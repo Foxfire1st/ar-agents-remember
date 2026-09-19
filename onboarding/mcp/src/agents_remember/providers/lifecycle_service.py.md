@@ -77,4 +77,3 @@ structured `ok: false` payloads for MCP callers.
 - 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
 - 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
 - 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.
-

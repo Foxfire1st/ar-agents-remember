@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -82,11 +82,14 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The single key, log format, renderer, and attribution value. | `_LOG_FORMAT` | mcp/src/agents_remember/kernel/memory_attribution.py:56-56 |
+| The single key, log format, renderer, and attribution value. | `CODE_COMMIT_TRAILER_KEY`; `_LOG_FORMAT` | mcp/src/agents_remember/kernel/memory_attribution.py:51; mcp/src/agents_remember/kernel/memory_attribution.py:56-56 |
+| The history walk and message/value parsers define the actual read behavior. | `attributed_commits` | mcp/src/agents_remember/kernel/memory_attribution.py:143-174 |
+| Row conversion and optional object validation. | `code_commit_exists` | mcp/src/agents_remember/kernel/memory_attribution.py:202-205 |
+| Runtime ledger derivation never consults cache text. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| The source census and behavioral renderer case keep the producer seam visible. | `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:87-117; mcp/tests/test_memory_attribution_producers.py:120-138 |
 | None | `attributed_commits`; `parse_code_commit_trailer`; `_trailer_value_from` | mcp/src/agents_remember/kernel/memory_attribution.py:127-140; mcp/src/agents_remember/kernel/memory_attribution.py:143-174; mcp/src/agents_remember/kernel/memory_attribution.py:186-199 |
 | None | `AttributedCommit`; `code_commit_exists`; `ledger_rows_from_attribution` | mcp/src/agents_remember/kernel/memory_attribution.py:99-124; mcp/src/agents_remember/kernel/memory_attribution.py:202-205; mcp/src/agents_remember/kernel/memory_attribution.py:208-227 |
 | None | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| The source census and behavioral renderer case keep the producer seam visible. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
 
 ## Cross-Repo References
 
@@ -100,6 +103,10 @@ No additional configured external or sibling-repository evidence is claimed.
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
@@ -112,7 +119,9 @@ No additional configured external or sibling-repository evidence is claimed.
   was read back at its current position. Verification metadata remains closeout-owned; no acceptance
   claim and no verification stamp advanced.
 
+
 - 2026-09-15T01:02 UTC — Corrected documentation to match the existing trailer-only runtime, removing transitional cached-table fallback and ledger-commit claims; preserved full-ancestry, last-match, shared-writer, and optional code-object semantics. No runtime change is claimed for this source-comment correction. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
@@ -122,11 +131,13 @@ No additional configured external or sibling-repository evidence is claimed.
   which resolves once in the code tree, and any range that had drifted off its construct was re-read
   at the declaration. The claim wording is unchanged, and the construct each range covers is the one
   the claim is about. Verification metadata remains closeout-owned.
+
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of
   11 claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in
   this card from their anchors against the frozen source snapshot (`agents-remember memory-citations
   --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
   back at its current position. Verification metadata remains closeout-owned.
+
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
   base `5bb124d4`): this module stopped being read-only. `render_memory_content_message(body,
   code_commit)` (`:72-97`) is now the **one** writer of the trailer, placed beside the one key literal
@@ -145,6 +156,7 @@ No additional configured external or sibling-repository evidence is claimed.
   is caught only by that route's behavioural case, and the prepared memory-content leg has none — the
   census case is what covers it. Verification metadata remains closeout-owned (no commit contains this
   candidate yet); no acceptance claim and no verification stamp advanced.
+
 
 - 2026-09-13T23:18+02:00 — 260913-LCA-L2 curator (same uncommitted change set): **the two-literal
   defect this card first recorded is fixed, and the entry below stands as the record of what was
@@ -166,6 +178,7 @@ No additional configured external or sibling-repository evidence is claimed.
   constant. `Conventions`, `Todos` and the reference rows above are rewritten to the resolved state —
   the history is where the defect stays visible. Every citation in this card was repointed to the
   grown file. Verification metadata remains intentionally empty (unstamped): closeout owns the stamp.
+
 
 - 2026-09-13T23:06+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
   created the one-to-one sidecar for this new kernel module. Records the attribution reader — the

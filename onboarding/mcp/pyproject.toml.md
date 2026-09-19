@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T18:45+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -105,6 +105,30 @@ the source rather than being repeated here; it is the same string
 `runtime_install` and `server_info` report, and it stays aligned with
 `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
+### The SQLite Binding Is A Binary Wheel With A Build-Time Capability (260915-KS-L1)
+
+`apsw==3.53.4.0` is the repository's first binary-wheel runtime dependency whose required capability is a
+**build-time SQLite option** rather than a Python API. Three facts justify the exact pin:
+
+1. **Why APSW at all.** APSW is the only declared binding that exposes SQLite's session and changeset machinery —
+   the operations a later merge leaf needs to capture and apply a candidate's changes. The standard library's
+   `sqlite3` module exposes neither session nor changeset, so the choice is not a preference between two bindings
+   with the same reach.
+2. **Why the pin is exact, not a range.** Session support is compiled in through SQLite's `ENABLE_SESSION` build
+   option, so the capability belongs to the specific wheel rather than to the APSW project version line. An exact
+   pin makes "this wheel has session support" a proven property of the locked artifact instead of an assumption
+   about whatever resolution picks next; a range would silently admit a build without it.
+3. **What was actually proven, and what was not.** The leaf's spike installed the pinned release from a prebuilt
+   `cp313` manylinux x86_64 wheel (no compiler, no source build, no fallback) and exercised one-row
+   changeset attach/diff/apply, an aborting conflict, a consistent WAL-inclusive backup and the leaf's DDL. macOS
+   wheels for `cp313` exist in the lock (x86_64 and arm64) but **no macOS host executed the spike**, so the macOS
+   classifier's support claim remains an unresolved acceptance item for the owning seat — it is disclosed rather
+   than narrowed silently.
+
+The pin is recorded in three places that must agree: `dependencies` here, `mcp/requirements.txt`, and the single
+added `apsw` entry in `mcp/uv.lock`. The in-file comment above the entry is the durable record of the reason, so a
+later reader does not have to reconstruct it from a report.
+
 ### Invariants And Boundaries
 
 - Runtime package dependencies should stay separate from source-development
@@ -141,15 +165,18 @@ the source rather than being repeated here; it is the same string
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:186-186 |
-| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23 |
+| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:164; pyproject.toml:186-186 |
+| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3"; "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23; mcp/pyproject.toml:28-29 |
+| The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
+| The same exact pin in the checkout requirements manifest, which must agree with this file. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2 |
+| The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects. | "{ name = \"apsw\", specifier = \"==3.53.4.0\" }"; `apsw` | mcp/uv.lock:43-43; mcp/uv.lock:102-111 |
 | Production complexity scoring loads Radon and refuses when its development dependency is unavailable. | `complexity_blocks` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:221-228 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:880-880 |
 | The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build"; "mcp/.venv/bin/python scripts/sync-dashboard.py"; ".venv/bin/python -m build"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:82-82; .github/workflows/publish-mcp-to-pypi.yml:91-91; .github/workflows/publish-mcp-to-pypi.yml:95-95; .github/workflows/publish-mcp-to-pypi.yml:111-111 |
-| The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT", "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:138-138; scripts/sync-dashboard.py:46-46; scripts/sync-dashboard.py:227-227 |
+| The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT"; "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:46-46; scripts/sync-dashboard.py:138-138; scripts/sync-dashboard.py:153-153; scripts/sync-dashboard.py:227-227 |
 | Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:26-27 |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
 | The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file. | "py313" | pyproject.toml:4-4 |
@@ -157,9 +184,13 @@ the source rather than being repeated here; it is the same string
 
 
 ## Update History
+- 2026-09-18T18:45+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this card against `mcp/pyproject.toml` at code `c5a74a85` and found the body already current; advanced the verification stamp to that revision, which closeout re-stamps.** The only source delta since the old stamp is the six lines behind `apsw==3.53.4.0` — the dependency entry and its five-line in-file comment — and the card already carries the whole of that reasoning under *"The SQLite Binding Is A Binary Wheel With A Build-Time Capability (260915-KS-L1)"*: why APSW rather than the standard library's `sqlite3`, why the pin is exact rather than a range, and the three places that must agree. Re-read against the source rather than trusted: the comment and the card say the same three things, and the dependency line, `mcp/requirements.txt` and the `mcp/uv.lock` entry are the three the card names. **No content impact:** no claim byte was rewritten, and nothing was added to fit the stamp.
 - 2026-09-18T01:52:52+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b549a05c7448b2578454675e173eaf65501170ee85e72dbbfb2c4a4132b3242; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:176-176. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `runtime_install` repointed to mcp/src/agents_remember/install/runtime.py:880-880. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `sync` in the row 179 of this card from scripts/sync-dashboard.py:38-38 to scripts/sync-dashboard.py:153-154, the extent of the construct the claim is about (the checker named line(s) [153] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `-n=4` in the row 168 of this card from pyproject.toml:160-160 to pyproject.toml:164, the extent of the construct the claim is about (the checker named line(s) [164, 267, 280] as its live location); re-pointed `TARGET = REPO_ROOT` in the row 179 of this card from scripts/sync-dashboard.py:153-154 to scripts/sync-dashboard.py:38, the extent of the construct the claim is about (the checker named line(s) [38] as its live location)
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): recorded the new `apsw==3.53.4.0` runtime dependency — the knowledge store's SQLite binding, the only declared binding that exposes SQLite's session/changeset machinery, exact-pinned because session support is a build-time SQLite option (`ENABLE_SESSION`) rather than a property of the version line. Documented the three places that must agree (this file, `mcp/requirements.txt`, `mcp/uv.lock`), what the leaf's spike actually proved (a prebuilt `cp313` manylinux x86_64 wheel, changeset apply, an aborting conflict, a consistent backup) and what it did not (no macOS execution, carried as an unresolved acceptance item). Corrected the Pydantic/tiktoken citation range, which the six-line insertion shifted from `:22-23` to `:28-29`, and added the pin's three evidence rows. Verification metadata remains closeout-owned.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: ".venv/bin/python -m build", "agents_remember/package_data/dashboard.fingerprint", "mcp/.venv/bin/python scripts/sync-dashboard.py", "npm run build" repointed to .github/workflows/publish-mcp-to-pypi.yml:111-111, .github/workflows/publish-mcp-to-pypi.yml:82-82, .github/workflows/publish-mcp-to-pypi.yml:91-91, .github/workflows/publish-mcp-to-pypi.yml:95-95. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:145-145. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

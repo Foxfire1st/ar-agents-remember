@@ -69,4 +69,3 @@ while announcing phases (GitHub #53).
 - 2026-06-10T07:30+02:00 — Added `setup_progress_from(args)`: returns the `SetupProgress` sink riding on the args namespace (set by `run_provider_setup(request, progress)`) or a shared no-op, so the install/prepare functions keep their `(args, settings)` signatures while announcing phases (GitHub #53).
 - 2026-05-31T12:30+02:00 — `stable_provider_id` slug logic moved to `providers.identity` (now re-exported); added `provider_settings`; dropped unused `coordination_root` arg from `settings_path`/`load_settings` (1.0.0 review remediation).
 - 2026-05-25T19:50+02:00: Created when shared provider setup helpers were extracted out of `provider_setup.py`.
-

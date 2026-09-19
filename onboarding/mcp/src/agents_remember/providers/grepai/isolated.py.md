@@ -92,4 +92,3 @@ instead of re-pulling it over the network.
 - 2026-05-31T12:50+02:00 — Source dropped the file-local `_grepai_provider()` helper and now resolves the GrepAI block through the shared `setup_common.provider_settings()` (import switched from `context_providers` to `provider_settings`); behaviour-preserving, Logic prose updated to name the shared helper (1.0.0 review remediation).
 - 2026-05-28T12:32+02:00: Updated after isolated GrepAI settings moved watch logs under `logs/providers/`.
 - 2026-05-27T18:10:12+02:00: Created for the GrepAI worktree warm-start settings slice.
-

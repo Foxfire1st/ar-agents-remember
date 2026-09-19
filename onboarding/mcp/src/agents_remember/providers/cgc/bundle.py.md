@@ -42,4 +42,3 @@ It builds path replacement pairs for POSIX and platform string variants, safely 
   seed-orchestration row to `_seed_rewrite`'s `rewrite_cgc_bundle_paths` call (seed.py:591-607) and the
   test row to its exact span (test_provider_setup.py:372-417). Scoped recheck clean.
 - 2026-05-25T19:50+02:00: Created when CGC bundle path rewriting was extracted out of `provider_setup.py`.
-

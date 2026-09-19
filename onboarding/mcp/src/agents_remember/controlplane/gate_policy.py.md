@@ -90,4 +90,3 @@ As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE
   delegation policy, human-pinned gate protection, no-self-approval attribution,
   and reviewer-verdict evidence requirements. Verification metadata pinned until
   closeout stamps the L4 commit.
-

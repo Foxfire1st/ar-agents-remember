@@ -60,8 +60,8 @@ These current source spans identify the implementation owners and the specific a
 | Protected branch aliases and nested/foreign workbench identities refuse. | `test_branch_alias_nested_checkout_and_memory_name_cannot_bypass_refusal` | mcp/tests/test_integration_branch_authority.py:54-78 |
 | A competing memory CAS is preserved after code has landed. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:80-170 |
 | Cache absence/corruption cannot affect the accepted pair or create another memory commit. | `test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move` | mcp/tests/test_integration_branch_authority.py:172-213 |
-| None | `test_the_accepted_memory_commit_must_descend_from_the_exact_source` | mcp/tests/test_integration_branch_authority.py:262-277 |
-| None | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-110 |
+| Real accepted-object and source-ancestry failures remain enforced. | `test_the_accepted_memory_commit_must_descend_from_the_exact_source` | mcp/tests/test_integration_branch_authority.py:262-277 |
+| Production ref preparation and publication proof. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
 
 ## Cross-Repo References
 

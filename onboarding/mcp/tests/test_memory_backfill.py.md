@@ -88,10 +88,10 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | `test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss`; `test_a_cell_naming_no_object_is_not_confused_with_an_unreachable_commit`; `test_the_same_history_plans_the_same_digest_twice`; `test_a_plan_that_lost_a_mapping_does_not_share_a_digest_with_one_that_did_not` | mcp/tests/test_memory_backfill.py:250-271; mcp/tests/test_memory_backfill.py:349-356; mcp/tests/test_memory_backfill.py:370-376; mcp/tests/test_memory_backfill.py:378-392 |
+| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | `test_a_plan_that_lost_a_mapping_does_not_share_a_digest_with_one_that_did_not`; `test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss`; `test_a_cell_naming_no_object_is_not_confused_with_an_unreachable_commit`; `test_the_same_history_plans_the_same_digest_twice` | mcp/tests/test_memory_backfill.py:222-392 |
 | The actual two-ref apply regression retains the original rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite` | mcp/tests/test_memory_backfill.py:579-596 |
 | Runtime proof uses the ordinary Git-only reader. | `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` | mcp/tests/test_memory_backfill.py:467-550 |
-| Historical table read/carry and real CLI boundaries stay covered. | `test_the_carried_table_validates_and_reads_with_no_exclusion` | mcp/tests/test_memory_backfill.py:753-764 |
+| Historical table read/carry and real CLI boundaries stay covered. | `test_a_tip_with_no_ledger_refuses_rather_than_planning_nothing`; `test_the_carried_table_validates_and_reads_with_no_exclusion` | mcp/tests/test_memory_backfill.py:645-672; mcp/tests/test_memory_backfill.py:753-764 |
 | The production target-update stream emits exactly one newline between commands. | `_move_targets` | mcp/src/agents_remember/kernel/memory_backfill.py:837-879 |
 | The existing CLI case applies two named refs and retries the same target set. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
 | The committed implementation uses native reversed topological traversal. | `_walk` | mcp/src/agents_remember/kernel/memory_backfill.py:784-791 |
@@ -108,6 +108,8 @@ No additional configured external or sibling-repository evidence is claimed.
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,

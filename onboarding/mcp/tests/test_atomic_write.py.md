@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_atomic_write.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ Atomic file publication, interruption cleanup and directory durability tests.
 ### Logic
 
 Readers see the old complete destination until replacement; successful writes publish exact bytes without temp leftovers. Failed replacement and KeyboardInterrupt remove private temporary files. The helper fsyncs both file and directory, and cross-directory replacement flushes destination and source directories.
+
+Two cases added by the `KS-R23` repair pin the failure vocabulary `atomic_replace` now carries, in `AtomicReplaceTests`: a post-rename directory-flush failure must raise `AtomicReplaceError` with `leg == "directory-fsync"` and `destination_state == "source-absent"`, and the case **reads the destination and the source path** to assert that state rather than trusting the label (the new bytes are published, the source is consumed); the other leg asserts a failed rename reports `leg == "replace"` with `destination_state == "previous-bytes"` and leaves the destination on its old bytes with the source still present. Both legs also assert the failure is still an `OSError` and now an `AgentsRememberError`.
 
 ### Conventions
 
@@ -67,6 +69,7 @@ No cross-repository implementation evidence is required for these local test and
 
 ## Update History
 
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the two cases this change set adds to `AtomicReplaceTests`, which pin the new two-leg failure vocabulary of `kernel/atomic_write.atomic_replace` (`AtomicReplaceError` with `leg` plus `destination_state`, asserted against a re-read of the destination and the source path, and against both the `OSError` and `AgentsRememberError` vocabularies). No existing claim in this card was falsified — the retained assertions it describes (exact bytes, no temp leftovers, cancellation cleanup, both-directory flush) still hold at the current source. Existing citation ranges were left for the citation pass; noted drift: the two new cases sit at 115-154 and 156-177, so every cited case below them shifted, and the card's cited ranges (e.g. `test_it_publishes_the_exact_bytes_and_leaves_no_temp_behind` at 33-39, cited as 32-38) are one to two lines stale.
 - 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 
 

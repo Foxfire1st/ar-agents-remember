@@ -94,4 +94,3 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-05-30T21:33+02:00: Verified `SERVER_VERSION` is `0.9.4` after the 0.9.0–0.9.4 run; still aligned with `mcp/pyproject.toml`. Repaired the broken builder reference — the former single `mcp/tools.py` was split into the `mcp/tools/` package at `01f503d`, so `ping_payload`/`server_info_payload` now live in `tools/core.py`.
 - 2026-05-29T21:00+02:00: Bumped `SERVER_VERSION` to `0.3.0` for the MCP `0.3.0` release (the act-by-default `dry_run` flip), kept aligned with `mcp/pyproject.toml`.
 - 2026-05-28T15:43+02:00: Created while preparing MCP package release `0.2.0`. Verification metadata remains pinned until closeout commits the source change.
-

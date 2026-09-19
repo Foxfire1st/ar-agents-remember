@@ -5,10 +5,10 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-15T01:13+00:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
-| governingOverview      | `overview.md`                                              |
+| lastUpdated | 2026-09-18T19:24+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 
 ## Governing Overview
 
@@ -101,17 +101,18 @@ package application entry point and resolver contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:379-386 |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `baseline_status` | mcp/src/agents_remember/memory/baseline.py:300-303 |
-| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:369-376 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:352-359; mcp/src/agents_remember/application/memory_tools.py:379-387 |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status`; `baseline_status` | mcp/src/agents_remember/memory/baseline.py:236-275; mcp/src/agents_remember/memory/baseline.py:300-303 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:342-345; mcp/src/agents_remember/application/memory_tools.py:369-383 |
+| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104; mcp/src/agents_remember/application/memory_scope.py:105-142 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:360-381 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290; mcp/src/agents_remember/application/memory_tools.py:279-315 |
+| The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
+| The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:418-435 |
-| Canonical quality scope is owned by the focused scope module. | `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104 |
 | Its resolver, which binds a repository to the scope the quality surface runs against. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
-| Typed quality execution and public run translation are owned by the controller. | `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:308-328 |
 | The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:331-383 |
 | The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:279-315 |
-| The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
 | The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:44-55 |
 | The refusal rule for a caller exclude that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
@@ -136,7 +137,25 @@ checklist publication moved to `memory_scope.py` and `memory_quality_controller.
 `memory_tools.py` focused on the other memory operations and prevents each transport/application
 caller from reimplementing the controller's failure vocabulary.
 
+## KS-R23@v1 The Citation Responses Name Their Ruler
+
+Both citation entry points now return the measurement's ruler beside their counts (item 26, D-33):
+`citation_fix_tool` (`:212-247`) and `citation_migrate_tool` (`:250-284`) spread
+`measuring_build_stamp()` — imported from `agents_remember.application.runtime.startup` at `:15` — into
+their returned mapping (`:246`, `:283`), so each response says which build's rewrite rules produced the
+counts it reports, rather than leaving a reader to assume they came from the candidate's own code.
+
+That the repair engine belongs to the *measuring* machinery is the reason it is stamped at all: a count
+produced by a fixed serving build while the candidate carries different code cannot show a fix to that
+machinery. The field is declared on `CitationFixResponse`/`CitationMigrateResponse` rather than left to
+the flexible envelope (see the `models/memory.py` card). Nothing else about these two operations moved —
+the leaf-memory-writer scope guard, the one `_citation_trees` construction point and the refusal paths are
+untouched.
+
 ## Update History
+- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (three table rows). (a) The carryover-message row cited `369-376`, which ends one line above the `class CarryoverCommitMessages:` the claim names at `377`; the range was widened to `369-383`, so it also reaches `DEFAULT_CARRYOVER_MESSAGES` at `383`. (b) The baseline-status row cited `379-386`, one line above `def memory_baseline_status_tool` at `387`; widened to `379-387`. (c) The quality-run row cited `controller.py:111-133` for `run_memory_quality_request`, whose definition this leaf's changes left at `249-255`, and `308-328` for `_resolve_execution`, which had moved to `360-381`; the cell cites both definitions now. A first pass re-pointed only the range the checker named for `run_memory_quality_request` and the document's own second anchor stopped resolving — caught by re-running the check over the whole cell, which is why both ranges are re-derived here. Claims, anchors and every other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T19:24+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the `servingBuild` stamp this leaf's item 26 added to both citation entry points, which this card did not mention.** `citation_fix_tool` and `citation_migrate_tool` now spread `measuring_build_stamp()` into their returns (`:246`, `:283`), so the repair engine's counts name the build whose rules produced them; the section above states why, and the two response models declare the field. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp. Everything else this card asserts about the module — the parameter objects, the single `_citation_trees` construction point, the ownership extraction — was re-read and still holds; the reference-table ranges are left to the citation-range repair pass that owns them.
+- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `CitationOperationScope` claim against the current module: the class is declared at :44 and the cited range :44-55 still holds it, so the wording is unchanged and the range is unchanged; the construct changed structurally since 420669c4 and the claim still states it.
 
 - 2026-09-17T12:40+02:00 — 260915-CAPS-L14 curator: recorded the module's **one citation construction point**. `_citation_trees` builds the citation `Trees` for all four citation operations and carries the caller's own excludes into it, validated through `validate_caller_excludes`; `CitationOperationScope` gained the `excludes` field, so a caller-supplied exclude and the memory layer's `system/settings.json` register are read in one place rather than four, and `Trees` takes them as a value so two operations over one root cannot change each other's population. **Flattened three tables from the legacy `| Finding | Citations | Source Path |` shape to the required `| Finding | Anchor | Source |` form** (the body also carried four inline `cit:([…], path:a-b)` cells, which are now plain `path:start-end`), and **re-derived every range**: the parameter objects cited at `:309-314` / `:322-338` / `:342-345` are now at `:336-348` / `:349-368` / `:369-376`, the route-index range at `:279-315`, and the `memory_scope` row cited a range that neither held `resolve_memory_scope` nor `MemoryScope`. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
 

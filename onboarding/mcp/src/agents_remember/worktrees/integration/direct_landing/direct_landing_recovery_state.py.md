@@ -80,11 +80,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed classification checks actual code, memory repository/ref, and candidate evidence. | `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
-| Memory receipt inference and output matching are based on actual Git lineage. | `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
-| Prepared and committed intent convergence retain exact ref/tree checks. | `_committed_intent_converges` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:336-355 |
-| Shared snapshots exclude cache data while retaining actual objects. | `_exclude_cache_from_index` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:476-479 |
-| Recovery tests reject code/ref/content drift and accept cache absence or damage. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
+| Typed classification checks actual code, memory repository/ref, and candidate evidence. | `DirectLandingRecoveryClassification`; `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:30-53; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
+| Memory receipt inference and output matching are based on actual Git lineage. | `_direct_recovery_outputs`; `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:185-204; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
+| Prepared and committed intent convergence retain exact ref/tree checks. | `_mutation_intent_converges`; `_committed_intent_converges` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:300-319 |
+| Shared snapshots exclude cache data while retaining actual objects. | `snapshot_is_clean_at_head`; `_exclude_cache_from_index` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:476-479 |
+| Recovery tests reject code/ref/content drift and accept cache absence or damage. | `_recover_after_interrupted_receipt`; `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
 

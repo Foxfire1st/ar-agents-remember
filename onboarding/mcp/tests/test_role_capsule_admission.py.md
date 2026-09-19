@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_role_capsule_admission.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
+| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
 | governingOverview      | `overview.md`                              |
 | reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 

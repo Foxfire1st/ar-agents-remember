@@ -517,4 +517,3 @@ As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks ge
 - 2026-06-13T19:30+02:00: Created for slice 3a — the pure fold, the inferred layer
   (paused/abandoned), the corrections fold, action availability, and workspace
   assembly. Verification metadata is pinned until closeout stamps the 3a code commit.
-

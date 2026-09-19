@@ -74,4 +74,3 @@ Git subprocesses still cannot consume MCP stdio transport input, but the guarant
   longer imports `run_git` from here, only the change-note helpers.
 - 2026-06-11T15:05+02:00 — `git_blob_hash()` and `compute_git_blob_set_fingerprint()` accept a keyword-only `ref` (default `HEAD`) so the carryover entity-catalog validation can recompute fingerprints against the official code ref.
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

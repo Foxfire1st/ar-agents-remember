@@ -82,4 +82,3 @@ the runner-image/layer-revision doctrine are unchanged.
 - 2026-05-29T18:35+02:00: Split `core.py` (668 lines) — extracted `materialize.py` (runtime dir/config-file writers) and `cleanup.py` (stale-artifact removal); `core.py` (now 522) keeps the layout dataclass + construction (commit `01f503d`).
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/cgc/context/` route.
 - 2026-05-25T19:16+02:00: Created when CGC provider context behavior moved into its own subpackage.
-

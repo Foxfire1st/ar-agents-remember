@@ -68,7 +68,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-222 |
+| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-222 |
 
 ## Cross-Repo References
 

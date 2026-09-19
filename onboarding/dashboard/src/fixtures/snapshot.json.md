@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T01:01+00:00 |
+| lastUpdated | 2026-09-15T20:42+02:00 |
 | lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -139,7 +139,7 @@ makes no separately verified external-library documentation claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external documentation source applies. | N/A | N/A |
+| No configured external documentation source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -149,27 +149,27 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. | "ledgers" | dashboard/src/fixtures/snapshot.json:592-609 |
-| Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. | "commit-approval-pending" | dashboard/src/fixtures/snapshot.json:380-380 |
-| `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. | `None` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
+| Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. | `observer`; "ledgers" | dashboard/src/fixtures/snapshot.json:592-609 |
+| Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. | `lifecycle`; "commit-approval-pending" | dashboard/src/fixtures/snapshot.json:380-380; dashboard/src/fixtures/snapshot.json:1166-1789 |
+| `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. | `write_projection`; `None` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | "evidenceRefs" | dashboard/src/fixtures/snapshot.json:1791-1928 |
-| Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1929-1940 |
-| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `expectationRows` | dashboard/src/fixtures/snapshot.json:575-575 |
+| Six lifecycles covering the six represented states and phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `false`; "evidenceRefs" | dashboard/src/fixtures/snapshot.json:1791-1928 |
+| Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2; dashboard/src/fixtures/snapshot.json:2-2 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `awaitingDeveloperCount`; `metrics` | dashboard/src/fixtures/snapshot.json:1929-1940 |
+| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `remember`; `expectationRows` | dashboard/src/fixtures/snapshot.json:3-1112 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | "extra=\"forbid\"" | mcp/src/agents_remember/observer/projection.py:54-323 |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "served ⊇ mirror" | dashboard/src/test/contract.test.ts:40-40 |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection`; "extra=\"forbid\"" | mcp/src/agents_remember/observer/projection.py:54-323; mcp/src/agents_remember/observer/projection.py:1140-1162 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | `valuesAt`; "served ⊇ mirror" | dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:452-466 |
 | The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:289-454 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:225-249 |
-| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
-| The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. | `check`; `demandServed` | scripts/sync-projection-types.py:46-54; dashboard/src/test/fixtures/wire.ts:73-76 |
+| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `projection`; `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
+| The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. | `generated`; `check`; `demandServed` | dashboard/src/test/fixtures/wire.ts:22-34; dashboard/src/test/fixtures/wire.ts:73-76; scripts/sync-projection-types.py:22-34; scripts/sync-projection-types.py:46-54 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
-| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | "as unknown as" | dashboard/src/test/servedProjection.ts:1-43 |
-| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | `withHeartbeat` | dashboard/src/data/store.test.ts:170-170 |
-| Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | "while the projection generator" | dashboard/e2e-production/cockpit.production.spec.ts:14-15 |
+| The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | `asServedProjection`; "as unknown as" | dashboard/src/test/servedProjection.ts:1-43 |
+| Store-suite consumer, which also constructs the two app-injected fields this payload omits. | `projection`; `withHeartbeat` | dashboard/src/data/store.test.ts:14; dashboard/src/data/store.test.ts:170-170 |
+| Production e2e consumer, which reads this manual sample off disk and states that it is checked against the generated mirror while the projection generator/stale gate hold that mirror to the Pydantic schema. | `provenance`; "while the projection generator" | dashboard/e2e-production/cockpit.production.spec.ts:13; dashboard/e2e-production/cockpit.production.spec.ts:14-15 |
 
 ## Cross-Repo References
 
@@ -178,7 +178,7 @@ sides live in `agents-remember`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The producer and fixture both belong to this repository; their implementation evidence is listed above. | N/A | N/A |
+| The producer and fixture both belong to this repository; their implementation evidence is listed above. | — | — |
 
 ## L23 Source-Lineage Samples
 

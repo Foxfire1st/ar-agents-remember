@@ -79,4 +79,3 @@ else `stage`).
 - 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
 - 2026-05-28T12:32+02:00: Updated after isolated CGC settings moved watcher logs under `logs/providers/`.
 - 2026-05-25T19:50+02:00: Created when CGC provider-level setup behavior was extracted out of `provider_setup.py`.
-

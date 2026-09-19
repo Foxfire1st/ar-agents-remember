@@ -228,6 +228,7 @@ implementation governs this module.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-343 to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-342, the range the cited construct now occupies
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f8508321721044ce85bb464c13146d4ff9a93843f25c858575bda1d3bad10c1a. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

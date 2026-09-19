@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `a29a20c6eefea424a7e0321a54fcda2ed1b35098`|
-| lastVerifiedCommitDate | 2026-09-17T14:23:47+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,36 @@ operation at the leaf's contract scope. The ruling is forward-looking: the alrea
 leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
 frozen tip.
 
+## 260915-KS-L23 The Byte Pin And The Consumer Oracle Are Two Gates, And This Route Owns One Of Them
+
+`testing/evidence_lifecycle.py` is where the repository's **consumer-completeness oracle** lives, and
+the point of the L23 section is that a reader arriving here must be able to tell it apart from the
+gate beside it. `D-19` measured the cost of the confusion: four green checks — the byte pin, pytest,
+ruff, format and pyright — shipped a red governance gate, because nothing in them derives the
+catalog's consumers from the source tree.
+
+| Gate | Where it lives | The question it answers | Its documented repair |
+| --- | --- | --- | --- |
+| the catalog **byte pin** | `mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CATALOG_SHA256` / `LIFECYCLE_CONTRACT_COUNT` / `LIFECYCLE_ARTIFACT_COUNT` | *is this the exact catalog file that was measured?* — nothing in the source tree can redden it | a re-pin, after the catalog edit was reviewed |
+| the **consumer oracle** | this route's `load_evidence_inventory` | *does the catalog agree with the source tree it describes?* — it derives the dependency graph and requires every `consumer_scope = "exact"` artifact's declared `consumers` to equal the test modules that actually reach it | a registry row — which is *why* the pin moves afterwards |
+
+The oracle's module docstring (`evidence_lifecycle.py:1-19`) was rewritten in this leaf to name both
+gates and each one's repair, and the case that shows the distinction as a measurement rather than a
+claim is `mcp/tests/test_evidence_catalog_gate_boundaries.py` — one catalog edit, in one run, where
+the oracle refuses the tree and the pinned catalog's bytes and populations are unchanged.
+
+**The class this route pays for on every landing, stated so the next leaf does not relearn it.** A
+test module that starts or stops importing a governed support module changes its artifact's
+consumer proof **without touching the catalog**, so the oracle reddens and the repair is a registry
+row (after which the closing stamp moves the pin). This leaf obliged **four** such rows — three for
+its two governed-support consumers and one that the item-16 case itself created by reading the lane
+manifest — while the catalogue's populations stayed at **15 contracts / 65 artifacts** and the
+digest moved to `25b00f88...`, because a consumer-only change moves the bytes and not the counts.
+
 ## Update History
+
+- 2026-09-18T19:16+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section for the consumer-completeness oracle (item 13 / D-19)** — the two gates side by side with the question each answers and its documented repair, the module docstring rewrite that names them, the case that shows the distinction in one run, and the four consumer rows this leaf obliged with the populations unchanged at 15 / 65. The body changed substantively; the route's own claims and the earlier entries are untouched. No verification stamp moves: `evidence_lifecycle.py` is modified in the delivered working tree and closeout owns the stamp.
+
 
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Also corrected the card's guard-obstacle paragraph, which L10 recorded as "not repaired": `CAPS-R19` **did** repair it — the retired pairing is no longer a required fragment, it is the guard's `RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`) beside the positive `LOOP_GATE_CORRECTED_FIELDS` (`:229`) and the `LOOP_GATE_DOCUMENTS` mapping (`:237-240`), asserted by `missing_loop_gate_statements` (`:382`) inside the existing census case (`test_role_instruction_corpus.py:685`).
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) and recorded the obstacle its repair will hit on this route.** The `CAPS-L18` section now names the **raw** `qualityChecklistStatus` as the repair loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate (`application/memory_quality/controller.py:664,671,678,687`). Added the source-backed statement that this route's `curation_doctrine.py::CURATION_COMPLETENESS_STATEMENTS` **requires** the fragment `"checklistStatus=ready-for-closeout"` for `roles/curator.md`, and that `normalize_statement` is case-preserving, so rewriting the sentence to `qualityChecklistStatus=…` would turn `test_every_canonical_source_states_the_complete_curation_rule` red unless the declared fragment moves with it. Recorded, not repaired — the table is code and this seat writes onboarding only.

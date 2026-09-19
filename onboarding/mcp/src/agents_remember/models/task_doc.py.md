@@ -44,6 +44,18 @@ Every non-`remove_subtask` operation leaves them `None` (excluded by `exclude_no
 registered model for the `task_doc` row in `PUBLIC_TOOL_RESPONSE_MODELS`. The
 persisted task document itself (`tasks.TaskDocument`) is deliberately not returned.
 
+`read_steps` has the same defect class once more, and its declaration is the fix. The operation had
+always emitted a focused checklist payload (`result["steps"] = task_doc_steps.step_payloads(doc.steps)`
+in `application/task_docs/task_doc_tools.py`) while `TaskDocResponse` never declared `steps`, so under
+`extra="forbid"` the payload was **rejected after a successful read**: `steps: Extra inputs are not
+permitted`. The model now declares `steps: list[TaskDocStepRead] | None` plus the two shapes the
+handler actually emits — `TaskDocStepRead` (`id`, `title`, `status`, `note`, `substeps`) and
+`TaskDocSubStepRead` (`id`, `title`, `status`, `note`) — so the operation is usable on every
+document. The handler was not changed: the model declares the field the handler always produced.
+`steps` is present only on `read_steps`; every other operation leaves it `None` (excluded by
+`exclude_none`), and the declaration is a **narrowing, not a relaxation** — an undeclared key still
+fails validation, which is what keeps the envelope strict rather than merely permissive.
+
 Since the master full-gate repair (260815-DAG, commit e5cb139f) `TaskDocResponse` also declares the
 **special-op wire fields** for the sprint-linkage and execution-graph authoring surfaces
 (`attach_master`, `detach_master`, `linkage_report`, `author_execution_graph`): `subtaskNumber`,
@@ -64,15 +76,18 @@ inside their own functions and return raw operation payloads; without the declar
   should not grow response data unnecessarily.
 - Every special-op wire field is optional and op-scoped: a real special op validates against the
   declared shape, and every other operation stays byte-unchanged.
+- `steps` is op-scoped to `read_steps` for the same reason, and its declaration is a narrowing:
+  the response model must declare every key the handler emits, but it must not be relaxed to
+  `extra="allow"` to make a mismatch disappear.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:203-203 |
+| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:210-210 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
 | The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:642-816 |
-| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
+| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:218-278 |
 | The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:424-446 |
 
 ## 260815-DAG Master Full-Gate Repair
@@ -81,7 +96,7 @@ inside their own functions and return raw operation payloads; without the declar
 execution-graph authoring results validate against the strict `extra="forbid"` envelope after their
 writes (the same defect class as the L18 `remove_subtask` fix), and the application entry point
 merges the standard task-doc identity into those raw operation payloads via
-`_sprint_doc_identity` (mcp/src/agents_remember/application/task_docs/task_doc_tools.py:396-418). The former wire-shape suite
+`_sprint_doc_identity` (mcp/src/agents_remember/application/task_docs/task_doc_tools.py:424-446). The former wire-shape suite
 was retired; these model and application owners remain the current contract authority.
 
 ## 260821-CLIVE Discard And Projection-Effect Response Models
@@ -109,7 +124,9 @@ below it in this class. Pinned by
 `mcp/tests/test_tool_response_conformance.py::test_task_doc_read_steps_validates_and_returns_the_checklist`.
 
 ## Update History
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected the Logic section, which said the `task_doc` response model was complete for every operation it serves.** The change set declares the `read_steps` payload the handler always emitted and the model never declared — `steps: list[TaskDocStepRead] | None` plus the `TaskDocStepRead` / `TaskDocSubStepRead` shapes — because under `extra="forbid"` the real payload was rejected *after* a successful read (`steps: Extra inputs are not permitted`), making the operation unusable on every document. This is the third instance of the class the card already records twice (`remove_subtask`, then the sprint-linkage and execution-graph fields), so the new paragraph names it as such rather than as a new topic. Added the op-scoped invariant, including the point that the declaration **narrows** (`extra="allow"` would have "fixed" the symptom by removing the strictness). The append is additive — `TaskDocResponse` moved from `115` to `138` and `TaskReopenResponse` now ends the file at `223-226` — so no other claim in this card was affected. Repairing the two ranges the new declaration did **not** cause: the `_sprint_doc_identity` merge is cited in the body prose below as `396-418` while the function spans `424-446` (the table row already carried `424-446`), and the `task_doc_tool` row cited `191-284` while the entry point spans `218-278`; both were re-read at their current position and re-pointed. Every other existing table row was left untouched for the citation pass.
 - 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): `steps` declared (`:134`, `T7`) and every citation into this file re-derived across the `+8` shift. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
+- 2026-09-18T13:36:47+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:210-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:196-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T22:45:49+00:00: Generated citation repair: `_sprint_doc_identity` repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:424-446. No content impact: mechanical anchor-range projection bound to citation source snapshot 7464238939d75c2065358d53c0f2e066dda635c5705830dfbe24fff068177c35; claim bytes unchanged; generated by ccr-r10@v1.

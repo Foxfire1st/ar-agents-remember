@@ -79,9 +79,9 @@ the current working-candidate behavior; historical entries below retain their or
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The fixture owns real temporary code/memory refs and an admitted series contract. | `_series_fixture` | mcp/tests/test_direct_landing.py:92-153 |
-| None | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
-| None | `_recover_after_interrupted_receipt`; `_assert_clean_memory_reused` | mcp/tests/test_direct_landing.py:274-314; mcp/tests/test_direct_landing.py:316-340 |
-| None | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
+| The retained scenario proves one content commit and reads its attribution from Git. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
+| Recovery rejects real drift and accepts cache misses without extra commits. | `_recover_after_interrupted_receipt`; `_assert_clean_memory_reused` | mcp/tests/test_direct_landing.py:274-314; mcp/tests/test_direct_landing.py:316-340 |
+| The lifecycle recovery owner performs the required same-generation resumption. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
 
 ## Cross-Repo References
 

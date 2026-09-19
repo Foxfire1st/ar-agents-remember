@@ -143,4 +143,3 @@ the product reads. The refusal names `runtime_install` and the `c-13-install-and
 
 - 2026-05-29T18:35+02:00: Extracted `_create_missing_dirs`, `_create_missing_files`, and `_git_init_result` from `initialize_memory` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-23T13:09+02:00: Created for MCP-owned memory initialization.
-

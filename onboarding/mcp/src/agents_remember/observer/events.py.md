@@ -60,4 +60,3 @@ Python attribute name — so records must be dumped with
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.
-

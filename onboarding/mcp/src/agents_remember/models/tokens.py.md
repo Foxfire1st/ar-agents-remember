@@ -215,4 +215,3 @@ operation-less responses such as `ping`.
 
 - 2026-05-30T22:29+02:00: S6 wiring completed — `_tool_payload` now calls the new `finalize_payload_tokens()` so every MCP response carries a real `tokens`/`tokenizer`/`tokenCountExact` instead of the Pydantic defaults; `response_payload`/`dump_with_token_count` were widened to accept any `ResponseModel`. Removed the pre-S6 "placeholder defaults" note and repaired the stale `mcp/tools.py` reference to `mcp/tools/base.py`. Verification metadata stays pinned until closeout commits the source change.
 - 2026-05-28T19:52+02:00: Created for the token-accounting model helpers planned for S6 wiring.
-

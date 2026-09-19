@@ -62,12 +62,12 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact refs, worktree identity, and authority-safe cleanup. | `read_ref`; `require_side_checkout`; `delete_pinned_ref` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:27-39; mcp/src/agents_remember/worktrees/sync_transaction_git.py:54-62; mcp/src/agents_remember/worktrees/sync_transaction_git.py:83-89 |
+| Exact refs, worktree identity, and authority-safe cleanup. | `read_ref`; `require_side_checkout`; `delete_pinned_ref` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:27-39; mcp/src/agents_remember/worktrees/sync_transaction_git.py:83-89; mcp/src/agents_remember/worktrees/sync_transaction_git.py:54-62 |
 | Typed dirty/WIP and restore proof exclude only the memory cache. | `worktree_dirty_paths`; `park_worktree_wip`; `prove_parked_wip_restored` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-141; mcp/src/agents_remember/worktrees/sync_transaction_git.py:144-163; mcp/src/agents_remember/worktrees/sync_transaction_git.py:198-216 |
 | Content-domain conflicts and narrowly scoped cache state handling. | `content_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:285-292 |
-| Native merge, exact continuation, and cache-free merge output. | `start_side_merge`; `_finish_staged_memory_merge`; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:363-396; mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction_git.py:414-435 |
-| Rollback and created-head proof retain exact operation ownership. | `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:491-499 |
-| Public regression covers cache-only success, true content conflict/continue, and preserved WIP. | `test_memory_merge_discards_only_cache_conflicts_and_preserves_content_conflicts` | mcp/tests/test_worktree_sync.py:330-411 |
+| Native merge, exact continuation, and cache-free merge output. | `start_side_merge`; `_finish_staged_memory_merge`; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:363-396; mcp/src/agents_remember/worktrees/sync_transaction_git.py:414-435 |
+| Rollback and created-head proof retain exact operation ownership. | `rollback_side`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:459-488 |
+| Public regression covers cache-only success, true content conflict/continue, and preserved WIP. | `test_memory_merge_discards_only_cache_conflicts_and_preserves_content_conflicts` | mcp/tests/test_worktree_sync.py:281-362 |
 
 ## Cross-Repo References
 

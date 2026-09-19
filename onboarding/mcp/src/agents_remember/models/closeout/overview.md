@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview | `../overview.md` |
 
@@ -69,11 +69,12 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Accepted closeout message input contains only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53 |
-| The effective two-leg input renders memory attribution through the kernel. | `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
+| Accepted closeout message input contains only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:46-52; mcp/src/agents_remember/models/closeout/input.py:47-53 |
+| The effective two-leg input renders memory attribution through the kernel. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:127-165; mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Update History
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected input/enabledness/message vocabulary to code and memory only. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 

@@ -5,9 +5,10 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-17T10:30+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +33,17 @@ cached process identity projected by MCP `server_info`.
 
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
 
+
+## 260915-KS-L22 Reviewer Route Registration
+
+`create_app` now registers the reviewer route family as well:
+`register_review_routes(app, config, collaborators.knowledge_review)` joins the other
+route-family registrations (`register_files_routes`, `register_changeset_routes`,
+`register_notes_routes`, `register_requirements_routes`) and is called **before** `mount_static(app)`
+so the static mount's greedy catch-all cannot shadow it — the same ordering constraint every route
+family in this function obeys. The third argument is the collaborator port: the route family does not
+compose an adapter of its own, and a process that supplies no `knowledge_review` collaborator is
+refused by name rather than served an empty surface.
 
 ## 260831-CCR-L23 Requirements Route Registration
 
@@ -62,7 +74,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:253-310 |
 | One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:165-252; mcp/src/agents_remember/serving/app.py:198-198; mcp/src/agents_remember/serving/app.py:242-242 |
-| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:333-333 |
+| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:333-333; mcp/src/agents_remember/serving/app.py:335-335 |
 
 ## Cross-Repo References
 
@@ -423,3 +435,14 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
   channel (snapshot + per-entity deltas) + one-shot `/api/state` + static mount. The raw
   `event` channel and POST action skeleton land in 4b. Verification metadata pinned until
   closeout stamps the 4a code commit.
+2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **registered the reviewer route family in the serving app.** `create_app` now calls
+`register_review_routes(app, config, collaborators.knowledge_review)` beside the other route-family
+registrations and before the greedy static mount, so the reviewer surface is reachable in every app
+this module builds. The call passes the collaborator port through rather than composing an adapter
+here, which is what keeps the layering rule visible at the registration site. The new section above
+records both facts, including the ordering constraint the static mount imposes on every route family
+in this function. No reference row was touched; ranges into this source are left to the
+citation-reprojection engine. The metadata block above names this leaf's uncommitted candidate as
+what was read, and the two verification stamps are left exactly as the last real verification set
+them because no commit holds this candidate. The body was changed substantively and this entry is the
+history record, not a metadata-only refresh.

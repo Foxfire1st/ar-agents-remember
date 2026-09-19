@@ -57,10 +57,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `DoorCandidateEvidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:37-54 |
-| None | `require_source_bases_current`; "memory.md" | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:57-95; mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:98-107 |
-| Review and task evidence remain independently validated. | `_door_task_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:250-266 |
-| Cache changes leave memory candidate identity stable while real content changes it. | `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:213-245 |
+| The door candidate contains only real candidate/base and review/memory facts. | `DoorCandidateEvidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:37-54 |
+| Current source bases and cache-excluding memory tree capture. | `require_source_bases_current`; "memory.md" | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:57-95; mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:98-107 |
+| Review and task evidence remain independently validated. | `_review_provenance`; `_door_task_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:168-247 |
+| Cache changes leave memory candidate identity stable while real content changes it. | `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:208-240 |
 
 ## Cross-Repo References
 

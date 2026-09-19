@@ -104,4 +104,3 @@ controller.
 - 2026-06-10T09:00+02:00 — Carryover plan/apply responses compacted for 2.5.2 (GitHub #52): full result filed via `write_tool_report`, wire keeps per-decision capped path lists + `carriedPaths` + `reportPath`, drops `candidates`/`carried` (apply previously repeated every record twice; 7.7k tokens for a 28-file carryover).
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the effectful memory payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
-

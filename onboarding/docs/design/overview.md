@@ -120,7 +120,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The implementation produces/reuses memory content before refreshing its cache. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
+| The implementation produces/reuses memory content before refreshing its cache. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76; mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
 
 ## R39 Design Evidence Disposition
 
@@ -184,6 +184,7 @@ rather than deleted, and this is a `T45` find — no check reads a number in pro
 ## Update History
 - 2026-09-18T17:14+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): **body update, not an annotation** — this route's governed source `python-pytest-bootstrap.md` changed (the Git-checkout prerequisite at `:22-24`), so the section above was added and the paragraph carrying the superseded 1,000/150 budget figure was corrected to `pyproject.toml`'s 2000/300 in the same operation (`T45`). Verification stamps stay at the recorded verification; the candidate is uncommitted and the governed closeout owns the real code commit.
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned observable-lifecycle route guidance with separate cache refresh. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 

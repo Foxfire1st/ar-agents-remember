@@ -100,4 +100,3 @@ state before the next AR tool call resumes the lifecycle to `running`.
 - 2026-06-13T16:41+02:00: Created for slice 2b — the six `lifecycle_*` payload
   builders. Verification metadata is pinned until closeout stamps the 2b code
   commit.
-

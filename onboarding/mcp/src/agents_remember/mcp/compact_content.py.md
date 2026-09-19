@@ -62,4 +62,3 @@ compacted text remains a faithful mirror of the structured payload.
 
 - 2026-08-03T02:32:19+02:00: Curator W3-B02 anchored 2 Repo-Internal citation rows with 2 exact identifiers and generated source ranges; verification metadata was preserved.
 - 2026-05-29T08:53+02:00: Created onboarding for the FastMCP compact-content shim that minifies the JSON text mirror of tool results.
-

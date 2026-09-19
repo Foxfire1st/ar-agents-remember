@@ -82,11 +82,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Execution publishes or reuses real memory output and refreshes the cache afterward. | "ledgerCache" | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:71-77 |
-| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_prepared_direct_attempt` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:261-290 |
-| Shared mutation intent and proof retain actual object checks. | `_publish_mutation_intent` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:137-154 |
-| The lifecycle recovery owner resumes the generation before execution. | "lifecycle-generation-changed" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
-| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
+| Execution publishes or reuses real memory output and refreshes the cache afterward. | `execute_direct_landing`; "ledgerCache" | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:42-75 |
+| Prepared attempts preserve repository and exact pre-commit tree evidence. | `_require_accepted_memory_prestate`; `_require_prepared_direct_attempt` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:239-255; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:261-290 |
+| Shared mutation intent and proof retain actual object checks. | `begin_git_mutation`; `_publish_mutation_intent` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:84-105 |
+| The lifecycle recovery owner resumes the generation before execution. | `recover_direct_landing_under_authority`; "lifecycle-generation-changed" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
+| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | `_recover_after_interrupted_receipt`; `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
 

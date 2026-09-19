@@ -49,4 +49,3 @@ uppercase minus I, L, O, U).
 
 - 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
   until closeout stamps the 2a code commit.
-

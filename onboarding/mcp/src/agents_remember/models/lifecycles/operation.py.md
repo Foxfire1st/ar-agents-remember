@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,15 +106,15 @@ The operation model owns strict serialization and cross-field identity checks. T
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:957-978 |
-| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | `_require_legacy_effective_input` | mcp/src/agents_remember/models/lifecycles/operation.py:806-829 |
-| The durable record carries both selected certification states and the completed quality proof. | `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:208-245 |
-| Completed integration requires an exact original full code prefix and a matching result digest. | "original full code prefix" | mcp/src/agents_remember/models/lifecycles/operation.py:237-237 |
-| Attestation, passing result, comparison base and memory policy are checked together. | `memory_policy` | mcp/src/agents_remember/models/lifecycles/operation.py:297-297 |
-| Completed proof must match the selected operation generation, references and integration code authority. | `IntegrationOperationAuthority` | mcp/src/agents_remember/models/lifecycles/operation.py:170-186 |
-| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `_MEANINGFUL_STATE_FIELDS` | mcp/src/agents_remember/models/lifecycles/operation.py:521-548 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection`; `LifecycleWorkerObservation` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393; mcp/src/agents_remember/models/lifecycles/operation_projection.py:314-321 |
-| The R03 dependency vocabulary is shared by these record types. | `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
+| Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication. | `LifecycleOperationRecoveryCommits`; `_require_integration_publication` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72; mcp/src/agents_remember/models/lifecycles/operation.py:957-978 |
+| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | `CloseoutOperationInput`; `_require_legacy_effective_input` | mcp/src/agents_remember/models/lifecycles/operation.py:311-320; mcp/src/agents_remember/models/lifecycles/operation.py:806-829 |
+| The durable record carries both selected certification states and the completed quality proof. | `_decode_legacy_missing_intent`; `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:208-245; mcp/src/agents_remember/models/lifecycles/operation.py:340-435 |
+| Completed integration requires an exact original full code prefix and a matching result digest. | `IntegrationQualityCertification`; "original full code prefix" | mcp/src/agents_remember/models/lifecycles/operation.py:208-245 |
+| Attestation, passing result, comparison base and memory policy are checked together. | `_require_quality_certification_attestation`; `memory_policy` | mcp/src/agents_remember/models/lifecycles/operation.py:260-274; mcp/src/agents_remember/models/lifecycles/operation.py:297-297 |
+| Completed proof must match the selected operation generation, references and integration code authority. | `_require_integration_certification_authority`; `IntegrationOperationAuthority` | mcp/src/agents_remember/models/lifecycles/operation.py:170-186; mcp/src/agents_remember/models/lifecycles/operation.py:566-589 |
+| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `closeoutFinalizedContractSha256`; `_MEANINGFUL_STATE_FIELDS` | mcp/src/agents_remember/models/lifecycles/operation.py:521-548 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection`; `LifecycleWorkerObservation` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:314-321; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
+| The R03 dependency vocabulary is shared by these record types. | `EvidenceRecordType`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-30; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
 
 ## Cross-Repo References
 
@@ -122,7 +122,7 @@ No cross-repository vocabulary is defined here. Config/contract input and the pu
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate cross-repository source is required for these model-local claims. | N/A | N/A |
+| No separate cross-repository source is required for these model-local claims. | — | — |
 
 ## L23 Final Candidate Disposition
 
@@ -146,9 +146,9 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery evidence records the exact code and memory-content commits. | `_require_recovery_commit_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:729-737 |
+| Recovery evidence records the exact code and memory-content commits. | `LifecycleOperationRecoveryCommits`; `_require_recovery_commit_evidence` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72; mcp/src/agents_remember/models/lifecycles/operation.py:729-737 |
 | Organizational publication intent records and validates accepted/intended task-document bytes and digests. | `OrganizationalTaskPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:75-104 |
-| Integration publication intent captures the claimed source operation and checks completeness of that identity. | `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:107-148 |
+| Integration publication intent captures the claimed source operation and checks completeness of that identity. | `_source_identity_is_complete`; `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:107-148 |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 

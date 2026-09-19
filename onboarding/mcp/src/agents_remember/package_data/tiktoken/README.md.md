@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/tiktoken/README.md`      |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                     |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`                     |
+| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
 | governingOverview      | `../../../../overview.md`                                      |
 
 ## Governing Overview
@@ -104,12 +104,13 @@ test that re-derives its two hashes.
 | `TiktokenTokenCounter` is the production counter that reads the verified vocabulary. | `TiktokenTokenCounter` | mcp/src/agents_remember/models/tokens.py:183-202 |
 | `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. | `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:205-205 |
 | The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. | "-text" | .gitattributes:12-13 |
-| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:23-23; mcp/pyproject.toml:84-84 |
+| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:29-29; mcp/pyproject.toml:84-84; mcp/pyproject.toml:90-90 |
 | The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | "class CorruptVendoredVocabularyTests(unittest.TestCase):" | mcp/tests/test_cold_start.py:208-281 |
 | The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | .gitignore:26-26; mcp/src/agents_remember/package_data/tiktoken/README.md:64-64 |
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `package_data/**/*` in the row 107 of this card from mcp/pyproject.toml:23-23 to mcp/pyproject.toml:90, the extent of the construct the claim is about (the checker named line(s) [90] as its live location); re-pointed `tiktoken>=0.12` in the row 107 of this card from mcp/pyproject.toml:90 to mcp/pyproject.toml:29, the extent of the construct the claim is about (the checker named line(s) [29] as its live location)
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
   range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
   range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations

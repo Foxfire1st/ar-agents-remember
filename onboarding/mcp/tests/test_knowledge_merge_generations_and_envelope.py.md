@@ -1,0 +1,168 @@
+# mcp/tests/test_knowledge_merge_generations_and_envelope.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_knowledge_merge_generations_and_envelope.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-17T22:00+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[tests route overview](../overview.md)
+
+## Purpose
+
+The case module for what generation 2 makes possible and what it must refuse: the mixed-generation merge preflight,
+the typed record envelope's payload seam, and the route scope's confinement and acyclicity. Three requirement groups
+share one file because they share one subject — generation 2 — and its docstring names them: **6.1/6.2** (the preflight
+reads each input's generation first, refuses a mixed-generation merge before any session exists, and validates a
+same-generation merge against the generation the inputs agree on), **3.1** (one registry maps a `(kind, record_schema)`
+pair to one frozen model and one entry point decides admissibility), and **4.2/4.3** (a route path is normalised and
+confined, and the hierarchy is acyclic with the check running inside the caller's transaction). This is one of the
+leaf's own new test modules.
+
+## Code Commentary
+
+### Logic
+
+The module declares `MERGE_OPERATION = "merge_knowledge_datasets"` and `pytestmark = pytest.mark.evidence_unit`, and
+imports the merge preflight (`declared_generation`, `selected_generation`, `require_supported_structure`), the payload
+seam, the two route rules, and `create_generation_1_store` from the shared support module.
+
+- `_v1_dataset` creates one genuine version-1 dataset bound to a caller-supplied repository namespace. Its docstring
+  gives the reason the caller supplies it: the three positions of one merge share a namespace, so three datasets bound
+  to three different namespaces are not a merge of one dataset's branches, and their repository rows would show up as a
+  difference that has nothing to do with the generation.
+- `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1` is the required **passing** case and the one
+  a partially threaded preflight breaks. All three inputs declare version 1, `declared_generation(base)` and
+  `selected_generation` both resolve to generation 1, each input validates against generation 1's manifest through
+  `require_supported_structure(..., generation=GENERATION_1)`, and `build_delta(left, base, side="left",
+  generation=GENERATION_1)` reports operation counts over exactly generation 1's ten tables with an empty delta. With
+  the live globals left in place, the same merge would ask for `route`, `knowledge_record` and `record_revision` and be
+  refused.
+- `test_a_mixed_generation_merge_is_refused_before_any_session_exists` builds two version-1 inputs and one
+  generation-2 input and asserts the refusal's code `schema_mismatch`, its operation, its `(expected, observed)` pair
+  `("1", "2")`, and that the detail names the disagreeing position and the base. It then proves the preflight is
+  read-only: both inputs are byte-identical afterwards and a second attempt refuses again.
+- `test_a_generation_2_merge_on_the_generation_2_build_selects_generation_2` shows the same mechanism serving the
+  newest generation: agreement selects `CURRENT_GENERATION`, each input validates against it, and a read-only reader
+  sees an empty `route` table in the logical body.
+- `test_the_payload_seam_registers_one_shape_and_refuses_every_inadmissible_payload` asserts the registry entry exists,
+  that a valid payload round-trips to `{"note": "conformance"}`, and that the validated value is **frozen** (assignment
+  raises). Five inadmissible combinations are then measured — an unknown kind, a schema not admissible for a known
+  kind, an empty note, an extra field, and a missing field — each returning a `KnowledgeRefusal` with code
+  `invalid_payload`, table `record_revision` and the supplied `record_id`.
+- `test_a_confined_route_path_normalises_to_itself` and `test_a_route_path_outside_the_admitted_form_is_refused` are the
+  two directions of requirement 4.2: four admitted spellings normalise to themselves, and eleven refused spellings
+  (empty, absolute, traversal, dot segment, doubled separator, backslash, drive form, two UNC spellings, trailing
+  separator, embedded NUL) each return a refusal whose table is `route` and whose `observed` is the exact input.
+- `test_the_route_hierarchy_is_acyclic_and_a_cycle_rolls_the_batch_back` measures both directions of 4.3 on a real
+  generation-2 schema: a chain and a two-root forest pass, a three-node cycle introduced inside an explicit `BEGIN`
+  returns a `lineage_cycle` refusal naming a route in the cycle, the subsequent `ROLLBACK` restores the hierarchy the
+  walk passed on, and the **one-node** cycle is the table's own `CHECK`, raising `apsw.ConstraintError` instead of
+  reaching the walk.
+- `test_the_gen_2_record_tables_carry_no_competing_identity_and_the_association_is_a_constraint` asserts the
+  generation-2 facts behind 3.3 and 4.4: the envelope's columns contain none of `content_digest`, `logical_digest` or
+  `fingerprint`, `payload` is a declared column and a typed-JSON column of `record_revision`, the three governing-route
+  joins key on the governed entity's own id, no generation-1 table carries `governing_route_id`, and no create statement
+  starts with `ALTER TABLE`.
+
+### Conventions
+
+- Each case measures **both directions** where a rule has a passing and a failing form; the module docstring states why
+  (a check observed only in the passing direction is not evidence).
+- Version-1 datasets always come from the shared support module, and generation-2 datasets from the real creation path
+  with foreign keys enabled.
+- Refusal assertions address the structured facts a caller branches on (code, operation, table, expected/observed,
+  detail content) rather than message text.
+- Parametrized refusal tables carry the exact offending spelling so a failure names the form that regressed.
+
+### Invariants And Boundaries
+
+- **A mixed-generation merge is refused before any session exists and picks no winner**, and the refusal leaves both
+  inputs byte-identical — the case proves input preservation by comparing file bytes, not by re-reading the refusal.
+- **The passing case is the load-bearing one.** A v1/v1/v1 merge on the generation-2 build must proceed *under
+  generation 1* and attach generation 1's ten tables; the docstring records that this is exactly what a partially
+  threaded preflight breaks, which is requirement 5.1 broken by the mechanism meant to serve it.
+- **Route scope is recorded, never inferred.** The confinement cases admit only the normalised spelling and refuse a
+  path that would need normalising rather than rewriting it; the acyclicity case refuses however the cycle arrives, not
+  only through the authoring path.
+- **The envelope must not become a second identity authority**, which is why the case asserts the *absence* of any
+  identity-valued column on it; the payload lives on the revision with `json_valid`, and the governing association is a
+  generation-2 table keyed by the governed row rather than a new column on a generation-1 table.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The three requirement groups the module covers and why they share one file. | "what generation 2 makes possible and what it must refuse" | mcp/tests/test_knowledge_merge_generations_and_envelope.py:1-15 |
+| The one-namespace helper for the three merge positions, and why the caller supplies the namespace. | `_v1_dataset` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:58-69 |
+| The required passing case: a version-1 merge on the generation-2 build selects generation 1 and attaches generation 1's ten tables. | `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:72-102 |
+| A mixed-generation merge refuses before any session exists, names the disagreeing input, and leaves both files byte-identical. | `test_a_mixed_generation_merge_is_refused_before_any_session_exists` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:105-135 |
+| The same mechanism selects the newest generation when the inputs agree. | `test_a_generation_2_merge_on_the_generation_2_build_selects_generation_2` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:138-166 |
+| One registry, one entry point, a frozen validated value, and five inadmissible payloads refused with the shipped code. | `test_the_payload_seam_registers_one_shape_and_refuses_every_inadmissible_payload` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:169-197 |
+| Confinement measured in both directions, with the refused spelling carried in the refusal's `observed`. | `test_a_confined_route_path_normalises_to_itself`; `test_a_route_path_outside_the_admitted_form_is_refused` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:209-214; mcp/tests/test_knowledge_merge_generations_and_envelope.py:217-239 |
+| Acyclicity measured in both directions, including the rollback and the one-node cycle the table's own CHECK catches. | `test_the_route_hierarchy_is_acyclic_and_a_cycle_rolls_the_batch_back` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:233-284 |
+| The generation-2 DDL facts: no identity column on the envelope, payload on the revision, the joins keyed by the governed row, no altered generation-1 table. | `test_the_gen_2_record_tables_carry_no_competing_identity_and_the_association_is_a_constraint` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:287-311 |
+| The merge preflight the generation cases drive: per-input generation, agreement selection, and structural validation against the selected generation. | `declared_generation`; `selected_generation`; `require_supported_structure` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:94; mcp/src/agents_remember/memory/knowledge/merge_schema.py:110; mcp/src/agents_remember/memory/knowledge/merge_schema.py:226-258 |
+| The delta builder the passing case calls with an explicit generation, and the empty-delta fact it asserts. | `build_delta` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:210-254 |
+| **The registry this case's seam resolves against — re-cited by hand, and now holding three groups because `KS-R14@v1` registered the two mechanical-detection kinds beside the eight facet kinds and the internal conformance kind.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
+| The one entry point that returns a validated payload or a refusal. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
+|The marked-internal kind that exercises the seam.|`INTERNAL_CONFORMANCE_KIND`| mcp/src/agents_remember/memory/knowledge/record_envelope.py:76-133; mcp/src/agents_remember/memory/knowledge/record_envelope.py:75-75 |
+| **The registry this case's seam resolves against — re-cited by hand, and now holding three groups because `KS-R14@v1` registered the two mechanical-detection kinds beside the eight facet kinds and the internal conformance kind.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157 |
+| The one entry point that returns a validated payload or a refusal. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
+| The marked-internal kind that exercises the seam. | `INTERNAL_CONFORMANCE_KIND` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:110-110 |
+| The two route rules the module exercises. | `normalize_route_path`; `require_acyclic_routes` | mcp/src/agents_remember/memory/knowledge/routes.py:75-89; mcp/src/agents_remember/memory/knowledge/routes.py:92-144 |
+| The generation-2 declarations the DDL case reads as facts. | `APPENDED_TABLE_DDL`; `APPENDED_PRIMARY_KEYS`; `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-201; mcp/src/agents_remember/memory/knowledge/schema_v2.py:81-88; mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-76 |
+| The genuine version-1 datasets the merge cases use. | "def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:" | mcp/tests/generation_test_support.py:67-70 |
+
+## Cross-Repo References
+
+No cross-repository behavior is implemented in this file.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `build_delta` repointed to mcp/src/agents_remember/memory/knowledge/merge_changeset.py:210-254. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `INTERNAL_CONFORMANCE_KIND` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:12:32+00:00: Generated citation repair: `INTERNAL_CONFORMANCE_KIND` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:105-105. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T08:36:42+00:00: Generated citation repair: `INTERNAL_CONFORMANCE_KIND` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:104-104. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
+
+- 2026-09-18T07:21:19+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 4 generated projection bullet(s) by hand while resolving the memory sync** — `validate_record_payload`, `INTERNAL_CONFORMANCE_KIND`, `create_generation_1_store`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
+
+- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
+
+- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `create_generation_1_store`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
+
+- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: ``INTERNAL_CONFORMANCE_KIND`` → `mcp/src/agents_remember/memory/knowledge/record_envelope.py:65-65`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
+
+- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the payload-seam row against the current envelope and re-cited it by hand.** The row named three anchors across three stale ranges; it is now one anchor per row at each declaration's current range, and the registry row records the fact this leaf changed: `PAYLOAD_MODELS` now holds **three groups** — the internal conformance kind, the eight facet kinds, and the two mechanical-detection kinds `KS-R14@v1` registered. The case's own assertions about the seam are unaffected, and verification metadata is not advanced for a module this leaf did not modify.
+
+- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the payload-seam row against the current envelope and re-cited it by hand.** The row named three anchors across three stale ranges; it is now one anchor per row at each declaration's current range, and the registry row records the fact this leaf changed: `PAYLOAD_MODELS` now holds **three groups** — the internal conformance kind, the eight facet kinds, and the two mechanical-detection kinds `KS-R14@v1` registered. The case's own assertions about the seam are unaffected, and verification metadata is not advanced for a module this leaf did not modify.
+
+- 2026-09-17T20:00:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`; the module is untracked in the leaf's code worktree): created this one-to-one card for the leaf's new merge/envelope/route case module. It records the required passing case a partially threaded preflight breaks, the byte-identical input preservation a refusal must leave behind, the both-directions rule for the pin-like checks, the five inadmissible payloads, and the generation-2 DDL facts the module asserts as absences as well as presences.

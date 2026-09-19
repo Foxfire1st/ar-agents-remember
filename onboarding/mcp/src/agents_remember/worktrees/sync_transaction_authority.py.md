@@ -60,8 +60,8 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Side planning and exact source-pair reads. | `side_record`; `source_pair` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-75; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:110-118 |
-| Pinned ref authority and reconstruction require exact identities. | `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
-| Contract identity and base-transition constraints. | `require_contract_bases_unchanged` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:245-252 |
+| Pinned ref authority and reconstruction require exact identities. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
+| Contract identity and base-transition constraints. | `require_record_contract`; `require_contract_bases_unchanged` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:206-220; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:245-252 |
 | Parked-content restoration and settlement retain the exact stash until safe. | `restore_parked_wip`; `settle_resolved_parked_wip` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:316-356; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:380-401 |
 
 ## Cross-Repo References

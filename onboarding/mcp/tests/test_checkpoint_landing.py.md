@@ -57,11 +57,11 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Checkpoint versus final durable integration cells. | `IntegrationCellRecordingTests` | mcp/tests/test_checkpoint_landing.py:169-204 |
-| The checkpoint result retains the pre-existing cleanup state. | `test_checkpoint_result_publishes_without_running_cleanup` | mcp/tests/test_checkpoint_landing.py:217-238 |
-| Completion and stale candidate publication refusals. | `test_publication_refuses_a_candidate_that_moved_after_its_capture` | mcp/tests/test_checkpoint_landing.py:290-305 |
-| The landed-master abandon guard remains enforced. | `SeriesAbandonGuardTests` | mcp/tests/test_checkpoint_landing.py:308-347 |
-| Production checkpoint capture and publication authority. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
+| Checkpoint versus final durable integration cells. | `test_final_landing_still_records_completed_and_marks_cleanup_pending`; `IntegrationCellRecordingTests` | mcp/tests/test_checkpoint_landing.py:169-204 |
+| The checkpoint result retains the pre-existing cleanup state. | `test_checkpoint_result_publishes_without_running_cleanup` | mcp/tests/test_checkpoint_landing.py:207-238 |
+| Completion and stale candidate publication refusals. | `test_publication_refuses_a_candidate_that_moved_after_its_capture` | mcp/tests/test_checkpoint_landing.py:241-305 |
+| The landed-master abandon guard remains enforced. | `test_abandon_guard_still_refuses_a_completed_master`; `SeriesAbandonGuardTests` | mcp/tests/test_checkpoint_landing.py:308-347 |
+| Production checkpoint capture and publication authority. | `capture_series_checkpoint_refs`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122; mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
 
 ## Cross-Repo References
 

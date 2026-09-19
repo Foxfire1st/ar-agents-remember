@@ -57,8 +57,9 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Observed objects and public conflict/interruption payloads. | `observed_objects` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:156-156 |
-| The total live classifier reads the actual memory output to decide accepted versus intended state. | `classify_integration_authority_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:127-168 |
+| Observed objects and public conflict/interruption payloads. | `IntegrationRefObservation`; `observed_objects` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:18-32; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:156-156 |
+| Exact accepted/intended state classification uses the actual memory output. | `classify_integration_refs`; `classify_integration_authority_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:127-168 |
+| The total live classifier reads the actual memory output to decide accepted versus intended state. | `classify_integration_refs`; `classify_integration_authority_refs` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:118-124; mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:127-168 |
 | Canonical ref reading preserves stable failure categories. | `_read_ref` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:171-205 |
 
 ## Cross-Repo References

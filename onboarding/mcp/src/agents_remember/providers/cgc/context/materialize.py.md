@@ -55,4 +55,3 @@ then appends source `.gitignore` patterns and repo-specific managed exclusions.
   (constants.py:16-21; 50-90). Scoped recheck clean.
 - 2026-07-03T01:55+02:00 — L12: ensure_cgc_runtime_layout also materializes the enriched .cgcignore into run/home/.codegraphcontext/global/.cgcignore (byte-identical), closing the dead-config gap where the watch context read cgc's auto-created plain defaults instead.
 - 2026-05-29T18:35+02:00: Created when `ensure_cgc_runtime_layout` and the runtime file/dir writers were extracted from `core.py` (commit `01f503d`).
-

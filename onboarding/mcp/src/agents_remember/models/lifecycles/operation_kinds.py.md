@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No configured Domain Documentation source applies to this repository-internal li
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -64,6 +64,8 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The canonical phase union excludes both retired ledger-commit phases. | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
+| The module defines the closed module vocabulary as its public seam. | `LifecycleOperationKind` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:5 |
 | None | `LifecycleOperationPhase` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-38 |
 | None | `LifecycleOperationKind` | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:5-46 |
 
@@ -73,7 +75,7 @@ No meaningful cross-repository boundary is owned by this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## 2026-08-26 Shared Control Vocabulary
 
@@ -106,4 +108,3 @@ The closed `LifecycleControlAction` vocabulary now names `resume` in place of `r
 
 - 2026-08-26T10:44:52+02:00 — Documented the newly centralized closed lifecycle-control action vocabulary alongside operation kinds.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

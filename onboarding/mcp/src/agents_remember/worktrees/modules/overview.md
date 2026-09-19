@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
 
@@ -462,7 +462,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:184-236 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:279-279; mcp/src/agents_remember/models/worktree.py:40-40 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:286-286; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
 
@@ -470,7 +470,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
+| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76 |
 | Final memory staging removes and excludes the cache. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
 | Carryover completion is actual memory ancestry. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
 
@@ -1242,11 +1242,52 @@ a producer must never edit the string it was handed. The census is enforced from
 `mcp/tests/test_memory_attribution_producers.py`, and the recovery route's behavioural half lives in
 `mcp/tests/test_transaction_only_worktree_delivery.py::test_closeout_recovery_attributes_the_memory_commit_it_still_owed`.
 
+## The Two Memory-Candidate Roots That Landed Here In `806649b9`
+
+Commit `806649b9` moved two candidate-identity owners into this route, each as a **pure rename** (both
+blobs are byte-identical before and after): `future_code_candidate.py` from
+`memory_quality/`, and `memory_candidate_pair.py` from the same place, which had itself arrived there
+from `worktrees/integration/closeout/` in the de-entanglement cut. They were not new code and this
+route did not previously own them; what changed is the rank they sit at and the route a reader
+reaches them from.
+
+`future_code_candidate.py` owns the exact pre-commit **future-code** route identity: a frozen,
+strict three-field model (`FutureCodeCandidateIdentity` — observed HEAD, configured base, candidate
+tree) plus the capture and currentness functions that derive and re-prove it, refusing non-leaf use
+and translating expected Git/filesystem failures into the package's central typed error family. It
+wraps the canonical isolated-index add-all tree calculation in `git.py` rather than duplicating it, and
+every observation gets its own enclosure-local temporary index so concurrent captures cannot unlink
+each other's.
+
+`memory_candidate_pair.py` owns the one read-only resolver that admits and re-proves an **exact
+external-memory leaf pair**: repository identity, both work branches, both recorded bases, and
+ancestry, with the memory source head checked against the recorded integrated landing for a completed
+leaf. The ledger location it derives is a consumer detail — it is excluded from the contract digest and
+is neither required to exist nor admitted as caller-supplied authority. Every refusal is a typed
+`MemoryCandidatePairError` naming one field with bounded expected/observed facts and a
+contract-addressed repair action.
+
+Both cards' claims were already correct and their cited anchors were verified unchanged; they moved to
+this route's card paths with their `path` metadata and governing-overview links repointed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The frozen strict future-code route identity, and the capture that derives it without touching the real index. | `FutureCodeCandidateIdentity`; `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
+| Currentness is exact equality of the whole bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68 |
+| The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. | `resolve_memory_candidate_pair`; `_require_branch_plan` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-131; mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:286-351 |
+
 ## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The lifecycle-state row's `"phase: WorktreePhase"` cell cited `models/worktree.py:256-256`, which is `memoryWorktreeDirty`; the field the claim is about now sits at `263`, so the cell cites `263-263`. The `"WorktreePhase = Literal["` cell at `40-40` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **added the section above for the two candidate-identity owners `806649b9` moved into this route, and moved their two cards here.** The cards had stayed at `memory_quality/`, where the drift check reported both `orphaned` ("Source file no longer exists") while this route had no card for either module at all; the cards' bodies were already correct (a generated citation repair had repointed their claims to these paths on 2026-09-17), so only their title, `path` metadata, governing-overview link and history needed the move, and `memory_quality/overview.md` was repointed in the same pass so it is not left as the last dead reference. This route's own source is otherwise unchanged by the pass, so no verification stamp is advanced here; the two moved cards carry their own stamps.
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _integrated_result("; "def record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "def _integrated_result("; "def record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 - 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
 
 

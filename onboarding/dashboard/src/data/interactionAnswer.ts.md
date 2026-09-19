@@ -152,4 +152,3 @@ message, PTY write, or lifecycle gate can never substitute for the exact-session
   answer-as-decision-note POST on the approve verb, verbatim failure text, and the NOT-YET vs
   CANNOT copy split on the seat's lifecycle binding. Verification metadata pinned to the leaf
   base until closeout stamps the L6 code commit.
-

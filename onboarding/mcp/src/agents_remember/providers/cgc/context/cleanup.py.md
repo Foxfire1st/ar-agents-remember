@@ -53,4 +53,3 @@ under the expected root before calling `remove_runtime_path`.
 
 - 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
 - 2026-05-29T18:35+02:00: Created when the runtime-artifact cleanup functions were extracted from `core.py` (commit `01f503d`).
-

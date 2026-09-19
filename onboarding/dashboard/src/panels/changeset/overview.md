@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-12T12:55+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-09-18T18:10+02:00                           |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`       |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -97,7 +98,40 @@ until a file is picked; the back link restores the railed Operations view.
 | The markdown renderer the sidecar column + rendered-markdown toggle reuse. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 | The siege-tank empty-state backdrop shown until a file is picked. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 
+## 260915-KS-L22 The Review Variant Beside The Change-Set Actions
+
+This route gained the reviewer's target variant and the entry that produces it, and nothing else on
+it changed. `ChangeSetTarget` now carries an optional `review?: { selectorKind; selectorId }` — the
+reviewed subject's recorded identity — and the variant is a *dispatch* field rather than a fifth
+change-set mode: the change-set viewer is never mounted for a target that carries it, so the three
+ranges this screen already owns (`scope`, `master`, and `leaf` with its `mode`) keep their meaning
+exactly and no request this route makes is ever issued from a review. The declaration says as much
+in its own comment, which is where a reader arriving at the type will look first.
+
+`changeSetBar.tsx` renders the reviewer entry **beside** the working and committed actions and never
+in their place: a third `ChangeSetButton` labelled "Intent review" appears only when the bar's target
+is a live admitted curator candidate and a selector id was supplied (`live && selectorId`). That is
+the same liveness the working change-set action is gated on, so the two appear together, and the new
+props are optional and defaulted (`selectorKind` falls back to `invariant`), so every existing caller
+that supplies neither renders exactly what it rendered before this leaf.
+
+What the entry carries is an identity, not a path. `{ repo, master, leaf, review: { selectorKind,
+selectorId } }` names the task context and the recorded subject; the browser never chooses the
+candidate dataset, because the resolution behind the route does that from the same task context. The
+screen that displays a review belongs to the `panels/review/` child route; this route owns the target
+variant and the entry that sets it, which is the boundary the two cards divide.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The target variant this route's type gained. | "review?: { selectorKind: ReviewSelectorKind; selectorId: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
+| The declaration's own statement that no change-set request comes from a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
+| The reviewer entry, added beside the working/committed actions. | "{live && selectorId ? (" | dashboard/src/panels/detail-panel/changeSetBar.tsx:119-119 |
+| The entry's label. | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
+| The identity the entry carries instead of a filesystem path. | "target={{ repo, master, leaf, review: { selectorKind, selectorId } }}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:125-125 |
+| The optional props, defaulted so existing callers are unchanged. | "selectorKind?: ReviewSelectorKind;" | dashboard/src/panels/detail-panel/changeSetBar.tsx:84-85 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the `review` variant `ChangeSetTarget` gained and why it is a dispatch field rather than a fifth change-set mode, plus the "Intent review" entry `changeSetBar.tsx` adds beside the working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: changeset files changed only by behavior-preserving lint remediation and import-path updates.
 
 - 2026-08-04T18:05+02:00 — 260731-EFA-L6 S18-B17 curator: re-anchored the detail-panel row from the

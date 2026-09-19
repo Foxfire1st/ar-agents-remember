@@ -48,7 +48,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -56,11 +56,11 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | `head_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:42-42 |
-| The exact raw HEAD tree is checked before projected content is inspected. | `content_tree` | mcp/src/agents_remember/kernel/git_command.py:472-472 |
-| None | `_existing_preparation_entries`; `_require_existing_preparation` | mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:468-486 |
-| None | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
-| None | `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:25-27 |
+| The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | `observe_existing_memory_proof`; `head_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
+| The exact raw HEAD tree is checked before projected content is inspected. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:472-472 |
+| Only root memory.md is removed when proving equality with a required memory certificate subject. | `_existing_preparation_entries`; `_require_existing_preparation` | mcp/src/agents_remember/kernel/git_command.py:468-486; mcp/src/agents_remember/kernel/git_command.py:451-465 |
+| The closed record hashes the raw and certified identities separately. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
+| The shared exact Git pathspec names only the derived root cache. | `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:25-27 |
 
 ## Cross-Repo References
 
@@ -68,7 +68,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

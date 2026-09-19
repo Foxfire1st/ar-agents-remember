@@ -50,7 +50,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -58,13 +58,13 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bundle has code and memory outputs only. | "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:202-202 |
+| The bundle has code and memory outputs only. | `PreparedMemoryOutputs`; "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:44-48; mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:202-202 |
 | Created memory uses the one renderer; no-write intent has no message or private root. | `_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:59-122 |
-| Memory attribution is appended to the caller's body by one shared renderer. | `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:95-96 |
-| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:159-198 |
-| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `actual_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:227-227 |
+| Memory attribution is appended to the caller's body by one shared renderer. | `render_memory_content_message`; `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:67-92; mcp/src/agents_remember/kernel/memory_attribution.py:95-96 |
+| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | `reobserve`; `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:159-198 |
+| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `prepare_memory_outputs`; `actual_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:201-236 |
 | The stored normalized message becomes the private commit message. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
-| The committed census checks that every listed producer reaches the shared renderer. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
+| The committed census checks that every listed producer reaches the shared renderer. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:119-137 |
 
 ## Cross-Repo References
 
@@ -72,7 +72,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

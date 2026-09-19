@@ -62,7 +62,7 @@ These current source spans identify the implementation owners and the specific a
 | --- | --- | --- |
 | Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:313-385 |
 | Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:187-214 |
-| Frozen observation, task plans, and canonical publication remain coordinated. | `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:506-565 |
+| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:506-565 |
 | Parent lineage compares exact prestart output positions to the configured parent source. | `parent_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:79-91 |
 
 ## Cross-Repo References

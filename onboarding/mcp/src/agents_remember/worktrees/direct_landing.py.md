@@ -89,8 +89,8 @@ the current working-candidate behavior; historical entries below retain their or
 | Policy, normalized request, exact code proof, and read-only preview. | `DirectLandingRequest`; `require_direct_landing_enabled`; `_verify_code_commit`; `_direct_landing_preview` | mcp/src/agents_remember/worktrees/direct_landing.py:86-136; mcp/src/agents_remember/worktrees/direct_landing.py:196-254; mcp/src/agents_remember/worktrees/direct_landing.py:287-307 |
 | Memory admission captures the prepared content snapshot and typed candidate. | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:310-353 |
 | Generation creation and action-required public projection. | `_create_direct_landing`; `_direct_landing_observation` | mcp/src/agents_remember/worktrees/direct_landing.py:460-494; mcp/src/agents_remember/worktrees/direct_landing.py:497-514 |
-| The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:64-113 |
-| The focused integration scenario verifies cache-independent publication and recovery. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272; mcp/tests/test_direct_landing.py:274-314 |
+| The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:55-104 |
+| The focused integration scenario verifies cache-independent publication and recovery. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
 

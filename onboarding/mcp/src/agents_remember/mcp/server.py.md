@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51; mcp/src/agents_remember/mcp/registration/__init__.py:53-53; mcp/src/agents_remember/mcp/registration/__init__.py:25-25 |
+| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51; mcp/src/agents_remember/mcp/registration/__init__.py:53-53; mcp/src/agents_remember/mcp/registration/__init__.py:25-25; mcp/src/agents_remember/mcp/registration/__init__.py:55-55 |
 | The stable tools package declares the public import surface for payload builders. | "Pure payload builders for Agents Remember MCP tools." | mcp/src/agents_remember/mcp/tools/__init__.py:1-6 |
 | The package imports worktree payload builders from the owning module. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:96-96 |
 | The package explicitly exports its builder vocabulary. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-116 |

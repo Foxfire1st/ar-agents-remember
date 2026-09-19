@@ -161,10 +161,11 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery proves the accepted code and memory outputs without a cache lookup. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
+| Recovery proves the accepted code and memory outputs without a cache lookup. | `resume_external_commits`; `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-160; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
 
 ## Update History
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected preview and recovery authority; cache failures no longer refuse transactions. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the route's conventions now state that a capacity refusal is an `invalid` source rather than an unreadable one, and that the refusal codes and that classification are one declaration in `closeout_queue_errors.py`. `closeout_queue_graph.py` raises its master- and edge-capacity refusals through those constants and `closeout_projection._problem` classifies by membership of `CAPACITY_REFUSAL_CODES`, so a sprint past its graph bound is no longer reported as a source that could not be read; no refusal code was renamed and the other classifiers are unchanged. Verification metadata remains closeout-owned; no acceptance claim.

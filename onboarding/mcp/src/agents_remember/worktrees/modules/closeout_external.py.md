@@ -68,7 +68,7 @@ The following current source boundaries establish the ledger-retirement behavior
 | `external_closeout_commits` resumes or creates the memory output, then refreshes its informational cache. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
 | `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
 | `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | `_refresh_external_memory` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:124-150 |
-| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | `_report_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:153-162 |
+| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | `_report_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:150-159 |
 
 The memory mutation boundary and the cache renderer have separate owners.
 

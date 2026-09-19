@@ -329,4 +329,3 @@ existing seam rather than adding a second one.
   state machine, choke-point emission, heartbeat ticker, TTL project-and-prune
   sweep, and the process registry. Verification metadata is pinned until closeout
   stamps the 2b code commit.
-

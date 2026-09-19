@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_post_integration_cleanup_guidance.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-18T19:28+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | verificationStatus | working-candidate |
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
@@ -39,6 +40,9 @@ Module-level tests use the small constructed contract where only projection is a
 - Finalization owns reclamation and a checkpoint remains open.
 - Cache contents cannot decide carryover completion.
 - Actual missing or unlanded output identities still refuse completion.
+- **A step's reason travels with the step.** The coherence-route case asserts the summary carries why
+  `validate` must run now, because a step named without its reason is the step the next operator skips —
+  which is the defect (D-25) the case exists for.
 
 ### Todos
 
@@ -57,10 +61,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision`; `test_the_cleanup_decision_is_no_longer_in_the_next_operation_vocabulary` | mcp/tests/test_post_integration_cleanup_guidance.py:49-65; mcp/tests/test_post_integration_cleanup_guidance.py:68-81 |
+| Finalization and retired cleanup-vocabulary assertions. | `test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision`; `test_the_cleanup_decision_is_no_longer_in_the_next_operation_vocabulary` | mcp/tests/test_post_integration_cleanup_guidance.py:49-65; mcp/tests/test_post_integration_cleanup_guidance.py:68-81 |
 | External completion depends on landed commits, never cache text. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
 | Checkpoint guidance remains still-working. | `test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate` | mcp/tests/test_post_integration_cleanup_guidance.py:122-148 |
-| Production completion and post-integration guidance owner. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
+| Production completion and post-integration guidance owner. | `carryover_done`; `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
 
 ## Cross-Repo References
 
@@ -69,7 +73,34 @@ The operation and fixture boundaries described here are defined by same-reposito
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## KS-R23@v1 The Validate Step Is Named Before Its Window Closes
+
+`260915-KS-L23` item 18's first half (D-25). The guidance chain used to move straight from
+closeout-completed to integration, and nothing anywhere named `curator_coherence validate` — while
+`lifecycle_finalize_task`'s automatic cleanup collects the enclosure root that the standalone validate
+addresses, so a leaf following the tool's own hints finalized and could never re-prove the authority it
+had published. Three module-level cases now drive `lifecycle_guidance` over a leaf external-memory
+contract:
+
+- `test_a_published_coherence_authority_puts_validate_before_integration` (`:191-222`) — with the
+  contract's canonical authority present, the move out of `closeout_status == "completed"` is
+  `nextTool == "curator_coherence"` with `action == "validate"`, the exact canonical `caller` payload
+  (`{"role": "curator", "task_document_ref": {"repository": "repo", "path": "leaf/leaf.json"}}`), and a
+  summary carrying the reason. `nextOperation` stays `request_integration_decision`: the validation is
+  the precondition of that decision, not a replacement for it. Red if the branch reverts to
+  `worktree_integrate` (the D-25 defect) or names the step without the reason that forces it.
+- `test_a_leaf_that_has_not_published_is_still_told_to_integrate` (`:225-234`) — red if the
+  published-authority condition is dropped and every leaf is routed to a tool that would refuse.
+- `test_a_series_contract_is_never_routed_to_the_coherence_route` (`:237-249`) — red if the leaf-only
+  applicability guard is lost.
+
+`_external_memory_leaf` (`:154-188`) builds the contract those cases drive — external memory, a memory
+worktree, a completed closeout — and writes the canonical authority where `curator_coherence_paths`
+resolves it, which is what makes the first case's condition real rather than mocked.
+
 ## Update History
+
+- 2026-09-18T19:28+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the three cases this leaf's item 18 (D-25) added to this module, which this card did not mention.** They drive `lifecycle_guidance` over a real leaf external-memory contract: a published authority routes out of closeout-completed to `curator_coherence` with `action="validate"` and the canonical `caller` while `nextOperation` stays `request_integration_decision`; an unpublished leaf is still told to integrate; a series contract is never routed to the coherence route. The section above states them with their measured extents, and the Invariants section gained the rule the first case enforces — a step's reason has to travel with the step. `_external_memory_leaf` builds the contract and writes the authority where the resolver names it. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference rows are left to the citation-range repair pass that owns them.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Added real Git completion coverage for absent/malformed/stale cache states and unlanded/missing outputs; retained the three existing finalization/vocabulary/checkpoint scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,6 +91,17 @@ reclaimed) and `_nested_blockers` (the remote half of a branch entry). Bundling 
 replaced the five-keyword `terminal_result_blockers` signature with one `TerminalResult` argument at
 every call site; the change set adds no `# noqa` and no per-file ignore.
 
+**Every collection that needs the preview flag now carries it (260915-KS-L23, D-15).** The
+`drift_snapshots` branch was the one collection that did **not** propagate `preview`, so a preview's
+`would_remove` entry was read through the real call's `would_delete` key, looked like a blockage, and
+`_blocker` raised `RuntimeError` on the missing reason — a cleanup *preview* failed on exactly the
+contracts a real finalize completed. It now passes `preview=result.preview` like its siblings, and
+`remove_drift_snapshot` is the producer that makes the flag necessary: under `dry_run` it emits
+`{"removed": False, "would_remove": True}`, the `removed`/`would_remove` pair. The `branch` collection
+is the deliberate exception and needs no flag: its preview producer emits `deleted: False,
+would_delete: True`, which is what `_blocked`'s default `pending_key` already reads, so the branch
+half of a preview was and remains correctly classified without `preview=True`.
+
 ### Conventions
 
 Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
@@ -148,6 +159,9 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 ## Update History
 
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected an over-general claim in this card.** The Logic said the dry-run path can no longer read a preview as a blockage, but the `drift_snapshots` branch of `terminal_result_blockers` was building `TerminalExpectation(done_key="removed")` **without** `preview=result.preview` while every other collection propagated it — so a preview's `would_remove` entry was read with the real call's `would_delete` key and `_blocker` raised `RuntimeError: terminal result blocker driftSnapshot=code carries no reason`. The branch now passes the flag, and the card states the fix, names `remove_drift_snapshot` as the `removed`/`would_remove` producer that makes it necessary, and records the one deliberate exception: the `branch` collection needs no flag because its preview producer emits `deleted: False, would_delete: True`, which `_blocked`'s default `pending_key` already reads. No other claim was falsified. Existing citation ranges were left for the citation pass; noted drift: `terminal_result_blockers` now spans `246-292` (card cites `246-288`) and every symbol below it shifted by four lines (`_worktree_preflight` 291-330 → 295-334, `_provider_blockers` 553-572 → 557-576, `_blocker` 640-656 → 644-660, `_blocked` 659-667 → 663-671), while the module-source list above still carries the pre-change numbers.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
 - 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
 
 

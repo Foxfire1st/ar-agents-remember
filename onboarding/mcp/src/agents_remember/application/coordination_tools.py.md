@@ -89,4 +89,3 @@ resolver path, preserving task-name ergonomics.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `resolve_context_tool` now forwards `parent_task` and `leaf_id` so source API/MCP callers can resolve nested task roots and a specific leaf enclosure by task name. Verification metadata pinned until closeout stamps the code commit.
 - 2026-05-31T12:50+02:00 — Source dropped the local `_repo`/`_coord_path` helpers in favor of `require_repo`/`require_within_coordination` imported from shared `controllers/_guards`, switching authority failures from `ValueError` to `AuthorityError` and removing the `Path`/`RepositoryScope`/`path_is_relative_to` imports; corrected Code Commentary, Invariants And Boundaries, and References accordingly (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created when resolver MCP control moved into its own controller module.
-

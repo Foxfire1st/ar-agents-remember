@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_suite_budget.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae`|
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Proves selected-case budget admission without recursive pytest collection.
 
 ### Logic
 
-Three parametrized cases feed the actual collection-finish hook a synthetic selected item population: 1000 unit/250 integration passes; 1001 unit or 251 integration raises UsageError requiring an explicit tradeoff. The marker-shaped item double classifies each already-collected item. This is boundary arithmetic and refusal evidence, not a second inventory scan or a real nested pytest session.
+Four cases, and they now split the two things the old version of this module ran together. `test_selected_case_budgets` is the parametrized one: it feeds the actual collection-finish hook a **synthetic** selected item population — 1000 unit/250 integration passes, 1001 unit or 251 integration raises the refusal requiring an explicit tradeoff — so those two numbers are the *test's inputs*, deliberately not the repository's rails, and the marker-shaped item double classifies each already-collected item. Three further cases pin the rail itself: `test_the_effective_budgets_are_the_repository_rails` asserts that the running configuration's `inifile` **is** the repository-root `pyproject.toml` and that the two ini values equal the root file's own declarations, reading the enforced configuration rather than either file's text; `test_the_option_declarations_state_no_budget_of_their_own` walks `conftest.py`'s AST and refuses a `default=` on either `addini` declaration, so the dead number cannot come back; and `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` states that an absent rail resolves to `0` and is refused by the `budget < 1` guard rather than read as "no ceiling". This is boundary arithmetic and refusal evidence, not a second inventory scan or a real nested pytest session.
 
 ### Conventions
 
@@ -31,7 +31,7 @@ boundary when changing policy rather than adding duplicate metric or collection 
 
 ### Invariants And Boundaries
 
-Default budgets are 1000 unit and 250 integration collected cases (`260831-LOCR-L37` raised the integration ceiling 200 -> 250 on explicit developer authorization; this module pins the same numbers `pyproject.toml` declares, so the two can never drift silently). Coverage is diagnostic; production
+There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The 1000/250 figures inside the parametrized case are that case's own inputs. Coverage is diagnostic; production
 CRAP 20 triggers review without failing delivery. Full suites and whole-candidate review occur at
 master completion. A green unit result is not a certification certificate.
 
@@ -53,7 +53,10 @@ The exact functions below establish the tested boundary and its test doubles.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Proves selected-case budget admission without recursive pytest collection. | `test_selected_case_budgets` | mcp/tests/test_suite_budget.py:19-35 |
+| Proves selected-case budget admission without recursive pytest collection, over a synthetic population. | `test_selected_case_budgets` | mcp/tests/test_suite_budget.py:23-41 |
+| Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations. | `test_the_effective_budgets_are_the_repository_rails` | mcp/tests/test_suite_budget.py:43-60 |
+| Refuses a `default=` on either budget declaration, so a dead number cannot return to the tree. | `test_the_option_declarations_state_no_budget_of_their_own` | mcp/tests/test_suite_budget.py:63-88 |
+| States that an absent rail resolves to `0` and is refused by name instead of running unbounded. | `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` | mcp/tests/test_suite_budget.py:91-106 |
 
 ## Cross-Repo References
 
@@ -65,6 +68,7 @@ No cross-repository protocol is exercised by these unit cases.
 
 ## Update History
 
+- 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **this card described a module that no longer exists, and both halves of its budget sentence were wrong.** `260915-KS-L23`'s item 12 (worker W1) removed the two never-effective `default=1100/300` declarations from `mcp/tests/conftest.py` and added **three cases** to this module (+71 lines): the module now has **four** cases, not one parametrized three-row case — `test_the_effective_budgets_are_the_repository_rails` (asserts the running configuration's `inifile` is the repository-root `pyproject.toml` and that its ini values equal that file's declarations), `test_the_option_declarations_state_no_budget_of_their_own` (AST over `conftest.py`, refusing a `default=` on either `addini`) and `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` (an absent rail resolves to `0` and is refused by the `budget < 1` guard). The `### Logic` section now says that, and says plainly that `test_selected_case_budgets`' 1000/250 are **the case's own synthetic inputs** rather than the repository's rails. The `### Invariants And Boundaries` sentence read "Default budgets are 1000 unit and 250 integration … this module pins the same numbers `pyproject.toml` declares" — wrong on both halves (there are no per-declaration defaults, and the declared pair is **2300 / 400** in the repository root) — and is replaced by the no-default rule plus the pair's real home and the fact that it moves. The reference table gained the three new cases with their measured extents (`:43-60`, `:63-88`, `:91-106`) and the parametrized case's range was re-derived from `:19-35` to `:23-41`. Content was read against the delivered but **uncommitted** working tree, so **the verification stamp is not advanced**: no commit carries these bytes and closeout stamps the real code commit.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: recorded this leaf's case-budget change —
   `integration_case_budget` 200 -> 250 and therefore the third parametrization's refusal boundary
   201 -> 251, developer-authorized so dropped coverage could be written back. `pyproject.toml` owns

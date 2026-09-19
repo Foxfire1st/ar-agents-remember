@@ -117,4 +117,3 @@ cannot carry that narrowing across the branch.
   status-conditional keys stay `NotRequired`). Added line ranges for the three dataclasses and the
   constants block, and four reference rows with verified citations.
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

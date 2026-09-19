@@ -82,9 +82,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `add_arguments`; `_request_from`; `_refusal_for` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:117-150 |
-| None | `run`; `_apply` | mcp/src/agents_remember/cli/memory_backfill.py:76-97; mcp/src/agents_remember/cli/memory_backfill.py:100-114 |
-| None | `plan_memory_backfill`; `apply_memory_backfill` | mcp/src/agents_remember/kernel/memory_backfill.py:257-308; mcp/src/agents_remember/kernel/memory_backfill.py:625-661 |
+| Flags, request resolution, and mode/directory refusal define the adapter scope. | `add_arguments`; `_request_from`; `_refusal_for` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:117-150 |
+| Planning and apply status/output remain separate. | `run`; `_apply` | mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
+| The kernel owns loss-aware planning and the explicit apply transaction. | `MemoryBackfillPlan`; `plan_memory_backfill`; `apply_memory_backfill` | mcp/src/agents_remember/kernel/memory_backfill.py:144-224; mcp/src/agents_remember/kernel/memory_backfill.py:257-308 |
 | Actual branch-name invocation and retry behavior are tested through the CLI. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/memory_candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash |  `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate |  2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,14 +59,14 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The frozen pair identity retains ledgerPath as information excluded from its authority digest. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
-| The strict frozen pair wire contract declares every required authority cell. | "Every contract cell that selects one worktree-backed memory candidate pair." | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
+| The strict frozen pair wire contract declares every required authority cell. | `MemoryCandidatePairIdentity`; "Every contract cell that selects one worktree-backed memory candidate pair." | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
 | The resolver is the sole producer of this identity. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-131 |
 
 ## Cross-Repo References
@@ -77,7 +77,7 @@ both repository addresses.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 

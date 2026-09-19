@@ -6,8 +6,8 @@
 | path | `mcp/tests/_adapter_event_scripts.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
+| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The replay port and Codex, Pi, and Claude scripts own only external frames. | `AdapterReplayPort` | mcp/tests/_adapter_event_scripts.py:19-156 |
-| The lifecycle catalog identifies this support file as provider-derived and binds it to conversation-provider event conformance with an exact consumer list. | "conversation-provider-event-conformance"; "caller-owned Codex, Pi, and Claude terminal frame scripts" | mcp/tests/evidence-lifecycle.toml:67-67; mcp/tests/evidence-lifecycle.toml:71-71 |
+| The lifecycle catalog identifies this support file as provider-derived and binds it to conversation-provider event conformance with an exact consumer list. | "conversation-provider-event-conformance"; "caller-owned Codex, Pi, and Claude terminal frame scripts" | mcp/tests/evidence-lifecycle.toml:67-67; mcp/tests/evidence-lifecycle.toml:71-71; mcp/tests/evidence-lifecycle.toml:110-121; mcp/tests/evidence-lifecycle.toml:125-125 |
 | The real composition remains in the structural control port. | `ControlHarness` | mcp/tests/_control_plane.py:300-383 |
 
 ## Cross-Repo References

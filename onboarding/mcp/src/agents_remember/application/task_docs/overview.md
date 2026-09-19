@@ -157,12 +157,14 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Execution evidence checks real code and memory output cells. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
 | None | `prove_task_unstarted` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:112-183 |
 
 ## Update History
 - 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `application/task_docs/task_doc_tools.py` changed one refusal message (`T43`); the application route's structure and ownership are unchanged.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented unstarted-task evidence after removal of ledger commit fields. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on

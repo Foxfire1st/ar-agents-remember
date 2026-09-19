@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_preparation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -56,8 +56,8 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing observations bind raw HEAD/tree and the additional memory-content subject. | `memory_content_tree` | mcp/src/agents_remember/kernel/git_preparation.py:44-44 |
-| Private paths, object identities, hook policy, and operation identity are validated before capability use. | `PrivateGitPreparationCapability` | mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
+| Existing observations bind raw HEAD/tree and the additional memory-content subject. | `ExistingGitPreparationBinding`; `memory_content_tree` | mcp/src/agents_remember/kernel/git_preparation.py:33-44 |
+| Private paths, object identities, hook policy, and operation identity are validated before capability use. | `PrivateGitPreparationBinding`; `PrivateGitPreparationCapability` | mcp/src/agents_remember/kernel/git_preparation.py:47-85; mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
 | The sealed private capability revalidates the binding and invokes its live owner. | `PrivateGitPreparationCapability`; `require_authority` | mcp/src/agents_remember/kernel/git_preparation.py:88-98 |
 | File modes and exact no-follow blob bytes are checked, including replacement during observation. | `_physical_blob`; `require_physical_tree` | mcp/src/agents_remember/kernel/git_preparation.py:133-159; mcp/src/agents_remember/kernel/git_preparation.py:162-211 |
 | Only explicit memory observations omit root memory.md from physical membership. | `require_physical_tree` | mcp/src/agents_remember/kernel/git_preparation.py:162-211 |
@@ -69,7 +69,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

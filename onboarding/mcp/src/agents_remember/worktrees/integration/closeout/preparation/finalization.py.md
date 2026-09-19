@@ -50,7 +50,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -58,16 +58,16 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Prepared output references and exact raw commit bytes are revalidated. | "finalization-output-bytes-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:90-106 |
-| Live ownership, contract identity, and selected preparation remain bound. | "finalization-contract-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:109-145 |
-| Existing historical memory retains its raw tree while proving the separate certified content. | `certified_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:285-289 |
-| The fifth certificate is checked against the correct content subject and current authorities. | `gateFiveInputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:281-295 |
-| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
-| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | "finalization-prestate-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
-| Publication checks original state, uses the exact CAS, and records its proof. | `_record_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387 |
-| The accepted pair is proven before the best-effort cache refresh. | "Closeout completed; integrate the task branches into their source branches." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:512-530 |
-| Only code and memory outputs are published before canonical contract completion. | "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:534-534 |
-| Resume requires the same generation and exactly two selected output legs. | `resume_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:572-605 |
+| Prepared output references and exact raw commit bytes are revalidated. | `_output`; "finalization-output-bytes-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:90-106 |
+| Live ownership, contract identity, and selected preparation remain bound. | `_owner`; "finalization-contract-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:109-145 |
+| Existing historical memory retains its raw tree while proving the separate certified content. | `_physical_memory`; `certified_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:243-268; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:285-289 |
+| The fifth certificate is checked against the correct content subject and current authorities. | `_live`; `gateFiveInputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:271-353 |
+| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | `_record_proof`; `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
+| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | `_publication_intent`; "finalization-prestate-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
+| Publication checks original state, uses the exact CAS, and records its proof. | `_publish_leg`; `_record_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:480-509; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387 |
+| The accepted pair is proven before the best-effort cache refresh. | `_closed_payload`; "Closeout completed; integrate the task branches into their source branches." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:512-530 |
+| Only code and memory outputs are published before canonical contract completion. | `finalize_prepared_closeout`; "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569 |
+| Resume requires the same generation and exactly two selected output legs. | `resume_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:572-606 |
 
 ## Cross-Repo References
 
@@ -75,7 +75,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

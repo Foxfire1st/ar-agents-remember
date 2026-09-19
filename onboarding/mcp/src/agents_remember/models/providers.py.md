@@ -70,4 +70,3 @@ their service payloads can expose provider-specific fields.
 - 2026-06-08T09:57+02:00: Made compact provider `ok` fields optional-null defaults so skipped provider summaries survive public payload serialization and re-validation.
 - 2026-05-31T12:30+02:00 — Dropped `integrity` block from diagnostics commentary; `runnerIntegrityFailed` state and `ProviderDiagnosticsResponse.integrity` field removed (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created for compact provider summaries and the dedicated diagnostics response contract.
-

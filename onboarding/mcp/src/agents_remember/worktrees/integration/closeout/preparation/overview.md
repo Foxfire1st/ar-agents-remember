@@ -55,7 +55,7 @@ Current working-candidate evidence for this route:
 | --- | --- | --- |
 | The selected bundle contains code and one memory-content output. | `PreparedMemoryOutputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:45-48 |
 | Existing memory reuse binds raw Git facts and a separately certified content tree. | `observe_existing_memory_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
-| Final publication proves and publishes the pair, then refreshes the cache. | `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
+| Final publication proves and publishes the pair, then refreshes the cache. | `finalize_prepared_closeout`; `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
 
 ## Integrated IAS Recovery Contract
 
@@ -69,6 +69,7 @@ The parity candidate composes the sidecar and governing route body/history check
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced M/L and C/M/L proof/publication with exact code and memory-content outputs and cache-free certified reuse. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
 - 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base

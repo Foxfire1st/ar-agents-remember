@@ -72,4 +72,3 @@ No meaningful cross-repo boundary is owned here.
 
 - 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
   metadata remains pinned to the leaf base until closeout.
-

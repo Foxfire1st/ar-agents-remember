@@ -86,11 +86,11 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `require_git`; `local_branch_ref`; `repository_identity` | mcp/src/agents_remember/worktrees/modules/git.py:20-31; mcp/src/agents_remember/worktrees/modules/git.py:79-85; mcp/src/agents_remember/worktrees/modules/git.py:100-109 |
-| Candidate trees use private indices and exact derived-path exclusions. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:38-68 |
-| Filtered status and staging/commit APIs share the exclusion contract. | `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:221-236 |
-| None | `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:24-27 |
-| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
+| Ref/repository identity and transport-safe errors have shared implementations. | `_transport_safe_git_diagnostic`; `require_git`; `local_branch_ref`; `repository_identity` | mcp/src/agents_remember/worktrees/modules/git.py:20-31; mcp/src/agents_remember/worktrees/modules/git.py:79-85; mcp/src/agents_remember/worktrees/modules/git.py:100-109 |
+| Candidate trees use private indices and exact derived-path exclusions. | `_excluded_pathspec`; `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:38-68 |
+| Filtered status and staging/commit APIs share the exclusion contract. | `_status_args`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:112-116; mcp/src/agents_remember/worktrees/modules/git.py:221-236 |
+| The exact cache pathspec is defined beside the consumer filename. | `LEDGER_RELATIVE_PATH`; `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:24-27 |
+| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `committed_changed_paths`; `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
 
 ## Cross-Repo References
 

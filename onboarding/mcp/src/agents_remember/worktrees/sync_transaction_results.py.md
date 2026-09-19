@@ -58,10 +58,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Conflict ownership and parked-WIP versus merge result shapes. | `parked_wip_validation_preview` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:114-141 |
+| Conflict ownership and parked-WIP versus merge result shapes. | `resolution_required`; `parked_wip_validation_preview` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:69-111; mcp/src/agents_remember/worktrees/sync_transaction_results.py:114-141 |
 | Policy choice and non-mutating initial/active/cancel previews. | `memory_choice_required`; `sync_preview`; `active_preview`; `cancel_preview` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:26-48; mcp/src/agents_remember/worktrees/sync_transaction_results.py:51-66; mcp/src/agents_remember/worktrees/sync_transaction_results.py:171-185; mcp/src/agents_remember/worktrees/sync_transaction_results.py:188-205 |
 | Terminal and no-authority replay results remain distinct. | `terminal_resolution_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:208-243 |
-| Content-domain conflict and staged-resolution proof is delegated to the Git owner. | `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:438-456 |
+| Content-domain conflict and staged-resolution proof is delegated to the Git owner. | `content_conflicts`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:438-456 |
 
 ## Cross-Repo References
 

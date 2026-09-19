@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -54,9 +54,9 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `observe_code_output`; `prepare_code_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:20-36; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
-| None | `prepare_code_output`; "retain_code_output(selected, raw)" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
-| None | `inspect_existing_git_preparation`; `_require_existing_preparation`; `_require_preparation_index` | mcp/src/agents_remember/kernel/git_command.py:390-427; mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:489-498 |
+| Existing code uses a strict typed binding, while enabled code delegates to the private executor. | `observe_code_output`; `prepare_code_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:20-36; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
+| Prepared or existing raw code output is retained through the shared selected-output owner. | `prepare_code_output`; "retain_code_output(selected, raw)" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py:39-48 |
+| The kernel rechecks actual HEAD/ref/tree and physical output around the raw commit read. | `inspect_existing_git_preparation`; `_require_existing_preparation`; `_require_preparation_index` | mcp/src/agents_remember/kernel/git_command.py:489-498; mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:390-427 |
 
 ## Cross-Repo References
 
@@ -64,7 +64,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

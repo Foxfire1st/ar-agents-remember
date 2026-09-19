@@ -65,4 +65,3 @@ This task extends this suite's production-bound fixtures or assertions for task-
   still holds.
 
 - 2026-06-10T05:30+02:00: Created as the reproducing harness and permanent regression for GitHub #49 (2.5.1).
-

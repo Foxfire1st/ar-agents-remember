@@ -60,4 +60,3 @@ so every reader of a layout is unaffected.
 - 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/context/` route.
 - 2026-05-25T19:33+02:00: Updated after GrepAI context logic was split into constants, layout, workspace, and artifact modules.
 - 2026-05-25T19:16+02:00: Created when GrepAI provider context behavior moved into its own subpackage.
-

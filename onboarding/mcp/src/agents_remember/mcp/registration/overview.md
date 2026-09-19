@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated |  2026-09-18T14:56+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Governing Overview
@@ -232,7 +232,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical closeout input rejects a ledger message field. | `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:77-85 |
+| Canonical closeout input rejects a ledger message field. | `CloseoutMessageInput`; `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:46-52; mcp/src/agents_remember/models/closeout/input.py:77-85 |
 
 ## Historical 260731-EFA-L17 Change
 
@@ -463,8 +463,41 @@ pure addition to the advertised schema rather than a signature change. And the r
 is reported in the result, so a reader can still see which patterns produced the population even
 when a caller narrowed it.
 
+## 260915-KS-L20 The Knowledge Operation Family, Appended As The Fourteenth Registrar
+
+`mcp/registration/knowledge.py` is the family module `registration/__init__.py`'s docstring describes: one
+`register_knowledge_tools(server, config)` declaring its family against the server it is handed and
+delegating to the payload builders on `mcp/tools/knowledge.py`. It is **appended** to `TOOL_REGISTRARS` —
+the fourteenth entry, after the capsule-and-skill registrar — and never inserted, because FastMCP publishes
+tools in registration order and every existing name therefore keeps the position it was advertised at. The
+five operation families are spelled as `Doc13:181-187` spells them: `knowledge_read`, `knowledge_change`,
+`knowledge_diff`, `knowledge_integrity_check`, `knowledge_project`; the same five names were appended to
+`PUBLIC_TOOLS`' tail and given strict response models in the same change, so the roster, the registrar and
+the registry never disagreed.
+
+**The surface performs no domain reasoning, and that is the whole contract.** Each handler validates its
+wire request, delegates, and returns the typed shape the response model declares. `knowledge_read` returns
+recorded claims and assessments as attributed records; `knowledge_change` records a caller-authored
+proposal through an admitted operation **another leaf owns** and authors nothing; `knowledge_diff` carries
+only effect labels an identified agent or assessment supplied; `knowledge_integrity_check` reports
+conditions and their limits and produces no verdict; `knowledge_project` renders through the projection
+writer and writes no file itself. The runtime configuration supplies exactly one thing to this family — the
+workspace root a read resolves recorded source anchors against when the caller names none — because
+everything else a handler needs (the dataset path, the namespace, the destination) is caller-supplied: the
+substrate decides nothing about which dataset or which vault is meant.
+
+**Nothing is mounted for the reviewer, and the refusal of that is recorded rather than implied.**
+`KS-R22@v1` owns the Intent Reviewer, the cockpit route and the browser client. What this module publishes
+is the interface that leaf mounts — the five operations, the review-matrix view and the typed models behind
+them — and it adds no panel, no route and no client. The one honest partial in the leaf is here: a
+`knowledge_change` call for a record kind outside the two admitted kinds returns the shipped
+`registration_absent` refusal naming the absent admitted operation, rather than inventing a second write
+path, because constructing an admitted destination from a thin tool call needs candidate-resolution facts
+another owner supplies.
+
 ## Update History
 - 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `mcp/registration/tasks.py` changed one published description clause (`T43`, the refused `'light'` kind); no tool was added, removed or renamed, so this route's inventory and boundaries are unchanged.
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the fourteenth registrar, appended rather than inserted so every existing tool keeps its advertised position; the five `Doc13:181-187` operation families and the one thing the runtime configuration supplies to them; the no-domain-reasoning contract per operation, including that `knowledge_change` authors nothing and `knowledge_integrity_check` produces no verdict; and the deliberate absence of any reviewer surface, with the leaf's one honest partial (`registration_absent` for an unadmitted record kind) recorded rather than implied. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):
   this route's governed source changed (`mcp/registration/tasks.py`, 248 → 253 lines), so a body
   section was **added rather than annotated** — `## 260918-TSIP-L3 The Published Description Names Its
@@ -481,6 +514,7 @@ when a caller narrowed it.
   metadata is left at its recorded value; the candidate is deliberately uncommitted.
 - 2026-09-17T11:55+02:00 — 260915-CAPS-L14 curator:
 - 2026-09-17T11:55+02:00 — 260915-CAPS-L14 curator: recorded the additive `exclude` parameter on the registered `citation_fix` tool and what it does at this route's altitude (a per-call narrowing on top of the shared register, validated and refused by name, keyword-only so no existing call changes meaning), in the new section above. The file card for `memory.py` gained the matching service section, a corrected reference table and its own history entry. Verification metadata is left at its recorded value; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
+- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
   `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
@@ -698,4 +732,3 @@ when a caller narrowed it.
   single `PLR0913` per-file-ignore that follows from it and the AST/`--ignore-noqa` suite that holds
   the carve-out shut. Verification metadata is pinned to the pre-change commit until closeout stamps
   the L2 code commit.
-

@@ -42,4 +42,3 @@ No meaningful cross-repo references.
 ## Update History
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-

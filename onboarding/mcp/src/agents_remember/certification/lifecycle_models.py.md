@@ -81,17 +81,17 @@ an unchanged interruption resumes the exact publication path without rerunning g
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external Domain Documentation source applies. | N/A | N/A |
+| No configured external Domain Documentation source applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `FinalizationLeg` | mcp/src/agents_remember/certification/lifecycle_models.py:32-36 |
+| Finalization order contains code, external memory, and contract publication only. | `FinalizationLeg` | mcp/src/agents_remember/certification/lifecycle_models.py:32-36 |
 | The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:46-79 |
-| Prior-red corrective and recovery records bind digests to semantic envelopes. | `PriorRedDispositionSemanticEnvelope` | mcp/src/agents_remember/certification/lifecycle_models.py:82-100 |
-| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `_require_ordered_progress` | mcp/src/agents_remember/certification/lifecycle_models.py:220-240 |
-| Certificate identities and creation provenance are imported from the R21 certificate owners. | `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:77-82 |
+| Prior-red corrective and recovery records bind digests to semantic envelopes. | `_require_disposition_shape`; `PriorRedDispositionSemanticEnvelope` | mcp/src/agents_remember/models/certification/corrective.py:41-70; mcp/src/agents_remember/certification/lifecycle_models.py:82-100 |
+| The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `_require_ordered_progress` | mcp/src/agents_remember/certification/lifecycle_models.py:215-250 |
+| Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity`; `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:100-102; mcp/src/agents_remember/certification/certificate_models.py:77-82 |
 
 ## Cross-Repo References
 
@@ -99,7 +99,7 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository implementation is referenced. | N/A | N/A |
+| No cross-repository implementation is referenced. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

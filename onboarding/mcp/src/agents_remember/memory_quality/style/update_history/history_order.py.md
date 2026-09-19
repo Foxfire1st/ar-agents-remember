@@ -54,4 +54,3 @@ local copy.
 
 - 2026-05-31T12:50+02:00 — Removed the local `relative_path` helper; `order_findings` now calls the shared `rel(path, onboarding_root)` imported from `agents_remember.memory_quality.integrity.onboarding_drift_check.discovery`. Noted the shared helper in Logic and References (1.0.0 review remediation).
 - 2026-05-24T02:47+02:00: Created for the update-history ordering style check.
-

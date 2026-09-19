@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastUpdated | 2026-09-18T19:00+02:00 |
+| lastVerifiedCommitHash |  `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b`|
+| lastVerifiedCommitDate |  2026-09-19T13:56:32+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
@@ -16,13 +17,22 @@
 
 Memory quality is useful before gate admission: a contract-scoped full request observes the exact code/memory pair and candidate trees, runs quality checks, and builds an enclosure-local curator worklist covering repair findings, commit-owned findings, missing onboarding, stale route indexes and source drift. Use that worklist to perform the authorized semantic onboarding updates before entering the expensive certification sequence. It is not necessary to obtain code-gate certificates merely to discover the memory work.
 
+The tool surface those steps use states its own inputs. The curator-coherence request now refuses by
+naming the exact missing member: `publish` requires nine non-`None` request members, two of which
+(`semantic_requirement_revision`, `delivery_attempt`) `prepare` does not derive and does not echo, and
+the refusal names them instead of naming a prose category. `prepare` states the complete input set from
+the same declaration, and a `status`/`prepare`/`validate` refusal names the publication-only field it
+received. This matters to this repository's own record rather than only to callers: two leaves of the
+`260915-KS` master read the old refusal as an impassable tool defect and carried an unpublished
+coherence authority as an external blocker (`notes/DISCLOSURES.md` D-11).
+
 Preparation does not grant a final certificate. The interactive catalog projection explicitly lacks affected-closure and code-prefix authority. The existing prepared-memory adapter consumes the selected four original code terminals and exact prepared candidate, runs the final memory producer, publishes its physical result and selects Gate 5 through the normal owner. Finalization requires that selected original fifth certificate and its bound memory inputs. MCAR continues from these existing owners; this overview does not declare the unfinished master accepted or create a second final proof path.
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of **2,300 unit and 400 integration** parametrized collected cases (`unit_case_budget` / `integration_case_budget` in `pyproject.toml`; raised to 1,500 / 400 by the `260915-KS` master's owning seat because its own leaves had filled the previous 1,250 / 340 pair, then to 2,000 and to 2,200 by the merged line, and then to **2,300** / 400 by `260915-KS-L21`, over its own measured 2,206-case candidate — six cases past the 2,200 ceiling, past which `pytest_collection_finish` runs no unit case at all). Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -216,6 +226,53 @@ workspace ar-coordination/
 | Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles — now a **thin router** plus a shared `core/`, nine self-contained role files, eight `operations/` blocks, a prose-free `composition-manifest.json`, and reference-only rationale/rulings — and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
 | Runtime AGENTS templates | [mcp/src/agents_remember/package_data/runtime/agents-md-files](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files)                                                                                                        | Package-owned coordinator, skills, system, and tasks `AGENTS.md` templates for runtime installation.           |
 | System defaults      | [mcp/src/agents_remember/package_data/runtime/system/defaults/examples](agents-remember/mcp/src/agents_remember/package_data/runtime/system/defaults/examples)                                                                                          | Example settings, sources, and tools files used as scaffolding material.                                       |
+
+### 260915-KS-L22 Route Impact — The Intent Reviewer Surface, And The Port That Keeps It Path-Free
+
+`260915-KS-L22` (`KS-R22@v1`) adds the repository's first read-only **Intent Reviewer** surface: one
+HTTP route, the application adapter behind it, a display vocabulary with its prohibitions built into
+its constructors, and the dashboard panes that render it. Four facts belong at repository altitude.
+
+1. **The route cannot be pointed at a dataset.** `GET /api/review/intent`
+   (`mcp/src/agents_remember/serving/review.py`) is GET-only and accepts **no filesystem path**: the
+   query string carries `repo`, `master`, `leaf`, `selectorKind` and `selectorId`, and the candidate
+   whose datasets are compared is resolved behind the route from the canonical task context — the
+   leaf's enclosure contract is located from the recorded task root, never from a caller-supplied
+   path. Current `HEAD` and a guessed worktree path are unavailable as fallbacks, because neither is
+   reachable from the route's inputs.
+2. **Transport is separated from composition by rank, not by taste.** `layers.toml` ranks `serving`
+   below `application`, so the HTTP shim may not import the read, diff and view operations it
+   composes; it takes `KnowledgeReviewPort` — a callable from the typed request to the typed result —
+   the way the launch route takes the capsule compiler. `ServingCollaborators.knowledge_review`
+   (`serving/_app_common.py`) carries it in, `serving/app.py` registers the route, and
+   `cli/dashboard.py`'s `serving_collaborators` builds the application adapter in production. A
+   process that omits the port **refuses the route by name with `503`** rather than serving an empty
+   pane, because an empty pane and an unreachable adapter are different facts. `404` marks a
+   candidate that does not resolve, is not live, or has no dataset; `400` a selector kind the surface
+   does not admit; `200` the typed result serialized once through the model that declares its shape.
+3. **The surface owns no record kind and no conclusion.** `models/knowledge/review.py` defines the
+   vocabulary of what the panes carry: **no** summary, narrative, severity, score, conflict verdict,
+   causal explanation or approval exists anywhere in it, so the display cannot grow one by filling a
+   blank; "unassessed" is the absence of a value rather than a value; a missing operand is a named
+   state rather than an empty string; and a stale payload must carry the submission state that
+   disables submission against it. Every value it renders comes from a record another owner already
+   stores. `application/knowledge_review.py` is the thin adapter over the shipped read, diff and view
+   operations — it selects nothing, computes no scope, widens no frontier and re-resolves no
+   reference; R07's selection policy, R08's comparison result, `Route` as the recorded scope axis and
+   L20's review matrix are consumed exactly as their owners publish them, and every absence is a
+   typed state.
+4. **The dashboard half is a rendering, not a second authority.** `dashboard/src/data/review.ts` and
+   `dashboard/src/panels/review/ReviewSurface.tsx` carry the request/response binding and the panes;
+   `Cockpit.tsx`, `panels/changeset/ChangeSetViewer.tsx` and
+   `panels/detail-panel/changeSetBar.tsx` gained the entry points into them. The surface is
+   read-only end to end, and `mcp/tests/test_knowledge_review_surface.py` is the case that holds its
+   prohibitions: `test_the_whole_payload_schema_has_no_field_a_generated_conclusion_could_occupy`,
+   `test_the_surface_defines_no_record_kind_no_table_and_no_status_of_its_own`,
+   `test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible`,
+   `test_a_missing_side_is_its_own_state_and_never_an_empty_string`,
+   `test_a_stale_comparison_keeps_the_previous_input_and_disables_submission` and
+   `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` would each
+   redden on the corresponding regression. No case was added or replaced by this pass.
 
 ### 260915-CAPS-L6 Route Impact — A Native eve Session Adapter, And A Root Tree Outside The Path Rules
 
@@ -1039,9 +1096,9 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:102-163; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:403-461 |
-| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:79-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:512-556 |
-| Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-222 |
+| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:326-364; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:403-461 |
+| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:79-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:512-556 |
+| Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
 | Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169 |
 
 ## Historical milestone context: 260824-PDLS — Python Evidence Altitudes
@@ -1105,22 +1162,49 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The interactive-catalog row cited `application/memory_quality/controller.py:553-600` for `_attach_final_full_catalog`; this leaf's changes left the helper's definition at `671-707` (it is also called at `632`), so that cell cites the definition now, exactly as the `memory_quality/overview.md` card does for the same helper. The claim, the anchor and the `550-586` range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **the declared case-budget pair reaches this route, and the two sentences that carried the old one now carry the current one.** `pyproject.toml` declares `unit_case_budget = 2300` / `integration_case_budget = 400`; this leaf raised the unit ceiling 2200 -> 2300 over its own measured 2206-case candidate, six cases past the 2200 wall, past which `pytest_collection_finish` refuses the whole unit population and no unit case runs at all. Both `Build And Development Reference` statements (the one in this route's leading policy section and the one repeated in the closing reference) now read **2,300 unit and 400 integration** and name the three successive raises the line has taken — 1,250 / 340 -> 1,500 / 400 by the master's owning seat, -> 2,000 and -> 2,200 on the merged line, and -> 2,300 by `260915-KS-L21` — rather than the single 1,500 pair they carried. Integration is unchanged and its six remaining cases of headroom are reported, not consumed. No claim was deleted or softened: the earlier pair is retained inside the same sentence as the history it is. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the ten role files' current shape reaches this route.** The CAPS-L1 section below still described the role files as carrying the L1 readable order with an `**Inherits:**` line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all ten files under `skills/l-01-agent-lifecycles/roles/` — and their byte-identical package-data copies — into the **function shape** (`# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, closing `## Stop and …`), so the numbered sections, the `## Knobs, Tool Surface, And Dispatch Authority` block and the `**Inherits:**` line no longer exist there; the ten files total **1,578** lines. Body updated as above. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `sync_targets` repointed to scripts/sync-runtime.py:236-249. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **one stale citation repaired by hand on this card (D14 route).** The evidence-table row `PreparedMemoryCertificationAdapter` cited `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, a path that does not exist at this leaf's code base `304de8e2`; the adapter now lives at the application rank. Re-read at the base: `mcp/src/agents_remember/application/prepared_certification.py` is 813 lines and declares `class PreparedMemoryCertificationAdapter:` at **749**, so the row now reads `application/prepared_certification.py:749-813`. Per-document `citation_fix` is unreachable in a leaf worktree (`D14`), so this is a hand repair and it is recorded here rather than stamped.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the master's measured result reaches this route, and it is negative.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation that could be measured (delivered `orientation` capsule **11,828** tokens against a **5,928** baseline, **+5,900**; the like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), obligation preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED**, with disposition **REVISE**. The section also records the delivery result that *did* hold (a started eve session's own system block carries the capsule exactly once — on the second call, after compaction, clear and resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, the explicit statement that **no IAS landing is authorized**, and the residuals with owners (`F-1`…`F-7`, the UNRUN matched baseline, `D34`, `D35`). **Corrected a landed defect (`D35`):** the CAPS-L18 section told a curator to iterate until `checklistStatus=ready-for-closeout`, which is never a value of the combined field; the loop's termination condition is the **raw** `qualityChecklistStatus`, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` is true only after the coherence authority validates (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T00:56:17+00:00; `lastVerifiedCommitHash` `806649b91bdce18f7b915bfbbf6727967f4e7a88`; `lastVerifiedCommitDate` 2026-09-16T12:23:53+02:00; `reviewedWorkingCandidate` `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
+
 - 2026-09-16T12:05:38+00:00: Generated citation repair: "providers/runners/grepai" repointed to mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T12:05:38+00:00: Generated citation repair: `operation_projection` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 54ba1c80e9f4f0ed17cd298c5557d1e9bef0a090bcc99a0ad730541f201be45a; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **governing-intent change** — the removal of `internal` memory mode (`CAPS-R12@v1`). Two current-tense claims on this root overview were false the moment the removal landed and are corrected rather than annotated: "What This Repo Is" no longer distinguishes `ar-memory/` as durable internal memory (external memory repos are now the only supported topology, with `disabled` for a task carrying no memory lane, and the removed repo-local mode is **refused by name** with its exact artifact rather than substituted or defaulted), and the Feature Inventory row formerly keyed "Internal and external memory roots" now reads "External memory roots (and the disabled mode)" and states the refusal, the no-silent-migration rule, and that `repo-sidecar` survives as a per-artifact placement rather than a topology. The separate `ar-memory-*` versioned schema identifiers (`ar-memory-ledger/v1`, `ar-memory-candidate-pair/v1`, `ar-memory-census/v1`) are wire contracts and were deliberately left unchanged. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-
 - 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Route Impact, which records the two repository-altitude facts this leaf changes: the controlled application is a new repository-root tree (`eve_runtime/`) that is **outside this memory root's `pathRules` and deliberately has no sidecars** — its authored surface is documented on the cards of the modules that consume it — and the adapter implements AR's existing adapter/capability/interrupt seams rather than introducing a service, scheduler, registry or approval plane. Also records that the machine-local build products the change set introduces are gitignored, not repository content. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
+
+
+
+
+
+
+
+
+
 
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the lifecycle-corpus consolidation (`CAPS-R01@v1`). The Code Structure "Lifecycle + task workflow" row now names the corpus's actual shape (thin router + `core/` + nine role files + eight `operations/` blocks + `composition-manifest.json` + `reference/`) instead of the retired "router + minimal frame + per-role lifecycles" description, and the new § 260915-CAPS-L1 Route Impact section records the structural change, the canonical-vs-generated boundary, and the onboarding consequence that the canonical `skills/**` tree is outside this memory root's path rules while its generated `mcp/**` copy is governed. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
 
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled root delivery, baseline, glossary and verification guidance to actual Git outputs and the computed consumer cache. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen code moved
@@ -1128,11 +1212,41 @@ evidence of a synced tree.
   through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
   rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
   falsified, so no wording changed. Verification metadata remains closeout-owned.
+
+  under this repository route — test sources changed (the checkpoint-landing split, the door read
+  through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
+  rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
+  falsified, so no wording changed. Verification metadata remains closeout-owned.
+
+  under this repository route — test sources changed (the checkpoint-landing split, the door read
+  through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
+  rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
+  falsified, so no wording changed. Verification metadata remains closeout-owned.
+  under this repository route — test sources changed (the checkpoint-landing split, the door read
+  through `live_closeout_door`, the memory-census import moves) and the catalog gained consumer
+  rows. Re-read this overview and re-checked its claims and cited ranges: nothing it asserts is
+  falsified, so no wording changed. Verification metadata remains closeout-owned.
+
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this repository route
   changed since the recorded verification commit. Re-read the card against the frozen on-disk source
   and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
   so no wording changed. Verification metadata remains closeout-owned; no verification stamp
   advanced.
+
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
+
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
+  changed since the recorded verification commit. Re-read the card against the frozen on-disk source
+  and re-checked its claims and cited ranges: nothing this card asserts is falsified by the change,
+  so no wording changed. Verification metadata remains closeout-owned; no verification stamp
+  advanced.
+
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the repository gained one public verb, `worktree_pause`
   — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
   hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
@@ -1140,31 +1254,146 @@ evidence of a synced tree.
   otherwise unchanged; the content updates live on the `mcp/registration`, `mcp/tools`,
   `worktrees` and `worktrees/modules` route overviews and the file cards beneath them. Verification
   metadata remains closeout-owned; no acceptance claim.
+
+  — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
+  hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
+  landing is restated as the separate publication it is. The repo surface this overview describes is
+  otherwise unchanged; the content updates live on the `mcp/registration`, `mcp/tools`,
+  `worktrees` and `worktrees/modules` route overviews and the file cards beneath them. Verification
+  metadata remains closeout-owned; no acceptance claim.
+
+  — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
+  hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
+  landing is restated as the separate publication it is. The repo surface this overview describes is
+  otherwise unchanged; the content updates live on the `mcp/registration`, `mcp/tools`,
+  `worktrees` and `worktrees/modules` route overviews and the file cards beneath them. Verification
+  metadata remains closeout-owned; no acceptance claim.
+  — the stop-only pause that releases an atomic master's activation selection, publishes nothing, and
+  hands the turn back — taking the advertised MCP roster from 62 to 63 names, and the checkpoint
+  landing is restated as the separate publication it is. The repo surface this overview describes is
+  otherwise unchanged; the content updates live on the `mcp/registration`, `mcp/tools`,
+  `worktrees` and `worktrees/modules` route overviews and the file cards beneath them. Verification
+  metadata remains closeout-owned; no acceptance claim.
+
 - 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling on the graph-less default — nothing serializes a graph-less sprint; `atomic-sequential` describes sprint shape (every commanded master executes atomically), not a serialization mechanism; activation stays per contract and a real graph wave still gates on `predecessor-incomplete:`. Added a new explicit **known defect** note for the ungoverned `onboarding/skills/**` tree (a mirror of the code repo's `skills/**` that is absent from `system/settings.json` `pathRules.include` and from normal census coverage yet is still validated by the contract-scoped memory-quality checker, with sibling sidecars still describing the retired source-pair exclusivity rule and contradicting the corrected shipped skills — needs a follow-up decision: govern it or retire it), cross-referenced from `## Key Invariants`, and corrected the JSON-primary task-documents feature row to say the default serializes nothing. No verification-metadata change; no execution or acceptance claim.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
+
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the staged-quality row: the boundary still owns exact-candidate staging and targeted quality, but the transaction-only closeout no longer imports it. Verification metadata remains closeout-owned.
+
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `PreparedMemoryCertificationAdapter` and `_attach_final_full_catalog` against the current code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
+
 - 2026-09-08T14:39:58+00:00: Generated citation repair: "gate_staged_code as _gate_staged_code" repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:106-106. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-535. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:479-542. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-06T22:41:21+00:00: Generated citation repair: "gate_staged_code as _gate_staged_code" repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:105-105. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-09-06T21:56+00:00 — Reconciled d3610903 development/certification and pre-gate memory preparation policy while preserving the production feature inventory, ownership narratives, invariants and original historical entries. Retired obsolete test citations and marked milestone procedures historical; verification pins remain closeout-owned.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Updated the current citation-repair boundary from the retained L30 defect to source-reviewed private C b34f4a59. Existing unrelated route/history content is preserved; this is not an aggregate acceptance or delivery statement.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Reconciled actual L30 publication and lock ownership while preserving L32 and production lifecycle obligations; unchanged route knowledge remains preserved.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-05T07:40+00:00 — L31 cumulative source review at ea35964985f30080488270e71ac81657ac40682b: reconciled current profile, intent, publication, dispatch and provider contracts; preserved prior frontend/lifecycle milestones as history; recorded R10/R21 and unconstructed certification consumers. Verification records source review, not execution or acceptance.
+
+
+
+
+
+
+
+
+
+
 
 ### Historical feature entries retained from the prior 0506b57a source-review baseline
 
@@ -1184,10 +1413,48 @@ The following entries are the original development narrative, preserved for prov
 
 - 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: re-anchored the retained-generation projection row to the current `operation_projection` definition span after the L18 projection rewrite grew `lifecycle_operation_projection.py`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 preserves the rank-3
+  `certification` package boundary and root repository structure. Its changes are bounded internal
+  contract forcing, one dominated-refusal deletion, and exact verification-input ownership; no
+  executor, repository profile, lifecycle, or memory-gate authority moved. Verification remains
+  closeout-owned.
+
+
+  `certification` package boundary and root repository structure. Its changes are bounded internal
+  contract forcing, one dominated-refusal deletion, and exact verification-input ownership; no
+  executor, repository profile, lifecycle, or memory-gate authority moved. Verification remains
+  closeout-owned.
+
+  `certification` package boundary and root repository structure. Its changes are bounded internal
+  contract forcing, one dominated-refusal deletion, and exact verification-input ownership; no
+  executor, repository profile, lifecycle, or memory-gate authority moved. Verification remains
+  closeout-owned.
   `certification` package boundary and root repository structure. Its changes are bounded internal
   contract forcing, one dominated-refusal deletion, and exact verification-input ownership; no
   executor, repository profile, lifecycle, or memory-gate authority moved. Verification remains
@@ -1198,7 +1465,31 @@ The following entries are the original development narrative, preserved for prov
   identity; no executor, repository profile, lifecycle-terminalization, or memory-gate ownership
   moved into the generic certification package. Verification remains closeout-owned.
 
+
+  explicit rank-3 `certification` boundary. Later rank integers shift to preserve order/index
+  identity; no executor, repository profile, lifecycle-terminalization, or memory-gate ownership
+  moved into the generic certification package. Verification remains closeout-owned.
+
+  explicit rank-3 `certification` boundary. Later rank integers shift to preserve order/index
+  identity; no executor, repository profile, lifecycle-terminalization, or memory-gate ownership
+  moved into the generic certification package. Verification remains closeout-owned.
+  explicit rank-3 `certification` boundary. Later rank integers shift to preserve order/index
+  identity; no executor, repository profile, lifecycle-terminalization, or memory-gate ownership
+  moved into the generic certification package. Verification remains closeout-owned.
+
 - 2026-08-31T20:30+02:00 — 260831-DER: removed the obsolete direct-current-checkout wording and
+  recorded the actual boundary: closeout remains worktree-only, ordinary series integration is
+  independent of `directExecutionEnabled`, and direct landing is reserved for an explicitly
+  selected leaf delivered without an enclosure.
+
+
+  recorded the actual boundary: closeout remains worktree-only, ordinary series integration is
+  independent of `directExecutionEnabled`, and direct landing is reserved for an explicitly
+  selected leaf delivered without an enclosure.
+
+  recorded the actual boundary: closeout remains worktree-only, ordinary series integration is
+  independent of `directExecutionEnabled`, and direct landing is reserved for an explicitly
+  selected leaf delivered without an enclosure.
   recorded the actual boundary: closeout remains worktree-only, ordinary series integration is
   independent of `directExecutionEnabled`, and direct landing is reserved for an explicitly
   selected leaf delivered without an enclosure.
@@ -1207,7 +1498,25 @@ The following entries are the original development narrative, preserved for prov
   explicit named-role takeover and clarified that role-table dispatch/tool rows describe fixed
   structural authority rather than settings overrides. Verification remains closeout-owned.
 
+
+  explicit named-role takeover and clarified that role-table dispatch/tool rows describe fixed
+  structural authority rather than settings overrides. Verification remains closeout-owned.
+
+  explicit named-role takeover and clarified that role-table dispatch/tool rows describe fixed
+  structural authority rather than settings overrides. Verification remains closeout-owned.
+  explicit named-role takeover and clarified that role-table dispatch/tool rows describe fixed
+  structural authority rather than settings overrides. Verification remains closeout-owned.
+
 - 2026-08-29T16:13+02:00 — Reconciled repository-wide execution authority to the single Python
+  3.13 line and canonical exact 3.13.15 source build; the former `py311` floor is retained only as
+  historical context. Verification remains closeout-owned.
+
+
+  3.13 line and canonical exact 3.13.15 source build; the former `py311` floor is retained only as
+  historical context. Verification remains closeout-owned.
+
+  3.13 line and canonical exact 3.13.15 source build; the former `py311` floor is retained only as
+  historical context. Verification remains closeout-owned.
   3.13 line and canonical exact 3.13.15 source build; the former `py311` floor is retained only as
   historical context. Verification remains closeout-owned.
 
@@ -1215,17 +1524,59 @@ The following entries are the original development narrative, preserved for prov
   environment and refuses missing quality dependencies; the focused regression test does not
   change repository architecture, ownership, or routing.
 
+
+  environment and refuses missing quality dependencies; the focused regression test does not
+  change repository architecture, ownership, or routing.
+
+  environment and refuses missing quality dependencies; the focused regression test does not
+  change repository architecture, ownership, or routing.
+  environment and refuses missing quality dependencies; the focused regression test does not
+  change repository architecture, ownership, or routing.
+
 - 2026-08-28T10:03:40+02:00 — Reconciled the repository-wide quality summary with Candidate A's
+  deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.
+
+
+  deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.
+
+  deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.
   deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.
 
 - 2026-08-28T05:10+02:00 — Replaced the obsolete two-route description with measured Candidate A
   retirement, ordinary preservation of its seven assertions, and one Dagger Python environment.
+
+  retirement, ordinary preservation of its seven assertions, and one Dagger Python environment.
+
+  retirement, ordinary preservation of its seven assertions, and one Dagger Python environment.
+  retirement, ordinary preservation of its seven assertions, and one Dagger Python environment.
+
 - 2026-08-27T22:15+02:00 — Clarified attempt-journal recovery: malformed rows before review are
   preserved non-attempt corrections; handed-off rows require independent rejection.
+
+  preserved non-attempt corrections; handed-off rows require independent rejection.
+
+  preserved non-attempt corrections; handed-off rows require independent rejection.
+  preserved non-attempt corrections; handed-off rows require independent rejection.
+
 - 2026-08-27T21:53+02:00 — M40@v2/M44@v2 task-workflow impact: separated formal review-handoff
   attempts from internal protocol events and replaced repeated evidence bodies with lightweight
   content-addressed journal records; summaries remain non-gating.
+
+  attempts from internal protocol events and replaced repeated evidence bodies with lightweight
+  content-addressed journal records; summaries remain non-gating.
+
+  attempts from internal protocol events and replaced repeated evidence bodies with lightweight
+  content-addressed journal records; summaries remain non-gating.
+  attempts from internal protocol events and replaced repeated evidence bodies with lightweight
+  content-addressed journal records; summaries remain non-gating.
+
 - 2026-08-26T15:20+02:00 — No route impact: the IAS ledger-history repair changes MCP worktree
+  lifecycle semantics only; root repository ownership and routing remain unchanged.
+
+
+  lifecycle semantics only; root repository ownership and routing remain unchanged.
+
+  lifecycle semantics only; root repository ownership and routing remain unchanged.
   lifecycle semantics only; root repository ownership and routing remain unchanged.
 
 - 2026-08-26T08:18+02:00 — Reconciled the root authority map with source-pair atomic activation,
@@ -1233,13 +1584,49 @@ The following entries are the original development narrative, preserved for prov
   authoring, disposable queue invalidation/rebuild, and exact terminal selector release. Real
   commit verification remains closeout-owned.
 
+
+  pause/reconcile switching, retained sync-conflict continuation/cancellation, unlocked task
+  authoring, disposable queue invalidation/rebuild, and exact terminal selector release. Real
+  commit verification remains closeout-owned.
+
+  pause/reconcile switching, retained sync-conflict continuation/cancellation, unlocked task
+  authoring, disposable queue invalidation/rebuild, and exact terminal selector release. Real
+  commit verification remains closeout-owned.
+  pause/reconcile switching, retained sync-conflict continuation/cancellation, unlocked task
+  authoring, disposable queue invalidation/rebuild, and exact terminal selector release. Real
+  commit verification remains closeout-owned.
+
 - 2026-08-25T01:56+02:00 — 260824-PDLS reconciled the explicit cohort, durable evidence lifecycle,
   product-only scoring, dependency-owned selection/retry, and causal localization; retired the
   unused rich-sim generator and task/date model-split snapshot.
+
+  product-only scoring, dependency-owned selection/retry, and causal localization; retired the
+  unused rich-sim generator and task/date model-split snapshot.
+
+  product-only scoring, dependency-owned selection/retry, and causal localization; retired the
+  unused rich-sim generator and task/date model-split snapshot.
+  product-only scoring, dependency-owned selection/retry, and causal localization; retired the
+  unused rich-sim generator and task/date model-split snapshot.
+
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the bounded Python diagnostic route and preserved
   Dagger as sole acceptance authority.
 
+
+  Dagger as sole acceptance authority.
+
+  Dagger as sole acceptance authority.
+  Dagger as sole acceptance authority.
+
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: replaced the last live
+  pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2
+  state only as explicit migration history.
+
+
+  pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2
+  state only as explicit migration history.
+
+  pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2
+  state only as explicit migration history.
   pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2
   state only as explicit migration history.
 
@@ -1248,24 +1635,117 @@ The following entries are the original development narrative, preserved for prov
   planning, atomic graph adoption, canonical handover references, and direct targeted Vitest as
   diagnostic-only. Canonical/generated sync is reported green; Dagger acceptance remains pending
   and closeout-owned.
+
+  governing doctrine for NUL-safe untracked review evidence, effective priority, graph-optional
+  planning, atomic graph adoption, canonical handover references, and direct targeted Vitest as
+  diagnostic-only. Canonical/generated sync is reported green; Dagger acceptance remains pending
+  and closeout-owned.
+
+  governing doctrine for NUL-safe untracked review evidence, effective priority, graph-optional
+  planning, atomic graph adoption, canonical handover references, and direct targeted Vitest as
+  diagnostic-only. Canonical/generated sync is reported green; Dagger acceptance remains pending
+  and closeout-owned.
+  governing doctrine for NUL-safe untracked review evidence, effective priority, graph-optional
+  planning, atomic graph adoption, canonical handover references, and direct targeted Vitest as
+  diagnostic-only. Canonical/generated sync is reported green; Dagger acceptance remains pending
+  and closeout-owned.
+
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the final package ownership map, repaired root evidence paths, and verified the L2 repository overview at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed the
   formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.
   Verification metadata remains pinned until governed closeout.
 
+
+  formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.
+  Verification metadata remains pinned until governed closeout.
+
+  formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.
+  Verification metadata remains pinned until governed closeout.
+  formatter-moved `gate_staged_code` source coordinate against accepted tree `4241908c`.
+  Verification metadata remains pinned until governed closeout.
+
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 root route impact: the Agent-facing session dispatch inventory row now names `dispatch_agent` as the one public spawn tool (plane + ambient caller kinds) with `spawn_agent_session` the internal primitive; full vocabulary adoption across skills/docs is the L3 leaf scope. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: task-document, closeout-queue, and integration modules moved into the new `application/task_docs`, `models/queue`, `worktrees/queue`, `worktrees/integration` packages; the `TaskDocResponse` special-op wire fields + `_sprint_doc_identity` fix; closeout/reopen refactors; orchestration-task template phrase restore. Verified at code commit e5cb139f.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: served-build preflight, async memory-quality surface, typed authoring dialect, create=False dry-run locks, L7 orchestration_portfolio deletion, and the review-doctrine repair (D-6 folded into the canonical system/coding-guidelines.md at master level). Verified at code commit de3a0fd9.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram + dashboard wave-grid view with the primitives-only projection builder and shared title join. Verified at code commit b7f2c8e2.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
   (declared caller on the closeout-queue and structural gate tools when no plane seat exists;
@@ -1274,7 +1754,34 @@ The following entries are the original development narrative, preserved for prov
   (L16-R9). Verified at code commit a9d50e08.
 
 
+
+  (declared caller on the closeout-queue and structural gate tools when no plane seat exists;
+  hosted seat wins; conflict refuses), the branch-addressed `record_route_review` binding
+  (L16-R6), the `direct_landing` operation (L16-R8), and the recovery-naming refusal dialect
+  (L16-R9). Verified at code commit a9d50e08.
+
+  (declared caller on the closeout-queue and structural gate tools when no plane seat exists;
+  hosted seat wins; conflict refuses), the branch-addressed `record_route_review` binding
+  (L16-R6), the `direct_landing` operation (L16-R8), and the recovery-naming refusal dialect
+  (L16-R9). Verified at code commit a9d50e08.
+  (declared caller on the closeout-queue and structural gate tools when no plane seat exists;
+  hosted seat wins; conflict refuses), the branch-addressed `record_route_review` binding
+  (L16-R6), the `direct_landing` operation (L16-R8), and the recovery-naming refusal dialect
+  (L16-R9). Verified at code commit a9d50e08.
+
 - 2026-08-20T05:00+02:00 — 260815-DAG-L14 route impact: the sprint document gains first-class
+  `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;
+  consistency validation and the read-only `linkage_report` surface are wired; doctrine files
+  updated to the new flow. Verified at code commit 8071a644.
+
+
+  `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;
+  consistency validation and the read-only `linkage_report` surface are wired; doctrine files
+  updated to the new flow. Verified at code commit 8071a644.
+
+  `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;
+  consistency validation and the read-only `linkage_report` surface are wired; doctrine files
+  updated to the new flow. Verified at code commit 8071a644.
   `seats`, typed `masterRef` links, and the atomic `attach_master`/`detach_master` operations;
   consistency validation and the read-only `linkage_report` surface are wired; doctrine files
   updated to the new flow. Verified at code commit 8071a644.
@@ -1283,24 +1790,107 @@ The following entries are the original development narrative, preserved for prov
   records the atomic-sequential default for graph-less sprints and the
   `author_execution_graph` bootstrap/edit seam; the explicit-migration sentence is gone with the
   removed `migrate_execution_topology` operation. Verification remains closeout-owned.
+
+  records the atomic-sequential default for graph-less sprints and the
+  `author_execution_graph` bootstrap/edit seam; the explicit-migration sentence is gone with the
+  removed `migrate_execution_topology` operation. Verification remains closeout-owned.
+
+  records the atomic-sequential default for graph-less sprints and the
+  `author_execution_graph` bootstrap/edit seam; the explicit-migration sentence is gone with the
+  removed `migrate_execution_topology` operation. Verification remains closeout-owned.
+  records the atomic-sequential default for graph-less sprints and the
+  `author_execution_graph` bootstrap/edit seam; the explicit-migration sentence is gone with the
+  removed `migrate_execution_topology` operation. Verification remains closeout-owned.
+
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 moved series closeout reports (operation log, citation source-index cache, Dagger test sandbox) from the task enclosures root to the master worktree group `worktrees/<repo>/<master>-ar`; the repository overview purpose is unchanged.
+
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added the read-only execution-topology migration inventory and the operator migration/rollback reference; the repository overview purpose is unchanged.
+
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added the organizational direct-super topology across the worktree integration path; the repository overview purpose is unchanged.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-15T13:27+02:00 — No route impact: L3's Pyright repair adds one test narrowing and does
   not alter repository behavior or execution topology.
+
+  not alter repository behavior or execution topology.
+
+  not alter repository behavior or execution topology.
+  not alter repository behavior or execution topology.
+
 - 2026-08-15T13:18+02:00 — No route impact: L3's repository-format pass changed only Python
   layout; the dependency-aware queue feature and execution topology are unchanged.
+
+  layout; the dependency-aware queue feature and execution topology are unchanged.
+
+  layout; the dependency-aware queue feature and execution topology are unchanged.
+  layout; the dependency-aware queue feature and execution topology are unchanged.
+
 - 2026-08-15T13:08+02:00 — No route impact: L3's fast-hook repair only normalizes imports and
   private test bindings; repository features and execution topology are unchanged.
+
+  private test bindings; repository features and execution topology are unchanged.
+
+  private test bindings; repository features and execution topology are unchanged.
+  private test bindings; repository features and execution topology are unchanged.
+
 - 2026-08-15T12:53+02:00 — 260815-DAG-L3 route impact: completed the exact evidence, atomic
   landing, durable-state, and lifecycle-recovery forcing for the same pre-closeout queue design;
   repository routing and the mechanical-versus-judgment boundary are unchanged.
+
+  landing, durable-state, and lifecycle-recovery forcing for the same pre-closeout queue design;
+  repository routing and the mechanical-versus-judgment boundary are unchanged.
+
+  landing, durable-state, and lifecycle-recovery forcing for the same pre-closeout queue design;
+  repository routing and the mechanical-versus-judgment boundary are unchanged.
+  landing, durable-state, and lifecycle-recovery forcing for the same pre-closeout queue design;
+  repository routing and the mechanical-versus-judgment boundary are unchanged.
+
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented the durable pre-closeout
+  candidate queue, the manager/orchestrator authority split, exact evidence binding, atomic blockers,
+  and lifecycle-owned closeout/integration seams. Verification remains pinned to the leaf base until
+  closeout stamps the candidate commit.
+
+
+  candidate queue, the manager/orchestrator authority split, exact evidence binding, atomic blockers,
+  and lifecycle-owned closeout/integration seams. Verification remains pinned to the leaf base until
+  closeout stamps the candidate commit.
+
+  candidate queue, the manager/orchestrator authority split, exact evidence binding, atomic blockers,
+  and lifecycle-owned closeout/integration seams. Verification remains pinned to the leaf base until
+  closeout stamps the candidate commit.
   candidate queue, the manager/orchestrator authority split, exact evidence binding, atomic blockers,
   and lifecycle-owned closeout/integration seams. Verification remains pinned to the leaf base until
   closeout stamps the candidate commit.
@@ -1309,7 +1899,31 @@ The following entries are the original development narrative, preserved for prov
   identity and writer-census bypasses inside the already documented execution-topology route; the
   repository inventory and the separation between mechanical topology and scheduling judgment stay
   unchanged.
+
+  identity and writer-census bypasses inside the already documented execution-topology route; the
+  repository inventory and the separation between mechanical topology and scheduling judgment stay
+  unchanged.
+
+  identity and writer-census bypasses inside the already documented execution-topology route; the
+  repository inventory and the separation between mechanical topology and scheduling judgment stay
+  unchanged.
+  identity and writer-census bypasses inside the already documented execution-topology route; the
+  repository inventory and the separation between mechanical topology and scheduling judgment stay
+  unchanged.
+
 - 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task documents now persist an explicit
+  organizational/atomic master nature and a sprint-owned reasoned AON graph. The server validates
+  exact commanded membership, derives waves mechanically, and projects the contract to generated
+  dashboard clients; scheduling judgment remains outside this foundation leaf.
+
+
+  organizational/atomic master nature and a sprint-owned reasoned AON graph. The server validates
+  exact commanded membership, derives waves mechanically, and projects the contract to generated
+  dashboard clients; scheduling judgment remains outside this foundation leaf.
+
+  organizational/atomic master nature and a sprint-owned reasoned AON graph. The server validates
+  exact commanded membership, derives waves mechanically, and projects the contract to generated
+  dashboard clients; scheduling judgment remains outside this foundation leaf.
   organizational/atomic master nature and a sprint-owned reasoned AON graph. The server validates
   exact commanded membership, derives waves mechanically, and projects the contract to generated
   dashboard clients; scheduling judgment remains outside this foundation leaf.
@@ -1319,7 +1933,31 @@ The following entries are the original development narrative, preserved for prov
   repository inventory, route structure, and authority boundaries are unchanged; verification
   remains pinned to the last committed source until closeout.
 
+
+  existing test timeout and removes its intentionally untaken local branch. Production,
+  repository inventory, route structure, and authority boundaries are unchanged; verification
+  remains pinned to the last committed source until closeout.
+
+  existing test timeout and removes its intentionally untaken local branch. Production,
+  repository inventory, route structure, and authority boundaries are unchanged; verification
+  remains pinned to the last committed source until closeout.
+  existing test timeout and removes its intentionally untaken local branch. Production,
+  repository inventory, route structure, and authority boundaries are unchanged; verification
+  remains pinned to the last committed source until closeout.
+
 - 2026-08-14T13:41:27+02:00 — No route impact: R45 removed only the tracked
+  `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
+  onboarding and route coverage, so the repository inventory, route model, and authority map are
+  unchanged; verification is pinned to the exact deletion commit `aeca9a2839c965218a61a3040e15cb84367ebeca`.
+
+
+  `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
+  onboarding and route coverage, so the repository inventory, route model, and authority map are
+  unchanged; verification is pinned to the exact deletion commit `aeca9a2839c965218a61a3040e15cb84367ebeca`.
+
+  `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
+  onboarding and route coverage, so the repository inventory, route model, and authority map are
+  unchanged; verification is pinned to the exact deletion commit `aeca9a2839c965218a61a3040e15cb84367ebeca`.
   `dashboard/node_modules` absolute symlink. That machine-local dependency link is excluded from
   onboarding and route coverage, so the repository inventory, route model, and authority map are
   unchanged; verification is pinned to the exact deletion commit `aeca9a2839c965218a61a3040e15cb84367ebeca`.
@@ -1328,7 +1966,25 @@ The following entries are the original development narrative, preserved for prov
   acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
   remains closeout-owned.
 
+
+  acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
+  remains closeout-owned.
+
+  acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
+  remains closeout-owned.
+  acceptance, workflow de-duplication, and repository-generic runtime doctrine. Verification
+  remains closeout-owned.
+
 - 2026-08-14T06:10+02:00 — L23 curator: reconciled the repository inventory and authority map
+  with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
+  quality owner. Verification provenance remains closeout-owned.
+
+
+  with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
+  quality owner. Verification provenance remains closeout-owned.
+
+  with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
+  quality owner. Verification provenance remains closeout-owned.
   with exact-candidate, Dagger-only acceptance, fail-closed host suites, and the extracted staged
   quality owner. Verification provenance remains closeout-owned.
 
@@ -1338,22 +1994,87 @@ The following entries are the original development narrative, preserved for prov
   authority boundaries remain unchanged; verification provenance remains closeout-owned.
 
 
+
+  closeout helper, narrowed registrar naming, made five test package-root imports deterministic,
+  and rendered the already-durable lifecycle command in Hangar. Repository architecture and
+  authority boundaries remain unchanged; verification provenance remains closeout-owned.
+
+  closeout helper, narrowed registrar naming, made five test package-root imports deterministic,
+  and rendered the already-durable lifecycle command in Hangar. Repository architecture and
+  authority boundaries remain unchanged; verification provenance remains closeout-owned.
+  closeout helper, narrowed registrar naming, made five test package-root imports deterministic,
+  and rendered the already-durable lifecycle command in Hangar. Repository architecture and
+  authority boundaries remain unchanged; verification provenance remains closeout-owned.
+
 - 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: source-lineage enforcement now spans
   start/resume, the mandatory pre-curator boundary, closeout, and integration, including
   post-quality and final pre-claim/pre-merge rechecks. Detailed package moves and proofs live in
   the MCP, lifecycle-role, and test routes; the repository's task-derived identity and
   code/external-memory architecture remain unchanged. Final provenance remains closeout-owned.
+
+  start/resume, the mandatory pre-curator boundary, closeout, and integration, including
+  post-quality and final pre-claim/pre-merge rechecks. Detailed package moves and proofs live in
+  the MCP, lifecycle-role, and test routes; the repository's task-derived identity and
+  code/external-memory architecture remain unchanged. Final provenance remains closeout-owned.
+
+  start/resume, the mandatory pre-curator boundary, closeout, and integration, including
+  post-quality and final pre-claim/pre-merge rechecks. Detailed package moves and proofs live in
+  the MCP, lifecycle-role, and test routes; the repository's task-derived identity and
+  code/external-memory architecture remain unchanged. Final provenance remains closeout-owned.
+  start/resume, the mandatory pre-curator boundary, closeout, and integration, including
+  post-quality and final pre-claim/pre-merge rechecks. Detailed package moves and proofs live in
+  the MCP, lifecycle-role, and test routes; the repository's task-derived identity and
+  code/external-memory architecture remain unchanged. Final provenance remains closeout-owned.
+
 - 2026-08-13T00:07+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: recorded the repository-level process-authority split. The detached lifecycle-operation worker may reach its plane-owned live operation without becoming an MCP/dashboard daemon, and undeclared checkout CLI isolation remains fail-closed. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
+
 - 2026-08-12T20:20+02:00 — L23 curator: added the repository-wide source-lineage admission and operator-visibility boundary; verification remains closeout-owned.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-12T15:19+02:00 — L23 curator: documented the pinned observable Dagger quality path and its enclosure-owned reports at repository altitude; verification provenance remains closeout-owned.
+
 - 2026-08-12T10:08+02:00 — No route impact: the rc7 release leaf changes only the public
   README version pin and existing package-version authorities; repository routes and subsystem
   ownership are unchanged. Verification metadata remains pinned until closeout.
 
+
+  README version pin and existing package-version authorities; repository routes and subsystem
+  ownership are unchanged. Verification metadata remains pinned until closeout.
+
+  README version pin and existing package-version authorities; repository routes and subsystem
+  ownership are unchanged. Verification metadata remains pinned until closeout.
+  README version pin and existing package-version authorities; repository routes and subsystem
+  ownership are unchanged. Verification metadata remains pinned until closeout.
+
 - 2026-08-12T09:20+02:00 — No route impact: the 260731-EFA-L20 reopen removes one intentionally unreachable test body after the master coverage gate identified it; repository architecture and routing remain unchanged.
+
 - 2026-08-12T08:41+02:00 — No route impact: 260731-EFA-L20 changes only regression implementation and direct boundary coverage needed by the existing master quality contract; repository architecture and routing remain unchanged.
+
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed the master full-
+  gate resource default from an artificial ceiling to host-managed RAM/swap,
+  kept pytest `-n=auto`, and retained the hard cap only as an explicit
+  constrained-environment setting. Verification metadata remains pinned until
+  closeout stamps L24.
+
+
+  gate resource default from an artificial ceiling to host-managed RAM/swap,
+  kept pytest `-n=auto`, and retained the hard cap only as an explicit
+  constrained-environment setting. Verification metadata remains pinned until
+  closeout stamps L24.
+
+  gate resource default from an artificial ceiling to host-managed RAM/swap,
+  kept pytest `-n=auto`, and retained the hard cap only as an explicit
+  constrained-environment setting. Verification metadata remains pinned until
+  closeout stamps L24.
   gate resource default from an artificial ceiling to host-managed RAM/swap,
   kept pytest `-n=auto`, and retained the hard cap only as an explicit
   constrained-environment setting. Verification metadata remains pinned until
@@ -1363,7 +2084,25 @@ The following entries are the original development narrative, preserved for prov
   removes cache-only layering false positives, and splits three oversized test modules; the
   repository feature inventory and top-level subsystem boundaries are unchanged.
 
+
+  removes cache-only layering false positives, and splits three oversized test modules; the
+  repository feature inventory and top-level subsystem boundaries are unchanged.
+
+  removes cache-only layering false positives, and splits three oversized test modules; the
+  repository feature inventory and top-level subsystem boundaries are unchanged.
+  removes cache-only layering false positives, and splits three oversized test modules; the
+  repository feature inventory and top-level subsystem boundaries are unchanged.
+
 - 2026-08-12T00:20+02:00 — Corrected parallel-execution ownership to root pytest `addopts`, shared
+  by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification
+  metadata remains pinned until closeout.
+
+
+  by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification
+  metadata remains pinned until closeout.
+
+  by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification
+  metadata remains pinned until closeout.
   by raw and wrapped runs; `-n=0` remains the explicit serial diagnostic override. Verification
   metadata remains pinned until closeout.
 
@@ -1371,7 +2110,25 @@ The following entries are the original development narrative, preserved for prov
   checkout/package dependency boundary, and retry-proof invalidation across executor-version
   changes. Verification metadata remains pinned until closeout.
 
+
+  checkout/package dependency boundary, and retry-proof invalidation across executor-version
+  changes. Verification metadata remains pinned until closeout.
+
+  checkout/package dependency boundary, and retry-proof invalidation across executor-version
+  changes. Verification metadata remains pinned until closeout.
+  checkout/package dependency boundary, and retry-proof invalidation across executor-version
+  changes. Verification metadata remains pinned until closeout.
+
 - 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the repository overview with the
+  enforcement-first separation between structural task-document/role control and private
+  plane-owned runtime addressing; implementation detail remains routed to the affected children.
+
+
+  enforcement-first separation between structural task-document/role control and private
+  plane-owned runtime addressing; implementation detail remains routed to the affected children.
+
+  enforcement-first separation between structural task-document/role control and private
+  plane-owned runtime addressing; implementation detail remains routed to the affected children.
   enforcement-first separation between structural task-document/role control and private
   plane-owned runtime addressing; implementation detail remains routed to the affected children.
 
@@ -1381,7 +2138,31 @@ The following entries are the original development narrative, preserved for prov
   the `mcp/`, application, kernel/primitives, controlplane, and tests route documentation.
   Verification metadata remains pinned until closeout stamps the L21 code commit.
 
+
+  checkout CLI coordination to the linked worktree's disposable provider-runtime root. The
+  repository inventory and top-level feature routing remain unchanged; current mechanics live in
+  the `mcp/`, application, kernel/primitives, controlplane, and tests route documentation.
+  Verification metadata remains pinned until closeout stamps the L21 code commit.
+
+  checkout CLI coordination to the linked worktree's disposable provider-runtime root. The
+  repository inventory and top-level feature routing remain unchanged; current mechanics live in
+  the `mcp/`, application, kernel/primitives, controlplane, and tests route documentation.
+  Verification metadata remains pinned until closeout stamps the L21 code commit.
+  checkout CLI coordination to the linked worktree's disposable provider-runtime root. The
+  repository inventory and top-level feature routing remain unchanged; current mechanics live in
+  the `mcp/`, application, kernel/primitives, controlplane, and tests route documentation.
+  Verification metadata remains pinned until closeout stamps the L21 code commit.
+
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the model extraction, kernel
+  primitives, projections move, and armed layering rail at the repo level. Verification metadata
+  pinned until closeout stamps the L9 code commit.
+
+
+  primitives, projections move, and armed layering rail at the repo level. Verification metadata
+  pinned until closeout stamps the L9 code commit.
+
+  primitives, projections move, and armed layering rail at the repo level. Verification metadata
+  pinned until closeout stamps the L9 code commit.
   primitives, projections move, and armed layering rail at the repo level. Verification metadata
   pinned until closeout stamps the L9 code commit.
 
@@ -1390,20 +2171,158 @@ The following entries are the original development narrative, preserved for prov
   settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
   Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
 
+
+  (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
+  settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
+
+  (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
+  settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
+  (targeted leaf contract, once-per-master full wrapper at the master integration gate with the
+  settings-owned memory cap, per-leaf `memory_quality_check` carve-out, loud refusal shapes).
+  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
+
 - 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the armed file-size rail, the scope closure, and the in-place facade/test-family splits. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section (ESLint rail, size splits, coverage/budget/knip/trap, Playwright, hooks, Python ripple). Verification metadata stays pinned until closeout stamps the code commit.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-08-05T22:30+02:00 — No route impact: 260731-EFA-L16 (the cross-store lock-order repair, its forcing tests, and the coding-guidelines/spawn-doctrine skill chain) is recorded in the `mcp/` and `skills/l-01-agent-lifecycles/` route overviews and their children; this root inventory was reviewed and is unchanged. Verification metadata pinned until closeout stamps the L16 code commit.
+
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the code-quality and docs-index claims through their operative sections and regenerated the final ranges with the scoped fixer.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: superseded the deferred-codegen account.
   `types/projection.ts` is generated and stale-checked from the Pydantic projection schema;
   `snapshot.json` remains a manual sample whose coverage is measured separately. New ranges are
   ranges were normalized by the scoped fixer.
 
+
+  `types/projection.ts` is generated and stale-checked from the Pydantic projection schema;
+  `snapshot.json` remains a manual sample whose coverage is measured separately. New ranges are
+  ranges were normalized by the scoped fixer.
+
+  `types/projection.ts` is generated and stale-checked from the Pydantic projection schema;
+  `snapshot.json` remains a manual sample whose coverage is measured separately. New ranges are
+  ranges were normalized by the scoped fixer.
+  `types/projection.ts` is generated and stale-checked from the Pydantic projection schema;
+  `snapshot.json` remains a manual sample whose coverage is measured separately. New ranges are
+  ranges were normalized by the scoped fixer.
+
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` (14 modules), moved `worktrees/status.py` in as `application/worktree_status.py`, and renamed `mcp/tests/test_controller_guards.py` to `test_application_guards.py`. The repo's structure, feature inventory, and functional areas this overview describes are unchanged — the rename replaces MVC vocabulary that described nothing about the contents with the layer the package actually is; the vocabulary is "the application layer" for the package and "an application entry point" for one function. Reviewed this overview's body: it does not name the renamed package outside dated history entries, which are preserved verbatim. Detail lives in the `mcp/` package overview, the new `application/` route overview, and the file sidecars. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **corrected three passages this
+  same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
+  nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
+  copies or the four runtime asset targets, and recorded it in the `Canonical runtime and skills
+  asset sync` capability row, in the `260731-EFA-L4 Repository Impact` section, and in that entry
+  itself. **The gap was then closed later in the same leaf and all three passages were left stating
+  the old world.** Re-derived from `mcp/tests/test_sync_scripts.py` rather than from the review lead:
+  a new `RealTreeDriftTests` class holds
+  `test_every_skill_copy_matches_the_canonical_tree`, which iterates all **nine**
+  `sync-skills.TARGETS` (mcp package data + eight harness roots in `scripts/sync-skills.py`),
+  and `test_every_runtime_package_asset_matches_its_source`, which iterates all **four**
+  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper over
+  each script's `diff_target`, rebasing each entry onto its target so a failure names the copy to
+  repair, and both assert against `[]` with the repair command in the message. It is a plain
+  `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
+  suite root, so it runs in the quality wrapper's pytest step — `.githooks/pre-push` (`_gate.sh full`),
+  worktree closeout, and `.github/workflows/quality-checks.yml`'s
+  `python -m agents_remember_test_support.code_quality.check`. **Kept both honest limits rather than trading one
+  overclaim for another:** CI still never invokes `--check` (verified — the only `sync-*` string under
+  `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
+  is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
+  registering it would pass (verified by grep across `mcp/tests/`) — unlike
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data`, which pins
+  the runtime label set to `{agents-md-files, benchmarks, providers, system}`. Also recorded that the
+  six pre-existing `ReplaceTreeTests` temp-directory cases are **unchanged and not superseded** —
+  they cover `replace_tree`'s crash-safe copy-then-swap contract, a different property — and rewrote
+  the "that is the opposite of the harness trees" contrast, since `RealTreeDriftTests` is modelled on
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` and the three sync
+  scripts now behave alike. The 00:50 entry's own sentence is left as the record of what was true then,
+  marked superseded and pointing here. Verification metadata untouched; closeout stamps it.
+
+
+  same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
+  nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
+  copies or the four runtime asset targets, and recorded it in the `Canonical runtime and skills
+  asset sync` capability row, in the `260731-EFA-L4 Repository Impact` section, and in that entry
+  itself. **The gap was then closed later in the same leaf and all three passages were left stating
+  the old world.** Re-derived from `mcp/tests/test_sync_scripts.py` rather than from the review lead:
+  a new `RealTreeDriftTests` class holds
+  `test_every_skill_copy_matches_the_canonical_tree`, which iterates all **nine**
+  `sync-skills.TARGETS` (mcp package data + eight harness roots in `scripts/sync-skills.py`),
+  and `test_every_runtime_package_asset_matches_its_source`, which iterates all **four**
+  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper over
+  each script's `diff_target`, rebasing each entry onto its target so a failure names the copy to
+  repair, and both assert against `[]` with the repair command in the message. It is a plain
+  `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
+  suite root, so it runs in the quality wrapper's pytest step — `.githooks/pre-push` (`_gate.sh full`),
+  worktree closeout, and `.github/workflows/quality-checks.yml`'s
+  `python -m agents_remember_test_support.code_quality.check`. **Kept both honest limits rather than trading one
+  overclaim for another:** CI still never invokes `--check` (verified — the only `sync-*` string under
+  `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
+  is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
+  registering it would pass (verified by grep across `mcp/tests/`) — unlike
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data`, which pins
+  the runtime label set to `{agents-md-files, benchmarks, providers, system}`. Also recorded that the
+  six pre-existing `ReplaceTreeTests` temp-directory cases are **unchanged and not superseded** —
+  they cover `replace_tree`'s crash-safe copy-then-swap contract, a different property — and rewrote
+  the "that is the opposite of the harness trees" contrast, since `RealTreeDriftTests` is modelled on
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` and the three sync
+  scripts now behave alike. The 00:50 entry's own sentence is left as the record of what was true then,
+  marked superseded and pointing here. Verification metadata untouched; closeout stamps it.
+
+  same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
+  nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
+  copies or the four runtime asset targets, and recorded it in the `Canonical runtime and skills
+  asset sync` capability row, in the `260731-EFA-L4 Repository Impact` section, and in that entry
+  itself. **The gap was then closed later in the same leaf and all three passages were left stating
+  the old world.** Re-derived from `mcp/tests/test_sync_scripts.py` rather than from the review lead:
+  a new `RealTreeDriftTests` class holds
+  `test_every_skill_copy_matches_the_canonical_tree`, which iterates all **nine**
+  `sync-skills.TARGETS` (mcp package data + eight harness roots in `scripts/sync-skills.py`),
+  and `test_every_runtime_package_asset_matches_its_source`, which iterates all **four**
+  `sync-runtime.TARGETS`; both read through one module-level `drifted_files()` helper over
+  each script's `diff_target`, rebasing each entry onto its target so a failure names the copy to
+  repair, and both assert against `[]` with the repair command in the message. It is a plain
+  `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
+  suite root, so it runs in the quality wrapper's pytest step — `.githooks/pre-push` (`_gate.sh full`),
+  worktree closeout, and `.github/workflows/quality-checks.yml`'s
+  `python -m agents_remember_test_support.code_quality.check`. **Kept both honest limits rather than trading one
+  overclaim for another:** CI still never invokes `--check` (verified — the only `sync-*` string under
+  `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
+  is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
+  registering it would pass (verified by grep across `mcp/tests/`) — unlike
+  `test_sync_runtime.py::test_default_targets_only_write_to_mcp_package_data`, which pins
+  the runtime label set to `{agents-md-files, benchmarks, providers, system}`. Also recorded that the
+  six pre-existing `ReplaceTreeTests` temp-directory cases are **unchanged and not superseded** —
+  they cover `replace_tree`'s crash-safe copy-then-swap contract, a different property — and rewrote
+  the "that is the opposite of the harness trees" contrast, since `RealTreeDriftTests` is modelled on
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` and the three sync
+  scripts now behave alike. The 00:50 entry's own sentence is left as the record of what was true then,
+  marked superseded and pointing here. Verification metadata untouched; closeout stamps it.
   same leaf wrote and this same leaf then falsified.** The 00:50 entry below correctly found that
   nothing outside the locally-installed `.githooks/_gate.sh` checked the ten byte-identical skill
   copies or the four runtime asset targets, and recorded it in the `Canonical runtime and skills
@@ -1480,7 +2399,196 @@ The following entries are the original development narrative, preserved for prov
   nine of its ten files (12-18 lines each) and is now stated as whole-file. Verification metadata
   pinned until closeout stamps the commit.
 
+
+  (`.gitignore`, the canonical `c-12-closeout/SKILL.md` plus its eight per-harness mirrors, and
+  `dashboard/e2e-production/cockpit.production.spec.ts`), and all of them are about the same three
+  repository-level facts, now recorded in a new **260731-EFA-L4 Repository Impact** section.
+  **(1) Closeout stages before it gates.** `worktrees/modules/closeout.py::_gate_staged_code` runs
+  `git reset --mixed HEAD` then `git add -A` in the task worktree and hands the wrapper exactly the
+  commit's content — because every rail of the gate reads the index while closeout commits with
+  `add -A`, so a file the task *created* was previously committed unread with the gate green (leaf
+  3's own `abc7cbcc` shipped four such files). Recorded that the staging is deliberately **not**
+  rolled back on refusal (the checkout is disposable, and the index-copy machinery an earlier attempt
+  used is removed rather than fixed — it could not survive `core.splitIndex` or `SIGTERM`), that the
+  mixed reset is what makes a retry equal a first run, and the two gate-scoped refusals (git-dir vs
+  git-common-dir, which `default_series_contract` violates; an unmerged index, which `add -A` would
+  resolve to the conflict markers) with their ordering constraint. **Corrected three places that said
+  closeout fails "without mutation"** — the accurate phrasing is now "without any **commit**", since
+  the index write is a mutation that precedes the gate on purpose: the `Source quality tooling` and
+  `Approval-gated closeout` inventory rows, the `Code Quality And Refactor Baseline` paragraph, and
+  the `Worktree Support` paragraph. **(2) `.gitignore` gained `.dmypy.json` and `.mypy_cache/`** for
+  that exact reason, verified from the diff and the inline comment: a tool dropping is now staged
+  content rather than something ruff merely skips, and one reached this leaf's own first commit.
+  **(3) The production E2E spec** now `satisfies`-checks its happy-path terminal payloads against the
+  wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally
+  spread `harness`/`controlState`) while its fault-injection payloads stay untyped on purpose.
+  **Verified the nine `c-12-closeout/SKILL.md` copies are byte-identical after the edit** —
+  `md5sum`/`cmp` over all nine plus the tenth package-data copy give one hash
+  (`e7279e57604ea6c1871ff918cf713449`) and mode 644 throughout. **Corrected a false claim about how
+  that identity is enforced**, in the `Canonical runtime and skills asset sync` inventory row and in
+  the new section: the row said both `--check` forms "run in **both** hook tiers and in CI" and that
+  both scripts are "covered by `mcp/tests/test_sync_*`". Neither half holds for skills or runtime
+  assets — no workflow under `.github/workflows/` invokes `_gate.sh` or any `scripts/sync-*.py`, the
+  quality wrapper does not either, and **as of this entry** `test_sync_scripts.py`/`test_sync_runtime.py`
+  only exercised `replace_tree`/`diff_target` over temp fixtures rather than the real trees.
+  Skill-mirror drift was therefore caught by the local hooks alone, unlike harness-tree drift, which
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` reads off the real
+  files and so fails in CI as well. **[Superseded later in this same leaf — see the 11:40 entry: the
+  gap was closed by `test_sync_scripts.py::RealTreeDriftTests`, which reads the real skill and
+  runtime trees in the pytest step, so the "hooks alone" conclusion no longer holds.]** Added four invariants, five evidence rows, and a paragraph stating the
+  mirror boundary precisely: `snapshot.json` and the TypeScript mirrors are hand-maintained, **no
+  generator exists**, fixture ⊆ mirror is enforced and mirror ⊆ server is enforced by nothing.
+  **Citations:** re-checked the 13 range-bearing rows in `Cross-Repo References` and repaired the two stale ones — `tool_registry.py` `L1-L85` →
+  **L108-L185** (the row names the response-model registry, and `TOOL_RESPONSE_MODELS` is at L111
+  with `PUBLIC_TOOL_RESPONSE_MODELS` at L181, so the old range contained neither symbol; the file is
+  185 lines) and the harness starter-instruction group citation `L1-L37`, which was out of bounds for
+  nine of its ten files (12-18 lines each) and is now stated as whole-file. Verification metadata
+  pinned until closeout stamps the commit.
+
+  (`.gitignore`, the canonical `c-12-closeout/SKILL.md` plus its eight per-harness mirrors, and
+  `dashboard/e2e-production/cockpit.production.spec.ts`), and all of them are about the same three
+  repository-level facts, now recorded in a new **260731-EFA-L4 Repository Impact** section.
+  **(1) Closeout stages before it gates.** `worktrees/modules/closeout.py::_gate_staged_code` runs
+  `git reset --mixed HEAD` then `git add -A` in the task worktree and hands the wrapper exactly the
+  commit's content — because every rail of the gate reads the index while closeout commits with
+  `add -A`, so a file the task *created* was previously committed unread with the gate green (leaf
+  3's own `abc7cbcc` shipped four such files). Recorded that the staging is deliberately **not**
+  rolled back on refusal (the checkout is disposable, and the index-copy machinery an earlier attempt
+  used is removed rather than fixed — it could not survive `core.splitIndex` or `SIGTERM`), that the
+  mixed reset is what makes a retry equal a first run, and the two gate-scoped refusals (git-dir vs
+  git-common-dir, which `default_series_contract` violates; an unmerged index, which `add -A` would
+  resolve to the conflict markers) with their ordering constraint. **Corrected three places that said
+  closeout fails "without mutation"** — the accurate phrasing is now "without any **commit**", since
+  the index write is a mutation that precedes the gate on purpose: the `Source quality tooling` and
+  `Approval-gated closeout` inventory rows, the `Code Quality And Refactor Baseline` paragraph, and
+  the `Worktree Support` paragraph. **(2) `.gitignore` gained `.dmypy.json` and `.mypy_cache/`** for
+  that exact reason, verified from the diff and the inline comment: a tool dropping is now staged
+  content rather than something ruff merely skips, and one reached this leaf's own first commit.
+  **(3) The production E2E spec** now `satisfies`-checks its happy-path terminal payloads against the
+  wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally
+  spread `harness`/`controlState`) while its fault-injection payloads stay untyped on purpose.
+  **Verified the nine `c-12-closeout/SKILL.md` copies are byte-identical after the edit** —
+  `md5sum`/`cmp` over all nine plus the tenth package-data copy give one hash
+  (`e7279e57604ea6c1871ff918cf713449`) and mode 644 throughout. **Corrected a false claim about how
+  that identity is enforced**, in the `Canonical runtime and skills asset sync` inventory row and in
+  the new section: the row said both `--check` forms "run in **both** hook tiers and in CI" and that
+  both scripts are "covered by `mcp/tests/test_sync_*`". Neither half holds for skills or runtime
+  assets — no workflow under `.github/workflows/` invokes `_gate.sh` or any `scripts/sync-*.py`, the
+  quality wrapper does not either, and **as of this entry** `test_sync_scripts.py`/`test_sync_runtime.py`
+  only exercised `replace_tree`/`diff_target` over temp fixtures rather than the real trees.
+  Skill-mirror drift was therefore caught by the local hooks alone, unlike harness-tree drift, which
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` reads off the real
+  files and so fails in CI as well. **[Superseded later in this same leaf — see the 11:40 entry: the
+  gap was closed by `test_sync_scripts.py::RealTreeDriftTests`, which reads the real skill and
+  runtime trees in the pytest step, so the "hooks alone" conclusion no longer holds.]** Added four invariants, five evidence rows, and a paragraph stating the
+  mirror boundary precisely: `snapshot.json` and the TypeScript mirrors are hand-maintained, **no
+  generator exists**, fixture ⊆ mirror is enforced and mirror ⊆ server is enforced by nothing.
+  **Citations:** re-checked the 13 range-bearing rows in `Cross-Repo References` and repaired the two stale ones — `tool_registry.py` `L1-L85` →
+  **L108-L185** (the row names the response-model registry, and `TOOL_RESPONSE_MODELS` is at L111
+  with `PUBLIC_TOOL_RESPONSE_MODELS` at L181, so the old range contained neither symbol; the file is
+  185 lines) and the harness starter-instruction group citation `L1-L37`, which was out of bounds for
+  nine of its ten files (12-18 lines each) and is now stated as whole-file. Verification metadata
+  pinned until closeout stamps the commit.
+  (`.gitignore`, the canonical `c-12-closeout/SKILL.md` plus its eight per-harness mirrors, and
+  `dashboard/e2e-production/cockpit.production.spec.ts`), and all of them are about the same three
+  repository-level facts, now recorded in a new **260731-EFA-L4 Repository Impact** section.
+  **(1) Closeout stages before it gates.** `worktrees/modules/closeout.py::_gate_staged_code` runs
+  `git reset --mixed HEAD` then `git add -A` in the task worktree and hands the wrapper exactly the
+  commit's content — because every rail of the gate reads the index while closeout commits with
+  `add -A`, so a file the task *created* was previously committed unread with the gate green (leaf
+  3's own `abc7cbcc` shipped four such files). Recorded that the staging is deliberately **not**
+  rolled back on refusal (the checkout is disposable, and the index-copy machinery an earlier attempt
+  used is removed rather than fixed — it could not survive `core.splitIndex` or `SIGTERM`), that the
+  mixed reset is what makes a retry equal a first run, and the two gate-scoped refusals (git-dir vs
+  git-common-dir, which `default_series_contract` violates; an unmerged index, which `add -A` would
+  resolve to the conflict markers) with their ordering constraint. **Corrected three places that said
+  closeout fails "without mutation"** — the accurate phrasing is now "without any **commit**", since
+  the index write is a mutation that precedes the gate on purpose: the `Source quality tooling` and
+  `Approval-gated closeout` inventory rows, the `Code Quality And Refactor Baseline` paragraph, and
+  the `Worktree Support` paragraph. **(2) `.gitignore` gained `.dmypy.json` and `.mypy_cache/`** for
+  that exact reason, verified from the diff and the inline comment: a tool dropping is now staged
+  content rather than something ruff merely skips, and one reached this leaf's own first commit.
+  **(3) The production E2E spec** now `satisfies`-checks its happy-path terminal payloads against the
+  wire mirrors (which surfaced the absent `controlEndpoint`/`controlProtocol` and the conditionally
+  spread `harness`/`controlState`) while its fault-injection payloads stay untyped on purpose.
+  **Verified the nine `c-12-closeout/SKILL.md` copies are byte-identical after the edit** —
+  `md5sum`/`cmp` over all nine plus the tenth package-data copy give one hash
+  (`e7279e57604ea6c1871ff918cf713449`) and mode 644 throughout. **Corrected a false claim about how
+  that identity is enforced**, in the `Canonical runtime and skills asset sync` inventory row and in
+  the new section: the row said both `--check` forms "run in **both** hook tiers and in CI" and that
+  both scripts are "covered by `mcp/tests/test_sync_*`". Neither half holds for skills or runtime
+  assets — no workflow under `.github/workflows/` invokes `_gate.sh` or any `scripts/sync-*.py`, the
+  quality wrapper does not either, and **as of this entry** `test_sync_scripts.py`/`test_sync_runtime.py`
+  only exercised `replace_tree`/`diff_target` over temp fixtures rather than the real trees.
+  Skill-mirror drift was therefore caught by the local hooks alone, unlike harness-tree drift, which
+  `test_sync_harness.py::test_every_generated_harness_file_matches_its_source` reads off the real
+  files and so fails in CI as well. **[Superseded later in this same leaf — see the 11:40 entry: the
+  gap was closed by `test_sync_scripts.py::RealTreeDriftTests`, which reads the real skill and
+  runtime trees in the pytest step, so the "hooks alone" conclusion no longer holds.]** Added four invariants, five evidence rows, and a paragraph stating the
+  mirror boundary precisely: `snapshot.json` and the TypeScript mirrors are hand-maintained, **no
+  generator exists**, fixture ⊆ mirror is enforced and mirror ⊆ server is enforced by nothing.
+  **Citations:** re-checked the 13 range-bearing rows in `Cross-Repo References` and repaired the two stale ones — `tool_registry.py` `L1-L85` →
+  **L108-L185** (the row names the response-model registry, and `TOOL_RESPONSE_MODELS` is at L111
+  with `PUBLIC_TOOL_RESPONSE_MODELS` at L181, so the old range contained neither symbol; the file is
+  185 lines) and the harness starter-instruction group citation `L1-L37`, which was out of bounds for
+  nine of its ten files (12-18 lines each) and is now stated as whole-file. Verification metadata
+  pinned until closeout stamps the commit.
+
 - 2026-07-31T22:12+02:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers):
+  **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
+  vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
+  would "restore the cold-start download on those clones alone". Read against the current code:
+  `models/tokens.py::_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` itself and raises `TokenizerVocabularyError` — such a clone
+  cannot start the server at all, and nothing is re-downloaded. Recorded why the check moved into
+  this package (`tiktoken.load.read_file_cached` verifies but does not fail closed: it deletes the
+  file and downloads a replacement over it, which inside an installed package is a startup fetch
+  plus a rewrite of the installed tree, or a `PermissionError` on a read-only install), and that the
+  entry is a **literal filename** — `.gitattributes` L13 names
+  `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`, so a refresh renames both and
+  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` holds them
+  together. `.gitattributes` carries its own corrected comment for the same reason. Also
+  made the cold-start hot-path sentence say *absent or byte-wrong* rather than only absent, and
+  added the invariant that a downstream integrity check which repairs itself is not a check. The
+  `blank-at-eol` half of the paragraph and the one-git-runner half were re-read and are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+
+
+  **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
+  vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
+  would "restore the cold-start download on those clones alone". Read against the current code:
+  `models/tokens.py::_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` itself and raises `TokenizerVocabularyError` — such a clone
+  cannot start the server at all, and nothing is re-downloaded. Recorded why the check moved into
+  this package (`tiktoken.load.read_file_cached` verifies but does not fail closed: it deletes the
+  file and downloads a replacement over it, which inside an installed package is a startup fetch
+  plus a rewrite of the installed tree, or a `PermissionError` on a read-only install), and that the
+  entry is a **literal filename** — `.gitattributes` L13 names
+  `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`, so a refresh renames both and
+  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` holds them
+  together. `.gitattributes` carries its own corrected comment for the same reason. Also
+  made the cold-start hot-path sentence say *absent or byte-wrong* rather than only absent, and
+  added the invariant that a downstream integrity check which repairs itself is not a check. The
+  `blank-at-eol` half of the paragraph and the one-git-runner half were re-read and are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
+  vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
+  would "restore the cold-start download on those clones alone". Read against the current code:
+  `models/tokens.py::_verify_vendored_vocabulary` hashes the file against
+  `VENDORED_VOCABULARY_SHA256` itself and raises `TokenizerVocabularyError` — such a clone
+  cannot start the server at all, and nothing is re-downloaded. Recorded why the check moved into
+  this package (`tiktoken.load.read_file_cached` verifies but does not fail closed: it deletes the
+  file and downloads a replacement over it, which inside an installed package is a startup fetch
+  plus a rewrite of the installed tree, or a `PermissionError` on a read-only install), and that the
+  entry is a **literal filename** — `.gitattributes` L13 names
+  `package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`, so a refresh renames both and
+  `test_cold_start.py::test_the_gitattributes_entry_names_the_shipped_file` holds them
+  together. `.gitattributes` carries its own corrected comment for the same reason. Also
+  made the cold-start hot-path sentence say *absent or byte-wrong* rather than only absent, and
+  added the invariant that a downstream integrity check which repairs itself is not a check. The
+  `blank-at-eol` half of the paragraph and the one-git-runner half were re-read and are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
   **corrected the `.gitattributes` `-text` claim, which was false.** It said tiktoken verifies the
   vocabulary's SHA-256 on load and re-downloads any copy whose bytes differ, so an autocrlf clone
   would "restore the cold-start download on those clones alone". Read against the current code:
@@ -1516,7 +2624,97 @@ The following entries are the original development narrative, preserved for prov
   route overviews.
   Verification metadata pinned until closeout stamps the code commit.
 
+
+  facts and corrected the one root claim it falsified. Added a **Runtime integrity** hot-path
+  paragraph (the server starts with no network egress now that the `o200k_base` vocabulary is
+  vendored rather than downloaded at import; six drifted private git runners consolidated onto
+  `kernel/git_command.py::run_git`, only one of which had scrubbed the `GIT_DIR`-family selectors
+  while the unguarded one sat behind `reset --hard` / `branch -D` / `worktree remove --force` /
+  `push origin --delete`), and extended the MCP-server feature row with the cold-start property.
+  **Corrected the `.gitattributes` note**, which said the file's only rule was the inert
+  `blank-at-eol` exception over a git-ignored path: it now has a second rule, and that one has a
+  tracked subject — the vendored vocabulary is marked `-text` because a `core.autocrlf=true` clone
+  would otherwise break the checksum tiktoken verifies and restore the download on those clones
+  alone. Added two durable invariants (a guard that lives in one copy of a duplicated function is
+  not a guard; nothing on the import path may reach the network, and a mitigation that lives in
+  `conftest.py` can hide the defect it mitigates). Detail stays in the `mcp/` and `mcp/tests/`
+  route overviews.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  facts and corrected the one root claim it falsified. Added a **Runtime integrity** hot-path
+  paragraph (the server starts with no network egress now that the `o200k_base` vocabulary is
+  vendored rather than downloaded at import; six drifted private git runners consolidated onto
+  `kernel/git_command.py::run_git`, only one of which had scrubbed the `GIT_DIR`-family selectors
+  while the unguarded one sat behind `reset --hard` / `branch -D` / `worktree remove --force` /
+  `push origin --delete`), and extended the MCP-server feature row with the cold-start property.
+  **Corrected the `.gitattributes` note**, which said the file's only rule was the inert
+  `blank-at-eol` exception over a git-ignored path: it now has a second rule, and that one has a
+  tracked subject — the vendored vocabulary is marked `-text` because a `core.autocrlf=true` clone
+  would otherwise break the checksum tiktoken verifies and restore the download on those clones
+  alone. Added two durable invariants (a guard that lives in one copy of a duplicated function is
+  not a guard; nothing on the import path may reach the network, and a mitigation that lives in
+  `conftest.py` can hide the defect it mitigates). Detail stays in the `mcp/` and `mcp/tests/`
+  route overviews.
+  Verification metadata pinned until closeout stamps the code commit.
+  facts and corrected the one root claim it falsified. Added a **Runtime integrity** hot-path
+  paragraph (the server starts with no network egress now that the `o200k_base` vocabulary is
+  vendored rather than downloaded at import; six drifted private git runners consolidated onto
+  `kernel/git_command.py::run_git`, only one of which had scrubbed the `GIT_DIR`-family selectors
+  while the unguarded one sat behind `reset --hard` / `branch -D` / `worktree remove --force` /
+  `push origin --delete`), and extended the MCP-server feature row with the cold-start property.
+  **Corrected the `.gitattributes` note**, which said the file's only rule was the inert
+  `blank-at-eol` exception over a git-ignored path: it now has a second rule, and that one has a
+  tracked subject — the vendored vocabulary is marked `-text` because a `core.autocrlf=true` clone
+  would otherwise break the checksum tiktoken verifies and restore the download on those clones
+  alone. Added two durable invariants (a guard that lives in one copy of a duplicated function is
+  not a guard; nothing on the import path may reach the network, and a mitigation that lives in
+  `conftest.py` can hide the defect it mitigates). Detail stays in the `mcp/` and `mcp/tests/`
+  route overviews.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator (final state). **Retired every mid-leaf claim that
+  rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
+  Source-quality feature row's five-step list and threshold of 30, contract 1's shrink-only ratchet
+  with a 2026-10-31 burn-down, contract 4's "CRAP is statement-based until that reader is moved",
+  contract 5's shrink-only allowlists in `test_gate_scope.py` (all three were empty and were
+  deleted outright), the "two things deliberately not changed with named owners" paragraph
+  (`PLR0913` and the CRAP threshold were both paid instead), the fast tier's complexity-baseline
+  step, and the "prefer a ratchet with an owner" lesson — which is now the opposite rule. Added the
+  seventh contract: the 100% changed-lines coverage floor in `diff_coverage.py`, with the evidence
+  that rules out 80/85/90/95. Recorded CRAP at 20.0 against branch coverage with a report lacking
+  branch data refused, `PLR0913` armed at 5 args with the single AST-guarded tool-signature
+  carve-out, the eight now-applied integration markers with their CI and local runners, and CI's
+  load-bearing `fetch-depth: 0`. Verification metadata pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
+
+
+  rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
+  Source-quality feature row's five-step list and threshold of 30, contract 1's shrink-only ratchet
+  with a 2026-10-31 burn-down, contract 4's "CRAP is statement-based until that reader is moved",
+  contract 5's shrink-only allowlists in `test_gate_scope.py` (all three were empty and were
+  deleted outright), the "two things deliberately not changed with named owners" paragraph
+  (`PLR0913` and the CRAP threshold were both paid instead), the fast tier's complexity-baseline
+  step, and the "prefer a ratchet with an owner" lesson — which is now the opposite rule. Added the
+  seventh contract: the 100% changed-lines coverage floor in `diff_coverage.py`, with the evidence
+  that rules out 80/85/90/95. Recorded CRAP at 20.0 against branch coverage with a report lacking
+  branch data refused, `PLR0913` armed at 5 args with the single AST-guarded tool-signature
+  carve-out, the eight now-applied integration markers with their CI and local runners, and CI's
+  load-bearing `fetch-depth: 0`. Verification metadata pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
+
+  rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
+  Source-quality feature row's five-step list and threshold of 30, contract 1's shrink-only ratchet
+  with a 2026-10-31 burn-down, contract 4's "CRAP is statement-based until that reader is moved",
+  contract 5's shrink-only allowlists in `test_gate_scope.py` (all three were empty and were
+  deleted outright), the "two things deliberately not changed with named owners" paragraph
+  (`PLR0913` and the CRAP threshold were both paid instead), the fast tier's complexity-baseline
+  step, and the "prefer a ratchet with an owner" lesson — which is now the opposite rule. Added the
+  seventh contract: the 100% changed-lines coverage floor in `diff_coverage.py`, with the evidence
+  that rules out 80/85/90/95. Recorded CRAP at 20.0 against branch coverage with a report lacking
+  branch data refused, `PLR0913` armed at 5 args with the single AST-guarded tool-signature
+  carve-out, the eight now-applied integration markers with their CI and local runners, and CI's
+  load-bearing `fetch-depth: 0`. Verification metadata pinned to the leaf's reformat commit until
+  closeout stamps the code commit.
   rested on the complexity baseline, which the developer's no-deferral ruling deleted**: the
   Source-quality feature row's five-step list and threshold of 30, contract 1's shrink-only ratchet
   with a 2026-10-31 burn-down, contract 4's "CRAP is statement-based until that reader is moved",
@@ -1545,7 +2743,85 @@ The following entries are the original development narrative, preserved for prov
   ratchets with owners, deferral to non-enforcing tools, derive-never-enumerate scope).
   Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
 
+
+  in the Hot Path Summary (baselined complexity rules, Radon reports but is CRAP's engine, branch
+  coverage with its honest caveat, `git ls-files`-derived scope, and the nine generated harness
+  trees), plus the two deliberately-open items with named owners (`PLR0913`, the CRAP threshold).
+  **Retired falsified claims:** the Source-quality feature row's "wrapper for Ruff, Radon, pytest
+  coverage, and CRAP"; "the current `pyproject.toml` makes … Radon responsible for complexity
+  scouting" and its "better reviewed through Radon" ignore rationale; "run Ruff, Pyright, and
+  Radon after Python implementation work" in both the prose and the lessons list; the lesson
+  "Radon owns complexity scouting"; and the fast-tier step list, which now includes the formatter,
+  the complexity baseline, the harness generated-copy check, and its own `git ls-files` derivation.
+  Added a Self-hosted harness configuration feature row and four new lessons (unselected limits,
+  ratchets with owners, deferral to non-enforcing tools, derive-never-enumerate scope).
+  Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
+
+  in the Hot Path Summary (baselined complexity rules, Radon reports but is CRAP's engine, branch
+  coverage with its honest caveat, `git ls-files`-derived scope, and the nine generated harness
+  trees), plus the two deliberately-open items with named owners (`PLR0913`, the CRAP threshold).
+  **Retired falsified claims:** the Source-quality feature row's "wrapper for Ruff, Radon, pytest
+  coverage, and CRAP"; "the current `pyproject.toml` makes … Radon responsible for complexity
+  scouting" and its "better reviewed through Radon" ignore rationale; "run Ruff, Pyright, and
+  Radon after Python implementation work" in both the prose and the lessons list; the lesson
+  "Radon owns complexity scouting"; and the fast-tier step list, which now includes the formatter,
+  the complexity baseline, the harness generated-copy check, and its own `git ls-files` derivation.
+  Added a Self-hosted harness configuration feature row and four new lessons (unselected limits,
+  ratchets with owners, deferral to non-enforcing tools, derive-never-enumerate scope).
+  Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
+  in the Hot Path Summary (baselined complexity rules, Radon reports but is CRAP's engine, branch
+  coverage with its honest caveat, `git ls-files`-derived scope, and the nine generated harness
+  trees), plus the two deliberately-open items with named owners (`PLR0913`, the CRAP threshold).
+  **Retired falsified claims:** the Source-quality feature row's "wrapper for Ruff, Radon, pytest
+  coverage, and CRAP"; "the current `pyproject.toml` makes … Radon responsible for complexity
+  scouting" and its "better reviewed through Radon" ignore rationale; "run Ruff, Pyright, and
+  Radon after Python implementation work" in both the prose and the lessons list; the lesson
+  "Radon owns complexity scouting"; and the fast-tier step list, which now includes the formatter,
+  the complexity baseline, the harness generated-copy check, and its own `git ls-files` derivation.
+  Added a Self-hosted harness configuration feature row and four new lessons (unselected limits,
+  ratchets with owners, deferral to non-enforcing tools, derive-never-enumerate scope).
+  Verification metadata pinned to the leaf's reformat commit until closeout stamps the code commit.
+
 - 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: refreshed the repository spine for the
+  enforcement-first leaf. Recorded the enforcement topology as the durable home for the
+  pathRules-disabled hooks and workflows: the shared `.githooks/_gate.sh` in a fast staged-content
+  tier and a full pre-push tier, CI on every branch and pull request with the frontend rail
+  required by the ruleset, `publish-mcp-to-pypi.yml` gated on `quality-checks.yml` through
+  `workflow_call`, and the closeout gate applying to any checkout that carries the wrapper rather
+  than to one repository name. Recorded that the cockpit bundle and its fingerprint sidecar left
+  version control (master decision OQ6) and are built at release. Corrected the falsified claims
+  in place: the Source-quality feature row, the dashboard-sync feature row (split into an asset-sync
+  row and a release-build row), the wrapper-enforcement paragraph, the Dashboard Serving Layer
+  paragraph, the `--check` parity statements in the FEUI-MX-FIX-2 / HFX2-L16 / HFX2-L17 summaries,
+  the `.gitattributes` hot-path note (now an inert rule over an untracked path), and the
+  pre-commit citation row. Verification metadata remains pinned until closeout.
+
+
+  enforcement-first leaf. Recorded the enforcement topology as the durable home for the
+  pathRules-disabled hooks and workflows: the shared `.githooks/_gate.sh` in a fast staged-content
+  tier and a full pre-push tier, CI on every branch and pull request with the frontend rail
+  required by the ruleset, `publish-mcp-to-pypi.yml` gated on `quality-checks.yml` through
+  `workflow_call`, and the closeout gate applying to any checkout that carries the wrapper rather
+  than to one repository name. Recorded that the cockpit bundle and its fingerprint sidecar left
+  version control (master decision OQ6) and are built at release. Corrected the falsified claims
+  in place: the Source-quality feature row, the dashboard-sync feature row (split into an asset-sync
+  row and a release-build row), the wrapper-enforcement paragraph, the Dashboard Serving Layer
+  paragraph, the `--check` parity statements in the FEUI-MX-FIX-2 / HFX2-L16 / HFX2-L17 summaries,
+  the `.gitattributes` hot-path note (now an inert rule over an untracked path), and the
+  pre-commit citation row. Verification metadata remains pinned until closeout.
+
+  enforcement-first leaf. Recorded the enforcement topology as the durable home for the
+  pathRules-disabled hooks and workflows: the shared `.githooks/_gate.sh` in a fast staged-content
+  tier and a full pre-push tier, CI on every branch and pull request with the frontend rail
+  required by the ruleset, `publish-mcp-to-pypi.yml` gated on `quality-checks.yml` through
+  `workflow_call`, and the closeout gate applying to any checkout that carries the wrapper rather
+  than to one repository name. Recorded that the cockpit bundle and its fingerprint sidecar left
+  version control (master decision OQ6) and are built at release. Corrected the falsified claims
+  in place: the Source-quality feature row, the dashboard-sync feature row (split into an asset-sync
+  row and a release-build row), the wrapper-enforcement paragraph, the Dashboard Serving Layer
+  paragraph, the `--check` parity statements in the FEUI-MX-FIX-2 / HFX2-L16 / HFX2-L17 summaries,
+  the `.gitattributes` hot-path note (now an inert rule over an untracked path), and the
+  pre-commit citation row. Verification metadata remains pinned until closeout.
   enforcement-first leaf. Recorded the enforcement topology as the durable home for the
   pathRules-disabled hooks and workflows: the shared `.githooks/_gate.sh` in a fast staged-content
   tier and a full pre-push tier, CI on every branch and pull request with the frontend rail
@@ -1565,13 +2841,53 @@ The following entries are the original development narrative, preserved for prov
   document parse reuse. Detailed ownership remains in the MCP, observer, serving/conversation,
   and dashboard route overviews. Verification metadata remains pinned until closeout.
 
+
+  onboarding spine for the active-projector package split, runtime-probed bounded Codex history,
+  child-local failure containment, explicit projection-domain invalidation, and per-file task
+  document parse reuse. Detailed ownership remains in the MCP, observer, serving/conversation,
+  and dashboard route overviews. Verification metadata remains pinned until closeout.
+
+  onboarding spine for the active-projector package split, runtime-probed bounded Codex history,
+  child-local failure containment, explicit projection-domain invalidation, and per-file task
+  document parse reuse. Detailed ownership remains in the MCP, observer, serving/conversation,
+  and dashboard route overviews. Verification metadata remains pinned until closeout.
+  onboarding spine for the active-projector package split, runtime-probed bounded Codex history,
+  child-local failure containment, explicit projection-domain invalidation, and per-file task
+  document parse reuse. Detailed ownership remains in the MCP, observer, serving/conversation,
+  and dashboard route overviews. Verification metadata remains pinned until closeout.
+
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   recorded the mandatory default CRAP threshold and four enforcement seams,
   corrected closeout ordering to quality-before-mutation, and documented the
   pathRules boundary for disabled generated/public surfaces. Verification metadata
   and entity fingerprints remain pre-commit.
 
+
+  recorded the mandatory default CRAP threshold and four enforcement seams,
+  corrected closeout ordering to quality-before-mutation, and documented the
+  pathRules boundary for disabled generated/public surfaces. Verification metadata
+  and entity fingerprints remain pre-commit.
+
+  recorded the mandatory default CRAP threshold and four enforcement seams,
+  corrected closeout ordering to quality-before-mutation, and documented the
+  pathRules boundary for disabled generated/public surfaces. Verification metadata
+  and entity fingerprints remain pre-commit.
+  recorded the mandatory default CRAP threshold and four enforcement seams,
+  corrected closeout ordering to quality-before-mutation, and documented the
+  pathRules boundary for disabled generated/public surfaces. Verification metadata
+  and entity fingerprints remain pre-commit.
+
 - 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: refreshed the root behavioral inventory for the combined frontend/backend interactive-session delta. Verification metadata remains pre-commit.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-07-21T12:00+02:00 — No route impact: reviewed 260718-CHATS-L5P (cockpit chrome visual polish,
   PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer
@@ -1582,6 +2898,33 @@ The following entries are the original development narrative, preserved for prov
   `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
   `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
   Verification metadata unchanged.
+
+  PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer
+  visual-findings file + the FB7 terminal-identity directive against the composed app (the terminal well
+  + gutter grammar, the responsive rail-row grammar, collapse-or-explain chrome, humanized durations, and
+  the load-bearing `@webtui/css` `word-break: break-all` root-override lesson). No repo-level feature
+  inventory changed — detail routes to the `dashboard/src/`, `dashboard/src/panels/`, `.../session-cockpit/`,
+  `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
+  `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
+  Verification metadata unchanged.
+
+  PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer
+  visual-findings file + the FB7 terminal-identity directive against the composed app (the terminal well
+  + gutter grammar, the responsive rail-row grammar, collapse-or-explain chrome, humanized durations, and
+  the load-bearing `@webtui/css` `word-break: break-all` root-override lesson). No repo-level feature
+  inventory changed — detail routes to the `dashboard/src/`, `dashboard/src/panels/`, `.../session-cockpit/`,
+  `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
+  `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
+  Verification metadata unchanged.
+  PASS-WITH-NOTES) against the repo body. Dashboard-only, zero backend edits: it closes the developer
+  visual-findings file + the FB7 terminal-identity directive against the composed app (the terminal well
+  + gutter grammar, the responsive rail-row grammar, collapse-or-explain chrome, humanized durations, and
+  the load-bearing `@webtui/css` `word-break: break-all` root-override lesson). No repo-level feature
+  inventory changed — detail routes to the `dashboard/src/`, `dashboard/src/panels/`, `.../session-cockpit/`,
+  `.../session-cockpit/conversation/`, and `dashboard/src/data/conversation/` governors; the regenerated
+  `package_data/dashboard/` bundle is shipped output under the `mcp/` overview's sync mechanism.
+  Verification metadata unchanged.
+
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the CHATS-L1 narrative's now-false
   "claude `unverified` at the installed-vs-locked version mismatch" to the never-probed contract reason
   — 260718-CHATS-L5F R4 (developer ruling 2026-07-21) removed all capability version gating (THE
@@ -1590,6 +2933,30 @@ The following entries are the original development narrative, preserved for prov
   R6 exit-note + metrics timeout, R7 durable `dashboard/e2e-chats/` suite) are detailed in the `serving/`,
   `serving/conversation/*`, `mcp/`, `mcp/tests/`, and `dashboard/` overviews. Verification stays pinned
   until L5F closeout stamps the candidate commit.
+
+  "claude `unverified` at the installed-vs-locked version mismatch" to the never-probed contract reason
+  — 260718-CHATS-L5F R4 (developer ruling 2026-07-21) removed all capability version gating (THE
+  CONTRACT IS THE ONLY GATE). The half-time functional fixes (R1 codex notification identity, R2 claude
+  acceptance, R3 claude 2.1.216 frame contracts, R4 version-gate removal, R5 per-session bounds/release,
+  R6 exit-note + metrics timeout, R7 durable `dashboard/e2e-chats/` suite) are detailed in the `serving/`,
+  `serving/conversation/*`, `mcp/`, `mcp/tests/`, and `dashboard/` overviews. Verification stays pinned
+  until L5F closeout stamps the candidate commit.
+
+  "claude `unverified` at the installed-vs-locked version mismatch" to the never-probed contract reason
+  — 260718-CHATS-L5F R4 (developer ruling 2026-07-21) removed all capability version gating (THE
+  CONTRACT IS THE ONLY GATE). The half-time functional fixes (R1 codex notification identity, R2 claude
+  acceptance, R3 claude 2.1.216 frame contracts, R4 version-gate removal, R5 per-session bounds/release,
+  R6 exit-note + metrics timeout, R7 durable `dashboard/e2e-chats/` suite) are detailed in the `serving/`,
+  `serving/conversation/*`, `mcp/`, `mcp/tests/`, and `dashboard/` overviews. Verification stays pinned
+  until L5F closeout stamps the candidate commit.
+  "claude `unverified` at the installed-vs-locked version mismatch" to the never-probed contract reason
+  — 260718-CHATS-L5F R4 (developer ruling 2026-07-21) removed all capability version gating (THE
+  CONTRACT IS THE ONLY GATE). The half-time functional fixes (R1 codex notification identity, R2 claude
+  acceptance, R3 claude 2.1.216 frame contracts, R4 version-gate removal, R5 per-session bounds/release,
+  R6 exit-note + metrics timeout, R7 durable `dashboard/e2e-chats/` suite) are detailed in the `serving/`,
+  `serving/conversation/*`, `mcp/`, `mcp/tests/`, and `dashboard/` overviews. Verification stays pinned
+  until L5F closeout stamps the candidate commit.
+
 - 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E gate plus
   bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
   projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
@@ -1601,6 +2968,39 @@ The following entries are the original development narrative, preserved for prov
   Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
   IPC-flake investigation, and the R5.1 ≥12-session real-browser residual. Verification metadata
   unchanged.
+
+  bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
+  projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
+  new/extended regression suites incl. the installed F1 real-wire regression and the 10k renderer
+  tripwire) against the repo body. No repo-level feature inventory changed — L5 hardens the
+  already-landed structured Chats surfaces against their proven production faults rather than
+  adding a product surface; detail routes to the `serving/`, `conversation/`, `conversation/active/`,
+  `conversation/projectors/`, `mcp/tests/`, and `dashboard/…/session-cockpit/conversation/` governors.
+  Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
+  IPC-flake investigation, and the R5.1 ≥12-session real-browser residual. Verification metadata
+  unchanged.
+
+  bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
+  projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
+  new/extended regression suites incl. the installed F1 real-wire regression and the 10k renderer
+  tripwire) against the repo body. No repo-level feature inventory changed — L5 hardens the
+  already-landed structured Chats surfaces against their proven production faults rather than
+  adding a product surface; detail routes to the `serving/`, `conversation/`, `conversation/active/`,
+  `conversation/projectors/`, `mcp/tests/`, and `dashboard/…/session-cockpit/conversation/` governors.
+  Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
+  IPC-flake investigation, and the R5.1 ≥12-session real-browser residual. Verification metadata
+  unchanged.
+  bounded hardening (the terminal-liveness per-row synchronizer quarantine, the conversation
+  projection-store input-authority pin, the projector's disjoint-id-namespace twin suppression, and
+  new/extended regression suites incl. the installed F1 real-wire regression and the 10k renderer
+  tripwire) against the repo body. No repo-level feature inventory changed — L5 hardens the
+  already-landed structured Chats surfaces against their proven production faults rather than
+  adding a product surface; detail routes to the `serving/`, `conversation/`, `conversation/active/`,
+  `conversation/projectors/`, `mcp/tests/`, and `dashboard/…/session-cockpit/conversation/` governors.
+  Master-exit carries recorded by the reviewer: the F3 completion-correlation disposition, the L3.7
+  IPC-flake investigation, and the R5.1 ≥12-session real-browser residual. Verification metadata
+  unchanged.
+
 - 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: added the ancestor-routing narrative paragraph
   for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
   260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log
@@ -1612,6 +3012,39 @@ The following entries are the original development narrative, preserved for prov
   the L5-Facing Register). No backend/MCP source changed — the `package_data/dashboard/` bundle is
   regenerated output. Verification metadata stays pinned to the L3 tip (`0be0099`) until L4 closeout
   stamps the candidate commit.
+
+  for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
+  260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log
+  as the primary body; the structured `ConversationSurface` over two reconstructable browser
+  projections is the controlled default, the interrupt rides the WorkingLine `conversation.stop`
+  chord, and the read-only PTY is a default-off diagnostics drawer. Detail routes to the new
+  `dashboard/src/data/{conversation,conversation-library}/` and
+  `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/` overviews (which carry
+  the L5-Facing Register). No backend/MCP source changed — the `package_data/dashboard/` bundle is
+  regenerated output. Verification metadata stays pinned to the L3 tip (`0be0099`) until L4 closeout
+  stamps the candidate commit.
+
+  for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
+  260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log
+  as the primary body; the structured `ConversationSurface` over two reconstructable browser
+  projections is the controlled default, the interrupt rides the WorkingLine `conversation.stop`
+  chord, and the read-only PTY is a default-off diagnostics drawer. Detail routes to the new
+  `dashboard/src/data/{conversation,conversation-library}/` and
+  `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/` overviews (which carry
+  the L5-Facing Register). No backend/MCP source changed — the `package_data/dashboard/` bundle is
+  regenerated output. Verification metadata stays pinned to the L3 tip (`0be0099`) until L4 closeout
+  stamps the candidate commit.
+  for the landed structured Chats renderer (reviewer FINAL PASS, 26/26 closed) and amended the stale
+  260715-FEUI-L8 feature-inventory clause — controlled sessions no longer expose the runner line-log
+  as the primary body; the structured `ConversationSurface` over two reconstructable browser
+  projections is the controlled default, the interrupt rides the WorkingLine `conversation.stop`
+  chord, and the read-only PTY is a default-off diagnostics drawer. Detail routes to the new
+  `dashboard/src/data/{conversation,conversation-library}/` and
+  `dashboard/src/panels/session-cockpit/{conversation,conversation-library}/` overviews (which carry
+  the L5-Facing Register). No backend/MCP source changed — the `package_data/dashboard/` bundle is
+  regenerated output. Verification metadata stays pinned to the L3 tip (`0be0099`) until L4 closeout
+  stamps the candidate commit.
+
 - 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: reviewed the root body against the leaf diff and
   added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
   routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,
@@ -1619,12 +3052,51 @@ The following entries are the original development narrative, preserved for prov
   the new `conversation/control/overview.md` and the `serving/`, `mcp/`, and `mcp/tests/` governors,
   and no feature-inventory surface changed. Verification metadata stays pinned until L3 closeout
   stamps the candidate commit.
+
+  added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
+  routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,
+  read-only policy, evidence-bound telemetry — over the closed L2E/L3E substrate); detail routes to
+  the new `conversation/control/overview.md` and the `serving/`, `mcp/`, and `mcp/tests/` governors,
+  and no feature-inventory surface changed. Verification metadata stays pinned until L3 closeout
+  stamps the candidate commit.
+
+  added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
+  routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,
+  read-only policy, evidence-bound telemetry — over the closed L2E/L3E substrate); detail routes to
+  the new `conversation/control/overview.md` and the `serving/`, `mcp/`, and `mcp/tests/` governors,
+  and no feature-inventory surface changed. Verification metadata stays pinned until L3 closeout
+  stamps the candidate commit.
+  added the ancestor-routing paragraph for the implemented authoritative control API (seventeen
+  routes — interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments,
+  read-only policy, evidence-bound telemetry — over the closed L2E/L3E substrate); detail routes to
+  the new `conversation/control/overview.md` and the `serving/`, `mcp/`, and `mcp/tests/` governors,
+  and no feature-inventory surface changed. Verification metadata stays pinned until L3 closeout
+  stamps the candidate commit.
+
 - 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: reviewed the root body against the leaf diff
   and added the ancestor-routing paragraph for the additive native control-plane substrate
   (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
   withdrawal recovery); detail routes to the `serving/`, `mcp/`, and `mcp/tests/` governors and no
   feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
   the candidate commit.
+
+  and added the ancestor-routing paragraph for the additive native control-plane substrate
+  (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
+  withdrawal recovery); detail routes to the `serving/`, `mcp/`, and `mcp/tests/` governors and no
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+
+  and added the ancestor-routing paragraph for the additive native control-plane substrate
+  (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
+  withdrawal recovery); detail routes to the `serving/`, `mcp/`, and `mcp/tests/` governors and no
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+  and added the ancestor-routing paragraph for the additive native control-plane substrate
+  (interrupt write, paged never-bodies timeline, digest-verified asset channel, once-only
+  withdrawal recovery); detail routes to the `serving/`, `mcp/`, and `mcp/tests/` governors and no
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+
 - 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
   ancestor routing with the L1 active-serving routing after the master memory branch advanced;
   both implemented slices are routed at repository level — detail to the `serving/`,
@@ -1632,6 +3104,27 @@ The following entries are the original development narrative, preserved for prov
   `native_helpers/conversation_library/`, `mcp/`, and `mcp/tests/` governors. No
   feature-inventory surface changed. Verification metadata remains pinned until L1 closeout
   stamps the candidate commit.
+
+  ancestor routing with the L1 active-serving routing after the master memory branch advanced;
+  both implemented slices are routed at repository level — detail to the `serving/`,
+  `conversation/`, `conversation/active/`, `conversation/projectors/`, `conversation/library/`,
+  `native_helpers/conversation_library/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until L1 closeout
+  stamps the candidate commit.
+
+  ancestor routing with the L1 active-serving routing after the master memory branch advanced;
+  both implemented slices are routed at repository level — detail to the `serving/`,
+  `conversation/`, `conversation/active/`, `conversation/projectors/`, `conversation/library/`,
+  `native_helpers/conversation_library/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until L1 closeout
+  stamps the candidate commit.
+  ancestor routing with the L1 active-serving routing after the master memory branch advanced;
+  both implemented slices are routed at repository level — detail to the `serving/`,
+  `conversation/`, `conversation/active/`, `conversation/projectors/`, `conversation/library/`,
+  `native_helpers/conversation_library/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until L1 closeout
+  stamps the candidate commit.
+
 - 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the implemented active conversation
   serving — the two authorized routes, signed cursor authority, bounded projectors over native
@@ -1640,6 +3133,30 @@ The following entries are the original development narrative, preserved for prov
   `conversation/active/`, `conversation/projectors/`, `mcp/`, and `mcp/tests/` governors. No
   feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
   the candidate commit.
+
+  and added the repository-level ancestor routing for the implemented active conversation
+  serving — the two authorized routes, signed cursor authority, bounded projectors over native
+  authority, the canonical status service single-sourcing Chats and orchestration, and the pure
+  per-harness mapper grammars — with detail routed to the `serving/`, `conversation/`,
+  `conversation/active/`, `conversation/projectors/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+
+  and added the repository-level ancestor routing for the implemented active conversation
+  serving — the two authorized routes, signed cursor authority, bounded projectors over native
+  authority, the canonical status service single-sourcing Chats and orchestration, and the pure
+  per-harness mapper grammars — with detail routed to the `serving/`, `conversation/`,
+  `conversation/active/`, `conversation/projectors/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+  and added the repository-level ancestor routing for the implemented active conversation
+  serving — the two authorized routes, signed cursor authority, bounded projectors over native
+  authority, the canonical status service single-sourcing Chats and orchestration, and the pure
+  per-harness mapper grammars — with detail routed to the `serving/`, `conversation/`,
+  `conversation/active/`, `conversation/projectors/`, `mcp/`, and `mcp/tests/` governors. No
+  feature-inventory surface changed. Verification metadata remains pinned until closeout stamps
+  the candidate commit.
+
 - 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the implemented native conversation
   library — authorized list/read routes, live capability gates, the per-app signed token
@@ -1647,25 +3164,110 @@ The following entries are the original development narrative, preserved for prov
   `serving/`, `conversation/`, `conversation/library/`, `native_helpers/conversation_library/`,
   `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
   remains pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the implemented native conversation
+  library — authorized list/read routes, live capability gates, the per-app signed token
+  authority, and the idempotent exact open with honest retirement — with detail routed to the
+  `serving/`, `conversation/`, `conversation/library/`, `native_helpers/conversation_library/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the implemented native conversation
+  library — authorized list/read routes, live capability gates, the per-app signed token
+  authority, and the idempotent exact open with honest retirement — with detail routed to the
+  `serving/`, `conversation/`, `conversation/library/`, `native_helpers/conversation_library/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+  and added the repository-level ancestor routing for the implemented native conversation
+  library — authorized list/read routes, live capability gates, the per-app signed token
+  authority, and the idempotent exact open with honest retirement — with detail routed to the
+  `serving/`, `conversation/`, `conversation/library/`, `native_helpers/conversation_library/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the native evidence and resume substrate —
   reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped
   private-socket reads, and the codex-only resume channel — with detail routed to the `serving/`,
   `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
   remains pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the native evidence and resume substrate —
+  reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped
+  private-socket reads, and the codex-only resume channel — with detail routed to the `serving/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the native evidence and resume substrate —
+  reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped
+  private-socket reads, and the codex-only resume channel — with detail routed to the `serving/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+  and added the repository-level ancestor routing for the native evidence and resume substrate —
+  reserved-key evidence diversion with byte-identical projections, the three additive epoch-scoped
+  private-socket reads, and the codex-only resume channel — with detail routed to the `serving/`,
+  `mcp/`, and `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata
+  remains pinned until closeout stamps the candidate commit.
+
 - 2026-07-19T00:37+02:00 — 260718-CHATS-L0 curator: reviewed the root body against the leaf diff
   and added the repository-level ancestor routing for the conversation runtime composition repair
   — install-once immutable runtime plus server-resolved local-operator ruling under the existing
   harness-control registration, with detail routed to the `mcp/`, `serving/`, `conversation/`, and
   `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata remains
   pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the conversation runtime composition repair
+  — install-once immutable runtime plus server-resolved local-operator ruling under the existing
+  harness-control registration, with detail routed to the `mcp/`, `serving/`, `conversation/`, and
+  `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
+
+  and added the repository-level ancestor routing for the conversation runtime composition repair
+  — install-once immutable runtime plus server-resolved local-operator ruling under the existing
+  harness-control registration, with detail routed to the `mcp/`, `serving/`, `conversation/`, and
+  `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
+  and added the repository-level ancestor routing for the conversation runtime composition repair
+  — install-once immutable runtime plus server-resolved local-operator ruling under the existing
+  harness-control registration, with detail routed to the `mcp/`, `serving/`, `conversation/`, and
+  `mcp/tests/` governors. No feature-inventory surface changed. Verification metadata remains
+  pinned until closeout stamps the candidate commit.
+
 - 2026-07-18T21:05+02:00 — FEUI-MX-FIX-5 root route impact: documented Vite as the semantic
   generated-byte owner, raw sync as the byte-equality boundary, the rejection of generic EOL
   normalization, and the root attribute's direct shipped-JavaScript-only `blank-at-eol` exception.
   Recorded retained authored/near-miss whitespace checks plus two clean byte/fingerprint-identical
   build/sync passes; generated assets remain excluded from file-level onboarding.
+
+  generated-byte owner, raw sync as the byte-equality boundary, the rejection of generic EOL
+  normalization, and the root attribute's direct shipped-JavaScript-only `blank-at-eol` exception.
+  Recorded retained authored/near-miss whitespace checks plus two clean byte/fingerprint-identical
+  build/sync passes; generated assets remain excluded from file-level onboarding.
+
+  generated-byte owner, raw sync as the byte-equality boundary, the rejection of generic EOL
+  normalization, and the root attribute's direct shipped-JavaScript-only `blank-at-eol` exception.
+  Recorded retained authored/near-miss whitespace checks plus two clean byte/fingerprint-identical
+  build/sync passes; generated assets remain excluded from file-level onboarding.
+  generated-byte owner, raw sync as the byte-equality boundary, the rejection of generic EOL
+  normalization, and the root attribute's direct shipped-JavaScript-only `blank-at-eol` exception.
+  Recorded retained authored/near-miss whitespace checks plus two clean byte/fingerprint-identical
+  build/sync passes; generated assets remain excluded from file-level onboarding.
+
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4 route impact: route indexes now derive source identity and eligibility from one deterministic Git/path-rule census; callers pass resolved repository/storage authority explicitly, and official-memory carryover refuses missing or semantically empty write authority before mutation.
+
 - 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2 ancestor route repair: added the repository-level sole
+  browser open authority and zero-ghost accepted-row invariant, while retaining synchronized
+  package dashboard files as generated output rather than a second implementation source.
+  Verification metadata remains pinned pending candidate closeout.
+
+
+  browser open authority and zero-ghost accepted-row invariant, while retaining synchronized
+  package dashboard files as generated output rather than a second implementation source.
+  Verification metadata remains pinned pending candidate closeout.
+
+  browser open authority and zero-ghost accepted-row invariant, while retaining synchronized
+  package dashboard files as generated output rather than a second implementation source.
+  Verification metadata remains pinned pending candidate closeout.
   browser open authority and zero-ghost accepted-row invariant, while retaining synchronized
   package dashboard files as generated output rather than a second implementation source.
   Verification metadata remains pinned pending candidate closeout.
@@ -1676,21 +3278,84 @@ The following entries are the original development narrative, preserved for prov
   client behavior stays under `dashboard/src/`; server behavior and proof stay under
   `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard package data remains
   generated output rather than a competing source authority.
+
+  dashboard/serving routing boundary for browser build identity and recovery, pre-session harness
+  discovery, raw-event record handling, HTML revalidation, and tmux client identity. Detailed
+  client behavior stays under `dashboard/src/`; server behavior and proof stay under
+  `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard package data remains
+  generated output rather than a competing source authority.
+
+  dashboard/serving routing boundary for browser build identity and recovery, pre-session harness
+  discovery, raw-event record handling, HTML revalidation, and tmux client identity. Detailed
+  client behavior stays under `dashboard/src/`; server behavior and proof stay under
+  `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard package data remains
+  generated output rather than a competing source authority.
+  dashboard/serving routing boundary for browser build identity and recovery, pre-session harness
+  discovery, raw-event record handling, HTML revalidation, and tmux client identity. Detailed
+  client behavior stays under `dashboard/src/`; server behavior and proof stay under
+  `mcp/src/agents_remember/serving/` and `mcp/tests/`; synchronized dashboard package data remains
+  generated output rather than a competing source authority.
+
 - 2026-07-18T07:43+02:00 — 260715-FEUI-L8 route impact: added the repository-level canonical Chats
   cockpit feature and its root `dashboard/` test/config boundary. One Chats destination now owns the
   session cockpit, Operations remains default, RailChat remains contextual, and the toggleable inspector
   defaults closed. The expanded Playwright/performance configuration is a regression gate for that product
   contract; it does not fill the explicitly absent UA-1 structured transcript/history authority. Detailed
   component/data routing stays in the new strategic dashboard overviews and design evidence set.
+
+  cockpit feature and its root `dashboard/` test/config boundary. One Chats destination now owns the
+  session cockpit, Operations remains default, RailChat remains contextual, and the toggleable inspector
+  defaults closed. The expanded Playwright/performance configuration is a regression gate for that product
+  contract; it does not fill the explicitly absent UA-1 structured transcript/history authority. Detailed
+  component/data routing stays in the new strategic dashboard overviews and design evidence set.
+
+  cockpit feature and its root `dashboard/` test/config boundary. One Chats destination now owns the
+  session cockpit, Operations remains default, RailChat remains contextual, and the toggleable inspector
+  defaults closed. The expanded Playwright/performance configuration is a regression gate for that product
+  contract; it does not fill the explicitly absent UA-1 structured transcript/history authority. Detailed
+  component/data routing stays in the new strategic dashboard overviews and design evidence set.
+  cockpit feature and its root `dashboard/` test/config boundary. One Chats destination now owns the
+  session cockpit, Operations remains default, RailChat remains contextual, and the toggleable inspector
+  defaults closed. The expanded Playwright/performance configuration is a regression gate for that product
+  contract; it does not fill the explicitly absent UA-1 structured transcript/history authority. Detailed
+  component/data routing stays in the new strategic dashboard overviews and design evidence set.
+
 - 2026-07-18T00:08+02:00 — 260715-FEUI-L7 curator closeout delta: added the repository-level
   Sessions inspector/status integration inventory for stable-mounted accessible tabs, the complete
   post-removal evidence audit, separated exact-session capability authority, fleet-global pending
   Bus reply semantics and 100/101 virtualization boundary, and the honest contractual StatusLine.
   Detailed component routing remains in the `dashboard/src/panels/session-cockpit/` overview.
+
+  Sessions inspector/status integration inventory for stable-mounted accessible tabs, the complete
+  post-removal evidence audit, separated exact-session capability authority, fleet-global pending
+  Bus reply semantics and 100/101 virtualization boundary, and the honest contractual StatusLine.
+  Detailed component routing remains in the `dashboard/src/panels/session-cockpit/` overview.
+
+  Sessions inspector/status integration inventory for stable-mounted accessible tabs, the complete
+  post-removal evidence audit, separated exact-session capability authority, fleet-global pending
+  Bus reply semantics and 100/101 virtualization boundary, and the honest contractual StatusLine.
+  Detailed component routing remains in the `dashboard/src/panels/session-cockpit/` overview.
+  Sessions inspector/status integration inventory for stable-mounted accessible tabs, the complete
+  post-removal evidence audit, separated exact-session capability authority, fleet-global pending
+  Bus reply semantics and 100/101 virtualization boundary, and the honest contractual StatusLine.
+  Detailed component routing remains in the `dashboard/src/panels/session-cockpit/` overview.
+
 - 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: added the repository-level reliable submission
   feature, end-to-end hot path, and sole-authority invariant covering epoch/idempotency, guarded
   dispatch/withdrawal, full refs, raw-free bounded status, no-resend reconciliation, and revision-
   safe pop-back.
+
+  feature, end-to-end hot path, and sole-authority invariant covering epoch/idempotency, guarded
+  dispatch/withdrawal, full refs, raw-free bounded status, no-resend reconciliation, and revision-
+  safe pop-back.
+
+  feature, end-to-end hot path, and sole-authority invariant covering epoch/idempotency, guarded
+  dispatch/withdrawal, full refs, raw-free bounded status, no-resend reconciliation, and revision-
+  safe pop-back.
+  feature, end-to-end hot path, and sole-authority invariant covering epoch/idempotency, guarded
+  dispatch/withdrawal, full refs, raw-free bounded status, no-resend reconciliation, and revision-
+  safe pop-back.
+
 - 2026-07-17T08:33+02:00 — 260715-FEUI-L4 curator: added the repository inventory entry for
   exact-session model/effort controls, the five-state evidence/readback contract, serialized pair
   changes, shared worded outcomes, ledger/rail/toast attention, cycle-effort, and live regions.
@@ -1698,6 +3363,27 @@ The following entries are the original development narrative, preserved for prov
   preserved on the governing file cards. No MCP/package-data route was refreshed because the
   dashboard bundle was not synced. Verification metadata is pinned to the contract base until the
   code commit exists.
+
+  exact-session model/effort controls, the five-state evidence/readback contract, serialized pair
+  changes, shared worded outcomes, ledger/rail/toast attention, cycle-effort, and live regions.
+  Final reviewer verdict is PASS after three fix rounds; six nonblocking sev-4 observations remain
+  preserved on the governing file cards. No MCP/package-data route was refreshed because the
+  dashboard bundle was not synced. Verification metadata is pinned to the contract base until the
+  code commit exists.
+
+  exact-session model/effort controls, the five-state evidence/readback contract, serialized pair
+  changes, shared worded outcomes, ledger/rail/toast attention, cycle-effort, and live regions.
+  Final reviewer verdict is PASS after three fix rounds; six nonblocking sev-4 observations remain
+  preserved on the governing file cards. No MCP/package-data route was refreshed because the
+  dashboard bundle was not synced. Verification metadata is pinned to the contract base until the
+  code commit exists.
+  exact-session model/effort controls, the five-state evidence/readback contract, serialized pair
+  changes, shared worded outcomes, ledger/rail/toast attention, cycle-effort, and live regions.
+  Final reviewer verdict is PASS after three fix rounds; six nonblocking sev-4 observations remain
+  preserved on the governing file cards. No MCP/package-data route was refreshed because the
+  dashboard bundle was not synced. Verification metadata is pinned to the contract base until the
+  code commit exists.
+
 - 2026-07-17T06:35+02:00 — 260715-FEUI-L3 curator: refreshed the dashboard-frontend inventory row
   for the sessions cockpit's capability-catalog/launch-flow slice — the memory-only dynamic-only
   capability-envelope store with verbatim error honesty, the pure launch machines
@@ -1709,6 +3395,39 @@ The following entries are the original development narrative, preserved for prov
   otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
   overviews and the touched sidecars. Verification metadata remains pinned until closeout stamps
   the L3 code commit.
+
+  for the sessions cockpit's capability-catalog/launch-flow slice — the memory-only dynamic-only
+  capability-envelope store with verbatim error honesty, the pure launch machines
+  (both-knobs-or-neither selection, uniform fail-loud response paths), the launch-evidence tier
+  machine + five-glyph EvidenceBadge, the capability/open wire mirrors, the R3 contract fixture
+  pack + conformance suite, and the LaunchFlow/FailedLaunchBanner cockpit surfaces (review FINAL
+  PASS after two fix rounds; upstream ask: an operator retire actor identity for
+  provenance-recording retires). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Verification metadata remains pinned until closeout stamps
+  the L3 code commit.
+
+  for the sessions cockpit's capability-catalog/launch-flow slice — the memory-only dynamic-only
+  capability-envelope store with verbatim error honesty, the pure launch machines
+  (both-knobs-or-neither selection, uniform fail-loud response paths), the launch-evidence tier
+  machine + five-glyph EvidenceBadge, the capability/open wire mirrors, the R3 contract fixture
+  pack + conformance suite, and the LaunchFlow/FailedLaunchBanner cockpit surfaces (review FINAL
+  PASS after two fix rounds; upstream ask: an operator retire actor identity for
+  provenance-recording retires). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Verification metadata remains pinned until closeout stamps
+  the L3 code commit.
+  for the sessions cockpit's capability-catalog/launch-flow slice — the memory-only dynamic-only
+  capability-envelope store with verbatim error honesty, the pure launch machines
+  (both-knobs-or-neither selection, uniform fail-loud response paths), the launch-evidence tier
+  machine + five-glyph EvidenceBadge, the capability/open wire mirrors, the R3 contract fixture
+  pack + conformance suite, and the LaunchFlow/FailedLaunchBanner cockpit surfaces (review FINAL
+  PASS after two fix rounds; upstream ask: an operator retire actor identity for
+  provenance-recording retires). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Verification metadata remains pinned until closeout stamps
+  the L3 code commit.
+
 - 2026-07-17T04:20+02:00 — 260715-FEUI-L6 curator: extended the dashboard-frontend inventory row
   for the cockpit's PTY-stage/interaction/lifecycle slice — keep-alive real xterm panes with the
   measured DOM-renderer decision (webgl kept as a lazy escalation path; two xterm addons
@@ -1723,6 +3442,48 @@ The following entries are the original development narrative, preserved for prov
   gate-id-only projection surface for interactions on lifecycle-less seats, and an actor-seat
   path if an operator retire UI is ever required. Verification metadata remains pinned until
   closeout stamps the L6 code commit.
+
+  for the cockpit's PTY-stage/interaction/lifecycle slice — keep-alive real xterm panes with the
+  measured DOM-renderer decision (webgl kept as a lazy escalation path; two xterm addons
+  exact-pinned), the two server-truth pane archetypes with legacy-raw-only observe-only
+  harvesting, the gate-channel-only structured-interaction answer path, the WorkingLine turn
+  theater, honest terminate flows with verbatim failures and informational, never-dropped stop
+  residuals (retire stays agent-side; the cockpit renders it), and the accessibility layer
+  (screen-reader opt-in, always-named terminal landmarks) (review FINAL PASS; 1 sev-3 + 5 sev-4
+  all CLOSED in fix round 1). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Two upstream asks recorded for the developer: a
+  gate-id-only projection surface for interactions on lifecycle-less seats, and an actor-seat
+  path if an operator retire UI is ever required. Verification metadata remains pinned until
+  closeout stamps the L6 code commit.
+
+  for the cockpit's PTY-stage/interaction/lifecycle slice — keep-alive real xterm panes with the
+  measured DOM-renderer decision (webgl kept as a lazy escalation path; two xterm addons
+  exact-pinned), the two server-truth pane archetypes with legacy-raw-only observe-only
+  harvesting, the gate-channel-only structured-interaction answer path, the WorkingLine turn
+  theater, honest terminate flows with verbatim failures and informational, never-dropped stop
+  residuals (retire stays agent-side; the cockpit renders it), and the accessibility layer
+  (screen-reader opt-in, always-named terminal landmarks) (review FINAL PASS; 1 sev-3 + 5 sev-4
+  all CLOSED in fix round 1). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Two upstream asks recorded for the developer: a
+  gate-id-only projection surface for interactions on lifecycle-less seats, and an actor-seat
+  path if an operator retire UI is ever required. Verification metadata remains pinned until
+  closeout stamps the L6 code commit.
+  for the cockpit's PTY-stage/interaction/lifecycle slice — keep-alive real xterm panes with the
+  measured DOM-renderer decision (webgl kept as a lazy escalation path; two xterm addons
+  exact-pinned), the two server-truth pane archetypes with legacy-raw-only observe-only
+  harvesting, the gate-channel-only structured-interaction answer path, the WorkingLine turn
+  theater, honest terminate flows with verbatim failures and informational, never-dropped stop
+  residuals (retire stays agent-side; the cockpit renders it), and the accessibility layer
+  (screen-reader opt-in, always-named terminal landmarks) (review FINAL PASS; 1 sev-3 + 5 sev-4
+  all CLOSED in fix round 1). Repo-level routing, feature surfaces, and architecture are
+  otherwise unchanged by this frontend-only leaf; detail lives in the `dashboard/src/` route
+  overviews and the touched sidecars. Two upstream asks recorded for the developer: a
+  gate-id-only projection surface for interactions on lifecycle-less seats, and an actor-seat
+  path if an operator retire UI is ever required. Verification metadata remains pinned until
+  closeout stamps the L6 code commit.
+
 - 2026-07-17T02:30+02:00 — 260715-FEUI-L2 curator: refreshed the dashboard-frontend inventory row
   for the sessions cockpit's data-layer/rail/stage slice — the hoisted shared catalog poll driver,
   the gated seat-event pre-apply layer over the existing events channel, the full catalog wire
@@ -1732,6 +3493,33 @@ The following entries are the original development narrative, preserved for prov
   architecture are otherwise unchanged by this frontend-only leaf; detail lives in the
   `dashboard/src/` route overviews and the touched sidecars. Verification metadata remains pinned
   until closeout stamps the L2 code commit.
+
+  for the sessions cockpit's data-layer/rail/stage slice — the hoisted shared catalog poll driver,
+  the gated seat-event pre-apply layer over the existing events channel, the full catalog wire
+  mirror, the honesty-invariant cockpit client store, the single seat-state dot grammar with the
+  ruled 2.4 s pulse, and the ruled role-driven rail + stage HeaderStrip/inspector card (review
+  FINAL PASS; one open sev-3 chip-vocabulary ruling). Repo-level routing, feature surfaces, and
+  architecture are otherwise unchanged by this frontend-only leaf; detail lives in the
+  `dashboard/src/` route overviews and the touched sidecars. Verification metadata remains pinned
+  until closeout stamps the L2 code commit.
+
+  for the sessions cockpit's data-layer/rail/stage slice — the hoisted shared catalog poll driver,
+  the gated seat-event pre-apply layer over the existing events channel, the full catalog wire
+  mirror, the honesty-invariant cockpit client store, the single seat-state dot grammar with the
+  ruled 2.4 s pulse, and the ruled role-driven rail + stage HeaderStrip/inspector card (review
+  FINAL PASS; one open sev-3 chip-vocabulary ruling). Repo-level routing, feature surfaces, and
+  architecture are otherwise unchanged by this frontend-only leaf; detail lives in the
+  `dashboard/src/` route overviews and the touched sidecars. Verification metadata remains pinned
+  until closeout stamps the L2 code commit.
+  for the sessions cockpit's data-layer/rail/stage slice — the hoisted shared catalog poll driver,
+  the gated seat-event pre-apply layer over the existing events channel, the full catalog wire
+  mirror, the honesty-invariant cockpit client store, the single seat-state dot grammar with the
+  ruled 2.4 s pulse, and the ruled role-driven rail + stage HeaderStrip/inspector card (review
+  FINAL PASS; one open sev-3 chip-vocabulary ruling). Repo-level routing, feature surfaces, and
+  architecture are otherwise unchanged by this frontend-only leaf; detail lives in the
+  `dashboard/src/` route overviews and the touched sidecars. Verification metadata remains pinned
+  until closeout stamps the L2 code commit.
+
 - 2026-07-17T00:45+02:00 — 260715-FEUI-L1 curator: refreshed the dashboard-frontend inventory row
   for the sessions-cockpit view slice — the keep-alive full-bleed Sessions view
   (`panels/session-cockpit/`), the pure keyboard/command/layout data modules
@@ -1740,43 +3528,174 @@ The following entries are the original development narrative, preserved for prov
   routing, feature surfaces, and architecture are otherwise unchanged by this frontend-only leaf;
   detail lives in the `dashboard/src/` route overviews and the touched sidecars. Verification
   metadata remains pinned until closeout stamps the L1 code commit.
+
+  for the sessions-cockpit view slice — the keep-alive full-bleed Sessions view
+  (`panels/session-cockpit/`), the pure keyboard/command/layout data modules
+  (`data/keymap/`, `data/commands.ts`, `data/sessionLayout.ts`), and the adopted scoped WebTUI skin
+  (`styles/webtui.css`, the `webtui` cascade layer, exact pins, spike assertions). Repo-level
+  routing, feature surfaces, and architecture are otherwise unchanged by this frontend-only leaf;
+  detail lives in the `dashboard/src/` route overviews and the touched sidecars. Verification
+  metadata remains pinned until closeout stamps the L1 code commit.
+
+  for the sessions-cockpit view slice — the keep-alive full-bleed Sessions view
+  (`panels/session-cockpit/`), the pure keyboard/command/layout data modules
+  (`data/keymap/`, `data/commands.ts`, `data/sessionLayout.ts`), and the adopted scoped WebTUI skin
+  (`styles/webtui.css`, the `webtui` cascade layer, exact pins, spike assertions). Repo-level
+  routing, feature surfaces, and architecture are otherwise unchanged by this frontend-only leaf;
+  detail lives in the `dashboard/src/` route overviews and the touched sidecars. Verification
+  metadata remains pinned until closeout stamps the L1 code commit.
+  for the sessions-cockpit view slice — the keep-alive full-bleed Sessions view
+  (`panels/session-cockpit/`), the pure keyboard/command/layout data modules
+  (`data/keymap/`, `data/commands.ts`, `data/sessionLayout.ts`), and the adopted scoped WebTUI skin
+  (`styles/webtui.css`, the `webtui` cascade layer, exact pins, spike assertions). Repo-level
+  routing, feature surfaces, and architecture are otherwise unchanged by this frontend-only leaf;
+  detail lives in the `dashboard/src/` route overviews and the touched sidecars. Verification
+  metadata remains pinned until closeout stamps the L1 code commit.
+
 - 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: added the frozen daemon capability/control
   boundary, bounded install-aware advertise cache with failed-refresh quarantine, complete-pair
   launch carriage, truthful live reopen, exact-session set/submit/reconcile, first-byte ambiguity,
   idempotent request correlation, raw-free public responses, and liveness-first status ordering.
   Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus. Verification
   metadata remains pinned until closeout stamps the L4 code commit.
+
+  boundary, bounded install-aware advertise cache with failed-refresh quarantine, complete-pair
+  launch carriage, truthful live reopen, exact-session set/submit/reconcile, first-byte ambiguity,
+  idempotent request correlation, raw-free public responses, and liveness-first status ordering.
+  Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus. Verification
+  metadata remains pinned until closeout stamps the L4 code commit.
+
+  boundary, bounded install-aware advertise cache with failed-refresh quarantine, complete-pair
+  launch carriage, truthful live reopen, exact-session set/submit/reconcile, first-byte ambiguity,
+  idempotent request correlation, raw-free public responses, and liveness-first status ordering.
+  Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus. Verification
+  metadata remains pinned until closeout stamps the L4 code commit.
+  boundary, bounded install-aware advertise cache with failed-refresh quarantine, complete-pair
+  launch carriage, truthful live reopen, exact-session set/submit/reconcile, first-byte ambiguity,
+  idempotent request correlation, raw-free public responses, and liveness-first status ordering.
+  Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus. Verification
+  metadata remains pinned until closeout stamps the L4 code commit.
+
 - 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: completed the root own-adapter capability
   contract with queue-ordered same-session setters, exact five-value `SetResult` truth, truthful
   Claude/Codex/Pi acceptance semantics, the no-paste boundary, and the current dynamic Fable
   correction. Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus;
   daemon capability/request exposure remains L4. Verification metadata remains pinned until
   closeout stamps the L3 code commit.
+
+  contract with queue-ordered same-session setters, exact five-value `SetResult` truth, truthful
+  Claude/Codex/Pi acceptance semantics, the no-paste boundary, and the current dynamic Fable
+  correction. Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus;
+  daemon capability/request exposure remains L4. Verification metadata remains pinned until
+  closeout stamps the L3 code commit.
+
+  contract with queue-ordered same-session setters, exact five-value `SetResult` truth, truthful
+  Claude/Codex/Pi acceptance semantics, the no-paste boundary, and the current dynamic Fable
+  correction. Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus;
+  daemon capability/request exposure remains L4. Verification metadata remains pinned until
+  closeout stamps the L3 code commit.
+  contract with queue-ordered same-session setters, exact five-value `SetResult` truth, truthful
+  Claude/Codex/Pi acceptance semantics, the no-paste boundary, and the current dynamic Fable
+  correction. Preserved settings-owned role spawn and the durable inter-agent inbox/brief bus;
+  daemon capability/request exposure remains L4. Verification metadata remains pinned until
+  closeout stamps the L3 code commit.
+
 - 2026-07-15T23:31+02:00 — 260714-ACPUI-L2 closeout-preview delta: refreshed the root dispatch
   feature and hot path for complete settings-owned role selection, dynamic model-local catalogs,
   native Claude/Codex/Pi launch channels, honest failed/rejected evidence, and the preserved durable
   inbox/brief bus. Removed the superseded claim that normalized model/effort is session-command
   injection; L3 mutation and L4 daemon exposure remain future boundaries.
+
+  feature and hot path for complete settings-owned role selection, dynamic model-local catalogs,
+  native Claude/Codex/Pi launch channels, honest failed/rejected evidence, and the preserved durable
+  inbox/brief bus. Removed the superseded claim that normalized model/effort is session-command
+  injection; L3 mutation and L4 daemon exposure remain future boundaries.
+
+  feature and hot path for complete settings-owned role selection, dynamic model-local catalogs,
+  native Claude/Codex/Pi launch channels, honest failed/rejected evidence, and the preserved durable
+  inbox/brief bus. Removed the superseded claim that normalized model/effort is session-command
+  injection; L3 mutation and L4 daemon exposure remain future boundaries.
+  feature and hot path for complete settings-owned role selection, dynamic model-local catalogs,
+  native Claude/Codex/Pi launch channels, honest failed/rejected evidence, and the preserved durable
+  inbox/brief bus. Removed the superseded claim that normalized model/effort is session-command
+  injection; L3 mutation and L4 daemon exposure remain future boundaries.
+
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the root route body for the
   negotiated harness contract, bounded rolling inbox compatibility, and deferred R10 boundary.
+
+  negotiated harness contract, bounded rolling inbox compatibility, and deferred R10 boundary.
+
+  negotiated harness contract, bounded rolling inbox compatibility, and deferred R10 boundary.
+  negotiated harness contract, bounded rolling inbox compatibility, and deferred R10 boundary.
+
 - 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
+
 - 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: recorded the repository-level routing impact of
   the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
   route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
 
+
+  the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
+  route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
+
+  the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
+  route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
+  the new unregistered Pi RPC protocol slice; detailed behavior remains in the serving and tests
+  route overviews and nine file sidecars. Verification metadata remains pinned until closeout.
+
 - 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset and dashboard reader refinements are fully documented in their existing child routes; the repository-level onboarding route model is unchanged. Verification metadata remains pinned until closeout.
+
 - 2026-07-12T12:28+02:00 — 260712-TRH-L1 root route impact: documented body-first complete task
+  hydration, delayed ancillary reader requests, honest loading/fallback state, revision caching, and
+  the unchanged source-to-package dashboard boundary. The public release pin advances to rc5.
+
+
+  hydration, delayed ancillary reader requests, honest loading/fallback state, revision caching, and
+  the unchanged source-to-package dashboard boundary. The public release pin advances to rc5.
+
+  hydration, delayed ancillary reader requests, honest loading/fallback state, revision caching, and
+  the unchanged source-to-package dashboard boundary. The public release pin advances to rc5.
   hydration, delayed ancillary reader requests, honest loading/fallback state, revision caching, and
   the unchanged source-to-package dashboard boundary. The public release pin advances to rc5.
 
 - 2026-07-10T22:18+02:00 — 260707-HFX2-L20 root route impact: recorded monotonic consumed inbox
   state across concurrent hosted delivery; public communication surfaces remain unchanged.
 
+
+  state across concurrent hosted delivery; public communication surfaces remain unchanged.
+
+  state across concurrent hosted delivery; public communication surfaces remain unchanged.
+  state across concurrent hosted delivery; public communication surfaces remain unchanged.
+
 - 2026-07-10T21:59+02:00 — 260707-HFX2-L21 root route impact: recorded the adjustable Chats
   sidebar on the existing Dashboard frontend surface. The change is frontend-local; the MCP route
   only receives the verified generated bundle and fingerprint.
 
+
+  sidebar on the existing Dashboard frontend surface. The change is frontend-local; the MCP route
+  only receives the verified generated bundle and fingerprint.
+
+  sidebar on the existing Dashboard frontend surface. The change is frontend-local; the MCP route
+  only receives the verified generated bundle and fingerprint.
+  sidebar on the existing Dashboard frontend surface. The change is frontend-local; the MCP route
+  only receives the verified generated bundle and fingerprint.
+
 - 2026-07-10T15:07+02:00 — 260707-HFX2-L17 root route impact: documented current
+  `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit
+  hand-opened role claim, and the source/build/serve package boundary. Clarified that per-role
+  one-leaf/one-session lifecycle prose is role-local, not global uniqueness. Verification metadata
+  remains pinned until closeout stamps L17.
+
+
+  `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit
+  hand-opened role claim, and the source/build/serve package boundary. Clarified that per-role
+  one-leaf/one-session lifecycle prose is role-local, not global uniqueness. Verification metadata
+  remains pinned until closeout stamps L17.
+
+  `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit
+  hand-opened role claim, and the source/build/serve package boundary. Clarified that per-role
+  one-leaf/one-session lifecycle prose is role-local, not global uniqueness. Verification metadata
+  remains pinned until closeout stamps L17.
   `(leafKey, seatRole)` identity, provenance/binding separation, multi-role coexistence, explicit
   hand-opened role claim, and the source/build/serve package boundary. Clarified that per-role
   one-leaf/one-session lifecycle prose is role-local, not global uniqueness. Verification metadata
@@ -1787,7 +3706,31 @@ The following entries are the original development narrative, preserved for prov
   generated dashboard asset route stays excluded from file-level onboarding; sync/static boundary
   docs carry the release-significant evidence. Verification metadata stays pinned until closeout.
 
+
+  honest task-reader fallback/single-step behavior, and final L15+L16 source-to-package proof. The
+  generated dashboard asset route stays excluded from file-level onboarding; sync/static boundary
+  docs carry the release-significant evidence. Verification metadata stays pinned until closeout.
+
+  honest task-reader fallback/single-step behavior, and final L15+L16 source-to-package proof. The
+  generated dashboard asset route stays excluded from file-level onboarding; sync/static boundary
+  docs carry the release-significant evidence. Verification metadata stays pinned until closeout.
+  honest task-reader fallback/single-step behavior, and final L15+L16 source-to-package proof. The
+  generated dashboard asset route stays excluded from file-level onboarding; sync/static boundary
+  docs carry the release-significant evidence. Verification metadata stays pinned until closeout.
+
 - 2026-07-10T13:03+02:00 — 260707-HFX2-L15 root route impact: added the log-backed dispatch,
+  duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row
+  supervisor redelivery contract. Verification metadata remains pinned until closeout stamps the
+  eventual L15 code commit.
+
+
+  duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row
+  supervisor redelivery contract. Verification metadata remains pinned until closeout stamps the
+  eventual L15 code commit.
+
+  duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row
+  supervisor redelivery contract. Verification metadata remains pinned until closeout stamps the
+  eventual L15 code commit.
   duplicate-safe retry, settings-pinned knob provenance, replacement-leaf chain credit, and one-row
   supervisor redelivery contract. Verification metadata remains pinned until closeout stamps the
   eventual L15 code commit.
@@ -1799,7 +3742,43 @@ The following entries are the original development narrative, preserved for prov
   boundaries explicit. Verification metadata remains pinned until closeout stamps the eventual
   two-parent code commit.
 
+
+  root hot-path summary, and harness-starter description with the free-chat launcher,
+  developer-approved strategist pass plus sanctioned-skip authoring, architect terminal custody,
+  and dependency-graph parallel-by-default rule. Kept canonical and excluded generated mirror
+  boundaries explicit. Verification metadata remains pinned until closeout stamps the eventual
+  two-parent code commit.
+
+  root hot-path summary, and harness-starter description with the free-chat launcher,
+  developer-approved strategist pass plus sanctioned-skip authoring, architect terminal custody,
+  and dependency-graph parallel-by-default rule. Kept canonical and excluded generated mirror
+  boundaries explicit. Verification metadata remains pinned until closeout stamps the eventual
+  two-parent code commit.
+  root hot-path summary, and harness-starter description with the free-chat launcher,
+  developer-approved strategist pass plus sanctioned-skip authoring, architect terminal custody,
+  and dependency-graph parallel-by-default rule. Kept canonical and excluded generated mirror
+  boundaries explicit. Verification metadata remains pinned until closeout stamps the eventual
+  two-parent code commit.
+
 - 2026-07-10T01:27+02:00 — 260707-HFX2-L13 closeout-follow-up root route impact: replaced the
+  former future-residual routing note with current end-to-end L13 behavior across MCP observer,
+  serving, control-plane, tests, and dashboard routes. Recorded live virtual-cursor compaction,
+  heartbeat coalescing/reclamation, bounded task summaries plus on-demand bodies, manager-first wake,
+  chain-aware suppression, and rung pacing; preserved S1 as HFX2-L14 S7 and the separate HFX3 retro
+  gate. Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
+
+
+  former future-residual routing note with current end-to-end L13 behavior across MCP observer,
+  serving, control-plane, tests, and dashboard routes. Recorded live virtual-cursor compaction,
+  heartbeat coalescing/reclamation, bounded task summaries plus on-demand bodies, manager-first wake,
+  chain-aware suppression, and rung pacing; preserved S1 as HFX2-L14 S7 and the separate HFX3 retro
+  gate. Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
+
+  former future-residual routing note with current end-to-end L13 behavior across MCP observer,
+  serving, control-plane, tests, and dashboard routes. Recorded live virtual-cursor compaction,
+  heartbeat coalescing/reclamation, bounded task summaries plus on-demand bodies, manager-first wake,
+  chain-aware suppression, and rung pacing; preserved S1 as HFX2-L14 S7 and the separate HFX3 retro
+  gate. Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
   former future-residual routing note with current end-to-end L13 behavior across MCP observer,
   serving, control-plane, tests, and dashboard routes. Recorded live virtual-cursor compaction,
   heartbeat coalescing/reclamation, bounded task summaries plus on-demand bodies, manager-first wake,
@@ -1814,6 +3793,30 @@ The following entries are the original development narrative, preserved for prov
   It also records the explicit residual boundary for HFX2-L13: live Event River compaction, full
   task-document body windowing/on-demand retrieval, and heartbeat coalescing. Verification metadata
   pinned until closeout stamps the 260707-HFX2-L12 commit.
+
+  story for the store-scaling and reclamation audit. The overview now routes HFX2-L12's bounded
+  supervisor signal/expectation stores, startup Event River compaction, projection/task-document hot
+  path bounds, terminal catalog/liveness batching, and provider metric/degradation log compaction to
+  the already-updated `mcp/`, `controlplane/`, `observer/`, `serving/`, and provider route sidecars.
+  It also records the explicit residual boundary for HFX2-L13: live Event River compaction, full
+  task-document body windowing/on-demand retrieval, and heartbeat coalescing. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L12 commit.
+
+  story for the store-scaling and reclamation audit. The overview now routes HFX2-L12's bounded
+  supervisor signal/expectation stores, startup Event River compaction, projection/task-document hot
+  path bounds, terminal catalog/liveness batching, and provider metric/degradation log compaction to
+  the already-updated `mcp/`, `controlplane/`, `observer/`, `serving/`, and provider route sidecars.
+  It also records the explicit residual boundary for HFX2-L13: live Event River compaction, full
+  task-document body windowing/on-demand retrieval, and heartbeat coalescing. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L12 commit.
+  story for the store-scaling and reclamation audit. The overview now routes HFX2-L12's bounded
+  supervisor signal/expectation stores, startup Event River compaction, projection/task-document hot
+  path bounds, terminal catalog/liveness batching, and provider metric/degradation log compaction to
+  the already-updated `mcp/`, `controlplane/`, `observer/`, `serving/`, and provider route sidecars.
+  It also records the explicit residual boundary for HFX2-L13: live Event River compaction, full
+  task-document body windowing/on-demand retrieval, and heartbeat coalescing. Verification metadata
+  pinned until closeout stamps the 260707-HFX2-L12 commit.
+
 - 2026-07-09T14:05+02:00 — 260707-HFX2-L11 root route impact: reverses the prior (260707_hotfix-
   orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
   manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;
@@ -1821,13 +3824,70 @@ The following entries are the original development narrative, preserved for prov
   this reversal at the master level. Per-file/route detail lives in the already-updated `mcp/`,
   `dashboard/src/`, and `dashboard/src/panels/` sub-route overviews and file sidecars. Verification
   metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
+
+  orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
+  manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;
+  manual explicit retire and its authority policy are unchanged. Ruled design constraint 10 records
+  this reversal at the master level. Per-file/route detail lives in the already-updated `mcp/`,
+  `dashboard/src/`, and `dashboard/src/panels/` sub-route overviews and file sidecars. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
+
+  orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
+  manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;
+  manual explicit retire and its authority policy are unchanged. Ruled design constraint 10 records
+  this reversal at the master level. Per-file/route detail lives in the already-updated `mcp/`,
+  `dashboard/src/`, and `dashboard/src/panels/` sub-route overviews and file sidecars. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
+  orchestration-stack HFX-L8) auto-retire-on-success completion edge — successful worker/reviewer/
+  manager seat completion now lands the seat (inspectable, non-terminated) instead of retiring it;
+  manual explicit retire and its authority policy are unchanged. Ruled design constraint 10 records
+  this reversal at the master level. Per-file/route detail lives in the already-updated `mcp/`,
+  `dashboard/src/`, and `dashboard/src/panels/` sub-route overviews and file sidecars. Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
+
 - 2026-07-09T12:04+02:00 — 260707-HFX2-L10 root route impact: refreshed the Agent-facing session
   dispatch inventory row so spawned-seat spend is settings-resolved and caller spend overrides refuse
   before side effects with `spend-override-unsupported`. Detailed behavior remains under the `mcp/`
   and `mcp/tools/` route overviews plus the terminal/test/doc sidecars. Verification metadata pinned
   until closeout stamps the 260707-HFX2-L10 commit.
 
+
+  dispatch inventory row so spawned-seat spend is settings-resolved and caller spend overrides refuse
+  before side effects with `spend-override-unsupported`. Detailed behavior remains under the `mcp/`
+  and `mcp/tools/` route overviews plus the terminal/test/doc sidecars. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L10 commit.
+
+  dispatch inventory row so spawned-seat spend is settings-resolved and caller spend overrides refuse
+  before side effects with `spend-override-unsupported`. Detailed behavior remains under the `mcp/`
+  and `mcp/tools/` route overviews plus the terminal/test/doc sidecars. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L10 commit.
+  dispatch inventory row so spawned-seat spend is settings-resolved and caller spend overrides refuse
+  before side effects with `spend-override-unsupported`. Detailed behavior remains under the `mcp/`
+  and `mcp/tools/` route overviews plus the terminal/test/doc sidecars. Verification metadata pinned
+  until closeout stamps the 260707-HFX2-L10 commit.
+
 - 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
+  throttling) touches `docs/reference/settings-json.md` (documents the 900s redelivery floor,
+  `signalCooldownSeconds`, and the current supervisor kill-switch mitigation status) and the
+  `mcp/`, `controlplane/`, and `serving/` sub-routes. This is a doctrine/reference-doc and sub-route
+  behavior change, not a change to the root's own structure or routing; per-file detail lives in the
+  already-updated sidecars and sub-route overviews (curator pass, 260707-HFX2-L9). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
+
+
+  throttling) touches `docs/reference/settings-json.md` (documents the 900s redelivery floor,
+  `signalCooldownSeconds`, and the current supervisor kill-switch mitigation status) and the
+  `mcp/`, `controlplane/`, and `serving/` sub-routes. This is a doctrine/reference-doc and sub-route
+  behavior change, not a change to the root's own structure or routing; per-file detail lives in the
+  already-updated sidecars and sub-route overviews (curator pass, 260707-HFX2-L9). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
+
+  throttling) touches `docs/reference/settings-json.md` (documents the 900s redelivery floor,
+  `signalCooldownSeconds`, and the current supervisor kill-switch mitigation status) and the
+  `mcp/`, `controlplane/`, and `serving/` sub-routes. This is a doctrine/reference-doc and sub-route
+  behavior change, not a change to the root's own structure or routing; per-file detail lives in the
+  already-updated sidecars and sub-route overviews (curator pass, 260707-HFX2-L9). Verification
+  metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
   throttling) touches `docs/reference/settings-json.md` (documents the 900s redelivery floor,
   `signalCooldownSeconds`, and the current supervisor kill-switch mitigation status) and the
   `mcp/`, `controlplane/`, and `serving/` sub-routes. This is a doctrine/reference-doc and sub-route
@@ -1846,7 +3906,55 @@ The following entries are the original development narrative, preserved for prov
   pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps the 260707-HFX2-L8
   commit.
 
+
+  guaranteed-reclamation doctrine) adds one cross-reference sentence to root `AGENTS.md`'s Code
+  Quality Instructions section (naming the new `system/coding-guidelines.md` Stability/Reclamation
+  section as MUST-READ before adding/editing a store, loop-over-a-store, queue, or append-only log)
+  and candidate reviewer criteria (CS-6, PR-6) to the canonical `skills/l-01-agent-lifecycles/
+  criteria/` catalogs. This is a doctrine/cross-reference content addition, not a change to the
+  root's own structure, routing, or module responsibilities described by this overview; per-file
+  detail lives in the already-updated `AGENTS.md`/`code-seam.md`/`plan-review.md` sidecars (curator
+  pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps the 260707-HFX2-L8
+  commit.
+
+  guaranteed-reclamation doctrine) adds one cross-reference sentence to root `AGENTS.md`'s Code
+  Quality Instructions section (naming the new `system/coding-guidelines.md` Stability/Reclamation
+  section as MUST-READ before adding/editing a store, loop-over-a-store, queue, or append-only log)
+  and candidate reviewer criteria (CS-6, PR-6) to the canonical `skills/l-01-agent-lifecycles/
+  criteria/` catalogs. This is a doctrine/cross-reference content addition, not a change to the
+  root's own structure, routing, or module responsibilities described by this overview; per-file
+  detail lives in the already-updated `AGENTS.md`/`code-seam.md`/`plan-review.md` sidecars (curator
+  pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps the 260707-HFX2-L8
+  commit.
+  guaranteed-reclamation doctrine) adds one cross-reference sentence to root `AGENTS.md`'s Code
+  Quality Instructions section (naming the new `system/coding-guidelines.md` Stability/Reclamation
+  section as MUST-READ before adding/editing a store, loop-over-a-store, queue, or append-only log)
+  and candidate reviewer criteria (CS-6, PR-6) to the canonical `skills/l-01-agent-lifecycles/
+  criteria/` catalogs. This is a doctrine/cross-reference content addition, not a change to the
+  root's own structure, routing, or module responsibilities described by this overview; per-file
+  detail lives in the already-updated `AGENTS.md`/`code-seam.md`/`plan-review.md` sidecars (curator
+  pass, 260707-HFX2-L8). Verification metadata pinned until closeout stamps the 260707-HFX2-L8
+  commit.
+
 - 2026-07-08T23:59+02:00 — No route impact: reviewed the repo overview as the nearest governing
+  overview for `docs/reference/settings-json.md` (the `docs/reference` route has no local overview).
+  The source doc gained the already-route-local `orchestration.supervisor.redeliverBudget` table row
+  for HFX2-L8; this does not change the root feature inventory or routing model. A file-level sidecar
+  now covers the settings reference directly. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
+
+
+  overview for `docs/reference/settings-json.md` (the `docs/reference` route has no local overview).
+  The source doc gained the already-route-local `orchestration.supervisor.redeliverBudget` table row
+  for HFX2-L8; this does not change the root feature inventory or routing model. A file-level sidecar
+  now covers the settings reference directly. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
+
+  overview for `docs/reference/settings-json.md` (the `docs/reference` route has no local overview).
+  The source doc gained the already-route-local `orchestration.supervisor.redeliverBudget` table row
+  for HFX2-L8; this does not change the root feature inventory or routing model. A file-level sidecar
+  now covers the settings reference directly. Verification metadata pinned until closeout stamps the
+  260707-HFX2-L8 commit.
   overview for `docs/reference/settings-json.md` (the `docs/reference` route has no local overview).
   The source doc gained the already-route-local `orchestration.supervisor.redeliverBudget` table row
   for HFX2-L8; this does not change the root feature inventory or routing model. A file-level sidecar
@@ -1859,7 +3967,49 @@ The following entries are the original development narrative, preserved for prov
   supervisor redelivery-vs-escalation boundary. The root overview's feature inventory remains
   accurate at this altitude; detail lives in the `mcp/` and `serving/` route overviews plus the
   touched file sidecars.
+
+  version strings to 3.0.0rc4, refines the l-01 Developer Clarification Triage wording to classify
+  note-only vs immediate implementation from the active queue/current diff fit, and fixes the
+  supervisor redelivery-vs-escalation boundary. The root overview's feature inventory remains
+  accurate at this altitude; detail lives in the `mcp/` and `serving/` route overviews plus the
+  touched file sidecars.
+
+  version strings to 3.0.0rc4, refines the l-01 Developer Clarification Triage wording to classify
+  note-only vs immediate implementation from the active queue/current diff fit, and fixes the
+  supervisor redelivery-vs-escalation boundary. The root overview's feature inventory remains
+  accurate at this altitude; detail lives in the `mcp/` and `serving/` route overviews plus the
+  touched file sidecars.
+  version strings to 3.0.0rc4, refines the l-01 Developer Clarification Triage wording to classify
+  note-only vs immediate implementation from the active queue/current diff fit, and fixes the
+  supervisor redelivery-vs-escalation boundary. The root overview's feature inventory remains
+  accurate at this altitude; detail lives in the `mcp/` and `serving/` route overviews plus the
+  touched file sidecars.
+
 - 2026-07-08T15:27+02:00 — 260707-HFX2-L6 doctrine impact: the root approval-gated
+  closeout row now reflects applicable authority rather than unconditional explicit approval:
+  standalone/final work remains developer-approved, while subordinate accepted-series work can
+  proceed under recorded delegated series authority. The synced runtime skill copies add
+  task-seat takeover, developer clarification triage (close/current/small clarifications get
+  implemented in the active leaf), and delegated series authority across l-01, c-09, and c-12.
+  No repository structure, MCP tool signature, controller, provider, or serving route behavior
+  changed. Detail lives in the `mcp/` route overview and touched skill sidecars.
+
+
+  closeout row now reflects applicable authority rather than unconditional explicit approval:
+  standalone/final work remains developer-approved, while subordinate accepted-series work can
+  proceed under recorded delegated series authority. The synced runtime skill copies add
+  task-seat takeover, developer clarification triage (close/current/small clarifications get
+  implemented in the active leaf), and delegated series authority across l-01, c-09, and c-12.
+  No repository structure, MCP tool signature, controller, provider, or serving route behavior
+  changed. Detail lives in the `mcp/` route overview and touched skill sidecars.
+
+  closeout row now reflects applicable authority rather than unconditional explicit approval:
+  standalone/final work remains developer-approved, while subordinate accepted-series work can
+  proceed under recorded delegated series authority. The synced runtime skill copies add
+  task-seat takeover, developer clarification triage (close/current/small clarifications get
+  implemented in the active leaf), and delegated series authority across l-01, c-09, and c-12.
+  No repository structure, MCP tool signature, controller, provider, or serving route behavior
+  changed. Detail lives in the `mcp/` route overview and touched skill sidecars.
   closeout row now reflects applicable authority rather than unconditional explicit approval:
   standalone/final work remains developer-approved, while subordinate accepted-series work can
   proceed under recorded delegated series authority. The synced runtime skill copies add
@@ -1883,6 +4033,51 @@ The following entries are the original development narrative, preserved for prov
   this leaf only bans ad hoc watchers layered on top of it). Route detail (the doctrine paragraphs,
   the new liveness-simulation test coverage, the Supervisor Sweep entity) lives in the `mcp/` route
   overview, `onboarding/entities.md`, and the touched file sidecars.
+
+  the worker"/"monitor turn-report artifacts" duty language across `skills/l-01-agent-lifecycles/
+  {SKILL.md, roles/manager.md, roles/orchestrator.md, roles/worker.md, templates/turn-report.md}`
+  rewritten to a passive process-and-ack contract, a new "no seat-local watcher" invariant
+  (uniform-mechanism ruling 2026-07-07), and "idle is safe" framing — mechanically synced by
+  `scripts/sync-skills.py` to the 9 downstream package copies — plus the new
+  `mcp/tests/test_liveness_simulations.py`) is a doctrine consistency/wording pass formalizing an
+  already-existing HFX2-L1..L4 supervisor-sweep/escalation-ladder mechanism this root overview does
+  not itself narrate at any altitude. It changes HOW a seat reacts to missing signals (passive
+  wake-and-ack vs. hand-rolled watching), not any package/route structure, and it does not touch the
+  Observable Session Lifecycle paragraph's notify-and-continue interaction model this root overview
+  already carries (that model — gate choreography, `lifecycle_turn_end_notification` — is unaffected;
+  this leaf only bans ad hoc watchers layered on top of it). Route detail (the doctrine paragraphs,
+  the new liveness-simulation test coverage, the Supervisor Sweep entity) lives in the `mcp/` route
+  overview, `onboarding/entities.md`, and the touched file sidecars.
+
+  the worker"/"monitor turn-report artifacts" duty language across `skills/l-01-agent-lifecycles/
+  {SKILL.md, roles/manager.md, roles/orchestrator.md, roles/worker.md, templates/turn-report.md}`
+  rewritten to a passive process-and-ack contract, a new "no seat-local watcher" invariant
+  (uniform-mechanism ruling 2026-07-07), and "idle is safe" framing — mechanically synced by
+  `scripts/sync-skills.py` to the 9 downstream package copies — plus the new
+  `mcp/tests/test_liveness_simulations.py`) is a doctrine consistency/wording pass formalizing an
+  already-existing HFX2-L1..L4 supervisor-sweep/escalation-ladder mechanism this root overview does
+  not itself narrate at any altitude. It changes HOW a seat reacts to missing signals (passive
+  wake-and-ack vs. hand-rolled watching), not any package/route structure, and it does not touch the
+  Observable Session Lifecycle paragraph's notify-and-continue interaction model this root overview
+  already carries (that model — gate choreography, `lifecycle_turn_end_notification` — is unaffected;
+  this leaf only bans ad hoc watchers layered on top of it). Route detail (the doctrine paragraphs,
+  the new liveness-simulation test coverage, the Supervisor Sweep entity) lives in the `mcp/` route
+  overview, `onboarding/entities.md`, and the touched file sidecars.
+  the worker"/"monitor turn-report artifacts" duty language across `skills/l-01-agent-lifecycles/
+  {SKILL.md, roles/manager.md, roles/orchestrator.md, roles/worker.md, templates/turn-report.md}`
+  rewritten to a passive process-and-ack contract, a new "no seat-local watcher" invariant
+  (uniform-mechanism ruling 2026-07-07), and "idle is safe" framing — mechanically synced by
+  `scripts/sync-skills.py` to the 9 downstream package copies — plus the new
+  `mcp/tests/test_liveness_simulations.py`) is a doctrine consistency/wording pass formalizing an
+  already-existing HFX2-L1..L4 supervisor-sweep/escalation-ladder mechanism this root overview does
+  not itself narrate at any altitude. It changes HOW a seat reacts to missing signals (passive
+  wake-and-ack vs. hand-rolled watching), not any package/route structure, and it does not touch the
+  Observable Session Lifecycle paragraph's notify-and-continue interaction model this root overview
+  already carries (that model — gate choreography, `lifecycle_turn_end_notification` — is unaffected;
+  this leaf only bans ad hoc watchers layered on top of it). Route detail (the doctrine paragraphs,
+  the new liveness-simulation test coverage, the Supervisor Sweep entity) lives in the `mcp/` route
+  overview, `onboarding/entities.md`, and the touched file sidecars.
+
 - 2026-07-08T04:25+02:00 — No route impact: 260707-HFX-L12 (master-exit fix leaf) closes a schema
   gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
   decision-item relay this root overview's Agent lifecycles row already describes actually
@@ -1890,12 +4085,51 @@ The following entries are the original development narrative, preserved for prov
   leaf makes the CODE match it. No new role, no role-census change, no repository structure or
   routing delta. Route detail (the two new Literal members, the new round-trip test) lives in the
   `mcp/` route overview and the touched file sidecars.
+
+  gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
+  decision-item relay this root overview's Agent lifecycles row already describes actually
+  round-trips through the inbox — the row's own prose was already correct about the DESIGN; this
+  leaf makes the CODE match it. No new role, no role-census change, no repository structure or
+  routing delta. Route detail (the two new Literal members, the new round-trip test) lives in the
+  `mcp/` route overview and the touched file sidecars.
+
+  gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
+  decision-item relay this root overview's Agent lifecycles row already describes actually
+  round-trips through the inbox — the row's own prose was already correct about the DESIGN; this
+  leaf makes the CODE match it. No new role, no role-census change, no repository structure or
+  routing delta. Route detail (the two new Literal members, the new round-trip test) lives in the
+  `mcp/` route overview and the touched file sidecars.
+  gap in the operator-inbox `AgentRole`/`InboxMessageKind` Literals so the ARCHITECT/ORCHESTRATOR
+  decision-item relay this root overview's Agent lifecycles row already describes actually
+  round-trips through the inbox — the row's own prose was already correct about the DESIGN; this
+  leaf makes the CODE match it. No new role, no role-census change, no repository structure or
+  routing delta. Route detail (the two new Literal members, the new round-trip test) lives in the
+  `mcp/` route overview and the touched file sidecars.
+
 - 2026-07-08T03:05+02:00 — 260707-HFX-L8 root route impact (seat lifecycle: retirement + live
   identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
   server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at
   the leaf-integrate and master-finalize completion edges), post-spawn identity rename, and a live
   turn-state badge riding the existing L5 liveness-sweep cadence. Detailed behavior lives in the
   `serving/` route overview and the touched file sidecars.
+
+  identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
+  server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at
+  the leaf-integrate and master-finalize completion edges), post-spawn identity rename, and a live
+  turn-state badge riding the existing L5 liveness-sweep cadence. Detailed behavior lives in the
+  `serving/` route overview and the touched file sidecars.
+
+  identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
+  server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at
+  the leaf-integrate and master-finalize completion edges), post-spawn identity rename, and a live
+  turn-state badge riding the existing L5 liveness-sweep cadence. Detailed behavior lives in the
+  `serving/` route overview and the touched file sidecars.
+  identity + turn-state, issues #12/#4): the Dashboard Serving Layer paragraph now records
+  server-authoritative seat retirement (authority-policy-checked, provenance-stamped, automated at
+  the leaf-integrate and master-finalize completion edges), post-spawn identity rename, and a live
+  turn-state badge riding the existing L5 liveness-sweep cadence. Detailed behavior lives in the
+  `serving/` route overview and the touched file sidecars.
+
 - 2026-07-08T02:10+02:00 — No route impact: 260707-HFX-L11 (curator activation: change-set feeding
   + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
   (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new
@@ -1904,6 +4138,30 @@ The following entries are the original development narrative, preserved for prov
   any package/route structure or public surface this root overview describes. Route detail (the
   new curator-brief template, the c-12/c-05 seat-routing wording) lives in the `mcp/` route
   overview's package_data/runtime/skills pillar and the touched file sidecars.
+
+  + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
+  (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new
+  templates/curator-brief.md, c-12-closeout/SKILL.md, c-05-create-or-update-onboarding-files/SKILL.md,
+  the l-01 SKILL.md companion-files list) — it changes WHICH SEAT writes onboarding and WHEN, not
+  any package/route structure or public surface this root overview describes. Route detail (the
+  new curator-brief template, the c-12/c-05 seat-routing wording) lives in the `mcp/` route
+  overview's package_data/runtime/skills pillar and the touched file sidecars.
+
+  + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
+  (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new
+  templates/curator-brief.md, c-12-closeout/SKILL.md, c-05-create-or-update-onboarding-files/SKILL.md,
+  the l-01 SKILL.md companion-files list) — it changes WHICH SEAT writes onboarding and WHEN, not
+  any package/route structure or public surface this root overview describes. Route detail (the
+  new curator-brief template, the c-12/c-05 seat-routing wording) lives in the `mcp/` route
+  overview's package_data/runtime/skills pillar and the touched file sidecars.
+  + c-12/c-05 process rewiring) is entirely doctrine/dispatch-template prose inside `skills/`
+  (roles/curator.md, roles/manager.md, templates/manager-brief.md, the new
+  templates/curator-brief.md, c-12-closeout/SKILL.md, c-05-create-or-update-onboarding-files/SKILL.md,
+  the l-01 SKILL.md companion-files list) — it changes WHICH SEAT writes onboarding and WHEN, not
+  any package/route structure or public surface this root overview describes. Route detail (the
+  new curator-brief template, the c-12/c-05 seat-routing wording) lives in the `mcp/` route
+  overview's package_data/runtime/skills pillar and the touched file sidecars.
+
 - 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass (body): the Agent lifecycles Feature
   Inventory row and the root-index l-01 paragraph now name all nine role lifecycles including
   **system-specialist** (the investigate-first provider-degradation responder dispatched by the
@@ -1913,12 +4171,57 @@ The following entries are the original development narrative, preserved for prov
   kind, and the doctrine additions to `roles/manager.md`/`roles/orchestrator.md`) lives in the
   `mcp/`, `serving/`, and `controlplane/` route overviews plus their file sidecars. Verification
   metadata pinned until closeout stamps the HFX-L7 commit.
+
+  Inventory row and the root-index l-01 paragraph now name all nine role lifecycles including
+  **system-specialist** (the investigate-first provider-degradation responder dispatched by the
+  orchestrator on a `degradation-alert`, reporting before any fix, escalating directly to the
+  orchestrator) — up from the HFX-L6 eight-role census. Route detail (the detector, the
+  `providerDegradation` settings surface, the inbox `system-specialist` role/`degradation-alert`
+  kind, and the doctrine additions to `roles/manager.md`/`roles/orchestrator.md`) lives in the
+  `mcp/`, `serving/`, and `controlplane/` route overviews plus their file sidecars. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
+
+  Inventory row and the root-index l-01 paragraph now name all nine role lifecycles including
+  **system-specialist** (the investigate-first provider-degradation responder dispatched by the
+  orchestrator on a `degradation-alert`, reporting before any fix, escalating directly to the
+  orchestrator) — up from the HFX-L6 eight-role census. Route detail (the detector, the
+  `providerDegradation` settings surface, the inbox `system-specialist` role/`degradation-alert`
+  kind, and the doctrine additions to `roles/manager.md`/`roles/orchestrator.md`) lives in the
+  `mcp/`, `serving/`, and `controlplane/` route overviews plus their file sidecars. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
+  Inventory row and the root-index l-01 paragraph now name all nine role lifecycles including
+  **system-specialist** (the investigate-first provider-degradation responder dispatched by the
+  orchestrator on a `degradation-alert`, reporting before any fix, escalating directly to the
+  orchestrator) — up from the HFX-L6 eight-role census. Route detail (the detector, the
+  `providerDegradation` settings surface, the inbox `system-specialist` role/`degradation-alert`
+  kind, and the doctrine additions to `roles/manager.md`/`roles/orchestrator.md`) lives in the
+  `mcp/`, `serving/`, and `controlplane/` route overviews plus their file sidecars. Verification
+  metadata pinned until closeout stamps the HFX-L7 commit.
+
 - 2026-07-08T00:05+02:00 — No route impact: 260707-HFX-L5 (catalog liveness hysteresis) is
   serving-internal — the dashboard terminal catalog's stale-row handling moved from immediate
   exit marks to the evidence-scaled hysteresis owned by `serving.terminal_liveness`; this
   repo-overview's dashboard/terminal framing (Task 22 durability, Mode B2) stays accurate at this
   altitude, and the detail lives in the `mcp/` and `serving/` route overviews + file sidecars.
   Body reviewed, no change needed; route indexes regenerated for the HFX-L5 sidecar additions.
+
+  serving-internal — the dashboard terminal catalog's stale-row handling moved from immediate
+  exit marks to the evidence-scaled hysteresis owned by `serving.terminal_liveness`; this
+  repo-overview's dashboard/terminal framing (Task 22 durability, Mode B2) stays accurate at this
+  altitude, and the detail lives in the `mcp/` and `serving/` route overviews + file sidecars.
+  Body reviewed, no change needed; route indexes regenerated for the HFX-L5 sidecar additions.
+
+  serving-internal — the dashboard terminal catalog's stale-row handling moved from immediate
+  exit marks to the evidence-scaled hysteresis owned by `serving.terminal_liveness`; this
+  repo-overview's dashboard/terminal framing (Task 22 durability, Mode B2) stays accurate at this
+  altitude, and the detail lives in the `mcp/` and `serving/` route overviews + file sidecars.
+  Body reviewed, no change needed; route indexes regenerated for the HFX-L5 sidecar additions.
+  serving-internal — the dashboard terminal catalog's stale-row handling moved from immediate
+  exit marks to the evidence-scaled hysteresis owned by `serving.terminal_liveness`; this
+  repo-overview's dashboard/terminal framing (Task 22 durability, Mode B2) stays accurate at this
+  altitude, and the detail lives in the `mcp/` and `serving/` route overviews + file sidecars.
+  Body reviewed, no change needed; route indexes regenerated for the HFX-L5 sidecar additions.
+
 - 2026-07-07T23:05+02:00 — 260707-HFX-L6 curator follow-up (body): remaining pre-split routing
   wording corrected to the HFX-L6 seat split — the Workflow modes row's build decision belongs to
   the architect lifecycle; the Agent lifecycles row lists the eight role lifecycles
@@ -1930,6 +4233,39 @@ The following entries are the original development narrative, preserved for prov
   pre-HFX-L6, architect since the split, backend orchestrators park gates and relay decision
   items). Historical entries untouched. Verification metadata pinned until closeout stamps the
   HFX-L6 commit.
+
+  wording corrected to the HFX-L6 seat split — the Workflow modes row's build decision belongs to
+  the architect lifecycle; the Agent lifecycles row lists the eight role lifecycles
+  (architect/backend orchestrator/designer/strategist/manager/worker/curator/reviewer, architect
+  default) and now also references `roles/architect.md`; the root-index l-01 line reads eight
+  `roles/` lifecycles with the architect-default router; the Source Checkout Contract paragraph
+  routes a developer session to the architect lifecycle; the observable-lifecycle paragraph
+  attributes the developer-facing Gate Choreography to the developer-facing seat (orchestrator
+  pre-HFX-L6, architect since the split, backend orchestrators park gates and relay decision
+  items). Historical entries untouched. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
+
+  wording corrected to the HFX-L6 seat split — the Workflow modes row's build decision belongs to
+  the architect lifecycle; the Agent lifecycles row lists the eight role lifecycles
+  (architect/backend orchestrator/designer/strategist/manager/worker/curator/reviewer, architect
+  default) and now also references `roles/architect.md`; the root-index l-01 line reads eight
+  `roles/` lifecycles with the architect-default router; the Source Checkout Contract paragraph
+  routes a developer session to the architect lifecycle; the observable-lifecycle paragraph
+  attributes the developer-facing Gate Choreography to the developer-facing seat (orchestrator
+  pre-HFX-L6, architect since the split, backend orchestrators park gates and relay decision
+  items). Historical entries untouched. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
+  wording corrected to the HFX-L6 seat split — the Workflow modes row's build decision belongs to
+  the architect lifecycle; the Agent lifecycles row lists the eight role lifecycles
+  (architect/backend orchestrator/designer/strategist/manager/worker/curator/reviewer, architect
+  default) and now also references `roles/architect.md`; the root-index l-01 line reads eight
+  `roles/` lifecycles with the architect-default router; the Source Checkout Contract paragraph
+  routes a developer session to the architect lifecycle; the observable-lifecycle paragraph
+  attributes the developer-facing Gate Choreography to the developer-facing seat (orchestrator
+  pre-HFX-L6, architect since the split, backend orchestrators park gates and relay decision
+  items). Historical entries untouched. Verification metadata pinned until closeout stamps the
+  HFX-L6 commit.
+
 - 2026-07-07T22:50+02:00 — 260707-HFX-L6 curator memory pass (body): the Harness Starter
   Packages paragraph now states the architect-exclusive startup directive — a developer-facing
   session routes to the ARCHITECT (`roles/architect.md`) per the HFX-L6 router inversion, while
@@ -1937,13 +4273,53 @@ The following entries are the original development narrative, preserved for prov
   architect. Closes reviewer finding F1 (the paragraph previously narrated the superseded
   260703-L10 orchestrator-exclusive directive). Verification metadata pinned until closeout
   stamps the HFX-L6 commit.
+
+  Packages paragraph now states the architect-exclusive startup directive — a developer-facing
+  session routes to the ARCHITECT (`roles/architect.md`) per the HFX-L6 router inversion, while
+  backend orchestrators are spawned, never-developer-facing seats relaying decision items to the
+  architect. Closes reviewer finding F1 (the paragraph previously narrated the superseded
+  260703-L10 orchestrator-exclusive directive). Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
+
+  Packages paragraph now states the architect-exclusive startup directive — a developer-facing
+  session routes to the ARCHITECT (`roles/architect.md`) per the HFX-L6 router inversion, while
+  backend orchestrators are spawned, never-developer-facing seats relaying decision items to the
+  architect. Closes reviewer finding F1 (the paragraph previously narrated the superseded
+  260703-L10 orchestrator-exclusive directive). Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
+  Packages paragraph now states the architect-exclusive startup directive — a developer-facing
+  session routes to the ARCHITECT (`roles/architect.md`) per the HFX-L6 router inversion, while
+  backend orchestrators are spawned, never-developer-facing seats relaying decision items to the
+  architect. Closes reviewer finding F1 (the paragraph previously narrated the superseded
+  260703-L10 orchestrator-exclusive directive). Verification metadata pinned until closeout
+  stamps the HFX-L6 commit.
+
 - 2026-07-07T21:05+02:00 — No route impact: 260703-L18 changes root-scope files only in place — skills/l-01 criteria catalogs gain candidate/standing tier updates (described in their package_data mirror sidecars) and docs/reference/settings-json.md + harnesses.md gain one rule sentence each (null refusal; effortSessionCommand template); the code fixes live in their own child routes (mcp, dashboard/src). The root route model and this overview's descriptions are unaffected.
+
 - 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes (delta): the setup lock is HOST-scoped in
   the system temp dir (not `providers/.setup.lock` — that root is pruned by `runtime_install`
   and benchmark roots are per-workspace), and the benchmark filter's no-authority default is
   fail-closed with an explicit env escape. Root prose corrected to match; detail in the `mcp/`
   and `runner_modules/` routes and the file sidecars. Verification metadata pinned until
   closeout stamps the HFX-L1 commit.
+
+  the system temp dir (not `providers/.setup.lock` — that root is pruned by `runtime_install`
+  and benchmark roots are per-workspace), and the benchmark filter's no-authority default is
+  fail-closed with an explicit env escape. Root prose corrected to match; detail in the `mcp/`
+  and `runner_modules/` routes and the file sidecars. Verification metadata pinned until
+  closeout stamps the HFX-L1 commit.
+
+  the system temp dir (not `providers/.setup.lock` — that root is pruned by `runtime_install`
+  and benchmark roots are per-workspace), and the benchmark filter's no-authority default is
+  fail-closed with an explicit env escape. Root prose corrected to match; detail in the `mcp/`
+  and `runner_modules/` routes and the file sidecars. Verification metadata pinned until
+  closeout stamps the HFX-L1 commit.
+  the system temp dir (not `providers/.setup.lock` — that root is pruned by `runtime_install`
+  and benchmark roots are per-workspace), and the benchmark filter's no-authority default is
+  fail-closed with an explicit env escape. Root prose corrected to match; detail in the `mcp/`
+  and `runner_modules/` routes and the file sidecars. Verification metadata pinned until
+  closeout stamps the HFX-L1 commit.
+
 - 2026-07-07T16:50+02:00 — 260707-HFX-L1 (provider containment) body review: the provider feature
   row and the MCP/provider runtime area now carry the containment story — the on-disk authority
   is the live provider launch authority (fail-closed re-read for launch-capable operations; the
@@ -1952,50 +4328,206 @@ The following entries are the original development narrative, preserved for prov
   (`providers/metrics.py`, new) that ride `provider_status`. Detail lives under the `mcp/`,
   `controllers/`, `serving/`, and `runner_modules/` route overviews and the file sidecars.
   Verification metadata pinned until closeout stamps the HFX-L1 commit.
+
+  row and the MCP/provider runtime area now carry the containment story — the on-disk authority
+  is the live provider launch authority (fail-closed re-read for launch-capable operations; the
+  boot snapshot is not launch authority; stop/status/cleanup ungated), provider setup is
+  serialized fleet-wide, and the dashboard daemon samples label-discovered containment metrics
+  (`providers/metrics.py`, new) that ride `provider_status`. Detail lives under the `mcp/`,
+  `controllers/`, `serving/`, and `runner_modules/` route overviews and the file sidecars.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
+
+  row and the MCP/provider runtime area now carry the containment story — the on-disk authority
+  is the live provider launch authority (fail-closed re-read for launch-capable operations; the
+  boot snapshot is not launch authority; stop/status/cleanup ungated), provider setup is
+  serialized fleet-wide, and the dashboard daemon samples label-discovered containment metrics
+  (`providers/metrics.py`, new) that ride `provider_status`. Detail lives under the `mcp/`,
+  `controllers/`, `serving/`, and `runner_modules/` route overviews and the file sidecars.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
+  row and the MCP/provider runtime area now carry the containment story — the on-disk authority
+  is the live provider launch authority (fail-closed re-read for launch-capable operations; the
+  boot snapshot is not launch authority; stop/status/cleanup ungated), provider setup is
+  serialized fleet-wide, and the dashboard daemon samples label-discovered containment metrics
+  (`providers/metrics.py`, new) that ride `provider_status`. Detail lives under the `mcp/`,
+  `controllers/`, `serving/`, and `runner_modules/` route overviews and the file sidecars.
+  Verification metadata pinned until closeout stamps the HFX-L1 commit.
+
 - 2026-07-07T12:55+02:00 — L16 route impact (body): the root index names docs/reference/harnesses.md, the new spawn-parameters manual (the docs/reference route has no onboarding overview of its own — pre-existing gap, follow-up registered). Verification metadata pinned until closeout stamps the L16 commit.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-07-07T06:10+02:00 — No route impact: PR #100 merged the 260703_agent-orchestration series
   to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
   empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
   Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
+
+  to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
+  empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
+  Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
+
+  to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
+  empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
+  Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
+  to main (`e358c4a`); the post-575a9a4 delta is two review fixes inside `mcp/` (agentic-settings
+  empty-list refusal; reconciliation memory-source-branch guard) plus tests. Repo surface and
+  Feature Inventory unchanged (detail under `mcp/`). Post-merge onboarding refresh, developer-approved.
+
 - 2026-07-06T23:59:58+02:00 — No route impact: L14 is dashboard + mcp-internal (insignia, command tree, additive doc/session fields) — the repo surface this root overview describes is unchanged; details live in the dashboard/src and mcp sub-route overviews.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-07-06T23:55+02:00 — L13 owner follow-up (body): the root index names kernel/agentic_settings.py, the new two-layer agentic-settings loader (the builder's entry was history-only for this route). Verification metadata pinned until closeout stamps the L13 commit.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops): the Agent lifecycles body row now names the strategist (spawn-first sprint planner; mandatory pre-run producing the orchestration task) and the loop doctrine (criteria catalogs, 3-full-round cap, convergence, quo-vadis); the root-index l-01 line updated to the six-role/ten-template/criteria census — and its stale "per-harness variants" phrase (dead since the L8 de-harnessing) removed. Verification metadata pinned until closeout stamps the L12 commit.
+
 - 2026-07-06T13:40+02:00 — 260703-L10 round 2 route impact (adversarial review L10R-1/L10R-2): the directive flip is now COMPLETE — the six remaining first-action surfaces (`.agents/GEMINI.md`, `.hermes/HERMES.md`, `.openclaw/workspace/AGENTS.md`, `.pi/extensions/agents-remember-start.ts` hardcoded block, `.cursor/rules/agents-remember.mdc`, `.github-vscode/copilot-instructions.md`) carry the orchestrator-exclusive text placeholder/format-adjusted per harness, restoring the cursor/vscode-copilot install-doc "same directive" claims; and the pre-convergence "build/job decision" compound was swept from the coordinator template (+ mirror), `c-04` SKILL.md (+ 9 mirrors), `mcp/server.py`'s `read_ar_files` docstring, and `docs/reference/mcp-tools.md`. The Harness Starter Packages paragraph above now states the full-surface coverage. Verification metadata pinned until closeout stamps the L10 commit.
+
 - 2026-07-06T12:10+02:00 — 260703-L10 route impact (one-vocabulary sweep): the public surfaces now speak only the converged `l-01-agent-lifecycles` vocabulary — root `AGENTS.md` and the coordinator/skills templates route by role (Start Here — Route By Role; orchestrator plan gate; reframe-research phase), the four harness session-start hooks carry the orchestrator-exclusive directive (spawned roles ignore it; their brief is the session start), and `docs/**` (workflows, getting-started, features, llms.txt, FAQ, concepts, reference/skills with the l-02 row removed, reference/runtime-layout, install/claude-code, docs/README) plus the root README drop the dead `orient → ground → frame → decide` axis, the retired skill names, and the retired chat build (chat is never a build route). Body rows (Workflow modes, Source Checkout Contract, Harness Starter Packages) updated to match. Verification metadata pinned until closeout stamps the L10 commit.
+
 - 2026-07-05T19:55+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 7 is the adversarial-review-4 remediation (enclosure address validation + warning, dry-run guard reporting, canvas/doctrine/registry alignment), all inside existing routes. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-05T19:10+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 6 is the adversarial-review-3 remediation (enforcement re-addressing, raise hygiene, doctrine/template/canvas alignment), all inside existing routes. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-05T18:24+02:00 — No route impact: repo-level rows remain accurate — 260703-L8 cycle 5 is the seam-channel remediation (server + doctrine internals documented at their routes) and the settings-json.md gate-delegation paragraph update. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-05T16:32+02:00 — 260703-L8 route impact (cycle 4, seam ruling): the master-exit handover gate is now the delegable `master-handover-approval` kind — the manager raises it with the reviewer verdict attached, the ORCHESTRATOR decides (human review concentrates at the super gate); `requireReviewerVerdictAtSeams` is wired (binds delegated seam decisions to verdict evidence); the reviewer role file is `roles/reviewer.md` (renamed to the server vocabulary, spawn value `reviewer`); templates gain `manager-brief.md`; the FlowTab canvas draws the converged doctrine (ROUTER in, FRAME/BUILD-JOB out). Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-05T04:40+02:00 — No route impact: 260703-L8 de-harnessing pass is internal to the unified lifecycle skill (no per-harness role files); repo-level rows remain accurate — no repository structure or routing change.
+
+
+
+
+
+
+
+
+
+
 
 - 2026-07-05T04:16+02:00 — No route impact: 260703-L8 reopened pass is internal restructuring of the unified lifecycle skill's role files; the repo-level feature rows (Agent lifecycles, Workflow modes) remain accurate as written — no repository structure or routing change.
 
+
+
+
+
+
+
+
+
+
+
 - 2026-07-05T01:32+02:00 — 260703-L9 route impact: lifecycle convergence — `l-01-session-job-lifecycle` and `l-02-agent-orchestration` merged into the single `l-01-agent-lifecycles` skill (three-condition router + minimal frame in SKILL.md; `roles/` from jobs/; `lenses.md` from job-variants.md; templates gain worker-brief.md and the relocated deep-research-report.md); body rows, tree lines, and AGENTS.md description updated to the unified name and router semantics. Verification metadata pinned until closeout stamps the L9 commit.
+
 - 2026-07-04T23:43+02:00 — No route impact: L8 fixes the master change-set net diff resolver inside the existing MCP dashboard serving layer; the repo-wide feature inventory and top-level runtime subsystem boundaries are unchanged. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-04T13:16+02:00 — No route impact: 260703-L6 sharpened existing orchestration skill
   doctrine/templates for the two adversarial seams — master-exit and super-exit reviewer rubrics,
   verdict artifact variants under `notes/reports/`, and `reviewer-verdict` handover gate evidence refs.
   The repo feature inventory row now names that seam evidence contract; no top-level route or runtime
   subsystem was added. Verification metadata pinned until closeout stamps the L6 commit.
+
+  doctrine/templates for the two adversarial seams — master-exit and super-exit reviewer rubrics,
+  verdict artifact variants under `notes/reports/`, and `reviewer-verdict` handover gate evidence refs.
+  The repo feature inventory row now names that seam evidence contract; no top-level route or runtime
+  subsystem was added. Verification metadata pinned until closeout stamps the L6 commit.
+
+  doctrine/templates for the two adversarial seams — master-exit and super-exit reviewer rubrics,
+  verdict artifact variants under `notes/reports/`, and `reviewer-verdict` handover gate evidence refs.
+  The repo feature inventory row now names that seam evidence contract; no top-level route or runtime
+  subsystem was added. Verification metadata pinned until closeout stamps the L6 commit.
+  doctrine/templates for the two adversarial seams — master-exit and super-exit reviewer rubrics,
+  verdict artifact variants under `notes/reports/`, and `reviewer-verdict` handover gate evidence refs.
+  The repo feature inventory row now names that seam evidence contract; no top-level route or runtime
+  subsystem was added. Verification metadata pinned until closeout stamps the L6 commit.
+
 - 2026-07-04T13:03+02:00 — 260703-L5 route impact: added the Agent orchestration
   frame inventory row for the super integration branch topology: super from main,
   masters from super, leaves from masters, C-11 carry-over at every edge,
   orchestrator worktree integration for master-to-super, and final super-to-main
   PR plus main-memory carry-over. Verification metadata pinned until closeout
   stamps the L5 commit.
+
+  frame inventory row for the super integration branch topology: super from main,
+  masters from super, leaves from masters, C-11 carry-over at every edge,
+  orchestrator worktree integration for master-to-super, and final super-to-main
+  PR plus main-memory carry-over. Verification metadata pinned until closeout
+  stamps the L5 commit.
+
+  frame inventory row for the super integration branch topology: super from main,
+  masters from super, leaves from masters, C-11 carry-over at every edge,
+  orchestrator worktree integration for master-to-super, and final super-to-main
+  PR plus main-memory carry-over. Verification metadata pinned until closeout
+  stamps the L5 commit.
+  frame inventory row for the super integration branch topology: super from main,
+  masters from super, leaves from masters, C-11 carry-over at every edge,
+  orchestrator worktree integration for master-to-super, and final super-to-main
+  PR plus main-memory carry-over. Verification metadata pinned until closeout
+  stamps the L5 commit.
+
 - 2026-07-04T12:32+02:00 — 260703-L4 route impact: the Gate control plane
   inventory now records opt-in delegated approvals, all-human defaults,
   human-pinned integration/push/cleanup gates, no owner self-approval, and
   reviewer-verdict evidence refs on gate records/projections. Verification
   metadata pinned until closeout stamps the L4 commit.
+
+  inventory now records opt-in delegated approvals, all-human defaults,
+  human-pinned integration/push/cleanup gates, no owner self-approval, and
+  reviewer-verdict evidence refs on gate records/projections. Verification
+  metadata pinned until closeout stamps the L4 commit.
+
+  inventory now records opt-in delegated approvals, all-human defaults,
+  human-pinned integration/push/cleanup gates, no owner self-approval, and
+  reviewer-verdict evidence refs on gate records/projections. Verification
+  metadata pinned until closeout stamps the L4 commit.
+  inventory now records opt-in delegated approvals, all-human defaults,
+  human-pinned integration/push/cleanup gates, no owner self-approval, and
+  reviewer-verdict evidence refs on gate records/projections. Verification
+  metadata pinned until closeout stamps the L4 commit.
+
 - 2026-07-04T12:31+02:00 - L3 route impact: added the Agent orchestration
   communications feature row for agent-to-agent inbox delivery, turn-report and
   handover artifact helpers, and rate-limited manager nudges. Verification
   metadata pinned until closeout stamps the L3 commit.
+
+  communications feature row for agent-to-agent inbox delivery, turn-report and
+  handover artifact helpers, and rate-limited manager nudges. Verification
+  metadata pinned until closeout stamps the L3 commit.
+
+  communications feature row for agent-to-agent inbox delivery, turn-report and
+  handover artifact helpers, and rate-limited manager nudges. Verification
+  metadata pinned until closeout stamps the L3 commit.
+  communications feature row for agent-to-agent inbox delivery, turn-report and
+  handover artifact helpers, and rate-limited manager nudges. Verification
+  metadata pinned until closeout stamps the L3 commit.
+
 - 2026-07-04T11:20+02:00 — 260703-L1 route impact (small): the canonical `skills/` tree and every synced mirror gained `l-02-agent-orchestration` (the orchestration frame: SKILL.md + five jobs + two claude-code variants + six report templates); the root index enumeration now names it beside l-01/w-02. Runtime behavior unchanged (doctrine only). Verification metadata pinned until closeout stamps the L1 commit.
+
 - 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: added the **Agent-facing session
   dispatch** feature — the public `spawn_agent_session` MCP tool that composes the existing session
   primitives (shared serving opener + optional leaf attach + echo-confirmed context paste + optional
@@ -2005,74 +4537,293 @@ The following entries are the original development narrative, preserved for prov
   `POST /api/terminal/{session}/paste` endpoint back it; no parallel spawn path. Added a Feature Inventory
   row; detail lives in the `mcp/tools/`, `models/`, and `serving/` route overviews. Verification metadata
   pinned until closeout stamps the L2 commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
+
+  dispatch** feature — the public `spawn_agent_session` MCP tool that composes the existing session
+  primitives (shared serving opener + optional leaf attach + echo-confirmed context paste + optional
+  submit) to spawn a role-configured, leaf-attached, context-primed hosted session with model/effort/env
+  knob injection and spawned-by provenance, so orchestrators spawn managers and managers spawn workers
+  without dashboard clicks. New `serving.terminal_opener`/`serving.terminal_paste` modules + a
+  `POST /api/terminal/{session}/paste` endpoint back it; no parallel spawn path. Added a Feature Inventory
+  row; detail lives in the `mcp/tools/`, `models/`, and `serving/` route overviews. Verification metadata
+  pinned until closeout stamps the L2 commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
+
+  dispatch** feature — the public `spawn_agent_session` MCP tool that composes the existing session
+  primitives (shared serving opener + optional leaf attach + echo-confirmed context paste + optional
+  submit) to spawn a role-configured, leaf-attached, context-primed hosted session with model/effort/env
+  knob injection and spawned-by provenance, so orchestrators spawn managers and managers spawn workers
+  without dashboard clicks. New `serving.terminal_opener`/`serving.terminal_paste` modules + a
+  `POST /api/terminal/{session}/paste` endpoint back it; no parallel spawn path. Added a Feature Inventory
+  row; detail lives in the `mcp/tools/`, `models/`, and `serving/` route overviews. Verification metadata
+  pinned until closeout stamps the L2 commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
+  dispatch** feature — the public `spawn_agent_session` MCP tool that composes the existing session
+  primitives (shared serving opener + optional leaf attach + echo-confirmed context paste + optional
+  submit) to spawn a role-configured, leaf-attached, context-primed hosted session with model/effort/env
+  knob injection and spawned-by provenance, so orchestrators spawn managers and managers spawn workers
+  without dashboard clicks. New `serving.terminal_opener`/`serving.terminal_paste` modules + a
+  `POST /api/terminal/{session}/paste` endpoint back it; no parallel spawn path. Added a Feature Inventory
+  row; detail lives in the `mcp/tools/`, `models/`, and `serving/` route overviews. Verification metadata
+  pinned until closeout stamps the L2 commit. (Distinct from the 260703-L2 daemon-supervision entry below.)
+
 - 2026-07-03T12:59+02:00 — No route impact: 260703 L4 releases the series as MCP 3.0.0rc2 (version
   strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
   paragraph's version reference became generic). Repo structure and behavior unchanged.
+
+  strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
+  paragraph's version reference became generic). Repo structure and behavior unchanged.
+
+  strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
+  paragraph's version reference became generic). Repo structure and behavior unchanged.
+  strings only: pyproject, SERVER_VERSION fallback, README Status; the Public Documentation
+  paragraph's version reference became generic). Repo structure and behavior unchanged.
+
 - 2026-07-03T12:58+02:00 — 260703 L3 route impact: the public README gains the ToC-linked
   `## Run The Dashboard` section (unpinned install first-class, daemon usage, autoStart key,
   pinning as debugging, rc-period note) and the PyPI `mcp/README.md` Install And Run carries the
   same story; commands verified against real PyPI resolution. Verification metadata pinned until
   closeout stamps the code commit.
+
+  `## Run The Dashboard` section (unpinned install first-class, daemon usage, autoStart key,
+  pinning as debugging, rc-period note) and the PyPI `mcp/README.md` Install And Run carries the
+  same story; commands verified against real PyPI resolution. Verification metadata pinned until
+  closeout stamps the code commit.
+
+  `## Run The Dashboard` section (unpinned install first-class, daemon usage, autoStart key,
+  pinning as debugging, rc-period note) and the PyPI `mcp/README.md` Install And Run carries the
+  same story; commands verified against real PyPI resolution. Verification metadata pinned until
+  closeout stamps the code commit.
+  `## Run The Dashboard` section (unpinned install first-class, daemon usage, autoStart key,
+  pinning as debugging, rc-period note) and the PyPI `mcp/README.md` Install And Run carries the
+  same story; commands verified against real PyPI resolution. Verification metadata pinned until
+  closeout stamps the code commit.
+
 - 2026-07-03T12:57+02:00 — 260703 L2 route impact: the dashboard gains daemon mode
   (`--daemon`/`--status`/`--stop`, state under `logs/dashboard/`) and MCP-boot supervision via the
   new fail-loud `dashboard` settings object (`autoStart`, `port`) — adopt healthy, spawn absent,
   restart on version mismatch. Verification metadata pinned until closeout stamps the code commit.
+
+  (`--daemon`/`--status`/`--stop`, state under `logs/dashboard/`) and MCP-boot supervision via the
+  new fail-loud `dashboard` settings object (`autoStart`, `port`) — adopt healthy, spawn absent,
+  restart on version mismatch. Verification metadata pinned until closeout stamps the code commit.
+
+  (`--daemon`/`--status`/`--stop`, state under `logs/dashboard/`) and MCP-boot supervision via the
+  new fail-loud `dashboard` settings object (`autoStart`, `port`) — adopt healthy, spawn absent,
+  restart on version mismatch. Verification metadata pinned until closeout stamps the code commit.
+  (`--daemon`/`--status`/`--stop`, state under `logs/dashboard/`) and MCP-boot supervision via the
+  new fail-loud `dashboard` settings object (`autoStart`, `port`) — adopt healthy, spawn absent,
+  restart on version mismatch. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-07-03T12:55+02:00 — 260703 L1 route impact: `agents-remember dashboard` runs flag-free —
   the new `cli/discovery.py` resolves the trusted settings from the working directory upward when
   `--config` is omitted. Verification metadata pinned until closeout stamps the code commit.
+
+  the new `cli/discovery.py` resolves the trusted settings from the working directory upward when
+  `--config` is omitted. Verification metadata pinned until closeout stamps the code commit.
+
+  the new `cli/discovery.py` resolves the trusted settings from the working directory upward when
+  `--config` is omitted. Verification metadata pinned until closeout stamps the code commit.
+  the new `cli/discovery.py` resolves the trusted settings from the working directory upward when
+  `--config` is omitted. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-07-03T12:50+02:00 — No route impact: L15 push-gate fixups — mechanical ruff/pyright compliance so the series passes its own pre-push quality gate; no behavior change anywhere.
+
 - 2026-07-03T11:20+02:00 — L14 route impact: the repo is released as MCP 3.0.0rc1 — the first version serving the mission-control dashboard from the MCP package via the agents-remember dashboard CLI; README Status states the shipped 3.0 arc.
+
 - 2026-07-03T02:58+02:00 — No route impact: L13 reopen drill second cycle (marker comment extension only).
+
 - 2026-07-03T02:40+02:00 — No route impact: L13 reopen drill: a test-conftest marker comment only, used to live-fire the L11 task_reopen cycle.
+
 - 2026-07-03T01:55+02:00 — L12 route impact: provider memory caps in the compose templates and CGC watch hygiene (enriched ignore rules reach the live watcher; timer-pop patch; package_data bundle excluded from watch/index).
+
 - 2026-07-03T00:35+02:00 — L11 route impact: task_reopen tool (reopen a completed leaf in place; exact leaf id, no -rN forks) added to the MCP surface and documented in the c-09 skill; dashboard and observer stop special-casing suffixed reopens.
+
 - 2026-07-02T21:45+02:00 — No route impact: the L10 enclosure-to-doc binding repair stays inside the
   observer projection join (`snapshots.py`) and the sidebar admission (`panels/LifecycleList.tsx`);
   the repo-wide feature inventory is unchanged at this granularity. Detail lives in the observer and
   panels route overviews and the changed file sidecars. Verification metadata pinned until closeout
   stamps the L10 commit.
+
+  observer projection join (`snapshots.py`) and the sidebar admission (`panels/LifecycleList.tsx`);
+  the repo-wide feature inventory is unchanged at this granularity. Detail lives in the observer and
+  panels route overviews and the changed file sidecars. Verification metadata pinned until closeout
+  stamps the L10 commit.
+
+  observer projection join (`snapshots.py`) and the sidebar admission (`panels/LifecycleList.tsx`);
+  the repo-wide feature inventory is unchanged at this granularity. Detail lives in the observer and
+  panels route overviews and the changed file sidecars. Verification metadata pinned until closeout
+  stamps the L10 commit.
+  observer projection join (`snapshots.py`) and the sidebar admission (`panels/LifecycleList.tsx`);
+  the repo-wide feature inventory is unchanged at this granularity. Detail lives in the observer and
+  panels route overviews and the changed file sidecars. Verification metadata pinned until closeout
+  stamps the L10 commit.
+
 - 2026-07-02T20:55+02:00 — No route impact: the L8-r1 correction stays inside
   `dashboard/src/panels/HighlightComposer` (+ tests) plus the regenerated package-data bundle; the
   repo-wide feature inventory is unchanged at this granularity. Detail lives in the
   `dashboard/src/panels` overview and the changed file sidecars. Verification metadata pinned until
   closeout stamps the L8-r1 commit.
+
+  `dashboard/src/panels/HighlightComposer` (+ tests) plus the regenerated package-data bundle; the
+  repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src/panels` overview and the changed file sidecars. Verification metadata pinned until
+  closeout stamps the L8-r1 commit.
+
+  `dashboard/src/panels/HighlightComposer` (+ tests) plus the regenerated package-data bundle; the
+  repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src/panels` overview and the changed file sidecars. Verification metadata pinned until
+  closeout stamps the L8-r1 commit.
+  `dashboard/src/panels/HighlightComposer` (+ tests) plus the regenerated package-data bundle; the
+  repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src/panels` overview and the changed file sidecars. Verification metadata pinned until
+  closeout stamps the L8-r1 commit.
+
 - 2026-07-02T20:15+02:00 — No route impact: operations-integration L8 stays inside the dashboard
   frontend (`dashboard/src/panels` + `dashboard/src/data` + the cockpit shell wiring) plus the
   regenerated package-data bundle; the repo-wide feature inventory is unchanged at this granularity.
   Detail lives in the `dashboard/src` and `dashboard/src/panels` overviews and the changed file
   sidecars. Verification metadata pinned until closeout stamps the L8 commit.
+
+  frontend (`dashboard/src/panels` + `dashboard/src/data` + the cockpit shell wiring) plus the
+  regenerated package-data bundle; the repo-wide feature inventory is unchanged at this granularity.
+  Detail lives in the `dashboard/src` and `dashboard/src/panels` overviews and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the L8 commit.
+
+  frontend (`dashboard/src/panels` + `dashboard/src/data` + the cockpit shell wiring) plus the
+  regenerated package-data bundle; the repo-wide feature inventory is unchanged at this granularity.
+  Detail lives in the `dashboard/src` and `dashboard/src/panels` overviews and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the L8 commit.
+  frontend (`dashboard/src/panels` + `dashboard/src/data` + the cockpit shell wiring) plus the
+  regenerated package-data bundle; the repo-wide feature inventory is unchanged at this granularity.
+  Detail lives in the `dashboard/src` and `dashboard/src/panels` overviews and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the L8 commit.
+
 - 2026-07-02T18:40+02:00 — No route impact: operations-integration L7 corrected the CGC dependency
   guidance at the canonical `skills/` root (`analyze deps <module>` instead of the stale
   `analyze dependencies`) and re-ran `sync-skills` so every generated harness package copy matches;
   the wrapper argv fix itself lives in `controllers/provider_tools.py`. The repo-wide feature
   inventory is unchanged at this granularity. Verification metadata pinned until closeout stamps the
   L7 commit.
+
+  guidance at the canonical `skills/` root (`analyze deps <module>` instead of the stale
+  `analyze dependencies`) and re-ran `sync-skills` so every generated harness package copy matches;
+  the wrapper argv fix itself lives in `controllers/provider_tools.py`. The repo-wide feature
+  inventory is unchanged at this granularity. Verification metadata pinned until closeout stamps the
+  L7 commit.
+
+  guidance at the canonical `skills/` root (`analyze deps <module>` instead of the stale
+  `analyze dependencies`) and re-ran `sync-skills` so every generated harness package copy matches;
+  the wrapper argv fix itself lives in `controllers/provider_tools.py`. The repo-wide feature
+  inventory is unchanged at this granularity. Verification metadata pinned until closeout stamps the
+  L7 commit.
+  guidance at the canonical `skills/` root (`analyze deps <module>` instead of the stale
+  `analyze dependencies`) and re-ran `sync-skills` so every generated harness package copy matches;
+  the wrapper argv fix itself lives in `controllers/provider_tools.py`. The repo-wide feature
+  inventory is unchanged at this granularity. Verification metadata pinned until closeout stamps the
+  L7 commit.
+
 - 2026-07-02T17:25+02:00 — No route impact: the reopened-L6 copy-mode escape is confined to the
   serving terminal host's stdin path; the repo-wide feature inventory is unchanged at this
   granularity. Detail lives in the `mcp/src/agents_remember/serving` overview and the changed file
   sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
+  serving terminal host's stdin path; the repo-wide feature inventory is unchanged at this
+  granularity. Detail lives in the `mcp/src/agents_remember/serving` overview and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
+  serving terminal host's stdin path; the repo-wide feature inventory is unchanged at this
+  granularity. Detail lives in the `mcp/src/agents_remember/serving` overview and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+  serving terminal host's stdin path; the repo-wide feature inventory is unchanged at this
+  granularity. Detail lives in the `mcp/src/agents_remember/serving` overview and the changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
 - 2026-07-02T17:04+02:00 — L9 feature inventory impact: added hosted chat leaf reassignment as a surfaced
   feature spanning the public MCP tool, serving catalog move helper, and dashboard session/RailChat
   synchronization path. Verification metadata pinned until closeout stamps the L9 commit.
+
+  feature spanning the public MCP tool, serving catalog move helper, and dashboard session/RailChat
+  synchronization path. Verification metadata pinned until closeout stamps the L9 commit.
+
+  feature spanning the public MCP tool, serving catalog move helper, and dashboard session/RailChat
+  synchronization path. Verification metadata pinned until closeout stamps the L9 commit.
+  feature spanning the public MCP tool, serving catalog move helper, and dashboard session/RailChat
+  synchronization path. Verification metadata pinned until closeout stamps the L9 commit.
+
 - 2026-07-02T16:35+02:00 — No route impact: the reopened-L6 wheel/paste fixes stay inside the existing
   dashboard `Terminal`/session-delivery surfaces and the serving terminal host (per-session tmux mouse
   mode); the repo-wide feature inventory is unchanged at this granularity. Detail lives in the
   `dashboard/src`, `dashboard/src/panels`, `mcp/src/agents_remember/serving`, and changed file
   sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
+  dashboard `Terminal`/session-delivery surfaces and the serving terminal host (per-session tmux mouse
+  mode); the repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, `mcp/src/agents_remember/serving`, and changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
+  dashboard `Terminal`/session-delivery surfaces and the serving terminal host (per-session tmux mouse
+  mode); the repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, `mcp/src/agents_remember/serving`, and changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+  dashboard `Terminal`/session-delivery surfaces and the serving terminal host (per-session tmux mouse
+  mode); the repo-wide feature inventory is unchanged at this granularity. Detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, `mcp/src/agents_remember/serving`, and changed file
+  sidecars. Verification metadata pinned until closeout stamps the follow-up commit.
+
 - 2026-07-02T15:03+02:00 — No route impact: the L6 alternate-buffer wheel follow-up is limited to the
   existing dashboard `Terminal` wrapper and the generated package-data dashboard bundle. The repo-wide
   feature inventory is unchanged at this granularity; detail lives in the `dashboard/src`,
   `dashboard/src/panels`, `mcp`, and changed file sidecars. Verification metadata pinned until closeout
   stamps the follow-up commit.
+
+  existing dashboard `Terminal` wrapper and the generated package-data dashboard bundle. The repo-wide
+  feature inventory is unchanged at this granularity; detail lives in the `dashboard/src`,
+  `dashboard/src/panels`, `mcp`, and changed file sidecars. Verification metadata pinned until closeout
+  stamps the follow-up commit.
+
+  existing dashboard `Terminal` wrapper and the generated package-data dashboard bundle. The repo-wide
+  feature inventory is unchanged at this granularity; detail lives in the `dashboard/src`,
+  `dashboard/src/panels`, `mcp`, and changed file sidecars. Verification metadata pinned until closeout
+  stamps the follow-up commit.
+  existing dashboard `Terminal` wrapper and the generated package-data dashboard bundle. The repo-wide
+  feature inventory is unchanged at this granularity; detail lives in the `dashboard/src`,
+  `dashboard/src/panels`, `mcp`, and changed file sidecars. Verification metadata pinned until closeout
+  stamps the follow-up commit.
+
 - 2026-07-02T13:16+02:00 — No route impact: reopened L6 frontend follow-up stays inside the existing
   dashboard frontend/session and panels routes; repo-level feature inventory is unchanged. The behavioral
   detail lives in the `dashboard/src`, `dashboard/src/panels`, and changed file sidecars. Verification
   metadata pinned until closeout stamps the L6 follow-up commit.
+
+  dashboard frontend/session and panels routes; repo-level feature inventory is unchanged. The behavioral
+  detail lives in the `dashboard/src`, `dashboard/src/panels`, and changed file sidecars. Verification
+  metadata pinned until closeout stamps the L6 follow-up commit.
+
+  dashboard frontend/session and panels routes; repo-level feature inventory is unchanged. The behavioral
+  detail lives in the `dashboard/src`, `dashboard/src/panels`, and changed file sidecars. Verification
+  metadata pinned until closeout stamps the L6 follow-up commit.
+  dashboard frontend/session and panels routes; repo-level feature inventory is unchanged. The behavioral
+  detail lives in the `dashboard/src`, `dashboard/src/panels`, and changed file sidecars. Verification
+  metadata pinned until closeout stamps the L6 follow-up commit.
+
 - 2026-07-01T01:43+02:00 — No route impact: L6 added bind-time context handoff to the existing
   right-rail leaf chat and rebuilt/re-synced the generated dashboard package bundle. The repo-wide feature
   inventory's dashboard/frontend/MCP package model is unchanged at this granularity; detail lives in the
   `dashboard/src`, `dashboard/src/panels`, and `mcp` route overviews plus the changed file sidecars.
   Verification metadata pinned until closeout stamps the L6 commit.
+
+  right-rail leaf chat and rebuilt/re-synced the generated dashboard package bundle. The repo-wide feature
+  inventory's dashboard/frontend/MCP package model is unchanged at this granularity; detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, and `mcp` route overviews plus the changed file sidecars.
+  Verification metadata pinned until closeout stamps the L6 commit.
+
+  right-rail leaf chat and rebuilt/re-synced the generated dashboard package bundle. The repo-wide feature
+  inventory's dashboard/frontend/MCP package model is unchanged at this granularity; detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, and `mcp` route overviews plus the changed file sidecars.
+  Verification metadata pinned until closeout stamps the L6 commit.
+  right-rail leaf chat and rebuilt/re-synced the generated dashboard package bundle. The repo-wide feature
+  inventory's dashboard/frontend/MCP package model is unchanged at this granularity; detail lives in the
+  `dashboard/src`, `dashboard/src/panels`, and `mcp` route overviews plus the changed file sidecars.
+  Verification metadata pinned until closeout stamps the L6 commit.
+
 - 2026-06-30T00:00:00+02:00 — operations-integration L5 route impact: added the L5 paragraph to the Observable session
   lifecycle narrative — the sidebar leaf-keyed chat registry (`RailChat`/`LeafAttachPicker`/`sessions`/
   `taskIdentity`), the operations-dashboard polish pass (resizable persisted rails, view-switch-durable
@@ -2082,44 +4833,169 @@ The following entries are the original development narrative, preserved for prov
   history from the inactivity TTL until archived + a one-week grace). Detail lives in the `observer/`,
   `serving/`, and `dashboard/src/` route overviews + file sidecars. Verification metadata pinned until
   closeout stamps the L5 code commit.
+
+  lifecycle narrative — the sidebar leaf-keyed chat registry (`RailChat`/`LeafAttachPicker`/`sessions`/
+  `taskIdentity`), the operations-dashboard polish pass (resizable persisted rails, view-switch-durable
+  drill-state, File/Diff viewer markdown overview rendering + corrected Change-Set row highlight, Hangar
+  archived-enclosure filter, empty-state backdrops), and the lifecycle event-retention correctness fix
+  (durable enclosure is the liveness source of truth; a live master series protects its leaves' event
+  history from the inactivity TTL until archived + a one-week grace). Detail lives in the `observer/`,
+  `serving/`, and `dashboard/src/` route overviews + file sidecars. Verification metadata pinned until
+  closeout stamps the L5 code commit.
+
+  lifecycle narrative — the sidebar leaf-keyed chat registry (`RailChat`/`LeafAttachPicker`/`sessions`/
+  `taskIdentity`), the operations-dashboard polish pass (resizable persisted rails, view-switch-durable
+  drill-state, File/Diff viewer markdown overview rendering + corrected Change-Set row highlight, Hangar
+  archived-enclosure filter, empty-state backdrops), and the lifecycle event-retention correctness fix
+  (durable enclosure is the liveness source of truth; a live master series protects its leaves' event
+  history from the inactivity TTL until archived + a one-week grace). Detail lives in the `observer/`,
+  `serving/`, and `dashboard/src/` route overviews + file sidecars. Verification metadata pinned until
+  closeout stamps the L5 code commit.
+  lifecycle narrative — the sidebar leaf-keyed chat registry (`RailChat`/`LeafAttachPicker`/`sessions`/
+  `taskIdentity`), the operations-dashboard polish pass (resizable persisted rails, view-switch-durable
+  drill-state, File/Diff viewer markdown overview rendering + corrected Change-Set row highlight, Hangar
+  archived-enclosure filter, empty-state backdrops), and the lifecycle event-retention correctness fix
+  (durable enclosure is the liveness source of truth; a live master series protects its leaves' event
+  history from the inactivity TTL until archived + a one-week grace). Detail lives in the `observer/`,
+  `serving/`, and `dashboard/src/` route overviews + file sidecars. Verification metadata pinned until
+  closeout stamps the L5 code commit.
+
 - 2026-06-29T23:18+02:00 — No route impact: `worktree_start` now records the memory base from the source branch tip (not the repo HEAD) deep under `mcp/`; nothing at the repo-overview level changes (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
+
 - 2026-06-29T22:57+02:00 — No route impact: `task_doc` gained a `remove_subtask` op deep under `mcp/`; nothing at the repo-overview level changes (detail in the task_doc_tools.py file sidecar; task 260629_post-landing-cleanup L2).
+
 - 2026-06-29T17:00+02:00 — No route impact: operations-integration L4 review follow-up — the Change-Set Viewer's series/master view is now the inspectable NET diff (`git diff <master-base>..<series-tip>`, via `master_file_diff`), and the shared code view gained comment/operator readability + a split-diff scroll fix — documented in the `dashboard/src/`, `panels/changeset/`, `panels/file-viewer/`, and `serving/` route overviews + file sidecars. The repo-wide feature inventory's Dashboard frontend summary is unchanged at this granularity. Verification metadata pinned until closeout stamps the L4 follow-up commit.
+
 - 2026-06-29T16:40+02:00 — No route impact: operations-integration L4 added the **Change-Set Viewer** screen (`dashboard/src/panels/changeset/`) — a task-scoped takeover consuming the L3 `GET /api/changeset/*` API with a CodeMirror `@codemirror/merge` diff, reusing L2's panes — documented in the `dashboard/src/`, `panels/`, and new `panels/changeset/` route overviews + file sidecars. The repo-wide feature inventory's Dashboard frontend summary (a near-read-only cockpit with switchable centre views) is unchanged at this granularity. Verification metadata pinned until closeout stamps the L4 code commit.
+
 - 2026-06-29T15:30+02:00 — No route impact: operations-integration L3 added the read-only change-set backend (`serving/changeset.py` → `GET /api/changeset/{task,file-diff,master}`: per-file code+memory diff counts, before/after content, master accumulation) over the L1 scope resolution, plus the `serving/scope.py` extraction and a `worktrees/modules/git.py` counts primitive — documented in the `serving/` and `worktrees/modules/` route overviews + file sidecars. The repo-wide feature inventory's Dashboard serving layer summary is unchanged at this granularity. Verification metadata pinned until closeout stamps the L3 code commit.
+
 - 2026-06-29T09:06+02:00 — No route impact: operations-integration L2 added the **File Viewer** centre tab (`dashboard/src/panels/file-viewer/`) — a read-only, dual-pane code+onboarding browser that is the first consumer of the L1 read-only `GET /api/files/*` API — documented in the `dashboard/src/`, `panels/`, and new `panels/file-viewer/` route overviews + file sidecars. The repo-wide feature inventory's Dashboard frontend summary (a near-read-only cockpit with switchable centre views) is unchanged at this granularity. Verification metadata pinned until closeout stamps the L2 code commit.
+
 - 2026-06-28T22:41+02:00 — No route impact: operations-integration L1 added the read-only `GET /api/files/*` dashboard files API (a serving-layer addition documented in the `serving/` route overview); the repo-wide feature inventory's Dashboard serving layer summary is unchanged. Verification metadata pinned until closeout stamps the L1 code commit.
+
 - 2026-06-28T20:30+02:00 — No route impact: a `find_worktree_contract` archive-skip + docstring fix deep under `mcp/`; nothing at the repo-overview level changes (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
+
 - 2026-06-28T16:17+02:00 — Task 35 route impact: the dashboard asset sync gate (`scripts/sync-dashboard.py
   --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
   sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the
   skill gate flags a changed skill; the frontend `LifecycleList` reopen-task nesting fix is covered by the
   `dashboard/src` route overview. Verification metadata pinned until closeout stamps the code commit.
+
+  --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
+  sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the
+  skill gate flags a changed skill; the frontend `LifecycleList` reopen-task nesting fix is covered by the
+  `dashboard/src` route overview. Verification metadata pinned until closeout stamps the code commit.
+
+  --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
+  sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the
+  skill gate flags a changed skill; the frontend `LifecycleList` reopen-task nesting fix is covered by the
+  `dashboard/src` route overview. Verification metadata pinned until closeout stamps the code commit.
+  --check`, run by `.githooks/`) became source-aware — it fingerprints the dashboard build inputs into a
+  sibling `dashboard.fingerprint` and flags a `dashboard/src` change shipped without a rebuild, the way the
+  skill gate flags a changed skill; the frontend `LifecycleList` reopen-task nesting fix is covered by the
+  `dashboard/src` route overview. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-28T13:54+02:00 — No route impact: task 34 changed activity-decaying heartbeat emission,
   inactivity-keyed raw Event River retention, the `/api/events` single-scan / heartbeat-filtered /
   chunked-backlog channel, and the dashboard event-store sliding window + Event River virtualization
   within child files (covered by their file-level sidecars and the `observer/`, `serving/`,
   `dashboard/src/`, and `dashboard/src/panels/` route overviews); this route's purpose/structure is
   unchanged.
+
+  inactivity-keyed raw Event River retention, the `/api/events` single-scan / heartbeat-filtered /
+  chunked-backlog channel, and the dashboard event-store sliding window + Event River virtualization
+  within child files (covered by their file-level sidecars and the `observer/`, `serving/`,
+  `dashboard/src/`, and `dashboard/src/panels/` route overviews); this route's purpose/structure is
+  unchanged.
+
+  inactivity-keyed raw Event River retention, the `/api/events` single-scan / heartbeat-filtered /
+  chunked-backlog channel, and the dashboard event-store sliding window + Event River virtualization
+  within child files (covered by their file-level sidecars and the `observer/`, `serving/`,
+  `dashboard/src/`, and `dashboard/src/panels/` route overviews); this route's purpose/structure is
+  unchanged.
+  inactivity-keyed raw Event River retention, the `/api/events` single-scan / heartbeat-filtered /
+  chunked-backlog channel, and the dashboard event-store sliding window + Event River virtualization
+  within child files (covered by their file-level sidecars and the `observer/`, `serving/`,
+  `dashboard/src/`, and `dashboard/src/panels/` route overviews); this route's purpose/structure is
+  unchanged.
+
 - 2026-06-28T07:45+02:00 — Task 33 route impact (light): the dashboard-frontend feature row notes the
   active-enclosure topology scoping that landed in leaf 33 (an `activeWorktreeGroups` projection field,
   shared with the Engine Room's active admission, with the lifecycle/task rim folded into the enclosure
   node). Verification metadata pinned until closeout stamps the code commit.
+
+  active-enclosure topology scoping that landed in leaf 33 (an `activeWorktreeGroups` projection field,
+  shared with the Engine Room's active admission, with the lifecycle/task rim folded into the enclosure
+  node). Verification metadata pinned until closeout stamps the code commit.
+
+  active-enclosure topology scoping that landed in leaf 33 (an `activeWorktreeGroups` projection field,
+  shared with the Engine Room's active admission, with the lifecycle/task rim folded into the enclosure
+  node). Verification metadata pinned until closeout stamps the code commit.
+  active-enclosure topology scoping that landed in leaf 33 (an `activeWorktreeGroups` projection field,
+  shared with the Engine Room's active admission, with the lifecycle/task rim folded into the enclosure
+  node). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-28T07:43+02:00 — Task 29 S7 root route impact: surfaced the current Event River boundary
   (backend lifecycle retention, raw-stream `ready`, no frontend count cap), actionable-drift
   provenance/targetless dismissal, optimistic attention suppression, and the hidden Lifecycle Flow tab.
   Route detail lives under `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`,
   `dashboard/src/`, and `dashboard/src/panels/`. Verification metadata pinned until closeout stamps the
   task-29 code commit.
+
+  (backend lifecycle retention, raw-stream `ready`, no frontend count cap), actionable-drift
+  provenance/targetless dismissal, optimistic attention suppression, and the hidden Lifecycle Flow tab.
+  Route detail lives under `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`,
+  `dashboard/src/`, and `dashboard/src/panels/`. Verification metadata pinned until closeout stamps the
+  task-29 code commit.
+
+  (backend lifecycle retention, raw-stream `ready`, no frontend count cap), actionable-drift
+  provenance/targetless dismissal, optimistic attention suppression, and the hidden Lifecycle Flow tab.
+  Route detail lives under `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`,
+  `dashboard/src/`, and `dashboard/src/panels/`. Verification metadata pinned until closeout stamps the
+  task-29 code commit.
+  (backend lifecycle retention, raw-stream `ready`, no frontend count cap), actionable-drift
+  provenance/targetless dismissal, optimistic attention suppression, and the hidden Lifecycle Flow tab.
+  Route detail lives under `mcp/`, `observer/`, `serving/`, `controlplane/`, `memory_quality/`,
+  `dashboard/src/`, and `dashboard/src/panels/`. Verification metadata pinned until closeout stamps the
+  task-29 code commit.
+
 - 2026-06-28T03:33+02:00 — No route impact: task 32 is scoped to mcp-internal drift snapshot
   retention for the observer/worktree cleanup surface; the top-level feature inventory already routes
   this behavior through the MCP/observer/worktree entries, and no repository-level surface changes here.
   Verification metadata pinned until closeout stamps the task-32 code commit.
+
+  retention for the observer/worktree cleanup surface; the top-level feature inventory already routes
+  this behavior through the MCP/observer/worktree entries, and no repository-level surface changes here.
+  Verification metadata pinned until closeout stamps the task-32 code commit.
+
+  retention for the observer/worktree cleanup surface; the top-level feature inventory already routes
+  this behavior through the MCP/observer/worktree entries, and no repository-level surface changes here.
+  Verification metadata pinned until closeout stamps the task-32 code commit.
+  retention for the observer/worktree cleanup surface; the top-level feature inventory already routes
+  this behavior through the MCP/observer/worktree entries, and no repository-level surface changes here.
+  Verification metadata pinned until closeout stamps the task-32 code commit.
+
 - 2026-06-28T03:21+02:00 — Task 31 route impact: refreshed the root overview body for dashboard/provider
   current-state honesty: live projection refreshes provider state, isolated worktree provider containers are
   inspected, and Engine Room keeps expected-but-missing provider roles visible. Route detail lives in the
   MCP, observer, serving, and dashboard panel overviews. Verification metadata pinned until closeout stamps
   the task-31 code commit.
+
+  current-state honesty: live projection refreshes provider state, isolated worktree provider containers are
+  inspected, and Engine Room keeps expected-but-missing provider roles visible. Route detail lives in the
+  MCP, observer, serving, and dashboard panel overviews. Verification metadata pinned until closeout stamps
+  the task-31 code commit.
+
+  current-state honesty: live projection refreshes provider state, isolated worktree provider containers are
+  inspected, and Engine Room keeps expected-but-missing provider roles visible. Route detail lives in the
+  MCP, observer, serving, and dashboard panel overviews. Verification metadata pinned until closeout stamps
+  the task-31 code commit.
+  current-state honesty: live projection refreshes provider state, isolated worktree provider containers are
+  inspected, and Engine Room keeps expected-but-missing provider roles visible. Route detail lives in the
+  MCP, observer, serving, and dashboard panel overviews. Verification metadata pinned until closeout stamps
+  the task-31 code commit.
+
 - 2026-06-27T22:00+02:00 — Task 28 SKILL / doctrine reframe (`.` root route): the active-developer
   hand-off taught by the root skill trees (`skills/` plus the mirrors `.claude/skills/`, `.agents/skills/`,
   `.hermes/…`, `.codex/…`, `.cursor/…`, `.github-vscode/…`, `.openclaw/…`) moved from block-and-wait
@@ -2132,11 +5008,62 @@ The following entries are the original development narrative, preserved for prov
   `mcp/src/agents_remember/package_data/runtime/skills/` are sync-propagated from canonical `skills/` via
   `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
   l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
+
+  hand-off taught by the root skill trees (`skills/` plus the mirrors `.claude/skills/`, `.agents/skills/`,
+  `.hermes/…`, `.codex/…`, `.cursor/…`, `.github-vscode/…`, `.openclaw/…`) moved from block-and-wait
+  `lifecycle_gate` to **notify-and-continue** `lifecycle_turn_end_notification` across
+  `l-01-session-job-lifecycle`, `c-09-git-worktree-manager`, and `c-12-closeout` — every junction (reframe /
+  plan / worktree-intent / commit-closeout / push / integration / cleanup / turn-end) now runs dry-run →
+  report → notify-and-stop, with the next turn's first AR tool call auto-resuming and auto-dismissing the
+  attention item (no `lifecycle_resume`); `next_step.py` repoints onto the notification and the
+  `lifecycle_gate`/operator-inbox stack is parked as the fallback. The packaged bundle copies under
+  `mcp/src/agents_remember/package_data/runtime/skills/` are sync-propagated from canonical `skills/` via
+  `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
+  l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
+
+  hand-off taught by the root skill trees (`skills/` plus the mirrors `.claude/skills/`, `.agents/skills/`,
+  `.hermes/…`, `.codex/…`, `.cursor/…`, `.github-vscode/…`, `.openclaw/…`) moved from block-and-wait
+  `lifecycle_gate` to **notify-and-continue** `lifecycle_turn_end_notification` across
+  `l-01-session-job-lifecycle`, `c-09-git-worktree-manager`, and `c-12-closeout` — every junction (reframe /
+  plan / worktree-intent / commit-closeout / push / integration / cleanup / turn-end) now runs dry-run →
+  report → notify-and-stop, with the next turn's first AR tool call auto-resuming and auto-dismissing the
+  attention item (no `lifecycle_resume`); `next_step.py` repoints onto the notification and the
+  `lifecycle_gate`/operator-inbox stack is parked as the fallback. The packaged bundle copies under
+  `mcp/src/agents_remember/package_data/runtime/skills/` are sync-propagated from canonical `skills/` via
+  `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
+  l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
+  hand-off taught by the root skill trees (`skills/` plus the mirrors `.claude/skills/`, `.agents/skills/`,
+  `.hermes/…`, `.codex/…`, `.cursor/…`, `.github-vscode/…`, `.openclaw/…`) moved from block-and-wait
+  `lifecycle_gate` to **notify-and-continue** `lifecycle_turn_end_notification` across
+  `l-01-session-job-lifecycle`, `c-09-git-worktree-manager`, and `c-12-closeout` — every junction (reframe /
+  plan / worktree-intent / commit-closeout / push / integration / cleanup / turn-end) now runs dry-run →
+  report → notify-and-stop, with the next turn's first AR tool call auto-resuming and auto-dismissing the
+  attention item (no `lifecycle_resume`); `next_step.py` repoints onto the notification and the
+  `lifecycle_gate`/operator-inbox stack is parked as the fallback. The packaged bundle copies under
+  `mcp/src/agents_remember/package_data/runtime/skills/` are sync-propagated from canonical `skills/` via
+  `scripts/sync-skills.py`. Acknowledged in the root overview body; junction-level detail lives in the
+  l-01/c-09/c-12 skill sidecars. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-27T20:16+02:00 — No route impact: the task-27 follow-up adds a gate-await branch to the
   lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) —
   a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
   feature is already in this root inventory and the repo route model is unchanged (detail in the file
   sidecar). Verification metadata pinned until closeout stamps the code commit.
+
+  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) —
+  a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
+  feature is already in this root inventory and the repo route model is unchanged (detail in the file
+  sidecar). Verification metadata pinned until closeout stamps the code commit.
+
+  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) —
+  a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
+  feature is already in this root inventory and the repo route model is unchanged (detail in the file
+  sidecar). Verification metadata pinned until closeout stamps the code commit.
+  lifecycle next-step engine ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) —
+  a `blocked` lifecycle now hints `lifecycle_resume`, carrying the chain through the open gate. The
+  feature is already in this root inventory and the repo route model is unchanged (detail in the file
+  sidecar). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-27T18:43+02:00 — Tasks 26+27 root route impact: surfaced two new features in the feature
   inventory. **Task 27** adds the **lifecycle next-step hint engine**
   ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) — every MCP tool
@@ -2149,69 +5076,288 @@ The following entries are the original development narrative, preserved for prov
   visualizing the build-job lifecycle and a **hot-reload dev env** (`--reload` on the dashboard CLI);
   refreshed the Dashboard frontend + Dashboard serving Feature Inventory rows and the Dashboard Serving
   Layer functional area. Verification metadata pinned until closeout stamps the code commit.
+
+  inventory. **Task 27** adds the **lifecycle next-step hint engine**
+  ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) — every MCP tool
+  response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload`
+  choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain
+  that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing
+  `lifecycle_gate` at gate junctions; built on the existing gate, auto-firing a later step); refreshed
+  the Observable session lifecycle row + Observable Session Lifecycle functional area. **Task 26** adds
+  the dev-facing **Lifecycle Flow** tab ([FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx))
+  visualizing the build-job lifecycle and a **hot-reload dev env** (`--reload` on the dashboard CLI);
+  refreshed the Dashboard frontend + Dashboard serving Feature Inventory rows and the Dashboard Serving
+  Layer functional area. Verification metadata pinned until closeout stamps the code commit.
+
+  inventory. **Task 27** adds the **lifecycle next-step hint engine**
+  ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) — every MCP tool
+  response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload`
+  choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain
+  that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing
+  `lifecycle_gate` at gate junctions; built on the existing gate, auto-firing a later step); refreshed
+  the Observable session lifecycle row + Observable Session Lifecycle functional area. **Task 26** adds
+  the dev-facing **Lifecycle Flow** tab ([FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx))
+  visualizing the build-job lifecycle and a **hot-reload dev env** (`--reload` on the dashboard CLI);
+  refreshed the Dashboard frontend + Dashboard serving Feature Inventory rows and the Dashboard Serving
+  Layer functional area. Verification metadata pinned until closeout stamps the code commit.
+  inventory. **Task 27** adds the **lifecycle next-step hint engine**
+  ([next_step.py](agents-remember/mcp/src/agents_remember/application/next_step.py)) — every MCP tool
+  response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload`
+  choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain
+  that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing
+  `lifecycle_gate` at gate junctions; built on the existing gate, auto-firing a later step); refreshed
+  the Observable session lifecycle row + Observable Session Lifecycle functional area. **Task 26** adds
+  the dev-facing **Lifecycle Flow** tab ([FlowTab.tsx](agents-remember/dashboard/src/panels/FlowTab.tsx))
+  visualizing the build-job lifecycle and a **hot-reload dev env** (`--reload` on the dashboard CLI);
+  refreshed the Dashboard frontend + Dashboard serving Feature Inventory rows and the Dashboard Serving
+  Layer functional area. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-27T15:24+02:00 — Task 22 root route impact: the Dashboard Serving Layer paragraph now records
   durable terminal catalog persistence, refresh/server restart rehydration, multi-tab terminal attach,
   and sticky explicit termination as repo-level dashboard serving behavior. Detailed behavior lives in
   the serving route overview, dashboard source route, and file sidecars. Verification metadata pinned
   until closeout stamps the follow-up code commit.
+
+  durable terminal catalog persistence, refresh/server restart rehydration, multi-tab terminal attach,
+  and sticky explicit termination as repo-level dashboard serving behavior. Detailed behavior lives in
+  the serving route overview, dashboard source route, and file sidecars. Verification metadata pinned
+  until closeout stamps the follow-up code commit.
+
+  durable terminal catalog persistence, refresh/server restart rehydration, multi-tab terminal attach,
+  and sticky explicit termination as repo-level dashboard serving behavior. Detailed behavior lives in
+  the serving route overview, dashboard source route, and file sidecars. Verification metadata pinned
+  until closeout stamps the follow-up code commit.
+  durable terminal catalog persistence, refresh/server restart rehydration, multi-tab terminal attach,
+  and sticky explicit termination as repo-level dashboard serving behavior. Detailed behavior lives in
+  the serving route overview, dashboard source route, and file sidecars. Verification metadata pinned
+  until closeout stamps the follow-up code commit.
+
 - 2026-06-26T19:40+02:00 — Task 20 reopened root route impact: added the Event
   River lifecycle task label feature-inventory row so retained event-history
   rows whose live lifecycle projection is gone are still documented as
   task-title-first. Detailed behavior lives in the dashboard source route,
   panel route, and file sidecars. Verification metadata pinned until closeout
   stamps the reopened task-20 code commit.
+
+  River lifecycle task label feature-inventory row so retained event-history
+  rows whose live lifecycle projection is gone are still documented as
+  task-title-first. Detailed behavior lives in the dashboard source route,
+  panel route, and file sidecars. Verification metadata pinned until closeout
+  stamps the reopened task-20 code commit.
+
+  River lifecycle task label feature-inventory row so retained event-history
+  rows whose live lifecycle projection is gone are still documented as
+  task-title-first. Detailed behavior lives in the dashboard source route,
+  panel route, and file sidecars. Verification metadata pinned until closeout
+  stamps the reopened task-20 code commit.
+  River lifecycle task label feature-inventory row so retained event-history
+  rows whose live lifecycle projection is gone are still documented as
+  task-title-first. Detailed behavior lives in the dashboard source route,
+  panel route, and file sidecars. Verification metadata pinned until closeout
+  stamps the reopened task-20 code commit.
+
 - 2026-06-26T18:43+02:00 — Regression fix: root gate-control-plane row now
   states that `lifecycle_gate` blocks until a developer decision or gate-specific
   inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+  states that `lifecycle_gate` performs the bounded gate/inbox wait itself
+  after creating the gate and blocking the lifecycle.
+
 - 2026-06-26T18:23+02:00 — No route impact: task 20 is scoped to the Event River
   frontend under `dashboard/src/panels/` plus the generated `package_data/dashboard/` bundle sync.
   The root feature inventory and functional-area model stay unchanged; detailed behavior lives in the
   dashboard panels overview and file sidecars. Verification metadata pinned until closeout stamps the
   code commit.
+
+  frontend under `dashboard/src/panels/` plus the generated `package_data/dashboard/` bundle sync.
+  The root feature inventory and functional-area model stay unchanged; detailed behavior lives in the
+  dashboard panels overview and file sidecars. Verification metadata pinned until closeout stamps the
+  code commit.
+
+  frontend under `dashboard/src/panels/` plus the generated `package_data/dashboard/` bundle sync.
+  The root feature inventory and functional-area model stay unchanged; detailed behavior lives in the
+  dashboard panels overview and file sidecars. Verification metadata pinned until closeout stamps the
+  code commit.
+  frontend under `dashboard/src/panels/` plus the generated `package_data/dashboard/` bundle sync.
+  The root feature inventory and functional-area model stay unchanged; detailed behavior lives in the
+  dashboard panels overview and file sidecars. Verification metadata pinned until closeout stamps the
+  code commit.
+
 - 2026-06-26T17:12+02:00 — Regression fix: root gate-control-plane row now
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
+  states that `lifecycle_gate` blocks until a developer decision or gate-specific
+  inbox response and ignores stale lifecycle-scoped inbox rows for a new gate.
   states that `lifecycle_gate` performs the bounded gate/inbox wait itself
   after creating the gate and blocking the lifecycle.
+
 - 2026-06-26T16:15+02:00 — Task 25 closeout verification: refreshed the root
   gate-control-plane wording to the unified public `lifecycle_gate` junction (including
   `required_decision`) and verified the task-document replacement summary against the
   source branch's `task_doc replace` operation at `2017434`.
+
+  gate-control-plane wording to the unified public `lifecycle_gate` junction (including
+  `required_decision`) and verified the task-document replacement summary against the
+  source branch's `task_doc replace` operation at `2017434`.
+
+  gate-control-plane wording to the unified public `lifecycle_gate` junction (including
+  `required_decision`) and verified the task-document replacement summary against the
+  source branch's `task_doc replace` operation at `2017434`.
+  gate-control-plane wording to the unified public `lifecycle_gate` junction (including
+  `required_decision`) and verified the task-document replacement summary against the
+  source branch's `task_doc replace` operation at `2017434`.
+
 - 2026-06-26T15:33+02:00 — No route impact: task 25 preserves the source branch's
   `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
   observer, control-plane, model, and MCP-tool sidecars, so the root task-document inventory remains
   the replacement-repair wording.
   Verification metadata pinned until closeout stamps the code commit.
+
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  observer, control-plane, model, and MCP-tool sidecars, so the root task-document inventory remains
+  the replacement-repair wording.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  observer, control-plane, model, and MCP-tool sidecars, so the root task-document inventory remains
+  the replacement-repair wording.
+  Verification metadata pinned until closeout stamps the code commit.
+  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
+  observer, control-plane, model, and MCP-tool sidecars, so the root task-document inventory remains
+  the replacement-repair wording.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-25T13:20+02:00 — Task 23/24: root overview now records gate/inbox interactions as disposable data with response, dismiss, clear, consume, and TTL cleanup paths.
+
 - 2026-06-25T09:55+02:00 — Root provider runtime summary now records GrepAI's non-conflicting preferred auto host ports (`61432`/`61434`) and preserves the distinction from container service ports (`5432`/`11434`).
+
 - 2026-06-25T07:26+02:00 — Task 19 gate interaction polish: root inventory now records
   `gate_response_wait`, single-current gate expiration, targeted dashboard decisions with rejection
   notes, message-only Chat responses, and human-readable dashboard gate previews. Verification metadata
   pinned until closeout stamps the code commit.
+
+  `gate_response_wait`, single-current gate expiration, targeted dashboard decisions with rejection
+  notes, message-only Chat responses, and human-readable dashboard gate previews. Verification metadata
+  pinned until closeout stamps the code commit.
+
+  `gate_response_wait`, single-current gate expiration, targeted dashboard decisions with rejection
+  notes, message-only Chat responses, and human-readable dashboard gate previews. Verification metadata
+  pinned until closeout stamps the code commit.
+  `gate_response_wait`, single-current gate expiration, targeted dashboard decisions with rejection
+  notes, message-only Chat responses, and human-readable dashboard gate previews. Verification metadata
+  pinned until closeout stamps the code commit.
+
 - 2026-06-24T18:13+02:00 - No route impact: the empty-state backdrop zoom-stability pass is scoped to
   the existing dashboard panels route and tracked SC2 media assets. The repository-level dashboard
   feature inventory already describes these as shared, effects-gated boomerang-video empty-state
   backdrops; the panels route overview and file sidecars own the current static direct-video and
   media-owned zoom contract.
+
+  the existing dashboard panels route and tracked SC2 media assets. The repository-level dashboard
+  feature inventory already describes these as shared, effects-gated boomerang-video empty-state
+  backdrops; the panels route overview and file sidecars own the current static direct-video and
+  media-owned zoom contract.
+
+  the existing dashboard panels route and tracked SC2 media assets. The repository-level dashboard
+  feature inventory already describes these as shared, effects-gated boomerang-video empty-state
+  backdrops; the panels route overview and file sidecars own the current static direct-video and
+  media-owned zoom contract.
+  the existing dashboard panels route and tracked SC2 media assets. The repository-level dashboard
+  feature inventory already describes these as shared, effects-gated boomerang-video empty-state
+  backdrops; the panels route overview and file sidecars own the current static direct-video and
+  media-owned zoom contract.
+
 - 2026-06-24T12:31+02:00 — Task 17 root inventory refresh: the JSON-primary task-documents row and
   functional area now record that leaf task docs and folder-keyed series masters expose structured
   creation metadata for reader ordering, and that the series master projection carries authored master
   content for the dashboard reader.
+
+  functional area now record that leaf task docs and folder-keyed series masters expose structured
+  creation metadata for reader ordering, and that the series master projection carries authored master
+  content for the dashboard reader.
+
+  functional area now record that leaf task docs and folder-keyed series masters expose structured
+  creation metadata for reader ordering, and that the series master projection carries authored master
+  content for the dashboard reader.
+  functional area now record that leaf task docs and folder-keyed series masters expose structured
+  creation metadata for reader ordering, and that the series master projection carries authored master
+  content for the dashboard reader.
+
 - 2026-06-24T09:53+02:00 - No route impact: slice 16 is scoped to the dashboard Engine Room/detail
   reader implementation and its file/route sidecars; the repository-level feature inventory and
   invariants remain accurate.
+
+  reader implementation and its file/route sidecars; the repository-level feature inventory and
+  invariants remain accurate.
+
+  reader implementation and its file/route sidecars; the repository-level feature inventory and
+  invariants remain accurate.
+  reader implementation and its file/route sidecars; the repository-level feature inventory and
+  invariants remain accurate.
+
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: root inventory refreshed for the workflow change from task-root `contract.md` files to one `ar-series-contract/v1` schema: root series contracts represent integration branches, leaf enclosure contracts represent worktrees, and observer/dashboard projections carry leaf identity separately from task roots. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-23T23:04+02:00 — Dashboard task 14 adds `lifecycle_finalize_task` as the terminal worktree lifecycle operation. Refreshed the Worktree lifecycle Feature Inventory row and Worktree Support narrative: closeout remains commit-only, finalization proves one local parent-child branch edge after landing/carryover, runs or verifies cleanup, updates the leaf task plus immediate parent row, and deliberately does not model squash-merge equivalence.
+
 - 2026-06-23T22:31+02:00 — Task 12 S2 clarification: the Dashboard frontend Feature Inventory row now
   distinguishes GrepAI process aggregation from target addressability, so repo-scoped provider dots can
   represent `targetRepos` without implying separate provider processes.
+
+  distinguishes GrepAI process aggregation from target addressability, so repo-scoped provider dots can
+  represent `targetRepos` without implying separate provider processes.
+
+  distinguishes GrepAI process aggregation from target addressability, so repo-scoped provider dots can
+  represent `targetRepos` without implying separate provider processes.
+  distinguishes GrepAI process aggregation from target addressability, so repo-scoped provider dots can
+  represent `targetRepos` without implying separate provider processes.
+
 - 2026-06-23T22:09+02:00 — Task 12 S2 correction: the Dashboard frontend Feature Inventory row still
   describes provider parenting generically, but the backend source of repo coverage is now explicit:
   CGC watcher rows and GrepAI configured `targetRepos` parent workspace provider satellites to repo
   nodes, while worktree providers remain worktree-group scoped.
+
+  describes provider parenting generically, but the backend source of repo coverage is now explicit:
+  CGC watcher rows and GrepAI configured `targetRepos` parent workspace provider satellites to repo
+  nodes, while worktree providers remain worktree-group scoped.
+
+  describes provider parenting generically, but the backend source of repo coverage is now explicit:
+  CGC watcher rows and GrepAI configured `targetRepos` parent workspace provider satellites to repo
+  nodes, while worktree providers remain worktree-group scoped.
+  describes provider parenting generically, but the backend source of repo coverage is now explicit:
+  CGC watcher rows and GrepAI configured `targetRepos` parent workspace provider satellites to repo
+  nodes, while worktree providers remain worktree-group scoped.
+
 - 2026-06-23T21:58+02:00 — Task 12 S2 refreshed the Dashboard frontend Feature Inventory row for the
   topology constellation's provider-parenting correction: repo-covered workspace provider nodes now
   parent to repo nodes, while worktree providers remain worktree-group scoped. Detail lives in the
   `mcp/` observer route and the root `dashboard/src/topology/` route.
+
+  topology constellation's provider-parenting correction: repo-covered workspace provider nodes now
+  parent to repo nodes, while worktree providers remain worktree-group scoped. Detail lives in the
+  `mcp/` observer route and the root `dashboard/src/topology/` route.
+
+  topology constellation's provider-parenting correction: repo-covered workspace provider nodes now
+  parent to repo nodes, while worktree providers remain worktree-group scoped. Detail lives in the
+  `mcp/` observer route and the root `dashboard/src/topology/` route.
+  topology constellation's provider-parenting correction: repo-covered workspace provider nodes now
+  parent to repo nodes, while worktree providers remain worktree-group scoped. Detail lives in the
+  `mcp/` observer route and the root `dashboard/src/topology/` route.
+
 - 2026-06-23T15:05+02:00 — Task 10 external-chat inbox: added a root feature note tying the control-plane inbox, the dashboard serving `POST /api/operator-inbox` endpoint, and the `GateResponder` no-hosted-session fallback together as the current pull-based return channel for external agents. Verification metadata pinned until closeout stamps the task-10 code commit.
+
 - 2026-06-23T07:39+02:00 — slice 09 closes the **observable-lifecycle gate story** by adopting the
   lifecycle-signal + gate substrate into the lifecycle skills: touched the **Observable Session
   Lifecycle** functional area and the **Gate control plane** Feature Inventory row to record the
@@ -2229,6 +5375,57 @@ The following entries are the original development narrative, preserved for prov
   these are surfaced here as they land; per-file detail lives in the skill mirror sidecars + the
   `dashboard/src/panels/` route overview + sidecars. Verification metadata pinned until closeout stamps
   the code commit.
+
+  lifecycle-signal + gate substrate into the lifecycle skills: touched the **Observable Session
+  Lifecycle** functional area and the **Gate control plane** Feature Inventory row to record the
+  `l-01-session-job-lifecycle` skill's new **Gate Choreography** (every approval junction raises an
+  ambient `lifecycle_block` + a durable kind-typed `gate_create`, `gate_wait`s, the **developer**
+  resolves — never the agent's model-attributed `gate_decide` — and the agent always clears with
+  `lifecycle_resume`), with junctions split by kind across the skills (`plan-approval`/`push-approval`
+  in l-01; `worktree-intent`/`integration-approval`/`cleanup-approval` in the `c-09-git-worktree-manager`
+  skill; `closeout-approval` = the single commit gate in the `c-12-closeout` skill; `agent-question`
+  catch-all). The agent's behavior — not just the dashboard's reads — now makes the session observable.
+  The same slice refreshed the empty-state backdrop atmosphere: the shared `EmptyStateBackdrop` video
+  became a `motion.video` with a slow 12s scale-yoyo zoom (`1`→`1.03`, no CSS per the animation
+  doctrine, shared by both backdrops, effects-gated), and the battle-cruiser clip was re-sourced into the
+  same `sc2-battlecruiser-boomerang.mp4` path. Per the root-overview-surfaces-emerging-features lesson
+  these are surfaced here as they land; per-file detail lives in the skill mirror sidecars + the
+  `dashboard/src/panels/` route overview + sidecars. Verification metadata pinned until closeout stamps
+  the code commit.
+
+  lifecycle-signal + gate substrate into the lifecycle skills: touched the **Observable Session
+  Lifecycle** functional area and the **Gate control plane** Feature Inventory row to record the
+  `l-01-session-job-lifecycle` skill's new **Gate Choreography** (every approval junction raises an
+  ambient `lifecycle_block` + a durable kind-typed `gate_create`, `gate_wait`s, the **developer**
+  resolves — never the agent's model-attributed `gate_decide` — and the agent always clears with
+  `lifecycle_resume`), with junctions split by kind across the skills (`plan-approval`/`push-approval`
+  in l-01; `worktree-intent`/`integration-approval`/`cleanup-approval` in the `c-09-git-worktree-manager`
+  skill; `closeout-approval` = the single commit gate in the `c-12-closeout` skill; `agent-question`
+  catch-all). The agent's behavior — not just the dashboard's reads — now makes the session observable.
+  The same slice refreshed the empty-state backdrop atmosphere: the shared `EmptyStateBackdrop` video
+  became a `motion.video` with a slow 12s scale-yoyo zoom (`1`→`1.03`, no CSS per the animation
+  doctrine, shared by both backdrops, effects-gated), and the battle-cruiser clip was re-sourced into the
+  same `sc2-battlecruiser-boomerang.mp4` path. Per the root-overview-surfaces-emerging-features lesson
+  these are surfaced here as they land; per-file detail lives in the skill mirror sidecars + the
+  `dashboard/src/panels/` route overview + sidecars. Verification metadata pinned until closeout stamps
+  the code commit.
+  lifecycle-signal + gate substrate into the lifecycle skills: touched the **Observable Session
+  Lifecycle** functional area and the **Gate control plane** Feature Inventory row to record the
+  `l-01-session-job-lifecycle` skill's new **Gate Choreography** (every approval junction raises an
+  ambient `lifecycle_block` + a durable kind-typed `gate_create`, `gate_wait`s, the **developer**
+  resolves — never the agent's model-attributed `gate_decide` — and the agent always clears with
+  `lifecycle_resume`), with junctions split by kind across the skills (`plan-approval`/`push-approval`
+  in l-01; `worktree-intent`/`integration-approval`/`cleanup-approval` in the `c-09-git-worktree-manager`
+  skill; `closeout-approval` = the single commit gate in the `c-12-closeout` skill; `agent-question`
+  catch-all). The agent's behavior — not just the dashboard's reads — now makes the session observable.
+  The same slice refreshed the empty-state backdrop atmosphere: the shared `EmptyStateBackdrop` video
+  became a `motion.video` with a slow 12s scale-yoyo zoom (`1`→`1.03`, no CSS per the animation
+  doctrine, shared by both backdrops, effects-gated), and the battle-cruiser clip was re-sourced into the
+  same `sc2-battlecruiser-boomerang.mp4` path. Per the root-overview-surfaces-emerging-features lesson
+  these are surfaced here as they land; per-file detail lives in the skill mirror sidecars + the
+  `dashboard/src/panels/` route overview + sidecars. Verification metadata pinned until closeout stamps
+  the code commit.
+
 - 2026-06-23T04:35+02:00 — slice 07b targeted polish extends the engine-room **G6 video-backdrop
   atmosphere** to the cockpit's empty-state canvases: a new shared `EmptyStateBackdrop` panel
   (`dashboard/src/panels/`) renders a faint, effects-gated, forward+reverse **boomerang** clip behind
@@ -2239,6 +5436,36 @@ The following entries are the original development narrative, preserved for prov
   reduced-motion) and is `aria-hidden`. Per the root-overview-surfaces-emerging-features lesson this growing
   cockpit atmosphere is surfaced here as it lands; per-file detail lives in the `dashboard/src/panels/` route
   overview + sidecars. Verification metadata pinned until closeout stamps the 07b code commit.
+
+  atmosphere** to the cockpit's empty-state canvases: a new shared `EmptyStateBackdrop` panel
+  (`dashboard/src/panels/`) renders a faint, effects-gated, forward+reverse **boomerang** clip behind
+  centered empty-state text — the operations DetailPanel no-selection state shows the battle cruiser and
+  the chats no-session state shows the adjutant. New atmosphere assets land under `dashboard/public/assets/`
+  (`sc2-battlecruiser-boomerang.mp4`, `sc2-adjutant-boomerang.mp4`, plus a spare
+  `sc2-siegetank-blueprint-video.mp4`); the backdrop honors `useShouldAnimate` (absent under calm-cockpit /
+  reduced-motion) and is `aria-hidden`. Per the root-overview-surfaces-emerging-features lesson this growing
+  cockpit atmosphere is surfaced here as it lands; per-file detail lives in the `dashboard/src/panels/` route
+  overview + sidecars. Verification metadata pinned until closeout stamps the 07b code commit.
+
+  atmosphere** to the cockpit's empty-state canvases: a new shared `EmptyStateBackdrop` panel
+  (`dashboard/src/panels/`) renders a faint, effects-gated, forward+reverse **boomerang** clip behind
+  centered empty-state text — the operations DetailPanel no-selection state shows the battle cruiser and
+  the chats no-session state shows the adjutant. New atmosphere assets land under `dashboard/public/assets/`
+  (`sc2-battlecruiser-boomerang.mp4`, `sc2-adjutant-boomerang.mp4`, plus a spare
+  `sc2-siegetank-blueprint-video.mp4`); the backdrop honors `useShouldAnimate` (absent under calm-cockpit /
+  reduced-motion) and is `aria-hidden`. Per the root-overview-surfaces-emerging-features lesson this growing
+  cockpit atmosphere is surfaced here as it lands; per-file detail lives in the `dashboard/src/panels/` route
+  overview + sidecars. Verification metadata pinned until closeout stamps the 07b code commit.
+  atmosphere** to the cockpit's empty-state canvases: a new shared `EmptyStateBackdrop` panel
+  (`dashboard/src/panels/`) renders a faint, effects-gated, forward+reverse **boomerang** clip behind
+  centered empty-state text — the operations DetailPanel no-selection state shows the battle cruiser and
+  the chats no-session state shows the adjutant. New atmosphere assets land under `dashboard/public/assets/`
+  (`sc2-battlecruiser-boomerang.mp4`, `sc2-adjutant-boomerang.mp4`, plus a spare
+  `sc2-siegetank-blueprint-video.mp4`); the backdrop honors `useShouldAnimate` (absent under calm-cockpit /
+  reduced-motion) and is `aria-hidden`. Per the root-overview-surfaces-emerging-features lesson this growing
+  cockpit atmosphere is surfaced here as it lands; per-file detail lives in the `dashboard/src/panels/` route
+  overview + sidecars. Verification metadata pinned until closeout stamps the 07b code commit.
+
 - 2026-06-23T00:53+02:00 — No route impact: slice 07 S4+S5 is doctrine/docstring text only — the `read_ar_files`
   tool docstring now states its research-phase-read role (read managed-repo source through it until the
   build/job decision; native read = the edit precondition once building begins), the `read_files.py` +
@@ -2248,6 +5475,33 @@ The following entries are the original development narrative, preserved for prov
   subsystem changed, so the repo's feature inventory / functional areas this overview describes are unchanged —
   detail lives in the `mcp/` package overview + the `controllers/` / `observer/` route overviews + file
   sidecars. Verification metadata pinned until closeout stamps the slice-07 code commit.
+
+  tool docstring now states its research-phase-read role (read managed-repo source through it until the
+  build/job decision; native read = the edit precondition once building begins), the `read_files.py` +
+  `served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (no
+  session-hook producer; consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors
+  under `mcp/.../package_data/runtime/` carry that research-phase-read doctrine. No MCP tool surface, schema, or
+  subsystem changed, so the repo's feature inventory / functional areas this overview describes are unchanged —
+  detail lives in the `mcp/` package overview + the `controllers/` / `observer/` route overviews + file
+  sidecars. Verification metadata pinned until closeout stamps the slice-07 code commit.
+
+  tool docstring now states its research-phase-read role (read managed-repo source through it until the
+  build/job decision; native read = the edit precondition once building begins), the `read_files.py` +
+  `served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (no
+  session-hook producer; consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors
+  under `mcp/.../package_data/runtime/` carry that research-phase-read doctrine. No MCP tool surface, schema, or
+  subsystem changed, so the repo's feature inventory / functional areas this overview describes are unchanged —
+  detail lives in the `mcp/` package overview + the `controllers/` / `observer/` route overviews + file
+  sidecars. Verification metadata pinned until closeout stamps the slice-07 code commit.
+  tool docstring now states its research-phase-read role (read managed-repo source through it until the
+  build/job decision; native read = the edit precondition once building begins), the `read_files.py` +
+  `served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (no
+  session-hook producer; consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors
+  under `mcp/.../package_data/runtime/` carry that research-phase-read doctrine. No MCP tool surface, schema, or
+  subsystem changed, so the repo's feature inventory / functional areas this overview describes are unchanged —
+  detail lives in the `mcp/` package overview + the `controllers/` / `observer/` route overviews + file
+  sidecars. Verification metadata pinned until closeout stamps the slice-07 code commit.
+
 - 2026-06-22T11:00+02:00 — slice 05o completes the engine-room **failure-mode library**: enriched the
   "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the canvas now driving
   **all eight** `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed
@@ -2258,6 +5512,36 @@ The following entries are the original development narrative, preserved for prov
   lands, not marked no-route-impact. The change is scoped to `dashboard/src/panels/engine-room/` +
   `dashboard/src/dev/` (their route overviews + sidecars carry the per-file detail); the repo's other
   functional areas are unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the canvas now driving
+  **all eight** `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed
+  fault, reindex reroute, live sync, integration conflict, abandon) on a shared set of node-anchored failure
+  primitives — steady gate, scan ring, ghosted lane, pruned node, refused-conduit flash, moved badge,
+  engine-dropout, terminal STOP, and dissolve — each entering/exiting with a Motion fade/pop transition. Per
+  the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-route-impact. The change is scoped to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` (their route overviews + sidecars carry the per-file detail); the repo's other
+  functional areas are unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the canvas now driving
+  **all eight** `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed
+  fault, reindex reroute, live sync, integration conflict, abandon) on a shared set of node-anchored failure
+  primitives — steady gate, scan ring, ghosted lane, pruned node, refused-conduit flash, moved badge,
+  engine-dropout, terminal STOP, and dissolve — each entering/exiting with a Motion fade/pop transition. Per
+  the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-route-impact. The change is scoped to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` (their route overviews + sidecars carry the per-file detail); the repo's other
+  functional areas are unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the canvas now driving
+  **all eight** `podstage.html` failure modes (memory/ledger block, stale base, provider-plan block, seed
+  fault, reindex reroute, live sync, integration conflict, abandon) on a shared set of node-anchored failure
+  primitives — steady gate, scan ring, ghosted lane, pruned node, refused-conduit flash, moved badge,
+  engine-dropout, terminal STOP, and dissolve — each entering/exiting with a Motion fade/pop transition. Per
+  the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-route-impact. The change is scoped to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` (their route overviews + sidecars carry the per-file detail); the repo's other
+  functional areas are unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
+
 - 2026-06-22T10:45+02:00 — slice 05o Mode 2 (engine-room failure modes, mode 2 = T1B stale-base block): enriched the
   "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the next failure-mode beat —
   the **pruned-base-node** primitive (a stale local base, behind upstream, reads DORMANT/pruned over its
@@ -2271,6 +5555,45 @@ The following entries are the original development narrative, preserved for prov
   `dashboard/src/dev/` + the `docs/design/engine-room/` living spec (their overviews + sidecars carry the
   detail); the repo's other functional areas are unchanged. Verification metadata pinned until closeout stamps
   the 05o code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the next failure-mode beat —
+  the **pruned-base-node** primitive (a stale local base, behind upstream, reads DORMANT/pruned over its
+  fact-state box) plus the big red **fleeting-enclosure** box (a born-blocked / pre-contract worktree footprint
+  replacing the dashed-amber border, BLOCKED title + reason + recovery chips), and a failure-indicator polish
+  pass that anchors the verify/block pointers **ON the repository node** as the topmost layer (the gate +
+  reason badge straddle the checked node's top edge, "pointing at" the blocked repo) and gives every alert
+  overlay (gate, reason, attention, chips, STOP, the block pointer) a Motion fade/pop enter/exit transition.
+  Per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The change is internal to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` + the `docs/design/engine-room/` living spec (their overviews + sidecars carry the
+  detail); the repo's other functional areas are unchanged. Verification metadata pinned until closeout stamps
+  the 05o code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the next failure-mode beat —
+  the **pruned-base-node** primitive (a stale local base, behind upstream, reads DORMANT/pruned over its
+  fact-state box) plus the big red **fleeting-enclosure** box (a born-blocked / pre-contract worktree footprint
+  replacing the dashed-amber border, BLOCKED title + reason + recovery chips), and a failure-indicator polish
+  pass that anchors the verify/block pointers **ON the repository node** as the topmost layer (the gate +
+  reason badge straddle the checked node's top edge, "pointing at" the blocked repo) and gives every alert
+  overlay (gate, reason, attention, chips, STOP, the block pointer) a Motion fade/pop enter/exit transition.
+  Per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The change is internal to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` + the `docs/design/engine-room/` living spec (their overviews + sidecars carry the
+  detail); the repo's other functional areas are unchanged. Verification metadata pinned until closeout stamps
+  the 05o code commit.
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the next failure-mode beat —
+  the **pruned-base-node** primitive (a stale local base, behind upstream, reads DORMANT/pruned over its
+  fact-state box) plus the big red **fleeting-enclosure** box (a born-blocked / pre-contract worktree footprint
+  replacing the dashed-amber border, BLOCKED title + reason + recovery chips), and a failure-indicator polish
+  pass that anchors the verify/block pointers **ON the repository node** as the topmost layer (the gate +
+  reason badge straddle the checked node's top edge, "pointing at" the blocked repo) and gives every alert
+  overlay (gate, reason, attention, chips, STOP, the block pointer) a Motion fade/pop enter/exit transition.
+  Per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The change is internal to `dashboard/src/panels/engine-room/` +
+  `dashboard/src/dev/` + the `docs/design/engine-room/` living spec (their overviews + sidecars carry the
+  detail); the repo's other functional areas are unchanged. Verification metadata pinned until closeout stamps
+  the 05o code commit.
+
 - 2026-06-22T00:29+02:00 — slice 05o (engine-room failure modes, mode 1 = T3B memory/ledger block): enriched the
   "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the new **failure-mode**
   choreography — the **scan-ring** + **ghosted-lane** primitives and the `memory-block` player scenario (verify
@@ -2280,27 +5603,75 @@ The following entries are the original development narrative, preserved for prov
   internal to `dashboard/src/panels/engine-room/` + `dashboard/src/dev/` + the `docs/design/engine-room/` living
   spec (their overviews + sidecars carry the detail); the repo's other functional areas are unchanged.
   Verification metadata pinned until closeout stamps the code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the new **failure-mode**
+  choreography — the **scan-ring** + **ghosted-lane** primitives and the `memory-block` player scenario (verify
+  → block → reconcile → **provider clone** → nominal, mirroring `podstage.html` T3B), plus the coupled
+  engine-gauge polish (flat gold bezel, constant-gold petals). Per the root-overview-surfaces-emerging-features
+  lesson this growing cockpit subsystem is surfaced here as it lands, not marked no-impact. The change is
+  internal to `dashboard/src/panels/engine-room/` + `dashboard/src/dev/` + the `docs/design/engine-room/` living
+  spec (their overviews + sidecars carry the detail); the repo's other functional areas are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the new **failure-mode**
+  choreography — the **scan-ring** + **ghosted-lane** primitives and the `memory-block` player scenario (verify
+  → block → reconcile → **provider clone** → nominal, mirroring `podstage.html` T3B), plus the coupled
+  engine-gauge polish (flat gold bezel, constant-gold petals). Per the root-overview-surfaces-emerging-features
+  lesson this growing cockpit subsystem is surfaced here as it lands, not marked no-impact. The change is
+  internal to `dashboard/src/panels/engine-room/` + `dashboard/src/dev/` + the `docs/design/engine-room/` living
+  spec (their overviews + sidecars carry the detail); the repo's other functional areas are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+  "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the new **failure-mode**
+  choreography — the **scan-ring** + **ghosted-lane** primitives and the `memory-block` player scenario (verify
+  → block → reconcile → **provider clone** → nominal, mirroring `podstage.html` T3B), plus the coupled
+  engine-gauge polish (flat gold bezel, constant-gold petals). Per the root-overview-surfaces-emerging-features
+  lesson this growing cockpit subsystem is surfaced here as it lands, not marked no-impact. The change is
+  internal to `dashboard/src/panels/engine-room/` + `dashboard/src/dev/` + the `docs/design/engine-room/` living
+  spec (their overviews + sidecars carry the detail); the repo's other functional areas are unchanged.
+  Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-21T23:35+02:00 — slice 05k (docs/design onboarding inclusion + engine-room tear-down/refinements): **`docs/design/` is now in onboarding scope.** `system/settings.json` `pathRules` became a two-rule list — a `docs/design`-scoped rule (first; first-match-wins) onboards `.html` + `.md` there, the root rule unchanged (so a stray non-design `.html` like `dashboard/src/dev/reference/mc2.html` still falls through and is *not* onboarded) — and `system/sources.md` registers `docs/design/` as Domain Documentation. The engine-room design language (`engine-room-visual-language.html` living spec + `podstage.html` prototype) + `observable-lifecycle.md`/`harness-matrix.md` are now first-class memory under `onboarding/docs/design/` (2 new file sidecars + the `docs/design/` + `docs/design/engine-room/` route overviews). Updated the Public Documentation functional area + the Build & Dev `sources.md` note accordingly. The accompanying engine-room dashboard work (5k tear-down dispose sequence + power-down diagnostics + active/settled flow language, and the design-review refinements: the second-loop engine-fill fix, the three-column re-spacing, the closeout-train breadcrumb, the memory integration arrow) is internal to `dashboard/src/panels/engine-room/` (its overview + sidecars) and already surfaced in the Dashboard frontend Feature Inventory row. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-21T02:44+02:00 — Slice 6g: the **Dashboard frontend** Feature Inventory row now records **task-document navigation** — the detail panel renders a series master (overview + clickable sub-task index) with in-panel drill-in into each slice (back/parent up-link in the sticky panel header), markdown-rendered task prose (new `grammar/Markdown` primitive), and cross-master "→" navigation between series lifecycles. Per the root-overview-surfaces-emerging-features lesson the dashboard surface is described here as it grows. Verification metadata pinned until closeout stamps the 6g code commit.
+
 - 2026-06-21T02:26+02:00 — slice 05k (dashboard engine-room motion): the engine-room canvas motion completed its 05f §8 property-split — moved off interim CSS onto a new `useEngineTimeline` GSAP hook (draw-ons + the repeating fx) + Motion (`AnimatePresence` enter/exit), CSS static; the "Dashboard frontend (mission-control cockpit)" Feature Inventory row now surfaces this (plus the 5h landing arc + the 5i scenario player), per the root-overview-surfaces-emerging-features lesson. The change is internal to `dashboard/src/panels/engine-room/` + `dashboard/src/index.css` (their overviews + sidecars); the repo's other functional areas are unchanged. A known D5 (`cleanup-pending`) landing-tier retraction follow-up is tracked in the engine-room overview. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T15:59+02:00 — Task 6 slice 6f-1: the **Dashboard frontend** Feature Inventory row now records the **highlight → context-package** composer — a cockpit text selection raises a React Aria popover to send the selection + a message into a chat session's stdin (single/selector/create-on-Enter + ＋ new chat), reusing the live stdin channel; no silent action, not ACP. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6f-1 code commit.
+
 - 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: the **Dashboard frontend** Feature Inventory row now records the terminal/session **hardening** — the open-session registry moved into a `data/sessions` store, and a live terminal survives a cockpit *view* switch (`Cockpit` keeps `<Chats>` mounted, hidden via CSS) and a *session-tab* switch (`Chats` keeps every session's `<Terminal>` mounted) instead of being unmounted ("tabbing away bricked the session"); the backend PTY spawn (`serving/terminal.py`) gained a controlling terminal (`os.login_tty`) so tmux honors resize. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6e-4 code commit.
+
 - 2026-06-19T07:23+02:00 — No route impact: slice 3c R5 adds the `task_doc` `dry_run`/preview op (render + diff + would-lose without writing) — the adoption safety partner to R4; an mcp-internal tool-op addition, so the repo's feature inventory / functional areas this overview describes are unchanged — detail in the `controllers/`/`models/`/`mcp/tools/` overviews + sidecars. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T06:39+02:00 — No route impact: an engine-room dashboard crash fix (the `landing` read guarded for pre-5h/persisted projections) under `dashboard/src/` + the rebuilt `package_data/dashboard/` bundle; the repo's feature inventory / functional areas this overview describes are unchanged — detail in the `dashboard/src/panels/engine-room/` overview + sidecars. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-19T06:03+02:00 — Slice 3c reopened (R4, leaf-doc fidelity): recorded in the JSON-primary task-documents Functional Area slice tracker — leaf docs gain `statusNote`/`headerNotes` + freeform `sections` so a real hand file round-trips content-complete (the escape hatch; the standard sections stay the backbone), `DocStatus` stays strict, and the w-02 skill documents the extensions. A schema-fidelity refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R4 code commit.
+
 - 2026-06-19T05:48+02:00 — Task 6 slice 6e-3: the **Dashboard frontend** Feature Inventory row now records **context injection** — a `SessionComposer` docked below the Chats terminal sends a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f). Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows. Verification metadata pinned until closeout stamps the 6e-3 code commit.
+
 - 2026-06-19T05:15+02:00 — Slice 3c reopened (R3, deferred-examples honesty): recorded in the JSON-primary task-documents Functional Area slice tracker — an optional `codeExamplesNote` lets a planning slice that defers its examples render as *deferred* rather than "none needed", and the w-02 skill now teaches it. A small format-honesty refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R3 code commit.
+
 - 2026-06-19T04:38+02:00 — Task 6 slice 6e-2c: the **Dashboard frontend** Feature Inventory row now records the **session switcher** — the Chats view's open sessions moved into a dedicated left-rail `SessionList` (a React Aria `GridList`: single-select = active session, per-row close ✕), replacing the horizontal tab strip, plus the harness buttons unified onto ＋ Terminal's golden look. Per the root-overview-surfaces-emerging-features lesson the chat surface is described here as it grows, not no-impacted. Verification metadata pinned until closeout stamps the 6e-2c code commit.
+
 - 2026-06-19T04:18+02:00 — Slice 3c reopened (R2, heading-vs-outcome): recorded the task-document renderer fix in the JSON-primary task-documents Functional Area slice tracker — `Step.outcome` is now distinct from the heading `title` (a bare step renders heading-only). A small render-fidelity refinement within the `tasks/` route; detail in the `tasks/` overview. Verification metadata pinned until closeout stamps the R2 code commit.
+
 - 2026-06-19T03:17+02:00 — Slice 3c reopened (R1, masters observable): the observer now projects series **masters** folder-keyed (`read_series_documents` → `Analytics.series`), aggregating the declared `subTasks` checkboxes into whole-series progress so a master is observable on the dashboard (click a master → overall progress, not just per-lifecycle leaves). Refreshed the JSON-primary task-documents Feature Inventory row + Functional Area; per the root-overview-surfaces-emerging-features lesson this growing dashboard subsystem is surfaced here, not marked no-impact. Verification metadata pinned until closeout stamps the R1 code commit.
+
 - 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: the **Dashboard frontend** Feature Inventory row now records the **per-harness launch buttons** — a detection-driven button per *installed* harness (Claude Code / Codex / Pi.dev) beside ＋ Terminal, via the new `GET /api/harnesses` detection endpoint + the `serving.harnesses` registry (a harness id on the wire, the fixed argv server-side). Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-2b code commit.
+
 - 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: the **Dashboard frontend** Feature Inventory row now records the **create + own** capability — a "＋ Terminal" control spawns a dashboard-owned shell at the workspace root via the new `POST /api/terminal` opener (`TerminalHost.open`, server-resolved command); the dashboard owns the session it created (the Chats view no longer just attaches). Per-harness launch buttons (Claude Code / Codex / Pi.dev) are 6e-2b. Verified live (POST → real shell → WS). Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-2a code commit.
+
 - 2026-06-18T16:50+02:00 — Task 6 slice 6e-1: surfaced the visible **Mode B2 terminal** on the **Dashboard frontend** Feature Inventory row — a full-bleed **Chats** view (`panels/Chats.tsx` + a code-split `Terminal.tsx` xterm.js wrapper over the `data/terminal.ts` WebSocket client) rendering the 6d PTY stream (keystrokes/resize ↔ PTY bytes), the cockpit's first bidirectional surface; reviewed against a dev mock socket, the real launch is 6e-2. Per the root-overview-surfaces-emerging-features lesson this lands here as it ships. Verification metadata pinned until closeout stamps the 6e-1 code commit.
+
 - 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: the **Dashboard serving layer** Feature Inventory row + Dashboard Serving Layer functional area now record Mode B2's `/api/terminal/{session}` WebSocket bridge (PTY ↔ browser — binary out, JSON `stdin`/`resize` in, `{type:exit}` on child exit; attach-only + tmux-persistent) landing in `serving.app`, plus the new `websockets` core dep. The xterm.js Chats tab (6e) still follows. Per the root-overview-surfaces-emerging-features lesson this subsystem is tracked here as it lands. Verification metadata pinned until closeout stamps the 6d-2 code commit.
+
 - 2026-06-18T15:40+02:00 — Task 6 slice 6d-1: surfaced **Mode B2** (the dashboard-hosted terminal) on the **Dashboard serving layer** Feature Inventory row + Dashboard Serving Layer functional area — 6d-1 lands the `serving.terminal` host (a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions launching the harness render-not-scrape; fixed-argv/OS-user/localhost; injectable PTY/tmux spawn). Per the root-overview-surfaces-emerging-features lesson this new subsystem is surfaced here as it lands, not marked no-impact; the WebSocket bridge (6d-2) + xterm.js visual (6e) follow. (Task 6 runs in its own worktree off the slice-5 tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6d-1 code commit.
+
 - 2026-06-18T12:10+02:00 — Task 6 slice 6b: the **Gate control plane** became enforcing — `controlplane/enforcement.py` binds `worktree_closeout_apply` to a developer-approved gate (model self-approval rejected; gateless lifecycles unchanged), and the dashboard POST plane records that approval (`gate_decide_for_lifecycle`). Refreshed the Gate control plane + Dashboard serving Feature Inventory rows and the Dashboard Serving Layer area; per the root-overview-surfaces-emerging-features lesson this growing subsystem is surfaced here as it lands. (Task 6 runs in its own worktree off the slice-5 tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6b code commit.
+
 - 2026-06-18T01:05+02:00 — Task 6 slice 6a: surfaced the new **Gate control plane** subsystem as a Feature Inventory row — the `agents_remember.controlplane` gate-record substrate (`GateRecord` + `GateStore`) and the four `gate_*` MCP tools. Per the root-overview-surfaces-emerging-features lesson this growing subsystem is surfaced here as it lands, not marked no-impact. (Task 6 runs in its own worktree off the slice-5 work-branch tip, reconciling at the series integration gate.) Verification metadata pinned until closeout stamps the 6a code commit.
+
 - 2026-06-17T22:45+02:00 — Slice 5g (visual-parity / G6): enriched the "Dashboard frontend (mission-control cockpit)" Feature Inventory row to surface the completed bird's-eye fidelity — the 5g G6 atmospheric backdrop + the cockpit Effects/Calm toggle, the restored HUD decal layer (canopy frame, engine spine + petals, the left official-line engines + conduits + coupler, lane annotations), and the fixed-height room layout (the `grammar/Panel` `fill` variant). Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-17T16:15+02:00 — Slice 5g (G1–G5): the dashboard **Engine Room** was reworked into the design
   prototype's **bird's-eye podracer canvas** and now renders the whole worktree lifecycle — boot
   choreography, failure overlays (blocked gates · engine fault flicker · reindex reroute), and the
@@ -2309,41 +5680,109 @@ The following entries are the original development narrative, preserved for prov
   root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
   lands, not marked no-impact. The successful-landing choreography (needs a `projection.py` addition) is
   split to the `05h` follow-up. Verification metadata pinned until closeout stamps the G5 code commit.
+
+  prototype's **bird's-eye podracer canvas** and now renders the whole worktree lifecycle — boot
+  choreography, failure overlays (blocked gates · engine fault flicker · reindex reroute), and the
+  **live/teardown** states (sync block · a terminal integration-conflict STOP · abandon dissolve) — with
+  engines reading **green when active**. Refreshed the Dashboard frontend Feature Inventory row; per the
+  root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The successful-landing choreography (needs a `projection.py` addition) is
+  split to the `05h` follow-up. Verification metadata pinned until closeout stamps the G5 code commit.
+
+  prototype's **bird's-eye podracer canvas** and now renders the whole worktree lifecycle — boot
+  choreography, failure overlays (blocked gates · engine fault flicker · reindex reroute), and the
+  **live/teardown** states (sync block · a terminal integration-conflict STOP · abandon dissolve) — with
+  engines reading **green when active**. Refreshed the Dashboard frontend Feature Inventory row; per the
+  root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The successful-landing choreography (needs a `projection.py` addition) is
+  split to the `05h` follow-up. Verification metadata pinned until closeout stamps the G5 code commit.
+  prototype's **bird's-eye podracer canvas** and now renders the whole worktree lifecycle — boot
+  choreography, failure overlays (blocked gates · engine fault flicker · reindex reroute), and the
+  **live/teardown** states (sync block · a terminal integration-conflict STOP · abandon dissolve) — with
+  engines reading **green when active**. Refreshed the Dashboard frontend Feature Inventory row; per the
+  root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here as it
+  lands, not marked no-impact. The successful-landing choreography (needs a `projection.py` addition) is
+  split to the `05h` follow-up. Verification metadata pinned until closeout stamps the G5 code commit.
+
 - 2026-06-17T01:49+02:00 — No route impact: adds the engine-room **pod-stage design prototype sandbox** under `dashboard/public/_proto/` (a standalone choreography reference — `podstage.html` + `SCENARIOS.md`/`DESIGN.md` + the blueprint boomerang backdrop), the design source iterated on Open Design for the forthcoming **5g** engine-room dashboard implementation. This is a design-reference *sandbox*, not feature code: `dashboard/public/**` is outside the memory/route scope, no governed source changed, and the repository's top-level surface this overview describes is unchanged. Distinct from the 5a–5f entries (which surfaced shipped serving/panel/projection work) — when the **5g implementation** lands (evolving `panels/engine-room/EnclosureProcessMap` into the prototype's bird's-eye podracer canvas) it WILL be surfaced here as it lands, per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the sandbox code commit.
+
 - 2026-06-16T02:30+02:00 — Slice 5f (S0–S1): the dashboard **Engine Room** is becoming an animated worktree-lifecycle state machine — S0 landed the honest-motion gate (`useShouldAnimate`), SVG conduits, and `worktreeGroup` keying (visual parity); S1 gave the room a full-width 3-zone **full-bleed** layout (the rails hide for the Engine Room / Topology machine-map views). Refreshed the Dashboard frontend Feature Inventory row; per the root-overview-surfaces-emerging-features lesson this growing cockpit subsystem is surfaced here, not marked no-impact. Verification metadata pinned until closeout stamps the S1 code commit.
+
 - 2026-06-15T19:35+02:00 — Slice 5e: reworked the dashboard **Engine Room** into an enclosure-centered, state-backed process map (a new `analytics.engineProcesses` server projection + the `panels/engine-room/` module + pre-contract `worktree_start` observability, §5.4); refreshed the Dashboard frontend Feature Inventory row. Verification metadata pinned until closeout stamps the 5e code commit.
+
 - 2026-06-15T17:00+02:00 — Slice 05 (5d): the React/TS **frontend was re-architected** and `dashboard/src/**` brought **into memory scope** — now onboarded with a new `dashboard/src/` route overview (+ `panels/` + `grammar/` route overviews + 19 file sidecars). The ~1,200-line global `tokens.css` monolith was retired into the layered blueprint: **Panda CSS** (typed tokens + build-time/zero-runtime recipes) for styling, **React Aria** (`react-aria-components`) for headless behavior/a11y (the mode bar + pivot `ToggleButtonGroup`s, the lifecycle `ListBox`), CRT effects isolated in `index.css`. Added a **Dashboard frontend** Feature Inventory row and refreshed the Dashboard Serving Layer functional area (the frontend is no longer out-of-memory-scope). Verification metadata pinned until closeout stamps the 5d code commit.
+
 - 2026-06-14T23:30+02:00 — Slice 05 (5c): the cockpit was rebuilt to represent the real Agents Remember model — lifecycle as the unit (paused persistent lifecycles synthesized from worktree contracts), one de-duped BY REPO | BY PHASE lifecycle list, an in-dashboard **task reader** (full task-document content), a **per-worktree engine room**, the lifecycle → worktree → provider spine, and the topology constellation. This drove a **projection correction** under `observer/` (per-worktree provider stacks, full task content on `TaskDocNode`, persistent-lifecycle synthesis) plus a `serving/` sim/events fix. Refreshed the Dashboard Serving Layer functional area. The cockpit UI is the out-of-scope root `dashboard/`, surfaced here per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the 5c code commit.
+
 - 2026-06-14T17:28+02:00 — Slice 05 (5b): surfaced the **server-computed attention queue** (`AttentionItem` + the derived `Analytics.attentionQueue`, reducer `build_attention_queue`) on the Observable Session Lifecycle inventory row, and noted the read-only **cockpit panels** (attention queue, live session strip, two-axis operation tree, detail panel + phase stepper / display-only gate banner) on the Dashboard Serving Layer area. The React/TS panels live in the out-of-memory-scope `dashboard/`, so the durable summary lives here per the root-overview-surfaces-emerging-features lesson. Verification metadata pinned until closeout stamps the 5b code commit.
+
 - 2026-06-14T15:52+02:00 — Slice 05a: the **real** Vite/React mission-control cockpit now ships under the root `dashboard/` sub-project (the slice-04 placeholder is replaced; built bundle synced into `package_data/dashboard/` by `scripts/sync-dashboard.py`, gated by `sync-dashboard --check` in both githooks + a new frontend CI job). Refreshed the **Dashboard Serving Layer** functional area + the canonical-asset-sync Feature Inventory row. Per the root-overview-surfaces-emerging-features lesson the cockpit is surfaced here as it lands; its React/TS sources live in the out-of-memory-scope `dashboard/`, so the durable summary lives on this overview. Verification metadata pinned until closeout stamps the 5a code commit.
+
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4b: refreshed the **dashboard serving layer** Feature Inventory row + functional area — the serving layer now carries the raw `event` SSE channel (byte-offset resume), sim-mode replay, and the no-mutation POST action skeleton (slice 06 enforces). Per the root-overview-surfaces-emerging-features lesson this growing subsystem is refreshed here as it lands, not marked "No route impact." Verification metadata pinned until closeout stamps the 4b code commit.
+
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4a: surfaced the **dashboard serving layer** (`agents_remember.serving` + the umbrella `agents-remember dashboard` CLI) as a Feature Inventory row and a "Dashboard Serving Layer" functional area, naming the root-level `dashboard/` frontend sub-project. Per the root-overview-surfaces-emerging-features lesson, the serving layer is surfaced here as it lands (4a), not deferred to the cockpit. Verification metadata pinned until closeout stamps the 4a code commit.
+
 - 2026-06-14T00:16+02:00 — Slice 3c commit 3: surfaced master JSON support (`kind:"master"` — a `subTasks` series index + ordered `sections`) in the "JSON-Primary Task Documents" functional area; the format now covers every task-doc kind. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+
 - 2026-06-13T23:10+02:00 — Slice 3c commit 2: the JSON-primary task-document feature is complete — the `w-02-light-task-workflow` skill adopted authoring via the `task_doc` tool (synced to package data + harness packages) and the observer reader (`read_task_documents`, keyed by lifecycle) landed; updated the "JSON-Primary Task Documents" functional-area note. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
+
 - 2026-06-13T22:34+02:00 — Addition: surfaced **JSON-primary task documents** (the `agents_remember.tasks` package + `task_doc` tool, slice 3c) on this entry-point overview as a Feature Inventory row and a "JSON-Primary Task Documents" functional area, pointing down to the new `tasks/` route overview. Per the root-overview-surfaces-emerging-features lesson, this growing dashboard-series subsystem is surfaced at the root as it lands (commit 1: engine + tool), not deferred until the cockpit ships. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+
 - 2026-06-13T20:48+02:00 — Correction + addition: surfaced the **observable session lifecycle (`observer`)** on this entry-point overview as a Feature Inventory row and an "Observable Session Lifecycle" functional area, pointing down to the `observer/` route overview and `docs/design/observable-lifecycle.md` for detail. This **corrects** the earlier dashboard-series entries (2a–3a below), which marked their changes "No route impact" on this root because the work was mcp-internal: the observable-lifecycle subsystem has in fact been a growing top-level feature since 2a (event substrate → ambient lifecycle → save gate → projection read side → 3b analytical surfaces) and should have been surfaced here as it grew, not deferred "until the cockpit ships." Per append-only history the earlier entries are preserved; this entry is the correction of record. Verification metadata pinned until closeout stamps the 3b code commit.
+
 - 2026-06-13T19:30+02:00 — No route impact: slice 3a of the 3.0 browser-dashboard series adds the observable-lifecycle **projection read side** (the mcp-internal `observer` reducer/schema/structural snapshot readers/atomic projection store, plus the shared `observer_root`/`timeutil`); per the 2a/2b/2c framing the subsystem detail lives in the `mcp`/`observer` route overviews, and the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+
 - 2026-06-13T18:45+02:00 — No route impact: slice 2c of the 3.0 browser-dashboard series adds the observable-lifecycle resume + save gate (mcp-internal `observer.save_gate`, ambient `promote`/`attach`, the contract `lifecycle_id` anchor) and the per-harness matrix doc; per the 2a/2b framing the subsystem detail lives in the `mcp`/`observer`/`mcp/tools` route overviews, and the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+
 - 2026-06-13T16:41+02:00 — No route impact: slice 2b of the 3.0 browser-dashboard series adds the mcp-package-internal ambient lifecycle and the six `lifecycle_*` MCP signal tools (plus the `_tool_payload` emission hook) under the `agents_remember.observer` domain. Per the slice-2a framing, the observable-lifecycle subsystem's detail lives in the `mcp`, `observer`, and `mcp/tools` route overviews; the repository's top-level surface this overview describes is unchanged until the cockpit ships.
+
 - 2026-06-13T11:15+02:00 — No route impact: slice 2a of the 3.0 browser-dashboard series adds the mcp-package-internal `agents_remember.observer` event-substrate write side (envelope, ULID, store) under a new `mcp/src/agents_remember/observer/` route, and amends `docs/design/observable-lifecycle.md` (TTL project-and-prune). The repository's top-level surface this overview describes is unchanged; the new subsystem's detail lives in the `mcp` and `observer` route overviews.
+
 - 2026-06-13T10:48+02:00 — Added `docs/design/` as the home for developer-facing design specs of in-flight major work (first entry: `docs/design/observable-lifecycle.md`, the approved 3.0 observable-lifecycle design — lifecycle entity, `ar-observer-event/v1` substrate, enforced gates, the browser-dashboard cockpit). Recorded it in the Public Documentation area as distinct from the user-facing `docs/` pages and the historical `roadmap/` specs; `docs/**` stays onboarding-excluded, so this overview is where the routing convention lives. No source-code structure change.
+
 - 2026-06-12T19:06+02:00 — No route impact: root-level changes for issue #83 are the README status version string (2.9.1) and the synced c-12-closeout and l-01-session-job-lifecycle skill doctrine copies (canonical `skills/` plus harness directories; issue #83 doctrine and the two-turn gate protocol); the repository structure and routing this overview describes are unchanged.
+
 - 2026-06-12T12:25+02:00 — No route impact: README Status section rewritten from the per-release narrative chain into a two-paragraph current-state + direction statement at `2.9.0` (release history routed to GitHub Releases; direction = observable/steerable sessions toward the browser cockpit, #2/#43); the README remains the short public front door this overview describes, and the repo surface is unchanged.
+
 - 2026-06-11T15:20+02:00 — No route impact: the carryover artifact-coverage change is contained in mcp/ (carryover kinds, drift git_ops ref parameter, c-11 skill doc, version bump); repo-root route structure is unchanged.
+
 - 2026-06-11T14:07+02:00: No route impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
+
 - 2026-06-11T06:47+02:00 — Issue #62 removed the direct-closeout path: closeout is worktree-only. Updated the approval-gated closeout inventory row (dropped `direct_closeout_*` identifiers), the Worktree Support narrative (command surface and the closing sentence now state the worktree-only rule), the c-09 boundary bullet, and removed the `direct closeout` glossary term.
+
 - 2026-06-10T10:26+02:00 — No route impact: README Status section bumped to 2.8.0 with the GitHub #54 release sentence, and the canonical root skills (l-01/c-09/c-11) gained the freshness-checkpoint doctrine in lockstep with their packaged copies; the repo surface this overview describes is unchanged.
+
 - 2026-06-10T09:56+02:00 — No route impact: issue #54 sub-task D is mcp-package-internal (worktree_sync tool + status freshness); the mcp and worktrees/modules route overviews carry the content updates, and the repo surface this overview describes is unchanged.
+
 - 2026-06-10T09:45+02:00 — No route impact: issue #54 sub-task C is mcp-package-internal (carryover memory-main advance); the mcp route overview carries the content update, and the repo surface this overview describes is unchanged.
+
 - 2026-06-10T09:30+02:00 — No route impact: issue #54 sub-task B is mcp-package-internal (worktree_start stale-base preflight + memory branch auto-template); the mcp and worktrees/modules route overviews carry the content updates, and the repo surface this overview describes is unchanged.
+
 - 2026-06-10T08:39+02:00 — No route impact: issue #54 sub-task A is mcp-package-internal (freshness kernel + context_packet section); the mcp route overview carries the content update, and the repo surface this overview describes is unchanged.
+
 - 2026-06-10T08:15+02:00 — No route impact: README Status section bumped to 2.7.0 with the GitHub #53/#58 release sentence; the repo surface this overview describes is unchanged.
+
 - 2026-06-10T06:05+02:00 — No route impact: README Status section bumped to 2.6.0 with the GitHub #56 release sentence; the repo surface this overview describes is unchanged.
+
 - 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: the branch memory carryover inventory row now records route-overview candidates (identical→auto re-verify, differing→always review-required) and guarded official-side route-index regeneration.
+
 - 2026-06-10T05:30+02:00 — Root overview body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness + `indexing` busy list in the feature inventory, a new tool-response-budget inventory row, and stall-watchdog/seed-fallback/stdio-subprocess doctrine in the provider runtime narrative. Previous closeouts had only stamped the verification header (developer-flagged gap).
+
 - 2026-06-10T05:20+02:00 — Issue #56 sub-tasks 1-2: the approval-gated closeout inventory row now records the body/history gates and the `No content impact:` / `No route impact:` reviewed-no-impact markers enforced for sidecars and nearest-governing route overviews.
+
 - 2026-06-09T14:52+02:00: Refreshed the root overview against MCP 2.4.1 `main` after runtime asset canonical sync landed; recorded the hard installed-runtime onboarding trust gate and the canonical root-to-package runtime asset sync path.
+
 - 2026-06-08T09:57+02:00: Re-verified the repository overview against the PR-39 branch head after the branch merged current `main` and the skipped-provider context-packet contract was corrected.
+
+
+
+
+
+
+
+
+
+
 
 ## Historical milestone context: 260821-DAGQC-L4 Doctrine And Review Closure
 
@@ -2366,7 +5805,7 @@ of scope.
 
 ## Build And Development Reference
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of **2,300 unit and 400 integration** parametrized collected cases (`unit_case_budget` / `integration_case_budget` in `pyproject.toml`; raised to 1,500 / 400 by the `260915-KS` master's owning seat because its own leaves had filled the previous 1,250 / 340 pair, then to 2,000 and to 2,200 by the merged line, and then to **2,300** / 400 by `260915-KS-L21`, over its own measured 2,206-case candidate — six cases past the 2,200 ceiling, past which `pytest_collection_finish` runs no unit case at all). Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -2380,17 +5819,17 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:311-331; mcp/src/agents_remember/application/memory_quality/controller.py:334-386; mcp/src/agents_remember/application/memory_quality/controller.py:416-580 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:553-589 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441; mcp/src/agents_remember/application/memory_quality/controller.py:416-580 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586; mcp/src/agents_remember/application/memory_quality/controller.py:671-707 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785; mcp/src/agents_remember/application/prepared_certification.py:749-813 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45; mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Git attribution is the source of the consumer ledger. | "Read mappings from Git without consulting a cached file or a ledger commit." | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| Closeout writes or reuses one actual memory-content output. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
+| Git attribution is the source of the consumer ledger. | `derive_memory_ledger`; "Read mappings from Git without consulting a cached file or a ledger commit." | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| Closeout writes or reuses one actual memory-content output. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76; mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
 | Integration proves exact memory source ancestry independently of cache rows. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
 
 ## Key Invariants
@@ -2551,12 +5990,65 @@ architect bootstrap, the ambient-to-worker structural chain, canonical manager a
 a real vacancy/replacement, actionable failure evidence, and complete teardown. Production starter
 commands remain self-updating; the static pin belongs only to reproducible candidate acceptance.
 
+## 260915-KS-L1 Experimental Knowledge Storage Increment
+
+An experimental master on this repository's branch pair added a knowledge-storage subsystem. It is one primary
+requirement (`KS-R01@v1` — stable knowledge identities and immutable invariant revisions) on an experimental
+branch, with **no IAS landing implied**, and legacy Markdown remains operational authority throughout.
+
+What exists after this leaf: `mcp/src/agents_remember/memory/knowledge/` (the concrete APSW-backed SQLite
+candidate: schema, connection contract, row codecs, typed refusals, one insert-only revision operation),
+`mcp/src/agents_remember/models/knowledge/` (the shared frozen vocabulary it writes),
+`mcp/src/agents_remember/application/knowledge.py` (the composition seam, and its only consumer), and
+`mcp/src/agents_remember/kernel/canonical_json.py` (the single canonical encoder the seal and the schema
+fingerprint are computed through). The route overviews are
+[`mcp/overview.md`](onboarding/mcp/overview.md),
+[`memory/overview.md`](onboarding/mcp/src/agents_remember/memory/overview.md),
+[`models/overview.md`](onboarding/mcp/src/agents_remember/models/overview.md) and
+[`application/overview.md`](onboarding/mcp/src/agents_remember/application/overview.md).
+
+Two repository-governance facts accompany it, and both are deliberate rather than incidental:
+
+- **`layers.toml` gained charter wording, not a rank.** `[package.memory]` now states that the experimental
+  knowledge storage lives there and ranks with the record stores rather than with the application that admits its
+  writes, and that consumers ranked below it — `worktrees` and `memory_quality` among them — receive
+  `models/knowledge` values or an already-prepared result from `application` and never import this package. No
+  rank, order or sequencing entry moved, which is the narrow charter change the leaf document permits.
+- **`mcp/pyproject.toml`, `mcp/requirements.txt` and `mcp/uv.lock` gained an exact `apsw==3.53.4.0` pin** — the
+  repository's first binary-wheel runtime dependency whose capability is a build-time SQLite option
+  (`ENABLE_SESSION`, needed for the session/changeset machinery a later merge leaf requires). The pin is exact
+  because that capability belongs to the wheel rather than to the version line.
+
+Scope this increment explicitly does **not** claim: authority adjudication, recommendation, invariant-family
+behaviour, the admitted batch contract, snapshot publication, Git merging, portable roundtrip, selective read and
+candidate diff, and any product surface. Storing a proposal grants no acceptance — the store manufactures no
+acceptance and exposes no promotion operation. The leaf's own review converged to PASS after three rounds with an
+empty remaining set; its two material disclosures are the unexecuted macOS spike and the R04 journal-mode
+behaviour, both carried for the owning seat.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The charter paragraph that records the storage home and the one-way import direction, with no rank move. | "[package.memory]" | layers.toml:206-222 |
+| The exact SQLite-binding pin and the in-file reason tying it to the session build option. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26 |
+| The storage package's ownership boundary in its own words. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
+| The requirement this increment implements: requirement packet `KS-R01@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+| The leaf's independent review, whose final round returned PASS with an empty remaining set: task report `260915-KS-L1-review-fix-verification-2.md`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+
 ## Update History
+- 2026-09-18T19:00+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **recorded the L22 landing at repository altitude, and it was needed rather than decorative.** The delta since this overview's old stamp is `c5a74a85`'s 15 files and ~3,300 lines: one GET-only HTTP route, its application adapter, a display vocabulary, three dashboard entry points and their panes, and the surface's own case module. This is the first read-only **user-facing review surface** in the repository, so a reader of the root overview could not have learned it existed from anything here. The new section under `## Code Structure` states the four facts that belong at this altitude — the route accepts no filesystem path and cannot be pointed at a dataset; the `serving`/`application` rank split is what makes the port necessary and an omitted port refuses with `503` rather than serving an empty pane; the vocabulary owns no record kind and **no field a conclusion could be assembled in**; and the dashboard half is a rendering that adds no authority. Every one of those was read from the modules and from `mcp/tests/test_knowledge_review_surface.py`'s own case names rather than taken from the leaf's report, and the six cases that hold the prohibitions are named in the section. The `reviewedWorkingCandidate` row moved from the L21 candidate to this one. Verification stamp advanced to `c5a74a85`, the revision read; closeout re-stamps.
+- 2026-09-18T03:35+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **this overview governs `pyproject.toml`, and this candidate changed it.** The declared case budgets are now **1,500 unit and 400 integration** (raised by the master's owning seat from 1,250 / 340 because the increment's own leaves had filled the ceiling and an over-budget unit population makes `pytest_collection_finish` run no tests at all), so the "1,000 unit and 150 integration" sentence this card carried **in two places** — already two raises stale — was corrected in both to the current pair with the raise attributed. The card also now states that the curator-coherence tool names its own required inputs: the `publish` refusal lists the missing members, `prepare` states the complete input set, and the read-action refusal names the publication-only field it received, which is what removes the failure class two leaves of this master recorded as an impassable tool defect (`notes/DISCLOSURES.md` D-11). Only these claims were re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the new generated mirror this route's
   generator produces (`package_data/runtime/eve-runtime/`, generated and never hand-edited), the
   per-target ignore rule, and the absent-source refusal. Verification metadata is left at the
   leaf's base commit; the candidate is deliberately uncommitted.
 
+- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
+  `67b21aeb`): recorded the experimental knowledge-storage increment at repository scope — the new
+  `memory/knowledge`, `models/knowledge`, `application/knowledge.py` and `kernel/canonical_json.py` surfaces with
+  their route overviews, the `layers.toml` `[package.memory]` charter-wording addition (no rank or order moved),
+  the exact `apsw==3.53.4.0` binary-wheel pin and why session support makes it a per-wheel capability, the
+  explicit non-claims and the two carried disclosures (unexecuted macOS spike, R04 journal-mode behaviour).
+  Verification metadata remains closeout-owned.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a source under this repo route moved since
   the recorded verification commit (`mcp/tests/evidence-lifecycle.toml`). Re-read the overview; it makes no

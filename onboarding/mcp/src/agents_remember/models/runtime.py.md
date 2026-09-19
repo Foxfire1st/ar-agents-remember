@@ -50,4 +50,3 @@ context dictionary.
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-06-10T05:30+02:00 — `RuntimeInstallResponse` gains a documented optional `reportPath` field for the S4 response-budget compaction (2.5.1).
 - 2026-05-28T19:52+02:00: Created for runtime and resolver response contracts.
-

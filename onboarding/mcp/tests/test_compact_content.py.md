@@ -70,4 +70,3 @@ the compaction must never raise on non-JSON content.
   default, decorator, control-flow branch, docstring, or assertion this card describes has moved,and every claim this card makes about its own source still holds.
 
 - 2026-05-29T08:53+02:00: Created onboarding for the compact-content shim tests.
-

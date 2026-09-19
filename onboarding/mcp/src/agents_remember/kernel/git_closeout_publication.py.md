@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/kernel/git_closeout_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -54,12 +54,12 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | `allow_memory_cache` | mcp/src/agents_remember/kernel/git_closeout_publication.py:44-44 |
-| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | `expected_old_commit` | mcp/src/agents_remember/kernel/git_closeout_publication.py:38-38 |
+| The binding records exact ref/commit/tree facts and the explicit memory-only cache option. | `GitCloseoutPublicationBinding`; `allow_memory_cache` | mcp/src/agents_remember/kernel/git_closeout_publication.py:33-82 |
+| Raw commit identity, raw tree, and sole expected-old parent are independently enforced. | `require_prepared_bytes`; `expected_old_commit` | mcp/src/agents_remember/kernel/git_closeout_publication.py:38-38; mcp/src/agents_remember/kernel/git_closeout_publication.py:61-82 |
 | Capability use reopens the caller-owned authority. | `require_authority`; "self.authorize(self.binding)" | mcp/src/agents_remember/kernel/git_closeout_publication.py:91-95 |
 | Result records preserve before/after observations and any actual Git command result. | `GitCloseoutPublicationResult` | mcp/src/agents_remember/kernel/git_closeout_publication.py:105-109 |
-| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | "named closeout ref is outside its original old/new publication states"; "new memory publication includes the derived cache" | mcp/src/agents_remember/kernel/git_command.py:694-706 |
-| Publication issues one expected-old CAS and does not rerun already-new or existing output. | `closeout_publication_command` | mcp/src/agents_remember/kernel/git_command.py:749-757 |
+| The runner rejects cache-bearing new memory output and checks the exact old/new ref states. | `_observe_closeout_publication`; "named closeout ref is outside its original old/new publication states"; "new memory publication includes the derived cache" | mcp/src/agents_remember/kernel/git_command.py:688-720 |
+| Publication issues one expected-old CAS and does not rerun already-new or existing output. | `publish_git_closeout_ref`; `closeout_publication_command` | mcp/src/agents_remember/kernel/git_command.py:749-757; mcp/src/agents_remember/kernel/git_command.py:760-783 |
 
 ## Cross-Repo References
 
@@ -67,7 +67,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

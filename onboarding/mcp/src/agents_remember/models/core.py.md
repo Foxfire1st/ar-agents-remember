@@ -56,4 +56,3 @@ metadata, and that payload under `servingBuild`.
 
 - 2026-06-06T12:28+02:00: Corrected the core payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for core MCP response contracts.
-

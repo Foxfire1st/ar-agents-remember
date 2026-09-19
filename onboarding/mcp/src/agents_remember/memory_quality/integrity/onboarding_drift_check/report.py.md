@@ -66,4 +66,3 @@ at durable memory, so temporary drift reports never land inside a memory repo.
   undocumented `rev-parse --short HEAD` stamp in `write_markdown_report` and its `unknown`
   fallback. Rendered output is unchanged.
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

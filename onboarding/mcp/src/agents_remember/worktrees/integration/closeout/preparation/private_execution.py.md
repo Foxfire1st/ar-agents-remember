@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -57,10 +57,10 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | The selected leg must still match the retained intent. | `_selected_leg` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:37-46 |
 | The private binding retains the exact selected parent, admitted tree, message, and owner. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
 | The capability reopens selection and actual private policy around commands. | `_capability` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:69-92 |
-| Original commands are selected and their observed terminals retained once. | `_terminal_record` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:95-115 |
+| Original commands are selected and their observed terminals retained once. | `_run_once`; `_terminal_record` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:118-183 |
 | Output observation proves the named committed object and current policy. | `observe_private_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:186-200 |
 | Only an unstarted suffix runs; uncertain prior commands are retained for named-output recovery. | `prepare_private_output` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:203-237 |
-| The selected intent supports only code and memory-content output legs. | `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:380-414 |
+| The selected intent supports only code and memory-content output legs. | `PreparationLeg`; `require_prepared_output_matches_intent` | mcp/src/agents_remember/models/lifecycles/preparation.py:26; mcp/src/agents_remember/models/lifecycles/preparation.py:380-414 |
 
 ## Cross-Repo References
 
@@ -68,7 +68,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

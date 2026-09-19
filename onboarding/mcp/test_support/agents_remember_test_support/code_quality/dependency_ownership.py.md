@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ declared empty set is distinct from an absent declaration: only observed-empty e
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.
 
-`REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in the same change set — the
+`REPOSITORY_TEST_INPUT_CONSUMERS` gained twelve exact declarations in one change set, and two more in
+`260915-KS-L18`'s — the
 260913-LCA-L8 module and eleven sibling suites that the extracted shared fixtures now reach — so
 `mcp/tests/test_terminal_blocker_reasons.py`, `mcp/tests/test_checkpoint_landing_end_to_end.py`,
 `mcp/tests/test_cross_master_concurrency.py`, `mcp/tests/test_lifecycle_playthrough_end_to_end.py`,
@@ -80,7 +81,7 @@ The source owners below establish these file-local behaviors; this read does not
 | Observed and declared ownership, exact-empty distinction and refusals | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:225-519 |
 | Transitive importer closure | `transitive_importers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:522-542 |
 | Digest binds declarations and classification authority | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:593-614 |
-| The repository-owned declaration table; the L8 module is declared as an exact consumer of the ambient-role runner. | `REPOSITORY_TEST_INPUT_CONSUMERS`; `AMBIENT_ROLE_RUNNER_PATH` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-175; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47 |
+| **The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.** | `REPOSITORY_TEST_INPUT_CONSUMERS`; `AMBIENT_ROLE_RUNNER_PATH` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-178; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47 |
 
 ## Cross-Repo References
 
@@ -92,6 +93,7 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 
 
 ## Update History
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the consumer table's claim against the current source and moved the number it states.** The table gained **two** exact declarations in this leaf's change set — `mcp/tests/test_knowledge_citation_bindings.py` and `mcp/tests/test_knowledge_citation_boundaries.py`, both consumers of the ambient role runner — so the cited range moves `56-175` → `56-177` and the sentence that counted twelve declarations now says twelve *in one change set* and two more here. The reason the two modules are declared at all is the fact this card's overview now carries: a path *string* in a test is a dependency edge, derived once for the evidence census and once for the selection graph, and `REPOSITORY_TEST_INPUT_CONSUMERS` overrides the catalog for selection rather than restating it — so a module that quotes a real corpus key is registered here even though no import creates the edge. Verification metadata is **not** advanced over unreviewed content: the body was re-read against the current source, and the code commit does not exist yet — closeout owns that stamp.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source added
   twelve consumer rows to `REPOSITORY_TEST_INPUT_CONSUMERS`, which now ends at `:175`. Re-read the

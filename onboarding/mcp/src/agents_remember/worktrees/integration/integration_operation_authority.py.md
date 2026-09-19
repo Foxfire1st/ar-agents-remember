@@ -55,7 +55,7 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Final output authority is the contract's exact accepted pair. | `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:9-30 |
-| Source and ref proof remain at the prepared movement boundary. | "Perform every refusing read before the lifecycle marks the move irreversible." | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
+| Source and ref proof remain at the prepared movement boundary. | `prepare_integration_ref_move`; "Perform every refusing read before the lifecycle marks the move irreversible." | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
 
 ## Cross-Repo References
 

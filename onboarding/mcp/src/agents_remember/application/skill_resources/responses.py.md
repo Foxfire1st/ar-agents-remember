@@ -117,4 +117,3 @@ No meaningful cross-repository reference applies.
   and revision facts it has, the named-versus-carried split between a listing and a read, the constant
   trust statement, and the two mutation-probe-backed guarantees (no grant, no body in a listing).
   Verification metadata remains closeout-owned; no acceptance claim is made.
-

@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -83,9 +83,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Format constants, row types, and the exact cache-exclusion expression. | `MEMORY_CACHE_EXCLUDE`; `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:24-33 |
+| Format constants, row types, and the exact cache-exclusion expression. | `LEDGER_RELATIVE_PATH`; `MEMORY_CACHE_EXCLUDE`; `LedgerRow` | mcp/src/agents_remember/kernel/memory_ledger.py:24-33 |
 | Structural parsing and validation distinguish empty and nonempty representations. | `parse_ledger_text_unvalidated`; `validate_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:68-132; mcp/src/agents_remember/kernel/memory_ledger.py:173-184 |
-| Serialization and data lookup stay independent from Git publication. | `write_ledger`; `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:229-236; mcp/src/agents_remember/kernel/memory_ledger.py:253-255; mcp/src/agents_remember/kernel/memory_ledger.py:258-266 |
+| Serialization and data lookup stay independent from Git publication. | `ledger_to_text`; `write_ledger`; `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-212; mcp/src/agents_remember/kernel/memory_ledger.py:229-236; mcp/src/agents_remember/kernel/memory_ledger.py:253-255; mcp/src/agents_remember/kernel/memory_ledger.py:258-266 |
 | The runtime cache owner derives data rather than trusting a serialized table. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
@@ -100,6 +100,10 @@ No additional configured external or sibling-repository evidence is claimed.
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
+
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
@@ -110,7 +114,9 @@ No additional configured external or sibling-repository evidence is claimed.
   Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
   advanced.
 
+
 - 2026-09-15T01:02 UTC — Replaced the immediate-ledger-commit durability rule with consumer serialization semantics; documented valid empty derived ledgers, retained nonempty validation, and the shared root-cache exclusion constant. Earlier R12 entries describe the former committed-table design. Working candidate verified by source inspection; commit metadata records real committed history only.
+
 
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
@@ -120,6 +126,7 @@ No additional configured external or sibling-repository evidence is claimed.
   exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
   report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
   current position. Verification metadata remains closeout-owned.
+
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `LEDGER_RELATIVE_PATH = "memory.md"` is now declared here, beside the schema, the row
   type and the parser, instead of in `worktrees/ledger_projection.py`. The reason is recorded in
@@ -134,23 +141,35 @@ No additional configured external or sibling-repository evidence is claimed.
   260-268 → 266-274, the module-shape row 17-41 → 17-47, and
   `require_integrated_ledger_mapping` 229-282 → 274-359. Verification metadata remains
   closeout-owned; no acceptance claim and no verification stamp advanced.
+
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `ledger_to_text`, `prepend_mapping`, `validate_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:162-171, mcp/src/agents_remember/kernel/memory_ledger.py:174-199, mcp/src/agents_remember/kernel/memory_ledger.py:241-252. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `find_mapping`; `contains_mapping` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:260-268. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "def write_ledger(path: Path" repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-216. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "existing_mapping = find_mapping(ledger" repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:64-64. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+
 
 - 2026-08-26T14:32+02:00 — Corrected the ledger contract after the IAS activation regression:
   repeated code commits are valid newest-first memory-state history; `find_mapping` owns current
   authority and `contains_mapping` owns exact historical-edge proof. Removed the unrequested
   global uniqueness rule. Verification remains closeout-owned.
+
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
+
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `find_unique_mapping` for one-to-one code mapping with duplicate-authority refusal. Verification remains closeout-owned.
+
 
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
+
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 moved the ledger reader (`observer/snapshots.py` → `serving/projections/snapshots.py`); the documented behavior is unchanged and the reader-path citation was re-pointed. Body re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+
 
 - 2026-08-04T18:29+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the four malformed rows and two
   superseded prose cites. `parse_ledger_text` bound to 52-104; closeout/integration rows bound to
@@ -162,6 +181,7 @@ No additional configured external or sibling-repository evidence is claimed.
   anchored on "ar-durable-store/1.0" at 1-25; not a Tier-3 remainder. Also extended
   `prepend_mapping`'s row range to its true end (218-231) and converted the two `(L…)` history
   prose cites to cit forms. No claim wording changed.
+
 
 - 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass): **the `durable_store.py` row
   pointed at the wrong docstring.** It cited "contract front matter L1-L116; the deployment-fact
@@ -179,6 +199,7 @@ No additional configured external or sibling-repository evidence is claimed.
   L23, "def parse_ledger_text(text: str) -> MemoryLedger:" L29, "class LedgerError(AgentsRememberError):" L40), "def parse_ledger_text(text: str) -> MemoryLedger:" L51-L104 cit:(["def parse_ledger_text(text: str) -> MemoryLedger:"], mcp/src/agents_remember/kernel/memory_ledger.py:58-58),
   `validate_ledger` L147 / `ledger_to_text` L159 / `prepend_mapping` L218, and `write_ledger`
   L193-L215 cit:(["def write_ledger(path: Path"], mcp/src/agents_remember/kernel/memory_ledger.py:222-222). Nothing on this card asserts a measured figure.
+
 
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: the only source change here is a 20-line docstring
   on `write_ledger`, and it is a **ruling**, not a description — so the card now records the ruling,
@@ -207,6 +228,7 @@ No additional configured external or sibling-repository evidence is claimed.
   Added a row for `write_ledger` itself and one for the contract it was measured against.
   Verification metadata pinned until closeout stamps the L5 code commit.
 
+
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-repo citation that broke when
   the worktree manager was split into `worktrees/modules/`. `git_worktree_manager.py` is now a
   195-line pure re-export facade with no ledger call in it at all, so the old `L18-L24; L923-L929;
@@ -216,6 +238,7 @@ No additional configured external or sibling-repository evidence is claimed.
   `modules/integrate.py` L10-L15 (import) + L251-L257 (integration mapping prepend). Claim text
   rewritten to name the two modules and the conditional-vs-unconditional difference.
 
+
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/kernel/memory_ledger.py` since the L2 base commit is the whole-tree
   `ruff format` pass in `00e8379`, which re-wrapped 1 line(s) with no token change whatsoever.
@@ -224,14 +247,18 @@ No additional configured external or sibling-repository evidence is claimed.
   docstring, or assertion this card describes has moved, and every claim this card makes about its
   own source still holds.
 
+
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
   whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
   structure or responsibility change. The sidecar was re-read against the current source and
   every claim in it still holds, so it was deliberately not rewritten. Verification metadata
   pinned until closeout stamps the L2 commit.
 
+
 - 2026-05-31T12:30+02:00 — Removed `find_ledger_anchor_commit()` (and its `subprocess` use) from Logic and references; `LedgerError` now subclasses `AgentsRememberError` (1.0.0 review remediation).
 
+
 - 2026-05-29T18:35+02:00: Extracted `_ledger_rows_from` (inner row loop) from `parse_ledger_rows` to reduce complexity; behavior-preserving (commit `e3dab63`).
+
 
 - 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.

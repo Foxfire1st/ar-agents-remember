@@ -57,10 +57,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Source state, named-branch admission, and informational Git-derived metadata. | `memory_branch_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:48-48 |
-| None | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:72-111; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:114-127 |
-| None | `_missing_memory_repo_state`; `_disabled_memory_choice` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:130-133; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:136-144 |
-| None | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| Source state, named-branch admission, and informational Git-derived metadata. | `_memory_source_state`; `memory_branch_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:19-32; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:48-48 |
+| Mtime reuse and divergence handling preserve the current indexing behavior. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:72-111; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:74-113 |
+| Missing external repository and explicit disabled-memory outcomes. | `_disabled_memory_choice`; `_missing_memory_repo_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:136-144 |
+| The informational ledger is reconstructed from commit attribution without a cache read. | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 
 ## Cross-Repo References
 

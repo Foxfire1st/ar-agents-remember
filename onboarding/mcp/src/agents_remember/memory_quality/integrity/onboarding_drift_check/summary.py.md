@@ -142,4 +142,3 @@ unified renderer publishes.
 - 2026-06-13T20:48+02:00 — Slice 3b (browser-dashboard): `run_drift_summary` now also persists a durable `ar-drift-snapshot/v1` JSON snapshot via `_write_drift_snapshot` (best-effort) for the observer reducer to read with a staleness age — drift is classified once, on demand, never re-run on a poll cadence. Verification metadata is pinned until closeout stamps the 3b code commit.
 - 2026-05-31T12:50+02:00 — Dropped the local `ACTIONABLE_CLASSIFICATIONS` set literal and now import it from the shared `models.py`; behavior-preserving. Noted the new source in Invariants And Boundaries and added the `models.py` reference (1.0.0 review remediation).
 - 2026-05-24T02:47+02:00: Created after drift summary moved under `memory_quality.integrity`.
-

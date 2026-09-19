@@ -39,4 +39,3 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 2 citations (citation_anchor_missing=1, citation_prose_not_in_cit_form=0, citation_source_malformed=1); final scoped citation check clean.
 - 2026-06-02T16:24+02:00: Module docstring now names the `c-09-git-worktree-manager` skill in full (was "C-09"). Reference-style normalization; behavior unchanged.
 - 2026-05-25T20:41+02:00: Created for the extracted worktree lifecycle implementation package.
-

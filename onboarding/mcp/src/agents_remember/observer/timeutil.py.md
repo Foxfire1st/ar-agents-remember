@@ -59,4 +59,3 @@ from the producer and reducer layers that consume them.
   (`HEARTBEAT_SECONDS`/`STALE_AFTER_SECONDS`/`TTL_SECONDS`, moved out of
   `ambient` so the read side shares one definition). Verification metadata is
   pinned until closeout stamps the 3a code commit.
-

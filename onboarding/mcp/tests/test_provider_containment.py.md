@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_containment.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-18T19:29+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +17,11 @@
 
 ## Purpose
 
-Proves that a stale in-memory armed provider snapshot cannot override an unconfigured authority file on disk. The retained case reloads launch authority and observes the veto. Historical benchmark self-arming, setup-lock and metrics-parser claims are no longer tests in this file.
+Proves that a stale in-memory armed provider snapshot cannot override an unconfigured authority file on
+disk. The retained case reloads launch authority and observes the veto. Since `260915-KS-L23` the file
+also carries the **truthfulness of the `worktree_start` gate**: what its refusal actually tests, and the
+declared-dependency check it never performed. Historical benchmark self-arming, setup-lock and
+metrics-parser claims are no longer tests in this file.
 
 ## Code Commentary
 
@@ -25,6 +30,11 @@ Proves that a stale in-memory armed provider snapshot cannot override an unconfi
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+`WorktreeStartGateTruthfulnessTests` (`:93-144`) is the second subject in this file, added by
+`260915-KS-L23` item 8 (D-17). It drives `worktree_start_tool` twice: once with a session lifecycle that
+is bound and no longer fleeting, and once with the underlying start stubbed to `would-start`. Its two
+cases and what they hold are stated in the section below.
 
 ### Conventions
 
@@ -68,8 +78,31 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | --- | --- | --- |
 | No external evidence is needed for these assertions. | N/A | N/A |
 
+## KS-R23@v1 The Start Gate States What It Tests, And What It Did Not Check
+
+`260915-KS-L23` item 8 (D-17) added `WorktreeStartGateTruthfulnessTests` (`:93-144`) beside the retained
+veto case. `_bound_lifecycle()` (`:28-40`) supplies the session lifecycle a real start leaves behind:
+bound, and no longer fleeting.
+
+- `test_the_refusal_states_the_session_binding_rather_than_a_protected_lifecycle` (`:104-121`) — the
+  refusal used to read *"worktree_start refuses to repoint the active persistent lifecycle"*, which
+  described a protection that does not exist: the check reads only the session's **current** lifecycle
+  and only its `fleeting` flag, so no other leaf, enclosure or session can block a start. The case
+  asserts `lifecycle-switch-required`, that the summary says the session is already bound to another
+  lifecycle, that it says no other leaf, enclosure or session can block the start, and that the
+  mis-stated "persistent lifecycle" claim is **gone** rather than paraphrased into the same meaning.
+- `test_a_start_result_reports_that_the_declared_dependencies_were_not_checked` (`:123-144`) — the tool
+  never checked a leaf's declared `Requires` lines, so a `would-start` preview could be read as "this
+  leaf's declared dependencies are satisfied". The case asserts the result's
+  `eligibility.requiresCheck == "not-performed"` and that the detail names the `Requires` lines, so the
+  check that was **not** performed travels with the answer.
+
+Both cases are about the tool's own truthfulness rather than about provider containment; the retained
+veto case and its armed-boot fixture are unchanged.
+
 ## Update History
 
+- 2026-09-18T19:29+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the second subject this leaf's item 8 (D-17) added to a file this card described as carrying one retained case.** `WorktreeStartGateTruthfulnessTests` (`:93-144`) pins that the `worktree_start` refusal names the session binding it actually tests — the current lifecycle's `fleeting` flag, not a protected persistent lifecycle no other leaf can trip — and that a result carries the declared-dependency check it did **not** perform (`eligibility.requiresCheck == "not-performed"`). `_bound_lifecycle()` (`:28-40`) supplies that session state. The Purpose and `### Logic` sections now name the second subject, and the section above states both cases with their extents. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference rows are left to the citation-range repair pass that owns them.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

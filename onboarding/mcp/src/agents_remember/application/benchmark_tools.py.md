@@ -105,4 +105,3 @@ registration or provider launch.
   commit.
 - 2026-05-31T12:30+02:00 — Documented benchmarks_enabled disabled-tools gate and switch to shared require_within_coordination guard (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00: Created when benchmark MCP controllers moved into their own domain module.
-

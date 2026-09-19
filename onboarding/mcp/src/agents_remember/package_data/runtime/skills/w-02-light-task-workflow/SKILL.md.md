@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T12:30+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-09-18T18:48+02:00                     |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 
 ## Purpose
 
@@ -27,7 +27,7 @@ The task document is JSON-primary (slice 3c): an `ar-task-document/v1` JSON is t
 
 ### Invariants And Boundaries
 
-`w-02-light-task-workflow` skill task artifacts are planning and execution state. They can trigger onboarding updates through `c-05-create-or-update-onboarding-files` skill, but they should not be treated as onboarding content. If a light task later becomes worktree-backed, `c-09-git-worktree-manager` skill stores `contract.md` beside `task.md` in the same wrapper folder. Refreshed external-memory onboarding and ledger changes must be committed before that `c-09-git-worktree-manager` skill worktree start. Implementation approval does not authorize closeout commits; the agent must present a commit preview and wait for explicit commit approval. Worktree-backed task status reaches `Completed` through `lifecycle_finalize_task`, not immediately after closeout.
+`w-02-light-task-workflow` skill task artifacts are planning and execution state. They can trigger onboarding updates through `c-05-create-or-update-onboarding-files` skill, but they should not be treated as onboarding content. If a light task later becomes worktree-backed, `c-09-git-worktree-manager` skill stores `contract.md` beside `task.md` in the same wrapper folder. Refreshed external-memory onboarding content must be committed, **with the computed ledger cache excluded**, before that `c-09-git-worktree-manager` skill worktree start. Implementation approval does not authorize closeout commits; the agent must present a commit preview and wait for explicit commit approval. Worktree-backed task status reaches `Completed` through `lifecycle_finalize_task`, not immediately after closeout.
 
 ### Todos
 
@@ -49,7 +49,7 @@ No external domain documentation applies to this repository-local workflow skill
 | --- | --- | --- |
 | The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | `## Task Artifact` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:26-38 |
 | Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands. | `## Agent Responsibilities` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:61-76 |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | `## Invariants` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:87-112 |
+| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline — refreshed onboarding content committed with the computed ledger cache excluded — before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | `## Invariants` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:87-112 |
 
 ## Cross-Repo References
 
@@ -65,6 +65,7 @@ The packaged light-task workflow describes master series as integration-branch w
 
 ## Update History
 
+- 2026-09-18T18:48+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repaired a claim the source had already falsified.** The skill's `## Invariants` item 5 now reads *"Refreshed external-memory onboarding content is committed, with the computed ledger cache excluded, before the `c-09-git-worktree-manager` skill starts worktrees"*, and the source delta since this card's old stamp is exactly that one line. The card said *"Refreshed external-memory onboarding **and ledger changes** must be committed"* in its `### Invariants And Boundaries` prose, which the source no longer says: the ledger cache is now deliberately **excluded** from the commit rather than required in it. That sentence and the summary row on the `## Invariants` citation were both corrected to the source's wording — the retired sentence was a real false claim about what the workflow requires, not a wording preference, so correcting it is the repair rather than a re-read. Everything else the card says about this skill was re-read and still holds, and the cited range `:87-112` is still exactly the `## Invariants` section. Verification stamp advanced to `c5a74a85`, the revision read; closeout re-stamps.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
 
 - 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the JSON-primary paragraph's 'chat build' thin-doc example is re-anchored to the smallest single-session build — chat is never a build route; the thin doc IS the minimum artifact. Verification metadata pinned until closeout stamps the L10 commit.

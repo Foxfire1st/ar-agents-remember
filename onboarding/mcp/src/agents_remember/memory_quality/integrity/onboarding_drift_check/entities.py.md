@@ -72,4 +72,3 @@ document. Current signatures: `classify_entity_fingerprint(catalog, repo_root, r
   Verification metadata pinned until closeout stamps the L2 commit.
 - 2026-05-29T18:35+02:00: Extracted `_entity_fingerprint_from_row`, `_is_table_separator_row`, `_normalized_header_cells`, and an `_early_classification` closure in `classify_entity_fingerprint` to reduce complexity; behavior-preserving (commit `e3dab63`).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

@@ -7,7 +7,7 @@
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-15T20:42+02:00 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -72,23 +72,23 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle phase union mirrors the code/memory-only vocabulary. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `taskDocuments` | dashboard/src/types/projection.ts:104-104 |
-| Execution nodes name their kind, leaf-id segment and task reference. | `TaskExecutionNodeView` | dashboard/src/types/projection.ts:730-741 |
+| The lifecycle phase union mirrors the code/memory-only vocabulary. | `refinements`; `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
+| Structural analytics fields use the shared task-document reference. | `string`; `TaskDocumentRef` | dashboard/src/types/projection.ts:698-701 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `string`; `taskDocuments` | dashboard/src/types/projection.ts:104-104; dashboard/src/types/projection.ts:647-681 |
+| Execution nodes name their kind, leaf-id segment and task reference. | `string`; `TaskExecutionNodeView` | dashboard/src/types/projection.ts:724-728; dashboard/src/types/projection.ts:730-741 |
 | An execution endpoint carries a task reference and optional leaf id. | `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:710-713 |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | `TaskExecutionPredecessorNode` | dashboard/src/types/projection.ts:743-748 |
+| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | `TaskExecutionEndpointNode`; `TaskExecutionPredecessorNode` | dashboard/src/types/projection.ts:703-708; dashboard/src/types/projection.ts:743-748 |
 | The graph contains typed node and edge arrays. | `TaskExecutionGraphNode` | dashboard/src/types/projection.ts:715-718 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:840-854 |
-| The optional canonical task-intent identity on lifecycle operations. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:750-754 |
-| The generated `task-intent/v1` identity interface. | "task-intent/v1" | dashboard/src/types/projection.ts:753-753 |
-| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `members` | dashboard/src/types/projection.ts:144-144 |
+| Workspace projection remains the generated top-level wire contract. | `number`; `WorkspaceProjection` | dashboard/src/types/projection.ts:816-829; dashboard/src/types/projection.ts:840-854 |
+| The optional canonical task-intent identity on lifecycle operations. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:361; dashboard/src/types/projection.ts:750-754 |
+| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity`; "task-intent/v1" | dashboard/src/types/projection.ts:750-754 |
+| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | `string`; `members` | dashboard/src/types/projection.ts:143-152 |
 
 ## Cross-Repo References
 
@@ -96,7 +96,7 @@ No cross-repository implementation dependency governs this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## L23 Source-Lineage Mirror
 
@@ -124,7 +124,7 @@ they do not make the dashboard or disposable closeout projection an operation au
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `string`; `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 
@@ -153,7 +153,7 @@ changes: the panel still renders whatever rows the producer serves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | `members`; `reasons`; "sourceProblems: CloseoutProjectionProblemNode[]" | dashboard/src/types/projection.ts:143-152; dashboard/src/types/projection.ts:124-133 |
+| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | `string`; `members`; `reasons`; "sourceProblems: CloseoutProjectionProblemNode[]" | dashboard/src/types/projection.ts:124-133; dashboard/src/types/projection.ts:143-152 |
 
 ## 260824-PDLS Invalidation Outcome Mirror
 

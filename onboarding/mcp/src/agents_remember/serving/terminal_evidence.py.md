@@ -130,4 +130,3 @@ No meaningful cross-repo references found.
   `MAX_NATIVE_LIFT_PAGES = 8` pi tail walk, no-loss read contract, interrupt-origin
   attribution). Verification metadata pinned to the leaf base `1c1629fc` until closeout stamps
   the 260713-TES-L2 commit.
-

@@ -93,12 +93,12 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
-| Dirty work admission and parking use complete typed side records. | `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:632-638 |
-| None | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction.py:539-594 |
-| None | `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:281-308; mcp/src/agents_remember/worktrees/sync_transaction_git.py:491-499 |
-| Pinned authority and parked-work restoration remain separate owners. | `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
-| None | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-283 |
+| The driver validates choices and routes retained or new transactions. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
+| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:387-402; mcp/src/agents_remember/worktrees/sync_transaction.py:632-638 |
+| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction.py:539-594 |
+| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-141; mcp/src/agents_remember/worktrees/sync_transaction_git.py:281-308; mcp/src/agents_remember/worktrees/sync_transaction_git.py:491-499 |
+| Pinned authority and parked-work restoration remain separate owners. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-283 |
 
 ## Cross-Repo References
 

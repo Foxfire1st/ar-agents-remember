@@ -55,10 +55,20 @@ require those operations. When a requested certification run is required, use th
 Dagger configuration and exact source/bundle/base contract; do not allocate another engine or
 substitute a host result for its certificate.
 
-The selected collected-case budgets are **1000 unit /150 integration**, including parametrized
-cases. Consolidate overlap before adding a test; each added case must protect a distinct behavior,
-consequential failure, or regression. Any budget growth needs an explicit tradeoff for protection,
-case count, support size and runtime. Moving unit bloat into integration is not a reduction.
+The selected collected-case budgets, including parametrized cases, are enforced by the repository
+root `pyproject.toml`: `unit_case_budget` and `integration_case_budget` under
+`[tool.pytest.ini_options]` (`pyproject.toml:121`), the pair `pytest_collection_finish` reads.
+**Measured on 2026-09-18 in the `260915-KS-L23` code worktree (code HEAD `2dcacb27`, where the pair sits
+at `pyproject.toml:244-245`; the file is unmodified there, so these are the committed values):
+2300 unit / 400 integration.** Read the enforced pair from those two
+lines, never from this paragraph and never from a test-local default: `mcp/pyproject.toml` declares no
+`[tool.pytest.ini_options]`, so pytest's `inifile` — and the rail with it — is the repository root.
+The pair moves. Every raise carries its measured tradeoff in the dated comment block directly above
+those two lines, and an over-budget population executes **zero** tests rather than the first N, which
+is why the ceiling is a hard rail and not a target. Consolidate overlap before adding a test; each
+added case must protect a distinct behavior, consequential failure, or regression. Any budget growth
+needs an explicit tradeoff for protection, case count, support size and runtime. Moving unit bloat
+into integration is not a reduction.
 
 Coverage percentages are diagnostic, including changed-line coverage. Production CRAP 20 is a
 review trigger: simplify code, add a meaningful behavioral test, or record concise justified
@@ -311,3 +321,4 @@ format. This repo keeps release notes in **GitHub Releases**, not a `CHANGELOG.m
 ## Testing Policy Reconciliation
 
 - 2026-09-06T21:35:26+00:00 — Reconciled testing guidance to IAS d3610903 source policy: bounded host development suites, diagnostic coverage/production CRAP 20, and master-end full-suite/review ownership. No new verification result is claimed.
+- 2026-09-18 — The collected-case-budget paragraph above was restated at the value the repository actually enforces and now names its home: root `pyproject.toml` `[tool.pytest.ini_options]`, `unit_case_budget = 2300` (`:244`) and `integration_case_budget = 400` (`:245`), measured rather than copied (`grep -n 'case_budget' pyproject.toml` in the `260915-KS-L23` code worktree, code HEAD `2dcacb27`, 2026-09-18T18:17+02:00). It previously read **1000 unit /150 integration** — a stale reading that the root `pyproject.toml` has not enforced since the line grew past it, and one that would have made a terminal reader report the whole accumulation as hundreds of cases over budget. The paragraph now says the pair moves and where the raise history lives; the growth doctrine it carries is unchanged and no rail was lowered. `system/git-workflow.md`'s matching sentence was corrected in the same pass.

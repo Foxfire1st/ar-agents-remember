@@ -78,4 +78,3 @@ symlink installs can be migrated to the copy.
 - 2026-05-29T18:35+02:00: Added `sys.platform` narrowing in `_is_link` for the Windows-only `st_file_attributes` and extracted `_validate_install_skills_args` from `install_skills`; behavior-preserving (commits `0549b28`, `e3dab63`).
 - 2026-05-23T17:34+02:00: Documented overwrite handling for legacy symlink and Windows junction skill installs.
 - 2026-05-23T13:09+02:00: Created for copy-only MCP skill installation.
-

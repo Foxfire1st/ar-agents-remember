@@ -90,9 +90,9 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:61-76 |
+| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:32-36; mcp/src/agents_remember/worktrees/integration/closeout/door.py:61-76 |
 | The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:203-232 |
-| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
+| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-85; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
 
 ## Cross-Repo References
 

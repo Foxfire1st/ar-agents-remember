@@ -92,7 +92,7 @@ The current source seams include `derive_closeout_recovery_commits`, `require_cl
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-108 |
+| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `derive_closeout_recovery_commits`; `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-32; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-108 |
 
 ## Update History
 

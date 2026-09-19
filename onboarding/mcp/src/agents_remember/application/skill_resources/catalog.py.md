@@ -151,4 +151,3 @@ package-data copy of its canonical `skills/` tree.
   registry and revision-checked delivery half. Recorded the named-identity rule, containment proven
   before the read, the recorded-revision re-check on every delivery, and the recorded-not-dropped
   unreadable-skill gate. Its "skills never nest" claim is corrected above.
-

@@ -54,4 +54,3 @@ relativizes a path against the onboarding root.
 
 - 2026-05-31T12:30+02:00 — Dropped citation of removed `is_file_level_onboarding` helper from Logic (1.0.0 review remediation).
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

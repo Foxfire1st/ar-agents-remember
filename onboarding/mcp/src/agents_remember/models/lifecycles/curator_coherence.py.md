@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:53+02:00 |
-| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e` |
-| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
-| reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/src/agents_remember/models/lifecycles/curator_coherence.py` **385 → 398 lines**, `_action_has_one_input_shape` only); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
+| lastUpdated | 2026-09-18T19:22+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,11 +20,11 @@
 Defines the strict structured contracts for curator source candidates, agent-owned judgments,
 immutable coherence generations, the sole live authority manifest, optional attempt snapshots, the
 four-action public request/response API, and — since the closeout plane was cut away — the frozen
-`ValidatedCuratorCoherence` value (`:372-385`) that carries one validated authority with its record,
+`ValidatedCuratorCoherence` value (`:490-504`) that carries one validated authority with its record,
 its two paths, its digest and its evidence. Under CCR-R03@v1 the memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-92; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:190-234).
 
 ## Code Commentary
 
@@ -34,7 +34,10 @@ cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_rem
 candidate count and uniqueness. `CuratorCoherenceRecord` keeps semantic requirement revision,
 delivery attempt, and content identities in separate fields and requires the recorded judgment set
 to exactly equal the source-candidate set. `CuratorCoherenceRequest` makes publication a strict
-compare-and-swap shape while forbidding publication-only fields on status, prepare, and validate.
+compare-and-swap shape, forbids publication-only fields on status, prepare, and validate, and — since
+KS-R24@v1 — refuses by **naming** the member it is refusing on rather than by naming a category: a
+`publish` refusal lists every missing publication member by its request field name, and a read action's
+refusal names the publication-only field it received.
 
 **The refusal is the whole diagnosis, because pydantic reports a model-level validator with
 `loc: ()` (260918-TSIP-L3, `T50`).** `_action_has_one_input_shape` requires **nine** non-null fields
@@ -53,7 +56,7 @@ digest), exact code and memory candidate trees (git-object digests), the rendere
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:94-133; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:134-159).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:95-132; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:135-158).
 
 ### Conventions
 
@@ -70,6 +73,9 @@ type, never hand-written per domain.
 - The stable manifest points to one content-addressed generation.
 - Publication requires every expected identity and an authorized declared caller, and a refusal
   names each absent field by request name rather than the class of them (`T50`).
+- One declaration states what publication requires: `PUBLICATION_MEMBERS` is the authority for the
+  validator, the `publish` refusal and the `prepare` text, so no reader can name a member the others
+  do not know about and an appended member needs no second edit.
 - The attestation binds the exact code/memory candidate trees it inspected; a changed tree stales
   the evidence, and no filename, mtime, or marker substitutes for the typed digest edges.
 
@@ -89,10 +95,15 @@ No configured external documentation applies; the schemas are repository-owned.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91 |
+| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92 |
 | Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-235 |
-| The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-330 |
-| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-227; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273 |
+| The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-501 |
+| **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:305-317; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:323-333 |
+| **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** | `publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:360-384 |
+| **The sibling refusal that names the publication-only field a read action received.** | `forbidden_publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:387-390 |
+| **The statement of the complete publication input set, read from the declaration at call time.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:393-418 |
+| **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** | `_publication_inputs_supplied`; `_action_has_one_input_shape` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:471-485; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:487-501 |
+| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`; `dependency`; `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:267-302 |
 
 ## Cross-Repo References
 
@@ -115,8 +126,86 @@ recompute the exact dependency set from the candidate pair, code/memory candidat
 rendered-checklist digest at currentness time, so the memory-quality evidence cannot be rebound to
 another candidate or report (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
-## Update History
+## KS-R24@v1 The Publication Set States Itself
 
+The nine members `publish` requires are now **one declaration** — `PUBLICATION_MEMBERS`, a tuple of
+`PublicationMember` beside the request model, in the request model's own field order, each entry
+carrying its caller-written field name and whether `prepare` derives it. The inline `publication_fields`
+tuple the validator used to build is gone: the validator reads the declaration through `getattr`, so a
+member appended there is checked, named and stated with no second edit. `JUDGMENTS_MEMBER` names
+`judgments`, which is a publication input too but not one of the nine the `None` check covers — a leaf
+with no source candidates publishes with an empty judgment list.
+
+The three readings of that declaration are the requirement:
+
+- `publication_refusal` keeps the shipped opening sentence — `publish requires every identity,
+  predecessor, and caller field` — and appends the missing members by request field name in declaration
+  order. Only the **missing** members that are the caller's own delivery identities are called out, as
+  `semantic_requirement_revision` and `delivery_attempt` are the two `prepare` does not derive; naming a
+  member the caller did supply would reproduce the defect this text exists to remove.
+- `forbidden_publication_refusal` names the publication-only request fields a `status`/`prepare`/
+  `validate` call actually carried, in the request model's own field order, so `judgments` is named in
+  its real position between `delivery_attempt` and the `expected_*` members. The `freeze_snapshot`
+  branch keeps its own message byte-identically.
+- `publication_input_statement` is what the `prepare` response carries (see the publication card on the
+  closeout route): it names the per-candidate judgments and every declared member, and marks the two it
+  does not derive. It reads the declaration at call time, so an extended declaration reaches the text
+  with no edit — the drift the requirement exists to remove.
+
+Nothing else moved: no member became optional, none became required, the canonical record schema, the
+publication fingerprint, the predecessor rule and the idempotent replay are untouched, and a
+differential probe over 80 request shapes measured **0** accept/refuse outcome differences against the
+base revision. The out-of-scope half is stated rather than implied: the two delivery identities remain
+**required**, and a later ruling may decide otherwise.
+
+## KS-R15@v1 Typed Assessment Collection
+
+This authority now carries a **second typed collection beside `judgments`**, and the separation is the
+point rather than an implementation detail. A judgment's identity is the `(sourceFile, onboardingFile,
+classification)` triple, and `_judgments_cover_candidates_exactly` refuses a record whose judgment set
+is not exactly its source-candidate set. A knowledge review's subject is a family, an invariant
+revision or a comparison — none of which is a source-file pair — so appending one to `judgments` would
+either break exact coverage or fabricate a source-candidate tuple for a family, which the design
+forbids outright.
+
+`CuratorCoherenceRecord.assessments` is that separate collection, bounded by
+`MAX_CURATOR_REVIEW_ASSESSMENTS = 256`. The bound is deliberately far below the candidate bound: an
+assessment is an authored act a human writes, not a machine-produced row per changed file, so a
+thousand of them on one leaf is a defect rather than a workload. Its own validator,
+`_assessments_are_uniquely_identified`, refuses a repeated assessment identity and says nothing about
+source candidates, which keeps `_judgments_cover_candidates_exactly` the only rule relating judgments
+to candidates. The field defaults to empty, so every already-published generation stays valid: an
+assessment is optional content and its **absence** is reported as the `none-recorded` state rather
+than as an empty favourable disposition.
+
+`CuratorCoherenceRequest.review_assessments` is the submission-side input, named by
+`REVIEW_ASSESSMENTS_MEMBER`. It is deliberately **not** a member of `PUBLICATION_MEMBERS`: every one
+of those nine is an identity `publish` must be told, while this one is content a leaf may legitimately
+have none of, and making it required would force every existing caller to supply an empty list to say
+so. Like `judgments` it is refused on `status`/`prepare`/`validate` by the shape validator, so the four
+actions keep one input shape each.
+
+## KS-R23@v1 The Record Carries A Durable Attestation Copy
+
+`CuratorCoherenceRecord.attestationCopyPath` (`:221`, optional, `None` when absent) is the model half of
+`260915-KS-L23` item 18's **second** measurement: the record's `attestationPath` names a file inside the
+leaf's own **enclosure**, and `lifecycle_finalize_task`'s automatic cleanup reclaims that enclosure —
+`os.path.exists` is False for it on every landed leaf, so each authority's `attestationSha256` committed
+to bytes recoverable nowhere, and a reader could no longer tell a candidate-empty publication from one
+whose attestation listed candidates. The publication now copies those exact bytes into the surviving task
+tree beside the record, content-addressed by the attestation's own digest, and records the
+task-root-relative path here.
+
+The field is deliberately optional rather than required: authorities published before it existed carry
+no copy, and that absence has to be distinguishable from a copy that was written. It adds no new record
+validity rule — it is the durable address of bytes the record already commits to — and the publication
+refuses (`curator-coherence-attestation-stale`, `curator-coherence-content-address-collision`) rather
+than recording a path whose bytes do not match `attestationSha256` (see the publication card on the
+closeout route).
+
+## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `forbidden_publication_refusal` repointed to mcp/src/agents_remember/models/lifecycles/curator_coherence.py:387-390. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:22+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the declaration item 18's second measurement added to this model.** `CuratorCoherenceRecord` now carries the optional `attestationCopyPath` (`:221`), the task-root-relative address of the durable copy the publication writes beside the record; the record's own `attestationPath` is enclosure-local and `lifecycle_finalize_task` reclaims the enclosure, so before this field every authority's `attestationSha256` named bytes no longer recoverable anywhere. The card's body gains the section above stating why the field is optional, that it adds no record validity rule, and that publication refuses rather than records a path whose bytes do not match the digest. Nothing in the R24 publication-set declaration, the record schema's other fields, or the four-action request shape moved; the two `cit:` claims in this card were re-read against the current source and still hold, and the reference-table ranges are left to the citation-range repair pass that owns them. This card's source is delivered but **uncommitted**, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp.
 - 2026-09-18T14:53+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
   base `a12c511f`): this source is one of the leaf's five changed paths, so the card gained a **body**
   update, not a restamp. `_action_has_one_input_shape` now carries `(name, value)` pairs and its
@@ -133,6 +222,14 @@ another candidate or report (worker handover: notes/reports/260902-CCR-L03-worke
   `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are
   deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real
   code commit.
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:260-288` -> `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:309-333` -> `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:353-377`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:336-339` -> `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:380-383`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:342-367` -> `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+- 2026-09-18T03:10+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the changed source and recorded the publication declaration the leaf added.** The request model now carries `PUBLICATION_MEMBERS` as the single authority for what `publish` requires, with `publication_refusal`, `forbidden_publication_refusal` and `publication_input_statement` as its three readings, and the Logic paragraph, the Purpose coordinates and the reference table were re-derived from the current file: `ValidatedCuratorCoherence` is at `:490-504`, the attestation at `:66-92`, the record at `:190-234`, and `CuratorCoherenceRequest` — which moved to `:370-434` when the declaration was inserted above it — is re-cited by this pass rather than left to the mechanical projection that had rewritten its range (that generated bullet is retired here). Five rows were added for the declaration and its three readers, and the Invariants section gained the single-declaration rule. The section states the half the packet left open rather than implying it: the two delivery identities remain **required**, and a differential probe measured 0 outcome differences over 80 request shapes. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+- 2026-09-17T07:33:51+00:00: Generated citation repair: `EvidenceDependencies`; `dependency`; `require_evidence_dependencies` repointed to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-223; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `EvidenceDependencies` in the row 82 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98, the extent of the construct the claim is about (the checker named line(s) [98, 229, 233] as its live location); re-pointed `require_evidence_dependencies` in the row 82 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:234, the extent of the construct the claim is about (the checker named line(s) [234, 238, 345] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `EvidenceDependencies` in the row 82 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-220 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-99, the extent of the construct the claim is about (the checker named line(s) [98, 229, 233] as its live location); re-pointed `require_evidence_dependencies` in the row 82 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-99 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242, the extent of the construct the claim is about (the checker named line(s) [234, 238, 345] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `dependency` in the row 82 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-220, the extent of the construct the claim is about (the checker named line(s) [19, 55, 80] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-220 in the row 82 of this card; the repetition added no pooled evidence
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` changed since the recorded
   verification commit. Re-read the card against the frozen on-disk source and re-checked its claims

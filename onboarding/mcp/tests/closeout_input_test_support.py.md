@@ -80,7 +80,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | Canonical setup passes only enabled code/memory messages. | `start_closeout_operation` | mcp/tests/closeout_input_test_support.py:97-140 |
 | Finalization publishes code/memory recovery cells. | `publish_closeout_finalization` | mcp/tests/closeout_input_test_support.py:352-379 |
 | Input and WorktreeArgs builders share production normalization. | `closeout_operation_input`; `closeout_worktree_args` | mcp/tests/closeout_input_test_support.py:390-414; mcp/tests/closeout_input_test_support.py:417-438 |
-| Evidence builders retain the explicit durable states. | `with_mutation_intent`; `with_commit_proven`; `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:441-463; mcp/tests/closeout_input_test_support.py:466-497; mcp/tests/closeout_input_test_support.py:500-512 |
+| Evidence builders retain the explicit durable states. | `with_mutation_intent`; `with_commit_proven`; `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:466-497; mcp/tests/closeout_input_test_support.py:500-512 |
 
 ## Cross-Repo References
 

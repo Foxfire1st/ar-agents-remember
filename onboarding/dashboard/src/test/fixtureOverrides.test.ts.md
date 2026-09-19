@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtureOverrides.test.ts`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:20+02:00                           |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 | The builders whose parameters are being pinned. | `lifecycle`, `taskDoc`, `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The conversation builders, including the `capabilities`-required page the first probe attacks. | `conversationPage`, `conversationItem` | dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 | The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics. | `refusedPolarity`; `createdAtButMisspelled`; "still rejects a field the mirror does not declare" | dashboard/src/test/fixtureOverrides.test.ts:45-46; dashboard/src/test/fixtureOverrides.test.ts:101-112 |
-| The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. | "class TaskDocNode(BaseModel):"; "class TaskSubTaskRefNode(BaseModel):"; "class SeriesSubTaskNode(BaseModel):"; "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:585-615; mcp/src/agents_remember/observer/projection.py:590-590; mcp/src/agents_remember/observer/projection.py:736-736; mcp/src/agents_remember/observer/projection.py:804-804; dashboard/src/test/contract.test.ts:626-656 |
+| The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction. | "class TaskDocNode(BaseModel):"; "class TaskSubTaskRefNode(BaseModel):"; "class SeriesSubTaskNode(BaseModel):"; "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:585-615; dashboard/src/test/contract.test.ts:626-656; mcp/src/agents_remember/observer/projection.py:590-590; mcp/src/agents_remember/observer/projection.py:736-736; mcp/src/agents_remember/observer/projection.py:804-804 |
 
 ## Cross-Repo References
 
@@ -133,6 +133,7 @@ the in-repo mirror; the compiler is a devDependency, not a system boundary.
 
 ## Update History
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `keeps the master and series sub-task row models distinct` in the row 123 of this card from dashboard/src/test/contract.test.ts:585-615 to dashboard/src/test/contract.test.ts:626, the extent of the construct the claim is about (the checker named line(s) [626] as its live location)
 - 2026-08-02T23:29:31+02:00 — L6 W2-B02 curator: corrected the semantic citation ranges for the 2 supported repository-internal claims: the fixture regression now covers declarations 45-46 and its enclosing assertion test 101-112, while the schema claim covers Python model extents 561-578, 594-640, 643-658 and contract assertions 477-507; final scoped result 0 (checker-clean), with no Tier-3 residue.
 
 - 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: created. Records the three exact-count assertions

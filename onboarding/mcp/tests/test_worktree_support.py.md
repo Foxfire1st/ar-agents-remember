@@ -55,15 +55,15 @@ No Domain Documentation source is configured for these repository-owned test fix
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external source applies. | N/A | N/A |
+| No configured external source applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | `seed_memory_ledger`; `init_repo` | mcp/tests/test_worktree_support.py:138-148; mcp/tests/test_worktree_support.py:93-113 |
+| Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. | `initialized_memory_repo`; `seed_memory_ledger`; `init_repo` | mcp/tests/test_worktree_support.py:364-392; mcp/tests/test_worktree_support.py:138-148 |
 | External-memory fixture supplies real isolated Git repositories and current contract inputs. | `open_external_contract_fixture` | mcp/tests/test_worktree_support.py:395-483 |
-| The base class provides helper methods rather than collected test cases. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
+| The base class provides helper methods rather than collected test cases. | `_unmapped_external_contract`; `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
 
 
 ## Cross-Repo References
@@ -72,7 +72,7 @@ Temporary fixture repositories do not establish a live cross-repository integrat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies. | N/A | N/A |
+| No separate external implementation source applies. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

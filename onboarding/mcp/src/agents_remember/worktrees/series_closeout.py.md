@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `f031314345b674d0733c4619fe34d78c1b02ba26` |
-| lastVerifiedCommitDate | 2026-09-18T10:15:50+02:00|
+| lastVerifiedCommitHash | `e79985045437d7e6409b873c7da3c51aa7cd9685` |
+| lastVerifiedCommitDate | 2026-09-19T13:57:48+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -64,10 +64,10 @@ These current source spans identify the implementation owners and the specific a
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Final closeout and series integration re-prove canonical completion. | `require_closeout_publication_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:33-57 |
-| Checkpoint capture and publication revalidate an explicit two-output candidate. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
-| None | `_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain`; `_atomic_leaf_code_matches`; `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:201-223; mcp/src/agents_remember/worktrees/series_closeout.py:251-281; mcp/src/agents_remember/worktrees/series_closeout.py:581-614; mcp/src/agents_remember/worktrees/series_closeout.py:617-631 |
-| None | `_require_chain_origin`; `_require_admitted_step` | mcp/src/agents_remember/worktrees/series_closeout.py:309-340; mcp/src/agents_remember/worktrees/series_closeout.py:472-509 |
-| Series cleanliness and actual memory-ref capture exclude cache authority. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
+| Checkpoint capture and publication revalidate an explicit two-output candidate. | `SeriesCheckpointRefs`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
+| Leaf membership, output identity, and ordering remain exact. | `_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain`; `_atomic_leaf_code_matches`; `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:201-223; mcp/src/agents_remember/worktrees/series_closeout.py:251-281; mcp/src/agents_remember/worktrees/series_closeout.py:581-614 |
+| Recorded origins and admitted substantive history preserve reconciled series proof. | `_require_chain_origin`; `_require_admitted_step` | mcp/src/agents_remember/worktrees/series_closeout.py:309-340; mcp/src/agents_remember/worktrees/series_closeout.py:472-509 |
+| Series cleanliness and actual memory-ref capture exclude cache authority. | `refuse_series_workbench_commit`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:680-698; mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No external domain source governs this synchronized projection.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged packet carries the same one-call launcher contract. | `# Template — Architect Brief` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:1-10 |
-| The hosted child-authority and no-fallback boundary is embedded in the brief. | "This architect seat is now plane-hosted." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:61-61 |
+| The hosted child-authority and no-fallback boundary is embedded in the brief. | "This architect seat is now plane-hosted." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:54-60; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md:61-61 |
 | The canonical skill tree is synchronized into package data and harness mirrors. | `CANONICAL_SKILLS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:195-203; scripts/sync-skills.py:204-212 |
 
 ## Cross-Repo References
@@ -69,11 +69,12 @@ No sibling-repository contract defines this synchronized projection.
 - 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
 - 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 50 of this card; the repetition added no pooled evidence
+
+
 - 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **first real body update since creation.** The
   canonical architect brief gained the single-source marker naming `../roles/architect.md`,
   `../core/launcher.md`, and `../core/authority.md` as the rule owners; this card's Purpose now records
   that marker and the values-vs-rules boundary. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-
 - 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 created onboarding for the packaged architect brief.
   Verification metadata remains blank until governed closeout stamps the first source commit.

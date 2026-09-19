@@ -59,4 +59,3 @@ happens in `mcp/registration/benchmarks.py`.
   code commit.
 - 2026-05-31T12:50+02:00 — `codex_benchmark_run_payload`'s `codex_sandbox` default changed from the inline `"danger-full-access"` literal to the `CODEX_BENCHMARK_SANDBOX` constant imported from `benchmarks.runner`; noted the new constant source in Logic (1.0.0 review remediation).
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
-

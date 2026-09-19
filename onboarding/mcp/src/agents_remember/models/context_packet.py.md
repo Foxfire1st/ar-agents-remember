@@ -144,4 +144,3 @@ reports why instead of raising.
   pinned until closeout stamps the L2 commit.
 - 2026-06-10T08:39+02:00: Added `BranchFreshness` and `FreshnessSummary` and the `ContextPacketV2.freshness` field (issue #54 opt-in freshness section).
 - 2026-05-28T19:52+02:00: Created after context packets moved to the compact V2 Pydantic contract.
-

@@ -94,11 +94,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Source reads derive only Git attribution and recompute retained revision metadata. | `read_ledger_source`; `_ledger_with_rows` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249; mcp/src/agents_remember/worktrees/ledger_projection.py:252-264 |
+| Source reads derive only Git attribution and recompute retained revision metadata. | `read_ledger_source`; `_ledger_with_rows` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249 |
 | Contract projection resolves actual memory history independently of cache availability. | `contract_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:290-312 |
-| Expected mappings and informational differences are built from the selected Git history. | "the selected Git history" | mcp/src/agents_remember/worktrees/ledger_projection.py:284-284 |
+| Expected mappings and informational differences are built from the selected Git history. | `project_ledger`; "the selected Git history" | mcp/src/agents_remember/worktrees/ledger_projection.py:334-396; mcp/src/agents_remember/worktrees/ledger_projection.py:284-284 |
 | The kernel walks committed attribution without reading a ledger file. | `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| Cache forgery/misses and invalid attributed targets have focused regression coverage. | `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:338-360 |
+| Cache forgery/misses and invalid attributed targets have focused regression coverage. | `test_projection_recomputes_metadata_and_rejects_an_unattributed_pair`; `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:315-335; mcp/tests/test_memory_ledger.py:338-360 |
 
 ## Cross-Repo References
 
@@ -121,6 +121,8 @@ claims about the working candidate. Their former table-union interpretation is s
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 - 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
 
 - 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,

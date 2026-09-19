@@ -70,7 +70,7 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+| No configured domain evidence applies to the file-local claims above. | — | — |
 
 ## Repo-Internal References
 
@@ -78,16 +78,22 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. | `QueueFixture` | mcp/tests/test_closeout_queue.py:184-185 |
+| Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. | `enable_direct_execution`; `QueueFixture` | mcp/tests/test_closeout_queue.py:184-443; mcp/tests/test_closeout_queue.py:184-185 |
+| The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. | `enable_direct_execution`; `QueueFixture` | mcp/tests/test_closeout_queue.py:184-443; mcp/tests/test_closeout_queue.py:184-185 |
+| Master. | `_master` | mcp/tests/test_closeout_queue.py:76-102 |
 | The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. | `_master` | mcp/tests/test_closeout_queue.py:76-102 |
-| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `task_doc` | mcp/tests/test_closeout_queue.py:105-154 |
+| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `_leaf`; `task_doc` | mcp/tests/test_closeout_queue.py:105-154 |
+| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:157-162 |
 | The judgment-row builder renders one canonical judgment register row for a candidate and priority. | `_judgment_row` | mcp/tests/test_closeout_queue.py:157-162 |
+| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:165-166 |
 | The priority-row builder renders one canonical priority register row for a candidate and priority. | `_priority_row` | mcp/tests/test_closeout_queue.py:165-166 |
 | Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:169-170 |
 | Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:173-174 |
+| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:177-181 |
 | The grade builder returns the priority and judgment id pair the register rows reference. | `_grade` | mcp/tests/test_closeout_queue.py:177-181 |
-| The retained task/door/projection fixture class that non-queue lifecycle suites construct. | "Current task/door/projection fixture retained for non-queue lifecycle suites." | mcp/tests/test_closeout_queue.py:184-694 |
-| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `start_leaf` | mcp/tests/test_closeout_queue.py:371-441 |
+| Queuefixture. | `enable_direct_execution`; "Current task/door/projection fixture retained for non-queue lifecycle suites." | mcp/tests/test_closeout_queue.py:184-694 |
+| The retained task/door/projection fixture class that non-queue lifecycle suites construct. | `enable_direct_execution`; "Current task/door/projection fixture retained for non-queue lifecycle suites." | mcp/tests/test_closeout_queue.py:184-694 |
+| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `author_unstarted_leaf`; `start_leaf` | mcp/tests/test_closeout_queue.py:319-441; mcp/tests/test_closeout_queue.py:371-441 |
 | Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:371-441 |
 | Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:626-655 |
 
@@ -97,7 +103,7 @@ No cross-repository implementation evidence is required for these local test and
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+| Fixture repositories and protocol doubles do not establish a live external integration. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

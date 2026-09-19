@@ -70,9 +70,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | `_assert_early_closeout_binding_refusals` | mcp/tests/test_worktree_support_tests_1.py:127-174 |
+| The fixture queue and early refusal helpers retain typed inputs and exact bindings. | `_publish_and_read_leaf_queue`; `_assert_early_closeout_binding_refusals` | mcp/tests/test_worktree_support_tests_1.py:44-124; mcp/tests/test_worktree_support_tests_1.py:127-174 |
 | The retained lifecycle scenario preserves the parent through start/attach/abandon. | `test_master_start_and_abandon_preserve_parent_series` | mcp/tests/test_worktree_support_tests_1.py:178-343 |
-| None | `closeout_operation_input`; `closeout_worktree_args` | mcp/tests/closeout_input_test_support.py:390-414; mcp/tests/closeout_input_test_support.py:417-438 |
+| Shared closeout arguments normalize the two real content messages. | `closeout_worktree_args`; `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:417-438; mcp/tests/closeout_input_test_support.py:390-414 |
 
 ## Cross-Repo References
 

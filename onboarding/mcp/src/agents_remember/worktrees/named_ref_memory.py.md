@@ -71,7 +71,7 @@ the current working-candidate behavior; historical entries below retain their or
 | --- | --- | --- |
 | The reader derives attribution at the explicit normalized local branch. | `load_named_ref_ledger`; "Read committed attribution from the exact local ref, independent of cached tables." | mcp/src/agents_remember/worktrees/named_ref_memory.py:12-15 |
 | Local ref normalization and ledger derivation have shared owners. | `local_branch_ref` | mcp/src/agents_remember/worktrees/modules/git.py:79-85 |
-| The kernel derives rows and current/base metadata from committed attribution. | "Read mappings from Git without consulting a cached file or a ledger commit."; "rows = ledger_rows_from_attribution(attributed_commits(repository, tip=tip))" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
+| The kernel derives rows and current/base metadata from committed attribution. | `derive_memory_ledger`; "Read mappings from Git without consulting a cached file or a ledger commit."; "rows = ledger_rows_from_attribution(attributed_commits(repository, tip=tip))" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
 | A tag sharing the source branch name cannot redirect the read, even with a damaged cache. | `test_cache_misses_preserve_contract_and_named_ref_history`; "Cache absence or damage is harmless; an unreadable Git ref remains a real failure." | mcp/tests/test_memory_ledger.py:338-360 |
 
 ## Cross-Repo References
@@ -91,4 +91,3 @@ source is configured for this file's claims.
 
 
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: created named-ref memory ledger reader onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.
-

@@ -57,4 +57,3 @@ without writing them.
 - 2026-08-03T02:54:51+02:00 — W3-B05 curator: anchored 2 Tier-2 table citations with exact source paths; fixer generated all ranges.
 - 2026-05-31T12:50+02:00 — Removed the local `relative_path` helper; `fix_onboarding_root` now calls the shared `rel(path, onboarding_root)` imported from `agents_remember.memory_quality.integrity.onboarding_drift_check.discovery`. Noted the shared helper in Logic and added a References row (1.0.0 review remediation).
 - 2026-05-24T03:09+02:00: Created for the dedicated update-history ordering fix script.
-

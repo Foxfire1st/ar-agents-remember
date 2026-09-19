@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/preparation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,13 +45,13 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No configured domain documentation applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
+| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | `PreparationLeg`; `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:26; mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
 | `_canonical_preparation_path` owns the corresponding behavior described above. | `_canonical_preparation_path` | mcp/src/agents_remember/models/lifecycles/preparation.py:30-40 |
 | `ExistingMemoryPreparationProof` owns the corresponding behavior described above. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
 | `_one_header` owns the corresponding behavior described above. | `_one_header` | mcp/src/agents_remember/models/lifecycles/preparation.py:331-338 |
@@ -63,7 +63,7 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No cross-repository source is needed for this card. | — | — |
 
 ## Update History
 

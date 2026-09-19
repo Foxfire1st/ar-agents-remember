@@ -197,7 +197,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -205,13 +205,13 @@ contract is supported by the implementation and the authorized cache-retirement 
 | --- | --- | --- |
 | Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. | `_register_direct_landing_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:45-89 |
 | The payload builders these forward to. | `worktree_closeout_preview_payload`; `worktree_closeout_apply_payload`; `worktree_integrate_payload`; `worktree_checkpoint_landing_payload`; `worktree_record_landing_payload`; `worktree_operation_control_payload`; `worktree_cleanup_payload`; `worktree_abandon_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-238 |
-| The checkpoint-landing tool declaration and the payload builder it forwards to. | `worktree_checkpoint_landing_payload`; `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174; mcp/src/agents_remember/mcp/registration/closeout.py:172-199 |
-| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:131-136 |
-| Refuse to stage anywhere except a task's own throwaway worktree. | "Refuse to stage anywhere except a task's own throwaway worktree." | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:26-26 |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | `worktree_checkpoint_landing`; `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/registration/closeout.py:172-199; mcp/src/agents_remember/mcp/tools/worktree.py:159-174; mcp/src/agents_remember/mcp/tools/worktree.py:173-199 |
+| `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-115; mcp/src/agents_remember/application/worktree_tool_requests.py:131-136 |
+| Refuse to stage anywhere except a task's own throwaway worktree. | `_refuse_outside_a_linked_worktree`; "Refuse to stage anywhere except a task's own throwaway worktree." | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:25-41 |
 | Refuse before staging when the checkout has unresolved conflicts. | `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
-| Prepare and certify a fresh candidate through the ordinary gate entry point. | "Prepare and certify a fresh candidate through the ordinary gate entry point" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:145-145 |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | `gate_staged_code`; "Prepare and certify a fresh candidate through the ordinary gate entry point" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:145-145 |
 | The case that pins the checkpoint description as a partial publication and denies it is the pause. | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:289-311 |
-| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:149-192 |
+| The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:132-146; mcp/src/agents_remember/worktrees/modules/quality/gate.py:149-192 |
 
 ## Historical R39 Integration Tool Contract
 
@@ -254,7 +254,7 @@ No separate cross-repository implementation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
 - 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): `test_the_checkpoint_description_publishes_rather_than_pausing` was repointed `:287-309 → :289-311`. The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/tests/test_tools.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.

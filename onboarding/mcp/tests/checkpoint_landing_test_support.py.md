@@ -59,10 +59,10 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf and accumulated-master pairs are built from real code/memory commits. | `commit_memory_content` | mcp/tests/checkpoint_landing_test_support.py:104-115 |
-| None | `branch_checkout`; `absorb_source_into_master_line` | mcp/tests/checkpoint_landing_test_support.py:47-56; mcp/tests/checkpoint_landing_test_support.py:133-139 |
-| None | `checkpoint`; `master_status`; `set_master_status` | mcp/tests/checkpoint_landing_test_support.py:148-156; mcp/tests/checkpoint_landing_test_support.py:159-165; mcp/tests/checkpoint_landing_test_support.py:168-184 |
-| None | `checkpoint_landing_test_support` | mcp/tests/test_checkpoint_landing_end_to_end.py:23-37 |
+| Leaf and accumulated-master pairs are built from real code/memory commits. | `close_out_leaf`; `commit_memory_content` | mcp/tests/checkpoint_landing_test_support.py:59-82; mcp/tests/checkpoint_landing_test_support.py:104-115 |
+| Temporary branch ownership and real source-content reconciliation. | `branch_checkout`; `absorb_source_into_master_line` | mcp/tests/checkpoint_landing_test_support.py:47-56; mcp/tests/checkpoint_landing_test_support.py:133-139 |
+| Public checkpoint and canonical master status helpers. | `checkpoint`; `master_status`; `set_master_status` | mcp/tests/checkpoint_landing_test_support.py:148-156; mcp/tests/checkpoint_landing_test_support.py:159-165; mcp/tests/checkpoint_landing_test_support.py:168-184 |
+| The public boundary scenarios consume the shared builders. | `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate`; `checkpoint_landing_test_support` | mcp/tests/test_checkpoint_landing_end_to_end.py:41-479; mcp/tests/test_checkpoint_landing_end_to_end.py:23-37 |
 
 ## Cross-Repo References
 

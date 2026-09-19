@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,9 +69,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The accepted input contains code/memory identity and validates route plus intent. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:14-39 |
+| The shared snapshot keeps actual object identity and optional content-only comparison. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
+| The coordinator captures the accepted candidate from actual Git facts. | `_prepare_direct_landing_candidate`; `candidateTree` | mcp/src/agents_remember/worktrees/direct_landing.py:425-457 |
 | The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:34-39 |
 | The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:47-63 |
-| The coordinator captures the accepted candidate from actual Git facts. | `candidateTree` | mcp/src/agents_remember/worktrees/direct_landing.py:443-444 |
 | Recovery checks the typed facts against the current repositories and refs. | `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134 |
 
 ## Cross-Repo References
@@ -92,4 +94,3 @@ source is configured for this file's claims.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input model package relocation; direct-landing accepted-input and ledger-intent contracts are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

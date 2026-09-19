@@ -57,4 +57,3 @@ No meaningful cross-repository boundary is owned by this file.
 ## Update History
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-

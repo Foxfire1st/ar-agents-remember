@@ -5,10 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/baseline.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-09-18T14:05:00+02:00 |
+| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
 
 ## Governing Overview
 
@@ -105,12 +104,15 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Context, drift, and Git-history adoption decisions. | `resolve_request_context` | mcp/src/agents_remember/memory/baseline.py:71-82 |
+| Bootstrap branch proof and the one attributed content commit. | `_baseline_default_branch` | mcp/src/agents_remember/memory/baseline.py:133-169 |
+| Cache preparation and refresh are separate from Git commit publication. | `prepare_memory_cache`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
+| Shared staging excludes derived paths from the content commit. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
+| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-394 |
 | Context, drift and Git-history adoption decisions. | `BaselineRequest`; `resolve_baseline_context`; `base_payload`; `ledger_status`; `baseline_status`; `baseline_adopt` | mcp/src/agents_remember/memory/baseline.py:46-53; mcp/src/agents_remember/memory/baseline.py:93-122; mcp/src/agents_remember/memory/baseline.py:270-298; mcp/src/agents_remember/memory/baseline.py:258-268; mcp/src/agents_remember/memory/baseline.py:300-304; mcp/src/agents_remember/memory/baseline.py:306-345 |
 | Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. | `_baseline_default_branch`; `adopt_initial_baseline` | mcp/src/agents_remember/memory/baseline.py:149-192; mcp/src/agents_remember/memory/baseline.py:195-250 |
 | The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
 | Shared staging, and the re-stage that makes a bare `git add` exclusion inert. | `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:191-198; mcp/src/agents_remember/worktrees/modules/git.py:200-208 |
-| Cache preparation and refresh are separate from Git commit publication. | `prepare_memory_cache`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-394 |
 | The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. | `test_baseline_adoption_follows_the_configured_branch`; `test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`; `test_the_first_baseline_never_commits_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:230-261; mcp/tests/test_memory_branch_authority.py:263-283; mcp/tests/test_memory_branch_authority.py:469-493 |
 | The recorded-default authority this file now follows instead of a literal. | `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-87 |
 
@@ -125,6 +127,7 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | n/a | n/a |
 
 ## Update History
+- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `BaselineRequest` claim against the current module: the class is declared at :46 and the cited range :46-53 still holds it, so the wording and the range are unchanged; the construct changed structurally since 420669c4 and the claim still states it.
 
 - 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the branch-authority and
   content-exclusion changes this leaf made** (`CAPS-R13@v1`, the absorbed `260820` runtime-correctness

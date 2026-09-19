@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
 | lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -76,7 +76,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Historical memory provenance derives once from reachable attribution and validates the selected commit. | `memory_commit` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147 |
+| Historical memory provenance derives once from reachable attribution and validates the selected commit. | `dependency_versions`; `memory_commit` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:118-193 |
 | Defines the class `Read`. | `Read` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:43-46 |
 | Defines the class `LockedVersion`. | `LockedVersion` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:49-53 |
 | Defines the class `GitHistory`. | `GitHistory` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:56-114 |
@@ -99,7 +99,7 @@ No separate cross-repository implementation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
 

@@ -47,7 +47,7 @@ No Domain Documentation entries are configured in this memory root. These are re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+| No configured domain evidence applies to the file-local claims above. | — | — |
 
 ## Repo-Internal References
 
@@ -66,7 +66,7 @@ No cross-repository implementation evidence is required for these local test and
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+| Fixture repositories and protocol doubles do not establish a live external integration. | — | — |
 
 ## Update History
 

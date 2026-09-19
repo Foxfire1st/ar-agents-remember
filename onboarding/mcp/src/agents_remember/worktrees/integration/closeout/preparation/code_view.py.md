@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -54,11 +54,11 @@ These source owners establish the behavior and boundaries above. Citation ranges
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The running-owner observation reloads the selected output and builds a bound physical view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
+| The running-owner observation reloads the selected output and builds a bound physical view. | `observe_prepared_code_view`; `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:65-92; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
 | The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | `observe_selected_prepared_code_view`; "Reprove a selected code output without requiring a live worker lease." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
-| Selected record and intent currentness are rechecked around observation. | `_require_selected_code_current` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:166-186; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:135-135; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:150-150 |
-| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | `_PreparedCodeViewBuild`; "logicalPair"; "codeCommit" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:53-62; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:208-223 |
-| Preparation precedes a fresh observation when the caller requests a prepared view. | `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
+| Selected record and intent currentness are rechecked around observation. | `_require_selected_code_current` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:166-186 |
+| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | `_build_prepared_code_view`; `_PreparedCodeViewBuild`; "logicalPair"; "codeCommit" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:189-223 |
+| Preparation precedes a fresh observation when the caller requests a prepared view. | `prepare_code_view`; `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:226-231; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
 
 ## Cross-Repo References
 
@@ -66,7 +66,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

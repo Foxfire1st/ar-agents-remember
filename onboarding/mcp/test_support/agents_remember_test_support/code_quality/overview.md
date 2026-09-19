@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T14:57+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastUpdated | 2026-09-18T20:52+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -134,6 +134,18 @@ Use the generated adjacent route index for existing source/sidecar membership af
 ## Historical Context
 
 The original PDLS/CCR entries explain exact-scope, retry and publication repairs. Their historical exact consumer counts and old coverage enforcement are not current policy. Current source and the diagnostic policy below govern; history is retained for provenance.
+## The Two Registries A New Test Module's Path Literals Reach
+
+`dependency_ownership.py` owns the source-derived test-consumer graph, and one fact about it is load-bearing
+enough to state here rather than leave in a card: **a path *string* in a test is a dependency edge, and it is
+derived twice for two different consumers.** The evidence **census** is served by
+`mcp/tests/evidence-lifecycle.toml`'s `consumers` lists, while the **selection** graph for the ambient role
+runner is served by `REPOSITORY_TEST_INPUT_CONSUMERS[AMBIENT_ROLE_RUNNER_PATH]`, and that constant
+**overrides** the catalog for selection rather than restating it. Both derivations therefore have to be
+satisfied — one does not stand in for the other. `260915-KS-L18` is a worked example: its two
+citation-binding test modules each quote a real corpus key that the e2e generator's run report is written
+about, which registered them in **both** registries without a single import creating the edge.
+
 ## Development And Certification Policy
 
 Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
@@ -150,8 +162,8 @@ These current source and policy ranges establish the development/certification d
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:600-636 |
+| Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 | Exact profile scope and suite execution. | `_require_exact_scope`; `_paths`; `_run_python_suite`; L92-L214 | [Profile rails](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:92-214) |
@@ -162,7 +174,31 @@ These current source and policy ranges establish the development/certification d
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
+## Terminal-Pass Verification (`260915-KS-L23`, code `5e4eb651`)
+
+This route's **own sources are byte-identical** between its previous verification commit `7b1db4e0` and the
+terminal leaf's landing `5e4eb651` (`git diff 7b1db4e0..5e4eb651 -- mcp/test_support/agents_remember_test_support/code_quality/`
+is empty), so every technical claim in the body above still holds unchanged. What the terminal pass **did** change is
+this route's *consumers*, and three of those changes are things a reader of the quality machinery needs:
+
+- **The two gates are two.** The byte-pin guard and the consumer-completeness oracle were named as one thing in
+  places and are in fact separate derivations that must both be consulted; the terminal leaf's item 13 recorded them
+  as two gates in the oracle's own module docstring (`testing/evidence_lifecycle.py:1-19`) and added a case that
+  reddens the oracle while the pinned catalogue's bytes and populations stay provably untouched.
+- **The collected-case budget is declared once, at the repository root.** The never-effective `default=1100` /
+  `default=300` declarations in `mcp/tests/conftest.py` are removed (item 12); the enforced pair lives in the
+  repository root `pyproject.toml` `[tool.pytest.ini_options]` and is currently **2300 unit / 400 integration**. A
+  budget the parser declares and the repository does not enforce is worse than no declaration, because a reader
+  believes it.
+- **A registry row is a line, not an identity.** `mcp/tests/evidence-lifecycle.toml` gained appended `consumers` rows
+  in this pass, and because a registry is a file of many blocks, appending to the end of **one block in the middle of
+  the file** moves every line below it by one — which is why the citation ranges this card carries were re-projected
+  in the same pass and why the class is recorded as D-36. The durable cure is a citation form that does not need a
+  line range; until then the convention is to add at the end of the file.
+
 ## Update History
+- 2026-09-18T20:52+02:00 — 260915-KS-L23 curator (terminal leaf, uncommitted change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): a **body section added**, not a metadata-only advance. The route's own sources are unchanged at the leaf's landing (empty diff, measured) while its *consumers* changed in three ways the section records — the two-gate separation, the single root-level budget declaration, and the appended registry consumer rows whose line shift re-projected this card's own citation ranges (D-36). The stamp advances to `5e4eb651` on the strength of that content, and the `_attach_final_full_catalog` citation was re-projected to `application/memory_quality/controller.py:600-646` in the same pass.
+
 - 2026-09-18T14:57+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
   base `a12c511f`): **a stale number in prose, and no check can see it (`T45`).** This route's own
   governed sources did not change, so the route-body gate was silent here; but the leaf's `T51` repair
@@ -174,6 +210,7 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   file's old size rather than by running the checker — the rule L1 earned. `lastUpdated` advances with
   this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because
   the candidate is uncommitted and the governed closeout owns the real code commit.
+
 - 2026-09-18T13:44+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
   base `d9becade`): this route's governed sources changed, so a body section was **added rather than
   annotated** — `## 260918-TSIP-L2 Record-Integrity Comparisons`, recording that the route gained a
@@ -188,6 +225,8 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   the checker. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/
   `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
   governed closeout owns the real code and memory commits.
+
+- 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-636. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
   `ar/260918-tsip-l1-ar`, base `f0313143`): this route's governor changed under it again. The leaf's
@@ -216,6 +255,20 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
   metadata remains closeout-owned: `lastUpdated` tracks this body edit, and
   `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the candidate
   is uncommitted and the governed closeout owns the real code and memory commits.
+
+- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): this route's source `dependency_ownership.py` changed — two modules joined
+  `REPOSITORY_TEST_INPUT_CONSUMERS[AMBIENT_ROLE_RUNNER_PATH]` — so the overview gained the section that makes
+  the change legible instead of a no-impact note. It states the fact the change demonstrates: **a path
+  *string* in a test is a dependency edge derived twice**, once for the evidence census (through
+  `evidence-lifecycle.toml`'s `consumers` lists) and once for the selection graph (through
+  `REPOSITORY_TEST_INPUT_CONSUMERS`), with the constant overriding the catalog for selection rather than
+  restating it — so a module's path literal has to be registered in both, and one derivation does not stand
+  in for the other. The leaf's two citation-binding test modules quote a real corpus key that the e2e
+  generator's run report is written about, which is how they reached both registries with no import creating
+  the edge. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read
+  against the current source; the code commit does not exist yet and closeout owns that stamp.
+
+- 2026-09-17T08:16:00+00:00 — 260915-KS-L9 curator (memory-quality closure): re-pointed this route's citation for the final memory certification adapter from `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py` to `mcp/src/agents_remember/application/prepared_certification.py`, which is where that file now lives; the construct did not move within it (`PreparedMemoryCertificationAdapter` is still declared at 721-785, a pure move). No claim wording changed. Recorded because a re-pointed source is a body update.
 
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was

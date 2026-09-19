@@ -162,4 +162,3 @@ No meaningful cross-repository reference applies.
   registry contract (metadata cannot reach a body), the additive `_meta` provenance and constant trust
   statement, the observed-never-applied `allowed-tools` value, and the no-`mcp`-import boundary. Its
   description of the index document as the discovery surface is superseded above.
-

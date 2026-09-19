@@ -59,4 +59,3 @@ per-repo folders in the dashboard hangar (slice 4).
   (`SaveDecision`, `coerce_save_decision`, `SaveGateRequired`, `compute_scope`,
   and the landing-zone scope constants `UNSCOPED_SCOPE`/`CROSS_REPO_SCOPE`).
   Verification metadata is pinned until closeout stamps the 2c code commit.
-

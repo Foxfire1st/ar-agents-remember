@@ -212,4 +212,3 @@ tool-boundary string into a `Phase` or raises `LifecycleError`.
 - 2026-06-13T16:41+02:00: Created for slice 2b — the lifecycle state/phase
   vocabulary, `LifecycleState`, the typed errors, and `coerce_phase`. Verification
   metadata is pinned until closeout stamps the 2b code commit.
-

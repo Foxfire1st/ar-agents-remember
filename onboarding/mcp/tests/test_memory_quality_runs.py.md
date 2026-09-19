@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-17T19:30+02:00 |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l20-ar` uncommitted source; base `621db8981aba09a6f17880d2138cf76a37332c6c` |
+| lastUpdated            | 2026-09-18T19:30+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,15 @@ Bounded memory-quality run state and pair-currentness refusal.
 
 Registry cases retain completed/failed outcomes, unknown-run absence, launch rollback and repository-scoped polling privacy. A controller case changes the code/memory pair while deriving evidence and requires scope-refused with no curator publication.
 
+`260915-KS-L23` added two classes at the end of the module, stated in the section below:
+`MeasuringBuildStampTests` (`:626-696`) and `CloseoutOwnedProvenanceRoutingTests` (`:699-731`).
+
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card's body describes the source as it stood at IAS `d3610903` **plus** the later working candidates
+this card records — most recently the one named in the `reviewedWorkingCandidate` row above. Historical
+entries below record earlier test populations; they do not require restoring removed cases. Source
+inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -67,7 +73,7 @@ The retained source anchors below support the fixture roles and assertion bounda
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Start poll completed failed and unknown. | `test_start_poll_completed_failed_and_unknown` | mcp/tests/test_memory_quality_runs.py:131-146 |
-| Launch failure rolls back the admitted slot. | `test_launch_failure_rolls_back_the_admitted_slot` | mcp/tests/test_memory_quality_runs.py:148-154 |
+| Launch failure rolls back the admitted slot. | `test_launch_failure_rolls_back_the_admitted_slot` | mcp/tests/test_memory_quality_runs.py:155-161 |
 | Wrong repository poll never discloses any run state. | `test_wrong_repository_poll_never_discloses_any_run_state` | mcp/tests/test_memory_quality_runs.py:156-168 |
 | Pair change during derived evidence refuses before curator publication. | `test_pair_change_during_derived_evidence_refuses_before_curator_publication` | mcp/tests/test_memory_quality_runs.py:205-261 |
 
@@ -79,7 +85,36 @@ No cross-repository implementation evidence is required for these local test and
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
+## KS-R23@v1 The Ruler Stamp, And The Closeout-Owned Bucket's Wire
+
+Two classes were added to the end of the module; this card previously described neither.
+
+`MeasuringBuildStampTests` (`:626-696`) carries item 26 (D-33) with three cases:
+
+- `test_every_memory_quality_entry_point_stamps_the_serving_build` (`:636-659`) — drives all three public
+  entry points with their bodies patched out and asserts each returns the **process's resolved** commit
+  and source digest. Red if a wrapper is dropped, if a mode returns its body's payload unwrapped, or if
+  the stamp stops being the resolved identity: an unstamped envelope is exactly the state D-33 recorded,
+  where a count cannot be attributed to a ruler.
+- `test_the_stamp_is_declared_on_the_responses_that_carry_it` (`:661-674`) — the field is in
+  `MemoryQualityCheckResponse.model_fields`, and the stamp validates as the shared `ServingBuildPayload`.
+  Red if the declaration is removed, because `FlexibleToolResponse` sets `extra="allow"`, so an
+  undeclared key would validate while staying invisible in the tool's own schema.
+- `test_the_citation_repair_response_names_its_ruler` (`:676-696`) — drives `citation_fix_tool` with its
+  scope, its `_citation_trees` and the fixer doubled, and asserts the returned `servingBuild` is the
+  resolved one. Red if the tool's return stops including the stamp.
+
+`CloseoutOwnedProvenanceRoutingTests` (`:699-731`) carries item 17 half (b). Its single case,
+`test_the_checklists_commit_owned_set_collects_the_checks_own_bucket` (`:719-731`), drives the real
+`controller._checklist_finding_sets` with a check result that declares a `closeoutOwnedFindings` row and
+asserts the row lands in the closeout-owned half — and that an absent or non-mapping `checks` payload
+yields empty sets rather than raising. Red if the collection stops reading the bucket: those rows would
+then be in neither the repairable set nor the closeout-owned section, which is the silence the
+disposition rules forbid.
+
 ## Update History
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `test_launch_failure_rolls_back_the_admitted_slot` repointed to mcp/tests/test_memory_quality_runs.py:155-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:30+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the two classes this leaf added, which this card did not mention.** `MeasuringBuildStampTests` (`:626-696`) is item 26 (D-33): all three memory-quality entry points return the process's resolved `servingBuild`, the field is declared on `MemoryQualityCheckResponse` rather than tolerated by the flexible envelope, and `citation_fix_tool`'s response names its ruler too. `CloseoutOwnedProvenanceRoutingTests` (`:699-731`) is item 17 half (b): `controller._checklist_finding_sets` collects a check's own `closeoutOwnedFindings` bucket into the closeout-owned set, and empty sets are returned for an absent or non-mapping `checks` payload. The `### Logic` and `### Conventions` sections now say the body covers this leaf's working candidate, and the stale `reviewedWorkingCandidate` row (`ar/260915-caps-l20-ar`) names this leaf's. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference rows are left to the citation-range repair pass that owns them.
 - 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: recorded this leaf's added case — the wiring that carries a dead governing-overview finding into the gated curator repair set, with the finding's code and the published `unresolvedLinkCount` asserted together. The module counted 11 cases before this leaf and 12 after. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_start_poll_completed_failed_and_unknown` repointed to mcp/tests/test_memory_quality_runs.py:131-146. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `test_launch_failure_rolls_back_the_admitted_slot` repointed to mcp/tests/test_memory_quality_runs.py:148-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.

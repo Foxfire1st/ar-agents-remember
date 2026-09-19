@@ -70,8 +70,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:568-576 |
-| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:592-627 |
+| Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) | `_legacy_intent_override`; `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:546-551; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:568-576 |
+| Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:536-537; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:592-627 |
 | The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:172-219 |
 
 ## Cross-Repo References
@@ -103,7 +103,7 @@ cursor of the journal revision it projects.
 | --- | --- | --- |
 | Coherent envelope carries the record cursor. (`_coherent_operation_projection`) | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:172-219 |
 | Incoherent refusal envelope carries the record cursor too. (`_incoherent_operation_projection`) | `_incoherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:480-517 |
-| The envelope field being populated. (`meaningfulRevision`) | `meaningfulRevision` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:375-375 |
+| The envelope field being populated. (`meaningfulRevision`) | `None`; `meaningfulRevision` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:375 |
 
 ## CCR-L42 current candidate
 

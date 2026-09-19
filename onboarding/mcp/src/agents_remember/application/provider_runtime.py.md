@@ -145,4 +145,3 @@ No external Domain Documentation source is configured for this memory repo.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 4 citation items; scoped citation check now passes.
 
 - 2026-06-01T00:00+02:00 — Created onboarding for the new provider teardown module.
-

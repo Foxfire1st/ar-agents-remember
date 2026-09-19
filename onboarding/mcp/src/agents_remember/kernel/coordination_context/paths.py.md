@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,11 +32,40 @@ longer scans `workspace_root.iterdir()` for name matches, so it cannot raise the
 "multiple code repositories" ambiguity error; a non-direct hit yields only the
 "was not found" `ValueError`.
 
+**A leaf enclosure's memory worktree is a supported onboarding root (260915-KS-L23, D-34).** The
+module now decodes that shape structurally instead of refusing it:
+
+- `memory_worktree_enclosure(onboarding_root)` returns
+  `(coordination_root, code_repository_name)` for
+  `…/worktrees/<repo>/<group>/memory-<name>/onboarding`, or `None`. Every segment is matched — the
+  parent must be literally `worktrees`, the leaf directory must start with `memory-` and be longer
+  than the prefix, and no segment may be empty — so a lookalike directory earns no acceptance.
+- `infer_topology_from_onboarding_root` answers `"external"` for that root, which is the topology it
+  genuinely has: the memory is external to the code repository, and this is the exact root the
+  contract-scoped memory-quality route measures (it takes its root from the contract, not from this
+  resolver, which is why refusing it here refused a location the product itself uses).
+- `infer_settings_path` resolves a memory worktree's governing settings to the **official** memory
+  repo's `system/settings.md` (`external_memory_root(coordination_root, name)`), because a memory
+  worktree carries no `system/` of its own; when that file is absent it falls through to the previous
+  inference, so an unknown worktree reports a missing settings file instead of silently resolving to
+  some other repository's.
+- The refusal, when it still fires, names **both** supported shapes and the exact root received
+  instead of one shape and no value.
+
+The three directory names (`WORKTREES_DIRNAME`, `MEMORY_REPOS_DIRNAME`, `MEMORY_WORKTREE_PREFIX`) are
+module constants so the accepted shape and the refusal text cannot drift apart.
+
 ### Invariants And Boundaries
 
 - Source-checkout `.env` and `.env.example` are not resolver authority.
 - Internal memory resolves under `<code-repository-root>/ar-memory`; external
   memory resolves under `<coordination-root>/memory-repos/ar-<repo>`.
+- **A leaf enclosure's memory worktree resolves to `external` too**, and the shape is decoded
+  structurally: `<coordination-root>/worktrees/<repo>/<group>/memory-<name>/onboarding`. A directory
+  that merely resembles it earns no acceptance, and the refusal names both supported shapes plus the
+  received root.
+- A memory worktree's settings come from the **official** memory repo of the pair it was cut from; a
+  memory worktree carries no `system/` of its own.
 - Path helpers do not parse settings content or inspect Git.
 
 ## Docs References
@@ -63,6 +92,7 @@ No cross-repository evidence is needed for local path policy.
 
 ## Update History
 
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the second onboarding-root shape this module now accepts (D-34). It refused a leaf enclosure's memory worktree (`…/worktrees/<repo>/<group>/memory-<name>/onboarding`) even though the contract-scoped memory-quality route measures that exact root, so the CLI and the tool that wraps it disagreed about the same tree. Added the new `memory_worktree_enclosure` structural decoder, the `"external"` topology it implies, the settings resolution that follows from it (a memory worktree has no `system/` of its own, so its settings are the official repo's), the three module constants, and the two-shape refusal that now names the received root. Two invariants were added; nothing previously stated in this card was falsified — the existing external/internal resolution rules and the "no scanning, no ambiguity error" statement still hold. Existing citation ranges were left for the citation pass.
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 
 

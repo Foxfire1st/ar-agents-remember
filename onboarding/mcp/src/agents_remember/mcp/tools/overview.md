@@ -5,10 +5,10 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastUpdated | 2026-09-18T15:30+02:00 |
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
@@ -300,7 +300,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
-| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:215-215 |
+| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:219-219 |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
 | The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
 | The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:34-46 |
@@ -556,18 +556,57 @@ which is likewise not the extension's enumeration result.
 | The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. | `install_extension_methods` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153 |
 | This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
 
+## 260915-KS-L20 The Five Knowledge Payload Builders, And Where A Handler Refuses To Decide
+
+`mcp/tools/knowledge.py` adds one builder per mounted `knowledge_*` operation family, and its defining
+property is what it does **not** do: no classification is computed, no effect label is inferred, no draft is
+authored, no rationale is judged, no ambiguity is resolved by choosing, no missing assessment is filled, and
+no compatibility verdict is produced. Where a handler would have to decide something, it returns the
+unresolved state instead, and the module's brevity is the measurement of that rule rather than an accident
+of scope. Two of the five are quoted at requirement level and their builders are the reason: `knowledge_read`
+returns "recorded claims and assessments as attributed records", and the payload it returns **is the view
+payload itself**, so the classification rule has exactly one implementation instead of a second renderer
+here; `knowledge_diff` includes "semantic effect labels ... only when supplied by an identified
+agent/assessment, not inferred from the diff", so `_supplied_effect_labels` collects the labels the
+comparison already carries and never derives one.
+
+**Four request records and one builder that takes none.** `ReadToolRequest`, `ChangeToolRequest`,
+`DiffToolRequest` and `ProjectToolRequest` are the wire shapes, and each field they declare is an input the
+caller must supply rather than a default the substrate chooses — the dataset path, the namespace, the
+destination, the view name, the ordering input, the limit, the continuation, the authorized overwrites.
+`knowledge_integrity_check_payload` takes no request at all, which is the honest shape for an operation
+whose answer is "here are the recorded conditions and here is what could not be resolved":
+`_recorded_conditions` reads the shipped detection run for the named scope, `_no_detection_run` reports the
+absence as a state rather than as an empty condition list, and `_condition_report` carries each matched
+fact beside the condition that matched it.
+
+**Two refusal builders exist so that a refusal never becomes a default.** `_refused_read` returns the
+typed refusal naming the offending view and the code, and `_refused_project` names the destination and the
+code, so a caller can always tell "nothing was selected" from "the selection was refused" — a distinction
+the response models' `state` discriminator preserves on the wire. `ADMITTED_CHANGE_KINDS` is the two-member
+tuple of kinds that already have a shipped admitted operation (`evidence_claim`,
+`verification_observation`); a kind outside it returns the shipped `registration_absent` refusal naming the
+absent admitted operation, because inventing a second write path here is exactly the authority the
+requirement forbids this route to add. `_projection_requests` builds one view request per requested view so
+the projection builder reads each view through the same seam a direct read does, rather than through a
+second selection path.
+
 ## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:219-219. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five builders for the five mounted `knowledge_*` families and the rule that keeps them short (nothing is decided here; where a handler would have to decide it returns the unresolved state); the two requirement-level quotations and why `knowledge_read` returns the view payload itself; the four request records plus the one operation that takes none; and the two refusal builders plus `ADMITTED_CHANGE_KINDS`, which is why an unadmitted record kind refuses with `registration_absent` instead of acquiring a second write path. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/public_roster.py:64-64; mcp/src/agents_remember/models/tools/public_roster.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/public_roster.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:195-202. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded that `runtime_install_payload` now takes the run's
   own `RuntimeInstallRequest` instead of four keyword flags, and why (the run's selection input
   reaches the entry point by construction, and the payload can report `selectionSource`).
   Verification metadata is left at its recorded value; the candidate is deliberately
   uncommitted.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:195-202. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
   `ar/260915-caps-l4`, base `b00a4ac2`): re-anchored the `_register_skill_tools` range against the
   current 278-line registration module and added the boundary row this route needs after the repairs:
@@ -891,4 +930,3 @@ which is likewise not the extension's enumeration result.
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
 - 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
-

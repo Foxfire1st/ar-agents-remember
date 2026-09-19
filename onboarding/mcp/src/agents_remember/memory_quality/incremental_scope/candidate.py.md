@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

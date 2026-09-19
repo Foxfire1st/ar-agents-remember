@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,16 +61,16 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| The four-state vocabulary is closed and explicit. | "MutationEvidenceState = Literal[" | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
+| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | `CloseoutMutationLeg`; `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:9; mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
+| The four-state vocabulary is closed and explicit. | `MutationEvidenceState`; "MutationEvidenceState = Literal[" | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:10-15 |
 | Snapshot identity includes reflog, index, candidate, and status facts. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| State-specific proof is model validated. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:47-63 |
+| State-specific proof is model validated. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:33-63 |
 
 ## Cross-Repo References
 
@@ -78,7 +78,7 @@ No meaningful cross-repository reference applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## 260821-CLIVE-L2 Current Contract
 

@@ -58,7 +58,7 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Code and memory WIP return, with cache excluded from the memory candidate. | `test_parked_memory_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:56-78 |
+| Code and memory WIP return, with cache excluded from the memory candidate. | `test_parked_candidate_is_carried_and_returned`; `test_parked_memory_candidate_is_carried_and_returned` | mcp/tests/test_sync_parked_candidate.py:30-54; mcp/tests/test_sync_parked_candidate.py:56-78 |
 | Genuine reapply conflict and cancellation preserve candidate content. | `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` | mcp/tests/test_sync_parked_candidate.py:80-115 |
 | Crash recovery and retained-source continuation return parked work. | `test_resume_returns_the_candidate_a_crash_left_parked`; `test_resolving_a_retained_merge_returns_the_parked_candidate` | mcp/tests/test_sync_parked_candidate.py:117-144; mcp/tests/test_sync_parked_candidate.py:146-171 |
 | Pre-existing genuine conflicts remain a refusal. | `test_unmerged_index_entries_still_refuse_the_sync` | mcp/tests/test_sync_parked_candidate.py:173-188 |

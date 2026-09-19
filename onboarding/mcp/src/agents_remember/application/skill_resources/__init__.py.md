@@ -154,4 +154,3 @@ against is a pinned external dependency (`mcp==1.29.1` at this leaf), not a sibl
   `application/skill_resources` package. Recorded the two-surface separation (per-task capsule
   composition vs. stable reusable skill modules), the no-caller-named-path admission rule, and the
   package layout. Its claim that the extension adds no protocol methods was wrong and is corrected above.
-

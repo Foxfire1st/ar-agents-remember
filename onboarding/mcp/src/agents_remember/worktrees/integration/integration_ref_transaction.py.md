@@ -60,11 +60,11 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Two-output and route-specific candidate data. | `IntegratedCommits`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:63-67; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:82-91 |
+| Two-output and route-specific candidate data. | `IntegratedCommits`; `LandingAdmission` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:82-91 |
 | Preparation validates accepted output and source/checkout state. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160 |
 | Ordered expected-old CAS retains a torn pair on a memory race. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:163-232 |
 | Owned checkout refresh excludes only memory cache state. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:300-336 |
-| Real Git regression for cache independence and competing memory CAS. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:80-170 |
+| Real Git regression for cache independence and competing memory CAS. | `test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move`; `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:172-213; mcp/tests/test_integration_branch_authority.py:80-170 |
 
 ## Cross-Repo References
 

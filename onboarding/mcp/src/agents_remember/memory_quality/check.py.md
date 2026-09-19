@@ -158,4 +158,3 @@ caps never reach this branch — they skip and report.
   `onboarding_drift_check/models.py`. Added one reference row and citations for the two existing
   drift rows; the Repo-Internal References header was two columns and is now three.
 - 2026-05-24T02:47+02:00: Created for the first combined memory quality runner.
-

@@ -132,4 +132,3 @@ No meaningful cross-repository reference applies.
   reader. Recorded the bounded scalar subset (no YAML dependency), the total-read contract that reports
   rather than guesses, and why an empty description is a refusal rather than a cosmetic check. Its
   "scalar subset" description is superseded above.
-

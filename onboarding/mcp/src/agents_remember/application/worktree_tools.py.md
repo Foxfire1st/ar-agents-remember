@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
+| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -69,6 +69,16 @@ helper; the closeout pair take `(config, contract_path, messages[, approval])`; 
 The hard-limit repair moved definitions only. `worktree_tools.py` imports the exact classes and
 defaults and keeps the same function annotations/default objects, so the behavior below remains the
 same plumbing with its arguments named. No parallel model, legacy reader, or fallback path exists.
+
+`_START_ELIGIBILITY` is a module-level fact, not a policy: `{"requiresCheck": "not-performed"}` plus
+the reason, published as the `eligibility` key on **every** `worktree_start` result (including the
+`would-start` preview) and on the `lifecycle-switch-required` refusal. It exists because the tool
+cannot check a leaf's declared dependencies at all — the `Requires` set lives in the plan document's
+prose, not in the addressed leaf document — and the honest response is to say what was *not* verified
+rather than to let a `would-start` preview read as an eligibility verdict (D-17). Also note that the
+`lifecycle-switch-required` refusal's `summary` states the condition the gate actually tests: the
+session's own current lifecycle is already bound to another enclosure, and **no other leaf,
+enclosure or session can block a start**.
 
 The module resolves allowed repositories and coordination-contained paths from
 `McpRuntimeConfig`, builds typed `git_worktree_manager.WorktreeArgs`, and
@@ -252,6 +262,14 @@ Application adapters admit configured contract addresses and pass typed requests
   authority skips setup fail-closed and is surfaced via the
   `providersAuthority` result block; worktree creation itself is never blocked
   by the provider gate.
+- `worktree_start` reports the eligibility check it does **not** perform
+  (`eligibility.requiresCheck == "not-performed"`) on every result and on the
+  `lifecycle-switch-required` refusal. A caller must not read a `would-start` preview as proof that a
+  declared dependency has landed; the `Requires` lines are the owning seat's check.
+- A lifecycle hint attached to a response must agree with that response's own address. The binder
+  derives the hint from the addressed contract and **omits** a hint whose `nextArgs` paths name a
+  different contract, rather than forwarding guidance that would send an operator to another
+  enclosure.
 - Completion-seat classification must NEVER be able to fail a completion edge that has already
   succeeded (260707-HFX-L9 F1 doctrine, carried into HFX2-L11): `_auto_land_completed_seats` wraps
   its ENTIRE body — contract load, catalog construction, `land_seats_for_leaf`, and the
@@ -271,7 +289,7 @@ contract is supported by the implementation and the authorized cache-retirement 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+| No configured external domain source applies. | — | — |
 
 ## Repo-Internal References
 `worktree_start_tool` marks the temp lifecycle settings file with
@@ -295,23 +313,26 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:425-463 |
-| None | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:277-300 |
-| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:588-612 |
+| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_integrate_tool`; `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:371-422; mcp/src/agents_remember/application/worktree_tools.py:425-463 |
+| Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:305-328 |
+| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool`; `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:347-364; mcp/src/agents_remember/application/worktree_tools.py:616-640 |
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:425-463 |
-| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:770-778 |
-| Stable sync projection is read from the enclosure-root journal. | `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115 |
-| Worktree service behavior is owned by the worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:482-486 |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `route_review_refusal_projection` | mcp/src/agents_remember/worktrees/route_review.py:183-250 |
+| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:494-523; mcp/src/agents_remember/application/worktree_tools.py:798-806 |
+| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385; mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115 |
+| Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`; `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:263-317; mcp/src/agents_remember/models/worktree.py:489-493 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout`; `route_review_refusal_projection` | mcp/src/agents_remember/application/worktree_tools.py:942-984; mcp/src/agents_remember/worktrees/route_review.py:183-250 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
-| None | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | `reload_provider_authority`; `provider_setup_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:193-218; mcp/src/agents_remember/application/worktree_tools.py:143-154 |
+| Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | `worktree_start_tool`; `reload_provider_authority`; `provider_setup_config` | mcp/src/agents_remember/application/worktree_tools.py:121-228; mcp/src/agents_remember/kernel/primitives/runtime_config.py:103-200; mcp/src/agents_remember/kernel/primitives/runtime_config.py:193-218 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
-| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `RetirePolicyError` | mcp/src/agents_remember/serving/retire_policy.py:21-22 |
+| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority`; `RetirePolicyError` | mcp/src/agents_remember/serving/retire_policy.py:21-22; mcp/src/agents_remember/serving/retire_policy.py:36-85 |
 | `log_landed_event`, called once per landed entry after a successful auto-land. | `log_landed_event` | mcp/src/agents_remember/serving/seat_events.py:56-80 |
 | `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
-| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:114-125 |
+| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121; mcp/src/agents_remember/kernel/primitives/runtime_config.py:114-125 |
+| None | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:305-328 |
+| None | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
+| Worktree service behavior is owned by the worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 
 ## Series-Contract Notes
 
@@ -353,7 +374,8 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
+| The facade's start entry point consumes the extracted task-start request types at this boundary. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:121-228 |
+| None | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:121-228 |
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -372,6 +394,31 @@ that identity in its acknowledgement. Preview converts pair/coherence failure th
 domain projector, including the named field and exact repair route. The detached worker still
 revalidates independently before mutation.
 
+## 260915-KS-L23 Start Eligibility And The Response's Own Address
+
+**The start gate now says what it checks, and what it does not (D-17).** The `lifecycle-switch-required`
+refusal used to read *"worktree_start refuses to repoint the active persistent lifecycle"*, which
+described a protection the tool does not implement and left a reader thinking one enclosure could
+block another; it now names the real condition — a start binds the session's current lifecycle to the
+new enclosure and leaves it non-fleeting, so the next start in that session refuses — and states
+explicitly that no other leaf, enclosure or session can block a start. The unchecked half is
+disclosed rather than implied: the module-level `_START_ELIGIBILITY` fact
+(`requiresCheck: "not-performed"`) rides every start result and the refusal, because the `Requires`
+set lives in the plan document's prose and nothing in the addressed leaf document carries it in
+machine-readable form. The tool therefore does **not** gain a dependency check; it stops implying
+that eligibility was part of what it verified.
+
+**A response's next-step hint is bound to the response's own address (D-13).** `worktree_status`
+answers an *addressed* contract, and the hint attached to its envelope must be that contract's: the
+hint is derived from the addressed contract (`application/next_step.compute_next_step`) rather than
+from a global "most recently published enclosure" cursor, and `application/tool_response.bound_next_step`
+omits a hint whose `nextArgs` path fields contradict the response's own `contractPath` /
+`enclosurePath`. Two contracts addressed in sequence therefore receive two different hints, and a
+hint naming another contract is dropped rather than forwarded. The boundary is worth stating here
+because it is the caller's carrier that decides: the binder only checks a response model that
+declares an address, and `TaskDocResponse` declares neither field, so a hint on that carrier passes
+through unchecked — a deliberate, pinned boundary rather than a silent one.
+
 ## Current Landed Composition
 
 Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
@@ -383,11 +430,17 @@ No separate cross-repository implementation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+| No external implementation source applies. | — | — |
 
 ## Update History
+- 2026-09-18T18:04:10+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): the three cells that name `worktree_start_tool` -- the containment-R1 provider-authority row, the L23-era "facade's start entry point" row and its duplicated `None` row -- were re-cited from `mcp/src/agents_remember/application/worktree_tools.py:103-200` to `:121-228`, the function's own extent. The retired span began inside the `_START_ELIGIBILITY` constant block (102-118) and stopped 28 lines short of the body's end; this card's own L23 history already named `121-228` as the live extent. This is the explicit disposition the two mechanically-projected reopen items ask for. Question (1): yes -- the construct at 121-228 supports each claim's words (`worktree_start_tool` is declared at 121-127 and consumes the on-disk provider authority at 164, before the provider setup config is built at 170-176). Question (2): the retired ranges arrived by mechanical anchor-range projection, and the two generated repair bullets that record them are deliberately **left in this history** rather than retired by hand, because retiring them would delete provenance this pass was told not to delete; those items therefore remain enforced until the closing commit's stamp makes the change invisible (D-29), and this entry is the curator's reading they asked for. No anchor, row or claim was deleted or reworded. Verification stamp not advanced.
+- 2026-09-18T17:55:32+00:00: 260915-KS-L23 residue clearance (seat A): re-read the three reopened rows whose cited module is this card's own source and repointed the stale range; every claim's wording, anchor set and range shape kept. `worktree_sync_tool` from `mcp/src/agents_remember/application/worktree_tools.py:319-336` to `:347-364` (the entry point's own definition) and `_configured_control_refusal` from `:588-612` to `:616-640` (the refusal helper's own definition); `worktree_pause_tool`'s `_gate_policy_snapshot` from `:770-778` to `:798-806`; and `WorktreeSummary` from `mcp/src/agents_remember/models/worktree.py:233-287` to `:240-294` with `WorktreeCheckpointLandingResponse` from `:459-463` to `:466-470`. The paired halves that already held their anchors are unchanged (`worktree_pause_tool` at `:466-495`; the `worktree_integrate_tool`/`worktree_checkpoint_landing_tool` rows at `:371-422`/`:425-463`, whose ranges the L23 section's added lines did not move). Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:305-328. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T17:30:57+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:305-328. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded two response-surface corrections in this adapter. (1) **Item 8 (D-17):** `worktree_start`'s `lifecycle-switch-required` refusal no longer says it "refuses to repoint the active persistent lifecycle" — it states the condition it actually tests (a start binds the session's current lifecycle to the new enclosure, and *this session's* lifecycle is already bound to another one) and says plainly that no other leaf, enclosure or session can block a start; the tool also publishes `_START_ELIGIBILITY` (`requiresCheck: "not-performed"`) as `eligibility` on every start result and on the refusal, so a `would-start` preview no longer reads as a dependency verdict. The tool deliberately gains **no** `Requires` check, because that set is plan-document prose and is not machine-readable in the addressed leaf document. (2) **Item 3 (D-13):** documented that the hint attached to an addressed response is derived from that contract (`application/next_step.compute_next_step`) and that `application/tool_response.bound_next_step` omits a hint whose `nextArgs` path fields contradict the response's own `contractPath`/`enclosurePath`; also recorded the boundary — the binder can only check a carrier that declares an address, and `TaskDocResponse` declares neither, which is why that carrier's hint passes through unchecked. **No pre-existing claim in this card was falsified by either change** — the `providersAuthority` containment rule, the auto-land hooks, the checkpoint/pause entry points and the closeout/CILE boundaries are untouched — so the existing body above stands and the two new subjects were added as their own section plus three invariants. Existing citation ranges were left for the citation pass; noted drift from this change: `worktree_start_tool`'s module-level constant now sits at `102-118` and the function spans `121-228`, so every card range that begins at `103` is stale by the size of the inserted block.
 - 2026-09-18T14:49:10+00:00: Generated citation repair: `WorktreeCheckpointLandingResponse` repointed to mcp/src/agents_remember/models/worktree.py:482-486. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/worktrees/route_review.py:550 to mcp/src/agents_remember/worktrees/route_review.py:549, the range the cited construct now occupies
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned closeout, control, integration, checkpoint, and PR-recording adapters with code/memory outputs only. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
 

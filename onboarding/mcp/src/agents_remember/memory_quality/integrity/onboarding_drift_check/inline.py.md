@@ -50,4 +50,3 @@ finds inline-eligible sources via storage resolution.
 - 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for inline source enumeration and drift-test coverage.
 
 - 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
-

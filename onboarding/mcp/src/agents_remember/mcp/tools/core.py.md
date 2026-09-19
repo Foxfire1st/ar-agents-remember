@@ -124,4 +124,3 @@ remain unchanged; the move removes the former flat application-module ownership.
 - 2026-05-30T21:33+02:00: Documented `runtime_install_payload` forwarding the full `RuntimeInstallRequest` including `install_provider_deps` and the new `no_cache` flag, and `skills_install_payload`'s `layout`/`overwrite`/`archive_existing` forwarding. Verified against `8927f03`.
 - 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the install payload builders.
 - 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
-

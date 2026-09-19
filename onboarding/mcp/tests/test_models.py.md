@@ -56,4 +56,3 @@ a response contract and catches model definitions that are not schema-safe.
 
 - 2026-06-06T12:28+02:00: Corrected the public-tool metadata reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
 - 2026-05-28T19:52+02:00: Created for public tool response model registry and schema coverage.
-

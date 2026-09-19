@@ -7,7 +7,7 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
 | lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No configured Domain Documentation source applies to this repository-internal li
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+| No configured external domain-documentation source applies. | — | — |
 
 ## Repo-Internal References
 
@@ -84,10 +84,10 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | `CloseoutDoorGeneration`; `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:89-142; mcp/src/agents_remember/models/lifecycles/door.py:158-196 |
+| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | `_decode_legacy_missing_intent`; `CloseoutDoorGeneration`; `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:89-142; mcp/src/agents_remember/models/lifecycles/door.py:158-196 |
 | The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration` | mcp/src/agents_remember/models/lifecycles/door.py:89-142 |
 | The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | `_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS` | mcp/src/agents_remember/models/lifecycles/door.py:232-236 |
-| The R03 door dependency vocabulary owned by this record type. | `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
+| The R03 door dependency vocabulary owned by this record type. | `_edges_are_unique_and_canonical`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
 
 ## Cross-Repo References
 
@@ -95,7 +95,7 @@ No meaningful cross-repository boundary is owned by this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+| No separate external implementation source applies to this file. | — | — |
 
 ## 260821-CLIVE Canonical Door Contract
 

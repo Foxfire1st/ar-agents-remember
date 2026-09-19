@@ -78,10 +78,10 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| None | `DirectLandingRuntime` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:43-150 |
-| None | `direct_landing_record`; `reconcile_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:157-199; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:202-248 |
-| Recovery cells are derived from authoritative mutation evidence. | "from authoritative mutation evidence" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:1-1 |
-| The classifier supplies exact memory output evidence. | `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
+| The runtime validates and publishes progress, completion, and input-required evidence. | `progress`; `DirectLandingRuntime` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:43-150 |
+| Request-owned generation construction and memory-only output reconciliation. | `direct_landing_record`; `reconcile_direct_landing` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:157-199; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:202-248 |
+| Recovery cells are derived from authoritative mutation evidence. | `derive_closeout_recovery_commits`; "from authoritative mutation evidence" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-48; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:1-1 |
+| The classifier supplies exact memory output evidence. | `classify_direct_landing_recovery`; `_memory_output_matches_evidence` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:226-252 |
 
 ## Cross-Repo References
 

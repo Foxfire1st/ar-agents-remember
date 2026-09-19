@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` |
+| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -116,12 +116,13 @@ No external domain documentation is configured for this repository-local lifecyc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-180 |
+| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `sync_targets`; `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-55; scripts/sync-skills.py:136-177; scripts/sync-skills.py:179-191; scripts/sync-skills.py:204-205 |
 | The packaged source carries the launcher, approval-gated strategist, and parallel-by-default invariants as pointers, not as doctrine. | `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-24; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:67-67 |
 | The router declares its own boundary — it routes, and every rule lives in exactly one other file — and names the ten-role registry plus the ambient launcher as a routing condition rather than an invented role. | `This file routes. It does not carry doctrine.`; `## Composition Map (how a capsule is assembled)`; `Exactly ten roles.` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:13-13; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:89-89; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:82-82 |
 | The tenth registry row this leaf added, and the reachability sentence it carries. | "**bootstrap**"; "reachable before any task document exists" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:80-80 |
 | Doctrine moved out of the router: shared rules to `core/`, procedures to `operations/`, rationale and superseded rulings to `reference/`, and routing metadata to the prose-free manifest. | `## Companion Files`; `## settings.json Orchestration Block` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126-144; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:162-175 |
 | The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve. | `SANCTIONED_SIBLING_REFERENCES`; `test_every_role_source_is_a_capsule_shaped_function`; `test_manifest_reports_a_missing_source_instead_of_accepting_it`; `test_every_relative_path_the_corpus_cites_resolves` | mcp/tests/test_role_instruction_corpus.py:105-116; mcp/tests/test_role_instruction_corpus.py:409-494; mcp/tests/test_role_instruction_corpus.py:495-535; mcp/tests/test_role_instruction_corpus.py:536-559 |
-| Canonical skills are propagated into package data and harness mirrors by the sync script. | `CANONICAL_SKILLS`; `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-55; scripts/sync-skills.py:136-177; scripts/sync-skills.py:179-191 |
 
 ## Cross-Repo References
 
@@ -213,6 +214,7 @@ The lifecycle doctrine now distinguishes baseline from fix-verification review, 
 
 ## 260915-CAPS-L1 Consolidation — Where The Former Router Sections Went
 
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 91 of this card; the repetition added no pooled evidence
 The router was rewritten from a 620-line spine that doubled as the doctrine home into a 179-line
 router. This card's older task-delta sections below are **preserved as history**, not deleted; each
 one's live rule is still in force and now resolves to a new single home. Read them against this
@@ -232,6 +234,7 @@ citation re-open findings on this document report. Where a section above still c
 the old router body, the citation was rebased to the new home or dropped as superseded.
 
 ## Update History
+- 2026-09-18T10:45:13+00:00: Generated citation repair: `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-180; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-66; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:67-88. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the lifecycle-contract paragraph so the curator's duty reads as the complete memory-quality operation carried as a prerequisite rather than scoped checks.

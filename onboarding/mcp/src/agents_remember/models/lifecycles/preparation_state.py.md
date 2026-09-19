@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/preparation_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
+| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,13 +45,13 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+| No configured domain documentation applies. | — | — |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Selection is an ordered prefix of at most two preparations: code followed by memory content. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
+| Selection is an ordered prefix of at most two preparations: code followed by memory content. | `PreparationLeg`; `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:19; mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
 | `PreparationCommandTerminal` owns the corresponding behavior described above. | `PreparationCommandTerminal` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:22-40 |
 | `PreparationCommand` owns the corresponding behavior described above. | `PreparationCommand` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:43-75 |
 | `OperationPreparationState` owns the corresponding behavior described above. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
@@ -63,7 +63,7 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+| No cross-repository source is needed for this card. | — | — |
 
 ## Update History
 

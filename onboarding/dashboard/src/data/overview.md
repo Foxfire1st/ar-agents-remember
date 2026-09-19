@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -321,7 +322,7 @@ own server contracts, so no external code path is cited as authority.
 | Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:408-434; dashboard/src/data/railModel.ts:462-484 |
 | The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-401; dashboard/src/dev/ScenarioPlayer.tsx:21-107 |
-| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode", "export interface TaskSubTaskRefNode", "export type SubTaskRow" | dashboard/src/types/projection.ts:560-560; dashboard/src/types/projection.ts:792-792; dashboard/src/types/projection.ts:814-814; dashboard/src/types/projection.ts:838-838 |
+| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode"; "export interface TaskSubTaskRefNode"; "export type SubTaskRow" | dashboard/src/types/projection.ts:560-560; dashboard/src/types/projection.ts:792-792; dashboard/src/types/projection.ts:814-814; dashboard/src/types/projection.ts:838-838 |
 | The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319 |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
 
@@ -353,8 +354,47 @@ reserved `requirements/` address/reference resolvers) and the shared
 requirements with the task-document selector). Consumers: the requirement-link provider, the
 notes-reader viewer, TaskNotes references, and detail-panel task prose.
 
+## 260915-KS-L22 The Read-Only Intent-Review Client
+
+This route gained one client module, `data/review.ts`, and the property that makes it belong here at
+all is a restraint: it reads and it stores nothing. It is the same-origin client for
+`GET /api/review/intent` and it mirrors `data/changeset.ts` in shape — a `base` argument defaulting
+to same-origin, one exported call (`intentReview`), one request built through the shared `qs` helper
+and one thrown `FilesApiError` from the shared `getJson`. Where its sibling differs is what it does
+with the answer: the module's own header states that the surface exposes no submission control, so
+no function in it writes anything.
+
+It mutates no store. This route's data modules are where browser projection state is normalized,
+reconciled and retained; `review.ts` sits deliberately outside that pattern — it exports no store, no
+slice, no reducer and no subscription, so a review never enters the cockpit's dashboard store and can
+never be read back as browser state. Every value it returns is the server's typed result mapped
+field-for-field: a field the server omits is optional here rather than defaulted, which is what keeps
+an unresolved reference unresolved on the client instead of rendering as an empty string or a
+fabricated attribution.
+
+The request it builds names canonical task context and one recorded subject only — `repo`, `master`,
+`leaf`, `selectorKind`, `selectorId` — and never a filesystem path, so the browser cannot choose which
+dataset is reviewed. Its selector union is closed at the two kinds the transport admits (`invariant`
+and `family`), so the client cannot ask for a subject the server would refuse by having some other
+kind mapped onto one. The file's own card carries the type-by-type detail.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route's new read-only client and its one exported call. | "export const intentReview = (" | dashboard/src/data/review.ts:215-225 |
+| The endpoint that call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:224-224 |
+| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:13-13 |
+| The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
+| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:204-210 |
+| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:183-193 |
+
 ## Update History
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — `data/review.ts`, the read-only client for `GET /api/review/intent`, its closed two-member selector union, and the no-store-mutation boundary it holds (no store, slice, reducer or write is exported). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:792-792 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:560-566 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SeriesSubTaskNode` in the row 324 of this card from dashboard/src/types/projection.ts:838 to dashboard/src/types/projection.ts:560-566, the extent of the construct the claim is about (the checker named line(s) [560] as its live location)
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:560-560 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
   claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this

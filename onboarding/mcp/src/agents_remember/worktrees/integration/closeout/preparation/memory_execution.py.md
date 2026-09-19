@@ -48,7 +48,7 @@ No external Domain Documentation source is configured for this slice. The refere
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+| No external domain source is configured. | — | — |
 
 ## Repo-Internal References
 
@@ -58,8 +58,8 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | --- | --- | --- |
 | Candidate construction explicitly excludes memory.md and reobserves the selected code view. | `observe_prepared_memory_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:27-52 |
 | Cache setup is conditional on real non-cache changes before invoking the registered producer. | `certify_prepared_memory`; "prepare_memory_cache(handoff.contract.memory_worktree)" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:55-79 |
-| The selected fifth terminal must bind the actual cache-free tree and logical pair. | "actual selected fifth terminal"; "result.memoryInputs.memoryTree.value != actual.memoryTree"; "result.memoryInputs.candidatePairAuthorityDigest != view.logicalPair.contractDigest" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:106-121 |
-| The memory reuse record carries distinct raw and certified tree identities. | `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:52-52 |
+| The selected fifth terminal must bind the actual cache-free tree and logical pair. | `current_prepared_memory_result`; "actual selected fifth terminal"; "result.memoryInputs.memoryTree.value != actual.memoryTree"; "result.memoryInputs.candidatePairAuthorityDigest != view.logicalPair.contractDigest" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py:82-127 |
+| The memory reuse record carries distinct raw and certified tree identities. | `ExistingMemoryPreparationProof`; `certifiedContentTree` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
 
 ## Cross-Repo References
 
@@ -67,7 +67,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+| No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
