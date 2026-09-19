@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222` |
+| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `mcp/tests/task_reopen_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00 |
+| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222` |
+| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
