@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/mcp/registration/knowledge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview | `mcp/src/agents_remember/mcp/registration/overview.md` |
 
@@ -76,7 +76,7 @@ No domain documentation source is configured for this repository (`system/source
 | The five response-model rows that validate these operations' payloads, added at the registry's own tail. | `knowledge_read`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
 | The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:85-104 |
 | The review-matrix view this module makes reachable through the read operation's view argument, defined where the view payloads live rather than here. | `ReviewMatrixView` | mcp/src/agents_remember/models/knowledge/view.py:796-800; mcp/src/agents_remember/application/knowledge_views.py:58-58; mcp/src/agents_remember/application/knowledge_views.py:281-281; mcp/src/agents_remember/models/knowledge/view.py:956-956; mcp/src/agents_remember/models/knowledge/view.py:956-960 |
-| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:16-18 |
+| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model` | mcp/tests/test_models.py:46-61 |
 
 ## Cross-Repo References
 
@@ -87,4 +87,6 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-19T22:40+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): **re-read each claim below against the construct its range now covers, corrected the wording where the construct had moved, re-derived every range from the construct's real extent in the file the claim cites, and only then left the card's stamp to closeout.** No `Generated citation repair` bullet is written: these are curator edits, not a mechanical projection. `knowledge.py.md:79` — re-read: the test was consolidated into `test_every_public_tool_has_a_schema_generating_response_model`, whose docstring says 'One subject, two halves: the registry is total, and every model it names is usable. These were two cases and are one'. That is exactly the claim's subject, so the wording is retained and only the name and range are re-derived.
+
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the knowledge operation family module. It records that `register_knowledge_tools(server, config)` is appended to `TOOL_REGISTRARS` as the fourteenth entry and never inserted, because FastMCP publishes in registration order and every existing name keeps its advertised position; that the five operation families are spelled as the design spells them and registered read, change, diff, integrity, projection; that the surface performs no domain reasoning and each handler validates, delegates and returns; and that the runtime configuration supplies exactly one thing — the workspace root a read resolves recorded source anchors against. The reviewer surface is stated as a deliberate absence: what this module publishes is the interface another leaf mounts (five operations, the review-matrix view and the typed models behind them), and it adds no panel, no route and no client. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

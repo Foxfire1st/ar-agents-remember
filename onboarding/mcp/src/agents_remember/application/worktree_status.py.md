@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ No Domain Documentation source is configured for this memory root.
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell[Cell: str]("; "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:104-104; mcp/src/agents_remember/worktrees/worktree_contract.py:108-108; mcp/src/agents_remember/worktrees/worktree_contract.py:281-281; mcp/src/agents_remember/worktrees/worktree_contract.py:283-283; mcp/src/agents_remember/worktrees/worktree_contract.py:286-286 |
 | The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. | `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:217-277 |
 | The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:463-505 |
-| The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:353-353; mcp/src/agents_remember/models/worktree.py:384-395 |
+| The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:384-395; mcp/src/agents_remember/models/worktree.py:352-352 |
 | The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219 |
 | `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-28 |
 
@@ -200,6 +200,7 @@ be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives 
 `worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
 
 ## Update History
+- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `worktree_status.py.md:124` ("# The next-move triple, declared here so the worktree surface's guidance is part of", "def _require_registered_public_next_tool").
 - 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document.** (a) The next-move-triple row cited `models/worktree.py:323-323`, which is `code_quality_gate`; widened to `323-330` so the range reaches the comment that declares the triple inside the same envelope. (b) The lifecycle-status row's `"def lifecycle_guidance("` anchor cited `guidance.py:215-215`, a line inside `carryover_done`; re-pointed to `219-219`, where the definition now sits. Both claims, their other anchors and their other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `SyncOperationProjection` repointed to mcp/src/agents_remember/models/worktree.py:143-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "class WorktreeStatusPayload"; "NextOperation = Literal[" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:128-128; mcp/src/agents_remember/models/worktree.py:50-50. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

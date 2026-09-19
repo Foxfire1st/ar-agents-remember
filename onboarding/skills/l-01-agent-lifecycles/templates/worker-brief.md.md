@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00|
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ No external Domain Documentation source governs this worker template.
 | Repository-defined checks and artifact lifecycle remain separate obligations. | "## Targeted checks (before you report)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:142-164 |
 | The final report requires envelopes, checks, curator inputs, and continuity state. | "## Turn report (mandatory, last act)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:173-201 |
 | The template declares itself an input-feeder whose stated rules live in the seat's own files. | "it does not author rules." | skills/l-01-agent-lifecycles/templates/worker-brief.md:9-13 |
-| The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. | "Your curator hand-off list:"; "stay `null`, because those are the curator's to fill" | skills/l-01-agent-lifecycles/templates/worker-brief.md:175-181 |
+| The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. | "Your curator hand-off list:"; "because those are the curator's to fill" | skills/l-01-agent-lifecycles/templates/worker-brief.md:175-181 |
 | Curation is the standing exception: the curator always runs it complete, and closeout and integration carry the result. | "curation does not, because the curator always runs it complete" | skills/l-01-agent-lifecycles/templates/worker-brief.md:159-165 |
 
 ## Cross-Repo References
@@ -119,6 +119,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `worker-brief.md.md:106` (because those are the curator's to fill) — re-read the claim against the source line: the anchor literal embedded a code span, which the anchor grammar blanks, so it could never match its own source; re-anchored on a span-free literal from the same sentence.
 - 2026-09-19T17:15+02:00 — 260915-KS-L28 curator: the input-feeder row's quoted anchor carried an internal semicolon, which the citation form cannot separate from its own `;` delimiter; it now quotes the unambiguous tail `"it does not author rules."` over the same range `:9-13`. No finding was reworded and no claim was dropped.
 - 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`). The diff added three things (`:9-13`, `:29`, `:159-165`, `:175-181`): the template's own boundary paragraph — **it feeds inputs, it does not author rules**, with `../roles/worker.md`, `../operations/implementation.md`/`closeout.md` and `../core/acceptance.md` as the rule homes whose wording wins; the closeout handoff re-worded from the curator's *scoped* onboarding/check handoff to the curator's **complete** one; and the curation exception — full code-quality and full-test operations need an explicit developer request, `curation does not, because the curator always runs it complete`, with closeout and integration carrying that result as a prerequisite. Body: added the rule-home paragraph and the curator hand-off list to the Logic, added a Conventions bullet for the curation exception, added an Invariants bullet for the input-feeder boundary, corrected the CCR-R12@v5 Handoff Boundary paragraph (it claimed full memory quality was only an explicit request), and added three Repo-Internal References rows. Citations: all four pre-existing rows still resolve at HEAD ("## Owned primary requirement (exactly one stable-ID + version)" at `:76` inside `:69-102`, "## Targeted checks (before you report)" at `:148` inside `:142-164`, "## Turn report (mandatory, last act)" at `:188` inside `:173-201`).
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

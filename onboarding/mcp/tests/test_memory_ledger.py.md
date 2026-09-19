@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
-| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -89,9 +89,9 @@ the current working-candidate behavior; historical entries below retain their or
 | --- | --- | --- |
 | Data round-trip and current-versus-historical lookup semantics. | `test_roundtrip_preserves_newest_same_code_history` | mcp/tests/test_memory_ledger.py:53-68 |
 | Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection. | `source_rows`; `test_cache_misses_preserve_contract_and_named_ref_history` | mcp/tests/test_memory_ledger.py:91-179; mcp/tests/test_memory_ledger.py:338-360 |
-| Unattributed and partially attributed histories cannot inherit cached pairs. | `test_unattributed_history_does_not_inherit_pairs_from_committed_tables` | mcp/tests/test_memory_ledger.py:499-519 |
+| Unattributed and partially attributed histories cannot inherit cached pairs. | `test_projection_recomputes_metadata_and_rejects_an_unattributed_pair` | mcp/tests/test_memory_ledger.py:315-335 |
 | Invalid targets are reported and superseding order comes from actual history. | `test_invalid_source_and_branch_code_attributions_are_reported` | mcp/tests/test_memory_ledger.py:529-547 |
-| The real writer/reader round trip and merged-in attribution stay covered. | `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:717-751; mcp/tests/test_memory_ledger.py:754-784 |
+| The real writer/reader round trip and merged-in attribution stay covered. | `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:717-751; mcp/tests/test_memory_ledger.py:713-747 |
 | The runtime projection under test separates computed mappings from cache observations. | `read_ledger_source`; `inspect_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249; mcp/src/agents_remember/worktrees/ledger_projection.py:276-287 |
 
 ## Cross-Repo References
@@ -105,6 +105,8 @@ source is configured for this file's claims.
 | No additional configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_memory_ledger.py.md:92` (test_projection_recomputes_metadata_and_rejects_an_unattributed_pair) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation.
+- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `test_memory_ledger.py.md:94` (`test_the_rendered_trailer_is_the_one_the_reader_parses`, `test_attribution_reads_a_mapping_that_arrived_through_a_merge`).
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock

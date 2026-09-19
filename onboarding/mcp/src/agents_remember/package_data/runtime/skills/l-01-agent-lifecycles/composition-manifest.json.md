@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` |
-| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ guards that hold this file's declarations true.
 | A declared skill must resolve in the registry, and its root file must be admitted. | `_require_role_skills_are_declared`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/manifest.py:479-508; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
 | The parser treats `tools` and `skills` as optional and refuses a manifest that disagrees with the frozen vocabulary. | `parse_composition_manifest`; `CapsuleRoleEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:63-82 |
 | Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request. | `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_admission.py:221-230 |
-| The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty. | `test_every_shipped_role_compiles_deterministically_under_every_declared_operation`; `test_launcher_is_refused_an_operation_no_role_inherits_to_it`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling`; "operation-not-applicable" | mcp/tests/test_role_capsule_admission.py:520-542; mcp/tests/test_role_capsule_compiler.py:570-582; mcp/tests/test_role_capsule_admission.py:864-916 |
+| The plan still parses and compiles for every role with `tools`/`skills` absent, and emptying `launcher.operations` refuses instead of compiling — the launcher's own case, the one that replaced the older launcher-refusal case this row used to name. | `test_every_shipped_role_compiles_deterministically_under_every_declared_operation`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling`; "operation-not-applicable" | mcp/tests/test_role_capsule_admission.py:520-542; mcp/tests/test_role_capsule_compiler.py:570-582; mcp/tests/test_role_capsule_admission.py:864-905 |
 | The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes. | `test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration`; `test_the_skill_revision_follows_the_admitted_skill_bytes` | mcp/tests/test_role_capsule_admission.py:599-613; mcp/tests/test_role_capsule_admission.py:653-691 |
 | The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation. | "\"altitude\": \"free-agent\"" | skills/l-01-agent-lifecycles/composition-manifest.json:468-468 |
 
@@ -174,6 +174,7 @@ No sibling-repository contract defines this instruction file.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `composition-manifest.json.md:164` (test_emptying_the_launcher_operations_refuses_instead_of_compiling) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T05:26:45+00:00: Generated citation repair: "\"altitude\": \"free-agent\"" repointed to skills/l-01-agent-lifecycles/composition-manifest.json:468-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222` |
-| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | --- | --- | --- |
 | Typed admission evidence and bounded refusal projection. | `MasterSeriesContractSpecLike`; `_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:100-159 |
 | Existing contracts are classified before the separate edge checks. | `_existing_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215 |
-| External memory is checked through real repository/worktree identity without a ledger-path argument. | `_repository_root`; `_same_master_repository_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-385; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-269 |
+| External memory is checked through real repository/worktree identity without a ledger-path argument. | `_repository_root`; `_same_master_repository_edge` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-385; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:253-269; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:483-491 |
 
 ## Cross-Repo References
 
@@ -89,6 +89,8 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-20T00:29+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `master_series_admission.py.md:80` (_repository_root, _same_master_repository_edge) — re-read the claim against the current source: the construct moved and the range was re-derived from its real extent.
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `master_series_admission.py.md:80` (_repository_root) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Removed the documented ledger-path equality requirement from the series memory edge; retained real Git-root/worktree, task, memory-mode, branch, and bounded-refusal behavior. Working candidate verified by source inspection; commit metadata records real committed history only.

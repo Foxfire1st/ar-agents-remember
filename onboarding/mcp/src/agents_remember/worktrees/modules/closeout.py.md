@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | governingOverview | `overview.md` |
@@ -435,7 +435,7 @@ The following current source boundaries establish the ledger-retirement behavior
 | Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`) | `_revalidate_candidate`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:715-749 |
 | The extracted owner binds and certifies the exact staged candidate. (`gate_staged_code`) | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
 | The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. (`run_memory_quality_phase`; `combine_memory_quality`) | `run_memory_quality_phase`; `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-38; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`; `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:145-151; mcp/src/agents_remember/worktrees/modules/guidance.py:563-565 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`; `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:145-151; mcp/src/agents_remember/worktrees/modules/guidance.py:563-571 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:184-199 |
 | Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. (`_amended_closeout_contract`) | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:459-493 |
 
@@ -580,6 +580,7 @@ driven end to end by `mcp/tests/test_transaction_only_worktree_delivery.py:275-2
 own four cases are in `mcp/tests/test_response_address_binding.py`.
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `closeout.py.md:438` (status_payload) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 - 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T71` (`_refreshed_onboarding_paths` names every entry it counts, `_bounded_paths` refuses to count a blank) and `T54`'s producer half (the closed payload declares its own `contractPath` in the envelope's spelling). No behaviour changed in the gate stages above. Verification metadata stays closeout-owned.
 - 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The recovery-guidance row's `status_payload` cell cited `guidance.py:493-495`, which is the tail of `base_freshness` and holds no `status_payload`; this leaf's own moves left `def status_payload` at `563-565`, so the cell cites that definition now. The claim, the `recovery_guidance` anchor and its `145-151` range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_next_step_address_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:07+02:00 |
-| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93`|
-| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -140,7 +140,7 @@ it pins.
 | **The contradicting-address case: the hint is omitted, not forwarded.** | `test_a_hint_naming_another_contract_is_omitted_not_forwarded` | mcp/tests/test_next_step_address_binding.py:89-105 |
 | The positive control: the omission is a contradiction check, not blanket suppression. | `test_a_hint_naming_the_addressed_contract_is_kept_unchanged` | mcp/tests/test_next_step_address_binding.py:108-119 |
 | **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** | `test_two_addressed_contracts_in_sequence_yield_two_different_hints` | mcp/tests/test_next_step_address_binding.py:122-164 |
-| **The stated reach: the one carrier that declares no address keeps its hint, asserted against the model's own fields.** | `test_an_envelope_with_no_address_passes_the_hint_through_unchanged`; `TaskDocResponse` | mcp/tests/test_next_step_address_binding.py:167-198; mcp/src/agents_remember/models/task_doc.py:138-138 |
+| **The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.** | `test_an_envelope_with_no_address_has_its_hint_withheld`; `TaskDocResponse` | mcp/tests/test_next_step_address_binding.py:182-219; mcp/src/agents_remember/models/task_doc.py:138-138 |
 | The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" | mcp/tests/test-evidence-lanes.toml:195-195 |
 
 ## Cross-Repo References
@@ -153,4 +153,5 @@ contracts under `tmp_path` and asserts one repository's own address binder.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_next_step_address_binding.py.md:143` (test_an_envelope_with_no_address_has_its_hint_withheld) — re-read the claim against the successor case's own docstring, which records the rename (and, where it says so, the reversal of the behaviour the row described).
 - 2026-09-18T19:07+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): created this one-to-one card for the case lane that pins the addressed-hint binder. It records that the module has **two** subjects (the contract-derived `compute_next_step` and the omitting `bound_next_step`), that the sequence case exists because L14's single-value assertion could not be reproduced, and that the binder's reach stops at a carrier declaring no address — which is why `TaskDocResponse`'s absent fields are asserted rather than implied. It also records that this module carries **no `pytestmark`** and is registered by its appended `unit-regression` lane row. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

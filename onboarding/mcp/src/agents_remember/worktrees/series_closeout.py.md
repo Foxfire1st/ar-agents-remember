@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -67,7 +67,7 @@ These current source spans identify the implementation owners and the specific a
 | Checkpoint capture and publication revalidate an explicit two-output candidate. | `SeriesCheckpointRefs`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
 | Leaf membership, output identity, and ordering remain exact. | `_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain`; `_atomic_leaf_code_matches`; `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:201-223; mcp/src/agents_remember/worktrees/series_closeout.py:251-281; mcp/src/agents_remember/worktrees/series_closeout.py:581-614 |
 | Recorded origins and admitted substantive history preserve reconciled series proof. | `_require_chain_origin`; `_require_admitted_step` | mcp/src/agents_remember/worktrees/series_closeout.py:309-340; mcp/src/agents_remember/worktrees/series_closeout.py:472-509 |
-| Series cleanliness and actual memory-ref capture exclude cache authority. | `refuse_series_workbench_commit`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:680-698; mcp/src/agents_remember/worktrees/series_closeout.py:147-178 |
+| Series cleanliness and actual memory-ref capture exclude cache authority. | `refuse_series_workbench_commit`; `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:147-178; mcp/src/agents_remember/worktrees/series_closeout.py:718-736 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `series_closeout.py.md:70` (`refuse_series_workbench_commit`, `publish_series_checkpoint_under_authority`).
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Unified series memory capture on the actual memory ref; removed exact-mapping and fixed-point readers, ledger output cells, and the ledger-only history exemption. Preserved canonical completion, leaf-chain origin/spine proof, expected checkpoint capture, and pause/finalization distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.

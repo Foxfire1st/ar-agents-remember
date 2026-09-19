@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_candidate_batch_commands.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -105,9 +105,9 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The module's scope statement: the union and the receipt, with constructor validation deliberately not re-tested. | "the union cannot express something" | mcp/tests/test_candidate_batch_commands.py:1-9 |
 | The union's coverage case over all twelve kinds. | "test_every_declared_command_is_applied_and_read_back" | mcp/tests/test_candidate_batch_commands.py:114-209 |
-| The receipt-fidelity case and the changed-receipt guard in both its shapes. | "test_a_receipt_reports_the_rows_the_store_now_holds"; "test_a_changed_receipt_must_name_at_least_one_touched_record" | mcp/tests/test_candidate_batch_commands.py:210-254; mcp/tests/test_candidate_batch_commands.py:255-281 |
-| The no-op and the insertion-is-not-an-upsert cases. | "test_an_empty_batch_commits_no_record_and_reports_no_change"; "test_a_command_whose_effect_is_already_stored_is_refused_not_absorbed" | mcp/tests/test_candidate_batch_commands.py:282-303; mcp/tests/test_candidate_batch_commands.py:304-336 |
-| The held expectation and the two closed-union boundary cases. | "test_an_expected_record_that_matches_permits_the_batch"; "test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command"; "test_two_expectations_for_one_record_are_refused_at_the_boundary" | mcp/tests/test_candidate_batch_commands.py:337-371; mcp/tests/test_candidate_batch_commands.py:372-405; mcp/tests/test_candidate_batch_commands.py:406-422 |
+| The receipt-fidelity case and the changed-receipt guard in both its shapes. | "test_a_receipt_reports_the_rows_the_store_now_holds"; "test_a_changed_receipt_must_name_at_least_one_touched_record" | mcp/tests/test_candidate_batch_commands.py:210-254; mcp/tests/test_candidate_batch_commands.py:324-324 |
+| The no-op and the insertion-is-not-an-upsert cases. | "test_an_empty_batch_commits_no_record_and_reports_no_change"; "test_a_command_whose_effect_is_already_stored_is_refused_not_absorbed" | mcp/tests/test_candidate_batch_commands.py:351-351; mcp/tests/test_candidate_batch_commands.py:373-373 |
+| The held expectation and the two closed-union boundary cases. | "test_an_expected_record_that_matches_permits_the_batch"; "test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command"; "test_two_expectations_for_one_record_are_refused_at_the_boundary" | mcp/tests/test_candidate_batch_commands.py:406-422; mcp/tests/test_candidate_batch_commands.py:441-441; mcp/tests/test_candidate_batch_commands.py:475-475 |
 | The model-level seal case, whose operation-level twin lives in the transaction module. | "test_the_context_digest_seals_the_whole_resolved_context" | mcp/tests/test_candidate_batch_commands.py:423-438 |
 | The unit-lane rows that make the module's classification explicit. | "mcp/tests/test_candidate_batch_commands.py" | mcp/tests/test-evidence-lanes.toml:18-18 |
 |The shared harness this module drives and its registered contract.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1239-1240 |
@@ -125,6 +125,7 @@ No cross-repository behavior is involved in this module.
 | The shared harness this module drives and its registered contract. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1239-1240 |
 
 ## Update History
+- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 3 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `test_candidate_batch_commands.py.md:108` ("test_a_receipt_reports_the_rows_the_store_now_holds", "test_a_changed_receipt_must_name_at_least_one_touched_record"); `test_candidate_batch_commands.py.md:109` ("test_an_empty_batch_commits_no_record_and_reports_no_change", "test_a_command_whose_effect_is_already_stored_is_refused_not_absorbed"); `test_candidate_batch_commands.py.md:110` ("test_an_expected_record_that_matches_permits_the_batch", "test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command", "test_two_expectations_for_one_record_are_refused_at_the_boundary").
 - 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 3 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1239-1239` → `mcp/tests/evidence-lifecycle.toml:1239-1240` (rows 113, 115, 125). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

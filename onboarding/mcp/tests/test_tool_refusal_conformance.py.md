@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_refusal_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:50+02:00 |
-| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93`|
-| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l6-ar` uncommitted source (new file, **349 lines / 7 cases**, sha256 `a7980fae537b799a…`); base `a1351504` |
 | governingOverview | `overview.md` |
 
@@ -115,7 +115,7 @@ they make no acceptance claim.
 | The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises. | `BARE_RAISERS` | mcp/tests/test_tool_refusal_conformance.py:153-174 |
 | The census: one world, one run, and the assertions that bind both pins in both directions. | `FailurePathCensusTests` | mcp/tests/test_tool_refusal_conformance.py:191-282 |
 | The population is derived from the live advertisement and the roster, never a literal count. | `test_the_censused_population_is_the_advertised_one` | mcp/tests/test_tool_refusal_conformance.py:204-214 |
-| The three shapes partition the population: there is no fourth answer. | `test_every_failure_path_answers_in_one_of_the_three_named_shapes` | mcp/tests/test_tool_refusal_conformance.py:215-234 |
+| The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed. | `test_every_failure_path_answers_in_one_of_the_four_named_shapes` | mcp/tests/test_tool_refusal_conformance.py:288-327 |
 | Each refusal axis asserted by name, so a regression says which one it broke. | `test_every_refusal_names_what_refused_why_and_the_next_action` | mcp/tests/test_tool_refusal_conformance.py:235-255 |
 | `T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth. | `test_the_t34_family_is_no_longer_a_bare_raiser` | mcp/tests/test_tool_refusal_conformance.py:256-282 |
 | The executed control: each axis stripped from a real refusal, and the predicate required to reject it. | `FailurePathControlTests` | mcp/tests/test_tool_refusal_conformance.py:283-324 |
@@ -138,5 +138,6 @@ claimed by this census.
 | No repository or external-system boundary is proved by this module. | N/A | N/A |
 
 ## Update History
+- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_tool_refusal_conformance.py.md:118` (test_every_failure_path_answers_in_one_of_the_four_named_shapes) — re-read the claim against the successor case's own docstring, which records the rename (and, where it says so, the reversal of the behaviour the row described).
 
 - 2026-09-19T19:50+02:00 — 260918-TSIP-L6 curator (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): **created**. The module is new in this leaf (**349 lines / 7 cases**, sha256 `a7980fae537b799a…`) and is the durable form of the leaf's delivery-shape rule: every advertised tool driven down a path that cannot succeed, through the production entry point, and required to answer as a typed refusal, a recorded always-answer, or a recorded bare raiser. Recorded the measured census (**67 = 32 + 18 + 17**), the three refusal axes, both pins with their update rule, the executed axis-stripping control, the `T34` repair read at the entry point from the sweep's single source of truth, and the hermeticity property the module asserts of its own fixture. Its lane row was added by the same change set at `mcp/tests/test-evidence-lanes.toml:155` in `unit-regression`. Verification metadata is the recorded base commit; the candidate is uncommitted and the governed closeout stamps the real code commit.

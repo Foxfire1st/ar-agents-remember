@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc`|
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,10 +66,11 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_restartable_predecessor_contract` requires a terminal restartable contract without recorded code/memory outputs. | `_restartable_predecessor_contract` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py:398-417 |
+| `_restartable_predecessor_contract` requires a terminal restartable contract without recorded code/memory outputs. | `restartable_predecessor_contract` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py:407-433 |
 | `require_successor_generation` validates exact terminal predecessor and successor identities. | `require_successor_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py:343-368 |
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `lifecycle_enclosure_terminal.py.md:69` (restartable_predecessor_contract) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=a92a727ad3fc82423b4e531f64c1059ef6135c9e082a22f1358ba1ae77d185dd. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 

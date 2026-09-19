@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T17:20+02:00|
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,7 +23,7 @@ returns a list it becomes the status payload's `landing` block, and `reducer._en
 composes that onto `EngineProcessNode.landing`.
 
 Two callers reach the probe, and neither is the projection tick: the interactive `status_payload`
-cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:563-563; mcp/src/agents_remember/worktrees/modules/guidance.py:565-565), and `observer/landing_state.LandingStateRefresher`, which holds it as
+cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:571-571; mcp/src/agents_remember/worktrees/modules/guidance.py:573-573), and `observer/landing_state.LandingStateRefresher`, which holds it as
 `observe: LandingObserver = landing_refs` and sweeps landing-active contracts on its own
 `LANDING_REFRESH_INTERVAL_SECONDS = 30.0` cadence with `LANDING_REFRESH_CONCURRENCY = 4`. The
 recurring projection never spawns anything: it renders `unobserved_landing_refs` until the
@@ -137,13 +137,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing`; "def _status_payload_with_landing" | mcp/src/agents_remember/worktrees/modules/guidance.py:563-565; mcp/src/agents_remember/worktrees/modules/guidance.py:501-503 |
+| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing`; "def _status_payload_with_landing" | mcp/src/agents_remember/worktrees/modules/guidance.py:563-573; mcp/src/agents_remember/worktrees/modules/guidance.py:501-509 |
 | The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:956-978 |
 | The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304 |
 | The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213; mcp/src/agents_remember/kernel/git_command.py:93 |
 | The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:148-352 |
 
 ## Update History
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 2 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `landing.py.md:26` (status_payload, landing_refs(contract)) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites; `landing.py.md:140` (status_payload, _status_payload_with_landing) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 - 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (one table row, three anchors). The row cited `guidance.py:493-495` and `guidance.py:431-483` — the tail of `base_freshness` and part of `_pre_integration_phase` — for `status_payload` and `_status_payload_with_landing`; the definitions this leaf's moves left in the file sit at `563-565` and `501-503`, so the row's two source cells now cite those. The claim, all three anchors and the rest of the row are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "def status_payload"; "landing_refs(contract)" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:563-563; mcp/src/agents_remember/worktrees/modules/guidance.py:565-565. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
