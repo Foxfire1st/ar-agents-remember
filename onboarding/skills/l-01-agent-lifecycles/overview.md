@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` |
-| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
+| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
+| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 ## Purpose

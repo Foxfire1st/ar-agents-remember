@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_views_and_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
+| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted change set; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 

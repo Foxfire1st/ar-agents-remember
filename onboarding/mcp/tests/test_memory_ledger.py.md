@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_ledger.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
+| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

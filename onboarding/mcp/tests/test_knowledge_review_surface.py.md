@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T18:05+02:00 |
-| lastVerifiedCommitHash |  `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`|
-| lastVerifiedCommitDate |  2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash |  `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b`|
+| lastVerifiedCommitDate |  2026-09-19T13:56:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview | `mcp/tests/overview.md` |
 

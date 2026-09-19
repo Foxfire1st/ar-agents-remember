@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_migration_census.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash |  `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b`|
+| lastVerifiedCommitDate |  2026-09-19T13:56:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `mcp/tests/overview.md` |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_bindings.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
+| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `overview.md` |
 
