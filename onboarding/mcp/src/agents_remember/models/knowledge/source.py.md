@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

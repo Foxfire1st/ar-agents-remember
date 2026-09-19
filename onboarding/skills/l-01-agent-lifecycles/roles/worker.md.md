@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastUpdated | 2026-09-19T17:15+02:00 |
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,14 @@ the first edit. It implements the approved leaf, fills only small unambiguous ga
 changed paths, diff summary, tests, retrieval evidence, escalations, and onboarding observations in
 the turn report. Observations are evidence for a separate curator; the worker does not write
 accepted onboarding.
+
+Beside the report the worker emits **the curator hand-off list** — every requirement-shaped item of
+the leaf in the shape `../templates/curator-handoff-list.md` owns, one entry per item with its own
+statement, kind, target, `found_at`, disposition and evidence, while `resolution`, `validated_at`,
+`record_action` and `supersedes` stay `null` because they are the curator's to fill. That list is the
+hand-off rather than a summary of one: items name where each thing lives — path plus the construct
+inside it, from one resolution act — and keep the worker's own wording, because a re-worded statement
+destroys the evidence the curator compares against the code.
 
 Worker intake opens each version-addressed canonical packet and verifies the exact ID/version,
 approved state, and durable corpus-ruling citation before implementation. A missing, unapproved,
@@ -66,7 +74,8 @@ dispatch/tools rows are structural documentation rather than settings keys.
 
 ## Conventions
 
-- One leaf, one worker seat, one physical attempt journal, and one link-only turn report.
+- One leaf, one worker seat, one physical attempt journal, one link-only turn report, and one
+  curator hand-off list.
 - Native reads in the actual worktree are the edit precondition.
 - Read/search fan-out may assist, but the main worker owns edits and the report.
 - Fix rounds resume the same worker when possible and append round evidence.
@@ -88,20 +97,21 @@ dispatch/tools rows are structural documentation rather than settings keys.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification, and independent review are explicit operations only; curation is the standing exception — the curator always runs it complete — and it is not this seat's to run. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The worker is one leaf-scoped builder whose terminal state is checks plus report. | "You build one leaf."; `# Worker` | skills/l-01-agent-lifecycles/roles/worker.md:6-17 |
-| Intake binds writes to the named code worktree and report path. | "Where your inputs live."; "Your writable areas are your" | skills/l-01-agent-lifecycles/roles/worker.md:30-34; skills/l-01-agent-lifecycles/roles/worker.md:35-42 |
+| Intake binds writes to the named code worktree and report path. | "Where your inputs live."; "Your writable areas are your" | skills/l-01-agent-lifecycles/roles/worker.md:30-34 |
 | Orientation requires current worktree reads and coding guidelines before edits. | "**Before your first edit:**"; "native read is your edit precondition" | skills/l-01-agent-lifecycles/roles/worker.md:22-24; skills/l-01-agent-lifecycles/roles/worker.md:30-34 |
 | Build produces implementation plus evidence for the separate curator. | "Implement exactly the leaf plan"; `## Process`; "Produce the builder facts" | skills/l-01-agent-lifecycles/roles/worker.md:36-49; skills/l-01-agent-lifecycles/roles/worker.md:42-46 |
-| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | "**The requirement attempt record**"; "**The turn report**" | skills/l-01-agent-lifecycles/roles/worker.md:76-89 |
-| Tool authority excludes lifecycle, gates, task state, and memory writes. | `## What you must not do`; "No closeout, integration, gates, task-document bookkeeping" | skills/l-01-agent-lifecycles/roles/worker.md:112-126; skills/l-01-agent-lifecycles/roles/worker.md:100-112 |
+| The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. | "**The requirement attempt record**"; "**The turn report**" | skills/l-01-agent-lifecycles/roles/worker.md:76-93 |
+| The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape. | "**The curator hand-off list**" | skills/l-01-agent-lifecycles/roles/worker.md:83-89 |
+| Tool authority excludes lifecycle, gates, task state, and memory writes. | `## What you must not do`; "No closeout, integration, gates, task-document bookkeeping" | skills/l-01-agent-lifecycles/roles/worker.md:119-126 |
 | The worker records the complete acceptance envelope once for every stable requirement ID. | `## Outputs`; "the one Requirement Acceptance Envelope for your owned primary" | skills/l-01-agent-lifecycles/roles/worker.md:72-99 |
-| Checks have their own explicit reportable step. | "### The checks you owe"; "Record the exact commands, the selected scope and the results" | skills/l-01-agent-lifecycles/roles/worker.md:50-66; skills/l-01-agent-lifecycles/roles/worker.md:43-50 |
+| Checks have their own explicit reportable step. | "### The checks you owe"; "Record the exact commands, the selected scope and the results" | skills/l-01-agent-lifecycles/roles/worker.md:50-66 |
 | The worker builds one leaf in one session and delivers one scoped change set plus one report. | "**You build one leaf.**" | skills/l-01-agent-lifecycles/roles/worker.md:8-9 |
 
 ## R39 Generic Worker Doctrine
@@ -126,6 +136,8 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator: range-pairing correction after a mechanical re-check of every reference row against the code worktree revision `e7998504`. Three rows had equal anchor and citation counts but not both positional pairs true; each now carries the single shared citation that contains both of its anchors — the intake row's `"Where your inputs live."` / `"Your writable areas are your"` at `:30-34`, the tool-authority row's `## What you must not do` / `"No closeout, integration, gates, task-document bookkeeping"` at `:119-126`, and the checks row's `"### The checks you owe"` / `"Record the exact commands, the selected scope and the results"` at `:50-66`. No finding was reworded and no claim was dropped.
+- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`). The diff turns `## Outputs` from "Four things" into "Five things" (`:74`) and inserts **the curator hand-off list** as the worker's hand-off to the curator (`:83-89`): every requirement-shaped item, in the shape `../templates/curator-handoff-list.md` owns, with the producer's own statement, kind, target, `found_at`, disposition and evidence in the worker's own wording, and `resolution`/`validated_at`/`record_action`/`supersedes` left `null` for the curator. Body: added that output to the Logic, extended the Conventions line to the five outputs, added a Repo-Internal References row for it, and corrected the CCR-R12@v5 block's "full memory quality … explicit operations only" clause (this file's own checks rule makes curation the standing exception and not this seat's to run, `:60-61`, `:129-130`). Citations: the attempt-record row's extent had drifted with the seven inserted output lines — "**The requirement attempt record**" now stands at `:90`, so `:76-89` is re-pointed to `:76-93`, which covers both of that row's anchors. Verified ranges/claims: every other row's anchor still resolves inside its extent (`:6-17`, `:30-34`, `:35-42`, `:22-24`, `:36-49`, `:42-46`, `:112-126`, `:100-112`, `:72-99`, `:50-66`, `:43-50`, `:8-9`).
 - 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the last eight dead-anchor rows in this card were re-cited to the lines that now carry their facts.** Every dead anchor was a heading or a sentence of the *pre-rewrite* role file — `## What This Seat Is`, `### 1 — Intake`, `### 2 — Orient (paired reads before edits)`, `### 3 — Build`, `### 4 — Per-Requirement Acceptance Envelope`, `### 5 — Targeted Checks (before you report)`, `### 6 — The Turn Report (mandatory, your last act)`, `## Tool Surface (positive statement — this is all of it)`. The rewritten file's own title and sentences now carry those claims, so each dead anchor was replaced by text that exists inside a cited range: `# Worker` and `You build one leaf.` (`:6-17`); `Where your inputs live.` and `Your writable areas are your` (`:30-34`, `:35-42`); `**Before your first edit:**` beside `native read is your edit precondition` — the stale `:58-58` extent replaced by `:30-34`, which is where the precondition now stands; `## Process` with `Implement exactly the leaf plan` and `Produce the builder facts` (`:36-49`, `:42-46`); `**The requirement attempt record**` with `**The turn report**` (`:76-89`); `## What you must not do` with `No closeout, integration, gates, task-document bookkeeping` (`:112-126`); `## Outputs` with `the one Requirement Acceptance Envelope for your owned primary` (`:72-99`); and `### The checks you owe` with `Record the exact commands, the selected scope and the results` (`:50-66`). No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `### 6 — The Turn Report (mandatory, your last act)` at skills/l-01-agent-lifecycles/roles/worker.md:193-207.

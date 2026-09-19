@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastUpdated | 2026-09-19T17:09+02:00|
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,13 @@ separate protocol events as delivery attempts.
 ## Conventions
 
 - `skills/l-01-agent-lifecycles/` is canonical. Package and harness trees are synchronized outputs.
-- One self-contained role file owns each role lifecycle; templates carry dispatch inputs, not
-  alternate doctrine.
+- One self-contained role file owns each role lifecycle; templates carry dispatch inputs and
+  hand-off shapes, not alternate doctrine.
+- `templates/curator-handoff-list.md` is the one **producer output shape** among them: the
+  requirement-shaped items the builder, the reviewer, and the orchestrator hand to the curator, one
+  entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
+  data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
+  brief-schema, which is why the router names it on its own.
 - Roles communicate through structural parent/child operations and durable artifacts.
 - Exact runtime ids, readiness correlations, inbox ids, lifecycle ids, and gate ids remain
   control-plane details.
@@ -124,14 +129,15 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
-| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
-| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; "The seat binding is the catalog binding made at dispatch"; "Silence is supervised" | skills/l-01-agent-lifecycles/SKILL.md:140-175; skills/l-01-agent-lifecycles/core/authority.md:181-188; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-26 |
+| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:69-80 |
+| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "the shared core"; `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; "The seat binding is the catalog binding made at dispatch"; "Silence is supervised" | skills/l-01-agent-lifecycles/SKILL.md:126-131; skills/l-01-agent-lifecycles/core/authority.md:181-188; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-26 |
 | Shared continuity and authority invariants are explicit. | `# Core — Shared Invariants (every role can count on these)`; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)` | skills/l-01-agent-lifecycles/core/authority.md:1-6; skills/l-01-agent-lifecycles/core/invariants.md:1-11 |
 | Dispatch has two process-derived caller kinds and one shared transaction. | "two disjoint caller kinds"; "Every launcher or role that dispatches a hosted role calls"; "two disjoint caller kinds" | skills/l-01-agent-lifecycles/core/authority.md:50-73 |
 | Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
 | Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | `## Acceptance is per stable ID and version, never aggregate`; `## Acceptance is per stable ID and version, never aggregate`; "independent of requirement acceptance" | skills/l-01-agent-lifecycles/core/acceptance.md:44-77; skills/l-01-agent-lifecycles/core/acceptance.md:140-142 |
 | Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | `## Requirement revisions and delivery attempts are separate axes`; `## Requirement revisions and delivery attempts are separate axes` | skills/l-01-agent-lifecycles/core/acceptance.md:79-116 |
 | Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/core/acceptance.md:120-120 |
+| The companion files now include the producers' curator hand-off shape beside the brief schemas. | "the **producer's output shape**" | skills/l-01-agent-lifecycles/SKILL.md:139-143 |
 
 ## L23 Dispatch Admission
 
@@ -163,6 +169,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`). The diff is five added lines in `## Companion Files` (`:139-143`) introducing `templates/curator-handoff-list.md` as the **producer's output shape** for the requirement-shaped items the builder, the reviewer and the orchestrator hand to the curator — a hand-off artifact rather than a brief-schema. Body: corrected the Conventions statement that "templates carry dispatch inputs" (the layer now also carries that output shape) and added the curator-hand-off-list bullet stating what the router now names on its own; added the companion row to Repo-Internal References. Citations: re-derived every row against the file as it stands — the registry row's second extent `:119-119` was an empty line and is re-pointed to the registry table `:69-80`; the minimal-frame row's `SKILL.md:140-175` extent no longer carried any of that row's anchors and is re-pointed to the router's `core/…` pointer at `:126-131`, where the added anchor "the shared core" occurs (its `core/authority.md:181-188` and `core/lifecycle-frame.md:1-26` extents still hold "Silence is supervised" at `:184` and the frame heading at `:1`). Verified ranges/claims: `:13-51` and `:67-67` anchors still resolve; the new `:139-143` row resolves against the added bullet.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/core/acceptance.md:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "## The Role Registry" repointed to skills/l-01-agent-lifecycles/SKILL.md:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "## Shared Invariants (every role can count on these)" repointed to skills/l-01-agent-lifecycles/SKILL.md:229-229. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-19T17:09+02:00 |
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,9 +21,18 @@ Defines the complete manager-compiled session start for a fresh per-leaf curator
 ## Code Commentary
 
 The brief feeds the read-only code worktree, writable memory worktree, enclosure contract, landed
-change set, task/notes/design inputs, and existing intent anchors. It now also carries the
+change set, task/notes/design inputs, existing intent anchors, and now the **producers' curator
+hand-off list**. It now also carries the
 manager's immediately preceding `worktree_status` source-lineage projection, which must be current
 across every applicable super→master→leaf code and external-memory edge.
+
+The hand-off input names the path (or fenced-block location) of the builder's list, plus the
+reviewer's own list when review was requested, and demands it be handed over **unparaphrased as
+data**. The producer fields (`id`, `statement`, `kind`, `target`, `found_at`, `disposition`,
+`disposition_source`, `evidence`, `authority`) arrive filled; the curator fields (`resolution`,
+`validated_at`, `record_action`, `supersedes`) are `null` and are the curator's to fill. If the list
+and a report prose summary disagree, the list governs — the brief requires attaching the list
+itself, never a re-telling of it.
 
 It also carries the durable corpus ruling, exact primary and adjacent stable-ID + version packet
 paths, and the reviewer's independent row for each revision. Every onboarding edit maps back to an
@@ -58,7 +67,8 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. | "Pre-curator lineage:" | skills/l-01-agent-lifecycles/templates/curator-brief.md:39-39 |
 | Exact requirement packets and adjudications are mandatory task inputs. | "## Task inputs" | skills/l-01-agent-lifecycles/templates/curator-brief.md:44-54 |
-| Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:170-170 |
+| The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null. | "Producers' curator hand-off list:"; "the curator fields" | skills/l-01-agent-lifecycles/templates/curator-brief.md:71-77 |
+| Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:177-180 |
 | Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. | "Hand the curator its brief"; "curator-brief.md" | skills/l-01-agent-lifecycles/roles/manager.md:109-112 |
 
 ## 260821-DAGQC-L2 Briefed Quality Grammar
@@ -72,6 +82,7 @@ keeps sync/start/poll fields mutually exclusive.
 No cross-repository implementation dependency governs this template.
 
 ## Update History
+- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is seven added lines under `## Task inputs` (`:71-77`) adding the **Producers' curator hand-off list** input: the path or fenced-block location of the builder's list plus the reviewer's own list when review was requested, in the shape of `../templates/curator-handoff-list.md`, handed over unparaphrased as data — producer fields (`id`, `statement`, `kind`, `target`, `found_at`, `disposition`, `disposition_source`, `evidence`, `authority`) filled, curator fields (`resolution`, `validated_at`, `record_action`, `supersedes`) `null`, and the list governing over a prose summary. Body: added that input and its field-ownership boundary to the Code Commentary and added a Repo-Internal References row for it. Citations: the compiler-notes row had to be recomputed — the seven inserted lines moved "Immediately before compiling this brief" from `:170` to `:177`, so its extent is re-pointed to `:177-180`, the whole note. Verified ranges/claims: "Pre-curator lineage:" still resolves at `:39` inside `:39-39`, "## Task inputs" at `:51` inside `:44-54`, and the manager row's anchors still resolve inside `roles/manager.md:109-112`.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "Pre-curator lineage:" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "Immediately before compiling this brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

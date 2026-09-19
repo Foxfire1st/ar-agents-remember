@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:53+02:00 |
-| lastVerifiedCommitHash | `e79985045437d7e6409b873c7da3c51aa7cd9685` |
-| lastVerifiedCommitDate | 2026-09-19T13:57:48+02:00|
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `../../../overview.md` |
 

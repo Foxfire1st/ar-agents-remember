@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b`|
-| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
+| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
+| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
 | governingOverview | `mcp/tests/overview.md` |
 
