@@ -41,7 +41,7 @@ generated from. `composition_order` is the three-step order a capsule is compose
 metadata plane, including "Task facts are a separate context channel and are not part of this
 manifest."
 
-**`role_order` is the role registry, and `routing_conditions` is the router, expressed as data.** 
+**`role_order` is the role registry, and `routing_conditions` is the router, expressed as data.**
 `role_order` lists the ten roles in canonical order: architect, orchestrator, designer, strategist,
 manager, worker, curator, reviewer, system-specialist, bootstrap. The `notes` block fixes the
 consequence: "The launcher is a routing condition, not a role: the role registry is exactly the

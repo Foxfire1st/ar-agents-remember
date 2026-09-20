@@ -49,7 +49,7 @@ started from and the commit it landed" — so a case can build a contract whose 
 landed commit differ per side. Both classes are `unittest.TestCase` with a `TemporaryDirectory` in
 `setUp` and `cleanup()` in `tearDown`; nothing outside the temporary root is touched.
 
-**The first class forces the pair-order property over the production predicate.** 
+**The first class forces the pair-order property over the production predicate.**
 `AtomicSeriesChainPairOrderTests` — "one code commit, two memory commits: two landings, ordered by
 memory ancestry" — builds its contracts through `_contract`, which fills a `WorktreeContract` with
 the shared `code_source_branch` `line`, distinct work branches per leaf, and
@@ -64,7 +64,7 @@ over either commit's value"); and `test_disabled_memory_keeps_the_code_only_rule
 disabled there is no pair to order, so a shared code commit stays unordered"). Every assertion is on
 the shipped `_leaf_landing_precedes` imported from `agents_remember.worktrees.series_closeout`.
 
-**The second class forces the admissible-position rule that survived the pair fix.** 
+**The second class forces the admissible-position rule that survived the pair fix.**
 `AtomicSeriesLeafSyncPositionTests` — "a leaf-level sync position is admissible; a position no
 contract recorded is not" — explains why one case carries both directions: "a sync is journaled on the
 contract it ran for. When a leaf's own base was advanced ... the entry is on the *leaf's* contract,

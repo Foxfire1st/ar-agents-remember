@@ -5,9 +5,10 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e` |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -177,10 +178,10 @@ validation failures, and invalid resolvable parent master docs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:92-115 |
-| The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. | `_MUTATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:735-745 |
-| The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:689-707 |
+| The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. | `_MUTATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:736-746 |
+| The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:690-708 |
 | `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. | `_read_steps` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:405-421 |
-| The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:874-891 |
+| The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:875-892 |
 | `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:569-581 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:237-280 |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:320-320 |
@@ -191,10 +192,10 @@ validation failures, and invalid resolvable parent master docs.
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
 | The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:229-283 |
 | The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:218-276; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:308-363 |
-| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:584-616 |
+| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:584-617 |
 | The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51 |
-| The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:619-649 |
-| The `elif` arm that reaches the guard from the shared create/replace builder. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:584-616 |
+| The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:620-650 |
+| The `elif` arm that reaches the guard from the shared create/replace builder. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:584-617 |
 | The two end-to-end cases that pin the refusal's message and the still-working planning flow. | `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy`; `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` | mcp/tests/test_leaf_doc_master_link_binding.py:235-250; mcp/tests/test_leaf_doc_master_link_binding.py:252-268 |
 | Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. | `_prepare_task_doc_edit` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:362-398 |
 
@@ -261,7 +262,21 @@ path-move refusal on `replace`, and the whole step plane are untouched, and no s
 or removed.
 
 
+## 260918-TSIP-L4 — The `kind` Refusal Names Its Vocabulary (`T43`)
+
+`_build_doc`'s refusal for `kind='light'` now appends the accepted vocabulary and the
+omitted case (**`:594-595`**): *"kind must be one of ['subTask', 'master'], or omitted to take the
+contract-derived default."* The refusal already named what is gone; it did not name what is
+accepted, so a caller read the registered description for the vocabulary and the description was
+itself stale. Net `+1` from the old `:595`, so every line at or below the old `:595` moved `+1`.
+
+**`T43` is repaired on both sides, per the `T50` precedent**: the description in
+`mcp/registration/tasks.py` no longer advertises `'light'`, and this refusal now names the
+vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
+constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `kind` refusal now names the accepted vocabulary (`T43`, producer side). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 - 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `WorktreeContract` at mcp/src/agents_remember/worktrees/worktree_contract.py:229-283.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 192 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
   `52875e7a`): recorded the fail-closed leaf-authoring refusal. The Logic and Invariants sections now

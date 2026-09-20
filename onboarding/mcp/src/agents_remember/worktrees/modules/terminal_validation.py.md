@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
+| lastUpdated | 2026-09-19T19:52+02:00 |
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | path | `mcp/src/agents_remember/worktrees/modules/terminal_validation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -136,12 +136,12 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Builds the exact code and optional external-memory terminal branch targets owned by the validated contract. | `_branch_targets` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:333-356 |
 | Defines the function `_branch_preflight`. | `_branch_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:359-374 |
 | Defines the function `_local_absent_remote_preflight`. | `_local_absent_remote_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:377-387 |
-| Defines the function `_branch_identity_refusal`. | `_branch_identity_refusal` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:390-398 |
+| Defines the function `_branch_identity_refusal`. | `_branch_identity_refusal` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:390-400 |
 | Defines the function `_branch_refs_refusal`. | `_branch_refs_refusal` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:401-421 |
 | Defines the function `_branch_checkout_refusal`. | `_branch_checkout_refusal` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:424-435 |
 | Defines the function `_cleanup_branch_preflight`. | `_cleanup_branch_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:438-466 |
 | Defines the function `_abandon_branch_preflight`. | `_abandon_branch_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:469-499 |
-| Defines the function `_branch_presence`. | `_branch_presence` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:502-508 |
+| Defines the function `_branch_presence`. | `_branch_presence` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:509-515 |
 | Defines the function `_checked_out_paths`. | `_checked_out_paths` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:511-523 |
 | Defines the function `_remote_branch_preflight`. | `_remote_branch_preflight` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:526-550 |
 | Defines the function `_provider_blockers`; every provider, container and network blockage it emits goes through `_blocker`. | `_provider_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:553-572 |
@@ -150,21 +150,32 @@ This module defines the top-level symbols cited below; each row points at the ex
 | The remote half of a branch entry, reported separately from the local half. | `_nested_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:609-622 |
 | Answers a result item's reason, or why it carries none: `invalid-result` for a malformed item, operator language for a reasonless one. | `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:625-637 |
 | The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason instead of emitting an anonymous blocker. | `_blocker` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:640-656 |
-| Defines the function `_blocked`. | `_blocked` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:659-667 |
-| The focused cases that pin the reasonless result and the refusal of an unnameable reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:232-252; mcp/tests/test_terminal_blocker_reasons.py:255-268 |
+| Defines the function `_blocked`. | `_blocked` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:659-669 |
+| The focused cases that pin the reasonless result and the refusal of an unnameable reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`; `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:232-252; mcp/tests/test_terminal_blocker_reasons.py:273-286 |
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+## 260918-TSIP-L6 The Drift-Snapshot Collection Declares Its Preview
+
+`terminal_result_blockers` (`:246-297`) builds one expectation per terminal collection, and the
+drift-snapshot collection was the only one whose expectation omitted `preview=result.preview`
+(`T62`/`D49`). `_done_blockers` reads the *pending* key off that flag, and this collection's
+producer answers a dry run with `would_remove`
+(`kernel/primitives/drift_snapshot.py::_remove_snapshot_file`) exactly as the worktree, directory
+and provider collections beside it do. Without the flag the entry was neither reclaimed, nor
+pending, nor reasoned, so `_blocker` (`:647-665`) raised and **every preview of a task that has a
+drift snapshot crashed on its own producer's output** — the repair is the one keyword argument at
+`:285-292`, and the three cases that hold it (a preview, a real reasonless result, and the
+tool-level cleanup preview) are in `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
+
 ## Update History
-
+- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T62`/`D49` — the drift-snapshot expectation now declares `preview=result.preview`, without which every preview of a task that has a drift snapshot crashed inside `_blocker`. Verification metadata stays closeout-owned.
 - 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected an over-general claim in this card.** The Logic said the dry-run path can no longer read a preview as a blockage, but the `drift_snapshots` branch of `terminal_result_blockers` was building `TerminalExpectation(done_key="removed")` **without** `preview=result.preview` while every other collection propagated it — so a preview's `would_remove` entry was read with the real call's `would_delete` key and `_blocker` raised `RuntimeError: terminal result blocker driftSnapshot=code carries no reason`. The branch now passes the flag, and the card states the fix, names `remove_drift_snapshot` as the `removed`/`would_remove` producer that makes it necessary, and records the one deliberate exception: the `branch` collection needs no flag because its preview producer emits `deleted: False, would_delete: True`, which `_blocked`'s default `pending_key` already reads. No other claim was falsified. Existing citation ranges were left for the citation pass; noted drift: `terminal_result_blockers` now spans `246-292` (card cites `246-288`) and every symbol below it shifted by four lines (`_worktree_preflight` 291-330 → 295-334, `_provider_blockers` 553-572 → 557-576, `_blocker` 640-656 → 644-660, `_blocked` 659-667 → 663-671), while the module-source list above still carries the pre-change numbers.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `_worktree_preflight` excludes exactly the root ledger cache from external-memory dirtiness. Code worktrees keep their full status check, and all other memory paths remain blockers when dirty. This observation performs no index, worktree or ref mutation.
-
-
 - 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
   `7317108b`): `_remote_branch_preflight` now hands the runner one
   `GitRunnerOptions(timeout=GIT_REMOTE_TIMEOUT_SECONDS)` object for
@@ -173,7 +184,6 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
   no cited range was derived from an `input_text=`, `work_dir=` or `timeout=` mention — every symbol
   range above still names its current symbol, so no citation anchor changed. Verification metadata
   remains closeout-owned.
-
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented the blocker contract this change set
   introduced. `_blocker` is now the only blockage construction path and refuses a missing, blank or
   non-string reason; `_blocked_reason` answers a reasonless or malformed result item in operator
@@ -185,12 +195,9 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
   rows for the new symbols plus the focused cases. The change makes a reasonless blocker
   unrepresentable and names a surviving non-removal's cause; it adds no teardown capability.
   Verification metadata remains closeout-owned.
-
 - 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
   commit (0a746c9f) touched this source; card re-verified against the current file, verification
   stamp advanced to 0a746c9f. Body unchanged — the documented contract still holds.
-
-
 - 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: `require_series_children_retired` now checks
   the recorded series `worktree_group` against `worktree_group_for(...)` (the master worktree
   group) instead of the task enclosure root, and the new `legacy_series_reports_is_child_enclosure`
@@ -198,7 +205,5 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
   series-census functions to the module surface, documented the guard, and repaired all reference
   ranges (L10's +18-line shift plus older stale rows). Verification metadata stamped at the landed
   code commit `e41ea31d`.
-
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
-
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

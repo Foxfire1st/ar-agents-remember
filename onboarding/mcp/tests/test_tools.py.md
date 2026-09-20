@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
+| lastUpdated | 2026-09-18T14:57+02:00 |
+| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93` |
+| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/tests/test_tools.py` **364 → 468 lines**, 10 → **12** cases); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +17,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. 260831-LOCR-L38 extended that stop case so the description must also stay true about a master holding no selection: the removed `atomic-series-activation-selection-missing` refusal is pinned **out** of the registered text and the release the description still advertises is pinned **in**, so the absence cannot be satisfied by emptying the text. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool, 260831-LOCR-L36 added the case that pins that tool's **published description** — it must present a partial publication and deny being the pause — and 260831-LOCR-L37 added the matching case for the stop: `worktree_pause`'s description must present a stop that publishes NOTHING and must name `worktree_checkpoint_landing` as the separate, explicitly requested PUBLICATION. 260831-LOCR-L38 extended that stop case so the description must also stay true about a master holding no selection: the removed `atomic-series-activation-selection-missing` refusal is pinned **out** of the registered text and the release the description still advertises is pinned **in**, so the absence cannot be satisfied by emptying the text. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised. Since `260918-TSIP-L3` it also holds the **curator-coherence publish contract** (`T50`): one case compares the registered `curator_coherence` description against the nine fields the validator actually requires and pins that the JSON schema cannot carry the requirement, and its pair drives a real `publish` request once per omitted field — with the complete shape accepted first as the positive control — asserting the refusal names exactly the field it dropped.
 
 ## Code Commentary
 
@@ -58,17 +59,20 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:58-68 |
-| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:69-115 |
-| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:116-152 |
-| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:153-164 |
-| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:165-195 |
-| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-239 |
-| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
-| The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
-| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:282-304 |
-| The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:306-341 |
-| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:344-359 |
+| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:60-70 |
+| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:71-117 |
+| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:118-154 |
+| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:155-166 |
+| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:167-197 |
+| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:232-241 |
+| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:243-261 |
+| The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:263-282 |
+| The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". | `test_the_checkpoint_description_publishes_rather_than_pausing` | mcp/tests/test_tools.py:284-306 |
+| The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform. | `test_the_pause_advertises_a_stop_that_publishes_nothing` | mcp/tests/test_tools.py:308-343 |
+| The description names every field `curator_coherence`'s `publish` requires, and pins that the JSON schema cannot carry the requirement. | `test_the_description_names_every_field_publish_requires` | mcp/tests/test_tools.py:391-410 |
+| `publish` refuses by naming **every** missing field, one omission per field with the complete-shape acceptance as the positive control. | `test_publish_refuses_by_naming_every_missing_field` | mcp/tests/test_tools.py:412-450 |
+| The one list both pins compare — the nine publish-required fields, spelled once. | `PUBLISH_REQUIRED_FIELDS` | mcp/tests/test_tools.py:351-368 |
+| The permissive registration-time config stub the registration cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:453-464 |
 
 ## Cross-Repo References
 
@@ -140,7 +144,53 @@ is an advertisement pin, not a behavioural one — the behaviour is proved in
 `test_pause_stop_only_end_to_end.py` — and it pins the absence, so it constrains no production edit
 other than re-advertising a status the verb no longer returns.
 
+## The Curator-Coherence Publish Contract (260918-TSIP-L3)
+
+`CuratorCoherencePublishContractTests` exists because **the published contract and the enforced
+contract disagreed, and neither surface could show it** (`T50`). `curator_coherence`'s `publish` was
+refused twice on a real curator with *"publish requires every identity, predecessor, and caller
+field"* although every field the registered description named had been supplied. The validator
+(`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) requires **nine**
+non-null fields, and the description named neither `semantic_requirement_revision` nor
+`delivery_attempt` nor `caller` as required; the refusal named a class of fields and none of them,
+and a model-level validator reports `loc: ()`, so the message was the caller's only route to the
+missing field. Two disagreements, pinned separately because either can regress alone:
+
+- `test_the_description_names_every_field_publish_requires` registers every `TOOL_REGISTRARS` entry
+  against a probe `FastMCP("curator-coherence-description-probe")`, reads the advertised
+  `curator_coherence` text, and asserts each of the nine names appears in it. In the same case
+  `CuratorCoherenceRequest.model_json_schema()["required"]` must stay
+  `["action", "contract_path"]` — **the schema cannot carry the requirement**, because it is
+  conditional on `action == "publish"`, and the pin stops someone "moving the repair into the
+  schema" on the assumption that it could.
+- `test_publish_refuses_by_naming_every_missing_field` builds the complete nine-field request and
+  asserts it is accepted **first**, as the positive control: without that arm a mistyped field name
+  would make every later assertion pass for a reason unrelated to the repair. Then, one omission per
+  field, it asserts `missing: <field>` is in `errors()[0]["msg"]` — never `str(error)`, because the
+  rendered error echoes `input_value` and a substring check against the echo reports "named" for a
+  message that names nothing, which is the instrument fault this case exists to catch.
+
+`PUBLISH_REQUIRED_FIELDS` spells the nine once so both arms compare against one list. The two cases
+belong to the **integration** lane because that is where the two existing published-description pins
+live; the module was already registered, so this leaf added no lane row and **no line of
+`mcp/tests/test-evidence-lanes.toml` moved**.
+
 ## Update History
+- 2026-09-18T14:57+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): this file is one of the leaf's five changed paths, so the card gained a **body**
+  update rather than a restamp. Added the `## The Curator-Coherence Publish Contract (260918-TSIP-L3)`
+  section, the Purpose sentence, and **three reference rows** for the two new cases and the
+  `PUBLISH_REQUIRED_FIELDS` list they share; **eleven retained rows moved +2** (two one-line
+  insertions above them) and were re-derived against the new bytes. **One row was re-scoped rather
+  than moved:** `_permissive_registration_config` was cited as `:344-359`, and the 102-line insertion
+  this leaf makes at old `:348` now lies *inside* that range — so a prefix-preserving move would have
+  produced `:346-463`, a range naming the previous case's tail, the whole new publish-contract block
+  and the stub at once (the one-anchor-two-extents shape the shipped fixer declines). It now cites
+  the stub's own extent, `:453-464`, which is the only place its anchor resolves. The three earlier
+  history entries that quote the old numbers are as-of records and are deliberately not renumbered.
+  `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are
+  deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real
+  code commit.
 - 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
   `ar/260831-locr-l38`, base `67b21aeb`): extended the existing stop case
   `test_the_pause_advertises_a_stop_that_publishes_nothing` — no new case, so the module's case count

@@ -5,9 +5,10 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-17T10:40+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -45,10 +46,10 @@ compatibility and must not be confused with orchestration binding identity.
 `sessionLogPath`. `contextDelivered` means the id-bearing user record exists in the bound harness
 log; `sessionCommandsDelivered` means command record plus non-error stdout, not pane rendering.
 
-cit:([`TaskAssignmentStatus`], mcp/src/agents_remember/models/terminal.py:20-29) is the closed response vocabulary for document-owned seat assignment attempts: `attached`, `seat-taken`, `unknown-session`, `role-required`, and explicit task-binding/document validation refusals. The operation accepts structural document-and-role intent; it does not expose a leaf-key or occupant-id address.
-cit:([`AttachTerminalSessionToTaskResponse`], mcp/src/agents_remember/models/terminal.py:32-44) is a strict `ToolResponse` with operation `attach_terminal_session_to_task`, the requested session and `taskDocumentRef`, the optional previous document binding and seat role, an optional conflict owner for administrative diagnostics, and optional refusal detail.
+cit:([`TaskAssignmentStatus`], mcp/src/agents_remember/models/terminal.py:22-31) is the closed response vocabulary for document-owned seat assignment attempts: `attached`, `seat-taken`, `unknown-session`, `role-required`, and explicit task-binding/document validation refusals. The operation accepts structural document-and-role intent; it does not expose a leaf-key or occupant-id address.
+cit:([`AttachTerminalSessionToTaskResponse`], mcp/src/agents_remember/models/terminal.py:34-46) is a strict `ToolResponse` with operation `attach_terminal_session_to_task`, the requested session and `taskDocumentRef`, the optional previous document binding and seat role, an optional conflict owner for administrative diagnostics, and optional refusal detail.
 
-cit:([`SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:51-87) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
+cit:([`SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:53-89) is the L2 vocabulary: `spawned-unbriefed` (the only `ok: true`
 case — the seat exists and is bound, and its brief is a separate delivery),
 `brief-delivery-separate` (the refusal of the retired one-call brief contract, raised before any
 settings, catalog or spawn work when the caller passed `context` or `submit=true`), `leaf-taken`
@@ -71,7 +72,7 @@ with the exact stage and role named in the detail, because a session that would 
 instructions is never started. It joins the pre-spawn validation refusals above: like them it is a
 *decision* the launch point makes, not a failure of the process it was about to start. No member was
 removed or re-spelled to make room for it.
-cit:([`SpawnAgentSessionResponse`], mcp/src/agents_remember/models/terminal.py:96-155) is a strict
+cit:([`SpawnAgentSessionResponse`], mcp/src/agents_remember/models/terminal.py:98-157) is a strict
 `ToolResponse` with operation `spawn_agent_session`, the `session`, optional `harness`/`kind`/`leafKey`/
 `label`/`cwd`/`tmuxName`, the spawned-by provenance (`spawnedBySession` + `spawnedByLifecycle`, and — since
 260821-ARSPAWN-L1 — `spawnedByKind`: `Literal["plane","ambient","unattributed"] | None`, the
@@ -92,17 +93,17 @@ outcome reports `False`; absent on full success — a blind seat is diagnosed fr
 itself, never trusted from a bare boolean), and a `detail` for the refusals.
 
 **Seat lifecycle (260707-HFX-L8)** adds two new strict response contracts. `SessionRetireStatus`
-(cit:([`SessionRetireStatus`], mcp/src/agents_remember/models/terminal.py:174-180)) `= Literal["retired","already-retired","unknown-session","unknown-actor","retire-refused"]`;
-cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:177-193) models `session_retire` (issue #12): `operation: Literal["session_retire"]`,
+(cit:([`SessionRetireStatus`], mcp/src/agents_remember/models/terminal.py:176-182)) `= Literal["retired","already-retired","unknown-session","unknown-actor","retire-refused"]`;
+cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:179-195) models `session_retire` (issue #12): `operation: Literal["session_retire"]`,
 `status`, `session`, and the four retirement provenance fields
 `retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge` (all `None`-default, populated on
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
 `already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
 cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:1005-1005), so a refusal status added later cannot
-arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:206-206) `=
+arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:217-217) `=
 Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
-cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:213-224)
+cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:224-235)
 `operation: Literal["session_rename"]`, `status`, `session`, `label`/`spawnedLabel` (`None`-default).
 Identity text only — `spawn_role` (the L6 role-seat-immutability field) never appears in this
 response because a rename never touches it.
@@ -121,11 +122,11 @@ payload, and the spawn preflight check table. cit:(["def spawn_refusal("], mcp/s
 the tool invents is therefore a pyright error at the tool rather than a `ValidationError`
 escaping the MCP handler.
 
-The task-assignment contract is declared independently from the legacy leaf-ref refusal alias: cit:([`TaskAssignmentStatus`, `SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:47-78). Document assignment failures name task-document validation; spawn retains its own broader refusal vocabulary.
+The task-assignment contract is declared independently from the legacy leaf-ref refusal alias: cit:([`TaskAssignmentStatus`, `SpawnAgentSessionStatus`], mcp/src/agents_remember/models/terminal.py:22-31; mcp/src/agents_remember/models/terminal.py:49-80). Document assignment failures name task-document validation; spawn retains its own broader refusal vocabulary.
 
 Each of the three tool-facing vocabularies also publishes its runtime half, derived from the
-alias by `get_args` rather than retyped beside it: cit:([`VALID_SPAWN_AGENT_SESSION_STATUSES`], mcp/src/agents_remember/models/terminal.py:91-93),
-cit:([`VALID_SESSION_RETIRE_STATUSES`], mcp/src/agents_remember/models/terminal.py:182-184), cit:([`VALID_SESSION_RENAME_STATUSES`], mcp/src/agents_remember/models/terminal.py:208-210).
+alias by `get_args` rather than retyped beside it: cit:([`VALID_SPAWN_AGENT_SESSION_STATUSES`], mcp/src/agents_remember/models/terminal.py:93-95),
+cit:([`VALID_SESSION_RETIRE_STATUSES`], mcp/src/agents_remember/models/terminal.py:182-184), cit:([`VALID_SESSION_RENAME_STATUSES`], mcp/src/agents_remember/models/terminal.py:219-221).
 `test_wire_vocabulary_exhaustiveness` asserts, per tool, that the set of statuses the tool can
 actually return *equals* the declared set — a measurement in the other direction too, catching a
 member no writer can emit.
@@ -164,7 +165,7 @@ No relevant external/domain documentation found; this is an internal response co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response fields are defined by the document-and-role assignment contract. | `TaskAssignmentStatus`; `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:32-44 |
+| The response fields are defined by the document-and-role assignment contract. | `TaskAssignmentStatus`; `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:22-31; mcp/src/agents_remember/models/terminal.py:34-46 |
 
 ## Repo-Internal References
 
@@ -173,12 +174,12 @@ No relevant external/domain documentation found; this is an internal response co
 | The administrative attach payload builder returns the exact task-document-and-role fields modeled here. | `attach_terminal_session_to_task_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44 |
 | Application producers import and annotate the terminal aliases across the centralized spawn-refusal builder, knob-refusal check, retire result, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "_RETIRE_OK_STATUSES: frozenset[SessionRetireStatus] ="; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-13; mcp/src/agents_remember/application/terminal_tools.py:473-473; mcp/src/agents_remember/application/terminal_tools.py:944-944; mcp/src/agents_remember/application/terminal_tools.py:947-947; mcp/src/agents_remember/application/terminal_tools.py:1129-1129; mcp/src/agents_remember/application/terminal_tools.py:482-482; mcp/src/agents_remember/application/terminal_tools.py:1005-1005; mcp/src/agents_remember/application/terminal_tools.py:1008-1008; mcp/src/agents_remember/application/terminal_tools.py:1190-1190 |
 | The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
+| `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
 | The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:140-212 |
-| The declared attach response owns its wire fields; removed conformance fixtures do not establish a current validation pass. | `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:35-48 |
+| The declared attach response owns its wire fields; removed conformance fixtures do not establish a current validation pass. | `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:37-50 |
 | `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:985-1064; mcp/src/agents_remember/application/terminal_tools.py:1153-1167; mcp/src/agents_remember/application/terminal_tools.py:1214-1228 |
 | The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
-| The three `VALID_*` sets this module declares are no longer pinned by a produced == declared case: `d3610903` removed the per-set `ProducedLiteralTests` cases when coverage became diagnostic, and `mcp/tests/test_wire_vocabulary_exhaustiveness.py` now keeps only its module docstring and helpers. | "VALID_SPAWN_AGENT_SESSION_STATUSES: frozenset[SpawnAgentSessionStatus] = frozenset("; "VALID_SESSION_RETIRE_STATUSES: frozenset[SessionRetireStatus] = frozenset("; "VALID_SESSION_RENAME_STATUSES: frozenset[SessionRenameStatus] = frozenset(" | mcp/src/agents_remember/models/terminal.py:86-86; mcp/src/agents_remember/models/terminal.py:172-172; mcp/src/agents_remember/models/terminal.py:198-198; mcp/src/agents_remember/models/terminal.py:91-91; mcp/src/agents_remember/models/terminal.py:182-182; mcp/src/agents_remember/models/terminal.py:208-208 |
+| The three `VALID_*` sets this module declares are no longer pinned by a produced == declared case: `d3610903` removed the per-set `ProducedLiteralTests` cases when coverage became diagnostic, and `mcp/tests/test_wire_vocabulary_exhaustiveness.py` now keeps only its module docstring and helpers. | "VALID_SPAWN_AGENT_SESSION_STATUSES: frozenset[SpawnAgentSessionStatus] = frozenset("; "VALID_SESSION_RETIRE_STATUSES: frozenset[SessionRetireStatus] = frozenset("; "VALID_SESSION_RENAME_STATUSES: frozenset[SessionRenameStatus] = frozenset(" | mcp/src/agents_remember/models/terminal.py:88-88; mcp/src/agents_remember/models/terminal.py:174-174; mcp/src/agents_remember/models/terminal.py:200-200; mcp/src/agents_remember/models/terminal.py:93-93; mcp/src/agents_remember/models/terminal.py:184-184; mcp/src/agents_remember/models/terminal.py:219-219 |
 
 ## Cross-Repo References
 
@@ -206,7 +207,28 @@ statuses and carry the strict projection that explains them. The projection is
 optional because ordinary task-binding, launch-selection, and seat outcomes do
 not manufacture ancestry evidence.
 
+## 260918-TSIP-L4 — The Stranded-Row Report Declared (`T16`)
+
+`SessionRetireResponse` now declares the three keys the retire payload already emitted:
+`strandedRowIds: list[str]` (**`:211`**), `strandedRowCount: int` (**`:212`**) and
+`surfacedRowId: str | None` (**`:213`**), with `detail` following at `:214`. The
+`from pydantic import Field` import and its blank line at **`:7-8`** move the whole file `+2` from
+the old `:6`, and the nine-line comment-and-declaration block at **`:205-213`** moves everything
+from the old `:203` by a further `+9` (`SessionRetireResponse` `187 → 189`,
+`VALID_SESSION_RENAME_STATUSES` `208 → 219`, `SessionRenameResponse` `213 → 224`; file
+**224 → 235 lines**).
+
+`_retire_payload` (`application/terminal_tools.py:1038-1042`) adds them on the success path
+whenever `_surface_stranded_rows` surfaced a pending operator-inbox row addressed to the retiring
+seat or its lifecycle. They are set *after* the seat is already terminated and the row is already
+posted, so without the declaration the caller lost the only report of that row — and a retry
+answers `already-retired` and carries none of them. Pinned by
+`mcp/tests/test_tool_response_conformance.py::test_session_retire_reports_the_stranded_row_after_the_seat_is_gone`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the stranded-row report declared (`:222-224`, `T16`) and every citation into this file re-derived across the `+2`/`+11` shift. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
+- 2026-09-18T14:49:10+00:00: Generated citation repair: `SessionRenameStatus` repointed to mcp/src/agents_remember/models/terminal.py:217-217. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T14:49:10+00:00: Generated citation repair: `VALID_SESSION_RENAME_STATUSES` repointed to mcp/src/agents_remember/models/terminal.py:219-221. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `SessionRetireStatus` repointed to mcp/src/agents_remember/models/terminal.py:174-180. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_RETIRE_OK_STATUSES` repointed to mcp/src/agents_remember/application/terminal_tools.py:1005-1005. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

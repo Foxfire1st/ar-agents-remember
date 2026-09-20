@@ -5,9 +5,11 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
+| reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/src/agents_remember/mcp/registration/tasks.py` **248 → 253 lines**, the `curator_coherence` description only); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -49,7 +51,7 @@ creates exactly one and requires `{id, title}`, refusing an id that already exis
 `read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
 by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:114-136).
+explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:119-119; mcp/src/agents_remember/mcp/registration/tasks.py:135-135; mcp/src/agents_remember/mcp/registration/tasks.py:141-142).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -140,7 +142,51 @@ canonical, keeps semantic revision/attempt/digest identities separate, requires 
 `code:`/`memory:`/`task:` evidence references for exact candidate judgments, and names the shared
 validator used by memory and closeout. It explicitly forbids historical-filename fallback.
 
+**The description now names every field `publish` requires (260918-TSIP-L3, `T50`).** The enforced
+validator (`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) needs
+**nine** non-null fields: `semantic_requirement_revision`, `delivery_attempt`,
+`expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
+`expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256` and
+`caller`. The published text named the identity classes `prepare` returns and never marked
+`semantic_requirement_revision` or `delivery_attempt` as required, so a caller could satisfy
+everything the registered contract named and still be refused. The text now names all nine, says
+`status`/`prepare`/`validate` forbid them, and the refusal names the absent ones — **the description
+is load-bearing here because the JSON schema cannot carry the constraint**: the request model marks
+only `action` and `contract_path` required, since the requirement is conditional on
+`action == "publish"`. Pinned in `mcp/tests/test_tools.py` (`CuratorCoherencePublishContractTests`)
+against both surfaces at once.
+
+## 260918-TSIP-L4 — The `task_doc` Description Stops Advertising `'light'` (`T43`)
+
+The `_TASK_DOC_TOOL_DESCRIPTION` constant's `kind` clause now reads
+`kind ['subTask'|'master'] (the former 'light' kind is refused)` (**`:126-127`**), replacing the
+stale `kind ['light'|'subTask'|'master']`. Net `+1` from the old `:127`, so every line at or below
+the old `:127` moved `+1` (the `skip_step` vocabulary citation into this file moved
+`:119-141 → :119-142` and was re-derived in the same pass).
+
+The tool itself had refused `light` since the light-task removal; only the *published* description
+still advertised it, so the surface and the behaviour disagreed in the direction this master
+exists to find — a capability refused by a surface that still advertises it (`D13`'s class,
+reversed). The pin is taken from the **registered** FastMCP surface
+(`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
+`mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `task_doc` description stops advertising the refused `'light'` kind (`T43`, surface side). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
+- 2026-09-18T14:49:10+00:00: Generated citation repair: "operation: 'create'"; "exact existing step"; "sets only that unit done"; "records intentional-skip provenance without cascading"; "A nonblank reason is required."; "explicit status clears an earlier skip disposition" repointed to mcp/src/agents_remember/mcp/registration/tasks.py:119-119; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:135-135. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-18T14:54+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): the `curator_coherence` **description** is one of the leaf's five changed paths,
+  so the card gained a **body** update rather than a restamp. The registered text now names all nine
+  fields `publish` requires, says `status`/`prepare`/`validate` forbid them, and the validator's
+  refusal appends `missing: <fields>` (`T50`, both halves). Recorded why the description rather than
+  the schema carries it: `CuratorCoherenceRequest.model_json_schema()["required"]` is
+  `["action","contract_path"]` because the constraint is conditional on `action == "publish"`, and a
+  model-level validator reports `loc: ()`, so the message is the caller's only route to the field.
+  One citation into this file was re-derived against the new bytes — the `skip_step` vocabulary row
+  moved `:114-136 → :119-141` (every one of its six anchors re-read inside the new range) — and the
+  card's other citation rows point at other files and were not moved by this source. `lastUpdated`
+  advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` stay at the recorded
+  verification because the candidate is uncommitted and the governed closeout owns the real code commit.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: the `task_doc` tool **description** now

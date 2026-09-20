@@ -3,12 +3,13 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
+| lastUpdated | 2026-09-19T23:02+02:00 |
+| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
+| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -133,10 +134,10 @@ The route also carries a capacity fact recorded rather than worked around:
 `mcp/tests/test_final_full_memory_coherence_certification.py` stands at 1199 of its 1200-line limit
 after this leaf's re-scope, so the next leaf that must edit it has to split it first.
 
-## Update History` bullets
-- `style/update_history/` checks that onboarding `## Update History
+- `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
+
 
 ## Invariants And Boundaries
 
@@ -607,20 +608,66 @@ second reports directory and no second counter on this route.
 rationale, a path's bytes, a label or a count to decide whether a change matters. A caller that finds a stage
 here attaching a verdict has found the defect, and the fix is to remove it rather than to author it in code.
 
+## 260918-TSIP-L6 `citation_migrate`'s Preview Stops Reporting A Plan As A Failure
+
+`T64`: `memory_quality/style/citations/migration.py::payload` (`:767-833`) folded three facts
+into `ok` — declined, remaining, and `dry_run` — so a **preview** that had produced its complete
+plan reported `ok: false`, while its sibling `citation_fix` answers `ok: true` on the equivalent
+preview of the same family. A caller could not tell "nothing to migrate" from "the operation did
+not happen".
+
+`ok` now answers *did this call do what it set out to do*: `not blocked`, where
+`blocked = bool(result.declined) or (not dry_run and bool(result.remaining))`. The two facts that
+were folded in are declared separately — `state` (`"refused"` / `"planned"` / `"converted"`) and
+`outcome` — and `remaining` is never read on a dry run, because it is a post-write measurement
+(`migrate_onboarding_root` fills it only on the non-dry branch). Reading it while previewing
+would answer `ok: false, state: "planned"`, which is `T64`'s symptom returning through the other
+fact the old expression folded in. The truth table, including that row, is pinned by
+`mcp/tests/test_response_address_binding.py:225-291`; the entry-point sweep's third pin
+(`UNMARKED_NOT_OK`) was emptied in the same change.
+
+## 260918-TSIP-L7 The Definition-Outside-Range Report, And The Escape That Made A Construct Invisible
+
+Two changes land in this route's citation machinery, both report-only in effect and both proven by a
+case in `mcp/tests/test_memory_citation_agreement.py` rather than by a report:
+
+- **`T52` — a construct that moved INSIDE its cited range is now counted.** `range_resolution` asks
+  whether an anchor OCCURS in a cited range, and a construct's name occurs at every call site, so a
+  range the definition has left stays green for as long as anything inside it still spells the name.
+  `definition_outside_range_findings`
+  (`memory_quality/style/citations/range_resolution.py:466-513`) fires only when the anchor is a
+  **symbol**, exactly **one** of its definitions exists across the cited files, that definition is
+  inside **no** cited range, and the name still occurs in one; `check_onboarding_root` (`:650-685`)
+  emits it, and the payload carries it in the new key `definitionsOutsideCitedRanges` (`:718`).
+  `ok` and `findingCount` are unchanged: this is a report, not a gate, and the siblings it belongs
+  with are already report-only.
+- **`T57` — GFM's `\|` escape is resolved where cell text becomes anchor text.** `cells.unescaped`
+  (`memory_quality/style/citations/cells.py:40-53`) is applied to **both** cells, so
+  `` `useEffect(cb, [a \| b])` `` reaches the anchor grammar as the anchor its unescaped spelling
+  yields instead of being silently counted as an *unchecked span* — reading as checked and not being
+  checked. The bound is one literal `\|` → `|` replacement, which is GFM's own reading: with two
+  backslashes the second is the one consumed and the source's `a | b` stays unmatched.
+
+The populations both changes measure on the leaf memory worktree (base `fd1a024e`) are pinned in the
+new module rather than restated here: **120** definition-outside-range rows and an enforced population
+of **283**, with the `T58` wrapped-`cit:` population at **3** constructs in **2** documents. The
+module's own header cites `application/memory_tools.py:100` for `_refuse_official_memory`; in the tree
+it pins, that definition is at **`:105`** (`:100` is `"onboardingRoot": scope.onboarding_root.as_posix(),`)
+— recorded as the leaf's `R2-3`.
+
 ## Update History
+- 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
+- 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `citation_migrate`'s preview answers `ok: true` with `state: planned`, and `remaining` is never read on a dry run; the two facts the old `ok` folded in are now declared separately. Citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
 - 2026-09-18T19:56:44+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The readiness row cited `controller.py:583-600` for `"def _attach_final_full_catalog("`, whose definition this leaf's changes left at `671-707`; that cell cites it now. (b) and (c) The entry-point row cited `110-125` and `318-360` for `run_memory_quality_request` and `_execute_memory_quality`; the two definitions now span `249-255` and `383-435`, which is what the cell cites. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repointed this route at the two candidate-identity modules commit `806649b9` moved out to `worktrees/modules/`.** The route's source is unchanged by this pass — the change is that two cards used to be reached from here and now are not, so the `Memory-Candidate Roots Relocated In` section and the two prose mentions of `future_code_candidate.py` / `memory_candidate_pair.py` now say where those modules actually live and link to their cards' new paths. Leaving the old links would have made this overview the last dead reference to the retired `memory_quality/` sidecars. No verification stamp is advanced: this route's own source did not change, and the entry records a documentation move, not a re-read of this route. `memory_census_scope.py` is unaffected and still this route's.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's new `family_review.py` with its four acts and the failure each exists to prevent, and the one change this leaf made to a shipped module: the three-term actionability formula extracted into the named `curator_actionable_count`, whose value and behaviour are unchanged and whose one call site is the checklist writer. The section states the two boundaries a reader must not flatten — the pipeline calls the shipped function rather than restating the sum, and it renders into `KS-R15@v1`'s existing `knowledgeReview` section rather than creating a second worklist. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:583-583. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
 - 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above and recorded this route's share of the leaf — the new `integrity/governing_overview_resolution.py` check, its two-base resolution rule, its observation boundary, the wiring that carries its findings into the gated curator repair set, and the `D32` condition on the closeout-admission consumer. Verification metadata advanced to this leaf's frozen code base.
 - 2026-09-17T11:20+02:00 — 260915-CAPS-L14 curator: added **The Shared Exclusion Register, And The Ruled Caps** as a current-intent section, because this leaf makes the register a contract on this route rather than a detail. Records the three sources feeding one register and where each lives, the `matches_any` semantics shared with the storage resolver and the drift check, the register's **deliberate and pinned divergence from Git** on a negated file under an excluded directory, the developer's 2026-08-20 cap numbers with the skip-and-report rule (never a silent omission, never a whole-tree refusal), the refusal-by-name discipline for a malformed `onboarding.citationIndex`, and the closeout gate's own typed refusal through `_admitted_source_index`. Corrects the **stale `schema-9` claim** in *Exact Git Candidate Source-Index Composition* to the v10 manifest that now carries the register and states that a v9 manifest is refused and rebuilt, and adds the one-authority-per-root parity between the two acquisition routes. Repointed the *L34 Preparation Ownership* link to the card's real home after the adapter's second move (`806649b9`) to the application rank. Records that the register, the caps and the settings key are **mode-independent**. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-13T09:05+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
   as both an invariant bullet and a section, naming the five fixed instances, the two
@@ -654,38 +701,24 @@ here attaching a verdict has found the defect, and the fix is to remove it rathe
   semantics remain unchanged.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:503-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T14:39:58+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-499. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Documented the accepted-edit transaction route, exact observed-conflict boundary, CRLF, dry-run counts and nullable scoped recheck at source-reviewed private C b34f4a59; retained all separate Gate-5 readiness/execution limits.
-
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Added the exact Git-candidate index and R06/R07 composition boundary at 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; retained the unresolved production-caller and deterministic-repair limits.
-
 - 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected drift vocabulary ownership, historical Markdown coherence authority, final certification producer claims, and explicit R10 write defects. Verification records source review, not execution or acceptance.
-
-
 - 2026-09-05T06:12+00:00 — Recovered final-catalog knowledge and corrected readiness versus certification ownership; added the Gate-5 rail derivation and the still-unwired R07/R08 execution boundary.
-
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: added the
   `final_certification/` route-model bullet and the CCR-R08 leaf section (final full
   memory-coherence certification: complete catalog, readiness projection on the full run,
   executable certification) and re-anchored the controller row shifted by the +57-line change.
   Verification metadata stays pinned until closeout stamps the code commit.
-
 - 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
   code/memory pair. Verification remains closeout-owned.
-
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: removed timestamp entropy from the curator checklist and
   joined raw quality with the sole coherence validator. Verification remains closeout-owned.
-
 - 2026-08-26T10:44:52+02:00 — Reconciled the route with the extracted application controller while preserving memory-quality check ownership inside this package.
-
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded the structured curator
   attestation and exact source-change disposition contract consumed before queue declaration.
   Verification remains closeout-owned.
-
 - 2026-08-11T16:54+02:00 — Added the enclosure-local curator checklist owner, combined the
   pre-closeout worklist behind one full scoped quality call, and preserved code/memory mutation and
   real-commit stamping outside the report writer.
@@ -694,12 +727,9 @@ Recorded the current private preparation/publication ownership from source. Exis
 - 2026-08-11T14:40+02:00 — Assigned missing-onboarding and full dirty-tree quality repair to the
   curator before handoff, recorded temporary comparison provenance, and kept real-commit refresh
   and the repeated hard gate in closeout.
-
 - 2026-08-10T12:46+02:00 — L9 closeout repair: added the entity-catalog alignment owner and its
   pre-code fail-fast boundary; verification metadata stays pinned until closeout stamps the repair.
-
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
 - 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
   claim_reopen mechanism — the absent-at-stamp rule extended to whole source files added after
   the stamp (unique working-tree anchor inside a cited range surfaces report-only; absent,
@@ -709,11 +739,8 @@ Recorded the current private preparation/publication ownership from source. Exis
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the
   `memory_quality_check` row to the actual `memory_quality_check_tool` definition; exact
   non-fixing check returns zero findings.
-
 - 2026-08-02T20:33:53+02:00 — 260731-EFA-L6 curator W1-B10 final-index reconciliation after S31: repaired 1 citation range for `memory_quality_check` using the warm source-index snapshot; scoped recheck clean.
-
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 10 citation findings (4 rows); scoped recheck clean.
-
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** This route acquired
@@ -761,3 +788,4 @@ Recorded the current private preparation/publication ownership from source. Exis
 - 2026-05-24T03:24+02:00: Updated after adding `check_missing_onboarding` as the pre-code-commit integrity pass for newly added files.
 - 2026-05-24T03:09+02:00: Updated after adding the dedicated `history_order_fix.py` script and keeping `memory_quality_check` report-only.
 - 2026-05-24T02:47+02:00: Created after memory quality became a first-class package route with integrity and style subdomains.
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.

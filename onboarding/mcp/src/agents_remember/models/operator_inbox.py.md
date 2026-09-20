@@ -5,9 +5,10 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -66,7 +67,7 @@ listed as Domain Documentation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
+| The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:12-12; mcp/src/agents_remember/models/operator_inbox.py:62-62; mcp/src/agents_remember/models/operator_inbox.py:119-119; mcp/src/agents_remember/models/operator_inbox.py:129-129 |
 | The registry maps operator inbox post, poll, consume, and supersede tools to their response models. | "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:238-238 |
 
 ## Cross-Repo References
@@ -84,7 +85,40 @@ contract now follows exact adapter evidence for readiness, delivery, liveness, o
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
+## 260918-TSIP-L4 — The Refusal Half Of `operator_inbox_post` (`T15`)
+
+`OperatorInboxPostResponse` now carries a typed refusal as well as the queued projection
+(file **109 → 146 lines**; the class **`:62-116`**, with `OperatorInboxPollResponse` following at
+`:119`).
+
+- **`OperatorInboxPostStatus = Literal["queued", "sprint-owner-required"]`** is new at
+  **`:59`**, and `status: OperatorInboxPostStatus` is declared at **`:75`**. It names which of
+  the two outcomes the response is: `serving/operator_inbox_posts.py:304-310` returns
+  `{"ok": False, "operation": "operator_inbox_post", "status": "sprint-owner-required"}` — a typed
+  outcome of this operation, which previously surfaced as a bare tool error with no envelope.
+- **`detail: str | None`** (**`:101`**, `max_length=8192`) carries the refusal's prose, as on
+  `SessionRetireResponse`.
+- **The four queued-projection fields are conditional on `ok`.** `entryId`, `state`,
+  `messageKind` and `deliveryState` are now `| None = None`, and a
+  `@model_validator(mode="after")` (**`:103-116`**) refuses a success that omits any of them:
+  *"a queued operator post must report entryId, state, messageKind, deliveryState"*. The refusal
+  fires **before the first write**, so it has no entry id and must not invent one; making the four
+  optionally-absent without the validator would have hollowed out the success contract instead.
+
+**The JSON schema cannot carry the rule** — `required` is only ever unconditional — so the model
+docstring states it and the validator enforces it; a caller reading the schema alone must read the
+docstring with it. Pinned by
+`mcp/tests/test_tool_response_conformance.py::test_a_queued_operator_inbox_post_still_must_report_its_entry`
+and `::test_operator_inbox_post_sprint_owner_refusal_is_a_typed_payload`.
+
+**Correction to the register's carried figure:** the `sprint-owner-required` branch omits
+**four** required fields (`entryId`, `state`, `messageKind`, `deliveryState`), not two; Addendum C
+said two and the row that first recorded the defect said four. Executed against the base model the
+run reports `4 validation errors … Field required` plus `1 … status Extra inputs are not
+permitted`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the typed refusal half of `operator_inbox_post` (`:59-60`, `:75`, `:101`, `:103-119`; `T15`), and the register's two-field figure corrected to four. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: "\"operator_inbox_post\": OperatorInboxPostResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:238-238. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "\"operator_inbox_post\": OperatorInboxPostResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:231-231. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "\"operator_inbox_post\": OperatorInboxPostResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.

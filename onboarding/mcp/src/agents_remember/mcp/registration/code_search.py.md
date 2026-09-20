@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/code_search.py`       |
 | doc_type               | `file-level-onboarding`                                         |
 | lastUpdated            | 2026-08-02T01:05+02:00                                          |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                      |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`                      |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                                                   |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ contract rather than forwarding native arguments.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The payload builders these forward to. | `grepai_search_payload`; `cgc_symbol_search_payload` | mcp/src/agents_remember/mcp/tools/providers.py:129-139; mcp/src/agents_remember/mcp/tools/providers.py:155-165 |
-| `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:108-108; mcp/src/agents_remember/application/provider_tools.py:123-123; mcp/src/agents_remember/application/provider_tools.py:142-142; mcp/src/agents_remember/application/provider_tools.py:151-151 |
+| `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:305-305; mcp/src/agents_remember/application/provider_tools.py:320-320; mcp/src/agents_remember/application/provider_tools.py:339-339; mcp/src/agents_remember/application/provider_tools.py:348-348 |
 
 ## Update History
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

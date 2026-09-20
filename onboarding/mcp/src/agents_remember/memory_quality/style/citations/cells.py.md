@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/cells.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `d9214edf3388ee862f8c8f2ed59cf40af710d8bb` |
+| lastVerifiedCommitDate | 2026-09-19T22:45:38+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview

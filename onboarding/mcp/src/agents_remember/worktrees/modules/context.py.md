@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,8 +44,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution. | "def build_coordination_context(" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-252 |
-| Closeout preview resolves candidate-rooted context for route-index and sidecar classification. | "def _memory_refresh_preview(" | mcp/src/agents_remember/worktrees/modules/closeout.py:182-182 |
-| Closeout replaces the resolved context's code root with the task worktree. | "def _closeout_contract_context(" | mcp/src/agents_remember/worktrees/modules/closeout.py:710-710 |
+| Closeout preview resolves candidate-rooted context for route-index and sidecar classification. | "def _memory_refresh_preview(" | mcp/src/agents_remember/worktrees/modules/closeout.py:204-204 |
+| Closeout replaces the resolved context's code root with the task worktree. | "def _closeout_contract_context(" | mcp/src/agents_remember/worktrees/modules/closeout.py:741-741 |
 | The external-memory phase resolves that contract context before refreshing onboarding and running post-refresh quality. | "def _refresh_external_memory(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:124-124 |
 
 ## Series-Contract Notes

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/provider_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T15:05+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`                |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -125,7 +125,7 @@ No external Domain Documentation source is configured for this memory repo.
 | `docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped). | "def run_command"; "def docker_command" | mcp/src/agents_remember/providers/lifecycle/command_runner.py:15-15; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:18-18 |
 | The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
 | The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call. | `ProviderLifecyclePort` | mcp/src/agents_remember/worktrees/services.py:54-96 |
-| The focused cases that pin the reason on every non-removal result and the surviving-tree cause. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing`; `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:288-311; mcp/tests/test_terminal_blocker_reasons.py:314-352 |
+| The focused cases that pin the reason on every non-removal result and the surviving-tree cause. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing`; `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:306-329; mcp/tests/test_terminal_blocker_reasons.py:314-352 |
 
 ## Update History
 - 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented that `remove_tree` names a reason on

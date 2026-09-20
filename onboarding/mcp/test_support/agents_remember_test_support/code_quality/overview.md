@@ -6,13 +6,98 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T20:52+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [Python verification infrastructure](../overview.md)
+
+## 260918-TSIP-L2 Record-Integrity Comparisons
+
+This route gained a **fifth** verification-helper module, `record_integrity.py` (**1110 lines**),
+beside `citations.py`, `structural_limits.py`, `scope.py` and L1's `instrument_discipline.py`. Like
+its sibling it is a helper library and not a gate: no quality-plan step, no registry entry. It is the
+only module in this route that reads the **task and memory records** rather than the code.
+
+What it owns is the drift shape this master is about — a document that was true when written and
+silently stopped being true. Each of its four comparisons reads a declared value out of one artifact
+and the authoritative value out of another, and reports the rows where they disagree while naming both
+sides and the number of rows compared:
+
+- a leaf document's `status` against its own enclosure contract's `closeout`/`integration` cells;
+- a master's `subTasks[].status` row against the status the shipped rule derives from the leaf
+  document beside it — `Completed` requires the document to be `Completed`, never merely every step
+  marked, which is `D42`'s fix restated as `derived_master_status`;
+- a register row's `→ L<n>` arrow against the leaf ids the owning master actually declares;
+- a **figure written in prose** — a line count or a case count — against the source it describes, at
+  the revision the prose names. This is the comparison the memory layer's own checks cannot make:
+  `range_resolution` looks only inside cited ranges and `claim_reopen` only at cited claims, so a
+  number written as prose is invisible to both. It is recorded as `T45`, and on the previous leaf it
+  was found by grepping the tree rather than by running the checker.
+
+Two properties are the route's business rather than the module's. **Every comparison states the two
+populations it compared** beside its findings, because "0 disagreements" without them is a zero nobody
+can license — the rule L1's `instrument_discipline.py` enforces for a text probe, applied to a record.
+And **every unanswerable question refuses by name** instead of returning a zero: no coordination root,
+a root carrying no `tasks/` tree, a base commit that does not resolve, a source outside any Git tree,
+and a claim whose shape is not `PATTERN:SHAPE:SOURCE:DOCUMENT[:DOCUMENT...]`.
+
+What it deliberately does **not** do is stated on its own card rather than smoothed here: the
+register's prose census has no honest check, because finding the census means parsing free-form
+Markdown and its bucket rule is undeclared; and the contracts with no matching leaf document are
+counted rather than judged.
+
+Its contract suite is `mcp/tests/test_record_integrity.py` (**1140 lines, 37 cases** — 1000 lines when
+it was delivered, and the case count has not moved since), registered in
+the `architecture-fitness` lane of `mcp/tests/test-evidence-lanes.toml` because the module imports
+this package and executes nothing over a real boundary. Fourteen of those cases read the real record
+and **skip** without `AR_COORDINATION_ROOT`, and the `T45` documents are read **by Git object** at
+`e116e5ee` rather than from a working tree that moves under the test.
+
+## 260918-TSIP-L1 Instrument-Discipline Helpers
+
+This route gained **the fourth** verification-helper module, `instrument_discipline.py`, beside
+`citations.py`, `structural_limits.py` and `scope.py` — **the route's fifth** is
+`record_integrity.py`, recorded in the section above. It is a helper library, not a gate: it exposes
+no CLI, no registry entry and no plan step, and the quality plan does not invoke it.
+
+What it owns is narrower and older than this route's other helpers. Each of its four surfaces makes
+one *measurement admissibility* condition mechanical, so an inadmissible measurement cannot be
+stated at all — and after this leaf's independent review those conditions are strictly stronger than
+the first revision shipped. As the repaired source now states them:
+
+- a count or a zero is returned only after the pattern reproduced a positive witness, refused a
+  negative one, **and is the pattern the probe actually proved**: a proved probe licenses the shape
+  it proved and nothing else;
+- a captured window ends at its unit boundary and reports which boundary closed it, **the line cap
+  included**, so a capped capture is never shaped like a complete one and the lines it left unread
+  stay visible;
+- a pass claim printed after a crash marker is refused as not attributable to a run that completed;
+  an artifact with **no recorded run** — no exit status recorded as one, and no producer transcript —
+  is refused; a run that **exited non-zero and reported no result** is refused as a crash, because
+  that is the shape a crash takes when it leaves no traceback; and a clean result with no stated way
+  to fail is refused as vacuous, where the evidence that the check can fail must be a **non-zero**
+  result rather than the presence of the word `finding` in a disclaimer;
+- a record must name a producer that exists in the package, with a command and a revision, before the
+  producer is accepted as the artifact's source; reproduction is then byte-exact, writes its scratch
+  output **outside the directory holding the evidence it is checking**, and answers `matches=False`
+  rather than raising when the producer exits non-zero or writes nothing.
+
+That places it in the route as *instrument* evidence rather than product evidence. Its contract test
+is `mcp/tests/test_instrument_discipline.py`, registered in the `architecture-fitness` lane of
+`mcp/tests/test-evidence-lanes.toml`; the test imports this package and executes nothing over a real
+boundary, which is why the structural-invariant lane is the behaviour-preserving one for it and
+`unit-regression` is not. The route's own rule that coverage and CRAP are diagnostic applies
+unchanged here: the helper exists to make a number trustworthy, not to raise a metric, and it is
+excluded from production measurement like its siblings.
+
+Because this module is where the previous master's instrument faults became checks, its card carries
+the one fault the check committed against itself — a `\b` that cannot match the plural `findings`,
+which the shipped unit cases passed with. That is recorded on the file card and is deliberately not
+smoothed here: a route that presented its own instrument as faultless would be the class this route
+just shipped a guard against.
 
 ## What This Area Is
 
@@ -74,7 +159,7 @@ These current source and policy ranges establish the development/certification d
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
+| Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:600-636 |
@@ -102,7 +187,7 @@ this route's *consumers*, and three of those changes are things a reader of the 
   reddens the oracle while the pinned catalogue's bytes and populations stay provably untouched.
 - **The collected-case budget is declared once, at the repository root.** The never-effective `default=1100` /
   `default=300` declarations in `mcp/tests/conftest.py` are removed (item 12); the enforced pair lives in the
-  repository root `pyproject.toml` `[tool.pytest.ini_options]` and is currently **2300 unit / 400 integration**. A
+  repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:278-279` and is currently **4000 unit / 1000 integration**. A
   budget the parser declares and the repository does not enforce is worse than no declaration, because a reader
   believes it.
 - **A registry row is a line, not an identity.** `mcp/tests/evidence-lifecycle.toml` gained appended `consumers` rows
@@ -113,7 +198,64 @@ this route's *consumers*, and three of those changes are things a reader of the 
 
 ## Update History
 - 2026-09-18T20:52+02:00 — 260915-KS-L23 curator (terminal leaf, uncommitted change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): a **body section added**, not a metadata-only advance. The route's own sources are unchanged at the leaf's landing (empty diff, measured) while its *consumers* changed in three ways the section records — the two-gate separation, the single root-level budget declaration, and the appended registry consumer rows whose line shift re-projected this card's own citation ranges (D-36). The stamp advances to `5e4eb651` on the strength of that content, and the `_attach_final_full_catalog` citation was re-projected to `application/memory_quality/controller.py:600-646` in the same pass.
+
+- 2026-09-18T14:57+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
+  base `a12c511f`): **a stale number in prose, and no check can see it (`T45`).** This route's own
+  governed sources did not change, so the route-body gate was silent here; but the leaf's `T51` repair
+  round took this route's **contract suite**, `mcp/tests/test_record_integrity.py`, from 1000 to
+  **1140 lines**, and this document still described it as 1000. `style.citations.range_resolution` sees
+  only anchors inside cited ranges and `style.citations.claim_reopen` only re-opens cited claims, so the
+  figure stayed green in every run. The body now reads **1140 lines, 37 cases** with the prior figure
+  recorded as as-of, and the case count is unchanged. Found by grepping the memory tree for the changed
+  file's old size rather than by running the checker — the rule L1 earned. `lastUpdated` advances with
+  this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because
+  the candidate is uncommitted and the governed closeout owns the real code commit.
+
+- 2026-09-18T13:44+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
+  base `d9becade`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L2 Record-Integrity Comparisons`, recording that the route gained a
+  **fifth** verification-helper module, `record_integrity.py` (1110 lines), and what the four
+  comparisons it owns are. The section states the module's two load-bearing properties (both
+  populations stated with every count; every unanswerable question a named refusal rather than a zero)
+  and the two limits it records on its own card rather than hiding. **One correction was made to the
+  section below:** it read *"this route gained a fourth verification-helper module"*, which a reader
+  takes as the route's current ordinal; with `record_integrity.py` the route carries five, so the
+  sentence now reads **the fourth** and names the fifth. This is `T45`'s class — a figure written in
+  prose that no check can see — and it was found by grepping for the ordinal rather than by running
+  the checker. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/
+  `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
+  governed closeout owns the real code and memory commits.
+
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-636. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-18T12:32+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
+  `ar/260918-tsip-l1-ar`, base `f0313143`): this route's governor changed under it again. The leaf's
+  independent review returned three blocking findings and the fix worker revised
+  `instrument_discipline.py` **361 → 432 lines**, so the section above was **corrected rather than
+  annotated**: it now states the repaired contract — the pattern-licence binding in `counted_pattern`,
+  the `line cap` closer in `capture_bounded_window`, the narrow recorded-exit rule and the fourth
+  refusal in `check_artifact_refusal`, the non-zero-result vacuity rule, and reproduction that writes
+  into a scratch directory and answers `matches=False` instead of raising. This route carries no
+  counts or line numbers for that module, so nothing here had gone stale *numerically*; what had gone
+  stale was the strength of the contract it described, which a reader would have taken as the shipped
+  one. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate`
+  are deliberately unchanged because the candidate is uncommitted and the governed closeout owns the
+  real code and memory commits.
+
+- 2026-09-18T11:46+02:00 — 260918-TSIP-L1 curator (uncommitted change set on `ar/260918-tsip-l1-ar`,
+  base `f0313143`): this route's governed sources changed, so a body section was **added rather than
+  annotated** — `## 260918-TSIP-L1 Instrument-Discipline Helpers`, recording that the route gained a
+  fourth verification-helper module beside `citations.py`, `structural_limits.py` and `scope.py`. The
+  section states what the module owns (four measurement-admissibility conditions, each refusing
+  rather than returning an unlicensed number), why it lands in this route as *instrument* evidence
+  rather than product evidence, and why its contract test is registered in the
+  `architecture-fitness` lane. It also carries the module's own first-draft fault rather than
+  smoothing it. The loader was re-run at this candidate and is silent — `pytest
+  tests/test_evidence_lanes.py tests/test_suite_budget.py -q` → **4 passed in 0.54 s**. Verification
+  metadata remains closeout-owned: `lastUpdated` tracks this body edit, and
+  `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because the candidate
+  is uncommitted and the governed closeout owns the real code and memory commits.
+
 - 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): this route's source `dependency_ownership.py` changed — two modules joined
   `REPOSITORY_TEST_INPUT_CONSUMERS[AMBIENT_ROLE_RUNNER_PATH]` — so the overview gained the section that makes
   the change legible instead of a no-impact note. It states the fact the change demonstrates: **a path
@@ -125,7 +267,9 @@ this route's *consumers*, and three of those changes are things a reader of the 
   generator's run report is written about, which is how they reached both registries with no import creating
   the edge. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read
   against the current source; the code commit does not exist yet and closeout owns that stamp.
+
 - 2026-09-17T08:16:00+00:00 — 260915-KS-L9 curator (memory-quality closure): re-pointed this route's citation for the final memory certification adapter from `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py` to `mcp/src/agents_remember/application/prepared_certification.py`, which is where that file now lives; the construct did not move within it (`PreparedMemoryCertificationAdapter` is still declared at 721-785, a pure move). No claim wording changed. Recorded because a re-pointed source is a body update.
+
 - 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
   `99534dc5`, `projection_types.py` +30/−11): this route's generator changed, so a body section was
   added rather than an annotation. `projection_types.py` now states the current contract: the served

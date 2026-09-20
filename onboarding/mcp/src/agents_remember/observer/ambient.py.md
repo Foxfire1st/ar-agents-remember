@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`       |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -237,8 +237,8 @@ existing seam rather than adding a second one.
 | The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | `TERMINAL_STATES`; `coerce_end_outcome`; `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/observer/lifecycle_state.py:118-127; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
 | The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
-| The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists. | "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:84-98 |
-| The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. | "def _agent_notifier_banner(" | mcp/src/agents_remember/application/tool_response.py:53-62 |
+| The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists. | "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:131-145 |
+| The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. | "def _agent_notifier_banner(" | mcp/src/agents_remember/application/tool_response.py:100-109 |
 | The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:1-1 |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
 | The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:141-141; mcp/src/agents_remember/application/read_files.py:310-310 |

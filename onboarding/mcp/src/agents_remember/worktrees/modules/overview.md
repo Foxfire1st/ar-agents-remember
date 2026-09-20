@@ -3,6 +3,10 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
+| lastUpdated | 2026-09-19T19:54+02:00 |
+| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
+| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-20T06:50+02:00 |
@@ -877,7 +881,7 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:736-770 |
 | Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
 | Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
@@ -1276,6 +1280,34 @@ this route's card paths with their `path` metadata and governing-overview links 
 | Currentness is exact equality of the whole bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68 |
 | The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. | `resolve_memory_candidate_pair`; `_require_branch_plan` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-131; mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:286-351 |
 
+## 260918-TSIP-L6 The Closeout Payload Names What It Counts, And The Preview Stops Crashing
+
+Two defects on this route, both repaired in `260918-TSIP-L6`.
+
+**`T71` — a count an operator cannot audit.** A refresh entry is either a *source* file
+(`source_path`) or a regenerated **document** whose own path is the only identity it has
+(`worktrees/modules/onboarding.py::_refresh_regenerated_documents` appends those with
+`source_path: ""`). `closeout.py` read `source_path` alone, so those entries arrived as blanks and
+the payload reported a `count` its own sample could not name. `_refreshed_onboarding_paths`
+(`:127-141`) now names each entry by `source_path` **or** `onboarding_file`, and `_bounded_paths`
+(`:115-126`) refuses to count a blank.
+
+**`T54` — the closed payload's own address.** `_closed_result_payload` (`:595-627`) now emits
+`contractPath` beside `status_payload`'s snake_case `contract_path`. Without it a closed closeout
+declared no address in the spelling the guidance guard reads, so the guard had nothing to compare
+against and guidance derived from whatever enclosure the *process* happened to hold was emitted
+verbatim — a closeout for one leaf shipping a `nextStep` naming another master's contract.
+`test_transaction_only_worktree_delivery.py:275-284` drives the real producer end to end.
+
+**`T62`/`D49` — a preview that crashed on its own producer's output.**
+`terminal_validation.py::terminal_result_blockers` (`:246-297`) built the drift-snapshot
+expectation without `preview=result.preview`, which is the flag `_done_blockers` reads the pending
+key off; this collection's producer answers a dry run with `would_remove` exactly as the worktree,
+directory and provider collections beside it do. Without it the entry was neither reclaimed, nor
+pending, nor reasoned, so `_blocker` (`:647-665`) raised and **every preview of a task that has a
+drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held by three cases in
+`mcp/tests/test_terminal_blocker_reasons.py:382-480`.
+
 ## Update History
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.
@@ -1283,23 +1315,21 @@ this route's card paths with their `path` metadata and governing-overview links 
 
 - 2026-09-20T00:56:50+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): verified the 1 enforced citation row this card carried (citation_anchor_absent_from_range) against the source by hand-reading it — the lifecycle-state row's `"phase: WorktreePhase"` cell already reads `mcp/src/agents_remember/models/worktree.py:285-285`, which holds `phase: WorktreePhase | None = None` on `WorktreeSummary`, and its `"WorktreePhase = Literal["` cell reads `:40-40`, which holds the vocabulary's declaration, so the earlier mechanical projection was correct and needed no further edit; the claim's wording, both anchors and its other range are unchanged, and no verification stamp was advanced.
 - 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `phase: WorktreePhase`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
+- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `overview.md:466` (_existing_master_series_contract) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
+- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `overview.md:465` ("phase: WorktreePhase", "WorktreePhase = Literal[").
+- 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded the route's three repairs — `T71` (the refreshed-onboarding census names every entry it counts), `T54`'s producer half (the closed payload declares its own `contractPath`) and `T62`/`D49` (the drift-snapshot expectation declares `preview=result.preview`, without which every preview with a drift snapshot crashed). Citation ranges re-derived against the repaired files. Verification metadata stays closeout-owned.
 - 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The lifecycle-state row's `"phase: WorktreePhase"` cell cited `models/worktree.py:256-256`, which is `memoryWorktreeDirty`; the field the claim is about now sits at `263`, so the cell cites `263-263`. The `"WorktreePhase = Literal["` cell at `40-40` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **added the section above for the two candidate-identity owners `806649b9` moved into this route, and moved their two cards here.** The cards had stayed at `memory_quality/`, where the drift check reported both `orphaned` ("Source file no longer exists") while this route had no card for either module at all; the cards' bodies were already correct (a generated citation repair had repointed their claims to these paths on 2026-09-17), so only their title, `path` metadata, governing-overview link and history needed the move, and `memory_quality/overview.md` was repointed in the same pass so it is not left as the last dead reference. This route's own source is otherwise unchanged by the pass, so no verification stamp is advanced here; the two moved cards carry their own stamps.
+2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _integrated_result("; "def record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-17T20:42:17+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: "def _integrated_result("; "def record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
+- 2026-09-17T06:49:47+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:708-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
+- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
 - 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
-
-
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected closeout, final staging, carryover/cleanup, and integration routing; prior three-leg milestone prose labelled historical. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
   `mcp/src/agents_remember/worktrees/modules` carries local unstaged changes not represented in
   HEAD. Re-read the card against the frozen on-disk source and re-checked its claims and cited
@@ -1422,142 +1452,97 @@ this route's card paths with their `path` metadata and governing-overview links 
   `completed`/`cleanup="pending"` cells inline in `integrate.py`. Verification metadata remains
   closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "WorktreePhase = Literal[", "phase: WorktreePhase", `closeout_preview_payload`, `closeout_result` repointed to mcp/src/agents_remember/models/worktree.py:253-253, mcp/src/agents_remember/models/worktree.py:35-35, mcp/src/agents_remember/worktrees/modules/closeout.py:224-273, mcp/src/agents_remember/worktrees/modules/closeout.py:705-739. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T15:04+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: added `automatic_cleanup.py` to the modules owning the c-09 lifecycle operations, and recorded on the integration description that a completed integration reclaims its enclosure through `run_automatic_cleanup` (reusing `cleanup_result` with `approved=True` / `dry_run=False` / `teardown_providers=True`), that a refused or partial integration cleans up nothing, and that a cleanup refusal is reported without failing the integration. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound startup admission ranges and recorded bounded oversized parser-detail evidence. This remains source-grounded preparation; verification and acceptance remain closeout-owned.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01/CQ02/CQ04 preparation reconciled bounded activation diagnostics, authoritative master-contract reread evidence, and registered support-consumer ownership. These are source-grounded preparation updates only; verification and acceptance remain closeout-owned.
-- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the `master_series_admission.py` startup owner and its shared admission-projection boundary to the route explanation. The source remains uncommitted; verification metadata remains closeout-owned.
 - 2026-09-08T17:36:08+02:00 — CCR-L24 inherited citation reconciliation: repointed the route-index refresh anchor to the current L38 onboarding source range while preserving the L38 route overview and worktree-phase authorship. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the `master_series_admission.py` startup owner and its shared admission-projection boundary to the route explanation. The source remains uncommitted; verification metadata remains closeout-owned.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed route-index and worktree-phase anchors after the frozen source shifts. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented typed master-edge startup refusals and read-only series status activation evidence. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `_execute_gate_rails` repointed to .dagger/src/agents_remember_quality/profile_execution.py:215-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T15:15:01+00:00 — Added the missing selected-terminal and execution-package routes from actual source at `c69d5171187fa1957025e393270db9f5a864ab14`; corrected the bounded green-only recording and uncomposed-admission claims. Preserved the broad verification stamps and complete prior history; this route update is not gate or acceptance evidence.
-
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
 - 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Replaced superseded producer-gap claims with actual emission/export/retention owners, preserved useful publication history and named the remaining ordinary lifecycle gaps.
-
-
-
-
 - 2026-09-05T07:28+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Established explicit current profile/publication/ordering authority and corrected moved source owners while preserving the superseded gate narratives as history. Verification records source review, not execution or acceptance.
 - 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
 - 2026-09-05T06:12+00:00 — Composed host-authority and optional/final-Codex controller knowledge; documented the actual pre-G1 freeze, green-only record adapter and producer-backed binding limits.
-
 - 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-codex run controller (quality/final_codex_executor.py) that consumes the trusted R12 host authority for the certifying two-fresh-no-retry Gate-4 lane. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
-
-
 - 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional diagnostic run controller (`quality/diagnostic_executor.py`) that consumes the trusted R12 host authority for the non-certifying E2E lane. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
-
-
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the cost-ordered five-gate execution and shared Dagger authority - new `quality/dagger_authority.py` module, authority-bound clean executor, schema-3.1 manifest with `runtimeAuthorityDigest`, gate digest threading, and Gate-5 closeout ordering. Verification metadata stays pinned until closeout stamps the leaf code commit.
-
-
 - 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
-
 - 2026-08-29T22:45+02:00 — MCAR-L03: traced the exact pair adapter through closeout preview,
   admission, memory preflight, result publication, and recovery; all consumers now expose the same
   pair identity and typed refusal facts.
-
 - 2026-08-29T18:29+02:00 — Added the shared candidate-bound onboarding-acceptance boundary across
   preview, closeout admission, and external-memory refresh.
-
 - 2026-08-29T08:52+02:00 — Added shared structured curator-coherence admission before closeout's
   expensive mutation path. Verification remains closeout-owned.
-
 - 2026-08-26T18:55+02:00 — 260821-ARSPAWN-L2 closeout repair: documented the apply-time
   master-series bootstrap observation boundary. `_bootstrap_preflight_contract` now runs under the
   existing per-master bootstrap mutex, so concurrent starters cannot fall between the transient
   journal and durable contract publication. Dry-run remains unlocked and write-free; no retry,
   fallback reader, compatibility path, or new lock namespace was added.
-
 - 2026-08-26T08:55+02:00 — Finalized the IAS public lifecycle composition label against the
   frozen pass-13 candidate.
-
 - 2026-08-25T17:21+02:00 — Reconciled final integration evidence consumption and helper ownership.
   Verification remains closeout-owned.
-
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `modules/quality/` package split and moved all four preserved sidecars without duplicating the quality authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
-
 - 2026-08-24T21:23+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
   firewall.
-
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: completed the
   supersession record for queue-owned irreversible state; current modules publish task truth first
   and rebuild only a disposable waiting-door projection.
-
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict one-snapshot quality publication/recovery and distinct stable/published result paths while preserving L4 diagnostic curation. Verification metadata remains pinned until architect-owned closeout.
-
-
 - 2026-08-24T13:51:26+02:00 — No route impact: 260821-DAGQC-L4 narrowed the
   Python quality refusal wording without changing module ownership or execution topology.
   Dagger acceptance remains pending and closeout-owned.
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `startup/` package move and new integration-recovery owner, repaired current route references, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: `closeout_staged_quality` moved to `worktrees/queue`; module imports updated; `closeout.py` extracted `_closeout_quality_facts`. Verified at code commit e5cb139f.
-
-
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: recorded the atomic-sequential lane block
   in `start_contract.py`, the `staleSeriesArtifact` fact in `start_result.py`, and the
   `staleByEvidence` payload on `integrate.py` results; the modules route purpose is unchanged.
   Verification remains closeout-owned.
-
 - 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated the series worktree-group equality checks in `start_contract.py`/`terminal_validation.py` and narrowed reports-tree preservation in `cleanup.py`/`abandon.py` to legacy series contracts via `legacy_series_reports_is_child_enclosure`; the modules route purpose is unchanged.
-
 - 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added integration_publication.py to the modules route; the route purpose is unchanged.
-
 - 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded queue claim/certify/revalidate/
   consume order, reversible terminal recovery, and governed lifecycle task writes. Verification
   remains closeout-owned.
-
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded candidate typing and builder-level Dagger
   refusal repairs. Verification remains closeout-owned.
-
 - 2026-08-14T11:48:55+02:00 — R42 curator: recorded the recovery-proof owner move and focused
   staged-scope test extraction. Verification remains closeout-owned.
-
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the route with leaf reuse, master-only full
   acceptance, clean series closeout, and self-wrapper refusal. Verification remains closeout-owned.
-
 - 2026-08-14T09:37+02:00 — Reopened L23 acceptance ownership: leaf closeout is the single targeted
   owner, leaf integration performs no rerun, clean series closeout performs no acceptance, and
   master integration retains the single full run. Verification remains closeout-owned.
-
 - 2026-08-14T09:08+02:00 — Reopened L23 repair: recorded all-altitude candidate-tree revalidation
   after quality and the separate leaf-only route-review arm. Series closeout no longer needs a
   terminal leaf id and still refuses candidate drift before irreversible work. Verification
   remains closeout-owned.
-
 - 2026-08-14T06:25+02:00 — L23 final route review: removed the stale local-executor description and
   documented Dagger-only exact-candidate quality, extracted staging/result owners, failure-atomic
   integration, lineage rechecks, bounded fresh attempts, and monotonic recovery. Verification
   remains closeout-owned.
-
 - 2026-08-13T12:26+02:00 — L23 structural-rail repair: added the new
   `closeout_memory_quality.py` child and recorded its behavior-preserving ownership of quality-phase
   execution, bounded failure evidence, and two-phase result combination. Closeout retains commit,
   ledger, approval, lineage, and refresh ordering; verification provenance remains closeout-owned.
-
 - 2026-08-13T09:27+02:00 — L23 curator: recorded git-common-dir repository identity for lineage
   edges, including sibling-worktree acceptance and fail-closed resolution. Verification provenance
   remains closeout-owned.
-
 - 2026-08-13T09:05+02:00 — L23 integration-gate follow-up: closeout and integration now require
   complete transitive source lineage at preflight, recheck after their long quality work, and check
   again immediately before approval claim or merge. Integration pins exact code/memory source tips
@@ -1565,43 +1550,33 @@ this route's card paths with their `path` metadata and governing-overview links 
   clean-quality report promotion and the extracted strict-plan/closeout helper boundaries; final
   provenance remains closeout-owned.
 - 2026-08-13T08:47+02:00 — L23 integration-gate repair: reconciled closeout/integration lineage rechecks, source-tip pinning across quality, extracted quality/result helpers, strict plan validation, and shared atomic report promotion. Verification metadata remains closeout-owned.
-
-
 - 2026-08-12T22:45+02:00 — L23 curator follow-up: refined the baseline-relative route gate so sanctioned final-cell citation-coordinate shifts do not require fabricated history; the normalization is deliberately narrow and metadata-only, prose, anchor, path, table-shape, and other untraced changes still refuse. Verification remains closeout-owned.
 - 2026-08-12T22:36+02:00 — No route impact: the final L23 pre-commit repair corrects `_route_overview_bucket`'s docstring to name its already-implemented typed evidence and citation-only behavior; the worktree module operating model documented above is unchanged. Verification remains closeout-owned.
 - 2026-08-12T22:25+02:00 — L23 curator follow-up: route-overview closeout planning now includes memory overviews edited since the task's verified baseline even when their source drift predates the current leaf range; directly edited candidates remain subject to substantive body/history classification, so metadata-only and untraced refreshes refuse. Verification remains closeout-owned.
 - 2026-08-12T20:20+02:00 — L23 curator: documented parent-first lineage admission and status recovery; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: documented explicit local/Dagger quality execution, immutable candidate capture, and lifecycle progress threading through closeout/integration; verification provenance remains closeout-owned.
-
 - 2026-08-12T07:10+02:00 — 260731-EFA-L24: made the master full-
   gate resource policy host-managed by default while retaining an explicit cap
   for constrained environments. Verification metadata remains pinned until
   closeout stamps L24.
-
 - 2026-08-12T03:31+02:00 — 260731-EFA-L22 route repair: recorded the Git facade's transport-safe
   diagnostic boundary. Internal Git output remains surrogateescaped; only failure text crossing
   MCP is escaped, so no alternate runner or compatibility path was introduced.
-
 - 2026-08-12T01:38+02:00 — No route impact: refreshed closeout staging citations after the test
   responsibility split; the worktree module route model is unchanged.
-
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded deterministic transcript
   decoding and non-Windows ephemeral scratch normalization while preserving the enclosure-owned
   reports-folder contract. Verification metadata remains pinned until governed closeout.
-
 - 2026-08-10T22:09+02:00 — No route impact: L21 extracted the unchanged external-memory citation
   preflight from `closeout_result` into one module-local helper solely to restore the repository's
   hard 100-line function limit; closeout ordering, authority, and package responsibilities remain
   unchanged. Verification metadata stays pinned until closeout stamps the L21 code commit.
-
 - 2026-08-10T12:46+02:00 — L9 closeout-order repair: recorded the configured-hook-before-wrapper
   and exact-index-after-wrapper contract; verification metadata stays pinned until closeout stamps
   the repair commit.
-
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the provider-runtime move, the
   service-port surface, and the contract reader. Verification metadata pinned until closeout
   stamps the L9 code commit.
-
 - 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-routed gate plans
   (leaf targeted, master full+capped), the closeout targeted call sites, the per-leaf
   `memory_quality_check` carve-out, and the integration-step gate run. Verification metadata
@@ -1706,12 +1681,10 @@ this route's card paths with their `path` metadata and governing-overview links 
   preview reports `enforced` / `no-code-commit` / `wrapper-unavailable`, and both `closeout.py` call
   sites pass `contract.code_worktree`. Recorded the unannotated-call-site hazard and the single
   regression that guards it. Verification metadata remains pre-commit.
-
 - 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
   added the fail-closed `code_quality_gate.py` authority and corrected closeout's
   mutation order to quality-before-commit. Verification metadata remains
   pre-commit.
-
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: closeout route-index preview and apply now forward the
   resolved `context.storage` authority explicitly to the deterministic builder.
 - 2026-07-12T19:55+02:00 — 260712-PTS-L1 route impact (small): `cli.py` gained the `heal-leaf-ids`
@@ -1720,7 +1693,6 @@ this route's card paths with their `path` metadata and governing-overview links 
   `worktree_contract.py` sidecars). The module split this overview describes is unchanged.
   Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
 - 2026-07-12T17:30+02:00 — 260712-TRH-L7: worktree guidance separates fresh interactive landing probes from projected status, which consumes only pre-observed landing facts.
-
 - 2026-07-07T23:45+02:00 — 260707-HFX-L4R2 route impact: start leaf-ref resolution now accepts
   standalone/light `task.json` roots through doc-id/slug/folder aliases and the shared resolver skips
   non-task sibling JSON artifacts by schema marker while keeping malformed task docs loud. Verification

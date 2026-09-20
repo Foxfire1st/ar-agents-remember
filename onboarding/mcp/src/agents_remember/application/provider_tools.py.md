@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-19T19:52+02:00 |
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -136,15 +136,35 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Provider response models distinguish compact summaries from diagnostics/native payloads. | `ProviderSummary`; `ProviderStatusResponse`; `ProviderDiagnosticsResponse`; `ProviderNativeToolResponse` | mcp/src/agents_remember/models/providers.py:75-93; mcp/src/agents_remember/models/providers.py:96-119; mcp/src/agents_remember/models/providers.py:138-158; mcp/src/agents_remember/models/providers.py:182-188 |
 | Provider status and diagnostics payload builders produce the application-facing model inputs. | `provider_status_payload`; `provider_diagnostics_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52 |
 | The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
+| Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:131-145 |
 | Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
 | The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Watcher actions reject ambiguous refresh, retain stop/status, and require live launch authority for start/restart/invalidation. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:50-89 |
 | The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:151-171; mcp/src/agents_remember/kernel/primitives/runtime_config.py:174-199; mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
 | The watcher application entry point calls the launch gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
-| The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. | `grepai_search_tool`; `_provider_operation_result` | mcp/src/agents_remember/application/provider_tools.py:273-303; mcp/src/agents_remember/application/provider_tools.py:736-783 |
+| The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. | `grepai_search_tool`; `_provider_operation_result` | mcp/src/agents_remember/application/provider_tools.py:470-505; mcp/src/agents_remember/application/provider_tools.py:961-1008 |
+
+## 260918-TSIP-L6 One Declared Refusal Per Provider Tool
+
+Eight provider tools answered an ordinary absent capability with a bare exception, so the caller
+lost `ok`, `status` and the way out — `grepai_search`, `grepai_trace` and the six `cgc_*` tools
+(`T34`). Each now declares its refusal exactly once, in `_PROVIDER_REFUSAL_SITES` (`:109-195`)
+keyed by operation, and the declaration has two halves because the family has two shapes:
+`provider_refusal_payload` (`:196-220`) builds the envelope a tool can **return**, and
+`provider_refusal_result` (`:221-239`) turns the error an owner **raises** into the same envelope,
+returning `None` for an error that is not this condition so an unrelated failure still surfaces.
+
+The two guards are what make it one place rather than eight: `resolve_grepai_query` (`:240-274`)
+and `resolve_cgc_capability` (`:275-294`) are called first by their families, so "the provider is
+not configured or not armed on this host" is answered identically for every member and names
+`provider_watchers` as the way out. This is the constructive shape `provider_status_tool` (`:35-42`)
+and `provider_diagnostics_tool` (`:43-50`) already used — their `state: "noProviders"` answer is
+what the nine were brought up to, not a tolerated exception. Two argument-validation raises
+(`:493`, `:538`) deliberately still raise: a malformed argument is not a condition the product
+declares, and the entry point's own input model refuses it.
 
 ## Update History
+- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T34`'s repair of the eight provider tools — one declared refusal site per operation (`ProviderRefusalSite`, `_PROVIDER_REFUSAL_SITES`), a payload half and a raised half, and the two family guards (`resolve_grepai_query`, `resolve_cgc_capability`) that make it one place rather than eight. Every citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
 - 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `complete_tool_response` repointed to mcp/src/agents_remember/application/tool_response.py:84-98. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.

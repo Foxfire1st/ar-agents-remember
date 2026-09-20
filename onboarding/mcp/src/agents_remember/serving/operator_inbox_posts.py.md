@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/operator_inbox_posts.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T23:19+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-09-18T17:02+02:00 |
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,13 +64,36 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Post-time owner rebinding preserves a complete canonical structural address. | `_post_address` | mcp/src/agents_remember/serving/operator_inbox_posts.py:110-149 |
 | Append is the durable commit point before compaction and expectation publication. | `_persist_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:232-248 |
-| The shared post path derives, stamps, persists, and delivers the row. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:268-366 |
+| The shared post path derives, stamps, persists, and delivers the row. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:268-375 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
+## 260918-TSIP-L4 — The Refusal Payload And The Success `status` (`T15`)
+
+Two edits in `post_operator_inbox_entry`, both to satisfy the response contract this leaf
+extended.
+
+**The decision-item refusal now returns a typed envelope** (**`:304-314`**): beside
+`ok=False`/`operation`/`status="sprint-owner-required"` it adds `messageKind` (the one
+queued-projection field already known at that point) and a `detail` sentence naming why nothing was
+queued. The refusal fires **before the first write**, so it carries no entry identity and invents
+none.
+
+**The success path now sets `status="queued"`** (**`:358`**), because
+`OperatorInboxPostResponse.status` is required and names which of the two outcomes the response
+is. Net `+9/-1`; the file runs **382 lines** and every line at or below the old `:304` moved
+(`+3` from `:304`, `+8` from `:308`, `+9` from `:350`).
+
+The registered tool's response model is unchanged in name — it is the same
+`OperatorInboxPostResponse`, now with a refusal half. Pinned by
+`mcp/tests/test_tool_response_conformance.py::test_operator_inbox_post_sprint_owner_refusal_is_a_typed_payload`,
+which drives the real tool over a real catalog and asserts
+`produced["status"] == "sprint-owner-required"`.
+
 ## Update History
+- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the decision-item refusal now returns a typed envelope and the success path sets `status` (`T15`). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

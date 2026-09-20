@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/models/structural/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
+| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 
 ## What This Area Is
 
@@ -115,6 +115,7 @@ identity vocabulary.
   contract-scoped vocabulary, and citations are reconciled to the frozen candidate.
 
 ## Update History
+- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/structural/agent.py` gained the two delivery keys its own shared producer already emitted, on the base class rather than on any of its consumers, so this route's structure, ownership and boundaries are unchanged.
 
 - 2026-09-13T14:21:37+02:00 — LOCR-L36 contract-scoped activation re-key: corrected this route's
   description of the activation vocabulary, which still said one selected master per normalized source

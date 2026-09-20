@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/structural/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |  `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
+| lastVerifiedCommitDate |  2026-09-18T17:19:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public agent and gate models live in explicit sibling modules. | `DispatchAgentRequest` | mcp/src/agents_remember/models/structural/agent.py:1-107; mcp/src/agents_remember/models/structural/gates.py:1-165 |
+| Public agent and gate models live in explicit sibling modules. | `DispatchAgentRequest` | mcp/src/agents_remember/models/structural/agent.py:1-117; mcp/src/agents_remember/models/structural/gates.py:1-165 |
 
 ## Cross-Repo References
 

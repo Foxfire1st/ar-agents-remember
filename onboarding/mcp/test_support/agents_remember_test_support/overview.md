@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:58+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ Ordinary isolated host pytest is supported for development; only the certifying 
 **The case budgets this package's rails run under are not declared here.** Earlier revisions of this
 overview and of the cards beneath it named a pair (1,000 unit / 150, later 250, integration) as a
 current reading; the enforced pair is the repository root `pyproject.toml`'s
-`[tool.pytest.ini_options]` pair — `unit_case_budget = 2300` and `integration_case_budget = 400` at
-`pyproject.toml:244-245`, measured 2026-09-18 at code `c5a74a85` — and it moves. Read it there, and see
+`[tool.pytest.ini_options]` pair — `unit_case_budget = 4000` and `integration_case_budget = 1000` at
+`pyproject.toml:278-279`, re-read 2026-09-20 by `260918-TSIP-L13` on memory `682bbdfd` / code `1bcf73e7` — and it moves. Read it there, and see
 `system/tools.md` for why the pair is the root file's rather than any test-local default.
 
 ## Three Owners That Landed After This Route's Last Review

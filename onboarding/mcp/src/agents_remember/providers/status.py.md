@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ surface.
 | --- | --- | --- |
 | Provider response models define summary, diagnostics, watcher, and native provider payload shapes. | "class ProviderSummary" | mcp/src/agents_remember/models/providers.py:75-75 |
 | Context packet construction consumes the compact provider summary. | "def build_context_packet" | mcp/src/agents_remember/application/context_packet.py:64-64 |
-| Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. | "def provider_status_tool" | mcp/src/agents_remember/application/provider_tools.py:34-34 |
+| Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools. | "def provider_status_tool" | mcp/src/agents_remember/application/provider_tools.py:35-35 |
 | Current-state projection and persistence live in the current-state module. | "def build_current_provider_state" | mcp/src/agents_remember/providers/current_state.py:19-19 |
 | Restart/rebind recovery wording is shared with runtime-install recovery reporting. | `PROVIDER_WATCHER_RESTART_RECOVERY` | mcp/src/agents_remember/providers/recovery.py:3-7 |
 | The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | "class MetricsSnapshot" | mcp/src/agents_remember/providers/metrics.py:161-161 |

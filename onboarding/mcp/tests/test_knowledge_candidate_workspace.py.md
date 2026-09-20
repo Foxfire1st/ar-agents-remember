@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_candidate_workspace.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec`|
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,7 @@ No domain documentation source is configured for this repository (`system/source
 | The failed-flush refusal that keeps `created` honest. | "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:403-425 |
 | The shared harness this module exercises the lifecycle through. | `build_case`; `crash_and_abandon` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:477-533 |
 | The lifecycle operations these cases protect. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
-| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_candidate_workspace.py" | mcp/tests/test-evidence-lanes.toml:84-84 |
+| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_candidate_workspace.py" | mcp/tests/test-evidence-lanes.toml:83-83 |
 
 ## Cross-Repo References
 

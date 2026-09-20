@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_registered_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:25+02:00 |
-| lastVerifiedCommitHash |  `9f88a6de572dc15bbed1802cf08b77c1193fb24c`|
-| lastVerifiedCommitDate |  2026-09-18T14:21:49+02:00|
+| lastVerifiedCommitHash |  `47570cd827428c171613c8cb01e01f0b1cb26f73`|
+| lastVerifiedCommitDate |  2026-09-20T01:58:41+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -157,7 +157,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The prefix case: a declared directory where an anchor path is stored selects no claim, no anchor and no edge.** | "assert outcome.manifest.followed_edges == ()" | mcp/tests/test_knowledge_registered_scope.py:253-266 |
 | The frontier case reads the construction module's own text and requires the selection surface's names to be absent from it. | ""select_recorded_scope"," | mcp/tests/test_knowledge_registered_scope.py:269-286 |
 | **The declared-snapshot refusal names the exact declared digest and carries the construction's own operation on the typed refusal.** | "assert outcome.refusal.refusal.operation == CONSTRUCT_SCOPE_OPERATION" | mcp/tests/test_knowledge_registered_scope.py:293-311 |
-| Two declarations for one side are refused as an ambiguous common base at declaration time rather than resolved by a tie-break. | "with pytest.raises(ValidationError, match="ambiguous common base"):" | mcp/tests/test_knowledge_registered_scope.py:370-379 |
+| Two declarations for one side are refused as an ambiguous common base at declaration time rather than resolved by a tie-break. | "with pytest.raises(ValidationError, match="ambiguous common base"):" | mcp/tests/test_knowledge_registered_scope.py:370-406 |
 | The path helper refuses absolute, pathspec-magic and parent-escaping spellings, so the declared path stays an identity to compare. | "for bad in ("/src/integration.py", ":(exclude)src/x.py", "../src/x.py"):" | mcp/tests/test_knowledge_registered_scope.py:425-437 |
 
 ## Cross-Repo References
@@ -171,4 +171,5 @@ read-scope fixture's own — same-repository test data, not another repository's
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_knowledge_registered_scope.py.md:160` (?, "):") — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
 - 2026-09-18T14:25+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the registered-scope suite. It records the two-snapshot fixture whose policy row and authored edge live in the candidate dataset only, the six acceptance cases (construction identity and membership, per-side edge provenance, field-for-field determinism, the no-policy absence, the prefix that selects nothing, and the frontier exclusion asserted as a derivation over the construction module's text), the eight refusals that each name an exact missing input and fall back to nothing, and the boundary the module does not cross: it protects the construction and asserts nothing about a run over the scope or about the retrieval read. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_memory_branch_authority.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
+| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ No external or domain documentation governs this repository-local check.
 | The taskless admission the second and fourth groups hold. | `TASKLESS_SEAT_ROLES`; `_binding_refusal` | mcp/src/agents_remember/serving/task_binding.py:60-83; mcp/src/agents_remember/serving/task_binding.py:126-152 |
 | The exclusion policy the third group pins. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
 | The staging helper the third group's failure mode lives in. | `_excluded_pathspec`; `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:34-35; mcp/src/agents_remember/worktrees/modules/git.py:191-198; mcp/src/agents_remember/worktrees/modules/git.py:200-208 |
-| The lane row that keeps the fail-closed evidence registry loading clean. | "test_memory_branch_authority.py" | mcp/tests/test-evidence-lanes.toml:118-118 |
+| The lane row that keeps the fail-closed evidence registry loading clean. | "test_memory_branch_authority.py" | mcp/tests/test-evidence-lanes.toml:119-119 |
 
 ## Cross-Repo References
 
