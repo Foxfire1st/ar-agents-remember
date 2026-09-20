@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_sync.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `0da444b3b2b61f6a86fa4076b283c305db025d22` |
+| lastVerifiedCommitDate | 2026-09-20T02:38:15+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -32,6 +32,10 @@ The terminal-removal case uses the real Git fixture for tracked, missing, staged
 The scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
 
 The native memory case checks both cache-only success and a genuine README conflict. Real draft WIP is parked and returned while staged cache data is excluded. It asserts the exact merge parents, only one new reachable merge beyond its parents, a cache-free committed tree, an untracked materialized cache, and both source/work content. Its interrupted-merge branch adds an unstaged real edit after the merge was staged: resume must refuse with both repositories' refs unchanged, then complete after that edit is staged.
+
+**CYCLE-02 gave the same case a second conflict shape, and it is the one Git cannot decide.** `_assert_knowledge_database_conflict_settles` builds a real three-commit branching scenario over a knowledge database with disjoint valid edits on both sides, commits those datasets into the memory worktree and the memory repository, and then syncs: the ordinary Git merge must stop on the binary file, the transaction must route the three-way merge through the shipped adapter, and the sync must **complete** with `state == "synced"`. What it asserts is exactly what the review asked for — both sides survive in the merged dataset, the merged identity differs from either side's, the three input datasets are byte-identical afterwards, and the merge commit's two parents are the two sides' own commits. The caller invokes no merge function: the test never calls `resolve_knowledge_merge_base` or `merge_resolved_knowledge_datasets`, which is the property that distinguishes a wired seam from a callable one. Both shapes share one collected case rather than taking one each, because the integration lane sits at its declared ceiling of 400 and a further collected case would breach it — above the ceiling conftest raises and the lane then runs zero tests, which is worse than either outcome it would report. The shipped content scenarios were moved intact into `_assert_memory_content_conflict_scenarios` and their body is unchanged.
+
+The module also became a consumer of the shared `merge_case_test_support` fixture for that case, which is why the lifecycle catalog's byte pin moved at this tip without any registered artifact or contract being added.
 
 ### Conventions
 
@@ -62,12 +66,14 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | `test_terminal_removal_discards_only_the_memory_cache` | mcp/tests/test_worktree_sync.py:247-289 |
+| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | `test_terminal_removal_discards_only_the_memory_cache` | mcp/tests/test_worktree_sync.py:308-350 |
 | The real Git fixture and attributed official memory update. | `map_official_memory` | mcp/tests/test_worktree_sync.py:44-122 |
-| Fast-forward and retained code conflict behavior. | `test_pure_fast_forward_sync_advances_both_sides_and_contract`; `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:126-146; mcp/tests/test_worktree_sync.py:148-183 |
-| Cache-independent source admission, start, and candidate identity. | `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed`; `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:185-211; mcp/tests/test_worktree_sync.py:213-245 |
-| Native cache-only success, real conflict continuation, and resumed staged-content validation. | `test_memory_merge_discards_only_cache_conflicts_and_preserves_content_conflicts` | mcp/tests/test_worktree_sync.py:330-411 |
-| Nonregular journal quarantine preserves the outside target. | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:448-467 |
+| Fast-forward and retained code conflict behavior. | `test_pure_fast_forward_sync_advances_both_sides_and_contract`; `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:187-207; mcp/tests/test_worktree_sync.py:209-244 |
+| Cache-independent source admission, start, and candidate identity. | `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed`; `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:246-272; mcp/tests/test_worktree_sync.py:274-306 |
+| Native cache-only success, real conflict continuation, and resumed staged-content validation. | `test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction`; `_assert_memory_content_conflict_scenarios` | mcp/tests/test_worktree_sync.py:391-408; mcp/tests/test_worktree_sync.py:410-490 |
+| **The CYCLE-02 knowledge-dataset case: the sync completes, both sides survive, and the caller invokes no merge entry point.** | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:129-183 |
+| **The shared merge-case fixture this module began consuming for that case, and the two imports it takes from it.** | `build_case`; `file_digest` | mcp/tests/merge_case_test_support.py:177-205; mcp/tests/test_worktree_sync.py:44-45 |
+| Nonregular journal quarantine preserves the outside target. | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:528-547 |
 
 ## Cross-Repo References
 
@@ -77,6 +83,13 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-20T01:37+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): range repair only; no claim re-worded, no anchor renamed, no row deleted. The two pre-existing reference rows still cited this file's **pre-move** spans (`:126-146`/`:148-183` and `:185-211`/`:213-245`), which is where the four cases stood before this leaf's added case and helper pushed them down the class body. Re-derived with `grep -n` and read at each declaration, they now cite the four cases' own extents in the `WorktreeSyncTests` class as it stands: `test_pure_fast_forward_sync_advances_both_sides_and_contract` at `mcp/tests/test_worktree_sync.py:187-207` and `test_code_merge_conflict_is_retained_and_can_continue` at `:209-244` in the fast-forward/retained-conflict row, `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed` at `:246-272` and `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` at `:274-306` in the cache-independence row. The rows around them were already current on this candidate and are unchanged. No verification stamp advanced: the candidate is uncommitted and closeout owns the stamp.
+
+- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **the module gained the case that proves the merge adapter is wired, and lost the name the card cited.** The shipped content-conflict case was renamed to `test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction` and its body split, unchanged, into `_assert_memory_content_conflict_scenarios`; the second half is the new `_assert_knowledge_database_conflict_settles`, which drives a real divergent knowledge dataset through `SyncFixture.sync()` and asserts the sync completes, both sides survive, the inputs are untouched, and the merge commit's parents are the two sides. The claim about the shipped regression still holds, so it was kept and re-cited at its current name and helper rather than re-worded; the reference table gained the two new rows (the knowledge case and the `merge_case_test_support` imports it needs). No verification stamp advanced: the candidate is uncommitted and closeout owns the stamp.
+
+- 2026-09-19T22:49:08+00:00: Generated citation repair: `test_terminal_removal_discards_only_the_memory_cache` repointed to mcp/tests/test_worktree_sync.py:308-350. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: `test_nonregular_journal_is_renamed_without_following_and_quarantined` repointed to mcp/tests/test_worktree_sync.py:528-547. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock

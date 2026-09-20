@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:53+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
+| lastVerifiedCommitHash | `0da444b3b2b61f6a86fa4076b283c305db025d22` |
+| lastVerifiedCommitDate | 2026-09-20T02:38:15+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `../../../overview.md` |
 
@@ -153,7 +153,9 @@ memory-carryover vehicle.
 ### Resolve Or Cancel Retained Sync Conflict
 
 1. Read the stable enclosure-root journal and pinned Git authority.
-2. Resolve and stage the retained merge in the reported code or memory worktree.
+2. Resolve and stage the retained merge in the reported code or memory worktree. A **knowledge dataset** on
+   the memory side is not the agent's to resolve by hand: the transaction settles it through the knowledge
+   merge adapter before it reports the conflict, and only the paths the adapter declined are handed over.
 3. Call the same contract-addressed sync with `resolution_action="continue"`, or call it with
    `resolution_action="cancel"` to restore the pinned pre-sync pair.
 4. Fail closed for missing/malformed identity; explicit cancellation may recover from complete
@@ -173,6 +175,7 @@ memory-carryover vehicle.
 | `sync_transaction_state.py` | stable journal | state survives task/contract readability failures | covered |
 | `sync_transaction_authority.py` | identity/admission | pins exact code and memory source refs and admits their Git history | covered |
 | `sync_transaction_git.py` | Git proof | retains conflicts and proves exact operation-created history | covered |
+| `knowledge_conflict.py` | knowledge-conflict settlement (Git half) | settles a binary knowledge dataset through the merge adapter so the agent keeps only what the adapter will not decide | covered |
 | `sync_transaction_recovery.py` | finalization/recovery | terminal publication, rollback, and malformed/missing journal escape | covered |
 | `sync_transaction_results.py` | public evidence | consistent previews, conflict guidance, and terminal replay | covered |
 
@@ -224,7 +227,7 @@ memory-carryover vehicle.
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570 |
 | Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
-| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution, and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_git.py:417-429; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
 | A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
 
 Current working-candidate evidence for this route:
@@ -254,6 +257,7 @@ No Domain Documentation source is configured for this memory root.
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
 | `modules/pause.py` | [`modules/pause.py.md`](modules/pause.py.md) | covered | the stop-only pause: release one selection, publish nothing |
+| `knowledge_conflict.py` | [`knowledge_conflict.py.md`](knowledge_conflict.py.md) | covered | Git half of the knowledge-dataset conflict settlement |
 | `sync_source_refresh.py` | [`sync_source_refresh.py.md`](sync_source_refresh.py.md) | covered | shared pre-lock fetch evidence |
 | `sync_transaction.py` | [`sync_transaction.py.md`](sync_transaction.py.md) | covered | transaction driver |
 | `sync_transaction_authority.py` | [`sync_transaction_authority.py.md`](sync_transaction_authority.py.md) | covered | source/contract authority |
@@ -750,7 +754,52 @@ or `worktree_sync(..., resolution_action='cancel', dry_run=false)`), keeping the
 message last. Before this the only thing said about that state was the refused pass's branch
 complaint, which named neither the stuck contract nor what it was doing.
 
+## Route Impact: The Sync Settles A Knowledge-Dataset Conflict (260915-KS-L31)
+
+The sync's retained-conflict flow gained one step, and the step is what makes the knowledge merge adapter a
+driver rather than a callable seam. A knowledge database is **binary to Git**: an ordinary merge can only
+declare the whole file conflicted, and no amount of staging resolves it. Before this change the transaction
+handed that file to the agent as `sync-resolution-required` with `resolutionOwner: agent`, and the union was
+obtainable only by calling `resolve_knowledge_merge_base` and `merge_resolved_knowledge_datasets` by hand —
+not a composition seam an agent should have to discover.
+
+`_continue_memory_merge` now calls `settle_knowledge_conflicts(Path(side.worktree), conflicts,
+side.preSyncHead, side.sourceCommit)` before it returns that state, and the left/right pair it passes is
+exactly the pair the adapter's request names: `ours` is the work branch tip the merge started from and
+`theirs` is the source commit being merged in. Only the paths the settlement could not decide come back as
+`resolution-required`, so the routing **narrows the agent's work rather than hiding any of it**.
+
+The new module `knowledge_conflict.py` is the Git half and owns three facts:
+
+- **Binary safety.** The three datasets are Git *index stages*, and `kernel.git_command.run_git` returns
+  text, so reading a stage with `git show :1:<path>` would decode a SQLite file through a text layer and
+  corrupt it before the adapter ever saw it — surfacing as a row-count mismatch rather than as corruption.
+  The stages are materialised with `git checkout-index --stage=<n> --prefix`, where Git writes the bytes
+  itself, one prefix directory per stage.
+- **Refusal preserved.** A path the adapter will not decide — a schema disagreement above all — stays
+  conflicted, and `settle_knowledge_conflicts` returns it to the caller, which is the tuple the transaction
+  reports.
+- **No compatibility verdict.** A structurally merged dataset says the union is valid, never that the
+  combined knowledge is correct; nothing here may treat it as approval.
+
+The layer contract is what splits the work across two modules rather than one, and the split is enforced
+rather than documented: a module under `worktrees/` may not import `agents_remember.memory` at all, so the
+dataset half — reading identities, proving the common base, publishing the union — lives in
+`application/knowledge_merge.py` as `merge_conflicted_stages`, and this module hands it three paths and
+receives one boolean. `SyncGitProofError` still owns every unproven Git transition, and the routing
+introduces no new authority, no commit of its own, and no ledger row.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The routing: knowledge conflicts settle in the transaction, and what it will not decide is what the agent still gets. | `_continue_memory_merge`; `settle_knowledge_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:341-366; mcp/src/agents_remember/worktrees/knowledge_conflict.py:141-154 |
+| Binary-safe stage materialisation, and the unique-common-base proof that refuses rather than guessing. | `_materialise_stages`; `_common_base` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:64-84; mcp/src/agents_remember/worktrees/knowledge_conflict.py:87-98 |
+| The dataset half this route may not host, and the commits the adapter's base claim needs together. | `merge_conflicted_stages`; `ConflictCommits` | mcp/src/agents_remember/application/knowledge_merge.py:90-161; mcp/src/agents_remember/application/knowledge_merge.py:164-175 |
+| The layer rule that forces the split, enforced over the tree rather than asserted. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
+| The integration case that drives a real divergent dataset through `sync()` and asserts the sync completes with both sides intact. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:129-183 |
+
 ## Update History
+- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **this route gained a module and a conflict-flow step.** Added the L31 route-impact section (the binary-to-Git problem, the `_continue_memory_merge` routing and its left/right pair, binary-safe stage materialisation, the preserved refusal and the absent compatibility verdict, and the layer rule that forces the two-module split), registered `knowledge_conflict.py` in the Load-Bearing Files and File-Level Onboarding Map tables with its new card, and corrected the retained-conflict flow so step 2 no longer tells an agent to resolve a knowledge dataset by hand. No verification stamp advanced; closeout owns it.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:417-429; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T18:53+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **No route impact:** this route was re-read at code `c5a74a85` because the sources underneath it moved, and the model this overview describes is unchanged. The delta is one level down and one route further in: `worktrees/integration/closeout/` gained `curator_assessment_evidence.py` and the assessment-evidence publication in `curator_coherence_publication.py`, both of which are that child route's own and are recorded on [`integration/closeout/overview.md`](integration/closeout/overview.md). This route's own surface — the lifecycle operations, the closeout-door and landing ref owners, the sync/queue projections, and the ledger-free memory-output rule — is not touched by them, and the delegation this overview already makes ("closeout claim, commit, certification, integration, or recovery evidence → `worktrees/integration/lifecycle/` and closeout-door owners") still names the right owners. Stamp advanced to `c5a74a85` because the review happened there; closeout re-stamps. No body byte changed, because none needed to.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:399-411; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
