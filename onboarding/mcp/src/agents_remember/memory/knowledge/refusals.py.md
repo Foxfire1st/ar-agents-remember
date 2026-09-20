@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -214,7 +214,7 @@ No domain documentation source is configured for this repository (`system/source
 | The relabelling factory that preserves a command's own code, record and remedy while naming the batch. | `batch_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:743-763 |
 | The builder whose `command` argument carries both the failing position and its kind. | `batch_command_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:791-813 |
 | The context and stale-record refusals that name both digests. | `batch_context_refusal`; `batch_context_digest_refusal`; `batch_stale_record_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:713-726; mcp/src/agents_remember/memory/knowledge/refusals.py:728-741; mcp/src/agents_remember/memory/knowledge/refusals.py:696-711 |
-| The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module. | `require_acyclic_lineage`; "def find_cycle("; "def declared_cycle(" | mcp/src/agents_remember/memory/knowledge/store.py:698-728; mcp/src/agents_remember/memory/knowledge/lineage.py:97-130; mcp/src/agents_remember/memory/knowledge/lineage.py:133-157 |
+| The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module. | `require_acyclic_lineage`; "def find_cycle("; "def declared_cycle(" | mcp/src/agents_remember/memory/knowledge/store.py:698-728; mcp/src/agents_remember/memory/knowledge/lineage.py:97-130; mcp/src/agents_remember/memory/knowledge/lineage.py:133-157; mcp/src/agents_remember/memory/knowledge/lineage.py:133-133 |
 | The SQLite-error mapping, its caller-supplied failure context, and the trigger-message prefix that steers it. | `map_sqlite_error`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/refusals.py:828-871; mcp/src/agents_remember/memory/knowledge/refusals.py:815-826 |
 | **The candidate-lifecycle and publication group this leaf added: one factory per observable failure point.** | `selected_input_unavailable_refusal`; `candidate_binding_changed_refusal`; `candidate_snapshot_unpublished_refusal`; `snapshot_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:904-928; mcp/src/agents_remember/memory/knowledge/refusals.py:930-949; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974 |
 | **The destination and install failures, including the honest durability code.** | `destination_stale_refusal`; `publication_failed_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:976-999; mcp/src/agents_remember/memory/knowledge/refusals.py:1001-1018; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |

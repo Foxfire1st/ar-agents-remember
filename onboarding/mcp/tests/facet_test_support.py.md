@@ -6,8 +6,8 @@
 | path | `mcp/tests/facet_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1`|
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
 | governingOverview | `overview.md` |
 
@@ -124,7 +124,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The recursive union walk and the three closed-vocabulary questions the cases ask through it.** | `member_models`; `payload_kinds`; `declared_subject_kinds`; `command_kinds` | mcp/tests/facet_test_support.py:474-513 |
 | The one valid payload per subtype and the one noun per endpoint kind. | `MINIMAL_PAYLOADS`; `ENDPOINT_NOUNS` | mcp/tests/facet_test_support.py:132-169 |
 | The twelve shipped command kinds as data, so the widened union is measured against a stated set. | `SHIPPED_COMMAND_KINDS` | mcp/tests/facet_test_support.py:115-130 |
-| **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1330-1330; mcp/tests/evidence-lifecycle.toml:55-55 |
+| **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1328-1328 |
 | The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:173-180; mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:186-192; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-196; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313; |
 | The cases this harness exists for, and the byte-identity node that reads the measured constants. | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:1002-1017; mcp/tests/test_knowledge_facets.py:935-979; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:1214-1214; mcp/tests/test_knowledge_facets.py:1162-1162 |
 | The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:129-141; mcp/src/agents_remember/memory/knowledge/schema_generations.py:175-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313 |

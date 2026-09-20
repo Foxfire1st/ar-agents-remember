@@ -6,8 +6,8 @@
 | path | `mcp/tests/generation_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T22:00+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ No domain documentation source is configured for this repository (`system/source
 | The production builder that turns a generation record into its statements — re-cited by hand after the registry grew to four generations. | `create_schema_statements` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-202 |
 | Generation 1's own record, which the support reads both the DDL and the version from rather than from a literal. | `GENERATION_1` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:217-229 |
 | The version-to-generation resolution this support reads a file through. | `generation_for_version` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:527-530 |
-| The production open paths the support deliberately goes through. | `open_database`; `open_read_only_database`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/connection.py:26; mcp/src/agents_remember/memory/knowledge/connection.py:52; mcp/src/agents_remember/memory/knowledge/store.py:751 |
+| The production open paths the support deliberately goes through. | `open_database`; `open_read_only_database`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/connection.py:26; mcp/src/agents_remember/memory/knowledge/connection.py:52; mcp/src/agents_remember/memory/knowledge/store.py:42-42; mcp/src/agents_remember/memory/knowledge/store.py:751; mcp/src/agents_remember/memory/knowledge/store.py:787-800 |
 | The unit module that consumes this support, whose import is its consumer declaration. | "from generation_test_support import create_generation_1_store, create_generation_2_store" | mcp/tests/test_knowledge_schema_generations.py:62-62 |
 | The merge module that joined this support's consumer scope with this leaf. | "from generation_test_support import create_generation_1_store, create_generation_2_store" | mcp/tests/test_knowledge_merge_generations_and_envelope.py:60-60 |
 

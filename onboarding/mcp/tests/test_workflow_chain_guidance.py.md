@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_workflow_chain_guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T00:08+0200 |
-| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
-| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l8-ar` uncommitted source (new file, **1442 lines / 12 cases**, sha256 `2225c95ba8624286c770ea1060dd3235d5e0a9a2851ec4db830819e0c800b3e1`); base `d9214edf` |
 | governingOverview | `overview.md` |
 
@@ -264,7 +264,7 @@ make no acceptance claim.
 | The stale base driven, and the raiser pinned by set equality. | `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted` | mcp/tests/test_workflow_chain_guidance.py:1338-1367 |
 | `T109`: the declaring channel asserted where it is defined, and its four-phase population stated. | `test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable` | mcp/tests/test_workflow_chain_guidance.py:1371-1442 |
 | The lane row that keeps this module in the default selection, inside the array opening at `:5`. | "mcp/tests/test_workflow_chain_guidance.py" | mcp/tests/test-evidence-lanes.toml:201-201 |
-| The operational triple's declared home, and the reason it is a channel of the response's own contract. | `nextArgs` | mcp/src/agents_remember/models/worktree.py:356-358 |
+| The operational triple's declared home, and the reason it is a channel of the response's own contract. | `nextArgs` | mcp/src/agents_remember/models/worktree.py:400-406 |
 | The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. | `nextRequiredArgs` | mcp/src/agents_remember/models/base.py:63-63 |
 | The guard that withholds a hint which cannot name the response's own place. | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:58-58 |
 | The process-global ambient lifecycle the overlay is derived from, which is why the guard exists. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-260 |

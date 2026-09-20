@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
@@ -467,7 +467,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:184-236 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:333-333; mcp/src/agents_remember/models/worktree.py:46-55 |
-| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
+| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:240-322 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
 
 Current working-candidate evidence for this route:
@@ -1309,6 +1309,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-21T01:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches.** The route section above records the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, the intake that resolves a stored anchor through it and refuses a mismatch before any plan exists, and the citation re-measurement this leaf performed in `worktrees/reopen.py`, `worktrees/modules/closeout.py` and `worktrees/modules/startup/`. It also records that `memory/knowledge/merge.py` is byte-unchanged and its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal payloads. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.
 
@@ -1761,3 +1762,32 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 - 2026-05-25T20:41+02:00: Created when `c-09-git-worktree-manager` skill worktree lifecycle logic was split into focused implementation modules.
 
 
+
+## 260915-KS-L47 The Anchor Read Gets One Source Of Truth, And The Write Path Binds What It Stores
+
+This route carries the modules whose citations this leaf's change set moved, and two of them changed
+meaning rather than only line numbers.
+
+**`memory/knowledge/anchors.py` gained one small public reader.** `read_anchor(connection,
+repository_id, anchor_id)` is the same query, column list and decoder `get_anchor` already used, and
+`get_anchor` now delegates to it. The reason is not convenience: the curator intake holds a read-only
+connection and no `OpenedKnowledgeStore`, and re-deriving how an anchor row is decoded there would have
+created a second source of truth for a stored identity -- exactly the shape that lets one anchor be
+answered two ways. `get_anchor`'s own behaviour is unchanged.
+
+**Its caller is the application layer's explicit-anchor-reuse repair.** `knowledge_curator_ingest.py`'s
+`_require_stored_anchor` resolves a target-level `anchor_id` through this reader against the datasets
+`_Source.anchors` carries, in candidate-then-baseline order, and refuses a supplied path, blob or
+locator that disagrees with the stored row before any plan exists. The measured defect was a run that
+reported `changed` and published a receipt naming symbol `other` while the stored realization cited the
+`resolve_budget` anchor; after the repair the receipt, the stored claim and the public read agree by
+construction, and a matching reuse still succeeds without adding an anchor row. The two refusal codes
+are `anchor_reuse_mismatch` and `anchor_id_not_stored`.
+
+**`worktrees/reopen.py` and `worktrees/modules/closeout.py` changed only by the citation projection**
+this leaf's re-measurement performed: their ranges were rewritten to the extents their constructs
+actually occupy, with no change of meaning. **`worktrees/modules/startup/`** likewise: the ranges in
+`master_series_admission.py`, `series_attach.py` and `start_contract.py` were re-measured, not shifted.
+`memory/knowledge/merge.py` was **not** touched by this leaf -- it is byte-unchanged and its
+`_independent_insert_refusal` still refuses two independent insertions of one identity with equal
+payloads.

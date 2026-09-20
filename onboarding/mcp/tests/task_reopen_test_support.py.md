@@ -6,8 +6,8 @@
 | path | `mcp/tests/task_reopen_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,9 +56,9 @@ The source file is the direct evidence for the shared fixture boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper publishes an exact terminal predecessor and real super-to-leaf branch chain. | `_publish_terminal_reopen_predecessor`; `_completed_leaf_contract` | mcp/tests/task_reopen_test_support.py:94-112; mcp/tests/task_reopen_test_support.py:115-158 |
-| Runtime configuration and external-memory directories are built from the contract identity. | `_runtime_config`; `_external_memory_dirs` | mcp/tests/task_reopen_test_support.py:161-169; mcp/tests/task_reopen_test_support.py:172-174 |
-| Leaf and master documents expose controlled lifecycle, topology, and row-status variants. | `_leaf_doc`; `_master_doc` | mcp/tests/task_reopen_test_support.py:177-200; mcp/tests/task_reopen_test_support.py:203-257 |
+| The helper publishes an exact terminal predecessor and real super-to-leaf branch chain. | `_publish_terminal_reopen_predecessor`; `_completed_leaf_contract` | mcp/tests/task_reopen_test_support.py:227-245; mcp/tests/task_reopen_test_support.py:248-291 |
+| Runtime configuration and external-memory directories are built from the contract identity. | `_runtime_config`; `_external_memory_dirs` | mcp/tests/task_reopen_test_support.py:294-319; mcp/tests/task_reopen_test_support.py:322-324 |
+| Leaf and master documents expose controlled lifecycle, topology, and row-status variants. | `_leaf_doc`; `_master_doc` | mcp/tests/task_reopen_test_support.py:327-350; mcp/tests/task_reopen_test_support.py:353-407 |
 
 ## Cross-Repo References
 

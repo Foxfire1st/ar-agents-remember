@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
-| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
+| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
@@ -1838,7 +1838,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
 | **The two published half-names the ingest CLI derives its candidate directory from.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:138-139 |
-| **The ingest run's review handoff: the fork-point dataset copied into the baseline half on a committing run, with every not-placed reason stated.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
+| **The ingest run's review handoff: the fork-point dataset copied into the baseline half on a committing run, with every not-placed reason stated.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:293-332 |
 | **The namespace read from the candidate's own sealed receipt rather than from the request.** | `review_namespace` | mcp/src/agents_remember/application/knowledge_review.py:282-307 |
 | **The pair preflight: the absent half named as `baseline` or `candidate`.** | `missing_dataset_half` | mcp/src/agents_remember/application/knowledge_review.py:261-279 |
 
@@ -1958,17 +1958,19 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens and places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284; mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
+| **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens and places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:110-170; mcp/src/agents_remember/cli/knowledge_ingest.py:335-374; mcp/src/agents_remember/cli/knowledge_ingest.py:293-332 |
 | The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:999-1115; mcp/src/agents_remember/application/knowledge_curator_ingest.py:980-996 |
 | The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555 |
-| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807 |
-| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
-| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:556-594; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1589-1628; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1565-1586; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1678-1690 |
-| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1482-1493; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1496-1517; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1970-1992 |
+| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807; mcp/tests/test_knowledge_curator_ingest_list.py:1844-1965 |
+| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:110-170; mcp/src/agents_remember/cli/knowledge_ingest.py:335-374 |
+| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1631-1670; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1720-1727; mcp/src/agents_remember/application/knowledge_curator_ingest.py:564-600; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1607-1628 |
+| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1523-1559; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2093-2115 |
 | The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555 |
-| The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807; mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270 |
+| The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807; mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270; mcp/tests/test_knowledge_curator_ingest_list.py:1844-1965; mcp/tests/test_knowledge_curator_ingest_list.py:2309-2426 |
 
 ## Update History
+- 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the three write-binding repairs this leaf lands on the ingest entry point: the retry guard now digests the whole normalized semantic write intent, explicit anchor reuse is resolved against the stored anchor before any plan exists, and the review's before-snapshot is captured before publication can overwrite its source. The route section above states each measured before/after and names the fields the digest deliberately excludes. Every citation this leaf's edits moved was re-measured to its construct's own extent.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.
+- 2026-09-20T17:17:10+00:00: Generated citation repair: `_place_review_baseline` repointed to mcp/src/agents_remember/cli/knowledge_ingest.py:256-298. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **this route's identity bullets had their scope corrected, and the allocation they were silent about is now stated.** The first bullet said the ingest's identities belong to the repository rather than the baseline and that "the same obligation is therefore the same record when the next task reads the line at a later baseline" — true of the citation identities, and true of the invariant only because the entry's local label was then its whole distinction. That reading is what the developer's 2026-09-20 ruling replaced, so the bullet now says which identities the derivation covers and names the sentence's narrowed scope; a new bullet states the ruling at this route's altitude (the API allocates and persists the canonical identity; the label is not an input; continuity is naming the stored identity; a retry rides a separate idempotency key; **enclosure-scoped stored identity is forbidden**); and the two-constructs bullet now records that the anchor is keyed on the allocated revision and the claim on its own edge, because the route/anchor fix alone still left two independent tasks sharing one claim. Three rows were added for the allocation, the retry key/content guard and the explicit anchor reuse, and the two rows the fixer could not project were re-measured by hand. No verification stamp was advanced: the source is modified in the delivered working tree and the governed closeout owns the real stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
@@ -5667,3 +5669,54 @@ budgets are the **repository-root** `pyproject.toml`'s `[tool.pytest.ini_options
 the two ini names with `addini` and **no `default=`**. (3) The evidence catalogue's counts stayed
 **15 contracts / 65 artifacts** while its digest moved to `25b00f88…` — a consumer-only change moves
 the bytes, never the counts.
+
+## 260915-KS-L47 The Write Path Binds Three Claims To The Truth It Actually Writes
+
+The master-exit review of the knowledge write path confirmed three failures this leaf repaired, and
+each one is a claim the route was making that the code did not keep. **All three touch this route's
+ingest entry point**, which is why the route overview records them here rather than only on the two
+sidecars.
+
+**A changed request under a held retry key is no longer reported as already committed.**
+`application/knowledge_curator_ingest.py`'s `_content_digest` now digests the complete normalized
+semantic write intent, so it gained `dispositionSource` (the newly reachable field), `namedInvariantId`,
+`predecessors` as an ordered list, the **normalized** `RealizationRole` the write path stores rather
+than the caller's raw spelling, and `roleRationale`. Two inputs stay out deliberately: `entry_id`, which
+is the retry key's own scoping half, and `declares_invariant`, which is derived as `not predecessors` by
+construction. Before the repair the digest covered five of the eleven fields the write path consumes, so
+changing the realization role, the disposition source, or the invariant with its predecessors returned
+exit 0 with `batchState: replayed`, an empty `refused`, `recordsWritten 0`, and a database byte-identical
+to before -- the CLI reporting committed while echoing text the stored revision did not carry. The three
+measured variants now refuse with `allocation_content_conflict`, name the digest the allocation was
+minted for beside the one that arrived, and leave the database untouched; an exact retry still replays
+and writes nothing.
+
+**An explicit anchor reuse is now resolved against the stored anchor before any plan exists.**
+`_require_stored_anchor` and its `_stored_anchor` read refuse a supplied path, blob or locator that
+disagrees with the stored row (`anchor_reuse_mismatch`, and `anchor_id_not_stored` when no dataset holds
+the identity), and the check runs inside `_plan_target_inner` ahead of `_target_identities`. The measured
+defect was a target naming symbol `other` while supplying the anchor that identifies `resolve_budget`:
+the run returned `changed`, committed and published, the receipt echoed locator `other`, and the stored
+claim cited the `resolve_budget` anchor. A matching reuse still succeeds, adds no anchor row, and
+produces a reference agreeing with the receipt and the public read. The memory layer gained one small
+public reader for this -- `memory/knowledge/anchors.py`'s `read_anchor`, with `get_anchor` delegating to
+it -- so the intake resolves a stored anchor through one source of truth instead of a second decoding of
+the anchor row.
+
+**The review's before half is captured before publication can overwrite its source.**
+`cli/knowledge_ingest.py` now reads the admitted baseline at the top of `run` (`_CapturedBaseline` /
+`_capture_baseline`) and `_place_review_baseline` writes those captured bytes rather than re-reading
+`args.baseline`. When one path is used as both `--baseline` and `--publish-to`, publication replaces that
+file in place, so the old post-ingest copy put the published candidate into the review's before half and
+the review answered `present` on both sides with no field changes. Measured after the repair: the before
+half is byte-identical to the true fork point, the review answers before `absent` / after `present` over
+two different digests, and a retry leaves the half unchanged.
+
+The route's own reference tables were re-measured rather than shifted: every citation this leaf's edits
+moved was rewritten to the extent its construct actually occupies, the `compatible` declaration this
+leaf's change set makes explicit is now stated on the `models/tools/knowledge_responses.py` sidecar with
+the wire-omission rule beside it, and `mcp/tests/test_knowledge_views_and_projection.py`'s two reconciled
+assertions are stated on that sidecar. **No route-level behaviour outside the knowledge write path
+changed**, and the merge guard (`memory/knowledge/merge.py`) was not touched: it is byte-unchanged and
+its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal
+payloads.
