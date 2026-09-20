@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_facets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate |  2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash |  `1bcf73e772b640fea56c2788fe9a52d98099bd41`|
+| lastVerifiedCommitDate |  2026-09-20T05:00:13+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `overview.md` |
 
@@ -194,8 +194,8 @@ properties exactly as before, and each re-scope is stated *before* the membershi
   current pair. `KS-R14@v1`'s worker report measured the unit population at **1315** and the integration
   population at **322** against the declared `unit_case_budget = 1500` / `integration_case_budget = 400`;
   that reading is retained here as the state it measured, and `260915-KS-L21` re-read it against the file.
-  **The pair the file declares now is `unit_case_budget = 2300` (`pyproject.toml:244`) and
-  `integration_case_budget = 400` (`pyproject.toml:245`)**, measured on this candidate at **2206** unit
+  **The pair the file declares now is `unit_case_budget = 3000` (`pyproject.toml:263`) and
+  `integration_case_budget = 600` (`pyproject.toml:264`)** — re-read 2026-09-20 on the landed pair; the reading measured on this candidate was **2206** unit
   collected and **394** integration collected — the census leaf's 48 unit cases took the merged population
   six past the then-declared 2200, and its unit ceiling was raised to 2300 with the measured entry recorded
   above the value, because an over-budget population makes `pytest_collection_finish` raise `UsageError` and

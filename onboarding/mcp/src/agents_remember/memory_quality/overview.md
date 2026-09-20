@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `d9214edf3388ee862f8c8f2ed59cf40af710d8bb` |
-| lastVerifiedCommitDate | 2026-09-19T22:45:38+02:00|
+| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
+| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
@@ -134,10 +134,10 @@ The route also carries a capacity fact recorded rather than worked around:
 `mcp/tests/test_final_full_memory_coherence_certification.py` stands at 1199 of its 1200-line limit
 after this leaf's re-scope, so the next leaf that must edit it has to split it first.
 
-## Update History` bullets
-- `style/update_history/` checks that onboarding `## Update History
+- `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
+
 
 ## Invariants And Boundaries
 

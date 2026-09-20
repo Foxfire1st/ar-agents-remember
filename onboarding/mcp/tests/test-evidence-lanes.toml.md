@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
+| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l2-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 266 → **267** lines, one row added at `:246`); base `d9becade1a373f2272501f7451746ccc259ca9ac` |
@@ -377,7 +377,7 @@ change set added. This section supersedes the per-lane tables above, including t
 still calls itself the current account.
 
 **The declared rails are the repository-root file's, and only one lane has headroom.** The budgets are
-`unit_case_budget = 2300` at `pyproject.toml:244` and `integration_case_budget = 400` at `:245`
+`unit_case_budget = 3000` at `pyproject.toml:263` and `integration_case_budget = 600` at `:264`
 (`mcp/pyproject.toml` declares no `[tool.pytest.ini_options]`, so the root file is the inifile pytest
 actually reads; `mcp/tests/conftest.py` now registers the two option names **without** the dead
 `default=1100`/`default=300` declarations item 12 removed). In this change set the unit population measured
@@ -536,8 +536,8 @@ this file by two:
 | `integration` | `:265` | `mcp/tests/test_knowledge_family_integrity_pipeline.py` | it drives a real two-snapshot comparison over two real databases and two real Git trees and publishes real bytes to a real destination, and carries `pytestmark = pytest.mark.integration` |
 The classification is the **behaviour-preserving** one, not a budget convenience: the two unit modules ask
 questions about records and about a declaration, and the one integration module asks the whole-pipeline
-question the packet's §6/§7 worked example is about. **The declared ceilings are the ones `pyproject.toml` actually carries** — `unit_case_budget = 2300` at
-`pyproject.toml:244` and `integration_case_budget = 400` at `:245`. This section first recorded the pair as
+question the packet's §6/§7 worked example is about. **The declared ceilings are the ones `pyproject.toml` actually carries** — `unit_case_budget = 3000` at
+`pyproject.toml:263` and `integration_case_budget = 600` at `:264`. This section first recorded the pair as
 `2200` / `400`; `260915-KS-L21` raised the unit ceiling to 2300 over the measured 2206 collected (six past
 2200), so **2200 is retained here as the value this section measured and is no longer the declaration**, and
 the integration value is unchanged at 400. The
@@ -588,8 +588,8 @@ module population on disk, not derived by adding any earlier account):
 Against the previous account: **247 / 247** after the L11 and L24 leaves (147 / 2 / 68 / 17 / 13), so this
 leaf's two modules are the whole difference. The declared budget pair is `unit_case_budget = 1500`
 (`pyproject.toml:304`) and `integration_case_budget = 400` (`pyproject.toml:305`) **as this section measured
-it — the pair declared now is `unit_case_budget = 2300` at `pyproject.toml:244` and
-`integration_case_budget = 400` at `:245`** — **unchanged by this
+it — the pair declared now is `unit_case_budget = 3000` at `pyproject.toml:263` and
+`integration_case_budget = 600` at `:264`** — **unchanged by this
 leaf**, whose measured populations are 1315 unit and 322 integration and which consolidated nothing,
 skipped nothing, deselected nothing and widened no ceiling.
 
@@ -1288,9 +1288,9 @@ regenerated table below would otherwise describe a file that no longer exists in
 was added, removed, renamed or re-classified: the leaf registers two modules in the lanes their
 behaviour already belongs to.
 
-## Update History` entries — as-of records of earlier candidates — were deliberately left as
 
-the dated `## Update History
+
+
 - 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): two rows added (`:165`, `:244`), 267 → 269 lines, and the citations the insertion moved re-derived by enumeration rather than from the finding set. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 
 - 2026-09-17T10:45+02:00 — 260915-CAPS-L15 curator: the manifest gained one row for this leaf's own new
@@ -1328,7 +1328,7 @@ the dated `## Update History
 Verification metadata moves to the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so
 the governed closeout stamps the real code commit and no hash or fingerprint was invented here.
 
-` entries — as-of records of earlier candidates — were deliberately left as
+the dated `## Update History` entries — as-of records of earlier candidates — were deliberately left as
 written. One citation was corrected beyond the shift because it was already stale before this leaf
 (`test_checkpoint_landing_end_to_end.py`, cited at `:143-143`, which the manifest carries at `:140`).
 Classification only: lane membership is not execution, certification or acceptance evidence, and the
@@ -1442,19 +1442,19 @@ Registration is classification only; it is never execution or acceptance evidenc
 - Evidence class is separate from whether a test invokes a real external producer.
 - Current source membership governs; old final-Codex executor/status-wait/deleted-edge lists do not.
 - Host development pytest is supported; only explicit certification requires Dagger admission.
-- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1000 at `pyproject.toml:185`, `integration_case_budget` **300** at `pyproject.toml:186`; the 150, 200 and 250 values in earlier entries of this card are stale). **That pair is a historical reading of this card's own, retained as the state it measured; the pair the file declares now is `unit_case_budget = 2300` at `pyproject.toml:244` and `integration_case_budget = 400` at `pyproject.toml:245`.** A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1000 at `pyproject.toml:185`, `integration_case_budget` **300** at `pyproject.toml:186`; the 150, 200 and 250 values in earlier entries of this card are stale). **That pair is a historical reading of this card's own, retained as the state it measured; the pair the file declares now is `unit_case_budget = 3000` at `pyproject.toml:263` and `integration_case_budget = 600` at `pyproject.toml:264`.** A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
-- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` **300** (root `pyproject.toml:185-186`) **at that earlier candidate** — the file now declares `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`) — enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
+- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` **300** (root `pyproject.toml:185-186`) **at that earlier candidate** — the file now declares `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`) — enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
 
-- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1500, `integration_case_budget` 250 — `pyproject.toml:158-159`; the 150/200/1000 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`).** **The unit ceiling was raised from 1000 to 1500 by 260915-CAPS-L8, executing the developer's ruling**, because the default selection had outgrown 1000 and so refused collection before any case ran; the raise restored a working default selection and is a ceiling rather than a target. A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1500, `integration_case_budget` 250 — `pyproject.toml:158-159`; the 150/200/1000 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`).** **The unit ceiling was raised from 1000 to 1500 by 260915-CAPS-L8, executing the developer's ruling**, because the default selection had outgrown 1000 and so refused collection before any case ran; the raise restored a working default selection and is a ceiling rather than a target. A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 2000, `integration_case_budget` 300 — `pyproject.toml:168-176`; the 150/200/250/1000/1500 values in earlier entries of this card are stale). **Every figure in this card is measured against the leaf's base ceiling (2000/300); the merged line this leaf syncs onto raises both to 2300/400 (`T79`), so the two ceilings must not be quoted interchangeably.** **The unit ceiling was raised from 1000 to 1500 by 260915-CAPS-L8, executing the developer's ruling**, because the default selection had outgrown 1000 and so refused collection before any case ran; the raise restored a working default selection and is a ceiling rather than a target. A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
-- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` **300** (root `pyproject.toml:185-186`) **at that earlier candidate** — the file now declares `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`) — enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
+- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` **300** (root `pyproject.toml:185-186`) **at that earlier candidate** — the file now declares `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`) — enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
 
-- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1500, `integration_case_budget` 250 — `pyproject.toml:158-159`; the 150/200/1000 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`).** **The unit ceiling was raised from 1000 to 1500 by 260915-CAPS-L8, executing the developer's ruling**, because the default selection had outgrown 1000 and so refused collection before any case ran; the raise restored a working default selection and is a ceiling rather than a target. A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1500, `integration_case_budget` 250 — `pyproject.toml:158-159`; the 150/200/1000 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`).** **The unit ceiling was raised from 1000 to 1500 by 260915-CAPS-L8, executing the developer's ruling**, because the default selection had outgrown 1000 and so refused collection before any case ran; the raise restored a working default selection and is a ceiling rather than a target. A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
-- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1500 and `integration_case_budget` 250 (root `pyproject.toml:158-159`) **at that earlier candidate — the declaration now reads `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`)**, enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
-- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 2000, `integration_case_budget` 300 — `pyproject.toml:168-176`; the 150/200/250/1000/1500 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 2300` (`pyproject.toml:244`) and `integration_case_budget = 400` (`pyproject.toml:245`).**
+- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1500 and `integration_case_budget` 250 (root `pyproject.toml:158-159`) **at that earlier candidate — the declaration now reads `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`)**, enforced in `pytest_collection_finish`. A module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` can refuse collection.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 2000, `integration_case_budget` 300 — `pyproject.toml:168-176`; the 150/200/250/1000/1500 values in earlier entries of this card are stale) **as that candidate read them. The pair declared now is `unit_case_budget = 3000` (`pyproject.toml:263`) and `integration_case_budget = 600` (`pyproject.toml:264`).**
 
 ## Docs References
 
