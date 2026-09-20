@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
-| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../../../overview.md`                   |
 
@@ -55,6 +55,13 @@ admission completes.
 Task-document payloads remain independent of queue and activation state. A successful mutation may
 cause downstream projection invalidation/rebuild, but no payload builder turns scheduling state into
 authoring permission.
+
+**The sync builder's resolution input is one paired value (260915-KS-L40).** `worktree_sync_payload`
+takes `resolution: SyncResolutionInput | None` in place of a bare `resolution_action`, so the action and the
+authored knowledge decision a `reconcile` call may carry travel together through this route and cannot
+disagree here; the registration layer pairs the two published arguments before calling it. The builder is
+otherwise unchanged: it still forwards typed arguments to `application.worktree_tools.worktree_sync_tool`
+and returns through `base._tool_payload`, and it owns no journal, selector or resolution policy.
 
 ## 260915-CAPS-L9 `runtime_install_payload` Takes The Run's Request
 
@@ -642,6 +649,8 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 `WRITE_ENTRY_POINT` correction to the L20 section above are the route-level record of it.
 
 ## Update History
+- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktree_sync_payload` now takes one paired `resolution: SyncResolutionInput | None` — the action plus the authored decision it may carry, paired one layer up in `registration/worktrees.py` — in place of a bare `resolution_action`; the paragraph is in the `IAS Frozen Worktree Payload Boundary` section above. The import block grew by the two vocabulary imports, so every builder on this route moved by three lines. A body change, not a metadata-only refresh.
+
 - 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved the one conflicted reference row and the Update History block.** The row cites `mcp/tests/test_models.py`, modified by neither leaf, so upstream's `46-117` — the class's own declaration extent, from its `class` line through its last statement — was kept, and both sides' anchors were kept: the class, `PUBLIC_TOOL_RESPONSE_MODELS` and the quoted merged `def …(` line, each read inside that range in the code worktree. Update History is the union of both sides, newest first. No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
 - 2026-09-20T01:41+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): No route impact: this leaf changed no source this route governs. Its six paths are `application/knowledge_curator_ingest.py`, `application/knowledge_ingest.py`, `cli/knowledge_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_dependency_ownership_ast_helpers.py` and `mcp/tests/test_knowledge_curator_ingest_list.py` — none of them under `mcp/src/agents_remember/mcp/tools/`. The overview was re-read and no claim of its body is invalidated by this leaf; only its citation rows were repointed to the same constructs. No verification stamp is advanced.
 - 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared this card's one reopened claim, answering both questions the checklist put to it.** (1) Does the construct the projected range covers support the claim's own words? Yes: "Schema tests assert public tool and response model coverage" is exactly what `PublicToolResponseModelTests` does — its first case asserts `set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)` and then generates each registered model's JSON schema. (2) Was the range rebound from a mention to a declaration elsewhere? No: `mcp/tests/test_models.py:46-117` is the class's own declaration extent (the class at 46 through its last statement at 117), not a mention's target, so the mechanically projected range is the location the claim is about and it is **retained** — no re-cite and no re-wording was needed. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L20-era `reviewedWorkingCandidate` row beside them) were replaced by ONE `reviewedWorkingCandidate` row naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it. The claim's "evidence changed" condition was an artifact of comparing against a commit that predates the consolidation: the class is byte-identical between this candidate's base `7dcec036` and the working tree, so the claim is current against the base this card now names.
@@ -987,4 +996,6 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
 
 ## Update History
+
+
 - 2026-09-20T05:55+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two builder-side changes: `knowledge_integrity_check_payload` now takes an exact-input selector (`_ExactInputSelector`, with `_run_for_scope` applying it as a binding rather than a preference, `_runs_in_scope` / `_run_identity` naming every run the scope holds, `_report_facts` composing all three non-success answers, and `_condition_report` naming the selected run beside the digest over its exact inputs and echoing the run's own route as the scope), and `knowledge_read_payload` now resolves the context's `(repository_root, code_tree_id)` pair through `_source_resolution` / `_current_code_tree` so a minimal schema-conformant read returns a view rather than raising the context model's incomplete-resolution refusal. The section also restates that the scope still selects and never borrows another scope's run, and that nothing in this module decides anything. The card carried no `reviewedWorkingCandidate` row; one was added naming this leaf's candidate. This card's verification metadata — `lastVerifiedCommitHash`/`lastVerifiedCommitDate` — is retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.

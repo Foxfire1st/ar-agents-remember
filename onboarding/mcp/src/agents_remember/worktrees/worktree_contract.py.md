@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ Each `VALID_*` frozenset is `frozenset(get_args(<Alias>))`, derived rather than 
 can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-written set literal;
 `VALID_KINDS` is unchanged and is still a plain set (`kind` has no `Literal`).
 
-**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:29-29; mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/models/worktree.py:31-31; mcp/src/agents_remember/models/worktree.py:38-38; mcp/src/agents_remember/models/worktree.py:39-39) and imported back here
+**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:35-35; mcp/src/agents_remember/models/worktree.py:36-36; mcp/src/agents_remember/models/worktree.py:37-37; mcp/src/agents_remember/models/worktree.py:44-44; mcp/src/agents_remember/models/worktree.py:45-45) and imported back here
 cit:(["from agents_remember.models.worktree import ("], mcp/src/agents_remember/worktrees/worktree_contract.py:23-23); this module derives the runtime `VALID_*` frozensets from them. The members are still
 added in exactly one place, which is the property this section describes — adding one here instead
 would recreate the drift it was written to prevent. `checkpointed` reached the persisted contract
@@ -374,7 +374,7 @@ Same-repository source defines the contract format and `c-09-git-worktree-manage
 | The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal. | `heal`; "heal-leaf-ids" | mcp/src/agents_remember/worktrees/modules/cli.py:186-186 |
 | Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`. | `_contract_vocabularies`; `_path` | mcp/src/agents_remember/worktrees/worktree_contract.py:814-884; mcp/src/agents_remember/worktrees/worktree_contract.py:874-884 |
-| `WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:233-287 |
+| `WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:310-364 |
 | The current `WorktreeStatusFacts` shape imports the same six contract vocabularies, reports `unknown_cells` as `unknown_contract_cells`, and exposes derived source lineage without adding a persisted contract cell. | `WorktreeStatusFacts` | mcp/src/agents_remember/worktrees/modules/guidance.py:83-121 |
 | `build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:821-840 |
 | Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. (`ContractBoundaryTests`) | `ContractBoundaryTests` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-171 |
@@ -461,6 +461,8 @@ contract publication; `closeout_door.update-provenance` is likewise no longer a 
 refusal. No compatibility reader for a legacy door was retained.
 
 ## Update History
+- 2026-09-20T07:26+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus` and `CleanupStatus` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/models/worktree.py:35-35`, `:36-36`, `:37-37`, `:44-44` and `:45-45`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-20T03:57:45+00:00: Generated citation repair: `WorktreeSummary` repointed to mcp/src/agents_remember/models/worktree.py:310-364. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "from agents_remember.models.worktree import (" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:23-23. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:49-49. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

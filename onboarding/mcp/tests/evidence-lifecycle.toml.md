@@ -5,12 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T00:31+02:00 |
-| lastVerifiedCommitHash |  `0da444b3b2b61f6a86fa4076b283c305db025d22`|
-| lastVerifiedCommitDate |  2026-09-20T02:38:15+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted change set; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastUpdated | 2026-09-20T06:55+02:00 |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
 | governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -1218,3 +1217,6 @@ engine's to move. The metadata block above now names this leaf's uncommitted can
 `reviewedWorkingCandidate`, and `lastVerifiedCommitHash` / `lastVerifiedCommitDate` are left exactly
 as the last real verification set them because no commit contains this candidate. The body was
 changed substantively and this entry is the history record, not a metadata-only refresh.
+
+## Update History
+- 2026-09-20T06:55+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **two consumer paths were appended to one already-governed row, and this card's population claim is unchanged because nothing else moved.** The `generation_test_support` artifact's `consumers` list gained `mcp/tests/test_worktree_sync.py` (which now consumes the `shared-support` fixture) and `mcp/tests/test_sync_parked_candidate.py` (which imports that module and is therefore a consumer by the census's own propagation rule). This is the consumer-completeness oracle, not the byte pin: the catalogue was already stale **without the file changing** for the first of those two, which is exactly the two-registry trap this master disclosed as D-19. No artifact was registered, no contract added, no row removed: the governed populations stay at **fifteen contracts / sixty-five artifacts**, and the digest pinned in the sibling card was re-derived to `c499cbcc…`. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.

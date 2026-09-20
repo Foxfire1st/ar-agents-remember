@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/merge_validation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastUpdated | 2026-09-20T06:18+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -22,12 +23,13 @@
 
 ### Logic
 
-`MergeInputs` names the four datasets of one merge once — base, left, right, merged — so a validation pass cannot mix them up. Four checks, each answering a different question:
+`MergeInputs` names the four datasets of one merge once — base, left, right, merged — so a validation pass cannot mix them up. Five checks, each answering a different question:
 
 - `require_structural_validity(inputs)` — no foreign-key violation, every authored row still reading back as its typed aggregate, and every declared predecessor edge present. The typed-row read is the whole check: decoding every canonical table through the logical body constructor proves the JSON columns hold unambiguous JSON and the sealed aggregates still match their stored digests, because the decoders **recompute** the seal rather than trusting it (`_require_sealed_aggregates`).
 - `require_immutable_revisions_preserved(base, candidate)` — every revision the common base sealed is still identical to the base's row (`_first_revision_difference`), and every edge the base sealed is still present (`_first_missing_edge`). Immutability is compared against the **base** rather than against whichever side happens to be present: a revision the common base sealed is the same revision in every dataset derived from it, so a difference is an in-place rewrite of a sealed aggregate rather than an authored successor.
 - `require_side_inputs_preserved(base, side)` — each side's sealed revisions still match the common base. This is the refusal for a side that rewrote a revision in place behind its identity, which is the one input defect no schema comparison can see: the file is internally consistent and its content is simply not the aggregate the base sealed. It runs **before** the merge, so the defect is refused as an input defect instead of being carried into a candidate.
 - `require_applied_changes(delta, candidate)` — every operation the changeset materialised is looked for in the result: an insert's row is there holding the side's values, an update's supplied columns hold the side's values, a delete's row is gone. The comparison is per supplied column and against the **side the operation came from** (`_first_unapplied_change`, `_first_differing_column`).
+- `unapplied_changes(operation, *, merged, side, operations)` — **the same measurement as the whole list rather than only its first member**, in delta order. It exists because the caller's own authored decision changes what "every operation must be present" can mean for the rows it settled: a caller that settled some operations has to know *how many* the result is missing before it can tell the omissions it authorised from the ones it did not, while a caller that settled nothing reads the first refusal and the two functions answer identically. The merge's `_authored_postcondition` is that caller.
 
 **The digest comparison is deliberately the *stored* payload digest recomputed from the stored row**: re-stating the same payload with a different JSON key order is not a change to a sealed revision, while changing the statement behind the digest is.
 
@@ -60,14 +62,15 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The four datasets named once so a validation pass cannot mix them up. | `MergeInputs` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:64-70 |
-| The reachable structural check, whose typed-row read recomputes every seal. | `require_structural_validity` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:73-101 |
-| The immutability comparison, including the two calls with two different reachability facts. | `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
-| The side-input pass that refuses an in-place rewrite before the merge starts. | `require_side_inputs_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:155-166 |
-| The applied-change postcondition and its three-part unreachability statement. | `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211 |
-| The per-column comparison against the side the operation came from. | `_first_unapplied_change`; `_first_differing_column` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:214-247; mcp/src/agents_remember/memory/knowledge/merge_validation.py:250-276 |
-| The sealed-aggregate read that catches a row edited behind its seal with the file still open. | `_require_sealed_aggregates` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:279-309 |
-| The two halves of the base comparison: the sealed revision rows and the predecessor edges in their separate table. | `_first_revision_difference`; `_revision_rows`; `_first_missing_edge`; `_edge_set` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:327-346; mcp/src/agents_remember/memory/knowledge/merge_validation.py:389-396; mcp/src/agents_remember/memory/knowledge/merge_validation.py:360-375; mcp/src/agents_remember/memory/knowledge/merge_validation.py:378-386 |
+| The four datasets named once so a validation pass cannot mix them up. | `MergeInputs` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:68-76 |
+| The reachable structural check, whose typed-row read recomputes every seal. | `require_structural_validity` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:77-107 |
+| The immutability comparison, including the two calls with two different reachability facts. | `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:108-158 |
+| The side-input pass that refuses an in-place rewrite before the merge starts. | `require_side_inputs_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:159-172 |
+| The applied-change postcondition and its three-part unreachability statement. | `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:173-217 |
+| **The whole list rather than only its first member, which is what lets an authored decision tell the omissions it authorised from the ones it did not.** | `unapplied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:218-250 |
+| The per-column comparison against the side the operation came from. | `_first_unapplied_change`; `_first_differing_column` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:251-290; mcp/src/agents_remember/memory/knowledge/merge_validation.py:298-326 |
+| The sealed-aggregate read that catches a row edited behind its seal with the file still open. | `_require_sealed_aggregates` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:327-359 |
+| The two halves of the base comparison: the sealed revision rows and the predecessor edges in their separate table. | `_first_revision_difference`; `_revision_rows`; `_first_missing_edge`; `_edge_set` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:360-382; mcp/src/agents_remember/memory/knowledge/merge_validation.py:422-431; mcp/src/agents_remember/memory/knowledge/merge_validation.py:393-410; mcp/src/agents_remember/memory/knowledge/merge_validation.py:411-421 |
 | The refusal for a sealed revision whose stored row no longer matches its payload. | `immutable_revision_changed_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:176-196 |
 | The boundary node for the reachable structural guard, and the two direct-policy nodes for the unreachable call sites. | "test_a_candidate_carrying_a_foreign_key_violation_is_refused_by_the_structural_check" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:187-226 |
 
@@ -80,5 +83,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-20T06:18+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **a fifth check was added, and this card's "four checks" count and its section list are corrected rather than annotated.** `unapplied_changes(operation, *, merged, side, operations)` is the same measurement `require_applied_changes` makes, exposed as *every* unapplied operation in delta order instead of only the first — the merge's `_authored_postcondition` is the caller, and it needs the count (not the identity) to bound a row-less authored decision: the result may be missing exactly as many operations as the engine reported retracting it, and a different number is a lost change the caller never authorised. Nothing about `require_applied_changes` itself changed, and the two stated unreachability facts still hold for it. Every range in the reference table was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 
 - 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new postcondition module. It records the four checks and what each answers, the sealed-digest rule (the *stored* payload digest is recomputed, so re-stating the same payload with different JSON key order is not a change while changing the statement behind the digest is), and — as the load-bearing statement a later reader needs — this leaf's two stated reachability facts: the merged-candidate immutability call and the applied-change check are non-experiments under this schema, their policies are exercised directly by boundary nodes, and only the structural check has a reachable failing case. It also corrects the record in this leaf's own review: the predecessor set lives in a **separate** edge table, so the revision-row comparison never sees it. Verification metadata remains empty until closeout stamps the code commit.

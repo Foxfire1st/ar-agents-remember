@@ -5,9 +5,10 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
+| lastUpdated | 2026-09-20T06:40+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,7 +64,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` forwards the canonical `contract_path`, typed `MemorySyncChoice`, typed `SyncResolutionAction`, and `dry_run` unchanged to `worktree_sync_tool`; it owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -123,10 +124,11 @@ The source itself and its governing route are sufficient for this thin payload a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_integrate_payload`; `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:110-118; mcp/src/agents_remember/mcp/tools/worktree.py:141-156 |
-| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_pause_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-107 |
-| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:159-174 |
-| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:88-95 |
+| Integration payloads forward contract, strategy, and preview choice without ledger intent. | `worktree_integrate_payload`; `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:144-159; mcp/src/agents_remember/mcp/tools/worktree.py:113-121 |
+| Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_pause_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:46-56; mcp/src/agents_remember/mcp/tools/worktree.py:59-76; mcp/src/agents_remember/mcp/tools/worktree.py:79-88; mcp/src/agents_remember/mcp/tools/worktree.py:91-98; mcp/src/agents_remember/mcp/tools/worktree.py:101-110 |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:162-177 |
+| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | `worktree_pause_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:91-98 |
+| **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** | `SyncResolutionInput`; `worktree_sync_tool` | mcp/src/agents_remember/models/worktree.py:171-182; mcp/src/agents_remember/application/worktree_tools.py:347-361 |
 
 ## Cross-Repo References
 
@@ -161,6 +163,7 @@ served were removed; this module exports no wait payload today and the name appe
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 ## Update History
+- 2026-09-20T06:40+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the sync builder stopped taking a bare action, and this card's parameter claim is corrected rather than annotated.** `worktree_sync_payload` now takes `resolution: SyncResolutionInput | None` — the action plus the authored decision it may carry as one value, paired one layer up in `mcp/registration/worktrees.py` — because the application entry point is at the `PLR0913` argument ceiling and because the driver refuses the two as a pair. The registration-side card gained the matching row for the flat `knowledge_resolution` argument and its docstring. Every cited range in this card was re-derived against the delivered tree (the import block grew, so every builder moved). Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the ledger-message parameter from the documented integration payload forwarding. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.

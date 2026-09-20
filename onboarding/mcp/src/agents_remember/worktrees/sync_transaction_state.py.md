@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-20T06:26+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash |  `74c6c693b8c5a5863ce15f016793192931f4adc1`|
+| lastVerifiedCommitDate |  2026-09-20T06:22:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +26,8 @@ recovery do not depend on a readable task document or queue projection.
 ### Logic
 
 `SyncSideRecord` binds each participating side to exact repositories/worktrees/branches, admitted
-source/pre-sync/base commits, three authority refs, plan, progress, result head, conflicts, and the
+source/pre-sync/base commits, three authority refs, plan, progress, result head, conflicts, the
+engine's own explanation of a retained knowledge conflict, and the
 parked worktree candidate (`wipState`, `wipStash`, `wipPaths`, `wipPathCount`).
 `SyncOperationRecord` records one generation, canonical contract/task/kind, original bases, phase,
 memory policy, both sides, and timestamps. `SyncQuarantineRecord` is terminal proof that corrupt
@@ -69,6 +71,20 @@ another build is refused rather than misread.
 then continue worktree_sync", otherwise it keeps the retained-merge wording. The parked facts are
 also projected to callers through `side_payload`'s conditional `wip` block.
 
+**L40 journals the diagnosis, and the reason is that the diagnosis has to survive the response that
+carried it.** `SyncSideRecord.knowledgeConflict: SyncKnowledgeConflict | None` holds the merge engine's
+own explanation for a conflicted knowledge dataset this side retained — the path, the row-level
+`MergeConflict` (table, operation and exact refused key), the typed `KnowledgeRefusal` with the action
+it advertises, this seam's `detail` when the engine never answered, and the authored decisions that
+conflict admits. It is **journaled rather than only returned** because the agent reads it again on
+every later call: `_active_sync_projection` re-projects this side's state from the journal, so without
+the field a resumed sync could say only which file is unresolved while the first response had said
+exactly which row to reconcile. The projection carries it through `knowledgeConflict`, and the field
+is cleared with `conflictFiles` when the retained merge is finally settled, so a completed sync cannot
+re-advertise a reconcile call for a conflict that no longer exists. Because `SyncSideRecord` is frozen
+with `extra="forbid"`, the field is part of the durable journal schema: a record from another build is
+refused rather than misread.
+
 ### Todos
 
 Final nonregular handling and public model fields are reconciled to the frozen source;
@@ -85,11 +101,12 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:113-151; mcp/src/agents_remember/worktrees/sync_transaction.py:154-174 |
+| The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:117-157; mcp/src/agents_remember/worktrees/sync_transaction.py:158-180 |
 | Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
 | Public status embeds this journal projection without moving its authority into task/queue state. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
-| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, and true path count. | `SyncSideRecord`; `SyncWipState` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:38-38; mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67 |
-| The active projection distinguishes a parked-candidate reapply from a retained merge. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:433-509 |
+| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, and the engine's explanation of a retained knowledge conflict. | `SyncSideRecord`; `SyncWipState` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:42-75; mcp/src/agents_remember/worktrees/sync_transaction_state.py:39-39 |
+| The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:439-516 |
+| **The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.** | `SyncKnowledgeConflict`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:184-203; mcp/src/agents_remember/models/worktree.py:152-169 |
 
 ## Cross-Repo References
 
@@ -99,6 +116,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-20T06:26+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the journal gained the diagnosis, and this card now says why it is durable state rather than response state.** `SyncSideRecord.knowledgeConflict` is recorded with its full shape and — the load-bearing reason — the fact that `_active_sync_projection` re-projects the side from the journal, so a resumed sync must be able to re-state the row the engine refused rather than only the file name; the field is cleared with `conflictFiles` when the retained merge settles, and being part of a frozen `extra="forbid"` model it is durable journal schema that refuses a record from another build. The `SyncSideRecord` summary sentence in Logic gained it, and every cited range was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the journal move to
   `reports/sync-operation.json` with legacy read tolerance is the frozen change and the card records

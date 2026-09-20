@@ -5,9 +5,10 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
+| lastUpdated | 2026-09-20T06:44+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -84,16 +85,17 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication. | `worktree_pause`; `_register_worktree_stop_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:199-219 |
-| The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:168-194 |
-| The start payload forwards task identity, bases and execution configuration to the application owner. | "def worktree_start_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:43-43 |
-| The attach payload forwards the requested worktree attachment to the application owner. | "def worktree_attach_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:76-76 |
-| The status payload reads status through the application owner. | "def worktree_status_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:98-98 |
-| The sync payload forwards the synchronization request to the application owner. | "def worktree_sync_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:56-56 |
+| The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication. | `worktree_pause`; `_register_worktree_stop_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:215-235 |
+| **The public sync declaration: typed memory choice, contract-addressed continue/cancel, and the flat `knowledge_resolution` argument whose description carries the engine's diagnosis and both decisions' meanings.** | `worktree_sync`; `knowledge_resolution` | mcp/src/agents_remember/mcp/registration/worktrees.py:177-214 |
+| The start payload forwards task identity, bases and execution configuration to the application owner. | "def worktree_start_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:46-46 |
+| The attach payload forwards the requested worktree attachment to the application owner. | "def worktree_attach_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:79-79 |
+| The status payload reads status through the application owner. | "def worktree_status_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:101-101 |
+| The sync payload forwards the paired resolution value to the application owner. | "def worktree_sync_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:59-59 |
 | The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-29 |
 | The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. | `TaskBases` | mcp/src/agents_remember/application/worktree_tool_requests.py:32-47 |
 | The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. | `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:50-56 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
+| **The pairing this registrar performs, and the vocabulary the decision is typed by.** | `SyncResolutionInput`; `AuthoredReconciliation` | mcp/src/agents_remember/models/worktree.py:171-182; mcp/src/agents_remember/models/knowledge/merge.py:175-211 |
 
 ## Cross-Repo References
 
@@ -162,7 +164,15 @@ the published JSON schema stays a flat object. `mcp/tests/test_tools.py` pins th
 publication. Neither is reachable through the other, and the split is the point: before L37 an agent
 that wanted to stop a master found only a protected-branch publication under the name it reached for.
 
+## 260915-KS-L40 The Authored Sync Resolution On The Public Surface
+
+**`worktree_sync` gained a third argument, `knowledge_resolution: AuthoredReconciliation | None`**, and the published description is where an agent learns the whole recovery. The signature stays **flat** — `contract_path`, `memory_sync_choice`, `resolution_action`, `knowledge_resolution`, `dry_run` — because on this route the signature *is* the published JSON schema, so the decision is advertised as its own argument rather than as a nested object. The registrar pairs the two into the one `SyncResolutionInput` the payload layer takes before forwarding, which is also why the pairing is visible here and only here.
+
+The description now carries the diagnosis as well as the action: a retained *knowledge dataset* conflict is reported **with the engine's own diagnosis** — the table, the operation and the exact row it refused, plus the action it advertises — and is settled by authoring one decision for that row, `resolution_action='reconcile'` with `knowledge_resolution={table, record_id, decision}`, where `decision` is one of the conflict's advertised decisions. Both meanings are stated in prose (`keep-left` retracts the arriving change so the stored value stands; `keep-right` applies it over the stored value) because an agent that has to read the enum's source to choose has not been told what it is choosing. The merge then continues in the same call. No registrar, tool name, registration order or advertised count changed.
+
 ## Update History
+- 2026-09-20T06:44+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the public sync surface gained its one decided argument, and this card gains the section that says what the agent is now told.** Recorded: the flat `knowledge_resolution` argument beside `resolution_action` (flat because on this route the signature is the published schema), the registrar pairing the two into `SyncResolutionInput` before forwarding, and the published description's own content — the engine's diagnosis reaching the public boundary and the two decisions' meanings stated in prose rather than left to the enum. No registrar, tool name, order or count changed, so the route's advertised surface is unchanged. Every cited range was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
+- 2026-09-20T03:57:45+00:00: Generated citation repair: `worktree_pause`; `_register_worktree_stop_tools` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:218-235; mcp/src/agents_remember/mcp/registration/worktrees.py:215-235. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_start_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:43-43. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_attach_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_status_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:98-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.

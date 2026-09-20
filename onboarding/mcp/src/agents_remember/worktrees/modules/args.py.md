@@ -5,9 +5,10 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastUpdated | 2026-09-20T06:22+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Purpose
@@ -27,6 +28,8 @@ The internal transport carries one normalized code/memory closeout input and the
 `WorktreeArgs` now carries an optional `quality_certification` field for the organizational full-gate proof, and (CCR-R22@v1, L22, commit `685f83c44055`) the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
 
 L23 adds worker-injected operation fingerprint, candidate-tree, and progress callback fields to `WorktreeArgs`; CLI namespaces cannot populate these plane-owned controls.
+
+**L40 adds the one decided input this DTO carries, and it is deliberately a typed model rather than a loose mapping.** `knowledge_resolution: AuthoredReconciliation | None` is the authored decision one `resolution_action='reconcile'` call carries: exactly one conflict the knowledge merge refused, and which side's authored value is the reconciled one. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree` — the vocabulary is owned once and this transport only carries it — and it is optional because every operation that is not an authored reconciliation has no decision to carry. `sync_input_refusal` in the sync driver is what pairs it with its action in both directions (`reconcile` without a decision, and a decision with any other action, are refused by name), so this field cannot be read as a default or as a preference.
 
 `WorktreeArgs` is a `@dataclass(frozen=True)`. Every field carries a default, so
 any operation can construct just the subset it needs without supplying the rest;
@@ -93,12 +96,13 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `WorktreeArgs` carries normalized closeout input and actual landed code/memory facts. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-111 |
-| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:114-117 |
+| `WorktreeArgs` carries normalized closeout input, actual landed code/memory facts, and the one authored knowledge decision a reconcile call may carry. | `WorktreeArgs`; `knowledge_resolution` | mcp/src/agents_remember/worktrees/modules/args.py:35-118; mcp/src/agents_remember/worktrees/modules/args.py:60-62 |
+| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:118-121 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | `MemorySyncChoice` | mcp/src/agents_remember/models/worktree.py:87-87 |
+| Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:96-96; mcp/src/agents_remember/models/worktree.py:95-95 |
+| **The authored-decision vocabulary this transport carries for a reconcile call, owned by the merge model rather than restated here.** (`AuthoredReconciliation`) | `AuthoredReconciliation` | mcp/src/agents_remember/models/knowledge/merge.py:175-211 |
 | Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:35-43 |
 | Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:132-195 |
 | Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | `GatePolicy` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:53-63 |
@@ -125,8 +129,8 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-111 |
-| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:114-117 |
+| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:35-118 |
+| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:118-121 |
 
 ## Current Landed Composition
 
@@ -145,19 +149,14 @@ No separately configured cross-repository implementation governs this file; any 
 [Governing route overview](overview.md)
 
 ## Update History
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `MemorySyncChoice` repointed to mcp/src/agents_remember/models/worktree.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T07:35+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"Public sync choice and resolution-action vocabularies are owned once by the worktree model."* — names `MemorySyncChoice` and `SyncResolutionAction`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-20T06:22+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the internal transport gained the one decided input this leaf adds.** `WorktreeArgs.knowledge_resolution: AuthoredReconciliation | None` is recorded with what it is (the authored decision for exactly one refused conflict and the side whose value is the reconciled one), why it is typed through `models.knowledge.merge` rather than restated here (the vocabulary is owned once, exactly as `resolution_action` is owned by `models.worktree`), and the fact that the pairing with its action is enforced in the sync driver's `sync_input_refusal` rather than by a default here. Every cited range in this card was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=5e45e8425b3e6205a35a8a343e9c0178d1b2ec87f24472d586fb5cd181ccc24e. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 
-- 2026-09-13T12:29:52+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:79-79; mcp/src/agents_remember/models/worktree.py:78-78. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:80-80; mcp/src/agents_remember/models/worktree.py:79-79. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:73-73; mcp/src/agents_remember/models/worktree.py:72-72. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T17:57:35+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:72-72; mcp/src/agents_remember/models/worktree.py:71-71. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:71-71; mcp/src/agents_remember/models/worktree.py:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "class WorktreeArgs" repointed to mcp/src/agents_remember/worktrees/modules/args.py:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:60-60; mcp/src/agents_remember/models/worktree.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional certification_profile field on WorktreeArgs carrying the repository-owned profile reference into closeout/integration.
 
 

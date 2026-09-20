@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_sync.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `0da444b3b2b61f6a86fa4076b283c305db025d22` |
-| lastVerifiedCommitDate | 2026-09-20T02:38:15+02:00|
+| lastUpdated | 2026-09-20T06:55+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](overview.md)
@@ -66,14 +66,14 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | `test_terminal_removal_discards_only_the_memory_cache` | mcp/tests/test_worktree_sync.py:308-350 |
-| The real Git fixture and attributed official memory update. | `map_official_memory` | mcp/tests/test_worktree_sync.py:44-122 |
-| Fast-forward and retained code conflict behavior. | `test_pure_fast_forward_sync_advances_both_sides_and_contract`; `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:187-207; mcp/tests/test_worktree_sync.py:209-244 |
-| Cache-independent source admission, start, and candidate identity. | `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed`; `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:246-272; mcp/tests/test_worktree_sync.py:274-306 |
-| Native cache-only success, real conflict continuation, and resumed staged-content validation. | `test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction`; `_assert_memory_content_conflict_scenarios` | mcp/tests/test_worktree_sync.py:391-408; mcp/tests/test_worktree_sync.py:410-490 |
-| **The CYCLE-02 knowledge-dataset case: the sync completes, both sides survive, and the caller invokes no merge entry point.** | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:129-183 |
-| **The shared merge-case fixture this module began consuming for that case, and the two imports it takes from it.** | `build_case`; `file_digest` | mcp/tests/merge_case_test_support.py:177-205; mcp/tests/test_worktree_sync.py:44-45 |
-| Nonregular journal quarantine preserves the outside target. | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:528-547 |
+| Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. | `test_terminal_removal_discards_only_the_memory_cache` | mcp/tests/test_worktree_sync.py:541-583 |
+| The real Git fixture and attributed official memory update. | `map_official_memory` | mcp/tests/test_worktree_sync.py:132-144 |
+| Fast-forward and retained code conflict behavior. | `test_pure_fast_forward_sync_advances_both_sides_and_contract`; `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:420-441; mcp/tests/test_worktree_sync.py:442-478 |
+| Cache-independent source admission, start, and candidate identity. | `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed`; `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` | mcp/tests/test_worktree_sync.py:479-506; mcp/tests/test_worktree_sync.py:507-540 |
+| Native cache-only success, real conflict continuation, resumed staged-content validation, and the three knowledge-conflict scenarios this leaf added. | `test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction`; `_assert_knowledge_conflict_scenarios`; `_assert_memory_content_conflict_scenarios` | mcp/tests/test_worktree_sync.py:624-646; mcp/tests/test_worktree_sync.py:647-679; mcp/tests/test_worktree_sync.py:680-762 |
+| **The CYCLE-02 knowledge-dataset case: the sync completes, both sides survive, and the caller invokes no merge entry point.** | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-188 |
+| **The shared merge-case fixture this module began consuming for that case, and the two imports it takes from it.** | `build_case`; `file_digest` | mcp/tests/merge_case_test_support.py:511-573; mcp/tests/merge_case_test_support.py:607-612 |
+| Nonregular journal quarantine preserves the outside target. | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:798-817 |
 
 ## Cross-Repo References
 
@@ -83,6 +83,9 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-20T03:57:45+00:00: Generated citation repair: `test_terminal_removal_discards_only_the_memory_cache` repointed to mcp/tests/test_worktree_sync.py:541-583. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T03:57:45+00:00: Generated citation repair: `map_official_memory` repointed to mcp/tests/test_worktree_sync.py:132-144. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T03:57:45+00:00: Generated citation repair: `test_nonregular_journal_is_renamed_without_following_and_quarantined` repointed to mcp/tests/test_worktree_sync.py:798-817. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-20T01:37+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): range repair only; no claim re-worded, no anchor renamed, no row deleted. The two pre-existing reference rows still cited this file's **pre-move** spans (`:126-146`/`:148-183` and `:185-211`/`:213-245`), which is where the four cases stood before this leaf's added case and helper pushed them down the class body. Re-derived with `grep -n` and read at each declaration, they now cite the four cases' own extents in the `WorktreeSyncTests` class as it stands: `test_pure_fast_forward_sync_advances_both_sides_and_contract` at `mcp/tests/test_worktree_sync.py:187-207` and `test_code_merge_conflict_is_retained_and_can_continue` at `:209-244` in the fast-forward/retained-conflict row, `test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed` at `:246-272` and `test_start_and_memory_candidate_do_not_take_authority_from_the_cache` at `:274-306` in the cache-independence row. The rows around them were already current on this candidate and are unchanged. No verification stamp advanced: the candidate is uncommitted and closeout owns the stamp.
 
@@ -206,3 +209,6 @@ The operation and fixture boundaries described here are defined by same-reposito
   documented sync cases and their assertions are unaffected.
 
 - 2026-06-10T09:56+02:00: Created with issue #54 sub-task D (8 tests over live-worktree fixtures).
+
+## Update History
+- 2026-09-20T06:55+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **three new scenario helpers, and this card's list of what the module drives is corrected rather than annotated.** Added: `_assert_knowledge_conflict_is_diagnosed_and_reconciled` (the public response carries the engine's own table/operation/refused row, advertises `reconcile_knowledge_resolution` with the journaled record and a decision placeholder, refuses a decision naming the wrong record, and returns `synced` once the advertised decision is authored — asserted in both directions, and with a dry run that leaves HEAD and the index unchanged), `_assert_delete_reference_conflict_is_retracted` (the row-less shape offers only `keep-left`, `keep-right` is refused by the vocabulary, and recovery retracts exactly the arriving realization claim), and `_assert_schema_disagreement_is_reported_not_reconciled` (the refusal is explicit, `decisions` is empty, and any reconcile call is refused without entering the merge). All three run from the **existing** retained-conflict integration case through module-level helpers, so **no collected case was added to a lane already at its exact ceiling**. The module now builds one scenario at an older recorded schema generation and therefore consumes the registered `generation_test_support` fixture, which is what moved the evidence catalogue (two consumer paths) and its pinned digest (`c499cbcc…`, the eleventh deliberate re-pin) in the two sibling cards. Where this card's earlier rows cite the module's shared fixture and helpers, the ranges were re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.

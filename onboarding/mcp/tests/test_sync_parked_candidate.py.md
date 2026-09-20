@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_sync_parked_candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -62,7 +62,7 @@ These current source spans identify the implementation owners and the specific a
 | Genuine reapply conflict and cancellation preserve candidate content. | `test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it` | mcp/tests/test_sync_parked_candidate.py:80-115 |
 | Crash recovery and retained-source continuation return parked work. | `test_resume_returns_the_candidate_a_crash_left_parked`; `test_resolving_a_retained_merge_returns_the_parked_candidate` | mcp/tests/test_sync_parked_candidate.py:117-144; mcp/tests/test_sync_parked_candidate.py:146-171 |
 | Pre-existing genuine conflicts remain a refusal. | `test_unmerged_index_entries_still_refuse_the_sync` | mcp/tests/test_sync_parked_candidate.py:173-188 |
-| Production parked-content boundary and exact restore proof. | `park_worktree_wip`; `prove_parked_wip_restored` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:144-163; mcp/src/agents_remember/worktrees/sync_transaction_git.py:198-216 |
+| Production parked-content boundary and exact restore proof. | `park_worktree_wip`; `prove_parked_wip_restored` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:168-189; mcp/src/agents_remember/worktrees/sync_transaction_git.py:222-242 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-20T07:23+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `park_worktree_wip` and `prove_parked_wip_restored` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/worktrees/sync_transaction_git.py:168-189` and `mcp/src/agents_remember/worktrees/sync_transaction_git.py:222-242`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Extended the existing memory-WIP case with staged cache data and an exact real-path assertion; retained the six clean, conflict, cancel, crash/resume, continuation, and pre-existing-conflict scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
