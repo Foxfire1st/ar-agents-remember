@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
-| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T05:17+02:00 |
+| lastVerifiedCommitHash | `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitDate | 2026-09-20T05:22:07+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -1463,7 +1463,51 @@ restating its rule, resolved by `_seed_revisions` to the revisions realized at t
 hit can now ask what governs it through path → invariant → family without first discovering an invariant or
 family revision id.
 
+## 260915-KS-L39 The Ingest's Identities Move To The Repository, And The Front Door Reaches The Baseline
+
+`mcp/src/agents_remember/application/knowledge_curator_ingest.py` is this route's curator write plane — the layer that turns one orchestrator hand-off list into one
+admitted candidate batch — and this leaf changed what its identities are a function of.
+
+**Identity stopped being a function of the code base commit.** `_identity` derived every id it minted over
+`_enclosure(contract)`, which is the enclosure's recorded base commit. That made one repository's knowledge
+a function of the baseline it happened to be read at — the same obligation under the same local label was a
+different record at each baseline, while two different repositories that shared a base commit were handed
+the **same** record identity. Every id is now a `uuid5` over the repository's own `repository_id`: the
+namespace is read from the dataset the run selected (derived under `_INGEST_NAMESPACE` only as a cold-start
+fallback), and `ingest_curator_list` resolves it **before** planning so that one value — carried on the
+`_Source` the planner reads — reaches every mint in the run rather than one value per step.
+
+**Two constructs in one file are two stored records.** The stored `anchor_id` and `claim_id` were keyed on
+the written path and the entry id alone, so one entry citing `resolve_budget` and `other` in a single
+`pkg/module.py` reached the batch with the same `source_anchor` twice and was refused `duplicate_identity`.
+They are now minted together with the route id by `_target_identities` into one `_TargetIdentities` value,
+and the anchor and the claim carry the locator's **qualified name** as their discriminator — the same
+discriminator `_observation_id` already used, and the one that survives the file being edited above the
+definition. The **route** deliberately stays keyed on the path: a route is a scope that governs a path, so
+N anchors in one file are N associations with one route row rather than N rows.
+
+**The front door reached the selection this route already accepted.** `IngestSelection.baseline` existed and
+`_admitted_candidate` already forked a selected dataset; the CLI did not declare the argument, so no
+production caller could select one. The adapter now declares `--baseline` and passes it through, which is
+what makes task B begin from task A's published knowledge instead of from an empty candidate. A run that
+selects none is unchanged: the first task of a repository still creates an empty candidate.
+
+The route boundary is unchanged: the operation still adds no symbol extractor of its own (a symbol is
+resolved through the shipped `bound_definitions`), no onboarding write, no third root, no export, and no
+lane parameter; the two-leg route transaction and the publication step keep the shapes the L30 and L32
+sections describe.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one derivation, keyed on the repository's own id rather than the enclosure's base commit. | `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458 |
+| The route, anchor and claim identities minted together, discriminated by the locator's qualified name. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513 |
+| The operation that resolves the repository identity before planning, and the selection value the front door hands it. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:846-952; mcp/src/agents_remember/application/knowledge_curator_ingest.py:827-843 |
+| The admission that forks a selected baseline instead of creating an empty candidate. | `_admitted_candidate` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1073-1115 |
+| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
+
+
 ## Update History
+- 2026-09-20T05:17+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, base `756c47b37fa16324a836a44336655413d10fffaa`): **this route's body gained the L39 section above**, which states the three route-level facts this leaf changed inside the curator write plane: the identity derivation moving off `_enclosure(contract)` onto the repository's own `repository_id` (resolved before planning so one value reaches every mint), the anchor and claim identities gaining the locator's qualified name while the route stays one scope per path, and the CLI's `--baseline` reaching the selection this route already accepted so a next task begins from a prior task's published knowledge. The route's boundaries are unchanged: no second symbol extractor, no onboarding write, no third root, no export, no lane parameter, and publication still performed by the run that committed the candidate. This is a body change, not a metadata-only refresh: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows are left exactly as they were and no stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits; `reviewedWorkingCandidate` names the candidate this reading was performed against.
 - 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section and extended the L20 renderer paragraph** — the family read now returns its members and their implementation locations, and both selection paths apply one frontier so an exact revision read no longer returns another subject's realization row; the L20 paragraph gained the corresponding sentences plus the optional `ViewRequest.source_path` seed, which is the change to `models/knowledge/view.py` at this route's boundary. The body changed substantively; no verification stamp advanced, because every source named is modified in the delivered working tree and closeout owns the stamp. This document's `knowledge_read_boundaries` and `candidate.py` citation rows remain stale for reasons this leaf did not cause and could not repair without the blocked `citation_fix` pass; they are reported, not papered over.
 - 2026-09-18T19:18+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the application seam's three changes stated at route altitude: `measuring_build_stamp()` stamped onto the memory-quality response at all three entry points and onto the citation responses (item 26 / D-33), `worktree_tools.py`'s start gate restated to its actual condition with the `Requires` lines reported rather than enforced (item 8 / D-17), and the `read_steps` response shape its own model declares (item 20 / D-9). It also records which of the checklist's rows are **not** curation debt (`affected.closure` and `coherence.record` are blocked by construction; the drift summary is diagnostic and does not enter `curatorActionableCount`) and that the refresh-attestation gate is the one that does, which is why every changed-source sidecar carries a body edit or an exact no-impact entry. The body changed substantively; no verification stamp moves — every source named is modified in the delivered working tree and closeout owns the stamp.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the thin adapter `application/knowledge_review.py`, its composition of R08's `diff_knowledge_scope` and L20's `read_knowledge_view` with no selection of its own, the `layers.toml` rank that keeps the composition at this tier, and the candidate resolution and published-assessment read from the owners' own paths. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.

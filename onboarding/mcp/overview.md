@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T01:54+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T05:17+02:00 |
+| lastVerifiedCommitHash | `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastVerifiedCommitDate | 2026-09-20T05:22:07+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1842,7 +1842,47 @@ What this route does not gain: no second write path (the publication owner stays
 refusal vocabulary — a destination the caller did not admit is refused by the publication operation
 with its own code. The per-file detail lives in the sidecars for those three modules.
 
+## 260915-KS-L39 Route Impact — The Curator's Front Door Selects Its Baseline, And Its Identities Move To The Repository
+
+This leaf changed `mcp/src/agents_remember/cli/knowledge_ingest.py` and `mcp/src/agents_remember/application/knowledge_curator_ingest.py` (and the
+list-level test module under `mcp/tests/`), and every change is inside the **curator write plane** this
+route publishes: no public tool signature, no response model, no refusal vocabulary and no read-rail
+behaviour moved. Three route-level facts are worth carrying here, and they are the three points a
+follow-up review kept open on the CYCLE-01 finding.
+
+- **The front door can select the dataset it forks from.** `agents-remember knowledge-ingest` now declares
+  `--baseline <published dataset>` and hands it to the one `IngestSelection` as a `Path`. Without it a
+  task's candidate held only that task's new entry, so the repository's existing invariants were absent
+  from it and the next task began blind to knowledge the repository had already published. Omitting the
+  flag is still the correct cold start for a repository's first task, which is why the argument and the
+  selection field are one pairing rather than an option and a default.
+- **The identities the ingest mints belong to the repository, not to the code baseline.** `_identity`
+  derives every id over the repository's own `repository_id` — read from the selected dataset, derived
+  under the ingest namespace only as a cold-start fallback — instead of over the enclosure's recorded base
+  commit, and `ingest_curator_list` resolves that value **before** planning, so one value reaches every
+  mint in the run rather than one value per step. The same obligation is therefore the same record when
+  the next task reads the line at a later baseline, and two repositories that share a base commit no
+  longer collide on one record identity.
+- **Two constructs in one file are two stored records.** The anchor and the claim carry the locator's
+  qualified name as their discriminator while the route stays one scope per path, so `resolve_budget` and
+  `other` in one `pkg/module.py` commit as two anchors and two claims sharing the one route row. Before
+  this, the second construct reached the batch as the same `source_anchor` and was refused
+  `duplicate_identity`.
+
+What this route does not gain: no second write path (publication is still
+`application/knowledge_snapshot.py`), no change to the five published `knowledge_*` tools, and no new
+refusal vocabulary. The per-file detail lives in the sidecars for those modules.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
+| The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:846-952; mcp/src/agents_remember/application/knowledge_curator_ingest.py:827-843 |
+| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513; mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490 |
+| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1656-1775 |
+
+
 ## Update History
+- 2026-09-20T05:17+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, base `756c47b37fa16324a836a44336655413d10fffaa`): **this route's body gained the L39 section above**, and it states the three CYCLE-01 points at the boundary this route publishes: the CLI's new `--baseline` selection, the identity derivation moving off the code base commit onto the repository's own `repository_id`, and the symbol discriminator that lets two constructs of one file store two anchors and two claims against one route row. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows are left exactly as they were, no stamp is advanced — the candidate is uncommitted and closeout owns the real code and memory commits — and `reviewedWorkingCandidate` names the candidate this reading was performed against.
 - 2026-09-20T01:54+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **this route's body gained the L30 section above** — the curator ingest's continuous repository identity, its baseline fork, declared invariant revisions and multi-anchor targets, and the publication leg that makes a committed candidate reachable as a dataset through the CLI. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the previous verification stamp rows are left exactly as they were and no stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits.
 - 2026-09-18T19:17+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the route-level statement of the terminal leaf's changes under `mcp/` (the measuring-build stamp, the corrected `read_steps` response, the address-bound next-step hint, `atomic_replace`'s two legs, the accepted memory-worktree shape, the cleanup-preview agreement, the closeout hint plus the durable attestation copy, the citation-machinery fixes, and the knowledge substrate's own contradictions), each pointing at the module sidecar that carries it. It also states the three rails a reader must respect: zero integration headroom (400 / 400, with the `UsageError` that makes an over-budget lane execute nothing), the budget pair's real home in the repository-root `pyproject.toml`, and the catalogue's unchanged 15 / 65 with a moved digest. The body changed substantively; no verification stamp moves, because every source named is modified in the delivered working tree and closeout owns the stamp.
 - 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `KNOWLEDGE_REVIEW_ROUTE`, cited at mcp/src/agents_remember/serving/review.py:104-104. The claim says the section's route is registered GET-only, and the cited line is `@app.get(KNOWLEDGE_REVIEW_ROUTE)`; the constant itself is declared at `:49`. The claim is true as written. It reopens because the construct **did not exist at this card's recorded verification commit** — it is this leaf's own addition — so the comparison the checker makes is between a stamp that predates the construct and a tree that carries it. That is the stamp-relative condition this master named at L12, L13, L16, L17, L20 and L21, and it clears when closeout writes the code commit. No range was substituted or deleted and the verification stamp is **not** advanced.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash |  `756c47b37fa16324a836a44336655413d10fffaa`|
-| lastVerifiedCommitDate |  2026-09-20T03:26:53+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l35-ar`, uncommitted; base `7abacd8e432730cfca177ff0136711f13ea5f34d` |
+| lastUpdated | 2026-09-20T05:17+02:00 |
+| lastVerifiedCommitHash |  `f79f4db745ad00b908d6ce4871d0b4ab2320207c`|
+| lastVerifiedCommitDate |  2026-09-20T05:22:07+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `../overview.md` |
 
 ## 260915-CAPS-L9 Experiment-Installation Test Population
@@ -109,6 +109,52 @@ unchanged.
 | The counter-case the new admission must not weaken: a position descending from a step cannot vacate it. | `test_a_position_that_descends_from_a_step_does_not_vacate_it`; `_assert_the_vacating_position_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:379-411; mcp/tests/test_atomic_series_chain_pair_order.py:413-490 |
 | The production step rule these cases force, and the two helpers the repair added. | `_require_admitted_step`; `_positions_inside_the_step`; `_reached_by_an_official_position` | mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576 |
 | The positions a step is measured against: the chain's own contracts' sync logs unioned with the recorded base. | `_landing_source_positions`; `_require_landing_spine_side` | mcp/src/agents_remember/worktrees/series_closeout.py:579-602; mcp/src/agents_remember/worktrees/series_closeout.py:405-446 |
+
+## 260915-KS-L39 The Public Curation Journey, Pinned Inside The Existing Budget Slot
+
+`mcp/tests/test_knowledge_curator_ingest_list.py` carried the CYCLE-01 continuity case before this leaf and carries the closure of the three
+points a follow-up review kept open, so a reader of this route should know what the case now measures and
+why its **collected count did not change**.
+
+The case `RepositoryIdentityStabilityTests.test_repository_knowledge_continues_across_baselines_and_tasks`
+now ends by calling `_cycle01_public_identities`, which pins three route-level facts. **(f)** The
+identities the **write path** stores distinguish two constructs of one file: `_target_identities` mints the
+anchor and the claim from the locator's qualified name while the route stays one scope per path, so two
+constructs of one `pkg/module.py` get two anchor ids, two claim ids and one shared route id — the
+observation identity the case already separated was not enough on its own, because the stored anchor and
+claim were still keyed on the path and the entry id alone and the batch refused the second with
+`duplicate_identity` on `source_anchor`. **(g)** The **public operation** is driven for real: task A commits
+two constructs of one file and publishes, task B forks that published dataset with a selected `baseline`,
+keeps A's invariant and revisions by exact id, stores an explicit successor under the invariant it names
+with a recorded `invariant_predecessor` edge, adds an unrelated record, and republishes over the dataset it
+forked from (`previous_identity` equal to A's). The assertions are read from the databases themselves: the
+published `knowledge.sqlite` holds exactly the candidate's invariants and revisions, and the candidate
+holds four distinct anchors, three of them for the one file. **(h)** A reused local label resolves to the
+**repository's** record: one repository read at two code baselines mints the same invariant and revision
+identity, which is what makes the obligation recorded at the first baseline findable at the second.
+
+**No collected case was added, and the reason is a route-level constraint rather than a preference.** Both
+lanes sit at exactly their configured budget — 2300 / 2300 unit and 400 / 400 integration — and
+`pytest_collection_finish` raises `UsageError` on an over-budget selection, after which that lane executes
+**zero** tests. One added collected case would therefore buy a red lane and no coverage, so the new
+protection is plain statements and helper functions called from inside the existing case: it executes on
+every run of that case while remaining outside the collection unit count. A reader should take "the case
+count is unchanged" here as a deliberate budget decision with a named mechanism, and should reach for
+consolidation in this module rather than a new `test_*` method.
+
+The journey publishes into a private pair's memory root, so it builds its own repositories through the
+fixture's own builder (`pair.__wrapped__`) under a small private tmp factory rather than reusing the
+session pair, whose memory root the other cases read but never write. That keeps the session fixture's
+"never mutated by a case" invariant intact.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one collected case that now runs the public journey, and the entry point it calls. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_public_identities` | mcp/tests/test_knowledge_curator_ingest_list.py:1656-1775; mcp/tests/test_knowledge_curator_ingest_list.py:1780-1815 |
+| The public journey itself: a private pair, task A's publication, task B's baseline fork, and the measurements read from the databases. | `_cycle01_cli_baseline_journey`; `_cycle01_task_a`; `_cycle01_task_b`; `_cycle01_baseline_consequences` | mcp/tests/test_knowledge_curator_ingest_list.py:2012-2039; mcp/tests/test_knowledge_curator_ingest_list.py:1841-1872; mcp/tests/test_knowledge_curator_ingest_list.py:1875-1921; mcp/tests/test_knowledge_curator_ingest_list.py:1924-1963 |
+| The reused-label identity, asserted as one record for one repository at two baselines. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2042-2057 |
+| The write-path identities the journey's first assertion pins. | `_TargetIdentities`; `_target_identities`; `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458 |
+| The public selection the next task uses to begin from a prior task's published knowledge. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
+
 
 ## Governing Overview
 
@@ -1586,6 +1632,7 @@ leaf's curator to the owning seat; it is a code-side fix, not a memory one.
 | The two shared-support artifacts both new modules consume, whose exact consumer lists are the gate gap recorded above. | `make_authorship`; `create_current_generation_store` | mcp/tests/knowledge_fixture_test_support.py:189-220; mcp/tests/generation_test_support.py:86-120 |
 
 ## Update History
+- 2026-09-20T05:17+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, code base `756c47b37fa16324a836a44336655413d10fffaa`): **this route gained one section and no collected case, and the section states the budget reason rather than leaving it to be guessed.** The L39 record above names the three points the follow-up review kept open and how one existing case now pins them: the identities the write path stores for two constructs of one file, the public journey through `ingest_curator_list` with a selected `baseline` against a real SQLite store, and the reused local label resolving to the repository's record at two code baselines. No collected case was added because both lanes sit at exactly their budget — 2300 / 2300 unit and 400 / 400 integration — and one added collected case makes `pytest_collection_finish` raise `UsageError`, after which that lane executes zero tests; the new protection is functions called from inside the existing case, so it runs without moving the collection count. **One cross-card consequence is recorded here because this document's own bytes caused it:** inserting the L39 section at the top of this route shifted every heading below it, so the one row on `test_eve_protocol.py.md` that cites `## Fixture Roles And Claims` and `## Isolation And Collection` in this document was re-pointed to those sections' current extents; that card's claim, both anchors and its own body are otherwise unchanged, and its revision is `reconciled` rather than `extended`. No verification stamp advanced: the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T03:24+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **this route gained one section and no collected case, and the section states the budget reason rather than leaving it to be guessed.** Added the L35 record above: `test_atomic_series_chain_pair_order.py`'s single leaf-sync case now pins a **third** direction — a step whose endpoint is a `--no-ff` merge of the previous landing with a recorded position is admitted as that position's own line, asserted together with the step's own non-merge count (`4`) so the direction cannot pass on an empty step — which is the 260915-KS master's real L5 → L6 history and the shape whose refusal is register row `D-60` (22 commits named). The counter-case `test_a_position_that_descends_from_a_step_does_not_vacate_it` is deliberately untouched, because the new admission is bounded to recorded positions lying strictly *inside* the step. No collected case was added: both lanes sit at exactly their budget — 2300 / 2300 unit and 400 / 400 integration — and one added collected case makes `pytest_collection_finish` raise `UsageError`, after which that lane executes zero tests. **One cross-card consequence is recorded here because this document's own bytes caused it:** inserting the L35 section at the top of this route shifted every heading below it by **+39** lines, so the one row on `test_eve_protocol.py.md` that cites `## Fixture Roles And Claims` and `## Isolation And Collection` in this document was re-pointed to those sections' current extents (`:800-821` and `:822-825`); that card's claim, both anchors and its own body are unchanged. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **this route gained one section and lost no case, and the arithmetic is the section's point.** Added the L34 record above: `test_task_reopen.py`'s series case now tells the series reopen from all three of its arrivals (terminal, already-live at a collected address, and an interrupted reset resumed) plus the review counter the completion spent, and it does so through two **plain** helper methods because both lanes sit at exactly their budget — 2300 / 2300 unit and 400 / 400 integration — where one added collected case makes `pytest_collection_finish` raise `UsageError` and the lane run zero tests. The section states that mechanism explicitly so a later reader does not read the unchanged case count as an untested claim, and points at consolidation in that module rather than a new `test_*` method. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T02:25+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **cleared the one enforced `citation_anchor_absent_from_range` row this document carried, by re-reading the two registrations it names on the merged line.** The row is the L22 section's *"The two `consumers` registrations the module obliged."*, and the claim is right: `mcp/tests/test_knowledge_review_surface.py` is registered as a consumer of exactly two already-governed artifacts — the `[[artifact]]` block for `mcp/tests/diff_scope_test_support.py` (`mcp/tests/evidence-lifecycle.toml:1384`), whose `consumers` list carries the path at **1403**, and the block for `mcp/tests/read_scope_test_support.py` (`:1406`), whose `consumers` list carries it at **1432**. The row cited `1402-1402` and `1431-1431`; both registrations moved one line with the merged catalogue, so each Source now cites the line its own registration is on. Both anchors (the quoted module path and the bare `test_knowledge_review_surface`, which matches inside the quoted path) hold inside each new range. Claim wording, anchors and every other row are unchanged, no citation was dropped, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits. No commits.
