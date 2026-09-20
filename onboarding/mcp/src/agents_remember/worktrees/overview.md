@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-20T06:50+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| lastUpdated | 2026-09-20T07:30+02:00 |
+| lastVerifiedCommitHash | `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
+| lastVerifiedCommitDate | 2026-09-20T07:29:47+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l42-ar`, uncommitted; base `74c6c693b8c5a5863ce15f016793192931f4adc1` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1172,3 +1172,14 @@ The L31 section above records the wiring: a conflicted knowledge dataset settles
 **What the engine will and will not settle.** `apply_changeset` applies the caller's decision only where it names exactly the conflict in hand (table **and** rendered key), and lets the application continue to the next conflict — which is refused exactly as before. `keep-right` is reachable only with a named row. The row-less referential conflict admits `keep-left` alone and is settled by retracting a row the **arriving** delta inserted. Two consequences are stated as limits rather than as behaviour: the refusal's other named orientation (*restore the removed row*) is **not** expressible in this change and keeps its refusal, and a referential retraction is not itemised in the `synced` result. A schema disagreement still refuses explicitly and admits no decision at all, which the response says by publishing an empty `decisions` list and keeping the generic continuation.
 
 **The disjoint path is untouched.** `sync(memory_sync_choice="merge-memory")` on a valid disjoint divergence still returns `synced` with exit 0, the union committed and the merge parents equal to the two admitted commits — measured identical before and after the change. The explicit schema-disagreement refusal is retained, and a structurally merged database is still not approval.
+
+## 260915-KS-L42 The Unsettleable Conflict's Summary Names It And Says What To Do
+
+**This route's impact is the sentence a caller reads when no authored decision can settle a retained knowledge conflict.** In `worktrees/sync_transaction_results.py`, `_unsettled_instruction` splits that summary on the merge's measured retraction precondition: a referential refusal whose `precondition` is `no_arriving_insertion` is the orientation where the arriving side removed a row the retained side still cites, so the response says to restore the removed row or retract the reference in the worktree, stage it and continue — while every other unsettled conflict keeps the shipped "resolve it in the worktree, stage it, then continue". `_resolution_guidance` needed no new branch: an empty decision list already falls through to `continue_sync_resolution` with `nextArgs.resolution_action=continue`, which is the route that actually exists, and `cancelArgs` is still carried beside it.
+
+**The failure this replaces was measured, not argued.** The first response used to promise that the merge continues while advertising a `keep_left` the merge had not observed to work, and driving exactly that advertised call returned the identical response forever. The before/after captures are kept in the leaf's evidence — `notes/reports/2026-09-21-cycle-fix-verification/evidence/cycle02-orientation/summary-driven.json` (before) and `.../cycle02-orientation-fixed/summary-driven-after-fix.json` (after) — and the diagnosis in the two is byte-identical, which is the point: the explanation was preserved and only the false promise was removed.
+
+**Open, not settled — named for the round-3 reviewer.** `cancelArgs` itself returns `sync-operation-refused` / `SyncGitProofError` in **both** orientations, including the INSERTED-row orientation round 2 verified as working; it is not introduced here, it is most likely the fixture's missing canonical enclosure locator chain, and the cancel half of the manual continuation therefore could not be proven to settle in that fixture.
+
+## Update History
+- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact: `_unsettled_instruction` and the summary it produces, the fact that `_resolution_guidance` needed no new branch because an empty decision list already advertises the manual continuation, the measured before/after of the advertised call, and the `cancelArgs` item left open for the round-3 reviewer rather than widened into this leaf. The card's `reviewedWorkingCandidate` row now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.

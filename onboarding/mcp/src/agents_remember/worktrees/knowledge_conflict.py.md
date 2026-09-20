@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T05:55+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
+| lastVerifiedCommitDate | 2026-09-20T07:29:47+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -157,8 +157,8 @@ No domain-documentation source is configured for this repository (`system/source
 | **The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list.** | `_continue_memory_merge`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:364-395; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
 | The layer rule that forces the two-module split, and the test that enforces it. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
 | The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package. | "[package.worktrees]" | layers.toml:188-194; layers.toml:217-218 |
-| The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-188 |
-| **The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, and that a schema disagreement is reported rather than reconciled.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled`; `_assert_delete_reference_conflict_is_retracted`; `_assert_schema_disagreement_is_reported_not_reconciled` | mcp/tests/test_worktree_sync.py:250-338; mcp/tests/test_worktree_sync.py:339-383; mcp/tests/test_worktree_sync.py:384-418 |
+| The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-186 |
+| **The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled`; `_assert_delete_reference_conflict_is_retracted`; `_assert_unretractable_delete_reference_advertises_its_real_route`; `_assert_schema_disagreement_is_reported_not_reconciled` | mcp/tests/test_worktree_sync.py:268-354; mcp/tests/test_worktree_sync.py:357-399; mcp/tests/test_worktree_sync.py:402-455; mcp/tests/test_worktree_sync.py:458-490 |
 
 ## Cross-Repo References
 
@@ -169,6 +169,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (citation repair in this document; this card's own source file is unchanged): **the row naming the integration cases was re-cited to those cases' own extents, and it now names the fourth case this change set added.** The three helpers it cited at `:250-338` / `:339-383` / `:384-418` were pushed down the file by this leaf's two new module-level helpers, and they now stand at `:268-354` / `:357-399` / `:458-490`; the row also gained `_assert_unretractable_delete_reference_advertises_its_real_route` at `:402-455`, which is the case for the orientation where the row-less retraction is unavailable and whose whole point is that the response advertises only a route that changes the state. The same read corrected the neighbouring row's `_assert_knowledge_database_conflict_settles` extent (`:150-188` → `:150-186`). No claim was weakened, no anchor renamed and no citation dropped; this card's metadata was not touched and no verification stamp was advanced.
 
 - 2026-09-20T05:55+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the boolean is replaced by a typed settlement, and this card's "receives one boolean" claim is retracted rather than annotated.** The card now records `RefusedKnowledgeStage` (path + the engine's `MergeConflict` + the typed `KnowledgeRefusal` + this layer's own `detail` + the decisions that conflict admits), `KnowledgeConflictSettlement(remaining, refused)` with the `guidance` preference that puts the *structured* refusal in the public response when several paths refused, and `settle_knowledge_conflict` as the single-path pipeline the authored retry re-enters with `reconciliation` — so the one public entry point is no longer the whole surface, and `__all__` grows to four names because the transaction journals and publishes those fields. `_settle_one` is gone: the per-path pipeline is `settle_knowledge_conflict`, and the three declines are now named details instead of one `None`. The invariant section gained the disjointness of this layer's reasons from the engine's and the pass-through boundary for an authored decision, and the Todos line now records the *one deliberately unexpressible orientation* (restore-the-removed-row) as an open limitation. Verification metadata is **advanced to the candidate's base `f79f4db7`**; the module remains new and uncommitted, so closeout owns the real stamp.
 
