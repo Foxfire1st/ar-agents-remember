@@ -5,15 +5,65 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T05:17+02:00 |
-| lastVerifiedCommitHash | `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitDate | 2026-09-20T05:22:07+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastUpdated | 2026-09-20T05:38+02:00 |
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-KS-L41 The View Front Door: One Seed Frontier, Membership From Its Own Table, And A Pair That Is Completed
+
+This route owns the two application modules a knowledge *read* passes through, and this leaf changed
+both. `knowledge_view_render.py` is where a view decides what it selects, and the change here is that
+**the path seed is now one frontier computed once per reader and applied by every view that can be
+seeded**. `_seed_revisions` resolves the request's optional `source_path` to the revisions realized
+there and keeps the two honest answers apart — `None` means "no seed was named" and an empty set means
+"a path was named and it selects nothing" — so a path recorded nowhere returns no rows instead of
+falling back to everything. `_seed_memo` attaches that answer to the **reader object** (under
+`_SEED_MEMO_ATTRIBUTE`, so it lives exactly as long as the reader the seam already opened and closed),
+`_seeded_realizations` is the memoised front door, and `_seed_selects` is the single predicate whose
+`None` selects everything and whose set selects only its members. Two derived frontiers follow from it:
+`_seeded_family_revisions` selects a family **through the recorded membership** naming a revision the
+path realizes — a family is not a file, so no path can be matched against a family directly — while
+`_selected_invariant_revisions` returns the revision frontier as a set so `source_context` can apply it
+to both its registered realizations and the authored decisions attached to those revisions. That last
+point is what closed the measured defect: `_source_context_candidates` ignored `source_path` entirely,
+so a real path and a path that was never recorded both returned every realization in the namespace.
+
+The second change is that **family membership is read from the table membership is stored in**.
+`_family_members` now calls `reader.family_member_rows()` — the port method `StoreViewReader` answers
+from the dedicated `family_member` table — instead of `reader.rows("family_member")`. Membership is a
+recorded generation-1 entity and is **not** duplicated into the `knowledge_record`/`record_revision`
+envelope that generic read consults, so the named-kind read returned no members on a dataset that holds
+them and the family view reported a joint guarantee, no members, no implementation locations and
+`completeWithinDeclaredScope: true`. Both membership-derived row shapes now state their kind in the
+family view's own vocabulary: `fact_kind="member"`, the closed set `FamilyRow` declares, rather than
+`"family_member"` or the source-context view's `"registered_realization"`. The traversal a caller
+measures is therefore `subject.revision_id` plus `fact_kind`, which is how the acceptance check reads one
+path to the governing family, to that family's other member, and to that member's own code location.
+
+The third change closes the context-construction defect at the boundary between this route and the mount:
+the `(repository_root, code_tree_id)` pair a read context may carry is now **completed or not named at
+all**. `_source_resolution` returns a caller-named root with that root's own current tree, uses the
+mount's workspace default only when the caller names no repository *and* a tree can actually be resolved
+from it, and otherwise names neither half; `_current_code_tree` shells `git -C <root> rev-parse HEAD^{tree}`
+under a declared timeout and validates the answer against a tree-id pattern, returning `None` rather than
+a guess. A context carrying one half of the pair is refused by its own model, so the old behaviour —
+defaulting `repository_root` from the mount and leaving `code_tree_id` as the caller supplied it — turned
+an ordinary minimal `knowledge_read` into a raised validation error out of the mounted tool. Two
+properties the route already owned are preserved deliberately: the exact-invariant read still returns the
+requested statement and only the realizations the same selection covers, and an ordering input outside
+the four admitted ones still refuses rather than defaulting.
+
+**Open question the review owns, recorded rather than settled.** A path-seeded family read filters
+members and locations to the seed's frontier, while the unseeded / `familyRevisionId` read shows the
+family's complete membership. Both are deliberate — a seeded read answers "what does this file's family
+hold", an exact-revision read answers "what does this family hold" — and the review is asked to confirm
+that split rather than read either as the other.
 
 ## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary
 
@@ -1960,3 +2010,6 @@ change is one module's worth of new surface in `application/knowledge_merge.py` 
 
 ## Update History
 - 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): added this section because this route's third seam gained its driver, and corrected the two L5 sentences the change falsifies — the *callable rather than wired* bullet and the "no non-test importer" sentence now carry inline supersession pointers to this section instead of being silently left to mislead. The section records the two-module split and why the layer contract forces it, the boolean refusal contract, the preservation of every Git non-claim, and the exact importer. No verification stamp advanced; closeout owns it.
+
+## Update History
+- 2026-09-20T05:48+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is the route impact of the mounted view front door's own repair.** The section is new at the top of the route's change narrative and states the three behaviours this leaf changed in `application/knowledge_view_render.py`: the path seed is one frontier computed once per reader (`_seed_revisions`, `_seed_memo`, `_seeded_realizations`, `_seed_selects`, with `_seeded_family_revisions` and `_selected_invariant_revisions` as its two derived frontiers) and `_source_context_candidates` now applies it at all; family membership is read through `reader.family_member_rows()` from the dedicated `family_member` table rather than through the generic envelope kind read, with both membership-derived row shapes stating `fact_kind="member"`; and the `(repository_root, code_tree_id)` pair is completed or not named at all inside `_source_resolution` / `_current_code_tree`. It also records, as an open question rather than as settled behaviour, that a path-seeded family read is filtered to the seed's frontier while the unseeded or `familyRevisionId` read shows complete membership. **This insertion shifts every heading below it**, so the three off-route cards that cite this document by line were re-read and repointed in the same pass rather than left to rot: `application/__init__.py.md`'s `## Hot Path Summary` cell now reads `275-282` (it was `107-107; 225-232`, and `107-107` was already stale before this leaf — it is a body paragraph, not the heading the claim names), `application/skill_resources/__init__.py.md`'s section-extent cell now reads `68-108` (the L4 section moved by the same `+50`), and `application/runtime/skills.py.md`'s document-range cell now reads `1-362`. No claim was re-worded to fit a stale pointer, and `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp.

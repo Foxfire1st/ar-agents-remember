@@ -6,14 +6,39 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T01:53+02:00 |
-| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
-| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260915-KS-L41 The Knowledge Family Hands Over A Default Repository, Not Half A Resolution Pair
+
+The knowledge registrar was already the one family in this route that consumes the runtime config at all,
+and this leaf changed *what* it hands over. `_register_knowledge_read` now forwards
+`repository_root=repositoryRoot` exactly as the caller supplied it — `None` stays `None` — and passes
+`workspace_root=str(config.workspace_root)` as a **separate** argument into `knowledge_read_payload`. The
+read builder is therefore the one place that decides whether a source-resolution pair can be named at
+all. The previous spelling defaulted the root to the configured workspace and left `code_tree_id` as the
+caller supplied it, and a context carrying `repository_root` without `code_tree_id` is refused by its own
+model ("source resolution needs both repository_root and code_tree_id; supplying one without the other is
+an incomplete resolution request") — so a minimal schema-conformant `knowledge_read` raised a raw
+validation error out of the mounted tool instead of returning a view. The workspace root is now a
+*default repository*: used only when the caller names no repository of its own, and then only when a tree
+can actually be resolved from it.
+
+The same family publishes one new pair of wire arguments. `knowledge_integrity_check` gained
+keyword-only `runId` and `inputDigest`, forwarded unchanged to the payload builder, and its published
+docstring now states the split the operation's own contract depends on: **the scope selects the recorded
+run, while `runId` or `inputDigest` binds one exact run among several in that scope**, and the response
+names the selected run and its input identities so the conditions cannot be read as belonging to a run
+they were not measured over. Registration neither validates nor defaults either argument and assembles
+none of the five run fields the response carries — that is the builder's answer. The four other
+registrars still take the server alone, which remains this route's structural statement that nothing else
+in the family is configured.
 
 ## IAS Worktree Advertisement
 
@@ -719,3 +744,6 @@ The read side of that parameter — the seed it constructs and what the view doe
   single `PLR0913` per-file-ignore that follows from it and the AST/`--ignore-noqa` suite that holds
   the carve-out shut. Verification metadata is pinned to the pre-change commit until closeout stamps
   the L2 code commit.
+
+## Update History
+- 2026-09-20T05:52+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two mount-side changes the leaf makes: the knowledge registrar hands the workspace root over as a *default repository* beside the caller's own `repositoryRoot` rather than substituting it into half of the `(repository_root, code_tree_id)` pair, so a minimal schema-conformant `knowledge_read` returns a view instead of raising the context model's own incomplete-resolution refusal; and `knowledge_integrity_check` publishes keyword-only `runId` and `inputDigest`, forwarded unchanged, with the published docstring stating that the scope selects the run while those two bind one exact run among several in it. No claim was re-worded to fit a stale pointer and no citation was dropped. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp — and the superseded `ar/260915-ks-l20` candidate row is replaced by the `reviewedWorkingCandidate` row above.

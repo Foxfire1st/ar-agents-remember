@@ -6,9 +6,9 @@
 | path | `mcp/src/agents_remember/memory/knowledge/detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172`|
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -101,6 +101,22 @@ comparison alone and returns no signal. `resolve_manifest_reference` delegates t
 the record rather than a fresh UUID, and `detection_payload_digest` hashes a canonical payload for a
 caller comparing two recorded payloads.
 
+**A run's inputs are an identity and a digest over it, so a caller can name the exact execution it
+wants reported.** `detection_input_identity(run)` returns the run's inputs as one JSON value: the
+namespace and assessed namespace it was bound to, its registered `governing_route_id`, the policy,
+extractor and condition-vocabulary versions it ran under, the declared input sets, and — per side —
+the exact logical digest, the optional code tree and repository root, the task reference, and the
+selector digest and policy version that read it. `detection_input_digest(run)` is
+`sha256_digest(detection_input_identity(run))`. Nothing is read from the clock, the filesystem or the
+caller, so two runs with different inputs get different digests and one run always gets the same one —
+which is what lets the mounted integrity check take a caller's `inputDigest` as a **binding** rather
+than a hint, and report the run it actually read. The run's own `run_id` travels inside the identity as
+well, so two executions over identical inputs still carry two digests: the digest stands for the
+execution, not merely for the input pair. This is a deliberate, reviewable choice rather than an
+incidental one, and it is recorded as an open question the review owns: a caller wanting "the digest of
+these inputs regardless of which run measured them" is asking a different question from the one this
+function answers, and the two are not interchangeable.
+
 ### Conventions
 
 - The module's SQL is six module-level statement constants (`_RECORD_INSERT`, `_REVISION_INSERT`,
@@ -128,9 +144,19 @@ caller comparing two recorded payloads.
   refusal.
 - **Nothing in this module publishes, archives, deletes or re-runs.** A re-execution is compared, never
   merged; a manifest is referenced, never materialized.
+- **An input identity is a function of the recorded run and of nothing else.** `detection_input_identity`
+  reads the run's own bound fields — namespace, assessed namespace, registered route, the three
+  versions, the declared input sets, and each side's snapshot, optional tree and selector — and never
+  consults the dataset the run sits in, the clock or the caller; `detection_input_digest` hashes that
+  value through the shared `sha256_digest` helper, so the same run always answers the same digest and
+  two runs recorded in one scope over different snapshots, trees or selectors do not collide. The run id
+  is inside the identity, which means the digest distinguishes two executions over identical inputs —
+  the digest names the execution, not only its input pair.
 - **Boundary.** It does not select records, classify conditions or author prose: selection is the read
   policy's, the union is the diff policy's, classification is `detection_walk.py`, and the two detail
-  renderings live in `models/knowledge/detection.py`.
+  renderings live in `models/knowledge/detection.py`. It also does not decide *which* recorded run in a
+  scope should be reported: that selection belongs to the mounted tool, and this module only supplies
+  the identity that lets a caller name one exactly.
 
 ### Todos
 
@@ -169,6 +195,7 @@ No domain documentation source is configured for this repository (`system/source
 | **Currentness marks a run stale from the version comparison alone and returns no signal to reinterpret.** | `run_currentness` | mcp/src/agents_remember/memory/knowledge/detection.py:788-819 |
 | The retention answer, delegated to the manifest's own resolution so there is one definition of retained. | `resolve_manifest_reference` | mcp/src/agents_remember/memory/knowledge/detection.py:822-834 |
 | The declared input set vocabulary as a value, and the payload digest helper. | `declared_input_set_members`; `detection_payload_digest` | mcp/src/agents_remember/memory/knowledge/detection.py:844-847; mcp/src/agents_remember/memory/knowledge/detection.py:850-853 |
+| The run's exact inputs as one canonical identity, and the digest over it that a mounted caller names to bind a reported run. | `detection_input_identity`; `detection_input_digest` | mcp/src/agents_remember/memory/knowledge/detection.py:856-893; mcp/src/agents_remember/memory/knowledge/detection.py:896-905 |
 | The envelope seam every written payload passes through, which is the only place a write path decides admissibility. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
 | The composition this module's generation comes from — one anchor, one source, because a row naming several anchors across several files cannot resolve to a single extent. | `_compose_generation_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-335 |
 | **The two immutability triggers that seal a recorded detection sequence — the reason a later code path that forgot the rule still cannot reorder or shorten it.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
@@ -187,6 +214,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T05:26+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **body update for the input-identity pair this leaf adds, which is the half of the exact-binding finding that belongs to this module.** `detection_input_identity` (`memory/knowledge/detection.py:856-893`) returns a run's inputs as one canonical JSON value — namespace, assessed namespace, registered route, the three versions, the declared input sets and, per side, the snapshot logical digest, the optional code tree and root, the task reference and the selector digest and policy — and `detection_input_digest` (`:896-905`) hashes it. The Logic section now says that under *Identities are derived rather than drawn*, the Invariants list gained the property that the identity is a function of the recorded run and of nothing else, and the Boundary entry now states that this module does not decide which recorded run in a scope gets reported. Both functions are on the reference table. One deliberate semantic choice is recorded on the card rather than presented as settled: the run's own `run_id` travels inside the identity, so two executions over identical inputs carry two digests — the digest names the execution and not only the input pair — and the review owns that question. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded; the candidate is uncommitted and the governed closeout owns the real stamp, and no stamp was advanced or invented.
 - 2026-09-18T19:56:02+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The row cited `593-640` and `732-768`, two earlier regions, for the self-reference refusal case and the sealed-sequence case. Those two nodes are defined at `909-945` and `946-980` in the same file, so the two cells cite their definitions now; the ordered-round-trip range at `769-799` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: `_compose_generation_4` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:327-335. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `declared_input_set_members`; `detection_payload_digest` repointed to mcp/src/agents_remember/memory/knowledge/detection.py:844-847; mcp/src/agents_remember/memory/knowledge/detection.py:850-853. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.

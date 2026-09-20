@@ -6,13 +6,43 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
-| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
+
+This route owns the payload builders every mounted operation family delegates to, and this leaf changed
+two of the five knowledge builders. `knowledge_integrity_check_payload` now takes an exact-input selector
+and reports the run it actually read. `_ExactInputSelector` is the caller's `runId` and `inputDigest` as
+one frozen value with an `as_wire()` echo that distinguishes "the caller named none" (`None`) from a
+strategy of silence, and `_run_for_scope` applies it as a **binding** rather than a preference: a run
+whose recorded identity or `detection_input_digest` does not match is skipped and the search continues
+inside the requested scope, so a request naming inputs nothing was measured over reports no run instead
+of the first identity-sorted match. `_runs_in_scope` and `_run_identity` answer the other half of the same
+question by naming every run the scope holds — each with its own id, registered route and input digest —
+so a caller that received one match can see it was one of several and issue an exact request from the
+response it already has. `_report_facts` is the single composition all three non-success answers go
+through (no run recorded, nothing matched, a run that could not be read), which is what keeps
+`selectedRunId`, `inputDigest` and `inputIdentities` honestly empty exactly when nothing was selected
+while `exactInputSelector` still echoes what was asked for; `_condition_report` names the selected run
+beside the digest over its exact inputs and echoes the **run's own** `governing_route_id` as the scope
+rather than the caller's string. The scope still selects and never borrows another scope's run.
+
+`knowledge_read_payload` gained a `workspace_root` keyword and resolves the context's source-resolution
+pair through `_source_resolution` / `_current_code_tree`: a caller-named root is completed with that
+root's own current tree, the mount's workspace default is used only when the caller names no repository
+*and* a tree can be resolved from it, and a root Git cannot answer for (not a repository, no Git, a
+timeout, an answer that is not a tree id) yields neither half rather than a guess. A context carrying one
+half is refused by its own model, so this is the change that turns a minimal schema-conformant read from
+a raised validation error into a returned view. The other three builders are untouched, and the module's
+standing property is unchanged: nothing here decides anything, and every builder still returns the
+unresolved state wherever a decision would otherwise be required.
 
 ## IAS Frozen Worktree Payload Boundary
 
@@ -955,3 +985,6 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 - 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
 - 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
 - 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
+
+## Update History
+- 2026-09-20T05:55+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two builder-side changes: `knowledge_integrity_check_payload` now takes an exact-input selector (`_ExactInputSelector`, with `_run_for_scope` applying it as a binding rather than a preference, `_runs_in_scope` / `_run_identity` naming every run the scope holds, `_report_facts` composing all three non-success answers, and `_condition_report` naming the selected run beside the digest over its exact inputs and echoing the run's own route as the scope), and `knowledge_read_payload` now resolves the context's `(repository_root, code_tree_id)` pair through `_source_resolution` / `_current_code_tree` so a minimal schema-conformant read returns a view rather than raising the context model's incomplete-resolution refusal. The section also restates that the scope still selects and never borrows another scope's run, and that nothing in this module decides anything. The card carried no `reviewedWorkingCandidate` row; one was added naming this leaf's candidate. This card's verification metadata — `lastVerifiedCommitHash`/`lastVerifiedCommitDate` — is retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.

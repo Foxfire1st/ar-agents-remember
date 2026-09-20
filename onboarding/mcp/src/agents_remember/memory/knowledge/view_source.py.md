@@ -6,9 +6,9 @@
 | path | `mcp/src/agents_remember/memory/knowledge/view_source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -76,6 +76,20 @@ exact endpoint, and its endpoint column is substituted from `ENDPOINT_COLUMNS` �
 vocabulary mapping each endpoint kind to the column it populates — so no string a caller supplies can
 reach the SQL.
 
+**A statement answers the question it was written for, and the port method is what says which question
+that is.** Membership is a generation-1 entity with its own table, and it is not copied into the
+envelope, so `family_member_rows` executes `FAMILY_MEMBERS` and not `rows("family_member")`. The
+distinction is not stylistic: the generic envelope read answers for `knowledge_record` /
+`record_revision` kinds, and asking it for a kind those tables never carry returns **no rows on a
+dataset that holds them** — an empty answer a view then reports as `completeWithinDeclaredScope: true`
+for a family it never read. `_member_row` builds the row from the statement's own column order, and it
+keeps only what was recorded: the two ids travel in the payload under the names the view layer reads
+(`family_revision_id`, `invariant_revision_id`), the row kind and schema are `family_member` and
+`family-member/v1`, and the `change_locus` a view puts on such a row is the *view's* decision — this
+module performs no selection and no classification, so it does not choose one here. The member row is
+cached under its own statement key like every other read, so two views over one reader cannot disagree
+about a family's membership because a write landed between them.
+
 **Typed JSON is decoded through the shipped decoder, and nothing is defaulted.** `_sequence` turns a
 recorded list column into a tuple of strings through `decode_typed_column`, returning the empty tuple
 for null; `_text` renders one scalar as text or `None`; `_provenance_author` decodes a stored
@@ -84,20 +98,22 @@ author — never a default, because the point of an authored classification is t
 it. `_decode_row` decodes the revision payload and raises `ViewReaderError` when the stored value is
 not a JSON object, so an unreadable payload cannot arrive at a view as an empty mapping.
 
-**One row builder per recorded shape.** `_invariant_row`, `_family_row`, `_realization_row` and
-`_attachment_row` construct `ViewSourceRow` from the fixed column order their statement declares:
-each names its `record_kind` and `record_schema`, fills the envelope fields it has (`revision_id`,
-`lifecycle`, `author_ref`) and builds the `payload` mapping from named columns — conditions and
+**One row builder per recorded shape.** `_invariant_row`, `_family_row`, `_member_row`,
+`_realization_row` and `_attachment_row` construct `ViewSourceRow` from the fixed column order their
+statement declares: each names its `record_kind` and `record_schema`, fills the envelope fields it has
+(`revision_id`, `lifecycle`, `author_ref`) and builds the `payload` mapping from named columns — conditions and
 exclusions through `_sequence`, the attachment's payload through the decoded facet object whose
 `facet_kind` becomes the row's `record_kind`. `_decode_row` is the envelope path, taking `kind`,
 `record_schema`, `record_id`, `revision_id`, `lifecycle`, `governing_route_id` and `author_ref` from
-the stored columns and the payload from the decoded revision.
+the stored columns and the payload from the decoded revision. `_member_row` is the membership path and
+is the one builder whose result carries **no** `change_locus`: which locus a membership row belongs to
+is the view's classification decision, and this module classifies nothing.
 
 **Every read is cached, counted and answered as a typed error rather than an empty result.**
 `StoreViewReader` keeps a per-key `_cache` for the reader's lifetime — keyed by record kind, by the
-invariant, family and realization statement, and by `attachments:{endpoint_kind}:{endpoint_id}` — so
-two views built over one reader cannot disagree about a kind's rows merely because a write landed
-between them. `_count` reads the single count row and raises `ViewReaderError` when the statement
+invariant, family, membership and realization statements, and by
+`attachments:{endpoint_kind}:{endpoint_id}` — so two views built over one reader cannot disagree about
+a kind's rows merely because a write landed between them. `_count` reads the single count row and raises `ViewReaderError` when the statement
 returns none; `registered_counts` returns the two totals as `ViewSourceCounts`. `attachment_rows`
 refuses an unregistered endpoint kind with `ViewReaderError` before it builds a statement, and
 `anchor_state` returns `not_requested` when no resolver was supplied or the resolver answers nothing,
@@ -118,16 +134,17 @@ This module declares no model of its own: every shape it returns comes from the 
 `models/knowledge/read.py`, so `extra="forbid"` and `frozen=True` reach these rows from the shared base
 rather than from a declaration repeated here. Declarations that must agree are one declaration: each
 SQL statement is a single module-level constant executed from one place, the endpoint column is looked
-up in the imported `ENDPOINT_COLUMNS` mapping instead of being written into a query, and the four
+up in the imported `ENDPOINT_COLUMNS` mapping instead of being written into a query, and the five
 record-schema literals the entity and attachment builders write (`invariant-revision/v1`,
-`family-revision/v1`, `realization-claim/v1`, `facet/v1`) are spelled once each in their own builder.
+`family-revision/v1`, `family-member/v1`, `realization-claim/v1`, `facet/v1`) are spelled once each in
+their own builder.
 Vocabularies and ports that belong to another leaf are imported rather than re-declared —
 `decode_typed_column` from `records.py`, `dataset_identity` from `logical.py`,
 `open_read_only_database` from `connection.py`, `OpenedKnowledgeStore` from `store.py`,
 `ENDPOINT_COLUMNS` from `models/knowledge/facet.py`, and `AnchorResolutionState` plus
 `KnowledgeReadSnapshot` from `models/knowledge/read.py`. Module-private
 helpers carry a leading underscore (`_text`, `_sequence`, `_provenance_author`, `_count`, `_read_kind`
-and the five row builders), the six public names are the ones `__all__` lists, and the reader's own
+and the six row builders), the six public names are the ones `__all__` lists, and the reader's own
 storage is a single private `_cache` keyed by what was read rather than a second index of the store.
 
 ### Invariants And Boundaries
@@ -156,9 +173,17 @@ storage is a single private `_cache` keyed by what was read rather than a second
 - **The reader owns no table and no generation rule.** It reads `knowledge_record`, `record_revision`
   and generation 1's own entity tables exactly as they are declared elsewhere; the envelope and
   revision pair is generation 2's appended structure, declared in `schema_v2.py` and not restated here.
-- **One declared statement has no caller.** `FAMILY_MEMBERS` is a module-level statement
-  that `__all__` does not list and that no module or test in the shipped candidate references besides
-  its own definition, so the family-membership read this leaf declares has no caller yet.
+- **One declared statement has exactly one caller, and it is the port method written for it.**
+  `FAMILY_MEMBERS` is a module-level statement that `__all__` does not list; it is executed from
+  `StoreViewReader.family_member_rows` and from nowhere else, and `family_member_rows` is the port method
+  that makes the family view's membership read possible at all. The two travels together: the statement
+  is the read, the method is the question, and a caller that reaches for the generic envelope read
+  instead gets an empty answer the statement would not have given.
+- **Membership is read from its own table, never through the envelope.** `family_member` is a
+  generation-1 entity like `family` and `invariant`; it is not duplicated into
+  `knowledge_record`/`record_revision`, so `rows("family_member")` answers "no rows" on a dataset that
+  holds membership. The port declares `family_member_rows` so that read is a typed method call rather
+  than a string a caller can spell wrong, and `_member_row` is the only row builder for that statement.
 
 ## Docs References
 
@@ -183,17 +208,17 @@ re-declares, and the layer where selection, ordering and provenance classificati
 | The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees. | `RECORDS_OF_KIND` | mcp/src/agents_remember/memory/knowledge/view_source.py:48-59 |
 | The two registered totals, each counted from its own table and returned as one counts value. | `REGISTERED_REALIZATIONS`; `REGISTERED_FAMILIES` | mcp/src/agents_remember/memory/knowledge/view_source.py:61-63; mcp/src/agents_remember/memory/knowledge/view_source.py:64-64 |
 | Generation 1's own entities read by their own statements instead of being copied into the envelope. | `INVARIANT_REVISIONS`; `FAMILY_REVISIONS` | mcp/src/agents_remember/memory/knowledge/view_source.py:65-88 |
-| One declared statement with no caller and no export: the family-membership read. | `FAMILY_MEMBERS` | mcp/src/agents_remember/memory/knowledge/view_source.py:39-46; mcp/src/agents_remember/memory/knowledge/view_source.py:90-93 |
+| The family-membership read: its own statement, executed from its own port method, with the comment recording why the generic envelope read could not answer it. | `FAMILY_MEMBERS`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:91-99; mcp/src/agents_remember/memory/knowledge/view_source.py:235-248; mcp/src/agents_remember/memory/knowledge/view_source.py:333-351 |
 | The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. | `REALIZATION_CLAIMS` | mcp/src/agents_remember/memory/knowledge/view_source.py:95-102 |
 | The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text. | `ENDPOINT_COLUMNS`; `ATTACHMENTS_OF_ENDPOINT` | mcp/src/agents_remember/models/knowledge/facet.py:300-305; mcp/src/agents_remember/memory/knowledge/view_source.py:105-118 |
 | The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. | `_sequence`; `_provenance_author`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/view_source.py:126-151; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
-| The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. | `StoreViewReader`; `KnowledgeViewReader` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:1032-1067 |
+| The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. | `StoreViewReader`; `KnowledgeViewReader`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:1032-1067; mcp/src/agents_remember/models/knowledge/view.py:1073-1082 |
 | The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. | `snapshot`; `registered_counts`; `rows`; `_cache` | mcp/src/agents_remember/memory/knowledge/view_source.py:175-197 |
-| The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:199-244; mcp/src/agents_remember/memory/knowledge/view_source.py:263-266; mcp/src/agents_remember/memory/knowledge/view_source.py:267-270 |
-| The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. | `anchor_state`; `ViewReaderError` | mcp/src/agents_remember/memory/knowledge/view_source.py:246-259; mcp/src/agents_remember/models/knowledge/view.py:160-166 |
-| The row builders, each naming its record kind and schema and building its payload from named columns. | `_invariant_row`; `_family_row`; `_realization_row`; `_attachment_row`; `_decode_row` | mcp/src/agents_remember/memory/knowledge/view_source.py:274-354 |
-| Both entry points, with the anchor resolver passed in rather than resolved at this layer. | `store_view_reader`; `open_view_reader` | mcp/src/agents_remember/memory/knowledge/view_source.py:357-407 |
-| Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. | `order_candidates` | mcp/src/agents_remember/application/knowledge_view_render.py:261-298 |
+| The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:205-213; mcp/src/agents_remember/memory/knowledge/view_source.py:215-223; mcp/src/agents_remember/memory/knowledge/view_source.py:225-233; mcp/src/agents_remember/memory/knowledge/view_source.py:250-265; mcp/src/agents_remember/memory/knowledge/view_source.py:287-290 |
+| The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. | `anchor_state`; `ViewReaderError` | mcp/src/agents_remember/memory/knowledge/view_source.py:267-283; mcp/src/agents_remember/models/knowledge/view.py:165-171; mcp/src/agents_remember/models/knowledge/view.py:771-771 |
+| The row builders, each naming its record kind and schema and building its payload from named columns. | `_invariant_row`; `_family_row`; `_member_row`; `_realization_row`; `_attachment_row`; `_decode_row` | mcp/src/agents_remember/memory/knowledge/view_source.py:298-315; mcp/src/agents_remember/memory/knowledge/view_source.py:317-331; mcp/src/agents_remember/memory/knowledge/view_source.py:333-351; mcp/src/agents_remember/memory/knowledge/view_source.py:353-372; mcp/src/agents_remember/memory/knowledge/view_source.py:374-384; mcp/src/agents_remember/memory/knowledge/view_source.py:386-402 |
+| Both entry points, with the anchor resolver passed in rather than resolved at this layer. | `store_view_reader`; `open_view_reader` | mcp/src/agents_remember/memory/knowledge/view_source.py:405-428; mcp/src/agents_remember/memory/knowledge/view_source.py:431-455 |
+| Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. | `order_candidates` | mcp/src/agents_remember/application/knowledge_view_render.py:278-313 |
 | The envelope and revision tables generation 2 appends, and the opened store the reader is built over. | `APPENDED_TABLES`; `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/store.py:95-103 |
 
 ## Cross-Repo References
@@ -207,4 +232,5 @@ vocabulary member, and nothing here reaches another repository, another dataset 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T05:24+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **body update for the membership read this leaf makes real, and the invariant this card stated backwards.** The card's own Invariants list said `FAMILY_MEMBERS` was "a module-level statement that `__all__` does not list and that no module or test in the shipped candidate references besides its own definition, so the family-membership read this leaf declares has no caller yet." That was true when it was written and is false now: L41 gave the statement its caller — `StoreViewReader.family_member_rows` (`memory/knowledge/view_source.py:235-248`) — and `_member_row` (`:333-351`) is the one row builder for it. The Invariants entries now say that, the Logic section gained a paragraph stating why the membership read is a port method rather than `rows("family_member")` (the envelope tables never carried the kind, so the named-kind read answered "no rows" on a dataset holding membership and the family view reported a guarantee, no members, no locations and a complete answer), the row-builder and cache paragraphs now name `_member_row` and the membership statement key, and the Conventions section counts six row builders and five record-schema literals rather than five and four. The reference table's membership row now cites the statement, the method and the builder, and its reader row carries the protocol method the port declares. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp — and the superseded `ar/260915-ks-l20` candidate row is replaced by the `reviewedWorkingCandidate` row above, because two candidate rows for one card cannot both stand and no stamp was advanced or invented.
 - 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. Three rows were wrong. The attachment row had the two names and their modules swapped: the statement `ATTACHMENTS_OF_ENDPOINT` lives in this module at `:105-118` and the declared `ENDPOINT_COLUMNS` tuple lives in `models/knowledge/facet.py:300-305`, and the citations now follow the anchors' order. `KnowledgeViewReader` was cited at `models/knowledge/view.py:862-881`, which is `ReviewMatrixRow`; the protocol is at `:1032-1067`. `ViewReaderError` was cited at `models/knowledge/view.py:152-158`, which is the ordering-provenance rule; the class is at `:160-166`. Every other row was re-checked and stands (`ViewSourceRow` in the docstring range and `_cache` in the constructor range are deliberate mention anchors). No claim was deleted or softened. The stamp is unchanged because `d0c1d1cf`'s content for this file is byte-identical to `e7998504` (`git diff d0c1d1cf HEAD` is empty).- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the reader port's implementation. It records the division of labour that is the module's contract — envelope and revision rows out, no selection, no ordering and no classification, because those decisions carry their provenance class in the view layer — together with the read-only handle `open_read_only_database` gives, the snapshot resolved from the dataset's own identity rather than asserted, the eight SQL constants with the one substituted endpoint column taken from the declared vocabulary, the typed-JSON decoding, the per-kind row builders and the two entry points that pass the anchor resolver in. It also records the deliberate absences: no writable statement, no path of its own, no derived author, and the declared-but-uncalled family-membership statement. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

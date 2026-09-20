@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-09-17T11:10+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
 
 ## What This Area Is
 
@@ -247,7 +247,7 @@ the live gates and both real open E2Es.
 
 | The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
 | `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-2095 |
+| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-4959 |
 | Historical evidence (retired with the d3610903 suite reduction): The installed Codex 0.144.5 runtime fixture recorded disabled capabilities and the native-history/list-read-resume production-gate evidence. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
 ## Cross-Repo References

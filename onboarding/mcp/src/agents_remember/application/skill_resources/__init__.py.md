@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/skill_resources/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:20+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
+| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l4` uncommitted source; base `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
 | governingOverview | `../overview.md` |
 
@@ -116,7 +116,7 @@ extension specification, SEP-2640) — the URL the leaf's own `notes/source-evid
 | The two planes stay separate in the compiled capsule: a declared skill becomes a reference, not instruction content. | `CapsuleSkillReferencePayload`; `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:47-52; mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
 | The application entry points the MCP registration layer calls. | `role_capsule_compile_tool`; `skill_catalog_list_tool`; `skill_catalog_read_tool` | mcp/src/agents_remember/application/skill_resources/operation.py:68-107 |
 | How the boundary is registered: three public MCP tools, the resource set, and the two mandatory protocol methods. | `register_capsule_and_skill_tools`; `install_extension_methods` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:73-78; mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153; mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
-| The section of the governing route overview that documents this package's two surfaces and their boundary. | `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary` | onboarding/mcp/src/agents_remember/application/overview.md:18-58 |
+| The section of the governing route overview that documents this package's two surfaces and their boundary. | `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary` | onboarding/mcp/src/agents_remember/application/overview.md:68-108 |
 
 ## Cross-Repo References
 

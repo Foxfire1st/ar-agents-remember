@@ -6,14 +6,36 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash |  `5d64af264dc89b51d5c5e6454216573abde3c12e`|
-| lastVerifiedCommitDate |  2026-09-20T02:50:22+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitHash |  `b7bfebb550f036a7e51de1f390be1123cd2d2172`|
+| lastVerifiedCommitDate |  2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
+
+## 260915-KS-L41 The Reader Port Gains A Membership Method, And The Integrity Response Binds Its Run
+
+Two models on this route changed, and both are contract changes rather than behaviour changes.
+`models/knowledge/view.py`'s `KnowledgeViewReader` protocol now declares **five** methods rather than
+four: `snapshot()`, `registered_counts()`, `rows(record_kind)`, `family_member_rows()` and
+`anchor_state(locator)`. `family_member_rows()` exists because a generic read cannot answer its question —
+family membership is a recorded generation-1 entity with its own table and is **not** duplicated into the
+`knowledge_record`/`record_revision` envelope `rows(record_kind)` reads, so asking that method for the
+kind `family_member` returned no rows on a dataset that holds them, and a family view then reported a
+joint guarantee, no members, no implementation locations and a complete answer. Declaring the method is
+what makes the read a typed call rather than a string a caller can spell into an empty answer, and a
+reader that cannot satisfy it fails the protocol instead of returning empty.
+
+`models/tools/knowledge_responses.py`'s `KnowledgeIntegrityCheckResponse` gained the five fields that
+bind its conditions to the run they were measured over: `selectedRunId` and `inputDigest` (each
+`str | None`, defaulting to `None`), `inputIdentities` and `matchingRunIds` (each a list of objects,
+defaulting to empty), and `exactInputSelector` (an optional object). `matchingRunIds` carries every run
+the requested scope holds, the selected one included, and `exactInputSelector` echoes the caller's own
+`runId`/`inputDigest` or `None` — an explicit "the caller named no exact input" rather than a silent
+absence. `compatible: None` is unchanged and still by design: this route adds a binding, not a verdict.
+The response model still declares no `payload` field, so there is nowhere for a rendered view to arrive.
 
 ## IAS Contract-Scoped Activation And Sync Vocabulary
 
@@ -2332,3 +2354,6 @@ exists, the offending input.
 - 2026-06-06T10:15:00+00:00: Re-verified against the current response model package; corrected the payload-builder reference from the deleted `mcp/tools.py` file to the `mcp/tools/` package.
 
 - 2026-05-28T17:52:00+00:00: Created for the Pydantic public response-contract model package while S2/S4 source changes are still uncommitted in the checkout.
+
+## Update History
+- 2026-09-20T06:01+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two contract changes this leaf makes: `KnowledgeViewReader` declares five methods rather than four, with `family_member_rows()` existing because membership lives in its own generation-1 table and is not duplicated into the envelope the generic kind read consults (so the generic read answered "no rows" on a dataset that holds membership, and a family view reported a guarantee, no members, no locations and a complete answer); and `KnowledgeIntegrityCheckResponse` gained `selectedRunId`, `inputDigest`, `inputIdentities`, `matchingRunIds` and `exactInputSelector` so its conditions are bound to the run they were measured over, with `compatible: None` unchanged and still by design. The card carried a `reviewedWorkingCandidate` row naming an older candidate at a superseded base; it now names this leaf's candidate. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp. **This insertion shifts every heading below it**, and the two off-route cards that cite this document were checked: neither cites it by line, so no cross-card range needed repointing.

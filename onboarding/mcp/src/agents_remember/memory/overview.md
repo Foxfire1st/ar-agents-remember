@@ -6,14 +6,46 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `0da444b3b2b61f6a86fa4076b283c305db025d22`|
-| lastVerifiedCommitDate |  2026-09-20T02:38:15+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
+| lastVerifiedCommitHash |  `b7bfebb550f036a7e51de1f390be1123cd2d2172`|
+| lastVerifiedCommitDate |  2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
+
+This route owns the knowledge store's reader port implementation and the detection record module, and
+this leaf changed both for the same reason: a question was being asked of a structure that could not
+answer it. In `memory/knowledge/view_source.py`, **`FAMILY_MEMBERS` — the statement that reads the
+dedicated `family_member` table — finally has its caller.** It is executed by
+`StoreViewReader.family_member_rows()`, the one port method written for it, and `_member_row` is its one
+row builder. The statement had been declared and referenced by nothing while the family view asked the
+**generic envelope reader** for the record kind `family_member`; that reader answers only for
+`knowledge_record`/`record_revision` kinds, membership is not duplicated into that envelope, and the
+named-kind read therefore returned no rows on a dataset that holds membership. A family view built on
+that empty answer reported a joint guarantee, no members, no implementation locations and
+`completeWithinDeclaredScope: true` — an empty answer indistinguishable from a real absence at the call
+site, which is exactly why the read is now a typed method on the port rather than a string a caller can
+spell wrong. `_member_row` keeps only what was recorded: the two revision ids travel in the payload under
+the names the view layer reads, and the row carries **no** `change_locus`, because which locus a
+membership row belongs to is the view's classification decision and this module classifies nothing.
+
+In `memory/knowledge/detection.py`, a recorded run's inputs are now an identity and a digest over it.
+`detection_input_identity` returns one canonical JSON value — namespace and assessed namespace,
+registered `governing_route_id`, the policy, extractor and condition-vocabulary versions, the declared
+input sets, and per side the exact logical digest, the optional code tree and repository root, the task
+reference and the selector digest and policy — and `detection_input_digest` hashes that value. Nothing is
+read from the clock, the filesystem, the dataset the run happens to sit in, or the caller, so two runs
+with different inputs get different digests and one run always gets the same one. The run's own `run_id`
+travels inside the identity, so two executions over identical inputs still carry two digests: **the digest
+stands for the execution, not only for the input pair.** That is a deliberate choice and it is recorded as
+an open question the review owns rather than presented as settled — a caller wanting "the digest of these
+inputs regardless of which run measured them" is asking a different question from the one this function
+answers. The module still decides nothing about *which* recorded run in a scope should be reported; it
+supplies the identity that lets the mounted tool let a caller name one exactly.
 
 ## What This Area Is
 
@@ -1519,3 +1551,6 @@ under this leaf are **real types, not suppressions**: no `# type: ignore`, no wi
 narrowed scope — a report that says "pyright: 0" must say which **form** it ran, because the gate's
 broad form (`pyright --project . --pythonpath <pinned python>`) and a scoped run disagree about the
 same commit.
+
+## Update History
+- 2026-09-20T05:58+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two module changes: `FAMILY_MEMBERS`, the statement that reads the dedicated `family_member` table, now has its caller in `StoreViewReader.family_member_rows()` with `_member_row` as its one row builder, which is what stops the family view from asking the generic envelope reader for a kind that envelope has never carried and reporting a guarantee with no members, no locations and a complete answer; and `detection_input_identity` / `detection_input_digest` turn a recorded run's exact inputs into one canonical value and a digest over it, with the run id inside the identity so the digest names the execution rather than only the input pair — recorded as an open question the review owns rather than as settled behaviour, together with the statement that this module still decides nothing about which recorded run a scope should report. The card carried a `reviewedWorkingCandidate` row naming an older candidate at a superseded base; it now names this leaf's candidate. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp.

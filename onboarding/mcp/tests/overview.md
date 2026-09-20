@@ -5,11 +5,45 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-20T05:17+02:00 |
-| lastVerifiedCommitHash |  `f79f4db745ad00b908d6ce4871d0b4ab2320207c`|
-| lastVerifiedCommitDate |  2026-09-20T05:22:07+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastUpdated | 2026-09-20T05:38+02:00 |
+| lastVerifiedCommitHash |  `b7bfebb550f036a7e51de1f390be1123cd2d2172`|
+| lastVerifiedCommitDate |  2026-09-20T05:54:26+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `../overview.md` |
+
+## 260915-KS-L41 The Mounted Read Family's Successful Path, Driven Against A Real Store Without A New Case
+
+The regression this leaf protects could not be seen below a real store, so the case that protects it
+drives one — and it does so **without adding a collected case and without raising either lane's ceiling**.
+Family membership lives in the dedicated `family_member` table and is not duplicated into the
+`knowledge_record`/`record_revision` envelope a generic kind read consults, so a renderer that asked the
+envelope reader for the kind `family_member` returned no members on a dataset that holds them, and
+reported a joint guarantee, no members, no implementation locations and `completeWithinDeclaredScope:
+true`. A stub reader supplies the rows the production reader cannot, which is exactly why an earlier
+pass's verification missed it; every assertion here is therefore made against a real SQLite store built
+through the shipped typed operations (`create_repository`, `create_invariant_revision`,
+`create_family_revision`, `create_family_member`, `create_realization_claim`) and read through a real
+mounted `FastMCP` handler.
+
+The protection is four **non-collected** helpers — `_build_mounted_family_fixture` (which builds the
+store and records why in its own docstring), `_assert_family_traversal_from_one_path`,
+`_assert_the_path_seed_selects_in_every_view` and `_assert_the_context_is_constructible` — composed by
+`_assert_the_family_read_returns_stored_membership_and_the_path_seed`, which
+`test_the_read_family_refuses_a_sixth_view_before_it_touches_a_dataset` calls at its own end;
+`test_the_read_family_refuses_a_continuation_minted_for_another_walk` calls the constructible-context
+helper beside its refusal. Reverting only `application/knowledge_view_render.py` to its base version turns
+the first case red on the member rows it asserts, which is how the regression became visible to the suite
+at a moment when the unit lane stands at exactly **2300 / 2300** and the integration lane at **400 / 400**
+— neither can take a new case.
+
+**The fixture is module-local on purpose, and it should not be "simplified" back to the shared corpus.**
+The larger branching corpus lives in `knowledge_fixture_test_support`, a governed shared-support artifact
+whose consumer list is a pinned evidence catalog; importing it here would have added this module to that
+catalog and reddened the integration lane's structural check. This case needs three recorded rows — a
+family whose members are realized at one path, a sibling family that is not, and one path recorded
+nowhere — not a corpus, so it builds them through the same public operations a real caller uses, and its
+three path constants carry the shared corpus's own names so a reader moving between the two is not
+confused.
 
 ## 260915-CAPS-L9 Experiment-Installation Test Population
 
@@ -4967,3 +5001,6 @@ the L31 byte value this paragraph was written against was `f786c157…`, correct
 
 ## Update History — 260915-KS-L31
 - 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **added the L31 section.** It records the knowledge-conflict case and what it proves (the sync completes, both sides survive, no merge function is called by the test), why it shares one collected case with the shipped content scenarios (the integration lane's declared ceiling of 400 and the zero-test failure above it), and the registry delta — two consumer rows on `merge_case_test_support`, one direct and one transitive, with the populations unmoved at 15 / 65 and the pin at `f786c157…`. No verification stamp advanced; closeout owns it.
+
+## Update History
+- 2026-09-20T06:04+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the head of the route's change narrative and states how the mounted read family's successful path is now driven against a real SQLite store through four non-collected helpers, folded into two already-collected cases, with no collected case added and neither lane's ceiling raised (unit 2300/2300, integration 400/400). It states why a stub reader could not see the regression — membership lives in the dedicated `family_member` table and is not duplicated into the envelope a generic kind read consults — and it states, for a future maintainer, why the fixture is module-local rather than the shared `knowledge_fixture_test_support` corpus: that artifact's consumer list is a pinned evidence catalog, so importing it here would have reddened the integration lane's structural check. The card carried a `reviewedWorkingCandidate` row naming an older candidate at a superseded base; it now names this leaf's candidate. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp. **This insertion shifts every heading below it**, so the two off-route cards that cite this document by line were re-read and repointed in the same pass: `serving/conversation/library/overview.md`'s document-range cell now reads `1-5006`. **Post-sync re-read.** This card's L41 history entry was written before 260915-KS-L39 landed `f79f4db7` / `37d07875` and its memory sync brought L39's own section into this same shared overview. L39's section was inserted *above* both headings the off-route `test_eve_protocol.py.md` row cites, so L39's reconciled cells (`846-867`, `868-871`) were measured against the pre-L41 document and are stale in the merged file; the row has been re-read against the merged document and now cites `880-901` (`## Fixture Roles And Claims`, heading at 880, ending at the blank line before 902) and `902-905` (`## Isolation And Collection`). The verification stamp is the landed commit `f79f4db745ad00b908d6ce4871d0b4ab2320207c` with its own date, taken from L39's landed metadata row rather than advanced by hand; the `reviewedWorkingCandidate` row names this leaf's candidate. No section, heading or history entry was dropped: both leaves' sections and both history blocks stand, and this card carries no duplicated heading.
