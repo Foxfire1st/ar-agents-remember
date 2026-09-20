@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
-| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
@@ -972,7 +972,7 @@ removing commit where it can be proven, and never as a silently shorter list.
 The original milestone narratives documented substantially larger cohorts. Their counts, deleted symbols, source-pinning assertions and percentage-driven repair obligations are retired as current guidance. Relevant incident reasoning survives in the retained cards and source comments. The preserved history below records what earlier waves did without instructing future agents to reconstruct those waves.
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` = 3000 at `:263` and `integration_case_budget` = 600 at `:264` when this was read — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250 integration ceilings and the 1000/1100/1250/1500 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` = 4000 at `:278` and `integration_case_budget` = 1000 at `:279` when this was read — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250/400/600 integration ceilings and the 1000/1100/1250/1500/2300/3000 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -3128,7 +3128,7 @@ support module. Missing any one of them is a hard collection error rather than a
 | **The governed contract and artifact this leaf registered, with its one declared consumer.** | "id = \"knowledge-facet-cases\"" | mcp/tests/evidence-lifecycle.toml:55-55 |
 | The catalog digest re-pin a new test module obliges. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-46 |
 | The lane row this module is registered under. | "mcp/tests/test_knowledge_facets.py" | mcp/tests/test-evidence-lanes.toml:91-91 |
-| **The unit ceiling this route's suites collect against, cited as the pinned key and value — the L11 suite was written against 1250, the `260915-KS-L24` candidate raised it to 1500, this candidate's owning seat raised it again to 1600, the merge onto the moved super line raised it to 2200 over the merged 2035-case population, `260915-KS-L21` raised it to 2300 over its own measured 2206-case candidate (six cases past 2200, past which `pytest_collection_finish` runs no unit case at all), and `260918-TSIP-L7` raised the pair to **3000 / 600** by developer decision on 2026-09-19 — which is what `pyproject.toml:263-264` declares now.** | "unit_case_budget = 3000" | pyproject.toml:263-263 |
+| **The unit ceiling this route's suites collect against, cited as the pinned key and value — the L11 suite was written against 1250, the `260915-KS-L24` candidate raised it to 1500, this candidate's owning seat raised it again to 1600, the merge onto the moved super line raised it to 2200 over the merged 2035-case population, `260915-KS-L21` raised it to 2300 over its own measured 2206-case candidate (six cases past 2200, past which `pytest_collection_finish` runs no unit case at all), and `260918-TSIP-L7` raised the pair to **3000 / 600** by developer decision on 2026-09-19, and `260918-TSIP-L13` raised it again to **4000 / 1000** by a second developer decision on 2026-09-20 — which is what `pyproject.toml:278-279` declares now.** | "unit_case_budget = 4000" | pyproject.toml:278-278 |
 | **The refusal an over-budget population raises, which is why the loops live inside their cases.** | `UsageError` | mcp/tests/conftest.py:104-140 |
 
 ## 260915-KS-L24 The Coherence Tool States Its Own Publication Inputs
@@ -4445,8 +4445,8 @@ budget comment block in `pyproject.toml`.
 | **The re-pinned catalogue digest, with the reason written beside it and both counts unchanged.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45 |
 | **The command-union case re-scoped a second time: it now unions this leaf's published constant instead of a literal, and keeps the target-check half exactly.** | "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" | mcp/tests/test_knowledge_facets.py:913-913 |
 | **The registry case re-scoped to the derived fact the closed list stood in for.** | "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged" | mcp/tests/test_knowledge_facets.py:1065-1065 |
-| The unit ceiling this route's suites collect against, cited as the pinned key and value — 2200 since the merge onto the moved super line raised it over the merged line's 2035 collected cases, to **2300** by `260915-KS-L21` over its own measured 2206-case candidate, and to **3000** with the integration ceiling to **600** by `260918-TSIP-L7`'s developer decision on 2026-09-19. | "unit_case_budget = 3000" | pyproject.toml:263-263 |
-| The integration ceiling, cited as the pinned key and value. | "integration_case_budget = 600" | pyproject.toml:264-264 |
+| The unit ceiling this route's suites collect against, cited as the pinned key and value — 2200 since the merge onto the moved super line raised it over the merged line's 2035 collected cases, to **2300** by `260915-KS-L21` over its own measured 2206-case candidate, to **3000** with the integration ceiling to **600** by `260918-TSIP-L7`'s developer decision on 2026-09-19, and again to **4000** with the integration ceiling to **1000** by `260918-TSIP-L13`'s developer decision on 2026-09-20. | "unit_case_budget = 4000" | pyproject.toml:278-278 |
+| The integration ceiling, cited as the pinned key and value. | "integration_case_budget = 1000" | pyproject.toml:279-279 |
 
 ## 260915-KS-L13 The Authored-Effect Suites, The Registry Rows They Obliged, And A Catalogue Pin That Does Not Move
 
@@ -4788,8 +4788,8 @@ memory layer is a citation worklist rather than a defect: on the leaf memory wor
 across 52 documents** cite a range that crosses the insertion, enumerated by
 `notes/reports/tsip-instruments/l7-lane-citations.py`. Those rows are the next curation pass's
 worklist; this leaf adds one row and does not rewrite citations outside its own change set.
-- **The declared case-budget pair is now `unit_case_budget = 3000` / `integration_case_budget = 600`**
-(`pyproject.toml:263-264`), raised from 2300 / 400 by the agreement leaf under a direct developer
+- **The declared case-budget pair is now `unit_case_budget = 4000` / `integration_case_budget = 1000`**
+(`pyproject.toml:278-279`), raised from 2300 / 400 by the agreement leaf under a direct developer
 decision — a **policy** raise, not a measurement. The populations this route collects against it are
 **2433 / 2454** unit and **411 / 2844** integration, and `## Development And Certification Policy`
 above now states the pair where it read `2300 / 400 when this was written`.

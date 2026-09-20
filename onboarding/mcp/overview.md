@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T01:54+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
@@ -152,7 +152,7 @@ and re-resolve the incumbent or staged heir at delivery; public outcomes omit ru
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 3000` and `integration_case_budget = 600` parametrized collected cases (`pyproject.toml:263-264`), raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:278-279`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 

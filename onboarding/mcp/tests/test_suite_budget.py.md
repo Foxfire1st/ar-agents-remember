@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_suite_budget.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

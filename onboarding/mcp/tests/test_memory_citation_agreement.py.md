@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_agreement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T05:10+02:00 |
-| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41`|
-| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `260918-TSIP-L12` uncommitted source, **1124 lines / 35 cases**, sha256 `34db6ea729d58833…`, on base `15e100846a7ec984714580470d7f6985a425fcc4` |
 | governingOverview | `overview.md` |
 
@@ -222,16 +222,16 @@ make no acceptance claim.
 | The superseded-pair worklist: **DERIVED from the tree**, never remembered. The rule is `superseded_pair_sites`, the producer it carries is `notes/reports/tsip-instruments/l7-curator-stale-pair-enum.py`, and a change in either direction is a finding (`T112`, `F2`). | `NON_HISTORY_SUPERSEDED_SITES` | mcp/tests/test_memory_citation_agreement.py:758-758 |
 | The derived rule itself, so the pin can fail when the derivation stops seeing. | `superseded_pair_sites` | mcp/tests/test_memory_citation_agreement.py:228-248 |
 | The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded. | `SupersededPairDerivationTests` | mcp/tests/test_memory_citation_agreement.py:939-993 |
-| The live arm: the worklist count on the named tree equals the derived count. | `test_the_superseded_pair_population_is_derived_from_the_tree` | mcp/tests/test_memory_citation_agreement.py:865-891 |
+| The live arm: the worklist count on the named tree equals the derived count. | `test_the_superseded_pair_population_is_derived_from_the_tree` | mcp/tests/test_memory_citation_agreement.py:899-925 |
 | The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading. | `QualifiedHistoryHeadingTests` | mcp/tests/test_memory_citation_agreement.py:996-1055 |
 | The census constant: the pinned tuple the live arm compares against, and what each entry means. | `QUALIFIED_HEADINGS` | mcp/tests/test_memory_citation_agreement.py:1017-1017 |
-| The live arm that reds when the pinned population moves in either direction. | `test_the_named_tree_carries_exactly_the_pinned_ones` | mcp/tests/test_memory_citation_agreement.py:1043-1055 |
+| The live arm that reds when the pinned population moves in either direction. | `test_the_named_tree_carries_exactly_the_pinned_ones` | mcp/tests/test_memory_citation_agreement.py:1083-1095 |
 | The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. | `history_section_flags` | mcp/tests/test_memory_citation_agreement.py:190-225 |
 | The budget screen: the declared pair read from `pyproject.toml`, never restated here. | `BudgetAgreementTests` | mcp/tests/test_memory_citation_agreement.py:698-936 |
 | The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. | `test_the_repaired_site_states_the_declared_pair` | mcp/tests/test_memory_citation_agreement.py:770-801 |
-| Both figures asserted separately at every pinned site, so a site that has moved on is red. | `test_the_live_sites_still_state_the_figures_they_are_pinned_to` | mcp/tests/test_memory_citation_agreement.py:893-925 |
-| The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. | `test_the_two_figure_classes_are_counted_separately` | mcp/tests/test_memory_citation_agreement.py:927-936 |
-| The module's own mutation boundary, read from its own AST (`T114`'s bound). | `test_this_module_shells_out_to_nothing` | mcp/tests/test_memory_citation_agreement.py:1087-1120 |
+| Both figures asserted separately at every pinned site, so a site that has moved on is red. | `test_the_live_sites_still_state_the_figures_they_are_pinned_to` | mcp/tests/test_memory_citation_agreement.py:927-959 |
+| The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. | `test_the_two_figure_classes_are_counted_separately` | mcp/tests/test_memory_citation_agreement.py:961-970 |
+| The module's own mutation boundary, read from its own AST (`T114`'s bound). | `test_this_module_shells_out_to_nothing` | mcp/tests/test_memory_citation_agreement.py:1127-1160 |
 | The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" | mcp/tests/test-evidence-lanes.toml:120-120 |
 | The product counter this module's live case reads, and the code string it emits. | `definition_outside_range_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:466-513 |
 | The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-685 |

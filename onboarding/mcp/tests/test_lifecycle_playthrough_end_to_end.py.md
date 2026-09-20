@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | path | `mcp/tests/test_lifecycle_playthrough_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -148,10 +148,10 @@ direct evidence.
 | The leaf closeout recording it imports rather than duplicating. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:59-82 |
 | The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:245-245 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:381-381; mcp/tests/evidence-lifecycle.toml:421-421 |
-| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:264-264 |
+| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
 | The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:245-245 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390 |
-| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:264-264 |
+| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
 
 ## Cross-Repo References
 

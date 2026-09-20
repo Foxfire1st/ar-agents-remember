@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | path | `mcp/tests/test_pause_stop_only_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -180,7 +180,7 @@ No Domain Documentation source is configured for this memory root.
 | The lane this module is registered in. | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
 | The shared-support artifact whose exact consumer list carries this module (its entry is at `:369` in the block). | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:329-389 |
 | The separate publication no case here reaches. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:173-201 |
-| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:264-264 |
+| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
 | The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
 
 ## Cross-Repo References

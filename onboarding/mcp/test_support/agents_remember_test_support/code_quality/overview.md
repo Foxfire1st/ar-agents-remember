@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T20:52+02:00 |
-| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
-| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -187,7 +187,7 @@ this route's *consumers*, and three of those changes are things a reader of the 
   reddens the oracle while the pinned catalogue's bytes and populations stay provably untouched.
 - **The collected-case budget is declared once, at the repository root.** The never-effective `default=1100` /
   `default=300` declarations in `mcp/tests/conftest.py` are removed (item 12); the enforced pair lives in the
-  repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:263-264` and is currently **3000 unit / 600 integration**. A
+  repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:278-279` and is currently **4000 unit / 1000 integration**. A
   budget the parser declares and the repository does not enforce is worse than no declaration, because a reader
   believes it.
 - **A registry row is a line, not an identity.** `mcp/tests/evidence-lifecycle.toml` gained appended `consumers` rows

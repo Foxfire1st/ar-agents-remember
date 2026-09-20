@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_governing_overview_resolution.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-17T19:30+02:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l20-ar` uncommitted source; base `621db8981aba09a6f17880d2138cf76a37332c6c` |
 | governingOverview      | `overview.md`                              |
 
@@ -87,7 +87,7 @@ run in parallel with the rest of the unit population.
 | The single seam that materialises a seeded card, with `section=False` selecting the no-heading template. | `_write_card` | mcp/tests/test_governing_overview_resolution.py:66-88 |
 | The check under test, its three-bases field probe, and the observation classification. | `check_governing_overview_resolution` | mcp/src/agents_remember/memory_quality/integrity/governing_overview_resolution.py:211-251 |
 | The second half of the same defect: a dead governing overview must arrive in the gated repair set the curator's loop reads. | `test_a_dead_governing_overview_reaches_the_gated_repair_set` | mcp/tests/test_memory_quality_runs.py:355-458 |
-| The population ceiling the module's one-case budget was measured against. | `unit_case_budget` | pyproject.toml:263-263 |
+| The population ceiling the module's one-case budget was measured against. | `unit_case_budget` | pyproject.toml:278-278 |
 | The collector that refuses the entire run when the population exceeds that ceiling. | `pytest_collection_finish` | mcp/tests/conftest.py:148-159 |
 
 ## Update History

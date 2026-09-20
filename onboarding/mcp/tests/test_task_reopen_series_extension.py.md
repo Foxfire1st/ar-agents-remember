@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_reopen_series_extension.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T23:30+02:00 |
-| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222`|
-| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l9-ar` uncommitted source (new file, **1075 lines / 18 cases**, sha256 `afab4e6795facb10097f4179ddf6e677d3598b909153b7784813de05e420bddb`); base `d9214edf` |
 | governingOverview | `overview.md` |
 
@@ -180,7 +180,7 @@ sibling edit is reported rather than charged to this leaf.
   check is what makes that true for this module. Deleting the check, or skipping it together with the
   route, is outside what any in-repo case can prevent and is recorded as such rather than presented
   as proof.
-- The two budget figures inside the module — the ruled 3000/600 constants and the pre-raise 1000/250
+- The two budget figures inside the module — the ruled 4000/1000 constants and the pre-raise 1000/250
   pair — are **this module's declared inputs and the ruling's values**, never a second copy of the
   repository's ceilings: the ceilings themselves are read from `pyproject.toml` at run time. Do not
   restate either pair here; read them there.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_workflow_chain_guidance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T00:08+0200 |
-| lastVerifiedCommitHash | `79fa817f8469244de67e11ec4d44b7dfb936e9ba`|
-| lastVerifiedCommitDate | 2026-09-20T00:12:50+02:00|
+| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
+| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l8-ar` uncommitted source (new file, **1442 lines / 12 cases**, sha256 `2225c95ba8624286c770ea1060dd3235d5e0a9a2851ec4db830819e0c800b3e1`); base `d9214edf` |
 | governingOverview | `overview.md` |
 
@@ -347,7 +347,7 @@ writer's.
 **Does a lane someone actually runs reach the module?** Yes: the row is `unit-regression`
 (`mcp/tests/test-evidence-lanes.toml:201-201`), the lane the default selection collects, and on this
 candidate the registry loader plus the budget screen read **10 passed** (measured by this pass, `-n0`,
-no `-o` override; the declared rails are `pyproject.toml:263-264`'s `3000 / 600`). The row is load-bearing —
+no `-o` override; the declared rails are `pyproject.toml:278-279`'s `4000 / 1000`, raised from `3000 / 600` by `260918-TSIP-L13` after this pass measured them). The row is load-bearing —
 the round-1 worker ran the module before the row existed and the loader refused it — so a module
 cannot enter this tree unreached.
 
