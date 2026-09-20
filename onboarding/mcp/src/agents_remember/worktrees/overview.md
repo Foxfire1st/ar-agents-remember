@@ -6,9 +6,9 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:53+02:00 |
-| lastVerifiedCommitHash | `7abacd8e432730cfca177ff0136711f13ea5f34d` |
-| lastVerifiedCommitDate | 2026-09-20T03:03:09+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `0da444b3b2b61f6a86fa4076b283c305db025d22` |
+| lastVerifiedCommitHash | `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastVerifiedCommitDate | 2026-09-20T03:26:53+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l35-ar`, uncommitted; base `7abacd8e432730cfca177ff0136711f13ea5f34d` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -857,7 +857,62 @@ the lane.
 | The gathered case that drives all three arrivals at the publication, and the spent counter's clearance. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:117-226 |
 | The already-live arrival re-addressed: successor cites the archived predecessor, branch unmoved, counter cleared from `round: 3`. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:261-358 |
 
+## Route Impact: The Series Chain Admits The Reconciled Line A Step Merged With (260915-KS-L35)
+
+This route owns the one proof that decides whether an atomic master's landing chain may be closed out.
+`series_closeout.py::_require_exact_atomic_landing_chain` proves every canonical leaf landed, orders the
+leaves by their own landed ancestry, and then walks each side of the pair from landing to landing proving
+that **every step adds nothing but the series' own reconciled line**. This leaf changed what "nothing but"
+means, and that change is the route-level fact a reader needs.
+
+A step is measured by **enumeration**, never by subtraction: `_require_admitted_step` lists what the step
+adds (`rev-list --no-merges --full-history <later> --not <earlier>`, the memory side additionally excluding
+`. :(top,exclude)memory.md`) and admits a commit only when it is one of the official positions the chain's
+own contracts recorded as synced, or when a recorded position lying **inside** that step reaches it.
+Subtraction was the old shape and it removed a position's whole ancestry, so a single position descending
+from a step erased the step and the check could pass vacuously; the enumeration is what closed that gap
+(D-45).
+
+The residual the enumeration left was the shape the rule exists to **allow**. When a step's endpoint is the
+merge of the previous landing with a synced position, the whole step *is* that position's own line. On the
+260915-KS master the step is L5's landing `7db50f8f` to L6's recorded base `8dfc11b8`; `8dfc11b8` is the
+merge of `7db50f8f` with the synced super-line position `8dd62345`, and all 22 commits the step adds are
+reachable from `8dd62345`. The rule admitted the position and refused the line it introduced, so the
+master's own closeout refused `atomic-series-leaf-chain-invalid` naming those 22 commits (D-60), and the
+master could neither complete its own closeout nor integrate.
+
+Two predicates now decide, and the boundary between them is the point:
+
+- **`_positions_inside_the_step`** — the recorded positions lying *inside* the step: strictly after its
+  start (`is_ancestor(earlier, position)`) and at or before its end (`is_ancestor(position, later)`). The
+  start is excluded deliberately and costs nothing, because the revision walk already removes everything
+  the start reaches; a position *past* the step is excluded because it reaches the whole step and would
+  erase a commit the step genuinely introduced.
+- **`_reached_by_an_official_position`** — a commit is admitted when any position in that inside set
+  reaches it. The admission therefore stays bounded to the positions the call was given, and a position
+  that merely descends **from** the step is not inside it: the counter-case ("a position that descends
+  from a step does not vacate it") still refuses, and its case still passes unchanged.
+
+Nothing else about the chain proof moved. Origin, leaf-landing identity, the pair ordering, and the
+refusal to create commits on a dirty integration checkout are all as this overview already describes; the
+repair is one clause in the step rule and two helpers beside it.
+
+One operational consequence belongs on this route, because it is a property of the check rather than of
+this leaf. The rule is enforced by whatever revision of `series_closeout.py` the **running plane** loads,
+not by the revision carried on the branch being closed out. The 260915-KS master's first promotion ran
+under the pre-repair validator and admitted genuinely foreign history once, and nothing re-measured the
+result; the second promotion ran the repaired validator against that history, which is what surfaced the
+refusal. A chain admitted under an older validator has not been proved by the current one.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. | `_require_landing_spine_side`; `_require_admitted_step`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:405-446; mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:579-602 |
+| Inside means strictly after the step's start and at or before its end, so a position that only descends from the step is outside it. | `_positions_inside_the_step`; `_reached_by_an_official_position` | mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576 |
+| Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused`; `test_a_position_that_descends_from_a_step_does_not_vacate_it` | mcp/tests/test_atomic_series_chain_pair_order.py:298-377; mcp/tests/test_atomic_series_chain_pair_order.py:379-411 |
+| The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
+
 ## Update History
+- 2026-09-20T03:22+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **the route gained the L35 section above, because what a spine step may add is a route-level rule and where its boundary sits is the thing a reader gets wrong.** The section records the enumeration (never subtraction) that measures a step, the residual the enumeration left — a step whose endpoint is the merge of the previous landing with a synced position *is* that position's own line, measured on this master as `7db50f8f` → `8dfc11b8`, the merge of `7db50f8f` with the synced position `8dd62345` whose ancestry holds all 22 commits the step adds (D-60) — the two predicates that now decide (`_positions_inside_the_step`, `_reached_by_an_official_position`), and the boundary that keeps the counter-case refusing: a position that merely descends from the step is not inside it. It also records the operational fact that the check is enforced by the revision the running plane loads, so history admitted under an older validator has not been proved by the current one, and that the rest of the chain proof — origin, ordering, landing identity, checkout cleanliness — is unchanged. The four reference rows above are re-derived against this candidate. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **No route impact on the route's model; a moved body on `reopen.py`'s own.** This route gained the L34 section above, because the reading a caller needs — which fact decides a series reopen's ref rule, and why `cleanup` is not it — is a route-level fact rather than a sidecar detail. The section records the second arrival at the series publication (live on disk, `cleanup: pending`, both progress cells virgin, integration branches carrying the series' own landed work, locator still `terminal-archived`), the three facts that now decide instead of two, the resumed interrupted reset, and the review-counter reset a reopened master needs so its next round reads as the first. The route's own surface — the lifecycle operations, the closeout-door and landing ref owners, the sync and queue projections — is unchanged, and `reopen.py` remains the sole owner of `task_reopen`. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **this route gained a module and a conflict-flow step.** Added the L31 route-impact section (the binary-to-Git problem, the `_continue_memory_merge` routing and its left/right pair, binary-safe stage materialisation, the preserved refusal and the absent compatibility verdict, and the layer rule that forces the two-module split), registered `knowledge_conflict.py` in the Load-Bearing Files and File-Level Onboarding Map tables with its new card, and corrected the retained-conflict flow so step 2 no longer tells an agent to resolve a knowledge dataset by hand. No verification stamp advanced; closeout owns it.
 - 2026-09-19T22:49:08+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:417-429; mcp/src/agents_remember/worktrees/sync_transaction.py:333-359; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.

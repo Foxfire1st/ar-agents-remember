@@ -6,8 +6,9 @@
 | path | `mcp/tests/test_atomic_series_chain_pair_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastVerifiedCommitDate | 2026-09-20T03:26:53+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l35-ar`, uncommitted; base `7abacd8e432730cfca177ff0136711f13ea5f34d` |
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -104,6 +105,22 @@ synced, so both are read here." The union stays bounded — "every contract name
 ordered leaves this closeout already proved landed, so a position no contract ever synced with stays
 inadmissible" — which is precisely the third leaf the second case adds.
 
+**The same case now pins a third direction: the reconciled line a step merged with is that step's own
+history.** After the ordering and silent-position directions, the case builds a step whose *endpoint* is
+a `--no-ff` merge of the previous landing with a recorded position, places the series branches on it, and
+asserts `_require_exact_atomic_landing_chain` still orders `["L1", "L2"]` — with the step's own non-merge
+count asserted as `rev-list --no-merges --count` = `"4"`, so the direction cannot pass vacuously on an
+empty step. This is the 260915-KS master's real history at its L5 → L6 step: the recorded base
+`8dfc11b8` *is* the merge of the previous landing `7db50f8f` with the synced super-line position
+`8dd62345`, every commit the step adds is reachable from `8dd62345`, and the pre-repair validator admitted
+the position while refusing the whole line it introduced (register row `D-60`) — the master's own closeout
+refused `atomic-series-leaf-chain-invalid` naming 22 commits. The third direction is a **statement inside
+the existing case body**, not a new `test_*` method, because both lanes sit at exactly their configured
+budget — unit **2300 / 2300** and integration **400 / 400** — where one added collected case makes
+`pytest_collection_finish` raise `UsageError` and that lane executes **zero** tests. The counter-case is
+untouched and still refuses: a recorded position that reaches *past* a step cannot vacate a foreign commit
+inside it.
+
 ### Conventions
 
 Cases assert observable outcomes of the production functions, not internal helpers: the first class
@@ -129,6 +146,11 @@ state.
   admissible set is the union of the series contract's and the ordered leaves' own `sync_log` entries
   plus the recorded base; a position no contract ever synced with is refused as history beyond the
   chain.
+- **A recorded position inside a step admits that position's own line, and only that.** When a step's
+  endpoint is the merge of the previous landing with a synced position, every commit the step adds is
+  that position's history, so each commit such a position reaches is admitted. The admission is bounded
+  to positions lying strictly inside the step: a position that merely descends from the step is outside
+  it and admits nothing, which is what the counter-case still measures.
 - **The refusal is typed and names the offender.** The failure is `CloseoutQueueError` with
   `atomic-series-leaf-chain-invalid`, and the message carries the foreign commit, so a caller reads
   which step failed rather than only that the chain is invalid.
@@ -171,9 +193,9 @@ module under test.
 | The pair-order class and the contract builder that fixes each leaf's recorded pair independently of its work branch. | `AtomicSeriesChainPairOrderTests`; `_contract` | mcp/tests/test_atomic_series_chain_pair_order.py:83-99; mcp/tests/test_atomic_series_chain_pair_order.py:101-134 |
 | The four pair-order cases: a shared code commit with ordered memory is a step, code ancestry still orders, an identical pair is one landing recorded twice in both fixture pairs, and disabled memory keeps the code-only rule. | `test_a_shared_code_commit_with_ordered_memory_is_a_chain_step`; `test_code_ancestry_still_orders_when_the_code_position_moved`; `test_an_identical_pair_is_still_one_landing_recorded_twice`; `test_disabled_memory_keeps_the_code_only_rule` | mcp/tests/test_atomic_series_chain_pair_order.py:136-144; mcp/tests/test_atomic_series_chain_pair_order.py:146-152; mcp/tests/test_atomic_series_chain_pair_order.py:154-168; mcp/tests/test_atomic_series_chain_pair_order.py:170-193 |
 | The leaf-sync class and its two builders: the canonical series contract, and a landed leaf that may carry its own sync log. | `AtomicSeriesLeafSyncPositionTests`; `_series`; `_leaf` | mcp/tests/test_atomic_series_chain_pair_order.py:196-209; mcp/tests/test_atomic_series_chain_pair_order.py:231-254; mcp/tests/test_atomic_series_chain_pair_order.py:256-296 |
-| The single case that pins both directions: the recorded leaf-level sync position is admitted and ordered, while a position no contract's sync recorded is refused with the foreign commit named. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:298-337 |
+| The single case that pins all three directions: the recorded leaf-level sync position is admitted and ordered, a position no contract's sync recorded is refused with the foreign commit named, and a step whose endpoint merges the previous landing with a recorded position is admitted as that position's own line. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:298-377 |
 | The production chain walk the order comes out of: the chain is proved landed, then ordered by asking the pair predicate against every other remaining leaf and refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
-| The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with. | `_require_landing_spine_side`; `_require_admitted_step`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:405-446; mcp/src/agents_remember/worktrees/series_closeout.py:483-520; mcp/src/agents_remember/worktrees/series_closeout.py:523-546 |
+| The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with — or a line one of those positions, lying inside that step, reaches. | `_require_landing_spine_side`; `_require_admitted_step`; `_positions_inside_the_step`; `_reached_by_an_official_position`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:405-446; mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576; mcp/src/agents_remember/worktrees/series_closeout.py:579-602 |
 | The origin rule the chain still enforces: with no sync the oldest leaf starts at the recorded base, and with a sync its base must lie on one line with the position the first sync advanced from. | `_require_chain_origin` | mcp/src/agents_remember/worktrees/series_closeout.py:320-351 |
 | The contract fields the fixtures set: the mid-task sync log, the integration status, and the leaf identity the chain is keyed by. | `sync_log`; `integration_status`; `leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:280-280; mcp/src/agents_remember/worktrees/worktree_contract.py:263-263; mcp/src/agents_remember/worktrees/worktree_contract.py:269-269 |
 
@@ -189,6 +211,7 @@ coordination root; no sibling repository, remote, or external service participat
 
 ## Update History
 
+- 2026-09-20T03:19+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **the leaf-sync case gained a third direction, and it is the reason this leaf exists.** `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` now also builds a step whose endpoint is a `--no-ff` merge of the previous landing with a recorded position and asserts the chain admits it, counting the step's own non-merge commits (`"4"`) so the direction cannot pass on an empty step. That is the 260915-KS master's real L5 → L6 history — recorded base `8dfc11b8` is the merge of the previous landing `7db50f8f` with the synced super-line position `8dd62345`, and the pre-repair `_require_admitted_step` admitted the position while refusing all 22 commits of the line it introduced (register row `D-60`). The direction is statements inside the existing case body, not a new collected case, because both lanes sit at exactly their budget — **2300 / 2300** unit and **400 / 400** integration — and one added collected case makes `pytest_collection_finish` raise `UsageError`, after which that lane executes zero tests; the Invariants section now states that budget arithmetic as this module's decision rule. The case's own reference row was re-pointed to its current extent (`:298-377`, it grew by the new direction) and the spine row now carries the two helpers the repair added, `_positions_inside_the_step` and `_reached_by_an_official_position`. The `_position_that_descends_from_a_step_does_not_vacate_it` counter-case and its helper are untouched and still refuse. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-19T17:09+02:00 — 260915-KS-L28 curator: created this one-to-one card for the atomic-series
   chain pair-order suite. It records the property the module pins (the landing order is over the pair,
   not the code commit alone), the two refusals it forces — the pair-order regression that made a

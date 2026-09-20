@@ -6,9 +6,9 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash |  `7abacd8e432730cfca177ff0136711f13ea5f34d`|
-| lastVerifiedCommitDate |  2026-09-20T03:03:09+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `0da444b3b2b61f6a86fa4076b283c305db025d22` |
+| lastVerifiedCommitHash |  `756c47b37fa16324a836a44336655413d10fffaa`|
+| lastVerifiedCommitDate |  2026-09-20T03:26:53+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l35-ar`, uncommitted; base `7abacd8e432730cfca177ff0136711f13ea5f34d` |
 | governingOverview | `../overview.md` |
 
 ## 260915-CAPS-L9 Experiment-Installation Test Population
@@ -70,6 +70,45 @@ what makes "never moved" an assertion in this module instead of a claim in a doc
 | One collected subject covering all three arrivals at the series publication. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:117-226 |
 | The interrupted reset resumes rather than stranding the branches the series stands on. | `_assert_an_interrupted_series_reset_is_resumed` | mcp/tests/test_task_reopen.py:228-259 |
 | The already-live arrival is re-addressed: `advance` reported, branch unmoved, successor citing the archived predecessor, spent counter cleared. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:261-358 |
+
+## 260915-KS-L35 The Chain Admits The Reconciled Line A Step Merged With
+
+`mcp/tests/test_atomic_series_chain_pair_order.py` is the forcing test for the spine step rule the
+atomic-series closeout walks, and this leaf added the third direction to its single leaf-sync case. The
+route-level fact a reader needs is the same one the production card records, stated where a test reader
+meets it: **a step that adds a line is admitted only when the chain's own contracts recorded the position
+that line came from.**
+
+The case already told two directions apart — a recorded leaf-level sync position is admissible, and a
+position no contract recorded is refused with the foreign commit named. This leaf adds the shape the
+260915-KS master is actually in: when a step's **endpoint** is the merge of the previous landing with a
+recorded position, the whole step *is* that position's own line, and the validator used to admit the
+position while refusing every commit the line introduced — 22 of them on the live master (register row
+`D-60`). The new statements build exactly that merge with `git merge --no-ff`, place the series branches on
+it, assert the chain still orders `["L1", "L2"]`, and assert the step's own non-merge count is `4` —
+counted precisely so the direction cannot pass vacuously on an empty step.
+
+There is no new collected case, and the reason is a route-level constraint rather than a preference. **Both
+lanes sit at exactly their configured budget — 2300 / 2300 unit and 400 / 400 integration** — and
+`pytest_collection_finish` raises `UsageError` on an over-budget selection, after which that lane executes
+**zero** tests. One added collected case would therefore buy a red lane and no coverage. The new directions
+are plain statements inside the existing case body, so they execute on every run of it while remaining
+outside the collection unit count. A reader should take "the case count is unchanged" here as a deliberate
+budget decision with a named mechanism, and should reach for consolidation in this module rather than a new
+`test_*` method.
+
+The counter-case is deliberately untouched. `test_a_position_that_descends_from_a_step_does_not_vacate_it`
+still pins that a recorded position reaching *past* a step cannot erase a foreign commit inside it, which is
+the property that made enumeration necessary in the first place; the new admission is bounded to positions
+lying strictly **inside** the step, so it does not weaken that case, and both cases' own assertions are
+unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one collected case that now pins all three directions of the step rule. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:298-377 |
+| The counter-case the new admission must not weaken: a position descending from a step cannot vacate it. | `test_a_position_that_descends_from_a_step_does_not_vacate_it`; `_assert_the_vacating_position_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:379-411; mcp/tests/test_atomic_series_chain_pair_order.py:413-490 |
+| The production step rule these cases force, and the two helpers the repair added. | `_require_admitted_step`; `_positions_inside_the_step`; `_reached_by_an_official_position` | mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576 |
+| The positions a step is measured against: the chain's own contracts' sync logs unioned with the recorded base. | `_landing_source_positions`; `_require_landing_spine_side` | mcp/src/agents_remember/worktrees/series_closeout.py:579-602; mcp/src/agents_remember/worktrees/series_closeout.py:405-446 |
 
 ## Governing Overview
 
@@ -1547,6 +1586,7 @@ leaf's curator to the owning seat; it is a code-side fix, not a memory one.
 | The two shared-support artifacts both new modules consume, whose exact consumer lists are the gate gap recorded above. | `make_authorship`; `create_current_generation_store` | mcp/tests/knowledge_fixture_test_support.py:189-220; mcp/tests/generation_test_support.py:86-120 |
 
 ## Update History
+- 2026-09-20T03:24+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **this route gained one section and no collected case, and the section states the budget reason rather than leaving it to be guessed.** Added the L35 record above: `test_atomic_series_chain_pair_order.py`'s single leaf-sync case now pins a **third** direction — a step whose endpoint is a `--no-ff` merge of the previous landing with a recorded position is admitted as that position's own line, asserted together with the step's own non-merge count (`4`) so the direction cannot pass on an empty step — which is the 260915-KS master's real L5 → L6 history and the shape whose refusal is register row `D-60` (22 commits named). The counter-case `test_a_position_that_descends_from_a_step_does_not_vacate_it` is deliberately untouched, because the new admission is bounded to recorded positions lying strictly *inside* the step. No collected case was added: both lanes sit at exactly their budget — 2300 / 2300 unit and 400 / 400 integration — and one added collected case makes `pytest_collection_finish` raise `UsageError`, after which that lane executes zero tests. **One cross-card consequence is recorded here because this document's own bytes caused it:** inserting the L35 section at the top of this route shifted every heading below it by **+39** lines, so the one row on `test_eve_protocol.py.md` that cites `## Fixture Roles And Claims` and `## Isolation And Collection` in this document was re-pointed to those sections' current extents (`:800-821` and `:822-825`); that card's claim, both anchors and its own body are unchanged. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **this route gained one section and lost no case, and the arithmetic is the section's point.** Added the L34 record above: `test_task_reopen.py`'s series case now tells the series reopen from all three of its arrivals (terminal, already-live at a collected address, and an interrupted reset resumed) plus the review counter the completion spent, and it does so through two **plain** helper methods because both lanes sit at exactly their budget — 2300 / 2300 unit and 400 / 400 integration — where one added collected case makes `pytest_collection_finish` raise `UsageError` and the lane run zero tests. The section states that mechanism explicitly so a later reader does not read the unchanged case count as an untested claim, and points at consolidation in that module rather than a new `test_*` method. No verification stamp advanced; the metadata carries a `reviewedWorkingCandidate` row naming this candidate, and the governed closeout owns the real code and memory commits.
 - 2026-09-20T02:25+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **cleared the one enforced `citation_anchor_absent_from_range` row this document carried, by re-reading the two registrations it names on the merged line.** The row is the L22 section's *"The two `consumers` registrations the module obliged."*, and the claim is right: `mcp/tests/test_knowledge_review_surface.py` is registered as a consumer of exactly two already-governed artifacts — the `[[artifact]]` block for `mcp/tests/diff_scope_test_support.py` (`mcp/tests/evidence-lifecycle.toml:1384`), whose `consumers` list carries the path at **1403**, and the block for `mcp/tests/read_scope_test_support.py` (`:1406`), whose `consumers` list carries it at **1432**. The row cited `1402-1402` and `1431-1431`; both registrations moved one line with the merged catalogue, so each Source now cites the line its own registration is on. Both anchors (the quoted module path and the bare `test_knowledge_review_surface`, which matches inside the quoted path) hold inside each new range. Claim wording, anchors and every other row are unchanged, no citation was dropped, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits. No commits.
 - 2026-09-20T00:16:01+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1455-1455. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
