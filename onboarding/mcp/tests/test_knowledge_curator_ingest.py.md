@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_curator_ingest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:14+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -168,7 +168,7 @@ inside the range cited for it. Ranges are the exact construct extents at the ver
 | The recorded identity is what the observation can verify: the exact blob passes and a false success is refused. | "test_the_recorded_blob_identity_is_what_the_observation_can_verify" | mcp/tests/test_knowledge_curator_ingest.py:350-350 |
 | No sealed revision byte moves: equal sealed content digests equally with and without a citation, and every pre-existing revision row is byte-identical after an ingest. | "test_a_citation_moves_no_sealed_revision_byte" | mcp/tests/test_knowledge_curator_ingest.py:352-412 |
 | The private readers the two measurements are built from. | `_revision_rows`; `_harness_entry`; `_harness_revision_row` | mcp/tests/test_knowledge_curator_ingest.py:438-448; mcp/tests/test_knowledge_curator_ingest.py:428-436; mcp/tests/test_knowledge_curator_ingest.py:439-451 |
-| The committed-command seam the module drives: the citation and entry models, the one-entry commit, the admitted destination and the authorship envelope. | `commit_curator_entry`; `CuratorEntry`; `CuratorCitation`; `admitted_knowledge_destination`; `write_authorship` | mcp/src/agents_remember/application/knowledge_ingest.py:166-173; mcp/src/agents_remember/application/knowledge_ingest.py:83-101; mcp/src/agents_remember/application/knowledge_ingest.py:68-79; mcp/src/agents_remember/application/knowledge.py:140-156; mcp/src/agents_remember/application/knowledge.py:117-137 |
+| The committed-command seam the module drives: the citation and entry models, the one-entry commit, the admitted destination and the authorship envelope. | `commit_curator_entry`; `CuratorEntry`; `CuratorCitation`; `admitted_knowledge_destination`; `write_authorship` | mcp/src/agents_remember/application/knowledge_ingest.py:179-186; mcp/src/agents_remember/application/knowledge_ingest.py:89-108; mcp/src/agents_remember/application/knowledge_ingest.py:68-88; mcp/src/agents_remember/application/knowledge.py:140-156; mcp/src/agents_remember/application/knowledge.py:117-137 |
 | The read and observation seams the round trip is measured through: the mounted view, the resolved read context, the rail's symbol answer and the two realization readers. | `read_knowledge_view`; `open_read_context`; `observe_anchor`; "unsupported_locator"; `get_realization_claim`; `find_claim_by_pair` | mcp/src/agents_remember/application/knowledge_views.py:86-112; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/memory/knowledge/read_anchors.py:101-172; mcp/src/agents_remember/memory/knowledge/read_anchors.py:135-135; mcp/src/agents_remember/memory/knowledge/realizations.py:246-254; mcp/src/agents_remember/memory/knowledge/realizations.py:257-268 |
 | The shipped support fixtures this module consumes — no new governed artifact. | `ReadScopeFixture`; `build_read_scope_fixture`; `CandidateHarness`; `build_candidate_harness`; `table_counts` | mcp/tests/read_scope_test_support.py:174-239; mcp/tests/read_scope_test_support.py:266-283; mcp/tests/candidate_batch_test_support.py:92-234; mcp/tests/candidate_batch_test_support.py:237-276; mcp/tests/candidate_batch_test_support.py:288-294 |
 

@@ -5,10 +5,10 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `7abacd8e432730cfca177ff0136711f13ea5f34d` |
-| lastVerifiedCommitDate | 2026-09-20T03:03:09+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `0da444b3b2b61f6a86fa4076b283c305db025d22` |
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -102,6 +102,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (deterministic-check clearance inside this leaf's change set, uncommitted on `ar/260915-ks-l43-ar`, code base `fb719f89`): **one `ruff format` reflow inside an existing case; no claim changed.** In `SeriesReopenTests` the `commit_file(contract.code_repo_path, "late.txt", …)` call split across lines, which is a whitespace change inside that class's second method. The reflow is net two lines at its own span and **lands below `:146`**, so the card's five cited ranges are unchanged and each was verified at the reformatted tree: `ReopenResetTests` `:38-79` still opens on `test_resets_contract_doc_and_master_index`, `:81-105` still opens on `test_contract_publish_failure_rolls_back_docs_and_master_index`, `SeriesReopenTests` `:117-226` still opens on `test_a_terminal_series_is_reopened_without_ever_moving_its_line`, `:228-259` still opens on `self._assert_an_interrupted_series_reset_is_resumable` and `:261-358` still spans the resumed-locator assertions to the file's end. No range moved and no claim changed. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
 
 - 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **the series half of `task_reopen` is now covered here, and the two retained leaf rows were re-pointed at the ranges the file actually has.** The collected subject `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` was extended from two facts to four (a live ref is never moved; the reset is otherwise complete; a series already live at a collected address is re-addressed instead of refused; and the review counter the completion spent is cleared), and it gained two plain helper methods — `_assert_an_interrupted_series_reset_is_resumed` and `_assert_a_live_unaddressed_series_is_re_addressed` — which it calls inside its own body. They are deliberately **not** `test_*` methods: both lanes sit at exactly their case budget, and a single added collected case makes the lane raise `UsageError` and execute **zero** tests rather than one more. The two pre-existing rows had drifted with the file's growth and now cite `:38-79` and `:81-105` (previously `:25-66` and `:68-92`), each re-derived against the file as it stands rather than shifted by arithmetic. No verification stamp advanced and none was invented: the candidate is uncommitted, the governed closeout owns the real code and memory commits, and the metadata carries a `reviewedWorkingCandidate` row naming this candidate because the body moved under the retained pair.
 

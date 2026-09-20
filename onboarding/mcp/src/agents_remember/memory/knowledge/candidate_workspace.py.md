@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_workspace.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -19,7 +20,12 @@
 One candidate's local working state: **creation, resumption, cloning and disposal authority**.
 
 A candidate is a *directory* holding one writable SQLite database, the immutable receipt that binds it to its
-admission, and the database's own resource lock. That layout is fixed by `models/knowledge/snapshot.py` so the
+admission, and the database's own resource lock. An operation that owns the candidate may add its own local
+record beside those two — the curator ingest writes the identities it has allocated into
+`curator-allocation-journal.json` there — because that is the same kind of fact the receipt is: a local,
+operation-scoped record of what this candidate is, never knowledge the repository holds. The layout is fixed,
+not the file count: what `models/knowledge/snapshot.py` pins is which file is the working database, and a
+sibling record an owner writes does not move that answer. That layout is fixed by `models/knowledge/snapshot.py` so the
 admission that opens the candidate for writes and the publication that reads it cannot disagree about which file
 is the working database — and so no absolute path is ever stored as knowledge.
 
@@ -152,6 +158,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the module's docstring now records that an owning operation may keep its own local record in the candidate directory, and this card carries the same fact.** The change is documentation-only in this file — `application/knowledge_curator_ingest.py` is what writes `curator-allocation-journal.json` beside `candidate-receipt.json` — but it is a fact about *this* module's contract, because this module is where the candidate's layout is defined, and a reader who took "the layout is fixed" to mean "these are the only files" would be wrong. The body paragraph now says which part is fixed (which file is the working database, so the admission that opens the candidate for writes and the publication that reads it cannot disagree) and which part is not (a sibling local record an owning operation writes, of the same kind as the receipt). No claim was weakened, no range moved, and the verification pair is retained exactly as recorded. No commit was made.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1040 to mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039, the range the cited construct now occupies
 - 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new candidate lifecycle. It records the four load-bearing properties (two-phase creation that never exposes a half-built candidate, occupied-destination-as-resume, clone-from-a-closed-snapshot, and disposal as a verdict rather than a deletion), the expose ordering that makes `created` honest (verify → seal → read back → flush → install → read back through the ordinary resume path), why a baseline clone deliberately takes no filesystem lock, and the two narrow disposal grounds. It also records that `_close_without_discarding_peers` exists so a later change to `OpenedKnowledgeStore.close` cannot quietly reintroduce a peer unlink underneath the lifecycle. Verification metadata remains empty until closeout stamps the code commit.

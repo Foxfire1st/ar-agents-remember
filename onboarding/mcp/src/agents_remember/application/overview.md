@@ -6,9 +6,10 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45 against base `fb719f89`; this row names the 260915-KS-L43 reading performed against the same line after the memory side advanced to `92f444b04` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -894,6 +895,10 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **this route gained the L43 section, and the L39 section's identity claim had its scope corrected rather than being called false.** L39 stated the identity move as complete: "identity stopped being a function of the code base commit", every id a `uuid5` over the repository's namespace. That was true of the citation identities and was false of the invariant and its first revision, whose only distinction was the entry's local hand-off label — so two independent tasks numbering an entry `R-LOCAL` and stating different truths were handed one record, and production sync refused `duplicate_identity` on it. The new section states the developer's 2026-09-20 ruling at route altitude: the label carries no identity meaning, the API allocates and persists the canonical identity, continuity is by **naming** the stored identity (`invariant_id`, and now a target's `anchor_id`), and a retry rides a separate idempotency key; the anchor is keyed on the allocated revision and the claim on its own two endpoints; and **scoping the stored identity to the authoring enclosure is named as the forbidden design rather than the repair**. The recovery route beside this plane gained its own paragraph, because a two-conflict retained merge used to alternate forever (twelve applications to the cap, no settlement) and now journals every accepted decision and refuses to cycle (two applications, settled). The L39 section's two identity paragraphs were corrected in place: the "identity does not move with the baseline" paragraph now says which identities that was true of and that a reused label is not a claim that two entries are one record, and the "two constructs in one file" paragraph records that L43 sharpened the discriminator. The L30 section's `derived_identities` paragraph was corrected the same way, and five rows were re-measured (`_TargetIdentities`/`_target_identities` already shifted by the citation fixer, the operation and selection ranges to their own extents) with seven rows added for the allocation machinery, the citation keys, the explicit-reuse input, the recovery pair and the case that measures the ruled semantics. No verification stamp was advanced and no verification row was touched: the candidate is uncommitted and closeout owns the real code and memory commits; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **the two projected ranges are disposed of by real re-citations, not by a note.** The generated repairs of 12:00:25 moved the ranges of the `_identity` rows and of the `_admitted_candidate` row mechanically, and a mechanically projected range is unverified evidence: the projection picks the declaration it writes, so it satisfies its own currency test by construction. This entry replaces both. Each row was re-read at the construct its range now covers: `_identity` is `mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947`, and the row's words — that identity derives over the repository's own namespace and never the enclosure's base commit — are what that function's own docstring and body state, with the discriminator now naming what each citation identity is *about*; `_admitted_candidate` is `:1257-1299`, and the row's words — that admission resumes, forks a selected baseline or creates an empty candidate — are what that function states. Both rows were **re-cited deliberately after reading the constructs**; the wording of both is **retained**, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **the two projected ranges are disposed of by real re-citations, not by a note.** The generated repairs of 12:00:25 moved the ranges of the `_identity` rows and of the `_admitted_candidate` row mechanically, and a mechanically projected range is unverified evidence: the projection picks the declaration it writes, so it satisfies its own currency test by construction. This entry replaces both. Each row was re-read at the construct its range now covers: `_identity` is `mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947`, and the row's words — that identity derives over the repository's own namespace and never the enclosure's base commit — are what that function's own docstring and body state, with the discriminator now naming what each citation identity is *about*; `_admitted_candidate` is `:1257-1299`, and the row's words — that admission resumes, forks a selected baseline or creates an empty candidate — are what that function states. Both rows were **re-cited deliberately after reading the constructs**; the wording of both is **retained**, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `create_revision` repointed to mcp/src/agents_remember/memory/knowledge/store.py:291-325. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **this route gained the reviewer's entry operation and the three facts that make a live pair actually resolvable.** The body now records (1) `list_knowledge_review_entries` — the subjects the resolved pair can be compared on, resolved through the identical operation the comparison uses and offered only when the shipped `diff_knowledge_scope` answered for that identity, with a refused subject **dropped rather than listed with a zero**; (2) the two **published** half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, exported because the ingest CLI derives its candidate directory from the same names, which is what makes the authored candidate and the reviewed candidate one directory; (3) `missing_dataset_half`, the preflight that turns an absent half into the typed `candidate_dataset_absent` refusal naming **which** half, where before an absent baseline raised a storage error from inside side construction; and (4) `review_namespace`, which reads the namespace from the candidate's own sealed receipt because the dataset is bound to a namespace id — measured on this leaf's fixture as `bound to 40d350a6-…, not to the requested repository namespace agents-remember`, a failure every live review of a real candidate would have hit. Six reference rows were re-cited to their constructs' current extents and five were added. No verification stamp was advanced.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** This route's third knowledge seam changed shape: `application/knowledge_merge.py`'s `merge_conflicted_stages` now returns `KnowledgeStageSettlement(settled, conflict, refusal, detail)` instead of a boolean, so the engine's typed refusal and its row-level `MergeConflict` travel out of the seam instead of being discarded at it, and the four ways a path never reached the adapter are named rather than collapsed into one `False`. The same module passes the caller's one `AuthoredReconciliation` through to the adapter unchanged. `application/worktree_tools.py`'s `worktree_sync_tool` now takes the paired `resolution: SyncResolutionInput | None` (the action plus the decision it may carry) rather than a bare `resolution_action`, pairing forced by the `PLR0913` ceiling and by the driver refusing the two as a pair. A body change, not a metadata-only refresh.
@@ -1563,6 +1568,62 @@ restating its rule, resolved by `_seed_revisions` to the revisions realized at t
 hit can now ask what governs it through path → invariant → family without first discovering an invariant or
 family revision id.
 
+## 260915-KS-L43 The Ingest Allocates A New Truth's Identity, And A Citation's Stays Derived
+
+`mcp/src/agents_remember/application/knowledge_curator_ingest.py` is this route's curator write plane, and this
+leaf changed **what an identity is a function of** one layer further than L39 did.
+
+**The label is not an identity input, and a new truth's identity is allocated rather than derived.** L39 moved
+the derivation off the recorded base commit onto the repository's own namespace — correct, and still the rule
+for a *citation* — but it left the entry's local hand-off label as the discriminator for the invariant and its
+first revision. So two independent tasks that both numbered an entry `R-LOCAL` and stated different truths were
+handed one invariant and one revision; production sync then refused `duplicate_identity` on that row and
+offered only to discard one of two truths that had never been in conflict. Under the developer's 2026-09-20
+ruling that reading is wrong: `R-LOCAL` is a **local hand-off label**, the knowledge API **allocates and
+persists** the canonical identity, continuity across a task boundary is by **explicitly naming the stored
+identity**, and a retry rides a **separate idempotency key**. `_creation` now hands each new creation operation
+a fresh `uuid4` pair — no task, no enclosure, no branch, no baseline, no label — and records it in the
+candidate's own `curator-allocation-journal.json` under a key scoped by the enclosure's task identity;
+`_with_replays` asks the dataset whether a repeat already stored the revision, and a repeat is reported
+`replayed` with the identities it already holds rather than re-issued. The ruling's other forbidden design is
+named on the route as well: **scoping the stored identity to the authoring enclosure is not the repair** —
+enclosure identity scopes the retry key and distinguishes creation operations, and nothing else about it
+enters an identity.
+
+**A citation's identity stays derived, and each part is now keyed on what it actually is.** The route identity
+is unchanged (a scope governs a path, so N anchors in one file are N associations with one row). The **anchor**
+is keyed on the **allocated revision id**, with the locator's qualified name as the disambiguator *inside* one
+creation — so two constructs in one file are still two anchors, and two independent tasks citing one construct
+now mint two instead of aliasing onto one. The **claim** is neither a scope nor a place but the authored edge
+from one exact revision to one exact anchor, and it is keyed on exactly those two endpoints: keyed on the label
+it minted ONE identity for two genuinely different realizations, which is the row production sync refused.
+**Explicit reuse is expressible on both layers**: an entry revising an obligation names `invariant_id` (already
+shipped), and a target citing a place the dataset already records now names `anchor_id`, which uses that stored
+identity verbatim and authors no anchor row — `CuratorCitation.declares_anchor` carries it into the write
+module, exactly as `declares_invariant` does for a successor.
+
+**The recovery route moved with it.** Sibling to this plane, `worktrees/sync_transaction.py` now journals every
+authored decision a side has already accepted and re-enters the merge with all of them, because a decision that
+settles one conflict has to still hold when the merge goes on to the next; and a row an already-accepted
+decision answered that comes back anyway earns a **bounded refusal** (`sync-resolution-cycling`) naming the
+exact row and the two honest next steps, instead of re-offering a decision that has already been made and had
+its effect. Measured: twelve applications to the cap and no settlement before, two applications and a settled
+merge after.
+
+The route boundary is unchanged: no symbol extractor of its own, no onboarding write, no third root, no export,
+no lane parameter, and no new required producer input — a producer supplies exactly what it supplied before.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The allocation: a fresh `uuid4` pair per creation operation, and the journal the retry is found by. | `_Allocation`; `_Allocations`; `_creation`; `_record_allocations` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:556-594; mcp/src/agents_remember/application/knowledge_curator_ingest.py:595-609; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1589-1628; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1565-1586 |
+| The idempotency key, the content guard, and the replay decided from the dataset. | `_retry_key`; `_content_digest`; `_require_minted_content`; `_with_replays`; `_replayed_outcome` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1482-1493; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1496-1517; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1631-1656; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1678-1690; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3009-3026 |
+| The one derivation, now taking a discriminator that names what each citation identity is about. | `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947 |
+| The route, anchor and claim identities minted together, each keyed on what it is: the path, the allocated revision, and the revision-plus-anchor edge. | `_TargetIdentities`; `_target_identities`; `_Authoring` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:610-620 |
+| The explicit-reuse input on a target, and the write module field that carries it. | `_named_anchor_id`; `CuratorCitation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1970-1992; mcp/src/agents_remember/application/knowledge_ingest.py:68-88 |
+| The recovery's journaled decisions and its bounded cycling refusal. | `_reconcile_knowledge_resolution`; `_reconcile_progress_refusal`; `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction.py:650-709; mcp/src/agents_remember/worktrees/sync_transaction.py:712-741; mcp/src/agents_remember/worktrees/sync_transaction_state.py:43-81 |
+| The case that measures the ruled semantics at the public boundary: two sibling enclosures, one reused label, two statements, distinct stored identities, and continuity by naming the stored id. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270 |
+
+
 ## 260915-KS-L39 The Ingest's Identities Move To The Repository, And The Front Door Reaches The Baseline
 
 `mcp/src/agents_remember/application/knowledge_curator_ingest.py` is this route's curator write plane — the layer that turns one orchestrator hand-off list into one
@@ -1577,14 +1638,25 @@ namespace is read from the dataset the run selected (derived under `_INGEST_NAME
 fallback), and `ingest_curator_list` resolves it **before** planning so that one value — carried on the
 `_Source` the planner reads — reaches every mint in the run rather than one value per step.
 
+**What this paragraph described was true of the citations and only of them, and L43 corrected the scope.** The
+"identity does not move with the baseline" rule holds for the route, anchor and claim, which are still
+derived this way. It did not hold for the invariant and its first revision: those were derived from the entry's
+local hand-off label, so they were stable across baselines *and* identical across two independent tasks that
+numbered an entry the same way — the collision L43 repaired by allocating them. See the L43 section above; the
+sentence that read "the same obligation under the same local label was a different record at each baseline"
+remains true as history of the base-commit rule and is **not** a claim that a reused label identifies one
+record.
+
 **Two constructs in one file are two stored records.** The stored `anchor_id` and `claim_id` were keyed on
 the written path and the entry id alone, so one entry citing `resolve_budget` and `other` in a single
 `pkg/module.py` reached the batch with the same `source_anchor` twice and was refused `duplicate_identity`.
 They are now minted together with the route id by `_target_identities` into one `_TargetIdentities` value,
-and the anchor and the claim carry the locator's **qualified name** as their discriminator — the same
-discriminator `_observation_id` already used, and the one that survives the file being edited above the
-definition. The **route** deliberately stays keyed on the path: a route is a scope that governs a path, so
-N anchors in one file are N associations with one route row rather than N rows.
+and the anchor and the claim carry a discriminator that names what each of them is about rather than one
+shared key. L43 sharpened which discriminator that is — the anchor on the allocated revision with the
+locator's qualified name inside it, the claim on its revision-plus-anchor edge — because carrying the
+entry id left two independent tasks aliasing onto one claim. The **route** deliberately stays keyed on the
+path: a route is a scope that governs a path, so N anchors in one file are N associations with one route row
+rather than N rows.
 
 **The front door reached the selection this route already accepted.** `IngestSelection.baseline` existed and
 `_admitted_candidate` already forked a selected dataset; the CLI did not declare the argument, so no
@@ -1599,11 +1671,13 @@ sections describe.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one derivation, keyed on the repository's own id rather than the enclosure's base commit. | `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458 |
-| The route, anchor and claim identities minted together, discriminated by the locator's qualified name. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513 |
-| The operation that resolves the repository identity before planning, and the selection value the front door hands it. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:846-952; mcp/src/agents_remember/application/knowledge_curator_ingest.py:827-843 |
-| The admission that forks a selected baseline instead of creating an empty candidate. | `_admitted_candidate` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1073-1115 |
+| The one derivation, keyed on the repository's own id rather than the enclosure's base commit. | `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947 |
+| The route, anchor and claim identities minted together, discriminated by the locator's qualified name. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678 |
+| The operation that resolves the repository identity before planning, and the selection value the front door hands it. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:999-1115; mcp/src/agents_remember/application/knowledge_curator_ingest.py:980-996 |
+| The admission that forks a selected baseline instead of creating an empty candidate. | `_admitted_candidate` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1257-1299 |
 | **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284; mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
+| The route, anchor and claim identities minted together, each keyed on what it is — L43's split lives in the section above. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678 |
+| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
 
 
 ## Update History
@@ -2067,7 +2141,7 @@ change is one module's worth of new surface in `application/knowledge_merge.py` 
 
 ## 260915-KS-L42 The Curator Ingest Report's Own Identity Sentence, Corrected To The Rule The Code Follows
 
-**This route's impact is one public field in `application/knowledge_curator_ingest.py`, and the field was the last place an obsolete rule survived.** `IngestReport.derived_identities` described identity as `uuid5` over "the enclosure's recorded code base commit … plus the written path for a target" — the rule the module followed before `_identity` moved to the repository's own namespace, and the exact sentence a verification round was misled by when it read a minted identity as baseline-scoped. The field now names the fixed `_INGEST_NAMESPACE`, the repository's own namespace identity, which identity it is (invariant, revision, anchor, claim, route), the entry's own id and, for a target, what inside the written path the citation is about — a symbol's qualified name, or the locator kind when there is nothing finer — and it states the stable half explicitly as the repository namespace and never the recorded base commit. The module docstring carried the same stale clause and was corrected in the same change.
+**This route's impact is one public field in `application/knowledge_curator_ingest.py`, and the field was the last place an obsolete rule survived.** `IngestReport.derived_identities` described identity as `uuid5` over "the enclosure's recorded code base commit … plus the written path for a target" — the rule the module followed before `_identity` moved to the repository's own namespace, and the exact sentence a verification round was misled by when it read a minted identity as baseline-scoped. The field was corrected here to name the fixed `_INGEST_NAMESPACE` and the repository's own namespace identity, and **L43 corrected it again** (see that section): it now states the split the code actually implements — the invariant and its first revision are **allocated** by the API and recorded under an idempotency key scoped by the enclosure's task identity, while a citation's route, anchor and claim are **derived** — plus both negatives: no allocated identity contains the enclosure, the branch, the baseline or the label, and the derived half's stable component is the repository namespace and never the recorded base commit. The module docstring carries the same split.
 
 **The sentence is now checkable against the derivation rather than against a phrase.** The guarded assertion lives in `mcp/tests/test_knowledge_curator_ingest_list.py`'s `test_the_report_names_the_candidate_its_receipt_the_lane_and_the_exact_inputs`, an already-collected case because both lanes stand at their ceilings: the base commit must not appear in the field, the field must name the repository namespace, and `_identity` is compared with `uuid5(_INGEST_NAMESPACE, f"{repository_id}|invariant|E-named|")`. A phrase check would have passed on the stale text, so the case runs the rule instead.
 

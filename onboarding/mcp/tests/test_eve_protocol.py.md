@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_eve_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T05:17+02:00 |
-| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
-| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `overview.md` |
 
@@ -102,7 +102,7 @@ pass was available for this file.
 | The bounded replay window whose occupancy and eviction these cases pin. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW`; `retained` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
 | The production request builders and the transport these wire cases drive. | `create_session_body`; `follow_up_body`; `cancel_turn_body`; `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:118-372 |
 | The adapter cases that consume this same wire layer one level up. | `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests` | mcp/tests/test_eve_adapter.py:661-907 |
-| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:880-901; onboarding/mcp/tests/overview.md:902-905 |
+| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:912-916 |
 
 ## Cross-Repo References
 

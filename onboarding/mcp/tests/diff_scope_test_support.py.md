@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/diff_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -130,16 +130,16 @@ repository source and package-local evidence only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.** | `SUCCESSOR_PATH`; `UNMAPPED_PATH`; `RETRY_REVISED_STATEMENT`; `_CANDIDATE_TREE_TEXT` | mcp/tests/diff_scope_test_support.py:92-125 |
-| The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against. | `AddedRealization`; `DiffSide`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:129-186 |
-| **The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.** | `build_diff_fixture`; `_build_candidate` | mcp/tests/diff_scope_test_support.py:189-281 |
-| **The revised statement as a successor, with the substrate's own `duplicate_identity` rule as its reason.** | `_author_revised_revision` | mcp/tests/diff_scope_test_support.py:284-312 |
-| **The relationship revision as removal-plus-authoring, because the claim trigger refuses an in-place rewrite.** | `_move_retry_claim`; `_remove_retired_claim` | mcp/tests/diff_scope_test_support.py:315-335; mcp/tests/diff_scope_test_support.py:362-378 |
-| **The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.** | `_add_unselected_revision` | mcp/tests/diff_scope_test_support.py:338-359 |
-| **The added claim, whose recorded identity is the blob the candidate tree really holds.** | `_add_successor_claim` | mcp/tests/diff_scope_test_support.py:381-418 |
-| The claim row digest recomputed through the production sealer rather than restated here. | `_claim_row_digest` | mcp/tests/diff_scope_test_support.py:421-456 |
-| **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** | `_write_candidate_tree`; `_borrow_objects`; `_git` | mcp/tests/diff_scope_test_support.py:459-506 |
-| **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:509-516 |
+| **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.** | `SUCCESSOR_PATH`; `UNMAPPED_PATH`; `RETRY_REVISED_STATEMENT`; `_CANDIDATE_TREE_TEXT` | mcp/tests/diff_scope_test_support.py:92-135 |
+| The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against. | `AddedRealization`; `DiffSide`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:136-193 |
+| **The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.** | `build_diff_fixture`; `_build_candidate` | mcp/tests/diff_scope_test_support.py:196-288 |
+| **The revised statement as a successor, with the substrate's own `duplicate_identity` rule as its reason.** | `_author_revised_revision` | mcp/tests/diff_scope_test_support.py:291-319 |
+| **The relationship revision as removal-plus-authoring, because the claim trigger refuses an in-place rewrite.** | `_move_retry_claim`; `_remove_retired_claim` | mcp/tests/diff_scope_test_support.py:322-342; mcp/tests/diff_scope_test_support.py:369-385 |
+| **The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.** | `_add_unselected_revision` | mcp/tests/diff_scope_test_support.py:345-366 |
+| **The added claim, whose recorded identity is the blob the candidate tree really holds.** | `_add_successor_claim` | mcp/tests/diff_scope_test_support.py:388-425 |
+| The claim row digest recomputed through the production sealer rather than restated here. | `_claim_row_digest` | mcp/tests/diff_scope_test_support.py:428-463 |
+| **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** | `_write_candidate_tree`; `_borrow_objects`; `_git` | mcp/tests/diff_scope_test_support.py:466-513 |
+| **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:516-523 |
 | **The baseline fixture this module builds on.** | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-283 |
 | The fixture value the baseline side is read from. | `ReadScopeFixture` | mcp/tests/read_scope_test_support.py:174-239 |
 | **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1398-1398 |
@@ -171,6 +171,8 @@ repository's history.
 | The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1398-1398; mcp/tests/evidence-lifecycle.toml:1420-1420 |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (deterministic-check clearance inside this leaf's change set, uncommitted on `ar/260915-ks-l43-ar`, code base `fb719f89`): **a pre-existing I001 is cleared by reordering one import block, and this card's ranges were re-measured for it.** The `read_scope_test_support` import list in this module had `UNPARSED_PATH` before `RESOLUTION_PATH`/`SYNCHRONIZATION_PATH`; the names are now in the module's own order, which is the deterministic gate's requirement and changes no binding. The reorder is **net one line shorter** and it sits inside the import block, so **every construct below it moved up by one**: the constants block `:93-117`→`:92-117`-equivalent, `AddedRealization` `:136-143` (card cited `:129-186`), `DiffSide` `:144-154`, `DiffFixture` `:155-193`, `build_diff_fixture` `:196-240`, `_build_candidate` `:243-288`, `_author_revised_revision` `:291-319`, `_move_retry_claim` `:322-342`, `_add_unselected_revision` `:345-366`, `_remove_retired_claim` `:369-385`, `_add_successor_claim` `:388-425`, `_claim_row_digest` `:428-463`, `_write_candidate_tree` `:466-487`, `_borrow_objects` `:490-495`, `_git` `:498-513` and `_require` `:516-523`. Each of the card's ranges was repointed to its construct's current extent for that reason, and every claim was re-read against the reordered source and **retained**: an import order is not a fact any of these claims is about. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
 - 2026-09-20T07:27+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming the artifact row's `introduced_by`, `replacement_contract` and the two consumer lists no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/tests/evidence-lifecycle.toml:1395-1395`, `:1398-1398` and `:1420-1420`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T03:57:45+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1398-1398. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T03:57:45+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1420-1420. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.

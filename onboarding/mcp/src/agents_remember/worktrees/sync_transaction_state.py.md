@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T06:26+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash |  `74c6c693b8c5a5863ce15f016793192931f4adc1`|
-| lastVerifiedCommitDate |  2026-09-20T06:22:08+02:00|
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash |  `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
+| lastVerifiedCommitDate |  2026-09-20T15:00:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,6 +85,17 @@ re-advertise a reconcile call for a conflict that no longer exists. Because `Syn
 with `extra="forbid"`, the field is part of the durable journal schema: a record from another build is
 refused rather than misread.
 
+**L43 journals the accepted decisions beside the conflict they answer, and that is what makes the
+recovery terminate.** `SyncSideRecord.knowledgeReconciliations: tuple[AuthoredReconciliation, ...] = ()`
+holds every authored decision this side's retained knowledge merge has already accepted, in the order
+they were accepted. They travel **together** into the next attempt, because a decision that settled one
+conflict has to still hold when the merge goes on to the next one: with only the newest decision
+carried, a two-conflict merge alternates between the same two rows forever and re-offers a decision
+that has already been made and already had its effect. The field is cleared with `knowledgeConflict`
+when the retained merge is finally settled, so a completed sync carries no stale decisions; and, like
+`knowledgeConflict`, it is part of the durable journal schema under `extra="forbid"`, so a record from
+another build is refused rather than misread.
+
 ### Todos
 
 Final nonregular handling and public model fields are reconciled to the frozen source;
@@ -104,7 +115,7 @@ No Domain Documentation source is configured for this memory root.
 | The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:117-157; mcp/src/agents_remember/worktrees/sync_transaction.py:158-180 |
 | Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
 | Public status embeds this journal projection without moving its authority into task/queue state. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
-| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, and the engine's explanation of a retained knowledge conflict. | `SyncSideRecord`; `SyncWipState` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:42-75; mcp/src/agents_remember/worktrees/sync_transaction_state.py:39-39 |
+| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it. | `SyncSideRecord`; `SyncWipState`; `knowledgeReconciliations` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:43-81; mcp/src/agents_remember/worktrees/sync_transaction_state.py:39-39 |
 | The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:439-516 |
 | **The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.** | `SyncKnowledgeConflict`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:184-203; mcp/src/agents_remember/models/worktree.py:152-169 |
 
@@ -116,6 +127,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the journal gained the one field that makes a two-conflict recovery terminate.** `SyncSideRecord.knowledgeReconciliations: tuple[AuthoredReconciliation, ...] = ()` records every authored decision this side's retained knowledge merge has already accepted, in acceptance order, and it is cleared with `knowledgeConflict` when the merge settles. It is journaled for the same reason the diagnosis beside it is: the attempt that answers the second conflict has to carry the first, so the facts the next attempt needs must survive the response that produced them. Without it each attempt re-refused the row the previous decision had already answered, the two conflicts alternated forever, and the caller was re-offered a decision it had already made and that had already had its effect — the cycling the `sync-resolution-cycling` refusal now names instead of continuing. A new body paragraph records the field, its lifetime and its place in the durable schema. **Citation accounting:** the side-record row's range was re-measured to that class's own extent, `:42-75` → `:43-81`, because this leaf's field moved it, and the row's anchor cell now names `knowledgeReconciliations`. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
 
 - 2026-09-20T06:26+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the journal gained the diagnosis, and this card now says why it is durable state rather than response state.** `SyncSideRecord.knowledgeConflict` is recorded with its full shape and — the load-bearing reason — the fact that `_active_sync_projection` re-projects the side from the journal, so a resumed sync must be able to re-state the row the engine refused rather than only the file name; the field is cleared with `conflictFiles` when the retained merge settles, and being part of a frozen `extra="forbid"` model it is durable journal schema that refuses a record from another build. The `SyncSideRecord` summary sentence in Logic gained it, and every cited range was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 

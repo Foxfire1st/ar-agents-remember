@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_ingest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T05:16+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
-| lastVerifiedCommitHash | `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitDate | 2026-09-20T05:22:07+02:00|
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,13 @@ existing revision's digest bytes do not move." Second, **provenance is not a par
 revision draft is built here with the admitted destination's own envelope, and "the batch operation
 re-stamps it, so nothing a caller authors can become the stored provenance."
 
+One citation field is a decision rather than a payload. `CuratorCitation.declares_anchor` (default
+`True`) says whether this citation is **writing** its anchor or **citing one the dataset already
+holds**: a producer that means to reuse a stored anchor names its identity outright, and re-declaring
+a row that is already there is refused outright by the batch, so the reuse half has to be
+expressible — exactly as an entry revising an invariant does not re-declare it. `declares_anchor`
+is the target-level counterpart of `declares_invariant`, and this module is where both are honoured.
+
 ## Code Commentary
 
 ### Logic
@@ -41,8 +48,12 @@ re-stamps it, so nothing a caller authors can become the stored provenance."
 **Two frozen dataclasses are the input shape, and neither holds a decision of its own.**
 `CuratorCitation` is one resolved target plus the claim that cites it: a shipped `SourceAnchorDraft`
 ("a path, the source identity it was resolved at and the locator") together with the authored
-`claim_id`, `role` and `rationale`, because "a stored anchor with nothing citing it attributes
-nothing to the statement." `CuratorEntry` is one requirement-shaped entry: the `invariant_id`,
+`claim_id`, `role`, `rationale` and `declares_anchor`, because "a stored anchor with nothing citing
+it attributes nothing to the statement." `declares_anchor` is the one member that is a decision
+rather than a payload: `False` means the citation names an anchor the dataset already holds, so the
+batch writes the claim that cites it and leaves the anchor row as it stands — re-declaring it would
+be refused with the same `batch_stale_precondition`, which is what makes "reuse a stored anchor"
+expressible at all rather than a second spelling of "insert a duplicate of it." `CuratorEntry` is one requirement-shaped entry: the `invariant_id`,
 display label, revision identity and version, statement, applicability, the optional
 `conditions`, `exclusions` and `predecessors` tuples that become the revision's own fields, and
 `declares_invariant` (default `True`), which says whether this entry is declaring the invariant or
@@ -59,8 +70,10 @@ entry that names predecessor revisions is authoring a successor, and re-declarin
 repository already holds is refused outright with `batch_stale_precondition`, because "the batch's
 precondition for creating an invariant is that the invariant is ABSENT". Then, per citation, it
 appends `AddSourceAnchor` **before** the `AddRealizationClaim` that
-cites it, because "an anchor is written before the claim that cites it, so the claim's anchor
-endpoint resolves against a row this same batch declared." The claim's `anchor` is an
+cites it — but only `if citation.declares_anchor`, on the same rule and for the same reason — because
+"an anchor is written before the claim that cites it, so the claim's anchor
+endpoint resolves against a row this same batch declared." A citation that reuses a stored anchor
+appends the claim alone, and the claim's endpoint still resolves against the row the dataset holds." The claim's `anchor` is an
 `AnchorReference(anchor_id=str(citation.anchor.anchor_id))`, so the claim names the row the previous
 command in the same batch declared rather than a row read from the store. Four entry points
 publish this module's work: `curator_entry_commands` (commands only), `curator_batch` (one batch for
@@ -125,8 +138,9 @@ grouped by module.
 
 ### Invariants And Boundaries
 
-- **An anchor is written before the claim that cites it.** `curator_entry_commands` appends
-  `AddSourceAnchor` and then `AddRealizationClaim` for each citation, so the claim's anchor endpoint
+- **An anchor is written before the claim that cites it, unless it is reused.** `curator_entry_commands`
+  appends `AddSourceAnchor` (only when the citation `declares_anchor`) and then `AddRealizationClaim`
+  for each citation, so the claim's anchor endpoint
   resolves against a row declared in the same batch.
 - **Provenance comes from the admitted destination, never from an entry.** `_revision_draft` sets
   `provenance=destination.authorship`, and the batch operation re-stamps it; the entry carries no
@@ -182,17 +196,17 @@ move when a citation is added.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of what it is: the first production caller of the knowledge write plane, the curator entry turned into one batch, the second-record citation that keeps an existing revision's digest still, and provenance not being a parameter. | "This is the first production caller of the knowledge write plane." | mcp/src/agents_remember/application/knowledge_ingest.py:1-30 |
-| The published surface: the two entry dataclasses and the four command/batch/commit functions, and nothing else. | `__all__` | mcp/src/agents_remember/application/knowledge_ingest.py:57-64 |
-| One resolved target plus the claim that cites it — the shipped anchor draft with the authored claim identity, role and rationale. | `CuratorCitation` | mcp/src/agents_remember/application/knowledge_ingest.py:68-79 |
-| One requirement-shaped entry: the invariant identity shared by the identity row and the revision, the authored revision fields, the empty-citations case that records an obligation with no realization, and `declares_invariant`, which keeps a successor from re-declaring the invariant it revises. | `CuratorEntry` | mcp/src/agents_remember/application/knowledge_ingest.py:83-102 |
-| The load-bearing command order: the invariant row only when the entry declares it, then its revision, then each anchor before the claim that cites it, with the claim referencing the row the same batch declared. | `curator_entry_commands` | mcp/src/agents_remember/application/knowledge_ingest.py:105-142 |
-| The single all-or-nothing batch for a whole hand-off list, with the context resolved against the candidate as it stands rather than accepted from the caller. | `curator_batch` | mcp/src/agents_remember/application/knowledge_ingest.py:145-163 |
-| The two commit entry points: one entry committed as one batch, and the whole hand-off list committed as one batch through the closed write path. | `commit_curator_entry`; `commit_curator_entries` | mcp/src/agents_remember/application/knowledge_ingest.py:166-173; mcp/src/agents_remember/application/knowledge_ingest.py:176-187 |
-| The one authoring step: the revision draft built from the entry's fields and sealed under the admitted destination's own provenance envelope. | `_revision_draft` | mcp/src/agents_remember/application/knowledge_ingest.py:190-205 |
+| The published surface: the two entry dataclasses and the four command/batch/commit functions, and nothing else. | `__all__` | mcp/src/agents_remember/application/knowledge_ingest.py:57-65 |
+| One resolved target plus the claim that cites it — the shipped anchor draft with the authored claim identity, role and rationale, and `declares_anchor`, which is what makes "reuse a stored anchor" expressible instead of a second spelling of "insert a duplicate of it". | `CuratorCitation` | mcp/src/agents_remember/application/knowledge_ingest.py:68-88 |
+| One requirement-shaped entry: the invariant identity shared by the identity row and the revision, the authored revision fields, the empty-citations case that records an obligation with no realization, and `declares_invariant`, which keeps a successor from re-declaring the invariant it revises. | `CuratorEntry` | mcp/src/agents_remember/application/knowledge_ingest.py:89-108 |
+| The load-bearing command order: the invariant row only when the entry declares it, then its revision, then each anchor *that the citation declares* before the claim that cites it, with the claim referencing the row the same batch declared or the stored row a reused anchor names. | `curator_entry_commands` | mcp/src/agents_remember/application/knowledge_ingest.py:111-155 |
+| The single all-or-nothing batch for a whole hand-off list, with the context resolved against the candidate as it stands rather than accepted from the caller. | `curator_batch` | mcp/src/agents_remember/application/knowledge_ingest.py:158-176 |
+| The two commit entry points: one entry committed as one batch, and the whole hand-off list committed as one batch through the closed write path. | `commit_curator_entry`; `commit_curator_entries` | mcp/src/agents_remember/application/knowledge_ingest.py:179-186; mcp/src/agents_remember/application/knowledge_ingest.py:189-200 |
+| The one authoring step: the revision draft built from the entry's fields and sealed under the admitted destination's own provenance envelope. | `_revision_draft` | mcp/src/agents_remember/application/knowledge_ingest.py:203-218 |
 | The two seams it delegates to: the resolver that reads the identity the candidate actually holds, and the operation that applies the batch under the destination's provenance. | `resolve_candidate_context`; `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:267-285; mcp/src/agents_remember/application/knowledge.py:318-331 |
 | The shapes it builds and returns: the ordered all-or-nothing batch, and the factual receipt whose refusal leaves the logical identity unchanged and reports no touched record. | `ChangeBatch`; `MutationResult` | mcp/src/agents_remember/models/knowledge/candidate.py:676-701; mcp/src/agents_remember/models/knowledge/candidate.py:704-741 |
-| The only production importer, the curator's whole-operation layer, which reuses this module's entry and citation dataclasses and its batch commit, and builds one entry per plan. | "from agents_remember.application.knowledge_ingest import ("; `_curator_entry` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:91-96; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2333-2347 |
-| The cases that drive this module directly: one curator entry committed through the public commit entry point, and the documented empty-citations path the whole-operation layer deliberately does not reach. | "from agents_remember.application.knowledge_ingest import ("; "``CuratorEntry.citations`` permits an empty list" | mcp/tests/test_knowledge_curator_ingest.py:34-34; mcp/tests/test_knowledge_curator_ingest_list.py:480-480 |
+| The only production importer, the curator's whole-operation layer, which reuses this module's entry and citation dataclasses and its batch commit, and builds one entry per plan. | "from agents_remember.application.knowledge_ingest import ("; `_curator_entry` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:108-115; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2808-2822 |
+| The cases that drive this module directly: one curator entry committed through the public commit entry point, and the documented empty-citations path the whole-operation layer deliberately does not reach. | "from agents_remember.application.knowledge_ingest import ("; "``CuratorEntry.citations`` permits an empty list" | mcp/tests/test_knowledge_curator_ingest.py:34-34; mcp/tests/test_knowledge_curator_ingest_list.py:484-484 |
 
 ## Cross-Repo References
 
@@ -205,6 +219,9 @@ comes from that admission; the module opens no second repository and names no ex
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **this module gained the anchor-reuse half of the identity ruling, and the card states it.** `CuratorCitation` gained `declares_anchor: bool = True`, and `curator_entry_commands` now emits `AddSourceAnchor` **only when the citation declares its anchor**: a producer that means to reuse a `source_anchor` the dataset already holds names its stored identity (the curator ingest reads it from a target's `anchor_id`), and re-declaring that row would be refused with the same `batch_stale_precondition` a re-declared invariant earns. The pair is deliberate — `declares_anchor` is the target-level counterpart of `declares_invariant`, and both exist because "re-declare it" and "reuse it" are different operations that the closed command union expresses the same way unless the entry says which one it means. Three clauses were rewritten rather than annotated, because each described the unconditional form: the CuratorCitation row now names `declares_anchor`; the command-order paragraph and its invariant bullet now carry the conditional, with the claim's endpoint still resolving either against a row the same batch declared or against the stored row a reused anchor names; and the Purpose section gained a paragraph recording why the reuse half has to be expressible at all. **Citation accounting:** every range on this card was re-measured at its construct's own declaration extent in this candidate, since this leaf's edit plus the curator-ingest insertions moved them — `__all__` to `:57-65`, `CuratorCitation` to `:68-88`, `CuratorEntry` to `:89-108`, `curator_entry_commands` to `:111-155`, `curator_batch` to `:158-176`, `commit_curator_entry`/`commit_curator_entries` to `:179-186`/`:189-200`, `_revision_draft` to `:203-218`, and the importer row's second range to the curator card's `_curator_entry` extent `:2808-2822`. No anchor was renamed, no citation was dropped, and no finding text changed except where the source itself changed. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`, which is the candidate this reading was performed against; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains the body as it now stands and no stamp was measured on it. No commit was made.
+- 2026-09-20T12:00:25+00:00: Generated citation repair: "from agents_remember.application.knowledge_ingest import ("; "permits an empty list" repointed to mcp/tests/test_knowledge_curator_ingest.py:34-34; mcp/tests/test_knowledge_curator_ingest_list.py:484-484. No content impact: mechanical anchor-range projection bound to citation source snapshot 23094be373d669ad77475ab6ebb610401913ce4b65c82d3b4cc642eb6bb44e43; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T05:16+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, code base `756c47b37fa16324a836a44336655413d10fffaa`): **reconciled, not extended — this card is not one of the changed source files, and it was edited only because another leaf's change moved two ranges it cites.** `_curator_entry` is declared in `application/knowledge_curator_ingest.py`, which this leaf rewrote the identity derivation of and `ruff format`ed; the helper therefore moved from `:2296-2310` to `:2333-2347` and the "only production importer" row's second range no longer held the anchor it names. The row's first range, both anchors and its Finding text are unchanged, and the claim remains true as written: the curator's whole-operation layer is still the only production importer, and it still builds one entry per plan through that helper. The second row was corrected for the same reason and the same way — the quoted literal `"``CuratorEntry.citations`` permits an empty list"` moved with `test_knowledge_curator_ingest_list.py` from `:471-471` to `:480-480`. Nothing in this module's own source changed, so no statement on this card was rewritten. **Stamp accounting:** `reviewedWorkingCandidate` now names the candidate this reading was performed against, `ar/260915-ks-l39-ar` on base `756c47b3`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains the body as it now stands and no stamp was measured on it. No commit was made.
 - 2026-09-20T02:25+02:00 — 260915-KS-L33 curator, post-sync citation pass (uncommitted change set on `ar/260915-ks-l33-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **repointed one range in the "only production importer" row (line 194) to its construct's current extent.** This leaf's own change to `application/knowledge_curator_ingest.py` — the realization role is authored by the entry rather than inferred from the locator — moved `_curator_entry` to `:2296-2310`, and the row's second range `:2261-2275` therefore no longer held the anchor it names. The range was repointed to the declaration's current extent; the Finding text, both anchors, the row's first range `:91-96` and every other row are unchanged. No anchor was renamed, no citation was dropped and no range was deleted. `reviewedWorkingCandidate` was moved onto this leaf's candidate `ar/260915-ks-l33-ar` on the same base, because that is the candidate this reading was performed against; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit, no verification stamp advanced, no acceptance claim made.
 - 2026-09-20T01:41+02:00 — 260915-KS-L30 curator, hand re-read (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): the row naming this module's only production importer was re-read against the construct it is about, and both of its ranges were verified at their declarations — `knowledge_curator_ingest.py:91-96` is the import statement the row quotes, and `:2261-2275` is `_curator_entry`'s own span, which is the function that builds one entry per plan. The earlier automatic range projection that had rewritten one of this row's citations is superseded by this reading and no longer stands as its evidence. No claim wording, anchor or other range changed, and no verification stamp was advanced.

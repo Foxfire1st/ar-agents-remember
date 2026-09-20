@@ -6,9 +6,10 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash |  `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
+| lastVerifiedCommitDate |  2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -1780,6 +1781,8 @@ not a disguised failure.
 | The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:88-94 |
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card's line citation shifted. It records the route's own impact — `MergeRequest.reconciliations` as a tuple, the unchanged vocabulary beside it, the measured cycling the plurality repairs, and the boundary that keeps a sequence of one-row decisions from being a policy. No verification stamp was advanced: the source is modified in the delivered working tree and the governed closeout owns the real stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the review-surface vocabulary gained its entry half.** The card now records `ReviewSubjectKind` (the two admitted subject kinds, declared here once so the transport's admission tuple, the entry list and the panes cannot disagree), `ReviewEntry` (the reviewed subject as the shipped comparison selected it — a recorded identity, its own label and the operation's count, with **no field for a path, a file, a display version or a ranking**), and `ReviewEntryListResult` (whose validator refuses a **refused** read that offers any entry: "an entry beside a refusal is how a caller comes to review a subject nothing admitted"), plus the sixth refusal code `subject_unresolved`. The L22 paragraph's "closed five-member union" was corrected in place to six. Four reference rows were re-cited to their constructs' current extents and four were added. No verification stamp was advanced.
 - 2026-09-20T07:33+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination."* — names `MergeRequest`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `models/knowledge/merge.py` gained the authored-decision vocabulary — `AuthoredDecision`, `expressible_decisions` (the single place that answers which decisions a conflict admits), `AuthoredReconciliation` (two structural shapes, no mode flag) and `MergeRequest.reconciliation` — and `models/worktree.py` gained the wire half: `SyncResolutionAction`'s third member `reconcile`, `SyncResolutionInput` (the action-and-decision pair), `SyncKnowledgeConflict` (the engine's explanation carried verbatim, with an empty `decisions` list meaning nothing can be settled) and the two projections that carry it (`SyncResolutionProjection.knowledge`, `SyncOperationProjection.knowledgeConflict`). The vocabulary block moved by six lines, so `WorkflowKind` is now L35 … `NextTool` L65 and `WorktreeState` L307. A body change, not a metadata-only refresh.
@@ -2401,6 +2404,29 @@ not a disguised failure.
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is new at the end of this route's change narrative and did not shift a single existing line, which matters here because off-route cards cite this document by line. It records the route's own impact — `RetractionPrecondition`, `MergeConflict.precondition` and the corrected three-part answer `expressible_decisions` gives, with the row-less branch now reading a measured fact and the row-level branch deliberately ordered after it. The reference table gained a row for the three constructs and its neighbouring `MERGE_STATES` row was re-cited from `:81-81` to `:82-82`, which is where this leaf's `__all__` addition moved that declaration. The card's `reviewedWorkingCandidate` row now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.
 
 
+
+## 260915-KS-L43 The Merge Request's Authored Decision Becomes A Sequence
+
+**This route's impact is one field on `MergeRequest` in `models/knowledge/merge.py`, and the field's plurality is a
+measured repair rather than a generality.** `MergeRequest.reconciliation: AuthoredReconciliation | None` became
+`MergeRequest.reconciliations: tuple[AuthoredReconciliation, ...] = ()`. The vocabulary beside it did not move:
+`AuthoredReconciliation` still names exactly one row (or the one row-less shape), still refuses half a row identity at
+construction, and `expressible_decisions` is still the single place that answers which decisions a conflict admits.
+What changed is how many of those decisions one attempt may carry, and the reason is the loop: a retained merge is
+answered one conflict at a time, a decision that settles the first reveals the second, and with only the newest
+decision carried the two alternate forever — the caller is re-offered a decision it has already made and that has
+already had its effect. Measured: twelve applications to the cap and no settlement before, two applications and a
+settled merge after (`evidence/after-independent/recovery-progress-after.json` against `recovery-progress-before.json`).
+
+**A sequence of one-row decisions is not a policy, and the model is where that could have gone wrong.** Every member
+still names its own row, every conflict no member names is still refused exactly as it was, and there is still no
+field meaning "prefer my side" — the shape simply lets a caller restate the decisions it has already made instead of
+the merge forgetting them between attempts.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The merge request's authored-decision channel, now a tuple of one-row decisions. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:286-325 |
+| The vocabulary and its single admission point, unchanged. | `AuthoredReconciliation`; `expressible_decisions` | mcp/src/agents_remember/models/knowledge/merge.py:182-218; mcp/src/agents_remember/models/knowledge/merge.py:148-179 |
 
 ## 260915-KS-L44 The Two Realization Row Models Declare The Location They Were Already Being Handed
 

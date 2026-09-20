@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-20T07:30+02:00 |
-| lastVerifiedCommitHash | `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
-| lastVerifiedCommitDate | 2026-09-20T07:29:47+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l42-ar`, uncommitted; base `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1173,6 +1173,37 @@ The L31 section above records the wiring: a conflicted knowledge dataset settles
 
 **The disjoint path is untouched.** `sync(memory_sync_choice="merge-memory")` on a valid disjoint divergence still returns `synced` with exit 0, the union committed and the merge parents equal to the two admitted commits — measured identical before and after the change. The explicit schema-disagreement refusal is retained, and a structurally merged database is still not approval.
 
+## 260915-KS-L43 The Recovery Journals Accepted Decisions, And A Returning Answered Row Is Refused
+
+**This route's impact is the retained-knowledge recovery's progress property, and it has two halves that only work together.**
+The L40 section above records the supported recovery: one authored decision, validated against the journaled diagnosis,
+re-run through the merge. What it did not have was **progress**. A retained merge holding two conflicts alternated between
+the same two rows forever, because each attempt carried only the newest decision and so re-refused the row the previous one
+had already answered; the agent was offered a decision it had already made and that had already had its effect. Measured on
+the same harness and the same public surface: **twelve** applications to the cap with `settled: false` before, **two**
+applications and `state synced` after (`evidence/after-independent/recovery-progress-after.json` against
+`recovery-progress-before.json`; the script drives only `fixture.sync` and the advertised `nextArgs`, so it runs unchanged
+against both trees).
+
+**Half one: accepted decisions persist.** `SyncSideRecord.knowledgeReconciliations` journals every decision this side has
+already accepted, in acceptance order, and `_reconcile_knowledge_resolution` re-enters the merge with **all** of them —
+`accepted = (*side.knowledgeReconciliations, args.knowledge_resolution)` — so each attempt starts from the conflict the
+previous attempt actually reached. Each decision still answers only the row it named, and every conflict no decision names
+is still refused, so this is not a policy. `_finish_retained_merge` clears the field with the conflict it belongs to.
+
+**Half two: a returning answered row gets a bounded refusal.** If a row an already-accepted decision answered comes back
+anyway, the retraction could not hold it — retracting the arriving change re-exposed another arriving change that needs the
+same row — and `_reconcile_progress_refusal` returns `sync-resolution-cycling` naming the exact row and the two honest next
+steps (resolve it in the worktree and continue, or cancel), rather than journaling the same decision a second time. The
+merge guard is untouched: `_independent_insert_refusal` still refuses two independent insertions of one identity, and no
+blanket equal-payload exception was introduced.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The journaled decisions, and the continuation that clears them with the conflict. | `SyncSideRecord`; `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:43-81; mcp/src/agents_remember/worktrees/sync_transaction.py:611-647 |
+| The attempt that carries every accepted decision, and the bounded refusal that stops the cycling. | `_reconcile_knowledge_resolution`; `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:650-709; mcp/src/agents_remember/worktrees/sync_transaction.py:712-741 |
+| The Git half that hands the adapter the whole sequence. | `reconcile_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:398-424 |
+
 ## 260915-KS-L42 The Unsettleable Conflict's Summary Names It And Says What To Do
 
 **This route's impact is the sentence a caller reads when no authored decision can settle a retained knowledge conflict.** In `worktrees/sync_transaction_results.py`, `_unsettled_instruction` splits that summary on the merge's measured retraction precondition: a referential refusal whose `precondition` is `no_arriving_insertion` is the orientation where the arriving side removed a row the retained side still cites, so the response says to restore the removed row or retract the reference in the worktree, stage it and continue — while every other unsettled conflict keeps the shipped "resolve it in the worktree, stage it, then continue". `_resolution_guidance` needed no new branch: an empty decision list already falls through to `continue_sync_resolution` with `nextArgs.resolution_action=continue`, which is the route that actually exists, and `cancelArgs` is still carried beside it.
@@ -1182,4 +1213,5 @@ The L31 section above records the wiring: a conflicted knowledge dataset settles
 **Open, not settled — named for the round-3 reviewer.** `cancelArgs` itself returns `sync-operation-refused` / `SyncGitProofError` in **both** orientations, including the INSERTED-row orientation round 2 verified as working; it is not introduced here, it is most likely the fixture's missing canonical enclosure locator chain, and the cancel half of the manual continuation therefore could not be proven to settle in that fixture.
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact: `SyncSideRecord.knowledgeReconciliations` as the journal of accepted decisions, `_reconcile_knowledge_resolution` re-entering the merge with all of them, `_reconcile_progress_refusal` as the bounded `sync-resolution-cycling` refusal that replaces "reconcile until it lands", `reconcile_side_merge`'s sequence parameter, the measured twelve-applications-to-two before/after, and the statement that the merge guard was not weakened. No verification stamp was advanced: the sources are modified in the delivered working tree and the governed closeout owns the real stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact: `_unsettled_instruction` and the summary it produces, the fact that `_resolution_guidance` needed no new branch because an empty decision list already advertises the manual continuation, the measured before/after of the advertised call, and the `cancelArgs` item left open for the round-3 reviewer rather than widened into this leaf. The card's `reviewedWorkingCandidate` row now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.

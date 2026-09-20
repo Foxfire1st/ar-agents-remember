@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T06:02+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936b337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,10 +62,20 @@ source, parent/ref, journal, and admitted-choice checks remain in force.
 decision takes as well.** `_retained_side` reads the side the retained phase names, so the phase really is
 the whole address and the three call sites can no longer disagree about which side is meant.
 `_finish_retained_merge` is the single continuation both a hand-staged resolution and an authored
-reconciliation end in: it commits the retained merge, clears `conflictFiles` **and the journaled
-`knowledgeConflict`** together (the agent was told what to reconcile, and the state that carried it goes with
-the conflict), restores parked work, and rejoins the ordinary automatic run. So a reconciled sync is a normal
+reconciliation end in: it commits the retained merge, clears `conflictFiles`, the journaled
+`knowledgeConflict` **and `knowledgeReconciliations`** together (the agent was told what to reconcile, and the
+state that carried it goes with the conflict), restores parked work, and rejoins the ordinary automatic run. So a reconciled sync is a normal
 sync with one authored input rather than a second route through the transaction.
+
+**Progress or an actionable refusal, never an indefinite cycle.** When a conflict survives an attempt,
+`_reconcile_progress_refusal(remaining, side.knowledgeReconciliations)` compares it against the decisions this
+side held **before** the attempt, and returns the reason for the `sync-resolution-cycling` result when a row an
+already-accepted decision answered has come back anyway: the authored decision was applied and retracted the
+arriving change, and retracting it re-exposed another arriving change that needs the same row, so no further
+authored decision will make this merge converge. The refusal names the exact row and what to do instead —
+resolve it in the worktree and continue, or cancel — and it deliberately does **not** journal the same decision
+a second time. A row no accepted decision named is ordinary progress: the merge moved on to a conflict nobody
+has answered yet, and that one is journaled and reported exactly as the first was.
 
 **An authored decision is checked against the journal *before* the merge is entered.**
 `_reconcile_knowledge_resolution` reads the conflict from the journal, hands it to `_reconcile_problem` (via
@@ -77,7 +87,14 @@ or a reconcile against the code side (which merges text and carries no knowledge
 `sync-input-invalid` and `invalidField="knowledge_resolution"` **without entering the merge** — carrying a
 decision into a merge that would ignore it and hand back the same conflict is exactly the loop this replaced.
 A decision that settles one conflict may reveal the next; that one is journaled through `_knowledge_conflict`
-and reported exactly as the first was. `sync_input_refusal` pairs the two inputs both ways:
+and reported exactly as the first was. **Every decision already accepted persists**, and the reason is the
+loop this route exists to close: `_reconcile_knowledge_resolution` builds
+`accepted = (*side.knowledgeReconciliations, args.knowledge_resolution)` and hands the whole sequence to
+`reconcile_side_merge`, so each attempt starts from the conflict the previous attempt actually reached rather
+than from the first one again. With only the newest decision carried, a merge holding two conflicts alternated
+between the same two rows forever and re-offered a decision that had already been made and already had its
+effect. A decision still answers only the row it named, and every conflict no decision names is still refused.
+`sync_input_refusal` pairs the two inputs both ways:
 `resolution_action='reconcile'` without `knowledge_resolution`, and `knowledge_resolution` with any other
 action, are refused by name. `_reconcile_preview` routes a dry run to the read-only preview and refuses with
 `sync-resolution-not-active` when no knowledge conflict is retained.
@@ -100,6 +117,12 @@ consumer artifact on the memory side, not a second source of sync truth.
 - **`resolution_action='reconcile'` is admitted only with a knowledge resolution, and the two are refused
   as a pair.** `knowledge_resolution` is read only with `reconcile`, which is what keeps a decided input
   from travelling with an action that would ignore it.
+- **A retry carries every accepted decision, and a returning answered row is refused rather than re-offered.**
+  Each attempt re-enters the merge with all the decisions this side has already accepted plus the new one, so a
+  two-conflict merge advances instead of alternating; and a row an accepted decision already answered that comes
+  back anyway earns `sync-resolution-cycling` with the exact row and the two honest next steps, never a second
+  copy of the same journaled decision. Neither change softens the merge guard:
+  `_independent_insert_refusal` still refuses two independent insertions of one identity.
 - **A decision never enters the merge unchecked.** It is validated against the *journaled* diagnosis first,
   so a wrong record or an inexpressible decision is refused before the retention is disturbed rather than
   after a merge that would have ignored it.
@@ -128,15 +151,16 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The driver validates choices and routes retained or new transactions, including the reconcile/decision pairing. | `sync_contract_under_authority`; `sync_input_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:86-116; mcp/src/agents_remember/worktrees/sync_transaction.py:181-222 |
-| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:408-425; mcp/src/agents_remember/worktrees/sync_transaction.py:849-857 |
+| The driver validates choices and routes retained or new transactions, including the reconcile/decision pairing. | `sync_contract_under_authority`; `sync_input_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:86-114; mcp/src/agents_remember/worktrees/sync_transaction.py:181-220 |
+| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:408-425; mcp/src/agents_remember/worktrees/sync_transaction.py:904-910 |
 | Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:354-382; mcp/src/agents_remember/worktrees/sync_transaction.py:581-602 |
 | **The side the retained phase names is read in one place, so phase and side cannot disagree.** | `_retained_side` | mcp/src/agents_remember/worktrees/sync_transaction.py:603-610 |
-| **The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.** | `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:611-648 |
-| **The authored-decision route: validate against the journal, re-run the adapter with the decision, then finish the retained merge.** | `_reconcile_knowledge_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:649-688 |
-| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:704-741; mcp/src/agents_remember/worktrees/sync_transaction.py:759-769; mcp/src/agents_remember/worktrees/sync_transaction.py:750-758 |
-| **The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.** | `_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction.py:770-789 |
-| **The read-only dry run of an authored decision.** | `_reconcile_preview` | mcp/src/agents_remember/worktrees/sync_transaction.py:486-501 |
+| **The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.** | `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:611-647 |
+| **The authored-decision route: validate against the journal, re-run the adapter with every decision this side has already accepted plus the new one, then finish the retained merge.** | `_reconcile_knowledge_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:650-709 |
+| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:759-794; mcp/src/agents_remember/worktrees/sync_transaction.py:814-822; mcp/src/agents_remember/worktrees/sync_transaction.py:805-811 |
+| **The bounded refusal that stops the recovery cycling: a row an already-accepted decision answered that came back anyway.** | `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:712-741 |
+| **The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.** | `_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction.py:825-842 |
+| **The read-only dry run of an authored decision.** | `_reconcile_preview` | mcp/src/agents_remember/worktrees/sync_transaction.py:486-499 |
 | The delegated Git owner excludes only the memory cache while retaining exact native merge proofs, and now returns the adapter's refusal with the merge outcome. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:141-167; mcp/src/agents_remember/worktrees/sync_transaction_git.py:305-318; mcp/src/agents_remember/worktrees/sync_transaction_git.py:319-340; mcp/src/agents_remember/worktrees/sync_transaction_git.py:571-581; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
 | Pinned authority and parked-work restoration remain separate owners. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
 | Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-283 |
@@ -152,6 +176,9 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the recovery now journals accepted decisions and refuses to cycle, and the card records both halves.** `_reconcile_knowledge_resolution` builds `accepted = (*side.knowledgeReconciliations, args.knowledge_resolution)` and hands the whole sequence to `reconcile_side_merge`, journaling it on the next `resolution_required`; `_finish_retained_merge` clears `knowledgeReconciliations` with the conflict it belongs to. Before this change a decision that settled one conflict was forgotten the moment the next one was authored, so a merge holding two conflicts alternated between the same two rows forever: twelve applications, the cap, no settlement. The measured repair is two applications and a settled merge (`evidence/after-independent/recovery-progress-after.json`, against `recovery-progress-before.json`). A new `_reconcile_progress_refusal` is the **bounded refusal** that replaces the old "reconcile until it lands": when a row an already-accepted decision answered comes back anyway, the retraction could not hold it, and the operation stops with `sync-resolution-cycling`, naming the exact row and the two honest next steps (resolve it in the worktree and continue, or cancel) instead of journaling the same decision a second time. Three claims were rewritten rather than annotated — the continuation paragraph now names the field it clears, the authored-decision paragraph now says that every accepted decision persists and why, and the invariants section gained one bullet for the pair — and one was added for the progress refusal. The merge guard is untouched and is stated as such: `_independent_insert_refusal` still refuses two independent insertions of one identity, and each decision still answers only the row it named. **Citation accounting:** `_reconcile_knowledge_resolution` `:649-688`→`:650-709`, `_finish_retained_merge` `:611-648`→`:611-647`, `_reconcile_preview` `:486-501`→`:486-499`, the validate-the-caller's-error row to `:759-794`/`:814-822`/`:805-811`, the driver row to `:86-114`/`:181-220`, and a new row for `_reconcile_progress_refusal` at `:712-741`. No anchor was renamed and no citation was dropped. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
+- 2026-09-20T12:00:25+00:00: Generated citation repair: `_knowledge_conflict` repointed to mcp/src/agents_remember/worktrees/sync_transaction.py:825-842. No content impact: mechanical anchor-range projection bound to citation source snapshot 23094be373d669ad77475ab6ebb610401913ce4b65c82d3b4cc642eb6bb44e43; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T06:02+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the retained-conflict continuation gained its second ending, and this card now records the authored route end to end.** Added: `_retained_side` (the phase is the whole address), `_finish_retained_merge` (the one continuation a hand-staged resolution and an authored reconciliation share, which clears `conflictFiles` *and* the journaled `knowledgeConflict` together), `_reconcile_knowledge_resolution` (validate against the journal, then re-run the adapter with the decision), `_reconcile_problem` / `_decision_matches` / `_refused_record` (the two facts a caller can get wrong, refused *before* the merge is entered), `_knowledge_conflict` (the projection into journal and response), `_reconcile_preview`, and the two-way pairing in `sync_input_refusal`. Three invariants are added for exactly the properties the acceptance depends on: a decision never enters the merge unchecked, the two inputs are refused as a pair, and the journaled diagnosis is cleared with the conflict it explains. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; the committed stamp remains closeout's.
 
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

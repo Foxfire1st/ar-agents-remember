@@ -6,9 +6,10 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash |  `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
+| lastVerifiedCommitDate |  2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1100,7 +1101,7 @@ one leaf's curation pass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy and the engine-supplied conflict key. | `merge_knowledge_datasets`; `_TAXONOMY`; `_conflict_record`; `_freeze_merged` | mcp/src/agents_remember/memory/knowledge/merge.py:140-273; mcp/src/agents_remember/memory/knowledge/merge.py:784-789; mcp/src/agents_remember/memory/knowledge/merge.py:802-813; mcp/src/agents_remember/memory/knowledge/merge.py:881-917 |
+| The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy with the single key predicate its two lookups share, and the engine-supplied conflict key. | `merge_knowledge_datasets`; `_TAXONOMY`; `_conflict_key`; `_conflict_record`; `_freeze_merged` | mcp/src/agents_remember/memory/knowledge/merge.py:140-175; mcp/src/agents_remember/memory/knowledge/merge.py:785-792; mcp/src/agents_remember/memory/knowledge/merge.py:803-821; mcp/src/agents_remember/memory/knowledge/merge.py:830-841; mcp/src/agents_remember/memory/knowledge/merge.py:908-944 |
 | **The measured retraction precondition: the probe's own copy of the retained side, the measurement that runs the caller's own retraction to answer it, the call site that hands it to the conflict record, and the field the offer reads.** | `PROBE_LEFT_NAME`; `_retraction_precondition`; `_retracts_arriving_rows`; `RetractionPrecondition`; `MergeConflict.precondition`; `expressible_decisions` | mcp/src/agents_remember/memory/knowledge/merge.py:118-118; mcp/src/agents_remember/memory/knowledge/merge.py:348-381; mcp/src/agents_remember/memory/knowledge/merge.py:384-401; mcp/src/agents_remember/memory/knowledge/merge.py:316-321; mcp/src/agents_remember/models/knowledge/merge.py:405-405; mcp/src/agents_remember/models/knowledge/merge.py:443-443; mcp/src/agents_remember/models/knowledge/merge.py:148-179 |
 | The base resolution: the closed two-member claim and the two refusals a base claim can earn. | `resolve_merge_base`; `_ancestry_refusal`; `_uniqueness_refusal` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge_base.py:181-196; mcp/src/agents_remember/memory/knowledge/merge_base.py:199-224 |
 | The structural preflight that runs before any session exists, and the declared manifest it compares against. | `require_supported_structure`; `declared_structure`; `compare_structures` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:226-258; mcp/src/agents_remember/memory/knowledge/merge_schema.py:173-188; mcp/src/agents_remember/memory/knowledge/merge_schema.py:261-305 |
@@ -1412,6 +1413,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `decode_invariant_row`; `decode_family_row` repointed to mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** Three governed modules moved. `memory/knowledge/merge_changeset.py`: `apply_changeset` takes an optional `AuthoredReconciliation` and its conflict callback now returns `ABORT` for every conflict the caller did not decide — `OMIT` (keep-left) and `REPLACE` (keep-right) are reachable *only* through a decision naming exactly the row in hand — with `ResolvedConflict` recording what was settled and `_retract_referential_rows` handling the row-less referential shape, bounded to rows the arriving delta inserted. `memory/knowledge/merge.py`: `_authored_postcondition` replaces the unconditional applied-changes call so the postcondition stays exact for everything undecided, with a row-less decision bounded by the count of retractions the engine reported. `memory/knowledge/merge_validation.py`: `unapplied_changes` exposes the whole unapplied list, which is what that count is measured from. A body change, not a metadata-only refresh.
 
@@ -1591,6 +1593,47 @@ every other read in this route uses.
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
 | The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:364-437; mcp/src/agents_remember/application/knowledge_review.py:474-491 |
 
+## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
+
+**This route's impact is the merge's authored-decision channel, plus one naming defect in its conflict taxonomy.**
+Three files under `memory/knowledge/` changed, and each change is a fact a route reader needs.
+
+**Accepted decisions travel as a sequence, because one retained conflict is rarely the last.** `MergeRequest.reconciliation`
+became `MergeRequest.reconciliations: tuple[AuthoredReconciliation, ...]`, `apply_changeset(..., reconciliations=())`
+replaces its single `reconciliation`, `_authored_decision` loops the sequence, and `merge_conflicted_stages` /
+`settle_knowledge_conflict` forward it. Nothing about the decision boundary moved: **each** entry still names exactly
+one row, `keep-left`/`keep-right` still apply only to the conflict in hand, a row-less decision still answers only a
+row-less conflict, and every conflict no decision names is still refused exactly as it was. What the sequence repairs
+is measured, not theoretical: with only the newest decision carried, a retained merge holding two conflicts re-refused
+the row the previous decision had already answered, the two alternated forever, and the caller was offered a decision
+it had already made and that had already had its effect — twelve applications to the cap and no settlement before,
+two applications and a settled merge after (`evidence/after-independent/recovery-progress-after.json` against
+`recovery-progress-before.json`).
+
+**The taxonomy's two lookups had drifted apart, and they now share one key.** `_TAXONOMY` selects the refusal builder
+and `_CONFLICT_NAMES` selects the name an operator reads, and both are keyed by `(SQLite code, whether the conflict is
+the relationship one)` — but they asked the question differently: the builder asked
+`code == _CONFLICT_CONSTRAINT and table in _RELATIONSHIP_TABLES`, while the name lookup asked
+`table in _RELATIONSHIP_TABLES` alone. `realization_claim` is a relationship table, so a `duplicate_identity` on it was
+refused correctly and *simultaneously* named `unmapped_conflict_3` — the operator was told the taxonomy does not name a
+conflict it maps, which is a false statement about the tool rather than a fact about the data. `_conflict_key(code, table)`
+is now the single home for the predicate, `_conflict_name(code, table)` the single namer, and `_conflict_refusal` and
+`_conflict_facts` both go through them. The predicate is what it is because the relationship answer exists only for the
+constraint code: a unique-declaration violation on a relationship table is `duplicate_relationship`, while the same table
+colliding on a primary key is two independent insertions of one identity like any other table's.
+
+**A candidate directory may carry an owning operation's own local record.** `candidate_workspace.py`'s docstring now
+records that the layout it fixes is *which file is the working database*, not the file count: an operation that owns the
+candidate may keep its own local, operation-scoped record beside the receipt and the lock, exactly as the receipt itself
+is such a record. The curator ingest's `curator-allocation-journal.json` is the first instance. Nothing about admission,
+disposal or the two-phase creation moved.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The authored-decision channel as a sequence, and the one matching rule that still bounds it to a single row. | `MergeRequest`; `apply_changeset`; `_authored_decision` | mcp/src/agents_remember/models/knowledge/merge.py:286-325; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:291-402; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:504-534 |
+| The taxonomy's one key predicate and the namer built on it, so the builder and the operator-facing name cannot disagree. | `_TAXONOMY`; `_CONFLICT_NAMES`; `_conflict_key`; `_conflict_name` | mcp/src/agents_remember/memory/knowledge/merge.py:785-792; mcp/src/agents_remember/memory/knowledge/merge.py:793-800; mcp/src/agents_remember/memory/knowledge/merge.py:803-821; mcp/src/agents_remember/memory/knowledge/merge.py:824-827 |
+| The candidate layout's fixed part and its owner-writable part. | `candidate_database_path`; "curator-allocation-journal.json" | mcp/src/agents_remember/models/knowledge/snapshot.py:58-63; mcp/src/agents_remember/application/knowledge_curator_ingest.py:194-194; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:1-11 |
+
 ## Update History
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **route body updated.** The section above records this route's own impact — two enumerating read methods on `OpenedKnowledgeStore` (`list_invariants`, `list_families`), each returning every recorded identity of its kind ordered by the identity's own column, decoded through the shared row decoders, with no filter and no count. It states the boundary explicitly: the enumeration is not a selection rule, and the comparing-and-dropping belongs to `application/knowledge_review.py`. Three rows were added and the L42 section below is untouched and keeps its own history block.
 
@@ -1603,6 +1646,7 @@ every other read in this route uses.
 **Open, not settled — named for the round-3 reviewer.** `cancelArgs`, carried beside `nextArgs` by every `sync-resolution-required` response, returns `sync-operation-refused` / `SyncGitProofError` in **both** orientations, including the INSERTED-row orientation round 2 verified as working. It is not introduced by this change and was not widened into it; it is most likely the fixture limitation round 2 already recorded (the sync fixture writes a bare contract with no canonical enclosure locator chain). The `continue` half of the manual continuation is real and drives state; the `cancel` half could not be proven to settle in that fixture.
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** The section above records this route's own impact: the merge's authored-decision channel becoming a sequence (`MergeRequest.reconciliations`, `apply_changeset(reconciliations=...)`, `_authored_decision` over it, forwarded through `merge_conflicted_stages` and `settle_knowledge_conflict`), the measured cycling this repairs, the conflict taxonomy's two lookups being put back on one key predicate (`_conflict_key`, `_conflict_name`) after a `duplicate_identity` on a relationship table was refused correctly and named `unmapped_conflict_3` at the same time, and the candidate-directory docstring recording that an owning operation may keep its own local record beside the receipt. The section is appended at the end of the route's change narrative, so it shifts no existing line of a document another card cites by line. The route's own reference rows were not re-measured by this pass; the three affected sidecars carry the per-file figures. No verification stamp was advanced, because the sources are modified in the delivered working tree and closeout owns the stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of the route's change narrative, so it shifts no existing line in a document other cards cite by line. It records this route's own impact — the measured retraction precondition in `memory/knowledge/merge.py` (`PROBE_LEFT_NAME`, `_retraction_precondition`, `_retracts_arriving_rows`, the widened `_conflict_facts` signature) and the model half it feeds (`RetractionPrecondition`, `MergeConflict.precondition`, `expressible_decisions`), the deliberate non-widening of `_retract_referential_rows`, the measured before/after of the advertised route, and the `cancelArgs` item left open for the round-3 reviewer. The merge-orchestration row in the reference table was re-cited to its anchors' own declaration extents in the working tree (`merge_knowledge_datasets` `:133-167` → `:140-273`, `_TAXONOMY` `:718-723` → `:784-789`, `_conflict_record` `:736-747` → `:802-813`, `_freeze_merged` `:808-845` → `:881-917`), because this leaf's insertions moved every one of them, and a row was added for the new constructs. The card's `reviewedWorkingCandidate` row now names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.
 
 

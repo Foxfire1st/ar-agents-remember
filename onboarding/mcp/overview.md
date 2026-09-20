@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                           |
 
@@ -1922,18 +1922,34 @@ follow-up review kept open on the CYCLE-01 finding.
   from it and the next task began blind to knowledge the repository had already published. Omitting the
   flag is still the correct cold start for a repository's first task, which is why the argument and the
   selection field are one pairing rather than an option and a default.
-- **The identities the ingest mints belong to the repository, not to the code baseline.** `_identity`
-  derives every id over the repository's own `repository_id` — read from the selected dataset, derived
-  under the ingest namespace only as a cold-start fallback — instead of over the enclosure's recorded base
-  commit, and `ingest_curator_list` resolves that value **before** planning, so one value reaches every
-  mint in the run rather than one value per step. The same obligation is therefore the same record when
-  the next task reads the line at a later baseline, and two repositories that share a base commit no
-  longer collide on one record identity.
-- **Two constructs in one file are two stored records.** The anchor and the claim carry the locator's
-  qualified name as their discriminator while the route stays one scope per path, so `resolve_budget` and
-  `other` in one `pkg/module.py` commit as two anchors and two claims sharing the one route row. Before
-  this, the second construct reached the batch as the same `source_anchor` and was refused
-  `duplicate_identity`.
+- **A citation's identity belongs to the repository, not to the code baseline.** `_identity` derives a
+  citation's route, anchor and claim over the repository's own `repository_id` — read from the selected
+  dataset, derived under the ingest namespace only as a cold-start fallback — instead of over the
+  enclosure's recorded base commit, and `ingest_curator_list` resolves that value **before** planning, so
+  one value reaches every mint in the run rather than one value per step. Two repositories that share a
+  base commit therefore no longer collide on one record identity. **L43 narrowed the scope of this
+  sentence**: the invariant and its first revision are no longer *derived* at all, and the clause "the
+  same obligation is the same record at a later baseline" was true of the citations and, for the
+  invariant, rested on the entry's local label being its whole distinction — which is the reading the
+  developer's 2026-09-20 ruling replaced.
+- **A new truth's identity is ALLOCATED, and the label is not an input to it.** `_creation` hands each new
+  creation operation a fresh `uuid4` pair and records it in the candidate's own allocation journal under an
+  idempotency key scoped by the enclosure's task identity, so two independent tasks that both numbered an
+  entry `R-LOCAL` mint two distinct truths — they used to be handed one invariant and one revision, and
+  production sync refused `duplicate_identity` on it and offered only to discard one of two truths that had
+  never been in conflict. A repeat of one operation resolves to the identities it already holds and is
+  reported `replayed`; different content under one key is refused `allocation_content_conflict`. Continuity
+  across a task boundary is by **explicitly naming the stored identity** — an entry names `invariant_id`
+  and a target now names `anchor_id` — and **scoping the stored identity to the authoring enclosure is
+  forbidden** by the ruling, not merely disfavoured: enclosure identity scopes the retry key and
+  distinguishes creation operations only.
+- **Two constructs in one file are two stored records, and each citation identity is keyed on what it
+  is.** The anchor is keyed on the **allocated revision id** with the locator's qualified name as the
+  disambiguator inside that creation, and the claim on its own **revision-plus-anchor edge**, while the
+  route stays one scope per path — so `resolve_budget` and `other` in one `pkg/module.py` commit as two
+  anchors and two claims sharing the one route row. The route/anchor fix alone was not enough: with the
+  claim still keyed on the label, two independent tasks citing one construct minted ONE claim identity for
+  two different realizations, and the batch refused the second.
 
 What this route does not gain: no second write path (publication is still
 `application/knowledge_snapshot.py`), no change to the five published `knowledge_*` tools, and no new
@@ -1942,12 +1958,18 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens and places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284; mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
-| The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:846-952; mcp/src/agents_remember/application/knowledge_curator_ingest.py:827-843 |
-| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513; mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490 |
-| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1656-1775 |
-
+| The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:999-1115; mcp/src/agents_remember/application/knowledge_curator_ingest.py:980-996 |
+| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555 |
+| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807 |
+| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
+| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:556-594; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1589-1628; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1565-1586; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1678-1690 |
+| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1482-1493; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1496-1517; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1970-1992 |
+| The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555 |
+| The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:1688-1807; mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270 |
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **this route's identity bullets had their scope corrected, and the allocation they were silent about is now stated.** The first bullet said the ingest's identities belong to the repository rather than the baseline and that "the same obligation is therefore the same record when the next task reads the line at a later baseline" — true of the citation identities, and true of the invariant only because the entry's local label was then its whole distinction. That reading is what the developer's 2026-09-20 ruling replaced, so the bullet now says which identities the derivation covers and names the sentence's narrowed scope; a new bullet states the ruling at this route's altitude (the API allocates and persists the canonical identity; the label is not an input; continuity is naming the stored identity; a retry rides a separate idempotency key; **enclosure-scoped stored identity is forbidden**); and the two-constructs bullet now records that the anchor is keyed on the allocated revision and the claim on its own edge, because the route/anchor fix alone still left two independent tasks sharing one claim. Three rows were added for the allocation, the retry key/content guard and the explicit anchor reuse, and the two rows the fixer could not project were re-measured by hand. No verification stamp was advanced: the source is modified in the delivered working tree and the governed closeout owns the real stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: "def review_request_from_query(" repointed to mcp/src/agents_remember/serving/review.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.

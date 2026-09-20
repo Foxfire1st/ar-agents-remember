@@ -7,8 +7,8 @@
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-20T06:55+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | governingOverview      | `overview.md`                              |
 ## Governing Overview
 
@@ -318,7 +318,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool`; `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:347-364; mcp/src/agents_remember/application/worktree_tools.py:616-640 |
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:454-494 |
 | The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:466-495; mcp/src/agents_remember/application/worktree_tools.py:798-806 |
-| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
+| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115; mcp/src/agents_remember/worktrees/sync_transaction_state.py:383-399 |
 | Worktree service behavior is owned by the worktree manager and modules. | `agents_remember` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:34 |
 | Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`; `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:310-364; mcp/src/agents_remember/models/worktree.py:538-542 |
 | Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout`; `route_review_refusal_projection` | mcp/src/agents_remember/application/worktree_tools.py:914-956; mcp/src/agents_remember/worktrees/route_review.py:183-250; mcp/src/agents_remember/worktrees/route_review.py:549 |

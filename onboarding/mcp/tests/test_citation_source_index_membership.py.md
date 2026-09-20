@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_citation_source_index_membership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
+| lastUpdated | 2026-09-20T14:20+02:00 |
+| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a` |
+| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,6 +94,8 @@ the case's temporary directory.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (deterministic-check clearance inside this leaf's change set, uncommitted on `ar/260915-ks-l43-ar`, code base `fb719f89`): **a pre-existing PLC0415 is cleared by moving a function-local import to the top level, plus `ruff format` reflows; no claim on this card changed, and the import move is the one edit here with a content consequence a reader should be told about.** `BoundTreeResolutionTests.test_tree_resolution_honours_the_bound_tree` imported `claim_change_router`, `model` and `range_resolution` inside the method body; the import block is now at the top of the module beside the existing `source_index` import, which is what the deterministic gate requires (PLC0415). The names are the same three modules and the behaviour is identical — an import is a binding, not a decision — but the card should know that the module now binds them at import time rather than at first call, because a reader following the old "imported where it is used" shape would not find it. Four `ruff format` reflows ride along in the same class (`Trees(...)`, `model.Citation(...)` and two assertion calls collapsed or split to fit), and the top-level import block's growth is what moved **every** construct below line 90: the three classes are now `GitMembershipSourceIndexTests` `:172-335`, `ThisCheckoutsCitationIndexBoundsTests` `:338-361` and `BoundTreeResolutionTests` `:364-484`, and the module constants `REPOSITORY_ROOT`/`PER_FILE_CAP`/`AGGREGATE_CAP`/`_ABSENT_MEMORY_ROOT` sit at `:107-112`. **Stamp accounting:** `reviewedWorkingCandidate` now names this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains the body as it now stands and no stamp was measured on it. No commit was made.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: created this card for the module this leaf added to

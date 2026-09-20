@@ -6,9 +6,10 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitHash |  `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
+| lastVerifiedCommitDate |  2026-09-20T15:00:59+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview | `../overview.md` |
 
 ## 260915-KS-L41 The Mounted Read Family's Successful Path, Driven Against A Real Store Without A New Case
@@ -153,19 +154,31 @@ why its **collected count did not change**.
 The case `RepositoryIdentityStabilityTests.test_repository_knowledge_continues_across_baselines_and_tasks`
 now ends by calling `_cycle01_public_identities`, which pins three route-level facts. **(f)** The
 identities the **write path** stores distinguish two constructs of one file: `_target_identities` mints the
-anchor and the claim from the locator's qualified name while the route stays one scope per path, so two
-constructs of one `pkg/module.py` get two anchor ids, two claim ids and one shared route id — the
-observation identity the case already separated was not enough on its own, because the stored anchor and
-claim were still keyed on the path and the entry id alone and the batch refused the second with
-`duplicate_identity` on `source_anchor`. **(g)** The **public operation** is driven for real: task A commits
+anchor on the allocated revision id with the symbol's qualified name as the in-creation disambiguator, and the
+claim on its own revision-plus-anchor edge, while the route stays one scope per path — so two constructs of
+one `pkg/module.py` get two anchor ids, two claim ids and one shared route id. The observation identity the
+case already separated was not enough on its own, because the stored anchor and claim were still keyed on the
+path and the entry id alone and the batch refused the second with `duplicate_identity` on `source_anchor`; and
+the entry id was not enough either, which is what L43 corrected below. **(g)** The **public operation** is driven for real: task A commits
 two constructs of one file and publishes, task B forks that published dataset with a selected `baseline`,
 keeps A's invariant and revisions by exact id, stores an explicit successor under the invariant it names
 with a recorded `invariant_predecessor` edge, adds an unrelated record, and republishes over the dataset it
 forked from (`previous_identity` equal to A's). The assertions are read from the databases themselves: the
 published `knowledge.sqlite` holds exactly the candidate's invariants and revisions, and the candidate
-holds four distinct anchors, three of them for the one file. **(h)** A reused local label resolves to the
-**repository's** record: one repository read at two code baselines mints the same invariant and revision
-identity, which is what makes the obligation recorded at the first baseline findable at the second.
+holds four distinct anchors, three of them for the one file. **(h)** This point was **re-pointed by L43** and no longer reads as it was
+written here. It used to say that a reused local label resolves to the repository's record — one repository
+read at two code baselines mints the same invariant and revision identity, "which is what makes the
+obligation recorded at the first baseline findable at the second". That was true of the fixture it measured
+(one repository, one label, two baselines, one statement) and became misleading only because it was read as
+covering a case the fixture never separated: two *independent* tasks authoring different truths under a
+reused label. The developer's 2026-09-20 ruling names the case — `R-LOCAL` is a **local hand-off label**, the
+label is not an identity input, the knowledge API **allocates and persists** the canonical identity,
+continuity across a task boundary is by **explicitly naming the stored identity**, and a retry rides a
+**separate idempotency key** — and `_cycle01_reused_label_identity` now measures exactly that: two sibling
+enclosures differing in nothing but their leaf id, one reused label, two different statements, **distinct**
+stored invariant and revision ids, and then a third enclosure naming the first side's stored `invariant_id`
+to evolve that record. The legitimate worry the old sentence carried is still answered, by the route that
+actually provides it.
 
 **No collected case was added, and the reason is a route-level constraint rather than a preference.** Both
 lanes sit at exactly their configured budget — 2300 / 2300 unit and 400 / 400 integration — and
@@ -184,10 +197,12 @@ session pair, whose memory root the other cases read but never write. That keeps
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The one collected case that now runs the public journey, and the entry point it calls. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_public_identities` | mcp/tests/test_knowledge_curator_ingest_list.py:1656-1775; mcp/tests/test_knowledge_curator_ingest_list.py:1780-1815 |
-| The public journey itself: a private pair, task A's publication, task B's baseline fork, and the measurements read from the databases. | `_cycle01_cli_baseline_journey`; `_cycle01_task_a`; `_cycle01_task_b`; `_cycle01_baseline_consequences` | mcp/tests/test_knowledge_curator_ingest_list.py:2012-2039; mcp/tests/test_knowledge_curator_ingest_list.py:1841-1872; mcp/tests/test_knowledge_curator_ingest_list.py:1875-1921; mcp/tests/test_knowledge_curator_ingest_list.py:1924-1963 |
-| The reused-label identity, asserted as one record for one repository at two baselines. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2042-2057 |
-| The write-path identities the journey's first assertion pins. | `_TargetIdentities`; `_target_identities`; `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458 |
+| The public journey itself: a private pair, task A's publication, task B's baseline fork, and the measurements read from the databases. | `_cycle01_cli_baseline_journey`; `_cycle01_task_a`; `_cycle01_task_b`; `_cycle01_baseline_consequences` | mcp/tests/test_knowledge_curator_ingest_list.py:2123-2150; mcp/tests/test_knowledge_curator_ingest_list.py:1932-1963; mcp/tests/test_knowledge_curator_ingest_list.py:1966-2012; mcp/tests/test_knowledge_curator_ingest_list.py:2015-2054 |
+| The reused-label identity, asserted as one record for one repository at two baselines. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270 |
+| The write-path identities the journey's first assertion pins. | `_TargetIdentities`; `_target_identities`; `_identity` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:541-555; mcp/src/agents_remember/application/knowledge_curator_ingest.py:623-678; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2911-2947 |
 | **The public selection the next task uses to begin from a prior task's published knowledge — and, since 260915-KS-L45, the run that also places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284; mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
+| The reused-label identity, asserted as the ruled semantics: a label is not an identity input, and continuity is naming the stored id (re-pointed by L43 — see the section below). | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270 |
+| The public selection the next task uses to begin from a prior task's published knowledge. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284 |
 
 
 ## Governing Overview
@@ -762,6 +777,7 @@ from a mechanical projection. The case budgets are unchanged: this leaf's own ca
 the unit and the integration ceilings under their declared limits, so it raised neither.
 
 the dated `## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
 - 2026-09-20T06:52+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `mcp/tests/test_worktree_sync.py` grew the acceptance for the public conflict boundary — `_assert_knowledge_conflict_is_diagnosed_and_reconciled`, `_assert_delete_reference_conflict_is_retracted` and `_assert_schema_disagreement_is_reported_not_reconciled` — driven from the existing retained-conflict integration case, so no collected case was added to a lane that already sits at its exact ceiling. The module now builds one scenario at an older recorded schema generation and therefore consumes the registered `generation_test_support` fixture, whose `consumer_scope = "exact"` required the consumer list in `mcp/tests/evidence-lifecycle.toml` to gain this module **and** `mcp/tests/test_sync_parked_candidate.py` (which imports it), and required the catalog digest pinned in `mcp/tests/test_dependency_ownership_ast_helpers.py` to be re-derived to `c499cbcc…` — the eleventh deliberate re-pin, recorded in that module's own docstring. **Nothing was registered, no artifact row was removed and no identity moved**, so the governed populations stay at fifteen contracts / sixty-five artifacts. A body change, not a metadata-only refresh.
 
 - 2026-09-18T19:23+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **retargeted the eight reference rows this leaf's own module split made wrong, and verified each by reading the new module.** L24's `KS-R24@v1` rows at `:2814-2821` cited the eight publication-input cases in `mcp/tests/test_final_full_memory_coherence_certification.py` at `:1059-1076`, `:1079-1089`, `:1092-1108`, `:1111-1124`, `:1127-1147`, `:1150-1163`, `:1166-1180` and `:1192-1192` — ranges the split left **out of bounds** (the module is 954 lines) and whose anchors now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. Each row was re-cited to the range its own case occupies there (`:145-162`, `:165-175`, `:178-201`, `:204-217`, `:220-240`, `:243-256`, `:259-273`, `:276-283`), and each new range was **verified to contain that case's own `def` line** before it was written. This is the engine's own prescribed action for `anchor_left_live_file` — re-cite where the fact now lives — that the serving build's pass declined because the old module still exists; it is recorded here rather than left to the reader. No other row was touched: the route's remaining absent-anchor rows are the anchor-**multiplicity** class, which the leaf's own item 16(b) now reports as *report-only* rather than curator work, and the engine's declines for them are carried in the curator's declined worklist.
@@ -1671,6 +1687,7 @@ leaf's curator to the owning seat; it is a code-side fix, not a memory one.
 | The two shared-support artifacts both new modules consume, whose exact consumer lists are the gate gap recorded above. | `make_authorship`; `create_current_generation_store` | mcp/tests/knowledge_fixture_test_support.py:189-220; mcp/tests/generation_test_support.py:86-120 |
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **the projected range is disposed of by a real re-citation, not by a note.** The generated repair of 12:00:25 had moved `_cycle01_reused_label_identity`'s range mechanically, and a mechanically projected range is unverified evidence: the projection picks the declaration it writes, so it satisfies its own currency test by construction. This entry replaces it. The two claims that cited it were re-read at the construct the range now covers, `mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270`, and at `_cycle01_sibling_contract` (`:2273-2287`), which is the helper the second claim is about. The construct supports both claims' own words: the case's docstring now states the **ruled** semantics (a local hand-off label is not an identity input, two sibling enclosures differing only in their leaf id mint two distinct stored identity pairs, and continuity across a task boundary is by naming the stored `invariant_id`), and `_cycle01_sibling_contract` writes exactly the second enclosure those words describe. Both ranges were **re-cited deliberately after reading the constructs**, the wording of both claims is **retained**, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **no new test file and no new collected case.** `mcp/tests/test_knowledge_review_surface.py` changed, and the change is folded into two cases it already had: the unresolvable-candidate case now also asserts the **entry** read refuses with the same `candidate_unresolved` code and an empty `entries` — because the entry read resolves through the identical operation the comparison does, and an empty list would read as "this candidate records nothing to review" — and the pane-name case now measures the entry list against the shipped comparison's own answer: every offered entry is one the comparison answered for, its `selected_item_count` equals the comparison's own `items_total`, and an identity the candidate does not record is dropped rather than listed with a zero. Collected cases measured on this candidate: **25 before, 25 after** (`pytest --collect-only`), so the unit lane's budget is untouched. The L22 section's own count of "27 `unit-regression` cases" was corrected in place to the measured 25, which is what this file actually collects and what the leaf's own report states. Two reference rows were added and one re-cited. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-20T03:57:45+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1457-1457. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T03:57:45+00:00: Generated citation repair: "path = \"scripts/e2e_harness/fresh_user_fixture.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1573-1573. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
@@ -5036,9 +5053,43 @@ the L31 byte value this paragraph was written against was `f786c157…`, correct
 **Open, not settled — named for the round-3 reviewer.** The `cancelArgs` probe (`notes/reports/2026-09-21-cycle-fix-verification/evidence/cycle02-orientation-fixed/cancel-probe.json`) returns `sync-operation-refused` in **both** orientations, including the INSERTED-row orientation round 2 verified as working, so the cancel half of the manual continuation is unproven in this fixture. The `continue` half is proven: driving the advertised call moves the state.
 
 ## Update History
+- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** A section was appended for this route's own impact — `_cycle01_reused_label_identity` re-pointed at the ruled semantics (two sibling enclosures, one reused label, two different truths, distinct stored identities, continuity by naming the stored id), the two renamed cases in the same module, and the unchanged collected count of 19. The L39 section's **(f)** and **(h)** statements were corrected in place rather than left standing: (f) now names the allocated revision and the revision-plus-anchor edge as the two discriminators, and (h) states the ruled semantics and records that the pre-ruling sentence was true of the fixture it measured and became misleading only through its scope. Three rows were re-measured (`_cycle01_public_identities`/the case to `:1812-1906`/`:1688-1807`, the write-path identities row to the L43 extents) and three rows were added. No verification stamp was advanced: the sources are modified in the delivered working tree and the governed closeout owns the real stamp; `reviewedWorkingCandidate` names the candidate this reading was performed against. No commit was made.
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of the route's change narrative, so no existing heading moved and the off-route cards that cite this document by line needed no repointing this time. It records this route's own impact for the leaf: the reversed-orientation case and its assertion that the advertised call changes the state, the two unit-side cases that changed with it, the exact ceilings (unit 2300/2300, integration 400/400) that made every new assertion land inside an already-collected case, and the `cancelArgs` item left open for the round-3 reviewer. The card's `reviewedWorkingCandidate` row now names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.
 
 
+
+## 260915-KS-L43 Two Sibling Enclosures, One Reused Label, And The Ruled Semantics
+
+**This route's impact is what its own case now proves**, and the change is a scope correction rather than a
+retraction. `mcp/tests/test_knowledge_curator_ingest_list.py`'s `_cycle01_reused_label_identity` — the (h) point of
+the L39 section above — asserted that a reused local label at two code baselines mints ONE invariant and ONE
+revision. That was the code's behaviour and it was measured, so the case was not wrong about what it saw; it was
+wrong about what the behaviour *meant*, and a reader took "the same label at a later baseline names the SAME
+record" as "label reuse across independent tasks is handled". The developer's 2026-09-20 ruling is that a label
+carries no identity meaning: two independent tasks numbering an entry `R-LOCAL` are two **creation operations**,
+and the truth each authors gets its own canonical identity.
+
+**What the case measures now.** A published baseline, then two sibling enclosures that differ in nothing but
+their leaf id (`_cycle01_sibling_contract`, which is also what scopes the retry key), each ingesting one entry
+labelled `R-LOCAL` with a different statement and a different cited construct; the assertion is that the two
+stored invariant ids and the two stored revision ids **differ**, and that both snapshots publish. Continuity is
+then proved the way the ruling names it: a third enclosure hands over `invariant_id=stored["left"][0]` and its
+revision as predecessor, and must evolve *that* record — identity preserved, a distinct revision filed under it,
+and a recorded predecessor edge readable from the database.
+
+**Two cases in the same module were renamed**, because the rule they measure changed and a reader searching for
+the old names would find nothing: `test_identity_is_derived_from_the_enclosure_so_a_second_run_is_diagnosable` →
+`test_a_second_run_resolves_to_the_identities_the_operation_was_allocated` (a repeat is now a **replay** —
+`batch_state == "replayed"`, zero commands, zero records written, the stored row sets byte-identical — rather
+than a `batch_stale_precondition` refusal), and `test_dry_and_real_runs_report_the_same_written_rows_and_a_refused_run_reports_none`
+→ `…_and_a_repeat_writes_none`. **The collected count is unchanged at 19**, which is the constraint the L39
+section above records: the new protection is plain functions called from inside the existing case.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The re-pointed case: two sibling enclosures, one reused label, distinct stored identities, and continuity by naming the stored id. | `_cycle01_reused_label_identity`; `_cycle01_sibling_contract` | mcp/tests/test_knowledge_curator_ingest_list.py:2153-2270; mcp/tests/test_knowledge_curator_ingest_list.py:2273-2287 |
+| The replayed repeat, and the count that says nothing was written. | `test_a_second_run_resolves_to_the_identities_the_operation_was_allocated` | mcp/tests/test_knowledge_curator_ingest_list.py:1116-1161 |
+| The allocation the case's distinct identities come from. | `_creation`; `_Allocation`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1589-1628; mcp/src/agents_remember/application/knowledge_curator_ingest.py:556-594; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1678-1690 |
 
 ## 260915-KS-L44 The Location Rows Are Asserted Against The Record, With A Rationale That Names No File
 
