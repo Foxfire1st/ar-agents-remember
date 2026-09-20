@@ -6,9 +6,9 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastVerifiedCommitHash | `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitDate | 2026-09-20T12:31:16+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l44-ar`, uncommitted; base `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
@@ -999,3 +999,12 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 
 
 - 2026-09-20T05:55+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two builder-side changes: `knowledge_integrity_check_payload` now takes an exact-input selector (`_ExactInputSelector`, with `_run_for_scope` applying it as a binding rather than a preference, `_runs_in_scope` / `_run_identity` naming every run the scope holds, `_report_facts` composing all three non-success answers, and `_condition_report` naming the selected run beside the digest over its exact inputs and echoing the run's own route as the scope), and `knowledge_read_payload` now resolves the context's `(repository_root, code_tree_id)` pair through `_source_resolution` / `_current_code_tree` so a minimal schema-conformant read returns a view rather than raising the context model's incomplete-resolution refusal. The section also restates that the scope still selects and never borrows another scope's run, and that nothing in this module decides anything. The card carried no `reviewedWorkingCandidate` row; one was added naming this leaf's candidate. This card's verification metadata — `lastVerifiedCommitHash`/`lastVerifiedCommitDate` — is retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.
+
+## 260915-KS-L44 The Read Request States What Owns The Knowledge Selection
+
+**This route's impact is one docstring in `mcp/tools/knowledge.py`, and what it records is a finding rather than a new contract.** `ReadToolRequest` (`:106-135`) now states that `databasePath` and `repositoryId` **are** the knowledge selection and that the caller owns both: the runtime config's per-repository scope carries no knowledge-database or namespace field, a repository's coordination declaration (`context_packet`) and the memory layer's `system/settings.json` name roots, paths and policy but no knowledge database, namespace or `repositoryId`, no shipped helper or filename convention resolves a repository or a task to a knowledge SQLite path (`knowledge.db` appears only in test support), and the repository namespace is minted by ingestion (`create_repository`), so it is a fact about a store that already exists. The published schema keeps both **required** rather than optional-with-a-default, because a default here would be this surface inventing a selection; a cold planner that has not been told the pair cannot discover it from this server.
+
+**Nothing was widened.** Exposing a real discovery contract — a settings key, a `context_packet` field, a resolver — is a product decision and is deliberately **not** taken by this leaf. The mounted builders, the refusal vocabulary, the source-resolution pair, the detection-run selection and the projection path are all unchanged; the docstring is the only edit at this surface.
+
+## Update History
+- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact — the read request's docstring now naming the caller as the owner of the `databasePath`/`repositoryId` selection, with the five observations that make that a fact (no config field, no coordination field, no memory-settings key, no resolver or filename convention, and a namespace minted at ingestion), the reason the schema keeps both required, and the explicit boundary that a discovery contract is a product decision this leaf did not take. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.

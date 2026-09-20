@@ -6,9 +6,9 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T07:30+02:00 |
-| lastVerifiedCommitHash |  `2a96eb883fb081e77a79485530ad7b83ccceff7b`|
-| lastVerifiedCommitDate |  2026-09-20T07:29:47+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l42-ar`, uncommitted; base `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitHash |  `fb719f8936d337c4685f2758d4ba3731cd8b7fc5`|
+| lastVerifiedCommitDate |  2026-09-20T12:31:16+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l44-ar`, uncommitted; base `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
 | governingOverview | `../overview.md` |
 
 ## 260915-KS-L41 The Mounted Read Family's Successful Path, Driven Against A Real Store Without A New Case
@@ -5036,3 +5036,12 @@ the L31 byte value this paragraph was written against was `f786c157…`, correct
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of the route's change narrative, so no existing heading moved and the off-route cards that cite this document by line needed no repointing this time. It records this route's own impact for the leaf: the reversed-orientation case and its assertion that the advertised call changes the state, the two unit-side cases that changed with it, the exact ceilings (unit 2300/2300, integration 400/400) that made every new assertion land inside an already-collected case, and the `cancelArgs` item left open for the round-3 reviewer. The card's `reviewedWorkingCandidate` row now names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.
 
 
+
+## 260915-KS-L44 The Location Rows Are Asserted Against The Record, With A Rationale That Names No File
+
+**This route's impact is two non-collected helpers and a fourth claim inside the mounted-family fixture, folded into cases that were already collected.** `mcp/tests/test_knowledge_views_and_projection.py` gained `_assert_the_invariant_realizations_carry_their_recorded_location` (`:1599-1634`) and `_assert_the_locations_are_recorded_not_read_out_of_the_prose` (`:1637-1665`), driven from `_assert_family_traversal_from_one_path` (`:1482`) and from `_assert_the_path_seed_selects_in_every_view` (`:1668`). **No collected case was added and neither ceiling was raised**: the unit lane stands at exactly 2300 / 2300 and the integration lane at 400 / 400, so every new assertion lands inside an already-collected case.
+
+**The fixture variation is what makes the assertions mean anything, and it is the reason this leaf exists.** `_build_mounted_family_fixture` (`:886-1067`) now records a fourth realization claim at `src/batch.py` with `role="enforcement"`, `locator=LineRangeLocator(12, 18)` and rationale `LIMIT_RATIONALE` ("This implementation enforces the shared attempt limit."), on the same base revision as the other three — a location without a new member. Its rationale names **no file**, so a row that reports the path and the extent cannot have read either out of the statement; the original fixture's filename-bearing rationale is exactly what hid the loss. Both helpers compare each response row with `MountedFamilyFixture.expected_locations`, the **stored** answer the fixture built the claim from, rather than with the sibling view's answer, so the case cannot pass by two renderers agreeing with each other; the invariant helper additionally asserts that every `fact_kind="statement"` row carries `None` in `role`, `path` and `locator`. Mutation check as measured: reverting **only** the two production files makes the collected case fail with `KeyError: 'path'` at `:1620`; restored, 37 passed.
+
+## Update History
+- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card that cites this document by line needed repointing. It records this route's own impact — the two non-collected helpers, the fourth filename-free claim with its line-range locator, the stored-expectation comparison that keeps the case from becoming an agreement test between two renderers, the statement-row `None` assertion, the exact ceilings that made every assertion land inside an already-collected case, and the mutation check that fails with `KeyError: 'path'` when only the production files are reverted. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.

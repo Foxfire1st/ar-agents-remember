@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/view_source.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
-| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| lastVerifiedCommitHash | `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitDate | 2026-09-20T12:31:16+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -212,7 +212,7 @@ re-declares, and the layer where selection, ordering and provenance classificati
 | The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. | `REALIZATION_CLAIMS` | mcp/src/agents_remember/memory/knowledge/view_source.py:95-102 |
 | The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text. | `ENDPOINT_COLUMNS`; `ATTACHMENTS_OF_ENDPOINT` | mcp/src/agents_remember/models/knowledge/facet.py:300-305; mcp/src/agents_remember/memory/knowledge/view_source.py:105-118 |
 | The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. | `_sequence`; `_provenance_author`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/view_source.py:126-151; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
-| The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. | `StoreViewReader`; `KnowledgeViewReader`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:1032-1067; mcp/src/agents_remember/models/knowledge/view.py:1073-1082 |
+| The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. | `StoreViewReader`; `KnowledgeViewReader`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:1068-1114; mcp/src/agents_remember/models/knowledge/view.py:1101-1110 |
 | The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. | `snapshot`; `registered_counts`; `rows`; `_cache` | mcp/src/agents_remember/memory/knowledge/view_source.py:175-197 |
 | The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:205-213; mcp/src/agents_remember/memory/knowledge/view_source.py:215-223; mcp/src/agents_remember/memory/knowledge/view_source.py:225-233; mcp/src/agents_remember/memory/knowledge/view_source.py:250-265; mcp/src/agents_remember/memory/knowledge/view_source.py:287-290 |
 | The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. | `anchor_state`; `ViewReaderError` | mcp/src/agents_remember/memory/knowledge/view_source.py:267-283; mcp/src/agents_remember/models/knowledge/view.py:165-171; mcp/src/agents_remember/models/knowledge/view.py:771-771 |

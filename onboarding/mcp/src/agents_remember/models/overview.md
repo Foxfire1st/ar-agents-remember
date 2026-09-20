@@ -6,9 +6,9 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T07:30+02:00 |
-| lastVerifiedCommitHash |  `2a96eb883fb081e77a79485530ad7b83ccceff7b`|
-| lastVerifiedCommitDate |  2026-09-20T07:29:47+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l42-ar`, uncommitted; base `74c6c693b8c5a5863ce15f016793192931f4adc1` |
+| lastVerifiedCommitHash |  `fb719f8936d337c4685f2758d4ba3731cd8b7fc5`|
+| lastVerifiedCommitDate |  2026-09-20T12:31:16+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l44-ar`, uncommitted; base `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -2383,3 +2383,12 @@ exists, the offending input.
 - 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is new at the end of this route's change narrative and did not shift a single existing line, which matters here because off-route cards cite this document by line. It records the route's own impact — `RetractionPrecondition`, `MergeConflict.precondition` and the corrected three-part answer `expressible_decisions` gives, with the row-less branch now reading a measured fact and the row-level branch deliberately ordered after it. The reference table gained a row for the three constructs and its neighbouring `MERGE_STATES` row was re-cited from `:81-81` to `:82-82`, which is where this leaf's `__all__` addition moved that declaration. The card's `reviewedWorkingCandidate` row now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.
 
 
+
+## 260915-KS-L44 The Two Realization Row Models Declare The Location They Were Already Being Handed
+
+**This route's impact is two row models in `models/knowledge/view.py`, and the fields are declarations of a fact the pipeline already carried.** `FamilyRow` (`:822-859`) and `InvariantRow` (`:782-819`) now declare `role: RealizationRole | None`, `path: str | None` (bounded by `REFERENCE_MAX_LENGTH`) and `locator: SourceLocator | None`. A realization row of either view reported the claim id, the invariant revision id and the authored rationale and **no place at all**, so a caller could see that a realization existed without seeing where it is; the recorded location was already sitting on the candidate the projection had been handed, which is why the repair is three field assignments in the renderer rather than a derivation, and why nothing in this module had to change its meaning.
+
+**Both models are one shape behind more than one row kind, and that decides the optionality — and the fields are not added where nothing can populate them.** `InvariantRow` carries the invariant view's `fact_kind="statement"` rows as well as its `realization` rows, so the three fields are optional and appear on statement rows as explicit `null`s, the same convention this module already had for `SourceContextRow.anchor_state` (produced by `knowledge_read_payload`'s `model_dump(mode="json")` with no `exclude_none`). `ReviewMatrixRow` and `CurationQueueRow` deliberately do **not** gain the fields: no candidate feeding either view sets a `path` or a `locator`, so there is no recorded location for them to drop and an added field would be a field nothing populates. `ViewSourceRow` is the reader port's own DTO rather than a rendered row and is outside this change.
+
+## Update History
+- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact — the three optional location fields on `FamilyRow` and `InvariantRow`, why they are optional (one model behind two row kinds, with explicit `null` on the rows that have no location), what deliberately did **not** gain them (`ReviewMatrixRow` and `CurationQueueRow`, because no candidate feeding them sets a `path` or a `locator`), and that `ViewSourceRow` is a port DTO rather than a rendered row. Three off-route cards that cite this file by line were re-read and repointed as this leaf's own fall-out; that repair is recorded on the file's own card. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.

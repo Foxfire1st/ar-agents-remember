@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T00:31+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
-| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
-| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| lastVerifiedCommitHash | `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastVerifiedCommitDate | 2026-09-20T12:31:16+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -217,7 +217,7 @@ in the working candidate.
 | The change handler, which branches on nothing: **every** kind — declared or not — answers `refused` with `registration_absent` and a detail naming the reachable entry point, and the kinds the surface may be asked about are its own declared roster rather than a check the handler consults. | `knowledge_change_payload`; `DECLARED_CHANGE_KINDS` | mcp/src/agents_remember/mcp/tools/knowledge.py:359-387; mcp/src/agents_remember/mcp/tools/knowledge.py:87-94 |
 | The diff and integrity handlers: only caller-supplied labels survive, and the integrity payload carries no verdict but does carry the selected run, its input identity and the digest over it. | `_supplied_effect_labels`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:460-474; mcp/src/agents_remember/mcp/tools/knowledge.py:477-533 |
 | The project handler that returns the per-path published/retained/discrepancy lists and the manifest generation. | `knowledge_project_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:775-814 |
-| The one registered shape it is a payload of, where the state/payload exclusion is a validator rather than handler discipline. | `ViewPayload`; `ViewResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/view.py:906-952; mcp/src/agents_remember/models/knowledge/view.py:1112-1127; mcp/src/agents_remember/models/knowledge/view.py:1122-1127; mcp/src/agents_remember/models/knowledge/change_set.py:280-286; mcp/src/agents_remember/models/knowledge/detection.py:1001-1006; mcp/src/agents_remember/models/knowledge/diff.py:530-535 |
+| The one registered shape it is a payload of, where the state/payload exclusion is a validator rather than handler discipline. | `ViewPayload`; `ViewResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/view.py:934-978; mcp/src/agents_remember/models/knowledge/view.py:1151-1166; mcp/src/agents_remember/models/knowledge/view.py:1160-1166; mcp/src/agents_remember/models/knowledge/change_set.py:280-286; mcp/src/agents_remember/models/knowledge/detection.py:1001-1006; mcp/src/agents_remember/models/knowledge/diff.py:530-535 |
 | The closed view refusal vocabulary the read handler's `unknown_view` code comes from, which these models carry as a plain string rather than re-declare. | `ViewRefusalCode` | mcp/src/agents_remember/models/knowledge/view.py:174-182 |
 
 ## Cross-Repo References
