@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `0da444b3b2b61f6a86fa4076b283c305db025d22` |
-| lastVerifiedCommitDate | 2026-09-20T02:38:15+02:00|
+| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
+| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../overview.md`                     |
 
@@ -843,6 +843,7 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The case that proves the operation refuses a context smuggled past the model seal. | "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:1120-1160 |
 
 ## Update History
+- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved two reference-table hunks in this route overview.** Both rows cite files this leaf did not modify, so upstream's ranges were kept: `models/knowledge/candidate.py:659-676; 498-529; 638-655; 656-656; 236-236` for the resolution-shape row (upstream's side is also the superset — this leaf's side had dropped `498-529`, `638-655` and `656-656`, all of which are restored rather than deleted, and both sides agree on the class's own extent `659-676`), and `mcp/tests/test_knowledge_read_boundaries.py:502-502; 772-772` for the baseline-nodes row, whose two quoted anchors were read at exactly those `def` lines in the code worktree (this leaf's side cited the wider `499-502; 759-772`, which also holds them). No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
 - 2026-09-20T01:37+02:00 — 260915-KS-L31 curator (uncommitted change set on `ar/260915-ks-l31-ar`, base `7dcec036`): range repair only; every claim's wording and every anchor set kept. Two rows were re-derived against the tree this leaf's own line moves left behind. The L3 candidate-write row's `CandidateResolution` citation was a mechanically projected range set (`:182-223; :498-529; :638-655; :656-656; :236-236`) that stops one line short of the declaration every time, so it read the class's neighbours rather than the class; it now cites the declaration's own extent `mcp/src/agents_remember/models/knowledge/candidate.py:659-676` beside `KnowledgeContext` at its own class extent `mcp/src/agents_remember/models/knowledge/candidate.py:236-277` — the four projected ranges held neither named anchor and were dropped rather than carried, and the duplicate row beside it already cites `:83-424`. The L7 read-seam row's two quoted test names had moved again (the L23 residue entry repointed them to `:499-499`/`:759-759`; the declarations now stand at `:502` and `:772`), so each now cites its own declaration extent, `mcp/tests/test_knowledge_read_boundaries.py:502-533` and `:772-807`. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T01:36+02:00 — 260915-KS-L33 curator (uncommitted change set on `ar/260915-ks-l33-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): No route impact: this route overview was re-read against this leaf's one changed governed source, `application/knowledge_curator_ingest.py`, and nothing in this body moved. The change is internal to that module's producer contract — the realization role a curator hand-off entry stores is now the word its producer stated, validated against the shipped vocabulary, or the vocabulary's own non-answer, and it is no longer inferred from locator syntax — and this overview states no realization-role derivation, no role/locator equivalence and no curator-ingest citation rule, so no bullet, boundary or reference row here held a claim that became false. The L33 entry below records the same review in prose; this entry carries the exact in-band marker the route-overview refresh gate requires, bound to the uncommitted candidate `ar/260915-ks-l33-ar` on base `7dcec036`. No verification stamp is advanced by this entry: the governed closeout owns the real code and memory commits, and no acceptance claim is made.
 - 2026-09-20T00:55+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): hand-read the two enforced rows this route overview carries. One is cleared (`CandidateResolution` in "The resolution shape whose missing dataset-identity field makes the read the only source of that value."): its first range `182-223` no longer reached the class the claim names, so it was replaced with the class's own extent at `candidate.py:659-676`; every other range in the row was left as written. The other row ("D13's dual repair…") still cannot pass: its anchor `` `AdmittedEnclosure.code_repository_root` `` is a dotted spelling that occurs nowhere in the tree — the attribute it names is declared at `capsule.py:198` inside `AdmittedEnclosure` (`186-202`) and read onto the projection request at `capsule.py:282` — so the anchor, not the range, is what needs re-wording; that is the claim's own content and is left for a curator. The range that used to cite the class's own block (`186-202`) was nonetheless replaced with `275-289`, which holds the projection-request read the claim's second half is about; no claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits.
@@ -1367,6 +1368,17 @@ is the rationale and whose `outcome` carries the determination -- and a facet wh
 the canonical decimal spelling is **not** read as a priority; the row it would have ordered is reported as
 an unresolved limitation instead.
 
+**A realization row is now emitted only for a revision the same read selected, and the front door accepts
+a path.** Both selection paths apply one frontier: an exact invariant-revision read no longer returns a
+location belonging to another invariant or to another family's member, because the row that realizes an
+unselected revision is a different subject's answer rather than a second view of this one; and the family
+view returns its members and those members' locations beside the joint guarantee, not the guarantee alone.
+The seed that makes the front door reachable without a discovered revision id is optional and its absence
+is not an error: `_seed_revisions` returns "no restriction" when the request names no source path, the
+revisions realized at that path when it does, and an empty set when the path is recorded as realized
+nowhere — an answer that selects nothing rather than a fallback to everything — with the spelling validated
+by the shipped `PathSeed` rule on the request model itself.
+
 **`application/knowledge_projection.py` renders Markdown and JSON as sibling views from the same resolved
 records, and it places authored text without producing any.** There is no model call, no summary, no score
 and no reassessment in it: a displayed disposition is the recorded disposition, a displayed status is the
@@ -1427,7 +1439,32 @@ supplied, so the shipped projection reports an unmeasured assessment stale rathe
 | The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
 | The disposable candidate root the two datasets are read from. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:111-111 |
 
+## 260915-KS-L32 The Front Door's Path Seed, And The One Frontier Both Selections Share
+
+Two corrections land in the view renderer, and they are the same correction stated twice: a view answers
+about the subject it selected and nothing else. The first is a membership gap. A family read used to return
+the joint guarantee and the detection signals and nothing else, so a caller asking which obligations a
+family admits — and where they are implemented — was shown neither, while the payload still declared its
+scope complete. `_family_members` and `_member_locations` now append the `family_member` rows the request
+selected and the realization rows those members name, classified mechanically under the module's third
+registered rule `REGISTERED_ROLE_RULE = ("ordering.registered-role", 1)` because membership is *recorded*
+(the edge carries both revision ids and its own provenance) rather than authored — so those rows carry a
+rule rather than an author, exactly as a trigger-derived row names `DETECTION_RULE`. The second is the
+frontier itself. The invariant view always filtered its invariant rows by the requested revision while every
+realization row in the namespace was appended unconditionally, so an exact revision read returned the
+requested statement **plus** realizations belonging to other invariants — including ones in a different
+family. Both loops now select on the same frontier, and the family view's member locations are filtered to
+the members that read selected for the same reason: a realization answers "where is this realized", so one
+realizing a revision this view did not select attributes a location to the wrong statement. With no
+revision and no seed the frontier is every revision, which is the broader view the operation already
+offered, so the filter restricts only where the caller asked it to. The front door itself is
+`ViewRequest.source_path`, a request field validated by constructing the shipped `PathSeed` rather than by
+restating its rule, resolved by `_seed_revisions` to the revisions realized at that path: an ordinary code
+hit can now ask what governs it through path → invariant → family without first discovering an invariant or
+family revision id.
+
 ## Update History
+- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section and extended the L20 renderer paragraph** — the family read now returns its members and their implementation locations, and both selection paths apply one frontier so an exact revision read no longer returns another subject's realization row; the L20 paragraph gained the corresponding sentences plus the optional `ViewRequest.source_path` seed, which is the change to `models/knowledge/view.py` at this route's boundary. The body changed substantively; no verification stamp advanced, because every source named is modified in the delivered working tree and closeout owns the stamp. This document's `knowledge_read_boundaries` and `candidate.py` citation rows remain stale for reasons this leaf did not cause and could not repair without the blocked `citation_fix` pass; they are reported, not papered over.
 - 2026-09-18T19:18+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the application seam's three changes stated at route altitude: `measuring_build_stamp()` stamped onto the memory-quality response at all three entry points and onto the citation responses (item 26 / D-33), `worktree_tools.py`'s start gate restated to its actual condition with the `Requires` lines reported rather than enforced (item 8 / D-17), and the `read_steps` response shape its own model declares (item 20 / D-9). It also records which of the checklist's rows are **not** curation debt (`affected.closure` and `coherence.record` are blocked by construction; the drift summary is diagnostic and does not enter `curatorActionableCount`) and that the refresh-attestation gate is the one that does, which is why every changed-source sidecar carries a body edit or an exact no-impact entry. The body changed substantively; no verification stamp moves — every source named is modified in the delivered working tree and closeout owns the stamp.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the thin adapter `application/knowledge_review.py`, its composition of R08's `diff_knowledge_scope` and L20's `read_knowledge_view` with no selection of its own, the `layers.toml` rank that keeps the composition at this tier, and the candidate resolution and published-assessment read from the owners' own paths. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** -- the three seams this route gains for `KS-R20@v1`; the view seam's two refusals of convenience (the snapshot resolved from the dataset rather than declared, and the continuation checked before any row is read with no partial answer); the four properties the renderer enforces together (a named ordering input with no fallback, an unclassifiable value withheld rather than emitted with an empty class, the declared tiebreak as the only lexical order, and byte-identical runs at one snapshot); the `CR20-6` intake decision that carries the authored claim inside an already-registered `decision` facet; and the projection seam that places authored text without producing any, records all three values or refuses to project, and keeps conditions and attributions separate. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.

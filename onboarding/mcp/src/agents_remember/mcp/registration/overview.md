@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastUpdated | 2026-09-20T01:53+02:00 |
+| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
+| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -475,7 +475,24 @@ them — and it adds no panel, no route and no client. The one honest partial in
 path, because constructing an admitted destination from a thin tool call needs candidate-resolution facts
 another owner supplies.
 
+## 260915-KS-L32 Route Impact — The Read Request Publishes A Source-Path Seed
+
+This leaf changed exactly one file this route governs, `mcp/src/agents_remember/mcp/registration/knowledge.py`,
+and the change is a **published parameter**, not an internal one: `_register_knowledge_read` declares
+`sourcePath: str | None = None` on the registered `knowledge_read` signature (line 74) and forwards it as
+`source_path=sourcePath` into the request it builds (line 94). The signature IS the published schema on this
+route, so a caller can now name one source path and reach `path → invariant → family` through the public tool
+instead of having to discover a database path and a repository UUID first — the front-door gap CYCLE-03 named.
+
+What did **not** change: every other registered parameter and its forwarding, the response models, the error
+shapes, and the five-name roster this route publishes. The new parameter is optional and defaults to `None`,
+so a caller that does not name it gets exactly the previous behaviour.
+
+The read side of that parameter — the seed it constructs and what the view does with it — belongs to the
+`mcp/src/agents_remember/application` and `models/knowledge` routes and is recorded there.
+
 ## Update History
+- 2026-09-20T01:53+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **this route's overview body was updated for the leaf's change to a source it governs.** `mcp/src/agents_remember/mcp/registration/knowledge.py` publishes a new optional `sourcePath` parameter on `knowledge_read` (line 74) and forwards it as `source_path=` (line 94); the new section above records what that means for the route, and what it explicitly does not change. A body change, not a metadata-only refresh: the previous stamp rows are left exactly as they were and no verification stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the fourteenth registrar, appended rather than inserted so every existing tool keeps its advertised position; the five `Doc13:181-187` operation families and the one thing the runtime configuration supplies to them; the no-domain-reasoning contract per operation, including that `knowledge_change` authors nothing and `knowledge_integrity_check` produces no verdict; and the deliberate absence of any reviewer surface, with the leaf's one honest partial (`registration_absent` for an unadmitted record kind) recorded rather than implied. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 
 - 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the additive keyword-only `experiment` parameter on
