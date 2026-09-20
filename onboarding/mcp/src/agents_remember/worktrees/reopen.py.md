@@ -6,9 +6,10 @@
 | path | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `eca18fe69b7a8aa4d64911497a210aa256f60222` |
-| lastVerifiedCommitDate | 2026-09-19T23:28:48+02:00|
+| lastVerifiedCommitHash | `7abacd8e432730cfca177ff0136711f13ea5f34d` |
+| lastVerifiedCommitDate | 2026-09-20T03:03:09+02:00|
 | verificationStatus | working-candidate |
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `0da444b3b2b61f6a86fa4076b283c305db025d22` |
 | governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
@@ -19,7 +20,7 @@ The body describes the uncommitted LCA L9 working candidate. The commit fields i
 
 ## Purpose
 
-Reopen a fully landed leaf under the same leaf identity by atomically resetting its enclosure and task facts.
+Reopen a fully landed leaf — or a terminal atomic series — under its original id by atomically resetting its enclosure and task facts, and re-address a series whose enclosure generation was collected but never re-published.
 
 ## Code Commentary
 
@@ -31,9 +32,40 @@ The reset clears free-form approval/output/lifecycle provenance with dataclass r
 
 The frozen landing observation clear, leaf/master task updates, and contract reset publish in one task-fact CAS batch. Apply reloads and repeats the terminal/source checks inside that publication. Original artifacts support rollback of a failed canonical write; derived projection refresh happens afterward. Recreating worktrees remains worktree_start's responsibility.
 
+#### The series half, and its three deciding facts
+
+The series spelling of the same operation publishes the contract tombstone, the integration refs, the
+master document and the successor enclosure generation under the same guards. Three facts decide it,
+and the current candidate changed all three (D-58):
+
+- **In flight, not `cleanup`.** `_series_in_flight` reads `closeout_status` and `integration_status`.
+  It deliberately does **not** read `cleanup`, because the reopen rewrites that cell as its own first
+  durable step — keying the ref rule on it would make the answer depend on whether the reset had
+  already been written, which is exactly the difference between a first attempt and its resume.
+- **An advanced branch may be the series' own work.** `_series_ref_recut` takes `in_flight` and, when
+  the series has not closed out and the recorded source tip is an **ancestor** of the integration
+  branch, reports that branch as action `advance`: it is the line the series is landing on, there is
+  nothing to re-cut, and refusing would strand it. It is never moved. A completed series keeps its
+  refusal, and a diverged or lagging branch is refused in both cases.
+- **A live series at a collected address is re-addressed, not refused.** `_series_is_live_unaddressed`
+  accepts `cleanup: pending` with both progress cells untouched when the locator at the contract's own
+  address reads `terminal-archived`. The locator is the one fact that tells "the generation was
+  collected" apart from "somebody is mid-transition", so the call publishes the successor generation
+  alone — `mode: publish`, no reset and no ref move — which is the arrival the hand reopen left behind
+  and also what a resume of an interrupted publication needs.
+- **The review counter is part of the reset.** `_review_state_carries_history` reports whether the
+  counter carries anything, and `_plan_series_document_reset` clears `.reviewState` to its pristine
+  value when it does — the rounds a completion spent belong to that completion, so a reopened master
+  starts at zero instead of billing its next round against a budget it never spent. A document whose
+  counter is absent or already all-zero is left untouched, and the reset no longer returns early on a
+  document that has left `Completed`.
+
+The applied result payload therefore carries a structured `mode` (`reset` or `publish`) alongside its
+`state`, and the two modes report different summaries because they did different things.
+
 ### Conventions
 
-This owner lives in worktrees because the enclosure contract is the primary mutated artifact; the task store remains a collaborator. The parent resolver validates parent identity without restoring the deleted child-admission seal.
+This owner lives in worktrees because the enclosure contract is the primary mutated artifact; the task store remains a collaborator. The parent resolver validates parent identity without restoring the deleted child-admission seal. The series half uses the same tombstone proof, the same guards and the same archive citation as the terminal path — there is no second publication route.
 
 ### Invariants And Boundaries
 
@@ -42,6 +74,8 @@ This owner lives in worktrees because the enclosure contract is the primary muta
 - Terminal code/memory Git facts replace cache mapping proof; unrelated source movement remains a refusal.
 - Vocabulary cells use the typed contract writer.
 - A task/ref race cannot overwrite newer task facts or leave an old completed landing projection current.
+- The reopen **never moves an existing ref**: it re-cuts an absent one, accepts an advanced one as the series' own work, and refuses divergence.
+- A successor generation always cites the exact archived predecessor, and the series' own `cleanup` stays `pending` — `reopened` is itself a terminal series state and would leave the series unable to own the lane.
 
 ### Todos
 
@@ -60,9 +94,14 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:313-385 |
-| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:187-214 |
-| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:506-565 |
+| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:325-398 |
+| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:197-224 |
+| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:519-579 |
+| Whether a series still owns its integration line, read from the two progress cells a completion writes rather than from `cleanup`. | `_series_in_flight` | mcp/src/agents_remember/worktrees/reopen.py:1003-1012 |
+| A series is live but unaddressed only when the locator at its own address is `terminal-archived` and both progress cells are untouched. | `_series_is_live_unaddressed` | mcp/src/agents_remember/worktrees/reopen.py:1015-1039 |
+| An advanced integration branch is the in-flight series' own landed work: reported as `advance`, never moved; divergence still refuses. | `_series_ref_recut` | mcp/src/agents_remember/worktrees/reopen.py:784-818 |
+| The reopen clears the review counter a completion spent, and only when the counter carries history. | `_review_state_carries_history`; `_plan_series_document_reset` | mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117 |
+| The publication `mode` (`reset` or `publish`) is decided by the arrival, not by a caller flag. | `_series_reopen_plan` | mcp/src/agents_remember/worktrees/reopen.py:1120-1189 |
 | Parent lineage compares exact prestart output positions to the configured parent source. | `parent_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:79-91 |
 
 ## Cross-Repo References
@@ -73,6 +112,13 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_in_flight` repointed to mcp/src/agents_remember/worktrees/reopen.py:1003-1012. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_is_live_unaddressed` repointed to mcp/src/agents_remember/worktrees/reopen.py:1015-1039. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: `_review_state_carries_history`; `_plan_series_document_reset` repointed to mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_reopen_plan` repointed to mcp/src/agents_remember/worktrees/reopen.py:1120-1189. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **the series half of this route is now described here, and this card's own citation rows were re-derived against the file as it stands.** The body gained the three deciding facts and the counter reset — `_series_in_flight` reading the two progress cells a completion writes rather than `cleanup` (the reopen rewrites `cleanup` as its own first durable step, so keying on it would make the rule's answer depend on whether the reset had been written), `_series_ref_recut` accepting an integration branch strictly ahead of its source on the same line as the series' own landed work and reporting it `advance` without moving it, `_series_is_live_unaddressed` accepting a live series at an address whose generation is `terminal-archived` and publishing only the successor generation, and the current partial reset clearing a review counter that carries history. This card's own four rows had **drifted with the file's growth**: `_reopen_preflight_refusal` cited `:313-385` and is at `:325-398`, `_reopened_contract` cited `:187-214` and is at `:197-224`, and the frozen-observation row cited `:506-565` and is at `:519-579`. Each range was re-derived by reading the construct's own extent in the file rather than shifted by arithmetic, and five rows were added for the series owners. No verification stamp advanced and none was invented: the candidate is uncommitted, the governed closeout owns the real code and memory commits, and the metadata carries a `reviewedWorkingCandidate` row naming this candidate because the body moved under the retained pair.
+
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced terminal ledger mapping and integrated ledger base with the accepted memory output and real ancestry; retained exact terminal/parent lineage, typed reset cells, frozen-observation clearing, and rollback-safe task publication. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.

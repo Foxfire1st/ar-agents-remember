@@ -6,8 +6,9 @@
 | path | `mcp/src/agents_remember/memory/knowledge/schema_v2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l30-ar`, uncommitted; base `7dcec036094768c5f50e571fb45e59a27ae78efc` |
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -140,7 +141,7 @@ No domain documentation source is configured for this repository (`system/source
 | The one added required feature, which is part of the fingerprint because it is part of the manifest. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:263 |
 | The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313 |
 | The shipped generation-1 tables this module appends after and never touches. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
-| The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. | `author_route` | mcp/src/agents_remember/memory/knowledge/routes.py:285-339 |
+| The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. | `author_route` | mcp/src/agents_remember/memory/knowledge/routes.py:285-339; mcp/src/agents_remember/memory/knowledge/routes.py:342-388 |
 | **The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
 | The one entry point that validates a payload for a kind and schema. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
 | The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build. | `selected_generation` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:110-155 |
@@ -155,6 +156,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared this card's one reopened claim.** The route row named `author_route` while citing `routes.py:225-279`, a span that now holds `_route_for_path`, `route_for_path` and `route_exists` — neither half of the Finding. The range was repointed onto the two constructs the Finding's own words name: `author_route`'s declaration extent `285-339` (the write layer that authors a route and attaches a governed row) and `find_governing_route`'s `342-388`, whose docstring is the read side exactly — "Return the id of the route governing this row, or ``None`` for explicitly ungoverned". The Finding text and the anchor are unchanged, no citation was added and no row was deleted. Re-read against the candidate the claim **holds as written**; the only thing wrong with it was the pointer. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows were replaced by ONE `reviewedWorkingCandidate` row naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it.
 - 2026-09-20T00:29+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `schema_v2.py.md:143` (author_route) — re-read the claim against the current source: the construct moved and the range was re-derived from its real extent.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.

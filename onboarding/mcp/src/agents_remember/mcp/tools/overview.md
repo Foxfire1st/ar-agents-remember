@@ -6,9 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `a30509587c0456038d616b0ccd1a69ef969eff93` |
-| lastVerifiedCommitDate | 2026-09-20T01:12:38+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
+| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
@@ -297,7 +296,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
 | The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:64-65 |
 | The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:59-59 |
-| Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
+| Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests`; `PUBLIC_TOOL_RESPONSE_MODELS`; "def test_every_public_tool_has_a_schema_generating_response_model(" | mcp/tests/test_models.py:46-117 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:219-219 |
@@ -576,22 +575,48 @@ caller must supply rather than a default the substrate chooses — the dataset p
 destination, the view name, the ordering input, the limit, the continuation, the authorized overwrites.
 `knowledge_integrity_check_payload` takes no request at all, which is the honest shape for an operation
 whose answer is "here are the recorded conditions and here is what could not be resolved":
-`_recorded_conditions` reads the shipped detection run for the named scope, `_no_detection_run` reports the
-absence as a state rather than as an empty condition list, and `_condition_report` carries each matched
-fact beside the condition that matched it.
+`_recorded_conditions` reads the shipped detection run **for the named scope** — `_run_for_scope` matches
+the caller's scope against the run's own registered traversal scope and `_no_run_for_scope` reports a scope
+no recorded run measured — `_no_detection_run` reports the absence as a state rather than as an empty
+condition list, and `_condition_report` carries each matched fact beside the condition that matched it.
 
 **Two refusal builders exist so that a refusal never becomes a default.** `_refused_read` returns the
 typed refusal naming the offending view and the code, and `_refused_project` names the destination and the
 code, so a caller can always tell "nothing was selected" from "the selection was refused" — a distinction
-the response models' `state` discriminator preserves on the wire. `ADMITTED_CHANGE_KINDS` is the two-member
-tuple of kinds that already have a shipped admitted operation (`evidence_claim`,
-`verification_observation`); a kind outside it returns the shipped `registration_absent` refusal naming the
-absent admitted operation, because inventing a second write path here is exactly the authority the
-requirement forbids this route to add. `_projection_requests` builds one view request per requested view so
+the response models' `state` discriminator preserves on the wire. `DECLARED_CHANGE_KINDS` is the six-member
+tuple of record kinds this surface may be *asked* about (`evidence_claim`, `verification_observation`,
+`invariant_revision`, `assumption`, `semantic_change_set`, `requirement_revision`), and the refusal is
+unconditional for every member of it: the shape records that the earlier spelling advertised two "admitted"
+kinds and then refused both anyway, which made the tool's own description false, so the refusal now names
+`WRITE_ENTRY_POINT` — the `agents-remember knowledge-ingest` subcommand — as where the write actually
+happens, because inventing a second write path here is exactly the authority the requirement forbids this
+route to add. `_projection_requests` builds one view request per requested view so
 the projection builder reads each view through the same seam a direct read does, rather than through a
 second selection path.
 
+## 260915-KS-L32 The Integrity Lookup Is Bound To The Requested Scope
+
+The route's read surface gains one optional seed and loses one silent substitution. `knowledge_read` now
+publishes `sourcePath`, forwarded into `ReadToolRequest.source_path`, so a caller who knows only a file can
+present that file as a seed and let the view layer resolve what governs it — a front door that does not
+require first discovering an invariant revision id or a family revision id. On the integrity side the
+correction is smaller and more consequential: the scope a caller names now **selects** the reported run
+rather than being echoed beside one. Before this, every recorded `detection_run` row was read in record-id
+order and the first was reported whatever scope the caller asked for, so with more than one run recorded
+the answer was whichever run happened to sort first while the response still named the requested scope —
+"scope X" printed beside conditions measured over scope Y. `_run_for_scope` now matches the caller's scope
+against the run's own registered traversal scope (`governing_route_id`) and keeps searching past a run
+measured over a different one; a caller naming no scope keeps the previous behaviour (the first recorded
+run), and a caller whose scope matches no run is told so by `_no_run_for_scope` rather than handed another
+run's conditions. The scope-selection invariant, the two new helpers and the `DECLARED_CHANGE_KINDS` /
+`WRITE_ENTRY_POINT` correction to the L20 section above are the route-level record of it.
+
 ## Update History
+- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved the one conflicted reference row and the Update History block.** The row cites `mcp/tests/test_models.py`, modified by neither leaf, so upstream's `46-117` — the class's own declaration extent, from its `class` line through its last statement — was kept, and both sides' anchors were kept: the class, `PUBLIC_TOOL_RESPONSE_MODELS` and the quoted merged `def …(` line, each read inside that range in the code worktree. Update History is the union of both sides, newest first. No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
+- 2026-09-20T01:41+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): No route impact: this leaf changed no source this route governs. Its six paths are `application/knowledge_curator_ingest.py`, `application/knowledge_ingest.py`, `cli/knowledge_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_dependency_ownership_ast_helpers.py` and `mcp/tests/test_knowledge_curator_ingest_list.py` — none of them under `mcp/src/agents_remember/mcp/tools/`. The overview was re-read and no claim of its body is invalidated by this leaf; only its citation rows were repointed to the same constructs. No verification stamp is advanced.
+- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared this card's one reopened claim, answering both questions the checklist put to it.** (1) Does the construct the projected range covers support the claim's own words? Yes: "Schema tests assert public tool and response model coverage" is exactly what `PublicToolResponseModelTests` does — its first case asserts `set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)` and then generates each registered model's JSON schema. (2) Was the range rebound from a mention to a declaration elsewhere? No: `mcp/tests/test_models.py:46-117` is the class's own declaration extent (the class at 46 through its last statement at 117), not a mention's target, so the mechanically projected range is the location the claim is about and it is **retained** — no re-cite and no re-wording was needed. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L20-era `reviewedWorkingCandidate` row beside them) were replaced by ONE `reviewedWorkingCandidate` row naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it. The claim's "evidence changed" condition was an artifact of comparing against a commit that predates the consolidation: the class is byte-identical between this candidate's base `7dcec036` and the working tree, so the claim is current against the base this card now names.
+- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section** — the read surface's new `sourcePath` seed, and the integrity check's lookup now bound to the requested scope instead of reporting the first recorded run's conditions under whatever scope was asked for. The L20 section above was also corrected where this leaf's findings showed it describing code that does not exist: it named `ADMITTED_CHANGE_KINDS` as a two-member admitted tuple, but the module declares `DECLARED_CHANGE_KINDS` (six kinds) with an unconditional refusal naming `WRITE_ENTRY_POINT`, and `_recorded_conditions`'s description now names `_run_for_scope` and `_no_run_for_scope`. The `PublicToolResponseModelTests` row was repointed from `test_models.py:16-26` (import lines, which never held the anchor) to `46-61`, where the class and its single schema-generating case live after the 260915-KS-L29 consolidation. Body changed substantively; this entry is the history record, not a metadata-only refresh, and no verification stamp advanced because the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-19T22:28:52+00:00: Generated citation repair: `PublicToolResponseModelTests` repointed to mcp/tests/test_models.py:46-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:219-219. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five builders for the five mounted `knowledge_*` families and the rule that keeps them short (nothing is decided here; where a handler would have to decide it returns the unresolved state); the two requirement-level quotations and why `knowledge_read` returns the view payload itself; the four request records plus the one operation that takes none; and the two refusal builders plus `ADMITTED_CHANGE_KINDS`, which is why an unadmitted record kind refuses with `registration_absent` instead of acquiring a second write path. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/public_roster.py:64-64; mcp/src/agents_remember/models/tools/public_roster.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

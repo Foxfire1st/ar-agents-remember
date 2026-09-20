@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-19T21:35:57+02:00 |
-| lastVerifiedCommitHash | `d9214edf3388ee862f8c8f2ed59cf40af710d8bb` |
-| lastVerifiedCommitDate | 2026-09-19T22:45:38+02:00|
+| lastUpdated | 2026-09-20T01:54+02:00 |
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | governingOverview      | `../overview.md`                           |
@@ -1819,7 +1819,32 @@ empty surface.
 | The port passed into the shared collaborators. | `knowledge_review` | mcp/src/agents_remember/cli/dashboard.py:98-98 |
 | The two-shape status idiom the route inherits, `503` included. | "def _status_for(result: KnowledgeReviewResult) -> int:" | mcp/src/agents_remember/serving/review.py:78-89 |
 
+## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
+
+This leaf changed `mcp/src/agents_remember/application/knowledge_curator_ingest.py`,
+`mcp/src/agents_remember/application/knowledge_ingest.py` and
+`mcp/src/agents_remember/cli/knowledge_ingest.py`, and every change is inside the **curator write
+plane** this route publishes: no public tool signature, no response model, no refusal vocabulary and no
+read-rail behaviour moved.
+
+Two route-level facts are worth carrying here. First, **repository identity stopped being a function of
+the baseline**: the namespace is now read from the repository's own dataset (`_repository_namespace`)
+and derived under the ingest namespace only as a cold-start fallback keyed on the repository name, so
+one repository keeps one namespace as its baseline advances. An absent candidate now **forks the
+selected baseline** rather than starting empty, an entry may name the invariant it revises with
+explicit predecessors instead of re-declaring one, and a file may carry more than one anchor. Second,
+**the operation publishes**: a run that selects an `IngestPublication` publishes the candidate it just
+committed through the shipped publication owner, and the operator reaches it as
+`agents-remember knowledge-ingest --commit --publish-to <dataset> [--expected-destination <identity>]`,
+so a curated candidate no longer stops at the candidate directory.
+
+What this route does not gain: no second write path (the publication owner stays
+`application/knowledge_snapshot.py`), no change to the five published `knowledge_*` tools, and no new
+refusal vocabulary — a destination the caller did not admit is refused by the publication operation
+with its own code. The per-file detail lives in the sidecars for those three modules.
+
 ## Update History
+- 2026-09-20T01:54+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **this route's body gained the L30 section above** — the curator ingest's continuous repository identity, its baseline fork, declared invariant revisions and multi-anchor targets, and the publication leg that makes a committed candidate reachable as a dataset through the CLI. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the previous verification stamp rows are left exactly as they were and no stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits.
 - 2026-09-19T21:35:57+02:00 — 260918-TSIP-L7 worker (agreement leaf, `ar/260918-tsip-l7-ar`, base `7879f5b2`): **the budget sentence in `## Development And Certification Policy` was false and is corrected.** It read *"budgets of 1,000 unit and 150 integration"* — two raises stale, and made false a second time by this leaf's own change — and now states the declared pair with its home (`pyproject.toml:263-264`: `unit_case_budget = 3000`, `integration_case_budget = 600`), the pair it replaces (2300 / 400, the merged line's) and the reason the raise is a policy rather than a measurement. This is `T56` on the 260918 TSIP register and the sixth instance of its class found by grep on this master; the four sibling sites in other routes are reported with their owners rather than repaired here. `lastVerifiedCommitHash` is deliberately unchanged: the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
 - 2026-09-18T19:17+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the route-level statement of the terminal leaf's changes under `mcp/` (the measuring-build stamp, the corrected `read_steps` response, the address-bound next-step hint, `atomic_replace`'s two legs, the accepted memory-worktree shape, the cleanup-preview agreement, the closeout hint plus the durable attestation copy, the citation-machinery fixes, and the knowledge substrate's own contradictions), each pointing at the module sidecar that carries it. It also states the three rails a reader must respect: zero integration headroom (400 / 400, with the `UsageError` that makes an over-budget lane execute nothing), the budget pair's real home in the repository-root `pyproject.toml`, and the catalogue's unchanged 15 / 65 with a moved digest. The body changed substantively; no verification stamp moves, because every source named is modified in the delivered working tree and closeout owns the stamp.
 - 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `KNOWLEDGE_REVIEW_ROUTE`, cited at mcp/src/agents_remember/serving/review.py:104-104. The claim says the section's route is registered GET-only, and the cited line is `@app.get(KNOWLEDGE_REVIEW_ROUTE)`; the constant itself is declared at `:49`. The claim is true as written. It reopens because the construct **did not exist at this card's recorded verification commit** — it is this leaf's own addition — so the comparison the checker makes is between a stamp that predates the construct and a tree that carries it. That is the stamp-relative condition this master named at L12, L13, L16, L17, L20 and L21, and it clears when closeout writes the code commit. No range was substituted or deleted and the verification stamp is **not** advanced.

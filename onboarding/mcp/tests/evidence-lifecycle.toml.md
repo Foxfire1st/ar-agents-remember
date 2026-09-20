@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash |  `47570cd827428c171613c8cb01e01f0b1cb26f73`|
-| lastVerifiedCommitDate |  2026-09-20T01:58:41+02:00|
+| lastUpdated | 2026-09-20T00:31+02:00 |
+| lastVerifiedCommitHash |  `0da444b3b2b61f6a86fa4076b283c305db025d22`|
+| lastVerifiedCommitDate |  2026-09-20T02:38:15+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted change set; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `overview.md` |
 
@@ -24,12 +24,15 @@ Declares shared test-support/fixture ownership, fidelity, lifetime, replacement 
 exact consumers. **The catalog now contains 65 artifact records and fifteen executable replacement contracts**,
 counted on this leaf's frozen candidate by counting the blocks (`65 [[artifact]]` and `15 [[contract]]`), with the
 file's own sha256 re-measured as
-`25b00f8832420b705495931c3a04ad13a9bfe83e367a97c4a854b36030071e30`; those declarations are not records that a test ran.
-That reading is `260915-KS-L23`'s, and it is a **bytes-only** move: four consumer entries appended to three
-already-governed artifacts, no contract and no artifact added, so the populations are unchanged from the
+`825abfd65a17899cf1334d6191bd944d1f618347db7e599a44629f2bec910ef2`; those declarations are not records that a test ran.
+That reading is `260915-KS-L30`'s, and it is a **bytes-only** move: one consumer entry appended to an
+already-governed artifact, no contract and no artifact added, so the populations are unchanged from the
 `15 / 65` that `260915-KS-L21` set when it appended the census pair — the last change here that moved a block
-kind since `KS-L11`. The two digests in between are retained in their own sections — the L21 landing pinned `633b03ee…` and
-the L22 landing pinned `68a64207…`. The six earlier counts are kept because they are different states of the same merged line, not competing
+kind since `KS-L11`. **This candidate's value is the merge of the two re-pins**: the merged candidate
+carries **both** leaves' consumer rows — `260915-KS-L30`'s one row on
+`mcp/tests/snapshot_lifecycle_test_support.py` and `260915-KS-L31`'s two on
+`mcp/tests/merge_case_test_support.py` — so the digest is their merge while both counts stay **15 / 65**. The digest this leaf re-pinned from is `6ec7eb0d…` (the constant at its base, L28's
+value), and the three digests before that are retained in their own sections — the L21 landing pinned `633b03ee…`, the L22 landing pinned `68a64207…`, and the L23 landing pinned `25b00f88…`. The six earlier counts are kept because they are different states of the same merged line, not competing
 measurements: **48 / 9** at the pre-sync `KS-L6` base, **50 / 9** on the merged base `4eb2b199` (the incoming
 official line's two extra artifacts), **51 / 10** after `KS-L7` added its one contract/artifact pair,
 **52 / 11** after `KS-L8` added its own, **53 / 12** after `KS-L10` re-scoped the generation contract's
@@ -183,7 +186,9 @@ is measured:
   `shared-support` / `internal-canonical` / `unit-regression` / `in-process` / `cadence = "affected"` /
   `lifetime = "permanent"` / `consumer_scope = "exact"` — to the node
   `mcp/tests/test_knowledge_snapshot_publication.py::test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not`,
-  with exactly two declared consumers (the two snapshot modules). That node is chosen deliberately rather than
+  with four declared consumers on this candidate — the two snapshot modules, the candidate-workspace module
+  and, since `260915-KS-L30`, `mcp/tests/test_knowledge_curator_ingest_list.py`, whose CYCLE-01 continuity
+  case imports `build_case`/`create`/`write_record` to get a real candidate database to fork. That node is chosen deliberately rather than
   for convenience: it is the measurement that distinguishes a **closed** snapshot from a bare main-file copy, so a
   future edit that weakens the harness's freeze path breaks the contract's own subject.
 - Its `source_version_or_generator` names what the harness builds rather than a generator: one admitted candidate
@@ -334,24 +339,25 @@ Source declarations and test assertions are distinguished from execution and acc
 | --- | --- | --- |
 | The schema version and the large-fixture discovery threshold remain explicit. | `schema_version`; `large_fixture_bytes`; "ar-test-evidence-lifecycle/v3"; "large_fixture_bytes = 25000" | mcp/tests/evidence-lifecycle.toml:1-2 |
 | The four retained knowledge contracts and their evidence nodes. | "id = \"ar-durable-store/1.0-process-race-evidence\""; "id = \"conversation-control-public-route-contract\""; "id = \"next-supported-pi-rpc-activity-recording\""; "id = \"synthetic-test-evidence-candidate\"" | mcp/tests/evidence-lifecycle.toml:4-22 |
-|  Closeout fixture support names the retained code/memory transaction replacement. | "closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:320-320  |
-|  Closeout-input support declares the cleanup-guidance consumer. | "closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-338  |
+|  Closeout fixture support names the retained code/memory transaction replacement. | "closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:325-325  |
+|  Closeout-input support declares the cleanup-guidance consumer. | "closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:343-343  |
 | **The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers and 260915-KS-L6 extended to the two portable modules.** | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers. | "id = \"knowledge-graph-case-support\"" | mcp/tests/evidence-lifecycle.toml:30-30 |
 | The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | "id = \"candidate-batch-case-harness\"" | mcp/tests/evidence-lifecycle.toml:35-35 |
 | **The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.** | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | **The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.** | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
-| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "owner = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1182-1183 |
-| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "owner = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1252-1253 |
-| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "owner = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1272-1273 |
+| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "owner = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1182-1182 |
+| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "owner = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1253-1253 |
+| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "owner = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1274-1274 |
 | **The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.** | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
 |The snapshot harness card, which records the registered owner and the exact consumer set.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
+|The consumer entry this leaf appended to the snapshot harness, which is a row in a list rather than a new registration — the populations do not move because of it.|"mcp/tests/test_knowledge_curator_ingest_list.py",| mcp/tests/evidence-lifecycle.toml:1265-1270 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools"; `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
-| None | "mcp/tests/closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:320-320 |
-| Closeout-input support names the same retained code/memory transaction replacement node. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-338 |
+| None | "mcp/tests/closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:325-325 |
+| Closeout-input support names the same retained code/memory transaction replacement node. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:343-343 |
 | None | "mcp/tests/curator_coherence_test_support.py"; "mcp/tests/test_post_integration_cleanup_guidance.py" | mcp/tests/evidence-lifecycle.toml:380-380; mcp/tests/evidence-lifecycle.toml:421-421; mcp/tests/evidence-lifecycle.toml:384-390; mcp/tests/evidence-lifecycle.toml:425-431 |
 |The snapshot harness card, which records the registered owner and the exact consumer set.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools" | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
@@ -535,8 +541,58 @@ should carry forward: the item-16 case reads the lane manifest, so it became a c
 governed artifact must be declared, and the validator derives that from the source graph rather than
 trusting the list.
 
+## 260915-KS-L31 Two Consumer Rows On The Merge-Case Artifact — One Direct, One Transitive
+
+`260915-KS-L31` registers no contract and no artifact. Its whole change to this catalogue is **two
+consumer entries appended to the tail of one already-governed artifact's exact list**, on
+`mcp/tests/merge_case_test_support.py`:
+
+| Row appended | Module reaches the harness because |
+| --- | --- |
+| `mcp/tests/test_worktree_sync.py` at `:1292` | **directly** — the CYCLE-02 knowledge-dataset case builds its real three-commit branching scenario with `merge_case_test_support.build_case` and measures the inputs with `file_digest` |
+| `mcp/tests/test_sync_parked_candidate.py` at `:1291` | **transitively** — it imports `SyncFixture`, `commit_file`, `git` and `section` from `test_worktree_sync`, so the census's transitive import walk reaches the harness through the edge the sibling above gained |
+
+**The second row is the one worth reading**, because nobody edited that module: it was already a
+consumer of `test_worktree_sync` and became a consumer of *the harness* the moment its import target
+started consuming it. That is the census working as designed and stated here rather than left as a
+surprise — the declaration is derived from the import graph, so a new edge anywhere in the closure adds
+a row, and a list that only named the module whose diff mentioned the harness would be refused by the
+validator that derives real importers and compares them with the declared set.
+
+**The populations do not move: 15 contracts and 65 artifacts**, and the byte pin does.
+`sha256sum mcp/tests/evidence-lifecycle.toml` on this candidate is
+`825abfd65a17899cf1334d6191bd944d1f618347db7e599a44629f2bec910ef2`, which is the value
+`mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CATALOG_SHA256` carries beside the
+unchanged count constants. **This candidate's value is the merge of the two re-pins**, because the
+merged candidate carries both leaves' consumer rows — `260915-KS-L30`'s one row on
+`mcp/tests/snapshot_lifecycle_test_support.py` and this leaf's two rows on
+`mcp/tests/merge_case_test_support.py` — while both counts stay **15 / 65**; the L31 byte value this
+paragraph was written against was `f786c157…`, correct only at this leaf's own tip. The values in between are retained in their own sections above, one record
+per leaf: the L23 tip, L22 and L21 each carry theirs there.
+
+**Both rows are appended to the end of their list**, which is the append point L23 pinned: an append
+moves no existing row of that list, so the citations into its own entries keep their lines, and the
+lines below the append are the class L23's item 16 half (b) reports as a pure move rather than as
+curator work.
+
 ## Update History
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:325-325. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_input_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "owner = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1182-1182. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "owner = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1253-1253. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "owner = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1274-1274. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:325-325. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/closeout_input_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T02:25+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **cleared the `update_history_not_newest_first` finding this card carried, with the shipped order fixer and no change to any entry's text.** This leaf's own 23:20Z entry recorded the pre-sync tip's pinned digest and was written below the L30 entry it follows in time; the two are now in newest-first order. Sorting is the fixer's whole edit: every entry keeps its own bytes and no timestamp was reworded. The body above already carries the merged line's value — `LIFECYCLE_CATALOG_SHA256` is `825abfd6…` on this candidate, measured with `sha256sum` against `mcp/tests/evidence-lifecycle.toml`, with the counts still 15 contracts / 65 artifacts — and the entries naming `f786c157…` and the earlier digests are retained as the states they record. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits. No commits.
 - 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `evidence-lifecycle.toml.md:355` ("mcp/tests/curator_coherence_test_support.py", "mcp/tests/test_post_integration_cleanup_guidance.py") — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
+- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **two consumer rows on the merge-case artifact, no new contract and no new artifact.** The direct row is `mcp/tests/test_worktree_sync.py`, which now consumes `merge_case_test_support` for the knowledge-dataset conflict case; the transitive row is `mcp/tests/test_sync_parked_candidate.py`, which reaches the harness through its existing import of `test_worktree_sync` and was not itself edited. The counts stay 15 / 65 and the pinned digest moves to `f786c157…`, re-measured with `sha256sum` on this candidate and recorded in the constants beside the counts. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: "owner = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1184-1184. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: "owner = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1255-1255. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: "owner = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1275-1275. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): re-read this card against the CYCLE-01 repair, whose whole change here is **one consumer row** appended at the tail of the `mcp/tests/snapshot_lifecycle_test_support.py` artifact's `consumers` list (`mcp/tests/evidence-lifecycle.toml:1267`, inside `:1265-1270`) for `mcp/tests/test_knowledge_curator_ingest_list.py` — that module's new continuity case imports `build_case`/`create`/`write_record`, and an import edge is a declared consumer. **No contract and no artifact was added, so the populations do not move: 65 artifacts / 15 contracts.** The card's Purpose paragraph and its "value at this candidate" statement now read the digest the file actually hashes to on this candidate, `73cdd2183e153af752773e8a4c6076e5e2eb7053d9e0ce5fa6538a69c907cefe` (re-pinned from `6ec7eb0d…`, the value at this leaf's base), and the earlier digests (`633b03ee…` L21, `68a64207…` L22, `25b00f88…` L23) are retained as the states they were. One further claim the change falsifies was corrected rather than carried: the snapshot contract row said the harness artifact has "exactly two declared consumers (the two snapshot modules)", which is not what the file declares — the list holds four on this candidate, so the row now states the set and names this leaf's addition. A reference row was added for the appended consumer entry. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real code and memory commits.
+- 2026-09-19T22:28:52+00:00: Generated citation repair: "owner = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1184-1184. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-19T22:28:52+00:00: Generated citation repair: "owner = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1255-1255. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-19T22:28:52+00:00: Generated citation repair: "owner = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1276-1276. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 3 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1182-1182` → `mcp/tests/evidence-lifecycle.toml:1182-1183` (row 344); `mcp/tests/evidence-lifecycle.toml:1252-1252` → `mcp/tests/evidence-lifecycle.toml:1252-1253` (row 345); `mcp/tests/evidence-lifecycle.toml:1272-1272` → `mcp/tests/evidence-lifecycle.toml:1272-1273` (row 346). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
 - 2026-09-18T19:53:17+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The row cited `evidence-lifecycle.toml:384-384` for `"mcp/tests/curator_coherence_test_support.py"` — the `[[artifact]]` header, one line above the `path = …` line that carries it — and `425-425` for `"mcp/tests/test_post_integration_cleanup_guidance.py"`, one line above the consumer entry that carries it. Both ranges were widened by one line (`384-385`, `425-426`) rather than re-pointed; the two consumer-list ranges and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

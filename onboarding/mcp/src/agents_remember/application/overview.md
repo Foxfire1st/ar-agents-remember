@@ -10,6 +10,10 @@
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
+| lastUpdated | 2026-09-18T18:10+02:00 |
+| lastVerifiedCommitHash | `5d64af264dc89b51d5c5e6454216573abde3c12e` |
+| lastVerifiedCommitDate | 2026-09-20T02:50:22+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -180,7 +184,7 @@ Three facts a reader of this route needs:
 | The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. | `compile_launch_capsule`; `_compile_admitted_task`; `_compile_free_agent` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:297-360; mcp/src/agents_remember/application/role_capsules/launch.py:407-448 |
 | The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. | `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
 | The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. | `FreeAgentSeatAdmission`; `free_agent_seat_admission`; `workspace_identity` | mcp/src/agents_remember/application/role_capsules/launch.py:126-196; mcp/src/agents_remember/application/role_capsules/launch.py:199-230; mcp/src/agents_remember/application/role_capsules/launch.py:233-247 |
-| D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root`; `_projection`; `_enclosure` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289; mcp/src/agents_remember/application/skill_resources/capsule.py:364-417 |
+| D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root`; `_projection`; `_enclosure` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:275-289; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289; mcp/src/agents_remember/application/skill_resources/capsule.py:364-417 |
 | The seat-addressed routing rule and its address type, for a caller with no task document. | `CapsuleSeatAddress`; `routed_admission_for`; `routed_admission_request` | mcp/src/agents_remember/application/skill_resources/capsule.py:174-184; mcp/src/agents_remember/application/skill_resources/capsule.py:515-554; mcp/src/agents_remember/application/skill_resources/capsule.py:491-512 |
 | The declared exports that make the new names this route's public surface. | `CapsuleSeatAddress`; `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/__init__.py:20-31; mcp/src/agents_remember/application/skill_resources/__init__.py:66-95 |
 | The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. | `role_capsule_compile_tool`; `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` | mcp/src/agents_remember/application/skill_resources/operation.py:1-120; mcp/tests/test_capsule_launch_wiring.py:975-1022 |
@@ -836,7 +840,7 @@ extension, and the worker report's claim that `KS-R03` "resolved" that observati
 | The two label operations the seam exposes. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-239; mcp/src/agents_remember/application/knowledge.py:240-255 |
 | The context resolution and its pure sealing step. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
 | The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
-| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:236-236; mcp/src/agents_remember/models/knowledge/candidate.py:659-676 |
+| The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:659-676; mcp/src/agents_remember/models/knowledge/candidate.py:498-529; mcp/src/agents_remember/models/knowledge/candidate.py:638-655; mcp/src/agents_remember/models/knowledge/candidate.py:656-656; mcp/src/agents_remember/models/knowledge/candidate.py:236-236; mcp/src/agents_remember/models/knowledge/candidate.py:236-277 |
 | The batch operation that takes its provenance from the destination. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
 | The resolution shape whose missing dataset-identity field makes the read the only source of that value. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:83-424 |
 | The lane rules the seam's entry point reaches, and the operation that applies them. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
@@ -870,6 +874,12 @@ contains it — no wider. `complete_tool_response` (`:131-145`) is unchanged; th
 `_attach_lifecycle_tail` (`:112-130`), so every response this route completes passes through it.
 
 ## Update History
+- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved two reference-table hunks in this route overview.** Both rows cite files this leaf did not modify, so upstream's ranges were kept: `models/knowledge/candidate.py:659-676; 498-529; 638-655; 656-656; 236-236` for the resolution-shape row (upstream's side is also the superset — this leaf's side had dropped `498-529`, `638-655` and `656-656`, all of which are restored rather than deleted, and both sides agree on the class's own extent `659-676`), and `mcp/tests/test_knowledge_read_boundaries.py:502-502; 772-772` for the baseline-nodes row, whose two quoted anchors were read at exactly those `def` lines in the code worktree (this leaf's side cited the wider `499-502; 759-772`, which also holds them). No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
+- 2026-09-20T01:37+02:00 — 260915-KS-L31 curator (uncommitted change set on `ar/260915-ks-l31-ar`, base `7dcec036`): range repair only; every claim's wording and every anchor set kept. Two rows were re-derived against the tree this leaf's own line moves left behind. The L3 candidate-write row's `CandidateResolution` citation was a mechanically projected range set (`:182-223; :498-529; :638-655; :656-656; :236-236`) that stops one line short of the declaration every time, so it read the class's neighbours rather than the class; it now cites the declaration's own extent `mcp/src/agents_remember/models/knowledge/candidate.py:659-676` beside `KnowledgeContext` at its own class extent `mcp/src/agents_remember/models/knowledge/candidate.py:236-277` — the four projected ranges held neither named anchor and were dropped rather than carried, and the duplicate row beside it already cites `:83-424`. The L7 read-seam row's two quoted test names had moved again (the L23 residue entry repointed them to `:499-499`/`:759-759`; the declarations now stand at `:502` and `:772`), so each now cites its own declaration extent, `mcp/tests/test_knowledge_read_boundaries.py:502-533` and `:772-807`. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- 2026-09-20T01:36+02:00 — 260915-KS-L33 curator (uncommitted change set on `ar/260915-ks-l33-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): No route impact: this route overview was re-read against this leaf's one changed governed source, `application/knowledge_curator_ingest.py`, and nothing in this body moved. The change is internal to that module's producer contract — the realization role a curator hand-off entry stores is now the word its producer stated, validated against the shipped vocabulary, or the vocabulary's own non-answer, and it is no longer inferred from locator syntax — and this overview states no realization-role derivation, no role/locator equivalence and no curator-ingest citation rule, so no bullet, boundary or reference row here held a claim that became false. The L33 entry below records the same review in prose; this entry carries the exact in-band marker the route-overview refresh gate requires, bound to the uncommitted candidate `ar/260915-ks-l33-ar` on base `7dcec036`. No verification stamp is advanced by this entry: the governed closeout owns the real code and memory commits, and no acceptance claim is made.
+- 2026-09-20T00:55+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): hand-read the two enforced rows this route overview carries. One is cleared (`CandidateResolution` in "The resolution shape whose missing dataset-identity field makes the read the only source of that value."): its first range `182-223` no longer reached the class the claim names, so it was replaced with the class's own extent at `candidate.py:659-676`; every other range in the row was left as written. The other row ("D13's dual repair…") still cannot pass: its anchor `` `AdmittedEnclosure.code_repository_root` `` is a dotted spelling that occurs nowhere in the tree — the attribute it names is declared at `capsule.py:198` inside `AdmittedEnclosure` (`186-202`) and read onto the projection request at `capsule.py:282` — so the anchor, not the range, is what needs re-wording; that is the claim's own content and is left for a curator. The range that used to cite the class's own block (`186-202`) was nonetheless replaced with `275-289`, which holds the projection-request read the claim's second half is about; no claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits.
+- 2026-09-19T22:49:08+00:00: Generated citation repair: `merge_resolved_knowledge_datasets` repointed to mcp/src/agents_remember/application/knowledge_merge.py:74-83. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 2 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope`; `test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
 - 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 2 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `overview.md:839` (`CandidateResolution`, `KnowledgeContext`); `overview.md:1094` ("test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope", "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping").
 - 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded the route's three caller-visible repairs — the provider refusal sites (`T34`, eight tools), memory baseline adoption answering `BranchAuthorityUnavailable` in the envelope (`T34`), and the guidance guard that binds a response's guidance to its own address (`T54`). Every citation range re-derived against the repaired files. Verification metadata stays closeout-owned.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `CURRENT_GENERATION` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:482-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
@@ -983,17 +993,22 @@ Two things matter to a later reader:
 - **The adapter is callable rather than wired.** No Git merge driver is installed, no attribute is configured and
   no commit is created anywhere on this path: the module is the exact seam a later, separately reviewed change
   would call. That is the requirement's own boundary — this increment supplies evidence and a callable boundary,
-  not production configuration.
+  not production configuration. *(**Superseded in part by `260915-KS-L31`**: the separately reviewed change
+  arrived and the adapter now has one production caller, `worktrees/knowledge_conflict.py`, through the
+  `merge_conflicted_stages` half recorded in the L31 section at the end of this route. The Git non-claims in
+  this bullet survive the wiring unchanged.)*
 
 The result this seam returns carries **no compatibility verdict**: a `structurally_merged` outcome is a statement
 about the candidate's structure and nothing about whether the merged knowledge is correct. The wiring boundary also
 did **not** move: like its two siblings, this module has **no non-test importer in `mcp/src`**, so its cases are
-behaviour evidence about the boundary and not evidence that any tool is wired to it.
+behaviour evidence about the boundary and not evidence that any tool is wired to it. *(**Superseded by
+`260915-KS-L31`**: exactly one non-test importer exists now, and the L31 section names it and the structural
+reason the driver half could not live in the worktree module that calls it.)*
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The base-resolution entry point and its refusal-or-resolution contract. | `resolve_knowledge_merge_base` | mcp/src/agents_remember/application/knowledge_merge.py:36-52 |
-| The merge entry point, including the carried statement that the result holds no compatibility verdict. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:55-64 |
+| The merge entry point, including the carried statement that the result holds no compatibility verdict. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:74-83 |
 | The defect the layer below makes unreachable. | `KnowledgeMergeSeamDefect` | mcp/src/agents_remember/application/knowledge_merge.py:67-68 |
 | The two storage operations this seam delegates to, in the order the seam exposes them. | `resolve_merge_base`; `require_session_capability` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
 | The vocabulary the seam takes and returns unchanged. | `MergeBaseRequest`; `MergeRequest`; `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:124-154; mcp/src/agents_remember/models/knowledge/merge.py:189-215; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
@@ -1263,6 +1278,7 @@ Three boundaries the module owns, and the reason each is the shape it is:
 | The published seam surface: two operations and their two value types. | `__all__` | mcp/src/agents_remember/application/knowledge_composition.py:49-49 |
 | **The case that stamps the seam: read-only, its own operation, and no movement of the retrieval selection.** | "test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection" | mcp/tests/test_knowledge_family_composition_boundaries.py:615-615 |
 ## Update History
+- 2026-09-20T02:25+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **cleared the one enforced `table_row_cell_count_mismatch` finding this route overview carried, and cleared it by deleting the empty cell rather than widening the table.** The L7 seam's reference row *"The nodes that drive the task-free baseline read and the binding refusals through the public seam."* ended in a stray fourth cell (`|  |`) under a three-column header, which GFM truncates silently; the extra cell holds nothing, so removing it loses no content and leaves the row matching its own `| Finding | Anchor | Source |` header and delimiter. The row's claim, both quoted anchors and both ranges (`mcp/tests/test_knowledge_read_boundaries.py:502-502` and `:772-772`, each the declaration line the L7 pass repointed) are unchanged, and no other row of the table was touched. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits. No commits.
 - 2026-09-18T18:04:10+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): the L23 reference-table cell's `_attach_curator_checklist` citation moved from `mcp/src/agents_remember/application/memory_quality/controller.py:363-441` to `mcp/src/agents_remember/application/memory_quality/controller.py:465-638`. The earlier entry in this pass kept the call site inside `_execute_memory_quality`; the reopen item asks a different question -- whether some cited range contains the changed construct's **declaration** line -- and the checklist publication is the function declared at 465, which is also the occurrence this claim is about. The other three citations (`:249-255`, `:258-264`, `:267-273`) are unchanged, the wording is retained, and nothing was deleted. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
 - 2026-09-18T17:58:12+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): the L23 reference-table cell that names the quality controller's three entry points still cited their pre-rewrite spans. `run_memory_quality_request` repointed from `mcp/src/agents_remember/application/memory_quality/controller.py:110-120` to `:249-255`, `start_memory_quality_request` from `:111-143` to `:258-264`, `poll_memory_quality_request` from `:146-208` to `:267-273` — each is that entry point's current definition (it delegates to its `_run`/`_start`/`_poll` implementation through `_stamped`), read back in the code worktree. The fourth citation, `_attach_curator_checklist` at `:363-441`, is unchanged: the range holds the call site in `_execute_memory_quality` that performs the publication this claim names. No anchor, row, claim or range was deleted and no wording changed. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
 - 2026-09-18T17:54:26+00:00: 260915-KS-L23 residue clearance (seat A): re-read and repointed the five rows in this document that cite a construct this leaf's own line moves left behind; every claim's wording, anchor set and range shape kept. `generation_of_database` in the L10 reference table repointed from `mcp/src/agents_remember/memory/knowledge/schema_generations.py:385-385`, `:413-447`, `:475-492` and `:507-507` to `mcp/src/agents_remember/memory/knowledge/schema_generations.py:510-527` (its definition) beside `CURRENT_GENERATION` at `:482-482`; the same anchor repointed from `:346-363`, `:34-46`, `:413-413`, `:475-492` and `:507-507` to `mcp/src/agents_remember/memory/knowledge/schema_generations.py:510-527`; and again in the L10 body table from `:282-282`, `:310-447`, `:475-492` and `:507-507` to `mcp/src/agents_remember/memory/knowledge/schema_generations.py:510-527` beside `CURRENT_GENERATION` at `:482-482`. In the L7 table, `"test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope"` repointed from `mcp/tests/test_knowledge_read_boundaries.py:465-497` to `:499-499` and `"test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"` from `:725-762` to `:759-759` — the two quoted test names are declared on exactly those lines, and the retired spans stopped one and three lines short of them respectively. The retired ranges named no construct these claims are about (module prose, registrations and the 385/413/447 bodies of other generation declarations). Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
@@ -1372,6 +1388,17 @@ is the rationale and whose `outcome` carries the determination -- and a facet wh
 the canonical decimal spelling is **not** read as a priority; the row it would have ordered is reported as
 an unresolved limitation instead.
 
+**A realization row is now emitted only for a revision the same read selected, and the front door accepts
+a path.** Both selection paths apply one frontier: an exact invariant-revision read no longer returns a
+location belonging to another invariant or to another family's member, because the row that realizes an
+unselected revision is a different subject's answer rather than a second view of this one; and the family
+view returns its members and those members' locations beside the joint guarantee, not the guarantee alone.
+The seed that makes the front door reachable without a discovered revision id is optional and its absence
+is not an error: `_seed_revisions` returns "no restriction" when the request names no source path, the
+revisions realized at that path when it does, and an empty set when the path is recorded as realized
+nowhere — an answer that selects nothing rather than a fallback to everything — with the spelling validated
+by the shipped `PathSeed` rule on the request model itself.
+
 **`application/knowledge_projection.py` renders Markdown and JSON as sibling views from the same resolved
 records, and it places authored text without producing any.** There is no model call, no summary, no score
 and no reassessment in it: a displayed disposition is the recorded disposition, a displayed status is the
@@ -1432,7 +1459,32 @@ supplied, so the shipped projection reports an unmeasured assessment stale rathe
 | The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
 | The disposable candidate root the two datasets are read from. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:111-111 |
 
+## 260915-KS-L32 The Front Door's Path Seed, And The One Frontier Both Selections Share
+
+Two corrections land in the view renderer, and they are the same correction stated twice: a view answers
+about the subject it selected and nothing else. The first is a membership gap. A family read used to return
+the joint guarantee and the detection signals and nothing else, so a caller asking which obligations a
+family admits — and where they are implemented — was shown neither, while the payload still declared its
+scope complete. `_family_members` and `_member_locations` now append the `family_member` rows the request
+selected and the realization rows those members name, classified mechanically under the module's third
+registered rule `REGISTERED_ROLE_RULE = ("ordering.registered-role", 1)` because membership is *recorded*
+(the edge carries both revision ids and its own provenance) rather than authored — so those rows carry a
+rule rather than an author, exactly as a trigger-derived row names `DETECTION_RULE`. The second is the
+frontier itself. The invariant view always filtered its invariant rows by the requested revision while every
+realization row in the namespace was appended unconditionally, so an exact revision read returned the
+requested statement **plus** realizations belonging to other invariants — including ones in a different
+family. Both loops now select on the same frontier, and the family view's member locations are filtered to
+the members that read selected for the same reason: a realization answers "where is this realized", so one
+realizing a revision this view did not select attributes a location to the wrong statement. With no
+revision and no seed the frontier is every revision, which is the broader view the operation already
+offered, so the filter restricts only where the caller asked it to. The front door itself is
+`ViewRequest.source_path`, a request field validated by constructing the shipped `PathSeed` rather than by
+restating its rule, resolved by `_seed_revisions` to the revisions realized at that path: an ordinary code
+hit can now ask what governs it through path → invariant → family without first discovering an invariant or
+family revision id.
+
 ## Update History
+- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section and extended the L20 renderer paragraph** — the family read now returns its members and their implementation locations, and both selection paths apply one frontier so an exact revision read no longer returns another subject's realization row; the L20 paragraph gained the corresponding sentences plus the optional `ViewRequest.source_path` seed, which is the change to `models/knowledge/view.py` at this route's boundary. The body changed substantively; no verification stamp advanced, because every source named is modified in the delivered working tree and closeout owns the stamp. This document's `knowledge_read_boundaries` and `candidate.py` citation rows remain stale for reasons this leaf did not cause and could not repair without the blocked `citation_fix` pass; they are reported, not papered over.
 - 2026-09-18T19:18+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the application seam's three changes stated at route altitude: `measuring_build_stamp()` stamped onto the memory-quality response at all three entry points and onto the citation responses (item 26 / D-33), `worktree_tools.py`'s start gate restated to its actual condition with the `Requires` lines reported rather than enforced (item 8 / D-17), and the `read_steps` response shape its own model declares (item 20 / D-9). It also records which of the checklist's rows are **not** curation debt (`affected.closure` and `coherence.record` are blocked by construction; the drift summary is diagnostic and does not enter `curatorActionableCount`) and that the refresh-attestation gate is the one that does, which is why every changed-source sidecar carries a body edit or an exact no-impact entry. The body changed substantively; no verification stamp moves — every source named is modified in the delivered working tree and closeout owns the stamp.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the thin adapter `application/knowledge_review.py`, its composition of R08's `diff_knowledge_scope` and L20's `read_knowledge_view` with no selection of its own, the `layers.toml` rank that keeps the composition at this tier, and the candidate resolution and published-assessment read from the owners' own paths. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** -- the three seams this route gains for `KS-R20@v1`; the view seam's two refusals of convenience (the snapshot resolved from the dataset rather than declared, and the continuation checked before any row is read with no partial answer); the four properties the renderer enforces together (a named ordering input with no fallback, an unclassifiable value withheld rather than emitted with an empty class, the declared tiebreak as the only lexical order, and byte-identical runs at one snapshot); the `CR20-6` intake decision that carries the authored claim inside an already-registered `decision` facet; and the projection seam that places authored text without producing any, records all three values or refuses to project, and keeps conditions and attributions separate. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
@@ -1725,3 +1777,45 @@ leaf's own coherence authority is current, and `integrity.onboarding_drift_check
 module is the one that does: it refuses a changed source whose sidecar body is unmodified or carries
 only refreshed metadata/history, which is why every changed-source sidecar in this leaf either has a
 body edit or an exact `No content impact:` entry.
+
+## 260915-KS-L31 The Merge Adapter Gains Its Driver
+
+This route's third seam stopped being reachable only by a caller that already knew how to compose it. The
+change is one module's worth of new surface in `application/knowledge_merge.py` and one caller in
+`worktrees/`, and the two halves are split by the layer contract rather than by taste.
+
+- **The dataset half lives here, and it has to.** `merge_conflicted_stages(destination, stages,
+  repository_root, commits)` takes the three materialised Git index stages of one conflicted path, reads
+  each stage's identity with `dataset_identity`, opens the left stage read-only to decode the single
+  `repository` row the base claim is about, composes `resolve_knowledge_merge_base` with
+  `merge_resolved_knowledge_datasets`, and returns **one boolean**: settled or not. It is the lowest layer
+  that *may* read a dataset's identity — a module under `worktrees/` is forbidden from importing the memory
+  domain at all, which the layer test enforces — so the worktree module hands it three paths and receives
+  the boolean. `ConflictCommits` groups the three commits one conflicted merge spans, because the adapter
+  requires all three together and a base claim naming two of them would not be a claim.
+- **The Git half lives in `worktrees/knowledge_conflict.py`.** Materialising the index stages binary-safely
+  (through `git checkout-index`, not a text-decoding read of a SQLite file) and staging the settled result
+  are worktree facts. Its `settle_knowledge_conflicts` returns the paths it could **not** settle, and that
+  tuple is the contract with the sync transaction: what comes back is exactly what the agent is still asked
+  to resolve.
+- **The Git non-claims survive the wiring, and that is the point worth carrying forward.** No merge driver is
+  installed, no attribute is configured, no commit is created on this path, and nothing here takes a
+  compatibility verdict. What changed is *who calls it*: before, an agent facing a conflicted binary
+  knowledge database had to discover `resolve_knowledge_merge_base` and `merge_resolved_knowledge_datasets`
+  and drive them by hand; now the sync transaction routes the merge and the adapter still decides it. A
+  structurally merged result says the union is valid, never that the combined knowledge is correct.
+- **A refusal is preserved rather than swallowed.** Every way of not settling — a stage that is not a
+  dataset, an adapter refusal (a schema disagreement above all), a publication that did not happen — returns
+  `False`, so the path stays conflicted for the agent. The routing narrows the agent's work instead of
+  hiding any of it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The driving entry point: three materialised stages in, one settled-or-not boolean out, and the identity read only this layer may perform. | `merge_conflicted_stages` | mcp/src/agents_remember/application/knowledge_merge.py:90-161 |
+| The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together. | `ConflictCommits` | mcp/src/agents_remember/application/knowledge_merge.py:164-175 |
+| The one non-test importer this module gained, and the Git half that cannot live here. | `settle_knowledge_conflicts`; `_materialise_stages` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:141-154; mcp/src/agents_remember/worktrees/knowledge_conflict.py:64-84 |
+| The transaction seam that routes the conflict and narrows the agent's list. | `_continue_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:341-366 |
+| The layer rule that forces the split, enforced by a test rather than documented. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
+
+## Update History
+- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): added this section because this route's third seam gained its driver, and corrected the two L5 sentences the change falsifies — the *callable rather than wired* bullet and the "no non-test importer" sentence now carry inline supersession pointers to this section instead of being silently left to mislead. The section records the two-module split and why the layer contract forces it, the boolean refusal contract, the preservation of every Git non-claim, and the exact importer. No verification stamp advanced; closeout owns it.
