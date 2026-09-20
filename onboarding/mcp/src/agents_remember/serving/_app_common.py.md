@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -80,17 +80,42 @@ No Domain Documentation source is configured.
 | The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-83 |
 | The refusals the port's presence decides, in the one gate every launch point calls. | `resolve_launch_capsule`; `capsule-resolver-unavailable` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
+## 260915-KS-L45 The Reviewer Entry Port Beside The Reviewer Port
+
+`ServingCollaborators` now carries **two** reviewer fields, and they are one port beside the other
+rather than one port with a mode:
+
+- `knowledge_review: KnowledgeReviewPort | None = None` — the comparison: one typed
+  `ReviewSurfaceRequest` in, one `KnowledgeReviewResult` out.
+- `knowledge_review_entries: KnowledgeReviewEntriesPort | None = None` — the entry half: the task
+  context alone (`repository_id`, `master`, `leaf_id`) in, one `ReviewEntryListResult` out.
+
+Both are imported from `agents_remember.serving.review` beside the other serving ports, and each
+one's own docstring carries the reason the field exists at all: `serving` ranks below `application`
+in `layers.toml`, so the reviewer routes cannot import the read/diff/view operations the adapter
+composes and take ports instead, exactly as the launch route takes the capsule compiler. All three
+are the same shape of decision recorded more than once — production wires them all in
+`agents_remember.cli.dashboard`, and a process that omits one refuses that route **by name** rather
+than serving an empty surface, because an empty pane and an unreachable adapter are different facts
+and only one of them is true.
+
+The entry port's own reason is the sharper of the two, and the field's docstring states it: the
+entry route is the only one a task view can call *before it knows a subject*, and answering an
+unwired process with an empty entry list would say "nothing is reviewable here" — a different fact
+from "this process cannot answer". So the entry route's missing-port answer is a `503` naming the
+missing adapter, never an empty list. The two fields sit above `capsule_launch` on the record, which
+is the order the dataclass now declares.
+
 ## 260915-KS-L22 The Reviewer Port On The Collaborator Record
 
-`ServingCollaborators` gains one field, `knowledge_review: KnowledgeReviewPort | None = None`,
-imported from `agents_remember.serving.review` beside the other serving ports. Its own docstring
-carries the reason the field exists at all: `serving` ranks below `application` in `layers.toml`, so
-the reviewer route cannot import the read/diff/view operations the adapter composes and takes this
-port instead, exactly as the launch route takes the capsule compiler. The two ports are the same
-shape of decision recorded twice — production wires this one in `agents_remember.cli.dashboard`, and
-a process that omits it refuses the review route by name rather than serving an empty surface,
-because an empty pane and an unreachable adapter are different facts and only one of them is true.
-The field sits above `capsule_launch` on the record, which is the order the dataclass now declares.
+`ServingCollaborators` gained the first of those two fields in the L22 increment. The section above
+supersedes its count; this entry is retained because the layering reason and the wiring site it
+recorded are still exactly right. It reads: the class gains one field,
+`knowledge_review: KnowledgeReviewPort | None = None`, imported from
+`agents_remember.serving.review` beside the other serving ports, and a process that omits it refuses
+the review route by name rather than serving an empty surface — because an empty pane and an
+unreachable adapter are different facts and only one of them is true. The field sits above
+`capsule_launch` on the record, which is the order the dataclass declares.
 
 ## Cross-Repo References
 
@@ -104,6 +129,7 @@ let the serving process register task-bound worker/reviewer/curator first eviden
 retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the collaborator record gained the reviewer's entry port beside its comparison port.** `ServingCollaborators.knowledge_review_entries: KnowledgeReviewEntriesPort | None = None` carries the callable that answers the entry route — the task context alone in, one `ReviewEntryListResult` out — and `_app_common.py` is where it crosses from `application` into `serving`. The new section states why the entry port is separate rather than a mode of the first: the entry route is the only one a task view can call before it knows a subject, and answering an unwired process with an empty list would say "nothing is reviewable here", a different fact from "this process cannot answer", so the missing-port answer must be a named refusal. That makes three ports on this record of one shape, so a reader comparing them gets the layering rule rather than three unrelated defaults. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: `_ServingRuntime` repointed to mcp/src/agents_remember/serving/_app_common.py:481-514. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T10:25+02:00 — 260915-CAPS-L15 curator: **the shared bundle gained the capsule-compiler

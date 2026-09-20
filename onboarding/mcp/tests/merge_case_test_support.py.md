@@ -6,8 +6,8 @@
 | path | `mcp/tests/merge_case_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
-| lastVerifiedCommitDate | 2026-09-20T07:29:47+02:00|
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No domain documentation source is configured for this repository (`system/source
 |The registered artifact that makes this harness an owned contract rather than a private helper.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1284-1284 |
 | The unit-side consuming module, which drives the disjoint-edit survival case. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:312-384 |
 | The integration-side consuming module, whose docstring states which integrity checks a case can reach. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
-| The store operations the authored states go through. | `create_invariant`; `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:236-253; mcp/src/agents_remember/memory/knowledge/store.py:255-289 |
+| The store operations the authored states go through. | `create_invariant`; `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-325 |
 
 ## Cross-Repo References
 

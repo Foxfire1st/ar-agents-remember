@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-09-18T18:10+02:00                           |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`       |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated            | 2026-09-20T13:43:00+02:00                           |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`       |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -110,27 +110,40 @@ in its own comment, which is where a reader arriving at the type will look first
 
 `changeSetBar.tsx` renders the reviewer entry **beside** the working and committed actions and never
 in their place: a third `ChangeSetButton` labelled "Intent review" appears only when the bar's target
-is a live admitted curator candidate and a selector id was supplied (`live && selectorId`). That is
-the same liveness the working change-set action is gated on, so the two appear together, and the new
-props are optional and defaulted (`selectorKind` falls back to `invariant`), so every existing caller
-that supplies neither renders exactly what it rendered before this leaf.
+is a live admitted curator candidate **and the bar holds a reviewed subject** (`live && subject`).
+That is the same liveness the working change-set action is gated on — now one extracted `leafIsLive`
+predicate, so the two entries cannot come to disagree about what "live" means — and they appear
+together.
 
-What the entry carries is an identity, not a path. `{ repo, master, leaf, review: { selectorKind,
-selectorId } }` names the task context and the recorded subject; the browser never chooses the
-candidate dataset, because the resolution behind the route does that from the same task context. The
-screen that displays a review belongs to the `panels/review/` child route; this route owns the target
-variant and the entry that sets it, which is the boundary the two cards divide.
+**Superseded 2026-09-20 (260915-KS-L45): the selector is no longer a prop, and the old prop gate was
+the reason the entry was unreachable.** The L22 increment gave `DocChangeSetBar` optional
+`selectorKind`/`selectorId` props and gated the entry on `live && selectorId`. No production caller ever
+supplied them: `taskReader.tsx` and the master header pass `kind`/`repo`/`master`/`leaf`/`onOpen` only,
+so the condition could not hold on any real navigation. The props are **gone**; a live leaf's subject
+is read from the server by `useReviewSubject`, which calls `intentReviewEntries(repo, master, leaf)`
+and keeps `result.entries?.[0]`. The gate is not weakened: a refusal, an empty entry list, a rejected
+promise and a non-live leaf all leave the subject `undefined`, so **no subject means no button** —
+which is the L22 semantics, now reached through a source that can actually produce a subject.
+
+What the entry carries is still an identity, not a path. `{ repo, master, leaf, review: {
+selectorKind: subject.selector_kind, selectorId: subject.selector_id } }` names the task context and
+the subject's own recorded identity, and that identity now comes from the **server's** resolution over
+the candidate pair rather than from a caller; the browser never chooses the candidate dataset, because
+the resolution behind the route does that from the same task context. The screen that displays a
+review belongs to the `panels/review/` child route; this route owns the target variant and the entry
+that sets it, which is the boundary the two cards divide.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The target variant this route's type gained. | "review?: { selectorKind: ReviewSelectorKind; selectorId: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
 | The declaration's own statement that no change-set request comes from a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
-| The reviewer entry, added beside the working/committed actions. | "{live && selectorId ? (" | dashboard/src/panels/detail-panel/changeSetBar.tsx:119-119 |
-| The entry's label. | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
-| The identity the entry carries instead of a filesystem path. | "target={{ repo, master, leaf, review: { selectorKind, selectorId } }}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:125-125 |
-| The optional props, defaulted so existing callers are unchanged. | "selectorKind?: ReviewSelectorKind;" | dashboard/src/panels/detail-panel/changeSetBar.tsx:84-85 |
+| **The reviewer entry's current gate: it appears beside the working/committed actions only when the leaf is live and the server returned a subject.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
+| **The identity the entry carries instead of a filesystem path — and the identity now comes from the server's own resolution, not from a caller.** | "selectorKind: subject.selector_kind"; "selectorId: subject.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:148-154 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:252-260 |
+| **The one liveness predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer entry's selector stopped being a prop, and this overview's L22 account of the gate is corrected in place.** The paragraph said the entry appears "only when the bar's target is a live admitted curator candidate and a selector id was supplied (`live && selectorId`)", and that "the new props are optional and defaulted … so every existing caller that supplies neither renders exactly what it rendered before this leaf" — true when written, and precisely the defect: no production caller supplied a selector, so the entry never rendered on any real navigation. The props are gone; the subject is read from `GET /api/review/intent/entries` by `useReviewSubject`, and the gate is `live && subject`. The card states that this is not a weakening — a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, which is the L22 semantics — and that liveness was extracted into one `leafIsLive` predicate shared with the working action. Three rows that cited the removed props or the old gate were replaced with rows citing the current gate, the server-supplied identity and the shared predicate; no claim was silently dropped. No verification stamp was advanced.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the `review` variant `ChangeSetTarget` gained and why it is a dispatch field rather than a fifth change-set mode, plus the "Intent review" entry `changeSetBar.tsx` adds beside the working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: changeset files changed only by behavior-preserving lint remediation and import-path updates.
 

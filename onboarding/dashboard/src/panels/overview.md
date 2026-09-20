@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -326,7 +326,48 @@ viewer change; file-level detail lives in the panel sidecars.
 
 260831-CCR-L18 updated the Hangar render-test fixture so its hand-built `lifecycleOperation` sample carries the new `schemaVersion` and `stateMatrixVersion` literals required by the generated mirror. File-level detail lives in that sidecar.
 
+## 260915-KS-L45 The Task-View Entry Into The Review Panel Is Reachable
+
+The review panel existed before this leaf; what did not exist was a **navigation** into it on a live
+leaf task. `detail-panel/changeSetBar.tsx` is where that is decided, and the decision is now made from
+the server rather than from a prop:
+
+- The bar renders an **Intent review** `ChangeSetButton` beside the working and committed change-set
+  buttons — never in their place — and the gate is `live && subject`: the leaf's enclosure must be
+  live (one extracted `leafIsLive` predicate, shared with the working action so the two entries cannot
+  disagree about what "live" means) **and** a reviewed subject must have come back from the server.
+- The subject comes from a new read. `useReviewSubject(live, repo, master, leaf)` calls
+  `intentReviewEntries(repo, master, leaf)` — the `data/review.ts` client for
+  `GET /api/review/intent/entries` — and keeps `result.entries?.[0]`. The `selectorKind`/`selectorId`
+  **props are gone**, because no production caller ever supplied them: `taskReader.tsx` and the master
+  header pass `kind`/`repo`/`master`/`leaf`/`onOpen` only, so the old `live && selectorId` gate could
+  never hold on a real navigation and the panel was unreachable by design rather than by policy.
+- The gate is not weakened by the swap. A refusal, an empty entry list, a rejected promise and a
+  non-live leaf all leave the subject `undefined`, so **no subject means no button** — the same
+  behaviour as before, now reached through a source that can actually produce a subject. The hook
+  fetches nothing at all for a leaf that is not live, because there is no candidate to resolve.
+- The button's target carries the subject's **recorded** identity
+  (`review: { selectorKind: subject.selector_kind, selectorId: subject.selector_id }`), so the browser
+  still never chooses the candidate: the id is a recorded identity inside the candidate the server
+  resolved from canonical task context, and the client's `ReviewEntry` has no path field on purpose.
+
+The entry is also still the only reviewer affordance in the bar, and it still reports no counters —
+its counter effect reads the leaf or master change-set request only. It is display-only in the same
+sense the panel is: the bar offers a navigation, and the surface it opens generates no semantic
+judgment and publishes no assessment.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
+| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:252-260; dashboard/src/data/review.ts:231-236 |
+
 ## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
+
+The L22 section below records the panel itself — the three panes, their prohibitions and the
+display-only submission boundary — and remains current. What it did not record is a way to *reach* the
+panel on a live leaf; the section above supplies that, and supersedes nothing below it.
 
 `panels/review/` is this route's new child, and it is one component: `ReviewSurface.tsx`, mounted by
 the cockpit takeover when a change-set target carries the review variant. It renders the Intent
@@ -365,6 +406,7 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 | The one renderer it reuses, fed only two present sides. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:22-22 |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the task-view entry into the review panel is reachable now, and this route gained the section that records how.** The gate in `detail-panel/changeSetBar.tsx` is `live && subject`: the `selectorKind`/`selectorId` props are gone and a live leaf's subject is read from `GET /api/review/intent/entries` by a new `useReviewSubject` hook. The card records why the old prop gate could never hold — `taskReader.tsx` and the master header pass no selector — and why the swap is not a weakening: a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. It also records that liveness was extracted into one `leafIsLive` predicate shared with the working change-set action, and that the button's target carries the subject's recorded kind and id rather than a path, so the browser still never chooses the candidate. The L22 section on the panel itself is retained unchanged below. No verification stamp was advanced.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:798-798; dashboard/src/cockpit/Cockpit.tsx:799-799; dashboard/src/cockpit/Cockpit.tsx:801-801. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "export function CockpitShell({ initialView = \"operations\"" repointed to dashboard/src/cockpit/Cockpit.tsx:875-875. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,10 +5,10 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated            | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -142,22 +142,43 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
 
+## 260915-KS-L45 Both Reviewer Ports Wired From One Composition Root
+
+`serving_collaborators` now binds **two** application-tier reviewer callables, and the second one is
+what makes a task view able to ask the question the first one needs an answer to:
+
+```python
+def review_entries_port(repository_id, master, leaf_id):
+    return list_knowledge_review_entries(config, repository_id, master, leaf_id)
+```
+
+It imports `list_knowledge_review_entries` beside `read_knowledge_review` and `review_records_for`
+from `agents_remember.application.knowledge_review` at function scope, and places both on the
+collaborator record as `knowledge_review` and `knowledge_review_entries`. The two ports are one
+composition and one resolution: the entry call takes the **task context alone**, because a subject is
+exactly what it is being asked for, and the task view calls it *before* any subject exists. The
+docstring states the property this buys: resolving the entry list "through the identical operation
+the review route uses … is what keeps the entry a caller is offered and the review it then opens on
+one candidate". Supplying a port is also what decides its route's behaviour — the serving layer
+refuses each route **by name** when its field is absent, because an empty pane (or an empty entry
+list, which would read as "nothing is reviewable here") and an unreachable adapter are different
+facts.
+
 ## 260915-KS-L22 Reviewer-Adapter Composition Root
 
-`serving_collaborators` now binds a second application-tier callable beside the capsule compiler.
-It imports `read_knowledge_review` and `review_records_for` from
-`agents_remember.application.knowledge_review` at function scope, defines the local `review_port`,
-and places it on the collaborator record as `knowledge_review` — so every `create_app` call in this
-module, live, reload, sim and daemon alike, resolves the reviewer adapter through the one function
-that already knows which configuration the app serves. The adapter is composed with its published
-records: `review_port` calls
-`read_knowledge_review(config, request, review_records_for(config, request))`, reading the
-assessment collection from the curator authority's own publication for the candidate the request
-resolves to. A candidate with no published assessment supplies an empty collection, which the
-surface displays as `unassessed` rather than inventing an assessment — the honest state, and the one
-a reviewer needs to see. Supplying the port is also what decides the route's behaviour: the serving
-layer refuses the review route by name when this field is absent, because an empty pane and an
-unreachable adapter are different facts.
+This section records the L22 increment, which wired the first of those two ports. The section above
+supersedes its count and adds the entry half; the wiring site, the function-scope import and the
+refuse-by-name reason it recorded are unchanged. It reads: `serving_collaborators` binds a second
+application-tier callable beside the capsule compiler, importing `read_knowledge_review` and
+`review_records_for` at function scope, defining the local `review_port` and placing it on the
+collaborator record as `knowledge_review` — so every `create_app` call in this module, live, reload,
+sim and daemon alike, resolves the reviewer adapter through the one function that already knows which
+configuration the app serves. The adapter is composed with its published records: `review_port` calls
+`read_knowledge_review(config, request, review_records_for(config, request))`, reading the assessment
+collection from the curator authority's own publication for the candidate the request resolves to. A
+candidate with no published assessment supplies an empty collection, which the surface displays as
+`unassessed` rather than inventing an assessment — the honest state, and the one a reviewer needs to
+see.
 
 ## Invariants And Boundaries
 
@@ -189,7 +210,7 @@ unreachable adapter are different facts.
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
 | The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
 | The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:211-232; mcp/src/agents_remember/cli/dashboard.py:246-267; mcp/src/agents_remember/cli/dashboard.py:270-297; mcp/src/agents_remember/cli/dashboard.py:308-335 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments` (the `mcp/src/agents_remember/cli/dashboard.py` one, distinguished from the identically named function in `cli/knowledge_ingest.py`); `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:147-171; mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:237-258; mcp/src/agents_remember/cli/dashboard.py:261-282; mcp/src/agents_remember/cli/dashboard.py:285-312; mcp/src/agents_remember/cli/dashboard.py:336-363 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
 | The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
@@ -230,11 +251,12 @@ the base is not silently dropped by this composition.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:112-115; mcp/src/agents_remember/cli/dashboard.py:287-303; mcp/src/agents_remember/cli/dashboard.py:86-116; mcp/src/agents_remember/cli/dashboard.py:281-305 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:309-333; mcp/src/agents_remember/cli/dashboard.py:67-111 |
 | The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
 
 ## Update History
 
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the composition root now supplies both reviewer ports.** `serving_collaborators` imports `list_knowledge_review_entries` beside `read_knowledge_review`/`review_records_for` and defines `review_entries_port(repository_id, master, leaf_id)`, placing it on the collaborator record as `knowledge_review_entries` beside `knowledge_review`. The card records why the entry port takes the task context alone — a subject is what it is being asked for, and the task view calls it before any subject exists — and the property the shared resolution buys: the entry a caller is offered and the review it then opens resolve through the identical operation, so they cannot name different candidates. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-17T10:35+02:00 — 260915-CAPS-L15 curator: **this file became the composition root for the
   capsule compiler.** Added `serving_collaborators(config)`, a `dataclasses.replace` over the
   config-free base record that binds the `application`-rank `compile_launch_capsule` into the serving

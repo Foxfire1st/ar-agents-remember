@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -592,12 +592,22 @@ change-set viewer is therefore never mounted for a review and no change-set requ
 one, which is the reason the variant's own declaration gives for it.
 
 The entry that produces such a target is added **beside** the change-set actions, never in their
-place. `DocChangeSetBar` gained optional `selectorKind`/`selectorId` props and renders a third
-`ChangeSetButton` labelled "Intent review" only when its target is a live admitted curator candidate
-and a selector was named (`live && selectorId`) — the same liveness the working change-set action is
-gated on, so the two entries appear and disappear together and a subject with no live candidate
-offers neither. The entry carries an identity rather than a filesystem path, because the browser
-never chooses the candidate: the resolution layer behind the route does.
+place. `DocChangeSetBar` renders a third `ChangeSetButton` labelled "Intent review" only when the leaf
+is **live** and it holds a **subject** (`live && subject`) — the same liveness the working change-set
+action is gated on (one extracted `leafIsLive` predicate, so the two entries appear and disappear
+together and a subject with no live candidate offers neither). The entry carries an identity rather
+than a filesystem path, because the browser never chooses the candidate: the resolution layer behind
+the route does.
+
+**Superseded 2026-09-20 (260915-KS-L45): the subject stopped being a prop, because as a prop it was
+never supplied.** The L22 increment gave `DocChangeSetBar` optional `selectorKind`/`selectorId` props
+and gated the entry on `live && selectorId`; no production caller supplied either, so the reviewer
+takeover described above was unreachable by navigation. The props are gone. The bar now reads its
+subject from `GET /api/review/intent/entries` through the `data/review.ts` client's
+`intentReviewEntries(repo, master, leaf)`, keeping `result.entries?.[0]` via a `useReviewSubject` hook.
+The gate is not weakened: a refusal, an empty list, a rejected promise and a non-live leaf all leave
+the subject `undefined`, so **no subject means no button**. What changed is that the subject now comes
+from the server's own resolution over the candidate pair rather than from a caller that never existed.
 
 The shell did not move. The reviewer takeover inherits the change-set takeover's full-bleed body, its
 `viewport` main and its back link, so it is entered and left exactly as the working and committed
@@ -616,10 +626,12 @@ reviewer with no second takeover path.
 | The declaration's own reason: the change-set viewer is never mounted for a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
 | The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
 | The surface a review target mounts in the change-set viewer's place. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:575-575 |
-| The reviewer entry, gated on the same liveness as the working action. | "{live && selectorId ? (" | dashboard/src/panels/detail-panel/changeSetBar.tsx:119-119 |
-| The label the entry carries beside the change-set actions. | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
+| **The reviewer entry, gated on the same liveness as the working action and on a subject the server returned.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
+| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:252-260 |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the paragraph that described the reviewer entry's gate was corrected in place, because as written it described the defect.** It said `DocChangeSetBar` "gained optional `selectorKind`/`selectorId` props and renders a third `ChangeSetButton` labelled \"Intent review\" only when its target is a live admitted curator candidate and a selector was named (`live && selectorId`)" — accurate about the shipped code and exactly why the takeover this route describes was unreachable: no production caller supplied a selector. The props are gone; the subject is read from `GET /api/review/intent/entries` by `useReviewSubject`, and the gate is `live && subject` with liveness extracted into one `leafIsLive` predicate shared with the working action. The card states that the gate is not weakened — a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. Two rows citing the removed props and the old gate were replaced with rows citing the current gate, the shared predicate and the read. No verification stamp was advanced.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the reviewer takeover the cockpit reaches through the existing change-set target's `review` variant, the `intent-review` view marker that dispatches it to the `panels/review/` surface, and the "Intent review" entry the change-set bar adds beside its working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 

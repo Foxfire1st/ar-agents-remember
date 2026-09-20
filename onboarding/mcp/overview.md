@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T05:17+02:00 |
-| lastVerifiedCommitHash | `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitDate | 2026-09-20T05:22:07+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l39-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1779,7 +1779,73 @@ unpopulated in a checkout, because populating it would repoint every checkout la
 dependency-less copy. The per-card detail is on the `install` route's cards and the
 [tests route](tests/overview.md).
 
+## 260915-KS-L45 The Reviewer Becomes Two Routes, And The Candidate Pair Gets A Producer
+
+The Intent Reviewer surface is now reached through **two GET routes**, and the second one is what makes
+the first reachable from a task view:
+
+| Route | Answers | Port | Inputs |
+| --- | --- | --- | --- |
+| `/api/review/intent` | what one comparison renders | `KnowledgeReviewPort` | task context + one recorded subject selector |
+| `/api/review/intent/entries` | which subjects the resolved pair can be compared on | `KnowledgeReviewEntriesPort` | task context alone |
+
+The split is a second **path** rather than a second adapter, and the source comment gives the reason: a
+caller that had to guess a subject id to reach the comparison route would be choosing the candidate,
+which the browser may not do. Both answer from **one application resolution**, so the entry a task view
+is offered and the review it then opens cannot name different candidates. The entry route is the only
+one a caller can invoke *before* it knows a subject, so it takes the task context and nothing else.
+
+**No adapter is a named refusal on both routes, and the entry route must never answer it with a list.**
+The comparison route's `503` says the surface is not served rather than served empty. The entry route
+has its own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`) because an empty entry list would say
+"nothing is reviewable here" — a different fact from "this process cannot answer", and only one of them
+is true when the process was composed without the port. `_status_for` now reads success as
+`refusal is None` (so an `entries` state and a `review` state both serve `200` from one mapping) and
+`subject_unresolved` joins the candidate codes answering `404`.
+
+**The candidate pair now has a production producer, and its two halves are named once.** The ingest CLI
+derives its candidate directory from the **contract's own recorded worktree group** through the
+review's published `REVIEW_CANDIDATE_RELATIVE_ROOT` / `REVIEW_CANDIDATE_DIRECTORY`, so an ingest that
+names no directory authors the candidate the review then opens; and when a caller supplies
+`--baseline` on a committing run, that fork-point dataset is **copied** into the baseline half (never
+moved or linked, because the review's own recorded decision is that both halves live in the leaf's
+disposable local root). Nothing is placed on a way out that did not commit, and a run with no
+`--baseline` leaves the half absent — where `candidate_dataset_absent`, now **naming which half** is
+missing, is the truthful answer.
+
+**The pair is opened under the candidate's own namespace.** The datasets are bound to a namespace id
+derived from the repository name, so a comparison opened under the requested repository spelling
+refuses against the dataset's own binding; `review_namespace` therefore reads the namespace from the
+candidate's sealed **receipt** (`candidate-receipt.json`) rather than from the request. A dataset
+handed directly with no receipt keeps the requested identity, and a receipt that exists but cannot be
+read is refused rather than guessed past.
+
+Production wiring lives in the composition root, and it now supplies both ports:
+`cli/dashboard.py`'s `serving_collaborators` builds `review_port` and `review_entries_port` — the
+application adapter's two halves — and passes them as `knowledge_review` and
+`knowledge_review_entries`. Every `create_app` call in that module goes through that function, so a
+served dashboard either has both adapters or refuses the corresponding route by name.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The comparison route constant, GET-only.** | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:51-52 |
+| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:54-58 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-99 |
+| **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:68-80 |
+| **The status mapping success reads as `refusal is None`, so one function serves both typed results; the four candidate codes answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:102-117 |
+| The two port fields on the collaborators dataclass, and the rank reason they exist. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:456-456; mcp/src/agents_remember/serving/_app_common.py:467-467 |
+| The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
+| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
+| **The two published half-names the ingest CLI derives its candidate directory from.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:138-139 |
+| **The ingest run's review handoff: the fork-point dataset copied into the baseline half on a committing run, with every not-placed reason stated.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
+| **The namespace read from the candidate's own sealed receipt rather than from the request.** | `review_namespace` | mcp/src/agents_remember/application/knowledge_review.py:282-307 |
+| **The pair preflight: the absent half named as `baseline` or `candidate`.** | `missing_dataset_half` | mcp/src/agents_remember/application/knowledge_review.py:261-279 |
+
 ## 260915-KS-L22 The Intent-Review Route, Its Port, And The Wiring Behind It
+
+The L22 section below records the surface as it was first shipped: one route and one port. The section
+above supersedes its count; the status idiom, the path-free property and the rank reason it recorded
+are still right.
 
 This route gained one read-only HTTP route and the composition seam it is reached through.
 `GET /api/review/intent` (`serving/review.py`) is GET-only and accepts **no filesystem path**: the
@@ -1809,14 +1875,14 @@ empty surface.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:49-49 |
-| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:104-104 |
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:59-75 |
+| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:52-52 |
+| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:52-52 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-83 |
 | The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:456-465 |
 | The registration that reads that port. | `register_review_routes(app, config, collaborators.knowledge_review)` | mcp/src/agents_remember/serving/app.py:295-295 |
-| The composition root's adapter function. | "def review_port(request):" | mcp/src/agents_remember/cli/dashboard.py:84-93 |
-| The port passed into the shared collaborators. | `knowledge_review` | mcp/src/agents_remember/cli/dashboard.py:98-98 |
-| The two-shape status idiom the route inherits, `503` included. | "def _status_for(result: KnowledgeReviewResult) -> int:" | mcp/src/agents_remember/serving/review.py:78-89 |
+| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
+| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:109-110 |
+| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:102-117 |
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
 
@@ -1875,13 +1941,17 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:71-129; mcp/src/agents_remember/cli/knowledge_ingest.py:165-194 |
+| **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens and places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:93-153; mcp/src/agents_remember/cli/knowledge_ingest.py:248-284; mcp/src/agents_remember/cli/knowledge_ingest.py:213-245 |
 | The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:846-952; mcp/src/agents_remember/application/knowledge_curator_ingest.py:827-843 |
 | The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2436-2458; mcp/src/agents_remember/application/knowledge_curator_ingest.py:493-513; mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-490 |
 | The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:1656-1775 |
 
 
 ## Update History
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T11:53:49+00:00: Generated citation repair: "def review_request_from_query(" repointed to mcp/src/agents_remember/serving/review.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer surface became two routes, and the candidate pair it compares got a production producer.** This overview gained the section recording both: `/api/review/intent/entries` lists the subjects the resolved pair can be compared on (a second **path**, not a second adapter, because a caller that had to guess a subject id would be choosing the candidate), `_status_for` reads success as `refusal is None` so one mapping serves both result types with `subject_unresolved` answering `404`, and the entry route refuses an unwired process by name (`_UNWIRED_ENTRIES`) rather than with an empty list. It also records the producer half: the ingest CLI derives its candidate directory from the contract through the review's own **published** constants, and a committing run given `--baseline` **copies** that dataset into the baseline half, with `missing_dataset_half` naming which half is absent when neither is there; and that both sides are opened under the namespace read from the candidate's own sealed receipt, because the dataset is bound to a namespace id rather than to the requested repository spelling. The L22 section is retained below with its count superseded in place. No verification stamp was advanced.
 - 2026-09-20T05:17+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, base `756c47b37fa16324a836a44336655413d10fffaa`): **this route's body gained the L39 section above**, and it states the three CYCLE-01 points at the boundary this route publishes: the CLI's new `--baseline` selection, the identity derivation moving off the code base commit onto the repository's own `repository_id`, and the symbol discriminator that lets two constructs of one file store two anchors and two claims against one route row. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows are left exactly as they were, no stamp is advanced — the candidate is uncommitted and closeout owns the real code and memory commits — and `reviewedWorkingCandidate` names the candidate this reading was performed against.
 - 2026-09-20T01:54+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **this route's body gained the L30 section above** — the curator ingest's continuous repository identity, its baseline fork, declared invariant revisions and multi-anchor targets, and the publication leg that makes a committed candidate reachable as a dataset through the CLI. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the previous verification stamp rows are left exactly as they were and no stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits.
 - 2026-09-18T19:17+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the route-level statement of the terminal leaf's changes under `mcp/` (the measuring-build stamp, the corrected `read_steps` response, the address-bound next-step hint, `atomic_replace`'s two legs, the accepted memory-worktree shape, the cleanup-preview agreement, the closeout hint plus the durable attestation copy, the citation-machinery fixes, and the knowledge substrate's own contradictions), each pointing at the module sidecar that carries it. It also states the three rails a reader must respect: zero integration headroom (400 / 400, with the `UsageError` that makes an over-budget lane execute nothing), the budget pair's real home in the repository-root `pyproject.toml`, and the catalogue's unchanged 15 / 65 with a moved digest. The body changed substantively; no verification stamp moves, because every source named is modified in the delivered working tree and closeout owns the stamp.

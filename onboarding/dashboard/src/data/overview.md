@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -359,10 +359,23 @@ notes-reader viewer, TaskNotes references, and detail-panel task prose.
 This route gained one client module, `data/review.ts`, and the property that makes it belong here at
 all is a restraint: it reads and it stores nothing. It is the same-origin client for
 `GET /api/review/intent` and it mirrors `data/changeset.ts` in shape — a `base` argument defaulting
-to same-origin, one exported call (`intentReview`), one request built through the shared `qs` helper
-and one thrown `FilesApiError` from the shared `getJson`. Where its sibling differs is what it does
-with the answer: the module's own header states that the surface exposes no submission control, so
-no function in it writes anything.
+to same-origin, requests built through the shared `qs` helper and errors thrown as the shared
+`FilesApiError` from `getJson`. Where its sibling differs is what it does with the answer: the
+module's own header states that the surface exposes no submission control, so no function in it writes
+anything.
+
+**It now exports two calls, one per reviewer route, and the second one is what a task view needs
+first.** `intentReview(repo, master, leaf, selectorKind, selectorId)` renders one comparison;
+`intentReviewEntries(repo, master, leaf)` asks which subjects that comparison can be opened on, taking
+the **task context and nothing else** because a selector is precisely what it is being asked for. The
+entry call's own comment records how a caller must read its answer: a refused read is "a normal outcome
+(no live candidate, no dataset yet): it yields no entry and the caller renders no button, which is the
+existing `live && selectorId` semantics and stays correct". That is why the task view can now offer
+the reviewer at all — the reviewed subject it needs is a **recorded identity inside the candidate the
+server resolved**, and this client is the only legitimate source of it. Its `ReviewEntry` interface has
+no path field on purpose, and its `ReviewEntryListResult` is a typed envelope whose refused form
+carries a `refusal` and no entries rather than throwing, so "cannot answer" and "no subject here" stay
+different facts at the client boundary too.
 
 It mutates no store. This route's data modules are where browser projection state is normalized,
 reconciled and retained; `review.ts` sits deliberately outside that pattern — it exports no store, no
@@ -372,22 +385,28 @@ field-for-field: a field the server omits is optional here rather than defaulted
 an unresolved reference unresolved on the client instead of rendering as an empty string or a
 fabricated attribution.
 
-The request it builds names canonical task context and one recorded subject only — `repo`, `master`,
-`leaf`, `selectorKind`, `selectorId` — and never a filesystem path, so the browser cannot choose which
-dataset is reviewed. Its selector union is closed at the two kinds the transport admits (`invariant`
-and `family`), so the client cannot ask for a subject the server would refuse by having some other
-kind mapped onto one. The file's own card carries the type-by-type detail.
+The comparison request it builds names canonical task context and one recorded subject only — `repo`,
+`master`, `leaf`, `selectorKind`, `selectorId` — and never a filesystem path, so the browser cannot
+choose which dataset is reviewed. Its selector union is closed at the two kinds the transport admits
+(`invariant` and `family`), so the client cannot ask for a subject the server would refuse by having
+some other kind mapped onto one. The entry request names **no subject at all**, which is the other half
+of the same rule: it asks the server to select one. The file's own card carries the type-by-type
+detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route's new read-only client and its one exported call. | "export const intentReview = (" | dashboard/src/data/review.ts:215-225 |
-| The endpoint that call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:224-224 |
+| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:215-228 |
+| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:252-260 |
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:231-236 |
+| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:238-246 |
+| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:224-224 |
 | The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:13-13 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
 | The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:204-210 |
 | The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:183-193 |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **this route's reviewer client gained the entry read, which is what makes the task-view entry reachable.** `intentReviewEntries(repo, master, leaf)` takes the task context and nothing else — a selector is precisely what it is being asked for — and returns a typed `ReviewEntryListResult` whose refused form carries a `refusal` and no entries rather than throwing, so a refused read is a normal outcome the caller renders as no button. The card also records `ReviewEntry`, whose own comment states it is "the ONLY legitimate source of the entry's selector" and that there is "no path field here on purpose", and it corrects the L22 sentence that said the module exports "one exported call": it now exports two, one per reviewer route. No verification stamp was advanced.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — `data/review.ts`, the read-only client for `GET /api/review/intent`, its closed two-member selector union, and the no-store-mutation boundary it holds (no store, slice, reducer or write is exported). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

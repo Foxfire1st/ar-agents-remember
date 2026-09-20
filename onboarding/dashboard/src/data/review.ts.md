@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T18:05+02:00 |
-| lastVerifiedCommitHash |  `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`|
-| lastVerifiedCommitDate |  2026-09-18T18:30:35+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -18,11 +18,13 @@
 ## Purpose
 
 The browser-side, same-origin client for the read-only Intent Reviewer API
-(`mcp/src/agents_remember/serving/review.py`). Its own header states the shape it mirrors and the
-boundary it keeps: it mirrors `data/changeset.ts` — a `base` arg with a same-origin default, typed
-results taken from the application models, a thrown `FilesApiError`, and **no store mutation** — and it
-is a *read* client, because the surface exposes no submission control and so no function here writes
-anything.
+(`mcp/src/agents_remember/serving/review.py`). It now exports **two** requests, one per reviewer
+route: `intentReview` renders one comparison, and `intentReviewEntries` asks which subjects that
+comparison can be opened on — the call the task view makes before it can offer the button at all. Its
+own header states the shape it mirrors and the boundary it keeps: it mirrors `data/changeset.ts` — a
+`base` arg with a same-origin default, typed results taken from the application models, a thrown
+`FilesApiError`, and **no store mutation** — and it is a *read* client, because the surface exposes no
+submission control and so no function here writes anything.
 
 The header also states the one rule every type below obeys: **every type mirrors one model in
 `models/knowledge/review.py`, and a field the server omits is absent here rather than defaulted**, so
@@ -96,7 +98,24 @@ clearance.
 `ReviewRefusal` carries `code`, `detail`, `next_action` and the optional `offending_input`, `expected`
 and `observed`.
 
-**`intentReview` is the module's one request and it never names a path.** It takes
+**`ReviewEntry` is the reviewed subject as the server selected it, and this client has no way to
+manufacture one.** `selector_kind` is the existing `ReviewSelectorKind` union, `selector_id` and
+`label` are strings and `selected_item_count` is a number — and the interface's own comment records
+the contract: it is "the ONLY legitimate source of the entry's selector", the id is a recorded identity
+inside the candidate the server resolved from task context, and **"There is no path field here on
+purpose."** `ReviewEntryListResult` is its response envelope — `state` (`"entries" | "refused"`), the
+literal `operation`, the task context, an optional `entries` array and an optional `refusal` — so a
+refused read is a normal typed outcome with no entries rather than an error a caller must catch.
+
+**`intentReviewEntries` is the entry read, and it takes the task context and nothing else.** It
+returns `getJson<ReviewEntryListResult>` over `${base}/api/review/intent/entries?${qs({ repo, master,
+leaf })}`, with the same `base = ""` same-origin default as `intentReview`. There is no selector in
+its signature because a selector is exactly what it is being asked for, and its own comment records
+how the caller must read a refusal: a refused read is "a normal outcome (no live candidate, no dataset
+yet): it yields no entry and the caller renders no button, which is the existing `live && selectorId`
+semantics and stays correct."
+
+**`intentReview` is the comparison request and it never names a path.** It takes
 `repo`, `master`, `leaf`, `selectorKind`, `selectorId` and a `base` defaulting to `""` (same-origin),
 and returns `getJson<ReviewResult>` over `${base}/api/review/intent?${qs({...})}`. The two helpers come
 from `data/files.ts` — `getJson` is what throws `FilesApiError` on a non-OK response, and `qs` is the
@@ -110,9 +129,11 @@ resolved on the server and the browser must not be able to choose which dataset 
 The module imports exactly two helpers — `getJson` and `qs` from `./files` — and declares everything
 else itself. Interfaces are exported and named with the `Review`/`Comparison` prefix so a reader can
 tell a review display value from the change-set client's own types; the optional members use `?` with
-no default, which is the client half of the server's `exclude_none=True`. There is no `default` export,
-no class and no function other than `intentReview`, and the interfaces are declared in the order the
-payload nests them, so the file reads top-down as the response shape.
+no default, which is the client half of the server's `exclude_none=True`. There is no `default` export
+and no class. The module declares **two** functions, one per reviewer route, and the second one is
+appended after the response types it answers with rather than beside the first, so the file still reads
+top-down as the response shape: the comparison's vocabulary, `intentReview`, then the entry half's two
+types and `intentReviewEntries`.
 
 ### Invariants And Boundaries
 
@@ -165,10 +186,14 @@ function, the two helpers it borrows from the file API, and the client that cons
 | The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:139-156 |
 | **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:168-181 |
 | The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:183-210 |
-| **The one request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:215-225 |
+| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:215-228 |
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:231-236 |
+| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:238-246 |
+| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:252-260 |
 | The two helpers this client borrows rather than re-implementing: the thrower and the query encoder. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-98; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-58 |
 | The surface that consumes this client. | `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:21-22; dashboard/src/panels/review/ReviewSurface.tsx:351-367 |
+| **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References
 
@@ -180,4 +205,5 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the client gained the entry read, which is what makes the task view able to offer the reviewer at all.** The card now records `ReviewEntry` (the reviewed subject as the *server* selected it — a `ReviewSelectorKind`, a recorded id, the identity's own label and the operation's count, with **no path field on purpose**, because the browser never chooses the candidate), `ReviewEntryListResult` (a `state`/`operation`/task-context envelope whose refused form carries a `refusal` and no entries, so a refusal is a normal typed outcome rather than a thrown error), and `intentReviewEntries(repo, master, leaf, base = "")` — the second request this module exports, taking the task context alone because a selector is precisely what it is being asked for. The Conventions paragraph was corrected from "the module's one request" to two, and the row that said so now distinguishes the comparison request from the entry request. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-18T18:05+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): created this one-to-one card for the Intent Reviewer's browser client. It records the two rules the file's own header states — every type mirrors one model in `models/knowledge/review.py`, and **a field the server omits is absent here rather than defaulted**, so an unresolved reference stays unresolved on the client — plus the two boundaries a reader needs: it is a *read* client with **no store mutation** (it is not in `data/store.ts`, and the surface owns its own component state), and the one request names a task context and one recorded subject and **never a filesystem path**, because the candidate is resolved server-side. It also records that the two display unions (`ReviewStaleness`, `ReviewSubmission`) have no favourable member, so an absence cannot be rendered as a clearance. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

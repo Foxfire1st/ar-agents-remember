@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `4904e08f0668ed6d11a2c44d0118716bb82f735c`|
-| lastVerifiedCommitDate | 2026-09-17T22:32:32+02:00|
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,22 @@ whose `__exit__` always closes and returns `False` (never suppressing a failure)
 Reads: `get_repository`, `get_invariant`, `list_revision_ids` (ordered by revision id) and `get_revision`, which
 loads the twelve declared columns and passes them to `records.decode_revision_row` with the predecessor set from
 `_predecessors_of`, so every read re-derives the seal.
+
+Two enumerating reads exist for the Intent Reviewer's own use, and they are the only reason a reader can be
+handed a subject it was not already pointed at:
+
+- `list_invariants` returns every invariant identity the namespace records — `repository_id`, `invariant_id`,
+  `display_label`, `label_provenance` — decoded through `records.decode_invariant_row` and **ordered by the
+  identity's own column**, so two runs over one snapshot agree without a tiebreak this reader chose. The source
+  docstring states the reason a subject enumerator has to exist at all: "a reader that must be handed a subject
+  before it can list the candidates cannot enumerate a candidate it was not pointed at."
+- `list_families` is the same enumeration for the surface's other admitted subject kind, read the same way
+  rather than derived from the invariant list, because a family identity is not a projection of an invariant and
+  the two subject kinds are peers.
+
+Neither is a selection rule: both return **every** recorded identity, apply no filter and compute no count. What
+the review's entry list does with them — comparing each identity and dropping the ones the comparison refuses —
+belongs to `application/knowledge_review.py`, not here.
 
 Mutations, each under `_exclusive_candidate_lock` and inside `_within_immediate`:
 
@@ -182,18 +198,19 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners. | `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/store.py:92-110 |
 | **The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional. | `close` | mcp/src/agents_remember/memory/knowledge/store.py:136-147 |
-| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:192-207; mcp/src/agents_remember/memory/knowledge/store.py:165-178; mcp/src/agents_remember/memory/knowledge/store.py:180-190; mcp/src/agents_remember/memory/knowledge/store.py:151-163 |
-| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:255-289; mcp/src/agents_remember/memory/knowledge/store.py:370-387 |
-| The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:536-572; mcp/src/agents_remember/memory/knowledge/store.py:360-368 |
+| The read surface, including the seal-verifying single-revision read. | `get_revision`; `get_invariant`; `list_revision_ids`; `get_repository` | mcp/src/agents_remember/memory/knowledge/store.py:228-243; mcp/src/agents_remember/memory/knowledge/store.py:166-178; mcp/src/agents_remember/memory/knowledge/store.py:216-226; mcp/src/agents_remember/memory/knowledge/store.py:152-164 |
+| **The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.** | `list_invariants`; `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
+| The one atomic insert-only revision operation and its ordered checks. | `create_revision`; `_insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:291-325; mcp/src/agents_remember/memory/knowledge/store.py:406-423 |
+| The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:572-608; mcp/src/agents_remember/memory/knowledge/store.py:396-404 |
 | The module-level revision aggregate insert, including the pending-predecessor skip of the immediate FK check. | `insert_revision` | mcp/src/agents_remember/memory/knowledge/store.py:552-611 |
 | The predecessor ownership rule with its batch-declared set, and the single-record lineage rule that can accept wider edges. | `require_same_invariant_predecessors`; `require_acyclic_lineage`; `find_lineage_cycle` | mcp/src/agents_remember/memory/knowledge/store.py:635-662; mcp/src/agents_remember/memory/knowledge/store.py:698-728; mcp/src/agents_remember/memory/knowledge/store.py:665-680 |
-| The batch-facing in-transaction helpers and the live identity read the whole snapshot half resolves against. | `insert_invariant_identity`; `insert_revision_aggregate`; `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:296-313; mcp/src/agents_remember/memory/knowledge/store.py:315-325; mcp/src/agents_remember/memory/knowledge/store.py:327-340 |
-| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |
-| The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases. | `within_immediate`; `immediate_transaction`; `exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:467-489; mcp/src/agents_remember/memory/knowledge/store.py:491-498; mcp/src/agents_remember/memory/knowledge/store.py:509-526; mcp/src/agents_remember/memory/knowledge/refusals.py:815-825 |
-| The write helper the batch and the single-record operations share. | `write` | mcp/src/agents_remember/memory/knowledge/store.py:500-507 |
+| The batch-facing in-transaction helpers and the live identity read the whole snapshot half resolves against. | `insert_invariant_identity`; `insert_revision_aggregate`; `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:332-349; mcp/src/agents_remember/memory/knowledge/store.py:351-361; mcp/src/agents_remember/memory/knowledge/store.py:363-376 |
+| The membership query, which is not the write rule. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:435-454 |
+| The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases. | `within_immediate`; `immediate_transaction`; `exclusive_candidate_lock`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/store.py:503-525; mcp/src/agents_remember/memory/knowledge/store.py:527-534; mcp/src/agents_remember/memory/knowledge/store.py:545-562; mcp/src/agents_remember/memory/knowledge/refusals.py:815-825 |
+| The write helper the batch and the single-record operations share. | `write` | mcp/src/agents_remember/memory/knowledge/store.py:536-543 |
 | The label-edit delegation and the module that owns the guard. | `set_invariant_label` | mcp/src/agents_remember/memory/knowledge/store.py:291-294; mcp/src/agents_remember/memory/knowledge/labels.py:40-59 |
 | The graph modules that reuse this store's lock and transaction helpers. | `create_family_revision`; `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/anchors.py:49-72; mcp/src/agents_remember/memory/knowledge/memberships.py:88-109; mcp/src/agents_remember/memory/knowledge/realizations.py:61-85 |
-| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:731-748; mcp/src/agents_remember/memory/knowledge/store.py:751-764 |
+| The create-versus-reopen open functions. | `open_knowledge_store`; `open_existing_knowledge_store` | mcp/src/agents_remember/memory/knowledge/store.py:767-784; mcp/src/agents_remember/memory/knowledge/store.py:787-800 |
 | The reused lock primitive this store does not reimplement. | `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:87-116 |
 | The node that pins the two-caller identity contract on the single-record side. | "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses" | mcp/tests/test_knowledge_store.py:180-207 |
 | The node that would fail if a close-time peer unlink came back. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit" | mcp/tests/test_knowledge_candidate_workspace.py:206-246 |
@@ -207,6 +224,9 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `lineage_cycle_members` repointed to mcp/src/agents_remember/memory/knowledge/store.py:435-454. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `write` repointed to mcp/src/agents_remember/memory/knowledge/store.py:536-543. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): the store gained the **two enumerating reads the Intent Reviewer's entry list is built on**. `list_invariants` and `list_families` each return every identity the namespace records — decoded through the same `records.decode_*_row` the other reads use, ordered by the identity's own column so two runs over one snapshot agree without a tiebreak this reader chose — and the card records that neither is a selection rule: no filter, no count, no ranking, and what the review's entry list does with them (comparing each identity and dropping the ones the comparison refuses) belongs to `application/knowledge_review.py`. The source docstring's own reason is recorded verbatim: a reader that must be handed a subject before it can list the candidates cannot enumerate a candidate it was not pointed at. Both new rows cite their construct's exact extent; the eleven rows this leaf's insertion shifted were re-cited by the mechanical projection. No row, anchor or citation was removed. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory/knowledge/store.py:728-742 to mcp/src/agents_remember/memory/knowledge/store.py:728-741, the range the cited construct now occupies

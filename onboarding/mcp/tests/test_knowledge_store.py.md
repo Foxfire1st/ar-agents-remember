@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ No domain documentation source is configured for this repository (`system/source
 | The shared fixture every case builds from. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:203-261 |
 |  The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5  |
 |  The fixture's registered stable contract and evidence node. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1192-1192  |
-| The store contract the added node pins, including the two-caller distinction. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:536-572; mcp/src/agents_remember/memory/knowledge/store.py:360-368 |
+| The store contract the added node pins, including the two-caller distinction. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:572-608; mcp/src/agents_remember/memory/knowledge/store.py:396-404 |
 
 ## Cross-Repo References
 

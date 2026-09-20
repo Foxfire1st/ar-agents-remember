@@ -5,10 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T07:30+02:00 |
-| lastVerifiedCommitHash |  `fb719f8936d337c4685f2758d4ba3731cd8b7fc5`|
-| lastVerifiedCommitDate |  2026-09-20T12:31:16+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l44-ar`, uncommitted; base `2a96eb883fb081e77a79485530ad7b83ccceff7b` |
+| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -1746,23 +1746,41 @@ false the moment there is no assessment to show.
 
 One outcome per result closes the set. `KnowledgeReviewResult` carries either a payload or one typed
 refusal, never both and never neither, so a caller that receives a refusal has no panes and cannot
-read their absence as a review of an empty candidate. The refusals themselves are a closed five-member
-union — the codes for an unresolved candidate, a non-live one, an absent dataset, a refused
-comparison, and an unavailable adapter — each naming its detail, its next action and, where one
-exists, the offending input.
+read their absence as a review of an empty candidate. The refusals themselves are a closed **six**-
+member union — the codes for an unresolved candidate, a non-live one, an absent dataset, an
+unresolved **subject**, a refused comparison, and an unavailable adapter — each naming its detail, its
+next action and, where one exists, the offending input.
+
+**The entry half of the surface is three more declarations in the same module, and its rule is the
+interesting one.** `ReviewSubjectKind` is the closed two-member `invariant`/`family` union, declared
+**here once** so the transport's admission tuple, the entry list and the panes cannot come to disagree
+about which identities are reviewable. `ReviewEntry` is the reviewed subject as the shipped comparison
+selected it — a recorded identity, that identity's own label and the operation's count — with **no
+field for a path, a file, a display version or a ranking**, which is what keeps "the browser never
+chooses the candidate" a property of the value rather than a convention of its callers.
+`ReviewEntryListResult` is the entry read's typed outcome, and its validator refuses a **refused** read
+that offers any entry: "a refused entry read offers no subject; an entry beside a refusal is how a
+caller comes to review a subject nothing admitted". Its empty `entries` on an `entries` state is
+therefore a pair that selected no reviewable subject — a fact about the datasets, stated as one — and
+not a disguised failure.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own non-definition: it defines no record kind. | "This module defines **no record kind**" | mcp/src/agents_remember/models/knowledge/review.py:3-3 |
-| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:73-73 |
-| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:78-82 |
+| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:76-76 |
+| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:81-85 |
 | The present-side-requires-text rule. | "def _require_text_exactly_when_present" | mcp/src/agents_remember/models/knowledge/review.py:122-133 |
-| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:267-286 |
-| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:512-528 |
-| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:340-348 |
-| One outcome per result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:555-561 |
+| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:296-296 |
+| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:541-541 |
+| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:369-369 |
+| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:584-584 |
+| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` | mcp/src/agents_remember/models/knowledge/review.py:96-99; mcp/src/agents_remember/serving/review.py:60-63 |
+| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:175-191 |
+| **The entry read's typed outcome, whose validator refuses a refused read that offers any entry — so a caller can never be handed a subject beside the statement that nothing admitted one.** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:592-620 |
+| The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:88-94 |
 
 ## Update History
+- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the review-surface vocabulary gained its entry half.** The card now records `ReviewSubjectKind` (the two admitted subject kinds, declared here once so the transport's admission tuple, the entry list and the panes cannot disagree), `ReviewEntry` (the reviewed subject as the shipped comparison selected it — a recorded identity, its own label and the operation's count, with **no field for a path, a file, a display version or a ranking**), and `ReviewEntryListResult` (whose validator refuses a **refused** read that offers any entry: "an entry beside a refusal is how a caller comes to review a subject nothing admitted"), plus the sixth refusal code `subject_unresolved`. The L22 paragraph's "closed five-member union" was corrected in place to six. Four reference rows were re-cited to their constructs' current extents and four were added. No verification stamp was advanced.
 - 2026-09-20T07:33+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination."* — names `MergeRequest`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `models/knowledge/merge.py` gained the authored-decision vocabulary — `AuthoredDecision`, `expressible_decisions` (the single place that answers which decisions a conflict admits), `AuthoredReconciliation` (two structural shapes, no mode flag) and `MergeRequest.reconciliation` — and `models/worktree.py` gained the wire half: `SyncResolutionAction`'s third member `reconcile`, `SyncResolutionInput` (the action-and-decision pair), `SyncKnowledgeConflict` (the engine's explanation carried verbatim, with an empty `decisions` list meaning nothing can be settled) and the two projections that carry it (`SyncResolutionProjection.knowledge`, `SyncOperationProjection.knowledgeConflict`). The vocabulary block moved by six lines, so `WorkflowKind` is now L35 … `NextTool` L65 and `WorktreeState` L307. A body change, not a metadata-only refresh.
 

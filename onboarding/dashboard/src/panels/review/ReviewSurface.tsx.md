@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T18:05+02:00 |
-| lastVerifiedCommitHash |  `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`|
-| lastVerifiedCommitDate |  2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | governingOverview | `dashboard/src/panels/overview.md` |
 
@@ -185,7 +185,7 @@ sub-components, the refusal block, and the cockpit and change-set files that mou
 | The reused diff renderer itself, imported from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48 |
 | The client this component reads through. | `intentReview` | dashboard/src/data/review.ts:215-225 |
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-590; dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
-| The reviewer entry that opens this target, added beside the working and committed actions. | `selectorId`; `review` | dashboard/src/panels/detail-panel/changeSetBar.tsx:119-130 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it now reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:148-154; dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References
 

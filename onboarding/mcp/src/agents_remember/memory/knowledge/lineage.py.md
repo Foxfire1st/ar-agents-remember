@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
+| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
+| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -125,13 +125,13 @@ No domain documentation source is configured for this repository (`system/source
 | The post-insert graph construction the guard reasons over, which folds the wider edges in as stored ones. | `post_insert_graph`; `descendants` | mcp/src/agents_remember/memory/knowledge/lineage.py:183-241 |
 | The Tarjan classification and its reason for not being a recursive CTE. | `cycle_vertices`; `_CycleScan` | mcp/src/agents_remember/memory/knowledge/lineage.py:207-318 |
 | The two edges queries, one per lineage graph. | `invariant_edges`; `family_edges` | mcp/src/agents_remember/memory/knowledge/lineage.py:67-80 |
-| The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:674-705 |
+| The invariant-side application, which states the rule once above the guard and uses the default wider-edge set. | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/store.py:734-764 |
 | The family-side application, which reuses this rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
 | The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:292-319; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:393-429; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:423-449; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:325-328; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:361-362; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:462-468; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:534-534 |
 | The batch pass that gathers the declared edge sets and hands them to this module's rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:328-353; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:429-457; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:460-468; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:361-362; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:493-501; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:402-402; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:503-531 |
 | The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied. | "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:605-674; mcp/tests/test_candidate_batch_transaction.py:561-603 |
 | The two-branch refusal wording, shared so the relations cannot describe different rules. | `_lineage_cycle_wording`; `lineage_cycle_refusal`; `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:290-309; mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
-| The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:399-418 |
+| The membership query the store still exposes, delegating to this module. | `lineage_cycle_members` | mcp/src/agents_remember/memory/knowledge/store.py:435-454 |
 | The declared predecessor tables this module reads. | `invariant_predecessor`; `family_predecessor`; `family_predecessor_parent_endpoint` | mcp/src/agents_remember/memory/knowledge/schema.py:206-221; mcp/src/agents_remember/memory/knowledge/schema.py:251-266; mcp/src/agents_remember/memory/knowledge/schema.py:323-324 |
 
 ## Cross-Repo References
@@ -143,6 +143,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `require_acyclic_lineage` repointed to mcp/src/agents_remember/memory/knowledge/store.py:734-764. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-20T11:53:49+00:00: Generated citation repair: `lineage_cycle_members` repointed to mcp/src/agents_remember/memory/knowledge/store.py:435-454. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:21:19+00:00: Generated citation repair: `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:328-353; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:429-457; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:460-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `edges_on_cycle`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
