@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/routes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `f745e16659c5602252bb185a2ffccc356c2bde26` |
+| lastVerifiedCommitDate | 2026-09-20T20:44:27+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview

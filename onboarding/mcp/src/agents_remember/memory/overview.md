@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate |  2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash |  `f745e16659c5602252bb185a2ffccc356c2bde26`|
+| lastVerifiedCommitDate |  2026-09-20T20:44:27+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview | `../../../overview.md` |

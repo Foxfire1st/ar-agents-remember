@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T18:45:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l47-ar`, uncommitted; base `be325216416326a66950c9e320ff8d08f41e5d66` |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `f745e16659c5602252bb185a2ffccc356c2bde26` |
+| lastVerifiedCommitDate | 2026-09-20T20:44:27+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
