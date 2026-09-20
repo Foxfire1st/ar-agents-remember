@@ -6,8 +6,9 @@
 | path | `mcp/tests/test_eve_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `7abacd8e432730cfca177ff0136711f13ea5f34d` |
+| lastVerifiedCommitDate | 2026-09-20T03:03:09+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `3faf5b50b92361e73ef2a332cd2a41c178381ff7` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +102,7 @@ pass was available for this file.
 | The bounded replay window whose occupancy and eviction these cases pin. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW`; `retained` | mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
 | The production request builders and the transport these wire cases drive. | `create_session_body`; `follow_up_body`; `cancel_turn_body`; `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:118-372 |
 | The adapter cases that consume this same wire layer one level up. | `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests` | mcp/tests/test_eve_adapter.py:661-907 |
-| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:724-725; onboarding/mcp/tests/overview.md:746-747 |
+| The test suite this file joins and its fixture/collection conventions. | `## Fixture Roles And Claims`; `## Isolation And Collection` | onboarding/mcp/tests/overview.md:761-782; onboarding/mcp/tests/overview.md:783-786 |
 
 ## Cross-Repo References
 
@@ -112,6 +113,8 @@ No external repository boundary is implemented by this test.
 | The protocol shapes under test are the pinned published `eve` package's contract, not a sibling repository's. | `eve` | mcp/src/agents_remember/serving/eve_protocol.py:32-40 |
 
 ## Update History
+- 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (cross-card pointer repair; uncommitted change set on `ar/260915-ks-l34-ar`, memory base `3faf5b50`): **this card's one memory-tree row was re-pointed because a different document grew and moved the two headings it cites — no claim of this card changed.** The row cites the suite and collection conventions of `onboarding/mcp/tests/overview.md`, and that route overview gained a new section above those two headings, which shifted `## Fixture Roles And Claims` from `:725` to `:761` and `## Isolation And Collection` from `:747` to `:783` (a constant `+36`, since the insertion is above both). The row now cites each heading's own section extent — `:761-782` and `:783-786` — rather than the heading line alone, because a single-line range cannot carry the anchor *and* the checker's own strip of the trailing newline makes a bare heading line ambiguous while the two lines below it are blank; a section extent is what the claim is actually about anyway. The claim, both anchors, and every other row in this document are unchanged, and the target document was not edited to suit the pointer. No verification stamp advanced and none was invented: this is another route's insertion, not a change to `mcp/tests/test_eve_protocol.py`, which is byte-identical to this leaf's base. The metadata carries a `reviewedWorkingCandidate` row naming this candidate because the card's bytes moved under the retained pair.
+
 - 2026-09-18T19:53:42+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two heading anchors). The row cited `mcp/tests/overview.md:724-724` and `:746-746` — the blank lines above the two section headings it names — so both ranges were widened by one line (`724-725`, `746-747`) to reach `## Fixture Roles And Claims` and `## Isolation And Collection` themselves. The claim and both anchors are unchanged; the target document is another card and was not edited. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the one row whose memory-tree ranges had gone stale was re-pointed to the lines that now carry its anchors.** The row cites this route's own suite/collection conventions in `onboarding/mcp/tests/overview.md`; the L13 and later insertions moved those two headings, so `:608-628` / `:630-632` were replaced by the checker-named live extents `:724-724` (`## Fixture Roles And Claims`) and `:746-746` (`## Isolation And Collection`). Both anchors are unchanged and both ranges are in bounds; no claim was deleted or softened. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

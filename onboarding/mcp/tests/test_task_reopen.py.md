@@ -6,8 +6,9 @@
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
+| lastVerifiedCommitHash | `7abacd8e432730cfca177ff0136711f13ea5f34d` |
+| lastVerifiedCommitDate | 2026-09-20T03:03:09+02:00|
+| reviewedWorkingCandidate | candidate `ar/260915-ks-l34-ar`, uncommitted; base `0da444b3b2b61f6a86fa4076b283c305db025d22` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +17,7 @@
 
 ## Purpose
 
-Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. Deleted guard/start/abandon companion suites are not claimed as current tests here.
+Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. The same module also carries the **series** half: one gathered case drives the terminal atomic-series reopen and, through two plain helper methods, the two other arrivals at the same publication — the series that is already live at a collected address, and the reset that was interrupted before its successor generation was published. Deleted guard/start/abandon companion suites are not claimed as current tests here.
 
 ## Code Commentary
 
@@ -26,10 +27,34 @@ The current evidence boundary is the source-listed behavior below. Earlier cover
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
 
+`SeriesReopenTests` is deliberately **one collected subject told from all of its arrivals**. The
+collected case drives the terminal series: the reset of the contract cells, the master document and
+the enclosure generation, with the fixture asserting up front that the cleanup really did retire the
+integration branch, because a re-cut of a branch that still exists would be measuring the wrong
+thing. Its two helper methods are plain (not `test_*`) on purpose: both pytest lanes sit at exactly
+their case budget, and one added collected case makes the lane run **zero** tests rather than one
+more. They are called from inside the collected case, so they still execute — a plain method is a
+budget fact here, not a claim that the scenario is unverified.
+
+The three facts the gathered subject pins are the three ways a series reaches the publication:
+
+- **`advance`** — a series that is in flight (neither closeout nor integration completed) may stand
+  strictly ahead of its source *on the same line*. That branch is the series' own landed work, so it
+  is reported as `advance` and never moved; a diverged or lagging branch keeps its refusal.
+- **`publish`** — a series already live at an address whose generation is `terminal-archived`, with
+  closeout and integration untouched, is re-addressed rather than refused: the successor generation
+  is published and the branch is left exactly where the series put it.
+- **the counter** — the completion's spent review rounds (`round: 3` in the fixture) are cleared to
+  `0`, not pending, no baseline or residual, no developer approval and no additional rounds, so the
+  next round reads as the first instead of the fourth.
+
 ### Conventions
 
 The table lists retained test definitions, not collected parametrized or subtest counts.
 Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+The series methods reuse the shared `task_reopen_test_support` fixtures rather than building their
+own contract, and each scenario gets its own temporary workspace so the locator state of one cannot
+leak into another.
 
 ### Invariants And Boundaries
 
@@ -37,6 +62,10 @@ Preserve exact refusal, identity, and cleanup assertions rather than adding over
 cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
 an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
 work. This source inspection does not claim a newly executed test or acceptance result.
+
+A branch is only ever read, never moved, by any of these scenarios: the fixture records the landed
+commit before the call and asserts the same commit after it. Adding a collected subject to this
+module is a cross-lane budget decision, not a local one.
 
 ### Todos
 
@@ -58,8 +87,11 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:25-66 |
-| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:68-92 |
+| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:38-79 |
+| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:81-105 |
+| The terminal series reopen, gathered as one collected subject across all three of its arrivals. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:117-226 |
+| The reset that is durable while the locator is still the collected generation is resumed, not refused. | `_assert_an_interrupted_series_reset_is_resumed` | mcp/tests/test_task_reopen.py:228-259 |
+| A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:261-358 |
 
 ## Cross-Repo References
 
@@ -70,6 +102,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **the series half of `task_reopen` is now covered here, and the two retained leaf rows were re-pointed at the ranges the file actually has.** The collected subject `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` was extended from two facts to four (a live ref is never moved; the reset is otherwise complete; a series already live at a collected address is re-addressed instead of refused; and the review counter the completion spent is cleared), and it gained two plain helper methods — `_assert_an_interrupted_series_reset_is_resumed` and `_assert_a_live_unaddressed_series_is_re_addressed` — which it calls inside its own body. They are deliberately **not** `test_*` methods: both lanes sit at exactly their case budget, and a single added collected case makes the lane raise `UsageError` and execute **zero** tests rather than one more. The two pre-existing rows had drifted with the file's growth and now cite `:38-79` and `:81-105` (previously `:25-66` and `:68-92`), each re-derived against the file as it stands rather than shifted by arithmetic. No verification stamp advanced and none was invented: the candidate is uncommitted, the governed closeout owns the real code and memory commits, and the metadata carries a `reviewedWorkingCandidate` row naming this candidate because the body moved under the retained pair.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
