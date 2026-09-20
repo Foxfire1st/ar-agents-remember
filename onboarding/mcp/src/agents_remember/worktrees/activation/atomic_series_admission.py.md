@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ No Domain Documentation source is configured for this memory root.
 | The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. | `_admission_activation` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:92-116 |
 | The status action keeps the repository and exact contract path for a read-only `worktree_status` call. | `_admission_status_action` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:119-137 |
 | Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. | `_admission_retry_precondition` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:140-158 |
-| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:205-218; mcp/src/agents_remember/models/worktree.py:180-192 |
+| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:235-235; mcp/src/agents_remember/models/worktree.py:210-222 |
 | Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. | "def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:"; "def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:" | mcp/tests/test_activation_admission_registered.py:178-222; mcp/tests/test_activation_admission_registered.py:268-321 |
 
 ## Cross-Repo References
@@ -103,6 +103,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-20T01:06+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range). The row pairs the two response models; its first citation `mcp/src/agents_remember/models/worktree.py:235-235` was already correct for `AtomicSeriesAdmission`, while its second, `:180-192`, pointed at the activation-fact block instead of `AtomicSeriesAdmissionActivation`, so it now reads `:210-222`, that class's own extent. No claim wording or anchor was changed, no other range was touched, and no verification stamp was advanced.
+- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `class AtomicSeriesAdmission(StrictResponseModel):`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
 - 2026-09-13T14:19:25+02:00 — Contract-scoped admission: rewrote Purpose/Logic/Conventions/Invariants so the projection emits `contractFingerprint` plus activation, retry precondition, and status action, removed the classification, blocking, and source-pair keys and the whole cross-contract blocker story, and recorded the contract-scoped vacant/unreadable/general retry wording. Citations rebound to the frozen source; verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the public admission `detail` field to the shared 8192-character diagnostic bound, preserving oversized parser-error evidence through structured refusal output without mutation or acceptance claim.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation reconciled admission unreadable-detail projection with the shared bounded diagnostic helper. Concrete validation evidence remains available under the public response limit, with no authority mutation or acceptance claim; verification remains closeout-owned.

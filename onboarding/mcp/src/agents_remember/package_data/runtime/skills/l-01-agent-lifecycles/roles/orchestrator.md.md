@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` |
-| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ No Domain Documentation source is configured for this memory root.
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
 | The shipped role states that independent ready masters run in parallel up to the configured maximum, and that only an atomic master waits for its explicit graph predecessors. | `maxParallelMasters`; "waits for its explicit graph predecessors" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-112 |
 | Each release and landing is per execution nature, and the seat releases only the exact first-ready generation the projection admits. | "Release and land per execution nature"; "You release only the exact first-ready generation the projection admits" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:67-68 |
-| The shipped role selects from current truth rather than a queue row, and it never mutates an old queue row. | "selecting from current truth rather than a queue row"; "never mutate an old queue row" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:36-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:179-180 |
+| The shipped role selects from current truth rather than a queue row, and it never mutates an old queue row. | "selecting from current truth rather than a queue row"; "never mutate an old queue row" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:36-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:184-185 |
 | The shipped topology rule gives only an atomic master an intermediate integration branch off super, and its completed block lands on super once. | "owns an intermediate integration branch"; "its leaves branch from that block, and the completed block lands on super once" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:55-62 |
 
 ## Cross-Repo References
@@ -235,6 +235,7 @@ earlier shipped-source debt note is therefore removed — a repo-wide grep for `
 and source-pair activation wording returns 0 hits in the code worktree.
 
 ## Update History
+- 2026-09-20T00:56+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): hand-read the one enforced row this card carries and cleared it (`citation_anchor_absent_from_range`, "The shipped role selects from current truth rather than a queue row, and it never mutates an old queue row."). The second range `179-180` no longer held the second anchor; reading `roles/orchestrator.md` places `never mutate an old queue row` on line 184, in the prohibition pair that also names unprocessed pending signals, so the range was repointed to `184-185`. The row's first range (`36-36`), its claim and both anchors are unchanged. No claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits. (Entries below are preserved as written; this one is newest.)
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "atomic master B branch" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:269-269. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

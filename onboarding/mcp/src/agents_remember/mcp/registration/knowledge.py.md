@@ -6,9 +6,9 @@
 | path | `mcp/src/agents_remember/mcp/registration/knowledge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l20` uncommitted staged source; base `9f88a6de572dc15bbed1802cf08b77c1193fb24c` |
+| reviewedWorkingCandidate | `ar/260915-ks-l30-ar`, uncommitted; base `7dcec036094768c5f50e571fb45e59a27ae78efc` |
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | governingOverview | `mcp/src/agents_remember/mcp/registration/overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No domain documentation source is configured for this repository (`system/source
 | The five response-model rows that validate these operations' payloads, added at the registry's own tail. | `knowledge_read`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
 | The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:85-104 |
 | The review-matrix view this module makes reachable through the read operation's view argument, defined where the view payloads live rather than here. | `ReviewMatrixView` | mcp/src/agents_remember/models/knowledge/view.py:796-800; mcp/src/agents_remember/application/knowledge_views.py:58-58; mcp/src/agents_remember/application/knowledge_views.py:281-281; mcp/src/agents_remember/models/knowledge/view.py:956-956; mcp/src/agents_remember/models/knowledge/view.py:956-960 |
-| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:16-18 |
+| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model` | mcp/tests/test_models.py:47-61 |
 
 ## Cross-Repo References
 
@@ -87,4 +87,5 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-20T01:28+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the last two citation rows of this card — one dead anchor and the reopened claim that names it (one row).** The roster-pinning row named `test_every_public_tool_has_a_response_model`, which exists nowhere in the tree; the surviving construct states the consolidation in its own docstring — `test_every_public_tool_has_a_schema_generating_response_model` (mcp/tests/test_models.py:47) reads "One subject, two halves: the registry is total, and every model it names is usable. These were two cases and are one: both iterate the same registry over the same set, and neither can be true while the other is false." The Anchor cell now names that case, and its range is the declaration's own span `47-61`, replacing the stale `16-18`. The Finding text is unchanged and no citation was dropped. Re-read against the candidate, the claim's wording **holds as written**: the case still pins the advertised roster to the response-model registry (`set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)`), so exactly the drift the row describes is still prevented. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L20-era `reviewedWorkingCandidate` row beside them) were replaced by ONE `reviewedWorkingCandidate` row naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it.
 - 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the knowledge operation family module. It records that `register_knowledge_tools(server, config)` is appended to `TOOL_REGISTRARS` as the fourteenth entry and never inserted, because FastMCP publishes in registration order and every existing name keeps its advertised position; that the five operation families are spelled as the design spells them and registered read, change, diff, integrity, projection; that the surface performs no domain reasoning and each handler validates, delegates and returns; and that the runtime configuration supplies exactly one thing — the workspace root a read resolves recorded source anchors against. The reviewer surface is stated as a deliberate absence: what this module publishes is the interface another leaf mounts (five operations, the review-matrix view and the typed models behind them), and it adds no panel, no route and no client. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

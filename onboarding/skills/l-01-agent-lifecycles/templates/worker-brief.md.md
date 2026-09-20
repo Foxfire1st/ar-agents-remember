@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00|
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
+| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ No external Domain Documentation source governs this worker template.
 | Repository-defined checks and artifact lifecycle remain separate obligations. | "## Targeted checks (before you report)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:142-164 |
 | The final report requires envelopes, checks, curator inputs, and continuity state. | "## Turn report (mandatory, last act)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:173-201 |
 | The template declares itself an input-feeder whose stated rules live in the seat's own files. | "it does not author rules." | skills/l-01-agent-lifecycles/templates/worker-brief.md:9-13 |
-| The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. | "Your curator hand-off list:"; "stay `null`, because those are the curator's to fill" | skills/l-01-agent-lifecycles/templates/worker-brief.md:175-181 |
+| The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. | "Your curator hand-off list:"; "because those are the curator's to fill" | skills/l-01-agent-lifecycles/templates/worker-brief.md:175-181 |
 | Curation is the standing exception: the curator always runs it complete, and closeout and integration carry the result. | "curation does not, because the curator always runs it complete" | skills/l-01-agent-lifecycles/templates/worker-brief.md:159-165 |
 
 ## Cross-Repo References
@@ -119,6 +119,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the one enforced `citation_anchor_absent_from_range` row this card carried, by changing only the quoted anchor text.** The row's second quote was `"stay `null`, because those are the curator's to fill"`; the checker removes backticked code spans from a quoted anchor *including their content* before matching, so that quote can only ever be searched for as `stay , because those are the curator's to fill` and can never be found. The cure is a backtick-free substring the cited range holds verbatim, and the quote now reads `"because those are the curator's to fill"`, which is on `skills/l-01-agent-lifecycles/templates/worker-brief.md:178` inside the cited `:175-181` (verified with `grep`) and carries the same fact the row states: the producer fills the entry's fields and the curator-side fields are the curator's to fill. The Finding text, the row's first quote (`"Your curator hand-off list:"`, `:175`), the range and every other row are unchanged; no citation was dropped. Reviewed against the working candidate `ar/260915-ks-l30-ar`; no commit exists for these bytes and the commit stamp is not advanced.
 - 2026-09-19T17:15+02:00 — 260915-KS-L28 curator: the input-feeder row's quoted anchor carried an internal semicolon, which the citation form cannot separate from its own `;` delimiter; it now quotes the unambiguous tail `"it does not author rules."` over the same range `:9-13`. No finding was reworded and no claim was dropped.
 - 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`). The diff added three things (`:9-13`, `:29`, `:159-165`, `:175-181`): the template's own boundary paragraph — **it feeds inputs, it does not author rules**, with `../roles/worker.md`, `../operations/implementation.md`/`closeout.md` and `../core/acceptance.md` as the rule homes whose wording wins; the closeout handoff re-worded from the curator's *scoped* onboarding/check handoff to the curator's **complete** one; and the curation exception — full code-quality and full-test operations need an explicit developer request, `curation does not, because the curator always runs it complete`, with closeout and integration carrying that result as a prerequisite. Body: added the rule-home paragraph and the curator hand-off list to the Logic, added a Conventions bullet for the curation exception, added an Invariants bullet for the input-feeder boundary, corrected the CCR-R12@v5 Handoff Boundary paragraph (it claimed full memory quality was only an explicit request), and added three Repo-Internal References rows. Citations: all four pre-existing rows still resolve at HEAD ("## Owned primary requirement (exactly one stable-ID + version)" at `:76` inside `:69-102`, "## Targeted checks (before you report)" at `:148` inside `:142-164`, "## Turn report (mandatory, last act)" at `:188` inside `:173-201`).
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
