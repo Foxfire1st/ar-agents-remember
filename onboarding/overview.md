@@ -5,13 +5,48 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `c755cec64fa9dc12e797c9fcfb4c96822718330c`|
-| lastVerifiedCommitDate |  2026-09-21T15:29:12+02:00|
+| lastUpdated | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitHash |  `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc`|
+| lastVerifiedCommitDate |  2026-09-21T18:46:40+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
 > **Status:** active baseline
+
+## This Repository's Published Knowledge Now Has One Declared Location, And The Ordinary Write Side Reaches It
+
+A repository-level fact rather than a route one, recorded here because it is the spelling two otherwise
+unrelated routes have to agree on. The ordinary **read** route declares one published dataset location —
+`<memory_root>/knowledge.sqlite`, where the memory root is the canonical external memory root with no
+enclosure in scope and a task's memory **worktree** inside one — and, since `260921-ICR-L20`
+(`ICR-R20@v1`), the ordinary **write** route publishes there: the curator's ingest run selects that
+location with `--publish`, resolving it through the read side's own declaration, and reads the published
+identity back through the reader's owner. A caller-named `--publish-to` remains the other selection and
+the two are mutually exclusive; a run that names no destination and passes no `--publish` still commits
+without publishing, which is why the destination is a *selection* rather than a default.
+
+Three consequences a reader of this overview should carry, because they are what the change is for:
+
+- **One spelling, owned once.** The location is computed in `application/published_intent.py` and
+  consumed by both sides, so the place a curator writes and the place a later task's planner selects
+  cannot drift apart by two conventions agreeing today.
+- **A successful process exit is not a publication claim.** The run's report carries the destination it
+  selected, the publication owner's own result and an independent read-back of the location
+  (`confirmed` / `mismatch` / `unavailable`); a refused publication establishes nothing and is read back
+  not at all.
+- **The knowledge batch and its publication keep their existing owners.** `--commit` is the
+  knowledge-batch write word and acquires no Git or acceptance meaning; the mounted `knowledge_change`
+  tool still refuses every record kind and only names the real entry point.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:200-216; mcp/src/agents_remember/application/published_intent.py:117-117 |
+| **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
+| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:301-337; mcp/src/agents_remember/cli/knowledge_ingest.py:382-394; mcp/src/agents_remember/cli/knowledge_ingest.py:602-615 |
+| The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
+| **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
+| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
 
 ## Memory Preparation And Final Certification
 
@@ -1162,6 +1197,7 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update, and it is a repository-level fact rather than a route one.** This overview is where two otherwise unrelated routes' shared spelling belongs, and `ICR-R20@v1` created one: the ordinary write route now publishes to the same declared published dataset location the ordinary read route resolves (`<memory_root>/knowledge.sqlite`, the memory worktree inside an enclosure and the canonical external root otherwise). The new section states the three consequences the change exists for — one spelling owned once; a successful exit is not a publication claim because the report carries the destination, the owner's result and an independent read-back; and the knowledge batch and its publication keep their existing owners (`--commit` acquires no Git meaning, and the mounted `knowledge_change` still only names the real entry point). **Citation accounting:** every range was derived from its construct's own extent in this candidate, including the carrier line in `skills/l-01-agent-lifecycles/roles/curator.md` and the mounted refusal in `mcp/registration/knowledge.py`. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **No route impact: this repository overview describes no construct this leaf changed.** The leaf makes the Intent Reviewer's task-view entry reachable (`dashboard/src/panels/detail-panel/changeSetBar.tsx`, `dashboard/src/data/review.ts`), adds the reviewer's entry route and its application operation (`serving/review.py`, `application/knowledge_review.py`, `serving/_app_common.py`, `serving/app.py`, `cli/dashboard.py`), publishes the candidate pair's two directory names and connects the ingest CLI to them (`cli/knowledge_ingest.py`), adds two enumerating reads to the knowledge store (`memory/knowledge/store.py`) and two declarations to the review vocabulary (`models/knowledge/review.py`). None of those is a construct this repo-level overview states — it carries the workspace's routing, skill ownership and code-quality doctrine rather than the reviewer's wiring — so the body was re-read rather than rewritten and nothing in it is contradicted. The `reviewedWorkingCandidate` row now names this leaf's candidate; no verification stamp was advanced.
 - 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The interactive-catalog row cited `application/memory_quality/controller.py:553-600` for `_attach_final_full_catalog`; this leaf's changes left the helper's definition at `671-707` (it is also called at `632`), so that cell cites the definition now, exactly as the `memory_quality/overview.md` card does for the same helper. The claim, the anchor and the `550-586` range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **the declared case-budget pair reaches this route, and the two sentences that carried the old one now carry the current one.** `pyproject.toml` declares `unit_case_budget = 2300` / `integration_case_budget = 400`; this leaf raised the unit ceiling 2200 -> 2300 over its own measured 2206-case candidate, six cases past the 2200 wall, past which `pytest_collection_finish` refuses the whole unit population and no unit case runs at all. Both `Build And Development Reference` statements (the one in this route's leading policy section and the one repeated in the closing reference) now read **2,300 unit and 400 integration** and name the three successive raises the line has taken — 1,250 / 340 -> 1,500 / 400 by the master's owning seat, -> 2,000 and -> 2,200 on the merged line, and -> 2,300 by `260915-KS-L21` — rather than the single 1,500 pair they carried. Integration is unchanged and its six remaining cases of headroom are reported, not consumed. No claim was deleted or softened: the earlier pair is retained inside the same sentence as the history it is. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.

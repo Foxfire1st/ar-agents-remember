@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastUpdated | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc`|
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -53,6 +54,23 @@ seat: curation is always complete, it runs at intake and after every repair, and
 is prerequisite evidence that closeout and integration carry rather than rerun. Certification is the
 curator's own act through `curator_coherence` when the checklist requires it.
 
+Since `260921-ICR-L20` (`ICR-R20@v1`) the role file also carries the seat's **authoring** obligation,
+which is the reconciliation's other half and is not onboarding prose. The requirement-shaped items the
+hand-off list carries are knowledge, so the seat hands them to the real writer with the ordinary
+route's invocation — `agents-remember knowledge-ingest --contract <this leaf's enclosure contract>
+--list <the JSON hand-off list> --authorization-ref <the authorization this run is admitted under>
+--baseline <the published dataset this task forked from> --publish --commit --json` — and **reads the
+report, never the exit status**: every entry appears in exactly one of `committed` / `rulings` /
+`refused`; `publicationRoute` names the destination this run selected or that it named none;
+`publishedIdentity` reports what an independent read of that location found (`confirmed` / `mismatch` /
+`unavailable`); a refused publication establishes nothing. `--commit` therefore stays the
+**knowledge-batch** write word — not a Git action and not an acceptance — and `--publish` is an explicit
+selection of the repository's one declared published dataset location, never a default implied by
+committing. The seat never writes the dataset itself and never treats the mounted `knowledge_change`
+tool as a write route: it refuses every record kind and exists only to name the subcommand. The
+published identity travels into the curator report, because it is the snapshot the next task's planner
+reads.
+
 The rewritten role file carries no role table and no dispatch surface: its seat classification and
 `dispatch`/`tools` rows live in `composition-manifest.json`, where they are structural documentation
 rather than settings keys. Only the manager ordinarily dispatches this leaf
@@ -95,9 +113,12 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | --- | --- | --- |
 | The seat definition names the three-way reconciliation and onboarding-only boundary. | "**You run one leaf's coherence pass and you write onboarding.**" | skills/l-01-agent-lifecycles/roles/curator.md:8-9 |
 | Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, durable reports, and the producers' curator hand-off list. | "## Inputs"; "the producers' curator hand-off list" | skills/l-01-agent-lifecycles/roles/curator.md:11-31 |
-| Inspection classifies contract disposition rather than equating test-green with intent-green. | "Do not confuse **test-green with intent-green**" | skills/l-01-agent-lifecycles/roles/curator.md:63-71 |
-| Current intent, evidence, and semantic history are separate information planes. | "Reconcile three ways before writing anything" | skills/l-01-agent-lifecycles/roles/curator.md:40-44 |
-| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "Run the complete curation operation at intake and after every repair" | skills/l-01-agent-lifecycles/roles/curator.md:49-59 |
+| **The authoring step this leaf added: the real invocation, the report fields to consume, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
+| The permitted-action line that names the subcommand, and the report sentence that carries the published identity into the handoff. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself."; "knowledge hand-off result" | skills/l-01-agent-lifecycles/roles/curator.md:112-114; skills/l-01-agent-lifecycles/roles/curator.md:124-126; skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
+| Inspection classifies contract disposition rather than equating test-green with intent-green. | "Do not confuse **test-green with intent-green**" | skills/l-01-agent-lifecycles/roles/curator.md:81-89 |
+| Current intent, evidence, and semantic history are separate information planes. | "Reconcile three ways before writing anything" | skills/l-01-agent-lifecycles/roles/curator.md:44-44 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "Run the complete curation operation at intake and after every repair" | skills/l-01-agent-lifecycles/roles/curator.md:67-77 |
+| The write plane the authoring step invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 
 ## 260821-DAGQC-L2 Quality Invocation
 
@@ -107,6 +128,7 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the authoring obligation this leaf added to the role file.** `skills/l-01-agent-lifecycles/roles/curator.md` is 144 lines and gained, inside the function shape `260915-CAPS-L22` standardized: a fourth numbered `## Process` step (`:53-66`) stating the real invocation, the fields to consume from the ingest report and the discipline that a zero exit is not evidence the repository holds the knowledge; a permitted-action line naming the subcommand (`:112-114`); a `## What you must not do` prohibition against writing the dataset or treating the mounted tool as a write route (`:124-126`); and a report sentence carrying the read-back identity (`:99-101`). The card's Logic gained a paragraph stating why this is the seat's own half rather than prose, and the Conventions and Invariants sections were re-read and left as written because nothing in them is contradicted. **Citation accounting:** every range this table carries into the role file was re-derived from the post-edit bytes rather than shifted — the test-green row `:63-71` → `:81-89`, "Reconcile three ways before writing anything" `:40-44` → `:44-44`, and "Run the complete curation operation at intake and after every repair" `:49-59` → `:67-77`, which the claim-reopen finding also named (it is a **stamp-class** leftover: the source is uncommitted, no commit contains the body as it now stands, so the verification stamp was left exactly as recorded and closeout owns it). The intake row's `:11-31` was re-verified rather than assumed, and two new rows cite the authoring step and its carriers. No claim and no row was dropped.
 - 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is seven added lines in `## Inputs` (`:22-28`) adding **the producers' curator hand-off list** — the builder's and reviewer's requirement-shaped items in the shape `../templates/curator-handoff-list.md` owns, with the producer fields filled and `resolution`/`validated_at`/`record_action`/`supersedes` the curator's to fill, a carried `disposition` never re-judged at intake. Body: added that intake item to the Logic (with its field-ownership boundary), extended the intake row's extent to the whole section (`:11-31`), and corrected three statements the current source does not support — the Logic's "runs scoped checks" and "Full memory quality and certification remain explicit operations, not closeout or integration prerequisites" (the source requires the **complete** operation at intake and after every repair, `:49-59`), the Conventions bullet that sent the seat to scoped onboarding checks, the same "explicit operations only" clause in the CCR-R12@v5 block, and the "role table classifies curator as target-only" sentence (the rewritten file carries no role table; that classification now lives in `composition-manifest.json`). Citations: re-derived against the file as it stands — the test-green row's `:56-59` extent no longer carried its anchor and moved to `:63-71`; "Reconcile three ways before writing anything" moved from `:33-37` to `:40-44`; "Run the complete curation operation at intake and after every repair" moved from `:42-46` to `:49-59`. Verified ranges/claims: all four rows' anchors resolve inside their extents at HEAD, and the new intake row resolves against the added bullet.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

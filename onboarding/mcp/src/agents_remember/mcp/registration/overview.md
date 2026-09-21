@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-20T01:53+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastUpdated | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l41-ar`, uncommitted; base `756c47b37fa16324a836a44336655413d10fffaa` |
 | governingOverview      | `../../../../../overview.md`                     |
 
@@ -536,7 +537,36 @@ so a caller that does not name it gets exactly the previous behaviour.
 The read side of that parameter — the seed it constructs and what the view does with it — belongs to the
 `mcp/src/agents_remember/application` and `models/knowledge` routes and is recorded there.
 
+## 260921-ICR-L20 The Mounted Refusal Names The Ordinary Publication, And Nothing Else On This Route Moves
+
+One route-level fact, and it is deliberately the smallest one this route has ever carried: the
+knowledge family's *refusal* gained a sentence, and no registered name, no wire argument, no response
+model and no registration order changed.
+
+`knowledge_change` refuses every record kind with `registration_absent` and writes nothing — that is
+its whole body, and it is unchanged. What changed is what its published docstring tells a caller who
+reached it: the reachable write plane entry point, `agents-remember knowledge-ingest`, no longer only
+"commits a whole curator hand-off list through the admitted batch" but, **on the curator's ordinary
+route, publishes that candidate to the repository's one declared published dataset location and reads
+the published identity back**. A caller that reads the refusal to learn where writing *does* happen now
+learns the whole route rather than half of it, which is `ICR-R20@v1`'s point: a mounted tool that can
+only name a writer would leave the publication half of the ordinary route undiscoverable from the
+surface a caller most likely consults.
+
+Three things this section deliberately does **not** claim: the family is still the fourteenth and last
+`TOOL_REGISTRARS` entry (five registrars, read → change → diff → integrity → projection); no handler
+computes anything new; and the publication itself is not reachable from this route at all — it lives in
+`application/knowledge_publication_route.py` and the CLI, and this module only names it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The refusal whose docstring now names the ordinary publication and its read-back, and the registrar that declares it.** | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location" | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
+| The operation family entry point this leaf leaves exactly as it was: five registrars, declared order, appended at the tail. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:44-61 |
+| **The writer the refusal names for the write half, and the module that now owns the publication half the refusal also names.** | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
+| The subcommand spelling the docstring carries, and the parser that registers it. | "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:35-43 |
+
 ## Update History
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **route body updated for the one sentence this leaf changed here.** `knowledge_change`'s published docstring now states that the reachable entry point publishes the committed candidate to the repository's one declared published dataset location and reads the published identity back; the refusal itself, the five registrars, their order and every wire argument are unchanged, and the file is 220 → 221 lines. The section records what the sentence is *for* (a caller reading the refusal to learn where writing happens now learns the whole ordinary route rather than only its write half) and the three things it does not claim. **Citation accounting:** the record-registrar, comparison, report and projection rows on the `knowledge.md` sidecar were re-derived for the one-line insertion (`:106-134` → `:106-135`, `:137-159` → `:138-160`, `:162-187` → `:163-188`, `:190-220` → `:191-221`), and `register_knowledge_tools` `:44-61` and the read registrar `:64-103`, which sit above the insertion, were re-verified rather than assumed. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** The registered `worktree_sync` declaration in `registration/worktrees.py` gained a third flat argument, `knowledge_resolution: AuthoredReconciliation | None`, beside `resolution_action` — flat because on this route the signature IS the published JSON schema — and the registrar pairs the two into the single `SyncResolutionInput` the payload layer forwards. The published description now carries the engine's own diagnosis of a retained knowledge conflict (table, operation, exact refused row and the action it advertises) and states in prose what `keep-left` and `keep-right` mean, so an agent can author the decision without reading the enum's source. No registrar, tool name, registration order or advertised tool count changed. A body change, not a metadata-only refresh.
 
 - 2026-09-20T03:57:45+00:00: Generated citation repair: "worktree_attach_payload," repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:23-23. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.

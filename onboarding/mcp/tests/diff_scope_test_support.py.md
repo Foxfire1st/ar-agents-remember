@@ -6,8 +6,8 @@
 | path | `mcp/tests/diff_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `overview.md` |
 
@@ -145,22 +145,22 @@ repository source and package-local evidence only.
 | **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:534-541 |
 | **The baseline fixture this module builds on.** | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-283 |
 | The fixture value the baseline side is read from. | `ReadScopeFixture` | mcp/tests/read_scope_test_support.py:174-239 |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The artifact row that registers this module, and the replacement contract it declares.** | "introduced_by = \"260915-KS-L8\""; "replacement_contract = \"contract:knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:1397-1397; mcp/tests/evidence-lifecycle.toml:1400-1400 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The artifact row that registers this module, and the replacement contract it declares.** | "introduced_by = \"260915-KS-L8\""; "replacement_contract = \"contract:knowledge-diff-cases\"" | mcp/tests/evidence-lifecycle.toml:1399-1399; mcp/tests/evidence-lifecycle.toml:1402-1402 |
 | The unit-lane row that keeps the scope module in the certifying collection path. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/test-evidence-lanes.toml:110-110 |
 | The integration-lane row that keeps the boundary module in the certifying collection path. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:216-216 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
 | The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "id = \"knowledge-diff-cases\""; "id = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:60-62; mcp/tests/evidence-lifecycle.toml:65-67 |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1397-1397; mcp/tests/evidence-lifecycle.toml:1400-1400 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1399-1399; mcp/tests/evidence-lifecycle.toml:1402-1402 |
 | The unit-lane row that keeps the scope module in the certifying collection path. | "mcp/tests/test_knowledge_diff_scope.py" | mcp/tests/test-evidence-lanes.toml:110-110 |
 | The integration-lane row that keeps the boundary module in the certifying collection path. | "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:216-216 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
-| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400; mcp/tests/evidence-lifecycle.toml:1423-1423 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
+| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402; mcp/tests/evidence-lifecycle.toml:1425-1425 |
 | **The evidence node the contract names: the removed realization keeps its baseline source in the union.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:309-342 |
 
 ## Cross-Repo References
@@ -172,13 +172,14 @@ repository's history.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured cross-repository evidence is claimed. | — | — |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1397-1397; mcp/tests/evidence-lifecycle.toml:1400-1400 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
-| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
-| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400; mcp/tests/evidence-lifecycle.toml:1423-1423 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| **The artifact row that registers this module, and the replacement contract it declares.** | "260915-KS-L8"; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1399-1399; mcp/tests/evidence-lifecycle.toml:1402-1402 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
+| The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1425-1425 |
+| The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1402-1402; mcp/tests/evidence-lifecycle.toml:1425-1425 |
 ## Update History
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **citation repair only, forced by this leaf's own moves in the files this card cites.** The source file this card documents did **not** change; this leaf appended one row to `mcp/tests/test-evidence-lanes.toml` at `:89` and two consumer rows to `mcp/tests/evidence-lifecycle.toml` at `:733` and `:1271`, so every lane row below `:88` shifted by one and every evidence-catalog line below those rows by one and two respectively. Each affected row was re-read against the construct it names and its range re-derived from that construct's own extent in the moved file — and, where a row's anchor is a lane or consumer entry, from the line that actually carries it — rather than shifted by a remembered delta. No claim was re-worded, no anchor was renamed and no row was dropped, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **one additive helper, `independent_changed_records`.** It is the shared, byte-safe independent Git observation the boundary module and the production endpoint module both assert against, and it is deliberately read through the production runner rather than this module's strict `_git` helper so a non-UTF-8 pathname does not raise inside the observation itself. Nothing registered changed: no new contract row, no new artifact row, no lane row. The rows in the reference table were re-derived against this candidate. **Stamp accounting:** the verification rows still name `702714fc05363cb28eacaf101ba8384475a6aa56`, the last real commit on this line, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only.** `260921-ICR-L1` appended two consumer rows to `mcp/tests/evidence-lifecycle.toml` (at `:1404` and `:1435`), so a cited line below them reads one or two lines lower; this card's claim rows that cite that catalogue were re-derived under that mapping from the anchor's real position. No claim was re-worded, no row was deleted, and the generated history entries in this card keep the ranges they were written with. No verification stamp was advanced.

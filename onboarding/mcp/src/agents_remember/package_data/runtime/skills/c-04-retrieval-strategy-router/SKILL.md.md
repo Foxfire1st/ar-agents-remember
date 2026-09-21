@@ -5,10 +5,11 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-09-21T15:14+02:00                     |
+| lastUpdated            | 2026-09-21T18:09+02:00                     |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l19`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c`             |
-| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc`             |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -107,6 +108,18 @@ skip sidecar probing and read source first.
 
 The skill does not check, install, repair, or reindex providers.
 
+**One paragraph of the route section was corrected by `260921-ICR-L20`, and it is the paragraph that
+matters most to this skill's own boundary.** The section used to say the ordinary write side *had to be*
+wired to the location this route declares, with the wiring named as `ICR-R20@v1`'s obligation; the change
+restates it as current truth: the ingest command selects that same location with `--publish`,
+**resolving it through this read side's own declaration** and reading the published identity back
+through the reader's owner, while a run that names no destination and passes no `--publish` still commits
+without publishing — which is why the flag stays a selection rather than a default. The remaining
+`ICR-R25@v1` obligation is unchanged (the two-consecutive-task journey that has to prove task A's
+publication lands where task B's planner looks). Nothing else in the mirror moved: the same section
+still states the memory-root rule with no fallback, the exact payload spellings, the named `state`s and
+their refusal codes, and the continuation limitation as a limitation.
+
 ### Todos
 
 None.
@@ -126,7 +139,7 @@ retrieval contract over installed provider tooling and durable onboarding.
 | --- | --- | --- |
 | `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-32 |
 | **The Intent bullet now names the published-intent half: the same `read_ar_files` call carries the invariants a previous task already recorded about the requested paths, at their exact snapshot and without needing a task.** | `## Retrieval Substrates` (Intent bullet) | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:21-27 |
-| **The new route section, which is this leaf's carrier: the publication location the read side declares, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
+| **The route section, which is this leaf's carrier: the publication location the read side declares, and — restated as current truth by `260921-ICR-L20` — the ordinary write side publishing to that same location with `--publish`, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.** | `## Published Intent Before Planning`; "Where the route reads, and what publishes there." | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |
 | Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-82 |
 | Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:84-131 |
 | The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-131 |
@@ -147,6 +160,7 @@ They do not contain private sibling repository names, symbols, paths, or code.
 
 ## Update History
 
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body updated — the consequence repair this leaf landed in this mirror's own route paragraph.** `ICR-R20@v1` wired the ordinary write side to the location this skill declares, so the paragraph that said the write side *has to* publish there (and that the wiring was R20's obligation) now states the current route: the ingest command selects that same location with `--publish`, resolving it through **this** read side's declaration and reading the published identity back through the reader's owner, while a run that names no destination still commits without publishing — the reason the flag is a selection rather than a default. `ICR-R25@v1`'s two-consecutive-task journey is unchanged as an outstanding obligation. This is text only: the skill's provider contract, its substrate definitions, its boundary and its refusal vocabulary are all untouched, and the canonical root `skills/` copy carries the identical paragraph (the mirror is produced by `scripts/sync-skills.py`, which this leaf ran together with its `--check`). **Citation accounting:** the carrier row's extent was re-derived from the section's own post-edit lines (`:173-229` → `:173-232`) and the anchor set was extended to name the corrected sentence. No claim and no row was dropped, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this generated mirror is one of the ten carriers this leaf's requirement moves.** The Intent bullet now names the published-intent half (`:21-27`) and the skill gained a **Published Intent Before Planning** section (`:173-229`) that states the route, the publication location it declares, the memory-root rule with no fallback, the exact payload field spellings, the three named `state`s with their refusal codes, the seed-level absences and the continuation limitation. The card's Logic records all of it and names the authored owner (`skills/c-04-retrieval-strategy-router/SKILL.md`) and the generator (`scripts/sync-skills.py`, nine targets) rather than implying this copy is authored. **Every citation range on this card was re-derived against the 239-line candidate, not shifted by the 60 added lines**: the section rows now read `## Retrieval Substrates` `:12-32`, `## Semantics: GrepAI` `:34-82`, `## Relationship: CodeGraphContext` `:84-131`, the shared prohibition row `:34-131`, `## Intent: Onboarding And Source` `:133-171`, and the two sibling-catalog literals `:82-82` / `:126-126` (the two rows the checklist flagged as stale); three rows were added — the Intent bullet, the new section, and the unchanged `## Route Index Semantics` close. No claim was re-worded to fit a stale pointer and no anchor was renamed. **Installed copies are not this leaf's:** the seven harness skill roots still carry the 179-line carrier, and installing and verifying them is the orchestrator's acceptance step, not a memory change. **Stamp accounting:** `reviewedWorkingCandidate` names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows; scoped citation fixing regenerated the source ranges.

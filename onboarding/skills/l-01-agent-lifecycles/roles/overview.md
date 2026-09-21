@@ -5,10 +5,38 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastUpdated | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+
+## 260921-ICR-L20 The Curator Role Gains An Authoring Step, And Its Function Shape Is Unchanged
+
+One of this route's ten role files moved, and the movement is **inside** an existing section rather
+than a new shape. `roles/curator.md` (144 lines) gained the knowledge-authoring obligation the curator
+seat had been missing: a fourth numbered step in `## Process` that hands the reconciliation's
+requirement-shaped items to the real writer with the ordinary route's invocation
+(`agents-remember knowledge-ingest … --baseline <the published dataset this task forked from>
+--publish --commit --json`), a line in the permitted-writes list naming that route, a prohibition in
+`## What you must not do` against writing the dataset from this seat, and a sentence in the curator
+report that carries the read-back identity. The section order this route standardized at
+`260915-CAPS-L22` — `## Inputs`, `## Process`, `## Outputs`, then the permitted and prohibited lists —
+is exactly what the change slots into, and no `**Inherits:**` line, knob block or sibling reference
+changed.
+
+Two route-level rules the change makes explicit, because they are now load-bearing for any seat reading
+this file: **a per-entry refusal is a result, not a tool failure** (the report is the product, and a
+zero exit is not evidence that the repository holds the knowledge), and **the mounted `knowledge_change`
+tool is not a write route at all** — it refuses every record kind and exists only to name the
+subcommand, which is why the role file's prohibition names it rather than the operation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:112-114; skills/l-01-agent-lifecycles/roles/curator.md:124-126 |
+| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
+| The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
 ## Purpose
 
@@ -168,7 +196,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:42-59 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:67-77 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -297,6 +325,7 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **route body updated for the one role file this leaf moved.** `roles/curator.md` is 144 lines and gained a fourth numbered step in `## Process` (the real knowledge-authoring invocation and what to consume from its report), a permitted-action line naming the subcommand, a prohibition against writing the dataset from this seat, and a report sentence carrying the read-back identity — all **inside** the function shape this route standardized at `260915-CAPS-L22`, with no `**Inherits:**` line, knob block or sibling reference touched. The section also states the two rules the change makes load-bearing (a per-entry refusal is a result, and the mounted `knowledge_change` tool is not a write route). **Citation accounting:** the rows this document already carried into `roles/curator.md` were re-derived rather than shifted — `curator_coherence` `:42-59` → `:46-77`, and the curator row's `:56-56` → `:74-74` — because the file grew five net lines in the workflow's third step and one line in each of two later lists. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
 - 2026-09-20T01:06+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range). The curator row's third citation, `skills/l-01-agent-lifecycles/roles/curator.md:42-52`, stopped short of the fourth numbered duty: `curator_coherence` — the structured authority publication the claim names — is written at 56, so the range was widened to `:42-59`, the four duties the claim summarises. The row's heading and quoted anchors were re-read against their cited ranges and stand, and both other citations are untouched. No claim wording, anchor or other range was changed, and no verification stamp was advanced.
 - 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `overview.md:171` (curator_coherence) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 - 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the last seven dead-anchor rows in this document were re-cited to the lines that now carry their facts.** `# Lifecycle — Curator` / `# Lifecycle — Manager` / `# Lifecycle — Worker` were the *retired* file titles: the rewritten role files title themselves `# Curator`, `# Manager`, `# Worker`, so the dead title was replaced by each file's live opening duty sentence (`You run one leaf's coherence pass and you write onboarding.`, `You drive exactly one master's leaf sequence from dispatch to handover.`, `You build one leaf.`) and, for the worker row, the `The turn report` bullet the claim names. `### 4 — Repair Affected Onboarding, Then Publish` and the curator row's `run the complete curation operation …` now read the live `## Process` item 3 plus the `curator_coherence` gate, whose extent was widened from `42-46` to `42-52` so the authority tool the claim names is inside it. `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt` and `## Per-Requirement Independent Attempt Adjudication` were the *rewritten* role files' old section headings; the live carriers are the worker template sentence `the one Requirement Acceptance Envelope for your owned primary` and the reviewer's `Adjudicate every requirement revision separately` / `An aggregate verdict or a sampled subset is invalid`, so the dead headings were replaced by those quotes. `nothing serializes its masters` was re-sourced to the migration note that carries it verbatim (`docs/reference/execution-topology-migration.md:63`) and the `.agents/` generated copy was replaced by the root `skills/l-01-agent-lifecycles/criteria/plan-review.md:64-67` catalog, whose own wording (`nothing serializes the masters`) the row's sibling anchor already quotes — the stale `architect.md:143-143` extent was re-pointed to the architect's live plan-review binding at `architect.md:28-28`. No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.

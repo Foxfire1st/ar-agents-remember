@@ -5,9 +5,10 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated            | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -54,10 +55,29 @@ result never stands in for the full operation.
 three fed inputs (the landed change set with counters and paths pulled from the leaf contract's recorded
 range; the leaf task doc with its approved requirement-corpus ruling and version-addressed packets; and
 `notes/` with the builder turn report plus the candidate-bound route-review verdict only when review was
-requested) and records the rule that none of them is inferred from transcript memory. The block also
+requested) and records the rule that none of them is inferred from transcript memory. Since
+`260921-ICR-L20` (`ICR-R20@v1`) that section also names the repository's **published dataset** — the one
+declared location the ordinary read route selects, which the knowledge hand-off is published to and the
+next task's planner reads. The block also
 carries the curator's own prohibitions — never runs the closeout preview, never repairs transaction
 conflicts, never decides whether a leaf lands — and the routing rule that rejects overview-dumping and
 task-log-dumping alike.
+
+**The authoring step this leaf added is a procedure step, not a new authority.** `## Normal workflow`
+gained a third numbered step that routes the reconciliation's *requirement-shaped items* — authored
+knowledge, not onboarding prose — through the real writer with the ordinary route's invocation
+(`agents-remember knowledge-ingest … --baseline … --publish --commit --json`), and states the discipline
+the whole route exists for: **consume the report, not the exit status.** Every entry appears in exactly
+one of `committed` / `rulings` / `refused` with its own reason, `publicationRoute` names the destination
+selected or that none was, `publishedIdentity` reports what an independent read of that location found
+(`confirmed` / `mismatch` / `unavailable`), and a refused publication establishes nothing. `## Authority
+gates` gained the matching rule from the other side — the batch and its publication keep their existing
+owners, `--commit` is the knowledge-batch write word and not a Git action or an acceptance, and the
+mounted `knowledge_change` tool refuses every kind and only names the real entry point — and `## Failure
+handling` gained the one that keeps a partial hand-off visible: a run whose entries split across
+`committed` and `refused`, or whose publication the owner refused, names each outcome and manufactures no
+full completion, with an exact retry as the recovery. `## Handoff / exit` now carries the published
+dataset identity as well, because it is what the next task's planner reads.
 
 ### Conventions
 
@@ -88,6 +108,11 @@ repository prose consumed by the skill router.
 | The operation block's declared purpose, source path, and applicable roles. | `"operations"`; `"purpose"`; `"applies_to_roles"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1 |
 | The manifest keeps the operation vocabulary at exactly these eight names. | `OPERATION_KEYS`; `test_manifest_resolves_every_role_and_operation_source` | mcp/tests/test_role_instruction_corpus.py:56-64; mcp/tests/test_role_instruction_corpus.py:199-225 |
 | The canonical source of this block. | `# Operation` | skills/l-01-agent-lifecycles/operations/curation.md:1-1 |
+| **The authoring step this leaf added to the block: the real invocation, the report fields to consume, and the rule that a partial hand-off stays partial.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:141-145 |
+| **The authority gate that keeps the batch and its publication with their existing owners, and the published dataset the required-inputs section now names.** | "The knowledge batch and its publication keep their existing owners."; "repository's published dataset" | skills/l-01-agent-lifecycles/operations/curation.md:105-112; skills/l-01-agent-lifecycles/operations/curation.md:33-34 |
+| The handoff paragraph that now carries the published identity, and the write plane it names. | "knowledge hand-off result"; `ingest_curator_list` | skills/l-01-agent-lifecycles/operations/curation.md:155-157; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153 |
+| The publication owner whose result the step reads back, and the declared location it publishes to. | `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
+| This card documents the **generated packaged copy**; the canonical source it mirrors is the root `skills/` tree, and the copy is produced by `scripts/sync-skills.py` and never hand-edited. | `# Operation` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; scripts/sync-skills.py:1-60 |
 
 ## Cross-Repo References
 
@@ -99,6 +124,7 @@ No sibling-repository contract defines this instruction file.
 
 ## Update History
 
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the authoring step this leaf added to the operation block, in the canonical source and therefore in this generated copy.** `skills/l-01-agent-lifecycles/operations/curation.md` is 161 lines where it measured 144 in this card's last reading; `## Normal workflow` gained a third numbered step (the real ingest invocation, `--baseline`, `--publish --commit --json`, and "consume the report, not the exit status"), `## Required inputs` gained the repository's published dataset, `## Authority gates` gained the paragraph keeping the batch and publication with their existing owners, `## Failure handling` gained the rule that a partial or refused hand-off stays partial and visible, and `## Handoff / exit` gained the published dataset identity. **Citation accounting:** the `## Handoff / exit` row this card already carried was re-derived `:121-128` → `:151-151` from the heading's own post-edit line rather than shifted, the new rows were read from the block's own lines, and `# Operation` `:1-1` — the one row that was already correct — was re-verified rather than assumed. This card documents the **generated packaged copy**: the canonical source is the root `skills/` tree, `scripts/sync-skills.py` produces the copy (the leaf ran it and its `--check`, both clean), and no harness skill root was installed. No verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) in the Logic section.** The complete-curation sentence named `checklistStatus=ready-for-closeout` as the loop's termination condition; `ready-for-closeout` is never a value of the combined field. It now names the **raw** `qualityChecklistStatus` as the loop's gate and the **combined** `checklistStatus=coherence-required` as the point at which the `curator_coherence` authority is published, matching `application/memory_quality/controller.py:664,671,678,687`. The 2026-09-17T12:28+02:00 entry below is left as written: it records what CAPS-L18 did, and this entry is the correction of that wording. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Added the changed `## Normal workflow` step 5 and `## Authority gates` rule to Logic: the complete curation check set, its `curatorActionableCount=0` / `checklistStatus=ready-for-closeout` termination condition, and the coherence authority published when the checklist requires it.

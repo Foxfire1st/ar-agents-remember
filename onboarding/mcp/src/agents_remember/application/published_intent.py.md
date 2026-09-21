@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/published_intent.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T15:14+02:00 |
+| lastUpdated | 2026-09-21T18:09+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l19`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
+| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -48,12 +49,16 @@ codes need no new member.
    **worktree** whenever an enclosure is in scope and the canonical external memory root otherwise
    (`kernel/coordination_context/resolver.py`, `_effective_memory_root`). This route substitutes neither
    for the other, so a publication that is not on the line being read is reported `not-recorded`.
-   **This route declares the location it reads; the ordinary write side has to publish there.** No shipped
-   owner computes or defaults a publication destination today: `IngestPublication.destination_path` is
-   whatever the caller's `--publish-to` names, and an ingest run that names none commits without
-   publishing. Wiring the ordinary publisher to this one location is ICR-R20@v1's obligation and the
-   two-consecutive-task journey that proves task A's publication lands where task B's planner looks is
-   ICR-R25@v1's; declaring it here is what gives both sides one shared spelling.
+   **This route declares the location it reads, and since `ICR-R20@v1` the ordinary write side publishes
+   there.** Before that leaf no shipped owner computed or defaulted a publication destination at all:
+   `IngestPublication.destination_path` was whatever the caller's `--publish-to` named, and an ingest run
+   that named none committed without publishing. The ingest command now selects this one location with
+   `--publish` — resolving it through `published_dataset_path`, the same declaration this read uses, and
+   reading the published identity back through `resolve_published_intent` — while a run that names no
+   destination and passes no `--publish` still commits without publishing, which is why the destination
+   stays a *selection* rather than a default. The two-consecutive-task journey that has to prove task A's
+   publication lands where task B's planner looks is still ICR-R25@v1's; declaring it here is what gives
+   both sides one shared spelling.
 2. **Which source identity.** The read context requires the source-resolution pair *together or not at
    all*, so `_source_pair` resolves the code repository root and `HEAD^{tree}` as one value, and answers
    `None` — leaving the pair *unrequested* — for a root that is None, a Git that cannot answer, a non-zero
@@ -152,7 +157,7 @@ repository source only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The one file name a repository's published dataset occupies inside its memory layer, with the comment that states this route declares the location it reads and that the write side has to publish there.** | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:102-109 |
+| **The one file name a repository's published dataset occupies inside its memory layer, with the comment that now states the current truth: this route declares the location it reads, and the ordinary write side publishes there through `--publish`.** | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:110-117 |
 | **The location resolver: repository-scoped by construction, following the resolved memory root with no fallback between the canonical root and a leaf's memory worktree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:192-208 |
 | **The resolution and the guard that make a missing, corrupt or foreign publication a named state rather than an empty success.** | `resolve_published_intent`; `_absence_state` | mcp/src/agents_remember/application/published_intent.py:211-235; mcp/src/agents_remember/application/published_intent.py:238-268 |
 | **The dataset's own identity is read from the file rather than taken from a caller.** | `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:143-156 |
@@ -161,8 +166,8 @@ repository source only.
 | **The ordinary route's whole public surface: resolve the publication, seed it with the paths the caller already asked about, and read one bounded page per path with every failure returned as a named state.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:271-286 |
 | **The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through.** | `read_published_intent` | mcp/src/agents_remember/application/published_intent.py:289-307 |
 | **The two shipped owners this module delegates the read to, reused unchanged.** | `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
-| **The per-seed bound, and the page that reports `hasMore`, the counts and the continuation which reaches the rest.** | `PUBLISHED_INTENT_MAX_ITEMS`; `PUBLISHED_INTENT_MAX_UTF8_BYTES`; `_page_block` | mcp/src/agents_remember/application/published_intent.py:111-115; mcp/src/agents_remember/application/published_intent.py:498-521 |
-| **The limitation that travels with a bounded page: the cursor continues the scope read, and the mounted read tool continues views.** | "continuationOperation" | mcp/src/agents_remember/application/published_intent.py:520-520 |
+| **The per-seed bound, and the page that reports `hasMore`, the counts and the continuation which reaches the rest.** | `PUBLISHED_INTENT_MAX_ITEMS`; `PUBLISHED_INTENT_MAX_UTF8_BYTES`; `_page_block` | mcp/src/agents_remember/application/published_intent.py:122-123; mcp/src/agents_remember/application/published_intent.py:506-529 |
+| **The limitation that travels with a bounded page: the cursor continues the scope read, and the mounted read tool continues views.** | "continuationOperation" | mcp/src/agents_remember/application/published_intent.py:528-528 |
 | **A path no recorded anchor could carry is refused as a seed instead of being answered with an absence this read never observed.** | `_source_seed`; `_UnseedablePath` | mcp/src/agents_remember/application/published_intent.py:382-396; mcp/src/agents_remember/application/published_intent.py:179-189 |
 | **A value that is not one of the typed seeds is a named refusal naming its own Python type, never an `AttributeError` from inside the read.** | `_seed_json`; `_unaddressable_seed_block` | mcp/src/agents_remember/application/published_intent.py:433-446; mcp/src/agents_remember/application/published_intent.py:449-469 |
 | **One item exactly as the read selected it: dumped by its own model, excluding `None` without dropping a recorded value.** | `_item_json` | mcp/src/agents_remember/application/published_intent.py:524-532 |
@@ -191,5 +196,7 @@ memory layer this repository's own coordination declaration resolves, and reache
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **the consequence repair this leaf's landing forced, and the two claims it made untrue are restated as current truth.** `ICR-R20@v1` wired the ordinary write side to the location this route declares, so the module docstring's fourth paragraph ("the ordinary write side **has to** publish there … wiring the ordinary publisher to this one location is ICR-R20@v1's obligation") and the `PUBLISHED_DATASET_NAME` comment are now past-tense statements of ownership with a present-tense statement of the route: the ingest command selects this location with `--publish`, resolving it through `published_dataset_path` and reading the published identity back through `resolve_published_intent`, while a run that names no destination and passes no `--publish` still commits without publishing — which is why the destination stays a *selection* rather than a default. `ICR-R25@v1`'s two-consecutive-task journey is unchanged as an outstanding obligation. **This is text only:** the module's code is untouched by the R20 landing, so no behaviour claim on this card changed. **Citation accounting:** the file is 594 → **602** lines (two comment/docstring insertions), so the rows whose cited ranges the insertions moved were re-derived rather than carried — the per-seed bound row `:111-115` / `:498-521` → `:122-123` / `:506-529`, the continuation row `:520-520` → `:528-528`, and the dataset-name row `:102-109` → `:110-117`, whose own prose was corrected with its range because the comment it cites is the sentence this leaf restated. **Stamp accounting:** `reviewedWorkingCandidate` names this leaf's candidate on production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`, which is the line this reading was performed against; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded and no stamp was advanced, because no commit contains the body as it now stands. No commit was made.
 
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **created this one-to-one card for the new module, the leaf's primary-requirement owner (ICR-R19@v1).** It records the three decisions the module owns — which dataset (`<memory_root>/knowledge.sqlite`, with the memory-worktree-versus-canonical-root rule and no fallback between them), which source identity (the pair resolved together or left unrequested) and what a caller reads (one bounded page per seed through the shipped selective read) — plus the rules that make its answers safe: every failure is a named state (`not-recorded` only when the location holds no file system entry at all; `unusable` for a non-file entry, undecodable bytes or another repository's dataset), a refusal is never reported as an absence (an unseedable path and an unaddressable seed are both refusals), the module holds no second store and adds no refusal vocabulary, and the bounded page's cursor continues the scope read rather than the mounted view read. **Stamp accounting:** this file does not exist at the recorded `lastVerifiedCommitHash`; that hash is the line this reading was performed against and the `reviewedWorkingCandidate` row names the uncommitted candidate, because no commit contains the module yet and the governed closeout owns the real stamp. No commit was made.
