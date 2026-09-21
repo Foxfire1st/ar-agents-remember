@@ -5,10 +5,10 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.tsx`        |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`                  |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`                  |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -27,6 +27,9 @@ button, `DocChangeSetBar` the compact bar rendered above the reader content.
 
 The bar renders the change-set summary for the displayed document and exposes the
 change-set viewer toggle; selection state stays in the panel's `useDetailPanelState`.
+
+
+**The reviewer entry is now offered for every live leaf, and the server's subject is a refinement rather than a gate.** The condition changed from `live && subject` to `live`: the button carries `review: { selectorKind, selectorId }` when the entry read answers with a recorded subject, and `review: {}` when it answers with nothing or refuses — the task-context target, which opens the review on the task's complete source change inventory. `useReviewSubject`'s contract is unchanged (it still fetches nothing for a leaf that is not live and still treats a refusal or an empty list as a normal answer) but its *meaning* changed: an empty or refused answer no longer hides the reviewer, and the comment above the hook and the comment above the button both say so. The boundary the dashboard case asserts is the consequence: the entry is rendered as soon as the leaf is live, so a click that lands before the subject read answers opens the whole-task review and the subject refines the same button afterwards — deliberately, because the entry must not depend on a knowledge read that can refuse.
 
 ### Conventions
 
@@ -90,7 +93,7 @@ configured for this file.
 | **The one predicate both gated entries read, so the working change-set and the reviewer entry cannot disagree about what "live" means.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
 | **The hook that makes the entry reachable: it asks the server for the leaf's reviewable subjects, keeps the first, and leaves the entry hidden on a refusal, an empty list or a rejected promise — fetching nothing at all for a leaf that is not live.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 | **The gate itself: `live && subject`, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
-| The client the hook calls, which takes the task context and nothing else. | `intentReviewEntries` | dashboard/src/data/review.ts:252-260 |
+| The client the hook calls, which takes the task context and nothing else. | `intentReviewEntries` | dashboard/src/data/review.ts:312-320 |
 
 ## Cross-Repo References
 
@@ -101,6 +104,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the entry stopped depending on the subject.** The button is now gated on liveness alone; the server's recorded subject travels with the target as a refinement, and its absence (an empty list or an unreadable refusal) produces the task-context target `review: {}` instead of no button at all. That is the non-conforming example the packet names — "an empty subject list makes the source review disappear" — closed at the entry. The hook, its no-fetch-for-a-dead-leaf rule and its "a refusal is a normal answer" idiom are unchanged; what changed is what an empty answer *means*, and both comments now say it. One citation row was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer entry is reachable now, and this card's account of *why* it was not is the correction that matters.** The `selectorKind`/`selectorId` props are gone. A live leaf's subject is read from the server by the new `useReviewSubject` hook, which calls `intentReviewEntries(repo, master, leaf)` and keeps `result.entries?.[0]`; the gate is now `live && subject`, and the liveness half was extracted into `leafIsLive` so both gated entries read one predicate. The gate is not weakened: a refusal, an empty list, a rejected promise or a non-live leaf all leave `subject` undefined and **no subject means no button**. The card records why that matters — the prop was the unreachable part, because `taskReader.tsx` and the master header pass no selector, so `live && selectorId` could never hold on any real navigation — and records the invariant the hook's own comment states: the id is a recorded identity inside the candidate the server resolved, so the hook chooses no candidate and invents no id. The revision of the previous paragraph is retained in place below in substance: the entry is still added beside the working/committed actions and never in their place, its target still carries the subject's recorded identity rather than a filesystem path, and the reviewer entry still reports no counters. No verification stamp was advanced, because no commit contains this body.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-09-20T13:43:00+02:00                           |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`       |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`       |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
@@ -135,10 +135,10 @@ that sets it, which is the boundary the two cards divide.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The target variant this route's type gained. | "review?: { selectorKind: ReviewSelectorKind; selectorId: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
-| The declaration's own statement that no change-set request comes from a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
-| **The reviewer entry's current gate: it appears beside the working/committed actions only when the leaf is live and the server returned a subject.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
-| **The identity the entry carries instead of a filesystem path — and the identity now comes from the server's own resolution, not from a caller.** | "selectorKind: subject.selector_kind"; "selectorId: subject.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:148-154 |
+| The target variant this route's type gained. | "review?: { selectorKind?: ReviewSelectorKind; selectorId?: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:44-44 |
+| The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44 |
+| **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:157-161 |
+| **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context.** | "selectorKind: subject.selector_kind"; "selectorId: subject.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:157-157; dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160 |
 | **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:252-260 |
 | **The one liveness predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
 
@@ -182,3 +182,22 @@ that sets it, which is the boundary the two cards divide.
   column-2/3 a read-only `@codemirror/merge` diff with split/inline/full-file/highlight-off toggles,
   code↔sidecar partner column), reusing the L2 File Viewer primitives; master scope is accumulated-only.
   Verification metadata pinned to the task base until closeout stamps the L4 code commit.
+
+## 260921-ICR-L2 The Review Target May Carry No Subject
+
+**Route meaning changed, narrowly: the change-set viewer's `ChangeSetTarget.review` field may now carry
+no selector.** Its type is `{selectorKind?: ReviewSelectorKind; selectorId?: string}` and the viewer's
+own behaviour is unchanged — it reads the field only to decide whether the target is a review at all, and
+the cockpit's takeover dispatch is what consumes the selector — but the field's contract is now stated
+where it is declared: its **presence** marks a review target, and an **empty object** is the task-context
+entry, the review opened from the task alone that lists the complete source inventory. That is the shape
+a task with no recorded invariant still has, and it is why the entry is no longer gated on a subject.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
+| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
+| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-36; dashboard/src/panels/review/ReviewSurface.tsx:409-476 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review field on a change-set target may now carry no selector, and its declaration records what that means: presence marks a review, an empty object is the task-context entry. The viewer's behaviour is unchanged. The section is appended at the end of this route's narrative, and the one row of this document that cited `ChangeSetViewer.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

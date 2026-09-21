@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
+| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -124,6 +124,9 @@ rather than growing a second one. The trailing comment states the omission that 
 canonical task context and one recorded subject, and never a filesystem path, because the candidate is
 resolved on the server and the browser must not be able to choose which dataset is reviewed.
 
+
+**The client gained the inventory's wire types and the three states that let a review exist without a subject.** `ReviewChangedFile` (the raw `path` exactly as Git recorded it — a tab or a newline inside it is part of the address — plus `status`, `content`, `mode_change` and an optional `detail`), `ReviewUnrepresentablePath` (`path_bytes`: the exact bytes in an ASCII-safe spelling, listed rather than dropped and never re-encoded) and `ReviewSourceInventory` (`state` `measured`/`unavailable`, the entries, `listed_total`, `detail`, `partial`, `command`, both tree ids and `unrepresentable_paths`), with `ReviewSourcePane.inventory` now required and first. `ComparisonIdentity` gained `knowledge_compared` and its three knowledge-half digests became optional, `ReviewKnowledgePane` gained `selection_state`/`selection_detail`, `ReviewStaleness.state` gained `not_compared`, and `ReviewPayload.comparison` became optional. `intentReview` sends **no selector parameters at all** when there is none, which is the task-context request; the same "a field the server omits is absent rather than defaulted" rule now covers an entire absent identity, and no fallback value was introduced for it.
+
 ### Conventions
 
 The module imports exactly two helpers — `getJson` and `qs` from `./files` — and declares everything
@@ -172,7 +175,7 @@ function, the two helpers it borrows from the file API, and the client that cons
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The header's own statement of what this file mirrors and the rule that a field the server omits is absent rather than defaulted. | `intentReview` | dashboard/src/data/review.ts:1-10; dashboard/src/data/review.ts:212-225 |
+| The header's own statement of what this file mirrors and the rule that a field the server omits is absent rather than defaulted. | `intentReview` | dashboard/src/data/review.ts:271-290; dashboard/src/data/review.ts:212-225 |
 | The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:12-13 |
 | **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` | dashboard/src/data/review.ts:15-20 |
 | The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` | dashboard/src/data/review.ts:22-26 |
@@ -180,19 +183,19 @@ function, the two helpers it borrows from the file API, and the client that cons
 | The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:46-58 |
 | The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:60-80 |
 | The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:82-92 |
-| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:94-107; dashboard/src/data/review.ts:129-137; dashboard/src/data/review.ts:158-166 |
+| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:94-107; dashboard/src/data/review.ts:180-189; dashboard/src/data/review.ts:210-218 |
 | The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` | dashboard/src/data/review.ts:109-121 |
-| **The count shape whose optional value beside its optional reason is the server's "states why rather than reporting a zero".** | `ReviewRemainingCount` | dashboard/src/data/review.ts:123-127 |
-| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:139-156 |
-| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:168-181 |
-| The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:183-210 |
-| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:215-228 |
-| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:231-236 |
-| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:238-246 |
-| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:252-260 |
+| **The count shape whose optional value beside its optional reason is the server's "states why rather than reporting a zero".** | `ReviewRemainingCount` | dashboard/src/data/review.ts:130-134 |
+| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:191-196; dashboard/src/data/review.ts:198-208 |
+| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:220-225; dashboard/src/data/review.ts:227-233 |
+| The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:235-247; dashboard/src/data/review.ts:249-256; dashboard/src/data/review.ts:258-270 |
+| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:271-290 |
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:291-296 |
+| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:298-311 |
+| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:312-320 |
 | The two helpers this client borrows rather than re-implementing: the thrower and the query encoder. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-98; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-58 |
-| The surface that consumes this client. | `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:21-22; dashboard/src/panels/review/ReviewSurface.tsx:351-367 |
+| The surface that consumes this client. | `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:1-25; dashboard/src/panels/review/ReviewSurface.tsx:351-367 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References
@@ -205,5 +208,7 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the client mirrors the new wire shape, and the request can now ask for the task's own review.** Added the inventory's three interfaces and the `source.inventory` field; made `comparison` optional with `knowledge_compared`; added `selection_state`, `not_compared` and the optional knowledge-half digests; and changed `intentReview` so it omits `selectorKind`/`selectorId` entirely when there is no subject, which is the task-context entry a leaf with no invariant still has. The two rules the header states are unchanged and now cover an absent identity as well as an absent field. Every row in the reference table was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the client gained the entry read, which is what makes the task view able to offer the reviewer at all.** The card now records `ReviewEntry` (the reviewed subject as the *server* selected it — a `ReviewSelectorKind`, a recorded id, the identity's own label and the operation's count, with **no path field on purpose**, because the browser never chooses the candidate), `ReviewEntryListResult` (a `state`/`operation`/task-context envelope whose refused form carries a `refusal` and no entries, so a refusal is a normal typed outcome rather than a thrown error), and `intentReviewEntries(repo, master, leaf, base = "")` — the second request this module exports, taking the task context alone because a selector is precisely what it is being asked for. The Conventions paragraph was corrected from "the module's one request" to two, and the row that said so now distinguishes the comparison request from the entry request. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-18T18:05+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): created this one-to-one card for the Intent Reviewer's browser client. It records the two rules the file's own header states — every type mirrors one model in `models/knowledge/review.py`, and **a field the server omits is absent here rather than defaulted**, so an unresolved reference stays unresolved on the client — plus the two boundaries a reader needs: it is a *read* client with **no store mutation** (it is not in `data/store.ts`, and the surface owns its own component state), and the one request names a task context and one recorded subject and **never a filesystem path**, because the candidate is resolved server-side. It also records that the two display unions (`ReviewStaleness`, `ReviewSubmission`) have no favourable member, so an absence cannot be rendered as a clearance. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

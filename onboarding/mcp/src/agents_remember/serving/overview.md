@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview      | `../../../overview.md`                         |
@@ -1318,10 +1318,10 @@ from it.
 | **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:54-58 |
 | The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:60-63 |
 | The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-99 |
-| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:102-117 |
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:108-108 |
-| The 400 a selector kind outside the admitted set gets. | `status_code` | mcp/src/agents_remember/serving/review.py:167-167 |
-| The 404 for a candidate that does not resolve. | `status_code` | mcp/src/agents_remember/serving/review.py:182-182 |
+| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:125-140 |
+| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:125-140 |
+| The 400 a selector kind outside the admitted set gets. | `status_code` | mcp/src/agents_remember/serving/review.py:143-217 |
+| The 404 for a candidate that does not resolve. | `status_code` | mcp/src/agents_remember/serving/review.py:143-217 |
 | **The registration that must precede the static mount and that takes both ports.** | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:120-136 |
 | **The entry port type: the task context in, one typed entry result out.** | `KnowledgeReviewEntriesPort` | mcp/src/agents_remember/serving/review.py:66-66 |
 
@@ -1361,7 +1361,7 @@ resolves nothing from it.
 | The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:63-63 |
 | The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-83 |
 | **The status mapping both routes inherit from the change-set routes; the signature now accepts either typed result and reads success as `refusal is None`.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:102-117 |
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:108-108 |
+| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:125-140 |
 | **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-190 |
 | **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-190 |
 | **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:137-143 |
@@ -1401,6 +1401,8 @@ whose after-side is a filesystem location, and its own `mode` says so. The two m
 | **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the refusal instead of a `HEAD` read, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:525-575; mcp/tests/test_knowledge_review_source_endpoints.py:578-601; mcp/tests/test_knowledge_review_source_endpoints.py:603-635 |
 
 ## Update History
+- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the row naming the transport case was re-pointed at the merged module's extent (`test_knowledge_review_surface.py:979-997`). No claim was re-worded, no anchor dropped and no stamp advanced.
+
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the committed leaf range is now the contract's two recorded commits (resolved by the new `serving/changeset_endpoints.py`) rather than the worktree `HEAD` fallback the earlier narrative describes, an unrecorded code endpoint is a named 404 that does not name the live head, an unrecorded memory endpoint degrades only its own half, `no-repository`/`unresolvable` stay refusals on both sides, and `mode=working` is unchanged. `serving/changeset.py`'s card carries the corresponding body correction and citation re-derivation. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: "def api_review_intent(" repointed to mcp/src/agents_remember/serving/review.py:146-146. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `SELECTOR_KINDS` repointed to mcp/src/agents_remember/serving/review.py:63-63. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2373,3 +2375,29 @@ The serving cutover is shared by the dashboard daemon, MCP-owning clients, bridg
 runners/adapters, and browser tabs; reloading only the dashboard can leave in-memory inbox/catalog
 schemas incompatible with durable rows. This is an operational contract, not a resource-polling
 change.
+
+## 260921-ICR-L2 The Review Route Admits "No Selector At All"
+
+**Route meaning changed: the Intent Reviewer's transport now has two admitted request shapes instead of
+one.** `review_request_from_query` took a required `selector_kind`/`selector_id` pair; both parameters
+are now optional, and **both absent** is the task context — the review is opened from the task alone and
+lists the complete source change inventory of the pair it resolves. One named kind with its id is still
+a reviewed subject, and a half-named selector or an unadmitted kind is still refused with `None`, so the
+route did not lose a refusal; it gained an answer.
+
+The route's `400 bad-request` body was extended with the option the caller actually has: `expected`
+names the two admitted kinds **or no selector at all**, `nextAction` says to name both parameters or
+omit both, and `offendingInput` falls back to whichever of the two was supplied, so a half-named pair is
+still reported with the value that was wrong. Nothing else on the route moved: the two port fields, the
+unwired `503`/refusal answers, the status mapping and the serializer are unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` | mcp/src/agents_remember/serving/review.py:83-122; mcp/src/agents_remember/models/knowledge/review.py:156-175 |
+| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:143-217 |
+| The status mapping and the serializer, unchanged by this leaf. | `_status_for`; `_json` | mcp/src/agents_remember/serving/review.py:125-140; mcp/src/agents_remember/serving/review.py:220-223 |
+| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:362-437; mcp/src/agents_remember/application/review_task_context.py:59-104 |
+| **The case that asserts the omission is admitted beside the two kinds, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_surface.py:979-997; mcp/tests/test_knowledge_review_source_endpoints.py:674-750 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review route now admits a third answer — omitting **both** selector parameters — which is the task context, and its `400` body names that option while still reporting a half-named selector with the value that was wrong. The section is appended at the end of this route's narrative; the rows above were derived against the candidate, and the five rows of this route that cited `serving/review.py` by line were re-derived in the same pass because the file grew by 30 lines above the registrar. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

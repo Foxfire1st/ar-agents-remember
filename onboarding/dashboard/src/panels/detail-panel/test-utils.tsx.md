@@ -5,9 +5,10 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -40,6 +41,9 @@ Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new
 `seedProjection` assembles a workspace projection; `seedPromotedLeaf` and
 `seedSeriesOrdering` prepare the promoted-identity and ordering scenarios;
 `stubCounters` installs deterministic counter hooks.
+
+
+**`stubCounters` gained one optional argument, and it is what lets a test choose which answer the entry read gives.** `stubCounters(reviewEntry?: unknown)` answers `/api/review/intent/entries` with whatever the caller passes — a recorded subject, an empty list, or a refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
 
 ### Conventions
 
@@ -85,6 +89,8 @@ No helper behavior changed. `seriesNode()` now defaults the required `discardedC
 existing required `seats` and repository-qualified topology defaults remain intact.
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **one optional argument on the counter stub.** `stubCounters(reviewEntry?)` now optionally answers the review-entry route, so the bar's three entry cases can present a subject, an empty list and a refusal through the same fixture; omitted, the stub behaves exactly as before. The row in the reference table was re-derived against this candidate. **Stamp accounting:** the previous verification stamp is left as it was, because nothing in this leaf is committed; the claims this card's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `/api/requirements/list` branch + requirement-listing argument added to the shared `stubNotes` fixture.
 

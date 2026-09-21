@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
@@ -188,8 +188,8 @@ inside agents-remember.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:798-799; dashboard/src/cockpit/Cockpit.tsx:801-801 |
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:794-794; dashboard/src/cockpit/Cockpit.tsx:800-800 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:800-800; dashboard/src/cockpit/Cockpit.tsx:801-801; dashboard/src/cockpit/Cockpit.tsx:803-803 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
 | The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
@@ -203,7 +203,7 @@ inside agents-remember.
 | The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
-| The hand-kept snapshot payload provides the generated timestamp. | "\"generatedAt\": \"2026-06-14T09:01:00+00:00\"" | dashboard/src/fixtures/snapshot.json:1790-1790 |
+| The hand-kept snapshot payload provides the generated timestamp. | "\"generatedAt\": \"2026-06-14T09:01:00+00:00\"" | dashboard/src/fixtures/snapshot.json:55-55 |
 | `Dot` renders its state glyph inside `aria-hidden="true"`. | `Dot`; "aria-hidden=\"true\"" | dashboard/src/grammar/Dot.tsx:119-129 |
 ## Current L5I Route State
 
@@ -358,10 +358,10 @@ judgment and publishes no assessment.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
+| **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160 |
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
-| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:252-260; dashboard/src/data/review.ts:231-236 |
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:312-320; dashboard/src/data/review.ts:291-296 |
 
 ## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
 
@@ -396,14 +396,14 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The child route's one component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:339-346 |
+| The child route's one component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:409-409 |
 | Pane 1, and the two collections it keeps apart. | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:172-208 |
-| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:210-250 |
-| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:252-301 |
-| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:203-203 |
-| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:303-323 |
-| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:325-337 |
-| The one renderer it reuses, fed only two present sides. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:22-22 |
+| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:279-279 |
+| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:322-322 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:211-366 |
+| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:373-373 |
+| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
+| The one renderer it reuses, fed only two present sides. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:1-25 |
 
 ## Update History
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the task-view entry into the review panel is reachable now, and this route gained the section that records how.** The gate in `detail-panel/changeSetBar.tsx` is `live && subject`: the `selectorKind`/`selectorId` props are gone and a live leaf's subject is read from `GET /api/review/intent/entries` by a new `useReviewSubject` hook. The card records why the old prop gate could never hold — `taskReader.tsx` and the master header pass no selector — and why the swap is not a weakening: a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. It also records that liveness was extracted into one `leafIsLive` predicate shared with the working change-set action, and that the button's target carries the subject's recorded kind and id rather than a path, so the browser still never chooses the candidate. The L22 section on the panel itself is retained unchanged below. No verification stamp was advanced.
@@ -2779,3 +2779,29 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
   (pivot). Verification metadata pinned until closeout stamps the 5d code commit.
   co-located Panda styling, with React Aria `ListBox` (LifecycleList) and `ToggleButtonGroup`
   (pivot). Verification metadata pinned until closeout stamps the 5d code commit.
+
+## 260921-ICR-L2 The Review Panel Renders The Whole-Task Inventory
+
+**Route meaning changed: the review panel can render a review that compared nothing, and its source pane
+now opens with the complete change inventory.** `panels/review/ReviewSurface.tsx`: `ReviewTarget`'s two
+selector fields became optional and the header prints `whole task (no subject selected)`; the Knowledge
+pane prints the comparison identity when there is one and `no knowledge comparison was made` with the
+server's own selection detail when there is not; and three render helpers were added — `Inventory` (all
+three inventory states, never an empty list, with the count, the byte-form count, the server's own reason
+and the reproducing command), `inventoryEntry` (the path exactly as published, with its status and its
+renderability) and `byteNamedEntry` (a name this surface cannot carry as text, printed by its exact byte
+form with the stated reason). `panels/detail-panel/changeSetBar.tsx` offers the entry for every live
+leaf, and `panels/detail-panel/test-utils.tsx` answers the entry read with whatever answer a case wants
+to exercise.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-36; dashboard/src/panels/review/ReviewSurface.tsx:409-476 |
+| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:252-277; dashboard/src/panels/review/ReviewSurface.tsx:221-237; dashboard/src/panels/review/ReviewSurface.tsx:238-251 |
+| **The source pane that now opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:279-320; dashboard/src/panels/review/ReviewSurface.tsx:178-220 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject as a refinement.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
+| The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
+| The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review panel renders the whole-task source inventory in all three of its states (including the byte-form rows for names it cannot carry as text), states that no comparison was made when the payload carries none, and survives a target with no selector; the detail-panel entry is offered for every live leaf. The section is appended at the end of this route's narrative, and the ten rows of this document that cited `ReviewSurface.tsx` by line were re-derived against the candidate in the same pass — this leaf moved every helper below the Knowledge pane. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

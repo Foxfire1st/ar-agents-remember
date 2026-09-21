@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `702714fc05363cb28eacaf101ba8384475a6aa56`|
-| lastVerifiedCommitDate |  2026-09-21T13:27:46+02:00|
+| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
+| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview | `../../../overview.md` |
@@ -1596,7 +1596,7 @@ every other read in this route uses.
 | **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** | `list_invariants` | mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | **The same enumeration for the surface's other admitted subject kind.** | `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
-| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:206-279; mcp/src/agents_remember/application/knowledge_review.py:316-333 |
+| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:301-318 |
 
 ## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
 
@@ -1673,3 +1673,36 @@ disagrees with the stored row, before any plan exists. The measured defect was a
 construction, and a matching reuse still succeeds without adding an anchor row. **No memory-layer
 behaviour outside this read changed**, and allocation-per-creation, revision-keyed anchor identity and
 the separate claim identities are untouched.
+
+## 260921-ICR-L2 The Expansion's Observation Is One Implementation, And A Changed Path Carries Its Status
+
+**Route meaning changed: this route's display vocabulary now describes a *status-bearing* change, and
+the observation behind it has one implementation.** `memory/knowledge/diff_display.py` gained
+`TreeChange` — the raw filename exactly as Git recorded it, Git's status, whether the content can be
+rendered, a mode-change flag and the reason an `unknown` is unknown — plus three fields on `TreePaths`:
+`entries` (the same measurement at full resolution, held in agreement with `paths` by a construction
+check), `partial` (the path set was measured while part of it could not be reported whole) and
+`unrepresentable` (the changed paths whose name is not valid UTF-8, kept in full, with
+`unrepresentable ⇒ partial` enforced at construction). `_expansion_detail` states a partial
+observation's limit beside its counts, so a smaller count is never read as the whole change set.
+
+**The advertised command changed with it.** `TREE_DIFF_COMMAND` is now
+`git diff --raw -z --no-renames {before_tree} {after_tree}` — the same delimiter-safe interface the
+measurement reads — because the line-oriented `--name-only` form quotes and escapes a pathname
+containing a tab or a newline, so a caller who ran the advertised command would hold a different string
+from the address the response lists and the address the same file is expanded by. The measurement itself
+moved to `application/review_source_inventory.py`, and `application/knowledge_diff.py`'s
+`git_tree_difference_probe` — the production `TreeDifferenceProbe` this route's expansion is reached
+through — is now a one-line delegation to it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** | `TreeChange` | mcp/src/agents_remember/memory/knowledge/diff_display.py:101-120 |
+| **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/diff_display.py:123-169 |
+| **The advertised command, now the delimiter-safe interface the measurement itself reads.** | `TREE_DIFF_COMMAND` | mcp/src/agents_remember/memory/knowledge/diff_display.py:75-78 |
+| **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** | `_expansion_detail` | mcp/src/agents_remember/memory/knowledge/diff_display.py:479-503 |
+| **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:158-173; mcp/src/agents_remember/application/review_source_inventory.py:193-235 |
+| The cases that measure the observation on real repositories, including the name a line-oriented interface loses and the non-UTF-8 boundary. | `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:1010-1035; mcp/tests/test_knowledge_diff_boundaries.py:1118-1170 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The expansion's vocabulary gained a status-bearing change entry and the two-list honesty rule (entries agreeing with paths; an unrepresentable name implying a partial observation), the advertised reproducing command became the delimiter-safe interface the measurement reads, and the production probe this route's expansion is reached through is now a delegation to the review's own observation. The section is appended at the end of this route's narrative and the row above that cited `knowledge_diff.py` was re-derived against the candidate. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

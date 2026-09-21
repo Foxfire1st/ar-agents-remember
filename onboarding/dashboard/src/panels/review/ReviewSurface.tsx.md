@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T18:05+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
+| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -116,6 +116,9 @@ text.
 to the pane grid, so the surface inherits the takeover layout rather than declaring a second one, while
 the component is mounted under its own `data-view="intent-review"` on the cockpit side.
 
+
+**The surface learned to render a review that compared nothing, and to render an inventory.** `ReviewTarget`'s two selector fields became optional, and the header prints `whole task (no subject selected)` instead of a kind and id when there is none. `KnowledgePane` no longer reads `payload.comparison.reference` unconditionally: it prints the comparison identity when there is one and `no knowledge comparison was made · <selection_detail>` when there is not, under a new `review-selection` test id. Three new render helpers were added and `SourcePane` now opens with them: `Inventory` — which renders all three inventory states (measured, partial, unavailable) and never as an empty list, printing `listed_total`, the `+ N by byte form` count, the server's own `detail` and the reproducing `command` with both tree ids; `inventoryEntry` — one changed path, printed exactly as published, with its status and its renderability beside it; and `byteNamedEntry` — a changed path whose name this surface cannot carry as text, printed by its exact byte form with its status and the stated reason. The surface root's `data-comparison` uses optional chaining, so an absent identity is an absent attribute rather than a crash.
+
 ### Conventions
 
 The component imports its types and its one function from `../../data/review` and its one reused
@@ -169,23 +172,23 @@ sub-components, the refusal block, and the cockpit and change-set files that mou
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The header's own statement that the surface is display-only, produces no conclusion of its own, and reuses `DiffPane` only when both sides are present. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:1-6; dashboard/src/panels/review/ReviewSurface.tsx:182-195 |
-| **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:24-30; dashboard/src/panels/review/ReviewSurface.tsx:339-346 |
-| The takeover class shared with the change-set viewer. | `TAKEOVER` | dashboard/src/panels/review/ReviewSurface.tsx:32-32; dashboard/src/panels/review/ReviewSurface.tsx:394-398 |
-| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `load`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:347-371 |
+| **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:24-30; dashboard/src/panels/review/ReviewSurface.tsx:409-476 |
+| The takeover class shared with the change-set viewer. | `TAKEOVER` | dashboard/src/panels/review/ReviewSurface.tsx:38-38; dashboard/src/panels/review/ReviewSurface.tsx:394-398 |
+| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `load`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:409-476; dashboard/src/panels/review/ReviewSurface.tsx:1-25 |
 | The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` | dashboard/src/panels/review/ReviewSurface.tsx:34-62 |
-| **The helper that prints a missing side as its own named state and never as an empty diff.** | `sideState` | dashboard/src/panels/review/ReviewSurface.tsx:64-69 |
+| **The helper that prints a missing side as its own named state and never as an empty diff.** | `sideState` | dashboard/src/panels/review/ReviewSurface.tsx:70-75 |
 | The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:71-82 |
 | The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:84-115; dashboard/src/panels/review/ReviewSurface.tsx:147-170 |
 | The mechanical half of pane 1: the conditions each side recorded, the retained revisions per side, and every field transition with `(absent)` for a missing value. | `KnowledgeFacts` | dashboard/src/panels/review/ReviewSurface.tsx:117-145 |
 | **Pane 1, with the both-sides-present gate on the diff renderer.** | `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:172-208 |
-| Pane 2: the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, and the unattributed paths and expansion. | `SourcePane` | dashboard/src/panels/review/ReviewSurface.tsx:210-250 |
-| Pane 3: the two independent absence states, the observations, and the source-inspection sentence. | `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:252-301 |
-| **The staleness and submission block, where neither state has a favourable member.** | `SubmissionBlock` | dashboard/src/panels/review/ReviewSurface.tsx:303-323 |
-| The typed refusal rendered beside the error line rather than instead of it. | `RefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:325-337 |
+| Pane 2: the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, and the unattributed paths and expansion. | `SourcePane` | dashboard/src/panels/review/ReviewSurface.tsx:279-320 |
+| Pane 3: the two independent absence states, the observations, and the source-inspection sentence. | `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:322-371 |
+| **The staleness and submission block, where neither state has a favourable member.** | `SubmissionBlock` | dashboard/src/panels/review/ReviewSurface.tsx:373-393 |
+| The typed refusal rendered beside the error line rather than instead of it. | `RefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:395-407 |
 | The reused diff renderer itself, imported from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48 |
-| The client this component reads through. | `intentReview` | dashboard/src/data/review.ts:215-225 |
+| The client this component reads through. | `intentReview` | dashboard/src/data/review.ts:271-290 |
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-590; dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it now reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:148-154; dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it now reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References
 
@@ -197,4 +200,6 @@ namespace's records and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **R02's rendering half: the inventory is displayed in all three of its states, and a review with no comparison identity renders as itself.** Added `Inventory`, `inventoryEntry` and `byteNamedEntry`; made `SourcePane` open with the inventory; made the Knowledge pane's selection line survive an absent `comparison` by naming that no comparison was made; made `ReviewTarget`'s selectors optional and the header print `whole task (no subject selected)`; and made the root's `data-comparison` optional-chained. The card's Purpose and Logic were re-pointed accordingly and every row in the reference table was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-18T18:05+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): created this one-to-one card for the Intent Reviewer's three-pane display. It records that the surface is **display-only** — no POST, no form, no submit handler, and a submission block that prints the existing authority's path rather than offering a control — and the five renderings a reader must not flatten: a missing side is printed as its own named state (so `DiffPane` is fed only when both sides are `present`), an unresolved attribution is printed rather than dropped, the remaining counts print `not measured (reason)` rather than a zero, the authored records and the mechanical signals sit under their own headings in their own lists, and the stale/submission block prints neither state as favourable. It also records that the component is mounted through the cockpit's change-set takeover under `data-view="intent-review"` rather than through a route of its own. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

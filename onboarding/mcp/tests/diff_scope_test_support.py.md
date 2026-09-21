@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/diff_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,6 +83,9 @@ that is a mismatch.
 the moved/unchanged/removed/added/outside-selection claim ids, the sibling invariant, and the four
 paths), and `DiffSide` carries one side's fixture, database path, Git root, tree id and blob map.
 
+
+**One new helper: the byte-safe independent observation both review suites now compare against.** `independent_changed_records(root, before, after)` runs `git diff --name-status -z --no-renames <before> <after>` through the **production** runner and returns `{path: status-letter}`. Two deliberate choices are recorded in its docstring: it is a *different* Git question from the inventory's own `--raw -z`, so agreement between the two is an observation about the two trees rather than a restatement of one implementation; and it goes through `run_git` rather than the module's strict fixture helper, because `_git` decodes strictly while a pathname is bytes — a name that is not valid UTF-8 would raise there and the independent observation would be lost exactly where it is needed. It was registered nowhere new: it lives in this module's existing governed artifact and adds no contract or artifact row.
+
 ### Conventions
 
 - **A fixture is not a probe.** `_require` fails loudly when a fixture-building store operation does not
@@ -139,7 +142,7 @@ repository source and package-local evidence only.
 | **The added claim, whose recorded identity is the blob the candidate tree really holds.** | `_add_successor_claim` | mcp/tests/diff_scope_test_support.py:388-425 |
 | The claim row digest recomputed through the production sealer rather than restated here. | `_claim_row_digest` | mcp/tests/diff_scope_test_support.py:428-463 |
 | **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** | `_write_candidate_tree`; `_borrow_objects`; `_git` | mcp/tests/diff_scope_test_support.py:466-513 |
-| **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:516-523 |
+| **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** | `_require` | mcp/tests/diff_scope_test_support.py:534-541 |
 | **The baseline fixture this module builds on.** | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-283 |
 | The fixture value the baseline side is read from. | `ReadScopeFixture` | mcp/tests/read_scope_test_support.py:174-239 |
 | **The contract this module's artifact row is registered under.** | "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1396-1396 |
@@ -176,6 +179,8 @@ repository's history.
 | The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1419-1419 |
 | The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). | "contract:knowledge-diff-cases"; "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1396-1396; mcp/tests/evidence-lifecycle.toml:1419-1419 |
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **one additive helper, `independent_changed_records`.** It is the shared, byte-safe independent Git observation the boundary module and the production endpoint module both assert against, and it is deliberately read through the production runner rather than this module's strict `_git` helper so a non-UTF-8 pathname does not raise inside the observation itself. Nothing registered changed: no new contract row, no new artifact row, no lane row. The rows in the reference table were re-derived against this candidate. **Stamp accounting:** the verification rows still name `702714fc05363cb28eacaf101ba8384475a6aa56`, the last real commit on this line, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only.** `260921-ICR-L1` appended two consumer rows to `mcp/tests/evidence-lifecycle.toml` (at `:1404` and `:1435`), so a cited line below them reads one or two lines lower; this card's claim rows that cite that catalogue were re-derived under that mapping from the anchor's real position. No claim was re-worded, no row was deleted, and the generated history entries in this card keep the ranges they were written with. No verification stamp was advanced.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1396-1396. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:knowledge-diff-cases" repointed to mcp/tests/evidence-lifecycle.toml:1396-1396. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.

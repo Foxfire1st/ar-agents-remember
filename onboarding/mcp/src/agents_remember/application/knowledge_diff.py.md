@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_diff.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
-| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ Four entry points, and each answers a different caller:
 | Entry point | What it does |
 | --- | --- |
 | `open_diff_side(database_path, repository_id, *, repository_root, code_tree_id)` | resolves **one side** from the identity the file at that path actually holds — the same discipline as `open_read_context`, so a caller cannot hand-write the snapshot a side is verified against. A worktree candidate database is a supported side: nothing here requires a commit, a ledger row or a leaf |
-| `git_tree_difference_probe(before, after)` | the production `TreeDifferenceProbe`: the paths two exact code trees differ at, addressed by object id, never by a branch, a working tree or `HEAD` |
+| `git_tree_difference_probe(before, after)` | the production `TreeDifferenceProbe`, now **one call**: the observation is `application/review_source_inventory.py`'s `tree_difference_observation`, which the review's own inventory reads too. Two implementations of "what did these two trees change" would be two answers to one question, and re-parsing paths is how a name containing a tab or a newline stops being an address |
 | `diff_knowledge_scope(request, *, before_path, after_path, probe=None)` | the operation itself |
 | `diff_row_counts(database_path)` | one row count per canonical table, read through the same read-only handle — the measurement half of "a refused comparison persisted nothing" |
 
@@ -52,6 +52,13 @@ a resolved context and a filesystem location the same value.
 4. `select_recorded_scope` runs **once per side**, on that side's own connection.
 5. `compare_selected_scopes` builds the union; the per-side absences are collected beside it.
 6. An empty union refuses; otherwise `build_display` runs, and the page is cut at the cursor's position.
+
+**The one Git question this seam asks is now asked in one place.** `git_tree_difference_probe` delegates to
+`tree_difference_observation`, so the comparison's expansion and the review's status-bearing inventory read
+the *same* observation rather than two that could disagree: the paths an expansion lists are the paths the
+inventory measured, from the same two object ids, through the same NUL-delimited interface. What this
+module still owns is the seam's *shape* — a callable `TreeDifferenceProbe` a caller may substitute — not
+the measurement behind it.
 
 ### The four boundaries this seam owns
 
@@ -113,9 +120,12 @@ snapshot, a SQLite failure, or a file that could not be read at all.
 - `_SELECTOR_KINDS` names each seed kind by its own discriminator, so a selector kind added later is
   reported by its own name rather than as a neighbouring one, and `_selector_id` writes the narrowing out
   rather than reaching through `getattr`.
-- `_TREE_DIFF_ARGS` carries `--no-renames` deliberately: a rename is a deletion of one path and an
-  addition of another, and reporting a rename would attribute the candidate's **new** path to a baseline
-  path that no recorded anchor names.
+- `_TREE_DIFF_ARGS` used to carry the probe's Git arguments here; **this leaf deleted it**, because the
+  observation moved to `application/review_source_inventory.py` and the two Git questions it asks
+  (`--raw -z` for status and modes, `--numstat -z` for whether content is text) are now stated once,
+  beside the measurement the review's own inventory reads. `--no-renames` is still deliberate and still
+  lives there: a rename is a deletion of one path and an addition of another, and reporting a rename would
+  attribute the candidate's **new** path to a baseline path that no recorded anchor names.
 
 ### Invariants And Boundaries
 
@@ -155,23 +165,23 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The row-count measurement, and the one statement shape this module runs that changes nothing.** | `diff_row_counts`; `ROW_COUNT_TEMPLATE` | mcp/src/agents_remember/application/knowledge_diff.py:826-841; mcp/src/agents_remember/application/knowledge_diff.py:120-120 |
-| **The side resolver: the identity comes from the file, and the root/tree pair is supplied together or not at all.** | `open_diff_side` | mcp/src/agents_remember/application/knowledge_diff.py:128-159 |
-| **The production probe, the two trees addressed by object id, and the never-substitute-`HEAD` rule with `--no-renames`.** | `git_tree_difference_probe`; `_TREE_DIFF_ARGS` | mcp/src/agents_remember/application/knowledge_diff.py:162-196; mcp/src/agents_remember/application/knowledge_diff.py:125-125 |
+| **The row-count measurement, and the one statement shape this module runs that changes nothing.** | `diff_row_counts`; `ROW_COUNT_TEMPLATE` | mcp/src/agents_remember/application/knowledge_diff.py:803-819; mcp/src/agents_remember/application/knowledge_diff.py:121-121 |
+| **The side resolver: the identity comes from the file, and the root/tree pair is supplied together or not at all.** | `open_diff_side` | mcp/src/agents_remember/application/knowledge_diff.py:124-155 |
+| **The production probe, now a one-line delegation: the two trees addressed by object id, the never-substitute-`HEAD` rule, and the delimiter-safe observation the review's own inventory reads too.** | `git_tree_difference_probe`; `tree_difference_observation`; `source_tree_side` | mcp/src/agents_remember/application/knowledge_diff.py:158-173; mcp/src/agents_remember/application/review_source_inventory.py:193-235; mcp/src/agents_remember/application/review_source_inventory.py:167-175 |
 | **The one operation: the ordered sequence, the injectable probe default and the typed catch of selection/storage/SQLite/OS failures.** | `diff_knowledge_scope` | mcp/src/agents_remember/application/knowledge_diff.py:199-253 |
-| The four input classes a failed read is mapped onto, each naming its own fact. | `_reading_failure` | mcp/src/agents_remember/application/knowledge_diff.py:256-279 |
-| The binding computed before either file is opened, and the per-side effective selector it digests. | `_binding`; `_effective_selector`; `_resolve_sides` | mcp/src/agents_remember/application/knowledge_diff.py:310-333; mcp/src/agents_remember/application/knowledge_diff.py:282-307 |
+| The four input classes a failed read is mapped onto, each naming its own fact. | `_reading_failure` | mcp/src/agents_remember/application/knowledge_diff.py:233-256 |
+| The binding computed before either file is opened, and the per-side effective selector it digests. | `_binding`; `_effective_selector`; `_resolve_sides` | mcp/src/agents_remember/application/knowledge_diff.py:259-284; mcp/src/agents_remember/application/knowledge_diff.py:282-307 |
 | The values that must not be crossed: the snapshot pair, the connection pair and the whole opened comparison. | `SnapshotPair`; `OpenPair`; `OpenComparison`; `_compare_inside_one_snapshot_pair` | mcp/src/agents_remember/application/knowledge_diff.py:337-394 |
-| **The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, refuse an empty union, display, page.** | `_select_and_compare`; `_select_side` | mcp/src/agents_remember/application/knowledge_diff.py:397-498 |
-| **Both sides verified before either is selected, and the three separate comparisons inside each.** | `_any_side_snapshot_refusal`; `_side_snapshot_refusal` | mcp/src/agents_remember/application/knowledge_diff.py:463-479; mcp/src/agents_remember/application/knowledge_diff.py:744-777 |
-| **The page arithmetic: the comparison total on every page, the cumulative returned, the display's own two numbers, and no continuation a page cannot serve.** | `_page` | mcp/src/agents_remember/application/knowledge_diff.py:501-545 |
-| The per-side absence vocabulary and the recorded-but-empty selection served rather than refused. | `_side_absences`; `_side_absence_refusal`; `_selector_is_recorded`; `_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_diff.py:556-635 |
-| **The empty comparison refused rather than reported as "nothing changed", with the contributing side absences named.** | `_empty_comparison`; `_absence_naming_both` | mcp/src/agents_remember/application/knowledge_diff.py:675-706 |
-| **The cursor check order: policy, selector, filter, then the snapshot pair.** | `_cursor_mismatch` | mcp/src/agents_remember/application/knowledge_diff.py:709-741 |
-| The typed refusal constructors that bind a refusal to the comparison identity, and the one that cannot bind because a side never resolved. | `_unusable`; `_refused`; `_refused_without_binding` | mcp/src/agents_remember/application/knowledge_diff.py:780-819 |
+| **The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, refuse an empty union, display, page.** | `_select_and_compare`; `_select_side` | mcp/src/agents_remember/application/knowledge_diff.py:397-498; mcp/src/agents_remember/application/knowledge_diff.py:374-437 |
+| **Both sides verified before either is selected, and the three separate comparisons inside each.** | `_any_side_snapshot_refusal`; `_side_snapshot_refusal` | mcp/src/agents_remember/application/knowledge_diff.py:440-456; mcp/src/agents_remember/application/knowledge_diff.py:721-754 |
+| **The page arithmetic: the comparison total on every page, the cumulative returned, the display's own two numbers, and no continuation a page cannot serve.** | `_page` | mcp/src/agents_remember/application/knowledge_diff.py:478-522 |
+| The per-side absence vocabulary and the recorded-but-empty selection served rather than refused. | `_side_absences`; `_side_absence_refusal`; `_selector_is_recorded`; `_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_diff.py:556-635; mcp/src/agents_remember/application/knowledge_diff.py:533-560 |
+| **The empty comparison refused rather than reported as "nothing changed", with the contributing side absences named.** | `_empty_comparison`; `_absence_naming_both` | mcp/src/agents_remember/application/knowledge_diff.py:675-706; mcp/src/agents_remember/application/knowledge_diff.py:652-674 |
+| **The cursor check order: policy, selector, filter, then the snapshot pair.** | `_cursor_mismatch` | mcp/src/agents_remember/application/knowledge_diff.py:686-718 |
+| The typed refusal constructors that bind a refusal to the comparison identity, and the one that cannot bind because a side never resolved. | `_unusable`; `_refused`; `_refused_without_binding` | mcp/src/agents_remember/application/knowledge_diff.py:780-819; mcp/src/agents_remember/application/knowledge_diff.py:757-764; mcp/src/agents_remember/application/knowledge_diff.py:767-783 |
 | **The storage layer this seam delegates to: R07's one selection policy, applied per side.** | `select_recorded_scope` | mcp/src/agents_remember/memory/knowledge/read.py:193-238 |
 | **The union comparison and the display builder this seam calls.** | `compare_selected_scopes` | mcp/src/agents_remember/memory/knowledge/diff.py:200-264 |
-| **The display builder, which turns one comparison into a page's items, omissions and expansion.** | `build_display` | mcp/src/agents_remember/memory/knowledge/diff_display.py:139-169 |
+| **The display builder, which turns one comparison into a page's items, omissions and expansion.** | `build_display` | mcp/src/agents_remember/memory/knowledge/diff_display.py:203-233 |
 | **The node that measures a real candidate write refusing its continuation, and the node that measures a side naming another snapshot of its own file refusing before any page.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:325-363; mcp/tests/test_knowledge_diff_boundaries.py:438-475 |
 | The nodes that measure a missing side refusing without a substitute, a continuation against another selector returning no page, and a small budget not shrinking the totals. | "test_a_missing_side_refuses_and_substitutes_no_other_snapshot"; "test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page"; "test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals" | mcp/tests/test_knowledge_diff_boundaries.py:303-322; mcp/tests/test_knowledge_diff_boundaries.py:408-435; mcp/tests/test_knowledge_diff_boundaries.py:257-297 |
 | **The node that measures the paging rule through the public seam: a page of a selection is what the comparison displays, not what it selected.** | "test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected" | mcp/tests/test_knowledge_diff_boundaries.py:708-749 |
@@ -192,6 +202,8 @@ the module never consults a remote.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the probe became a delegation, and the line-oriented Git interface left this module.** `git_tree_difference_probe` is now one call to `application/review_source_inventory.py`'s `tree_difference_observation`, so the comparison's expansion and the review's own inventory read one measurement instead of two that could disagree; the private `_TREE_DIFF_ARGS` (`diff --name-only --no-renames`) and the `splitlines()` that consumed it are **deleted**, and the two Git questions the observation now asks (`--raw -z` for status and modes, `--numstat -z` for renderability) are stated once, beside the measurement. The consequence the card now records: a name containing a tab or a newline survives as the address it is expanded by, because the interface that reads paths is NUL-delimited; over the same real pair the removed `--name-only` interface returned `"src/tab\tnewline\nname.py"` (quoted and escaped) for a file the leaf holds. The two ranges this moved were re-derived against this candidate: the deleted constant's paragraph in Conventions and the reference row for the probe, which now cites the observation it delegates to. **Stamp accounting:** the verification rows still name `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`, the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; the claims whose evidence this leaf's own change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's application seam — the route's **sixth** composition seam, with four entry points (`open_diff_side`, `git_tree_difference_probe`, `diff_knowledge_scope`, `diff_row_counts`). It records the four boundaries the seam owns: **R07's selection run twice** with the per-side exact-revision address as the only addition to the selection contract; **the binding as the invalidation** (a candidate whose bytes moved presents another `after` identity and is refused rather than continued); **a missing side refuses with no `HEAD` substituted** and an absent/unreadable file refused without a binding at all; and **one side's absence reported, not raised**, with the operation refusing outright only when neither side selected anything. It states the ordered sequence with the two properties that make it safe (both sides verified **before either is selected**; the request-level cursor checks decided **before** the comparison binding so a caller who changed the question is told that), the three separate snapshot comparisons per side, the page arithmetic (`items_total` on every page, the display's own two numbers travelling beside it), the two R07 absence codes with the recorded-but-empty selection served rather than refused, the four typed failure classes `_reading_failure` maps, and the two non-claims the module's own docstring carries. It also records that the wiring boundary did **not** move — like its five siblings the seam has **no non-test importer in `mcp/src`** and introduces no MCP tool name. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

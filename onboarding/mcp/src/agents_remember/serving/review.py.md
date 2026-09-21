@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
+| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -133,6 +133,9 @@ normalized later. The `bad-request` body for an unadmitted selector echoes `offe
 selectorKind` and `expected: ", ".join(SELECTOR_KINDS)`, so the refusal names what was sent and what
 would have been admitted.
 
+
+**The transport now admits two shapes, and they are different questions.** `review_request_from_query` takes `selector_kind` and `selector_id` as **optional**: both absent is the task context — the review is opened from the task alone and lists the complete source change inventory of the pair it resolves — and one named kind with its id is a reviewed subject. A half-named selector (`selectorKind` without `selectorId`) and a kind this surface does not review are both still refused with `None` rather than guessed at, because a caller that asked for a specific subject and received a whole-task review would be reading an answer to a question it did not ask. The route's two query parameters are declared `str | None` with `None` defaults, and its `400 bad-request` body was extended with the option the caller actually has: `expected` names the two admitted kinds **or no selector at all**, `nextAction` says to name both parameters or omit both, and `offendingInput` falls back to whichever of the two was supplied so a half-named pair is still reported with the value that was wrong.
+
 ### Conventions
 
 The module imports its vocabulary rather than declaring it: `KnowledgeReviewResult`,
@@ -194,20 +197,20 @@ supplies, and the cases that drive the routes with and without an adapter.
 | --- | --- | --- |
 | The shim's own statement of what it decides (nothing), why the ports exist rather than direct imports, and the fact that no path is accepted. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:1-30; mcp/src/agents_remember/serving/review.py:51-63 |
 | The published surface: two route constants, two port types, one parser and one registrar. | `__all__` | mcp/src/agents_remember/serving/review.py:40-49 |
-| **The two admitted selector kinds and the one parse that maps them onto the read operation's own seeds, returning `None` for every other kind.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` | mcp/src/agents_remember/serving/review.py:83-99; mcp/src/agents_remember/models/knowledge/read.py:1-60 |
+| **The two admitted selector kinds and the one parse that maps them onto the read operation's own seeds, returning `None` for every other kind.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` | mcp/src/agents_remember/serving/review.py:83-99; mcp/src/agents_remember/models/knowledge/read.py:1-60; mcp/src/agents_remember/serving/review.py:18-39 |
 | The comparison port type: one typed request in, one typed result out. | `KnowledgeReviewPort`; `ReviewSurfaceRequest`; `KnowledgeReviewResult` | mcp/src/agents_remember/serving/review.py:65-65; mcp/src/agents_remember/models/knowledge/review.py:145-158; mcp/src/agents_remember/models/knowledge/review.py:574-589 |
 | **The entry port type: the task context alone and no selector, because discovering the subject is what that call is for — and the typed entry result it returns.** | `KnowledgeReviewEntriesPort`; `ReviewEntryListResult` | mcp/src/agents_remember/serving/review.py:66-66; mcp/src/agents_remember/models/knowledge/review.py:592-620 |
-| **The result-to-status mapping derived from the refusal's own published code, with the four candidate codes — now including `subject_unresolved` — going to 404 and success read as `refusal is None` so one mapping serves both typed results.** | `_status_for` | mcp/src/agents_remember/serving/review.py:102-117 |
-| **The registrar: the comparison route's missing-port `503`, the unadmitted-selector `400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:120-136; mcp/src/agents_remember/serving/review.py:146-190 |
-| **The entry route's handler: it takes the task context alone and answers an unwired process with `_UNWIRED_ENTRIES` rather than an empty list.** | `api_review_intent_entries`; `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:137-143; mcp/src/agents_remember/serving/review.py:68-80 |
-| The one serializer, which keeps an omitted field absent rather than `null` and so serves both result types. | `_json` | mcp/src/agents_remember/serving/review.py:193-196 |
+| **The result-to-status mapping derived from the refusal's own published code, with the four candidate codes — now including `subject_unresolved` — going to 404 and success read as `refusal is None` so one mapping serves both typed results.** | `_status_for` | mcp/src/agents_remember/serving/review.py:125-140 |
+| **The registrar: the comparison route's missing-port `503`, the unadmitted-selector `400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:143-217; mcp/src/agents_remember/serving/review.py:146-190 |
+| **The entry route's handler: it takes the task context alone and answers an unwired process with `_UNWIRED_ENTRIES` rather than an empty list.** | `api_review_intent_entries`; `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:143-217; mcp/src/agents_remember/serving/review.py:68-80 |
+| The one serializer, which keeps an omitted field absent rather than `null` and so serves both result types. | `_json` | mcp/src/agents_remember/serving/review.py:220-223 |
 | The comparison route constant itself, GET-only, and the comment recording that the surface produces no record. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:51-52 |
 | **The entry route constant and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:54-58 |
 | The two port fields on the collaborators the composition supplies, and their reasons in the layer ranking. | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/serving/_app_common.py:456-456; mcp/src/agents_remember/serving/_app_common.py:467-467 |
 | The registration call, made before the greedy static mount and now passing both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:139-139; mcp/src/agents_remember/serving/app.py:292-298 |
 | The composition root that supplies both ports, so an omitted adapter refuses rather than serving empty. | `review_port`; `review_entries_port` | mcp/src/agents_remember/cli/dashboard.py:85-104 |
-| **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:770-786 |
-| **The case that the route serves the typed result and refuses by name with no adapter.** | `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` | mcp/tests/test_knowledge_review_surface.py:789-845 |
+| **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:979-997 |
+| **The case that the route serves the typed result and refuses by name with no adapter.** | `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` | mcp/tests/test_knowledge_review_surface.py:1000-1057 |
 
 ## Cross-Repo References
 
@@ -219,6 +222,10 @@ candidate and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the two case rows were re-pointed at the merged module's extents (`test_knowledge_review_surface.py:979-997` and `1000-1057`). No claim was re-worded, no anchor dropped and no stamp advanced.
+
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the selector became optional at the boundary, and the refusal learned to name the omission.** `review_request_from_query` now returns the task-context request when both selector parameters are absent, refuses a half-named selector and an unadmitted kind with `None` exactly as before, and the route signature declares both parameters optional. The `400` body gained the "or omit both" option in `expected`/`nextAction` and falls back to `selectorId` for `offendingInput` when only that parameter was supplied. Every row in the reference table was re-derived against this candidate — this file grew by 30 lines above the registrar — and the case row now cites the transport case's new lines. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): the shim now serves **two routes from one resolution**. `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` (`/api/review/intent/entries`) lists the subjects the resolved pair can be compared on, and `KnowledgeReviewEntriesPort` is its own port — the task context alone and no selector, because discovering the subject is what that call is for. This card records the three consequences a reader of the transport needs: `_status_for` now accepts both typed results and reads success as `refusal is None` (the entry list has no `state == "review"`), `subject_unresolved` joined the four candidate codes that answer `404`, and the entry handler answers an unwired process with `_UNWIRED_ENTRIES` rather than an empty list, because "no subject is reviewable here" and "nothing can answer that question" are different facts. It also records that the split is a second **path** and never a second adapter, since a caller that had to guess a subject id to reach the comparison route would be choosing the candidate the browser may not choose.
 - 2026-09-19T22:28:52+00:00: Generated citation repair: `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` repointed to mcp/tests/test_knowledge_review_surface.py:767-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-19T22:28:52+00:00: Generated citation repair: `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` repointed to mcp/tests/test_knowledge_review_surface.py:786-842. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.

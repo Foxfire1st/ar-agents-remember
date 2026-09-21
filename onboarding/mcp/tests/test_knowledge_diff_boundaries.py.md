@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_diff_boundaries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastUpdated            | 2026-09-21T14:59:00+02:00 |
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,6 +56,9 @@ already-built request so a case measures the *comparison's* answer to a mutated 
 different request; `selected_scopes`/`_rewording` build the two `SelectedScope`s and a reworded variant
 directly from the fixture, for the case that compares at the storage layer rather than through the seam.
 
+
+**This leaf added the real-Git half of the module: six cases over one fixture that builds a repository whose base commit and candidate tree carry every change class at once.** `InventoryFixture` and `build_inventory_fixture` write an edit, a deletion, an addition, a name containing a tab **and** a newline, a binary file, a moved symlink target, a mode-only change, a file→symlink type change and a submodule pointer change, and expose `.sides()` so a case hands the observation one pair rather than five hand-built ones. The cases assert the inventory against an **independent** `git diff --name-status -z` observation read through `mcp/tests/diff_scope_test_support.py::independent_changed_records` (a different Git question, so agreement is an observation about the two trees rather than a restatement of one implementation): population and per-path status equality; the tab/newline name surviving as the address it expands by, with the removed line-oriented command's output shown *not* to contain it; binary, symlink, submodule and mode-only entries each listed with their own kind and none dropped; a withheld tree reported `unavailable` with a reason and never as a measured empty set, with the identical-trees control reported `measured` with zero entries; and the non-UTF-8 boundary, where the observation stays available **and partial**, the path is carried by its byte form and the renderable remainder is still listed in full.
+
 ### Conventions
 
 - The module asserts against `DiffFixture`'s named identities through `item_for`/`items_of`, never against
@@ -102,8 +105,8 @@ repository source and package-local evidence only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration marker, the fixture, the request builder and the public-seam driver. | `pytestmark`; `fixture`; `request_for`; `run_diff` | mcp/tests/test_knowledge_diff_boundaries.py:51-51; mcp/tests/test_knowledge_diff_boundaries.py:68-73; mcp/tests/test_knowledge_diff_boundaries.py:76-106; mcp/tests/test_knowledge_diff_boundaries.py:109-122 |
-| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_boundaries.py:125-139 |
+| The integration marker, the fixture, the request builder and the public-seam driver. | `pytestmark`; `fixture`; `request_for`; `run_diff` | mcp/tests/test_knowledge_diff_boundaries.py:62-66; mcp/tests/test_knowledge_diff_boundaries.py:68-73; mcp/tests/test_knowledge_diff_boundaries.py:76-106; mcp/tests/test_knowledge_diff_boundaries.py:109-122 |
+| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_boundaries.py:125-139; mcp/tests/test_knowledge_diff_boundaries.py:143-153 |
 | **The expansion naming both requested trees and every path they differ at, with the reproducing command and no `HEAD`.** | "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at" | mcp/tests/test_knowledge_diff_boundaries.py:145-182 |
 | **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** | "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap" | mcp/tests/test_knowledge_diff_boundaries.py:185-218 |
 | The moved obligation's source observed on the side that claims it. | "test_the_attributed_source_of_a_moved_obligation_is_observed_on_the_side_that_claims_it" | mcp/tests/test_knowledge_diff_boundaries.py:221-251 |
@@ -139,6 +142,8 @@ under `tmp_path`. No configured remote, protected branch or sibling repository i
 | **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
 
 ## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **six new cases and one real-Git inventory fixture.** The module now measures the requirement's evidence: every change class in one real repository, filename identity through a tab and a newline, one entry per renderability kind, the `unavailable`-versus-measured-empty distinction with its control, a paths-only probe rendered partial, and the non-UTF-8 byte-form boundary. The card records the fixture's shape (`InventoryFixture`, `sides()`, the shared `independent_changed_records` observation) and what each case protects. **The module is now 1170 lines against a 900-line soft signal and a 1200-line hard rail — that is a master ruling, not an oversight:** the consolidation stays, the hard rail and the file-size gate are green, and the next leaf that adds cases there should extract first rather than push it toward the rail. Citation rows were re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
+
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.

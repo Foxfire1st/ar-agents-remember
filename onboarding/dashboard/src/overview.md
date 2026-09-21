@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../../overview.md`                              |
 
@@ -622,11 +622,11 @@ reviewer with no second takeover path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The target variant that turns the existing takeover into a review. | "review?: { selectorKind: ReviewSelectorKind; selectorId: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:41-41 |
-| The declaration's own reason: the change-set viewer is never mounted for a review. | "never mounted for one, so no change-set request is made from a review" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-40 |
+| The target variant that turns the existing takeover into a review. | "review?: { selectorKind?: ReviewSelectorKind; selectorId?: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:44-44 |
+| The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44 |
 | The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
-| The surface a review target mounts in the change-set viewer's place. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:575-575 |
-| **The reviewer entry, gated on the same liveness as the working action and on a subject the server returned.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:135-157 |
+| The surface a review target mounts in the change-set viewer's place. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
+| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:157-161 |
 | **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
 | **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:252-260 |
 
@@ -1392,3 +1392,27 @@ reviewer with no second takeover path.
 - 2026-06-15T17:00+02:00 — Created for slice 5d: the frontend re-architecture (Panda + React Aria,
   layered). Documents the layered styling architecture, the grammar/panels split, and the read-only
   boundary. Verification metadata pinned until closeout stamps the 5d code commit.
+
+## 260921-ICR-L2 The Task-Context Review Reaches The Surface
+
+**Route meaning changed: the reviewer entry no longer depends on the server offering a subject.**
+`panels/detail-panel/changeSetBar.tsx` gates the button on liveness alone and sends an empty review
+target when the entry read answers with nothing or refuses, so the task-context target reaches the
+cockpit for every live leaf; `cockpit/Cockpit.tsx`'s takeover dispatch already forwarded an optional
+selector, and its review branch now records that fact in a comment. `panels/changeset/ChangeSetViewer.tsx`
+widened `ChangeSetTarget.review` to carry an optional selector, where the field's **presence** still marks
+a review target and an empty object is the task context. The client (`data/review.ts`) and the review
+panel (`panels/review/ReviewSurface.tsx`) carry the rest: the inventory's wire types, an optional
+comparison identity, and the rendering of an inventory in all three of its states.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The entry that is now offered for every live leaf, with the server's subject as a refinement rather than a gate.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
+| **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
+| **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
+| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:168-178; dashboard/src/data/review.ts:271-290 |
+| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:252-277; dashboard/src/panels/review/ReviewSurface.tsx:221-237; dashboard/src/panels/review/ReviewSurface.tsx:238-251 |
+| The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The dashboard route's reviewer entry is now offered for every live leaf (the server's subject is a refinement, not a gate), the review target's selector is optional with an empty object meaning the task context, and the review panel renders the whole-task source inventory in all three states. The section is appended at the end of this route's narrative, and the row of this document that cited `Cockpit.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

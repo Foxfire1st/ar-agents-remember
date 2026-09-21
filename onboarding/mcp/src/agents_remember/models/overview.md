@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `c755cec64fa9dc12e797c9fcfb4c96822718330c`|
-| lastVerifiedCommitDate |  2026-09-21T15:29:12+02:00|
+| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
+| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview      | `../../../../overview.md`                  |
@@ -1284,7 +1284,7 @@ comparison vocabulary, exactly as it does not re-export the portable or merge vo
 | The expansion as a value, with the attributed and unattributed changed paths kept apart. | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:406-429 |
 | **The comparison's own cursor and its two functions, deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:573-586; mcp/src/agents_remember/models/knowledge/diff.py:589-605; mcp/src/agents_remember/models/knowledge/diff.py:608-621 |
 | **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:481-507; mcp/tests/test_knowledge_diff_boundaries.py:510-540 |
+| **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:526-526; mcp/tests/test_knowledge_diff_boundaries.py:497-497 |
 | The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:678-739; mcp/tests/test_knowledge_diff_scope.py:603-675 |
 
 ## 260915-KS-L10 The Route Operations, And The Envelope's Refusal
@@ -1773,17 +1773,17 @@ not a disguised failure.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own non-definition: it defines no record kind. | "This module defines **no record kind**" | mcp/src/agents_remember/models/knowledge/review.py:3-3 |
-| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:76-76 |
-| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:81-85 |
-| The present-side-requires-text rule. | "def _require_text_exactly_when_present" | mcp/src/agents_remember/models/knowledge/review.py:122-133 |
-| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:296-296 |
-| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:541-541 |
-| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:369-369 |
-| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:584-584 |
-| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` | mcp/src/agents_remember/models/knowledge/review.py:96-99; mcp/src/agents_remember/serving/review.py:60-63 |
-| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:175-191 |
-| **The entry read's typed outcome, whose validator refuses a refused read that offers any entry — so a caller can never be handed a subject beside the statement that nothing admitted one.** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:592-620 |
-| The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:88-94 |
+| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:87-91 |
+| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:92-96 |
+| The present-side-requires-text rule. | "def _require_text_exactly_when_present" | mcp/src/agents_remember/models/knowledge/review.py:143-143 |
+| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:335-335 |
+| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:739-739 |
+| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:408-408 |
+| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:800-826 |
+| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` | mcp/src/agents_remember/models/knowledge/review.py:110-110; mcp/src/agents_remember/serving/review.py:60-63 |
+| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:192-208 |
+| **The entry read's typed outcome, whose validator refuses a refused read that offers any entry — so a caller can never be handed a subject beside the statement that nothing admitted one.** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:808-836 |
+| The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:98-109 |
 
 ## 260918-TSIP-L4 — The Response Models Stop Forbidding What Their Producers Emit
 
@@ -1821,6 +1821,8 @@ strict models forbidding a candidate key, both dismissed with their reasons at
 `notes/reports/260918-TSIP-L4-worker-report.md` §5, down from 9 at this leaf's base.
 
 ## Update History
+- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the two rows of this document that cite `test_knowledge_review_surface.py` were re-pointed at the merged module's extents (`1161-1210`, `1213-1251`, from the pre-merge `971-1020`, `1023-1061`). No claim was re-worded, no anchor dropped and no stamp advanced.
+
 - 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the `compatible` declaration and the wire-omission rule this leaf's change set makes explicit on `KnowledgeIntegrityCheckResponse`. The route section above states both halves of the rule and the two test assertions reconciled to it.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:400-400. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: `_require_registered_public_next_tool` repointed to mcp/src/agents_remember/models/worktree.py:431-442. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2528,5 +2530,42 @@ are unchanged, and no other model this route owns changed.
 | The strict envelope base the field joined. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
 | The registry entry for the tool whose payload carries the field; unchanged by this leaf. | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
 
+
+## 260921-ICR-L2 The Review Wire Shape Carries An Inventory And An Absent Comparison
+
+**Route meaning changed: the review payload can now describe a review that compared nothing, and it
+carries the complete source change inventory either way.** `models/knowledge/review.py` gained
+`ReviewChangedFile` (path, status, content kind, mode-change flag and a reason required exactly when the
+content is unknown), `ReviewUnrepresentablePath` (the exact bytes of a name this surface cannot carry as
+text) and `ReviewSourceInventory` (`state` measured/unavailable, the entries, a `listed_total` checked
+against the list it describes, a `detail`, the reproducing `command`, both tree ids and the
+unrepresentable remainder) — and `ReviewSourcePane.inventory` is now required and first.
+
+Three optionalities and two states carry the rest of the change. `ReviewSurfaceRequest.selector` is
+optional, and its **absence is the task context** rather than an empty subject. `ComparisonIdentity`
+gained `knowledge_compared` and its three knowledge-half digests became optional, held all-or-nothing by
+a validator. `ReviewKnowledgePane` gained `selection_state` (`subject_selected`/`task_context`) with a
+reason required in exactly the second state, and `ReviewStaleness.state` gained `not_compared`.
+`KnowledgeReviewPayload.comparison` became optional behind a validator that ties its absence to
+`not_compared` **and** to the knowledge pane's answer, so a payload cannot disagree with itself about
+which question it answered. `KNOWLEDGE_REVIEW_SURFACE_VERSION` stays `knowledge-review-surface/1`, and
+the ruling is recorded beside the constant: `/1` admits both shapes, the change is additive for a client
+that already requests the subject payload, and no version validator exists in this package to enforce a
+bump.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** | `ReviewSourceInventory`; `ReviewChangedFile`; `ReviewUnrepresentablePath` | mcp/src/agents_remember/models/knowledge/review.py:551-612; mcp/src/agents_remember/models/knowledge/review.py:64-625; mcp/src/agents_remember/models/knowledge/review.py:50-625 |
+| **The pane that now requires the inventory as its first fact.** | `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:615-632 |
+| **The request whose selector may be absent, and the absence as a meaning rather than a default.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:156-175 |
+| **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** | `ComparisonIdentity`; `_require_the_knowledge_half_to_be_all_or_nothing` | mcp/src/agents_remember/models/knowledge/review.py:211-249 |
+| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:45-796; mcp/src/agents_remember/models/knowledge/review.py:482-482 |
+| **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:666-691 |
+| **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` | mcp/src/agents_remember/models/knowledge/review.py:85-85 |
+| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1161-1210; mcp/tests/test_knowledge_review_surface.py:1213-1251 |
+
+
 ## Update History
+- 2026-09-21T15:43:00+02:00 — 260921-ICR-L2 curator, **the second sync's memory-side conflict in this document resolved as a union.** Kept from the master line: L19's read-files section in full — the one optional `published_intent` field on `ReadArFilesResponse`, the boundary that its shape stays owned by `application/published_intent.py` and is carried here rather than re-declared, and its four reference rows — plus its history entry. Kept from this leaf: the L2 section on the review wire shape (the inventory models, the optional request selector, `knowledge_compared`, the task-context selection state and the `/1` ruling) with its reference rows and history entry. The two sections cite disjoint files, so no row needed re-pointing and **no claim needed correcting**: L19's rows measure `models/read_files.py` and the owner module, both untouched by this leaf, and this leaf's rows measure `models/knowledge/review.py`, untouched by L19. No claim was dropped and none was invented; no verification stamp was advanced.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact for the leaf: the one optional `published_intent` field on `ReadArFilesResponse`, the boundary that its shape is owned by `application/published_intent.py` and carried here rather than re-declared (the same direction the front-door dicts already follow), that the field is populated on every call so `None` is only the declared default, and that the strict envelope, the `extra="forbid"` rule and every other model on this route are unchanged. The field's own card and the application route's section carry the behaviour; this section carries only the contract's own fact. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** This route's review models gained the inventory (`ReviewSourceInventory`, `ReviewChangedFile`, `ReviewUnrepresentablePath`, `ReviewSourcePane.inventory`), the task-context states (`not_compared`, `selection_state`/`selection_detail`), an optional comparison identity with `knowledge_compared` and its all-or-nothing digest rule, and an optional request selector; the surface-version constant stays `/1` with the ruling recorded beside it. The section is appended at the end of this route's narrative. Nine reference rows of this document that cite `models/knowledge/review.py` were re-derived against the candidate in the same pass, because this leaf moved every line below the pane-name constants. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

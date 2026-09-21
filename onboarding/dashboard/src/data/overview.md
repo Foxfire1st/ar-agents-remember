@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
@@ -397,9 +397,9 @@ detail.
 | --- | --- | --- |
 | The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:215-228 |
 | **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:252-260 |
-| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:231-236 |
-| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:238-246 |
-| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:224-224 |
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:291-296 |
+| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:298-311 |
+| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-10 |
 | The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:13-13 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
 | The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:204-210 |
@@ -554,3 +554,28 @@ detail.
   reliable submit and withdrawal, lifecycle cleanup, control-authority boundaries, and the
   `sessionGroups` → `railModel`/`SessionRail` duty transfer. Verification metadata remains pinned to
   the leaf base because the reviewed L8 candidate is uncommitted; closeout owns candidate stamping.
+
+## 260921-ICR-L2 The Review Client Mirrors The Inventory And Asks For The Task's Own Review
+
+**Route meaning changed: `data/review.ts` can now express a review that compared nothing.** The client
+gained the inventory's three interfaces — `ReviewChangedFile` (the raw path, its status, its content kind
+and the reason an unknown is unknown), `ReviewUnrepresentablePath` (the exact bytes of a name the surface
+cannot carry as text) and `ReviewSourceInventory` (state, entries, count, detail, partial flag, command,
+both tree ids and the byte-form remainder) — and `ReviewSourcePane.inventory` is now required and first.
+`ComparisonIdentity` gained `knowledge_compared` with its three knowledge-half digests optional,
+`ReviewKnowledgePane` gained `selection_state`/`selection_detail`, `ReviewStaleness.state` gained
+`not_compared`, and `ReviewPayload.comparison` became optional. `intentReview` now sends **no selector
+parameters at all** when there is none, which is the task-context request. The module's own rule — a
+field the server omits is absent here rather than defaulted — now covers an entire absent identity, and
+no fallback value was introduced for it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:143-154; dashboard/src/data/review.ts:155-167; dashboard/src/data/review.ts:168-178 |
+| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:35-48; dashboard/src/data/review.ts:220-225 |
+| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:235-247; dashboard/src/data/review.ts:98-114 |
+| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:271-290 |
+| The surface that consumes the new types and renders the inventory. | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:252-277 |
+
+## Update History
+- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review client mirrors the new wire shape — the inventory types, an optional comparison identity, the `not_compared` and selection states — and `intentReview` now sends no selector at all when there is none, which is what makes the task-context review reachable from the browser. The section is appended at the end of this route's narrative, and the three rows of this document that cited `data/review.ts` by line were re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
