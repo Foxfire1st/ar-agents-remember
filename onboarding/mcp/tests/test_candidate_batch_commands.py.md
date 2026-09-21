@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_candidate_batch_commands.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
-| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview | `overview.md` |
 
@@ -111,9 +111,9 @@ No domain documentation source is configured for this repository (`system/source
 | The held expectation and the two closed-union boundary cases. | "test_an_expected_record_that_matches_permits_the_batch"; "test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command"; "test_two_expectations_for_one_record_are_refused_at_the_boundary" | mcp/tests/test_candidate_batch_commands.py:406-406; mcp/tests/test_candidate_batch_commands.py:441-441; mcp/tests/test_candidate_batch_commands.py:475-475 |
 | The model-level seal case, whose operation-level twin lives in the transaction module. | "test_the_context_digest_seals_the_whole_resolved_context" | mcp/tests/test_candidate_batch_commands.py:492-492 |
 | The unit-lane rows that make the module's classification explicit. | "mcp/tests/test_candidate_batch_commands.py" | mcp/tests/test-evidence-lanes.toml:18-18 |
-|The shared harness this module drives and its registered contract.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1239-1239 |
+|The shared harness this module drives and its registered contract.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1241-1241 |
 | The operation under test and the union it accepts. | `change_candidate`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/memory/knowledge/candidate.py:64-83; mcp/src/agents_remember/models/knowledge/candidate.py:614-614 |
-|The shared harness this module drives and its registered contract.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1239-1239 |
+|The shared harness this module drives and its registered contract.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1241-1241 |
 | The operation under test and the union it accepts. | `change_candidate`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/memory/knowledge/candidate.py:64-83; mcp/src/agents_remember/models/knowledge/candidate.py:614-614 |
 
 ## Cross-Repo References
@@ -123,7 +123,7 @@ No cross-repository behavior is involved in this module.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| The shared harness this module drives and its registered contract. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1239-1239 |
+| The shared harness this module drives and its registered contract. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1241-1241 |
 
 ## Update History
 

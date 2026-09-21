@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_catalog_gate_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:10+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -119,8 +119,8 @@ No domain documentation source is configured for this repository (`system/source
 | The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. | `synthetic_repo` | mcp/tests/test_evidence_catalog_gate_boundaries.py:49-65 |
 | The catalog's own digest and declared populations, read rather than pinned. | `populations` | mcp/tests/test_evidence_catalog_gate_boundaries.py:68-76 |
 | **The case: the oracle refuses the doctored tree while the pinned catalog's bytes and populations are identical.** | `test_the_oracle_reddens_while_the_byte_pin_stays_green` | mcp/tests/test_evidence_catalog_gate_boundaries.py:79-118 |
-| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/test-evidence-lanes.toml:199-199 |
-| The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-177; mcp/tests/evidence-lifecycle.toml:806-806 |
+| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/test-evidence-lanes.toml:202-202 |
+| The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-177; mcp/tests/evidence-lifecycle.toml:808-808 |
 
 ## Cross-Repo References
 

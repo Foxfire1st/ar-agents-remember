@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T13:45+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; production line `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c` |
-| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -150,8 +150,8 @@ candidate.
 | **The private stage and the one exposure: the stage removed in a `finally` that can only ever discard a stage which never became a half.** | `_expose_first_generation`; `_stage_directory` | mcp/src/agents_remember/application/knowledge_first_generation.py:223-246; mcp/src/agents_remember/application/knowledge_first_generation.py:338-350 |
 | **The closed failure set and the one promote: the build's four failure types, the creation owner's own refusal relabelled with its code and detail, and the rename that installs a complete half.** | `_promote_first_generation`; `atomic_replace` | mcp/src/agents_remember/application/knowledge_first_generation.py:249-288; mcp/src/agents_remember/kernel/atomic_write.py:80-126 |
 | **The build: the empty dataset created by the shipped owner under the candidate's own namespace and input pair, the identity read back from the bytes, the record written, and the re-read that refuses a record which did not read back unchanged.** | `_build_first_generation`; `create_knowledge_candidate`; `admitted_candidate_destination`; `dataset_identity` | mcp/src/agents_remember/application/knowledge_first_generation.py:291-315; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/memory/knowledge/logical.py:153-175 |
-| The one origin record built from the dataset that was actually created and the run that made it, including the `recorded_at` stamp this module is the only writer of. | `_origin_record`; `BaselineOrigin`; `write_baseline_origin`; `read_baseline_origin` | mcp/src/agents_remember/application/knowledge_first_generation.py:318-335; mcp/src/agents_remember/application/knowledge_before_half.py:86-117; mcp/src/agents_remember/application/knowledge_before_half.py:166-176; mcp/src/agents_remember/application/knowledge_before_half.py:179-201 |
-| **The reader every guard above is stated in terms of, and the four-state value it answers with.** | `read_before_half`; `BeforeHalf`; `baseline_database_path`; `baseline_origin_path` | mcp/src/agents_remember/application/knowledge_before_half.py:254-283; mcp/src/agents_remember/application/knowledge_before_half.py:120-134; mcp/src/agents_remember/application/knowledge_before_half.py:149-157; mcp/src/agents_remember/application/knowledge_before_half.py:160-163 |
+| The one origin record built from the dataset that was actually created and the run that made it, including the `recorded_at` stamp this module is the only writer of. | `_origin_record`; `BaselineOrigin`; `write_baseline_origin`; `read_baseline_origin` | mcp/src/agents_remember/application/knowledge_first_generation.py:318-335; mcp/src/agents_remember/application/knowledge_before_half.py:89-120; mcp/src/agents_remember/application/knowledge_before_half.py:169-179; mcp/src/agents_remember/application/knowledge_before_half.py:182-204 |
+| **The reader every guard above is stated in terms of, and the four-state value it answers with.** | `read_before_half`; `BeforeHalf`; `baseline_database_path`; `baseline_origin_path` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:124-137; mcp/src/agents_remember/application/knowledge_before_half.py:152-160; mcp/src/agents_remember/application/knowledge_before_half.py:163-166 |
 | The failure type the build catches, and the identity value the record is built from. | `KnowledgeStorageError`; `SnapshotIdentity`; `RepositoryIdentity` | mcp/src/agents_remember/memory/knowledge/refusals.py:27-32; mcp/src/agents_remember/models/knowledge/candidate.py:195-204; mcp/src/agents_remember/models/knowledge/repository.py:19-31 |
 
 ## Cross-Repo References

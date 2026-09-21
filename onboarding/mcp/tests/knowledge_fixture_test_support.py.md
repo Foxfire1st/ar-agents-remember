@@ -6,8 +6,8 @@
 | path | `mcp/tests/knowledge_fixture_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,7 +104,7 @@ No domain documentation source is configured for this repository (`system/source
 | The extension helper for later leaves' scenarios. | `fixture_revision_draft`; `RevisionClauses` | mcp/tests/knowledge_fixture_test_support.py:264-288; mcp/tests/knowledge_fixture_test_support.py:135-142 |
 | The step assertion that makes a fixture failure loud. | `_require` | mcp/tests/knowledge_fixture_test_support.py:614-623 |
 | The graph-half construction phases, each authored through the public operations. | `_build_identity_half`; `_build_graph_half`; `_create_families`; `_create_realizations` | mcp/tests/knowledge_fixture_test_support.py:309-327; mcp/tests/knowledge_fixture_test_support.py:328-335; mcp/tests/knowledge_fixture_test_support.py:380-439; mcp/tests/knowledge_fixture_test_support.py:492-539 |
-|  The registered stable contract, its evidence node and its five declared consumers. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1190-1190  |
+|  The registered stable contract, its evidence node and its five declared consumers. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1192-1192  |
 | The identity-conflict nodes that cover the contract in aggregate. | `test_two_same_label_successors_reopen_as_separate_revisions`; `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:89-113; mcp/tests/test_knowledge_store.py:257-282 |
 | The operations the fixture authors through, both halves. | `create_repository`; `create_invariant`; `create_revision`; `create_family`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81; mcp/src/agents_remember/memory/knowledge/store.py:247-270; mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-325 |
 

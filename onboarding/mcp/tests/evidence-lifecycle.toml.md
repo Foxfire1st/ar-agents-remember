@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview | `overview.md` |
@@ -346,15 +346,15 @@ Source declarations and test assertions are distinguished from execution and acc
 | The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node. | "id = \"candidate-batch-case-harness\"" | mcp/tests/evidence-lifecycle.toml:35-35 |
 | **The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.** | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | **The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.** | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
-| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "owner = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1182-1182 |
-| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "owner = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1253-1253 |
-| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "owner = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1274-1274 |
+| **The two consumer declarations 260915-KS-L6 added to the branching-fixture row.** | "owner = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:1184-1184 |
+| **The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.** | "owner = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:1255-1255 |
+| **The two consumer declarations 260915-KS-L6 added to the merge-case row.** | "owner = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:1278-1278 |
 | **The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.** | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
 | **The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.** | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 |  The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-73  |
 | The one-to-one card for the batch harness, which records what it builds through the real seam. | "One admitted candidate built through the real seam" | onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40 |
 |The snapshot harness card, which records the registered owner and the exact consumer set.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40; onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40 |
-|The consumer entry this leaf appended to the snapshot harness, which is a row in a list rather than a new registration — the populations do not move because of it.|"mcp/tests/test_knowledge_curator_ingest_list.py",| mcp/tests/evidence-lifecycle.toml:1265-1270 |
+|The consumer entry this leaf appended to the snapshot harness, which is a row in a list rather than a new registration — the populations do not move because of it.|"mcp/tests/test_knowledge_curator_ingest_list.py",| mcp/tests/evidence-lifecycle.toml:1269-1274 |
 | The referenced transaction test definition exists in the current source. | "test_public_closeout_commits_code_and_memory_without_acceptance_tools"; `test_public_closeout_commits_code_and_memory_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:211-318 |
 | None | "mcp/tests/closeout_fixture_test_support.py" | mcp/tests/evidence-lifecycle.toml:325-325 |
 | Closeout-input support names the same retained code/memory transaction replacement node. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:343-343 |
@@ -450,7 +450,7 @@ since `KS-L11` that moves both block kinds rather than only the file's bytes:
 | | Registration | Where |
 | --- | --- | --- |
 | contract | `id = "migration-census-cases"`, owner `mcp/tests/migration_census_test_support.py`, evidence node `mcp/tests/test_migration_census.py::test_the_seed_writes_every_census_record_kind_through_the_shipped_batch_operation` | `mcp/tests/evidence-lifecycle.toml:74-76`; mcp/tests/evidence-lifecycle.toml:77-77 |
-| artifact | `path = "mcp/tests/migration_census_test_support.py"`, `kind = "shared-support"`, `authority = "internal-canonical"`, `owner = "migration-census-cases"`, `category = "unit-regression"`, `fidelity = "local-composition"`, `cadence = "affected"`, `introduced_by = "260915-KS-L21"`, `lifetime = "permanent"`, `replacement_contract = "contract:migration-census-cases"`, `consumer_scope = "exact"` | `mcp/tests/evidence-lifecycle.toml:1613-1630` |
+| artifact | `path = "mcp/tests/migration_census_test_support.py"`, `kind = "shared-support"`, `authority = "internal-canonical"`, `owner = "migration-census-cases"`, `category = "unit-regression"`, `fidelity = "local-composition"`, `cadence = "affected"`, `introduced_by = "260915-KS-L21"`, `lifetime = "permanent"`, `replacement_contract = "contract:migration-census-cases"`, `consumer_scope = "exact"` | `mcp/tests/evidence-lifecycle.toml:1617-1634` |
 
 Both blocks are **appended**, not inserted mid-list, so this leaf's registration shifts no other row: the
 contract joins the tail of the contract block (`:74-76`, after `knowledge-evidence-cases` at `:69-72`) and
@@ -575,6 +575,42 @@ moves no existing row of that list, so the citations into its own entries keep t
 lines below the append are the class L23's item 16 half (b) reports as a pure move rather than as
 curator work.
 
+## 260921-ICR-L18 Two Consumer Rows On Two Artifacts, Counts Unmoved — No Third Fixture
+
+This leaf's whole footprint in this catalog is **two consumer rows on each of two artifacts and nothing
+else**: its two new case modules joined the `consumers` lists of
+`mcp/tests/snapshot_lifecycle_test_support.py` (owner `snapshot-lifecycle-cases`,
+`consumer_scope = "exact"`, rows `1268-1269`) and of the Node fixture
+`mcp/tests/fixtures/repository_profiles/node/package-lock.json` (also `consumer_scope = "exact"`, rows
+`731-732`). The reason is the leaf's own shape: its cases build every enclosure out of the **existing**
+`snapshot_lifecycle_test_support` builders and the existing ingest-list fixture module rather than
+introducing a third support module, so it registers **no artifact and no contract** — which is why both
+block counts are untouched and only the byte pin moves. The second list is reached by the census's own
+propagation rule from the support module the first row already names, so it is one change of subject
+seen twice rather than two independent registrations.
+
+**The populations do not move: 16 contracts and 66 artifacts**, the pair `260918-TSIP-L10`'s `T129`
+reconciliation set and every leaf since has left alone. The byte pin does:
+`sha256sum mcp/tests/evidence-lifecycle.toml` on this candidate is
+`4fb2bc3f2da65134e428631f0e964f4f712e6655f4816934e2a93a4cb8e32046`, which is the value
+`mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CATALOG_SHA256` carries beside the
+unchanged count constants, and the value it replaces on this line is `24e760a1…`. The older per-leaf byte
+values in the sections above remain the records of the tips that produced them.
+
+**Both insertions are mid-list, not appends**, so a citation that names a line below them reads lower than
+it did before this leaf: everything from `731` moves by `+2` and everything from `1265` by `+4`. The cards
+that cite those ranges by line were re-derived in the same pass rather than left to rot.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The first artifact's two new consumer rows: the Node package-lock fixture, whose `consumer_scope = "exact"` list both new modules joined.** | "mcp/tests/test_knowledge_ingest_comparison_generation.py"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/evidence-lifecycle.toml:731-731; mcp/tests/evidence-lifecycle.toml:732-732 |
+| **The second artifact's two new consumer rows: the snapshot-lifecycle shared support module, whose `consumer_scope = "exact"` list both new modules joined.** | "mcp/tests/test_knowledge_ingest_comparison_generation.py"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/evidence-lifecycle.toml:1268-1268; mcp/tests/evidence-lifecycle.toml:1269-1269 |
+| The artifact the first pair belongs to, and the scope both lists carry. | "mcp/tests/fixtures/repository_profiles/node/package-lock.json"; "exact" | mcp/tests/evidence-lifecycle.toml:668-668; mcp/tests/evidence-lifecycle.toml:1264-1264 |
+| The artifact the second pair belongs to. | "mcp/tests/snapshot_lifecycle_test_support.py" | mcp/tests/evidence-lifecycle.toml:1252-1252 |
+| The two block kinds whose counts this change does not move, and the sha256 it does move. | "[[contract]]"; "[[artifact]]" | mcp/tests/evidence-lifecycle.toml:1-1669 |
+| The constant this file's bytes pin, re-pinned deliberately in the same change. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
+| The reason no third fixture exists: both new modules import the existing builders rather than introducing one. | `build_case`; `create` | mcp/tests/snapshot_lifecycle_test_support.py:178-205; mcp/tests/snapshot_lifecycle_test_support.py:208-211 |
+
 ## 260921-ICR-L1 Two Consumer Rows, Counts Unmoved — No Third Fixture
 
 This leaf's whole footprint in this catalog is **two `consumers` rows and nothing else**: one on
@@ -601,14 +637,14 @@ the two cards that cite those ranges by line were re-derived in the same pass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The first consumer row: the diff-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1384-1405 |
-| **The second consumer row: the read-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1407-1436 |
+| **The first consumer row: the diff-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1388-1409 |
+| **The second consumer row: the read-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1411-1440 |
 | The two block kinds whose counts this change does not move, and the sha256 it does move. | "[[contract]]"; "[[artifact]]" | mcp/tests/evidence-lifecycle.toml:1-1665 |
 | The constant this file's bytes pin, re-pinned deliberately in the same change. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
 | The reason no third fixture exists: the case module composes the two existing ones. | `build_diff_fixture`; `build_read_scope_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:181-199; mcp/tests/diff_scope_test_support.py:196-242 |
 
 ## Update History
-- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **two consumer rows and nothing else — no artifact, no contract, so the populations are unchanged and only the byte pin moves.** The section above records the two appended rows (`mcp/tests/test_knowledge_review_source_endpoints.py` on `knowledge-diff-cases` and on `knowledge-read-scope-cases`, both `consumer_scope = "exact"`), the measured counts **16 / 66** from this candidate's blocks, the measured sha256 `24e760a1…` that `LIFECYCLE_CATALOG_SHA256` carries beside them, and the reason the module needed no third fixture. It also records the pure-move consequence for citations: the two rows sit at `:1404` and `:1435`, so a range below them reads one or two lines lower than before, and the two cards that cite such ranges by line were re-derived in this pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
+- 2026-09-21T15:35+02:00 — 260921-ICR-L18 curator (uncommitted change set on `ar/260921-icr-l18`, code base `0fca5c69766aa95eebe950c19fbcdc83864ec35a`): **two consumer rows on each of two artifacts, counts unmoved, and every citation into this file was re-derived against the moved file.** `260921-ICR-L18` registered no artifact and no contract of its own — its two new case modules import the existing `snapshot_lifecycle_test_support` builders and the existing ingest-list fixture module rather than introducing a third support module — so its catalog footprint is four consumer entries: both modules joined the `consumer_scope = "exact"` list of `mcp/tests/snapshot_lifecycle_test_support.py` (rows `1268-1269`) and of the Node fixture `mcp/tests/fixtures/repository_profiles/node/package-lock.json` (rows `731-732`), the second reached by the census's own propagation rule. **Nothing was registered, no row was removed and no artifact's identity moved**, so the population stays at **sixteen contracts / sixty-six artifacts**; the catalog's bytes do move, and it is re-pinned to `4fb2bc3f2da65134e428631f0e964f4f712e6655f4816934e2a93a4cb8e32046` (measured with `sha256sum mcp/tests/evidence-lifecycle.toml` on this candidate), replacing `24e760a1…`. Both insertions are **mid-list**, so everything from `:731` moves by `+2` and everything from `:1265` by `+4`; all 534 citations into this file across the onboarding tree were re-derived from the file's own diff-verified offset. **Citation accounting:** the same pass re-derived every range into the four changed `.py` files, so the rows on this card that cite `test_dependency_ownership_ast_helpers.py`'s constants (`:44-46`, unchanged) and the two support modules were re-read rather than assumed. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded; the candidate is uncommitted and the governed closeout owns the real stamp.- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **two consumer rows and nothing else — no artifact, no contract, so the populations are unchanged and only the byte pin moves.** The section above records the two appended rows (`mcp/tests/test_knowledge_review_source_endpoints.py` on `knowledge-diff-cases` and on `knowledge-read-scope-cases`, both `consumer_scope = "exact"`), the measured counts **16 / 66** from this candidate's blocks, the measured sha256 `24e760a1…` that `LIFECYCLE_CATALOG_SHA256` carries beside them, and the reason the module needed no third fixture. It also records the pure-move consequence for citations: the two rows sit at `:1404` and `:1435`, so a range below them reads one or two lines lower than before, and the two cards that cite such ranges by line were re-derived in this pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:325-325. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_input_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "owner = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1182-1182. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1200,7 +1236,7 @@ declared population stays 42 shared-support artifacts and four executable replac
 
 |`mcp/tests/closeout_input_test_support.py`|imported directly by `integration_branch_authority_test_support`, whose landing fixture builds the whole-tool world| `mcp/tests/evidence-lifecycle.toml:331-407`; mcp/tests/evidence-lifecycle.toml:464-464 |
 
-|`mcp/tests/curator_coherence_test_support.py`|reached through `selected_lifecycle_test_support`, whose closeout-operation input composes it| `mcp/tests/evidence-lifecycle.toml:391-1011`; mcp/tests/evidence-lifecycle.toml:1152-1152 |
+|`mcp/tests/curator_coherence_test_support.py`|reached through `selected_lifecycle_test_support`, whose closeout-operation input composes it| `mcp/tests/evidence-lifecycle.toml:391-1011`; mcp/tests/evidence-lifecycle.toml:1154-1154 |
 
 | `mcp/tests/integration_branch_authority_test_support.py` | imported directly: `_authority_fixture` and `_closed_external_leaf_worktrees` build the real landed leaf each whole-tool case starts from | `mcp/tests/evidence-lifecycle.toml:435` |
 
@@ -1210,15 +1246,15 @@ declared population stays 42 shared-support artifacts and four executable replac
 
 | `mcp/tests/fixtures/repository_profiles/node/package-lock.json` | the declared profile fixture that same support reads | `mcp/tests/evidence-lifecycle.toml:643` |
 
-|`mcp/tests/gate_certification_test_support.py`|reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint`| `mcp/tests/evidence-lifecycle.toml:937-1011`; mcp/tests/evidence-lifecycle.toml:1152-1152; mcp/tests/evidence-lifecycle.toml:406-406 |
+|`mcp/tests/gate_certification_test_support.py`|reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint`| `mcp/tests/evidence-lifecycle.toml:939-1013`; mcp/tests/evidence-lifecycle.toml:1154-1154; mcp/tests/evidence-lifecycle.toml:406-406 |
 
-|`mcp/tests/source_selection_test_support.py`|reached through `repository_profile_test_support`, which imports `source_selection_fixture`| `mcp/tests/evidence-lifecycle.toml:816-1012`; mcp/tests/repository_profile_test_support.py:60-60; mcp/tests/source_selection_test_support.py:20-20 |
+|`mcp/tests/source_selection_test_support.py`|reached through `repository_profile_test_support`, which imports `source_selection_fixture`| `mcp/tests/evidence-lifecycle.toml:818-1014`; mcp/tests/repository_profile_test_support.py:60-60; mcp/tests/source_selection_test_support.py:20-20 |
 
 | `mcp/tests/selected_lifecycle_test_support.py` | imported directly by the landing fixture (`selected_closeout_operation_input`) | `mcp/tests/evidence-lifecycle.toml:1038` |
 
-| `mcp/tests/gate_certification_test_support.py` | reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint` | `mcp/tests/evidence-lifecycle.toml:937-1011`; mcp/tests/evidence-lifecycle.toml:1152-1152; mcp/tests/evidence-lifecycle.toml:406-406 |
+| `mcp/tests/gate_certification_test_support.py` | reached through `selected_lifecycle_test_support` → `test_closeout_certification_entrypoint` | `mcp/tests/evidence-lifecycle.toml:939-1013`; mcp/tests/evidence-lifecycle.toml:1154-1154; mcp/tests/evidence-lifecycle.toml:406-406 |
 
-| `mcp/tests/source_selection_test_support.py` | reached through `repository_profile_test_support`, which imports `source_selection_fixture` | `mcp/tests/evidence-lifecycle.toml:816-1012`; mcp/tests/repository_profile_test_support.py:60-60; mcp/tests/source_selection_test_support.py:20-20 |
+| `mcp/tests/source_selection_test_support.py` | reached through `repository_profile_test_support`, which imports `source_selection_fixture` | `mcp/tests/evidence-lifecycle.toml:818-1014`; mcp/tests/repository_profile_test_support.py:60-60; mcp/tests/source_selection_test_support.py:20-20 |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 

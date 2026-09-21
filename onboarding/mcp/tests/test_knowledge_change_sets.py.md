@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_change_sets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate |  2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash |  `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate |  2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l21` uncommitted staged source; base `a7076008db4772554123794392f84b51143004ec` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -175,8 +175,8 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:919-932 |
 | The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:935-966 |
 | The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:969-983 |
-| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:194-194 |
-| The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1224-1242; mcp/tests/evidence-lifecycle.toml:1241-1241; mcp/tests/evidence-lifecycle.toml:34-37 |
+| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:197-197 |
+| The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1226-1244; mcp/tests/evidence-lifecycle.toml:1243-1243; mcp/tests/evidence-lifecycle.toml:34-37 |
 
 ## Cross-Repo References
 

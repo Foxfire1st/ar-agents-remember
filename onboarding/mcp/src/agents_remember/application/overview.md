@@ -3,9 +3,10 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastUpdated | 2026-09-21T15:35+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -22,6 +23,57 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L18 The Comparison Baseline Gets An Owner, And The Half Is Filled Once
+
+This route gained **one module and one boundary**, and the leaf they belong to (`260921-ICR-L18`,
+primary requirement ICR-R18@v1) is about a single question: what is a comparison's before side when the
+same path is both the baseline a run forks from and the dataset it publishes to? The per-file detail
+lives in the new sidecar; what belongs at this route's altitude is the boundary the leaf drew.
+
+- **The half's generation now has an owner.** `application/knowledge_baseline_generation.py` owns the
+  durable generation record (`baseline-generation.json` beside the dataset), the four-state read of what
+  the half holds (`absent` / `recorded` / `adopted` / `damaged`), the one first placement, and the
+  deliberate rebase with recorded lineage. It **composes** the two modules this route already had —
+  `knowledge_before_half.py` for the layout and the reads, `knowledge_first_generation.py` for the
+  establishment — rather than reimplementing either, and it adds no store, journal or approval authority.
+- **The half is filled once, and a standing baseline is replaced only by an explicit act.** A second
+  successful run whose `--baseline` is the first run's *publication* places nothing: it names the
+  generation the half holds, its dataset identity, and `--rebase-baseline`, which is the only input that
+  may begin a new generation. Without that argument a differing baseline is kept as the comparison's
+  original — which is what stops the deletion the review exists to show from being reported present on
+  both sides with an empty delta.
+- **The failure contract is an ordering, not a message.** A rebase publishes its **record first**, so the
+  one window it can leave is the previous bytes beside a record that disagrees with them (the named
+  `damaged` state) and never replacement bytes with no record (which would read `adopted` and relabel the
+  replacement as the original). A first placement into an *empty* half deliberately keeps dataset-first,
+  where a dataset without its record is truthfully an adopted baseline. A failure names the leg that
+  refused **and** re-reads the half, because the write owner flushes the directory after the rename and a
+  leg can therefore fail after its bytes landed.
+- **The seam the leaf crossed, recorded as the boundary rule it is.** `cli/knowledge_ingest.py` gave up
+  the placement machinery it used to own — `_place_fork_point`, `_establish_first_generation`,
+  `_placeable_baseline` and its local `_CapturedBaseline` are gone from it, and its
+  `_place_review_baseline` is now a pure seam — and is **541 lines** where it was 620. What stays in the
+  CLI is the one question only the run's own report can answer: *whether* this run may fill anything at
+  all. That is the seam policy's "keep the adapter a delegator" rule applied to a second responsibility,
+  and it is the same split `260921-ICR-L1` applied to the review resolution.
+
+The one route-level consequence a reader should carry: a comparison's before side is either the dataset
+the leaf forked from or an explicit record of the generation it began from, it is never quietly
+re-pointed behind the identity it already had, and a generation's id is **derived** from the facts its
+record names, so a verifier can recompute it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The generation owner: the record, the four-state read, the one first placement, and the deliberate rebase with lineage.** | `BaselineGeneration`; `read_standing_generation`; `place_original_baseline`; `rebase_comparison_baseline` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:108-160; mcp/src/agents_remember/application/knowledge_baseline_generation.py:354-373; mcp/src/agents_remember/application/knowledge_baseline_generation.py:579-612; mcp/src/agents_remember/application/knowledge_baseline_generation.py:615-657 |
+| **The one decision the module owns, and the four ordered answers behind it.** | `fill_admitted_before_half`; `_place_or_keep` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:464-500; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576 |
+| **The two publication legs whose order is the failure contract, and the read-back that states the outcome.** | `_publish_generation`; `_publish_dataset_leg`; `_publish_record_leg`; `_failed_placement` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:660-696; mcp/src/agents_remember/application/knowledge_baseline_generation.py:699-712; mcp/src/agents_remember/application/knowledge_baseline_generation.py:715-738; mcp/src/agents_remember/application/knowledge_baseline_generation.py:741-760 |
+| **The derived rather than minted generation id a reader can recompute, and the lineage validator that refuses a record whose fields contradict each other.** | `generation_identity`; `_lineage_agrees_with_the_index` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:319-348; mcp/src/agents_remember/application/knowledge_baseline_generation.py:140-160 |
+| **The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.** | `_placement_refusal`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:292-316; mcp/src/agents_remember/cli/knowledge_ingest.py:319-357 |
+| The new argument, and the invocation refusal that fires before the contract is read. | `--rebase-baseline`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
+| The two sibling owners this module composes rather than reimplements. | `read_before_half`; `establish_first_generation` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_first_generation.py:100-124 |
+| The successful journey, the two retries and the deliberate rebase, driven through the shipped CLI on a real enclosure. | `test_a_second_successful_ingest_over_one_path_keeps_the_original_baseline`; `test_an_exact_retry_and_a_refused_changed_retry_keep_the_original_baseline`; `test_a_deliberate_rebase_begins_a_recorded_generation_with_explicit_lineage` | mcp/tests/test_knowledge_ingest_comparison_generation.py:150-206; mcp/tests/test_knowledge_ingest_comparison_generation.py:209-257; mcp/tests/test_knowledge_ingest_comparison_generation.py:260-323 |
+| **Every way a placement refuses or loses a leg without losing the baseline, including the two flush windows that forced the "did not report success" wording.** | `test_a_half_that_records_no_generation_keeps_its_baseline_as_the_original`; `test_a_rebase_whose_record_leg_fails_leaves_the_original_baseline_in_place`; `test_a_rebase_whose_dataset_leg_fails_names_the_damage_it_left`; `test_an_obstructed_generation_record_path_is_damage_and_not_an_absent_record` | mcp/tests/test_knowledge_ingest_failure_windows.py:122-166; mcp/tests/test_knowledge_ingest_failure_windows.py:321-395; mcp/tests/test_knowledge_ingest_failure_windows.py:398-476; mcp/tests/test_knowledge_ingest_failure_windows.py:479-525 |
 
 ## 260921-ICR-L5 The Review's Before Half Becomes A Named Module, And A First Generation Becomes Establishable
 
@@ -70,12 +122,12 @@ as well as on the clone path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The before half's layout, its origin record, and the four states a writer must consult before it writes anything. | `read_before_half`; `BeforeHalf`; `BaselineOrigin`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:254-283; mcp/src/agents_remember/application/knowledge_before_half.py:120-134; mcp/src/agents_remember/application/knowledge_before_half.py:86-117; mcp/src/agents_remember/application/knowledge_before_half.py:344-374 |
+| The before half's layout, its origin record, and the four states a writer must consult before it writes anything. | `read_before_half`; `BeforeHalf`; `BaselineOrigin`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:124-137; mcp/src/agents_remember/application/knowledge_before_half.py:89-120; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
 | The establishment: read the half first, take the admission from the committed candidate's own record, build privately, promote once. | `establish_first_generation`; `_candidate_admission`; `_expose_first_generation` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:155-185; mcp/src/agents_remember/application/knowledge_first_generation.py:223-246 |
-| **The two call sites this leaf added to the adapter, and the one refusal they state.** | `compose_review`; `list_knowledge_review_entries`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:49-460; mcp/src/agents_remember/application/knowledge_review.py:134-371; mcp/src/agents_remember/application/knowledge_before_half.py:344-374 |
+| **The two call sites this leaf added to the adapter, and the one refusal they state.** | `compose_review`; `list_knowledge_review_entries`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:49-460; mcp/src/agents_remember/application/knowledge_review.py:134-371; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
 | The admission's own check of a selected baseline, which reads it on every run, resume included. | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
-| The CLI's two filling paths, the one gate they share, and the cold-start branch that reaches the establishment. | `_place_review_baseline`; `_place_fork_point`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:336-376; mcp/src/agents_remember/cli/knowledge_ingest.py:379-410; mcp/src/agents_remember/cli/knowledge_ingest.py:413-445; mcp/src/agents_remember/cli/knowledge_ingest.py:288-312 |
-| The cases that measure the operation at the CLI, and one that measures the review surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_lost_or_corrupt_selected_baseline_is_refused_by_name_and_establishes_nothing`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1893-2007; mcp/tests/test_knowledge_curator_ingest_list.py:2080-2145; mcp/tests/test_knowledge_review_surface.py:809-847 |
+| The CLI's two filling paths, the one gate they share, and the cold-start branch that reaches the establishment. | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:319-357; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:292-316 |
+| The cases that measure the operation at the CLI, and one that measures the review surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_lost_or_corrupt_selected_baseline_is_refused_by_name_and_establishes_nothing`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_curator_ingest_list.py:2079-2144; mcp/tests/test_knowledge_review_surface.py:809-847 |
 
 ## 260915-KS-L41 The View Front Door: One Seed Frontier, Membership From Its Own Table, And A Pair That Is Completed
 
@@ -1634,9 +1686,9 @@ supplied, so the shipped projection reports an unmeasured assessment stale rathe
 | The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
 | The disposable candidate root the two datasets are read from — defined in the sibling module and re-exported here so the ingest CLI keeps one spelling. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/review_candidate_resolution.py:77-82; mcp/src/agents_remember/application/knowledge_review.py:43-123 |
 | **The two published half-names, defined in the sibling module and re-exported here because the ingest CLI authors into the same root this adapter reads.** | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:83-87; mcp/src/agents_remember/application/knowledge_review.py:125-142 |
-| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place — reached only when a subject was named, because a task-context review compares no dataset — and, since leaf `260921-ICR-L5`, the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:279-297; mcp/src/agents_remember/application/knowledge_before_half.py:344-374 |
+| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place — reached only when a subject was named, because a task-context review compares no dataset — and, since leaf `260921-ICR-L5`, the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:279-297; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
 | **The namespace read from the candidate's own sealed receipt, with the requested repository used only when there is no receipt and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME` | mcp/src/agents_remember/application/review_candidate_resolution.py:300-325; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53 |
-| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero — with the unreadable-half refusal stated before that loop.** | `list_knowledge_review_entries`; `_reviewable_entries`; `_selected_item_count`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:294-330; mcp/src/agents_remember/application/knowledge_review.py:49-460; mcp/src/agents_remember/application/knowledge_before_half.py:344-374 |
+| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero — with the unreadable-half refusal stated before that loop.** | `list_knowledge_review_entries`; `_reviewable_entries`; `_selected_item_count`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:294-330; mcp/src/agents_remember/application/knowledge_review.py:49-460; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
 | **The identities the entry list enumerates, read through the store's own two list operations rather than a query written here.** | `_recorded_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/knowledge_review.py:310-327; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 
 
@@ -1717,7 +1769,7 @@ no lane parameter, and no new required producer input — a producer supplies ex
 | The route, anchor and claim identities minted together, each keyed on what it is: the path, the allocated revision, and the revision-plus-anchor edge. | `_TargetIdentities`; `_target_identities`; `_Authoring` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695; mcp/src/agents_remember/application/knowledge_curator_ingest.py:615-626 |
 | The explicit-reuse input on a target, and the write module field that carries it. | `_named_anchor_id`; `CuratorCitation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:524-535; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2159-2181; mcp/src/agents_remember/application/knowledge_ingest.py:68-88 |
 | The recovery's journaled decisions and its bounded cycling refusal. | `_reconcile_knowledge_resolution`; `_reconcile_progress_refusal`; `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction.py:650-709; mcp/src/agents_remember/worktrees/sync_transaction.py:712-741; mcp/src/agents_remember/worktrees/sync_transaction_state.py:43-81 |
-| The case that measures the ruled semantics at the public boundary: two sibling enclosures, one reused label, two statements, distinct stored identities, and continuity by naming the stored id. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:3032-3149 |
+| The case that measures the ruled semantics at the public boundary: two sibling enclosures, one reused label, two statements, distinct stored identities, and continuity by naming the stored id. | `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 
 ## 260915-KS-L39 The Ingest's Identities Move To The Repository, And The Front Door Reaches The Baseline
@@ -1771,9 +1823,9 @@ sections describe.
 | The route, anchor and claim identities minted together, discriminated by the locator's qualified name. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695 |
 | The operation that resolves the repository identity before planning, and the selection value the front door hands it. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1014-1031 |
 | The admission that forks a selected baseline instead of creating an empty candidate. | `_admitted_candidate` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355 |
-| **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:129-192; mcp/src/agents_remember/cli/knowledge_ingest.py:448-488; mcp/src/agents_remember/cli/knowledge_ingest.py:336-376 |
+| **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409; mcp/src/agents_remember/cli/knowledge_ingest.py:319-357 |
 | The route, anchor and claim identities minted together, each keyed on what it is — L43's split lives in the section above. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695 |
-| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:129-192; mcp/src/agents_remember/cli/knowledge_ingest.py:448-488 |
+| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
 
 
 ## Update History

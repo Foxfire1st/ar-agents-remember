@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_ingest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T14:30+02:00 |
+| lastUpdated | 2026-09-21T15:35+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; `260921-ICR-L1`'s extraction is the production line this reading is against (`702714fc05363cb28eacaf101ba8384475a6aa56`) |
-| lastVerifiedCommitHash | `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitDate | 2026-09-21T14:06:50+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -25,12 +26,13 @@ the committed candidate through the shipped publication owner.
 
 ### Logic
 
-Module-level surface (ranges are the current candidate's extents; this file grew 513 → 620 lines in
-this leaf, so every one of them moved):
+Module-level surface (ranges are the current candidate's extents; leaf `260921-ICR-L18` extracted the
+placement machinery out of this file, so it is **541 lines** where this card last measured 620, and
+every range below was re-derived rather than carried):
 
 - `add_arguments` (function, lines 129-192) — declares the operation's inputs: `--contract` (**required**),
   `--list` (**required**), `--candidate-directory` (**optional**), `--authorization-ref` (**required**),
-  `--baseline`, `--commit`, `--publish-to`, `--expected-destination` and `--json`.
+  `--baseline`, `--rebase-baseline`, `--commit`, `--publish-to`, `--expected-destination` and `--json`.
 - `_expected_destination` (function, lines 195-214) — the destination identity the caller admitted, read
   from its JSON object; a malformed value is refused by name rather than read as "absent".
 - `_publication` (function, lines 217-225) — the publication this invocation selects, or `None` when it
@@ -41,29 +43,35 @@ this leaf, so every one of them moved):
   because `run` loads the contract once and both the root and the leaf id come from that one value.
 - `_candidate_directory` (function, lines 240-249) — the directory this run writes into: the caller's
   if it named one, otherwise `<review root>/candidate`.
-- `_CapturedBaseline` (dataclass, lines 252-264) and `_capture_baseline` (function, lines 267-285) — the
-  fork-point bytes read **at the top of the run**, carrying the path they came from beside them.
+- `_capture_baseline` (function, lines 269-289) — the fork-point bytes read **at the top of the run**,
+  returned as the application owner's `CapturedBaseline`, carrying the path they came from beside them.
 - `_placement_refusal` (function, lines 288-312) — **the one gate both ways of filling the before half
   share**: `not-placed` for a planning run, for a batch that did not commit, and for a batch that
   committed no entry. It takes the report alone, so a caller cannot reach either filling path without
   passing it.
-- `_placeable_baseline` (function, lines 315-333) — the narrowed `_CapturedBaseline | str` the callers
-  branch on with a real `isinstance` before reading `payload` and `origin`.
-- `_place_review_baseline` (function, lines 336-376) — the run's **review handoff**: with a named
-  baseline it delegates to `_place_fork_point`; with **no** baseline it delegates to
-  `_establish_first_generation`.
-- `_place_fork_point` (function, lines 379-410) — copies one captured fork point into the before half,
-  or states which of the three rules kept it out.
-- `_establish_first_generation` (function, lines 413-445) — establishes the before half as an explicitly
-  identified empty first generation through `application.knowledge_first_generation`.
-- `run` (function, lines 448-488) — drives one ingest and prints its report; **the report IS the result**.
-- `_summary` (function, lines 491-520) — the human-readable rendering of an `IngestReport`.
-- `_targets` (function, lines 523-527) — how a resolved target (path plus its symbol or line range) is
+
+**Four constructs left this file in `260921-ICR-L18` and must not be cited here any more.**
+`_CapturedBaseline` became the application owner's public `CapturedBaseline`; `_placeable_baseline`
+(the narrowed union the caller branched on) has no successor, because `_place_review_baseline` now
+narrows `captured` once, inline, before the owner call; and `_place_fork_point` and
+`_establish_first_generation` both moved into `application/knowledge_baseline_generation.py`, where the
+first became `_place_or_keep` / `_place_admitted_baseline` and the second is called under the same
+name. Their rules did not disappear — they are `_place_or_keep`'s four answers in order, and
+`_identified_first_generation`'s preserved first-generation rule — but the CLI is no longer where they
+live.
+- `_place_review_baseline` (function, lines 319-357) — the run's **review handoff**, and since
+  `260921-ICR-L18` a pure seam: it asks `_placement_refusal` whether this run may fill anything, then
+  hands the half, the candidate directory, the captured bytes, the run's facts and the rebase flag to
+  `application.knowledge_baseline_generation.fill_admitted_before_half`.
+- `run` (function, lines 360-409) — drives one ingest and prints its report; **the report IS the result**.
+  It also carries the invocation refusal for `--rebase-baseline` without `--baseline`.
+- `_summary` (function, lines 412-441) — the human-readable rendering of an `IngestReport`.
+- `_targets` (function, lines 444-448) — how a resolved target (path plus its symbol or line range) is
   rendered per entry.
-- `_payload` (function, lines 530-568) — the machine-readable report the caller actually consumes.
-- `_counts` (function, lines 571-583) — the entry arithmetic: read, committed, refused, rulings.
-- `_outcome` (function, lines 586-620) — one entry's typed outcome, including its refusal reason.
-- `COMMITTED_BATCH_STATES` (line 126) — the two batch states that mean a candidate is on disk
+- `_payload` (function, lines 451-489) — the machine-readable report the caller actually consumes.
+- `_counts` (function, lines 492-504) — the entry arithmetic: read, committed, refused, rulings.
+- `_outcome` (function, lines 507-541) — one entry's typed outcome, including its refusal reason.
+- `COMMITTED_BATCH_STATES` (line 130) — the two batch states that mean a candidate is on disk
   (`changed`, `no_change`), which together with the committed-entry list decides whether either filling
   path may run.
 
@@ -85,38 +93,51 @@ today. Naming a directory still wins, because a caller that wants a scratch draf
 draft is then simply not the leaf's review candidate, and the report echoes the directory either way.
 A contract that cannot be loaded is refused before the list is read, by name.
 
-**The review handoff: one run fills exactly one half, and the half it fills depends on what the caller
-named.** `_capture_baseline` runs at the top of `run`, ahead of `ingest_curator_list`, and carries the
-bytes; `_place_review_baseline` then takes one of two paths, and **both are gated by the same
-`_placement_refusal`** because the question is one question — the half belongs to the run that
+**The review handoff: one run fills exactly one half, and since `260921-ICR-L18` this file owns only
+*whether* it may.** `_capture_baseline` runs at the top of `run`, ahead of `ingest_curator_list`, and
+carries the bytes; `_place_review_baseline` then asks `_placement_refusal` — **the one gate both ways of
+filling the before half share**, because the question is one question: the half belongs to the run that
 committed, and a planning run, a refused batch and a batch that committed nothing all leave it exactly
-as they found it. That single gate is this leaf's `260921-ICR-L5` change to the earlier structure: the
-gate is now reachable from both filling paths rather than only from the `--baseline` one.
+as they found it. That gate was `260921-ICR-L5`'s change to the earlier structure (reachable from both
+filling paths rather than only from the `--baseline` one) and it is unchanged by this leaf. What *did*
+change is everything downstream of it: the question **"what is the half afterwards"** now belongs to
+[`application/knowledge_baseline_generation.py`](../application/knowledge_baseline_generation.py.md),
+which composes the before-half layout owner and the first-generation owner. This function carries the
+run's facts across that seam and nothing else, so the CLI stays a surface rather than a second placement
+authority. The half is derived from the contract's own recorded worktree group through `_review_root`,
+exactly as the review resolves it, so the directory this run fills and the directory the comparison
+opens are one path by construction.
 
-With `--baseline`, `_place_fork_point` copies the captured bytes (`--baseline` and `--publish-to` may
-name one path, publication replaces that file **in place**, so a copy taken afterwards would place the
-published candidate in the before half — this leaf's `260915-KS-L47` repair). Three rules now guard
-that write, each naming a state the half can already be in, and the first two are new here: the half
-already records an identified first generation, so **nothing replaces the before side this leaf began
-from**; the half is damaged, so it is named and left exactly as it is; or the captured bytes are not a
-dataset, which is read **before** they are written because placing them would hand the review a before
-side no comparison can open — a corrupt expected dataset reported as *placed*. A destination already
-holding the captured bytes is `present: <path>` and left alone, which is what makes a retry keep the
-fork point it was first handed instead of restating it.
+**`--rebase-baseline` is the new argument, and it is the caller's deliberate word.** It reaches the
+owner as `rebase=args.rebase_baseline` (`:356-356`) and is the only input that may replace a standing
+baseline. It is a flag rather than a default because a deliberately new baseline is a **new comparison
+generation with recorded lineage**, never an overwrite behind the identity the comparison already had.
+Two invocation-level rules live here rather than in the owner, because both are facts about the
+argument list: `run` refuses the flag without `--baseline` by name and returns `EXIT_REFUSED`
+**before the contract or the list is read** (`:370-378`), since a rebase is a transition *from* one
+admitted baseline to another and a run that names the action without the dataset has stated no
+generation to begin from; and the flag cannot do two things the help text says it cannot — replace an
+identified first generation, or repair a damaged half — because those are named states with their own
+owners, and a flag that silently overrode them would be a second, quieter way to rewrite what a
+comparison is *of*.
 
-Without `--baseline`, the run is the repository's **first generation**, and the half is *established*
-rather than left absent: `_establish_first_generation` calls
-`application.knowledge_first_generation.establish_first_generation` with the leaf's own observed facts —
-the contract's `leaf_id`, the contract path, `--authorization-ref`, and the code base commit the report
-already prints (an *observation* of the run, not a second source-endpoint resolution; how a comparison
-binds a source side stays the review's own resolution). The operation creates a schema-valid empty
-dataset in the candidate's own namespace and writes `baseline-origin.json` beside it, and its detail
-line reaches the caller as `established: …`. This is the repair **ICR-R05@v1** requires: a fresh
-cold-start ingest used to commit its candidate and leave the half absent, and the review then refused
-the pair, so the first invariant a repository ever recorded could not be displayed as an addition at
-all. The tempting repair — answering the absent half with a newly empty dataset and no record — is the
-one the packet's non-conforming example forbids, which is why the half is identified by a record rather
-than merely created.
+**The rules that used to live in this file are still the rules; they are cited where they now are.**
+With `--baseline` and a half that already holds something, the owner keeps what stands rather than
+copying over it — the same `260915-KS-L47` repair (a copy taken after the run published would place the
+*candidate* in the before half, so the bytes are captured at the top of the run and carried) is what
+makes a retry keep the fork point it was first handed. The three guards that used to be `_place_fork_point`
+are now `_place_or_keep`'s ordered answers in the owner: a damaged half is named and left exactly as it
+is, the half's own dataset being the one this run was handed is a no-op rather than a placement, and the
+captured bytes are read as a dataset **before** anything is written so a corrupt expected dataset is
+never reported as *placed*. Without `--baseline`, the run is still the repository's **first
+generation** and the half is *established* rather than left absent — `ICR-R05@v1`'s repair, whose
+tempting wrong answer (an empty dataset with no record) is the one the packet's non-conforming example
+forbids — but the establishment is now reached through the owner's `_establish_first_generation`, which
+calls `application.knowledge_first_generation.establish_first_generation` with the leaf's own observed
+facts: the contract's `leaf_id`, the contract path, `--authorization-ref`, and the code base commit the
+report already prints (an *observation* of the run, not a second source-endpoint resolution; how a
+comparison binds a source side stays the review's own resolution). Its detail line still reaches the
+caller as `established: …`.
 
 **A *selected* baseline that is missing or corrupt is a different fact and is never answered either
 way.** `_admitted_candidate` (in the application layer) now reads the selected baseline **on every run,
@@ -172,9 +193,13 @@ they are in `memory_citations.py` and `memory_backfill.py`: `add_arguments` owns
   back to it when the batch never ran) each fill nothing through **either** path, and each says which
   case it was; no baseline is invented, there is no `HEAD` fallback and no coordination-tree
   resolution.
-- **One run fills one half, and never over one that is already there.** With `--baseline` the captured
-  bytes are copied; without it the half is established; and neither path replaces an identified first
-  generation, rewrites a damaged half, or places bytes that do not read as a dataset.
+- **One run fills one half, and never over one that is already there.** The gate decides *whether*; the
+  owner decides *what*. Neither path replaces an identified first generation, rewrites a damaged half,
+  or places bytes that do not read as a dataset, and the only input that may replace a standing baseline
+  is the caller's explicit `--rebase-baseline`.
+- **A rebase flag without a dataset is refused at the surface.** `--rebase-baseline` with no `--baseline`
+  exits `EXIT_REFUSED` by name before the contract is loaded, because the action states no generation to
+  begin from.
 - **The fork-point dataset is copied, not moved and not linked.** The published dataset keeps serving its
   own lane; the leaf's disposable root gets its own bytes.
 - **A selected baseline is read on every run, resume included.** An unreadable fork point is refused by
@@ -182,9 +207,11 @@ they are in `memory_citations.py` and `memory_backfill.py`: `add_arguments` owns
   reading under which a missing historical dataset came to be silently replaced by a newly empty one.
 - **The report is the result.** Nothing is inferred from exit status alone — the counts, the per-entry
   outcomes, the refusal reasons and the `reviewBaseline` line are the operation's evidence.
-- **This adapter adds no knowledge behaviour.** It declares arguments, derives one path from the contract,
-  copies one file and delegates one establishment to the application layer; every refusal, route
-  resolution, row count and generation record originates below this module.
+- **This adapter adds no knowledge behaviour and, since `260921-ICR-L18`, no placement behaviour.** It
+  declares arguments, derives one path from the contract, reads the caller's baseline bytes into the
+  owner's own value, asks the one gate whether this run may fill anything, and delegates the decision to
+  the application layer; every refusal, route resolution, row count and generation record originates
+  below this module.
 
 ### Todos
 
@@ -205,27 +232,30 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Declares the contract guard, the hand-off list, the optional candidate directory, the authorization ref, the baseline this task forks from, and dry-run. | `add_arguments` | mcp/src/agents_remember/cli/knowledge_ingest.py:129-192 |
-| Drives one ingest and prints the report, which is the result; it loads the contract once, builds the one `IngestSelection` the operation takes, and hands the loaded contract to the review handoff. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:448-488 |
-| **The canonical review root, derived from the contract's own recorded worktree group rather than from the caller, so the directory the review resolves and the directory this run writes are the same path by construction.** | `_review_root` | mcp/src/agents_remember/cli/knowledge_ingest.py:228-237 |
-| **The candidate directory: the caller's when it named one, otherwise the canonical review candidate root.** | `_candidate_directory` | mcp/src/agents_remember/cli/knowledge_ingest.py:240-249 |
-| **The review handoff: one of the two filling paths selected by whether the caller named a baseline.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:336-376 |
-| **The before-snapshot capture, taken at the top of `run` before the ingest can publish over the file `--baseline` names (leaf `260915-KS-L47`).** | `_capture_baseline`; `_CapturedBaseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:252-264; mcp/src/agents_remember/cli/knowledge_ingest.py:267-285 |
-| The two batch states that mean the candidate is on disk, and the entry list that keeps an all-refused run from reading as one of them: `no_change` is a batch whose rows were already stored, but the batch-level state also falls back to it when the batch never ran, so a run whose every entry refused reports it too. The placement therefore also requires `report.committed` to be non-empty, because a run that committed no entry has no candidate of its own and must not touch the review's before half. | `COMMITTED_BATCH_STATES` | mcp/src/agents_remember/cli/knowledge_ingest.py:126-126; mcp/src/agents_remember/cli/knowledge_ingest.py:288-312 |
-| **The one gate both filling paths share, split so each branch states only what its own condition established.** The state half reports `the batch did not commit (<state>)`; the entry half reports `the batch committed no entry (<state>, refused N)`. They are two returns rather than one sentence because the single sentence served both halves and contradicted itself on the state-half branch -- a replayed run read `committed no entry (replayed, committed 1)`. | `_placement_refusal`; `_placeable_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:288-312; mcp/src/agents_remember/cli/knowledge_ingest.py:315-333 |
-| **The three rules that guard the fork-point copy: an identified first generation is never replaced; a damaged half is named and left exactly as it is; and the captured bytes are read as a dataset *before* they are written, so a corrupt expected dataset is never reported as placed.** | `_place_fork_point`; `read_before_half`; `read_captured_dataset_identity` | mcp/src/agents_remember/cli/knowledge_ingest.py:379-410; mcp/src/agents_remember/application/knowledge_before_half.py:254-283; mcp/src/agents_remember/application/knowledge_before_half.py:223-237 |
-| **The cold-start branch: a run that named no baseline establishes the review's before half as an explicitly identified empty first generation, carrying the leaf, the contract, the authorization and the code base the report already observed.** | `_establish_first_generation` | mcp/src/agents_remember/cli/knowledge_ingest.py:413-445 |
-| **The application owner that act delegates to, the run it is handed, and the value it answers with.** | `establish_first_generation`; `FirstGenerationRun`; `BeforeGeneration` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:81-88; mcp/src/agents_remember/application/knowledge_first_generation.py:91-97 |
-| The machine-readable report the caller consumes, including `reviewBaseline` beside `candidateDirectory`. | `_payload` | mcp/src/agents_remember/cli/knowledge_ingest.py:530-568 |
-| The entry arithmetic: read, committed, refused, rulings. | `_counts` | mcp/src/agents_remember/cli/knowledge_ingest.py:571-583 |
+| Declares the contract guard, the hand-off list, the optional candidate directory, the authorization ref, the baseline this task forks from, and dry-run. | `add_arguments` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209 |
+| Drives one ingest and prints the report, which is the result; it loads the contract once, builds the one `IngestSelection` the operation takes, and hands the loaded contract to the review handoff. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:360-409; mcp/src/agents_remember/cli/knowledge_ingest.py:370-378 |
+| **The canonical review root, derived from the contract's own recorded worktree group rather than from the caller, so the directory the review resolves and the directory this run writes are the same path by construction.** | `_review_root` | mcp/src/agents_remember/cli/knowledge_ingest.py:245-254 |
+| **The candidate directory: the caller's when it named one, otherwise the canonical review candidate root.** | `_candidate_directory` | mcp/src/agents_remember/cli/knowledge_ingest.py:257-266 |
+| **The review handoff as a pure seam: ask the one gate whether this run may fill anything, then hand the half, the candidate directory, the captured bytes, the run's facts and the rebase flag to the placement owner.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:319-357 |
+| **The before-snapshot capture, taken at the top of `run` before the ingest can publish over the file `--baseline` names (leaf `260915-KS-L47`). It returns the application owner's own value rather than a CLI-local dataclass.** | `_capture_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:269-289 |
+| The two batch states that mean the candidate is on disk, and the entry list that keeps an all-refused run from reading as one of them: `no_change` is a batch whose rows were already stored, but the batch-level state also falls back to it when the batch never ran, so a run whose every entry refused reports it too. The placement therefore also requires `report.committed` to be non-empty, because a run that committed no entry has no candidate of its own and must not touch the review's before half. | `COMMITTED_BATCH_STATES`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:130-130; mcp/src/agents_remember/cli/knowledge_ingest.py:292-316 |
+| **The one gate both filling paths share, split so each branch states only what its own condition established.** The state half reports `the batch did not commit (<state>)`; the entry half reports `the batch committed no entry (<state>, refused N)`. They are two returns rather than one sentence because the single sentence served both halves and contradicted itself on the state-half branch -- a replayed run read `committed no entry (replayed, committed 1)` This is the only placement question left in this file. | `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:292-316 |
+| **The rules that used to be this file's, cited where they now live: the ordered answers that keep a standing baseline, and the first generation's preservation rule the rebase flag cannot override.** | `_place_or_keep`; `_place_admitted_baseline`; `_identified_first_generation` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:534-548; mcp/src/agents_remember/application/knowledge_baseline_generation.py:843-856 |
+| **The application owner the handoff delegates to, and the values it hands over: the run's admitted facts and the bytes read before publication could move them.** | `fill_admitted_before_half`; `BaselineRun`; `CapturedBaseline` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:464-500; mcp/src/agents_remember/application/knowledge_baseline_generation.py:164-175; mcp/src/agents_remember/application/knowledge_baseline_generation.py:179-189 |
+| **The two readers the moved guards were built on: the half's four-state read, and the bytes-read-as-a-dataset read taken before anything is written.** | `read_before_half`; `read_captured_dataset_identity` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:226-240 |
+| **The cold-start branch, now reached through the owner: a run that named no baseline establishes the review's before half as an explicitly identified empty first generation, carrying the leaf, the contract, the authorization and the code base the report already observed.** | `_establish_first_generation` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516 |
+| **The application owner that act delegates to, the run it is handed, and the value it answers with.** | `establish_first_generation`; `FirstGenerationRun`; `BeforeGeneration` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:82-88; mcp/src/agents_remember/application/knowledge_first_generation.py:92-97 |
+| The machine-readable report the caller consumes, including `reviewBaseline` beside `candidateDirectory`. | `_payload` | mcp/src/agents_remember/cli/knowledge_ingest.py:451-489 |
+| The entry arithmetic: read, committed, refused, rulings. | `_counts` | mcp/src/agents_remember/cli/knowledge_ingest.py:492-504 |
 | The production entry point this adapter calls — the closed write path — and the selection value it is handed, including the baseline a run forks from. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1014-1031 |
 | **The refusal a selected baseline that is missing or corrupt earns, naming its path and reason and establishing nothing.** | `selected_input_unavailable_refusal`; `_selected_baseline` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-901; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379 |
-| **The two published directory constants this adapter derives its default from — one spelling shared with the reader, which is what connects the write side to the review. They are defined in `application/review_candidate_resolution.py` and re-exported by `knowledge_review.py`, which is the import path this module uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_CANDIDATE_DIRECTORY`; `REVIEW_BASELINE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:72-79; mcp/src/agents_remember/application/knowledge_review.py:118-120; mcp/src/agents_remember/cli/knowledge_ingest.py:103-107 |
-| The dataset name both halves take, so a placed baseline and an established first generation are the file the review opens. | `CANDIDATE_DATABASE_NAME`; `BASELINE_ORIGIN_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52; mcp/src/agents_remember/application/knowledge_before_half.py:76-76 |
+| **The two published directory constants this adapter derives its default from — one spelling shared with the reader, which is what connects the write side to the review. They are defined in `application/review_candidate_resolution.py` and re-exported by `knowledge_review.py`, which is the import path this module uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_CANDIDATE_DIRECTORY`; `REVIEW_BASELINE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:72-79; mcp/src/agents_remember/application/knowledge_review.py:118-120; mcp/src/agents_remember/cli/knowledge_ingest.py:105-109 |
+| The dataset name both halves take, so a placed baseline and an established first generation are the file the review opens. | `CANDIDATE_DATABASE_NAME`; `BASELINE_ORIGIN_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52; mcp/src/agents_remember/application/knowledge_before_half.py:79-79 |
 | The contract the one load yields, and the loader that reads it. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The subparser registration that makes this the ninth CLI subcommand. | "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:35-43 |
 
 ## Update History
+- 2026-09-21T15:35+02:00 — 260921-ICR-L18 curator (uncommitted change set on `ar/260921-icr-l18`, code base `0fca5c69766aa95eebe950c19fbcdc83864ec35a`): **this adapter stopped being a placement authority, and the card's body says so.** `260921-ICR-L18` (ICR-R18@v1) extracted the placement machinery into the new `application/knowledge_baseline_generation.py`, so `cli/knowledge_ingest.py` is **541 lines** where this card last measured 620 — a net −79 — and `_place_review_baseline` (`:319-357`) is now a pure seam: it asks `_placement_refusal` (`:292-316`, still the only placement question left in this file, unchanged by this leaf) whether the run may fill anything, then hands the half, the candidate directory, the captured bytes, the run's facts and the rebase flag to `fill_admitted_before_half`. **Four constructs this card used to cite no longer exist in this file** and their rows were re-pointed rather than deleted: `_CapturedBaseline` is now the owner's public `CapturedBaseline`; `_placeable_baseline` has no successor (the handoff narrows `captured` once, inline); and `_place_fork_point` and `_establish_first_generation` both moved into the owner, as `_place_or_keep`/`_place_admitted_baseline` and `_establish_first_generation` respectively — the rules they carried (the ordered keep-or-write answers, and R05's first-generation preservation the rebase flag cannot override) are now cited where they live. **The new argument is `--rebase-baseline`**, the caller's deliberate word and the only input that may replace a standing baseline; its invocation refusal lives in `run` (`:370-378`) because it is a fact about the argument list, and it fires by name before the contract or the list is read. **Citation accounting:** every range into this file was re-derived from its construct's own extent rather than carried, including the ranges no checklist row named — `add_arguments` `:129-192` → `:133-209`, `run` `:448-488` → `:360-409`, `_review_root` `:228-237` → `:245-254`, `_candidate_directory` `:240-249` → `:257-266`, `_capture_baseline` `:267-285` → `:269-289` (and its dataclass row dropped), `_placement_refusal` `:288-312` → `:292-316`, `_place_review_baseline` `:336-376` → `:319-357`, `_payload` `:530-568` → `:451-489`, `_counts` `:571-583` → `:492-504`, `COMMITTED_BATCH_STATES` `:126-126` → `:130-130`. The sibling-module rows into `knowledge_before_half.py` moved by this leaf's own docstring reconciliation (`:254-283` → `:257-286`, `:223-237` → `:226-240`, `:76-76` → `:79-79`), and the `IngestSelection` row was corrected from `:1014-1031` to `:1015-1031` — a range that was already off by one before this leaf and is re-measured here rather than carried. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the production line this reading was against (`0fca5c69`, this leaf's base), because the candidate is uncommitted and no commit contains the body as it now stands; the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
 - 2026-09-21T14:30+02:00 — 260921-ICR-L5 curator, **the sync's memory-side conflict in this document resolved as a UNION, with the CLI's own ranges kept and the sibling-module facts added.** This file is 620 lines in the merged candidate — `260921-ICR-L5`'s version, which is why this side's ranges and Logic surface stand — while L1's contribution is the fact that the three `REVIEW_*` constants this module imports are now *defined* in `application/review_candidate_resolution.py` and re-exported through `knowledge_review.py`: that row names both files and this module's own import block (`:103-107`) rather than replacing the range. The 13-line adapter change this leaf landed survives the merge unchanged, and its two call sites are cited at the merged module's extents (`list_knowledge_review_entries` `:207-288`, `compose_review` `:386-496`). No verification stamp was advanced.
 - 2026-09-21T13:50+02:00 — 260921-ICR-L5 curator (uncommitted change set on `ar/260921-icr-l5`, code base `f745e16659c5602252bb185a2ffccc356c2bde26`): **the cold-start branch reached this adapter, and the review handoff became two filling paths behind one gate.** `--baseline` absent used to mean "nothing is placed" and the review's before half stayed absent; it now means the run *establishes* an explicitly identified empty first generation through the new `application/knowledge_first_generation.establish_first_generation`, because a pair with one side missing is refused and the first invariant a repository ever records could not otherwise be displayed as an addition (ICR-R05@v1). The gate that decides whether either path may run was extracted into `_placement_refusal` (`:288-312`) and is now reached from **both** paths rather than only from the `--baseline` one; `_place_fork_point` (`:379-410`) carries the three rules that guard the copy — an identified first generation is never replaced, a damaged half is named and left as it is, and the captured bytes are read as a dataset before they are written; and `_establish_first_generation` (`:413-445`) is the new branch. `_review_root` (`:228-237`) now takes the loaded `WorktreeContract` because `run` loads the contract once and derives both the root and the leaf id from it. This is a body change and not a metadata-only refresh: the two paragraphs above state behaviour this card did not carry, and the Invariants section gained the one-half-per-run rule and the resume-read rule. **Citation accounting:** the file grew 513 → 620 lines, so every range this card carries into it was re-measured by construct extent rather than carried — `add_arguments` `:110-170` → `:129-192`, `run` `:335-374` → `:448-488`, `_payload` `:416-454` → `:530-568`, `_counts` `:457-469` → `:571-583`, `_review_root` `:206-215` → `:228-237`, `_candidate_directory` `:218-227` → `:240-249`, `_CapturedBaseline`/`_capture_baseline` `:231-263` → `:252-264`/`:267-285`, `_place_review_baseline` `:293-332` → `:336-376`, and `COMMITTED_BATCH_STATES` `:107-107` → `:126-126`; three rows were added for the two new branch helpers and the shared gate, and two duplicate rows that cited the same constructs twice were folded into one. The same re-measurement was applied to the three other route documents that cite this file — `mcp/overview.md`, `mcp/src/agents_remember/application/overview.md`, `mcp/tests/overview.md` and the two test cards. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made. The Todos section records one code-level observation for the owning seat (the review adapter's 1,200-line rail), which no memory change could address.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only, forced by this leaf's move of the review resolution out of `application/knowledge_review.py` into `application/review_candidate_resolution.py`.** The rows of this document that cited `knowledge_review.py` for `REVIEW_CANDIDATE_RELATIVE_ROOT`, `REVIEW_CANDIDATE_DIRECTORY`, `REVIEW_BASELINE_DIRECTORY`, `review_namespace`, `missing_dataset_half`, `list_knowledge_review_entries` and `_recorded_identities` were re-read and re-pointed: a name the sibling module now defines is cited there, and a name the adapter still owns is cited at the extent it occupies in this candidate (the module is 1113 lines, down from 1281). No claim was re-worded beyond naming where the construct now lives, no row was deleted and no verification stamp was advanced — the candidate is uncommitted and closeout owns that stamp.

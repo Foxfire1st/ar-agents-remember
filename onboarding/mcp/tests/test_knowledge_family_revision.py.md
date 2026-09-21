@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_revision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ No domain documentation source is configured for this repository (`system/source
 | The two-branch wording node. | "test_both_family_lineage_branches_are_worded_for_the_branch_they_describe" | mcp/tests/test_knowledge_family_revision.py:325-348 |
 | The support builders this module consumes. | `FamilySeed`; `family_draft`; `sealed_family`; `insert_raw_family_revision`; `insert_raw_family_edge`; `table_counts` | mcp/tests/knowledge_graph_test_support.py:65-74; mcp/tests/knowledge_graph_test_support.py:121-135; mcp/tests/knowledge_graph_test_support.py:136-145; mcp/tests/knowledge_graph_test_support.py:185-190; mcp/tests/knowledge_graph_test_support.py:191-201; mcp/tests/knowledge_graph_test_support.py:176-184 |
 | The production module under test. | `create_family`; `create_family_revision`; `get_family_revision`; `family_id_of_revision` | mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282; mcp/src/agents_remember/memory/knowledge/families.py:285-301 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:97-97 |
-|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1190-1190  |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:99-99 |
+|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1192-1192  |
 
 ## Cross-Repo References
 

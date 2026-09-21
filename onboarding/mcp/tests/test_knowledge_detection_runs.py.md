@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_detection_runs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l14` uncommitted source; base `4264dcc9decf50e64c863e9c6526ea09117be71b` |
 | governingOverview | `overview.md` |
 
@@ -176,7 +176,7 @@ No domain documentation source is configured for this repository (`system/source
 | The registered support fixtures this module consumes — **no new artifact and no new contract**. | `DiffFixture`; `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:148-188; mcp/tests/diff_scope_test_support.py:189-215 |
 | The production entry points these cases drive. | `record_detection_run`; `read_detection_run`; `detect_review_conditions`; `build_detection_run` | mcp/src/agents_remember/memory/knowledge/detection.py:263-289; mcp/src/agents_remember/memory/knowledge/detection.py:557-600; mcp/src/agents_remember/memory/knowledge/detection_walk.py:182-247; mcp/src/agents_remember/memory/knowledge/detection.py:144-173 |
 | **The sequence table's two triggers, which are what refuse a reorder or a shortening of a recorded run.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
-| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1396-1396; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1400-1400; mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
 

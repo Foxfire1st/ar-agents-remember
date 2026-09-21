@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_entry_point_sweep.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l6-ar` uncommitted source (**1353 lines / 15 cases**, sha256 `c748a345b32b68ee…`, edited by `260918-TSIP-L6`); base `a1351504`. L5's own candidate (**1274 lines / 14 cases**, sha256 `4223c626…`) is recorded in the Update History below. |
 | governingOverview | `overview.md` |
 
@@ -149,7 +149,7 @@ they make no acceptance claim.
 | The sweep itself: one world, one run, and the equality assertions that bind every pin. | `EntryPointProbeTests` | mcp/tests/test_tool_entry_point_sweep.py:887-1181 |
 | The executed positive control over the choke point, and both break shapes at the entry point. | `ChokePointControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1182-1280 |
 | The census controls: write, rewrite and delete in both repositories and outside every zone. | `EntryPointCensusControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1281-1353 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" | mcp/tests/test-evidence-lanes.toml:188-188 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" | mcp/tests/test-evidence-lanes.toml:191-191 |
 | The advertised roster the swept population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
 | The registry whose models classify a payload that does not validate. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:156-241 |
 | The choke point a bypassing handler skips, and the validation this module's control executes. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |

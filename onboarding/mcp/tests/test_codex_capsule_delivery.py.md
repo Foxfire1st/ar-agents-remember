@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-18T13:43+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
 | path | `mcp/tests/test_codex_capsule_delivery.py` |
 | doc_type | `file-level-onboarding` |
@@ -101,7 +101,7 @@ No Domain Documentation entries are configured in the resolved source registry.
 | A malformed payload refuses before delivery, and the value type guards its own wire form. | `test_a_malformed_capsule_payload_is_refused_before_delivery`; `test_the_carrier_value_type_guards_its_own_wire_form` | mcp/tests/test_codex_capsule_delivery.py:816-885; mcp/tests/test_codex_capsule_delivery.py:886-959 |
 | The session decision path compares the recorded binding and digest across four resume branches. | `test_the_session_decision_path_compares_the_recorded_binding_and_digest` | mcp/tests/test_codex_capsule_delivery.py:1055-1120 |
 | The live case runs against the installed app-server; a version mismatch skips with its reason. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1208-1256 |
-| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:314-314 |
+| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:317-317 |
 
 ## Cross-Repo References
 

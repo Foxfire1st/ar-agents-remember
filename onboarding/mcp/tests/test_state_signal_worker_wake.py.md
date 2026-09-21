@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T21:40+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | path | `mcp/tests/test_state_signal_worker_wake.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -130,7 +130,7 @@ evidence.
 | The sprint-scoped orchestrator, the manager's own structural owner, present so the sweep's unrelated dead-upstream fact stays quiet and the whole store can be asserted. | `_sprint_orchestrator` | mcp/tests/test_state_signal_worker_wake.py:170-185 |
 | The temporary world writes real sprint, master, leaf and unrelated-master documents before the sweep resolves structural owners. | `setUp` | mcp/tests/test_state_signal_worker_wake.py:203-277 |
 | Every agent the whole store names, as address or as owner, used to prove no unrelated manager was woken. | `_addressed_agents` | mcp/tests/test_state_signal_worker_wake.py:304-312 |
-| The module's `unit-regression` lane row, added by the same change set that created the module. | "mcp/tests/test_state_signal_worker_wake.py" | mcp/tests/test-evidence-lanes.toml:164-164 |
+| The module's `unit-regression` lane row, added by the same change set that created the module. | "mcp/tests/test_state_signal_worker_wake.py" | mcp/tests/test-evidence-lanes.toml:167-167 |
 
 ## Cross-Repo References
 

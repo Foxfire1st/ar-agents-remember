@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_projection_vault_safety.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted change set; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -190,8 +190,8 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module docstring states the plan's one-acceptance-case rule, names the eight checkpoints, and names the two proof obligations that need real records.** | "One acceptance case covers it" | mcp/tests/test_knowledge_projection_vault_safety.py:1-13; mcp/src/agents_remember/memory/knowledge/managed_projection.py:33-36 |
-| The module declares the integration marker at module level and pins the renderer version its destination profile and rendered outputs both carry. | "pytestmark = pytest.mark.integration" | mcp/tests/test_knowledge_projection_vault_safety.py:52-52; mcp/tests/test-evidence-lanes.toml:194-269 |
-| **The fixture is the shared real dataset: one repository built through the public write operations, left closed, whose `database_path` and `repository_id` every case addresses.** | `build_read_scope_fixture` | mcp/tests/test_knowledge_projection_vault_safety.py:51-55; mcp/tests/read_scope_test_support.py:173-239; mcp/tests/read_scope_test_support.py:266-283; mcp/tests/evidence-lifecycle.toml:1405-1408 |
+| The module declares the integration marker at module level and pins the renderer version its destination profile and rendered outputs both carry. | "pytestmark = pytest.mark.integration" | mcp/tests/test_knowledge_projection_vault_safety.py:52-52; mcp/tests/test-evidence-lanes.toml:196-271 |
+| **The fixture is the shared real dataset: one repository built through the public write operations, left closed, whose `database_path` and `repository_id` every case addresses.** | `build_read_scope_fixture` | mcp/tests/test_knowledge_projection_vault_safety.py:51-55; mcp/tests/read_scope_test_support.py:173-239; mcp/tests/read_scope_test_support.py:266-283; mcp/tests/evidence-lifecycle.toml:1409-1412 |
 | Three local helpers name the acceptance profile, build one rendered output over the pinned renderer version, and read the destination manifest. | `_manifest` | mcp/tests/test_knowledge_projection_vault_safety.py:85-86 |
 | **The one acceptance case drives all eight checkpoints over one destination and one manifest lineage, then asserts the checkpoint id set and the final manifest generation.** | `test_the_vault_safety_contract_holds_for_all_eight_checkpoints_in_one_scenario` | mcp/tests/test_knowledge_projection_vault_safety.py:83-116 |
 | The prior generation and the user's own edits — two modified outputs, an untouched orphan, a user directory and a symlink out of the root — are planted so checkpoints 3, 5, 6, 7 and 8 each have a real subject. | `_open_the_scenario` | mcp/tests/test_knowledge_projection_vault_safety.py:119-144 |

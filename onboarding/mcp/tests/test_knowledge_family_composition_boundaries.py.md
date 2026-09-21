@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_composition_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:33+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l17` uncommitted source; base `15fe8678fc0f87eaac4606952f179135ebe392c4` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -109,7 +109,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The case that asserts every pre-existing family revision keeps its sealed `payload_digest`.** | "test_every_pre_existing_family_revision_keeps_its_payload_digest" | mcp/tests/test_knowledge_family_composition_boundaries.py:496-496 |
 | **The case that asserts the escalation artifact exists and states its subject and effect scope.** | "test_the_r07_escalation_proposal_is_recorded_with_its_subject_and_effect_scope" | mcp/tests/test_knowledge_family_composition_boundaries.py:589-589 |
 | **The end-to-end seam case: the recorded link is reported, the refusal leaves the file byte-identical, and a missing revision is refused rather than reported empty.** | "test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection" | mcp/tests/test_knowledge_family_composition_boundaries.py:615-615 |
-| The contract whose consumer list this module joined for its read-scope fixture. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1418-1418 |
+| The contract whose consumer list this module joined for its read-scope fixture. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1423-1423 |
 | The lane row this module is registered under. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References

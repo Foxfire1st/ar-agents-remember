@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_diff_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `overview.md` |
 
@@ -122,12 +122,12 @@ repository source and package-local evidence only.
 | The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set. | "test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make"; "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set" | mcp/tests/test_knowledge_diff_boundaries.py:752-771; mcp/tests/test_knowledge_diff_boundaries.py:774-814 |
 | **The probe that measured the trees being what makes a gap visible.** | "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:817-840 |
 | The production probe these cases drive rather than substitute. | `git_tree_difference_probe` | mcp/src/agents_remember/application/knowledge_diff.py:162-196 |
-|The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1256-1277; mcp/tests/evidence-lifecycle.toml:1262-1262 |
-|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
-|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1198-1202 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
-|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
+|The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1258-1279; mcp/tests/evidence-lifecycle.toml:1264-1264 |
+|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
+|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
+| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1200-1204 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
+|**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**|"integration = ["; "owner = \"knowledge-read-scope-cases\""| mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
 
 ## Cross-Repo References
 
@@ -137,9 +137,9 @@ under `tmp_path`. No configured remote, protected branch or sibling repository i
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured cross-repository evidence is claimed. | — | — |
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1198-1202; mcp/tests/evidence-lifecycle.toml:1262-1262 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1410-1410; mcp/tests/test-evidence-lanes.toml:207-207 |
+| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1200-1204; mcp/tests/evidence-lifecycle.toml:1264-1264 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/test-evidence-lanes.toml:210-210 |
 
 ## Update History
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **six new cases and one real-Git inventory fixture.** The module now measures the requirement's evidence: every change class in one real repository, filename identity through a tab and a newline, one entry per renderability kind, the `unavailable`-versus-measured-empty distinction with its control, a paths-only probe rendered partial, and the non-UTF-8 byte-form boundary. The card records the fixture's shape (`InventoryFixture`, `sides()`, the shared `independent_changed_records` observation) and what each case protects. **The module is now 1170 lines against a 900-line soft signal and a 1200-line hard rail — that is a master ruling, not an oversight:** the consolidation stays, the hard rail and the file-size gate are green, and the next leaf that adds cases there should extract first rather than push it toward the rail. Citation rows were re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.

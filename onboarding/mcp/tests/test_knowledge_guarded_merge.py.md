@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T00:45+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l47-ar`, uncommitted; base `be325216416326a66950c9e320ff8d08f41e5d66` |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -73,10 +73,10 @@ No domain documentation source is configured for this repository (`system/source
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:72-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:114-182 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1282-1282 |
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:207-207 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1282-1282 |
+|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:116-184 |
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1286-1286 |
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:209-209 |
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1286-1286 |
 
 ## Cross-Repo References
 
@@ -85,7 +85,7 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1282-1282  |
+|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1286-1286  |
 
 ## Update History
 - 2026-09-21T00:45+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update and the Update History entry this card's own body change owed.** The card carried the corrected text for the false universal the master-exit reviewers found — the case was *not* built with equal payloads — but the change had no history entry, and this entry records it. The `test_both_conflicting_edits_refuse_whole_and_preserve_every_input` bullet now strikes the word "equal" rather than rewording it, quotes the old sentence, says why it was false (`_shared_revision_shape` gives the two sides different `display_version` and `statement` values, so the case proved the refusal for a *diverging* payload and could not prove the equal-payload property at all), and records the second shape inside the same collected case that does measure it: `_equal_payload_revision_shape` inserts one identical complete revision row on both sides — same statement, display version, applicability, conditions, exclusions, state, `acceptance_ref`, provenance and `payload_digest` — asserts the same `duplicate_identity` refusal with every input byte-unchanged, and proves its two sides equal by comparing both sides' stored rows column by column before the merge runs, so the case cannot silently drift back into re-testing the diverging shape. Both shapes' verdict is asserted by one extracted helper, `assert_insertion_collision_refused`, because the first version pushed the case past the repository's statement rail and the doctrine is to extract a cohesive helper rather than widen a limit or add a `# noqa`. **No collected case was added**: both shapes are one guarantee, that exactly one insertion identity is refused whatever the two sides wrote in it, and both budgets are unchanged. The merge guard itself (`memory/knowledge/merge.py`'s `_independent_insert_refusal`) is byte-unchanged: no narrowing, no payload comparison, no blanket equal-payload exception, and selection is still by SQLite conflict code alone. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded — no commit contains this body and no stamp was measured on it — and only `lastUpdated`/`reviewedWorkingCandidate` move. No commit was made.

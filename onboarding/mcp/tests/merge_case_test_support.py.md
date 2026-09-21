@@ -6,8 +6,8 @@
 | path | `mcp/tests/merge_case_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ No domain documentation source is configured for this repository (`system/source
 | The one binary read, and why it does not go through the text-decoding runner. | `_read_committed_blob` | mcp/tests/merge_case_test_support.py:487-508 |
 | The build order that puts an unusual state inside the commits. | `build_case` | mcp/tests/merge_case_test_support.py:511-571 |
 | The measurement helpers that make input preservation and survival measured rather than asserted. | `table_rows`; `row_counts`; `file_digest`; `journal_peer_names`; `statements_of`; `labels_of` | mcp/tests/merge_case_test_support.py:583-591; mcp/tests/merge_case_test_support.py:594-605; mcp/tests/merge_case_test_support.py:607-611; mcp/tests/merge_case_test_support.py:613-621; mcp/tests/merge_case_test_support.py:623-633; mcp/tests/merge_case_test_support.py:635-645 |
-|The registered artifact that makes this harness an owned contract rather than a private helper.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1282-1282 |
+|The registered artifact that makes this harness an owned contract rather than a private helper.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1286-1286 |
 | The unit-side consuming module, which drives the disjoint-edit survival case. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:312-384 |
 | The integration-side consuming module, whose docstring states which integrity checks a case can reach. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | The store operations the authored states go through. | `create_invariant`; `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-325 |
@@ -85,7 +85,7 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The registered artifact that makes this harness an owned contract rather than a private helper. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1282-1282  |
+|  The registered artifact that makes this harness an owned contract rather than a private helper. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1286-1286  |
 | **The consuming module that drives the harness's own deletion case, cited at the definition the claim is about.** | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:312-384 |
 | **The boundary module that supplies the conflict-row and final-integrity cases, cited at its own module docstring.** | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-2 |
 

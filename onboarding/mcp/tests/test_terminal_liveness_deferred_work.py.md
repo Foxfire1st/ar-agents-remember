@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
 | path | `mcp/tests/test_terminal_liveness_deferred_work.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -52,7 +52,7 @@ The test cases are grounded in the production sweeper's batch and deferred-drain
 | The full and starting sweeps collect pending syncs inside the catalog batch, then drain them and invoke callbacks after the batch exits. | `refresh`; `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268 |
 | The deferred drain re-reads committed rows before invoking the observer, while the row-local guard records `interactionSyncError` and continues on later rows. | `_run_deferred_interaction_syncs`; `_observe_control_snapshot` | mcp/src/agents_remember/serving/terminal_liveness.py:300-322; mcp/src/agents_remember/serving/terminal_liveness.py:532-582 |
 | The module exercises full/starting order, aborted-pass suppression, guarded continuation, and post-commit failure durability with the real catalog and sweeper seams. | `TerminalLivenessDeferredWorkTests` | mcp/tests/test_terminal_liveness_deferred_work.py:101-366 |
-| The candidate classifies this module once in the explicit unit-regression lane. | "mcp/tests/test_terminal_liveness_deferred_work.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
+| The candidate classifies this module once in the explicit unit-regression lane. | "mcp/tests/test_terminal_liveness_deferred_work.py" | mcp/tests/test-evidence-lanes.toml:187-187 |
 ## Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned unit-regression module.
