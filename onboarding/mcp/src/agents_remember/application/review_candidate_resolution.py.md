@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
-| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
+| lastVerifiedCommitHash | `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
+| lastVerifiedCommitDate | 2026-09-21T14:06:50+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -211,7 +211,7 @@ recheck is deliberately not part of resolution, because it belongs at publicatio
 | The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word. | `_capture_refusal`; `_status_text` | mcp/src/agents_remember/application/review_candidate_resolution.py:338-355 |
 | The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. | `_leaf_contract`; `load_contract`; `slugify` | mcp/src/agents_remember/application/review_candidate_resolution.py:358-378; mcp/src/agents_remember/worktrees/worktree_contract.py:430-472; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
 | **The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.** | `resolve_review_candidate`; `read_knowledge_review` | mcp/src/agents_remember/application/knowledge_review.py:44-52; mcp/src/agents_remember/application/knowledge_review.py:116-130 |
-| The CLI that reads the two directory names through that re-export. | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/cli/knowledge_ingest.py:82-84 |
+| The CLI that reads the two directory names through that re-export. | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/cli/knowledge_ingest.py:102-103 |
 | **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** | `test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree`; `test_a_capture_input_that_moves_before_publication_is_refused_by_name` | mcp/tests/test_knowledge_review_source_endpoints.py:336-367; mcp/tests/test_knowledge_review_source_endpoints.py:434-458 |
 
 ## Cross-Repo References
@@ -225,4 +225,5 @@ request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T15:25+02:00 — 260921-ICR-L5 curator, **the second quality pass's enforced rows re-read and re-cited; every one of them was a range that had drifted out from under its anchor.** Rows repaired here by re-deriving each range from the construct's own extent in the merged candidate, with claim wording retained because each claim still states what the code does: the CLI-that-reads-the-two-names row, which cited the pre-leaf import block `82-84` and now cites `102-103` where the merged CLI imports them. No verification stamp was advanced — the working tree still differs from every recorded stamp, so closeout owns that stamp.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, base `f745e16659c5602252bb185a2ffccc356c2bde26`): created this one-to-one card for the module the leaf introduced as the review surface's one owner of exact source endpoints and of the dataset pair. The card records what the move changed rather than only where the code now lives: the resolution binds the contract's **recorded base commit** on one side and the **captured add-all candidate tree** on the other, with the candidate side supplying both a root and a tree id (before, `candidate_code_root` was deliberately `None`); a contract that records **no base commit** is now refused by name with `offending_input="baseline"` instead of degrading to a `None` tree; `candidate_identity` is carried so the composition can re-derive the whole identity immediately before publication; and the capture stays the existing `future_code_candidate` owner's, wrapped rather than re-implemented. **Stamp accounting:** the two verification rows name `f745e16659c5602252bb185a2ffccc356c2bde26`, the last real commit on this line, because the external-memory refresh gate requires verification metadata before the memory commit; every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the content those rows would otherwise claim to have verified, so the governed closeout owns the real stamp.
