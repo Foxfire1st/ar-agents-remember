@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash |  `c755cec64fa9dc12e797c9fcfb4c96822718330c`|
+| lastVerifiedCommitDate |  2026-09-21T15:29:12+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 
@@ -76,7 +76,7 @@ onboarding pass.
 | External memory roots (and the disabled mode) | Selected external memory repos under `ar-coordination/memory-repos/ar-<repo>/` are the **only supported topology**, plus `disabled` for a task that carries no memory lane and computed `memory.md` consumer caches derived from committed code/memory attribution. The former repo-local `ar-memory/` internal mode was **removed from the product**; a contract, settings file or memory root that still records it is reported with its exact artifact and refused with status `memory-mode-unsupported`, naming the supported set and the route out — never substituted with `external` and never migrated automatically. `repo-sidecar` survives only as a per-artifact storage placement, not as a memory topology. | `c-00-initialize-memory-repo` skill, `c-08-ar-coordination-context-resolver` skill, `c-09-git-worktree-manager` skill, `c-10-adopt-memory-baseline` skill, `kernel/memory_mode.py`, `kernel/memory_ledger.py` |
 | Context resolution and startup packets | Resolved code, coordination, memory, onboarding, task, temp, ledger, storage, path-rule, cross-repo, provider-summary, worktree, Git, and optional drift facts through compact `ContextPacketV2`; detailed provider state is intentionally excluded. | `c-08-ar-coordination-context-resolver` skill, `resolve_context`, `context_packet`, `ContextPacketV2` |
 | Memory quality control | Task-start drift classification, closeout memory quality, new-file missing-onboarding checks, overview/entity fingerprint checks, and update-history style checks. | `c-02-memory-quality-control` skill, `drift_check`, `memory_quality_check`, `check_missing_onboarding` |
-| Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. | `c-04-retrieval-strategy-router` skill, `overview.index.json`, GrepAI tools, CGC tools |
+| Retrieval routing | Semantics, Relationship, and Intent routing across provider accelerators, route indexes, onboarding, and bounded source confirmation. Since 260921-ICR-L19 the Intent route also reads the repository's **published intent** — the invariants a previous task already recorded about the requested paths, at their exact snapshot and without requiring a task — through the ordinary `read_ar_files` call. | `c-04-retrieval-strategy-router` skill, `overview.index.json`, GrepAI tools, CGC tools, `read_ar_files` |
 | Onboarding bootstrap and slice maintenance | Repo bootstrap, route-local overview creation, evidence packs, file cards, onboarding waves, curator review artifacts, and route/slice refresh or deletion cleanup. | `c-03-repo-bootstrap` skill, `c-05-create-or-update-onboarding-files` skill |
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes driven by one Git/path-rule census. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py`, `kernel/route_index_census.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
@@ -6079,3 +6079,50 @@ behaviour, both carried for the owning seat.
   targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff base,
   generated help, and diagnostic-only host pytest/wrapper execution. Verification remains
   closeout-owned.
+
+## 260921-ICR-L19 The Ordinary Retrieval Route Reads The Repository's Published Intent Before Planning
+
+**This route's impact is one capability at repository altitude (ICR-R19@v1): a planner can now read what
+this repository already intended, before a task exists.** `application/published_intent.py` resolves the
+repository's published knowledge dataset from the ordinary read's own coordination context
+(`<memory_root>/knowledge.sqlite`), resolves the source-resolution pair recorded anchors are observed
+against, and reads one bounded page per requested path through the shipped selective read
+(`application/knowledge_read.py`, reused unchanged) — no task, leaf or enclosure is required. The result
+rides the ordinary paired read as a `published_intent` block, so a fresh planner that calls `read_ar_files`
+gets the recorded intent beside the source and its onboarding. Every failure is a named state: a repository
+that published nothing yet reports `not-recorded` (and source and onboarding research continue unchanged),
+while a non-file entry, undecodable bytes or another repository's dataset is `unusable` with the failed
+binding named and no rows served.
+
+**The canonical retrieval instructions and their generated copies moved with it.** The retrieval carrier
+`skills/c-04-retrieval-strategy-router/SKILL.md` grew 179 → 239 lines: its Intent bullet names the
+published-intent half, and a new **Published Intent Before Planning** section states the route, the
+publication location the read side declares (with the write-side obligation named as ICR-R20@v1's and the
+two-consecutive-task journey as ICR-R25@v1's), the memory-worktree-versus-canonical-root rule with no
+fallback between the two, the payload's exact field spellings and its named absences, and the limitation
+that a bounded page's cursor continues the scope read rather than the mounted view read. The repository's
+own `scripts/sync-skills.py` regenerated all nine in-repo copies from that authored source (this package's
+`package_data/runtime/skills/` copy and the seven harness starter folders), and one test derives the
+carrier's field spellings from a real payload so the instruction cannot drift into a second vocabulary.
+**The seven installed harness skill roots under `~/.agents`, `~/.claude`, `~/.codex`, `projects/.claude`,
+`projects/.codex`, `projects/.pi` and `projects/.hermes` still carry the 179-line carrier**: installing them
+and verifying byte parity is the orchestrator's acceptance step, not a repository change.
+
+**One memory-tree fact this repository-level section owns, because no nearer overview does.** The `skills/`
+tree has file-level sidecars for some skills (`skills/c-09-git-worktree-manager/`, `skills/l-01-agent-lifecycles/`,
+`skills/w-02-light-task-workflow/`) but **no `skills/overview.md`** — there is no route-local overview at
+that folder, so this root overview (route `.`) is the governing overview for files placed directly under
+`skills/`, including the carrier this leaf changed. The generated copy of that carrier under
+`mcp/src/agents_remember/package_data/runtime/skills/` is governed by `mcp/overview.md` and has its own
+sidecar there.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:271-286; mcp/src/agents_remember/application/published_intent.py:192-208; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
+| **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:93-162; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The canonical retrieval carrier, whose new section directs a caller to the route.** | `## Published Intent Before Planning` | skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
+| **The generated copy of that carrier this package ships, regenerated from the authored source.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
+| **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`; `CARRIER` | mcp/tests/test_read_ar_files.py:521-544; mcp/tests/test_read_ar_files.py:24-24 |
+
+## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this repository's impact for the leaf: the ordinary planning retrieval route now selects and reads the repository's published knowledge snapshot without requiring a task, through a new `application/published_intent.py` and the reused selective read; the canonical retrieval carrier and its nine generated in-repo copies state the route (179 → 239 lines, regenerated by `scripts/sync-skills.py`), while the **seven installed harness skill roots still carry the old carrier** and installing them is the orchestrator's acceptance step; and the memory-tree fact that the `skills/` folder has file sidecars for three skills but **no route-local `overview.md`**, so this root overview governs files directly under `skills/` (the generated package-data copy under `mcp/` is governed by `mcp/overview.md`). The `## Feature Inventory` retrieval-routing row was updated in the same pass, because the inventory is maintained current-state surface. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

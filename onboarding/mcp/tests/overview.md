@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitDate | 2026-09-21T14:06:50+02:00|
+| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c` |
+| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
@@ -5163,3 +5163,35 @@ sections keep the ranges they were written with.
 
 ## Update History
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact for the leaf: one new case module that is the production-composition evidence for `ICR-R01@v1`, its eight protected properties, its registry footprint (one mid-list `unit-regression` row at `mcp/tests/test-evidence-lanes.toml:105` and two appended consumer rows with the catalog counts unchanged at 16 / 66), and the pure-move consequence for this document — every claim row here that cites the lanes manifest at or below the insertion, or the lifecycle catalogue below its two appends, was re-derived in the same pass while the generated history entries keep their own old ranges. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
+
+## 260921-ICR-L19 The Read-Files Suite Gains The Published-Intent Half, And A Case That Measures A Carrier
+
+**This route's impact is fourteen cases added to an existing module — no new module, and no registry row
+(ICR-R19@v1).** `mcp/tests/test_read_ar_files.py` grew from 334 to 736 lines, and the additions are two
+classes on the same route: `PublishedIntentRouteTests` (twelve cases at the application layer, driving
+`read_ar_files_tool` with a real dataset written at the memory layer's own name) and
+`PublishedIntentMountedRouteTests` (two cases driving the **mounted** `read_ar_files` route over a real
+coordination tree, so the block is measured through the call an agent actually makes rather than only
+beside it). Neither `mcp/tests/test-evidence-lanes.toml` nor `mcp/tests/evidence-lifecycle.toml` was
+touched: the cases extend a module the manifests already register, so the lane and artifact populations
+are unmoved by this leaf.
+
+**One case measures an instruction rather than a behaviour, and that is deliberate.**
+`test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` derives the item and count
+vocabulary from a **real page** and requires the retrieval carrier to name those spellings, while
+requiring the camelCase variants — which nothing produces — to be absent. A carrier that spells a field the
+payload never carries is a reader's dead end that no behavioural case can catch, because the code is right
+and the instruction is wrong; the case reads the authored root skill through the module's `CARRIER`
+constant, which resolves `skills/c-04-retrieval-strategy-router/SKILL.md` from the test file's own
+location. It is a carrier-parity measurement, not a behavioural one.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The two new classes and the fixtures they drive, including the `_selection()` narrowing helper the type-checked call sites need.** | `PublishedIntentRouteTests`; `PublishedIntentMountedRouteTests`; `_selection` | mcp/tests/test_read_ar_files.py:360-369; mcp/tests/test_read_ar_files.py:680-686; mcp/tests/test_read_ar_files.py:412-424 |
+| **The headline route case: the ordinary read returns the published intent at its exact identities while the source bytes ride in the same payload.** | `test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities` | mcp/tests/test_read_ar_files.py:426-461 |
+| **The cases that measure the named absences and refusals rather than an empty success.** | `test_a_repository_that_publishes_nothing_reports_not_recorded`; `test_a_dataset_that_is_not_a_dataset_names_the_failed_binding`; `test_a_directory_at_the_publication_path_is_not_reported_as_nothing_recorded`; `test_a_dataset_bound_to_another_repository_is_never_silently_read`; `test_an_identity_the_snapshot_does_not_hold_is_a_named_absence` | mcp/tests/test_read_ar_files.py:463-472; mcp/tests/test_read_ar_files.py:474-481; mcp/tests/test_read_ar_files.py:483-499; mcp/tests/test_read_ar_files.py:546-557; mcp/tests/test_read_ar_files.py:569-594 |
+| **The carrier-parity case: the vocabulary is derived from a real page, and the unproduced camelCase variants are required to be absent.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`; `CARRIER` | mcp/tests/test_read_ar_files.py:521-544; mcp/tests/test_read_ar_files.py:24-24 |
+| **The mounted-route class, which measures the block through the call an agent actually makes.** | `test_the_mounted_route_reads_the_memory_layer_publication`; `test_the_mounted_route_names_the_absence_before_anything_is_published` | mcp/tests/test_read_ar_files.py:703-719; mcp/tests/test_read_ar_files.py:721-736 |
+
+## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact for the leaf: fourteen added cases in two classes inside an existing module (twelve application-layer, two mounted-route), the explicit registry fact that neither `mcp/tests/test-evidence-lanes.toml` nor `mcp/tests/evidence-lifecycle.toml` was touched because the module was already registered, and the one case on this route that measures an **instruction** rather than a behaviour — the carrier-parity case, which derives the payload's own spellings from a real page and reads the authored root skill through the module's `CARRIER` constant. The module's own sidecar carries the full re-derived case inventory, including the twelve retained cases this leaf's insertions moved; that repair is recorded on `test_read_ar_files.py.md`. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

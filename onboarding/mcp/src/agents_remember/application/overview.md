@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitDate | 2026-09-21T14:06:50+02:00|
+| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c` |
+| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -567,7 +567,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:61-143 |
 | `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. | "class DriftSummaryPacket(TypedDict):" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11 |
 | `FileReadStatus` is defined in the models type. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
-| The application read-files entry point imports the wire type and decides the read status. | "from agents_remember.models.read_files import FileReadStatus"; "def _resolve_onboarding(" | mcp/src/agents_remember/application/read_files.py:52-52; mcp/src/agents_remember/application/read_files.py:218-218 |
+| The application read-files entry point imports the wire type and decides the read status. | "from agents_remember.models.read_files import FileReadStatus"; "def _resolve_onboarding(" | mcp/src/agents_remember/application/read_files.py:62-62; mcp/src/agents_remember/application/read_files.py:235-267 |
 
 Worktree start is async (GitHub #53): `worktree_tools.py` transfers the temp
 lifecycle settings file to the background setup thread on a `starting` result,
@@ -638,8 +638,8 @@ are checked against the shape `models/drift.py` expects.
 `application/read_files.py` imports that alias, and `_resolve_onboarding` is the only function that
 decides the value and returns `tuple[FileReadStatus, str | None, bool]`.
 cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29)
-cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:52-52)
-cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:209-238)
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:62-62)
+cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:235-267)
 `VALID_FILE_READ_STATUSES = frozenset(get_args(FileReadStatus))` is the runtime half, derived from the
 alias. The import direction is application → models, so the producer uses the single declared alias
 without maintaining a second copy.
@@ -2217,3 +2217,48 @@ keeps "the candidate the leaf authored" and "the candidate the review resolved" 
 
 ## Update History
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the review adapter's resolution moved out into `application/review_candidate_resolution.py` and is imported/re-exported here; the endpoints are now exact (recorded base commit plus captured add-all candidate tree, with a root beside each tree id) where the L22 section still describes a candidate side that supplied neither; a contract recording no base commit is refused by name; and `compose_review` re-checks the captured identity immediately before building the payload, refusing by name with both identities when an input moved. **`reviewedWorkingCandidate` is untouched and no verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp. Eleven reference rows of the `260915-KS-L22` section cited `application/knowledge_review.py` by line; the resolution's departure (1281 → 1113 lines) invalidated all of them, and each was re-read and re-derived in the same pass: the six rows naming a construct that now lives in the sibling module were re-pointed at that module (or, where the construct is the adapter's own call site, at the adapter's current extent), and the four rows whose ranges had run past the end of the shrunken file were replaced with the extents their anchors occupy now.
+
+## 260921-ICR-L19 The Ordinary Read Selects And Reads The Repository's Published Intent
+
+**This route gained one module and one returned half, and the leaf they belong to (`260921-ICR-L19`,
+primary requirement ICR-R19@v1) answers a question the paired read could not: "what did this repository
+already intend here?".** `application/published_intent.py` is the selection the ordinary route was missing
+— from the `CoordinationContext` the read already carries it resolves the repository's published knowledge
+dataset, resolves the source-resolution pair recorded anchors are observed against, seeds the shipped
+selective read with the paths the caller asked about (or with exact record identities), and shapes one
+bounded page per seed. It is not a second read: the page is built by `application/knowledge_read.py`'s
+`open_read_context` + `read_knowledge_scope`, **which this leaf deliberately did not touch** — the gap was
+the caller, not the read.
+
+**Three route-level facts a reader should carry.** (1) The route **declares** the location it reads and the
+ordinary write side has to publish there: no shipped owner computes or defaults a publication destination
+today (`IngestPublication.destination_path` is whatever the caller's `--publish-to` names, and a run that
+names none commits without publishing), so wiring the ordinary publisher to this one location is
+ICR-R20@v1's obligation and the two-consecutive-task journey that proves task A's publication lands where
+task B's planner looks is ICR-R25@v1's. (2) *Which* memory root is read follows the resolved scope with
+**no fallback between the two**: the canonical external memory root when no enclosure is in scope, the
+contract's memory **worktree** inside a leaf — so a publication that is not on the line being read is
+reported `not-recorded`, never substituted from the other root. (3) **No task, leaf or enclosure is
+required to read intent**: the route's only input is the context, and `task_ref` is left unset.
+
+**Every failure is a named state, and that is what makes the attach additive.** `not-recorded` is returned
+only when the location holds no file system entry at all; a directory, a dangling link or a device sitting
+there is `unusable`, as are bytes that are not a dataset of this code and a dataset bound to another
+repository's authority home (refused by name, with no rows served). A path no recorded anchor could carry
+is refused **as a seed** rather than answered with an absence this read never observed, and an identity the
+snapshot does not hold is the read's own `selector_absent` — a fact about this snapshot, never a claim that
+the obligation does not exist. Because every one of those answers is carried inside the block,
+`application/read_files.py`'s attach cannot cost the caller the paired source and onboarding bytes this
+route exists to return: the block is attached on every call, including when the repository publishes
+nothing yet, because an omitted block is indistinguishable from a route that never ran.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** | `published_intent_block`; `published_dataset_path`; `read_published_intent` | mcp/src/agents_remember/application/published_intent.py:271-286; mcp/src/agents_remember/application/published_intent.py:192-208; mcp/src/agents_remember/application/published_intent.py:289-307 |
+| **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** | `resolve_published_intent`; `_absence_state`; `_authority_mismatch` | mcp/src/agents_remember/application/published_intent.py:211-235; mcp/src/agents_remember/application/published_intent.py:238-268; mcp/src/agents_remember/application/published_intent.py:334-351 |
+| **The shipped read the new route delegates to, reused unchanged by this leaf.** | `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
+| **The ordinary read's attach point, and the response field the block travels on.** | `read_ar_files_tool`; "published_intent"; `published_intent` | mcp/src/agents_remember/application/read_files.py:93-162; mcp/src/agents_remember/application/read_files.py:148-148; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The cases that measure this route's half of the change: the application-layer route, the two mounted-route cases, and the named absence a repository that publishes nothing reports.** | `test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities`; `test_a_repository_that_publishes_nothing_reports_not_recorded`; `test_the_mounted_route_reads_the_memory_layer_publication` | mcp/tests/test_read_ar_files.py:426-461; mcp/tests/test_read_ar_files.py:463-472; mcp/tests/test_read_ar_files.py:703-719 |
+
+## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated; two enforced citation rows repaired; the document's two reopened claims re-read and recorded as stamp-class.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the new `application/published_intent.py`, the three decisions it owns, the declared publication location with the write-side obligation named as ICR-R20@v1's, the memory-root rule with no fallback, and the named-state discipline that keeps the attach additive — plus that `application/knowledge_read.py` was deliberately **not** touched. **Range repairs (the checklist's two enforced rows, both in this document):** the read-files status row's two cells and the two prose `cit:` pointers on the same constructs were re-derived against the candidate rather than shifted — the `FileReadStatus` import to `read_files.py:62-62` (was `:52-52`) and `_resolve_onboarding` to `:235-267` (was `:218-218` / `:209-238`) — because this leaf's insertions moved those declarations; no claim wording changed. **The two reopened claims, re-read against the candidate and retained:** (a) `compose_review` is declared at `knowledge_review.py:386-496` and still states the one refusal (`unreadable_half_refusal` at `:396`), so the L5 row's wording and its ranges both hold as written; (b) `resolve_review_candidate` is declared at `review_candidate_resolution.py:130-194` and the recorded-base precondition it names still refuses by name at `:164-174` when the enclosure contract records no base. Both findings close only when this document's verification stamp advances past the commit that predates the sibling module — a closeout-owned stamp this uncommitted candidate cannot truthfully receive — so they are recorded here as **stamp-class leftovers**, not as repairs. No verification stamp was advanced and `reviewedWorkingCandidate` still names the earlier candidates; the governed closeout owns the stamp. No commit was made.

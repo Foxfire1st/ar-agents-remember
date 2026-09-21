@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `3888cd8600e39a52c540d6038820759e3d4ffa7a`|
-| lastVerifiedCommitDate |  2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash |  `c755cec64fa9dc12e797c9fcfb4c96822718330c`|
+| lastVerifiedCommitDate |  2026-09-21T15:29:12+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview      | `../../../../overview.md`                  |
@@ -2505,3 +2505,28 @@ to put the key back. The `models/tools/knowledge_responses.py` sidecar states th
 developer's ruling that the incoming choke point wins: the stale `compatible is None` assertion is gone
 and the no-run branch asserts `"selectedRunId" not in unnamed` rather than `is None`. **No other model
 this route owns changed**, and no field was added or removed.
+
+## 260921-ICR-L19 The Read-Files Response Carries The Repository's Published Intent
+
+**This route's impact is one optional field on one strict response model (ICR-R19@v1).**
+`ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None = None` beside the
+`repository_overview` / `route_overviews` front-door dicts. The application entry point populates it on
+every call — its own `state` (`recorded` / `not-recorded` / `unusable`) is the answer, so `None` is the
+field's declared default rather than a state the route produces.
+
+**The shape is carried, not declared here, and that is the route boundary.** The selection contract — which
+dataset is read, which seeds are used, which absences are named — belongs to
+`application/published_intent.py`, so this module carries the block as a dict rather than re-declaring a
+second contract for the same read. That is the same direction the front-door dicts already follow, and it
+keeps the wire model from drifting into a duplicate vocabulary. `extra="forbid"` and the strict envelope
+are unchanged, and no other model this route owns changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new field, on the strict response model that declares it.** | `ReadArFilesResponse`; `published_intent` | mcp/src/agents_remember/models/read_files.py:50-74; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:271-286 |
+| The strict envelope base the field joined. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
+| The registry entry for the tool whose payload carries the field; unchanged by this leaf. | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
+
+## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact for the leaf: the one optional `published_intent` field on `ReadArFilesResponse`, the boundary that its shape is owned by `application/published_intent.py` and carried here rather than re-declared (the same direction the front-door dicts already follow), that the field is populated on every call so `None` is only the declared default, and that the strict envelope, the `extra="forbid"` rule and every other model on this route are unchanged. The field's own card and the application route's section carry the behaviour; this section carries only the contract's own fact. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

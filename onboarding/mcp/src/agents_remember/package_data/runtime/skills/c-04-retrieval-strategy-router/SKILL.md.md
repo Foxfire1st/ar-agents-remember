@@ -5,9 +5,10 @@
 | repository             | agents-remember                                     |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`             |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-09-21T15:14+02:00                     |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l19`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
+| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c`             |
+| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -41,6 +42,19 @@ the 260703-L10 sweep retired the pre-convergence "build/job" compound here)
 read managed-repo source with `read_ar_files` rather than native read, count those
 calls as research evidence alongside the Semantics/Relationship queries, and reserve
 native read as the edit precondition once building begins.
+
+Since 260921-ICR-L19@v1 the Intent substrate also carries the repository's **published intent**: the
+Intent bullet names it beside the paired read, and the skill gained a **Published Intent Before Planning**
+section stating the route end to end. That section records where the route reads and what has to publish
+there (`<memory_root>/knowledge.sqlite`, declared by the read side because no shipped owner defaults a
+publication destination), the memory-worktree-versus-canonical-root rule with no fallback between the
+two, the payload's own field spellings (`kind`, `item_id`, `invariant_id`, `record_id`, `revision_id`,
+`counts.primary_items_total`, `counts.primary_items_remaining`), the three named `state`s with their
+refusal codes, the seed-level absences (`registration_absent`, `selector_absent`), and the limitation that
+a bounded page's `continuation` continues the selective scope read rather than the mounted `knowledge_read`
+tool, so a deeper read is taken by identity. The section's source is the authored root skill
+`skills/c-04-retrieval-strategy-router/SKILL.md`, and this generated mirror is one of the nine copies the
+repository's own `scripts/sync-skills.py` writes from it.
 
 The Semantics section first requests MCP `context_packet(...,
 include_providers=true)` when the server is configured, then uses GrepAI only
@@ -110,12 +124,15 @@ retrieval contract over installed provider tooling and durable onboarding.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-31 |
-| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:32-81 |
-| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:82-130 |
-| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:32-130 |
-| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | "grepai-high-leverage-usage.md", "codegraphcontext-high-level-methods.md" | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:80-80; mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:124-124 |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | `## Intent: Onboarding And Source` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:131-170 |
+| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-32 |
+| **The Intent bullet now names the published-intent half: the same `read_ar_files` call carries the invariants a previous task already recorded about the requested paths, at their exact snapshot and without needing a task.** | `## Retrieval Substrates` (Intent bullet) | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:21-27 |
+| **The new route section, which is this leaf's carrier: the publication location the read side declares, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-82 |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:84-131 |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-131 |
+| The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | "grepai-high-leverage-usage.md", "codegraphcontext-high-level-methods.md" | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:82-82; mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:126-126 |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | `## Intent: Onboarding And Source` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:133-171 |
+| The generated route-index semantics close the skill, and are unchanged by this leaf. | `## Route Index Semantics` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:231-239 |
 | The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
 | The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. | `analyze` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:1-44 |
 
@@ -129,6 +146,8 @@ They do not contain private sibling repository names, symbols, paths, or code.
 | No source-code contract is imported from a sibling repository. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this generated mirror is one of the ten carriers this leaf's requirement moves.** The Intent bullet now names the published-intent half (`:21-27`) and the skill gained a **Published Intent Before Planning** section (`:173-229`) that states the route, the publication location it declares, the memory-root rule with no fallback, the exact payload field spellings, the three named `state`s with their refusal codes, the seed-level absences and the continuation limitation. The card's Logic records all of it and names the authored owner (`skills/c-04-retrieval-strategy-router/SKILL.md`) and the generator (`scripts/sync-skills.py`, nine targets) rather than implying this copy is authored. **Every citation range on this card was re-derived against the 239-line candidate, not shifted by the 60 added lines**: the section rows now read `## Retrieval Substrates` `:12-32`, `## Semantics: GrepAI` `:34-82`, `## Relationship: CodeGraphContext` `:84-131`, the shared prohibition row `:34-131`, `## Intent: Onboarding And Source` `:133-171`, and the two sibling-catalog literals `:82-82` / `:126-126` (the two rows the checklist flagged as stale); three rows were added — the Intent bullet, the new section, and the unchanged `## Route Index Semantics` close. No claim was re-worded to fit a stale pointer and no anchor was renamed. **Installed copies are not this leaf's:** the seven harness skill roots still carry the 179-line carrier, and installing and verifying them is the orchestrator's acceptance step, not a memory change. **Stamp accounting:** `reviewedWorkingCandidate` names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows; scoped citation fixing regenerated the source ranges.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran far past the end of the target. `codegraphcontext-high-level-methods.md` is 184 lines, so the sibling-CGC-catalog row moved from `L1-L38, L321-L332` to `L1-L44; L174-L184` (intro plus the Choosing A Method table, then the Practical Rules section). Reworded the claim to name the typed `cgc_*` tools, since the doc now routes through MCP tools rather than raw `cgc analyze` calls.

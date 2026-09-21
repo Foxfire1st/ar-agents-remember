@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitDate | 2026-09-21T14:06:50+02:00|
+| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c` |
+| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
@@ -5770,3 +5770,38 @@ assertions are stated on that sidecar. **No route-level behaviour outside the kn
 changed**, and the merge guard (`memory/knowledge/merge.py`) was not touched: it is byte-unchanged and
 its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal
 payloads.
+
+## 260921-ICR-L19 The Package's Ordinary Read Route Gains Its Published-Intent Half, And Its Carriers Move
+
+**This package's route impact is one application module, one response field, and the retrieval carrier this
+package ships (ICR-R19@v1).** `application/published_intent.py` is new on the application route: it resolves
+the repository's published knowledge dataset from the coordination context, seeds the shipped selective read
+with the requested paths or with exact record identities, and returns one bounded page per seed with every
+absence named. The MCP surface itself is unchanged — `mcp/tools/read_files.py`'s payload wrapper and the
+`read_ar_files` tool registration were not touched, and the tool's advertised contract is the same call it
+always was; what changed is that the payload now carries a `published_intent` block beside `files`
+(`models/read_files.py`). `application/knowledge_read.py` was reused unchanged.
+
+**The carrier this package ships moved with it, and that is the half a reader of this route has to know
+about.** The canonical retrieval skill `skills/c-04-retrieval-strategy-router/SKILL.md` gained a
+**Published Intent Before Planning** section (179 → 239 lines), and the repository's own
+`scripts/sync-skills.py` regenerated all nine targets from it, including this package's
+`package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` — the copy `runtime_install` serves.
+The three facts the section states are the ones an agent needs to use the route at all: where the route
+reads (`<memory_root>/knowledge.sqlite`, declared by the read side because no shipped owner defaults a
+publication destination), the memory-root rule with no fallback, and the exact payload spellings plus the
+named absences. One measurement keeps the carrier honest: a case in `mcp/tests/test_read_ar_files.py`
+derives the field spellings from a **real page** and rejects the camelCase variants, so the carrier cannot
+drift into a second vocabulary. **The seven installed harness skill roots still carry the 179-line
+carrier**; installing and verifying them is the orchestrator's acceptance step, not a package change, and
+no test under `mcp/tests` can assert an installed copy.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:271-286; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
+| **The response field the block travels on, carried by the strict response model rather than re-declared.** | `published_intent` | mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
+| **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` | mcp/tests/test_read_ar_files.py:521-544 |
+
+## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this package's impact for the leaf: the new `application/published_intent.py`, the `published_intent` field on the read-files response, the deliberately unchanged MCP surface (`mcp/tools/read_files.py` and the tool registration) and the untouched `application/knowledge_read.py`, the regenerated `package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` (179 → 239 lines, nine targets written by `scripts/sync-skills.py`), the case that holds the carrier to the payload's real spellings, and the boundary that the seven installed harness skill roots still carry the old carrier — an acceptance-time install the orchestrator owns, not a package change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

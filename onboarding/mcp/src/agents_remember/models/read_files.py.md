@@ -5,9 +5,10 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/models/read_files.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `a7076008db4772554123794392f84b51143004ec` |
-| lastVerifiedCommitDate | 2026-09-18T16:14:01+02:00|
+| lastUpdated | 2026-09-21T15:14+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l19`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
+| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c` |
+| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -45,14 +46,23 @@ is absent or binary/non-decodable), and an optional `onboarding` body (the
 `meaningful_body` when `status == found`, omitted otherwise) — so `source` is
 independent of `status`.
 
-cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:50-63) subclasses `ToolResponse` (strict): `operation`
-(`"read_ar_files"`), `repoId`, the `files` list, and the optional
-`repository_overview` / `route_overviews` dicts. The latter two are the
+cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:50-74) subclasses `ToolResponse` (strict): `operation`
+(`"read_ar_files"`), `repoId`, the `files` list, the optional
+`repository_overview` / `route_overviews` dicts, and the optional `published_intent` dict. The two
+overview dicts are the
 session-deduplicated front door — each served once per lifecycle, or again when
 its content changed, and omitted when already served unchanged (or when
 onboarding was suppressed for every file). Token fields are stamped by
 `finalize_payload_tokens` at the `_tool_payload` choke point — this module never
 sets them.
+
+`published_intent` cit:([`published_intent`], mcp/src/agents_remember/models/read_files.py:74-74) is the repository's published intent
+read through the existing selective read (ICR-R19@v1). It is deliberately **always present**, because its
+own `state` is the answer: `recorded` carries the dataset identity, the snapshot and one bounded page per
+seed, while `not-recorded` and `unusable` name why no publication could be read. Its shape is owned by
+`application.published_intent` — the route that selects, seeds and names the absences — so this model
+carries it as a dict rather than re-declaring a second contract for the same read, exactly as
+`repository_overview` and `route_overviews` are carried for the front door.
 
 ## Invariants And Boundaries
 
@@ -66,16 +76,22 @@ sets them.
   must not re-declare it. The direction is model → producer because the status
   is served wire vocabulary — `_resolve_onboarding` only decides the value.
 - Token fields are part of the contract but populated only at the choke point.
+- **`published_intent` is carried here, not owned here.** The application entry point populates it on
+  every call and the block's own `state` is the answer; `None` is the field's declared default, not a
+  state the route produces. The model declares no field of that block, so the selection contract stays in
+  `application/published_intent.py` and this module cannot drift into a second spelling of it.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:209-238 |
+| **The new field, and the owning module that decides its shape.** | `published_intent`; `published_intent_block` | mcp/src/agents_remember/models/read_files.py:74-74; mcp/src/agents_remember/application/published_intent.py:271-286 |
+| The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:235-267 |
 | The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
 
 ## Update History
+- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this response gained a field.** `ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None` at `:74` (ICR-R19@v1), the repository's published intent read through the existing selective read at one exact snapshot; the class docstring states the field's contract and the body records that the shape is owned by `application.published_intent` rather than re-declared here, plus an invariant that this model carries the block and does not own its selection. The `ReadArFilesResponse` citation extent was re-derived to `:50-74` and the `_resolve_onboarding` reference row to `read_files.py:235-267` (was `:209-238`) because this leaf's insertions moved that declaration; a reference row was added for the new field and its owning module. No claim was re-worded to fit a stale pointer. **Stamp accounting:** `reviewedWorkingCandidate` names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
 - 2026-09-18T13:36:47+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-13T17:20:55+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:154-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
