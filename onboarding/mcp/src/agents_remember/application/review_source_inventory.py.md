@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T14:59:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -210,7 +210,7 @@ odd name.
 | **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** | `InventoryFixture`; `build_inventory_fixture`; `test_the_inventory_lists_every_changed_path_of_the_bound_pair_with_gits_own_status`; `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_path_whose_content_cannot_be_rendered_is_still_listed_with_its_own_kind`; `test_a_measurement_that_could_not_be_made_is_unavailable_and_never_a_measured_empty_set`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:898-916; mcp/tests/test_knowledge_diff_boundaries.py:919-967; mcp/tests/test_knowledge_diff_boundaries.py:971-1007; mcp/tests/test_knowledge_diff_boundaries.py:1010-1035; mcp/tests/test_knowledge_diff_boundaries.py:1038-1063; mcp/tests/test_knowledge_diff_boundaries.py:1066-1093; mcp/tests/test_knowledge_diff_boundaries.py:1118-1170 |
 | The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by`; `test_the_production_inventory_lists_non_text_and_mode_changed_paths_it_cannot_render`; `test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial` | mcp/tests/test_knowledge_review_source_endpoints.py:674-750; mcp/tests/test_knowledge_review_source_endpoints.py:753-794; mcp/tests/test_knowledge_review_source_endpoints.py:797-824; mcp/tests/test_knowledge_review_source_endpoints.py:843-900 |
-| The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones. | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:252-277; dashboard/src/panels/review/ReviewSurface.tsx:221-237; dashboard/src/panels/review/ReviewSurface.tsx:238-251 |
+| The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones. | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:238-264; dashboard/src/panels/review/ReviewSurface.tsx:207-223; dashboard/src/panels/review/ReviewSurface.tsx:224-237 |
 
 ## Cross-Repo References
 

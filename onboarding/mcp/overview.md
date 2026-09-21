@@ -5,18 +5,55 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
+| lastUpdated | 2026-09-21T18:20:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`, re-derived at the sync against merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L6 The Review Surface's Statement Sides Get An Owner, And A Served Field Value Stops Reading As Absent
+
+One route-level fact this package route now carries, and one served-value change a consumer of the
+Intent Reviewer's payload should know about.
+
+**The fact.** `mcp/src/agents_remember/application/review_statement_sides.py` is a new module on the
+application route and the owner of the review surface's pane-1 statement-side data contract: what a
+statement side is (three outcomes — `absent`, `unresolved`, `present`+text — read from the comparison
+item rather than inferred from empty text), the essential conditions each side recorded, the
+comparison's own mechanical field roster, and the value reader that reserves `None` for absence.
+`application/knowledge_review.py` delegates to it (888 → **831 lines**) through one import block and
+four calls inside `_knowledge_pane`; the adapter keeps its composition, and this is the **fourth**
+responsibility it has handed out on this master line and the only one that leaves no alias, because no
+module under `mcp/` imported the old private names. The rendering half of the same rule lives in
+`dashboard/src/panels/review/KnowledgeStatements.tsx`: a knowledge addition or removal now draws the
+complete available statement beside a **named** absent side, and a side that is `binary`/`unresolved`
+draws its available text with its reason and no diff, instead of the whole statement disappearing.
+
+**The served-value change.** `ReviewFieldChange` reads `None` on either value as the recorded fact that
+the field was absent on that side. The base value reader returned `None` for any structured value, so
+a **changed** structured field — `provenance` is the shipped one — was served as `None` on both sides:
+an absence the snapshot does not hold, stated twice, in the one slot reserved for absence. Each side
+now carries the pane's own text projection of the value it really holds (canonical compact JSON,
+bracketed with `<recorded as a structured value, rendered as compact JSON: …>` and bounded with a
+visible truncation). That is a value change inside an existing field, not a wire-shape change: no new
+field, no new type and no transport change, and `models/knowledge/review.py` is untouched.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
+| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:55-83; mcp/src/agents_remember/models/knowledge/review.py:264-275 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:84-88; mcp/src/agents_remember/application/knowledge_review.py:672-705 |
+| **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
+| The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
+| The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -85,8 +122,8 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:155-185 |
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:319-357; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:292-316 |
-| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:371-446; mcp/src/agents_remember/application/knowledge_review.py:192-273 |
-| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_review_surface.py:809-847 |
+| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:377-452; mcp/src/agents_remember/application/knowledge_review.py:198-279 |
+| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_review_surface.py:828-866 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
 
@@ -1918,7 +1955,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The two port fields on the collaborators dataclass, and the rank reason they exist. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:456-456; mcp/src/agents_remember/serving/_app_common.py:467-467 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
-| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:77-87; mcp/src/agents_remember/application/knowledge_review.py:125-142; mcp/src/agents_remember/cli/knowledge_ingest.py:102-103 |
+| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:77-84; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:102-103 |
 | **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:319-357 |
 | **The namespace read from the candidate's own sealed receipt rather than from the request — the sibling module's operation, which the adapter delegates to.** | `review_namespace` | mcp/src/agents_remember/application/review_candidate_resolution.py:300-325 |
 | **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:279-297; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
@@ -2051,6 +2088,7 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 ## Update History
+- 2026-09-21T18:20:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **this route gained one module and one served-value change, and the entry was revised at the sync so the document states the merged line rather than either side of it.** The section above records that `mcp/src/agents_remember/application/review_statement_sides.py` now owns the review surface's statement-side data contract; that `application/knowledge_review.py` delegates to it (888 → **831 lines**, `__all__` unchanged, no re-export because nothing under `mcp/` imported the old private names); and that a **changed structured field** (`provenance`) is no longer served as `None` on both sides — an absence the snapshot does not hold, stated twice — but as each side's own labelled canonical projection. It is a value change inside an existing field: no new wire field, no new type, and `models/knowledge/review.py` untouched. The renderer half is `dashboard/src/panels/review/KnowledgeStatements.tsx`, where an addition or removal now draws the complete available statement beside a named absent side. **Sync accounting:** this document's memory-side conflict was resolved as an **additive union** — leaf `260921-ICR-L18`'s section is kept whole above/below this one, and this leaf's section and entry are kept whole beside it; no side was chosen wholesale and no claim was dropped. One observed gap is recorded rather than repaired: L18's section on this document arrived from the landed memory line **without an Update History entry of its own**, so this resolution preserved it exactly as it was carried and invented no record for another seat. Verification metadata is **not** advanced: the stamp is L18's `71a4433e686b3380af97a0836bb82bab2c8f2aad` / `2026-09-21T16:29:06+02:00`, which this leaf neither advances nor regresses, and the candidate is uncommitted so the governed closeout owns the real stamp.
 - 2026-09-21T15:25+02:00 — 260921-ICR-L5 curator, **the second quality pass's enforced rows re-read and re-cited; every one of them was a range that had drifted out from under its anchor.** Rows repaired here by re-deriving each range from the construct's own extent in the merged candidate, with claim wording retained because each claim still states what the code does: the unique `list_knowledge_review_entries` row (now `knowledge_review.py:207-288`, which is the operation's declaration in the adapter) and the two journey-case rows (now `2567-2690`, `2691-2785`, `3032-3149`, i.e. the class and the two entry points the claim's own words describe). No verification stamp was advanced — the working tree still differs from every recorded stamp, so closeout owns that stamp.
 - 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **the sync's memory-side conflict in this document resolved as a union, and one range on the master side corrected rather than merged.** Kept from the master line: L5's re-measured ingest-handoff row (`cli/knowledge_ingest.py:336-376`, the two filling paths behind one placement gate), its cold-start rows, its `unreadable_half_refusal` fact beside the pair preflight, and all four of its history entries. Kept from this leaf: the review rows it re-derived when this leaf moved `serving/review.py` and `review_candidate_resolution.py`. **Corrected rather than merged:** the published-half-names row cited `review_candidate_resolution.py:72-79` and `knowledge_review.py:118-120` — the pre-merge import block — so it now cites the constants' single span (`77-87`) and the merged adapter's `__all__` (`125-142`), with the CLI's own import line (`102-103`) kept beside them; the `review_namespace` row's `276-301` became `300-325`; and the pair-preflight row's `255-273` became `279-297`, because `candidate_ref` was added above both constructs. My earlier duplicate wording of the ingest-handoff row was **superseded, not merged**: L5's row states the same fact and adds the cold-start path, so keeping both would have said one thing twice. No claim was dropped and none was invented.
 - 2026-09-21T15:10+02:00 — 260921-ICR-L5 curator, **the quality checklist's five enforced rows on this document re-read and re-cited against the merged candidate.** Two were stale ranges and three were reopened claims, and the wording of each was compared with the construct before its range was regenerated. `_place_review_baseline` is cited at its merged extent (`336-376`) where the L45-era row still carried `293-332`; the journey row now names `_cycle01_public_identities` beside the two cases the claim's words describe and cites all three at their merged extents (`2567-2690`, `2691-2785`, `3032-3149`) instead of four ranges that no longer held their anchors; and the two rows whose claims are about the *pair handoff* rather than about the gate were left at the extents that do hold them. The review-handoff claim itself is retained rather than re-worded: it still states what the code does, and its range now holds the declaration the construct occupies. No verification stamp was advanced — the working tree still differs from the recorded `702714fc` stamp, so it cannot be re-verified here and closeout owns the real stamp.

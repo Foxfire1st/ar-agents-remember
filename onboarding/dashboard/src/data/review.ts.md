@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash |  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`|
-| lastVerifiedCommitDate |  2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash |  `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`|
+| lastVerifiedCommitDate |  2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview | `dashboard/src/data/overview.md` |
 
@@ -195,7 +195,7 @@ function, the two helpers it borrows from the file API, and the client that cons
 | **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:312-320 |
 | The two helpers this client borrows rather than re-implementing: the thrower and the query encoder. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-98; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-58 |
-| The surface that consumes this client. | `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:1-25; dashboard/src/panels/review/ReviewSurface.tsx:351-367 |
+| The surface that consumes this client. | `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:19-24; dashboard/src/panels/review/ReviewSurface.tsx:410-410 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-09-20T13:43:00+02:00                           |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`       |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`       |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
@@ -197,7 +197,7 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 | --- | --- | --- |
 | **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
-| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-36; dashboard/src/panels/review/ReviewSurface.tsx:409-476 |
+| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-37; dashboard/src/panels/review/ReviewSurface.tsx:395-462 |
 
 ## Update History
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review field on a change-set target may now carry no selector, and its declaration records what that means: presence marks a review, an empty object is the task-context entry. The viewer's behaviour is unchanged. The section is appended at the end of this route's narrative, and the one row of this document that cited `ChangeSetViewer.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

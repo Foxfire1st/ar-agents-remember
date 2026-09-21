@@ -6,9 +6,10 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -363,20 +364,62 @@ judgment and publishes no assessment.
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
 | The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:312-320; dashboard/src/data/review.ts:291-296 |
 
+## 260921-ICR-L6 The Review Panel's Statement Area Gets Its Own Component
+
+The **review child route gained its second component**, and the route-level fact is that the Intent
+Reviewer's pane 1 no longer decides its own statement rendering inline.
+`dashboard/src/panels/review/KnowledgeStatements.tsx` owns the statement area — the two recorded
+operands and the state of each side — and `ReviewSurface.tsx` delegates it (476 → **462 lines**, with
+the `sideState` helper and the `DiffPane` import gone from that file).
+
+**The rule the component implements is ICR-R06's, and the defect it closes is worth stating at this
+altitude because no gate caught it.** The pane used to draw the shipped `DiffPane` only when *both*
+statement sides were `present`, while the side line returned `null` for the side that *was* present —
+so an added or a removed statement rendered as two muted state lines and **no statement text at all**.
+The four branches now decided from a side's declared `state`, never from its text:
+
+- both `present` → the shipped two-sided diff, unchanged (and, as before, naming no side);
+- one `present`, the other `absent` → a **one-sided diff** with the present operand on its own side and
+  the absent side named above it, so the empty half is a stated fact rather than a blank to interpret;
+- one `present`, the other `binary`/`unresolved` → the available text as content with the unavailable
+  side's own reason beside it, an explicit "no diff is drawn" line, and **no diff** — a diff there
+  would claim the opposite operand is a known-empty document;
+- neither `present` → both sides' own state lines and no diff and no content pane.
+
+**The route's other half of the same rule is a mechanical field row.** `ReviewSurface.tsx` gained
+`fieldValue`, which prints `(absent)` for a value the server did not send and `(recorded empty)` for a
+value that is present and empty, so no field row is silently blank and no reader has to decide which of
+the two a gap meant — the display counterpart of the data contract
+`application/review_statement_sides.py` owns. The panel inventory is otherwise unchanged: no new
+route, no takeover change, and the child's file cards are the authority for the rest.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** | `KnowledgeStatements`; `unavailable`; `oneSidedDiff`; `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-34; dashboard/src/panels/review/KnowledgeStatements.tsx:62-77; dashboard/src/panels/review/KnowledgeStatements.tsx:79-91; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
+| **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:36-44 |
+| **Pane 1's delegation, and the header's corrected statement of what the surface reuses.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-7; dashboard/src/panels/review/ReviewSurface.tsx:179-206 |
+| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:70-77 |
+| **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | `draws an added invariant's full after statement beside an absent-before label` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
+| The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | `draws a removed invariant's full before statement beside an absent-after label`; `keeps the available text and claims no diff when the other side is unreadable`; `renders a %s side as that state and never as another one` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259; dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
+
 ## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
 
 The L22 section below records the panel itself — the three panes, their prohibitions and the
 display-only submission boundary — and remains current. What it did not record is a way to *reach* the
 panel on a live leaf; the section above supplies that, and supersedes nothing below it.
 
-`panels/review/` is this route's new child, and it is one component: `ReviewSurface.tsx`, mounted by
+`panels/review/` is this route's new child, and its entry component is `ReviewSurface.tsx`, mounted by
 the cockpit takeover when a change-set target carries the review variant. It renders the Intent
 Reviewer's three panes in one scrolling column — Knowledge, Source, Evidence and assessment — in the
 order the payload declares them, and it is display-only: the module has no control that writes
 anything, no submission button, and no place a conclusion of its own could be assembled. The one
-renderer it reuses is the change-set route's `DiffPane`, fed the two recorded statements the
-comparison published and only when both sides are `present`; a side that is `absent`, `binary` or
-`unresolved` renders as its own named state rather than as an empty diff.
+renderer it reuses is the change-set route's `DiffPane`, reached through the statement area
+`KnowledgeStatements.tsx` owns and fed the statements the comparison published: **both operands when
+both sides recorded one, and the available operand beside the named absence when one side did not**
+(the `260921-ICR-L6` section above records that rule and supersedes the "only when both sides are
+`present`" reading this section was written with); a side that is `absent`, `binary` or `unresolved`
+renders as its own named state rather than as an empty diff, and neither the statement area nor this
+file declares a second differ.
 
 The prohibitions are rendered, not merely intended. Authored effects, preservation claims and
 unresolved questions are listed under their own heading and detection signals under a second one,
@@ -396,16 +439,17 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The child route's one component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:409-409 |
-| Pane 1, and the two collections it keeps apart. | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:172-208 |
-| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:279-279 |
-| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:322-322 |
-| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:211-366 |
-| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:373-373 |
-| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
-| The one renderer it reuses, fed only two present sides. | `DiffPane` | dashboard/src/panels/review/ReviewSurface.tsx:1-25 |
+| The child route's entry component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
+| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:179-179 |
+| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:265-265 |
+| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:308-308 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:193-193; dashboard/src/panels/review/ReviewSurface.tsx:352-352 |
+| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:359-359 |
+| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:381-381 |
+| **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `DiffPane`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:29-29; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118; dashboard/src/panels/changeset/DiffPane.tsx:48-48 |
 
 ## Update History
+- 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`): **the review child route gained its second component, and the section above records the rule and the defect it closes.** Added the `260921-ICR-L6` section: `panels/review/KnowledgeStatements.tsx` owns the statement area (the four branches decided from a side's declared `state`, the one-sided diff with the absent side named above it, the available-content-with-reason path that draws no diff, and the neither-present case), `ReviewSurface.tsx` is 476 → **462 lines** and delegates it, and `fieldValue` now prints `(absent)` versus `(recorded empty)` so no mechanical field row is silently blank. **Two claims in the L22 section were corrected rather than carried**, because this leaf's change falsified them: the child is no longer "one component", and the reused `DiffPane` is no longer "fed … only when both sides are `present`" — the section now points at the L6 record above and says so. Its reference rows were **re-derived against this candidate** (`ReviewSurface` `409-409` → `395-395`, `KnowledgePane` `172-208` → `179-179`, `SourcePane` `279-279` → `265-265`, `EvidencePane` `322-322` → `308-308`, the unassessed state `211-366` → `193-193`/`352-352`, `SubmissionBlock` `373-373` → `359-359`, `RefusalBlock` `395-395` → `381-381`, and the reused-renderer row now points at `KnowledgeStatements.tsx`), as were the L2 section's three rows (`27-36`/`409-476` → `27-37`/`395-463`; `252-277`/`221-237`/`238-251` → `238-264`/`207-223`/`224-237`; `279-320`/`178-220` → `265-307`/`179-206`). No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the task-view entry into the review panel is reachable now, and this route gained the section that records how.** The gate in `detail-panel/changeSetBar.tsx` is `live && subject`: the `selectorKind`/`selectorId` props are gone and a live leaf's subject is read from `GET /api/review/intent/entries` by a new `useReviewSubject` hook. The card records why the old prop gate could never hold — `taskReader.tsx` and the master header pass no selector — and why the swap is not a weakening: a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. It also records that liveness was extracted into one `leafIsLive` predicate shared with the working change-set action, and that the button's target carries the subject's recorded kind and id rather than a path, so the browser still never chooses the candidate. The L22 section on the panel itself is retained unchanged below. No verification stamp was advanced.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:798-798; dashboard/src/cockpit/Cockpit.tsx:799-799; dashboard/src/cockpit/Cockpit.tsx:801-801. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2796,9 +2840,9 @@ to exercise.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-36; dashboard/src/panels/review/ReviewSurface.tsx:409-476 |
-| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:252-277; dashboard/src/panels/review/ReviewSurface.tsx:221-237; dashboard/src/panels/review/ReviewSurface.tsx:238-251 |
-| **The source pane that now opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:279-320; dashboard/src/panels/review/ReviewSurface.tsx:178-220 |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-37; dashboard/src/panels/review/ReviewSurface.tsx:395-462 |
+| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:238-264; dashboard/src/panels/review/ReviewSurface.tsx:207-223; dashboard/src/panels/review/ReviewSurface.tsx:224-237 |
+| **The source pane that now opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:265-307; dashboard/src/panels/review/ReviewSurface.tsx:179-206 |
 | **The detail-panel entry that is offered for every live leaf, with the server's subject as a refinement.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |

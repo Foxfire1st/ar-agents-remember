@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | governingOverview      | `../overview.md`                                 |
 
@@ -575,7 +575,7 @@ no fallback value was introduced for it.
 | **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:35-48; dashboard/src/data/review.ts:220-225 |
 | The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:235-247; dashboard/src/data/review.ts:98-114 |
 | **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:271-290 |
-| The surface that consumes the new types and renders the inventory. | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:252-277 |
+| The surface that consumes the new types and renders the inventory. | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:238-264 |
 
 ## Update History
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review client mirrors the new wire shape — the inventory types, an optional comparison identity, the `not_compared` and selection states — and `intentReview` now sends no selector at all when there is none, which is what makes the task-context review reachable from the browser. The section is appended at the end of this route's narrative, and the three rows of this document that cited `data/review.ts` by line were re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

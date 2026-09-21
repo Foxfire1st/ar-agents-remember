@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastUpdated | 2026-09-21T18:20:00+02:00 |
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l4-ar` uncommitted source; base `0dd04d6adbca3e8ba61849b605ece3137005829e` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l2-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 266 → **267** lines, one row added at `:246`); base `d9becade1a373f2272501f7451746ccc259ca9ac` |
@@ -16,6 +16,7 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`, re-derived at the sync against merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | governingOverview | `overview.md` |
 
 ## 260918-TSIP-L2 Row — The Record-Integrity Module
@@ -1876,7 +1877,55 @@ accounts above state the numbers *their* candidate measured and are retained as 
 | The precedent for a `unit-regression` row whose cases really do create Git objects under a temporary root they own. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/test-evidence-lanes.toml:202-202 |
 | **The catalog consumer rows the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1408-1408; mcp/tests/evidence-lifecycle.toml:1439-1439 |
 
+## 260921-ICR-L6 Lane Row — The One-Sided-Statement Cases, Beside The Ingest Modules
+
+This leaf registers **one** module, `mcp/tests/test_knowledge_review_one_sided_statements.py`, as a
+`unit-regression` entry **inserted mid-list** in the alphabetical knowledge run, with
+`test_knowledge_review_surface.py` at `:106` above it and `test_knowledge_review_source_endpoints.py`
+at `:108` below it — so its row is `mcp/tests/test-evidence-lanes.toml:107`. At the sync this row moved
+up from the `:105` the pre-sync candidate measured, because leaf `260921-ICR-L18` registered its two
+ingest modules at `:87`/`:88`, above it. The lane is the module's own declared one: it carries
+`pytestmark = pytest.mark.evidence_unit`, and the loader requires every `mcp/tests/test_*.py` module to
+hold exactly one lane. Its boundary is the one this manifest already admits for the neighbouring
+review-surface module: everything runs in-process over state under `tmp_path` — the six cases build
+**two real knowledge snapshots** through the public store operations and drive the real `compose_review`
+over them, with no network, no Node and no service boundary.
+
+**Measured on this candidate, from the manifest and the modules on disk rather than by adding any
+earlier account:**
+
+| | measured on this candidate |
+| --- | --- |
+| Declared lane entries | **312** |
+| `mcp/tests/test_*.py` modules on disk | **312** |
+| Declared-but-absent / present-but-undeclared | **0 / 0** |
+| File extent | **330 lines** |
+| `unit-regression` | **200**, key `:5`, rows `6-205` |
+| `public-contract` | **2**, key `:207`, rows `208-209` |
+| `integration` | **76**, key `:211`, rows `212-287` |
+| `architecture-fitness` | **20**, key `:289`, rows `290-309` |
+| `provider-conformance` | **14**, key `:311`, rows `312-325` |
+| `stress-durability` / `migration` | **0** / **0** (keys at `:327` and `:329`) |
+
+**The insertion moves every row below `:107` by one, and that is what this leaf owes the rest of
+memory.** `test_knowledge_review_source_endpoints.py` — itself a mid-list insertion by
+`260921-ICR-L1` — now reads at `:108`, and the lane keys now stand at `:207` (public-contract), `:211`
+(integration), `:289` (architecture-fitness), `:311` (provider-conformance) and `:327`/`:329` for the
+two empty lanes. Every citation into this manifest that points below `:107` therefore reads one line
+lower than it did, and those held by other cards were left to the citation-reprojection pass rather
+than re-pointed by hand. The one population that moves is `unit-regression`, which rises by exactly
+one; the other five are unchanged. Older per-candidate accounts above state the numbers *their*
+candidate measured and are retained as that record.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The registered row itself, in the alphabetical knowledge run immediately after the review-surface module and before the source-endpoint module.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/test-evidence-lanes.toml:106-108 |
+| The lane key the population is counted from, and the key of the next occupied lane after the insertion. | "unit-regression = ["; "public-contract = [" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:207-207 |
+| The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_one_sided_statements.py:69-69 |
+| The row this insertion displaced by one line, itself a `260921-ICR-L1` mid-list registration. | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/test-evidence-lanes.toml:108-108 |
+| **The catalog consumer row the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/evidence-lifecycle.toml:1440-1440 |
 ## Update History
+- 2026-09-21T18:20:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **one row registered, mid-list, and this entry was revised at the sync so the section states the merged manifest rather than either side of it.** `mcp/tests/test_knowledge_review_one_sided_statements.py` is registered at `mcp/tests/test-evidence-lanes.toml:107` in `unit-regression`; leaf `260921-ICR-L18`'s two rows for the ingest comparison and failure modules sit at `:87`/`:88`, above it, which is what moved this row from the `:105` the pre-sync candidate measured. Every figure was re-measured on the merged file: **312** declared entries against **312** modules on disk, 0/0, **330 lines**, `unit-regression` **200** at key `:5` rows `6-205`, `public-contract` 2 at `:207`, `integration` 76 at `:211`, `architecture-fitness` 20 at `:289`, `provider-conformance` 14 at `:311`, the two empty lanes at `:327`/`:329`. The pure-move consequence is re-derived in place: every row and lane key below `:107` is one line lower than on the pre-sync candidate, and the `260921-ICR-L1` source-endpoint row now reads `:108`. L18's entry below is kept whole, and the generated history entries below it are left exactly where they are. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T15:35+02:00 — 260921-ICR-L18 curator (uncommitted change set on `ar/260921-icr-l18`, code base `0fca5c69766aa95eebe950c19fbcdc83864ec35a`): **two lane rows added mid-list, and every citation into this file was re-derived against the moved file.** `260921-ICR-L18` registered its two ordinary unit modules — `mcp/tests/test_knowledge_ingest_comparison_generation.py` and `mcp/tests/test_knowledge_ingest_failure_windows.py` — as `unit-regression` entries at `:87` and `:88`, inserted alphabetically rather than appended. The file is **329 lines** and the lane populations measured on this candidate are unit-regression 199 (key `:5`, rows `6-204`), public-contract 2, integration 76, architecture-fitness 20, provider-conformance 14, stress-durability 0, migration 0 — **311 declared entries against 311 `test_*.py` modules on disk, 0 declared-but-absent and 0 present-but-undeclared**. The two insertions sit below every earlier insertion point in the knowledge run, so everything from `:89` reads two lines lower; all 165 citations into this file across the onboarding tree were re-derived from the file's own diff-verified offset rather than shifted by a carried delta. No row was moved, renamed or removed, and no lane's membership changed except by the two additions. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded; the candidate is uncommitted and the governed closeout owns the real stamp.- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **one row registered, mid-list, and every citation into this manifest that the insertion staled was re-derived in the same pass.** The section above records the row (`mcp/tests/test_knowledge_review_source_endpoints.py` at `:105`), the lane it declares for itself (`pytest.mark.evidence_unit`) and the boundary it actually crosses (real Git objects, in-process, under `tmp_path` it owns — the `test_evidence_catalog_gate_boundaries.py` precedent), the populations **measured on this candidate** (309 declared entries against 309 modules on disk, 0/0, 328 lines, `unit-regression` **197** at key `:5` rows `6-202`, `public-contract` 2 at `:204`, `integration` 76 at `:208`, `architecture-fitness` 20 at `:286`, `provider-conformance` 14 at `:308`, the two empty lanes at `:324`/`:326`), and the pure-move consequence: every row and lane key below `:105` is one line lower, which is why the citations into this file held by route cards were re-pointed rather than carried. **Citation accounting:** this card's own claim rows that cite this manifest were re-derived under the same one-line mapping (its `|`-row citations were shifted exactly where their range crossed `:105`), and nine other cards' claim rows into this file were re-derived the same way. The generated history entries in this card's history are left exactly where they are. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_state_signal_boundary_delivery.py" repointed to mcp/tests/test-evidence-lanes.toml:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.

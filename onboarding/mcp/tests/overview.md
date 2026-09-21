@@ -5,8 +5,8 @@
 | repository | agents-remember |
 | lastUpdated | 2026-09-21T15:35+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260918-tsip-l5-ar` uncommitted source (1 modified path; `test-evidence-lanes.toml` 269 → **270** lines, one row added at `:153`); base `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
 | reviewedWorkingCandidate | `ar/260915-caps-l7-ar` uncommitted source; base `23cc7a7218b96da5147146f9796557bedfcf1d11` |
@@ -410,6 +410,49 @@ session pair, whose memory root the other cases read but never write. That keeps
 ## Governing Overview
 
 [MCP package overview](../overview.md)
+
+## 260921-ICR-L6 The One-Sided-Statement Cases: One New Module, Six Cases, And One Lane Row
+
+This route gained **one module** — `mcp/tests/test_knowledge_review_one_sided_statements.py`, 410 lines
+and six cases — and one lane row, which is the first thing on this route a reader should check because
+it is what keeps the module selected at all. The module is the **production-composition half** of
+ICR-R06@v1: it drives the real `compose_review` over **two real datasets**, each built through the
+public store operations by `read_scope_test_support.build_read_scope_fixture` and then extended with
+one authored invariant apiece, so the addition and the removal are a real difference between two real
+snapshots rather than an edit of one dataset. Its renderer half is
+`dashboard/src/panels/review/KnowledgeStatements.test.tsx`, and the two assert the same statements,
+the same absent/unresolved details and the same `acceptance_ref`/`provenance` field rows.
+
+**The lane row, and the pure-move consequence a citation into that manifest must know about.**
+`mcp/tests/test_knowledge_review_one_sided_statements.py` is registered in the **`unit-regression`**
+lane at `mcp/tests/test-evidence-lanes.toml:105` — the lane the module declares for itself through
+`pytestmark = pytest.mark.evidence_unit`. The row is **inserted mid-list** in the alphabetical
+knowledge run, so every row and lane key below `:105` reads one line lower than it did, including the
+`260921-ICR-L1` source-endpoint row (`:105` → `:106`). Measured on this leaf's candidate from the
+manifest and the modules on disk: **310 declared entries against 310 modules**, 0 declared-but-absent,
+0 present-but-undeclared, **328 lines**, `unit-regression` **198** — the one population that moves.
+
+**The six cases and the property each one owns.** An **addition** serves the complete after statement
+beside an `absent` before side with `text is None` and the comparison's own
+`side_absence:before:selector_absent`; a **removal** is the mirror image; a **one-sided field row**
+keeps the side that recorded a value and names the side that did not, with the roster asserted by exact
+key set; a **structured field** the comparison reports as changed carries each side's own projection,
+the two differ, and each round-trips back to the stored authorship envelope; a **one-sided record**
+keeps an empty field roster and is reported by its coverage instead; and a **task-context review**
+(`selector=None`) serves no operand at all, both sides `unresolved` with the same reason, so a
+one-sided rendering cannot swallow it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new module's scope statement: six cases over the real adapter and two real datasets, and the load-bearing property each one owns.** | `compose_review`; `build_read_scope_fixture` | mcp/tests/test_knowledge_review_one_sided_statements.py:1-28 |
+| **The lane row, inserted mid-list, and the row it displaced.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/test-evidence-lanes.toml:104-106 |
+| The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_one_sided_statements.py:69-69 |
+| **The fixture that makes an addition and a removal real: two independently built snapshots under one namespace, plus the four authored revisions.** | `pair`; `author_invariant`; `AuthoredInvariant`; `OneSidedPair` | mcp/tests/test_knowledge_review_one_sided_statements.py:86-99; mcp/tests/test_knowledge_review_one_sided_statements.py:102-114; mcp/tests/test_knowledge_review_one_sided_statements.py:117-153; mcp/tests/test_knowledge_review_one_sided_statements.py:156-219 |
+| **The addition and the removal: the complete present-side statement beside the named absent side, with the comparison's own side-absence code.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
+| The field-row cases: the roster asserted by exact key set, and the structured value served as its own projection on both sides. | `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not`; `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:288-317; mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
+| The one-sided-record case and the task-context case. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows`; `test_a_review_that_compared_no_subject_serves_no_operand_at_all` | mcp/tests/test_knowledge_review_one_sided_statements.py:353-369; mcp/tests/test_knowledge_review_one_sided_statements.py:372-410 |
+| **The catalog consumer row the same registration produced, on the shared read-scope fixture.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/evidence-lifecycle.toml:1436-1436 |
+| **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** | `KnowledgeStatements`; `names an absent field value and a recorded empty one without printing either as blank` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 
 ## 260921-ICR-L5 The Before Half's Cases: Eleven Added, None Replacing A Measurement
 
@@ -1884,6 +1927,7 @@ citation into it below OLD line 112 moved, and this route's own reference rows w
 from the candidate rather than shifted (`T60`/`T52`).
 
 ## Update History
+- 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`): **this route gained one module, six cases and one lane row, and the section above records all three.** `mcp/tests/test_knowledge_review_one_sided_statements.py` (410 lines / 6 cases) is the production-composition half of ICR-R06@v1 — the real `compose_review` over two real snapshots built through the public store operations — and its renderer half is `dashboard/src/panels/review/KnowledgeStatements.test.tsx`, with both halves asserting the same values. The lane row is `mcp/tests/test-evidence-lanes.toml:105` in `unit-regression`, inserted mid-list, so every row and lane key below it reads one line lower (the `260921-ICR-L1` source-endpoint row `:105` → `:106`); the populations are measured on this candidate at **310 declared entries against 310 modules, 328 lines, `unit-regression` 198**. Its catalog consumer row on the shared read-scope fixture is recorded too. No verification stamp was advanced — the working tree still differs from every recorded stamp on this document, so closeout owns that stamp.
 - 2026-09-21T15:25+02:00 — 260921-ICR-L5 curator, **the second quality pass's enforced rows re-read and re-cited; every one of them was a range that had drifted out from under its anchor.** Rows repaired here by re-deriving each range from the construct's own extent in the merged candidate, with claim wording retained because each claim still states what the code does: the widened-pair row, whose two case anchors now cite `test_knowledge_review_surface.py:1038-1063` and `:1066-1136`. No verification stamp was advanced — the working tree still differs from every recorded stamp, so closeout owns that stamp.
 - 2026-09-21T15:10+02:00 — 260921-ICR-L5 curator, **one enforced row re-read and re-cited against the merged candidate.** The row about the allocation a continuity case's distinct identities come from cited `:1631-1670` and `:1753-1760`, which are the pre-leaf extents of the allocation machinery; the merged file carries `_creation` at `:1697-1736`, `_Allocation` at `:576-611` and `_with_replays` at `:1786-1793`, and the row now cites those. Claim wording retained. No verification stamp was advanced.
 - 2026-09-21T14:20+02:00 — 260921-ICR-L5 curator (uncommitted change set on `ar/260921-icr-l5`, code base `f745e16659c5602252bb185a2ffccc356c2bde26`): **eleven collected cases for the review's before half, and two registration claims about this route corrected.** `test_knowledge_curator_ingest_list.py` gained eight cases and five helpers, `test_knowledge_review_surface.py` gained three cases and one task-context builder, and the section above states what each measures. The correction is the part a reader of the manifests needs: the ingest-list module **is** placed in `unit-regression` (`test-evidence-lanes.toml:86`) and carries **two** `evidence-lifecycle` consumers rows (`:730`, `:1265`), where an earlier card stated the first was absent and the second was one; the current budgets are `unit_case_budget = 4000` / `integration_case_budget = 1000` (`pyproject.toml:278-279`), not the historical 2300 the older sections quote. **Citation accounting:** every range on this route that points into the two test modules or into `knowledge_ingest.py`/`knowledge_curator_ingest.py` was re-derived from the construct's own extent rather than carried — the ingest-list module's insertions at `:1882-2439` moved every CYCLE-01 anchor on this route, and `knowledge_ingest.py` was renumbered entirely. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.
