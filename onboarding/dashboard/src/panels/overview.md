@@ -5,11 +5,12 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -362,7 +363,75 @@ judgment and publishes no assessment.
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160 |
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
-| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:312-320; dashboard/src/data/review.ts:291-296 |
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:369-377; dashboard/src/data/review.ts:344-353 |
+
+## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
+
+**Route meaning changed, narrowly: the Source pane stopped being display-only about *what* changed and
+became the way into *the bytes*.** A listed inventory entry is now openable, and opening it reads the
+file at the two code trees the inventory published and renders both endpoints' actual content in place.
+That is ICR-R03's rendering half, and it is the defect the route had been carrying: an inventory row
+labelled as an expansion showed a path, a status and a reproducing command, and **no bytes at all**, so
+a reader had to leave the surface and run the command to learn what had changed.
+
+`panels/review/SourceContent.tsx` is the new renderer (222 lines), a third component in the child route,
+and `panels/review/ReviewSurface.tsx` grew 462 → **549 lines** to reach it:
+
+- **`inventoryEntry` renders the published path as a button** — `data-testid="review-inventory-open"`,
+  `data-path` carrying the path exactly as the server published it, `aria-expanded` carrying the open
+  state — **only when the inventory named both of its code trees**; the same click closes the row. An
+  inventory that named no pair has nothing to open, so it renders the path as text and no control.
+- **`Inventory` holds the one piece of state this route's rendering now has** — `const [open, setOpen] =
+  useState<string | null>(null)`, addressed by the published path — and derives the generation pair from
+  its own `before_code_tree_id`/`after_code_tree_id`, which `inventoryEntry` then mounts `SourceContent`
+  with. The two ids are the listing's, so a row opened after the branch moved still shows the generation
+  the reader was looking at.
+- **`SourcePane` forwards the task context** (`repo`/`master`/`leaf`) into `Inventory`, which is how the
+  expansion request carries the same target the root's `data-review-target` stamps.
+- **`byteNamedEntry` gained the explicit non-addressability note** (`data-testid=
+  "review-byte-path-not-addressable"`): the byte-form row is listed by its exact bytes and carries **no**
+  expansion control, because no request this text-carrying vocabulary can spell would address it. The
+  pane states that rather than implying a click would open something.
+
+**What the new renderer decides, and what it deliberately does not.** Every branch is decided by each
+side's declared `state` and never by inspecting its text: both sides `present` → the shipped `DiffPane`
+in split mode over the two files' own bytes; one side textual (a regular file's text, or a symlink's
+recorded target) → that side drawn as content with the other side's own reason beside it, plus an
+explicit `review-source-no-diff-claimed` line, because a diff there would claim the opposite endpoint is
+a known-empty document; neither side textual → the two state lines alone. The state line carries the
+declared state, the measured object identity and the byte count, and adds the long detail only when the
+state is not a complete untruncated text. A bounded read is stated as a prefix of the object
+(`review-source-truncated`), `currentness` says whether the listed generation is still the leaf's, the
+leaf-change-set bound is stated only when that is what admitted the path, and a typed refusal renders
+with its code, detail, next action and offending input and **no content** — a refusal is a normal answer
+from this route, not a degraded success. `DiffPane` (from the change-set route) and `FilePane` (from the
+file-viewer route) are reused rather than a third viewer being grown, and the module's header records
+both, so the surface now names **two** reused renderers instead of one.
+
+**`data/review.ts` grew 320 → 414 lines** and gained the expansion's wire types
+(`ReviewSourceSideState`, `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`) and
+`reviewSourceContent(...)`, which reads the typed refusal body **whatever the HTTP status** and throws
+`FilesApiError` only for a body that is not this route's answer — the one function in that client that
+deliberately does not go through `getJson`, because on this route a typed refusal arrives with a 400/404
+status. `intentReview` and `intentReviewEntries` are unchanged.
+
+The panel inventory is otherwise unchanged: no new route, no new takeover, no change to the reviewer
+dispatch or its target shape, and no other panel touched. The server half of this contract — the
+source-content route and the model the expansion mirrors — is recorded by the `mcp/` route's onboarding,
+not here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The rendered entry that opens its own content: the published path as a button with `data-path` and `aria-expanded`, drawn only when the inventory named both code trees, with `SourceContent` mounted beneath an open row.** | `inventoryEntry`; `review-inventory-open` | dashboard/src/panels/review/ReviewSurface.tsx:214-260 |
+| **The byte-form row's explicit non-addressability: listed by its exact bytes, carrying no expansion control, and saying in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
+| **The row's open state and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` | dashboard/src/panels/review/ReviewSurface.tsx:291-335 |
+| The pane that forwards the task context an expansion request carries. | `SourcePane` | dashboard/src/panels/review/ReviewSurface.tsx:337-393 |
+| **The header's corrected statement of what this child reuses: two renderers, `DiffPane` through the statement area and the Source pane's own entry expansion.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
+| **The new renderer: the three rules decided from a side's declared state, with the no-diff-claimed content path and the state lines.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
+| **The two provenance and boundary renderings the pane added: a bounded read stated as a prefix of the object, and the leaf-change-set bound stated only when that measurement admitted the path.** | `boundedNote`; `Expansion`; `review-source-truncated`; `review-source-path-bound` | dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:140-162 |
+| **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** | `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:126-138 |
+| **The client's expansion wire types and the request that reads the typed body whatever the status.** | `ReviewSourceSide`; `ReviewSourceExpansion`; `reviewSourceContent` | dashboard/src/data/review.ts:192-213; dashboard/src/data/review.ts:214-238; dashboard/src/data/review.ts:379-414 |
+| **The cases that measure the whole route at the real surface over a stubbed transport: the addition, the two-sided modification, the binary/symlink/submodule sides, the superseded generation, the bounded prefix, the typed refusal, the exact request, the leaf-change-set bound, the byte-form row and the inventory with no pair.** | "the source pane opening a listed entry"; "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:268-588 |
 
 ## 260921-ICR-L6 The Review Panel's Statement Area Gets Its Own Component
 
@@ -397,10 +466,10 @@ route, no takeover change, and the child's file cards are the authority for the 
 | --- | --- | --- |
 | **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** | `KnowledgeStatements`; `unavailable`; `oneSidedDiff`; `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-34; dashboard/src/panels/review/KnowledgeStatements.tsx:62-77; dashboard/src/panels/review/KnowledgeStatements.tsx:79-91; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:36-44 |
-| **Pane 1's delegation, and the header's corrected statement of what the surface reuses.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-7; dashboard/src/panels/review/ReviewSurface.tsx:179-206 |
-| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:70-77 |
-| **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | `draws an added invariant's full after statement beside an absent-before label` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
-| The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | `draws a removed invariant's full before statement beside an absent-after label`; `keeps the available text and claims no diff when the other side is unreadable`; `renders a %s side as that state and never as another one` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259; dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
+| **Pane 1's delegation, and the header's statement of what the surface reuses — now two renderers, this one and the Source pane's entry expansion.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-9; dashboard/src/panels/review/ReviewSurface.tsx:182-205 |
+| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:78-79 |
+| **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | "draws an added invariant's full after statement beside an absent-before label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
+| The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable"; "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259; dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
 
 ## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
 
@@ -439,16 +508,17 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The child route's entry component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
-| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:179-179 |
-| Pane 2, the selected locations and what the selection did not reach. | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:265-265 |
-| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:308-308 |
-| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:193-193; dashboard/src/panels/review/ReviewSurface.tsx:352-352 |
-| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:359-359 |
-| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:381-381 |
+| The child route's entry component. | "export function ReviewSurface({" | dashboard/src/panels/review/ReviewSurface.tsx:482-482 |
+| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:182-182 |
+| Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:337-337 |
+| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:200-200; dashboard/src/panels/review/ReviewSurface.tsx:439-439 |
+| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:446-446 |
+| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:468-468 |
 | **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `DiffPane`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:29-29; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118; dashboard/src/panels/changeset/DiffPane.tsx:48-48 |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the Source pane's inventory rows became the way into their own content, and this route gained a third component for it.** Added the `260921-ICR-L3` section above: `panels/review/SourceContent.tsx` is new (222 lines) and renders one listed entry's actual content at the two bound code trees — the three rules decided from a side's declared `state`, the reused `DiffPane`/`FilePane`, the bounded read stated as a prefix, the leaf-change-set bound stated only when it is the fact, and the typed refusal rendered with no content; `panels/review/ReviewSurface.tsx` grew 462 → **549 lines**, with `inventoryEntry` rendering the published path as a `review-inventory-open` button (only when the inventory named both code trees), `byteNamedEntry` gaining `review-byte-path-not-addressable`, `Inventory` holding which row is open and deriving the generation pair from its own published tree ids, and `SourcePane` forwarding the task context; and `data/review.ts` grew 320 → **414 lines** with the expansion wire types and `reviewSourceContent`, which reads the typed body whatever the HTTP status. **No route-level fact changed**: no new or removed route, no change to the reviewer takeover dispatch, the target shape or the cookie, and no other panel touched. **Citation accounting:** the rows of this document that cite `ReviewSurface.tsx` were re-derived against this candidate — the L22 block (`ReviewSurface` `409-409` → `482-482`, `KnowledgePane` `172-208` → `182-182`, `SourcePane` `279-279` → `337-337`, `EvidencePane` `322-322` → `395-395`, the two unassessed literals `211-366` → `200`/`439`, `SubmissionBlock` `373-373` → `446-446`, `RefusalBlock` `395-395` → `468-468`), the L6 rows (`1-7`/`179-206` → `1-9`/`182-205`, `fieldValue` `70-77` → `78-79`) and the L2 rows (`27-37`/`409-476` → `30-39`/`482-549`; `252-277`/`221-237`/`238-251` → `291-335`/`214-260`/`270-282`; `279-320`/`178-220` → `337-393`/`182-205`), with the L2 and L6 prose re-pointed at the newest section that owns each construct. The nine rows of the L3 section above are the ones this leaf added. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and `reviewedWorkingCandidate` records this leaf's uncommitted candidate beside the older one it still carries; no commit contains the new bytes, so closeout owns the real stamp.
 - 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`): **the review child route gained its second component, and the section above records the rule and the defect it closes.** Added the `260921-ICR-L6` section: `panels/review/KnowledgeStatements.tsx` owns the statement area (the four branches decided from a side's declared `state`, the one-sided diff with the absent side named above it, the available-content-with-reason path that draws no diff, and the neither-present case), `ReviewSurface.tsx` is 476 → **462 lines** and delegates it, and `fieldValue` now prints `(absent)` versus `(recorded empty)` so no mechanical field row is silently blank. **Two claims in the L22 section were corrected rather than carried**, because this leaf's change falsified them: the child is no longer "one component", and the reused `DiffPane` is no longer "fed … only when both sides are `present`" — the section now points at the L6 record above and says so. Its reference rows were **re-derived against this candidate** (`ReviewSurface` `409-409` → `395-395`, `KnowledgePane` `172-208` → `179-179`, `SourcePane` `279-279` → `265-265`, `EvidencePane` `322-322` → `308-308`, the unassessed state `211-366` → `193-193`/`352-352`, `SubmissionBlock` `373-373` → `359-359`, `RefusalBlock` `395-395` → `381-381`, and the reused-renderer row now points at `KnowledgeStatements.tsx`), as were the L2 section's three rows (`27-36`/`409-476` → `27-37`/`395-463`; `252-277`/`221-237`/`238-251` → `238-264`/`207-223`/`224-237`; `279-320`/`178-220` → `265-307`/`179-206`). No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the task-view entry into the review panel is reachable now, and this route gained the section that records how.** The gate in `detail-panel/changeSetBar.tsx` is `live && subject`: the `selectorKind`/`selectorId` props are gone and a live leaf's subject is read from `GET /api/review/intent/entries` by a new `useReviewSubject` hook. The card records why the old prop gate could never hold — `taskReader.tsx` and the master header pass no selector — and why the swap is not a weakening: a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. It also records that liveness was extracted into one `leafIsLive` predicate shared with the working change-set action, and that the button's target carries the subject's recorded kind and id rather than a path, so the browser still never chooses the candidate. The L22 section on the panel itself is retained unchanged below. No verification stamp was advanced.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:792-792; dashboard/src/cockpit/Cockpit.tsx:798-798. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2836,16 +2906,19 @@ and the reproducing command), `inventoryEntry` (the path exactly as published, w
 renderability) and `byteNamedEntry` (a name this surface cannot carry as text, printed by its exact byte
 form with the stated reason). `panels/detail-panel/changeSetBar.tsx` offers the entry for every live
 leaf, and `panels/detail-panel/test-utils.tsx` answers the entry read with whatever answer a case wants
-to exercise.
+to exercise. `260921-ICR-L3` (recorded above) then changed what those three helpers do to a row: the
+listing now opens into each entry's content, `Inventory` holds which row is open, and `byteNamedEntry`
+states that its byte-form row cannot be opened — so the measurements below name this candidate's lines.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-37; dashboard/src/panels/review/ReviewSurface.tsx:395-462 |
-| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:238-264; dashboard/src/panels/review/ReviewSurface.tsx:207-223; dashboard/src/panels/review/ReviewSurface.tsx:224-237 |
-| **The source pane that now opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:265-307; dashboard/src/panels/review/ReviewSurface.tsx:179-206 |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:30-39; dashboard/src/panels/review/ReviewSurface.tsx:482-549 |
+| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
+| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:337-393; dashboard/src/panels/review/ReviewSurface.tsx:182-205 |
 | **The detail-panel entry that is offered for every live leaf, with the server's subject as a refinement.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation in the L2 record above, forced by this leaf's changes to its cited files.** The paragraph and all three rows of the `260921-ICR-L2` section cite `panels/review/ReviewSurface.tsx` and nothing else that moved, so the whole section was re-derived against this candidate: `ReviewTarget`/`ReviewSurface` `27-37`/`395-462` → `30-39`/`482-549`, the three inventory helpers `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`, and `SourcePane`/`KnowledgePane` `265-307`/`179-206` → `337-393`/`182-205`. This leaf (`260921-ICR-L3`, whose own section is recorded in this route's narrative) made the inventory rows openable, added `SourceContent.tsx`, and grew `ReviewSurface.tsx` 462 → 549 lines, so the added sentence says which leaf changed what those helpers do to a row. No claim of the L2 record was falsified: the inventory is still rendered in all three states, the byte-form rows are still listed beside the named ones, and the target's selectors are still optional. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review panel renders the whole-task source inventory in all three of its states (including the byte-form rows for names it cannot carry as text), states that no comparison was made when the payload carries none, and survives a target with no selector; the detail-panel entry is offered for every live leaf. The section is appended at the end of this route's narrative, and the ten rows of this document that cited `ReviewSurface.tsx` by line were re-derived against the candidate in the same pass — this leaf moved every helper below the Knowledge pane. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

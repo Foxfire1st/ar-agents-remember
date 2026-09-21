@@ -5,10 +5,11 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -395,15 +396,15 @@ detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:215-228 |
-| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:252-260 |
-| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:291-296 |
-| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:298-311 |
-| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-10 |
-| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:13-13 |
+| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:328-342 |
+| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:369-377 |
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:344-353 |
+| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:355-363 |
+| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9 |
+| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:14-14 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
-| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:204-210 |
-| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:183-193 |
+| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:315-321 |
+| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:292-304 |
 
 ## Update History
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **this route's reviewer client gained the entry read, which is what makes the task-view entry reachable.** `intentReviewEntries(repo, master, leaf)` takes the task context and nothing else — a selector is precisely what it is being asked for — and returns a typed `ReviewEntryListResult` whose refused form carries a `refusal` and no entries rather than throwing, so a refused read is a normal outcome the caller renders as no button. The card also records `ReviewEntry`, whose own comment states it is "the ONLY legitimate source of the entry's selector" and that there is "no path field here on purpose", and it corrects the L22 sentence that said the module exports "one exported call": it now exports two, one per reviewer route. No verification stamp was advanced.
@@ -571,11 +572,58 @@ no fallback value was introduced for it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:143-154; dashboard/src/data/review.ts:155-167; dashboard/src/data/review.ts:168-178 |
-| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:35-48; dashboard/src/data/review.ts:220-225 |
-| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:235-247; dashboard/src/data/review.ts:98-114 |
-| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:271-290 |
-| The surface that consumes the new types and renders the inventory. | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:238-264 |
+| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:144-154; dashboard/src/data/review.ts:156-161; dashboard/src/data/review.ts:169-179 |
+| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:36-49; dashboard/src/data/review.ts:277-282 |
+| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:292-304; dashboard/src/data/review.ts:99-113 |
+| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:323-342 |
+| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `Inventory`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260 |
+
+## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
+
+**Route meaning extended, narrowly: the review client can now open one listed entry, and it does so
+through the one function that deliberately steps outside this route's error idiom.** `data/review.ts`
+grew 320 → **414 lines** and gained four interfaces and a third request:
+
+- `ReviewSourceSideState` — the closed six-member literal a side's `state` may be (`present`, `absent`,
+  `binary`, `symlink`, `submodule`, `unavailable`) — and `ReviewSourceSide`, which carries that state
+  with an optional `text`. The optionality is the route's own missing-side rule applied to content:
+  `text` is present only for the two textual states, so a missing or unrenderable side can never arrive
+  as an empty document and the renderer can never manufacture one.
+- `ReviewSourceExpansion` — both sides, both generation ids, the three-member `currentness` with its
+  detail, `path_bound` (`requested_generation` / `leaf_change_set`) with its detail, and the
+  `reference`/`command` — and `ReviewSourceContentResult`, the envelope whose `state` is `"content"`
+  with an `expansion` or `"refused"` with a `refusal`.
+- `reviewSourceContent(repo, master, leaf, path, beforeCodeTreeId, afterCodeTreeId, base = "")`, which
+  is the only function in this client that does **not** go through `getJson`. On this route a typed
+  refusal is a *normal* answer — a path outside the measured change set, a baseline that is not this
+  leaf's recorded one — and the transport carries it as the typed refusal in the body **with** a
+  400/404 status, which `getJson`'s throw-on-non-OK behaviour would turn into a transport error. So the
+  function `fetch`es the URL directly, decodes the body whatever the status was, returns it as the typed
+  result when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body
+  that is not this route's answer at all (an unwired process, a proxy error).
+
+**The generation is an input, and that is the property the whole expansion rests on.**
+`beforeCodeTreeId`/`afterCodeTreeId` are the ids the inventory published to this client, and the
+function sends them back — in that camelCase spelling, which is the spelling the route binds — so the
+content a reader opens is the content of the generation they were looking at, never re-resolved from
+whatever the leaf holds by the time the request lands. The client resolves no path and no tree of its
+own, and its own comment states that boundary. `intentReview` and `intentReviewEntries` are unchanged by
+this leaf: the comparison request still names a task context and one recorded subject, and the entry
+request still names the task context alone.
+
+The consumer is the `panels/` route's Source pane, which mounts the new renderer beneath an openable
+inventory row; the file's own card carries the type-by-type detail.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:192-213 |
+| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:214-238 |
+| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:240-246 |
+| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:379-414 |
+| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` | dashboard/src/data/review.ts:389-405 |
+| The consumer that mounts the renderer beneath an openable row, at the inventory's own two tree ids. | `SourceContent`; `review-inventory-open` | dashboard/src/panels/review/ReviewSurface.tsx:214-260 |
+| The renderer the expansion's fields feed, and its three state-decided branches. | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and citation re-derivation of the L2 record above forced by this leaf's change to its cited file.** Added the `260921-ICR-L3` section: `data/review.ts` gained the source-expansion wire types (`ReviewSourceSideState`, `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`) and `reviewSourceContent(...)`, and grew 320 → **414 lines**. The section records the one property a reader of this route has to carry away, because it is the exception to the route's own error idiom: `reviewSourceContent` is the only function in this client that does **not** go through `getJson`, because on the source-content route a typed refusal is a *normal* answer carrying a 400/404 status and `getJson`'s throw-on-non-OK behaviour would turn it into a transport error — so it decodes the body whatever the status was, returns it typed when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body that is not this route's answer. `intentReview` and `intentReviewEntries` are unchanged. **Citation accounting:** every row of the `260921-ICR-L2` section above cites `data/review.ts` by line and this leaf moved them all, so each was re-derived against this candidate — the inventory types `143-154`/`155-167`/`168-178` → `144-154`/`156-161`/`169-179`, `ComparisonIdentity`/`ReviewStaleness` `35-48`/`220-225` → `36-49`/`277-282`, `ReviewPayload`/`ReviewKnowledgePane` `235-247`/`98-114` → `292-304`/`99-113`, and `intentReview` `271-290` → `323-342` — as were the L22 section's nine rows, whose new values are `1-9`, `13-14`, `16-21`, `23-27`, `29-49`, `51-63`, `65-85`, `87-97`, `99-113`/`181-190`/`267-275`, `114-126`, `128-135`, `248-253`/`255-265`, `277-282`/`284-290`, `292-304`/`306-313`/`315-321`, `323-342`, `344-353`, `355-363`, `365-377`, and the consumed-client row now names `ReviewSurface.tsx:482-549` and `:214-260`. The five rows of the L3 section above are the ones this leaf added. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review client mirrors the new wire shape — the inventory types, an optional comparison identity, the `not_compared` and selection states — and `intentReview` now sends no selector at all when there is none, which is what makes the task-context review reachable from the browser. The section is appended at the end of this route's narrative, and the three rows of this document that cited `data/review.ts` by line were re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

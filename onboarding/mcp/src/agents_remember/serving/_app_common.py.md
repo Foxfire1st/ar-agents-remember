@@ -5,10 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -73,14 +73,42 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:300-304 |
-| The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:481-514 |
-| The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:120-157 |
-| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `ServingCollaborators.capsule_launch`; `_ServingRuntime.capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:455-462; mcp/src/agents_remember/serving/_app_common.py:496-496; mcp/src/agents_remember/serving/launch_capsule.py:162-163 |
-| The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-83 |
+| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:308-312 |
+| The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:505-538 |
+| The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:128-168 |
+| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:491-499; mcp/src/agents_remember/serving/_app_common.py:532-532; mcp/src/agents_remember/serving/launch_capsule.py:162-163 |
+| **The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:36-40; mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/serving/review.py:83-83 |
+| The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-127 |
 | The refusals the port's presence decides, in the one gate every launch point calls. | `resolve_launch_capsule`; `capsule-resolver-unavailable` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
+## 260921-ICR-L3 The Third Review Port On The Collaborator Record
+
+`ServingCollaborators` now carries a **third** reviewer field, and the reason it is a field of its own
+rather than one more member of the review payload is stated in the field's own docstring: the inventory
+is the whole task's change set, and the route that opens one entry reads two Git objects the payload
+never carried. A payload that carried every file's text would be a document dump, so the browser asks
+for exactly the row a reader opened, and this record is where the callable that answers it crosses from
+`application` into `serving`.
+
+- `review_source_content: ReviewSourceContentPort | None = None` — one inventory entry, named by the
+  generation the listing published, in; that entry's content at its two bound code trees out.
+
+The field is imported beside its two siblings from `agents_remember.serving.review`, which is the same
+grouped import the two reviewer ports already arrive through. The refusal it decides is the sharp half:
+an omitted port means **"this process cannot read the entry"**, which is a different fact from **"this
+entry has no content"** — and a browser served an empty file for the second would be reading a document
+this repository does not hold. So the missing-port answer is a named refusal, never an empty body.
+
+The three review ports are now one shape of decision recorded three times: production wires all of them
+in `agents_remember.cli.dashboard`, and each one's absence refuses its own route by name rather than
+serving an empty surface. The new field sits between `knowledge_review_entries` and `capsule_launch` on
+the record, which is the order the dataclass now declares.
+
 ## 260915-KS-L45 The Reviewer Entry Port Beside The Reviewer Port
+
+**The count in this section is superseded: the record carries three reviewer fields since
+260921-ICR-L3** (see the section above). The layering reason, the two ports' own docstrings and the
+wiring site it records are still exactly right, so the entry is retained rather than rewritten.
 
 `ServingCollaborators` now carries **two** reviewer fields, and they are one port beside the other
 rather than one port with a mode:
@@ -129,6 +157,7 @@ let the serving process register task-bound worker/reviewer/curator first eviden
 retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the collaborator record gained the third review port, and the section that counted two was superseded in place rather than left contradicting the source.** `ServingCollaborators.review_source_content: ReviewSourceContentPort | None = None` carries the callable that opens one listed inventory entry at the two code trees the listing published; it is imported beside `KnowledgeReviewPort` and `KnowledgeReviewEntriesPort` in one grouped import from `agents_remember.serving.review`. The new section records the field's own stated reason for being a third port rather than a field on the review payload (the inventory is the whole task's change set, and the route that opens one entry reads two Git objects the payload never carried) and the distinction the missing-port answer preserves: "this process cannot read the entry" is not "this entry has no content", so an omitted port refuses by name instead of serving an empty file. The L45 section's "carries **two** reviewer fields" is now flagged as superseded by the section above it, keeping its layering reason and wiring site intact — the same in-place idiom the L22 section already uses. **Citation accounting:** every row into this source was re-read against the candidate and re-derived from the construct's real extent, because this leaf's +16-line insertion moved everything below it. `TerminalAttachTaskRequest` `300-304` → `308-312`; `_ServingRuntime` `481-514` → `505-538`; `stream_events` `120-157` → `128-168`; the compiler-port row's dotted anchors (`ServingCollaborators.capsule_launch`; `_ServingRuntime.capsule_launch`), which no line can literally hold, became the real identifiers `capsule_launch`; `LaunchCapsuleResolver` over `491-499`; `532-532`; `launch_capsule.py:162-163`; `serving_collaborators` `dashboard.py:67-83` → `67-127`. One row was added for the new port, and no claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the collaborator record gained the reviewer's entry port beside its comparison port.** `ServingCollaborators.knowledge_review_entries: KnowledgeReviewEntriesPort | None = None` carries the callable that answers the entry route — the task context alone in, one `ReviewEntryListResult` out — and `_app_common.py` is where it crosses from `application` into `serving`. The new section states why the entry port is separate rather than a mode of the first: the entry route is the only one a task view can call before it knows a subject, and answering an unwired process with an empty list would say "nothing is reviewable here", a different fact from "this process cannot answer", so the missing-port answer must be a named refusal. That makes three ports on this record of one shape, so a reader comparing them gets the layering rule rather than three unrelated defaults. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: `_ServingRuntime` repointed to mcp/src/agents_remember/serving/_app_common.py:481-514. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 

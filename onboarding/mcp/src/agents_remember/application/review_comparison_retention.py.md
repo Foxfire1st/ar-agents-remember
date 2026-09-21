@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_retention.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T19:36:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -154,7 +154,7 @@ gets written out of history.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of the two kinds of content, the two owners that retain them, and the rule that a failure is a named refusal rather than an escaping error. | *(module docstring)* | mcp/src/agents_remember/application/review_comparison_retention.py:1-25 |
+| The module's own statement of the two kinds of content, the two owners that retain them, and the rule that a failure is a named refusal rather than an escaping error. | `retain_comparison_source`; `freeze_closed_snapshot` | mcp/src/agents_remember/application/review_comparison_retention.py:1-25 |
 | The published surface, the refusal codes and the four values. | `__all__`; `_ABSENT`; `_UNRESOLVED` | mcp/src/agents_remember/application/review_comparison_retention.py:76-85 |
 | **The deliberately narrow request: the resolution and the declared absences, and nothing a record owns.** | `KnowledgeRetentionRequest` | mcp/src/agents_remember/application/review_comparison_retention.py:88-98 |
 | The four facts that travel together through every decision below. | `_Capture` | mcp/src/agents_remember/application/review_comparison_retention.py:101-113 |
@@ -188,4 +188,5 @@ module crosses on its own authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the two kinds of content, the two owners that retain them and the named-refusal rule cited `review_comparison_retention.py:1-25` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names two real identifiers that occur **literally inside the cited range** — `retain_comparison_source` at line 9 and `freeze_closed_snapshot` at line 13, the code-side retainer and the storage snapshot owner the docstring names as the two existing owners — so the claim is checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-21T19:36:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as **the retention half of ICR-R11@v1** — where the bytes a generation binds come from. The card records what a reader has to act on: custody is a **measurement against named durable history only** (the leaf's protected source branch plus the commits the task record landed), and the leaf's own work branch is excluded **on purpose**, because it is the branch ordinary cleanup and `worktree_abandon` remove and a generation resting on it would lose its source side with the leaf; the pin is created only when that named history does not already hold the tree, and `created_pin` is `None` whenever the ref pre-existed so a failed publication cannot release another generation's pin; a knowledge half that is absent is one of exactly two *stated* states (`not-recorded` for R05's historical absence, `not-selected` for a comparison that selected nothing) and a **declared absence standing beside real bytes is refused**, because that is how a real generation gets written out of history; and the snapshot bytes come from the storage snapshot owner under the dataset's own bound namespace, with the namespace question asked *before* the copy so a mismatch is a refusal naming both ids rather than a storage error raised mid-freeze. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.

@@ -5,10 +5,11 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-09-20T13:43:00+02:00                           |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`       |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastUpdated            | 2026-09-21T22:40:00+02:00                           |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615`       |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -197,7 +198,8 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 | --- | --- | --- |
 | **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
-| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:27-37; dashboard/src/panels/review/ReviewSurface.tsx:395-462 |
+| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:30-39; dashboard/src/panels/review/ReviewSurface.tsx:482-549 |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation forced by this leaf's line shifts; no route impact.** This leaf's dashboard change is confined to the sibling `panels/review/` child and the `data/` route: `panels/review/SourceContent.tsx` is new, `panels/review/ReviewSurface.tsx` grew 462 → 549 lines (its inventory rows are now openable), and `data/review.ts` gained the expansion wire types and `reviewSourceContent`. The one row of the L2 section above that cited `ReviewSurface.tsx` by line was therefore re-derived against the candidate — `ReviewTarget`/`ReviewSurface` `27-37`/`395-462` → `30-39`/`482-549` — and it is the only row this document carries into that file. **The prose is not false and was not reworded:** `ChangeSetTarget.review`'s contract is unchanged (its presence still marks a review, an empty object is still the task-context entry), `ChangeSetViewer`'s own behaviour is unchanged, and the change-set viewer is still never mounted for a review. Nothing in this leaf touches `ChangeSetViewer.tsx`, `ChangeSetPane.tsx`, `DiffPane.tsx` or the change-set route's own API. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and the `reviewedWorkingCandidate` row records this leaf's uncommitted candidate; no commit contains the new bytes, so closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review field on a change-set target may now carry no selector, and its declaration records what that means: presence marks a review, an empty object is the task-context entry. The viewer's behaviour is unchanged. The section is appended at the end of this route's narrative, and the one row of this document that cited `ChangeSetViewer.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

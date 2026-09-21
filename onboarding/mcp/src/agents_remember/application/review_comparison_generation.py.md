@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T19:26:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -183,7 +183,7 @@ makes an exact retry converge.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door. | *(module docstring)* | mcp/src/agents_remember/application/review_comparison_generation.py:1-42 |
+| The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door. | `ComparisonGenerationManifest`; `ComparisonHistoryDeletion` | mcp/src/agents_remember/application/review_comparison_generation.py:1-42 |
 | The published surface: version, layout literals, the eleven models, the path helpers, the reads and the discovery functions. | `__all__`; `COMPARISON_GENERATION_VERSION` | mcp/src/agents_remember/application/review_comparison_generation.py:79-121 |
 | **The layout, named once**, and the two typed-absence spellings with their reason for being distinct from a failure. | `COMPARISON_GENERATIONS_DIRECTORY`; `COMPARISON_MANIFEST_NAME`; `COMPARISON_KNOWLEDGE_DIRECTORY`; `COMPARISON_SNAPSHOT_NAME`; `COMPARISON_DELETIONS_DIRECTORY`; `KNOWLEDGE_NOT_SELECTED`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_comparison_generation.py:125-144 |
 | **The fields the seal does not cover, and why each is excluded.** | `_UNSEALED_FIELDS`; `_GENERATION_NAMESPACE` | mcp/src/agents_remember/application/review_comparison_generation.py:146-155 |
@@ -218,4 +218,5 @@ path the source binding records rather than something this module resolves.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of what it owns cited `review_comparison_generation.py:1-42` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain, so the range could not be checked at all. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names two real identifiers that occur **literally inside the cited range** — `ComparisonGenerationManifest` at line 11 and `ComparisonHistoryDeletion` at line 22, the record and the deletion record the docstring says this module owns — which is what makes the claim checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-21T19:26:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as the **keystone of ICR-R11@v1** — the durable record a comparison survives cleanup and restart *as*. It records what the record is rather than only where the code lives: the manifest binds owner-produced identities and **stores no semantic judgment of its own** (its one self-computed digest is a seal over its own fields); a `retained` knowledge side must carry identity **and** bytes by construction, which makes the packet's non-conforming example — a manifest holding only a digest of already-deleted SQLite bytes — unconstructible rather than merely discouraged; the generation id is **re-derived from the seal** and then checked a second time against the directory the record was found in, so a record resealed around edited fields is refused instead of being read as the generation a caller resolved; and `recorded_at` is outside the seal on purpose so an exact retry converges on the same record instead of refusing against itself. It also records the boundaries: the durable root is asked of `durable_evidence.durable_reports_root` rather than restated, `not-recorded` / `not-selected` are R05's typed absences and not failures, an unreadable deletion record is a storage error rather than "no deletion recorded", and hidden stage directories are never generations. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate and no real commit contains the content a stamp would otherwise claim to have verified. The `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.

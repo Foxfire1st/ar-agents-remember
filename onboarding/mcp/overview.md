@@ -5,16 +5,17 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-21T20:44:00+02:00 |
+| lastUpdated | 2026-09-21T23:10:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`, re-derived at the sync against merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1982,13 +1983,19 @@ dependency-less copy. The per-card detail is on the `install` route's cards and 
 
 ## 260915-KS-L45 The Reviewer Becomes Two Routes, And The Candidate Pair Gets A Producer
 
-The Intent Reviewer surface is now reached through **two GET routes**, and the second one is what makes
+**Superseded count (`260921-ICR-L3`): the surface now serves three routes over three ports, and it is no
+longer true that no review route accepts a path.** This section records the two-route landing as it was;
+its reasons for the split remain current, and the `260921-ICR-L3` section at the end of this narrative
+records what the third route added and which sentence of the route model it corrected.
+
+The Intent Reviewer surface is reached through **three GET routes**, and the second one is what makes
 the first reachable from a task view:
 
 | Route | Answers | Port | Inputs |
 | --- | --- | --- | --- |
 | `/api/review/intent` | what one comparison renders | `KnowledgeReviewPort` | task context + one recorded subject selector |
 | `/api/review/intent/entries` | which subjects the resolved pair can be compared on | `KnowledgeReviewEntriesPort` | task context alone |
+| `/api/review/intent/source-content` | one listed entry's actual content at the two bound code trees (`260921-ICR-L3`) | `ReviewSourceContentPort` | task context + the entry path + both bound code tree ids |
 
 The split is a second **path** rather than a second adapter, and the source comment gives the reason: a
 caller that had to guess a subject id to reach the comparison route would be choosing the candidate,
@@ -1996,7 +2003,7 @@ which the browser may not do. Both answer from **one application resolution**, s
 is offered and the review it then opens cannot name different candidates. The entry route is the only
 one a caller can invoke *before* it knows a subject, so it takes the task context and nothing else.
 
-**No adapter is a named refusal on both routes, and the entry route must never answer it with a list.**
+**No adapter is a named refusal on all three routes, and neither the entry route nor the expansion route may answer it with a list or with an empty file (`260921-ICR-L3` added the third).**
 The comparison route's `503` says the surface is not served rather than served empty. The entry route
 has its own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`) because an empty entry list would say
 "nothing is reviewable here" — a different fact from "this process cannot answer", and only one of them
@@ -2038,12 +2045,12 @@ served dashboard either has both adapters or refuses the corresponding route by 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The comparison route constant, GET-only.** | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:51-52 |
-| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:54-58 |
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-99 |
-| **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:68-80 |
-| **The status mapping success reads as `refusal is None`, so one function serves both typed results; the four candidate codes answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:125-140 |
-| The two port fields on the collaborators dataclass, and the rank reason they exist. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:456-456; mcp/src/agents_remember/serving/_app_common.py:467-467 |
+| **The comparison route constant, GET-only.** | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
+| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:63-67 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173 |
+| **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:85-97 |
+| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/models/knowledge/review.py:98-106 |
+| The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
 | **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:77-84; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
@@ -2086,14 +2093,14 @@ empty surface.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:52-52 |
-| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:52-52 |
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-83 |
-| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:456-465 |
+| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
+| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173 |
+| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:460-469 |
 | The registration that reads that port. | `register_review_routes(app, config, collaborators.knowledge_review)` | mcp/src/agents_remember/serving/app.py:295-295 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
-| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:109-110 |
-| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:125-125 |
+| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:124-126 |
+| **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-216 |
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
 
@@ -5974,6 +5981,45 @@ no test under `mcp/tests` can assert an installed copy.
 | **The response field the block travels on, carried by the strict response model rather than re-declared.** | `published_intent` | mcp/src/agents_remember/models/read_files.py:74-74 |
 | **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-229 |
 | **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` | mcp/tests/test_read_ar_files.py:521-544 |
+
+## Update History
+- 2026-09-21T23:10:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and one sentence of the reviewer surface's route model corrected rather than extended.** The package gained one review route (`/api/review/intent/source-content`), one `ServingCollaborators` review port (`ReviewSourceContentPort`) and one application owner (`application/review_source_content.py`, with its vocabulary in `models/knowledge/review_source_content.py`); the section above records the three facts that reach this altitude — the third **path**'s reason (a payload carrying every changed file's text would be a document dump), the corrected boundary (**the review surface accepts no filesystem path and no root, but its expansion route does take a repository-relative entry path, read only from a measured change set**), and the refusal shape (`_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file", and `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`). The L45 section keeps its heading and now opens by naming the superseded count, because two of its sentences ("two GET routes", "no adapter is a named refusal on both routes") had become false. **Citation accounting:** every row this document carries into `serving/review.py` was re-derived against the candidate, because that file grew 223 → 349 lines (the `KNOWLEDGE_REVIEW_*` constants `:51-58` → `:59-74`, `_UNWIRED_ENTRIES` `:68-80` → `:85-97`, `review_request_from_query` `:83-99` → `:134-173`, `_status_for` `:125-140` → `:199-216`), and the two `_app_common.py` port rows (`:456`/`:467`) and the `cli/dashboard.py` composition row (`:109-110`) were re-pointed to the extents they occupy now (`:460`/`:471`, `:124-126`), with the third review port added to both. No claim was deleted, no anchor dropped to silence a finding, and no row invented. **No verification stamp was advanced**: the candidate is uncommitted, the stamp rows name the production line the card was read against (`d80a0513…`, committed `2026-09-21T19:51:20+02:00`), and the governed closeout owns the real stamp.
+
+## 260921-ICR-L3 The Reviewer Gains An Expansion Route, And Its Inventory Rows Open Into Bound Content
+
+**This route gained one HTTP route, one collaborator port and one application owner, and one sentence
+of the reviewer surface's route model became false rather than incomplete.** `GET
+/api/review/intent/source-content` opens **one listed entry's actual content** at the two bound code
+trees the inventory published. It is the third review route and the third `ServingCollaborators` review
+port (`ReviewSourceContentPort`), and it exists as its own **path** rather than a field on the review
+payload because the inventory is the whole task's change set: a payload carrying every changed file's
+text would be a document dump, so the browser asks for exactly the row a reader opened.
+
+The corrected boundary is the package-level fact this section exists to state. Every earlier statement
+that the review surface **accepts no path** is now true only of the comparison and entry routes: the
+expansion route takes a **repository-relative entry path** together with both bound code tree ids, and
+the application owner behind the port reads it only if a **measured** change set lists it — the requested
+generation's own, or, when that measurement cannot be made, the change set the leaf's review publishes —
+publishing which measurement admitted it as `path_bound`. No route accepts a filesystem path and no
+route accepts a root, so the browser still cannot choose which dataset or which repository is read.
+
+The refusal shape is the same idiom with one new fact: `_UNWIRED_SOURCE_CONTENT` refuses a process that
+composed no expansion port with `503` and **"not served rather than served as an empty file"** — an
+empty document would read as a file this repository does not hold — and the expansion's refusal code
+`source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`. The
+application owner, its vocabulary, its route-local overviews and the dashboard renderer are recorded on
+their own routes; this section records only what this package's route model gained.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` | mcp/src/agents_remember/serving/review.py:69-74 |
+| **The third collaborator port, with the reason it is a port rather than a field on the review payload.** | `review_source_content`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/serving/review.py:83-83 |
+| **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` | mcp/src/agents_remember/serving/review.py:99-111 |
+| **The application owner the port carries: the two admitted measured change sets, both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `_admit` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:293-337 |
+| The composition root's third review port, and the registration call that passes all three collaborators. | `review_source_content_port`; `register_review_routes` | mcp/src/agents_remember/cli/dashboard.py:109-119; mcp/src/agents_remember/serving/app.py:295-301 |
+| **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** | `SOURCE_CONTENT_REFERENCE`; `ReviewSourceExpansion` | mcp/src/agents_remember/application/review_source_content.py:1-70; mcp/src/agents_remember/models/knowledge/review_source_content.py:1-51 |
+| The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:771-795; mcp/tests/test_knowledge_review_source_content.py:796-821; mcp/tests/test_knowledge_review_source_content.py:641-678 |
+
 
 ## Update History
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this package's impact for the leaf: the new `application/published_intent.py`, the `published_intent` field on the read-files response, the deliberately unchanged MCP surface (`mcp/tools/read_files.py` and the tool registration) and the untouched `application/knowledge_read.py`, the regenerated `package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` (179 → 239 lines, nine targets written by `scripts/sync-skills.py`), the case that holds the carrier to the payload's real spellings, and the boundary that the seven installed harness skill roots still carry the old carrier — an acceptance-time install the orchestrator owns, not a package change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

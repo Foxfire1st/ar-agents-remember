@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`             |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615`             |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview      | `overview.md`                                          |
 
@@ -105,7 +105,7 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:303-303; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322; dashboard/src/panels/changeset/ChangeSetViewer.tsx:300-300; dashboard/src/panels/changeset/ChangeSetViewer.tsx:301-301; dashboard/src/panels/changeset/ChangeSetViewer.tsx:304-304; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-174; dashboard/src/panels/changeset/ChangeSetViewer.tsx:172-172 |
+| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:303-304; dashboard/src/panels/changeset/ChangeSetViewer.tsx:330-330; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-175 |
 | The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:190-190; dashboard/src/panels/changeset/ChangeSetViewer.tsx:191-191; dashboard/src/panels/changeset/ChangeSetViewer.tsx:453-453; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450; dashboard/src/panels/changeset/ChangeSetViewer.tsx:458-458; dashboard/src/panels/changeset/ChangeSetViewer.tsx:187-187; dashboard/src/panels/changeset/ChangeSetViewer.tsx:188-188; dashboard/src/panels/changeset/ChangeSetViewer.tsx:455-455 |
 | Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:157-162 |
 | The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-190 |

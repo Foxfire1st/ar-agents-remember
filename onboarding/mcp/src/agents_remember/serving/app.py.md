@@ -5,10 +5,10 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -34,7 +34,35 @@ cached process identity projected by MCP `server_info`.
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
 
 
+## 260921-ICR-L3 Reviewer Route Registration Carries All Three Ports
+
+`create_app` registers the reviewer route family with **three** collaborator ports:
+
+```python
+register_review_routes(
+    app,
+    config,
+    collaborators.knowledge_review,
+    collaborators.knowledge_review_entries,
+    collaborators.review_source_content,
+)
+```
+
+The call was one line and is now five; the fifth argument is the new one. It is the single line in this
+module where the surface's *three* routes and one composition root are visible together, and it is the
+only change this leaf makes here: the call still joins the other route-family registrations
+(`register_files_routes`, `register_changeset_routes`, `register_notes_routes`,
+`register_requirements_routes`) and is still made **before** `mount_static(app)`, so the static mount's
+greedy catch-all cannot shadow any reviewer route. Every argument is a collaborator port — the route
+family composes no adapter of its own — so a process that omits one refuses **that** route by name
+rather than serving an empty surface, and the third port's absence is the entry-content route's own
+named refusal, not an empty file.
+
 ## 260915-KS-L45 Reviewer Route Registration Carries Both Ports
+
+**The count in this section is superseded: the call now carries three ports since 260921-ICR-L3** (see
+the section above). The ordering constraint, the no-adapter rule and the one-composition-root reading it
+records are still exactly right, so the entry is retained rather than rewritten.
 
 `create_app` registers the reviewer route family with **both** collaborator ports:
 
@@ -90,9 +118,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:253-310 |
-| One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:165-252; mcp/src/agents_remember/serving/app.py:198-198; mcp/src/agents_remember/serving/app.py:242-242 |
-| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:337-337 |
+| App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:255-323 |
+| One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:166-252; mcp/src/agents_remember/serving/app.py:199-199; mcp/src/agents_remember/serving/app.py:243-243 |
+| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:341-341 |
 
 ## Cross-Repo References
 
@@ -131,11 +159,13 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `ServingCollaborators.capsule_launch` | mcp/src/agents_remember/serving/app.py:165-251; mcp/src/agents_remember/serving/_app_common.py:455-462 |
-| The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-83 |
+| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/app.py:166-252; mcp/src/agents_remember/serving/app.py:246-246; mcp/src/agents_remember/serving/_app_common.py:491-499 |
+| **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.** | `register_review_routes`; `review_source_content` | mcp/src/agents_remember/serving/app.py:295-301; mcp/src/agents_remember/serving/_app_common.py:481-489 |
+| The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-127 |
 | The gate whose behaviour the port's presence decides. | `resolve_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the reviewer route family is now registered with all three collaborator ports.** `create_app`'s `register_review_routes(...)` call gained a fifth argument, `collaborators.review_source_content`, and was reformatted from one line to five so each port reads on its own. This is the only change this leaf makes to this module, and the new section states what it means here: the registration still sits beside the other route families and still precedes `mount_static(app)`, every argument is still a collaborator port rather than an adapter composed in this file, and the third port's absence is the entry-content route's own named refusal instead of an empty file. The L45 section's "**both** collaborator ports" is flagged as superseded in place, keeping its ordering constraint and no-adapter rule intact. **Citation accounting:** every row into this source was re-read against the candidate and re-derived, because this leaf's +4-line reformat moved every construct below it and this card's earlier ranges had already drifted: `create_app` `253-310` → `255-323` (the construct's real extent, decorator-free); `_build_serving_runtime` `165-252` → `166-252` with its two seam lines `198-198`/`242-242` → `199-199`/`243-243`; `"\"TerminalAttachTaskRequest\","` `337-337` → `341-341`; the compiler-port row's second anchor, `ServingCollaborators.capsule_launch` — a dotted span no line can literally hold — became `capsule_launch`; `LaunchCapsuleResolver` over its real field line and `_app_common.py:491-499`; `serving_collaborators` `dashboard.py:67-83` → `67-127`. One row was added for the new fifth argument. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer route family is now registered with both collaborator ports.** `create_app` calls `register_review_routes(app, config, collaborators.knowledge_review, collaborators.knowledge_review_entries)` beside the other route-family registrations and before the greedy static mount, so both reviewer routes — the comparison and the entry list — are reachable in every app this module builds, and a process that wires only one of the two refuses the other route by name rather than serving an empty surface. This line is the one place the surface's two-routes-one-composition-root shape is visible, and the new section records it. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "\"TerminalAttachTaskRequest\"," repointed to mcp/src/agents_remember/serving/app.py:333-333. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_build_serving_runtime` repointed to mcp/src/agents_remember/serving/app.py:165-251. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

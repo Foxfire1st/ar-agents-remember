@@ -3,12 +3,12 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-21T20:44:00+02:00 |
+| lastUpdated | 2026-09-21T23:15:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -21,11 +21,70 @@
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; production line `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`, re-derived at the sync against merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L3 The Review's Content Read Becomes Its Own Owner, And A Path Is Admitted Only By A Measured Change Set
+
+This route gained **one module and one seam**, and the leaf they belong to (`260921-ICR-L3`, primary
+requirement `ICR-R03@v1`): `application/review_source_content.py` now owns opening **one review
+inventory entry** into the actual content both bound code trees hold at its path. The review adapter is
+untouched — it never owned this responsibility (the review payload carries no file text), so nothing had
+to move out of it and it did not grow toward the rail; it is 831 lines before and after this leaf.
+
+The module's own docstring states what it answers and what it refuses to own, and the three properties
+are the reason it exists rather than living inside the adapter. The **generation is an input, not a
+lookup**: the two tree object ids arrive with the request, are read back from the inventory the caller
+is looking at, and are used to address the bytes, while the leaf's review is re-resolved only to
+*measure* whether those ids are still the pair it binds — the answer travels as `currentness`, and a
+working tree, `HEAD` or a newer candidate is never substituted. **Every side states its own truth**: a
+side is `present`, `absent`, `binary`, `symlink`, `submodule` or `unavailable`, and `absent` (this
+endpoint measured and holding nothing there) stays apart from `unavailable` (a measurement that was not
+made, with its reason). **The content is real and bounded, never a reference**: text is carried to
+2 MiB with the object's exact size beside it and `truncated` set when the carried text is a prefix.
+
+The seam this leaf drew at this altitude is the path confinement, and it is the part a reader of this
+route should carry away. A path is read only from a **measured change set**, and there are exactly two
+sources: the requested generation's own change inventory, or — only when that measurement cannot be made
+at all — the change set this leaf's review actually publishes (its recorded baseline against the
+candidate tree it binds now). The admitting measurement is published on the answer as
+`path_bound`/`path_bound_detail`, so a row always says which change set listed it. A path in neither is
+refused by name in every state, which is what keeps this route a change-set read rather than a general
+file reader over the recorded base. Two further admissions gate the read before any object is touched:
+the two ids must be complete Git object identities, and the after generation must name a **tree** — a
+commit, a blob or a tag this repository holds is refused by name, while an object it does *not* hold
+stays a per-side `unavailable` measurement rather than a refusal, because refusing would hide the
+readable side of a comparison that is otherwise inspectable.
+
+What this module deliberately delegates is as load-bearing as what it owns: the change set is still the
+inventory owner's `review_inventory` (called, never re-derived), the resolution and the currentness
+recheck are `review_candidate_resolution`'s, the bytes are the kernel's byte-exact `read_git_blob_bytes`,
+and the bounded decode plus the language id are the shipped file-transport primitives. The route reaches
+it through a **third** `ServingCollaborators` port (`review_source_content`), wired by the composition
+root, because `serving` ranks below `application`; the serving route model records that half. The
+dashboard renderer (`dashboard/src/panels/review/SourceContent.tsx`) consumes the value and is on the
+panels route.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The module's own statement of the three properties it exists for, and of what it does not own — no diff, no re-measurement of the change set, no selection.** | `SOURCE_CONTENT_REFERENCE`; `EXPANSION_TEXT_BYTES` | mcp/src/agents_remember/application/review_source_content.py:1-75 |
+| **The one entry point: resolve, screen the four admission facts, then read — with the currentness measurement taken after the bytes so it can only qualify them.** | `read_review_source_content` | mcp/src/agents_remember/application/review_source_content.py:110-131 |
+| **The four admissions, each a distinct named refusal: a complete object identity per side, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** | `_inadmissible` | mcp/src/agents_remember/application/review_source_content.py:140-207 |
+| **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement.** | `_non_tree_generation` | mcp/src/agents_remember/application/review_source_content.py:210-238 |
+| **The confinement itself: exactly two admitting measurements — the requested generation's own change set, or, when that measurement is unavailable, the change set this leaf's review publishes — with the admitting measurement carried on the value.** | `_admit`; `_Admission` | mcp/src/agents_remember/application/review_source_content.py:284-337 |
+| The two refusals that keep the read confined, and the status an admitted entry keeps when the pair's change set was not measured. | `_unconfined`; `_not_listed`; `_status` | mcp/src/agents_remember/application/review_source_content.py:340-403 |
+| **The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.** | `_currentness` | mcp/src/agents_remember/application/review_source_content.py:415-451 |
+| **One endpoint's content with the three outcomes kept apart, and the entry's kind deciding before its bytes: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target.** | `_side_content`; `_entry_content` | mcp/src/agents_remember/application/review_source_content.py:473-517 |
+| The two reasons no text form exists, and the bounded decode that carries a prefix rather than the whole object. | `_decoded`; `_binary_detail`; `_text_detail` | mcp/src/agents_remember/application/review_source_content.py:564-606 |
+| **The tree read: a literal pathspec, because a measured pathname is an address and not a pattern, and the answer checked against the path that was asked about.** | `_tree_entry`; `_parsed_record` | mcp/src/agents_remember/application/review_source_content.py:618-658 |
+| The exact reproduction line a reader acts on, and the second path check that refuses the spellings Git could not have reported. | `_reproduction`; `_addressable` | mcp/src/agents_remember/application/review_source_content.py:677-709; mcp/src/agents_remember/application/review_source_content.py:712-733 |
+| **The owners this module calls instead of re-implementing: the inventory measurement and its side value, the resolution, and the shipped recheck.** | `review_inventory`; `source_tree_side`; `resolve_review_candidate`; `require_current_candidate_identity` | mcp/src/agents_remember/application/review_source_inventory.py:428-465; mcp/src/agents_remember/application/review_source_inventory.py:167-175; mcp/src/agents_remember/application/review_candidate_resolution.py:135-220; mcp/src/agents_remember/application/review_candidate_resolution.py:221-252 |
+| **The third collaborator port that carries this owner into the serving tier.** | `review_source_content`; `review_source_content_port` | mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/cli/dashboard.py:109-119 |
+| **The production-composition cases: both endpoints' own bytes against an independent `git show`, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** | `test_a_modified_file_opens_both_endpoints_own_bytes`; `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | mcp/tests/test_knowledge_review_source_content.py:269-313; mcp/tests/test_knowledge_review_source_content.py:599-640; mcp/tests/test_knowledge_review_source_content.py:641-678; mcp/tests/test_knowledge_review_source_content.py:679-724 |
 
 ## 260921-ICR-L11 The Durable Comparison Generation: Five New Owners, One Keystone Record, And A Freeze Nothing Calls Yet
 
@@ -1198,6 +1257,7 @@ contains it — no wider. `complete_tool_response` (`:131-145`) is unchanged; th
 `_attach_lifecycle_tail` (`:112-130`), so every response this route completes passes through it.
 
 ## Update History
+- 2026-09-21T23:15:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **this route gained one module and one seam.** `application/review_source_content.py` (733 lines) now owns opening one review inventory entry into the actual content both bound code trees hold at its path; its vocabulary lives in `models/knowledge/review_source_content.py`, its route and third `ServingCollaborators` port are on the serving route, and its renderer is on the panels route. The section above records the three properties the module exists for (the generation is an input rather than a lookup; every side states its own truth with `absent` and `unavailable` kept apart; the content is real, bounded to 2 MiB and never a reference) and the **seam** a reader of this route should carry away: a path is read only from a **measured** change set — the requested generation's own, or, when that measurement cannot be made, the change set this leaf's review publishes — with `path_bound`/`path_bound_detail` naming which, and a path in neither refused in every state. It also records the two further admissions (complete object identities, and a **tree** as the after generation, with a commit/blob/tag refused by name while a missing object stays a per-side measurement) and the ownership the module deliberately leaves alone (`application/knowledge_review.py` is untouched at 831 lines, and the change set, the resolution, the currentness recheck, the byte-exact blob read and the bounded decode are the shipped owners'). **Citation accounting:** every range in the new section was derived from its construct's own extent in this candidate; one inherited stale row was re-derived in the same pass — the ingest-CLI row citing `add_arguments`/`run` carried `:133-209`/`:360-409` from before L20's renumbering, and those constructs are `:171-262`/`:660-692` now (the same values L20's own entry above records, which the row itself had not been updated to). No claim was deleted or re-worded for convenience. **No verification stamp was advanced**: the candidate is uncommitted, the stamp rows keep the production line this document was read against (`d80a0513…`, committed `2026-09-21T19:51:20+02:00`), and the governed closeout owns the real stamp.
 - 2026-09-21T20:44:00+02:00 — 260921-ICR-L11 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L20` line; no side and no claim was dropped.** The header keeps both candidate rows and one `lastUpdated`; both sections are kept — this leaf's `260921-ICR-L11` section and `260921-ICR-L20`'s, each in the position its own pass wrote it — and both history entries are kept with this leaf's first. **Citation accounting:** this document carries no range into the two test manifests; its ranges into `durable_evidence.py` (`:58-69`), `errors.py` (`:180-190`, `:193-203`) and the new application modules were re-read against the merged code line and are unchanged. **No claim was corrected here.** **No verification stamp was advanced** — the stamp rows are outside the conflict and keep the incoming `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` / `2026-09-21T18:46:40+02:00`.
 - 2026-09-21T20:20:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained five modules and the leaf's keystone record.** `260921-ICR-L11` (ICR-R11@v1) added `review_comparison_generation.py` (the immutable manifest, its layout under the one durable root, the deletion record, the re-derived generation id and the directory-name agreement), `review_comparison_freeze.py` (the production entry, the one-rename publication, the stale-stage sweep and reclaim-on-failure), `review_comparison_retention.py` (custody measured against **named durable history only**, both halves copied by the storage snapshot owner), `review_comparison_reclamation.py` (the two deletion owners, the record written before the deletion, the measured digest) and `review_comparison_reopen.py` (per-channel states and `unavailable_channels()`). The section records the two route-level boundaries as boundaries rather than defects: **the freeze is deliberately not wired to any route or read path** — ICR-R21 wires it at closeout, so the absence of callers is not evidence of dead code — and a **relocated coordination root degrades the reopened source channel to `missing`**, ruled the boundary of ICR-R12/R13, which own historical resolution and may record a relative repository identity or add a resolution input. Five file-level cards were created in the same pass, and the two typed failures the retention and reclamation boundaries raise were added to `errors.py`'s card. Verification metadata is **not** advanced on the previous values: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T18:35+02:00 — 260921-ICR-L20 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L6` line; no side and no claim was dropped.** Both sections are kept: `260921-ICR-L6`'s statement-side section first and this leaf's publication-route section after it. Every range the resolution keeps was then re-derived against the merged candidate rather than shifted by a remembered delta (every row in the two sections was read against the merged candidate, and the adapter rows this document carries took the merged extents (`compose_review` `:377-452`, `_open_dataset_pair` `:455-500`, `_review_matrix` `:503-530`, `_selector_kind_or_absence` `:575-584`)); where both sides cited the same construct the merged extent was taken, and two claims that had become untrue in the merged state were corrected rather than kept in two wordings (the composition row named four constructs against three ranges and now cites all four). **No verification stamp was advanced:** the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is exactly what the incoming line recorded (`9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` / 2026-09-21T18:13:19+02:00 where that line carried it), the `reviewedWorkingCandidate` row for this leaf's candidate was added beside it as metadata and not as a stamp, and the governed closeout owns the real commit.
@@ -1994,7 +2054,7 @@ sections describe.
 | The admission that forks a selected baseline instead of creating an empty candidate. | `_admitted_candidate` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355 |
 | **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:660-692; mcp/src/agents_remember/cli/knowledge_ingest.py:504-542 |
 | The route, anchor and claim identities minted together, each keyed on what it is — L43's split lives in the section above. | `_TargetIdentities`; `_target_identities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695 |
-| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
+| The adapter that now declares the baseline argument and passes it into that selection. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:660-692 |
 
 
 ## Update History

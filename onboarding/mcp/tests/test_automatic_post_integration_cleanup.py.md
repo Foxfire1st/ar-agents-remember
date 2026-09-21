@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
-| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -137,8 +137,8 @@ direct evidence.
 | The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
 | The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
 | The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-886 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:211-211; mcp/tests/test-evidence-lanes.toml:221-221; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-65 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/tests/test-evidence-lanes.toml:210-210 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/test-evidence-lanes.toml:227-227; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-65 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/tests/test-evidence-lanes.toml:214-214 |
 
 ## Cross-Repo References
 
@@ -150,6 +150,7 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file. Both of its lane rows cited the pre-insertion lines for two different anchors; each was re-read and re-derived from the line that carries its own anchor on this candidate: the `integration = [` key moved `:210`/`:211` → `:214`, and the module's own row moved to `:227`. No claim wording or anchor was changed, and **no verification stamp was advanced** — the recorded stamp is kept, because the candidate is uncommitted and closeout owns the real commit.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **citation repair only, forced by this leaf's own moves in the files this card cites.** The source file this card documents did **not** change; this leaf appended one row to `mcp/tests/test-evidence-lanes.toml` at `:89` and two consumer rows to `mcp/tests/evidence-lifecycle.toml` at `:733` and `:1271`, so every lane row below `:88` shifted by one and every evidence-catalog line below those rows by one and two respectively. Each affected row was re-read against the construct it names and its range re-derived from that construct's own extent in the moved file — and, where a row's anchor is a lane or consumer entry, from the line that actually carries it — rather than shifted by a remembered delta. No claim was re-worded, no anchor was renamed and no row was dropped, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only.** `260921-ICR-L1` inserted one `unit-regression` row at `mcp/tests/test-evidence-lanes.toml:105`, so every row and lane key below it moved one line lower; this card's claim rows that cite that manifest were re-derived under that mapping from the anchor's real position (the ranges are shifted exactly where they cross `:105`, and left alone where they do not). No claim was re-worded, no row was deleted, and the generated history entries in this card keep the ranges they were written with. No verification stamp was advanced.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.

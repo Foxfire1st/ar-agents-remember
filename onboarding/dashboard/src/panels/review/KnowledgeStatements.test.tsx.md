@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/KnowledgeStatements.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T17:30:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -132,24 +132,32 @@ Every claim on this card is checkable in the shipped candidate: the suite's own 
 case bodies, the component it drives, the surface and client it deliberately does not stub, the jsdom
 setup that lets the shipped CodeMirror primitives render, and the server-side case module it mirrors.
 
+**Citation repair, and why the test-name rows read as quoted literals.** Seven rows cite one case by
+its suite range, and each names that case by the double-quoted string the case itself passes to `it` —
+which is the only anchor form that both the citation grammar and the occurrence rule accept here: a
+test's own name is several words, so a backticked span is *not* identifier-shaped, and the citation
+grammar explicitly refuses such a span as an anchor and requires a double-quoted literal instead. The
+`file-pane` and `diff-pane` anchors in the unreadable-opposite row stay backticked because those are
+single identifiers. The suite itself is unchanged by that repair; only this card was wrong.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The suite's own scope statement: the real component and the real client with only `fetch` stubbed, the values' provenance from the server-side cases, and the defect these cases catch.** | `ReviewSurface`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:1-27 |
-| The real surface the cases mount, and the real client it calls — neither is stubbed. | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:29-38; dashboard/src/data/review.ts:271-285 |
+| The real surface the cases mount, and the real client it calls — neither is stubbed. | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:1-14; dashboard/src/data/review.ts:328-347 |
 | **The measured server strings, the pane's two structured projections, and the declared-state `binary` fixture with its own labelling comment.** | `ADDED_STATEMENT`; `REMOVED_STATEMENT`; `SHARED_ACCEPTANCE_REF`; `STRUCTURED_BEFORE`; `STRUCTURED_AFTER`; `BINARY_AFTER` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:44-69 |
 | The four typed side builders and the two payload builders the cases spread overrides into. | `present`; `absent`; `unresolved`; `binary`; `knowledge`; `payload` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:71-85; dashboard/src/panels/review/KnowledgeStatements.test.tsx:87-164 |
 | **The transport stub and the mount helper: `fetch` and nothing else, so the payload travels the production route.** | `serve`; `reviewed` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:166-174; dashboard/src/panels/review/KnowledgeStatements.test.tsx:176-186 |
 | The teardown that keeps a stubbed global from leaking between cases. | `afterEach` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:188-191 |
-| **The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.** | `draws an added invariant's full after statement beside an absent-before label` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
-| The removal, symmetrically. | `draws a removed invariant's full before statement beside an absent-after label` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228 |
-| **The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.** | `keeps both statements when both sides recorded one, and names no side` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:230-241 |
-| **The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.** | `keeps the available text and claims no diff when the other side is unreadable` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259 |
-| The three declared states carried through as their own tokens and never collapsed into one another. | `renders a %s side as that state and never as another one` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
-| The task-context case: two named states, no diff and no content pane. | `draws no diff and both named states when no subject was compared` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:276-289 |
-| **The field-row case: absent, changed-text, changed-structured (asserted unequal) and recorded-empty in one render, none printed as a blank.** | `names an absent field value and a recorded empty one without printing either as blank` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336 |
+| **The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.** | "draws an added invariant's full after statement beside an absent-before label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
+| The removal, symmetrically. | "draws a removed invariant's full before statement beside an absent-after label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228 |
+| **The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.** | "keeps both statements when both sides recorded one, and names no side" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:230-241 |
+| **The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.** | "keeps the available text and claims no diff when the other side is unreadable" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259 |
+| The three declared states carried through as their own tokens and never collapsed into one another. | "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
+| The task-context case: two named states, no diff and no content pane. | "draws no diff and both named states when no subject was compared" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:276-289 |
+| **The field-row case: absent, changed-text, changed-structured (asserted unequal) and recorded-empty in one render, none printed as a blank.** | "names an absent field value and a recorded empty one without printing either as blank" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336 |
 | The jsdom answers that let the shipped CodeMirror primitives render in these cases. | `Range.getClientRects`; `ResizeObserver`; `matchMedia` | dashboard/src/test/setup.ts:65-83; dashboard/src/test/setup.ts:108-112 |
 | The component under test and the rule it implements. | `KnowledgeStatements`; `unavailable`; `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-44; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
-| The shipped renderers whose DOM these cases read back. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:117-117; dashboard/src/panels/file-viewer/FilePane.tsx:49-49 |
+| The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/file-viewer/FilePane.tsx:20-20 |
 | **The server-side half these cases mirror: the same statements and details measured through the real composition.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not`; `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:288-317; mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 
 ## Cross-Repo References
@@ -164,6 +172,7 @@ names.
 
 ## Update History
 
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only — a pre-existing defect the quality gate reports, and this leaf does not change the suite it cites.** Seven rows of the reference table named their case with a **backticked** test name. That form satisfies neither half of the citation grammar: a test name is several words, so the span is not identifier-shaped (the grammar refuses it as an unchecked span and requires a double-quoted literal instead, and a TypeScript parse of a bare sentence is not a call or a generic type), and the occurrence rule would reject it anyway. So each of those rows was a row with Source content and **no anchor**. Each was repaired by writing the case's own name as the double-quoted literal the suite passes to `it`, which occurs literally inside the cited range: `194-212` ("draws an added invariant's full after statement beside an absent-before label"), `214-228` ("draws a removed invariant's full before statement beside an absent-after label"), `230-241` ("keeps both statements when both sides recorded one, and names no side"), `243-259` ("keeps the available text and claims no diff when the other side is unreadable"), `261-274` ("renders a %s side as that state and never as another one"), `276-289` ("draws no diff and both named states when no subject was compared") and — the same defect, in a row the gate's range list did not enumerate — `291-336` ("names an absent field value and a recorded empty one without printing either as blank", whose row also carried the inverted, impossible range `291-289`, now corrected to the case's real `291-336`). No claim's meaning was changed, no range was re-pointed except that one inversion, and the `file-pane`/`diff-pane` identifiers in the unreadable-opposite row were left as they are. **This is not a consequence of this leaf:** `dashboard/src/panels/review/KnowledgeStatements.test.tsx` is **not** touched by `260921-ICR-L3` (its bytes are identical to `d80a0513e928ef29a973527d09597c82c96fde87`), so every range above still resolves against the same unchanged file and only this card was wrong. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against, and the commit whose bytes the cited suite still has — while the `reviewedWorkingCandidate` row records the candidate this card was read in; the repair itself is uncommitted and closeout owns the real stamp.
 - 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`):
   **created.** The module is new in this leaf and this is its one-to-one card. It records the two
   load-bearing choices a reader must not weaken: the cases drive the **real** `ReviewSurface` over the

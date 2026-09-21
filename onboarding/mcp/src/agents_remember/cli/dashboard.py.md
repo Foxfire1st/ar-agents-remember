@@ -5,10 +5,10 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
+| lastUpdated            | 2026-09-21T22:40:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -142,7 +142,40 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
 
+## 260921-ICR-L3 The Third Reviewer Port, And Who Chooses The Generation
+
+`serving_collaborators` now binds **three** application-tier reviewer callables, and the third one is
+what lets a browser open the entry a reader clicked:
+
+```python
+def review_source_content_port(request):
+    return read_review_source_content(config, request)
+```
+
+It is imported at function scope with the same deferred-composition idiom as its siblings —
+`from agents_remember.application.review_source_content import (  # noqa: PLC0415 - composition
+read_review_source_content,)` — and placed on the collaborator record as `review_source_content`.
+
+The docstring states the division of labour this port exists to make explicit, and it is the reason the
+closed-over value is not a config lookup: **the request carries the generation the browser is looking
+at, rather than the server choosing one.** The application owner re-resolves the leaf only to *measure*
+whether that generation is still the candidate's; it then reads those two objects and nothing else — no
+working tree, no `HEAD`. So an entry opened after the branch moved still shows the **listed**
+generation's bytes and says the leaf has moved past them, instead of silently substituting whatever the
+branch holds now. Supplying the port is also what decides the route's behaviour: a process that omits it
+refuses that route **by name**, because "this process cannot read the entry" and "this entry has no
+content" are different facts and only one of them is true.
+
+This is the third instance of one shape of decision on this record: production wires every reviewer port
+in this one config-bound composition root, and each port's absence refuses its own route rather than
+serving an empty surface.
+
 ## 260915-KS-L45 Both Reviewer Ports Wired From One Composition Root
+
+**The count in this section is superseded: the root now binds three reviewer callables since
+260921-ICR-L3** (see the section above). The wiring site, the function-scope import idiom and the
+refuse-by-name reason it records are still exactly right, so the entry is retained rather than
+rewritten.
 
 `serving_collaborators` now binds **two** application-tier reviewer callables, and the second one is
 what makes a task view able to ask the question the first one needs an answer to:
@@ -210,9 +243,9 @@ see.
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
 | The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
 | The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. | `add_arguments` (the `mcp/src/agents_remember/cli/dashboard.py` one, distinguished from the identically named function in `cli/knowledge_ingest.py`); `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:147-171; mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:237-258; mcp/src/agents_remember/cli/dashboard.py:261-282; mcp/src/agents_remember/cli/dashboard.py:285-312; mcp/src/agents_remember/cli/dashboard.py:336-363 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:163-237; mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:290-311; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:352-379 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:255-323 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
 | The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
@@ -250,12 +283,14 @@ the base is not silently dropped by this composition.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:309-333; mcp/src/agents_remember/cli/dashboard.py:67-111 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-127; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:67-127 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:440-499 |
+| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:109-119; mcp/src/agents_remember/cli/dashboard.py:81-83; mcp/src/agents_remember/serving/_app_common.py:481-489 |
 
 ## Update History
 
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the composition root gained the third reviewer port, and the section that counted two was superseded in place.** `serving_collaborators` now imports `read_review_source_content` from `agents_remember.application.review_source_content` with the same deferred `# noqa: PLC0415 - composition` idiom as its siblings, defines `review_source_content_port(request)` closing over `config`, and places it on the replaced record as `review_source_content`. The new section records the division of labour the docstring states — **the request carries the generation the browser is looking at rather than the server choosing one**, and the application owner re-resolves the leaf only to *measure* whether that generation is still the candidate's, then reads those two objects and nothing else (no working tree, no `HEAD`), so an entry opened after the branch moved still shows the listed generation's bytes and says the leaf has moved past it — plus the refuse-by-name half: "this process cannot read the entry" and "this entry has no content" are different facts. The L45 section's "binds **two** application-tier reviewer callables" is flagged as superseded while its wiring site and reason are kept. **Citation accounting:** this leaf's +16-line insertion shifted every construct below line ~78 by 16, so every row into this file was re-read against the candidate and re-derived rather than shifted: `add_arguments` `147-171` → `163-237`; `_dev_app` `114-144` → `130-160`; `_run_reload_server` `237-258` → `290-311`; `_build_app` `261-282`/`309-333` → `325-349`; `_run_daemon_command` `285-312`/`336-363` → `352-379`; `serving_collaborators` `67-83` → `67-127`; `ServingCollaborators` in `_app_common.py` `430-462` → `440-499`; `create_app` in `serving/app.py` `226-285` → `255-323`. Two backticked spans in the cadence row that are **not anchors** — the file path and the sibling CLI path used to disambiguate `add_arguments` — were moved out of the Anchor cell into the Finding's plain prose, because no cited range can literally hold a path; one row was added for the new port. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the composition root now supplies both reviewer ports.** `serving_collaborators` imports `list_knowledge_review_entries` beside `read_knowledge_review`/`review_records_for` and defines `review_entries_port(repository_id, master, leaf_id)`, placing it on the collaborator record as `knowledge_review_entries` beside `knowledge_review`. The card records why the entry port takes the task context alone — a subject is what it is being asked for, and the task view calls it before any subject exists — and the property the shared resolution buys: the entry a caller is offered and the review it then opens resolve through the identical operation, so they cannot name different candidates. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-17T10:35+02:00 — 260915-CAPS-L15 curator: **this file became the composition root for the
   capsule compiler.** Added `serving_collaborators(config)`, a `dataclasses.replace` over the

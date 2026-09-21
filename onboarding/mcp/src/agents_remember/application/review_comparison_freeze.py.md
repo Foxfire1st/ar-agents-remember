@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_freeze.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T19:31:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -176,7 +176,7 @@ possible; and a receipt the comparison does not read is never allowed to gate a 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of the composition rule and of the one-rename publication. | *(module docstring)* | mcp/src/agents_remember/application/review_comparison_freeze.py:1-42 |
+| The module's own statement of the composition rule and of the one-rename publication. | `freeze_closed_snapshot`; `review_comparison_retention` | mcp/src/agents_remember/application/review_comparison_freeze.py:1-42 |
 | The published surface and the three shipped refusal codes it reuses. | `__all__`; `_ABSENT`; `_UNRESOLVED`; `_REFUSED` | mcp/src/agents_remember/application/review_comparison_freeze.py:113-129 |
 | **The four caller-known facts that travel together, and the one empty contribution.** | `ComparisonEvidenceInput`; `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:132-163 |
 | **Everything one freeze binds, as values other owners produced**, including the declared historical absences and the predecessor. | `ComparisonGenerationRequest` | mcp/src/agents_remember/application/review_comparison_freeze.py:166-184 |
@@ -216,4 +216,5 @@ under the coordination root, which is outside both the code and the memory repos
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the composition rule cited `review_comparison_freeze.py:1-42` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain, so the range could not be checked at all. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names two real identifiers that occur **literally inside the cited range** — `freeze_closed_snapshot` at line 12 and `review_comparison_retention` at line 18, the two owners the docstring's composition rule names — which is what makes the claim ("the module's own statement of the composition rule and of the one-rename publication") checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-21T19:31:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as **the act that produces a durable comparison generation** under ICR-R11@v1. It records the properties a reader has to act on rather than the function list: publication is **one rename of a fully validated directory**, so a generation exists or it does not and no partial capture can be resolved; an already-published generation is converged on (same binding digest → the published record with `reused=True`) or refused, never overwritten; every failure path removes the stage and releases **only** the pin this call created, because an existing pin belongs to a record this call did not make; and a hard failure raised outside the operation's own control flow is reclaimed exactly like a refusal, so a rename `OSError` cannot leak a complete-looking `.stage`. The card also records the sweep: stages are named for the creating pid, the sweep runs inside the one leaf directory the record names as its temporary storage scope, and every unattributable or possibly-live name counts as live — "reclaim only from the dead". Two stated boundaries are carried as boundaries and not as defects: the freeze is **deliberately not wired to any route or read path** (ICR-R21 wires it at closeout), and reclaiming a *published* generation belongs to `review_comparison_reclamation`, which this module never calls. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.

@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_reopen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T19:45:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ repository path is a stated relocation boundary owned by ICR-R12/R13.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of the three channels, the six channel states and the five generation states. | *(module docstring)* | mcp/src/agents_remember/application/review_comparison_reopen.py:1-32 |
+| The module's own statement of the three channels, the six channel states and the five generation states. | `reopen_comparison_generation` | mcp/src/agents_remember/application/review_comparison_reopen.py:1-32 |
 | The published surface and the value that packages the three addressing strings. | `__all__`; `_Addressed` | mcp/src/agents_remember/application/review_comparison_reopen.py:75-90 |
 | **The source channel's five facts, including `pin_present` (measured now) beside `release_recorded` (history) and the three-valued `custody_observed`.** | `ComparisonSourceChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:96-122 |
 | The knowledge channel's six states and its optional identity and path. | `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:124-140 |
@@ -199,4 +199,5 @@ absolute path is stated above and owned by ICR-R12/R13.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the three channels, the six channel states and the five generation states cited `review_comparison_reopen.py:1-32` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names the real identifier `reopen_comparison_generation`, which occurs **literally inside the cited range** at line 4 — the operation the docstring's channel list describes — so the claim is checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-21T19:45:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as **the read-back half of ICR-R11@v1** — what reopening a durable comparison generation reports. It records what a consumer has to act on: every channel answers with its own state rather than one verdict, and `unavailable_channels()` names exactly which input stopped resolving so a consumer can keep the rest; a typed absence (`not-recorded` / `not-selected`) is a statement and never an unavailability; a **missing expected dataset is not absent history** — the two are told apart by the presence of a deletion record, not by a file's absence; custody is reported twice and neither substitutes for the other (`custody_recorded` is history, `custody_observed` is a three-valued measurement now, and `None` means the repository could not be read); and the live pin measurement leads the release history in the composed detail, because a re-frozen comparison legitimately has both. Two stated boundaries are carried as boundaries and not defects: an **absolute** recorded repository path means a relocated coordination root degrades the source channel to `missing` while the knowledge and evidence channels travel with the tree — ruled the boundary of ICR-R12/R13, which own historical resolution; and this read path has **no consumer yet** (no route, pane or CLI entry), which ICR-R12/R13 own. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.

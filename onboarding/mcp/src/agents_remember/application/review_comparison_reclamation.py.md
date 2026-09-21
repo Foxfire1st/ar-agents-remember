@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T19:40:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ release is taken *before* the ref is removed, because it cannot be recovered aft
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of the two properties the reopen depends on, and of what it deliberately does not decide. | *(module docstring)* | mcp/src/agents_remember/application/review_comparison_reclamation.py:1-23 |
+| The module's own statement of the two properties the reopen depends on, and of what it deliberately does not decide. | `review_comparison_freeze` | mcp/src/agents_remember/application/review_comparison_reclamation.py:1-23 |
 | **The two canonical deletion owners the manifest names on everything a freeze creates.** | `CODE_OBJECT_DELETION_OWNER`; `SNAPSHOT_DELETION_OWNER`; `__all__` | mcp/src/agents_remember/application/review_comparison_reclamation.py:50-63 |
 | The deletion targets, spelled with the record's own literal vocabulary. | `CodeObjectTarget`; `KnowledgeTarget`; `_knowledge_target`; `_CODE_OBJECT_TARGET` | mcp/src/agents_remember/application/review_comparison_reclamation.py:67-68; mcp/src/agents_remember/application/review_comparison_reclamation.py:141-147 |
 | **The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.** | `release_comparison_code_object`; `_require_the_ref_names_the_record`; `_ref_exists` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:150-171 |
@@ -162,4 +162,5 @@ manifest names and unlinks files under the coordination task root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the two properties the reopen depends on cited `review_comparison_reclamation.py:1-23` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names the real identifier `review_comparison_freeze`, which occurs **literally inside the cited range** at line 3 — the module whose record-before-delete ordering this docstring contrasts itself with — so the claim is checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-21T19:40:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as the **two bounded reclamation paths ICR-R11@v1 requires** ("every new snapshot/pin names its deletion owner and bounded temporary-storage cleanup"). It records the properties a reader has to act on rather than the function list: the unavailable-history record is written **before** the deletion so an interruption leaves the honest ordering, and the code release *withdraws* its record if the retention owner then refuses, so no false record of a deletion that did not happen survives; the ref must still name the recorded commit and the snapshot must still hold the recorded bytes, so a moved ref is left in place and a mismatched snapshot is refused with nothing removed and nothing recorded; the deleted digest is **measured** rather than copied from the manifest, and an already-absent snapshot converges as `None` so a retry of an interrupted discard does not fail; and custody at release is measured *before* the ref disappears, because the record's reader cannot recover that distinction afterwards. Two stated boundaries: the manifest is never deleted (a reopen must be able to say the generation existed), and *when* a comparison may be reclaimed has **no owner in this leaf** — these are explicit acts nothing in the freeze or reopen path calls. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.

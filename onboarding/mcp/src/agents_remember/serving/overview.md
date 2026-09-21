@@ -5,11 +5,12 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitDate | 2026-09-21T16:05:56+02:00|
+| lastUpdated | 2026-09-21T23:05:00+02:00 |
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -1265,12 +1266,19 @@ re-bound.**
 
 ## 260915-KS-L45 The Reviewer Serves Two Routes Over Two Ports
 
-The reviewer surface is reached through **two GET routes**, and neither one is a mode of the other:
+**Superseded count (`260921-ICR-L3`): the reviewer surface now serves three routes over three ports,
+and it is no longer true that no route accepts a path.** This section records the two-route, two-port
+landing as it was; every statement below about *counts* is superseded by the `260921-ICR-L3` section at
+the end of this narrative, while the reasons it gives for the split — a second **path** rather than a
+second adapter, and one application resolution behind both answers — remain current.
+
+The reviewer surface is reached through **three GET routes**, and none of them is a mode of another:
 
 | Route | Answers | Port | Inputs |
 | --- | --- | --- | --- |
 | `/api/review/intent` | what one comparison renders | `KnowledgeReviewPort` | task context + one recorded subject selector |
 | `/api/review/intent/entries` | which subjects the resolved pair can be compared on | `KnowledgeReviewEntriesPort` | task context alone |
+| `/api/review/intent/source-content` | one listed entry's actual content at the two bound code trees (added by `260921-ICR-L3`) | `ReviewSourceContentPort` | task context + the entry path + both bound code tree ids |
 
 The split is a second **path** rather than a second adapter, and the source comment gives the reason:
 a caller that had to guess a subject id to reach the comparison route would be choosing the candidate,
@@ -1279,51 +1287,61 @@ resolves through the identical operation the comparison uses — so the entry a 
 the review it then opens cannot name different candidates. The entry route is the only one a task view
 can call *before* it knows a subject, which is why it takes the task context and nothing else.
 
-The status idiom is now one mapping over two result types. `_status_for` reads success as
-`refusal is None` rather than `state == "review"` — which is how an `entries` state and a `review`
-state both serve `200` without a second local table — and `subject_unresolved` joins
+The status idiom is now one mapping over three result types (`260921-ICR-L3` widened the union).
+`_status_for` reads success as `refusal is None` rather than `state == "review"` — which is how an
+`entries` state, a `review` state and a `content` state all serve `200` without a second local table —
+and `subject_unresolved` joins
 `candidate_unresolved`, `candidate_not_live` and `candidate_dataset_absent` among the codes that answer
 `404`. The comparison route keeps its own `200`/`400`/`404`/`503` behaviour: `503` when no adapter is
 wired into the process, `404` for a candidate that does not resolve, is not live, or has no dataset,
 and `400` for a selector kind the surface does not admit.
 
-**No adapter is a named refusal on both routes, and the entry route must never answer it with a list.**
-The comparison route's `503` says no review adapter is wired and that the surface is not served rather
-than served empty. The entry route has its own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`, the
-same reason and next action) because an empty entry list would say "nothing is reviewable here", which
-is a different fact from "this process cannot answer", and only one of them is true when the process
-was composed without the port.
+**No adapter is a named refusal on all three routes, and neither the entry route nor the expansion
+route may answer it with a list or with an empty file.** The comparison route's `503` says no review
+adapter is wired and that the surface is not served rather than served empty. The entry route has its
+own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`, the same reason and next action) because an empty
+entry list would say "nothing is reviewable here", which is a different fact from "this process cannot
+answer", and only one of them is true when the process was composed without the port. The expansion
+route's own body (`_UNWIRED_SOURCE_CONTENT`, added by `260921-ICR-L3`) is the same answer with the one
+word that matters changed — **"not served rather than served as an empty file"** — because an empty
+document would read as a file this repository does not hold.
 
-It accepts no path on either route. The comparison route's inputs are a repository, a master, a leaf id
+The comparison route accepts no path, and the entry route takes the task context alone. The expansion
+route (`260921-ICR-L3`) is the one that does: a **repository-relative entry path**, always sent with
+both bound code tree ids, and read only if a **measured** change set lists it — the requested
+generation's own, or, when that measurement is unavailable, the change set the leaf's review publishes.
+It is not a filesystem path and no route accepts one, so the browser still cannot choose which dataset
+or which repository is read. The comparison route's inputs are a repository, a master, a leaf id
 and one recorded subject selector, with the selector kind closed at the two identity seeds the read
 operation declares — `invariant` and `family`; every other seed kind addresses a revision, a membership
 or a claim rather than a subject a curator reviews, so it is refused by name instead of being mapped
 onto one of the two, and the refusal carries the offending input, the expected set and the next action.
 That closure is what keeps the browser out of candidate selection: the resolution behind the ports
-chooses which dataset is reviewed, and neither route can be handed one.
+chooses which dataset is reviewed, and no route can be handed one.
 
 Why ports rather than direct imports is a rank fact: `layers.toml` ranks `serving` below
 `application`, so this module may not import the read, diff and view operations the reviewer composes.
-It takes both ports the way the launch route takes the capsule compiler, wired by the composition root
-in `cli/dashboard.py`. Registration also carries an ordering constraint its siblings share — the routes
+It takes all three ports the way the launch route takes the capsule compiler, wired by the composition
+root in `cli/dashboard.py`. Registration also carries an ordering constraint its siblings share — the routes
 must be registered before the greedy static mount — and the module's own docstring records it,
 alongside the statement that the registrar accepts the runtime config for symmetry and resolves nothing
 from it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The comparison route's handler over its injected port.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-190 |
-| **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:137-143 |
-| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:68-80 |
-| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:54-58 |
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:60-63 |
-| The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-99 |
-| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:125-140 |
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:125-140 |
-| The 400 a selector kind outside the admitted set gets. | `status_code` | mcp/src/agents_remember/serving/review.py:143-217 |
-| The 404 for a candidate that does not resolve. | `status_code` | mcp/src/agents_remember/serving/review.py:143-217 |
-| **The registration that must precede the static mount and that takes both ports.** | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:120-136 |
-| **The entry port type: the task context in, one typed entry result out.** | `KnowledgeReviewEntriesPort` | mcp/src/agents_remember/serving/review.py:66-66 |
+| **The comparison route's handler over its injected port.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:249-298 |
+| **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:236-243 |
+| **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).** | "def api_review_intent_source_content(" | mcp/src/agents_remember/serving/review.py:245-247; mcp/src/agents_remember/serving/review.py:309-331 |
+| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** | `_UNWIRED_ENTRIES`; `_UNWIRED_SOURCE_CONTENT` | mcp/src/agents_remember/serving/review.py:85-111 |
+| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:63-67 |
+| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:76-79 |
+| The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173 |
+| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` | mcp/src/agents_remember/serving/review.py:199-216 |
+| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:199-216 |
+| The 400 a selector kind outside the admitted set gets. | `status_code` | mcp/src/agents_remember/serving/review.py:249-298 |
+| The 404 for a candidate that does not resolve. | `status_code` | mcp/src/agents_remember/serving/review.py:249-298 |
+| **The registration that must precede the static mount and that takes all three ports.** | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:219-247 |
+| **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** | `KnowledgeReviewEntriesPort`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/review.py:82-83 |
 
 ## 260915-KS-L22 The Intent-Review Transport Over An Injected Port
 
@@ -1357,15 +1375,15 @@ resolves nothing from it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The GET-only route handler over the injected port. | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-146 |
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:63-63 |
-| The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:83-83 |
-| **The status mapping both routes inherit from the change-set routes; the signature now accepts either typed result and reads success as `refusal is None`.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:102-117 |
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:125-140 |
-| **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-190 |
-| **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:146-190 |
-| **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:137-143 |
-| The registration that must precede the static mount. | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:120-120 |
+| The GET-only route handler over the injected port. | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:249-298 |
+| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` | mcp/src/agents_remember/serving/review.py:76-79 |
+| The query parser that admits only those two. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173 |
+| **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-216 |
+| The refusal code a process with no adapter produces. | `review_adapter_unavailable` | mcp/src/agents_remember/serving/review.py:199-216 |
+| **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:249-298 |
+| **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** | "def api_review_intent(" | mcp/src/agents_remember/serving/review.py:249-298 |
+| **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:236-243 |
+| The registration that must precede the static mount. | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:219-247 |
 
 ## 260921-ICR-L1 The Committed Change-Set Range Binds Recorded Commits, Never HEAD
 
@@ -2393,11 +2411,65 @@ unwired `503`/refusal answers, the status mapping and the serializer are unchang
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` | mcp/src/agents_remember/serving/review.py:83-122; mcp/src/agents_remember/models/knowledge/review.py:156-175 |
-| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:143-217 |
-| The status mapping and the serializer, unchanged by this leaf. | `_status_for`; `_json` | mcp/src/agents_remember/serving/review.py:125-140; mcp/src/agents_remember/serving/review.py:220-223 |
+| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/models/knowledge/review.py:156-175 |
+| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:219-247; mcp/src/agents_remember/serving/review.py:249-298 |
+| The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:301-306 |
 | **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:362-437; mcp/src/agents_remember/application/review_task_context.py:59-104 |
 | **The case that asserts the omission is admitted beside the two kinds, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_surface.py:979-997; mcp/tests/test_knowledge_review_source_endpoints.py:674-750 |
 
+## 260921-ICR-L3 The Reviewer Gains Its Expansion Route, And The Inventory Rows Open Into Their Bound Content
+
+**Route meaning added: the reviewer surface now serves a third GET route over a third port, and one
+sentence of this route model had to be corrected rather than extended — "no path is accepted" is no
+longer true of every route.**
+
+`GET /api/review/intent/source-content` opens **one listed entry's actual content** at the two bound
+code trees the inventory published. It is a third **path** rather than a field on the payload, and the
+source comment gives the reason: the inventory is the whole task's change set, so a payload carrying
+every changed file's text would be a document dump; the browser asks for exactly the row a reader
+opened. The route is GET-only and takes a selector value (`SourceContentRef`) whose three parts travel
+together because any one of them alone selects nothing: the task context, the entry path, and both
+bound code tree ids — the last two named by the **caller**, read out of the listing it is looking at,
+which is what keeps an expansion bound to the generation the reader was looking at.
+
+The corrected boundary is the one a reader of this route model most needs. This is the only review route
+that accepts a `path`, and it is **not** a filesystem path: it is a repository-relative entry path, and
+the application owner behind the port reads it only if a **measured** change set lists it — the
+requested generation's own change set, or, when that measurement cannot be made, the change set this
+leaf's review actually publishes (its recorded baseline against the candidate tree it binds now). The
+admitting measurement is published on the answer as `path_bound`/`path_bound_detail`. No route accepts a
+root, and no route accepts a filesystem path, so the browser still cannot choose which dataset or which
+repository is read; the whole path-confinement boundary the L45 and L22 sections describe for the other
+two routes is unchanged.
+
+The refusal shape is the same idiom with one new fact. `_UNWIRED_SOURCE_CONTENT` answers a process that
+composed no expansion port with `503` and **"the surface is not served rather than served as an empty
+file"** — an empty document would read as a file this repository does not hold, which is exactly the
+confusion the L45 section's entry-list argument makes for lists. `ReviewSourceContentPort` joined
+`ServingCollaborators` as its own third port rather than a field on the review payload, for the same
+reason it is a third path. `_status_for` and `_json` widened to the third result type: `content` serves
+`200`, and the expansion's refusal code `source_content_unresolved` reaches `400` through the same
+fall-through as `comparison_refused`. A query that does not name the generation whole (a blank path or a
+blank tree id) is a `400` naming the exact expected set rather than a server-chosen generation. The
+application owner, its vocabulary and the dashboard renderer are on their own routes
+(`mcp/src/agents_remember/application/overview.md`, `mcp/src/agents_remember/models/overview.md`,
+`dashboard/src/panels/overview.md`); this section records only what the serving route model gained.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` | mcp/src/agents_remember/serving/review.py:69-74 |
+| **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** | `SourceContentRef`; `before_code_tree_id` | mcp/src/agents_remember/serving/review.py:114-131 |
+| **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` | mcp/src/agents_remember/serving/review.py:176-196 |
+| **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` | mcp/src/agents_remember/serving/review.py:245-247; mcp/src/agents_remember/serving/review.py:309-331 |
+| **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` | mcp/src/agents_remember/serving/review.py:99-111 |
+| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:481-489 |
+| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/models/knowledge/review.py:98-106 |
+| The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` | mcp/src/agents_remember/serving/review.py:333-349 |
+| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-301 |
+| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:109-119 |
+| **The application owner behind the port: the two admitted measured change sets, both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `_admit` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:293-337 |
+| **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:771-795; mcp/tests/test_knowledge_review_source_content.py:796-821; mcp/tests/test_knowledge_review_source_content.py:641-678 |
+
 ## Update History
+- 2026-09-21T23:05:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, code base `d80a0513`): **route body updated, the L45 section's counts superseded in place, and one sentence of this route model corrected rather than extended.** The reviewer surface gained a third GET route (`/api/review/intent/source-content`), a third port (`ReviewSourceContentPort`, its own field on `ServingCollaborators`) and a third entry in the route inventory table; the new section at the end of this narrative records the split's reason (a payload carrying every changed file's text would be a document dump), the corrected boundary (**this is the one review route that accepts a path, and it is a repository-relative entry path read only from a measured change set — never a filesystem path and never a root**), and the refusal shape (`_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file", and the expansion's `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`). The L45 heading keeps its historical wording and its section now opens by naming the superseded count, because two of its sentences ("two GET routes", "accepts no path on either route", "takes both ports") had become false. **Citation accounting:** every row this document carries into `serving/review.py` was re-derived against the candidate — that file grew 223 → 349 lines, so the L45 table's rows (`146-190`/`137-143`/`68-80`/`54-58`/`60-63`/`83-99`/`125-140`/`120-136`/`66`) and the L22 table's rows (`146`/`63`/`83`/`102-117`/`120`) were re-pointed to the extents they occupy now (`249-298`/`236-243`/`85-111`/`63-67`/`76-79`/`134-173`/`199-216`/`219-247`/`82-83`), and three rows were added for the new route's own constructs. No claim was dropped to silence a finding, and none was invented. **No verification stamp was advanced** — the candidate is uncommitted, and the governed closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review route now admits a third answer — omitting **both** selector parameters — which is the task context, and its `400` body names that option while still reporting a half-named selector with the value that was wrong. The section is appended at the end of this route's narrative; the rows above were derived against the candidate, and the five rows of this route that cited `serving/review.py` by line were re-derived in the same pass because the file grew by 30 lines above the registrar. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

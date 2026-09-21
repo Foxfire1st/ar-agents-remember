@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_review_one_sided_statements.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T17:30:00+02:00 |
+| lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ it.
 | **The projection owner whose markers and canonicality this module asserts.** | `structured_value_text`; `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TAIL` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/application/review_statement_sides.py:61-62 |
 | The adapter entry point the cases drive, and the one-sided contract its pane values carry. | `compose_review`; `ReviewCandidateResolution`; `ReviewRecordInputs` | mcp/src/agents_remember/application/knowledge_review.py:377-452 |
 | **The fixture this module builds on, and the public store operations it authors through.** | `ReadScopeFixture`; `build_read_scope_fixture`; `open_knowledge_store`; `create_invariant`; `create_revision` | mcp/tests/read_scope_test_support.py:178-243; mcp/tests/read_scope_test_support.py:270-287; mcp/src/agents_remember/memory/knowledge/store.py:767-784; mcp/src/agents_remember/memory/knowledge/store.py:272-272; mcp/src/agents_remember/memory/knowledge/store.py:291-291 |
-| **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/test-evidence-lanes.toml:105-105; mcp/tests/evidence-lifecycle.toml:1436-1436 |
+| **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/test-evidence-lanes.toml:109-109; mcp/tests/evidence-lifecycle.toml:1436-1436 |
 | The `consumer_scope = "exact"` artifact whose list this module joined. | `"mcp/tests/read_scope_test_support.py"`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:1407-1438 |
 | **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** | `KnowledgeStatements`; `names an absent field value and a recorded empty one without printing either as blank` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 
@@ -174,6 +174,7 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file; both ranges that moved belong to `mcp/tests/test-evidence-lanes.toml` (one row inserted at `:111`) and `mcp/tests/evidence-lifecycle.toml` (two rows added). Its one registration row was re-read and re-derived from the lines that actually carry each anchor: the module's lane row `:105` → `:109`, and its read-scope consumer row `:1436` → `:1446`, the row this leaf's own new consumer entry sits above. No claim wording or anchor was changed, and **no verification stamp was advanced** — the recorded stamp is kept, because the candidate is uncommitted and closeout owns the real commit.
 
 - 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`):
   **created.** The module is new in this leaf and this is its one-to-one card. It records the two
