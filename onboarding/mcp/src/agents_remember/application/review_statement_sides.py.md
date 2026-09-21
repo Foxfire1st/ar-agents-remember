@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T17:30:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
-| lastVerifiedCommitDate | 2026-09-21T18:13:19+02:00|
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -145,7 +145,7 @@ case modules that measure it from the composition side and the renderer side.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The module's own statement of its scope: three projections of a comparison's items, and a selection that reads nothing and stores nothing.** | `side_content`; `field_changes`; `side_conditions` | mcp/src/agents_remember/application/review_statement_sides.py:1-32 |
+| **The module's own statement of its scope: three projections of a comparison's items, and a selection that reads nothing and stores nothing.** | `side_content`; `field_changes`; `side_conditions` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:135-155 |
 | The published surface: the seven names the adapter and the case module import. | `__all__` | mcp/src/agents_remember/application/review_statement_sides.py:44-53 |
 | **The structured-value projection: the lead/tail markers, the truncation marker, and the canonical bounded rendering that keeps a present value out of the absence slot.** | `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TAIL`; `STRUCTURED_VALUE_TRUNCATION`; `structured_value_text` | mcp/src/agents_remember/application/review_statement_sides.py:55-83 |
 | **The three outcomes and no fourth: `absent` / `unresolved` / `present`+text, each with the detail that says which fact it is.** | `side_content`; `read_side` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:127-132 |
@@ -157,7 +157,7 @@ case modules that measure it from the composition side and the renderer side.
 | The declared prose limit the projection is bounded by. | `PROSE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-24 |
 | The item this module projects: its two payloads and the `changed_fields` roster the rows come from. | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:318-354 |
 | The payload `read_side` returns, with the `statement` and `essential_conditions` fields each projection reads. | `ReadItem` | mcp/src/agents_remember/models/knowledge/read.py:363-401 |
-| **The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.** | `side_content`; `side_conditions`; `field_changes` | mcp/src/agents_remember/application/knowledge_review.py:84-88; mcp/src/agents_remember/application/knowledge_review.py:672-705 |
+| **The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.** | `side_content`; `side_conditions`; `field_changes` | mcp/src/agents_remember/application/knowledge_review.py:90-90; mcp/src/agents_remember/application/knowledge_review.py:672-705 |
 | **The production composition case: the structured field's two sides are both present, differ, and round-trip back to the stored authorship envelope.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The case that a one-sided record reports its change through coverage and keeps the roster empty. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows` | mcp/tests/test_knowledge_review_one_sided_statements.py:353-369 |
 | The case that a row keeps the side that recorded a value and names the side that did not. | `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not` | mcp/tests/test_knowledge_review_one_sided_statements.py:288-317 |
@@ -174,6 +174,7 @@ was opened under.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T19:16:12+00:00: Generated citation repair: `side_content`; `field_changes`; `side_conditions` repointed to mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:120-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`):
   **created.** The module is new in this leaf and this is its one-to-one card. It records the three

@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
-| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -168,7 +168,7 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:822-840 |
 | **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` | mcp/src/agents_remember/serving/review.py:74-74; mcp/src/agents_remember/serving/review.py:114-131; mcp/src/agents_remember/serving/review.py:176-196; mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/review.py:246-247 |
 | The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:98-107 |
-| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:111-111; mcp/tests/evidence-lifecycle.toml:1412-1412; mcp/tests/evidence-lifecycle.toml:1445-1445 |
+| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:112-112; mcp/tests/evidence-lifecycle.toml:1412-1412; mcp/tests/evidence-lifecycle.toml:1445-1445 |
 
 ## Cross-Repo References
 

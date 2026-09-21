@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56`     |
-| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`     |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview      | `overview.md`                                  |
 
@@ -238,7 +238,7 @@ says so. The two modes are never mixed.
 | The committed branch of the file diff, now reading both sides from the recorded range's own repository. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:456-489 |
 | The doc-reader entry point that states the refusal contract for `committed` and the live-worktree requirement for `working`. | `leaf_changeset` | mcp/src/agents_remember/serving/changeset.py:402-436 |
 | **The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named refusal an unrecorded endpoint earns.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:68-125 |
-| **The cases that measure the change: the recorded range bound and unmoved by a later commit, the refusal instead of a `HEAD` read, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:525-575; mcp/tests/test_knowledge_review_source_endpoints.py:578-601; mcp/tests/test_knowledge_review_source_endpoints.py:603-635 |
+| **The cases that measure the change: the recorded range bound and unmoved by a later commit, the refusal instead of a `HEAD` read, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:609-659; mcp/tests/test_knowledge_review_source_endpoints.py:662-684; mcp/tests/test_knowledge_review_source_endpoints.py:687-730 |
 
 ## Update History
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, base `f745e16659c5602252bb185a2ffccc356c2bde26`): **the committed leaf range is now a recorded range or a named refusal, and the resolver is a module of its own.** The section above records it; the earlier `### Logic` description of `_leaf_range` said a live leaf fell back to the worktree's `HEAD`, which is what this leaf replaced, so that paragraph, the card's Purpose and its leaf-view invariant were corrected in the same pass rather than superseded silently. `committed` now reads the contract's two recorded commits through the new `serving/changeset_endpoints.py`, an unrecorded code endpoint is a named 404 (`RecordedEndpointAbsent` with `kind`) that does not so much as name the live `HEAD`, an unrecorded memory endpoint degrades only its own half, and `unresolvable`/`no-repository` stay refusals on both sides. **Citation accounting:** all seven in-file self-citations plus the three route extents and the `register_changeset_routes` rows were re-derived against this candidate, because the module grew (the endpoint import block, the extended docstrings and the rewritten `_leaf_range`). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.

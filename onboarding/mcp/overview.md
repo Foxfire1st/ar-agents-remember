@@ -5,7 +5,10 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-21T23:10:00+02:00 |
+| lastUpdated | 2026-09-21T23:45+02:00 |
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
@@ -21,6 +24,50 @@
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L14 The Review's Record Collection Gets One Production Owner, And An Empty Tuple Stops Meaning Three Things
+
+`260921-ICR-L14` (primary requirement `ICR-R14@v1`) adds **one `application/` owner, one `models/`
+vocabulary module and one case module**, and changes the production dashboard composition's record
+loader. At this altitude the package-wide facts are three:
+
+**The record half of a review now has an owner of its own.** `application/review_evidence_records.py`
+resolves, for one resolved candidate, **every** owner-produced collection — the curator authority's
+published assessments, the detection owner's signals, the evidence owner's verification observations and
+evidence claims, and the review matrix's authored effects — plus the one quantity nobody in that
+composition measures (dependency currentness). The resolver used to be a private function at the bottom
+of `application/knowledge_review.py` that read the assessments and returned an empty collection for an
+absent *or* unreadable authority; that body is gone, the adapter re-exports the name from its new home,
+and the adapter is **831 → 819 lines** while gaining the channel assembly. No second store, no second
+reader of an owner's tables and no re-derived content: every collection is the owner's own answer.
+
+**Availability became a fact per collection rather than an empty tuple.** The new
+`models/knowledge/review_records.py` declares `ReviewRecordChannel` with five states — `recorded`,
+`none_recorded`, `unavailable` (with the owner's own refusal as provenance), `not_measured`,
+`not_selected` — and its validator makes "a count nobody measured" unrepresentable: an unreadable
+authority carries no count, and every non-answer must say what would produce one. The vocabulary is
+carried on the bundle and on `ReviewEvidencePane.channels`, whole and underived. The vocabulary was
+extracted from `models/knowledge/review.py` (which had crossed the 900-line soft rail at 940 and is 851
+now) and re-exported from it, so no importer moved.
+
+**Two owners on the memory route gained an identity listing, so a damaged record is named rather than
+fatal.** `detection.recorded_run_ids` and `evidence_records.claim_ids` list identities without decoding,
+and the composing reader then reads each record through that owner's own single-record reader — the
+reason one damaged detection run, or one claim whose payload no longer decodes, is named on its channel
+(`unreadable`) while its siblings are still supplied. Each is a split rather than a second reader:
+`all_claims` and `read_detection_run` are unchanged.
+
+The ten cases live in `mcp/tests/test_knowledge_review_evidence_channels.py` and drive
+`cli.dashboard.serving_collaborators`, so the packet's failure — a production port supplying only
+assessments while claiming a complete bundle — is caught at the composition rather than at the resolver.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The production record owner: five collections and one stated non-measurement, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `_CURRENTNESS` | mcp/src/agents_remember/application/review_evidence_records.py:174-192; mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:144-158 |
+| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:366-391; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054 |
+| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:643-680 |
+| **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:85-101; mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
+| The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745; mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 
 ## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
 
@@ -214,7 +261,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:155-185 |
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:477-501 |
-| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:377-452; mcp/src/agents_remember/application/knowledge_review.py:198-279 |
+| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:192-273; mcp/src/agents_remember/application/knowledge_review.py:371-453 |
 | The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_review_surface.py:828-866 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
@@ -395,8 +442,8 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:600-636 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:465-638 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:671-707 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:721-785; mcp/src/agents_remember/application/prepared_certification.py:749-813 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
@@ -2049,7 +2096,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:63-67 |
 | The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173 |
 | **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:85-97 |
-| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/models/knowledge/review.py:98-106 |
+| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:112-112; mcp/src/agents_remember/models/knowledge/review.py:98-106 |
 | The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
@@ -2099,8 +2146,10 @@ empty surface.
 | The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:460-469 |
 | The registration that reads that port. | `register_review_routes(app, config, collaborators.knowledge_review)` | mcp/src/agents_remember/serving/app.py:295-295 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
-| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:124-126 |
+| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:109-119; mcp/src/agents_remember/cli/dashboard.py:121-133 |
 | **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-216 |
+| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:129-133 |
+| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-199 |
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
 
@@ -2179,13 +2228,15 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1014-1031 |
 | The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
 | The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658 |
-| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:133-209; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
+| The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
 | The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1697-1736; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1786-1793; mcp/src/agents_remember/application/knowledge_curator_ingest.py:576-611; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1673-1694 |
 | The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1576-1625; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2159-2181 |
 | The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 ## Update History
+- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
+- 2026-09-21T22:55:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **package-route body updated for one new production owner, one new vocabulary module and one new case module.** `application/review_evidence_records.py` becomes `ICR-R14@v1`'s record owner (every owner-produced collection for one resolved candidate plus a stated non-measurement), the adapter's private resolver leaves `knowledge_review.py` for it (831 → 819 lines, name re-exported), `models/knowledge/review_records.py` declares the five-state availability vocabulary and `ReviewEvidencePane.channels` carries it, and two memory-route owners gain identity listings so a damaged record is named while its siblings are supplied. The section states the three package-wide facts and the five reference rows behind them, and no earlier section was re-worded. **Stamp accounting:** the verification pair is retained as recorded (`d80a0513…` / `2026-09-21T19:51:20+02:00`), which is the production line this reading was against; the candidate row added at the top names the uncommitted candidate and no stamp was invented.
 - 2026-09-21T20:44:00+02:00 — 260921-ICR-L11 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L20` line; no side and no claim was dropped.** The header keeps both candidate rows (`ar/260921-icr-l20` and `ar/260921-icr-l11`) and one `lastUpdated`; both sections are kept — this leaf's `260921-ICR-L11` section first (newest content) and `260921-ICR-L20`'s below it — and both history entries are kept, this leaf's above `260921-ICR-L20`'s. **Citation accounting:** no range in this document needed re-derivation — the ranges it carries into `mcp/tests/test-evidence-lanes.toml` (`:89`) and `mcp/tests/evidence-lifecycle.toml` (`:733`, `:1271`) are **above** the sync line's insertions and were re-read as unchanged, while this leaf's own ranges into `errors.py` (`:180-190`, `:193-203`), `durable_evidence.py` (`:58-69`) and the new modules name the merged line's content exactly (those files are byte-identical to this leaf's candidate). **No claim was corrected here**, because neither side asserted a value the merge moved. **No verification stamp was advanced** — the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows sit outside the conflict and keep `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` / `2026-09-21T18:46:40+02:00` from the incoming line.
 - 2026-09-21T20:36:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this package route gained the durable-comparison chain: six production modules, one test module, and two typed failures.** The section states the chain in one line per owner (record, freeze, retention, reclamation, reopen, plus the `worktrees/modules/` Git-object retention they depend on) and records that it composes owners which already existed — **no second store, no second capture path, no second measurement**. It also records the package-wide consequence of the `errors.py` change: `CodeObjectRetentionError` and `ComparisonReclamationError` are ordinary `AgentsRememberError` members with a `status`, raised rather than returned at two different boundaries, and the insertion at `180` is **not additive at the tail**, so every class below it moved and the citations into `errors.py` held by this package's cards were re-derived rather than shifted. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T18:35+02:00 — 260921-ICR-L20 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L6` line; no side and no claim was dropped.** Both sections are kept: `260921-ICR-L6`'s statement-side section stands first (newer) and this leaf's publication-route section follows it, each unchanged in substance. Every range the resolution keeps was then re-derived against the merged candidate rather than shifted by a remembered delta (the three conflicted rows took the merged extent per construct — the CLI's `_place_review_baseline` `:504-542` and `_placement_refusal` `:477-501`, the adapter's `compose_review` `:377-452` and `list_knowledge_review_entries` `:198-279`, and `test_knowledge_review_surface.py`'s case `:828-866`; the half-names row took `review_candidate_resolution.py:77-84` with the adapter's `__all__` `:131-145` and the CLI's import block `:143-145`); where both sides cited the same construct the merged extent was taken, and two claims that had become untrue in the merged state were corrected rather than kept in two wordings (the half-names row's CLI citation said `:102-103` on both sides and the merged import block is `:143-145`). **No verification stamp was advanced:** the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is exactly what the incoming line recorded (`9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` / 2026-09-21T18:13:19+02:00 where that line carried it), the `reviewedWorkingCandidate` row for this leaf's candidate was added beside it as metadata and not as a stamp, and the governed closeout owns the real commit.

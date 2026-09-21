@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/evidence_records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `b5a74aee6cdf671c9963f3aba4df6d44b856f697`|
-| lastVerifiedCommitDate | 2026-09-18T09:42:44+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l12` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastUpdated | 2026-09-21T21:55:00+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,18 @@ field by field.
 `CLAIM_BY_ID` and the five sibling statements beside it are the read queries whose declared order columns
 land in `read_queries.py`.
 
+**The claim identities have a listing of their own, and it is not the record read** (`ICR-R14@v1`).
+`claim_ids` runs `CLAIM_IDS_OF_REPOSITORY` — the same repository-scoped identity statement
+`all_claims` reads whole — and decodes nothing. It exists because "which claims does this namespace
+record" and "what does this claim say" are different questions: a composing reader that wants to serve
+a damaged claim's identity while its siblings are still supplied needs the **listing** without the
+decode, and then reads each identity through `claim_record`, the owner's own single-record reader.
+`all_claims` is unchanged and stays the convenient all-or-nothing form (`_identities_of` over the same
+statement); `claim_ids` is the listing half, so the two can never come to disagree about which
+identities exist. The split is what makes the per-record isolation in
+[`application/review_evidence_records.py`](../../application/review_evidence_records.py.md)
+reachable at all: with only `all_claims`, one undecodable claim made the whole collection one refusal.
+
 ### Conventions
 
 A codec module owns row ↔ value conversion and nothing else: no policy, no refusal, no judgement. A digest
@@ -69,6 +81,10 @@ back from the row's own text.
   same order cannot disagree; a statement that restates the order can.
 - **A digest is computed from the row as it stands.** No path in this module returns a stored digest of an
   observable row without recomputing it.
+- **The listing and the record read are two answers, and neither is derived from the other.** A
+  caller that must survive one damaged record reads the identities and then reads each record; the
+  listing never decodes a payload, and `all_claims` is not re-implemented beside it — both run the
+  same `CLAIM_IDS_OF_REPOSITORY` statement, so an identity that exists is listed once.
 - **No blob, no second content store.** The only digest here that describes something outside the database
   is the artifact reference's, and it is carried as text.
 
@@ -94,6 +110,10 @@ No domain documentation source is configured for this repository (`system/source
 | The observation's cells and the declared column order the insert statement is derived from. | `observation_cells`; `OBSERVATION_COLUMNS` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:398-435; mcp/src/agents_remember/memory/knowledge/evidence_records.py:442-459 |
 | The observation's row, its observable-row digest and the typed sub-object rebuilds. | `observation_row`; `observation_row_digest`; `_artifact_of_columns`; `_publication_of_columns` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:463-467; mcp/src/agents_remember/memory/knowledge/evidence_records.py:470-486; mcp/src/agents_remember/memory/knowledge/evidence_records.py:511-532; mcp/src/agents_remember/memory/knowledge/evidence_records.py:536-552 |
 | The read statements whose declared order columns live in the read-queries module. | `CLAIM_BY_ID`; `OBSERVATION_BY_ID` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:659-659; mcp/src/agents_remember/memory/knowledge/evidence_records.py:678-679 |
+| **The claim-identity listing, decoding nothing, and the whole-listing form unchanged beside it: both run the same identity statement, so the two cannot disagree about which identities exist.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1057-1060; mcp/src/agents_remember/memory/knowledge/evidence_records.py:843-846 |
+| **The single-record reader each listed identity is then read through, which is what makes a per-record guard possible without a second reader.** | `claim_record`; `claimed_coverage_of_claim` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:928-932; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1124-1146 |
+| **The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.** | `_claim_records`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:498-521 |
+| **The registered surface gained exactly one name (`claim_ids`), and the case that measures the isolation it makes reachable.** | `__all__`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:1148-1180; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
 | The case that asserts there is no blob column and no second content store. | "def test_there_is_no_blob_column_and_no_second_content_store(" | mcp/tests/test_knowledge_evidence_observations.py:871-905 |
 
 ## Cross-Repo References
@@ -105,6 +125,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T21:55:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **this owner gained one read, and it is a split rather than a new reader.** `claim_ids` (`memory/knowledge/evidence_records.py:1042-1054`) runs the existing `CLAIM_IDS_OF_REPOSITORY` statement and decodes nothing, so a composing reader can list the claim identities and then read each one through the owner's own single-record reader — which is what makes "one damaged claim is named while its siblings are still supplied" reachable at all under `ICR-R14@v1`. `all_claims` is **unchanged** and stays the all-or-nothing form over the same statement, so the listing and the whole-record read cannot come to disagree about which identities exist; the Logic section now states that split and the Conventions/Invariants record that neither is derived from the other. `__all__` gained exactly one name. **Citation accounting:** the four rows citing ranges into this file were re-read and are unchanged — this leaf's insertion sits at `:1042`, below every construct they name — and four rows were **added** for the listing, the single-record reader it pairs with, the one composing reader it exists for and the registered surface with the case that measures the isolation. Nothing was re-worded, and no row was dropped. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line's current tip and this leaf's base — replacing the previous pair rather than leaving a stamp no reading in this pass measured; the candidate is uncommitted, so no commit contains the content a stamp would claim to have verified, and the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
 - 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
 
 - 2026-09-18T04:20:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the supporting records' row codecs. It records the single owner per table for order, canonical text and digests, the two seals recomputed on the way out, the observable-row digests, and why the envelope digests are restated here rather than borrowed from the facet codecs. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.

@@ -5,7 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
+| lastUpdated | 2026-09-21T23:45+02:00 |
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
@@ -39,6 +42,34 @@ rather than restating the path.
 | The single-file publication the export deliberately does not replace. | `publish_durable_evidence`; `_require_one_file_name` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:219-229 |
 | **Its first consumer, which derives the whole generation layout from it.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory` | mcp/src/agents_remember/application/review_comparison_generation.py:495-510 |
 | The per-file detail for the module that gained the export: the durable root and the shipped value it returns. | `durable_reports_root`; `_TASK_RELATIVE_REPORTS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:55-55 |
+| The per-file detail for the module that gained the export. | "# mcp/src/agents_remember/memory/knowledge/durable_evidence.py" | onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-120 |
+
+## Route Impact: Two Owners Gain An Identity Listing, And It Is A Split Rather Than A Second Reader (260921-ICR-L14)
+
+`ICR-R14@v1` adds one read to each of two owners on this route, and both are the same shape: **the
+identities of a record collection, listed without decoding anything, so a composing reader can read one
+record at a time through the owner's own single-record reader.**
+
+- `memory/knowledge/detection.py` gains `recorded_run_ids(store)` over a new `_RECORDED_RUN_IDS`
+  statement — the recorded run identities in identity order, scoped to the store's namespace and
+  filtered by the module's own `DETECTION_RUN_KIND`. The signals a review carries have to be addressed
+  by run, and each run is then read through the shipped `read_detection_run`, which is what lets one
+  damaged run be named while its siblings' signals are still supplied. An unreadable listing table
+  surfaces `KnowledgeStorageError` rather than an empty tuple standing for "no runs".
+- `memory/knowledge/evidence_records.py` gains `claim_ids(store)`, which runs the **existing**
+  `CLAIM_IDS_OF_REPOSITORY` statement that `all_claims` already reads whole. `all_claims` is unchanged,
+  so the listing and the all-or-nothing read cannot come to disagree about which identities exist; the
+  split is what makes a per-record guard possible without a second reader of the same tables.
+
+Both owners keep every existing reader, writer, refusal and precondition: the additions are one
+statement and one function each, and the write paths are untouched.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The detection owner's identity listing, decoding nothing, and the composing reader it exists for.** | `recorded_run_ids`; `_RECORDED_RUN_IDS`; `_read_signal_runs` | mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/detection.py:118-124; mcp/src/agents_remember/application/review_evidence_records.py:366-391 |
+| **The evidence owner's identity listing beside the unchanged whole-collection read.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1057-1060; mcp/src/agents_remember/memory/knowledge/evidence_records.py:843-846 |
+| **The single-record readers each listed identity is read through.** | `claim_record`; `read_detection_run` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:928-932; mcp/src/agents_remember/memory/knowledge/detection.py:582-627 |
+| The cases that measure the per-record isolation on both collections through the production port. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
 
 ## 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
 
@@ -1174,11 +1205,11 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:214-214 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:215-215 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:214-214 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:215-215 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1437,6 +1468,11 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
+- 2026-09-21T22:50:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated for two additive identity listings.** `detection.recorded_run_ids` (over a new `_RECORDED_RUN_IDS` statement) and `evidence_records.claim_ids` (over the existing `CLAIM_IDS_OF_REPOSITORY`) let a composing reader address each record by identity and read it through the owner's own single-record reader, which is what makes "one damaged record named while its siblings are supplied" reachable under `ICR-R14@v1`. The section records that both are splits rather than second readers, that `all_claims` is unchanged, and that no write path, refusal or precondition moved. No earlier section was re-worded. **Stamp accounting:** the verification pair is retained as recorded (`d80a0513…` / `2026-09-21T19:51:20+02:00`), which is the production line this reading was against; no stamp was invented.
+- 2026-09-21T22:16+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by this leaf's own citation pass.** one reference row's citation was repaired in the same way: the per-file detail row for `mcp/src/agents_remember/memory/knowledge/durable_evidence.py` now cites its card as `onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-40` with the card's own title as its anchor, where it previously carried a bare memory path. The route's prose was not changed. No claim was re-worded, no anchor was renamed and no row was dropped; the route's `Hot Path Summary` and its described responsibility are unchanged by this leaf (the change it records lives in the cards this route governs, not in the route's own statement). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout's metadata refresh owns the real one.
+- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T20:28:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **route impact recorded for one exported function.** `memory/knowledge/durable_evidence.py` gained `durable_reports_root(task_root)` — the durable root exported as a *decision*, so a producer whose evidence is a directory of related files roots itself at the same `<task_root>/notes/reports` the single-file publisher already builds rather than spelling it a second time. The section states the split the export creates (the single-file publication stays the route for one artifact) and names the first consumer (the durable comparison generation, whose whole layout derives from it). The module's own file-level card was updated in the same pass with the new function, its two invariants and its consumer rows. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only, forced by this leaf's move of the review resolution out of `application/knowledge_review.py` into `application/review_candidate_resolution.py`.** The rows of this document that cited `knowledge_review.py` for `REVIEW_CANDIDATE_RELATIVE_ROOT`, `REVIEW_CANDIDATE_DIRECTORY`, `REVIEW_BASELINE_DIRECTORY`, `review_namespace`, `missing_dataset_half`, `list_knowledge_review_entries` and `_recorded_identities` were re-read and re-pointed: a name the sibling module now defines is cited there, and a name the adapter still owns is cited at the extent it occupies in this candidate (the module is 1113 lines, down from 1281). No claim was re-worded beyond naming where the construct now lives, no row was deleted and no verification stamp was advanced — the candidate is uncommitted and closeout owns that stamp.
 - 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, and the intake that resolves a stored anchor through it. The route section above states why a second decoding of the anchor row was the thing being avoided.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.

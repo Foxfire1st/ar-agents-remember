@@ -5,10 +5,11 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
-| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| lastUpdated | 2026-09-21T23:45+02:00 |
+| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -197,7 +198,37 @@ refuses each route **by name** when its field is absent, because an empty pane (
 list, which would read as "nothing is reviewable here") and an unreachable adapter are different
 facts.
 
+## 260921-ICR-L14 The Review Port Supplies The Complete Record Collection
+
+`serving_collaborators`'s `review_port` is unchanged in *shape* — it still calls
+`read_knowledge_review(config, request, review_records_for(config, request))` — and what changed is what
+that loader is: `review_records_for` is now
+[`application/review_evidence_records.py`](../application/review_evidence_records.py.md)'s complete
+resolver, so the production port supplies the **detector signals, the verification observations, the
+authored effects, the evidence claims and the published assessments**, each with the availability fact
+its owner's answer earned, instead of the assessment collection alone. The port's own docstring states
+it for a reader of this file: every collection is read "from the owner's own operation for the candidate
+this request resolves to", a collection an owner answers for and holds none is a measured zero, expected
+content that could not be read is `unavailable` with that owner's provenance, and a dependency-currentness
+measurement is reported `not_measured` rather than omitted — so "the bundle never presents an empty tuple
+where three different facts are possible, and one unreadable authority does not withdraw the collections
+that were readable."
+
+**This is the composition the packet's conformance is measured through.** The verification evidence for
+`ICR-R14@v1` drives `serving_collaborators(config).knowledge_review` — the same port `create_app` places
+on the collaborator record — rather than the loader directly, which is why a port that kept supplying
+only assessments would fail the cases even with a correct resolver behind it. **No behaviour moved in
+this module**: the call site, the function-scope import, the placement on the collaborator record and the
+refuse-by-name rule for an absent port are all as they were; only the docstring and the reach of the
+loader changed.
+
 ## 260915-KS-L22 Reviewer-Adapter Composition Root
+
+This section is retained for the wiring it recorded, and its last sentence about the loader's reach is
+**superseded** by the ICR-L14 section above: `review_port` no longer reads "the assessment collection …
+from the curator authority's own publication" alone — it hands over every owner-produced collection.
+The wiring site, the function-scope import and the one-configuration-per-app reason it recorded are
+unchanged.
 
 This section records the L22 increment, which wired the first of those two ports. The section above
 supersedes its count and adds the entry half; the wiring site, the function-scope import and the
@@ -289,8 +320,19 @@ the base is not silently dropped by this composition.
 | **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:109-119; mcp/src/agents_remember/cli/dashboard.py:81-83; mcp/src/agents_remember/serving/_app_common.py:481-489 |
 
 ## Update History
+- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the composition root gained the third reviewer port, and the section that counted two was superseded in place.** `serving_collaborators` now imports `read_review_source_content` from `agents_remember.application.review_source_content` with the same deferred `# noqa: PLC0415 - composition` idiom as its siblings, defines `review_source_content_port(request)` closing over `config`, and places it on the replaced record as `review_source_content`. The new section records the division of labour the docstring states — **the request carries the generation the browser is looking at rather than the server choosing one**, and the application owner re-resolves the leaf only to *measure* whether that generation is still the candidate's, then reads those two objects and nothing else (no working tree, no `HEAD`), so an entry opened after the branch moved still shows the listed generation's bytes and says the leaf has moved past it — plus the refuse-by-name half: "this process cannot read the entry" and "this entry has no content" are different facts. The L45 section's "binds **two** application-tier reviewer callables" is flagged as superseded while its wiring site and reason are kept. **Citation accounting:** this leaf's +16-line insertion shifted every construct below line ~78 by 16, so every row into this file was re-read against the candidate and re-derived rather than shifted: `add_arguments` `147-171` → `163-237`; `_dev_app` `114-144` → `130-160`; `_run_reload_server` `237-258` → `290-311`; `_build_app` `261-282`/`309-333` → `325-349`; `_run_daemon_command` `285-312`/`336-363` → `352-379`; `serving_collaborators` `67-83` → `67-127`; `ServingCollaborators` in `_app_common.py` `430-462` → `440-499`; `create_app` in `serving/app.py` `226-285` → `255-323`. Two backticked spans in the cadence row that are **not anchors** — the file path and the sibling CLI path used to disambiguate `add_arguments` — were moved out of the Anchor cell into the Finding's plain prose, because no cited range can literally hold a path; one row was added for the new port. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:309-333; mcp/src/agents_remember/cli/dashboard.py:67-111 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
+| **The review port and the loader it hands the surface, which is the composition the R14 evidence is measured through.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-101; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
+| **The cases that drive this port and prove every available collection arrives with its own channel state.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `review_through_port` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:170-177 |
+
+## Update History
+
+- 2026-09-21T22:00:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **the port's loader became the complete record resolver, so the card's statement that it reads "the assessment collection" was corrected.** `review_port`'s body is unchanged — it still calls `read_knowledge_review(config, request, review_records_for(config, request))` — but `review_records_for` is now `application/review_evidence_records.py`'s resolver, so the production port supplies the detector signals, verification observations, authored effects, evidence claims and published assessments, each with the availability fact its owner's answer earned, and reports an unmeasured currentness rather than an empty collection. A new section records the change and states why it matters to *this* file: the `ICR-R14@v1` evidence is measured through `serving_collaborators(...).knowledge_review`, so a port that kept supplying assessments alone would fail the cases even with a correct resolver behind it. The L22 section's closing sentence about the loader's reach is marked **superseded** in place rather than deleted, which is this card's own convention for a later increment that changes an earlier section's reach (L45 did the same to L22's count). Two rows were added for the port with its loader and for the cases that drive them. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line's current tip and this leaf's base — replacing the previous pair rather than leaving a stamp no reading in this pass measured; the candidate is uncommitted, so no commit contains the content a stamp would claim to have verified, and the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
+
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the composition root now supplies both reviewer ports.** `serving_collaborators` imports `list_knowledge_review_entries` beside `read_knowledge_review`/`review_records_for` and defines `review_entries_port(repository_id, master, leaf_id)`, placing it on the collaborator record as `knowledge_review_entries` beside `knowledge_review`. The card records why the entry port takes the task context alone — a subject is what it is being asked for, and the task view calls it before any subject exists — and the property the shared resolution buys: the entry a caller is offered and the review it then opens resolve through the identical operation, so they cannot name different candidates. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-17T10:35+02:00 — 260915-CAPS-L15 curator: **this file became the composition root for the
   capsule compiler.** Added `serving_collaborators(config)`, a `dataclasses.replace` over the
