@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `f745e16659c5602252bb185a2ffccc356c2bde26` |
-| lastVerifiedCommitDate | 2026-09-20T20:44:27+02:00|
+| lastUpdated | 2026-09-21T13:07:00+02:00 |
+| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
+| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -15,6 +15,7 @@
 | lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45 against base `fb719f89`; this row names the 260915-KS-L43 reading performed against the same line after the memory side advanced to `92f444b04` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -1555,20 +1556,27 @@ collection rather than an error — a candidate with no published assessment is 
 display `unassessed`, which the surface must be able to show truthfully. No `current` measurement is
 supplied, so the shipped projection reports an unmeasured assessment stale rather than promoting it.
 
+> **Superseded in part by `260921-ICR-L1` (see that section at the end of this document).** The
+> resolution this section describes as the adapter's own is now
+> `application/review_candidate_resolution.py`'s and is imported/re-exported here, and the candidate side
+> no longer supplies "no root or tree id": it binds both from the capture, against the contract's
+> recorded base commit. The paragraphs above are retained as the L22 record of the reasoning at that
+> time; where they and that section disagree, the section is what the code does.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The comparison operation: resolve, then compose, with a refused resolution returned before any comparison runs. | "def read_knowledge_review(" | mcp/src/agents_remember/application/knowledge_review.py:333-361 |
-| The shipped comparison it composes and adds nothing to. | `diff_knowledge_scope` | mcp/src/agents_remember/application/knowledge_review.py:637-676 |
-| L20's review-matrix view, asked for the five record kinds. | `read_knowledge_view` | mcp/src/agents_remember/application/knowledge_review.py:585-585 |
-| The candidate resolved from task context, never from a caller's path. | "def resolve_review_candidate(" | mcp/src/agents_remember/application/knowledge_review.py:207-258 |
-| The published assessment collection as the renderer's input. | "def review_records_for(" | mcp/src/agents_remember/application/knowledge_review.py:1256-1281 |
+| The comparison operation: resolve, then compose, with a refused resolution returned before any comparison runs. | "def read_knowledge_review(" | mcp/src/agents_remember/application/knowledge_review.py:175-204 |
+| The shipped comparison it composes and adds nothing to. | `diff_knowledge_scope` | mcp/src/agents_remember/application/knowledge_review.py:486-527 |
+| L20's review-matrix view, asked for the five record kinds. | `read_knowledge_view` | mcp/src/agents_remember/application/knowledge_review.py:427-427 |
+| The candidate resolved from task context, never from a caller's path — now the sibling module's operation, which this adapter delegates to and re-exports. | "def resolve_review_candidate(" | mcp/src/agents_remember/application/review_candidate_resolution.py:130-194 |
+| The published assessment collection as the renderer's input. | "def review_records_for(" | mcp/src/agents_remember/application/knowledge_review.py:1088-1113 |
 | The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
-| The disposable candidate root the two datasets are read from. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:132-132 |
-| **The two published half-names, exported because the ingest CLI authors into the same root this adapter reads.** | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/knowledge_review.py:134-139 |
-| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place.** | `missing_dataset_half` | mcp/src/agents_remember/application/knowledge_review.py:261-279 |
-| **The namespace read from the candidate's own sealed receipt, with the requested repository used only when there is no receipt and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME` | mcp/src/agents_remember/application/knowledge_review.py:282-307; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53 |
-| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero.** | `list_knowledge_review_entries`; `_selected_item_count` | mcp/src/agents_remember/application/knowledge_review.py:364-437; mcp/src/agents_remember/application/knowledge_review.py:494-518 |
-| **The identities the entry list enumerates, read through the store's own two list operations rather than a query written here.** | `_recorded_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/knowledge_review.py:474-491; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
+| The disposable candidate root the two datasets are read from — defined in the sibling module and re-exported here so the ingest CLI keeps one spelling. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/review_candidate_resolution.py:72-72; mcp/src/agents_remember/application/knowledge_review.py:120-120 |
+| **The two published half-names, defined in the sibling module and re-exported here because the ingest CLI authors into the same root this adapter reads.** | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:78-79; mcp/src/agents_remember/application/knowledge_review.py:118-119 |
+| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place.** | `missing_dataset_half` | mcp/src/agents_remember/application/review_candidate_resolution.py:255-273 |
+| **The namespace read from the candidate's own sealed receipt, with the requested repository used only when there is no receipt and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME` | mcp/src/agents_remember/application/review_candidate_resolution.py:276-301; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53 |
+| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero.** | `list_knowledge_review_entries`; `_selected_item_count` | mcp/src/agents_remember/application/knowledge_review.py:206-279; mcp/src/agents_remember/application/knowledge_review.py:336-360 |
+| **The identities the entry list enumerates, read through the store's own two list operations rather than a query written here.** | `_recorded_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/knowledge_review.py:316-333; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 
 ## 260915-KS-L32 The Front Door's Path Seed, And The One Frontier Both Selections Share
 
@@ -2096,3 +2104,56 @@ named anchor as the claim endpoint. The read itself goes through the memory laye
 The migration/census usability gap this leaf recorded stays a recorded gap rather than a repair: no CLI
 was built here, and `KS-R21`'s "shipped candidate operation" is the existing batch writer, which a fresh
 probe used successfully. Nothing else this route owns changed.
+
+## 260921-ICR-L1 The Review Adapter Delegates Its Resolution, And The Endpoints Are Exact
+
+This route gained one module and lost one responsibility. **`application/review_candidate_resolution.py`
+is now the sole owner of the live review's exact source endpoints and of the dataset pair**, and
+`application/knowledge_review.py` imports and re-exports its names instead of defining them. The move is
+the packet's own instruction ("move a touched responsibility out of the over-limit review adapter before
+adding behavior; do not duplicate its implementation") and the module's stated second reason is the
+repository's file-size rail: the adapter was 1281 lines before the change and 1113 after.
+
+**What the resolution now binds, where before it bound one side and deliberately declined the other.**
+The **baseline** is the enclosure contract's recorded `code_base_commit` and the **candidate** is the
+tree `capture_future_code_candidate` derives through a private index — the leaf's `HEAD` with every
+staged, unstaged and eligible untracked change applied, ignored paths still excluded, the real Git index
+left byte-identical. The candidate side supplies **both** a code root (`contract.code_worktree`) and a
+tree id (`captured.codeCandidateTree`). The superseded behaviour is stated here because this route's L22
+section still describes it: `candidate_code_root` used to be `None`, on the recorded reasoning that a
+live leaf's uncommitted line had no tree id, and the comparison therefore reported the source expansion
+it could not make instead of resolving one. A contract that records **no base commit** is now refused by
+name (`candidate_unresolved`, `offending_input="baseline"`) rather than half-resolved, because a
+baseline endpoint that cannot be bound is a state a caller must act on, not a `None` to read past.
+
+**The endpoints are re-checked at the last possible moment, and that is the adapter's own new
+behaviour.** `compose_review` calls `require_current_candidate_identity` after the comparison and the
+review-matrix read and immediately before it builds the payload; the shipped capture owner is re-run and
+any field that disagrees produces the named refusal carrying **both** complete identities
+(`expected`/`observed`) and the exact side that moved. The recheck is deliberately not part of
+resolution: a capture that was current when it was taken can be stale by the time a payload would be
+returned, and a moved input must not be published as the candidate's own comparison. The stated next
+action is to reopen the review so the candidate is captured again — the surface substitutes neither the
+moved `HEAD`, nor another branch, nor a different working tree.
+
+**What did not move.** Selection, the comparison (`diff_knowledge_scope`), L20's review matrix, the five
+published remaining counts, the staleness/submission coupling, the entry list and the receipt-derived
+namespace are all unchanged, and the adapter still selects nothing. The three published path constants
+keep their single spelling and their import path: the sibling module defines them, the adapter re-exports
+them, and `cli/knowledge_ingest.py` still reads them from `application.knowledge_review` — which is what
+keeps "the candidate the leaf authored" and "the candidate the review resolved" one directory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The resolution's new home: the module's own statement of what it binds, why the working tree is never an endpoint, and that every failure is a named state.** | `code_base_commit`; `capture_future_code_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-28 |
+| **The bound endpoints: the recorded base commit on one side, the captured add-all candidate tree on the other, with the root travelling beside each tree id.** | `resolve_review_candidate`; `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:97-127; mcp/src/agents_remember/application/review_candidate_resolution.py:130-194 |
+| The recorded base as a precondition, refused by name rather than half-resolved. | `resolve_review_candidate` (recorded-base refusal) | mcp/src/agents_remember/application/review_candidate_resolution.py:164-174 |
+| **The capture is the shipped owner's, wrapped rather than re-implemented, and its own mid-capture head check is what makes a moved head a named state.** | `_captured_candidate`; `capture_future_code_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:321-335; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-51 |
+| **The pre-publication recheck and the refusal that carries both identities, with the one recapture action.** | `require_current_candidate_identity`; `_moved_candidate_refusal`; `_CAPTURE_INPUTS` | mcp/src/agents_remember/application/review_candidate_resolution.py:81-94; mcp/src/agents_remember/application/review_candidate_resolution.py:197-252 |
+| **The adapter's new call site: the recheck runs after the reads and before the payload, and a moved input refuses the whole render.** | `compose_review` (endpoint recheck) | mcp/src/agents_remember/application/knowledge_review.py:453-458 |
+| The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving. | `__all__`; `resolve_review_candidate` | mcp/src/agents_remember/application/knowledge_review.py:44-52; mcp/src/agents_remember/application/knowledge_review.py:116-130 |
+| **The pair preflight and the receipt-derived namespace remain the sibling module's, and this route's two operations still call them.** | `missing_dataset_half`; `review_namespace` | mcp/src/agents_remember/application/review_candidate_resolution.py:255-273; mcp/src/agents_remember/application/review_candidate_resolution.py:276-301 |
+| **The case module that measures this route's half of the change through the real resolution, the real capture, the real comparison and the served payload.** | `test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate`; `test_a_capture_input_that_moves_before_publication_is_refused_by_name` | mcp/tests/test_knowledge_review_source_endpoints.py:370-431; mcp/tests/test_knowledge_review_source_endpoints.py:434-458 |
+
+## Update History
+- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the review adapter's resolution moved out into `application/review_candidate_resolution.py` and is imported/re-exported here; the endpoints are now exact (recorded base commit plus captured add-all candidate tree, with a root beside each tree id) where the L22 section still describes a candidate side that supplied neither; a contract recording no base commit is refused by name; and `compose_review` re-checks the captured identity immediately before building the payload, refusing by name with both identities when an input moved. **`reviewedWorkingCandidate` is untouched and no verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp. Eleven reference rows of the `260915-KS-L22` section cited `application/knowledge_review.py` by line; the resolution's departure (1281 → 1113 lines) invalidated all of them, and each was re-read and re-derived in the same pass: the six rows naming a construct that now lives in the sibling module were re-pointed at that module (or, where the construct is the adapter's own call site, at the adapter's current extent), and the four rows whose ranges had run past the end of the shrunken file were replaced with the extents their anchors occupy now.

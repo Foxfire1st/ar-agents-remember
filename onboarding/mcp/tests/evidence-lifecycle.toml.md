@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T06:55+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastUpdated | 2026-09-21T13:07:00+02:00 |
+| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
+| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview | `overview.md` |
 ## Governing Overview
 
@@ -574,7 +575,40 @@ moves no existing row of that list, so the citations into its own entries keep t
 lines below the append are the class L23's item 16 half (b) reports as a pure move rather than as
 curator work.
 
+## 260921-ICR-L1 Two Consumer Rows, Counts Unmoved — No Third Fixture
+
+This leaf's whole footprint in this catalog is **two `consumers` rows and nothing else**: one on
+`mcp/tests/diff_scope_test_support.py` (owner `knowledge-diff-cases`, `consumer_scope = "exact"`) and one
+on `mcp/tests/read_scope_test_support.py` (owner `knowledge-read-scope-cases`, `consumer_scope = "exact"`),
+each appended to the tail of its own list, both for `mcp/tests/test_knowledge_review_source_endpoints.py`.
+The reason is the leaf's own shape: its source-endpoint cases build a live enclosure out of the **two
+existing** shared-support fixtures rather than introducing a third one, so it registers **no artifact and
+no contract** — which is why both block counts are untouched and only the byte pin moves.
+
+**The populations do not move: 16 contracts and 66 artifacts**, the pair `260918-TSIP-L10`'s `T129`
+reconciliation set and every leaf since has left alone. The byte pin does:
+`sha256sum mcp/tests/evidence-lifecycle.toml` on this candidate is
+`24e760a124d5f0d3a608295533720168b47e8a2ee28f6ee85c493e3778cdbed4`, which is the value
+`mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CATALOG_SHA256` carries beside the
+unchanged count constants, and the value it replaces on this line is `f0cb5fec…`. The older per-leaf byte
+values in the sections above remain the records of the tips that produced them.
+
+**Both rows are appended to the end of their list**, which is the append point `260915-KS-L23` pinned: an
+append moves no existing row of that list, so citations into this file's earlier entries keep their lines.
+The two rows do sit below the insertion points of earlier leaves — `1404` and `1435` in this candidate —
+so a citation that names a line below them reads one or two lines lower than it did before this leaf, and
+the two cards that cite those ranges by line were re-derived in the same pass.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The first consumer row: the diff-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1384-1405 |
+| **The second consumer row: the read-scope shared support module, whose `consumer_scope = "exact"` list this leaf's module joined.** | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1407-1436 |
+| The two block kinds whose counts this change does not move, and the sha256 it does move. | "[[contract]]"; "[[artifact]]" | mcp/tests/evidence-lifecycle.toml:1-1665 |
+| The constant this file's bytes pin, re-pinned deliberately in the same change. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
+| The reason no third fixture exists: the case module composes the two existing ones. | `build_diff_fixture`; `build_read_scope_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:181-199; mcp/tests/diff_scope_test_support.py:196-242 |
+
 ## Update History
+- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **two consumer rows and nothing else — no artifact, no contract, so the populations are unchanged and only the byte pin moves.** The section above records the two appended rows (`mcp/tests/test_knowledge_review_source_endpoints.py` on `knowledge-diff-cases` and on `knowledge-read-scope-cases`, both `consumer_scope = "exact"`), the measured counts **16 / 66** from this candidate's blocks, the measured sha256 `24e760a1…` that `LIFECYCLE_CATALOG_SHA256` carries beside them, and the reason the module needed no third fixture. It also records the pure-move consequence for citations: the two rows sit at `:1404` and `:1435`, so a range below them reads one or two lines lower than before, and the two cards that cite such ranges by line were re-derived in this pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_fixture_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:325-325. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "closeout_input_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T02:05:20+00:00: Generated citation repair: "owner = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1182-1182. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,10 +5,11 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-18T18:10+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastUpdated | 2026-09-21T13:07:00+02:00 |
+| lastVerifiedCommitHash | `702714fc05363cb28eacaf101ba8384475a6aa56` |
+| lastVerifiedCommitDate | 2026-09-21T13:27:46+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -1366,7 +1367,41 @@ resolves nothing from it.
 | **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** | "def api_review_intent_entries(" | mcp/src/agents_remember/serving/review.py:137-143 |
 | The registration that must precede the static mount. | "def register_review_routes(" | mcp/src/agents_remember/serving/review.py:120-120 |
 
+## 260921-ICR-L1 The Committed Change-Set Range Binds Recorded Commits, Never HEAD
+
+This route gained one module and changed one mode's meaning. **`serving/changeset_endpoints.py` now owns
+which exact Git objects a committed change-set range binds**, and `serving/changeset.py`'s leaf views
+call it.
+
+`mode=committed` is the range between the two commits the enclosure contract **recorded** — the base it
+forked from and the commit its closeout or integration wrote. The superseded behaviour is stated because
+this route's earlier change-set narrative describes the old rule: a still-live leaf whose landed commit
+was not recorded yet fell back to the worktree's moveable `HEAD`, which advanced with every ordinary
+commit the task made. That published a range that was not the leaf's landed delta under a label that
+said it was, and it answered differently on the next poll of the same URL. Now an unrecorded endpoint is
+a **named `404`** (`RecordedEndpointAbsent`, a `FileNotFoundError` carrying a `kind`) whose message names
+the leaf, the missing cell and the two actions — read `mode=working` while the task is live, or reopen
+after closeout records the range — and never names the live `HEAD`.
+
+**The two halves resolve independently, so one side's silence never discards the other's answer.** An
+unrecorded **memory** half degrades to `[]` with zeroed counters — the degradation this side has always
+published for a leaf that does not run memory — while the code half, resolved from its own recorded
+commit, is still published; the **code** half keeps the refusal, because there the endpoint *is* the
+view. `no-repository` and `unresolvable` (a recorded commit this checkout does not hold, checked with
+`git cat-file -e`) stay refusals on both sides, because reporting either as an empty range would publish
+a measurement the caller never made.
+
+**`mode=working` is unchanged and stays a separate population**: `worktree-HEAD → worktree`, the one view
+whose after-side is a filesystem location, and its own `mode` says so. The two modes are never mixed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:43-125 |
+| **The caller that owns the degradation policy: the two sides resolve independently, the code half keeps the refusal, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:345-389; mcp/src/agents_remember/serving/changeset.py:456-489 |
+| **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the refusal instead of a `HEAD` read, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:525-575; mcp/tests/test_knowledge_review_source_endpoints.py:578-601; mcp/tests/test_knowledge_review_source_endpoints.py:603-635 |
+
 ## Update History
+- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the committed leaf range is now the contract's two recorded commits (resolved by the new `serving/changeset_endpoints.py`) rather than the worktree `HEAD` fallback the earlier narrative describes, an unrecorded code endpoint is a named 404 that does not name the live head, an unrecorded memory endpoint degrades only its own half, `no-repository`/`unresolvable` stay refusals on both sides, and `mode=working` is unchanged. `serving/changeset.py`'s card carries the corresponding body correction and citation re-derivation. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: "def api_review_intent(" repointed to mcp/src/agents_remember/serving/review.py:146-146. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: `SELECTOR_KINDS` repointed to mcp/src/agents_remember/serving/review.py:63-63. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T11:53:49+00:00: Generated citation repair: "def review_request_from_query(" repointed to mcp/src/agents_remember/serving/review.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
