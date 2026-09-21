@@ -5,15 +5,51 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-21T02:00+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastUpdated | 2026-09-21T20:26:00+02:00 |
+| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
 | reviewedWorkingCandidate | commit `3888cd8600e39a52c540d6038820759e3d4ffa7a` (260915-KS-L47 closeout), verified at its bytes |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../../../overview.md)
+
+## Route Impact: Explicit Code-Object Retention (260921-ICR-L11)
+
+This route's `modules/` gained **one member** this leaf: `modules/code_object_retention.py`, the explicit
+Git-object retention a durable comparison generation needs because the candidate tree it binds exists in
+**no commit**. The route-level facts a reader should carry are the ones that constrain the ref namespace
+and the custody question:
+
+- **`refs/ar/retained-code/` is a namespace of its own, not a branch.** Nothing fetches, pushes, merges,
+  rebases or deletes it, which is precisely why `worktree remove`, `branch -D`, `worktree prune` and
+  `gc --prune=now` leave a pin where it is — the module's own docstring states that property as the
+  reason the namespace exists rather than as an observation.
+- **One ref keeps both bound objects alive**, because the retention commit's parent is the **recorded base
+  commit** rather than `HEAD`; and its commit id is a function of the two objects it keeps (identity and
+  timestamps supplied, dated by the base commit), so re-creating a released pin reproduces the identical
+  object and an exact re-freeze converges.
+- **Custody is measured only over the history the caller names.** The consumer derives those names from
+  the enclosure contract — the leaf's protected source branch plus the commits the task record landed —
+  and the leaf's own disposable work branch is deliberately absent. A tree that no named history holds is
+  `retained`, which keeps the pin: the safe direction to be wrong in, and the reason a custody
+  measurement never releases anything by itself.
+- **Release is explicit and refuses to delete what it did not bind.** A ref that no longer points at the
+  recorded commit is refused, an already-absent ref converges, and the value returned carries the custody
+  measured *before* deletion — the value a caller stores as the unavailable-history record.
+
+**Open boundary, recorded rather than assumed safe.** Whether a landed integration or closeout operation
+objects to the new ref namespace was not measured by this leaf, which cannot run those transactions.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The retention owner this route gained: one commit, one ref, the recorded base as parent.** | `retain_code_object`; `RETAINED_CODE_REF_NAMESPACE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:70-70 |
+| **Custody measured over named history, and the three-way observation that a record never stores.** | `code_object_custody`; `CustodyNames`; `code_object_observation` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256 |
+| The commit identity that makes a re-created pin identical. | `_retention_commit`; `_retention_identity` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:366-394; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:397-415 |
+| The explicit release, and the record it returns. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143 |
+| The contract-derived custody names the create-side consumer measures against. | `custody_names` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229 |
+| The per-file detail for the new member. | — | mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md |
 
 ## What This Area Is
 
@@ -912,6 +948,7 @@ refusal. A chain admitted under an older validator has not been proved by the cu
 | The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
 
 ## Update History
+- 2026-09-21T20:26:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **route impact recorded for one new `modules/` member.** `modules/code_object_retention.py` gives this route explicit Git-object retention: a namespace of its own (`refs/ar/retained-code/`) that no fetch, push, merge, rebase or delete touches; one retention commit whose parent is the recorded base commit, so one ref keeps **both** bound objects alive and the commit id is a function of the objects it keeps; custody measured only over the history the caller names, with the leaf's own disposable work branch excluded and an empty name set keeping the pin; and an explicit release that refuses a ref which no longer names the recorded commit and returns the custody measured before deletion. The section also records one **open boundary** — whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T02:00+02:00 — 260915-KS-L47 curator (post-closeout pass; code commit `3888cd8600e39a52c540d6038820759e3d4ffa7a`, memory commit `09dd841df686940858f409ae6818eb9e8de1d12e`): **re-read the three reopened claims against the committed bytes and answered both questions the checklist put to each; one range was genuinely wrong and is re-cited, two are the declarations they name and their wording is retained, and the card's stamp is advanced to the commit that carries these bytes.** (1) `_series_ref_recut` — the cited `reopen.py:784-818` did **not** hold the declaration, which sits at `921-977`; the range is re-cited. Its claim ("An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved") is exactly what the construct states: the function's own docstring makes it decision 2, "An existing ref is never moved ... reported as `advance` when an in-flight series is standing on its own committed work", and the landing is deliberately not consulted there. (2) `_review_state_carries_history`; `_plan_series_document_reset` — both cited ranges (`1042-1062`, `1065-1117`) **are** those two declarations, so the projection landed on the location the claim is about rather than on a same-named mention elsewhere; the claim ("The reset clears a review counter that carries history, and leaves an all-zero one alone") is the pair the two functions implement, so wording and ranges are **retained**. (3) `_series_reopen_plan` — its cited `1120-1189` is the declaration, and the claim ("`reset` or `publish` is decided by the arrival, and the applied payload states which one ran") holds at it: the function's own `mode="publish" if (live or tombstone == contract) else "reset"` decides the mode from the arrival and carries it on the returned plan, so wording and range are **retained**. The stamp was advanced only after those readings: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name `3888cd86…` at 2026-09-21T02:00, which is a real commit whose bytes are the ones read here. **This edit is after the memory commit and therefore needs a second closeout to be committed.** No commit was made by this pass.
 - 2026-09-20T07:36+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"The sync driver retains conflicts for continuation and exposes explicit cancellation."* — names `sync_contract_under_authority` and `_continue_resolution`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated across all five governed modules.** `knowledge_conflict.py` returns a typed settlement (`RefusedKnowledgeStage` with the engine's conflict and refusal, `KnowledgeConflictSettlement(remaining, refused)` with a `guidance` preference) and gained `settle_knowledge_conflict` as the single-path entry the authored retry re-enters; `sync_transaction_git.py` returns `SideMergeOutcome` instead of a three-tuple and gained `reconcile_side_merge`; `sync_transaction_state.py` journals `SyncSideRecord.knowledgeConflict` so a resumed sync re-projects the diagnosis rather than only the file name; `sync_transaction.py` gained the reconcile route (`_retained_side`, `_finish_retained_merge`, `_reconcile_knowledge_resolution`, `_reconcile_problem`, `_knowledge_conflict`, `_reconcile_preview`) and refuses the action/decision pair in both directions; `sync_transaction_results.py` advertises `reconcile_knowledge_resolution` with the journaled record and the decision left to the agent, and `reconcile_preview` is the dry run. The route's own earlier L31 section — "the sync settles a knowledge-dataset conflict" — remains true and is extended by this one rather than superseded: what changed is that the settlement now carries the engine's explanation and the agent has a supported operation to answer it. A body change, not a metadata-only refresh.

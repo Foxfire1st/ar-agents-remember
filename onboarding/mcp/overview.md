@@ -5,11 +5,12 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-21T18:20:00+02:00 |
+| lastUpdated | 2026-09-21T20:44:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
-| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
+| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l45-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
@@ -19,6 +20,50 @@
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
+
+Six production modules and one test module arrived on this package route with `260921-ICR-L11` (primary
+requirement ICR-R11@v1), whose obligation is that **a frozen comparison retains resolvable source,
+knowledge and evidence inputs through cleanup and restart**. Five are `application/` owners — the record,
+the freeze, the retention, the reclamation and the reopen — and one is
+`worktrees/modules/code_object_retention.py`, the Git-object retention they depend on. Each has its own
+file-level card and its own route section; what belongs at this altitude is the shape of the chain and
+the one package-wide fact it adds.
+
+**The chain, in one line each.** `review_comparison_generation` owns *the record* (an immutable manifest,
+its layout under `<task_root>/notes/reports/`, the unavailable-history record and the reads);
+`review_comparison_freeze` owns *the act* (resolve and compose exactly as the surface does, stage, read
+every referenced byte back, seal, and publish by **one rename**); `review_comparison_retention` owns
+*where the bytes come from* (custody measured against named durable history only, both knowledge halves
+copied by the storage snapshot owner); `review_comparison_reclamation` owns *the two operations that may
+delete them* (record first, measure the deleted digest, never alias today's data); and
+`review_comparison_reopen` owns *the read-back* (one state per channel, never one verdict). The chain
+composes owners that already existed and adds **no second store, no second capture path and no second
+measurement**.
+
+**The package-wide fact: two typed failures joined `errors.py` beside `FutureCodeCandidateError`.**
+`CodeObjectRetentionError` (retention could not be created, or was not released) and
+`ComparisonReclamationError` (a durable artifact could not be reclaimed as its own record describes it)
+are ordinary `AgentsRememberError` members, each carrying a machine-readable `status`. They are **raised
+rather than returned** at two different boundaries: a retention failure happens inside a publication that
+has not happened yet, so the freeze converts it into a typed refusal; a reclamation failure happens at a
+deletion, where a returned value would make "nothing was removed" easy to overlook at the one
+irreversible step. The insertion is **not additive at the tail** — it lands at `180`, so every class
+below it moved, and the citations into `errors.py` held by this package's cards were re-derived rather
+than shifted.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** | `ComparisonGenerationManifest`; `read_manifest`; `generation_identity` | mcp/src/agents_remember/application/review_comparison_generation.py:376-469; mcp/src/agents_remember/application/review_comparison_generation.py:586-620; mcp/src/agents_remember/application/review_comparison_generation.py:546-554 |
+| **The production entry and the one-rename publication.** | `freeze_review_comparison`; `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276; mcp/src/agents_remember/application/review_comparison_freeze.py:327-351 |
+| **Custody over named durable history only, and the two snapshots copied by the storage owner.** | `custody_names`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:315-341 |
+| **The two deletion owners and the record that precedes every deletion.** | `release_comparison_code_object`; `discard_comparison_snapshots` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210 |
+| **The read-back: per-channel states and `unavailable_channels()`.** | `reopen_comparison_generation`; `ComparisonReopen` | mcp/src/agents_remember/application/review_comparison_reopen.py:196-217; mcp/src/agents_remember/application/review_comparison_reopen.py:152-193 |
+| **The Git-object retention member this route's `worktrees/` gained.** | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
+| **The two typed failures, and the two boundaries that decide why they are raised.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-190; mcp/src/agents_remember/errors.py:193-203 |
+| **The one durable-root owner the layout asks instead of restating.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
+| The fifteen production-composition cases that measure the chain end to end. | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
 
 ## 260921-ICR-L6 The Review Surface's Statement Sides Get An Owner, And A Served Field Value Stops Reading As Absent
 
@@ -2134,6 +2179,8 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 ## Update History
+- 2026-09-21T20:44:00+02:00 — 260921-ICR-L11 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L20` line; no side and no claim was dropped.** The header keeps both candidate rows (`ar/260921-icr-l20` and `ar/260921-icr-l11`) and one `lastUpdated`; both sections are kept — this leaf's `260921-ICR-L11` section first (newest content) and `260921-ICR-L20`'s below it — and both history entries are kept, this leaf's above `260921-ICR-L20`'s. **Citation accounting:** no range in this document needed re-derivation — the ranges it carries into `mcp/tests/test-evidence-lanes.toml` (`:89`) and `mcp/tests/evidence-lifecycle.toml` (`:733`, `:1271`) are **above** the sync line's insertions and were re-read as unchanged, while this leaf's own ranges into `errors.py` (`:180-190`, `:193-203`), `durable_evidence.py` (`:58-69`) and the new modules name the merged line's content exactly (those files are byte-identical to this leaf's candidate). **No claim was corrected here**, because neither side asserted a value the merge moved. **No verification stamp was advanced** — the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows sit outside the conflict and keep `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` / `2026-09-21T18:46:40+02:00` from the incoming line.
+- 2026-09-21T20:36:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this package route gained the durable-comparison chain: six production modules, one test module, and two typed failures.** The section states the chain in one line per owner (record, freeze, retention, reclamation, reopen, plus the `worktrees/modules/` Git-object retention they depend on) and records that it composes owners which already existed — **no second store, no second capture path, no second measurement**. It also records the package-wide consequence of the `errors.py` change: `CodeObjectRetentionError` and `ComparisonReclamationError` are ordinary `AgentsRememberError` members with a `status`, raised rather than returned at two different boundaries, and the insertion at `180` is **not additive at the tail**, so every class below it moved and the citations into `errors.py` held by this package's cards were re-derived rather than shifted. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T18:35+02:00 — 260921-ICR-L20 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L6` line; no side and no claim was dropped.** Both sections are kept: `260921-ICR-L6`'s statement-side section stands first (newer) and this leaf's publication-route section follows it, each unchanged in substance. Every range the resolution keeps was then re-derived against the merged candidate rather than shifted by a remembered delta (the three conflicted rows took the merged extent per construct — the CLI's `_place_review_baseline` `:504-542` and `_placement_refusal` `:477-501`, the adapter's `compose_review` `:377-452` and `list_knowledge_review_entries` `:198-279`, and `test_knowledge_review_surface.py`'s case `:828-866`; the half-names row took `review_candidate_resolution.py:77-84` with the adapter's `__all__` `:131-145` and the CLI's import block `:143-145`); where both sides cited the same construct the merged extent was taken, and two claims that had become untrue in the merged state were corrected rather than kept in two wordings (the half-names row's CLI citation said `:102-103` on both sides and the merged import block is `:143-145`). **No verification stamp was advanced:** the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is exactly what the incoming line recorded (`9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` / 2026-09-21T18:13:19+02:00 where that line carried it), the `reviewedWorkingCandidate` row for this leaf's candidate was added beside it as metadata and not as a stamp, and the governed closeout owns the real commit.
 - 2026-09-21T18:20:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **this route gained one module and one served-value change, and the entry was revised at the sync so the document states the merged line rather than either side of it.** The section above records that `mcp/src/agents_remember/application/review_statement_sides.py` now owns the review surface's statement-side data contract; that `application/knowledge_review.py` delegates to it (888 → **831 lines**, `__all__` unchanged, no re-export because nothing under `mcp/` imported the old private names); and that a **changed structured field** (`provenance`) is no longer served as `None` on both sides — an absence the snapshot does not hold, stated twice — but as each side's own labelled canonical projection. It is a value change inside an existing field: no new wire field, no new type, and `models/knowledge/review.py` untouched. The renderer half is `dashboard/src/panels/review/KnowledgeStatements.tsx`, where an addition or removal now draws the complete available statement beside a named absent side. **Sync accounting:** this document's memory-side conflict was resolved as an **additive union** — leaf `260921-ICR-L18`'s section is kept whole above/below this one, and this leaf's section and entry are kept whole beside it; no side was chosen wholesale and no claim was dropped. One observed gap is recorded rather than repaired: L18's section on this document arrived from the landed memory line **without an Update History entry of its own**, so this resolution preserved it exactly as it was carried and invented no record for another seat. Verification metadata is **not** advanced: the stamp is L18's `71a4433e686b3380af97a0836bb82bab2c8f2aad` / `2026-09-21T16:29:06+02:00`, which this leaf neither advances nor regresses, and the candidate is uncommitted so the governed closeout owns the real stamp.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the route's new publication owner and the seam it drew.** This package gained `application/knowledge_publication_route.py`, `cli/knowledge_ingest_report.py` and `tests/test_knowledge_ingest_publication_route.py`; its public surface did **not** move — no tool name, response model or refusal code changed, and the mounted `knowledge_change` docstring gained one sentence naming the ordinary route. The section states the four route-level facts (one declared location reached by the write side, the derived admission, the read-back that replaces a successful-exit inference, and the CLI keeping the decision while giving up the renderer). **Citation accounting:** every range this section carries into the three new files, the CLI and `published_intent.py` was derived from its construct's own extent in this candidate; the rows this document already carried into `cli/knowledge_ingest.py` were re-derived in the same pass, because the module renumbered completely (541 → 692) — `_placement_refusal` `:292-316` → `:477-501`, `_place_review_baseline` `:319-357` → `:504-542`, `run` `:360-409` → `:660-692`, `add_arguments` `:133-209` → `:171-262`. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.

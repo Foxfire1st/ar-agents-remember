@@ -4,12 +4,13 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `3888cd8600e39a52c540d6038820759e3d4ffa7a` |
-| lastVerifiedCommitDate | 2026-09-20T20:02:13+02:00|
+| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
 | reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-20T06:50+02:00 |
+| lastUpdated | 2026-09-21T20:24:00+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
 | lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
@@ -18,6 +19,54 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260921-ICR-L11 The Route Gains A Git-Object Retention Owner, And Custody Becomes A Measurement Over Named History
+
+This route gained **one module**, `modules/code_object_retention.py`, and the leaf it belongs to
+(`260921-ICR-L11`, primary requirement ICR-R11@v1) needed it because a captured candidate tree is in
+**no commit**: it is written through a private index, so nothing points at it, `git gc` may delete it at
+any moment, and the only thing between "the comparison can be reopened" and "the tree is gone" is an
+object reference that survives reclamation.
+
+Three facts belong at this route's altitude, because each one is a decision rather than mechanics:
+
+- **One commit and one ref keep both bound objects alive.** The retention commit's tree *is* the captured
+  tree and its parent *is* the recorded base commit, so the candidate tree and the baseline it is
+  compared against stay in one ancestry — reclamation cannot keep one and drop the other. The ref lives
+  under `refs/ar/retained-code/`, deliberately outside `refs/heads` and `refs/remotes`, which is what
+  makes `worktree remove`, `branch -D`, `worktree prune` and `gc --prune=now` leave it exactly where it
+  is, and what lets a reader find every pin with one `git for-each-ref` over that prefix.
+- **The retention commit's id is a function of the two objects it keeps.** Author, committer and both
+  timestamps are supplied explicitly and dated by the **base commit**, so a pin re-created after an
+  explicit release is the identical object. That is what makes an exact re-freeze converge instead of
+  producing two generations claiming one index for a comparison nobody changed.
+- **Custody is measured over the history the caller names, and the leaf's own work branch is not one of
+  the names.** An empty name set means *nothing durable holds the tree*, so the pin stays; the
+  measurement never walks ancestry, and a tree surviving only deeper in a named branch's past is still
+  reported `retained`, because keeping a redundant pin is the safe direction to be wrong in while
+  releasing the only reference is not. A ref that already names a different pin is refused rather than
+  re-pointed.
+
+The third observation belongs to the reader, not the record: `code_object_observation` answers `absent`
+when the object does not resolve at all, and `absent` is a **separate type** from the two custody values
+— an object that is gone is not held by anything, so reporting it as `retained` would claim a pin is
+holding bytes that are no longer there. That is exactly the state a released-and-reclaimed history is in.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| One commit, one ref, and the recorded base as the commit's parent. | `retain_code_object`; `retention_ref`; `RETAINED_CODE_REF_NAMESPACE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:146-162; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:70-70 |
+| **The commit whose id is a function of the retained objects, and the identity that makes it so.** | `_retention_commit`; `_retention_identity` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:366-394; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:397-415 |
+| **Custody over named history only, and the empty set as a statement.** | `code_object_custody`; `CustodyNames` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106 |
+| **The third observation, which a record never stores.** | `code_object_observation`; `CUSTODY_UNREADABLE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:79-84 |
+| The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143 |
+| The typed failure every ref outcome raises. | `CodeObjectRetentionError` | mcp/src/agents_remember/errors.py:180-190 |
+| **The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.** | `custody_names`; `_pinned_outcome` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:246-292 |
+| **The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens`; `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:869-910; mcp/tests/test_knowledge_review_comparison_generation.py:913-966; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
+
+**One boundary this route inherits and does not settle.** Whether a *landed* integration or closeout
+operation objects to the `refs/ar/retained-code/` namespace was **not measured** by this leaf, which
+cannot run those transactions; the pin was measured to survive `worktree remove`/`prune`, `branch -D`,
+gc-packing and `git fsck`, and the ref namespace question is recorded as open rather than assumed safe.
 
 ## IAS Frozen Public Lifecycle Composition
 
@@ -1309,6 +1358,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-21T20:24:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained `modules/code_object_retention.py`.** The section records the three decisions a reader of this route has to carry — one commit plus one `refs/ar/retained-code/` ref keep both bound objects alive; the retention commit's id is a function of the retained objects (identity supplied, dated by the base commit) so a re-created pin is the identical object and an exact re-freeze converges; and custody is measured over the history the caller **names**, with the leaf's own disposable work branch deliberately excluded and an empty name set keeping the pin. It also records the third observation (`absent`) as a reader's value that a record never stores, and one **open boundary**: whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf, which cannot run those transactions. One file-level card was created in the same pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T01:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches.** The route section above records the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, the intake that resolves a stored anchor through it and refuses a mismatch before any plan exists, and the citation re-measurement this leaf performed in `worktrees/reopen.py`, `worktrees/modules/closeout.py` and `worktrees/modules/startup/`. It also records that `memory/knowledge/merge.py` is byte-unchanged and its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal payloads. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.

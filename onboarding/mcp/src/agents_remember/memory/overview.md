@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash |  `71a4433e686b3380af97a0836bb82bab2c8f2aad`|
-| lastVerifiedCommitDate |  2026-09-21T16:29:06+02:00|
+| lastUpdated | 2026-09-21T20:28:00+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| lastVerifiedCommitHash |  `d80a0513e928ef29a973527d09597c82c96fde87`|
+| lastVerifiedCommitDate |  2026-09-21T19:51:20+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
 | governingOverview | `../../../overview.md` |
@@ -15,6 +16,29 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## Route Impact: The Durable Root Gets One Exported Definition (260921-ICR-L11)
+
+`memory/knowledge/durable_evidence.py` gained **one function and no behavior change**:
+`durable_reports_root(task_root)` returns `<task_root>/notes/reports`, the durable directory this module
+already fixed as `_TASK_RELATIVE_REPORTS`. It is exported because the destination is a **decision**
+rather than a convenience — the enclosure root and `<worktree_group>/` are both removed by cleanup, so a
+second module that spelled the path for itself would be a second place where "durable" could drift away
+from the one that is.
+
+The route-level fact worth carrying is the split the export creates: **the single-file publication stays
+the route for one artifact** (`publish_durable_evidence`, with its one-plain-file-name rule), while a
+producer whose evidence is a **directory** of related files roots that directory here. Its first consumer
+is the durable comparison generation, whose whole layout —
+`<task_root>/notes/reports/comparison-generations/<leaf>/<generation-id>` — derives from this function
+rather than restating the path.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The exported root, and the shipped value it returns.** | `durable_reports_root`; `_TASK_RELATIVE_REPORTS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:55-55 |
+| The single-file publication the export deliberately does not replace. | `publish_durable_evidence`; `_require_one_file_name` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:219-229 |
+| **Its first consumer, which derives the whole generation layout from it.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory` | mcp/src/agents_remember/application/review_comparison_generation.py:495-510 |
+| The per-file detail for the module that gained the export. | — | mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md |
 
 ## 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
 
@@ -1413,6 +1437,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-21T20:28:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **route impact recorded for one exported function.** `memory/knowledge/durable_evidence.py` gained `durable_reports_root(task_root)` — the durable root exported as a *decision*, so a producer whose evidence is a directory of related files roots itself at the same `<task_root>/notes/reports` the single-file publisher already builds rather than spelling it a second time. The section states the split the export creates (the single-file publication stays the route for one artifact) and names the first consumer (the durable comparison generation, whose whole layout derives from it). The module's own file-level card was updated in the same pass with the new function, its two invariants and its consumer rows. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only, forced by this leaf's move of the review resolution out of `application/knowledge_review.py` into `application/review_candidate_resolution.py`.** The rows of this document that cited `knowledge_review.py` for `REVIEW_CANDIDATE_RELATIVE_ROOT`, `REVIEW_CANDIDATE_DIRECTORY`, `REVIEW_BASELINE_DIRECTORY`, `review_namespace`, `missing_dataset_half`, `list_knowledge_review_entries` and `_recorded_identities` were re-read and re-pointed: a name the sibling module now defines is cited there, and a name the adapter still owns is cited at the extent it occupies in this candidate (the module is 1113 lines, down from 1281). No claim was re-worded beyond naming where the construct now lives, no row was deleted and no verification stamp was advanced — the candidate is uncommitted and closeout owns that stamp.
 - 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, and the intake that resolves a stored anchor through it. The route section above states why a second decoding of the anchor row was the thing being avoided.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the `reviewedWorkingCandidate` row is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.

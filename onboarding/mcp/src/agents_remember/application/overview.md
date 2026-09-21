@@ -3,11 +3,12 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-21T18:20:00+02:00 |
+| lastUpdated | 2026-09-21T20:44:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
-| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
+| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | `ar/260915-caps-l15-ar` uncommitted source (17 dirty paths); base `15fa0e2c0bb91d5bb1b2abf4ee8eb54916bd5ed4` |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -25,6 +26,68 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L11 The Durable Comparison Generation: Five New Owners, One Keystone Record, And A Freeze Nothing Calls Yet
+
+This route gained **five modules** and the leaf they belong to (`260921-ICR-L11`, primary requirement
+ICR-R11@v1) is a single obligation: *a frozen comparison retains resolvable source, knowledge and
+evidence inputs through cleanup and restart*. Everything a comparison actually reads is disposable —
+both datasets live in a leaf's disposable knowledge root, the bound candidate is a tree that exists in
+**no commit**, and the worktree holding both is removed by cleanup — so before this leaf a reader holding
+only "a comparison was made" could re-read nothing at all. The per-file detail lives in the five new
+sidecars; what belongs at this route's altitude is the split and the two boundaries.
+
+- **The record is the keystone.** `application/review_comparison_generation.py` owns the immutable
+  manifest, its layout under `<task_root>/notes/reports/comparison-generations/<leaf>/<generation-id>/`,
+  the unavailable-history record, and the reads. It stores **references to owner-produced content and no
+  semantic judgment**, its generation id is **re-derived from its own seal** and then checked a second
+  time against the directory it was found in, and a `retained` knowledge side must carry identity **and**
+  bytes by construction — which makes the packet's non-conforming example (a manifest holding only a
+  digest of already-deleted SQLite bytes) unconstructible rather than merely discouraged.
+- **Production is separate from retention, and retention from reclamation.**
+  `review_comparison_freeze.py` is the act (resolve → compose → freeze, staged → validated → sealed →
+  **one rename**), `review_comparison_retention.py` is where the bytes come from (custody measured
+  against **named durable history only**; both halves copied by the storage snapshot owner), and
+  `review_comparison_reclamation.py` is the two operations that may delete them (record first, measure
+  the deleted digest, never alias today's data). `review_comparison_reopen.py` is the read-back: one
+  state per channel, never one verdict, with `unavailable_channels()` naming exactly what did not
+  resolve.
+- **Custody is a measurement, and the branch it measures matters.** The leaf's code pin is created only
+  when the history the caller **names** — the protected source branch plus the commits a task record
+  landed — does not already hold the tree. The leaf's own disposable work branch is deliberately not one
+  of the names: `worktree_abandon` force-deletes it and ordinary cleanup removes it, so a commit living
+  only there is not custody, and a generation resting on it would lose its source side with the leaf.
+
+**Two route-level boundaries, recorded as boundaries rather than defects.**
+
+1. **The freeze is not wired to any route or read path.** Nothing in this leaf calls
+   `freeze_review_comparison` from a serving surface, an HTTP route, the dashboard or a closeout path;
+   it is the operation a caller invokes, and wiring it at closeout is **ICR-R21**'s obligation. A reader
+   must not read the absence of callers as dead code: the production entry is complete and measured by
+   fifteen production-composition cases.
+2. **A relocated coordination root degrades the reopened source channel to `missing`.** The record stores
+   an absolute `task_root` / `contract_path` / `code_repository_root`, so the retained snapshot bytes and
+   the cited task artifacts travel with the tree while the source channel resolves against the recorded
+   repository path. That is ruled the boundary of **ICR-R12/R13**, which consume
+   `reopen_comparison_generation` and own historical resolution.
+
+The one route-level consequence a reader should carry: **the review surface's comparison can now outlive
+the leaf that made it**, and what survives is a record of owner-produced identities — not a second
+measurement, not a second store, and not a new source of authored truth.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The keystone record: the manifest, the layout under the one durable root, the deletion record, the re-derived id and the directory-name agreement.** | `ComparisonGenerationManifest`; `read_manifest`; `generation_identity`; `assemble_manifest`; `comparison_generations_root` | mcp/src/agents_remember/application/review_comparison_generation.py:376-469; mcp/src/agents_remember/application/review_comparison_generation.py:586-620; mcp/src/agents_remember/application/review_comparison_generation.py:546-554; mcp/src/agents_remember/application/review_comparison_generation.py:557-580; mcp/src/agents_remember/application/review_comparison_generation.py:495-498 |
+| **The production entry: resolve and compose exactly as the surface does, then freeze only what that composition bound.** | `freeze_review_comparison`; `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276; mcp/src/agents_remember/application/review_comparison_freeze.py:279-309 |
+| **The one-rename publication, the convergence on an already-published record, and the reclaim paths that leave no stage and no unpublished pin.** | `_publish`; `_reuse_or_refuse`; `_reclaim` | mcp/src/agents_remember/application/review_comparison_freeze.py:327-351; mcp/src/agents_remember/application/review_comparison_freeze.py:354-386; mcp/src/agents_remember/application/review_comparison_freeze.py:420-431 |
+| **The sweep that reclaims only from the dead, scoped to the one leaf directory the record names.** | `_sweep_stale_stages`; `_issuer_alive`; `_stage` | mcp/src/agents_remember/application/review_comparison_freeze.py:664-684; mcp/src/agents_remember/application/review_comparison_freeze.py:687-708; mcp/src/agents_remember/application/review_comparison_freeze.py:647-661 |
+| **The whole definition of durable history for this feature — the protected source branch plus the recorded landed commits — and the reason the work branch is absent.** | `custody_names`; `retain_comparison_source` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:131-165 |
+| **Both halves copied through the storage snapshot owner, under the dataset's own bound namespace, with the two refusals that keep a storage error out of the freeze.** | `retain_knowledge_sides`; `_freeze_side` | mcp/src/agents_remember/application/review_comparison_retention.py:315-341; mcp/src/agents_remember/application/review_comparison_retention.py:400-444 |
+| **The two deletion owners: the record written before the deletion, the measured digest, and the refusal that removes nothing.** | `release_comparison_code_object`; `discard_comparison_snapshots`; `_measure_and_remove` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210; mcp/src/agents_remember/application/review_comparison_reclamation.py:213-241 |
+| **The read-back: one state per channel, `unavailable_channels()`, and the live pin measurement leading the release history.** | `ComparisonReopen`; `reopen_comparison_generation`; `ComparisonSourceChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:152-193; mcp/src/agents_remember/application/review_comparison_reopen.py:196-217; mcp/src/agents_remember/application/review_comparison_reopen.py:96-122 |
+| **The one durable-root owner the layout asks instead of restating `<task_root>/notes/reports`.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
+| **The two typed failures this route's deletion and retention boundaries raise.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-190; mcp/src/agents_remember/errors.py:193-203 |
+| **The cases that measure the whole journey, the convergence, the typed absences and the per-channel damage.** | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation`; `test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor`; `test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference`; `test_a_missing_or_damaged_retained_input_is_reported_per_channel` | mcp/tests/test_knowledge_review_comparison_generation.py:336-387; mcp/tests/test_knowledge_review_comparison_generation.py:711-762; mcp/tests/test_knowledge_review_comparison_generation.py:768-836; mcp/tests/test_knowledge_review_comparison_generation.py:556-598 |
 
 ## 260921-ICR-L6 The Statement Sides Get Their Own Owner, And A Present Value Stops Reading As An Absence
 
@@ -1135,6 +1198,8 @@ contains it — no wider. `complete_tool_response` (`:131-145`) is unchanged; th
 `_attach_lifecycle_tail` (`:112-130`), so every response this route completes passes through it.
 
 ## Update History
+- 2026-09-21T20:44:00+02:00 — 260921-ICR-L11 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L20` line; no side and no claim was dropped.** The header keeps both candidate rows and one `lastUpdated`; both sections are kept — this leaf's `260921-ICR-L11` section and `260921-ICR-L20`'s, each in the position its own pass wrote it — and both history entries are kept with this leaf's first. **Citation accounting:** this document carries no range into the two test manifests; its ranges into `durable_evidence.py` (`:58-69`), `errors.py` (`:180-190`, `:193-203`) and the new application modules were re-read against the merged code line and are unchanged. **No claim was corrected here.** **No verification stamp was advanced** — the stamp rows are outside the conflict and keep the incoming `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` / `2026-09-21T18:46:40+02:00`.
+- 2026-09-21T20:20:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained five modules and the leaf's keystone record.** `260921-ICR-L11` (ICR-R11@v1) added `review_comparison_generation.py` (the immutable manifest, its layout under the one durable root, the deletion record, the re-derived generation id and the directory-name agreement), `review_comparison_freeze.py` (the production entry, the one-rename publication, the stale-stage sweep and reclaim-on-failure), `review_comparison_retention.py` (custody measured against **named durable history only**, both halves copied by the storage snapshot owner), `review_comparison_reclamation.py` (the two deletion owners, the record written before the deletion, the measured digest) and `review_comparison_reopen.py` (per-channel states and `unavailable_channels()`). The section records the two route-level boundaries as boundaries rather than defects: **the freeze is deliberately not wired to any route or read path** — ICR-R21 wires it at closeout, so the absence of callers is not evidence of dead code — and a **relocated coordination root degrades the reopened source channel to `missing`**, ruled the boundary of ICR-R12/R13, which own historical resolution and may record a relative repository identity or add a resolution input. Five file-level cards were created in the same pass, and the two typed failures the retention and reclamation boundaries raise were added to `errors.py`'s card. Verification metadata is **not** advanced on the previous values: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T18:35+02:00 — 260921-ICR-L20 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L6` line; no side and no claim was dropped.** Both sections are kept: `260921-ICR-L6`'s statement-side section first and this leaf's publication-route section after it. Every range the resolution keeps was then re-derived against the merged candidate rather than shifted by a remembered delta (every row in the two sections was read against the merged candidate, and the adapter rows this document carries took the merged extents (`compose_review` `:377-452`, `_open_dataset_pair` `:455-500`, `_review_matrix` `:503-530`, `_selector_kind_or_absence` `:575-584`)); where both sides cited the same construct the merged extent was taken, and two claims that had become untrue in the merged state were corrected rather than kept in two wordings (the composition row named four constructs against three ranges and now cites all four). **No verification stamp was advanced:** the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is exactly what the incoming line recorded (`9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` / 2026-09-21T18:13:19+02:00 where that line carried it), the `reviewedWorkingCandidate` row for this leaf's candidate was added beside it as metadata and not as a stamp, and the governed closeout owns the real commit.
 - 2026-09-21T18:20:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **this route gained one module and one seam, and the entry was revised at the sync so the document states the merged line rather than either side of it.** `application/review_statement_sides.py` now owns the pane-1 statement-side data contract (the three-outcome side state that is read rather than inferred from empty text, the essential conditions, the comparison's own field roster, and the `None`-means-absence value reader with its labelled canonical `structured_value_text` projection); `application/knowledge_review.py` is 888 → **831 lines** and delegates through one import block and four calls inside `_knowledge_pane`; and the wire-visible delta is that a **changed structured field** no longer serves `None` on both sides but each side's own projection. The section states plainly that this is the **fourth** responsibility the adapter has handed out on this master line and the only one that leaves no alias. The renderer half lives in `dashboard/src/panels/review/KnowledgeStatements.tsx`. **Corrected rather than merged:** the sibling-module ranges this document cites were re-derived against the merged tree where L18's line was stale — `unreadable_half_refusal` is `knowledge_before_half.py:347-377`, `REVIEW_CANDIDATE_RELATIVE_ROOT` is `review_candidate_resolution.py:77-77` and the two published half-names are `83-84` — while the L18-owned ingest and generation ranges are kept as L18 measured them because that code is L18's. **Sync accounting:** this document's memory-side conflict was resolved as an **additive union** — leaf `260921-ICR-L18`'s section is kept whole above/below this one, and this leaf's section and entry are kept whole beside it; no side was chosen wholesale and no claim was dropped. One observed gap is recorded rather than repaired: L18's section on this document arrived from the landed memory line **without an Update History entry of its own**, so this resolution preserved it exactly as it was carried and invented no record for another seat. Verification metadata is **not** advanced: the stamp is L18's `71a4433e686b3380af97a0836bb82bab2c8f2aad` / `2026-09-21T16:29:06+02:00`, which this leaf neither advances nor regresses, and the candidate is uncommitted so the governed closeout owns the real stamp.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the route's new module and the seam this leaf drew.** This route gained `application/knowledge_publication_route.py` (the ordinary publication route's three decisions: the declared location, the admission derived from the run's own captured baseline, and the read-back through the reader's owner) and lost nothing: it composes `published_intent`, `knowledge_before_half`'s captured-dataset read and `knowledge_baseline_generation`'s `CapturedBaseline` rather than reimplementing them. The section states the boundary at this route's altitude — the CLI owns the *selection* and the route owns what the declared selection means, with the renderer extracted to `cli/knowledge_ingest_report.py` so the CLI's growth is R20's own decision surface — and records the one consequence repair outside the leaf's files (`published_intent.py`'s docstring and its `PUBLISHED_DATASET_NAME` comment, text only). **Citation accounting:** every range this section carries into the new module, the CLI, the renderer and the test module was derived from its construct's own extent in this candidate rather than carried, and the rows this document already carried into `cli/knowledge_ingest.py` were re-derived in the same pass — the module renumbered completely (541 → 692 lines), so `_placement_refusal` `:292-316` → `:477-501`, `_place_review_baseline` `:319-357` → `:504-542` and `run` `:360-409` → `:660-692`. No claim was dropped and no row was deleted. No verification stamp was advanced; the governed closeout owns it.

@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/durable_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastUpdated | 2026-09-21T20:04:00+02:00 |
+| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -39,8 +40,23 @@ there" and "the bytes are different" are different facts and neither is "publish
 renders the destination, the expected digest and the observed state for the failure direction.
 `enclosure_reports_removed` is the read-back of the enclosure-local directory after cleanup.
 
+`durable_reports_root(task_root)` is the **root itself, exported as a decision rather than a
+convenience** (`:58-69`). The single-file publication above stays the route for one artifact; a producer
+whose evidence is a **directory** of related files roots that directory here instead of restating the
+path, because "the enclosure root and `<worktree_group>/` are both removed by cleanup, so a second module
+that spelled this path for itself would be a second place where 'durable' could drift away from the one
+that is". Its first consumer is the durable comparison generation, which publishes one directory per
+generation under `<task_root>/notes/reports/comparison-generations/<leaf>/<generation-id>`; the function
+returns exactly `Path(task_root).joinpath("notes", "reports")`, the same `_TASK_RELATIVE_REPORTS` value the
+publisher builds its destination from, so the two cannot diverge.
+
 ### Invariants And Boundaries
 
+- **The durable root has exactly one definition, and it is exported.** `durable_reports_root` returns
+  `_TASK_RELATIVE_REPORTS` joined onto the task root, and it is the same value the single-file publisher
+  builds its destination from; a directory-shaped producer (the comparison generation) roots itself here
+  rather than spelling `notes/reports` again. Calling it does not publish anything and grants no name
+  validation — that stays with `_require_one_file_name` on the publication path.
 - **The destination is `<task_root>/notes/reports/`**, outside the enclosure root and outside
   `<worktree_group>/` by construction. `DURABLE_EVIDENCE_REFUSED_DESTINATIONS` names the two places a
   retention claim may not rest on — the enclosure's own `reports/` (removed at cleanup for a leaf
@@ -72,12 +88,14 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The two destinations a retention claim may not rest on, named so neither is reachable by accident.** | `DURABLE_EVIDENCE_REFUSED_DESTINATIONS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:50-52 |
-| **The publication record a later reader is given: the exact destination, the digest, the byte count and the machine-readable reference.** | `DurableEvidencePublication` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:57-83 |
-| **The publication itself: the destination built from the task root and the digest hashed from the bytes written.** | `publish_durable_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:122-152 |
-| **The read-back result, whose state distinguishes "the bytes are not there" from "the bytes are different", and the blocked reason that renders the failure direction.** | `EvidenceReadBack` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:84-120 |
-| **The read-back operation itself.** | `read_back_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:154-189 |
-| The destination rule that makes a traversal or a nested name unrepresentable. | `_require_one_file_name` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:204-214 |
-| The enclosure-local read-back the cleanup direction is measured with. | `enclosure_reports_removed` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:191-202 |
+| **The durable root, exported as the one decision a directory-shaped producer must root itself at.** | `durable_reports_root`; `_TASK_RELATIVE_REPORTS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:55-55 |
+| **Its first consumer: the comparison generation, which derives its whole layout from this root rather than restating it.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory` | mcp/src/agents_remember/application/review_comparison_generation.py:495-510 |
+| **The publication record a later reader is given: the exact destination, the digest, the byte count and the machine-readable reference.** | `DurableEvidencePublication` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:73-96 |
+| **The publication itself: the destination built from the task root and the digest hashed from the bytes written.** | `publish_durable_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166 |
+| **The read-back result, whose state distinguishes "the bytes are not there" from "the bytes are different", and the blocked reason that renders the failure direction.** | `EvidenceReadBack` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:100-134 |
+| **The read-back operation itself.** | `read_back_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203 |
+| The destination rule that makes a traversal or a nested name unrepresentable. | `_require_one_file_name` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:219-229 |
+| The enclosure-local read-back the cleanup direction is measured with. | `enclosure_reports_removed` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:206-216 |
 | The shipped curator-coherence route that owns "leaf evidence parked where it survives". | `curator_coherence_paths` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:161-170 |
 | The cleanup that removes an enclosure-local `reports/` directory, which is why that path is refused. | `ENCLOSURE_REPORTS_DIRECTORY` | mcp/src/agents_remember/worktrees/modules/cleanup.py:53-53 |
 | The terminal archive's fixed content set, which is why it is not widened. | `_is_canonical_artifact` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:533-538 |
@@ -94,6 +112,7 @@ coordination task root, which is outside both the code and the memory repository
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-21T20:04:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): body updated for the one addition this leaf made to this module — `durable_reports_root(task_root)` (`58-69`), the durable root **exported as a decision**: the single-file publication stays the route for one artifact, while a producer whose evidence is a *directory* of related files roots that directory here instead of spelling `notes/reports` a second time. The card records why that matters rather than only what was added: the enclosure root and `<worktree_group>/` are both removed by cleanup, so a second spelling would be a second place where "durable" could drift away from the one that is; and the first consumer is the durable comparison generation, whose whole layout (`<task_root>/notes/reports/comparison-generations/<leaf>/<generation-id>`) derives from this function. Two invariants and three Repo-Internal rows were added, and the `DurableEvidencePublication` row's range moved `57-83`→`72-98` because the addition sits above it. **Stamp accounting:** the two fields now name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because the function exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` rows state what was actually read, and closeout owns the real stamp once the code commit exists.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `curator_coherence_paths` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:161-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_published_artifact_reads_back_with_its_published_digest`; `test_a_missing_durable_destination_reads_back_as_a_blocked_state`; `test_a_destination_whose_bytes_changed_reads_back_as_mismatched` repointed to mcp/tests/test_knowledge_citation_boundaries.py:635-649; mcp/tests/test_knowledge_citation_boundaries.py:672-691; mcp/tests/test_knowledge_citation_boundaries.py:694-711. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction` repointed to mcp/tests/test_knowledge_citation_boundaries.py:652-669. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
