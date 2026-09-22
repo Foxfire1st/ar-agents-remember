@@ -1,15 +1,15 @@
 # dashboard/src/panels/detail-panel/changeSetBar.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/changeSetBar.tsx`        |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`                  |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| governingOverview      | `../overview.md`                                            |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -17,69 +17,107 @@
 
 ## Purpose
 
-The change-set bar of the DetailPanel task-document reader, extracted from
-`DetailPanel.tsx` by the 260731-EFA-L8 split. `ChangeSetButton` is the per-document
-button, `DocChangeSetBar` the compact bar rendered above the reader content.
+The change-set bar of the DetailPanel task-document reader, extracted from `DetailPanel.tsx` by the
+260731-EFA-L8 split. `ChangeSetButton` is the per-document button, `DocChangeSetBar` the compact bar
+rendered above the reader content, and `leafIsLive` the one liveness predicate both gated entries read.
+
+Since ICR-R16 the bar also carries **the entry read's own answer**. The live leaf's Intent-review entry
+is a refinement of the server's recorded subject, and that read can refuse; the bar now prints what it
+answered — a subject, a known-empty list, a refusal or a transport failure — beside the entry, in the
+owner's own words, instead of discarding it. Three constructs carry that: `ReviewSubjectRead` (what the
+hook returns), `useReviewSubject` (the read) and `ReviewEntryState` (its rendering).
 
 ## Code Commentary
 
 ### Logic
 
-The bar renders the change-set summary for the displayed document and exposes the
-change-set viewer toggle; selection state stays in the panel's `useDetailPanelState`.
+**`ChangeSetButton` is unchanged and still performs its own change-set read.** Its effect calls
+`leafChangeset`/`masterChangeset`/`taskChangeset` and stores the counters, and its rejection handler is
+`() => live && setCounters(null)` — so a failed counter read leaves the button without a total **and
+without a reason**. That is the change-set client's behaviour, deliberately untouched by ICR-R16 (see
+the routed-debt note below).
 
+**`DocChangeSetBar` branches on `kind` and gates the live block on one predicate.** A master gets the
+series button; a leaf gets `committed` unconditionally (its landed delta) plus, **when the leaf's
+enclosure is live**, a fragment containing the `working` button, the `Intent review` button and
+`ReviewEntryState`. `leafIsLive(enclosures, activeWorktreeGroups, repo, leaf)` is that one predicate,
+read from the store, so the working change-set and the reviewer entry cannot come to disagree about what
+"live" means.
 
-**The reviewer entry is now offered for every live leaf, and the server's subject is a refinement rather than a gate.** The condition changed from `live && subject` to `live`: the button carries `review: { selectorKind, selectorId }` when the entry read answers with a recorded subject, and `review: {}` when it answers with nothing or refuses — the task-context target, which opens the review on the task's complete source change inventory. `useReviewSubject`'s contract is unchanged (it still fetches nothing for a leaf that is not live and still treats a refusal or an empty list as a normal answer) but its *meaning* changed: an empty or refused answer no longer hides the reviewer, and the comment above the hook and the comment above the button both say so. The boundary the dashboard case asserts is the consequence: the entry is rendered as soon as the leaf is live, so a click that lands before the subject read answers opens the whole-task review and the subject refines the same button afterwards — deliberately, because the entry must not depend on a knowledge read that can refuse.
+**The reviewer entry is offered for every live leaf, and the server's subject is a refinement rather than
+a gate.** The button's target carries `review: { selectorKind, selectorId }` when the entry read answered
+with a recorded subject and `review: {}` when it answered with nothing, refused, or failed — the
+task-context target, which opens the review on the task's complete source change inventory. **The read
+never gates the button**: the button is rendered as soon as the leaf is live, so a click that lands
+before the subject read answers opens the whole-task review and the subject refines the same button
+afterwards. That is the point — the entry must not depend on a knowledge read that can refuse, and
+offering the entry only for a subject is exactly how a task with no knowledge lost its source review.
+
+**`ReviewSubjectRead` carries every answer as a value rather than collapsing it.** `loading` is the
+in-flight flag; `entry` is the first subject when the read answered `entries`; `empty` is the
+**known-empty** fact that the read answered `entries` with none (a fact about the datasets, not a
+failure); and `problem` is the read's own `ReviewFailure` for a typed refusal, a transport-level body or
+an answer this client does not admit.
+
+**`useReviewSubject` reads the entry once per live leaf and carries the answer.** It fetches nothing for
+a leaf that is not live (there is no candidate to resolve, and the working change-set is hidden for the
+same reason), sets `loading` before the read, and then maps the result: `entries` → the first subject
+plus `empty: entries.length === 0`; `refused` → `reviewProblemFromRefusal(result.refusal)` or, when a
+refused body published no refusal, `unreadableAnswer("refused")`; anything else → `unreadableAnswer(
+result.state)`; and a **thrown** cause → `reviewProblemFromCause(cause)`. A `current` flag guards every
+assignment so a superseded read cannot write into the current leaf. The route answers a refusal with its
+own status and the refusal in the body, so this read goes through the review client's own decode — the
+hook's comment says so, because `getJson` would have thrown and the detail would have been lost.
+
+**`ReviewEntryState` is the read's own state, printed rather than hidden, and it never gates the entry.**
+`loading` prints `reading this candidate's recorded subjects…`; `empty` prints that no subject is
+recorded for the pair and that the review opens on the task's complete source change inventory;
+otherwise a `problem` prints `this candidate's recorded subjects could not be read (<code>): <detail>`,
+followed by `offending input: …` and `next: …` **only when the owner published them**. Every state
+carries `data-testid="review-entry-state"` and `data-review-state`, with `data-review-code` on the
+refusal, so a case reads the state back out of the DOM rather than out of the text. When the read
+succeeded the component returns `null`: a working read is not decorated with a refusal line.
 
 ### Conventions
 
-Small presentational components. The bar itself still performs no change-set fetch, but it now makes
-**one** read of its own: the reviewer entry asks the server which subject this leaf can be reviewed
-on. That read is a task-context `GET` (`data/review.ts`), not a change-set read, and it is the only
-network call this module makes.
-
-**260915-KS-L45 makes the reviewer entry reachable, and the subject now comes from the server
-rather than from a prop no caller supplied.** The bar renders a third `ChangeSetButton` labelled
-**Intent review** beside the two existing ones — never in their place — and it is offered when, and
-only when:
-
-1. the leaf's enclosure is **live**, decided by `leafIsLive(enclosures, activeWorktreeGroups, repo,
-   leaf)`: one extracted predicate that both the working change-set action and the reviewer entry are
-   gated on, so the two entries cannot come to disagree about what "live" means; and
-2. `useReviewSubject` returned a `ReviewEntry` — the `selectorKind`/`selectorId` **props are gone**,
-   and the hook asks `intentReviewEntries(repo, master, leaf)` for the leaf's reviewable subjects and
-   keeps `result.entries?.[0]`.
-
-The gate is not weakened by that: a refusal, an empty list, a rejected promise and a leaf that is not
-live all leave the subject `undefined`, so **no subject means no button**, exactly as before. What
-changed is where a subject could come from. The prop was the unreachable part: `taskReader.tsx` and the
-master header pass `kind`/`repo`/`master`/`leaf`/`onOpen` and no selector, so `live && selectorId`
-could never hold on any real navigation, and the screen was unreachable by design rather than by
-policy. The hook's own comment records the invariant it keeps — the id returned is a recorded
-identity inside the candidate the *server* resolved from canonical task context, so "this hook chooses
-no candidate and invents no id: it asks, and a refusal or an empty list is a normal answer that leaves
-the entry hidden" — and it fetches nothing at all for a leaf that is not live, because there is no
-candidate to resolve and the working change-set is hidden for the same reason.
-
-The button's target is `{ repo, master, leaf, review: { selectorKind: subject.selector_kind,
-selectorId: subject.selector_id } }`: the reviewed subject's **recorded** identity comes from the
-server's own resolution, never from the browser, because the browser does not choose the candidate.
-The bar's own change-set fetching is unchanged — the reviewer entry's counter effect still reads only
-the leaf or master request, so a review entry reports no counters.
+Small presentational components plus one hook. The bar itself performs no change-set fetch; the one
+network call this module owns is the entry read through `intentReviewEntries`. Everything the read
+carries is imported from the review client's public entry (`../../data/review`), so the bar classifies
+through the same table every other consumer uses rather than growing its own. Inline `style` objects
+match the cockpit panels' idiom, and each rendered fact carries a `data-*` attribute.
 
 ### Invariants And Boundaries
 
-The bar renders only the document currently displayed; it never fetches a change set
-itself.
+- **The reviewer entry is gated on liveness alone.** No subject, no refusal and no transport failure
+  removes the button; the read's answer is printed beside it.
+- **`leafIsLive` is the one liveness definition.** The working change-set action and the reviewer entry
+  both read it, so they cannot disagree.
+- **The browser names no candidate and no dataset.** The target carries the repo/master/leaf the server
+  resolves the candidate from plus a recorded subject when the server offered one; there is no filesystem
+  path anywhere in this file.
+- **A refusal keeps its own words, and nothing is invented where the owner published nothing.** The
+  condensed entry line prints the code, the reason, and the offending input and next action only when
+  the `ReviewFailure` carries them.
+- **A successful read prints no state.** `ReviewEntryState` returns `null` for an answer with a subject.
+- **Boundary.** This module owns the entry's *read and display*. What a refusal code means belongs to
+  `data/reviewTransport.ts`, what the session's liveness means belongs to the dashboard store, and
+  whether the review itself can be opened belongs to the review surface. It owns no change-set read of
+  its own.
 
 ### Todos
 
-None recorded.
+One routed item is recorded rather than fixed, because it is a different route, client and owner:
+
+- **The live-leaf `committed`/`working` change-set counter still swallows its own refusal detail.**
+  `ChangeSetButton`'s rejection handler is `() => live && setCounters(null)` and the read goes through
+  `data/changeset.ts` → `getJson` → `/api/changeset/task`, so a failed counter read simply disappears
+  with no reason and no next action. That is the change-set client, not the review transport, and it is
+  **routed to R12 (historical committed-leaf review) / R24 (usable review navigation)**. Measured in
+  this leaf; not fixed here, to keep the blast radius to the review route.
 
 ## Docs References
 
-The curator checked `system/sources.md`; no Domain Documentation source is
-configured for this file.
+The curator checked `system/sources.md`; no Domain Documentation source is configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -87,13 +125,25 @@ configured for this file.
 
 ## Repo-Internal References
 
+Every claim on this card is checkable in the shipped candidate: the two exported components and the one
+predicate, the hook and its state value, the one network call, the change-set client the counter read
+belongs to, and the cases that drive the bar's entry. Every anchor in a row occurs inside the range that
+row cites.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The change-set bar entry points. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:21-46; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-161 |
-| **The one predicate both gated entries read, so the working change-set and the reviewer entry cannot disagree about what "live" means.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
-| **The hook that makes the entry reachable: it asks the server for the leaf's reviewable subjects, keeps the first, and leaves the entry hidden on a refusal, an empty list or a rejected promise — fetching nothing at all for a leaf that is not live.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
-| **The gate itself: `live && subject`, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160 |
-| The client the hook calls, which takes the task context and nothing else. | `intentReviewEntries` | dashboard/src/data/review.ts:312-320 |
+| The change-set button and its own counter read, whose rejection handler drops the reason. | `ChangeSetButton`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:28-70 |
+| **The routed debt this card records and does not fix: the counter read's rejection handler, on a different route and client.** | `leafChangeset`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-11; dashboard/src/panels/detail-panel/changeSetBar.tsx:37-55 |
+| The change-set client and route that debt belongs to, which this leaf leaves untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-57 |
+| **What the entry read answered, as the four values the bar needs rather than one collapsed subject.** | `ReviewSubjectRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:72-83 |
+| **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — subject, known-empty, typed refusal, transport failure or unadmitted state.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:85-135 |
+| **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a successful read.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:137-178 |
+| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:180-260 |
+| **The reviewer entry's target, built from the recorded subject when the server offered one and as the task-context target when it did not — never a missing control.** | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:28-70; dashboard/src/panels/detail-panel/changeSetBar.tsx:240-255 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:262-277 |
+| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:22-31; dashboard/src/data/review.ts:392-399 |
+| The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8 |
+| **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:112-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-175; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-206 |
 
 ## Cross-Repo References
 
@@ -104,23 +154,10 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "Intent review" repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the entry read's answer is now carried and printed, and this card's earlier account of "no subject means no button" is corrected rather than carried.** `useReviewSubject` returns a `ReviewSubjectRead` — `loading`, the first `entry`, a known-empty `empty` flag, or a `problem` — instead of `ReviewEntry | undefined`, so a refused read and an empty list are no longer indistinguishable and neither is discarded; the read classifies through the review client's shared decode (`reviewProblemFromRefusal`/`reviewProblemFromCause`/`unreadableAnswer`), because the route publishes its refusal in the body of a non-2xx response and `getJson` would have thrown and lost it. The new `ReviewEntryState` prints that answer beside the entry — refused with the owner's code, reason, offending input and next action; known-empty for a pair that records no subject; `network` for a transport failure with nothing invented — and returns `null` for a successful read. The reviewer entry remains gated on **liveness alone**, which is unchanged from R02, and that is why the card's earlier sentence that "a refusal, an empty list, a rejected promise … leave the subject `undefined`, so no subject means no button" has been **removed**: it described the R02 hook, not this one. Line count 186 → 280. It also records, as **routed rather than fixed**, the live-leaf counter's swallowed refusal detail (`ChangeSetButton`'s `() => live && setCounters(null)` over `data/changeset.ts` → `getJson` → `/api/changeset/task`) to R12/R24 — a different route, client and owner. Every row of the reference table was re-derived against this candidate. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync; the `reviewedWorkingCandidate` row states what was actually read, and nothing in this leaf is committed, so closeout owns the stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the entry stopped depending on the subject.** The button is now gated on liveness alone; the server's recorded subject travels with the target as a refinement, and its absence (an empty list or an unreadable refusal) produces the task-context target `review: {}` instead of no button at all. That is the non-conforming example the packet names — "an empty subject list makes the source review disappear" — closed at the entry. The hook, its no-fetch-for-a-dead-leaf rule and its "a refusal is a normal answer" idiom are unchanged; what changed is what an empty answer *means*, and both comments now say it. One citation row was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 
-
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer entry is reachable now, and this card's account of *why* it was not is the correction that matters.** The `selectorKind`/`selectorId` props are gone. A live leaf's subject is read from the server by the new `useReviewSubject` hook, which calls `intentReviewEntries(repo, master, leaf)` and keeps `result.entries?.[0]`; the gate is now `live && subject`, and the liveness half was extracted into `leafIsLive` so both gated entries read one predicate. The gate is not weakened: a refusal, an empty list, a rejected promise or a non-live leaf all leave `subject` undefined and **no subject means no button**. The card records why that matters — the prop was the unreachable part, because `taskReader.tsx` and the master header pass no selector, so `live && selectorId` could never hold on any real navigation — and records the invariant the hook's own comment states: the id is a recorded identity inside the candidate the server resolved, so the hook chooses no candidate and invents no id. The revision of the previous paragraph is retained in place below in substance: the entry is still added beside the working/committed actions and never in their place, its target still carries the subject's recorded identity rather than a filesystem path, and the reviewer entry still reports no counters. No verification stamp was advanced, because no commit contains this body.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  change-set bar extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
-2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the reviewer entry beside the change-set actions.** `DocChangeSetBar` gained
-`selectorKind = "invariant"` / `selectorId` props and a third `ChangeSetButton` labelled *Intent
-review*, rendered only when the enclosure is live and a `selectorId` is supplied — the same liveness
-the working action is gated on, and never in the working or committed action's place. Its target
-carries `review: { selectorKind, selectorId }`, the reviewed subject's recorded identity rather than
-a filesystem path, because the browser does not choose the candidate. The new paragraph above states
-that, and states the boundary the bar keeps: it still fetches nothing itself, and the new entry's
-counter effect reads only the leaf or master request, so no counters are reported for a review. No
-reference row was touched; ranges into this source belong to the citation-reprojection engine. The
-metadata block above names this leaf's uncommitted candidate as what was read, and the two
-verification stamps are left exactly as the last real verification set them. The body was changed
-substantively and this entry is the history record, not a metadata-only refresh.
+- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the reviewer entry beside the change-set actions.** `DocChangeSetBar` gained `selectorKind = "invariant"` / `selectorId` props and a third `ChangeSetButton` labelled *Intent review*, rendered only when the enclosure is live and a `selectorId` is supplied — the same liveness the working action is gated on, and never in the working or committed action's place. Its target carries `review: { selectorKind, selectorId }`, the reviewed subject's recorded identity rather than a filesystem path, because the browser does not choose the candidate. The new paragraph above states that, and states the boundary the bar keeps: it still fetches nothing itself, and the new entry's counter effect reads only the leaf or master request, so no counters are reported for a review. No reference row was touched; ranges into this source belong to the citation-reprojection engine. The metadata block above names this leaf's uncommitted candidate as what was read, and the two verification stamps are left exactly as the last real verification set them. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
+- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the change-set bar extracted from `DetailPanel.tsx`. Verification pinned to the leaf base until closeout stamps the code commit.

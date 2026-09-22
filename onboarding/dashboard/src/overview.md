@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
-| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
+| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview      | `../../overview.md`                              |
@@ -631,7 +631,7 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
 | **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:157-161 |
 | **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
-| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:369-377 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96; dashboard/src/data/review.ts:369-377; dashboard/src/panels/detail-panel/changeSetBar.tsx:15-15; dashboard/src/panels/detail-panel/changeSetBar.tsx:107-107 |
 
 ## Update History
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **No route-level fact changed.** This leaf's dashboard change is confined to the `panels/review/` child and the `data/` route: `panels/review/SourceContent.tsx` is added there (222 lines, one listed inventory entry opened into the actual content of both bound code trees), `ReviewSurface.tsx` grew 462 → 549 lines so an inventory row can open it, and `data/review.ts` grew 320 → 414 lines with the expansion wire types and `reviewSourceContent`. **The route-level facts this document states are untouched**: the reviewer takeover dispatch (`ChangeSetTakeover`, `data-view="intent-review"` and the target variant) is unchanged, the target shape is unchanged (still `repo`/`master`/`leaf` plus the optional recorded subject, still no path), no cookie, session or store behaviour is involved at all, no route was added or removed, and no other panel was touched. It adds one child component and one client function. **Citation accounting:** the one current-claim row that cites the child's `ReviewSurface.tsx` was re-derived against the moved lines (`Inventory`/`inventoryEntry`/`byteNamedEntry` `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`), as were the three rows citing `data/review.ts` (`ReviewSourceInventory` `168-178` → `169-179`, `intentReview` `271-290` → `323-342`, and `intentReviewEntries` `252-260` → `369-377` in the L22 section), and the L22 paragraph now states plainly that this leaf changed nothing here. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and `reviewedWorkingCandidate` records this leaf's uncommitted candidate beside the older one it still carries; no commit contains the new bytes, so closeout owns the real stamp.
@@ -1412,13 +1412,40 @@ comparison identity, and the rendering of an inventory in all three of its state
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry that is now offered for every live leaf, with the server's subject as a refinement rather than a gate.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
+| **The entry that is now offered for every live leaf, with the server's subject as a refinement rather than a gate.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-185 |
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
-| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:169-179; dashboard/src/data/review.ts:323-342 |
+| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:169-179; dashboard/src/data/review.ts:323-342; dashboard/src/data/review.ts:348-348; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
 | **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
 | The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 
+## 260921-ICR-L16 The Review Route's Refusals Reach The Reader
+
+One change crosses this route's boundary without changing its shape: the Intent Reviewer's **read
+outcomes** now reach a reader, on the entry and on the surface.
+
+The review HTTP route answers with its typed result and maps a refusal onto a `400`/`404`/`503` status, so
+a refusal lives in the **body** of a non-2xx response. The dashboard's shared client `data/files.ts` reads
+only `body.status` and throws — correct for the other serving routes, and the reason a reader saw
+`404 Not Found` where the route had published a missing dataset, its reason and the initialization action.
+The route now has its own transport owner (`dashboard/src/data/reviewTransport.ts`) whose single GET reads
+the body whatever the status and treats a body carrying this route's `state` as the answer, plus one
+outcome renderer (`dashboard/src/panels/review/ReviewOutcome.tsx`) that every non-review state goes
+through. `data/files.ts` is **untouched**, so this route's other clients keep their semantics.
+
+Nothing about the cockpit's route model, takeover, or panel layout changed: the review surface is still
+mounted through the change-set takeover under `data-view="intent-review"`, and the entry bar still lives on
+the task-document reader. Two limits are recorded as **routed, not fixed**: an in-flight prop/question
+change can still settle an earlier read under a newer header (pre-existing; **R17** with R24), and the
+browser-class A01/A13 journeys are not verified here (**R25** with R24/R17).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-97 |
+| **The review route's own decode: the body is the answer whatever the status.** | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
+| **The one renderer every non-review state goes through.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
+
 ## Update History
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one change that crosses this route: the review reads' refusals now reach the reader, through a route-owned transport decode plus one outcome renderer, with the shared `data/files.ts` client deliberately untouched. It also records that **no route-model, takeover or layout change** accompanies it, and the two measured limits routed to R17/R24 and R25. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation in the L2 record above, forced by this leaf's changes to its cited files; no route impact.** The section cites `panels/review/ReviewSurface.tsx` and `data/review.ts`, and this leaf moved every construct in both: `Inventory`/`inventoryEntry`/`byteNamedEntry` `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`, `ReviewSourceInventory` `168-178` → `169-179`, and `intentReview` `271-290` → `323-342`. Nothing the section claims was falsified — the entry is still offered for every live leaf, the target's selector is still optional with presence marking a review, and the instrument still renders the whole-task inventory in all three states; the inventory's rows additionally open into their content now, which the row's claim says. This leaf (`260921-ICR-L3`) added one child component and one client function and changed no route-level fact. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The dashboard route's reviewer entry is now offered for every live leaf (the server's subject is a refinement, not a gate), the review target's selector is optional with an empty object meaning the task context, and the review panel renders the whole-task source inventory in all three states. The section is appended at the end of this route's narrative, and the row of this document that cited `Cockpit.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

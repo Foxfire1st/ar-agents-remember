@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`             |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2`             |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | governingOverview      | `overview.md`                                          |
 
@@ -113,7 +113,7 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 | The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:401-401; dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-416; dashboard/src/panels/changeset/ChangeSetViewer.tsx:412-412; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-398; dashboard/src/panels/changeset/ChangeSetViewer.tsx:413-413; dashboard/src/panels/changeset/ChangeSetViewer.tsx:409-409 |
 | The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:586-586 |
 | The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:400-400; dashboard/src/panels/changeset/ChangeSetViewer.tsx:407-407; dashboard/src/panels/changeset/ChangeSetViewer.tsx:397-397; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115 |
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-185 |
 | The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
 
 ## Update History

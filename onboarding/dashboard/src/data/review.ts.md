@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
-| lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
+| lastUpdated            | 2026-09-22T07:05:34+02:00 |
+| lastVerifiedCommitHash |  `d21bc8a6c5d30e2394a72d056bff216b766407c2`|
+| lastVerifiedCommitDate |  2026-09-22T08:22:57+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `dashboard/src/data/overview.md` |
 
@@ -22,10 +23,20 @@ The browser-side, same-origin client for the read-only Intent Reviewer API
 surface asks for: `intentReview` renders one comparison, `intentReviewEntries` asks which subjects that
 comparison can be opened on — the call the task view makes before it can offer the button at all — and
 `reviewSourceContent` opens one listed inventory entry into the actual content of both bound code trees.
+Since ICR-R16 all three reads take their **transport** from `data/reviewTransport.ts` and this module is
+their public entry: it imports `getReviewJson` and **re-exports** the moved surface (`ReviewTransportError`,
+`getReviewJson`, `intentOnlyRefusal`, `reviewFailureToken`, `reviewProblemFromCause`,
+`reviewProblemFromRefusal`, `unreadableAnswer`, and the `ReviewFailure`/`ReviewFailureToken`/
+`ReviewRefusalFacts` types), so the surface and the task view still import one public entry and no
+existing importer changed its import path.
+
 Its own header states the shape it mirrors and the boundary it keeps: it mirrors `data/changeset.ts` — a
-`base` arg with a same-origin default, typed results taken from the application models, a thrown
-`FilesApiError`, and **no store mutation** — and it is a *read* client, because the surface exposes no
-submission control and so no function here writes anything.
+`base` arg with a same-origin default, typed results taken from the application models, a thrown error,
+and **no store mutation** — and it is a *read* client, because the surface exposes no submission control
+and so no function here writes anything. The header's new TRANSPORT paragraph records the one thing a
+reader of this file needs: the route answers with its typed result and maps a refusal onto a `400`/`404`/
+`503` status, so the refusal is in the **body** of a non-2xx response, and the shared `getJson` — which
+reads only `body.status` and throws — dropped every one of them before a reader could see it.
 
 The header also states the one rule every type below obeys: **every type mirrors one model in
 `models/knowledge/review.py`, and a field the server omits is absent here rather than defaulted**, so
@@ -110,26 +121,30 @@ purpose."** `ReviewEntryListResult` is its response envelope — `state` (`"entr
 literal `operation`, the task context, an optional `entries` array and an optional `refusal` — so a
 refused read is a normal typed outcome with no entries rather than an error a caller must catch.
 
-**`intentReviewEntries` is the entry read, and it takes the task context and nothing else.** It
-returns `getJson<ReviewEntryListResult>` over `${base}/api/review/intent/entries?${qs({ repo, master,
-leaf })}`, with the same `base = ""` same-origin default as `intentReview`. There is no selector in
-its signature because a selector is exactly what it is being asked for, and its own comment records
-how the caller must read a refusal: a refused read is "a normal outcome (no live candidate, no dataset
-yet): it yields no entry and the caller renders no button, which is the existing `live && selectorId`
-semantics and stays correct."
+**`intentReviewEntries` is the entry read, and it takes the task context and nothing else.** It returns
+`getReviewJson<ReviewEntryListResult>` over `${base}/api/review/intent/entries?${qs({ repo, master,
+leaf })}`, with the same `base = ""` same-origin default as `intentReview`. There is no selector in its
+signature because a selector is exactly what it is being asked for. **Its comment was rewritten by
+ICR-R16, and the rewrite is the point:** a refused read is now "*read* rather than thrown: the answer is
+`entries` with the subjects the pair offers (an empty list is the known-empty answer "no subject is
+recorded here"), or `refused` with the owner's own code, reason and next action, which the task view
+shows beside the entry. The entry itself never depends on this read: it is offered for an admitted live
+candidate, and a refusal here leaves the task-context review reachable." The old semantics — "it yields
+no entry and the caller renders no button" — is exactly the behaviour this leaf removed.
 
 **`intentReview` is the comparison request and it never names a path.** It takes
 `repo`, `master`, `leaf`, `selectorKind`, `selectorId` and a `base` defaulting to `""` (same-origin),
-and returns `getJson<ReviewResult>` over `${base}/api/review/intent?${qs({...})}`. The two helpers come
-from `data/files.ts` — `getJson` is what throws `FilesApiError` on a non-OK response, and `qs` is the
-one query-string encoder the other clients use — so this client inherits the file API's error idiom
-rather than growing a second one. The trailing comment states the omission that matters: it names
+and returns `getReviewJson<ReviewResult>` over `${base}/api/review/intent?${qs({...})}`. Only `qs` still
+comes from `data/files.ts` — it is the one query-string encoder the other clients use — while the
+transport is this route's own decode, because the comparison route's refusal arrives in the body of a
+non-2xx response and `getJson`'s throw-on-non-2xx idiom (right for the other serving routes) would turn
+it into a transport error. The trailing comment states the omission that matters: it names
 canonical task context and one recorded subject, and never a filesystem path, because the candidate is
 resolved on the server and the browser must not be able to choose which dataset is reviewed.
 
 **The client gained the expansion's wire types and a third request, which opens one listed entry at the two generations the listing published.** `ReviewSourceSideState` is the closed six-member literal a side's `state` may be (`present`, `absent`, `binary`, `symlink`, `submodule`, `unavailable`), `ReviewSourceSide` carries that state with an optional `text` — present only for the two textual states, so a missing or unrenderable side can never arrive as an empty document — plus `detail`, optional `object_id`/`byte_length` and `truncated`, `ReviewSourceExpansion` carries the entry's `path`, `status`, `mode_change`, `language`, the two sides, both generation ids, the three-member `currentness` with its detail, `path_bound` (`requested_generation`/`leaf_change_set`) with its detail, and the `reference`/`command`, and `ReviewSourceContentResult` is the envelope whose `state` is `"content"` with an optional `expansion` or `"refused"` with an optional `refusal`.
 
-**`reviewSourceContent` is the one function here that does not go through `getJson`, and the reason is the route's own answer shape.** A refused source read is a *normal* answer on this route — a path outside the measured change set, a baseline that is not this leaf's recorded one — and the transport carries it as the typed refusal in the body **with** a 400/404 status, which `getJson`'s throw-on-non-OK idiom would turn into a transport error. So this function `fetch`es the URL directly, decodes the body whatever the status was, and returns it as the typed result when `body.state` is `"content"` or `"refused"`; only a body that is not this route's answer at all (an unwired process, a proxy error) becomes a `FilesApiError`, built from the response's status and the body's own `status` string when there is one. The three other imports stay as they were: `FilesApiError`, `getJson` and `qs`.
+**`reviewSourceContent` no longer decodes its own body: it delegates to the one shared review decode.** A refused source read is a *normal* answer on this route — a path outside the measured change set, a baseline that is not this leaf's recorded one — and the transport carries it as the typed refusal in the body **with** a `400`/`404` status. That decode used to be inline here; ICR-R16 moved it into `data/reviewTransport.ts`, so this function is now a one-expression delegation to `getReviewJson<ReviewSourceContentResult>` over the same URL, and `grep -rn "api/review/intent" dashboard/src` finds the route URL only in the two review client modules. The behaviour a caller sees is unchanged for a typed answer and strictly better for everything else: a body that is not this route's answer now becomes a named `ReviewTransportError` failure carrying the owner's code, reason, offending input and next action — where the old inline decode built a `FilesApiError` from the response's status and the body's own `status` string and dropped the rest.
 
 **The generation is an input here too, not a lookup.** `reviewSourceContent(repo, master, leaf, path, beforeCodeTreeId, afterCodeTreeId, base = "")` takes the two tree ids the inventory published to this client and sends them back with the request — in that camelCase spelling, which is the spelling the route binds — so the content a reader opens is the content of the generation they were looking at, never re-resolved from whatever the leaf holds by the time the request lands. The function resolves no path and no tree of its own, and its own comment states that boundary.
 
@@ -156,9 +171,15 @@ entry half's two types and `intentReviewEntries`, then the expansion half's four
   recorded subject, because the candidate is resolved server-side; `reviewSourceContent` names a path
   **and** the two generation ids the inventory published to this client, so it addresses a row of a
   measurement the server already made rather than choosing a file.
-- **A typed refusal is a returned state, not a thrown error, wherever the route can produce one.**
-  `getJson` covers the routes whose non-OK status is a failure; `reviewSourceContent` reads its body
-  whatever the status and throws only for a body that is not this route's answer.
+- **A typed refusal is a returned state; a transport-level failure is a named throw.** All three reads
+  go through `getReviewJson`, which returns the body as the typed result whenever it carries this
+  route's `state` (a payload, a subject list or a typed refusal) and throws `ReviewTransportError`
+  otherwise — so an unadmitted answer is named and never rendered as an empty review.
+- **The transport has one owner and this module is its public entry.** The decode lives in
+  `data/reviewTransport.ts` and is re-exported here, so a consumer has one import and the review client
+  has no second implementation.
+- **Unrelated clients are untouched.** `getJson` still reads only `body.status` and still throws for the
+  routes that use it — which is exactly why the change-set client below is unchanged (see Todos).
 - **A field the server omits is absent rather than defaulted.** Every optional member is optional
   because the server may not send it, and no fallback value is provided.
 - **Unresolved is displayed, not filled in.** `ReviewUnresolvedReference` appears wherever an
@@ -166,12 +187,22 @@ entry half's two types and `intentReviewEntries`, then the expansion half's four
 - **Neither display union has a favourable member.** `ReviewSubmission.state` is `unavailable` or
   `disabled_stale`, and `ReviewStaleness.state` is `current` or `stale`; an absence cannot be read as a
   clearance.
-- **The error idiom is the file API's.** A non-OK response throws `FilesApiError` through `getJson`
-  rather than returning a sentinel.
+- **The error idiom is the file API's, specialised for this route.** A review read throws
+  `ReviewTransportError`, which **extends** `FilesApiError` so an existing catcher keeps working, and
+  carries the whole `ReviewFailure` so a caller can render the refusal instead of only its status line;
+  the other serving routes keep `getJson`'s plain throw.
 
 ### Todos
 
-None recorded.
+One routed item is recorded rather than fixed, because it is a different route, client and owner:
+
+- **The change-set client still swallows its own refusal detail.** `data/changeset.ts` mirrors this
+  client's shape and reads through `getJson` — `/api/changeset/task`, `/api/changeset/master`,
+  `/api/changeset/file-diff` — and `changeSetBar.tsx`'s live-leaf `committed`/`working` counter
+  consequently drops a failed read with `() => live && setCounters(null)`: no reason, no next action.
+  That is the change-set client, not the review transport, and it is **routed to R12 (historical
+  committed-leaf review) / R24 (usable review navigation)**. Measured in this leaf; not fixed here, to
+  keep the blast radius to the review route.
 
 ## Docs References
 
@@ -192,7 +223,7 @@ construct below the source pane — and every anchor in a row occurs inside the 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The header's own statement of what this file mirrors, the rule that a field the server omits is absent rather than defaulted, and the second model module the expansion types mirror. | `Mirrors`; `FilesApiError`; `same way (ICR-R03)` | dashboard/src/data/review.ts:1-9 |
+| The header's own statement of what this file mirrors, the rule that a field the server omits is absent rather than defaulted, and the second model module the expansion types mirror. | `Mirrors`; `FilesApiError`; `same way (ICR-R03)` | dashboard/src/data/review.ts:1-9; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-3; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:25-25; dashboard/src/data/reviewTransport.test.ts:175-175; dashboard/src/data/reviewTransport.test.ts:180-180; dashboard/src/data/reviewTransport.test.ts:295-295; dashboard/src/data/reviewTransport.test.ts:300-300; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
 | The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:13-14 |
 | **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` | dashboard/src/data/review.ts:16-21 |
 | The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` | dashboard/src/data/review.ts:23-27 |
@@ -200,23 +231,23 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:51-63 |
 | The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:65-85 |
 | The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:87-97 |
-| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:99-113; dashboard/src/data/review.ts:181-190; dashboard/src/data/review.ts:267-275 |
+| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:99-113; dashboard/src/data/review.ts:181-190; dashboard/src/data/review.ts:267-275; dashboard/src/data/review.ts:287-287; dashboard/src/data/review.ts:320-320; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:201-201; dashboard/src/data/review.ts:319-319 |
 | The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` | dashboard/src/data/review.ts:114-126 |
 | **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** | `ReviewRemainingCount`; `value?: number`; `reason?: string` | dashboard/src/data/review.ts:131-135 |
-| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:248-253; dashboard/src/data/review.ts:255-265 |
-| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:277-282; dashboard/src/data/review.ts:284-290 |
-| The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:292-304; dashboard/src/data/review.ts:306-313; dashboard/src/data/review.ts:315-321 |
-| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:323-342 |
+| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:248-253; dashboard/src/data/review.ts:255-265; dashboard/src/data/review.ts:268-268; dashboard/src/data/review.ts:290-290; dashboard/src/data/review.ts:275-275; dashboard/src/data/review.ts:291-291 |
+| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:277-282; dashboard/src/data/review.ts:284-290; dashboard/src/data/review.ts:297-297; dashboard/src/data/review.ts:321-321; dashboard/src/data/review.ts:304-304; dashboard/src/data/review.ts:322-322 |
+| The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:292-304; dashboard/src/data/review.ts:306-313; dashboard/src/data/review.ts:315-321; dashboard/src/data/review.ts:265-265; dashboard/src/data/review.ts:326-326; dashboard/src/data/review.ts:340-340; dashboard/src/data/review.ts:335-335; dashboard/src/data/review.ts:355-355; dashboard/src/data/review.ts:361-361 |
+| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` | dashboard/src/data/review.ts:323-342; dashboard/src/data/review.ts:348-348 |
 | **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` | dashboard/src/data/review.ts:344-353 |
 | **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:355-363 |
-| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:365-377 |
+| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` | dashboard/src/data/review.ts:365-377; dashboard/src/data/review.ts:392-392 |
 | **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:192-213 |
 | **The expansion value: both sides, both generation ids, the three-member currentness, and `path_bound` naming which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:214-238 |
 | **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:240-246 |
 | **The source-content request: the task context, the published path and both published generation ids, read with `fetch` because the body is this route's answer whatever the status was.** | `reviewSourceContent` | dashboard/src/data/review.ts:379-414 |
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-97; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-57 |
-| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:328-347; dashboard/src/data/review.ts:389-414 |
+| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:328-347; dashboard/src/data/review.ts:389-414; dashboard/src/data/review.ts:348-348 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 
 ## Cross-Repo References
@@ -229,6 +260,7 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the client's three reads delegate to one decode, and the card's account of `getJson` as this route's error idiom is corrected rather than carried.** Three statements the card previously made have been **removed or replaced** because this change made them false: (1) "a thrown `FilesApiError`" in the Purpose — the header now says "a thrown error", and the read throws a `ReviewTransportError` that extends `FilesApiError` so existing catchers keep working while gaining the whole `ReviewFailure`; (2) the account of `intentReview`/`intentReviewEntries` as `getJson<…>` calls — both now call `getReviewJson`, and the entry read's own comment was rewritten, so the card quotes the new comment and names the old "no subject means no button" semantics as the behaviour this leaf removed; (3) "**`reviewSourceContent` is the one function here that does not go through `getJson`**" — that inline decode **moved** into `data/reviewTransport.ts` and the function is now a one-expression delegation, with the route URL still living only in this module and the transport module. The card also records the module's new shape: `getReviewJson` imported, the moved surface re-exported so existing importers keep one public entry, and a new `Todos` note that the **change-set client is unchanged and still swallows its own refusal detail** (`data/changeset.ts` → `getJson` → `/api/changeset/task`, dropped by `changeSetBar.tsx`'s counter handler) — a different route, client and owner, **routed to R12/R24**. Line count 414 → 428. Every row of the reference table was re-derived against this candidate. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00), and the leaf's own `reviewedWorkingCandidate` row states what was actually read; nothing in this leaf is committed, so closeout owns the stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the client gained the expansion's wire types and a third request, and it is the one function here that deliberately does not go through `getJson`.** Added `ReviewSourceSideState` (the closed six-member literal), `ReviewSourceSide` (the optional `text` that is present only for the two textual states, so a missing or unrenderable side can never arrive as an empty document), `ReviewSourceExpansion` (both sides, both generation ids, the three-member `currentness`, and the `path_bound` that says which measured change set admitted the path), `ReviewSourceContentResult`, and `reviewSourceContent(repo, master, leaf, path, beforeCodeTreeId, afterCodeTreeId, base = "")` — which `fetch`es the route, decodes the body **whatever the HTTP status was**, returns it typed when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body that is not this route's answer. The rationale is recorded on the card because it is the reason a reader will not find `getJson` there: on this route a typed refusal is a normal answer carrying a 400/404 status, and `getJson`'s throw-on-non-OK idiom would turn it into a transport error. `intentReview` and `intentReviewEntries` are **unchanged** by this leaf. The file is 414 lines (was 320 at `d80a0513`), and the two rules the header states now cover an expansion type set that mirrors a second model module. **Citation accounting:** every row of the reference table was re-derived against this candidate — the new types are cited at `192-213`, `214-238` and `240-246`, `reviewSourceContent` at `379-414`, and every construct below the source pane moved, which is stated here so the pass is auditable: `intentReview` `271-290` → `323-342`, `ReviewEntry` `291-296` → `344-353`, `ReviewEntryListResult` `298-311` → `355-363`, `intentReviewEntries` `312-320` → `365-377`, `ReviewPayload`/`ReviewRefusal`/`ReviewResult` `235-247`/`249-256`/`258-270` → `292-304`/`306-313`/`315-321`, `ReviewStaleness`/`ReviewSubmission` `220-225`/`227-233` → `277-282`/`284-290`, `ReviewKnowledgePane` `94-107` → `99-113`, `ReviewSourcePane` `180-189` → `181-190`, `ReviewEvidencePane` `210-218` → `267-275`, `ReviewEvidenceLink`/`ReviewObservation` `191-196`/`198-208` → `248-253`/`255-265`, `ReviewSourceLocation` `109-121` → `114-126`, `ReviewRemainingCount` `130-134` → `128-135`, the two unions `12-13` → `13-14` and `ReviewSideContent` `15-20` → `16-21`; the helpers row was repointed at `files.ts:76-97` (the thrower's own body) so `getJson` and `FilesApiError` both occur inside it, and the consumer row now names both requests this surface makes. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and `reviewedWorkingCandidate` states the leaf's own uncommitted candidate; no commit contains the new bytes, so closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the client mirrors the new wire shape, and the request can now ask for the task's own review.** Added the inventory's three interfaces and the `source.inventory` field; made `comparison` optional with `knowledge_compared`; added `selection_state`, `not_compared` and the optional knowledge-half digests; and changed `intentReview` so it omits `selectorKind`/`selectorId` entirely when there is no subject, which is the task-context entry a leaf with no invariant still has. The two rules the header states are unchanged and now cover an absent identity as well as an absent field. Every row in the reference table was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 

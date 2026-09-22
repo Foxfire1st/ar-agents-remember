@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
@@ -363,7 +363,7 @@ judgment and publishes no assessment.
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:160-160 |
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:164-179 |
-| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:369-377; dashboard/src/data/review.ts:344-353 |
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:369-377; dashboard/src/data/review.ts:344-353; dashboard/src/data/review.ts:368-368; dashboard/src/data/review.ts:381-381; dashboard/src/data/review.ts:392-392; dashboard/src/data/review.ts:392-399 |
 
 ## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
 
@@ -430,7 +430,7 @@ not here.
 | **The new renderer: the three rules decided from a side's declared state, with the no-diff-claimed content path and the state lines.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
 | **The two provenance and boundary renderings the pane added: a bounded read stated as a prefix of the object, and the leaf-change-set bound stated only when that measurement admitted the path.** | `boundedNote`; `Expansion`; `review-source-truncated`; `review-source-path-bound` | dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:140-162 |
 | **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** | `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:126-138 |
-| **The client's expansion wire types and the request that reads the typed body whatever the status.** | `ReviewSourceSide`; `ReviewSourceExpansion`; `reviewSourceContent` | dashboard/src/data/review.ts:192-213; dashboard/src/data/review.ts:214-238; dashboard/src/data/review.ts:379-414 |
+| **The client's expansion wire types and the request that reads the typed body whatever the status.** | `ReviewSourceSide`; `ReviewSourceExpansion`; `reviewSourceContent` | dashboard/src/data/review.ts:192-213; dashboard/src/data/review.ts:214-238; dashboard/src/data/review.ts:379-414; dashboard/src/data/review.ts:243-243; dashboard/src/data/review.ts:264-264 |
 | **The cases that measure the whole route at the real surface over a stubbed transport: the addition, the two-sided modification, the binary/symlink/submodule sides, the superseded generation, the bounded prefix, the typed refusal, the exact request, the leaf-change-set bound, the byte-form row and the inventory with no pair.** | "the source pane opening a listed entry"; "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:268-588 |
 
 ## 260921-ICR-L6 The Review Panel's Statement Area Gets Its Own Component
@@ -466,9 +466,9 @@ route, no takeover change, and the child's file cards are the authority for the 
 | --- | --- | --- |
 | **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** | `KnowledgeStatements`; `unavailable`; `oneSidedDiff`; `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-34; dashboard/src/panels/review/KnowledgeStatements.tsx:62-77; dashboard/src/panels/review/KnowledgeStatements.tsx:79-91; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:36-44 |
-| **Pane 1's delegation, and the header's statement of what the surface reuses — now two renderers, this one and the Source pane's entry expansion.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-9; dashboard/src/panels/review/ReviewSurface.tsx:182-205 |
+| **Pane 1's delegation, and the header's statement of what the surface reuses — now two renderers, this one and the Source pane's entry expansion.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-9; dashboard/src/panels/review/ReviewSurface.tsx:182-205; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624 |
 | **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:78-79 |
-| **Pane 1's delegation, and the header's corrected statement of what the surface reuses.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-7; dashboard/src/panels/review/ReviewSurface.tsx:179-206 |
+| **Pane 1's delegation, and the header's corrected statement of what the surface reuses.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:1-7; dashboard/src/panels/review/ReviewSurface.tsx:179-206; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624 |
 | **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | "draws an added invariant's full after statement beside an absent-before label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
 | The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable"; "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259; dashboard/src/panels/review/KnowledgeStatements.test.tsx:261-274 |
 
@@ -513,9 +513,9 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 | Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:182-182 |
 | Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:337-337 |
 | Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:395-395 |
-| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:200-200; dashboard/src/panels/review/ReviewSurface.tsx:439-439 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:200-200; dashboard/src/panels/review/ReviewSurface.tsx:439-439; dashboard/src/panels/review/ReviewSurface.tsx:228-228 |
 | The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:446-446 |
-| The refusal rendering. | "function RefusalBlock" | dashboard/src/panels/review/ReviewSurface.tsx:468-468 |
+| The refusal rendering, which left the surface for the outcome owner: one block prints every field the owner published, and both the surface and the expansion pane render it. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
 | **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `DiffPane`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:29-29; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118; dashboard/src/panels/changeset/DiffPane.tsx:48-48 |
 
 ## Update History
@@ -2917,13 +2917,60 @@ states that its byte-form row cannot be opened — so the measurements below nam
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:30-39; dashboard/src/panels/review/ReviewSurface.tsx:482-549 |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:30-39; dashboard/src/panels/review/ReviewSurface.tsx:482-549; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
-| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:337-393; dashboard/src/panels/review/ReviewSurface.tsx:182-205 |
-| **The detail-panel entry that is offered for every live leaf, with the server's subject as a refinement.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170 |
+| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:337-393; dashboard/src/panels/review/ReviewSurface.tsx:182-205; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject as a refinement.** | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-185; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-260;  |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |
 
+## 260921-ICR-L16 The Review Surface Gets Its Outcome Owner, And The Entry Shows Its Own Answer
+
+This leaf gives the Intent Reviewer's **non-payload states** one owner and makes the refusal reach the
+reader on three surfaces.
+
+**The outcome owner is new.** `panels/review/ReviewOutcome.tsx` (251 lines) owns the read's four phases
+(`loading` | `reviewed` | `refused` | `failed`), the known-empty note, and **one** `ReviewProblemBlock`
+that prints every field the owner published — code, reason, the offending input it named and the
+next action it published, with an explicit sentence where the server published none. It renders a retry
+**only** for `network`, the one token with no owner-published recovery route, and offers the task's source
+change inventory only for a refusal that answers for the intent half alone. `ReviewSurface.tsx`'s inline
+`RefusalBlock` and its generic `review-error` paragraph were **removed, not duplicated** (549 → 632 lines);
+the surface is now the composition: it loads, keeps the last coherent payload, and renders the panes.
+
+**The retained generation is keyed to the question it was read for.** `targetKeyOf` is the one identity a
+read answers for — the task context **and** the question asked — and both the reset in `load` and the
+render-time check read it, so a payload is never shown under a header it was not read for. A **failed**
+read keeps the last coherent comparison on screen, labelled, and claims no empty review for it; a
+**typed refusal** replaces the panes, because it is the owner's answer about the leaf's current state.
+
+**The entry bar carries the entry read's own answer.** `changeSetBar.tsx` (186 → 280 lines) returns a
+`ReviewSubjectRead` — `loading`, the first recorded subject, a known-empty flag, or the read's own
+`ReviewFailure` — and `ReviewEntryState` prints it beside the entry in the owner's own words. The entry
+itself is offered for every live leaf and still opens the task-context review on `review: {}`, so a
+refusal here is a stated reason rather than a missing control.
+
+**R03's expansion pane renders transported failures through the same block.** `SourceContent.tsx`
+(222 → 241) keeps its own typed-refusal block untouched and routes everything else — an unwired process,
+an unadmitted query, a socket that never answered — through the shared `ReviewProblemBlock`, so the 503
+that used to read `503 unavailable` now carries the adapter's own instruction; the retry re-arms the read
+through an `attempt` counter.
+
+Two measured limits are recorded as **routed, not fixed**: an **in-flight** prop/question change can still
+let an earlier read settle under a newer header (pre-existing at HEAD and on the round-1 bytes —
+**R17**, with R24 for the interaction side; the retained-generation guarantee holds for every *settled*
+change), and the **browser-class A01/A13 journeys** over a served dashboard are not verified by this leaf
+(**R25**, with R24/R17).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
+| **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
+| **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` | dashboard/src/panels/review/ReviewSurface.tsx:528-542; dashboard/src/panels/review/ReviewSurface.tsx:552-593 |
+| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:85-135; dashboard/src/panels/detail-panel/changeSetBar.tsx:137-178 |
+| **R03's pane rendering transported failures through the shared block while its own typed-refusal path stays untouched.** | `ReviewProblemBlock`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:135-147; dashboard/src/panels/review/SourceContent.tsx:188-241 |
+
 ## Update History
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records what this leaf changed on this route: a new outcome owner (`ReviewOutcome.tsx`), the surface's move from three outcome `useState`s to four phases with a retained generation keyed to the question it was read for (`ReviewSurface.tsx` 549 → 632), the entry bar's new `ReviewEntryState` carrying the entry read's own answer beside a button that never disappears (`changeSetBar.tsx` 186 → 280), and R03's expansion pane routing its transported failures through the shared block while its typed-refusal path stays untouched (`SourceContent.tsx` 222 → 241). It also records the two measured limits as **routed, not fixed**: the in-flight prop/question race (pre-existing; **R17** with R24) and the browser-class A01/A13 journeys (**R25** with R24/R17). **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation in the L2 record above, forced by this leaf's changes to its cited files.** The paragraph and all three rows of the `260921-ICR-L2` section cite `panels/review/ReviewSurface.tsx` and nothing else that moved, so the whole section was re-derived against this candidate: `ReviewTarget`/`ReviewSurface` `27-37`/`395-462` → `30-39`/`482-549`, the three inventory helpers `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`, and `SourcePane`/`KnowledgePane` `265-307`/`179-206` → `337-393`/`182-205`. This leaf (`260921-ICR-L3`, whose own section is recorded in this route's narrative) made the inventory rows openable, added `SourceContent.tsx`, and grew `ReviewSurface.tsx` 462 → 549 lines, so the added sentence says which leaf changed what those helpers do to a row. No claim of the L2 record was falsified: the inventory is still rendered in all three states, the byte-form rows are still listed beside the named ones, and the target's selectors are still optional. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review panel renders the whole-task source inventory in all three of its states (including the byte-form rows for names it cannot carry as text), states that no comparison was made when the payload carries none, and survives a target with no selector; the detail-panel entry is offered for every live leaf. The section is appended at the end of this route's narrative, and the ten rows of this document that cited `ReviewSurface.tsx` by line were re-derived against the candidate in the same pass — this leaf moved every helper below the Knowledge pane. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

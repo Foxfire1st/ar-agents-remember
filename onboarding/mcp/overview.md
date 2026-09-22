@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-21T23:45+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
@@ -6072,5 +6072,35 @@ their own routes; this section records only what this package's route model gain
 | The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:771-795; mcp/tests/test_knowledge_review_source_content.py:796-821; mcp/tests/test_knowledge_review_source_content.py:641-678 |
 
 
+## 260921-ICR-L16 The Review Transport's 400/404 Idiom Collapses To One Mapping, And Its Bodies Gain Actions
+
+The Intent Reviewer's HTTP shim changed in exactly one place, and in two ways that belong together.
+
+**One mapping.** The `try/except AuthorityError/FileNotFoundError` pair that the comparison handler and
+`_source_content_response` each carried is now one `_port_outcome(port, request)` that both adapters reach,
+building its two bodies through one `_transport_refusal(status, detail, *, next_action,
+offending_input=None)`. Each call site is now `result = _port_outcome(port, request)` plus a
+`isinstance(result, Response)` return, so the `400`/`404` idiom and the fields on its bodies cannot come to
+differ between the two routes.
+
+**Two bodies that published no next action now do.** `bad-path` carries
+`_AUTHORITY_NEXT_ACTION` ("name a repository the configured workspace authority admits, then reopen the
+review; these routes read no other repository in its place") and `not-found` carries
+`_NOT_FOUND_NEXT_ACTION` plus the offending path in both the `path` and `offendingInput` spellings. The
+requirement is that every refusal on this route be actionable in the body of its own status, and these two
+were the ones that named only their message.
+
+No route, status, key or model was removed, and no other client read those fields, so the change is
+additive on this route's own bodies. `serving/review.py` grew 349 → 401 lines and stays under its rail.
+`application/knowledge_review.py` — this campaign's global write mutex — is **untouched**: nothing this
+packet owns lives there, because no new application behaviour and no new refusal code were introduced.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The one mapping both adapters reach, and the one body builder it uses.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:128-169 |
+| **The two actions the bodies gained, and the not-found body's offending input.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-125 |
+| **The result-to-status mapping, unchanged, which the new bodies are used beside.** | `_status_for` | mcp/src/agents_remember/serving/review.py:257-274 |
+
 ## Update History
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one place the review transport changed: the duplicated `AuthorityError`/`FileNotFoundError` mapping collapsed into one `_port_outcome` with one `_transport_refusal` body builder, and the two bodies that named only their message gained the action their own failure implies (plus the offending path for `not-found`). It also records the untouched neighbour that matters most: `application/knowledge_review.py`, the campaign's write mutex, is not touched because this packet introduced no application behaviour and no refusal code. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this package's impact for the leaf: the new `application/published_intent.py`, the `published_intent` field on the read-files response, the deliberately unchanged MCP surface (`mcp/tools/read_files.py` and the tool registration) and the untouched `application/knowledge_read.py`, the regenerated `package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` (179 → 239 lines, nine targets written by `scripts/sync-skills.py`), the case that holds the carrier to the payload's real spellings, and the boundary that the seven installed harness skill roots still carry the old carrier — an acceptance-time install the orchestrator owns, not a package change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

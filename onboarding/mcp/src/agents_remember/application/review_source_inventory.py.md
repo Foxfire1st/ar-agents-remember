@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
+| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -211,7 +211,7 @@ odd name.
 | The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by`; `test_the_production_inventory_lists_non_text_and_mode_changed_paths_it_cannot_render`; `test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial` | mcp/tests/test_knowledge_review_source_endpoints.py:733-811; mcp/tests/test_knowledge_review_source_endpoints.py:812-855; mcp/tests/test_knowledge_review_source_endpoints.py:856-889; mcp/tests/test_knowledge_review_source_endpoints.py:902-961 |
 | The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones. | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
-| **The row that is now also the way into its own content: the named entry carries the two generation ids the surface is showing, an open control that is present exactly when both ids are, and the rendered content beside it — while the byte-form row states that no expansion request can name it.** | `inventoryEntry`; `byteNamedEntry`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282; dashboard/src/panels/review/ReviewSurface.tsx:248-256 |
+| **The row that is now also the way into its own content: the named entry carries the two generation ids the surface is showing, an open control that is present exactly when both ids are, and the rendered content beside it — while the byte-form row states that no expansion request can name it.** | `inventoryEntry`; `byteNamedEntry`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282; dashboard/src/panels/review/ReviewSurface.tsx:248-256; dashboard/src/panels/review/ReviewSurface.tsx:298-298; dashboard/src/panels/review/ReviewSurface.tsx:352-352 |
 
 ## Cross-Repo References
 

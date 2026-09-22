@@ -5,9 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-21T23:25:00+02:00 |
-| lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
-| lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
+| lastUpdated            | 2026-09-22T07:05:34+02:00 |
+| lastVerifiedCommitHash |  `d21bc8a6c5d30e2394a72d056bff216b766407c2`|
+| lastVerifiedCommitDate |  2026-09-22T08:22:57+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
@@ -30,6 +31,13 @@ module may not import the read, diff and view operations the adapter composes. I
 launch route takes the capsule compiler: the composition root wires all three in `cli/dashboard.py`,
 and a process that omits any one of them **refuses by name instead of serving an empty surface** — and,
 for the expansion route, instead of serving an empty file.
+
+**One mapping, two adapters (ICR-R16).** The two failures the ports themselves can raise —
+`AuthorityError` and `FileNotFoundError` — are not caught at each call site: both adapters reach their
+port through one `_port_outcome`, which builds its bodies through one `_transport_refusal`, so the
+`400`/`404` idiom and the actionable fields on its bodies cannot come to differ between the routes. Both
+bodies now carry a `nextAction` (and, for the not-found case, the offending input), because a reader has
+to be able to act on the failure rather than only read its message.
 
 **Three routes, because the surface answers three different questions.** `GET /api/review/intent`
 renders one comparison; `GET /api/review/intent/entries` lists the subjects that comparison *can* be
@@ -118,21 +126,28 @@ expansion's own `source_content_unresolved` lands, together with `comparison_ref
 therefore derived from the refusal's own published code rather than from a local table of route
 conditions.
 
-**The two exception types are caught at each port call and turned into the same two shapes.**
-`AuthorityError` becomes a `400` with `status: "bad-path"` and the error's own `str`, and
-`FileNotFoundError` becomes a `404` with `status: "not-found"` and the offending `path`; the comparison
-handler and `_source_content_response` each carry that pair. Everything else a port raises is left to
-propagate to the application's own error handling rather than being silently reshaped here. The entry
-handler adds no catch of its own: an absent dataset half is the application operation's own typed
-refusal, not an exception, so it arrives as a `404` through `_status_for`.
+**The two exception types are mapped once, by `_port_outcome`, and both bodies are actionable.**
+`AuthorityError` becomes a `400` with `status: "bad-path"`, the error's own `str` as `detail`, and
+`_AUTHORITY_NEXT_ACTION` ("name a repository the configured workspace authority admits, then reopen the
+review; these routes read no other repository in its place"); `FileNotFoundError` becomes a `404` with
+`status: "not-found"`, the offending `path` (also carried as `offendingInput`, the field vocabulary the
+typed refusals use), and `_NOT_FOUND_NEXT_ACTION` (reopen from a task context whose recorded paths
+exist). `_transport_refusal(status, detail, *, next_action, offending_input=None)` is the one body
+builder both use, so neither route can acquire a field the other lacks. The comparison handler and
+`_source_content_response` each call `_port_outcome` and return its `Response` unchanged when it is one;
+everything else a port raises is left to propagate to the application's own error handling rather than
+being silently reshaped here. The entry handler adds no catch of its own: an absent dataset half is the
+application operation's own typed refusal, not an exception, so it arrives as a `404` through
+`_status_for`.
 
 **`_source_content_response` is a module-level function rather than the route body, and that is the
 extraction that cleared two lint findings without a suppression.** It holds the expansion read's whole
 transport — the unwired answer, the selector check, the `400`/`404` map — so the registrar stays a
 composition of three one-line registrations and `register_review_routes` no longer exceeded the
 cyclomatic-complexity rail; the parse function takes the selector value instead of six positional
-scalars, which is what cleared the argument-count findings. The status idiom is unchanged and shared
-with the two routes above.
+scalars, which is what cleared the argument-count findings. Since ICR-R16 the status idiom it reaches —
+and the actionable fields on its bodies — is the one implementation both adapters share through
+`:func:`_port_outcome``, which is what its own docstring now states.
 
 **`_json` serializes a typed result exactly once, through the model that declares its shape.**
 `result.model_dump(mode="json", exclude_none=True)` is the whole function, and its union parameter is
@@ -167,8 +182,9 @@ The module imports its vocabulary rather than declaring it: `KnowledgeReviewResu
 `models/knowledge/review_source_content.py`, and `McpRuntimeConfig` from the kernel. `__all__` names
 exactly the **nine** public names — the three route constants, the three port types, `SourceContentRef`,
 `register_review_routes`, `review_request_from_query` and `source_content_request_from_query` — leaving
-`_status_for`, `_json`, `_UNWIRED_ENTRIES`, `_UNWIRED_SOURCE_CONTENT`, `_source_content_response` and
-`_incomplete_generation` reachable but unpublished. It uses `fastapi.APIRouter`-free direct
+`_status_for`, `_json`, `_UNWIRED_ENTRIES`, `_UNWIRED_SOURCE_CONTENT`, `_source_content_response`,
+`_incomplete_generation`, and the R16 mapping's own `_transport_refusal`, `_port_outcome`,
+`_AUTHORITY_NEXT_ACTION` and `_NOT_FOUND_NEXT_ACTION` reachable but unpublished. It uses `fastapi.APIRouter`-free direct
 `@app.get(...)` registration like the other change-set route registrars, and its JSON bodies are plain
 dicts shaped like the change-set routes' own error envelopes (`status`, `detail`, `nextAction`) rather
 than a second error model.
@@ -201,6 +217,9 @@ than a second error model.
 - **The result is serialized once, by the model.** `exclude_none=True` keeps an omitted field absent,
   which is the rule the browser client mirrors, why a refused entry read carries no `entries` key, and
   why a non-textual side carries no `text` key.
+- **One mapping, one body builder.** Both adapters reach their port through `_port_outcome` and both
+  bodies are built by `_transport_refusal`, so the `400`/`404` idiom and its fields cannot drift between
+  the routes; each body names the action its own failure implies rather than only the message it held.
 - **Rank is the reason for the indirection.** `serving` may not import `application`, so the ports are
   the only route to the adapter; the wiring belongs to the composition root.
 - **Registration order matters.** All three routes must be registered before the greedy static mount.
@@ -236,12 +255,12 @@ port fields the composition supplies, and the cases that drive the routes with a
 | **The entry route's unwired answer: an empty entry list would say "nothing is reviewable here", a different fact from "this process cannot answer".** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:85-97 |
 | **The expansion route's own unwired answer, which refuses rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` | mcp/src/agents_remember/serving/review.py:99-111 |
 | **The expansion's whole selector as one value: the task context, the entry path and the two camel-case tree ids, travelling together because any one alone selects nothing.** | `SourceContentRef` | mcp/src/agents_remember/serving/review.py:114-131 |
-| **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/models/knowledge/read.py:1-60 |
+| **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/models/knowledge/read.py:1-60; mcp/src/agents_remember/serving/review.py:32-32; mcp/src/agents_remember/serving/review.py:223-223; mcp/src/agents_remember/serving/review.py:33-33; mcp/src/agents_remember/serving/review.py:221-221; mcp/src/agents_remember/serving/review.py:55-55; mcp/src/agents_remember/serving/review.py:192-192; mcp/src/agents_remember/serving/review.py:331-331 |
 | **The expansion's own parse: the path and both tree ids required together, and a blank component refused rather than defaulted, because a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` | mcp/src/agents_remember/serving/review.py:176-196 |
 | **The result-to-status mapping derived from the refusal's own published code, now over three result types: the four candidate codes go to `404`, `review_adapter_unavailable` to `503`, and everything else — including the expansion's `source_content_unresolved` — to `400`.** | `_status_for`; `ReviewSourceContentResult`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211; mcp/src/agents_remember/models/knowledge/review.py:98-106 |
-| **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent_entries` | mcp/src/agents_remember/serving/review.py:219-247; mcp/src/agents_remember/serving/review.py:236-243 |
-| **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` | mcp/src/agents_remember/serving/review.py:245-247; mcp/src/agents_remember/serving/review.py:309-331 |
-| The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. | `api_review_intent` | mcp/src/agents_remember/serving/review.py:249-298 |
+| **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent_entries` | mcp/src/agents_remember/serving/review.py:219-247; mcp/src/agents_remember/serving/review.py:236-243; mcp/src/agents_remember/serving/review.py:277-277; mcp/src/agents_remember/serving/review.py:295-295; mcp/src/agents_remember/serving/review.py:54-54 |
+| **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` | mcp/src/agents_remember/serving/review.py:245-247; mcp/src/agents_remember/serving/review.py:309-331; mcp/src/agents_remember/serving/review.py:364-364; mcp/src/agents_remember/serving/review.py:305-305; mcp/src/agents_remember/serving/review.py:304-304 |
+| The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. | `api_review_intent` | mcp/src/agents_remember/serving/review.py:249-298; mcp/src/agents_remember/serving/review.py:308-308 |
 | The one serializer, which keeps an omitted field absent rather than null and so serves all three result types. | `_json` | mcp/src/agents_remember/serving/review.py:301-306 |
 | The `400` body for a query that did not name the generation it wants opened: the offending component, the exact expected set, and the inventory as the address of the content. | `_incomplete_generation` | mcp/src/agents_remember/serving/review.py:333-349 |
 | **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471; mcp/src/agents_remember/serving/_app_common.py:481-489 |
@@ -262,6 +281,7 @@ candidate and carry no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the 400/404 mapping collapsed into one implementation, and the two bodies that published no next action now do.** The duplicated `try/except AuthorityError/FileNotFoundError` pair that the comparison handler and `_source_content_response` each carried is now one `_port_outcome(port, request)` reached by both adapters, building its two bodies through one `_transport_refusal(status, detail, *, next_action, offending_input=None)`; both call sites now read `result = _port_outcome(...)` and return it unchanged when it is a `Response`. The **substantive** half of the change is what the bodies say: `bad-path` gained `_AUTHORITY_NEXT_ACTION` and `not-found` gained `_NOT_FOUND_NEXT_ACTION` plus the offending input (the path, in both the `path` and `offendingInput` spellings), because ICR-R16 requires every refusal on this route to carry a usable next action. No status, route, key or model was removed and no other client read those fields — the change is additive on this route's own bodies inside S08. Line count 349 → 401. The card's earlier paragraph that said the two exception types were "caught at each port call" and that the status idiom was "unchanged" has been **replaced** rather than carried. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00), and the leaf's own `reviewedWorkingCandidate` row states what was actually read; nothing in this leaf is committed, so closeout owns the stamp.
 - 2026-09-21T23:25+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.
 
 - 2026-09-21T23:00:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the shim became three routes over three ports, and the invariant that said no path is accepted was corrected rather than carried.** ICR-R03@v1 added `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` (`/api/review/intent/source-content`), `SourceContentRef` (the whole expansion selector as one `Depends()` value, the `ChangesetFileRef` idiom the change-set routes already use), `ReviewSourceContentPort`, `source_content_request_from_query`, `_source_content_response` and `_incomplete_generation`, and widened `_status_for`/`_json` by the third result type. The card now records the three facts a reader of the transport needs. First, the split's reason: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump, so the expansion is a third **path** and the browser asks for exactly the row a reader opened. Second, the corrected boundary: this is the one route that accepts a `path` — a repository-relative entry path, always sent with both bound code tree ids, and read only if a **measured** change set lists it, with the two tree ids named by the caller rather than resolved by the server so an expansion stays bound to the generation the reader was looking at; no route accepts a filesystem path or a root. Third, the refusal shape: `_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file" (an empty document would read as a file this repository does not hold), the expansion's `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`, and a blank path or tree id is a `400` naming the exact expected set rather than a server-chosen generation. It also records the extraction that cleared the complexity and argument-count rails without a suppression: the expansion's whole transport became `_source_content_response` and the compare route's parse now takes the selector value instead of six positional scalars. **Citation accounting:** every row of this document was re-derived against this candidate, because the file grew 223 → 349 lines and every construct below the new route constant moved (the selector kinds `:51-63` → `:76-79`, the port types `:65-66` → `:81-83`, `_status_for` `:125-140` → `:199-216`, `register_review_routes` `:143-217` → `:219-247`, `api_review_intent` `:146-190` → `:249-298`, `_json` `:220-223` → `:301-306`, `review_request_from_query` `:83-99` → `:134-173`, `_UNWIRED_ENTRIES` `:68-80` → `:85-97`, and the two `_app_common.py` port rows `:456`/`:467` → `:460`/`:471`); two rows were added for the new route's own constructs and one for its production cases. **No verification stamp was advanced** — the candidate is uncommitted, so the stamp names the master line this card was read against (`d80a0513…`, committed `2026-09-21T19:51:20+02:00`) and the governed closeout owns the real stamp.
