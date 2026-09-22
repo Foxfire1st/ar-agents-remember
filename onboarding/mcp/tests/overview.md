@@ -3,12 +3,13 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| lastUpdated | 2026-09-22T09:15:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
@@ -156,6 +157,28 @@ route's own population count moves by one module.
 | **The two per-record damage cases, which are the ones that make the partial-collection states measured rather than asserted.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
 | **The production port the cases read through, and the bundle they read beside it.** | `review_through_port`; `review_records_for` | mcp/tests/test_knowledge_review_evidence_channels.py:170-177; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
 | The fixture's external-memory shape, which the assessment channel needs. | `build_endpoint_fixture`; `_link_memory_worktree` | mcp/tests/test_knowledge_review_source_endpoints.py:198-231; mcp/tests/test_knowledge_review_source_endpoints.py:304-321 |
+## 260921-ICR-L4 The Attribution Cases: Nine Partition Cases, Six Precedence And Receipt Cases, Two Extensions
+
+This route gained **no module and fifteen cases across the four existing ones**, and the leaf they
+belong to (`260921-ICR-L4`, primary requirement ICR-R04@v1) makes one claim per route half: *the
+measured changes are partitioned once, and one unreadable side never licenses a negative
+conclusion*. `test_knowledge_diff_scope.py` (789 → 1384 lines) gained nine cases — the disjoint and
+exhaustive partition, the outside-selection boundary, the family-subject membership, the two
+stale/unresolvable-mapping precedence cases, the half-inspected undetermined rule, the
+legitimately-empty side, the unavailable-partition honesty rule and the partial-denominator scope.
+`test_knowledge_review_source_endpoints.py` (938 → 1364) gained six — the unreadable-half
+precedence, the identified empty generation, the complete-read control, the damaged-half refusal of
+a negative conclusion, and the two receipt states. `test_knowledge_diff_boundaries.py` extended the
+unavailable-observation case with the partition's own assertions, and
+`test_knowledge_review_surface.py` corrected the knowledge-only case to the measured empty
+partition. No lane row and no catalog row was added: no new test module, so no catalog re-pin —
+the whole footprint is cases inside already-registered modules.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The nine partition cases, appended after the module's former end.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive" | mcp/tests/test_knowledge_diff_scope.py:822-900 |
+| **The six precedence and receipt cases on the real enclosure route.** | "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"; "test_an_unreadable_candidate_receipt_is_stated_on_the_task_route_and_refused_on_the_subject_route" | mcp/tests/test_knowledge_review_source_endpoints.py:1026-1096; mcp/tests/test_knowledge_review_source_endpoints.py:1223-1299 |
+| **The extended unavailable-observation case and the corrected knowledge-only case.** | "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set"; "test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory" | mcp/tests/test_knowledge_diff_boundaries.py:791-847; mcp/tests/test_knowledge_review_surface.py:1161-1220 |
 
 ## 260921-ICR-L11 The Durable-Comparison Cases: One Module, Fifteen Cases, And The Journey Measured Rather Than Simulated
 
@@ -2176,6 +2199,9 @@ citation into it below OLD line 112 moved, and this route's own reference rows w
 from the candidate rather than shifted (`T60`/`T52`).
 
 ## Update History
+- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **continuation/snapshot rows re-cited** (`342-380`/`455-495`). Wording unchanged; no stamp advanced.
+- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`/`260921-ICR-L16`.** Both sides' sections (L16's refusal-cases section beside this leaf's attribution-cases section) and history kept; lane/lifecycle numbers take the landed values. Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **no new module, fifteen cases across four existing ones (new section above).** Nine partition cases appended to `test_knowledge_diff_scope.py`, six precedence/receipt cases appended to `test_knowledge_review_source_endpoints.py` (with its import hunk re-deriving every pre-existing row in that module's card), one boundaries case extended and one surface case corrected. Four file-level test cards updated in the same pass. No lane or catalog row was added — verified, not assumed: the worktree diff carries no manifest change, consistent with the worker report's "no new test module, so no catalog re-pin". No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Merged measurement:** the catalog both leaves' rows now share is 1681 lines and `3e9105c2116422debaa01c295294fc0c714288f701ee5902e6552884b64a52d8`, L3's own re-pin being the fifteenth and this leaf's the sixteenth (`16 / 66` counts unchanged). **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T23:02+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **the projected lane/catalog ranges this document was carrying were re-read against the rows they now name, and the projection records were replaced by this review.** The mechanical anchor-range projection this leaf's citation pass ran wrote : "mcp/tests/test_knowledge_review_one_sided_statements.py" → mcp/tests/evidence-lifecycle.toml:1447-1447 | : "mcp/tests/test_knowledge_review_source_endpoints.py" → mcp/tests/test-evidence-lanes.toml:111-111 into this document's Update History. This pass read each affected claim against the construct inside the range it now cites — `:110` and `:111` of `mcp/tests/test-evidence-lanes.toml` and `:1447` of `mcp/tests/evidence-lifecycle.toml`, each the exact row the claim names — so the ranges are curator-read evidence rather than unreviewed projections, and the projection bullets are superseded by this entry rather than kept beside it. No claim was re-worded, no anchor renamed and no range changed by this disposal; no verification stamp was advanced, because the candidate is uncommitted and the governed closeout's metadata refresh owns the real stamp.
 - 2026-09-21T22:55+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.
@@ -3626,7 +3652,7 @@ mutations, 0 refusals).
 | **`M26`'s node on the frozen file: the limitation validator, failing assertion at `:658`.** | "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:603-675 |
 | **`M25`'s node on the frozen file: the truncated comparison, failing assertion at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
 | **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
-| **The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:454-454; mcp/tests/test_knowledge_diff_boundaries.py:341-341 |
+| **The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:342-380; mcp/tests/test_knowledge_diff_boundaries.py:455-495 |
 | The expansion, the visible unattributed gap, and the filter that narrows the display and never the comparison. | "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at"; "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap"; "test_a_role_filter_narrows_the_display_and_never_the_comparison" | mcp/tests/test_knowledge_diff_boundaries.py:201-234; mcp/tests/test_knowledge_diff_boundaries.py:156-156; mcp/tests/test_knowledge_diff_scope.py:536-573 |
 | **The fixture and the governed contract it is registered under.** | `build_diff_fixture`; "id = \"knowledge-diff-cases\"" | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:60-60 |
 | **The two lane rows this leaf registered.** | "mcp/tests/test_knowledge_diff_scope.py"; "mcp/tests/test_knowledge_diff_boundaries.py" | mcp/tests/test-evidence-lanes.toml:115-115; mcp/tests/test-evidence-lanes.toml:221-221; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:116-116 |

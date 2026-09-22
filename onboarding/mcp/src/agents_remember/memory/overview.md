@@ -5,11 +5,12 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-21T23:45+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastUpdated | 2026-09-22T09:15:00+02:00 |
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
@@ -19,6 +20,35 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L4 The Partition Gets Its Own Module, The Observation Gets Its Own, And The Display Keeps The Seam
+
+This route gained **two modules** and the leaf they belong to (`260921-ICR-L4`, primary requirement
+ICR-R04@v1) corrects the attribution accounting: the measured change population is partitioned once
+into attributed, confirmed unregistered and undetermined, at the declared changed-path granularity.
+The per-file detail lives in the three sidecars; what belongs at this route's altitude is the split
+and the rule that keeps the two halves from disagreeing.
+
+- **The arithmetic is pure and the acquisition is elsewhere.** `memory/knowledge/diff_attribution.py`
+  owns `partition_attribution` (measured denominator, resolved-attribution, licensed absence, subject
+  link), `unavailable_attribution`, and the one licensing table with its one predicate
+  `licenses_absence` — read twice, by the partition for the confirmed-unregistered bucket and by the
+  acquisition owner for `subject_scope_complete`, so the two questions cannot disagree.
+- **The observation is shared, not owned by any reader.** `memory/knowledge/tree_observation.py`
+  owns `TreeSide`, `TreeChange`, `TreePaths` (with the two construction rules that keep paths and
+  entries one measurement and unrepresentable implying partial), the `TreeDifferenceProbe` seam and
+  `no_tree_difference_probe`.
+- **The display keeps the seam and states the deletion.** `memory/knowledge/diff_display.py`
+  (523 → 508 lines) re-exports every moved name so no importer changed, carries the partition onto
+  the expansion through one `SourceObservation`, and says in its own docstring that
+  `attributed_paths(comparison)` left and is deliberately not replaced — an unchanged mapped path is
+  context and never a change, and what replaces the name is `SourceAttribution.attributed_paths`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** | `partition_attribution`; `licenses_absence`; `_denominator_scope` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:211-227; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:363-386 |
+| **The shared observation vocabulary and its two construction rules.** | `TreeSide`; `TreeChange`; `TreePaths` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:32-42; mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64; mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108 |
+| **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** | `SourceObservation`; `build_display`; `_attribution_omissions` | mcp/src/agents_remember/memory/knowledge/diff_display.py:127-146; mcp/src/agents_remember/memory/knowledge/diff_display.py:157-200; mcp/src/agents_remember/memory/knowledge/diff_display.py:329-392 |
 
 ## Route Impact: The Durable Root Gets One Exported Definition (260921-ICR-L11)
 
@@ -1205,12 +1235,10 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:215-215 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:216-222 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:215-215 |
-| The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 | The second registered support artifact those rows land in, by its own artifact id. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The third registered support artifact those rows land in, by its own artifact id. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
@@ -1468,6 +1496,9 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **four enforced rows re-cited** (`TreeChange`/`TreePaths` to `tree_observation.py`, `TREE_DIFF_COMMAND`, `_expansion_detail`, probe delegation). Wording unchanged; no stamp advanced.
+- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`.** Both sides' history kept newest-first; L14's identity-listing section stands beside this leaf's partition section. Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **this route gained two modules and the display states the deletion (new section above).** `memory/knowledge/diff_attribution.py` owns the partition arithmetic with the one licensing predicate; `memory/knowledge/tree_observation.py` owns the shared observation vocabulary extracted whole from the display; `memory/knowledge/diff_display.py` (523 → 508) re-exports every moved name and records the deliberate non-replacement of `attributed_paths(comparison)`. Two file-level cards created, one corrected (including the exact non-replacement line and the L2 `--name-only` leftover). No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T22:50:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated for two additive identity listings.** `detection.recorded_run_ids` (over a new `_RECORDED_RUN_IDS` statement) and `evidence_records.claim_ids` (over the existing `CLAIM_IDS_OF_REPOSITORY`) let a composing reader address each record by identity and read it through the owner's own single-record reader, which is what makes "one damaged record named while its siblings are supplied" reachable under `ICR-R14@v1`. The section records that both are splits rather than second readers, that `all_claims` is unchanged, and that no write path, refusal or precondition moved. No earlier section was re-worded. **Stamp accounting:** the verification pair is retained as recorded (`d80a0513…` / `2026-09-21T19:51:20+02:00`), which is the production line this reading was against; no stamp was invented.
 - 2026-09-21T22:16+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by this leaf's own citation pass.** one reference row's citation was repaired in the same way: the per-file detail row for `mcp/src/agents_remember/memory/knowledge/durable_evidence.py` now cites its card as `onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-40` with the card's own title as its anchor, where it previously carried a bare memory path. The route's prose was not changed. No claim was re-worded, no anchor was renamed and no row was dropped; the route's `Hot Path Summary` and its described responsibility are unchanged by this leaf (the change it records lives in the cards this route governs, not in the route's own statement). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout's metadata refresh owns the real one.
@@ -1758,11 +1789,11 @@ through — is now a one-line delegation to it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** | `TreeChange` | mcp/src/agents_remember/memory/knowledge/diff_display.py:101-120 |
-| **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/diff_display.py:123-169 |
-| **The advertised command, now the delimiter-safe interface the measurement itself reads.** | `TREE_DIFF_COMMAND` | mcp/src/agents_remember/memory/knowledge/diff_display.py:75-78 |
-| **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** | `_expansion_detail` | mcp/src/agents_remember/memory/knowledge/diff_display.py:479-503 |
-| **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:158-173; mcp/src/agents_remember/application/review_source_inventory.py:193-235 |
+| **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** | `TreeChange` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64 |
+| **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108 |
+| **The advertised command, now the delimiter-safe interface the measurement itself reads.** | `TREE_DIFF_COMMAND` | mcp/src/agents_remember/memory/knowledge/diff_display.py:113-113 |
+| **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** | `_expansion_detail` | mcp/src/agents_remember/memory/knowledge/diff_display.py:452-468 |
+| **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:166-181; mcp/src/agents_remember/application/review_source_inventory.py:195-237 |
 | The cases that measure the observation on real repositories, including the name a line-oriented interface loses and the non-UTF-8 boundary. | `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:1010-1035; mcp/tests/test_knowledge_diff_boundaries.py:1118-1170 |
 
 ## Update History

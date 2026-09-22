@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:55:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ decides from `state` rather than from text.
 | The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. | `ReviewSourceContentRequest`; `before_code_tree_id`; `after_code_tree_id` | mcp/src/agents_remember/models/knowledge/review_source_content.py:174-188 |
 | **One outcome per result, enforced: a content result carries its expansion and no refusal, a refused result its refusal and no expansion.** | `ReviewSourceContentResult`; `_require_one_outcome`; `operation` | mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211 |
 | The base vocabulary this module extends rather than redeclares: the shared model base and the four length ceilings every field is bounded by. | `KnowledgeModel`; `PROSE_MAX_LENGTH`; `PATH_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `LABEL_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-27; mcp/src/agents_remember/models/knowledge/base.py:34-40 |
-| The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. | `ReviewFileStatus`; `ReviewRefusal` | mcp/src/agents_remember/models/knowledge/review.py:500-500; mcp/src/agents_remember/models/knowledge/review.py:791-803 |
+| The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. | `ReviewFileStatus`; `ReviewRefusal` | mcp/src/agents_remember/models/knowledge/review.py:513-513; mcp/src/agents_remember/models/knowledge/review.py:812-824 |
 | **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** | `read_review_source_content`; `_side_content`; `_admit`; `_currentness` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:473-492; mcp/src/agents_remember/application/review_source_content.py:293-337; mcp/src/agents_remember/application/review_source_content.py:415-451 |
 | The transport that accepts this request and serializes this result: the third review route, the selector value and the port type. | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/review.py:74-74; mcp/src/agents_remember/serving/review.py:114-131; mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/review.py:53-53; mcp/src/agents_remember/serving/review.py:173-173; mcp/src/agents_remember/serving/review.py:235-235 |
 | The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. | `ReviewSourceSide`; `ReviewSourceExpansion`; `ReviewSourceContentResult` | dashboard/src/data/review.ts:192-247 |
@@ -180,6 +180,7 @@ namespace's review and carries no identity that ranges beyond the repository the
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The reused-vocabulary row cited `models/knowledge/review.py:500-500`/`791-803`, which the six-counts and partition growth moved; it now cites the declarations at `:513-513`/`812-824`. Wording unchanged; no stamp advanced.
 - 2026-09-21T22:55+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.
 
 - 2026-09-21T22:55+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.

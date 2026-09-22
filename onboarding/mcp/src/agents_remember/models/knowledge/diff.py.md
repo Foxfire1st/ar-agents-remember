@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
+| lastUpdated | 2026-09-22T08:30:00+02:00 |
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -59,7 +60,10 @@ and the page.
    `KnowledgeDiffResult._require_the_limitation_matches_the_omission` refuses a response that omitted
    something for a reason whose limitation it did not declare, **and** one that declared a limitation
    with no omission behind it. `no_semantic_assessment_performed` is unconditional: every comparison
-   states it.
+   states it. The undetermined-attribution limit has **two** producers — the display's
+   `_attribution_omissions` and the model's own `_attribution_not_measured` — so the validator
+   learned the second one, and any later change to the limitation↔omission validator must keep both
+   directions.
 
 **The `record_transition` union is six states, and the two that matter most are
 `superseding`/`superseded`.** A schema whose revisions are immutable in place makes "the statement
@@ -69,13 +73,14 @@ as a deletion plus an unrelated addition. The pair is recognised from the author
 (`invariant_predecessor`, `family_predecessor`), **never** from a label, a display version or an
 insertion order.
 
-**Three construction-time invariants a consumer may rely on:**
+**Three construction-time invariants a consumer may rely on, plus the partition's own:**
 
 | Model | What it refuses |
 | --- | --- |
 | `KnowledgeDiffPage` | `has_more == enumeration_complete`, and a `has_more` that disagrees with the presence of a continuation — a truncated comparison cannot be presentable as complete |
 | `KnowledgeDiffCounts` | `items_returned + items_remaining != items_total`, and `displayed_total + suppressed_total > items_total` |
 | `KnowledgeDiffResult` | being both a page and a refusal or neither; and a declared limitation disagreeing with its omissions in either direction |
+| `SourceAttribution` | a repeated path, a bucket total that disagrees with its paths, an unavailable partition carrying a number, and a measured partition whose buckets do not sum — the three buckets are disjoint and exhaustive over the measured population by construction |
 
 **`KnowledgeDiffCounts` keeps the comparison total and the display total apart on purpose.**
 `items_total` is the whole comparison and `displayed_total` is this page's view of it, so a filter or a
@@ -96,7 +101,11 @@ both refuse it by name. `KnowledgeDiffCursor` carries `cursor_format =
 the position.
 
 **The closed vocabularies.** `DiffItemKind` (five members), `DiffCoverage` (five), `DiffRecordTransition`
-(six), `DiffOmissionReason` (three) and `DiffLimitation` (four) are literals rather than free text, and
+(six), `DiffOmissionReason` (**four** — `attribution_not_determined` added for the undetermined
+bucket) and `DiffLimitation` (**five** — `unknown_attribution_changed_paths` beside
+`unattributed_changed_paths`, two limits and not one: the first says no valid registered attribution
+was established for a measured change, the second says that conclusion could not be reached at all)
+are literals rather than free text, and
 `DiffOmissionReason` is closed on purpose: `assessment_beyond_this_increment` was declared and then
 **removed** in fix round 1 (`L8-F6`'s subject) because nothing in the package constructed it and no
 limitation advertised it — a reason with no producer would be dead vocabulary the validator could not
@@ -119,11 +128,13 @@ is a fact about a traversal and not about the record.
   separate members, and `SideAbsence` carries one side's own typed absence **beside** the page rather
   than replacing it — a comparison of two snapshots can legitimately find that one side holds nothing
   for the selector while the other holds records, and neither fact may be lost.
-- **A gap is a value.** `KnowledgeDiffExpansion.unattributed_changed_paths` lists the paths that changed
-  between the two trees and that **no** recorded realization claim attributes; dropping them would hide
-  exactly the changes a reviewer most needs to see. The expansion names both trees — never a branch, a
-  working tree or `HEAD` — and carries no source text, because this increment reports the *attribution*
-  of source.
+- **A gap is a value, and an undetermined gap is a different value.** `SourceAttribution` is the
+  measured change population partitioned once — attributed, confirmed unregistered, undetermined —
+  at the declared `changed_path` granularity, with each bound snapshot's inspection state beside it.
+  `KnowledgeDiffExpansion` carries that value plus its three path lists, so a path appears in exactly
+  one of them and a change nobody looked for is never listed as a change nobody registered. The
+  expansion names both trees — never a branch, a working tree or `HEAD` — and carries no source
+  text, because this increment reports the *attribution* of source.
 - **Boundary.** This module declares shapes. It performs no selection, opens no database, runs no Git
   command, and decides no refusal identity.
 - **A closed question, recorded so it is not re-opened.** The reviewer attacked the packet's *"R07's
@@ -154,23 +165,27 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*. | `DIFF_POLICY_VERSION`; `DIFF_DISPLAY_MAX_ITEMS` | mcp/src/agents_remember/models/knowledge/diff.py:98-103 |
-| **The closed vocabularies: item kinds, coverage, the six record transitions, the omission reasons and the four limitations.** | `DiffItemKind`; `DiffCoverage`; `DiffRecordTransition`; `DiffOmissionReason`; `DiffLimitation` | mcp/src/agents_remember/models/knowledge/diff.py:110-161 |
-| **The nine compared record fields in declared order, with `selection_reasons` deliberately absent.** | `KNOWLEDGE_DIFF_FIELD_NAMES` | mcp/src/agents_remember/models/knowledge/diff.py:169-179 |
-| **One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.** | `KnowledgeDiffSide` | mcp/src/agents_remember/models/knowledge/diff.py:182-205 |
-| The display-only budget and the registered-role filter that refuses a repeated role. | `KnowledgeDiffBudget`; `DisplayFilter`; `filter_is_empty` | mcp/src/agents_remember/models/knowledge/diff.py:208-242 |
-| The request: one selector, two sides, an optional filter, a budget and a position. | `KnowledgeDiffRequest` | mcp/src/agents_remember/models/knowledge/diff.py:245-253 |
-| **The binding every continuation is checked against, and the digest derived from it rather than stored beside it.** | `KnowledgeDiffBinding`; `diff_binding_digest` | mcp/src/agents_remember/models/knowledge/diff.py:256-285 |
-| **The record half versus the source half, with no field that could hold a verdict and a `missing_side` that is a reason rather than a third change statement.** | `KnowledgeDiffSourceChange` | mcp/src/agents_remember/models/knowledge/diff.py:288-315 |
-| **One union item: both payloads, its coverage, its transition, its changed fields, the path that reached it and its source comparison.** | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:318-354 |
-| The omission value, the per-side absence, and the per-side revision groups kept apart because they can differ. | `OmittedChanges`; `SideAbsence`; `SideRevisionGroups`; `side_revision_groups` | mcp/src/agents_remember/models/knowledge/diff.py:357-403 |
-| **The expansion as a value: both trees and both roots, the reproducing command, and the attributed/unattributed changed paths.** | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:406-429 |
-| **The counts that keep the comparison total and the display total apart, and refuse their own arithmetic contradiction.** | `KnowledgeDiffCounts` | mcp/src/agents_remember/models/knowledge/diff.py:432-460 |
-| The per-snapshot counts carried whole, and the statement that they are counts and not verdicts. | `KnowledgeDiffSummary` | mcp/src/agents_remember/models/knowledge/diff.py:463-472 |
-| **The truncated comparison that cannot be presentable as complete.** | `KnowledgeDiffPage` | mcp/src/agents_remember/models/knowledge/diff.py:475-498 |
-| **The result that is a page or a refusal, never both, and whose declared limitations are checked against its omissions in both directions.** | `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:501-570 |
-| **The comparison's own cursor and the two functions that encode and decode it — deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:573-621 |
-| The canonical spelling of one filter's effect, bound into a continuation. | `filter_policy` | mcp/src/agents_remember/models/knowledge/diff.py:631-634 |
+| The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*. | `DIFF_POLICY_VERSION`; `DIFF_DISPLAY_MAX_ITEMS` | mcp/src/agents_remember/models/knowledge/diff.py:105-110 |
+| **The closed vocabularies: item kinds, coverage, the six record transitions, the omission reasons and the five limitations.** | `DiffItemKind`; `DiffCoverage`; `DiffRecordTransition`; `DiffOmissionReason`; `DiffLimitation` | mcp/src/agents_remember/models/knowledge/diff.py:117-124; mcp/src/agents_remember/models/knowledge/diff.py:125-139; mcp/src/agents_remember/models/knowledge/diff.py:140-153; mcp/src/agents_remember/models/knowledge/diff.py:154-168; mcp/src/agents_remember/models/knowledge/diff.py:170-182 |
+| **The nine compared record fields in declared order, with `selection_reasons` deliberately absent.** | `KNOWLEDGE_DIFF_FIELD_NAMES` | mcp/src/agents_remember/models/knowledge/diff.py:184-194 |
+| **One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.** | `KnowledgeDiffSide` | mcp/src/agents_remember/models/knowledge/diff.py:197-220 |
+| The display-only budget and the registered-role filter that refuses a repeated role. | `KnowledgeDiffBudget`; `DisplayFilter`; `filter_is_empty` | mcp/src/agents_remember/models/knowledge/diff.py:223-231; mcp/src/agents_remember/models/knowledge/diff.py:233-258 |
+| The request: one selector, two sides, an optional filter, a budget and a position. | `KnowledgeDiffRequest` | mcp/src/agents_remember/models/knowledge/diff.py:260-269 |
+| **The binding every continuation is checked against, and the digest derived from it rather than stored beside it.** | `KnowledgeDiffBinding`; `diff_binding_digest` | mcp/src/agents_remember/models/knowledge/diff.py:271-290; mcp/src/agents_remember/models/knowledge/diff.py:292-301 |
+| **The record half versus the source half, with no field that could hold a verdict and a `missing_side` that is a reason rather than a third change statement.** | `KnowledgeDiffSourceChange` | mcp/src/agents_remember/models/knowledge/diff.py:303-331 |
+| **One union item: both payloads, its coverage, its transition, its changed fields, the path that reached it and its source comparison.** | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:333-370 |
+| The omission value, the per-side absence, and the per-side revision groups kept apart because they can differ. | `OmittedChanges`; `SideAbsence`; `SideRevisionGroups`; `side_revision_groups` | mcp/src/agents_remember/models/knowledge/diff.py:372-384; mcp/src/agents_remember/models/knowledge/diff.py:386-399; mcp/src/agents_remember/models/knowledge/diff.py:401-417 |
+| **The one granularity every attribution count is stated at, the three buckets, the four link labels and the three side states.** | `ATTRIBUTION_GRANULARITY`; `AttributionBucket`; `AttributionLink`; `AttributionSideState` | mcp/src/agents_remember/models/knowledge/diff.py:435-435; mcp/src/agents_remember/models/knowledge/diff.py:437-437; mcp/src/agents_remember/models/knowledge/diff.py:444-454; mcp/src/agents_remember/models/knowledge/diff.py:456-456 |
+| **One side's contribution and how completely it was inspected — a link count, never a path count.** | `AttributionSide` | mcp/src/agents_remember/models/knowledge/diff.py:459-471 |
+| **One measured changed path in exactly one bucket, with the links that put it there and the purported mappings carried beside them.** | `ChangedPathAttribution` | mcp/src/agents_remember/models/knowledge/diff.py:473-507 |
+| **The partition value: one population divided once, with the disjoint-plus-exhaustive validator and the three bucket accessors.** | `SourceAttribution` | mcp/src/agents_remember/models/knowledge/diff.py:509-628 |
+| **The expansion as a value: both trees and both roots, the reproducing command, the carried partition and its three path lists.** | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:630-662 |
+| **The counts that keep the comparison total and the display total apart, and refuse their own arithmetic contradiction.** | `KnowledgeDiffCounts` | mcp/src/agents_remember/models/knowledge/diff.py:664-693 |
+| The per-snapshot counts carried whole, and the statement that they are counts and not verdicts. | `KnowledgeDiffSummary` | mcp/src/agents_remember/models/knowledge/diff.py:695-705 |
+| **The truncated comparison that cannot be presentable as complete.** | `KnowledgeDiffPage` | mcp/src/agents_remember/models/knowledge/diff.py:707-731 |
+| **The result that is a page or a refusal, never both, and whose declared limitations are checked against its omissions in both directions.** | `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:733-829 |
+| **The comparison's own cursor and the two functions that encode and decode it — deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:831-845; mcp/src/agents_remember/models/knowledge/diff.py:847-864; mcp/src/agents_remember/models/knowledge/diff.py:866-887 |
+| The canonical spelling of one filter's effect, bound into a continuation. | `filter_policy` | mcp/src/agents_remember/models/knowledge/diff.py:889-892 |
 | **The node that measures the absence the request shape cannot carry: nine verdict words searched over the whole serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
 | **The node that holds the two change statements apart, and the node that measures the limitation validator.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_scope.py:603-675 |
 | **The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
@@ -187,5 +202,6 @@ caller supplied; no second repository, ledger or coordination path is read.
 
 ## Update History
 
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the vocabulary gained the attribution partition for ICR-R04@v1.** `ATTRIBUTION_GRANULARITY` (`changed_path`), `AttributionBucket` (three), `AttributionLink` (four — the two `outside` members are different facts), `AttributionSideState` (three), `AttributionSide`, `ChangedPathAttribution` and `SourceAttribution` (634 → 892 lines) with the disjoint-plus-exhaustive validator that refuses a repeated path, disagreeing totals, an unavailable partition carrying a number, and buckets that do not sum. `DiffOmissionReason` gained `attribution_not_determined` and `DiffLimitation` gained `unknown_attribution_changed_paths` — two limits, not one — with the model's own `_attribution_not_measured` as the undetermined limit's second producer beside the display's. The "gap is a value" section now states the partition and its three lists; every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `KnowledgeOperation` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:37-75 to mcp/src/agents_remember/models/knowledge/result.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 152, 349] as its live location); re-pointed `KnowledgeRefusalCode` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:36 to mcp/src/agents_remember/models/knowledge/result.py:80, the extent of the construct the claim is about (the checker named line(s) [80, 151] as its live location)
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's vocabulary and reviewed it against the leaf's frozen bytes. It states the four properties enforced at construction — the per-side selector as the **only** extension to R07's contract with **no field able to carry a second relevance rule**; the record half and the source half as separately typed collections with **no field that could hold a verdict**, which is how the packet's second non-conforming example is made unrepresentable; origin retained on every union item and `present_outside_selection` kept apart from `absent_from_snapshot`; and the limitation/omission check that runs **in both directions** — plus the six-state `record_transition` union whose `superseding`/`superseded` pair is recognised **only** from the authored predecessor edge. It records the three construction-time invariants, the comparison's own cursor decoder (deliberately not the read's), the derived binding digest that makes a candidate change invalidate a continuation by construction, and the removal of `assessment_beyond_this_increment` as a reason with no producer. **The closed `seed_override` question is recorded here with the reviewer's evidence** so a successor does not spend a round on it. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

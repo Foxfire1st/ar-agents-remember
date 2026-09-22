@@ -5,10 +5,12 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_task_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T21:45:00+02:00 |
+| lastUpdated | 2026-09-22T09:15:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` (leaf `260921-ICR-L5`'s landed cold-start work) with leaf `260921-ICR-L2`'s uncommitted review-surface work applied |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -31,9 +33,14 @@ It exists as its own module because it is a **different composition, not a degra
   an empty statement: `comparison=None`, `staleness.state="not_compared"` (there is no comparison
   binding that could be current or stale), and a knowledge pane whose `selection_state` is
   `task_context` with its reason.
-- **The source half is the whole point.** The inventory arrives already measured from the pair the
-  resolution bound — `compose_review` measures it before it decides which composition to run — and the
-  pane renders it whether it is complete, partial or unavailable: the three states the model keeps
+- **The source half is the whole point, and the attribution is measured here.** The inventory arrives
+  already measured from the pair the resolution bound — `compose_review` measures the observation
+  before it decides which composition to run — and `pair_attribution` partitions that same observation
+  from the pair's own two datasets, because a task review compares no dataset and therefore has no
+  comparison to inherit one from. A readable half's registered mappings attribute their paths even
+  when the other half is absent or unreadable, and the changes it did not attribute stay
+  *undetermined* rather than becoming confirmed unregistered. The pane renders inventory and
+  partition whether complete, partial, unavailable or undetermined: the states the models keep
   apart.
 - **Nothing here selects, ranks or concludes.** The records the caller supplied are rendered by
   `application/review_record_rendering.py`, the same renderer the subject review uses, so an
@@ -44,14 +51,22 @@ It exists as its own module because it is a **different composition, not a degra
   rather than omitted or reported as an owner's empty answer. "The review did not ask" and "the owner
   holds none" are different facts, and this is the one place the difference is decided.
 
-**A knowledge half that is present but cannot be read is *stated*, not raised — and that is the
-merged candidate's third state.** The pair's own preflight (`unreadable_half_refusal`, from
-`application/knowledge_before_half.py`) reached this composition when leaf `260921-ICR-L5`'s landed
-work met this leaf's rewrite: a damaged half is a fact about the knowledge half, and this review reads
-no dataset, so refusing would trade the whole source review away for a knowledge state it never reads
-— which is the failure this entry exists to remove. The state reaches the caller twice: as the pane's
-own reason (a third branch of `task_context_detail`) and as a declared limitation
-(`limitation:knowledge_half_unreadable`, through `unreadable_half_limitations`).
+**A knowledge half that is present but cannot be read is *stated*, not raised — and a candidate
+receipt that exists and does not validate is stated three times.** The pair's own preflight
+(`unreadable_half_refusal`, from `application/knowledge_before_half.py`) reached this composition
+when leaf `260921-ICR-L5`'s landed work met this leaf's rewrite; this leaf adds the receipt question
+(`candidate_receipt_refusal`, from the shared refusal owner in
+`application/review_candidate_resolution.py`), asked once before the pair read and once more after
+it — so a record that read as valid at the preflight and broke before the sides were bound reaches
+the pane and the declared limitations instead of stopping at the partition's side entries, and a
+second read of the same bytes is still guarded, so a receipt that moves between the two reads is a
+stated state rather than an escaping error. A damaged or unreadable half is a fact about the
+knowledge half, and this review reads no dataset for selection, so refusing would trade the whole
+source review away for a knowledge state it never selects from — which is the failure this entry
+exists to remove. The state reaches the caller in three places: as the pane's own reason (a third
+branch of `task_context_detail`, now carrying the actionable instruction too) and as declared
+limitations (`limitation:knowledge_half_unreadable`, through `unreadable_half_limitations`, plus the
+partition's own `attribution_limitations`).
 
 **Why this is the entry R02 required.** The surface used to require a subject, so a task that records
 no invariant — or whose datasets do not exist yet — lost its source review entirely, which is exactly
@@ -80,9 +95,10 @@ declares all three facts about itself in the vocabulary the rest of the surface 
 **The payload it returns is one composition of values that are all already owned elsewhere.**
 `candidate_ref` (from `review_candidate_resolution`) names the reviewed candidate from the
 resolution's own leaf id; `comparison=None` states that no knowledge operand was compared;
-`_task_context_pane` builds pane 1; `source_pane(None, inventory)` builds pane 2 with the inventory as
-its first required field and every attribution count stated as *not measured* with its own reason;
-`evidence_pane((), records, subjects)` builds pane 3 from the caller's records with **no** matrix rows,
+`_task_context_pane` builds pane 1; `source_pane(None, inventory, attribution)` builds pane 2 with
+the inventory as its first required field and the pair's own measured partition beside it — never a
+recomputed one, because this route has no comparison to inherit from; `evidence_pane((), records,
+subjects)` builds pane 3 from the caller's records with **no** matrix rows,
 because this composition reads no matrix it cannot select for; and the staleness value is
 `not_compared` with a statement that says the Source pane carries the complete inventory of the bound
 pair. `submission` is `submission(stale=False)` — nothing about a task-context review is stale, because
@@ -95,9 +111,10 @@ read they are `not_selected`, with no count and a next action, instead of appear
 collections the composition never asked about. The same call in the subject composition passes the rows
 the view returned, so one function states both compositions' positions from the same vocabulary.
 
-**The limitations list is the third place the absence is stated, and it is stated in the vocabulary's
-own words.** `limitation:no_knowledge_subject_selected` leads, followed by
-`inventory_limitations(inventory)`, so an unavailable or partial inventory is declared at the top
+**The limitations list is where every absence is stated, in the vocabulary's own words.**
+`limitation:no_knowledge_subject_selected` leads, followed by the unreadable-half declaration,
+`attribution_limitations(attribution)` and `inventory_limitations(inventory)`, so an unavailable or
+partial inventory and an undetermined attribution are declared at the top
 level of the same response rather than only inside the pane.
 
 **`_task_context_pane` renders pane 1 with two `unresolved` sides rather than two empty ones.** An
@@ -118,13 +135,16 @@ opened. The last state is deliberately not a degraded first: it is what a review
 
 ### Conventions
 
-`__all__` publishes exactly one name, `task_context_review`, because one composition is the module's
-whole surface; `unreadable_half_limitations` is public and called by that composition (the merge that
+`__all__` publishes two names, `task_context_review` and `pair_attribution`, because the pair
+measurement is the route's own and another composition must not re-derive it; `unreadable_half_limitations` is public and called by that composition (the merge that
 brought L5's unreadable-half fact into this module added it here rather than in the pair's own module,
 because the *declaration* is this response's), and `_task_context_pane` and `task_context_detail` are
 public-in-file helpers whose leading underscore marks the two the composition itself calls. Every value it returns is a shipped type from
-`models/knowledge/review.py`; the module declares no model, imports no store and opens nothing. It
-reaches the resolution, the record renderer and the source inventory through their public functions
+`models/knowledge/review.py`; the module declares no model and imports no store. It opens each
+knowledge half read-only when it is there (`_pair_side`, one dataset-identity read plus one SELECT
+per measured path per readable half) and carries an unreadable one as an unavailable side — the one
+extra read cost this route pays for its own attribution, with no latency claim made or measured.
+It reaches the resolution, the record renderer and the source inventory through their public functions
 only, and it writes nothing.
 
 ### Invariants And Boundaries
@@ -132,9 +152,12 @@ only, and it writes nothing.
 - **No subject is selected, and no comparison is faked.** `comparison` is `None`, `staleness.state` is
   `not_compared`, and the knowledge pane's `selection_state` is `task_context` with a reason — three
   spellings of one fact that `KnowledgeReviewPayload`'s validators hold in agreement.
-- **No dataset is opened and no matrix is read.** This composition never touches storage, so an absent
-  or unreadable knowledge half cannot refuse a task-context review; the refusal still exists on the
-  **subject** path, where a named subject that cannot be compared is a different fact.
+- **No dataset is opened for selection and no matrix is read.** This composition never selects,
+  so an absent or unreadable knowledge half cannot refuse a task-context review; the refusal still
+  exists on the **subject** path, where a named subject that cannot be compared is a different fact.
+  Each half is opened **read-only** when it is there for the attribution measurement alone
+  (`_pair_side`), and a half that is not becomes an unavailable side — no negative conclusion is
+  drawn from its silence.
 - **An unreadable knowledge half is stated, never raised.** `unreadable_half_refusal` is consulted,
   and its answer becomes the pane's reason and a declared limitation; this composition refuses nothing
   on the knowledge half's account, because it reads no dataset and refusing would remove the source
@@ -175,23 +198,25 @@ functions, the models that hold the three spellings of "nothing was compared", t
 composes with, the adapter that decides when to call it, and the cases that measure it through the
 real route. Three details a reader should carry: the composition is reached only when
 `ReviewSurfaceRequest.selector` is `None`; the inventory it renders is measured by
-`review_source_inventory` **before** the adapter branches, so this module never measures anything; and
+`review_source_inventory` **before** the adapter branches, while the attribution it renders is
+measured here from the pair's own halves (`pair_attribution`); and
 an absent dataset half changes the *reason* it states, never its ability to answer.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. | `not_compared`; `task_context` | mcp/src/agents_remember/application/review_task_context.py:1-22 |
-| The module's one published name. | `__all__` | mcp/src/agents_remember/application/review_task_context.py:61-61 |
-| **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, and the declaration it earns is this response's own.** | `unreadable_half_refusal`; `unreadable_half_limitations` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_task_context.py:121-128 |
-| **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the pair's unreadable-half answer read and stated, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the three declared limitations.** | `task_context_review`; `with_selection_channels`; `candidate_ref`; `require_current_candidate_identity`; `unreadable_half_refusal`; `unreadable_half_limitations`; `source_pane`; `evidence_pane`; `submission` | mcp/src/agents_remember/application/review_task_context.py:64-118; mcp/src/agents_remember/application/review_candidate_resolution.py:202-218; mcp/src/agents_remember/application/review_candidate_resolution.py:221-250; mcp/src/agents_remember/application/review_source_inventory.py:540-580; mcp/src/agents_remember/application/review_record_rendering.py:152-176; mcp/src/agents_remember/application/review_record_rendering.py:122-149 |
+| The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. | `not_compared`; `task_context` | mcp/src/agents_remember/application/review_task_context.py:1-23 |
+| The module's two published names: the composition and its pair measurement. | `__all__` | mcp/src/agents_remember/application/review_task_context.py:81-81 |
+| **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** | `unreadable_half_refusal`; `unreadable_half_limitations`; `candidate_receipt_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_task_context.py:160-167; mcp/src/agents_remember/application/review_candidate_resolution.py:358-372 |
+| **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** | `task_context_review`; `with_selection_channels`; `candidate_ref`; `require_current_candidate_identity`; `unreadable_half_refusal`; `unreadable_half_limitations`; `source_pane`; `evidence_pane`; `submission`; `attribution_limitations` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:160-167; mcp/src/agents_remember/application/review_candidate_resolution.py:205-221; mcp/src/agents_remember/application/review_candidate_resolution.py:224-254; mcp/src/agents_remember/application/review_source_inventory.py:556-619; mcp/src/agents_remember/application/review_record_rendering.py:152-176; mcp/src/agents_remember/application/review_record_rendering.py:122-150; mcp/src/agents_remember/application/review_source_inventory.py:741-763 |
 | **The selection-channel call that makes "this review did not ask" a stated fact rather than an empty collection, and the function that states both compositions' positions from one vocabulary.** | `with_selection_channels`; `_not_selected` | mcp/src/agents_remember/application/review_evidence_records.py:217-238; mcp/src/agents_remember/application/review_evidence_records.py:704-717 |
-| **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** | `_task_context_pane`; `ReviewSideContent`; `ReviewKnowledgePane` | mcp/src/agents_remember/application/review_task_context.py:131-154; mcp/src/agents_remember/models/knowledge/review.py:136-163; mcp/src/agents_remember/models/knowledge/review.py:447-503 |
-| **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability.** | `task_context_detail`; `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_task_context.py:157-188; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:279-297 |
-| **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** | `_require_the_identity_and_staleness_to_agree`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:726-789; mcp/src/agents_remember/models/knowledge/review.py:447-503; mcp/src/agents_remember/models/knowledge/review.py:681-708 |
-| **The branch that reaches this composition: the inventory measured first and unconditionally, then the selector branch.** | `compose_review`; `review_inventory` | mcp/src/agents_remember/application/knowledge_review.py:371-453; mcp/src/agents_remember/application/review_source_inventory.py:428-454 |
-| The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. | `review_request_from_query` | mcp/src/agents_remember/serving/review.py:83-122 |
+| **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** | `pair_attribution`; `_pair_without_namespace`; `_side_from_own_bytes`; `_pair_side` | mcp/src/agents_remember/application/review_task_context.py:231-289; mcp/src/agents_remember/application/review_task_context.py:291-320; mcp/src/agents_remember/application/review_task_context.py:322-349; mcp/src/agents_remember/application/review_task_context.py:351-376 |
+| **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** | `_task_context_pane`; `ReviewSideContent`; `ReviewKnowledgePane` | mcp/src/agents_remember/application/review_task_context.py:170-193; mcp/src/agents_remember/models/knowledge/review.py:139-166; mcp/src/agents_remember/models/knowledge/review.py:461-516 |
+| **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** | `task_context_detail`; `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_task_context.py:196-228; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:282-300 |
+| **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** | `_require_the_identity_and_staleness_to_agree`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:793-810; mcp/src/agents_remember/models/knowledge/review.py:461-516; mcp/src/agents_remember/models/knowledge/review.py:748-810; mcp/src/agents_remember/models/knowledge/review.py:703-730 |
+| **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** | `compose_review`; `review_inventory` | mcp/src/agents_remember/application/knowledge_review.py:372-458; mcp/src/agents_remember/application/review_source_inventory.py:430-471 |
+| The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. | `review_request_from_query` | mcp/src/agents_remember/serving/review.py:192-233 |
 | The browser entry that offers the task-context target for every live leaf. | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-185 |
-| **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `build_endpoint_fixture`; `task_request` | mcp/tests/test_knowledge_review_source_endpoints.py:733-810; mcp/tests/test_knowledge_review_source_endpoints.py:198-231; mcp/tests/test_knowledge_review_source_endpoints.py:132-146 |
+| **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `build_endpoint_fixture`; `task_request` | mcp/tests/test_knowledge_review_source_endpoints.py:750-826; mcp/tests/test_knowledge_review_source_endpoints.py:215-248; mcp/tests/test_knowledge_review_source_endpoints.py:149-167 |
 | **The case that measures the selection channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `not_selected` while the candidate-owned collections stay supplied.** | `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 | The dashboard case that measures the same entry from the browser side: the server offers no subject and the target is still `review: {}`. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195 |
 
@@ -206,6 +231,9 @@ namespace the request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **validators row re-cited** (`_require_the_identity_and_staleness_to_agree` at `:793-810` beside the payload value). Wording unchanged; no stamp advanced.
+- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`.** Both sides' history kept newest-first; L14's selection-channel call and rows beside this leaf's pair-attribution measurement, with every range re-derived against the merged 376-line module (`task_context_review` `84-158`, the four pair helpers `231-376`; `models/knowledge/review.py` at its merged 873-line extents). Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the task-context route measures its own pair attribution (184 → 372 lines).** `task_context_review` takes the already-made `observed`, asks the receipt question before and after the pair read, and composes `source_pane(None, inventory, attribution)` with the partition beside the inventory; `pair_attribution` opens each half read-only when it is there and carries an unreadable one as an unavailable side — with the F-V3-1 correction that only the side that cannot be bound is unavailable (the before half binds from the namespace its own bytes disclose, the candidate half carries the refusal); the unreadable state reaches the pane, the top-level limitations and the partition's side entries, and the pane detail carries the next action. New `pair_attribution`, `_pair_without_namespace`, `_side_from_own_bytes`, `_pair_side`; `__all__` is two names. Every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 - 2026-09-21T21:45:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **this composition now states the availability of the collections it never read, so the card's "`authored_effects` and `evidence_links` are empty here" needed the reason beside it.** `ICR-R14@v1` added one call — `with_selection_channels(records, (), selected=False)` — placed **before** the subject states are projected, and it reports the two matrix-owned collections `not_selected` with no count and a next action: a review that read no matrix did not ask, and "did not ask" is a different fact from an owner answering that it holds none. The Purpose gained the paragraph that states the distinction, the Logic gained the call and where it sits relative to the payload, and the invariant that used to leave the emptiness unexplained now says *why* it is empty and notes that the candidate-owned collections (claims included) arrive independently of any selection — with their links simply unselected. **Citation accounting:** every range into this 188-line file was re-derived at its own declaration extent (`__all__` `61`, `task_context_review` `64-118`, `unreadable_half_limitations` `121-128`, `_task_context_pane` `131-154`, `task_context_detail` `157-188`), and the `models/knowledge/review.py` references moved with that file (836→851): `ReviewSideContent` `128-153`→`136-163`, `ReviewKnowledgePane` `439-488`→`447-503`, `ReviewStaleness` `666-691`→`681-708`, `KnowledgeReviewPayload` `711-772`→`726-789`; the R01 enclosure case moved to `733-810` and `build_endpoint_fixture` to `198-231`; and the two rendering rows were repointed to their constructs' new extents. One row was **added** for the selection-channel call and the `_not_selected` builder it reaches, and one for the case that measures it through the task-context entry; nothing was dropped. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line's current tip and this leaf's base — replacing the previous pair rather than leaving a stamp no reading in this pass measured; the candidate is uncommitted, so no commit contains the content a stamp would claim to have verified, and the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
 - 2026-09-21T16:10+02:00 — orchestrating session, pre-closeout metadata repair on `ar/260921-icr-l2`: the governed closeout refused the memory leg because this card for a module that exists only in this leaf's uncommitted candidate carried no verification stamp in its header metadata (`external-memory closeout requires onboarding verification metadata before memory commit`). The two fields were added naming the **production line this card was read against** — `c755cec6…`, the master line after this leaf's resolved syncs brought in the ICR-L5 and ICR-L19 landings, at that closeout's recorded time `2026-09-21T15:29:12+02:00` — and the candidate row was left as it was. This states what the reading was against, not that the module exists in that commit; the closeout's own metadata refresh re-stamps the card against the code commit this transaction creates. No range, claim or anchor was changed by this repair.
 - 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **the sync brought leaf `260921-ICR-L5`'s unreadable-half fact into this composition, and the card now records it.** The code-side resolution kept L5's refusal *inside* this module rather than beside it: `unreadable_half_refusal` is imported from `application/knowledge_before_half.py`, `task_context_review` reads it from the resolved pair's two databases, threads it into the pane and states it as `limitation:knowledge_half_unreadable` through the new `unreadable_half_limitations`; and `task_context_detail` gained a **third ordered state** (an unreadable half, then an absent half, then a pair simply not selected over). The card's Purpose, Logic, Conventions and Invariants were extended with that state — the claim that this composition has two states was **corrected, not merged**, because a second wording would have described a module that no longer exists — and every range was re-derived against the merged 184-line file (`__all__` `58`, the composition `61-114`, `unreadable_half_limitations` `117-124`, the pane `127-150`, the detail `153-184`). The module-statement row and the preflight row were added for the same reason. No verification stamp is carried by this card and none was invented: every construct it cites exists only in this candidate and the governed closeout owns the stamp.

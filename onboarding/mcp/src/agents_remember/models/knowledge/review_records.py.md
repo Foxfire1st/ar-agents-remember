@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T21:25:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ and in the cases that measure both the vocabulary's refusals and the wire payloa
 | **The channel value: the state, the owner that answered, the count that exists exactly when an answer does, the named unreadable identities and the next action.** | `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review_records.py:68-89 |
 | **The validator that makes "a count nobody measured" unrepresentable — four refusals plus the required next action on every non-answer.** | `_require_an_answer_to_carry_its_count` | mcp/src/agents_remember/models/knowledge/review_records.py:91-123 |
 | The shared bounds the model takes rather than restating. | `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
-| **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:39-43; mcp/src/agents_remember/models/knowledge/review.py:60-68; mcp/src/agents_remember/models/knowledge/review.py:643-666 |
+| **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:41-43; mcp/src/agents_remember/models/knowledge/review.py:64-68; mcp/src/agents_remember/models/knowledge/review.py:665-701 |
 | **The composition that resolves every channel through the owner of each collection this vocabulary names.** | `_COLLECTION_OWNERS`; `_channel`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:720-731 |
 | **The cases that measure the vocabulary's own refusals and its presence in the served wire schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:761-787; mcp/tests/test_knowledge_review_evidence_channels.py:789-796 |
 
@@ -148,4 +148,5 @@ no boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The re-export row cited `models/knowledge/review.py:643-666` for the pane, which the six-counts and partition growth moved; it now cites `:665-701`. Wording unchanged; no stamp advanced.
 - 2026-09-21T21:25:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced by **extracting the availability vocabulary out of `models/knowledge/review.py`**. The card records what the vocabulary is rather than only where it moved: the six collection names taken by record class rather than by pane (with the reason — availability is a fact about the owner, and one fact has to serve whichever pane renders the records); the five states and what each one distinguishes; and the validator that makes the defect's shape unrepresentable, since a state that measured no count may not carry one and every non-answer must say what would produce an answer. It also records the extraction's provenance: `models/knowledge/review.py` had crossed the 900-line soft rail (940 → 851), and the three names are **re-exported** from it so no importer had to learn a new home. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line `ar/260921_complete-code-and-intent-review` at its current tip and this leaf's own base — because every construct cited here exists only in this leaf's uncommitted candidate and no commit contains the content a stamp would otherwise claim to have verified. That is a statement of what the reading was against, not a claim that these constructs exist in that commit; the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates, and that remains the real stamp.
