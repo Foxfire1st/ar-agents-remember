@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -196,7 +196,7 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 | **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
 | The entry bar's own classification of the same codes, printed beside a button that never disappears. | `ReviewEntryState`; `ReviewSubjectRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:72-83; dashboard/src/panels/detail-panel/changeSetBar.tsx:137-178 |
 | **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** | `setCounters`; `leafChangeset` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-11; dashboard/src/panels/detail-panel/changeSetBar.tsx:37-55 |
-| The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-57 |
+| The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128 |
 | **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** | "resolves a 404 typed refusal through the review client, refusal intact"; "drops the same body through getJson: the shared client's semantics are unchanged"; "carries a transport-level refusal body's reason, offending input and next action"; "offers an explicit retry for a network failure, and the retry renders the answer" | dashboard/src/data/reviewTransport.test.ts:156-186; dashboard/src/data/reviewTransport.test.ts:217-236; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376 |
 
 ## Cross-Repo References

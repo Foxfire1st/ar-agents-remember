@@ -5,10 +5,11 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2`             |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastUpdated            | 2026-09-22T11:00:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`             |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -18,8 +19,9 @@
 ## Purpose
 
 `ChangeSetViewer` is the **Change-Set Viewer screen**: the up-to-3-column takeover that shows what
-a task (`scope` = one active enclosure), a series master (`master` = the NET diff since the series base),
-or — L4a — a single `leaf` (in `committed` or `working` `mode`) changed. It is opened
+a task (`scope` = one active enclosure), a series master (`master` = the NET diff between its
+declared endpoints, bound to the generation the list published), or — L4a — a single `leaf`
+(in `committed` or `working` `mode`) changed. It is opened
 by a `DetailPanel` change-set button and hosted by `CockpitShell` as a full-bleed takeover (its `onBack`
 clears it, restoring the rails).
 
@@ -33,9 +35,9 @@ refreshes together and schedules the next cycle only after both settle. The
 viewer renders a loading placeholder until data arrives and retains the
 explicit error state, while stale refresh results are ignored after teardown.
 
-Props are `{ repo, scope?, master?, leaf?, mode?, onBack }` (`ChangeSetTarget` + `onBack`). Selection
+Props are `{ repo, scope?, master?, leaf?, mode?, generation?, onBack }` (`ChangeSetTarget` + `onBack`). Selection
 precedence is **`leaf > master > scope`**: on mount / target change an effect fetches `leaf ?
-leafChangeset(repo, master, leaf, mode) : master ? masterChangeset(repo, master) : taskChangeset(repo,
+leafChangeset(repo, master, leaf, mode) : master ? masterChangeset(repo, master, { includeLeaves: false, pins }) : taskChangeset(repo,
 scope)` into `data` (a `live` flag drops a stale resolve; a `FilesApiError` is shown as `code
 (httpStatus)`), and resets the selection/diff/partner state. `isLeaf = Boolean(leaf)`; `isSeries =
 Boolean(master) && !leaf` (a `leaf` carries `master` as its qualifier, so series mode is master-without-leaf).
@@ -58,7 +60,7 @@ the panel, so the selected file looked unselected. For a code row
 with `hasSidecar` (or an onboarding row with a derivable partner) a small split affordance opens it
 **with** its partner in column 3. `open(kind, file, withPartner?)` sets `active` and loads the diff via
 `loadDiff` — `leaf ? leafFileDiff(repo, master, leaf, kind, path, mode) : master ? masterFileDiff(repo,
-master, kind, path) : fileDiff(repo, scope, kind, path)` — so **every mode is per-file inspectable**
+master, kind, path, generation) : fileDiff(repo, scope, kind, path)` — so **every mode is per-file inspectable**
 (leaf committed/working, master net, and an enclosure scope all open a real diff); `withPartner` also loads
 `partnerOf(...)` into `partner` (column 3). `partnerOf` maps a code
 path to `onboarding/{path}.md` when `hasSidecar`, and a memory path back to its code partner via
@@ -73,6 +75,19 @@ Panel. Column 3 mounts a second `ChangeSetPane`
 
 
 **`ChangeSetTarget.review` became a target that may carry no subject.** Its type is now `{ selectorKind?: ReviewSelectorKind; selectorId?: string }`, and the comment above it records the two facts a reader needs: the field's **presence** is what marks a target as a review (the cockpit's takeover dispatch is what reads it, and the change-set viewer is never mounted for one, so no change-set request is made from a review), and an **empty object** is the task-context entry — the review opened from the task alone, which lists the complete source inventory and is what a task with no recorded invariant still has. Nothing else in the module changed: the viewer reads the field only to decide whether it is a review target at all.
+
+**260921-ICR-L13 bound the series view to its listed generation.** `ChangeSetTarget` gained an
+optional `generation?: MasterNetPins` — the exact recorded endpoints a listing published; empty /
+absent means the declared integrated result. Three constructs carry it: `seriesListMeta` reads
+the series list response back out when it names its own `generation` (a task/leaf payload never
+carries one, so the check is the discriminant, not the entry target);
+`boundSeriesGeneration` prefers the list response's generation (it is newer than the entry's)
+and falls back to the entry's pins, and every file expansion below carries the bound
+generation, so an opened entry stays bound after the branch advances. `SeriesGenerationTag`
+renders the bound net as a header caption — short digest + currentness + the one scope this
+view ever serves (`gen {digest8} · {currentness} · integrated`), only when the list response
+names its generation, so older payloads read unchanged. The viewer implements no catalogue
+or drill-down: that is R24's obligation on top of what this view exposes.
 
 ### Conventions
 
@@ -96,7 +111,7 @@ import on that account.
 
 Read-only over the L3/L4a API; owns its own component state (no store mutation). Every target opens real
 per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the NET series range
-(`master_base → tip`) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
+(`master_base → selected result`, pinned to the listed generation when one is bound) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
 `working` (HEAD→worktree uncommitted) range via `leafFileDiff` — a `leaf` always carries its `master`
 qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
 mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
@@ -105,20 +120,20 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:303-304; dashboard/src/panels/changeset/ChangeSetViewer.tsx:330-330; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-175 |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:170-486; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322; dashboard/src/panels/changeset/ChangeSetViewer.tsx:300-300; dashboard/src/panels/changeset/ChangeSetViewer.tsx:301-301; dashboard/src/panels/changeset/ChangeSetViewer.tsx:304-304; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-174; dashboard/src/panels/changeset/ChangeSetViewer.tsx:172-172 |
-| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:190-190; dashboard/src/panels/changeset/ChangeSetViewer.tsx:191-191; dashboard/src/panels/changeset/ChangeSetViewer.tsx:453-453; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450; dashboard/src/panels/changeset/ChangeSetViewer.tsx:458-458; dashboard/src/panels/changeset/ChangeSetViewer.tsx:187-187; dashboard/src/panels/changeset/ChangeSetViewer.tsx:188-188; dashboard/src/panels/changeset/ChangeSetViewer.tsx:455-455 |
-| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:157-162 |
-| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:172-172; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-175; dashboard/src/panels/changeset/ChangeSetViewer.tsx:191-191 |
-| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:401-401; dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-416; dashboard/src/panels/changeset/ChangeSetViewer.tsx:412-412; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-398; dashboard/src/panels/changeset/ChangeSetViewer.tsx:413-413; dashboard/src/panels/changeset/ChangeSetViewer.tsx:409-409 |
+| The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:355-355; dashboard/src/panels/changeset/ChangeSetViewer.tsx:356-356; dashboard/src/panels/changeset/ChangeSetViewer.tsx:382-382; dashboard/src/panels/changeset/ChangeSetViewer.tsx:184-184; dashboard/src/panels/changeset/ChangeSetViewer.tsx:185-185 |
+| The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption. | "boundSeriesGeneration"; "seriesListMeta"; "SeriesGenerationTag"; "changeset-generation" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:256-256; dashboard/src/panels/changeset/ChangeSetViewer.tsx:245-245; dashboard/src/panels/changeset/ChangeSetViewer.tsx:268-268; dashboard/src/panels/changeset/ChangeSetViewer.tsx:275-275 |
+| The `open` handler invokes `loadDiff`, whose branch chooses the master (generation-bound), leaf, or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:505-505; dashboard/src/panels/changeset/ChangeSetViewer.tsx:201-201; dashboard/src/panels/changeset/ChangeSetViewer.tsx:202-202; dashboard/src/panels/changeset/ChangeSetViewer.tsx:508-508; dashboard/src/panels/changeset/ChangeSetViewer.tsx:513-513 |
+| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:166-171 |
+| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-182; dashboard/src/panels/changeset/ChangeSetViewer.tsx:184-184; dashboard/src/panels/changeset/ChangeSetViewer.tsx:185-185; dashboard/src/panels/changeset/ChangeSetViewer.tsx:202-202 |
+| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:453-453; dashboard/src/panels/changeset/ChangeSetViewer.tsx:468-468; dashboard/src/panels/changeset/ChangeSetViewer.tsx:464-464 |
 | The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:586-586 |
-| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:400-400; dashboard/src/panels/changeset/ChangeSetViewer.tsx:407-407; dashboard/src/panels/changeset/ChangeSetViewer.tsx:397-397; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-185 |
-| The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
+| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:452-452; dashboard/src/panels/changeset/ChangeSetViewer.tsx:459-459 |
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-70; dashboard/src/panels/detail-panel/changeSetBar.tsx:208-283 |
+| The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode"; "binds master file expansions to the generation the net listing published" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:280-313 |
 
 ## Update History
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the series view is bound to its listed generation (468 → 542 lines).** The section above records `generation` on the target, `seriesListMeta`/`boundSeriesGeneration`/`SeriesGenerationTag` with the digest/currentness/scope caption, pins threaded through the list and expansion requests, and the new `binds master file expansions…` case; the Purpose and master-mode invariant now say generation-bound instead of "since the series base". **Citation accounting:** the duplicated mount-effect row is merged into one (it was the same claim twice with different stale ranges), and every row was re-derived against this candidate — the import block, `generationTag`, pin-threading and the three new helpers moved every construct below `:16`, so pre-existing ranges shifted (e.g. `partnerCodePath` `:157-162` → `:166-171`, `loadDiff`/`open` `:453-458` → `:505-513`, panes `:398-416` → `:452-468`). Each reopened claim is retained with its range regenerated onto the extent that holds its anchor's declaration. The 2026-09-21 mechanical projection bullet below that recorded the superseded ranges (`:172`/`:174`/`:175`/`:191`) is retired by this reading — those lines no longer hold their anchors, and this entry is the curator-read evidence that replaces it. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" repointed to dashboard/src/panels/changeset/ChangeSetViewer.tsx:172-172; dashboard/src/panels/changeset/ChangeSetViewer.tsx:174-174; dashboard/src/panels/changeset/ChangeSetViewer.tsx:175-175; dashboard/src/panels/changeset/ChangeSetViewer.tsx:191-191. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the review target's selector became optional, and an empty target became a meaning.** The type and its comment now record that presence marks a review and that `{}` is the task context; the viewer's own behaviour is unchanged because it only tests presence. One citation row was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 
 - 2026-09-18T16:13:35+00:00: Generated citation repair: "<ChangeSetViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:584-584. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.

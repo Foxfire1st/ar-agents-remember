@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
+| lastUpdated | 2026-09-22T11:00:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,11 +32,16 @@ hook returns), `useReviewSubject` (the read) and `ReviewEntryState` (its renderi
 
 ### Logic
 
-**`ChangeSetButton` is unchanged and still performs its own change-set read.** Its effect calls
-`leafChangeset`/`masterChangeset`/`taskChangeset` and stores the counters, and its rejection handler is
+**`ChangeSetButton` performs its own change-set read and now threads the published generation.** Its effect calls
+`leafChangeset`/`masterChangeset`/`taskChangeset` and stores the counters; for a master net it
+also stores the response's `generation` as `MasterNetPins` (four endpoints, or `null` when the
+payload names none), and the button opens the viewer with `{ ...target, generation }` so the
+view — and each file expansion inside it — reads the listed generation rather than
+re-resolving the live tip. Its rejection handler is still
 `() => live && setCounters(null)` — so a failed counter read leaves the button without a total **and
 without a reason**. That is the change-set client's behaviour, deliberately untouched by ICR-R16 (see
-the routed-debt note below).
+the routed-debt note below); this leaf's generation threading changes what a successful master
+read carries, not what a failed one reports.
 
 **`DocChangeSetBar` branches on `kind` and gates the live block on one predicate.** A master gets the
 series button; a leaf gets `committed` unconditionally (its landed delta) plus, **when the leaf's
@@ -132,15 +138,15 @@ row cites.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The change-set button and its own counter read, whose rejection handler drops the reason. | `ChangeSetButton`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:28-70 |
-| **The routed debt this card records and does not fix: the counter read's rejection handler, on a different route and client.** | `leafChangeset`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-11; dashboard/src/panels/detail-panel/changeSetBar.tsx:37-55 |
-| The change-set client and route that debt belongs to, which this leaf leaves untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-57 |
-| **What the entry read answered, as the four values the bar needs rather than one collapsed subject.** | `ReviewSubjectRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:72-83 |
-| **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — subject, known-empty, typed refusal, transport failure or unadmitted state.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:85-135 |
-| **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a successful read.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:137-178 |
-| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:180-260 |
-| **The reviewer entry's target, built from the recorded subject when the server offered one and as the task-context target when it did not — never a missing control.** | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:28-70; dashboard/src/panels/detail-panel/changeSetBar.tsx:240-255 |
-| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:262-277 |
+| The change-set button, its own counter read, and the generation it threads from a successful master read into the viewer target. | `ChangeSetButton`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-93 |
+| **The routed debt this card records and does not fix: the counter read's rejection handler, on a different route and client.** | `leafChangeset`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-12; dashboard/src/panels/detail-panel/changeSetBar.tsx:45-78 |
+| The change-set client and route that debt belongs to, which this leaf leaves untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:78-79 |
+| **What the entry read answered, as the four values the bar needs rather than one collapsed subject.** | `ReviewSubjectRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:97-106 |
+| **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — subject, known-empty, typed refusal, transport failure or unadmitted state.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:15-22; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-158 |
+| **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a successful read.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:163-201; dashboard/src/panels/detail-panel/changeSetBar.tsx:168-191; dashboard/src/panels/detail-panel/changeSetBar.tsx:169-192 |
+| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:208-283 |
+| **The reviewer entry's target, built from the recorded subject when the server offered one and as the task-context target when it did not — never a missing control.** | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-93; dashboard/src/panels/detail-panel/changeSetBar.tsx:270-278 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:288-301 |
 | The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:22-31; dashboard/src/data/review.ts:392-399 |
 | The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8 |
 | **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:112-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-175; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-206 |
@@ -155,6 +161,7 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the button threads the published generation into the viewer target (280 → 303 lines).** `ChangeSetButton` stores the master read's `generation` as `MasterNetPins` and opens `{ ...target, generation }`, so the view and its expansions read the listed generation; the rejection handler and the routed R12/R24 debt are unchanged. **Citation accounting:** every row into this file was re-derived against the moved candidate (the generation state + handlers moved everything below `:44`: `ChangeSetButton` `:28-70` → `:29-93`, `ReviewSubjectRead` `:72-83` → `:97-106`, `useReviewSubject` `:85-135` → `:116-158`, `ReviewEntryState` `:137-178` → `:163-201`, `DocChangeSetBar` `:180-260` → `:208-283`, `leafIsLive` `:262-277` → `:288-301`), and the two `changeset.ts` rows followed the client move (`taskChangeset` `:56-57` → `:78-79`). The entry-read, review-client and refusal-case rows are kept as recorded (those files are untouched by this leaf). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the entry read's answer is now carried and printed, and this card's earlier account of "no subject means no button" is corrected rather than carried.** `useReviewSubject` returns a `ReviewSubjectRead` — `loading`, the first `entry`, a known-empty `empty` flag, or a `problem` — instead of `ReviewEntry | undefined`, so a refused read and an empty list are no longer indistinguishable and neither is discarded; the read classifies through the review client's shared decode (`reviewProblemFromRefusal`/`reviewProblemFromCause`/`unreadableAnswer`), because the route publishes its refusal in the body of a non-2xx response and `getJson` would have thrown and lost it. The new `ReviewEntryState` prints that answer beside the entry — refused with the owner's code, reason, offending input and next action; known-empty for a pair that records no subject; `network` for a transport failure with nothing invented — and returns `null` for a successful read. The reviewer entry remains gated on **liveness alone**, which is unchanged from R02, and that is why the card's earlier sentence that "a refusal, an empty list, a rejected promise … leave the subject `undefined`, so no subject means no button" has been **removed**: it described the R02 hook, not this one. Line count 186 → 280. It also records, as **routed rather than fixed**, the live-leaf counter's swallowed refusal detail (`ChangeSetButton`'s `() => live && setCounters(null)` over `data/changeset.ts` → `getJson` → `/api/changeset/task`) to R12/R24 — a different route, client and owner. Every row of the reference table was re-derived against this candidate. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync; the `reviewedWorkingCandidate` row states what was actually read, and nothing in this leaf is committed, so closeout owns the stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the entry stopped depending on the subject.** The button is now gated on liveness alone; the server's recorded subject travels with the target as a refinement, and its absence (an empty list or an unreadable refusal) produces the task-context target `review: {}` instead of no button at all. That is the non-conforming example the packet names — "an empty subject list makes the source review disappear" — closed at the entry. The hook, its no-fetch-for-a-dead-leaf rule and its "a refusal is a normal answer" idiom are unchanged; what changed is what an empty answer *means*, and both comments now say it. One citation row was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 

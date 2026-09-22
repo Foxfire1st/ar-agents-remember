@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ the exception is a type rather than a message — the caller branches on `NOT_RE
 | The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf. | `_leaf` | mcp/src/agents_remember/serving/changeset_endpoints.py:142-145 |
 | **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** | `_unresolvable`; `run_git` | mcp/src/agents_remember/serving/changeset_endpoints.py:148-154; mcp/src/agents_remember/kernel/git_command.py:150-216 |
 | The contract whose recorded cells this module reads, and the cells themselves. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:430-472 |
-| **The caller that owns the degradation policy: the code half keeps the refusal while only an unrecorded **memory** half may empty, and both sides resolve independently.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:345-389; mcp/src/agents_remember/serving/changeset.py:456-489 |
+| **The caller that owns the degradation policy: the code half keeps the refusal while only an unrecorded **memory** half may empty, and both sides resolve independently.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:345-389; mcp/src/agents_remember/serving/changeset.py:456-489; mcp/src/agents_remember/serving/changeset.py:577-577; mcp/src/agents_remember/serving/changeset.py:666-666 |
 | **The case module that measures the bound range, the immovable endpoint, the refusal, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:609-659; mcp/tests/test_knowledge_review_source_endpoints.py:662-684; mcp/tests/test_knowledge_review_source_endpoints.py:687-730 |
 
 ## Cross-Repo References

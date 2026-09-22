@@ -5,11 +5,12 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastUpdated | 2026-09-22T11:00:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -667,9 +668,26 @@ and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
 | **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:158-171 |
 | **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98 |
 | **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:348-364; dashboard/src/data/review.ts:392-399; dashboard/src/data/review.ts:410-427; dashboard/src/data/review.ts:348-348 |
-| **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:100-108 |
+| **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:135-144 |
+
+## 260921-ICR-L13 The Master Client Is Generation-Bound
+
+This route's change-set client is now generation-bound for master nets. `data/changeset.ts`
+grew 120 → **155 lines**: `MasterNetPins` (four optional wire params) freezes a request to the
+listed generation with unset pins omitted, `MasterNetGeneration` (four commits + digest) is
+what the list response publishes beside `currentness` and `scope: "integrated"`, leaf rows
+carry optional `state`, and `masterChangeset`/`masterFileDiff` thread the pins. The leaf and
+task helpers are unchanged. The swallowed-refusal-debt sentence above still holds — this leaf
+changes what a successful master read carries, not what a failed one reports — and stays
+**routed to R12/R24**. `data/changeset.ts`'s card carries the body update and citation
+re-derivation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:112-112 |
 
 ## Update History
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated — the master client is generation-bound (new section above).** No review-client fact changed; the R16 routed-debt sentence stands. The one row into the moved client is re-derived (`leafChangeset` `:100-108` → `:135-144`). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The route gained the review reads' one transport owner, `data/reviewTransport.ts`, and `data/review.ts` became a delegator plus re-exporter (414 → 428 lines). The section above records the defect the owner closes (the typed refusal in the body of a non-2xx response was unreachable through `getJson`), the rule that makes the decode correct (a body carrying this route's `state` IS the answer, whatever the status), the closed failure vocabulary with `unreadable` (a response this route did not produce) and `network` (no response at all) as the two honest fallbacks rather than guessed states, and the boundary that unrelated clients are untouched. It also records, as **routed rather than fixed**, the change-set client's own swallowed refusal detail to R12/R24. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and citation re-derivation of the L2 record above forced by this leaf's change to its cited file.** Added the `260921-ICR-L3` section: `data/review.ts` gained the source-expansion wire types (`ReviewSourceSideState`, `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`) and `reviewSourceContent(...)`, and grew 320 → **414 lines**. The section records the one property a reader of this route has to carry away, because it is the exception to the route's own error idiom: `reviewSourceContent` is the only function in this client that does **not** go through `getJson`, because on the source-content route a typed refusal is a *normal* answer carrying a 400/404 status and `getJson`'s throw-on-non-OK behaviour would turn it into a transport error — so it decodes the body whatever the status was, returns it typed when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body that is not this route's answer. `intentReview` and `intentReviewEntries` are unchanged. **Citation accounting:** every row of the `260921-ICR-L2` section above cites `data/review.ts` by line and this leaf moved them all, so each was re-derived against this candidate — the inventory types `143-154`/`155-167`/`168-178` → `144-154`/`156-161`/`169-179`, `ComparisonIdentity`/`ReviewStaleness` `35-48`/`220-225` → `36-49`/`277-282`, `ReviewPayload`/`ReviewKnowledgePane` `235-247`/`98-114` → `292-304`/`99-113`, and `intentReview` `271-290` → `323-342` — as were the L22 section's nine rows, whose new values are `1-9`, `13-14`, `16-21`, `23-27`, `29-49`, `51-63`, `65-85`, `87-97`, `99-113`/`181-190`/`267-275`, `114-126`, `128-135`, `248-253`/`255-265`, `277-282`/`284-290`, `292-304`/`306-313`/`315-321`, `323-342`, `344-353`, `355-363`, `365-377`, and the consumed-client row now names `ReviewSurface.tsx:482-549` and `:214-260`. The five rows of the L3 section above are the ones this leaf added. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review client mirrors the new wire shape — the inventory types, an optional comparison identity, the `not_compared` and selection states — and `intentReview` now sends no selector at all when there is none, which is what makes the task-context review reachable from the browser. The section is appended at the end of this route's narrative, and the three rows of this document that cited `data/review.ts` by line were re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

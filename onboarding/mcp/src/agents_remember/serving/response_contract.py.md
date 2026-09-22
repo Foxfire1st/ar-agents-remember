@@ -5,9 +5,10 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-09-06T22:06:54+00:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
+| lastUpdated | 2026-09-22T11:00:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -69,6 +70,29 @@ response models validate where the framework owns serialization.
 
 None.
 
+## 260921-ICR-L13 Current Delta — The Master-Net Vocabulary
+
+This leaf added the three shapes the generation-bound master net is served in (declarative
+schema only; the file grows 1136 → 1155 lines, soft band, green via
+`test_file_size_detector.py`):
+
+- `MasterNetGeneration` — the exact endpoints one net comparison was computed over, and
+  their identity: `code_base`/`code_tip` plus `memory_base`/`memory_tip` (empty when the
+  master shows no memory half) and the deterministic `digest`. A completed master's
+  recorded result re-resolves from these rather than from the live branch tip.
+  cit:([`MasterNetGeneration`], mcp/src/agents_remember/serving/response_contract.py:857-869)
+- `MasterChangeSet` gains `generation: MasterNetGeneration | None` (absent only for the
+  unknown-master degradation), `currentness: "current" | "superseded" | "unmeasured"`, and
+  `scope: "integrated"` — the one scope the selection ever serves.
+  cit:([`MasterChangeSet`], mcp/src/agents_remember/serving/response_contract.py:872-882)
+- `LeafSummary` gains `state: "committed" | "working"` (default `committed`) so an
+  in-flight preview rides beside the net, never silently inside it.
+  cit:([`LeafSummary`], mcp/src/agents_remember/serving/response_contract.py:849-854)
+
+Routed boundaries recorded here, not closed here: R24 owns the leaf-history catalogue and
+drill-down UI on top of `leaves[].state` and per-view `generation`; R12 owns
+committed-leaf historical views; the browser-class journeys belong to R25.
+
 ## Docs References
 
 No Domain Documentation source is configured.
@@ -77,6 +101,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state. | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:857-869; mcp/src/agents_remember/serving/response_contract.py:872-882; mcp/src/agents_remember/serving/response_contract.py:849-854 |
 | The catalog wire mirrors structural binding, replacement, and the private dispatch receipt. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:281-363 |
 | Open and seat-conflict responses carry structural identity. | `TerminalOpened` | mcp/src/agents_remember/serving/response_contract.py:399-423 |
 | Task assignment success/refusal use task-document identity. | `TerminalTaskAttached` | mcp/src/agents_remember/serving/response_contract.py:442-460 |
@@ -87,6 +112,7 @@ No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master-net vocabulary.** The section above records `MasterNetGeneration`, the three new `MasterChangeSet` members and `LeafSummary.state` with measured ranges; the R24/R12/R25 boundaries are recorded as routed, not closed. No earlier claim is superseded (additive schema). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `RequirementRow`/`RequirementsListing`/`RequirementContents` models and the 61-to-63 route-count advance for the new requirement endpoints.

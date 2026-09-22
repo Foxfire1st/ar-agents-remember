@@ -1,0 +1,119 @@
+# mcp/tests/test_master_net_generation.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_master_net_generation.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-22T11:39:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[mcp/tests route overview](overview.md)
+
+## Purpose
+
+The **production-composition evidence for `ICR-R13@v1`**: the master NET comparison is
+endpoint-correct and bound to a generation, measured through the operations the dashboard
+really calls. Every case builds a real series contract on disk, real leaf enclosure contracts,
+real code and memory repositories with real branches, and the real `master_changeset` /
+`master_file_diff` resolution plus the HTTP routes that serve them. Nothing here injects a
+preconstructed payload or a hand-built comparison — which is what the packet's own evidence
+class requires, since "tests that merely mirror implementation or assert returned prebuilt
+payloads are insufficient for production-composition claims".
+
+## Code Commentary
+
+### Logic
+
+Nine cases, one load-bearing property each (the module's own docstring lists seven; the
+route case and the F1 diff-failure case complete the nine):
+
+- `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero` — the packet's
+  conforming example and the falsifier for its non-conforming one: two leaves add then
+  remove one file, the net is exactly `[]` with zero counters while both leaf counters stay
+  nonzero. cit:([`test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`], mcp/tests/test_master_net_generation.py:237-265)
+- `test_a_net_zero_source_result_still_reports_memory_effects` — the packet's boundary:
+  net-zero source with a one-line `memory.md` effect reports `code: []` + `memory:
+  [memory.md]`. cit:([`test_a_net_zero_source_result_still_reports_memory_effects`], mcp/tests/test_master_net_generation.py:267-283)
+- `test_a_pinned_generation_reopens_after_the_branch_advances` — the completed master's
+  recorded result: a pinned generation reopens byte-identically after the branch advances
+  (`superseded`) while the live view moves on (`current`, new digest). cit:([`test_a_pinned_generation_reopens_after_the_branch_advances`], mcp/tests/test_master_net_generation.py:285-309)
+- `test_an_opened_file_stays_bound_to_the_listed_generation` — a pinned file expansion
+  returns the recorded bytes while the live expansion returns `after: None`.
+  cit:([`test_an_opened_file_stays_bound_to_the_listed_generation`], mcp/tests/test_master_net_generation.py:311-343)
+- `test_an_unreadable_child_never_invalidates_the_net` — a garbage leaf contract plus an
+  unresolvable leaf commit leave the net matching the live integrated result.
+  cit:([`test_an_unreadable_child_never_invalidates_the_net`], mcp/tests/test_master_net_generation.py:345-363)
+- `test_a_missing_code_endpoint_is_refused_never_substituted` — a missing endpoint is
+  refused by name (`not-recorded` / `unresolvable`), never substituted with a later tip;
+  an unknown master keeps degrading to empty. cit:([`test_a_missing_code_endpoint_is_refused_never_substituted`], mcp/tests/test_master_net_generation.py:365-397)
+- `test_a_live_leaf_is_labelled_working_and_its_draft_stays_out_of_the_net` — a live leaf
+  row reads `working` beside the integrated net and its uncommitted delta never leaks in.
+  cit:([`test_a_live_leaf_is_labelled_working_and_its_draft_stays_out_of_the_net`], mcp/tests/test_master_net_generation.py:399-441)
+- `test_the_master_routes_carry_the_generation_and_its_named_refusal` — the served routes:
+  the list publishes `generation` + `currentness` + `scope`, and the shared 400/404 mapping
+  carries the named refusal. cit:([`test_the_master_routes_carry_the_generation_and_its_named_refusal`], mcp/tests/test_master_net_generation.py:443-470)
+- `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` — the F1 fix:
+  a diff that fails *after* endpoint validation (monkeypatched
+  `changed_files_with_counts` raising) is refused with `kind == "unresolvable"`, never
+  reported as an empty net. cit:([`test_a_diff_failure_after_validation_is_refused_never_reported_as_zero`], mcp/tests/test_master_net_generation.py:472-488)
+
+The shared world is `MasterFixture` with its `master_fixture(tmp_path)` builder — a
+master-shaped fixture (series contract + two leaf contracts + real code/memory repos) that
+leaf one adds `src/feature.py` into and leaf two removes. cit:([`MasterFixture`], mcp/tests/test_master_net_generation.py:110-229) cit:([`master_fixture`], mcp/tests/test_master_net_generation.py:231-235)
+`pytestmark = pytest.mark.evidence_unit` declares the evidence lane; the lane row that makes
+these cases run at all is `mcp/tests/test-evidence-lanes.toml:113`.
+
+### Conventions
+
+Real-Git fixture module in the `test_knowledge_review_source_endpoints.py` idiom: real
+contracts on disk, real branches, the real resolution plus the real HTTP routes. Case names
+state the property as a sentence. The F1 case pins the exact refusal kind and the
+refused-not-empty wording.
+
+### Invariants And Boundaries
+
+- No preconstructed resolutions, fake indexes or hand-built payloads anywhere.
+- R24 navigation is explicitly not claimed here; mounted-browser observation of the
+  generation caption belongs to R24/R25 assembly (jsdom proves URLs + caption render).
+- The module registers no contract and no artifact and consumes no catalog-registered
+  support module, so `mcp/tests/evidence-lifecycle.toml` is untouched and
+  `LIFECYCLE_CATALOG_SHA256` is not re-pinned.
+
+## Docs References
+
+The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
+are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
+the reviewed task evidence for any current behavioral claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured Domain Documentation source exists for this file. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The evidence lane the module runs in. | `pytestmark` | mcp/tests/test_master_net_generation.py:56-56 |
+| The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. | `MasterFixture`; `master_fixture` | mcp/tests/test_master_net_generation.py:110-229; mcp/tests/test_master_net_generation.py:231-235 |
+| The conforming add-then-remove case and the F1 diff-failure refusal case. | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
+| The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:114-114 |
+| The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. | `select_master_net`; `master_changeset` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/changeset.py:247-323 |
+
+## Cross-Repo References
+
+This card maps a repository-local agents-remember test module. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | — | — |
+
+## Update History
+- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: lane row (`:113` → `:114`) and verification pair re-derived to the merged production line.** ICR-L7 inserted its revision-selection row above. The module, cases and boundaries are unchanged. No verification stamp was advanced.
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the nine measured properties (eight plus the F1 diff-failure refusal), the shared `MasterFixture` world, the `evidence_unit` lane with its `:114` row (`:113` before the ICR-L7 sync), and the no-catalog-touch boundary. The F1 case (monkeypatched diff raising after validation, `kind == "unresolvable"`) is part of what this card documents. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) while the `reviewedWorkingCandidate` row states what was actually read — this leaf's **uncommitted** candidate, the only tree containing this module. Closeout owns the stamp.

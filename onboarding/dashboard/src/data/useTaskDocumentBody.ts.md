@@ -5,9 +5,10 @@
 | repository             | agents-remember                                   |
 | path                   | `dashboard/src/data/useTaskDocumentBody.ts`       |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                   `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                                   2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-09-22T11:00:00+02:00 |
+| lastVerifiedCommitHash |                                                   `f141d164265e926be9249acf6ae680ccf9ffae61`|
+| lastVerifiedCommitDate |                                                   2026-09-22T12:24:11+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +85,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The enclosure change-set controls wait until the body reader is no longer loading. | "import { ChangeSetButton } from \"./changeSetBar\";"; "const { documentFor: fullTaskDoc" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:19-19; dashboard/src/panels/detail-panel/state.ts:150-150 |
 | The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:146-189 |
 | The transport adapter owns the same-origin endpoint and non-OK rejection. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
-| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:13-13 |
+| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-14 |
 | Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. | "Operations click-to-detail body hydration" | dashboard/src/cockpit/Cockpit.test.tsx:335-441 |
 
 ## Cross-Repo References
@@ -98,6 +99,7 @@ live in `agents-remember`.
 
 ## Update History
 
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **citation repair only, forced by this leaf's test insertion; no content impact on this module.** The `changeSetBar.test.tsx` suite gained one case above the suites this card's row names, so the `describe` anchor moved `:13` → `:14`; the row is re-derived onto the declaration line with wording unchanged. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: rebound the enclosure change-set
   wait claim to `taskDocumentBodyState`/`changeSetBar` with fixer-generated ranges; exact
   non-fixing check returns zero findings.

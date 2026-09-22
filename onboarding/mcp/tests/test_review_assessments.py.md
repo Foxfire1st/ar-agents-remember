@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastUpdated | 2026-09-22T11:39:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l15` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -79,7 +80,7 @@ serves the cases that need a stored projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:203-203 |
+| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:204-204; mcp/tests/test-evidence-lanes.toml:5-5 |
 | The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
 | The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:110-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188 |
 | The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |
@@ -98,6 +99,7 @@ would be a source census rather than a behavioural check; and §6.9's scope refu
 unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
 
 ## Update History
+- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-merge resolution of the parked candidate against the landed ICR-L7 curation (1 region).** Additive union: the module's lane row re-derived to the merged tree (`:204`) with the `unit-regression = [` key (`:5`). Both sides' history preserved. No verification stamp was advanced.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file. Its one lane-registration row cited `mcp/tests/test-evidence-lanes.toml:197`, one line above the line that carries `"mcp/tests/test_review_assessments.py"` on this candidate; the row was re-read and the range re-derived to `:200`, and its other ranges were read back as still correct. No claim wording or anchor was changed, and **no verification stamp was advanced** — the recorded stamp is kept, because the candidate is uncommitted and closeout owns the real commit.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **citation repair only, forced by this leaf's own moves in the files this card cites.** The source file this card documents did **not** change; this leaf appended one row to `mcp/tests/test-evidence-lanes.toml` at `:89` and two consumer rows to `mcp/tests/evidence-lifecycle.toml` at `:733` and `:1271`, so every lane row below `:88` shifted by one and every evidence-catalog line below those rows by one and two respectively. Each affected row was re-read against the construct it names and its range re-derived from that construct's own extent in the moved file — and, where a row's anchor is a lane or consumer entry, from the line that actually carries it — rather than shifted by a remembered delta. No claim was re-worded, no anchor was renamed and no row was dropped, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only.** `260921-ICR-L1` inserted one `unit-regression` row at `mcp/tests/test-evidence-lanes.toml:105`, so every row and lane key below it moved one line lower; this card's claim rows that cite that manifest were re-derived under that mapping from the anchor's real position (the ranges are shifted exactly where they cross `:105`, and left alone where they do not). No claim was re-worded, no row was deleted, and the generated history entries in this card keep the ranges they were written with. No verification stamp was advanced.

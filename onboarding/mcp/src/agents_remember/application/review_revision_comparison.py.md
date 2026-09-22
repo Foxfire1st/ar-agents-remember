@@ -5,10 +5,11 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_revision_comparison.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T10:40:00+02:00 |
+| lastUpdated | 2026-09-22T11:39:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l7`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted (L7-aftershock citation repairs); base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -151,7 +152,7 @@ three-way decision, the invalid-graph read, the one-sided reuse, and the ten cas
 | Two nonempty sides: cycle with no head fabricated, multi-head ambiguity with no pair, unique heads compared. | `_combine`; `_compared`; `_ambiguous`; `_unresolved` | mcp/src/agents_remember/application/review_revision_comparison.py:237-253; mcp/src/agents_remember/application/review_revision_comparison.py:378-407; mcp/src/agents_remember/application/review_revision_comparison.py:470-506; mcp/src/agents_remember/application/review_revision_comparison.py:509-526 |
 | A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. | `_one_sided` | mcp/src/agents_remember/application/review_revision_comparison.py:410-467 |
 | Operands keyed by stored revision identity, never by stream position or both-sides presence. | `_item_with` | mcp/src/agents_remember/application/review_revision_comparison.py:529-552 |
-| The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. | `select_subject_revisions`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:453-461; mcp/src/agents_remember/application/knowledge_review.py:714-760 |
+| The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. | `select_subject_revisions`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:90-93; mcp/src/agents_remember/application/knowledge_review.py:712-759 |
 | The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. | `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:54-150 |
 | The ten cases that measure the policy through the real comparison: two chain defaults, selectable history, two forks, one-sided removal, cycle, dangling edge, order-independence, and the pane's own statements. | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_heads_come_from_successors_not_from_sorted_order`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:416-467; mcp/tests/test_knowledge_review_revision_selection.py:524-536; mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
 
@@ -166,4 +167,5 @@ comparison was opened under.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the adapter call-site row re-cited to the landed declarations** (`select_subject_revisions` import `:90-93`, `_knowledge_pane` `:712-759`). Wording retained; no stamp advanced.
 - 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the head-selection policy `ICR-R07@v1` owns (heads from authored predecessor edges only; unique heads compare head-to-head; known-empty sides stay R06 additions/removals; multi-heads, cycles and dangling edges yield explicit ambiguous/unresolved selections that still list every head and retained revision; intermediate revisions selectable on demand through the comparison's own per-side selector), the seam (the adapter resolves, calls and assembles; this module owns the rule; no alias because the replaced both-sides preference was private), and the boundaries the packet states (no order/presence/timestamp/similarity participation; kind-agnostic; R08/R09 movement display and R25 browser rendering out of scope). Every range was measured against the 552-line candidate module. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the bytes a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read; closeout owns the stamp once the code commit exists.

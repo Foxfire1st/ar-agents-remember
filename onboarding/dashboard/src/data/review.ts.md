@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash |  `d21bc8a6c5d30e2394a72d056bff216b766407c2`|
-| lastVerifiedCommitDate |  2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash |  `f141d164265e926be9249acf6ae680ccf9ffae61`|
+| lastVerifiedCommitDate |  2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `dashboard/src/data/overview.md` |
@@ -246,7 +246,7 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:240-246 |
 | **The source-content request: the task context, the published path and both published generation ids, read with `fetch` because the body is this route's answer whatever the status was.** | `reviewSourceContent` | dashboard/src/data/review.ts:379-414 |
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-97; dashboard/src/data/files.ts:99-101 |
-| The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:56-57 |
+| The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128 |
 | The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:328-347; dashboard/src/data/review.ts:389-414; dashboard/src/data/review.ts:348-348 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
 

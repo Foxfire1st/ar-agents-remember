@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastUpdated | 2026-09-22T11:39:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
@@ -15,6 +15,7 @@
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted (L7-aftershock citation repairs); base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -1496,6 +1497,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the recorded-identities row re-cited to the landed declaration** (`_recorded_identities` `:319-338`). Wording retained; no stamp advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **four enforced rows re-cited** (`TreeChange`/`TreePaths` to `tree_observation.py`, `TREE_DIFF_COMMAND`, `_expansion_detail`, probe delegation). Wording unchanged; no stamp advanced.
 - 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`.** Both sides' history kept newest-first; L14's identity-listing section stands beside this leaf's partition section. Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
 - 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **this route gained two modules and the display states the deletion (new section above).** `memory/knowledge/diff_attribution.py` owns the partition arithmetic with the one licensing predicate; `memory/knowledge/tree_observation.py` owns the shared observation vocabulary extracted whole from the display; `memory/knowledge/diff_display.py` (523 → 508) re-exports every moved name and records the deliberate non-replacement of `attributed_paths(comparison)`. Two file-level cards created, one corrected (including the exact non-replacement line and the L2 `--name-only` leftover). No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
@@ -1688,7 +1690,7 @@ every other read in this route uses.
 | **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** | `list_invariants` | mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | **The same enumeration for the surface's other admitted subject kind.** | `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
-| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:321-340 |
+| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:319-338 |
 
 ## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
 

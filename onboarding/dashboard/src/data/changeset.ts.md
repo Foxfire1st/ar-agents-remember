@@ -5,9 +5,10 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/changeset.ts`                |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`       |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastUpdated | 2026-09-22T11:00:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`       |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,6 +31,19 @@ calls these helpers directly.
 when a caller needs only the coherent series net range. The default remains
 the full response with per-leaf summaries, preserving callers that inspect
 that breakdown.
+
+### 260921-ICR-L13 — Generation pins and the published generation
+
+The master client is now generation-bound. `MasterNetPins` (four optional wire params —
+`codeBase`/`codeTip`/`memoryBase`/`memoryTip`) freezes a request to the listed generation;
+unset pins are omitted from the query so the request selects the declared integrated result.
+`MasterNetGeneration` (four commits + `digest`) is what the list response publishes, beside
+`currentness` and `scope: "integrated"`; leaf rows carry optional
+`state: "committed" | "working"`. cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:59-59)
+`masterChangeset` threads `options.pins` into the params; `masterFileDiff` takes `pins` so an
+opened entry stays bound to its generation after the branch advances. This leaf only exposes
+the pins and the per-view generation for R24's catalogue/drill-down to build on — no
+catalogue or drill-down is implemented here.
 
 Data contracts plus three fetch helpers:
 
@@ -76,12 +90,13 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. | "export interface MasterNetPins"; "export interface MasterNetGeneration"; "export interface MasterChangeset {" | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:59-59 |
 | Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | "interface TaskChangeset" | dashboard/src/data/changeset.ts:26-26 |
-| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | "export const taskChangeset" | dashboard/src/data/changeset.ts:56-56 |
+| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | "export const taskChangeset" | dashboard/src/data/changeset.ts:78-78 |
 | Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | "export const qs" | dashboard/src/data/files.ts:99-99 |
-| The serving layer that defines the endpoints + response shapes this client mirrors. | "def register_changeset_routes" | mcp/src/agents_remember/serving/changeset.py:517-517 |
-| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | "export function ChangeSetViewer" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:424-424 |
-| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | "masterChangeset(target.repo" | dashboard/src/panels/detail-panel/changeSetBar.tsx:39-39 |
+| The serving layer that defines the endpoints + response shapes this client mirrors. | "def register_changeset_routes" | mcp/src/agents_remember/serving/changeset.py:638-638 |
+| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | "export function ChangeSetViewer" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:476-476 |
+| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | "masterChangeset(target.repo" | dashboard/src/panels/detail-panel/changeSetBar.tsx:52-52 |
 | The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | "builds the task / file-diff / master URLs" | dashboard/src/data/changeset.test.ts:17-32 |
 
 ## Cross-Repo References
@@ -94,10 +109,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def register_changeset_routes" repointed to mcp/src/agents_remember/serving/changeset.py:517-517. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export function ChangeSetViewer" repointed to dashboard/src/panels/changeset/ChangeSetViewer.tsx:424-424. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "export function ChangeSetViewer" repointed to dashboard/src/panels/changeset/ChangeSetViewer.tsx:421-421. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "masterChangeset(target.repo" repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master client is generation-bound (120 → 155 lines).** The section above records `MasterNetPins`/`MasterNetGeneration`, the `generation`+`currentness`+`scope` mirror, the `state`-labelled leaf rows, and pins threaded through `masterChangeset`/`masterFileDiff` with unset pins omitted. **Citation accounting:** every row into this file was re-derived against the moved candidate (the insertion moved `taskChangeset` `:56` → `:78` and `MasterChangeset` `:45` → `:59`), and the three cross-file rows were re-derived against this candidate too (`register_changeset_routes` `:517` → `:638`, `ChangeSetViewer` `:424` → `:476`, the bar's `masterChangeset(` `:39` → `:52`). The reopened claim is retained with its range regenerated onto the declaration the anchor holds. The four mechanical projection bullets below that recorded the superseded ranges (`:517`, `:424`, `:421`, `:39`) are retired by this reading — they pointed at lines that no longer hold their anchors, and this entry is the curator-read evidence that replaces them. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations and 1 prose citation for the changeset contract and consumer path; fixer-generated ranges verified.
 
 - 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card

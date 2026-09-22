@@ -5,12 +5,13 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastUpdated | 2026-09-22T11:39:00+02:00 |
+| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
+| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -1419,10 +1420,42 @@ whose after-side is a filesystem location, and its own `mode` says so. The two m
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:43-125 |
-| **The caller that owns the degradation policy: the two sides resolve independently, the code half keeps the refusal, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:345-389; mcp/src/agents_remember/serving/changeset.py:456-489 |
+| **The caller that owns the degradation policy: the two sides resolve independently, the code half keeps the refusal, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:386-429; mcp/src/agents_remember/serving/changeset.py:577-612 |
 | **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the refusal instead of a `HEAD` read, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:609-659; mcp/tests/test_knowledge_review_source_endpoints.py:662-684; mcp/tests/test_knowledge_review_source_endpoints.py:687-730 |
 
+## 260921-ICR-L13 The Master Net Is Generation-Bound, And Selection Is A Module Of Its Own
+
+This route gained one module and the master entry changed meaning. **`serving/master_net_generation.py`
+now owns which exact Git objects a master NET change-set binds** — the declared integrated result
+for a live request, or the exact recorded endpoints a pinned request names — and
+`serving/changeset.py`'s master entry delegates to it.
+
+A master review exposes one exact, generation-bound net comparison between its declared
+source/knowledge base and its selected result, computed endpoint-to-endpoint rather than summed
+from leaf counters. The list publishes `generation` (four commits + deterministic digest) with
+`current`/`superseded`/`unmeasured` currentness and the one scope `integrated`, so a completed
+master's recorded URL keeps resolving after its source branch advances; generation pins on both
+master routes freeze the list and the file expansion to the listed generation. Breakdown rows
+carry `committed`/`working` state beside the net, never inside it. A missing code endpoint is
+a named refusal (`MasterEndpointAbsent`, the committed-range vocabulary applied to the master),
+never a substitution with a later tip; only an unknown master degrades to empty. The net is
+exact when served and refusal when unreadable: a post-validation diff failure refuses as
+`unresolvable`, never as an exact-looking zero (F1). No new route was added and no route was
+removed; both master routes share one 400/404 mapping, and the master list route newly
+declares the shared refusal table. `serving/changeset.py`'s card carries the corresponding
+body correction and citation re-derivation; the two new modules' cards (`master_net_generation.py`,
+`test_master_net_generation.py`) carry the selection and the nine measuring cases.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** | `select_master_net`; `master_net_digest`; `MasterEndpointAbsent` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/master_net_generation.py:158-168; mcp/src/agents_remember/serving/master_net_generation.py:73-81 |
+| **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** | `master_changeset`; `master_file_diff`; `_master_json` | mcp/src/agents_remember/serving/changeset.py:247-323; mcp/src/agents_remember/serving/changeset.py:325-357; mcp/src/agents_remember/serving/changeset.py:562-575 |
+| **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:857-869; mcp/src/agents_remember/serving/response_contract.py:872-882; mcp/src/agents_remember/serving/response_contract.py:849-854 |
+| **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
+
 ## Update History
+- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-merge resolution of the parked candidate against the landed ICR-L7 curation.** The memory sync fast-forwarded the code side cleanly and parked this leaf's memory candidate against L7's landed curation; the single header conflict resolves as an additive union: the verification pair names the merged production line `f33f58eab87bd4db0eb944999d01808821ef9c3a` (L7 landed), and this leaf's candidate row states its uncommitted reading re-derived at the sync. Both sides' sections, rows and history entries are preserved (L7's revision-selection sections beside this leaf's generation-bound master-net section). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the master net is now generation-bound (new `serving/master_net_generation.py` selector, `generation`+`currentness`+`scope` published, pins on both master routes, `state`-labelled breakdown, missing-endpoint refusal, F1 unreadable-range refusal), with no route added or removed and one shared 400/404 mapping. The L1 section's two `changeset.py` rows are re-derived against this candidate (`_leaf_range` `:345-389` → `:386-429`, `leaf_file_diff` `:456-489` → `:577-612`); the L1 claims are retained unchanged. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "def api_review_intent_entries(" repointed to mcp/src/agents_remember/serving/review.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "def register_review_routes(" repointed to mcp/src/agents_remember/serving/review.py:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
