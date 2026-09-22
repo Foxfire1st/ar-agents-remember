@@ -6,9 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/master_net_generation.py`  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`                   |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`                   |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -142,4 +141,5 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the selection/diff split (this module selects, `changeset.py` diffs), the three request states, the deterministic digest and same-call currentness, the independent half resolution with its refusal-vs-degradation table, the R03/R11/R16 reuse and the R24/R12/R25 boundaries, and the exact-when-served/refusal-when-unreadable invariant with the F1 fix. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) — the line this candidate sits on — while the `reviewedWorkingCandidate` row states what was actually read: this leaf's **uncommitted** candidate, the only tree that contains this module. No commit contains these bytes, so closeout owns the stamp.
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the selection/diff split (this module selects, `changeset.py` diffs), the three request states, the deterministic digest and same-call currentness, the independent half resolution with its refusal-vs-degradation table, the R03/R11/R16 reuse and the R24/R12/R25 boundaries, and the exact-when-served/refusal-when-unreadable invariant with the F1 fix. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) — the line this candidate sits on — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate, the only tree that contains this module. No commit contains these bytes, so closeout owns the stamp.

@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/application/prepared_certification.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T11:05+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l14-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -112,6 +111,7 @@ No source-local TODO is asserted here.
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 
 
@@ -121,7 +121,7 @@ No source-local TODO is asserted here.
 Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
 
 
-- 2026-09-17T11:05+02:00 — 260915-CAPS-L14 curator: **moved this card to follow its source** and refreshed it against the current module. The source left `worktrees/integration/closeout/` for the application rank in `806649b9` and this card was left behind, so it resolved to a file that no longer exists and the module read as unonboarded. Corrected the title, `path`, and the governing-overview link to `overview.md` (the application route overview), re-derived **every** reference range against the 813-line source, and documented this leaf's change: `_run` now acquires its index through the new `_admitted_source_index`, which converts a `SourceIndexError` into a named `CertificationContractError` (`citation-source-index-unavailable`) carrying the cause and the operator move, so the closeout gate cannot be bricked by an index it did not choose while satisfiable caps still skip and report. Verification metadata is left at this leaf's synced base `0346da9c` with a `reviewedWorkingCandidate` row, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+- 2026-09-17T11:05+02:00 — 260915-CAPS-L14 curator: **moved this card to follow its source** and refreshed it against the current module. The source left `worktrees/integration/closeout/` for the application rank in `806649b9` and this card was left behind, so it resolved to a file that no longer exists and the module read as unonboarded. Corrected the title, `path`, and the governing-overview link to `overview.md` (the application route overview), re-derived **every** reference range against the 813-line source, and documented this leaf's change: `_run` now acquires its index through the new `_admitted_source_index`, which converts a `SourceIndexError` into a named `CertificationContractError` (`citation-source-index-unavailable`) carrying the cause and the operator move, so the closeout gate cannot be bricked by an index it did not choose while satisfiable caps still skip and report. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
 - 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `_current` at mcp/src/agents_remember/application/prepared_certification.py:140-148, `_PreparedScopeAuthority` at mcp/src/agents_remember/application/prepared_certification.py:151-192, `_export` at mcp/src/agents_remember/application/prepared_certification.py:564-613, `_manifest` at mcp/src/agents_remember/application/prepared_certification.py:616-665, `_select` at mcp/src/agents_remember/application/prepared_certification.py:668-718, `PreparedMemoryCertificationAdapter` at mcp/src/agents_remember/application/prepared_certification.py:721-785.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `_PreparedScopeAuthority` repointed to mcp/src/agents_remember/application/prepared_certification.py:151-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T06:49:47+00:00: Generated citation repair: `_export` repointed to mcp/src/agents_remember/application/prepared_certification.py:564-613. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.

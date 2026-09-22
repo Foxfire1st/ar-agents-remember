@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_master_net_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -115,5 +114,6 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: lane row (`:113` → `:114`) and verification pair re-derived to the merged production line.** ICR-L7 inserted its revision-selection row above. The module, cases and boundaries are unchanged. No verification stamp was advanced.
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the nine measured properties (eight plus the F1 diff-failure refusal), the shared `MasterFixture` world, the `evidence_unit` lane with its `:114` row (`:113` before the ICR-L7 sync), and the no-catalog-touch boundary. The F1 case (monkeypatched diff raising after validation, `kind == "unresolvable"`) is part of what this card documents. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) while the `reviewedWorkingCandidate` row states what was actually read — this leaf's **uncommitted** candidate, the only tree containing this module. Closeout owns the stamp.
+- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the nine measured properties (eight plus the F1 diff-failure refusal), the shared `MasterFixture` world, the `evidence_unit` lane with its `:114` row (`:113` before the ICR-L7 sync), and the no-catalog-touch boundary. The F1 case (monkeypatched diff raising after validation, `kind == "unresolvable"`) is part of what this card documents. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) while what was actually read is this leaf's uncommitted working tree — this leaf's **uncommitted** candidate, the only tree containing this module. Closeout owns the stamp.

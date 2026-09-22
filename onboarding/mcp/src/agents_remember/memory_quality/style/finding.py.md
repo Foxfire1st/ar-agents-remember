@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/finding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,6 +49,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `check_result` (lines 46-68) — Package findings into the uniform runner result ``memory_quality.check`` expects.. | `check_result` | mcp/src/agents_remember/memory_quality/style/finding.py:46-68 |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
-- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the capability this change adds, which the card did not carry. `QualityFinding` gains a defaulted `closeout_owned` flag — a row no curator edit can discharge, because an anchor resolving more than once in the cited file cannot be made unique by narrowing a range or splitting a row — and `to_dict` publishes it as `closeoutOwned` only when it is set, so the routing to closeout is one structural fact rather than a message match at the reporting layer. The flag is set by `claim_reopen` and consumed by its `_gate_result` split (item 17). Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the `reviewedWorkingCandidate` metadata row and the governed closeout owns the real commits.
+- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the capability this change adds, which the card did not carry. `QualityFinding` gains a defaulted `closeout_owned` flag — a row no curator edit can discharge, because an anchor resolving more than once in the cited file cannot be made unique by narrowing a range or splitting a row — and `to_dict` publishes it as `closeoutOwned` only when it is set, so the routing to closeout is one structural fact rather than a message match at the reporting layer. The flag is set by `claim_reopen` and consumed by its `_gate_result` split (item 17). Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the the recorded working candidate metadata row and the governed closeout owns the real commits.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

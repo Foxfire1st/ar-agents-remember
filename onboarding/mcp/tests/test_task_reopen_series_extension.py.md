@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_task_reopen_series_extension.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T23:30+02:00 |
-| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
-| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
-| reviewedWorkingCandidate | `ar/260918-tsip-l9-ar` uncommitted source (new file, **1075 lines / 18 cases**, sha256 `afab4e6795facb10097f4179ddf6e677d3598b909153b7784813de05e420bddb`); base `d9214edf` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +17,7 @@
 Working candidate verification: this file is new in `260918-TSIP-L9` and **no commit carries its
 bytes**, so `lastVerifiedCommitHash` names the base the leaf was cut from rather than a commit that
 contains this source; it does not claim the uncommitted content was verified at that commit. The
-`reviewedWorkingCandidate` row names the exact candidate and its digest, and the governed closeout
+recorded working candidate names the exact candidate and its digest, and the governed closeout
 owns the real stamp. Every claim below was read against that candidate, and every range below was
 re-derived from the candidate's own syntax tree rather than carried from a report.
 
@@ -253,5 +252,6 @@ adjacent repository, external service or network boundary is involved.
 | No cross-repository claim is made. | N/A | N/A |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-19T23:30+02:00 — 260918-TSIP-L9 curator (uncommitted change set on `ar/260918-tsip-l9-ar`, memory worktree base `877a5a00`): created for the module `260918-TSIP-L9` adds, which the corpus's strict 1-to-1 rule owes a card and which reached review without one (`T120`). Every range was re-derived from the reviewed candidate's own syntax tree at the digest named above, and the citations to the module's lane row were read at their **merged** line rather than by arithmetic (`T119`, `T126`). The card records the six ratchet removals the leaf made with the case that holds each, the reconstruction at the recorded landing, the never-move-a-live-ref direction and its reachable counterpart, the `S1` case and its mutation-shaped acceptance test, the two coverage boundaries stated as boundaries (source-branch existence unpinned; the reachability proof's `present` arm), and the `S2` reader — the screen's pair read from the `parametrize` marks it runs with rather than from source literals, which is what makes the agreement arm true in either landing order. `lastVerifiedCommitHash` is deliberately unchanged: the candidate is uncommitted and the governed closeout owns the real code commit.

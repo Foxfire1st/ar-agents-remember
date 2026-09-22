@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ serves the cases that need a stored projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:205; mcp/tests/test-evidence-lanes.toml:5; mcp/tests/test-evidence-lanes.toml:208-208 |
+| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:209-209; mcp/tests/test-evidence-lanes.toml:5; mcp/tests/test-evidence-lanes.toml:208-208 |
 | The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
 | The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:110-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188 |
 | The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |

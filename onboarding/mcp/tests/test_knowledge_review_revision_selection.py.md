@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_revision_selection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T10:40:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l7`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -125,4 +124,5 @@ trees under `tmp_path` and asserts one repository namespace's selection.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf (615 lines, 10 cases) and this is its one-to-one card. It records the six load-bearing properties the module docstring names, the real-snapshot fixture (plus the two disclosed SQL fault-injection cases), the adapter's-own-function convention (`_select` calls what `compose_review` calls), and the pane case that closes the loop through the served payload. Every range was measured against the candidate module. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the bytes a stamp would claim to have verified. The `reviewedWorkingCandidate` row states what was actually read; closeout owns the stamp once the code commit exists.
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
+- 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf (615 lines, 10 cases) and this is its one-to-one card. It records the six load-bearing properties the module docstring names, the real-snapshot fixture (plus the two disclosed SQL fault-injection cases), the adapter's-own-function convention (`_select` calls what `compose_review` calls), and the pane case that closes the loop through the served payload. Every range was measured against the candidate module. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the bytes a stamp would claim to have verified. The recorded working candidate states what was actually read; closeout owns the stamp once the code commit exists.

@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/tree_observation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -115,5 +114,6 @@ caller supplied; no second repository, ledger or coordination path is read.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **re-export row re-anchored** — the bare `diff_display` anchor cited twice is replaced by the shared names at their definitions (`TreePaths`/`TreeChange`/`partition_attribution`). Wording adjusted to name the anchors; no stamp advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **shared source-observation vocabulary for ICR-R04@v1**. It records the three values and the seam — `TreeSide` (identity plus root, with `tree_id=None` supported), `TreeChange` (raw filename as address, Git status, renderability, mode flag, unknown-reason), `TreePaths` (availability apart from paths, entries held in agreement by construction, unrepresentable-implies-partial) — and the two honesty rules construction enforces, so a successor does not re-inline them into any one reader. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **shared source-observation vocabulary for ICR-R04@v1**. It records the three values and the seam — `TreeSide` (identity plus root, with `tree_id=None` supported), `TreeChange` (raw filename as address, Git status, renderability, mode flag, unknown-reason), `TreePaths` (availability apart from paths, entries held in agreement by construction, unrepresentable-implies-partial) — and the two honesty rules construction enforces, so a successor does not re-inline them into any one reader. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.

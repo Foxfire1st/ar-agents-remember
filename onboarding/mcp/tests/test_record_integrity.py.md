@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_record_integrity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:58+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -190,7 +190,7 @@ durable memory. Every range was derived against the current 1140-line source.
 | A prose figure is compared with its source at the revision the prose describes. | `DeclaredFigureCurrencyTests` | mcp/tests/test_record_integrity.py:668-1012 |
 | Every comparison states its two populations, and the CLI writes nothing. | `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:1015-1140 |
 | The module whose four comparisons these cases pin. | `check_leaf_document_against_contract`; `check_master_rows_against_leaf_documents`; `check_register_row_ownership`; `check_declared_figure_currency` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:441-955 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:312-312; mcp/tests/test-evidence-lanes.toml:320-320 |
+| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:321-321; mcp/tests/test-evidence-lanes.toml:320-320 |
 
 ## Cross-Repo References
 

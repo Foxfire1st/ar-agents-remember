@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -75,8 +74,9 @@ This file introduces no separate cross-repository protocol. Local temporary code
 | No new cross-repository protocol. | N/A | N/A |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
-- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): corrected the `history_edit` claim this change falsified and recorded the frame rule behind it. The card said the edit "preserves LF or CRLF when inserting grouped bullets", which no longer describes the mechanism: `history_edit` now chooses its insertion LINE by the section's parsed instants, below every offset-bearing entry newer than the newest generated bullet and directly under the heading when none is, because the generated bullet's UTC stamp and the document's own offset are different frames — top-of-block and newest-first are therefore different claims (item 22; the recorded "inserted in string order" diagnosis was wrong, the engine has inserted at the top since `709dd076`, and the surviving defect is the frame). Incomparable instants (a naive stamp, a malformed bullet) end the scan instead of being ordered against, matching the checker. Added the invariant and the named `history_order` members the edit delegates to. Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the `reviewedWorkingCandidate` metadata row and the governed closeout owns the real commits.
+- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): corrected the `history_edit` claim this change falsified and recorded the frame rule behind it. The card said the edit "preserves LF or CRLF when inserting grouped bullets", which no longer describes the mechanism: `history_edit` now chooses its insertion LINE by the section's parsed instants, below every offset-bearing entry newer than the newest generated bullet and directly under the heading when none is, because the generated bullet's UTC stamp and the document's own offset are different frames — top-of-block and newest-first are therefore different claims (item 22; the recorded "inserted in string order" diagnosis was wrong, the engine has inserted at the top since `709dd076`, and the surviving defect is the frame). Incomparable instants (a naive stamp, a malformed bullet) end the scan instead of being ordered against, matching the checker. Added the invariant and the named `history_order` members the edit delegates to. Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the the recorded working candidate metadata row and the governed closeout owns the real commits.
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Moved final-byte publication ownership to the document transaction, documented bounded source-cell checks and CRLF history preservation, and removed the deleted digest helper from the live inventory. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 
 - 2026-09-04T01:15+02:00 - 260831-CCR-L10 Gate-5 memory pass: created this file-level

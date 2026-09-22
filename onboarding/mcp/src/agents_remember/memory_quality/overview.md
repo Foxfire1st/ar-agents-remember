@@ -4,10 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `1bcf73e772b640fea56c2788fe9a52d98099bd41` |
-| lastVerifiedCommitDate | 2026-09-20T05:00:13+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l16` uncommitted staged source; base `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -656,6 +654,7 @@ it pins, that definition is at **`:105`** (`:100` is `"onboardingRoot": scope.on
 — recorded as the leaf's `R2-3`.
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
 - 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `citation_migrate`'s preview answers `ok: true` with `state: planned`, and `remaining` is never read on a dry run; the two facts the old `ok` folded in are now declared separately. Citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
 - 2026-09-18T19:56:44+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The readiness row cited `controller.py:583-600` for `"def _attach_final_full_catalog("`, whose definition this leaf's changes left at `671-707`; that cell cites it now. (b) and (c) The entry-point row cited `110-125` and `318-360` for `run_memory_quality_request` and `_execute_memory_quality`; the two definitions now span `249-255` and `383-435`, which is what the cell cites. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

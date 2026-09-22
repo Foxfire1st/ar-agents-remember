@@ -6,9 +6,8 @@
 | path | `scripts/e2e_harness/fresh_user_fixture.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:50+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l14-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `scripts/e2e_harness/overview.md` |
 
 ## Governing Overview
@@ -109,5 +108,6 @@ No sibling-repository contract defines these values.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
-- 2026-09-17T10:50+02:00 — 260915-CAPS-L14 curator: created this card for the harness module the leaf adds. Records the two fixtures and their shapes, that the oversized source is the shipped per-file cap **plus one**, why the sprint branch is neither `main` nor the spear, and — in its own section — the contract that matters most for a reader: **these are disposable repositories created from nothing under the run root, not the developer's repositories**, because nothing here reads the developer's real repositories or any machine-local state. Notes the module is a governed evidence artifact with a lifecycle row, a real consumer and an executable replacement node. Verification metadata is left at this leaf's synced base `0346da9c` with a `reviewedWorkingCandidate` row, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+- 2026-09-17T10:50+02:00 — 260915-CAPS-L14 curator: created this card for the harness module the leaf adds. Records the two fixtures and their shapes, that the oversized source is the shipped per-file cap **plus one**, why the sprint branch is neither `main` nor the spear, and — in its own section — the contract that matters most for a reader: **these are disposable repositories created from nothing under the run root, not the developer's repositories**, because nothing here reads the developer's real repositories or any machine-local state. Notes the module is a governed evidence artifact with a lifecycle row, a real consumer and an executable replacement node. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.

@@ -4,16 +4,13 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitDate | 2026-09-21T19:51:20+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
 | lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1358,6 +1355,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T20:24:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained `modules/code_object_retention.py`.** The section records the three decisions a reader of this route has to carry — one commit plus one `refs/ar/retained-code/` ref keep both bound objects alive; the retention commit's id is a function of the retained objects (identity supplied, dated by the base commit) so a re-created pin is the identical object and an exact re-freeze converges; and custody is measured over the history the caller **names**, with the leaf's own disposable work branch deliberately excluded and an empty name set keeping the pin. It also records the third observation (`absent`) as a reader's value that a record never stores, and one **open boundary**: whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf, which cannot run those transactions. One file-level card was created in the same pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T01:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches.** The route section above records the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, the intake that resolves a stored anchor through it and refuses a mismatch before any plan exists, and the citation re-measurement this leaf performed in `worktrees/reopen.py`, `worktrees/modules/closeout.py` and `worktrees/modules/startup/`. It also records that `memory/knowledge/merge.py` is byte-unchanged and its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal payloads. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.
 - 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktrees/modules/args.py`'s internal transport `WorktreeArgs` gained one optional field, `knowledge_resolution: AuthoredReconciliation | None` — the authored decision a `resolution_action='reconcile'` call carries for exactly one refused conflict. It is typed through `models.knowledge.merge` for the same reason `resolution_action` is typed through `models.worktree`: the vocabulary is owned once and this route only carries it. The pairing with its action is enforced in the sync driver, not by a default here, so the field cannot be read as a preference. No other field, default or adapter behavior on this route changed. A body change, not a metadata-only refresh.

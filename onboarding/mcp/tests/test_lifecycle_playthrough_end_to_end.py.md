@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | path | `mcp/tests/test_lifecycle_playthrough_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -146,10 +146,10 @@ direct evidence.
 | The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. | `checkpoint_landing_eligibility`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265; mcp/src/agents_remember/worktrees/modules/integrate.py:412-458 |
 | The shared world fixture and Git helper this module composes instead of re-implementing. | "class QueueFixture:"; "REPO = \"repo-a\""; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:184-694; mcp/tests/test_closeout_queue.py:54-54; mcp/tests/test_worktree_support.py:79-86; mcp/tests/test_worktree_support.py:78-78; mcp/tests/test_worktree_support.py:92-92; mcp/tests/test_worktree_support.py:337-337; mcp/tests/test_worktree_support.py:347-347; mcp/tests/test_worktree_support.py:710-710 |
 | The leaf closeout recording it imports rather than duplicating. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:59-82 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:254-254; mcp/tests/test-evidence-lanes.toml:262-262 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:263-263; mcp/tests/test-evidence-lanes.toml:262-262 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:381-381; mcp/tests/evidence-lifecycle.toml:421-421 |
 | The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:254-254; mcp/tests/test-evidence-lanes.toml:262-262 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:263-263; mcp/tests/test-evidence-lanes.toml:262-262 |
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390 |
 | The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
 

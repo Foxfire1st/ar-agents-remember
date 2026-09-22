@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_statement_sides.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T17:30:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -152,12 +151,12 @@ case modules that measure it from the composition side and the renderer side.
 | The conditions a side recorded, empty exactly when that side recorded none. | `side_conditions` | mcp/src/agents_remember/application/review_statement_sides.py:120-124 |
 | **The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.** | `field_changes` | mcp/src/agents_remember/application/review_statement_sides.py:135-155 |
 | **`None` reserved for the two real absences, the `Mapping` branch that projects instead, and the tuple join that makes a recorded empty a present-but-empty value.** | `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal. | `ReviewSideState`; `ReviewSideContent` | mcp/src/agents_remember/models/knowledge/review.py:146-146; mcp/src/agents_remember/models/knowledge/review.py:162-187 |
+| The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal. | `ReviewSideState`; `ReviewSideContent` | mcp/src/agents_remember/models/knowledge/review.py:13-13; mcp/src/agents_remember/models/knowledge/review.py:162-187 |
 | **The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange` | mcp/src/agents_remember/models/knowledge/review.py:300-311 |
 | The declared prose limit the projection is bounded by. | `PROSE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-24 |
 | The item this module projects: its two payloads and the `changed_fields` roster the rows come from. | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:318-354 |
 | The payload `read_side` returns, with the `statement` and `essential_conditions` fields each projection reads. | `ReadItem` | mcp/src/agents_remember/models/knowledge/read.py:363-401 |
-| **The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.** | `side_content`; `side_conditions`; `field_changes` | mcp/src/agents_remember/application/knowledge_review.py:105-108; mcp/src/agents_remember/application/knowledge_review.py:697-698; mcp/src/agents_remember/application/knowledge_review.py:112-112; mcp/src/agents_remember/application/knowledge_review.py:716-716; mcp/src/agents_remember/application/knowledge_review.py:717-717; mcp/src/agents_remember/application/knowledge_review.py:111-111; mcp/src/agents_remember/application/knowledge_review.py:718-718; mcp/src/agents_remember/application/knowledge_review.py:719-719; mcp/src/agents_remember/application/knowledge_review.py:110-110; mcp/src/agents_remember/application/knowledge_review.py:681-681 |
+| **The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.** | `side_content`; `side_conditions`; `field_changes` | mcp/src/agents_remember/application/knowledge_review.py:121-121; mcp/src/agents_remember/application/knowledge_review.py:120-120; mcp/src/agents_remember/application/knowledge_review.py:119-119; mcp/src/agents_remember/application/knowledge_review.py:716-716; mcp/src/agents_remember/application/knowledge_review.py:717-717; mcp/src/agents_remember/application/knowledge_review.py:111-111; mcp/src/agents_remember/application/knowledge_review.py:718-718; mcp/src/agents_remember/application/knowledge_review.py:719-719; mcp/src/agents_remember/application/knowledge_review.py:110-110; mcp/src/agents_remember/application/knowledge_review.py:681-681 |
 | **The production composition case: the structured field's two sides are both present, differ, and round-trip back to the stored authorship envelope.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The case that a one-sided record reports its change through coverage and keeps the roster empty. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows` | mcp/tests/test_knowledge_review_one_sided_statements.py:353-369 |
 | The case that a row keeps the side that recorded a value and names the side that did not. | `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not` | mcp/tests/test_knowledge_review_one_sided_statements.py:288-317 |
@@ -174,6 +173,7 @@ was opened under.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The delegation row cited `knowledge_review.py:90-90`/`672-705`, which the record-owner extraction and attribution wiring moved; it now cites the import block at `:93-96` and `_knowledge_pane` at `:694-727`. Wording unchanged; no stamp advanced.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: `side_content`; `field_changes`; `side_conditions` repointed to mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:120-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 
@@ -189,5 +189,5 @@ was opened under.
   verification pair names production line `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` — the leaf's
   base, and the last real commit the reading was taken against — because every construct this card
   cites exists only in this leaf's uncommitted candidate and no commit contains the bytes a stamp
-  would claim to have verified. `reviewedWorkingCandidate` states what was actually read; closeout
+  would claim to have verified. What was actually read is stated beside it; closeout
   owns the stamp once the code commit exists.

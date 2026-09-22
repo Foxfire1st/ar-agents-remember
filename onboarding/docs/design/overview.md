@@ -6,9 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated | 2026-09-18T17:14+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -219,6 +218,7 @@ rather than deleted, and this is a `T45` find — no check reads a number in pro
 retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
   runbook now treats `ladder-resolved` as a legacy pre-formal-vocabulary state (the timed

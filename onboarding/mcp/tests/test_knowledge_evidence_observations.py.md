@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_evidence_observations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l12` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
+| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -110,4 +109,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the observation contract's 20 cases. It records the closed execution vocabulary with no sufficiency member, the digest measured against real bytes, the four resolution states read from one record set, the by-name inheritance assertion, and the rule that a second run is a second record. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the stamp once the code commit exists.
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
+- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the observation contract's 20 cases. It records the closed execution vocabulary with no sufficiency member, the digest measured against real bytes, the four resolution states read from one record set, the by-name inheritance assertion, and the rule that a second run is a second record. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.

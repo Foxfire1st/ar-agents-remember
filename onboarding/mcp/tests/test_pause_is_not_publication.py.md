@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | path | `mcp/tests/test_pause_is_not_publication.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -115,7 +115,7 @@ No Domain Documentation source is configured for this memory root.
 | The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. | "What it measures is a STATIC, source-level graph" | mcp/tests/test_pause_is_not_publication.py:8-14 |
 | The route this guard exists to keep the stop away from. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:172-199 |
 | The stop module whose closure is measured, and the release authority the closure is required to reach. | "def pause_result("; "def release_atomic_series_selection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:31-31; mcp/src/agents_remember/worktrees/modules/pause.py:79-79 |
-| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:301-301; mcp/tests/test-evidence-lanes.toml:309-309 |
+| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:310-310; mcp/tests/test-evidence-lanes.toml:309-309 |
 
 ## Cross-Repo References
 

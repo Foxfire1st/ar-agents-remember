@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_attribution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -145,4 +144,5 @@ of the pair under review; no second repository, ledger or coordination path is r
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **acquisition half of the ICR-R04@v1 accounting**. It records the four truthfulness rules (exact-path lookup through the shared primitive; only `exact_recorded_blob` resolves with stale/unresolved carried; unread sides support no negative conclusion with R05's damage and empty-generation readers consumed, not re-decided; caller-owned denominator), the subject narrowing with the family-membership degradation, the single `licenses_absence` predicate shared with the partition, and the no-second-owner boundary. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; the `reviewedWorkingCandidate` row states what was actually read, and closeout owns the real stamp once the code commit exists.
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
+- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **acquisition half of the ICR-R04@v1 accounting**. It records the four truthfulness rules (exact-path lookup through the shared primitive; only `exact_recorded_blob` resolves with stale/unresolved carried; unread sides support no negative conclusion with R05's damage and empty-generation readers consumed, not re-decided; caller-owned denominator), the subject narrowing with the family-membership degradation, the single `licenses_absence` predicate shared with the partition, and the no-second-owner boundary. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.

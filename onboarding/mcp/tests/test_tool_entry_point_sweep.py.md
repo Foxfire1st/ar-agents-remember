@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_entry_point_sweep.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ they make no acceptance claim.
 | The sweep itself: one world, one run, and the equality assertions that bind every pin. | `EntryPointProbeTests` | mcp/tests/test_tool_entry_point_sweep.py:887-1181 |
 | The executed positive control over the choke point, and both break shapes at the entry point. | `ChokePointControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1182-1280 |
 | The census controls: write, rewrite and delete in both repositories and outside every zone. | `EntryPointCensusControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1281-1353 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" | mcp/tests/test-evidence-lanes.toml:195-195; mcp/tests/test-evidence-lanes.toml:203-203 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" | mcp/tests/test-evidence-lanes.toml:204-204; mcp/tests/test-evidence-lanes.toml:203-203 |
 | The advertised roster the swept population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
 | The registry whose models classify a payload that does not validate. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:156-241 |
 | The choke point a bypassing handler skips, and the validation this module's control executes. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |

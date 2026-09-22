@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_fresh_user_harness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:35+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l14-ar` uncommitted source; base `0346da9c572e1eb913a8eb4130e9a9e9d37343c8` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -98,5 +97,6 @@ No sibling-repository contract defines these values.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
-- 2026-09-17T10:35+02:00 — 260915-CAPS-L14 curator: created this card for the test module the leaf adds. Records why the module exists at all (it is the **consumer of record** that makes the three new `scripts/e2e_harness` modules governed evidence artifacts with a real consumer and an executable replacement node), the two classes and what each defends, and, in its own section, the two exclusions its docstring states: it does not run the acceptance, and it does not claim the product's integration-branch authority. States plainly that the fixtures are disposable repositories created from nothing under one run root and **not** the developer's repositories. Verification metadata is left at this leaf's synced base `0346da9c` with a `reviewedWorkingCandidate` row, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+- 2026-09-17T10:35+02:00 — 260915-CAPS-L14 curator: created this card for the test module the leaf adds. Records why the module exists at all (it is the **consumer of record** that makes the three new `scripts/e2e_harness` modules governed evidence artifacts with a real consumer and an executable replacement node), the two classes and what each defends, and, in its own section, the two exclusions its docstring states: it does not run the acceptance, and it does not claim the product's integration-branch authority. States plainly that the fixtures are disposable repositories created from nothing under one run root and **not** the developer's repositories. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.

@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_one_sided_statements.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -174,6 +173,7 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file; both ranges that moved belong to `mcp/tests/test-evidence-lanes.toml` (one row inserted at `:111`) and `mcp/tests/evidence-lifecycle.toml` (two rows added). Its one registration row was re-read and re-derived from the lines that actually carry each anchor: the module's lane row `:105` → `:109`, and its read-scope consumer row `:1436` → `:1446`, the row this leaf's own new consumer entry sits above. No claim wording or anchor was changed, and **no verification stamp was advanced** — the recorded stamp is kept, because the candidate is uncommitted and closeout owns the real commit.
 
@@ -190,4 +190,4 @@ No cross-repository implementation evidence is required for these local test and
   `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` — the leaf's base, and the last real commit the reading
   was taken against — because every construct this card cites exists only in this leaf's uncommitted
   candidate and no commit contains the bytes a stamp would claim to have verified.
-  `reviewedWorkingCandidate` states what was actually read; closeout owns the stamp.
+  What was actually read is stated beside it; closeout owns the stamp.

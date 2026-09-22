@@ -6,9 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:52+02:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -246,6 +245,7 @@ the record to the assessment only — which is what keeps it out of the self-inv
 no kind vocabulary.
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
 - 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/lifecycles/finalize.py` declared the two atomic-series projections it was already receiving; this route's composition and ownership are unchanged. The `+4` shift the import caused moved citations only.
 - 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):

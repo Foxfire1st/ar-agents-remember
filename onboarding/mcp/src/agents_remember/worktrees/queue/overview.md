@@ -6,9 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -164,6 +163,7 @@ The following current source owns the changed behavior; no external domain sourc
 | Recovery proves the accepted code and memory outputs without a cache lookup. | `resume_external_commits`; `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-160; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
 
 ## Update History
+- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
 - 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected preview and recovery authority; cache failures no longer refuse transactions. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.

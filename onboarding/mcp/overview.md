@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
+| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -56,7 +56,7 @@ assessments while claiming a complete bundle — is caught at the composition ra
 | --- | --- | --- |
 | **The production record owner: five collections and one stated non-measurement, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `_CURRENTNESS` | mcp/src/agents_remember/application/review_evidence_records.py:174-192; mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:144-158 |
 | **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:366-391; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054 |
-| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:731-766; mcp/src/agents_remember/models/knowledge/review.py:751-751 |
+| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:75-75; mcp/src/agents_remember/models/knowledge/review.py:893-893 |
 | **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:85-101; mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
 | The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745; mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 
@@ -134,8 +134,8 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:300-311 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:108; mcp/src/agents_remember/application/knowledge_review.py:628-673; mcp/src/agents_remember/application/knowledge_review.py:112-112; mcp/src/agents_remember/application/knowledge_review.py:716-716; mcp/src/agents_remember/application/knowledge_review.py:717-717 |
+| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:16-16; mcp/src/agents_remember/models/knowledge/review.py:300-311 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:121-121; mcp/src/agents_remember/application/knowledge_review.py:463-463; mcp/src/agents_remember/application/knowledge_review.py:112-112; mcp/src/agents_remember/application/knowledge_review.py:716-716; mcp/src/agents_remember/application/knowledge_review.py:717-717 |
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -2085,9 +2085,9 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | --- | --- | --- |
 | **The comparison route constant, GET-only.** | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
 | **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` | mcp/src/agents_remember/serving/review.py:63-67 |
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/serving/review.py:192-192 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:260-260; mcp/src/agents_remember/serving/review.py:192-192 |
 | **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` | mcp/src/agents_remember/serving/review.py:85-97 |
-| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:257-274; mcp/src/agents_remember/models/knowledge/review.py:98-106; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
+| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:257-274; mcp/src/agents_remember/models/knowledge/review.py:137-137; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
 | The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
@@ -2133,14 +2133,14 @@ empty surface.
 | --- | --- | --- |
 | The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
 | The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` | mcp/src/agents_remember/serving/review.py:59-61 |
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/serving/review.py:192-192 |
+| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" | mcp/src/agents_remember/serving/review.py:260-260; mcp/src/agents_remember/serving/review.py:192-192 |
 | The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:460-469 |
 | The registration that reads that port. | `register_review_routes(app, config, collaborators.knowledge_review)` | mcp/src/agents_remember/serving/app.py:295-295 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
 | **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:109-119; mcp/src/agents_remember/cli/dashboard.py:121-133 |
-| **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:257-257 |
+| **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:464-464; mcp/src/agents_remember/serving/review.py:257-257 |
 | **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:129-133 |
-| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:199-199; mcp/src/agents_remember/serving/review.py:257-257 |
+| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" | mcp/src/agents_remember/serving/review.py:464-464; mcp/src/agents_remember/serving/review.py:257-257 |
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
 
@@ -6091,10 +6091,39 @@ packet owns lives there, because no new application behaviour and no new refusal
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The one mapping both adapters reach, and the one body builder it uses.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:128-169 |
-| **The two actions the bodies gained, and the not-found body's offending input.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-125 |
+| **The two actions the bodies gained, and the not-found body's offending input.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:128-128; mcp/src/agents_remember/serving/review.py:132-132 |
 | **The result-to-status mapping, unchanged, which the new bodies are used beside.** | `_status_for` | mcp/src/agents_remember/serving/review.py:257-274 |
 
 ## Update History
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The delegation row cited `knowledge_review.py:84-88`/`672-705`, which the record-owner extraction and attribution wiring moved; it now cites the import block at `:93-96` and `_knowledge_pane` at `:694-727`. Wording unchanged; no stamp advanced.
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one place the review transport changed: the duplicated `AuthorityError`/`FileNotFoundError` mapping collapsed into one `_port_outcome` with one `_transport_refusal` body builder, and the two bodies that named only their message gained the action their own failure implies (plus the offending path for `not-found`). It also records the untouched neighbour that matters most: `application/knowledge_review.py`, the campaign's write mutex, is not touched because this packet introduced no application behaviour and no refusal code. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this package's impact for the leaf: the new `application/published_intent.py`, the `published_intent` field on the read-files response, the deliberately unchanged MCP surface (`mcp/tools/read_files.py` and the tool registration) and the untouched `application/knowledge_read.py`, the regenerated `package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` (179 → 239 lines, nine targets written by `scripts/sync-skills.py`), the case that holds the carrier to the payload's real spellings, and the boundary that the seven installed harness skill roots still carry the old carrier — an acceptance-time install the orchestrator owns, not a package change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.
+
+## 260921-ICR-L10 Complete Bounded Pagination On The Review Surface
+
+`260921-ICR-L10` (`ICR-R10@v1`) carries the two bounded review collections' **existing**
+snapshot-bound cursors through composition, transport and a reachable control, without minting a second
+pagination authority. The knowledge comparison's own knowledge-diff cursor and the review matrix's own
+view continuation are the only cursors; a new `application/review_pagination.py` owns how a page of
+either is stated and how a moved generation is mapped onto the surface's explicit new-generation action;
+the review models publish `ReviewCollectionPage` (with the constructor check that refuses a remainder
+without a cursor) and a separate `page_refusal`; the serving route admits the page size in its own
+vocabulary and names the input each refusal is about; and the dashboard renders the bounds, the scope and
+one action that reaches the rest from a captured real server body.
+
+Two facts a reader of the mcp route should carry away. **A page with a remainder cannot exist without its
+cursor** — the shape that produced the requirement's own non-conforming example is unrepresentable, not
+merely avoided. And **only the owners' binding-mismatch code is a moved generation**; every other refusal
+keeps the owner's own remedy and is reported as `comparison_page_unreadable`, so a reader is never told to
+open a new comparison when nothing moved. The manifest side is one lane row, three consumer rows and a
+re-pin with the population unchanged at sixteen contracts and sixty-six artifacts.
+
+## Update History
+- 2026-09-23T00:30:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; production line at this leaf's base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **route body updated: complete bounded pagination on the review surface.** The two bounded
+collections' own cursors now travel through composition, transport and a reachable control; a new
+application module owns the page arithmetic and the reset mapping; the review models publish the page
+value and a separate refusal; the serving route admits the page size itself; and the dashboard renders
+the control over a captured real body. The manifest side is one lane row, three consumer rows and a
+re-pin with the population unchanged. Rows across this route that cited the changed files by line were
+re-derived against this candidate. No verification stamp was advanced: nothing in this leaf is committed, so the commit/closeout stamp remains closeout's.
+
