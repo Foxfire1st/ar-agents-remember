@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_master_net_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `overview.md` |
 
@@ -102,7 +102,7 @@ the reviewed task evidence for any current behavioral claim.
 | The evidence lane the module runs in. | `pytestmark` | mcp/tests/test_master_net_generation.py:56-56 |
 | The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. | `MasterFixture`; `master_fixture` | mcp/tests/test_master_net_generation.py:110-229; mcp/tests/test_master_net_generation.py:231-235 |
 | The conforming add-then-remove case and the F1 diff-failure refusal case. | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
-| The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:114-114 |
+| The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:117-117 |
 | The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. | `select_master_net`; `master_changeset` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/changeset.py:247-323 |
 
 ## Cross-Repo References

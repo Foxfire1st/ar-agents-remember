@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,6 @@ This package marker is documented by the nearest mcp route overview and the real
   card from their anchors against the frozen source snapshot (`agents-remember memory-citations
   --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
   back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: fixed two Repo-Internal Reference rows: the package-docstring anchor is now the double-quoted literal "Command-line adapters for the application layer" (the backticked span was not anchor-shaped), and the route-overview row was repointed from the vanished mcp/overview.md:803-803 to the memory-tree onboarding/mcp/overview.md:803-803 with the quoted literal "`agents-remember` CLI under `cli/`" as anchor.
+- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: fixed two Repo-Internal Reference rows: the package-docstring anchor is now the double-quoted literal "Command-line adapters for the application layer" (the backticked span was not anchor-shaped), and the route-overview row was repointed from the vanished mcp/overview.md:803-803 to the memory-tree onboarding/mcp/overview.md:793-793 with the quoted literal "`agents-remember` CLI under `cli/`" as anchor.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

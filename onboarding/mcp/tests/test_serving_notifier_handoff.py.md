@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T21:25+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | path | `mcp/tests/test_serving_notifier_handoff.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -156,7 +156,7 @@ not execution evidence and is not a certification result.
 | A live pass that did not read the fact cannot be the pass that satisfies the stage. | `test_a_live_pass_that_did_not_observe_the_fact_does_not_satisfy_the_stage` | mcp/tests/test_serving_notifier_handoff.py:325-354 |
 | Notifier disablement pauses signal derivation only, and re-enabling in place consumes already-committed truth on the next pass. | `test_a_disabled_notifier_pauses_signal_derivation_only` | mcp/tests/test_serving_notifier_handoff.py:356-376 |
 | The shared fixture this module extends rather than duplicating. | `_ServingFixture` | mcp/tests/test_serving_observation_loop.py:259-370 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_notifier_handoff.py" | mcp/tests/test-evidence-lanes.toml:161-161 |
+| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_notifier_handoff.py" | mcp/tests/test-evidence-lanes.toml:161-161; mcp/tests/test-evidence-lanes.toml:169-169 |
 
 ## Cross-Repo References
 

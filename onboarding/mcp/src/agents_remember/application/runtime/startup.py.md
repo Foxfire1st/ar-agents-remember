@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/application/runtime/startup.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:24+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,6 +72,7 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-18T19:24+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the second serving-build reader this leaf's item 26 added, which this card did not mention.** `measuring_build_stamp` (`:36-51`) returns the process's resolved boot identity as `{"servingBuild": …}` wire JSON — a dict copy of the identity `process_serving_build()` caches once per process, `dirty` included — and is consumed by the memory-quality controller's three public entry points and by `citation_fix_tool`/`citation_migrate_tool`; the Purpose and `### Logic` sections now state it and its reason (D-33: a fixed serving build measuring a different candidate, indistinguishable in the output). It is a stamp, not a second resolution, and it does not move `initialize_mcp_application` or `mcp_serving_build_payload`. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp; the reference rows are left to the citation-range repair pass that owns them.
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the application-owned serving-build

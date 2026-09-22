@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T00:45+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260915-ks-l47-ar`, uncommitted; base `be325216416326a66950c9e320ff8d08f41e5d66` |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 |**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:116-184 |
 |The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1290-1290 |
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:214-214 |
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
 |The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1290-1290 |
 
 ## Cross-Repo References

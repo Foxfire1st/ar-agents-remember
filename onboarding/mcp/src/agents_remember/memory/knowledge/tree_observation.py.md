@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/tree_observation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
@@ -103,7 +103,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The observation: availability apart from paths, entries held in agreement with paths, and the unrepresentable-implies-partial rule.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108 |
 | **The Git seam as one question, and the probe that observes nothing for a comparison whose sides named no code tree.** | `TreeDifferenceProbe`; `no_tree_difference_probe` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:114-134 |
 | **The shared vocabulary defined once and re-exported at the display seam, so existing importers keep working.** | `TreePaths`; `TreeChange`; `partition_attribution` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108; mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178 |
-| **The two readers that consume this vocabulary beside the display.** | `partition_attribution`; `review_inventory` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178; mcp/src/agents_remember/application/review_source_inventory.py:430-471 |
+| **The two readers that consume this vocabulary beside the display.** | `partition_attribution`; `review_inventory` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178; mcp/src/agents_remember/application/review_source_inventory.py:429-469 |
 
 ## Cross-Repo References
 

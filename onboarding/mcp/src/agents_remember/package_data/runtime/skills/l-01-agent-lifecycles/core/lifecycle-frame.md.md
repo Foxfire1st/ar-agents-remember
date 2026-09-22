@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/lifecycle-frame.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ repository prose consumed by the skill router.
 ## Repo-Internal References
 
 | The six-signal frame and the dropped-call rule. | `## The Minimal Lifecycle Frame` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-38 |
-| The four-step trust checkpoint bound to the architect and orchestrator. | `## The trust checkpoint` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:40-56 |
+| The four-step trust checkpoint bound to the architect and orchestrator. | `## The trust checkpoint` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:40-56; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:39-39 |
 | The provider-degradation response protocol every seat meets. | `## Provider degradation, as every seat meets it` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:57-70 |
 
 ## Cross-Repo References

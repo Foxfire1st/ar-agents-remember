@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_next_step_address_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:07+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -141,7 +141,7 @@ it pins.
 | The positive control: the omission is a contradiction check, not blanket suppression. | `test_a_hint_naming_the_addressed_contract_is_kept_unchanged` | mcp/tests/test_next_step_address_binding.py:122-133 |
 | **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** | `test_two_addressed_contracts_in_sequence_yield_two_different_hints` | mcp/tests/test_next_step_address_binding.py:122-164 |
 | **The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.** | `test_an_envelope_with_no_address_has_its_hint_withheld`; `TaskDocResponse` | mcp/tests/test_next_step_address_binding.py:182-219; mcp/src/agents_remember/models/task_doc.py:138-138 |
-| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" | mcp/tests/test-evidence-lanes.toml:203-203 |
+| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" | mcp/tests/test-evidence-lanes.toml:203-203; mcp/tests/test-evidence-lanes.toml:211-211 |
 
 ## Cross-Repo References
 

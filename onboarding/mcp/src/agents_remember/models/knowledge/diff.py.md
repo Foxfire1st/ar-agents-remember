@@ -6,10 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -201,6 +199,7 @@ caller supplied; no second repository, ledger or coordination path is read.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the vocabulary gained the attribution partition for ICR-R04@v1.** `ATTRIBUTION_GRANULARITY` (`changed_path`), `AttributionBucket` (three), `AttributionLink` (four — the two `outside` members are different facts), `AttributionSideState` (three), `AttributionSide`, `ChangedPathAttribution` and `SourceAttribution` (634 → 892 lines) with the disjoint-plus-exhaustive validator that refuses a repeated path, disagreeing totals, an unavailable partition carrying a number, and buckets that do not sum. `DiffOmissionReason` gained `attribution_not_determined` and `DiffLimitation` gained `unknown_attribution_changed_paths` — two limits, not one — with the model's own `_attribution_not_measured` as the undetermined limit's second producer beside the display's. The "gap is a value" section now states the partition and its three lists; every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `KnowledgeOperation` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:37-75 to mcp/src/agents_remember/models/knowledge/result.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 152, 349] as its live location); re-pointed `KnowledgeRefusalCode` in the row 177 of this card from mcp/src/agents_remember/models/knowledge/result.py:36 to mcp/src/agents_remember/models/knowledge/result.py:80, the extent of the construct the claim is about (the checker named line(s) [80, 151] as its live location)

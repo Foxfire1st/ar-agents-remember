@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-09-17T11:10+02:00 |
-| lastVerifiedCommitHash | `b7bfebb550f036a7e51de1f390be1123cd2d2172` |
-| lastVerifiedCommitDate | 2026-09-20T05:54:26+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 
 ## What This Area Is
 
@@ -247,7 +247,7 @@ the live gates and both real open E2Es.
 
 | The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
 | `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-4959 |
+| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-4986 |
 | Historical evidence (retired with the d3610903 suite reduction): The installed Codex 0.144.5 runtime fixture recorded disabled capabilities and the native-history/list-read-resume production-gate evidence. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
 ## Cross-Repo References
@@ -402,6 +402,7 @@ with a recorded reason.
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1`. The only edit to this document is citation-coordinate regeneration against the grown `mcp/tests` route overview (the leaf recorded three relationship case modules and their lane and consumer registrations). No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T11:10+02:00 — 260915-CAPS-L15 curator: **route meaning changed: this route is now the
@@ -415,7 +416,7 @@ The library child routes now import the page/history wire contracts from `models
   in this overview's own existing tables were re-read and repaired by hand** because this leaf's
   insertions shifted the constructs they point at: the tracked-opener row's `open_terminal_session`
   `738-791` → **`821-879`**, and the suite-population row's `# mcp/tests` target
-  `onboarding/mcp/tests/overview.md:1-2095` → **`1-2669`**. The sanctioned per-document `citation_fix`
+  `onboarding/mcp/tests/overview.md:1-2122` → **`1-2669`**. The sanctioned per-document `citation_fix`
   is unreachable in a leaf worktree (D14), so both were rebind by reading the candidate. Verification metadata moves
   to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
   stamps the real code commit and no hash or fingerprint was invented here.

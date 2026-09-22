@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_agreement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T05:10+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | `260918-TSIP-L12` uncommitted source, **1124 lines / 35 cases**, sha256 `34db6ea729d58833…`, on base `15e100846a7ec984714580470d7f6985a425fcc4` |
 | governingOverview | `overview.md` |
 
@@ -232,7 +232,7 @@ make no acceptance claim.
 | Both figures asserted separately at every pinned site, so a site that has moved on is red. | `test_the_live_sites_still_state_the_figures_they_are_pinned_to` | mcp/tests/test_memory_citation_agreement.py:927-959 |
 | The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. | `test_the_two_figure_classes_are_counted_separately` | mcp/tests/test_memory_citation_agreement.py:961-970 |
 | The module's own mutation boundary, read from its own AST (`T114`'s bound). | `test_this_module_shells_out_to_nothing` | mcp/tests/test_memory_citation_agreement.py:1127-1160 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" | mcp/tests/test-evidence-lanes.toml:127-127; mcp/tests/test-evidence-lanes.toml:134-134 |
 | The product counter this module's live case reads, and the code string it emits. | `definition_outside_range_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:466-513 |
 | The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-685 |
 | The payload key the live pin reads. | "definitionsOutsideCitedRanges" | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:718-718 |

@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_requirement_revisions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
-| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l19` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -128,4 +127,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T06:20+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the record group's internal-boundary suite. It records what the 17 cases actually pin and, more usefully, the three things a reader would otherwise have to infer: immutability is asserted **against stored bytes** re-read after the fact rather than against a return value, so "a revision is never rewritten" is measured; the two forbidden-name sets are **restated in the suite rather than imported from production**, so the absence case cannot be satisfied by an import that quietly stopped covering a name; and the stored-cycle case **forces store damage on purpose** (the `record_revision_no_rewrite` trigger is dropped and an edge re-sealed) to prove the record group composes the shared `lineage.find_cycle` instead of judging adjacency itself. It also records that `_write_packet` is defined here and never called — the live copy is in the reference-contract sibling — and the code-side gate gap this leaf left open, which is recorded in the leaf's curator report rather than settled by a card: these modules were added to the lane manifest but not to the two `consumer_scope = "exact"` consumer lists in `mcp/tests/evidence-lifecycle.toml` they now import from. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.

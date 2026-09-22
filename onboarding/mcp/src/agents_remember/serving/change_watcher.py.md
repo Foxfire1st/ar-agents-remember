@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -177,11 +177,11 @@ the CLI/daemon own the `--heartbeat` knob's plumbing.
 | Projection source readers determine the input surface. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:214-278 |
 | Projector wiring and fail-open watcher completion retain actual ownership. | `ProjectionRefreshers`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:262-273 |
 | The live-input model selects actual watcher participation. | `LiveProjectionInputs` | mcp/src/agents_remember/serving/_app_common.py:394-416 |
-| Dashboard reload entry carries the pacing configuration. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:102-132 |
+| Dashboard reload entry carries the pacing configuration. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:102-132; mcp/src/agents_remember/cli/dashboard.py:135-135; mcp/src/agents_remember/cli/dashboard.py:307-307 |
 
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
-| Runtime dependency is explicitly version bounded. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:28-28 |
+| Runtime dependency is explicitly version bounded. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:28-28; mcp/pyproject.toml:34-34 |
 
 ## Cross-Repo References
 

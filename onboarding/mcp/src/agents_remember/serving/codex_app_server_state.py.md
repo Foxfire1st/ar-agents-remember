@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `34f818a190c35238dca33552d586ea2ace5d9e06` |
-| lastVerifiedCommitDate | 2026-09-16T14:33:47+02:00|
-| reviewedWorkingCandidate | `ar/260915-caps-l5-ar` uncommitted source; base `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,6 +110,7 @@ No external repository boundary is implemented by this parser module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: documented the thread-open `instructionSources`
   observation on `CodexThreadEvidence` — absent/null yields `()`, a malformed present value raises with

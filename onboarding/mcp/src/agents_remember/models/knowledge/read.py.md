@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `1ff1893f44d875073d58af863238501a6be35288`|
-| lastVerifiedCommitDate | 2026-09-16T23:58:57+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l07` uncommitted source; base `4eb2b1992f6183fba06e9f31aa664d9a93094c26` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -154,5 +153,6 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): created this one-to-one card for the read's typed vocabulary. It records the **four load-bearing splits** (seed versus selection — a seed carries no filter, sort, revision preference or display version; selection versus page — the three `primary_items_*` fields describe one walk so a one-item page cannot be read as a one-item scope at any position; provenance versus verdict — **the response has no field that could hold a current-truth marker, a severity or a ranking**, which is how the requirement's *Forbidden Overreach* is enforced structurally; and continuing versus re-binding), the **three model-level invariants a consumer may rely on** (a page cannot present a truncation as complete, the counts cannot contradict their own arithmetic, and a result is a page or a refusal and never both), the declared policy version, budgets, execution bound and the seven-member anchor vocabulary this leaf did **not** extend, and the cursor's binding fields with the one encoder/decoder pair. It also records that `task_ref=None` is a supported baseline state rather than a degraded one, and that the seed path applies the one shared path-shape rule. Verification metadata remains empty until closeout stamps the code commit.

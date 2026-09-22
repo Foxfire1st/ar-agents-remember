@@ -6,9 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-20T06:40+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -163,6 +162,7 @@ served were removed; this module exports no wait payload today and the name appe
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-20T06:40+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the sync builder stopped taking a bare action, and this card's parameter claim is corrected rather than annotated.** `worktree_sync_payload` now takes `resolution: SyncResolutionInput | None` — the action plus the authored decision it may carry as one value, paired one layer up in `mcp/registration/worktrees.py` — because the application entry point is at the `PLR0913` argument ceiling and because the driver refuses the two as a pair. The registration-side card gained the matching row for the flat `knowledge_resolution` argument and its docstring. Every cited range in this card was re-derived against the delivered tree (the import block grew, so every builder moved). Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 

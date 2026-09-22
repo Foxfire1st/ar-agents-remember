@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -106,6 +105,7 @@ temporary Git repository local to each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: module row re-derived to the merged tree (`:218` → `:219`).** ICR-L7 inserted its revision-selection row above, moving this registration one line down; re-read against the line that carries it. No verification stamp was advanced.
 
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file; the range that moved belongs to `mcp/tests/test-evidence-lanes.toml`, which gained the `mcp/tests/test_knowledge_review_source_content.py` row at `:111`. The three integration-lane rows that carried this module's own registration cited `:212`, one line above the line that holds the path on this candidate; each was re-read and re-derived to `:215`, the line that actually carries `"mcp/tests/test_knowledge_citation_boundaries.py"`. No claim wording, anchor or other range was changed, no row was dropped to silence a finding, and **no verification stamp was advanced** — `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are kept exactly as recorded, because the candidate is uncommitted and the governed closeout owns the real commit.

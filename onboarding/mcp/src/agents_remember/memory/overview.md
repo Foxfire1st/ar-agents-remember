@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
@@ -1497,6 +1497,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
 - 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the recorded-identities row re-cited to the landed declaration** (`_recorded_identities` `:319-338`). Wording retained; no stamp advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **four enforced rows re-cited** (`TreeChange`/`TreePaths` to `tree_observation.py`, `TREE_DIFF_COMMAND`, `_expansion_detail`, probe delegation). Wording unchanged; no stamp advanced.
@@ -1796,7 +1797,7 @@ through — is now a one-line delegation to it.
 | **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108 |
 | **The advertised command, now the delimiter-safe interface the measurement itself reads.** | `TREE_DIFF_COMMAND` | mcp/src/agents_remember/memory/knowledge/diff_display.py:113-113 |
 | **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** | `_expansion_detail` | mcp/src/agents_remember/memory/knowledge/diff_display.py:452-468 |
-| **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:166-181; mcp/src/agents_remember/application/review_source_inventory.py:195-237 |
+| **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:166-181; mcp/src/agents_remember/application/review_source_inventory.py:194-236 |
 | The cases that measure the observation on real repositories, including the name a line-oriented interface loses and the non-UTF-8 boundary. | `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:1010-1035; mcp/tests/test_knowledge_diff_boundaries.py:1118-1170 |
 
 ## Update History

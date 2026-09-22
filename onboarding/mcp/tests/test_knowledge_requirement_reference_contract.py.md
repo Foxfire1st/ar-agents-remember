@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_requirement_reference_contract.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash | `a066550591eb3116ae008cc0d57f3558b0af52c5` |
-| lastVerifiedCommitDate | 2026-09-18T07:03:08+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l19` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -144,4 +143,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T06:20+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the record group's task-plane reference contract and derived-view suite. It records the four facts a reader would otherwise have to reconstruct from the cases: the **real** owner resolver is driven rather than stubbed, because a stubbed resolver cannot catch the second resolver this suite exists to exclude; the absent-field campaign runs at **two planes** (the payload parametrization and the re-derived schema census over every registered generation), which is what makes the absence falsifiable and is the evidence for this leaf's recorded quotation-degree ruling that no operative-text field exists; the reference-is-never-rewritten claim is proven by **byte-identity of the stored reference under four real owner refusals**, which is the case that would fail if the owner's normalized path were adopted; and disposability is measured as **byte-equality across two builds from the same stored rows**. It also records that the no-winner cases carry positive controls (a disagreement must report both states, and an asserted `aligned` must be refused as not derived), and it records the code-side gate gap this leaf left open — these modules are in the lane manifest but absent from the two `consumer_scope = "exact"` consumer lists in `mcp/tests/evidence-lifecycle.toml` they import from. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.

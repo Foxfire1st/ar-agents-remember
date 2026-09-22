@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ no entries); static-serving behavior is proven by repository source and tests.
 | `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. | "def dashboard_static_dir" | mcp/src/agents_remember/serving/static.py:104-104 |
 | The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | "def mount_static" | mcp/src/agents_remember/serving/static.py:112-112 |
 | The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:227-227 |
-| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:318-318 |
+| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:318-318; mcp/src/agents_remember/serving/app.py:322-322 |
 
 
 

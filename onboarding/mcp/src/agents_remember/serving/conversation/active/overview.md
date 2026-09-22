@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-09-06T00:38:37+00:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`|
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 
 ## What This Area Is
 
@@ -408,6 +408,7 @@ offload are untouched.
 The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1`, and nothing in its body claims otherwise. The only edit to this document is citation-coordinate regeneration: its rows cite the `mcp/tests` route overview by line, and that overview grew when the leaf's three relationship case modules and their governed registrations were recorded, so the cited ranges were re-derived from the anchors' real positions. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
 
 - 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the unchanged active-serving test summary and updated the incoming memory citation after the tests overview grew; retained source verification provenance.
 
@@ -426,7 +427,7 @@ The active conversation routes now import the wire contracts from `models/conver
   unchanged, and verification metadata remains pinned.
 
 - 2026-09-01T03:50+02:00 — 260831-CCR-L11 curator citation maintenance: rebound the focused-suite
-  citation from `onboarding/mcp/tests/overview.md:1017-1021` to `onboarding/mcp/tests/overview.md:1032-1036`
+  citation from `onboarding/mcp/tests/overview.md:1044-1048` to `onboarding/mcp/tests/overview.md:1059-1063`
   after L11 inserted certification test-onboarding content. This is citation-range maintenance only;
   no active-conversation route or source behavior changed, and verification metadata remains pinned.
 
@@ -471,7 +472,7 @@ The active conversation routes now import the wire contracts from `models/conver
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 
 - 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the offloaded projector resolution; singleflight/epoch/identity semantics unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:668-668; onboarding/mcp/tests/overview.md:670-672`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.
+- 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:695-695; onboarding/mcp/tests/overview.md:697-699`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.
 
 - 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three routes' declared response
   shapes and the one shared refusal table, with the two things the table would otherwise mislead

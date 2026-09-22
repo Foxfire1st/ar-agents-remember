@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 | The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:683-710 |
 | The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:864-878 |
 
-| The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
+| The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982; mcp/tests/test_author_execution_graph.py:53-53 |
 | Preview and apply both route graph cardinality/title preparation through the central application owner. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:201-284 |
 | The central owner provides the zero/one assertion and exact in-memory join. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 

@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate |  2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ documentation was invented.
 | The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:791-791 |
 | Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:799-799 |
 
-| The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
+| The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:560-560 |
 
 ## Cross-Repo References
 

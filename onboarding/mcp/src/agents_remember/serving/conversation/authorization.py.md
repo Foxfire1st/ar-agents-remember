@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/authorization.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate |  2026-09-20T14:22:54+02:00|
+| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ it from the workspace root it already holds.
 | --- | --- | --- |
 | `AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies. | "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:56-56 |
 | The request dependency consults only the ASGI TCP peer and delegates to the bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | "LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)" | mcp/src/agents_remember/serving/app.py:315-315 |
+| The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime. | "LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)" | mcp/src/agents_remember/serving/app.py:315-315; mcp/src/agents_remember/serving/app.py:319-319 |
 | `AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings. | `AuthorityError` | mcp/src/agents_remember/errors.py:110-116 |
 | Contract tests prove local-operator identity, loopback resolution, non-loopback/unknown fail-closed, the signature-pinned no-identity-channel, ignored browser claims, cross-principal cursor/scope/operation rejection, and injected-resolver separation in both directions. | `test_server_resolves_one_local_operator_workspace_identity`; `test_loopback_peers_resolve`; `test_non_loopback_peers_fail_closed`; `test_unknown_peer_fails_closed`; `test_server_resolves_one_local_operator_workspace_identity`; `test_browser_identity_claims_are_never_read`; `test_cross_principal_cursor_binding_rejected`; `test_cross_principal_scope_binding_rejected`; `test_cross_principal_operations_have_distinct_fingerprints`; `test_injected_resolver_proves_cross_principal_rejection` | mcp/tests/test_conversation_authorization.py:117-126; mcp/tests/test_conversation_authorization.py:129-134; mcp/tests/test_conversation_authorization.py:137-152; mcp/tests/test_conversation_authorization.py:155-158; mcp/tests/test_conversation_authorization.py:168-189; mcp/tests/test_conversation_authorization.py:217-235; mcp/tests/test_conversation_authorization.py:238-255; mcp/tests/test_conversation_authorization.py:258-267; mcp/tests/test_conversation_authorization.py:270-290 |
 

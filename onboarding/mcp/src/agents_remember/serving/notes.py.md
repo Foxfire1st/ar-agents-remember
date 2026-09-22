@@ -6,9 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/notes.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`     |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`     |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -127,6 +126,7 @@ No meaningful cross-repo references found.
 
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **citation repair only, forced by this leaf's move of two sources this card cites; no content impact on this module.** `changeset.py`'s `_master_task_root` moved to `serving/master_net_generation.py` as `master_task_root` (`:120-125`), so the confinement row is re-anchored onto the moved declaration with the move named; `SCOPED_READ_RESPONSES` moved `:1103-1109` → `:1122-1128` with this leaf's vocabulary insertion, re-derived. The 2026-09-21 mechanical projection bullet below that recorded the deleted `:156-160` range is retired by this reading. No claim about `notes.py` itself changed. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 
 - 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.

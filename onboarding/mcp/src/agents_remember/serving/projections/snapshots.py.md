@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`       |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -442,10 +442,10 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 | The worktree contract loader + fields (surfaces 5/6). | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
 | The setup-progress projection (`progress_status`) reused for surface 3. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The memory ledger loader read for surface 8. | `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
+| The memory ledger loader read for surface 8. | `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:215-215; mcp/src/agents_remember/kernel/memory_ledger.py:221-221 |
 | The data-surface inventory the structural/analytical split follows. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
 | The gate reader's two halves: the tolerant `read_for_projection` this module now uses, and `projected_current`, which folds + keep-filters from that one read and rewrites nothing (`now=None` folds without the retention filter). | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
-| The expectation-row reader's two halves: the tolerant `read_for_projection` and the `pending_for_projection` wrapper `read_expectation_rows` calls; the docstring names this module's `suppress`-plus-strict-read defect as the reason it exists. | `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
+| The expectation-row reader's two halves: the tolerant `read_for_projection` and the `pending_for_projection` wrapper `read_expectation_rows` calls; the docstring names this module's `suppress`-plus-strict-read defect as the reason it exists. | `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223; mcp/src/agents_remember/controlplane/expectation_rows.py:226-226 |
 | Where the gate-log rewrite went: reclamation in the log's owner process, guarded by a non-raising ownership question and run on terminal decisions. | `_reclaim_gate_log` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80 |
 
 ## 260727-CHATS-IM-L2 Current Delta

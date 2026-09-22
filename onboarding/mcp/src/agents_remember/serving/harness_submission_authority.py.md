@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -209,8 +209,8 @@ repository-owned.
 | The API registers the submission-ledger routes. | `_register_submission_ledger_routes` | mcp/src/agents_remember/serving/harness_control_api.py:301-339 |
 | The API exposes the submission-authority route. | `api_submission_authority` | mcp/src/agents_remember/serving/harness_control_api.py:306-316 |
 | The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:274-278 |
-| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:998-1002 |
-| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:1032-1041 |
+| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:998-1002; mcp/src/agents_remember/serving/response_contract.py:1017-1017 |
+| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:1032-1041; mcp/src/agents_remember/serving/response_contract.py:1051-1051 |
 
 
 

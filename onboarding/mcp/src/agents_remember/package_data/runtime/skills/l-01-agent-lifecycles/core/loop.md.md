@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/loop.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -74,11 +74,11 @@ repository prose consumed by the skill router.
 ## Repo-Internal References
 
 | The owner/builder/reviewer separation and the per-altitude table. | `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/core/loop.md:1-15 |
-| Review is opt-in and explicit, and independence requires another agent. | `## Review is opt-in and explicit` | skills/l-01-agent-lifecycles/core/loop.md:17-26 |
-| The three review tiers and the rule that knobs never create a review. | `## Complexity-scored tiers (per leaf, at dispatch, when review is requested)` | skills/l-01-agent-lifecycles/core/loop.md:28-49 |
-| The three-round cap, the convergence rule, and the simple review rule. | `## Rounds and convergence` | skills/l-01-agent-lifecycles/core/loop.md:51-83 |
-| The criteria-catalog binding and the promotion ratchet. | `## Criteria catalogs (the reviewer as test bench)` | skills/l-01-agent-lifecycles/core/loop.md:85-93 |
-| Requirement compilation precedes task topology; packets are version-addressed and cold-readable. | `## Requirement compilation precedes task topology` | skills/l-01-agent-lifecycles/core/loop.md:99-115 |
+| Review is opt-in and explicit, and independence requires another agent. | `## Review is opt-in and explicit` | skills/l-01-agent-lifecycles/core/loop.md:17-26; skills/l-01-agent-lifecycles/core/loop.md:14-14 |
+| The three review tiers and the rule that knobs never create a review. | `## Complexity-scored tiers (per leaf, at dispatch, when review is requested)` | skills/l-01-agent-lifecycles/core/loop.md:28-49; skills/l-01-agent-lifecycles/core/loop.md:25-25 |
+| The three-round cap, the convergence rule, and the simple review rule. | `## Rounds and convergence` | skills/l-01-agent-lifecycles/core/loop.md:51-83; skills/l-01-agent-lifecycles/core/loop.md:46-46 |
+| The criteria-catalog binding and the promotion ratchet. | `## Criteria catalogs (the reviewer as test bench)` | skills/l-01-agent-lifecycles/core/loop.md:85-93; skills/l-01-agent-lifecycles/core/loop.md:78-78 |
+| Requirement compilation precedes task topology; packets are version-addressed and cold-readable. | `## Requirement compilation precedes task topology` | skills/l-01-agent-lifecycles/core/loop.md:99-115; skills/l-01-agent-lifecycles/core/loop.md:94-94 |
 
 ## Cross-Repo References
 

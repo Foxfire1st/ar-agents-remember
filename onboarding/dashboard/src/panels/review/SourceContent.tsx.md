@@ -8,8 +8,8 @@
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -192,7 +192,7 @@ surface over the real client.
 | The reused renderers and the one client function this module reads through, with the wire types it consumes. | `DiffPane`; `FilePane`; `reviewSourceContent` | dashboard/src/panels/review/SourceContent.tsx:27-38; dashboard/src/panels/review/SourceContent.tsx:5-5; dashboard/src/panels/review/SourceContent.tsx:46-46; dashboard/src/panels/review/SourceContent.tsx:98-98; dashboard/src/panels/review/SourceContent.tsx:13-13; dashboard/src/panels/review/SourceContent.tsx:47-47; dashboard/src/panels/review/SourceContent.tsx:80-80; dashboard/src/panels/review/SourceContent.tsx:44-44; dashboard/src/panels/review/SourceContent.tsx:202-202 |
 | **The one renderability predicate: a side with `text` is text a reader can be shown, and it is deliberately not the `present` state.** | `textual`; `present` | dashboard/src/panels/review/SourceContent.tsx:40-56 |
 | **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:46-66 |
-| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:68-74; dashboard/src/panels/file-viewer/FilePane.tsx:20-20 |
+| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:68-74; dashboard/src/panels/file-viewer/FilePane.tsx:20-20; dashboard/src/panels/review/SourceContent.tsx:77-77; dashboard/src/panels/review/SourceContent.tsx:117-117; dashboard/src/panels/review/SourceContent.tsx:118-118 |
 | **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
 | **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:114-124 |
 | **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:126-138 |

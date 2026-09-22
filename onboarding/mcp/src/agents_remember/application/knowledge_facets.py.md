@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_facets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -140,4 +139,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the route's sixth composition seam. It records the read-only handle as the structural reason "a refused facet read persisted nothing" holds, the **three** snapshot comparisons (namespace, schema generation, logical dataset) that run before any selection, the **absence-versus-emptiness** split where a recorded facet record with no attachments is served as a real page rather than reported as `selector_absent`, the complete-or-refused selection with no cursor, the one operation name every refusal carries, the shared `KnowledgeReadContext` and shipped digest helpers rather than second definitions, and the non-overlap with `KS-R07@v1`'s selection that makes a shipped seed's page byte-identical. It also records, as a position rather than a defect claim, that the module docstring counts itself the **fifth** seam while naming five predecessors. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

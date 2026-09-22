@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FilePane.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-04T03:03+02:00                             |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`         |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`         |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ L1 `language` id.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sibling theme module defines the CodeMirror chrome plus syntax `HighlightStyle` bundle. | `chrome`; `"HighlightStyle.define"`; `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27; dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
+| The sibling theme module defines the CodeMirror chrome plus syntax `HighlightStyle` bundle. | `chrome`; `"HighlightStyle.define"`; `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27; dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49; dashboard/src/panels/file-viewer/codemirrorTheme.ts:29-29 |
 | The `FilePane` module imports the sibling `codeTheme`. | "import { codeTheme }" | dashboard/src/panels/file-viewer/FilePane.tsx:10-10 |
 | `FilePane` installs `codeTheme` in the `EditorState` extension list. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
 | The sibling language module defines the lazy language-by-extension map. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |

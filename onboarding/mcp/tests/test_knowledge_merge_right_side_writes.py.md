@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_merge_right_side_writes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:09+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l23` uncommitted source; base `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
 | governingOverview | `mcp/tests/overview.md` |
 
@@ -137,8 +137,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The published-candidate case: the right side's own label is read back out of the merged file.** | `test_a_right_side_update_is_replayed_and_the_published_candidate_carries_it` | mcp/tests/test_knowledge_merge_right_side_writes.py:183-215 |
 | **The reparent case, with the two sibling assertions that separate "the right row moved" from "something moved".** | `test_a_replayed_reparent_moves_the_row_it_names_and_no_other` | mcp/tests/test_knowledge_merge_right_side_writes.py:218-241 |
 | **The cycle case: `lineage_cycle` attributed to the merge, nothing published, the three inputs byte-identical.** | `test_a_replayed_route_reparent_that_closes_a_cycle_refuses_the_whole_merge` | mcp/tests/test_knowledge_merge_right_side_writes.py:244-285 |
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" | mcp/tests/test-evidence-lanes.toml:205-205 |
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" | mcp/tests/test-evidence-lanes.toml:205-205 |
+| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" | mcp/tests/test-evidence-lanes.toml:205-205; mcp/tests/test-evidence-lanes.toml:213-213 |
+| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" | mcp/tests/test-evidence-lanes.toml:205-205; mcp/tests/test-evidence-lanes.toml:213-213 |
 
 ## Cross-Repo References
 

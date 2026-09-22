@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | path | `mcp/tests/test_closeout_projection_source_classification.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -110,8 +110,8 @@ repository's own source and its own declared refusal codes.
 | The single declaration that owns the capacity codes and their classification. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:34-34; mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:38-40 |
 | The raiser that publishes the code the first case reads back. | `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:165-174 |
 | The fixture this module composes instead of rebuilding the world. | `QueueFixture`; `REPO`; `SPRINT` | mcp/tests/test_closeout_queue.py:54-55; mcp/tests/test_closeout_queue.py:184-694 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:410-410 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:233-233 |
+| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:410-410; mcp/tests/evidence-lifecycle.toml:191-191; mcp/tests/evidence-lifecycle.toml:380-380; mcp/tests/evidence-lifecycle.toml:464-464; mcp/tests/evidence-lifecycle.toml:467-467; mcp/tests/evidence-lifecycle.toml:1170-1170; mcp/tests/evidence-lifecycle.toml:1194-1194; mcp/tests/evidence-lifecycle.toml:1223-1223; mcp/tests/evidence-lifecycle.toml:1243-1243; mcp/tests/evidence-lifecycle.toml:1473-1473; mcp/tests/evidence-lifecycle.toml:1608-1608; mcp/tests/evidence-lifecycle.toml:1647-1647; mcp/tests/evidence-lifecycle.toml:1683-1683 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/test-evidence-lanes.toml:241-241 |
 
 ## Cross-Repo References
 

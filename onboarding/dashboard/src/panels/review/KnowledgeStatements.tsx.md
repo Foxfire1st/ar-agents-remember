@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l6`, uncommitted; base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `dashboard/src/panels/overview.md` |
 
@@ -141,7 +141,7 @@ identifier-shaped and the citation grammar refuses it as an anchor.
 | **The available-content path: the explicit no-diff line and the readable operand as content, so no addition or removal is claimed from an unreadable side.** | `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:79-91 |
 | **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. | `ReviewSideState`; `ReviewSideContent` | dashboard/src/data/review.ts:12-12; dashboard/src/data/review.ts:15-21; dashboard/src/data/review.ts:36-36; dashboard/src/data/review.ts:122-122; dashboard/src/data/review.ts:123-123; dashboard/src/data/review.ts:33-33; dashboard/src/data/review.ts:37-37 |
-| The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:98-103 |
+| The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:98-103; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318 |
 | **The delegation: pane 1 renders `KnowledgeStatements` where it used to hold the both-present gate and the `sideState` helper.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:182-205; dashboard/src/panels/review/ReviewSurface.tsx:7-7; dashboard/src/panels/review/ReviewSurface.tsx:48-48; dashboard/src/panels/review/ReviewSurface.tsx:220-220; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624 |
 | The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/changeset/DiffPane.tsx:117-117 |
 | The content viewer the unreadable-opposite path reuses, and its own test id. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-20; dashboard/src/panels/file-viewer/FilePane.tsx:49-49 |

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc`  |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`  |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -140,7 +140,7 @@ claims are proven by repository source and tests.
 | The observer event envelope tailed here. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
-| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:124-124 |
+| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:124-124; mcp/src/agents_remember/serving/_app_common.py:128-128 |
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
 | `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |

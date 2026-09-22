@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -168,15 +168,15 @@ does not.
 | `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:344-344 |
 | `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
 | `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The fixture bases draw their lifecycle sample from the hand-maintained oracle. | "\"lifecycles\": [" | dashboard/src/fixtures/snapshot.json:1791-1791 |
-| The fixture bases draw their enclosure sample from the same oracle. | "\"enclosures\": [" | dashboard/src/fixtures/snapshot.json:1166-1822 |
+| The fixture bases draw their lifecycle sample from the hand-maintained oracle. | "\"lifecycles\": [" | dashboard/src/fixtures/snapshot.json:1791-1791; dashboard/src/fixtures/snapshot.json:55-55 |
+| The fixture bases draw their enclosure sample from the same oracle. | "\"enclosures\": [" | dashboard/src/fixtures/snapshot.json:1166-1822; dashboard/src/fixtures/snapshot.json:55-55 |
 | The oracle carries its independent analytics sample. | "\"analytics\": {" | dashboard/src/fixtures/snapshot.json:3-1112 |
-| The agent-pickup builder takes its sample from analytics. | "\"agentPickups\": [" | dashboard/src/fixtures/snapshot.json:4-41 |
-| The task-document builder takes its sample from analytics. | "\"taskDocuments\": [" | dashboard/src/fixtures/snapshot.json:728-1103 |
+| The agent-pickup builder takes its sample from analytics. | "\"agentPickups\": [" | dashboard/src/fixtures/snapshot.json:4-41; dashboard/src/fixtures/snapshot.json:55-55 |
+| The task-document builder takes its sample from analytics. | "\"taskDocuments\": [" | dashboard/src/fixtures/snapshot.json:728-1103; dashboard/src/fixtures/snapshot.json:55-55 |
 | The attention-item builder takes its sample from analytics. | "\"attentionQueue\": [" | dashboard/src/fixtures/snapshot.json:42-79 |
-| The engine-process builder takes its sample from analytics. | "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:96-574 |
+| The engine-process builder takes its sample from analytics. | "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:96-574; dashboard/src/fixtures/snapshot.json:55-55 |
 | The provider builder takes its sample from the top-level providers array. | "const SERVED_PROVIDER = demandServed(SERVED.providers[0], \"providers[0]\");" | dashboard/src/test/fixtures/wire.ts:80-80 |
-| The served snapshot supplies the code provider and memory provider in its top-level provider array. | "\"totalTokens\": 2800 }, \"providers\": [" | dashboard/src/fixtures/snapshot.json:1939-1941 |
+| The served snapshot supplies the code provider and memory provider in its top-level provider array. | "\"totalTokens\": 2800 }, \"providers\": [" | dashboard/src/fixtures/snapshot.json:1939-1941; dashboard/src/fixtures/snapshot.json:55-55 |
 | The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 | The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
 | `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |

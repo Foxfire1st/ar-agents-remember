@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l18` uncommitted source; base `e963a01c` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -80,4 +79,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for the projection rule `KS-R18@v1` §3 introduces. It records the property the module exists to enforce — **a displayed assessment carries its disposition, its author and its exact examined inputs** — and the three consequences that are enforced rather than documented: a missing assessment is `None` on the row (an empty instance would be a *present* assessment saying nothing), a stale assessment is measured from its examined inputs and never upgraded, and there is no field for a conclusion, severity or recommendation, so a projection cannot acquire one by accident. The card also records that the module persists nothing and holds no store handle, which is what makes "a projection is derived and regenerable, never a second authority" structural rather than promised. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.

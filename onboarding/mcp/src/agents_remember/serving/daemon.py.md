@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/daemon.py`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T20:24+02:00                           |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`       |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ protocol.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158 |
+| CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. | `add_arguments` | mcp/src/agents_remember/cli/dashboard.py:84-158; mcp/src/agents_remember/cli/dashboard.py:168-168 |
 | The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:98-103 |
 | The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
 | The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp" | mcp/src/agents_remember/kernel/primitives/version.py:18-18 |

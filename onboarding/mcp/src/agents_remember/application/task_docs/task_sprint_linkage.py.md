@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:368-391; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:749-794 |
 
 | Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
-| Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731 |
+| Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:253-253; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:326-326; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:646-646 |
 | The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 
 ## 260815-DAG-L14 Linkage Boundary

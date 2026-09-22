@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T15:02+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | path | `mcp/tests/test_serving_startup_prime.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -132,7 +132,7 @@ references describe the behavior under test and do not claim a certification res
 | The one canonical observation entry point both the prime and later passes call. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
 | The six startup-order cases and their `(step, sweeps_completed)` witness. | `ServingStartupPrimeTests` | mcp/tests/test_serving_startup_prime.py:93-352 |
 | The shared fixture whose `startup` record and `_Gate` this module reads and reuses. | `_ServingFixture`; `_Gate` | mcp/tests/test_serving_observation_loop.py:246-354; mcp/tests/test_serving_observation_loop.py:223-243 |
-| The candidate registers this module once, in the explicit unit-regression lane, one row below its sibling. | "mcp/tests/test_serving_startup_prime.py" | mcp/tests/test-evidence-lanes.toml:164-164 |
+| The candidate registers this module once, in the explicit unit-regression lane, one row below its sibling. | "mcp/tests/test_serving_startup_prime.py" | mcp/tests/test-evidence-lanes.toml:164-164; mcp/tests/test-evidence-lanes.toml:172-172 |
 
 ## Cross-Repo References
 

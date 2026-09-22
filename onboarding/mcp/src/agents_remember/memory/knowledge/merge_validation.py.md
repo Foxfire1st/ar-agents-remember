@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/merge_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T06:18+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l40-ar`, uncommitted; base `f79f4db745ad00b908d6ce4871d0b4ab2320207c` |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -83,6 +82,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-20T06:18+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **a fifth check was added, and this card's "four checks" count and its section list are corrected rather than annotated.** `unapplied_changes(operation, *, merged, side, operations)` is the same measurement `require_applied_changes` makes, exposed as *every* unapplied operation in delta order instead of only the first — the merge's `_authored_postcondition` is the caller, and it needs the count (not the identity) to bound a row-less authored decision: the result may be missing exactly as many operations as the engine reported retracting it, and a different number is a lost change the caller never authorised. Nothing about `require_applied_changes` itself changed, and the two stated unreachability facts still hold for it. Every range in the reference table was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
 

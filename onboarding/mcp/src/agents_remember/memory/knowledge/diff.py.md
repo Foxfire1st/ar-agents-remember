@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be` |
-| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l08` uncommitted source; base `1ff1893f44d875073d58af863238501a6be35288` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -199,5 +198,6 @@ connections the caller opened.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the two-snapshot union. It states the module's single claim — **the comparison is the union of two independently selected sets with each item retaining its snapshot** — and the four steps that build it, then documents the two contracts review corrected most. **The coverage rules are recorded with the measured direction of each rather than as three equal deciders:** rule 1 is load-bearing alone (variant `A`, two assertion kills); rule 2 cannot decide a state its neighbours do not, because an authored edge is a foreign key into the snapshot that declares it, so it is kept as a cheap short-circuit and its **invariant half is asserted while its family half is unexercised** (the fixture authors 0 `family_predecessor` rows — a stated gap, not coverage); and rule 3 is load-bearing in the **forced-present** direction (`C'`, two kills, plus `M24`), while forcing its answer absent changes no asserted state on this population (`C`, 28/28 survivors). The card records that collapsing the three is wrong because it **turns a missing selection into a real absence**, and that the leaf's first statement of that reason was the reverse and is withdrawn. It also records the four carried limits with their named closers (`M4`, `M8`, `M27` covered gaps; `M23` a non-experiment with its bound carried), the three equivalent mutants as **proved equivalences rather than kills** (including the instruction not to delete `_project`'s narrowing without deciding `FIELD_PROJECTION`'s fate), and the source half's `missing_side` semantics. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.

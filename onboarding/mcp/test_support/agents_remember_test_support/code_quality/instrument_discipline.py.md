@@ -6,9 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T12:30+02:00 |
-| lastVerifiedCommitHash | `d9becade1a373f2272501f7451746ccc259ca9ac` |
-| lastVerifiedCommitDate | 2026-09-18T12:33:45+02:00|
-| reviewedWorkingCandidate | `ar/260918-tsip-l1-ar` uncommitted source (this file is an addition, 432 lines, materially revised after the leaf's independent review); base `f031314345b674d0733c4619fe34d78c1b02ba26` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -198,6 +197,7 @@ coordination path and skips when that package is absent.
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-18T12:30+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
   `ar/260918-tsip-l1-ar`, base `f0313143`): the leaf's independent review returned three blocking

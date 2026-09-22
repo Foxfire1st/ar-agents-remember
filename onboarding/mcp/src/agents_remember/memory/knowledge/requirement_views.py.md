@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/requirement_views.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l19` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -118,4 +117,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. The bounded-walk row had `predecessor_chain_view` and `CHAIN_BOUND` crossed: the constant is `:58-62` and the walk is `:111-142`, and the citations now pair them that way. Every other row was re-checked and stands (the literal-anchored node rows each name their own node inside their own range). No claim was deleted or softened. The stamp is unchanged because `a0665505`'s content for this file is byte-identical to `e7998504` (`git diff a0665505 HEAD` is empty).- 2026-09-18T06:05+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the requirement record group's derived views. It records the mechanism rather than the requirement: disposability is met **structurally**, because this module holds no connection and takes no store, so no view can write even if a later caller wanted it to. It states the three no-winner rules a reader would otherwise have to re-derive — a fork is reported as more than one head because designating a successor is an authority the substrate does not hold; currentness reports both recorded states with their provenance and never claims an agreement it cannot show; and an absent route is the explicit `ungoverned` state rather than an inference from the packet's directory. It also records that the predecessor walk is **bounded rather than cycle-guarded** (`CHAIN_BOUND = 512`, `truncated=True`), because acyclicity is enforced by the writing transaction and a damaged store should be described rather than hung on. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.

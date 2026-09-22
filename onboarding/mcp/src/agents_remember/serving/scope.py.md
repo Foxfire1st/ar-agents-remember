@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/scope.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T07:05+02:00                     |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ modules.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The L1 files API that now imports + re-exports these helpers. | `resolve_scope` | mcp/src/agents_remember/serving/files.py:18-18 |
-| The L3 change-set API that reuses `FileScope` / `resolve_scope` / `run_scoped` / `language_for`. | "from agents_remember.serving.scope import FileScope" | mcp/src/agents_remember/serving/changeset.py:55-55 |
+| The L3 change-set API that reuses `FileScope` / `resolve_scope` / `run_scoped` / `language_for`. | "from agents_remember.serving.scope import FileScope" | mcp/src/agents_remember/serving/changeset.py:55-55; mcp/src/agents_remember/serving/changeset.py:67-67 |
 | The shared path-confinement helper (`confine_rel`) the scope uses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
 | The scope resolver bridge + "MissingMemoryError,". | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |

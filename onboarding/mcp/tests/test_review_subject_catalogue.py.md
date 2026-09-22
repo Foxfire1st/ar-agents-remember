@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_review_subject_catalogue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T14:38:00+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61` (this leaf's base, confirmed from the enclosure contract) — the module is new and exists only in the uncommitted candidate |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -137,5 +136,6 @@ No cross-repository behavior is exercised in this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-22T14:38:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`): **created.** The module is new in this leaf and this is its one-to-one card. It records the ten-case catalogue suite: union with labels and presence, the fix-round F1 kind-grouping pin, the retired/added one-sided openings, the statement-free family, the whole-row traversal, the unselectable subject's carried reason, the labelled totals, the zero-subject boundary, and the no-comparison tripwire. It also records the module's evidence-lifecycle registration: as a source-derived consumer of the two exact-scope support rows (`diff_scope_test_support.py`, `read_scope_test_support.py`) in `mcp/tests/evidence-lifecycle.toml`, plus its own unit-regression lane row in `mcp/tests/test-evidence-lanes.toml`. **Stamp accounting:** the verification pair names this leaf's base — the production line `f141d164265e926be9249acf6ae680ccf9ffae61`, the last real commit the reading was taken against — because the module exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.

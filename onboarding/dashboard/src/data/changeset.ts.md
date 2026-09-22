@@ -6,9 +6,8 @@
 | path                   | `dashboard/src/data/changeset.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`       |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`       |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,6 +108,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master client is generation-bound (120 → 155 lines).** The section above records `MasterNetPins`/`MasterNetGeneration`, the `generation`+`currentness`+`scope` mirror, the `state`-labelled leaf rows, and pins threaded through `masterChangeset`/`masterFileDiff` with unset pins omitted. **Citation accounting:** every row into this file was re-derived against the moved candidate (the insertion moved `taskChangeset` `:56` → `:78` and `MasterChangeset` `:45` → `:59`), and the three cross-file rows were re-derived against this candidate too (`register_changeset_routes` `:517` → `:638`, `ChangeSetViewer` `:424` → `:476`, the bar's `masterChangeset(` `:39` → `:52`). The reopened claim is retained with its range regenerated onto the declaration the anchor holds. The four mechanical projection bullets below that recorded the superseded ranges (`:517`, `:424`, `:421`, `:39`) are retired by this reading — they pointed at lines that no longer hold their anchors, and this entry is the curator-read evidence that replaces them. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations and 1 prose citation for the changeset contract and consumer path; fixer-generated ranges verified.
 

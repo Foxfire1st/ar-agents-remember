@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `c5a74a85af20a8fb48cc44f59de7e926d589d3fc` |
-| lastVerifiedCommitDate | 2026-09-18T18:30:35+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ rejected, never silently re-rooted).
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
 
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |
-| Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325 |
+| Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325; mcp/src/agents_remember/serving/files.py:298-298 |
 
 ## 260718-CHATS-L5I Current Delta
 

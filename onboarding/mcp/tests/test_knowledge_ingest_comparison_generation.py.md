@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T15:35+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` |
-| lastVerifiedCommitDate | 2026-09-21T18:46:40+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -162,6 +161,7 @@ builds is local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **citation repair only, forced by this leaf's own moves in the files this card cites.** The source file this card documents did **not** change; the ranges that moved belong to the leaf's other edits — this leaf appended one row to `mcp/tests/test-evidence-lanes.toml` at `:89`, so this module's own `unit-regression` row moved `:125` → `:87` in that manifest. Each row was re-read against the construct it names and its range re-derived from that construct's own extent in the moved file rather than shifted by a remembered delta. No claim was re-worded, no anchor was renamed and no row was dropped, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
 
 - 2026-09-21T15:35+02:00 — 260921-ICR-L18 curator (uncommitted change set on `ar/260921-icr-l18`, code base `0fca5c69766aa95eebe950c19fbcdc83864ec35a`): created this one-to-one card for the new module, which is the production-composition evidence for `ICR-R18@v1`'s conforming and boundary examples. The card records the defect the cases seal (one path named for both `--baseline` and `--publish-to`, so the second successful write re-placed the half from what by then *were* the first run's published bytes), the state the shared fixture sets up, the two measurement helpers' deliberate split between bytes and identity, and the fact each of the three cases owns. It also records the two things a reader would otherwise have to infer: this module **owns the journey fixtures** that the failure-window module imports rather than copies, and it registers **no artifact and no contract of its own** — one lane row plus two consumer rows on artifacts the existing support module already names. The failure surface is documented as living beside this module, and the split is recorded as an extraction forced by the repository's 900-line soft rail rather than as a subject boundary. **Verification metadata:** the card names the production line it was read against — `0fca5c69766aa95eebe950c19fbcdc83864ec35a`, this leaf's base — because every construct it cites exists only in this leaf's uncommitted candidate. The governed closeout's own metadata refresh re-stamps it against the code commit its transaction creates.

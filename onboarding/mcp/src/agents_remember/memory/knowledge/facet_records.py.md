@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/facet_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `2dcacb27446ecbaba01b69ee32e2ac40a1713b09`|
-| lastVerifiedCommitDate | 2026-09-18T17:26:34+02:00|
-| reviewedWorkingCandidate | `ar/260915-ks-l11` uncommitted source; base `4904e08f0668ed6d11a2c44d0118716bb82f735c` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -151,4 +150,5 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the facet row codecs. It records the two **recomputed-on-the-way-out** seals and the damaged-store rule they enforce, the two **mutable-field digests** the removal and designation guards compare against, what each digest covers (the endpoint *identity* rather than the column that holds it; the subject identity **and** the recorded designation; the payload and exact predecessor), the versioned payload constants, the explicit filling of all four endpoint and subject columns so the DDL's `CHECK` is satisfied by construction, the six stored-value readers that let a caller carry an expectation straight from a read, and the one-row lookups declared beside their readers. It records the shared local constant name `EXPLANATION_BY_ID` as a deliberate non-coupling rather than a second definition of a rule, and the asymmetry that these readers return `None` for an absent row while the write path is what turns that into a typed refusal. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.

@@ -6,9 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-09-22T11:00:00+02:00                                      |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`                  |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
-| reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`                  |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -78,6 +77,7 @@ design).
 | Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:476-541 |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **one new generation case (305 → 339 lines).** The Logic and table record `binds master file expansions to the generation the net listing published` (`:280-313`); the two cases below the insertion moved with it and their rows are re-derived (`:282-293` → `:316-327`, `:297-304` → `:331-338`, `onOpenChangeSet` `:285` → `:319`), as is the subject row (`ChangeSetViewer` `:416-478` → `:476-541`). The rows above the insertion stand. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 

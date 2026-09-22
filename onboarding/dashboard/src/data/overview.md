@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
-| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
@@ -397,17 +397,18 @@ detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:328-342 |
-| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:369-377 |
+| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:328-342; dashboard/src/data/review.ts:348-348 |
+| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:369-377; dashboard/src/data/review.ts:403-403 |
 | **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` | dashboard/src/data/review.ts:372-379 |
 | **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:381-401 |
 | The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9; dashboard/src/data/review.ts:1-10 |
-| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:14-14 |
+| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:14-14; dashboard/src/data/review.ts:34-34 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
-| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:315-321 |
-| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:292-304 |
+| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:315-321; dashboard/src/data/review.ts:335-335 |
+| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:292-304; dashboard/src/data/review.ts:312-312 |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
 - 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "export const intentReview = (" repointed to dashboard/src/data/review.ts:271-271. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
@@ -623,10 +624,10 @@ inventory row; the file's own card carries the type-by-type detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:192-213 |
-| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:214-238 |
-| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:240-246 |
-| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:379-414 |
+| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:192-213; dashboard/src/data/review.ts:217-217; dashboard/src/data/review.ts:226-226; dashboard/src/data/review.ts:225-225; dashboard/src/data/review.ts:248-248; dashboard/src/data/review.ts:249-249 |
+| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:214-238; dashboard/src/data/review.ts:243-243; dashboard/src/data/review.ts:264-264 |
+| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:240-246; dashboard/src/data/review.ts:260-260; dashboard/src/data/review.ts:429-429; dashboard/src/data/review.ts:430-430 |
+| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:379-414; dashboard/src/data/review.ts:421-421 |
 | **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` | dashboard/src/data/review.ts:426-426; dashboard/src/data/review.ts:427-427 |
 | The consumer that mounts the renderer beneath an openable row, at the inventory's own two tree ids. | `SourceContent`; `review-inventory-open` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | The renderer the expansion's fields feed, and its three state-decided branches. | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |

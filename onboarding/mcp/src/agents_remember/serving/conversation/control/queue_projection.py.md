@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ preview/digest transforms are the substrate and sibling module this projection c
 | The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | "class CockpitQueueIdentity(WireModel):"; "class OperationQueueItem(WireModel):" | mcp/src/agents_remember/models/conversations/submissions.py:16-16; mcp/src/agents_remember/models/conversations/submissions.py:23-23 |
 | The authority-internal setter mint with no submission source (`source=None`). | `_admit_setter` | mcp/src/agents_remember/serving/harness_submission_authority.py:561-594 |
 | The full-timeline paging seam and the submit journal this projection reads. | `read_full_timeline`; `ControlChannel` | mcp/src/agents_remember/serving/conversation/control/service.py:199-219; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
-| The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS])" | mcp/src/agents_remember/serving/conversation/control/previews.py:30-30; mcp/src/agents_remember/serving/conversation/control/previews.py:34-34; mcp/src/agents_remember/serving/conversation/control/previews.py:50-50; mcp/src/agents_remember/serving/conversation/control/previews.py:53-53; mcp/src/agents_remember/serving/conversation/control/previews.py:60-60; mcp/src/agents_remember/serving/conversation/control/previews.py:63-64 |
+| The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS])" | mcp/src/agents_remember/serving/conversation/control/previews.py:30-30; mcp/src/agents_remember/serving/conversation/control/previews.py:34-34; mcp/src/agents_remember/serving/conversation/control/previews.py:50-50; mcp/src/agents_remember/serving/conversation/control/previews.py:53-53; mcp/src/agents_remember/serving/conversation/control/previews.py:60-60; mcp/src/agents_remember/serving/conversation/control/previews.py:63-64; mcp/src/agents_remember/serving/conversation/control/previews.py:8-8; mcp/src/agents_remember/serving/conversation/control/previews.py:54-54; mcp/src/agents_remember/serving/conversation/control/previews.py:74-74; mcp/src/agents_remember/serving/conversation/control/previews.py:57-57 |
 | The queue projection precomputes the empty-content digest. | "_EMPTY_DIGEST = payload_digest(\"\")" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:48-48 |
 | Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs. | "operation_ref = mint_ref("; "withdrawal_ref=mint_ref(" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:115-119; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:133-137 |
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rulings.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T22:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ repository prose consumed by the skill router.
 
 ## Repo-Internal References
 
-| The reference layer is declared non-injected, so it stays out of the normative path. | `"injected": false` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1 |
+| The reference layer is declared non-injected, so it stays out of the normative path. | `"injected": false` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1; skills/l-01-agent-lifecycles/composition-manifest.json:25-25; skills/l-01-agent-lifecycles/composition-manifest.json:525-525; skills/l-01-agent-lifecycles/composition-manifest.json:530-530; skills/l-01-agent-lifecycles/composition-manifest.json:535-535; skills/l-01-agent-lifecycles/composition-manifest.json:540-540; skills/l-01-agent-lifecycles/composition-manifest.json:545-545 |
 | The ruling index and its supersession column. | `## The ruling index` | skills/l-01-agent-lifecycles/reference/rulings.md:8-30 |
 | The router's registry reflects the nine-role ruling this file indexes. | `## The Role Registry` | skills/l-01-agent-lifecycles/SKILL.md:67-86 |
 

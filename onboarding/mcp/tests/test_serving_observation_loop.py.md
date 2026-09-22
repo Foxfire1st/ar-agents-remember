@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | path | `mcp/tests/test_serving_observation_loop.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -205,7 +205,7 @@ references describe the behavior under test and do not claim a certification res
 | The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here. | `_ServingFixture`; `_record_startup` | mcp/tests/test_serving_observation_loop.py:259-371 |
 | The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first. | `_Gate` | mcp/tests/test_serving_observation_loop.py:236-257 |
 | The sibling module that owns the pre-serve prime's own ordering contract and imports this fixture. | `ServingStartupPrimeTests` | mcp/tests/test_serving_startup_prime.py:93-352 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
+| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_observation_loop.py" | mcp/tests/test-evidence-lanes.toml:162-162; mcp/tests/test-evidence-lanes.toml:170-170 |
 
 ## Cross-Repo References
 

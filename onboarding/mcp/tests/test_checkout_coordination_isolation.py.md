@@ -6,9 +6,8 @@
 | path | `mcp/tests/test_checkout_coordination_isolation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:56+02:00 |
-| lastVerifiedCommitHash | `0dd04d6adbca3e8ba61849b605ece3137005829e`|
-| lastVerifiedCommitDate | 2026-09-18T15:05:30+02:00|
-| reviewedWorkingCandidate | `ar/260918-tsip-l3-ar` uncommitted source (`mcp/tests/test_checkout_coordination_isolation.py` **180 → 241 lines**, 8 → **10** cases); base `a12c511f6e76bd1188719cad0a9104d78d46920c` |
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,6 +72,7 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
   base `a12c511f`): this file is one of the leaf's five changed paths, so the card gained a **body**

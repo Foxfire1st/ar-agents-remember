@@ -6,9 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/candidate_workspace.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T14:20+02:00 |
-| reviewedWorkingCandidate | candidate `ar/260915-ks-l43-ar`, uncommitted; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
-| lastVerifiedCommitHash | `4ef4dddc9194930611db2b1dfbb6e02113f2226a`|
-| lastVerifiedCommitDate | 2026-09-20T15:00:59+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -158,6 +157,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the module's docstring now records that an owning operation may keep its own local record in the candidate directory, and this card carries the same fact.** The change is documentation-only in this file — `application/knowledge_curator_ingest.py` is what writes `curator-allocation-journal.json` beside `candidate-receipt.json` — but it is a fact about *this* module's contract, because this module is where the candidate's layout is defined, and a reader who took "the layout is fixed" to mean "these are the only files" would be wrong. The body paragraph now says which part is fixed (which file is the working database, so the admission that opens the candidate for writes and the publication that reads it cannot disagree) and which part is not (a sibling local record an owning operation writes, of the same kind as the receipt). No claim was weakened, no range moved, and the verification pair is retained exactly as recorded. No commit was made.
 

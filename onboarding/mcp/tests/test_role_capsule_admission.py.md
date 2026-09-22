@@ -6,10 +6,9 @@
 | path                   | `mcp/tests/test_role_capsule_admission.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` |
-| lastVerifiedCommitDate | 2026-09-19T13:56:32+02:00|
+| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
+| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | governingOverview      | `overview.md`                              |
-| reviewedWorkingCandidate | `ar/260915-caps-l11-ar` uncommitted source; base `a29a20c6eefea424a7e0321a54fcda2ed1b35098` |
 
 ## Governing Overview
 
@@ -119,6 +118,7 @@ No sibling-repository contract is exercised by these cases.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T15:52+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): recorded the candidate's **D25 case** and corrected the card's stale vocabulary and ranges. The `root-local admission` group now carries the **emptied-source seed** inside `test_an_unreadable_source_returns_a_refusal_rather_than_raising` (338-390): it copies the shipped corpus into a disposable tree, empties a selected source, drives the **real** application boundary, and asserts the outcome is a refusal carrying `status == "source-empty"` rather than an escaping `ValueError` — which is what makes the seed failable. **Corrected a stale vocabulary the card had carried since L2:** the frozen registry is **ten roles / nine operations**, not nine/eight, so the group's cases, the purpose line, the conventions line and the reference row were all corrected to the registry's own current names. Ranges advanced by the candidate's +36 lines: helper inventory 100-114→**104-117**, 115-126→**118-129**, 127-145→**130-147**, 359-362→**395-398**, 363-386→**399-422**, 387-416→**423-452**, 417-430→**453-466**, 816-819→**852-855**, 820-829→**856-865**, 830-906→**866-942**; the vocabulary rows → **82-97** / **98-119** / **27-43**; `test_a_source_root_that_is_not_a_path_is_refused` 1146-1156→**1149-1159**; `skills_declared_identity` 126-138→**135-147**; the compiler sibling case 377-388→**381-392**. The composition-manifest anchor now reads as a **double-quoted literal** (the form the checker accepts) instead of the nested-backtick JSON fragment that named no anchor. The L14 curator's D7 table-shape repair above is untouched, as is every earlier entry and every verification stamp.
