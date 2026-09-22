@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l15` uncommitted source; base `e963a01c6804570d597e451eaa069eaba66bd3ec` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `overview.md` |
@@ -80,7 +80,7 @@ serves the cases that need a stored projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:204-204; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:205; mcp/tests/test-evidence-lanes.toml:5 |
 | The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
 | The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:110-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188 |
 | The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |

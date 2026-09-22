@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
@@ -2455,7 +2455,7 @@ unwired `503`/refusal answers, the status mapping and the serializer are unchang
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` | mcp/src/agents_remember/serving/review.py:134-173; mcp/src/agents_remember/models/knowledge/review.py:156-175 |
+| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` | mcp/src/agents_remember/serving/review.py:39; mcp/src/agents_remember/models/knowledge/review.py:176-195 |
 | **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:219-247; mcp/src/agents_remember/serving/review.py:249-298; mcp/src/agents_remember/serving/review.py:308-308 |
 | The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:301-306; mcp/src/agents_remember/serving/review.py:300-300; mcp/src/agents_remember/serving/review.py:353-353; mcp/src/agents_remember/serving/review.py:356-356; mcp/src/agents_remember/serving/review.py:257-257 |
 | **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:362-437; mcp/src/agents_remember/application/review_task_context.py:59-104 |

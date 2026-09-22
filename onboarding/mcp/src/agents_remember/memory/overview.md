@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
@@ -1497,6 +1497,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the recorded-identities row re-cited to the landed declaration** (`_recorded_identities` `:319-338`). Wording retained; no stamp advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **four enforced rows re-cited** (`TreeChange`/`TreePaths` to `tree_observation.py`, `TREE_DIFF_COMMAND`, `_expansion_detail`, probe delegation). Wording unchanged; no stamp advanced.
 - 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`.** Both sides' history kept newest-first; L14's identity-listing section stands beside this leaf's partition section. Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
@@ -1690,7 +1691,7 @@ every other read in this route uses.
 | **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** | `list_invariants` | mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | **The same enumeration for the surface's other admitted subject kind.** | `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
-| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:319-338 |
+| The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). | `list_knowledge_review_entries`; `read_subject_catalogue` | mcp/src/agents_remember/application/knowledge_review.py:199-280; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69 |
 
 ## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
 

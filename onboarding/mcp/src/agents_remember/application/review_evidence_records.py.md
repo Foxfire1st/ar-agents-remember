@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted (L7-aftershock citation repairs); base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
@@ -203,9 +203,9 @@ composition deliberately leaves unmeasured.
 | The four non-answer states and the two notes that keep a partial or bounded collection truthful. | `_recorded`; `_absent`; `_unavailable`; `_not_selected`; `_remaining_note`; `_unreadable_note` | mcp/src/agents_remember/application/review_evidence_records.py:664-717; mcp/src/agents_remember/application/review_evidence_records.py:734-753 |
 | One unavailability statement: what failed, under which owner status, in the owner's own words. | `_provenance` | mcp/src/agents_remember/application/review_evidence_records.py:756-760 |
 | **The availability vocabulary this module builds, and the validator that makes "a count nobody measured" unrepresentable.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:380-477; mcp/src/agents_remember/application/knowledge_review.py:560-575 |
+| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:296-391
 | **The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.** | `with_selection_channels`; `task_context_review` | mcp/src/agents_remember/application/review_task_context.py:108-115; mcp/src/agents_remember/application/review_task_context.py:84-158 |
-| **The production port this bundle is read through, and the adapter's re-export of the resolver so the port keeps resolving without a new home to learn.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:88-88; mcp/src/agents_remember/application/knowledge_review.py:74-79; mcp/src/agents_remember/application/knowledge_review.py:159-159 |
+| **The production port this bundle is read through, and the adapter's re-export of the resolver so the port keeps resolving without a new home to learn.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:79; mcp/src/agents_remember/application/knowledge_review.py:81
 | **The channel list as part of the served payload, one entry per class the composition read.** | `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:685-721 |
 | **The ten cases that drive this module through the production port, including the two per-record damage cases.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`             |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d`             |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
 | governingOverview      | `overview.md`                                          |
@@ -128,7 +128,7 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 | The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:453-453; dashboard/src/panels/changeset/ChangeSetViewer.tsx:468-468; dashboard/src/panels/changeset/ChangeSetViewer.tsx:464-464 |
 | The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:586-586 |
 | The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:452-452; dashboard/src/panels/changeset/ChangeSetViewer.tsx:459-459 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-70; dashboard/src/panels/detail-panel/changeSetBar.tsx:208-283 |
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395
 | The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode"; "binds master file expansions to the generation the net listing published" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:280-313 |
 
 ## Update History

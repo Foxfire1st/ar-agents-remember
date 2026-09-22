@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T21:25:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `d80a0513e928ef29a973527d09597c82c96fde87` |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ and in the cases that measure both the vocabulary's refusals and the wire payloa
 | **The channel value: the state, the owner that answered, the count that exists exactly when an answer does, the named unreadable identities and the next action.** | `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review_records.py:68-89 |
 | **The validator that makes "a count nobody measured" unrepresentable — four refusals plus the required next action on every non-answer.** | `_require_an_answer_to_carry_its_count` | mcp/src/agents_remember/models/knowledge/review_records.py:91-123 |
 | The shared bounds the model takes rather than restating. | `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
-| **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:41-43; mcp/src/agents_remember/models/knowledge/review.py:64-68; mcp/src/agents_remember/models/knowledge/review.py:665-701 |
+| **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:695-730; mcp/src/agents_remember/models/knowledge/review.py:42; mcp/src/agents_remember/models/knowledge/review.py:43 |
 | **The composition that resolves every channel through the owner of each collection this vocabulary names.** | `_COLLECTION_OWNERS`; `_channel`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:720-731 |
 | **The cases that measure the vocabulary's own refusals and its presence in the served wire schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:761-787; mcp/tests/test_knowledge_review_evidence_channels.py:789-796 |
 

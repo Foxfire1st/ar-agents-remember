@@ -8,8 +8,8 @@
 | lastUpdated | 2026-09-22T09:15:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -229,7 +229,7 @@ recheck is deliberately not part of resolution, because it belongs at publicatio
 | The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree. | `capture_future_code_candidate` (head re-read) | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-51 |
 | The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word. | `_capture_refusal`; `_status_text` | mcp/src/agents_remember/application/review_candidate_resolution.py:408-420; mcp/src/agents_remember/application/review_candidate_resolution.py:422-426 |
 | The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. | `_leaf_contract`; `load_contract`; `slugify` | mcp/src/agents_remember/application/review_candidate_resolution.py:428-448; mcp/src/agents_remember/worktrees/worktree_contract.py:430-472; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
-| **The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.** | `resolve_review_candidate`; `read_knowledge_review`; `candidate_ref` | mcp/src/agents_remember/application/knowledge_review.py:49-133; mcp/src/agents_remember/application/knowledge_review.py:135-150; mcp/src/agents_remember/application/knowledge_review.py:171-199 |
+| **The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.** | `resolve_review_candidate`; `read_knowledge_review`; `candidate_ref` | mcp/src/agents_remember/application/knowledge_review.py:71; mcp/src/agents_remember/application/knowledge_review.py:168-196
 | The CLI that reads the two directory names through that re-export. | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
 | **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** | `test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree`; `test_a_capture_input_that_moves_before_publication_is_refused_by_name` | mcp/tests/test_knowledge_review_source_endpoints.py:419-450; mcp/tests/test_knowledge_review_source_endpoints.py:518-542 |
 

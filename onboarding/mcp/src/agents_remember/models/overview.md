@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
-| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | reviewedWorkingCandidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260921-ICR-L3 reading performed against the same line |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
@@ -27,12 +27,33 @@
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The union that gained this leaf's member, with the new code inserted between the comparison refusal and the adapter refusal.** | `ReviewRefusalCode`; `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:109-117; mcp/src/agents_remember/models/knowledge/review.py:115-115 |
-| **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** | `ReviewRefusal`; `KnowledgeReviewResult` | mcp/src/agents_remember/models/knowledge/review.py:832-846; mcp/src/agents_remember/models/knowledge/review.py:847-864 |
-| The surface version that stays `/1`, with the reasoning recorded beside the constant. | `KNOWLEDGE_REVIEW_SURFACE_VERSION` | mcp/src/agents_remember/models/knowledge/review.py:96-96 |
+| **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** | `ReviewRefusal`; `KnowledgeReviewResult` | mcp/src/agents_remember/models/knowledge/review.py:842-855; mcp/src/agents_remember/models/knowledge/review.py:857-873 |
+| The surface version that stays `/1`, with the reasoning recorded beside the constant. | `KNOWLEDGE_REVIEW_SURFACE_VERSION` | mcp/src/agents_remember/models/knowledge/review.py:97-97 |
 | **The availability vocabulary, its five states and the validator that refuses a favourable default.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:685-721; mcp/src/agents_remember/models/knowledge/review.py:39-43; mcp/src/agents_remember/models/knowledge/review.py:60-68 |
+| **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:715-721; mcp/src/agents_remember/models/knowledge/review.py:39-43; mcp/src/agents_remember/models/knowledge/review.py:60-68 |
 | **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** | `_COLLECTION_OWNERS`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:720-731 |
 | The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:761-787; mcp/tests/test_knowledge_review_evidence_channels.py:789-796 |
+
+## 260921-ICR-L9 The Catalogue's Presence And Totals Enter The Wire, And The Per-Subject Count Leaves It
+
+**Route meaning changed: the entry half's vocabulary now describes a population, not a per-subject
+comparison.** `ReviewEntry.presence` — the new three-member `ReviewSubjectPresence` union
+`before_only`/`after_only`/`both` — **replaces** `selected_item_count` (893 → 936 lines). The deleted
+field was the wire carrier of the per-subject compare-to-earn-a-row mechanism `ICR-R09@v1` removes;
+an entry that carried a comparison count would oblige the catalogue read to compare every subject
+before answering, which the packet forbids. `ReviewEntryListResult` gains the labelled totals
+(`total_subjects`/`invariant_total`/`family_total`) with the `_require_the_totals_to_describe_the_catalogue`
+validator: the total must sum its two kind totals, a refused read carries zero totals, and the total
+is `>=` the page beside it — the rule R10's paging depends on. The one-direction rule is unchanged in
+substance and now totalled: a refused entry read still offers **no** entry, an empty `entries` on an
+`entries` state is still a pair that records no subject with the task-context source review reachable
+beside it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The presence union on the vocabulary, beside the subject-kind union it parallels.** | `ReviewSubjectPresence`; `ReviewSubjectKind` | mcp/src/agents_remember/models/knowledge/review.py:125-130; mcp/src/agents_remember/models/knowledge/review.py:123-123; mcp/src/agents_remember/models/knowledge/review.py:123-132 |
+| **The entry value with `presence`, and the entry list with the totals and their agreement validator.** | `ReviewEntry`; `ReviewEntryListResult`; `_require_the_totals_to_describe_the_catalogue` | mcp/src/agents_remember/models/knowledge/review.py:212-231; mcp/src/agents_remember/models/knowledge/review.py:875-936 |
+| The catalogue owner that fills these values, and the adapter that delegates to it. | `read_subject_catalogue`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/knowledge_review.py:199-280 |
 
 ## 260921-ICR-L7 The Review Wire Carries The Explicit Revision Selection, Declared Next Door
 
@@ -53,10 +74,11 @@ policy that computes it lives on the application route, not here.
 | --- | --- | --- |
 | **The new value module: the five-state union and the model with its own statement.** | `RevisionSelectionState`; `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:51-51; mcp/src/agents_remember/models/knowledge/revision_selection.py:54-74 |
 | **The three validators that make a misreading unconstructible.** | `_require_the_state_to_match_the_pair`; `_require_the_pair_to_come_from_the_heads`; `_require_the_heads_to_come_from_the_retained` | mcp/src/agents_remember/models/knowledge/revision_selection.py:76-106; mcp/src/agents_remember/models/knowledge/revision_selection.py:108-129; mcp/src/agents_remember/models/knowledge/revision_selection.py:131-150 |
-| **The pane field that carries the value, with its one-direction validator.** | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` | mcp/src/agents_remember/models/knowledge/review.py:484-489; mcp/src/agents_remember/models/knowledge/review.py:519-531 |
+| **The pane field that carries the value, with its one-direction validator.** | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` | mcp/src/agents_remember/models/knowledge/review.py:529-540; mcp/src/agents_remember/models/knowledge/review.py:499 |
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
+- 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
 - 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated (new section above).** The review wire carries the explicit revision selection: `models/knowledge/revision_selection.py` (new, 150 lines) declares the value and its three validators, and `models/knowledge/review.py` (873 → 893 lines) carries it on the pane with the one-direction validator. **Enforced rows re-cited in the same pass:** the L14-table rows this leaf's growth moved (`source_content_unresolved` `114` → `115`, `ReviewRefusal` `812-824` → `832-846`, `KnowledgeReviewResult` `827-842` → `847-864`, `KNOWLEDGE_REVIEW_SURFACE_VERSION` `95` → `96`, `ReviewEvidencePane` `643-680` → `685-721`), the subject-kinds row (`121` → `122`), and the L2 wire-shape rows (`1161-1220` → `1198-1275`, `1223-1261` → `1276-1314`). Header names this leaf's candidate row. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 
 ## 260921-ICR-L3 The Review Refusal Vocabulary Gains The Source-Content Code
@@ -1850,16 +1872,16 @@ not a disguised failure.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own non-definition: it defines no record kind. | "This module defines **no record kind**" | mcp/src/agents_remember/models/knowledge/review.py:3-3 |
-| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:98-98 |
+| The three pane names, declared once. | `REVIEW_PANE_NAMES` | mcp/src/agents_remember/models/knowledge/review.py:99-99 |
 | The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge/review.py:102-106 |
 | The present-side-requires-text rule. | "def _require_text_exactly_when_present" | mcp/src/agents_remember/models/knowledge/review.py:154-154 |
 | The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" | mcp/src/agents_remember/models/knowledge/review.py:346-346 |
 | The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" | mcp/src/agents_remember/models/knowledge/review.py:776-776 |
 | The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" | mcp/src/agents_remember/models/knowledge/review.py:430-430 |
-| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:856-864 |
-| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` | mcp/src/agents_remember/models/knowledge/review.py:122-122; mcp/src/agents_remember/serving/review.py:79-79 |
-| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:203-220 |
-| **The entry read's typed outcome, whose validator refuses a refused read that offers any entry — so a caller can never be handed a subject beside the statement that nothing admitted one.** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:845-873 |
+| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" | mcp/src/agents_remember/models/knowledge/review.py:867 |
+| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` | mcp/src/agents_remember/models/knowledge/review.py:123-123; mcp/src/agents_remember/serving/review.py:79-79 |
+| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:212-231 |
+| **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:875-936 |
 | The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:112-112 |
 | **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** | `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:114-114 |
 
@@ -1907,7 +1929,6 @@ strict models forbidding a candidate key, both dismissed with their reasons at
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_the_basis_to_travel" repointed to mcp/src/agents_remember/models/knowledge/review.py:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_the_submission_state_to_follow_staleness" repointed to mcp/src/agents_remember/models/knowledge/review.py:754-754. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_a_stated_state" repointed to mcp/src/agents_remember/models/knowledge/review.py:416-416. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `ReviewSubjectKind`; `SELECTOR_KINDS` repointed to mcp/src/agents_remember/models/knowledge/review.py:118-118; mcp/src/agents_remember/serving/review.py:63-63. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: `subject_unresolved` repointed to mcp/src/agents_remember/models/knowledge/review.py:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_SURFACE_VERSION` repointed to mcp/src/agents_remember/models/knowledge/review.py:93-93. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the two rows of this document that cite `test_knowledge_review_surface.py` were re-pointed at the merged module's extents (`1161-1210`, `1213-1251`, from the pre-merge `971-1020`, `1023-1061`). No claim was re-worded, no anchor dropped and no stamp advanced.
@@ -2644,14 +2665,14 @@ bump.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** | `ReviewSourceInventory`; `ReviewChangedFile`; `ReviewUnrepresentablePath` | mcp/src/agents_remember/models/knowledge/review.py:573-635; mcp/src/agents_remember/models/knowledge/review.py:518-549; mcp/src/agents_remember/models/knowledge/review.py:551-571 |
-| **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** | `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:637-663 |
+| **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** | `ReviewSourceInventory`; `ReviewChangedFile`; `ReviewUnrepresentablePath` | mcp/src/agents_remember/models/knowledge/review.py:603-665; mcp/src/agents_remember/models/knowledge/review.py:518-549; mcp/src/agents_remember/models/knowledge/review.py:551-571 |
+| **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** | `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:667-692 |
 | **The request whose selector may be absent, and the absence as a meaning rather than a default.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:167-186 |
-| **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** | `ComparisonIdentity`; `_require_the_knowledge_half_to_be_all_or_nothing` | mcp/src/agents_remember/models/knowledge/review.py:222-261; mcp/src/agents_remember/models/knowledge/review.py:239-251 |
-| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:461-516; mcp/src/agents_remember/models/knowledge/review.py:510-518; mcp/src/agents_remember/models/knowledge/review.py:748-810; mcp/src/agents_remember/models/knowledge/review.py:813-829 |
-| **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:703-730 |
-| **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` | mcp/src/agents_remember/models/knowledge/review.py:96-96 |
-| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1198-1275; mcp/tests/test_knowledge_review_surface.py:1276-1314 |
+| **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** | `ComparisonIdentity`; `_require_the_knowledge_half_to_be_all_or_nothing` | mcp/src/agents_remember/models/knowledge/review.py:233-272; mcp/src/agents_remember/models/knowledge/review.py:239-251 |
+| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:778-839; mcp/src/agents_remember/models/knowledge/review.py:823-839; mcp/src/agents_remember/models/knowledge/review.py:472-546; mcp/src/agents_remember/models/knowledge/review.py:529-540
+| **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:733-759 |
+| **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` | mcp/src/agents_remember/models/knowledge/review.py:97-97 |
+| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1275-1313; mcp/tests/test_knowledge_review_surface.py:1196-1271 |
 
 
 ## 260921-ICR-L4 The Comparison Vocabulary Gains The Attribution Partition, And The Pane Carries It
@@ -2675,7 +2696,7 @@ still validate.
 | **The one granularity, the three buckets, the four link labels and the three side states.** | `ATTRIBUTION_GRANULARITY`; `AttributionBucket`; `AttributionLink`; `AttributionSideState` | mcp/src/agents_remember/models/knowledge/diff.py:435-435; mcp/src/agents_remember/models/knowledge/diff.py:437-437; mcp/src/agents_remember/models/knowledge/diff.py:444-454; mcp/src/agents_remember/models/knowledge/diff.py:456-456 |
 | **The partition value with its validator and its three bucket accessors, and one side's contribution beside it.** | `SourceAttribution`; `ChangedPathAttribution`; `AttributionSide` | mcp/src/agents_remember/models/knowledge/diff.py:509-628; mcp/src/agents_remember/models/knowledge/diff.py:473-507; mcp/src/agents_remember/models/knowledge/diff.py:459-471 |
 | **The two new closed-vocabulary members, and the model's own second producer of the undetermined limit.** | `DiffOmissionReason`; `DiffLimitation`; `_attribution_not_measured` | mcp/src/agents_remember/models/knowledge/diff.py:154-168; mcp/src/agents_remember/models/knowledge/diff.py:170-182; mcp/src/agents_remember/models/knowledge/diff.py:821-829 |
-| **The six counts declared once, and the pane that carries the partition.** | `ReviewRemainingCountName`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:407-415; mcp/src/agents_remember/models/knowledge/review.py:637-663 |
+| **The six counts declared once, and the pane that carries the partition.** | `ReviewRemainingCountName`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:667-692; mcp/src/agents_remember/models/knowledge/review.py:418-425 |
 | **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"; "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_scope.py:822-900; mcp/tests/test_knowledge_diff_scope.py:1287-1314; mcp/tests/test_knowledge_diff_scope.py:1316-1384 |
 
 

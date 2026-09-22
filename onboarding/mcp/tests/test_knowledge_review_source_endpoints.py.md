@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T09:15:00+02:00 |
 | lastUpdated | 2026-09-21T23:45+02:00 |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
@@ -207,7 +207,7 @@ catalog digest are the whole memory-side footprint of adding a case module here.
 | **The committed range bound to the recorded commits, unmoved by a later commit, with the working view keeping its own labelled population.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` | mcp/tests/test_knowledge_review_source_endpoints.py:626-676 |
 | **An unrecorded committed endpoint refused by name with the live head absent from the message, while the working view stays readable.** | `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head` | mcp/tests/test_knowledge_review_source_endpoints.py:679-701 |
 | **One side's unrecorded endpoint never discarding the other side's resolved range.** | `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:704-747 |
-| The production owners these cases drive: the resolution, the composition and the route. | `resolve_review_candidate`; `require_current_candidate_identity`; `compose_review`; `register_review_routes` | mcp/src/agents_remember/application/review_candidate_resolution.py:138-253; mcp/src/agents_remember/application/knowledge_review.py:372-458; mcp/src/agents_remember/serving/review.py:219-298; mcp/src/agents_remember/application/knowledge_review.py:372-409 |
+| The production owners these cases drive: the resolution, the composition and the route. | `resolve_review_candidate`; `require_current_candidate_identity`; `compose_review`; `register_review_routes` | mcp/src/agents_remember/application/review_candidate_resolution.py:138-253; mcp/src/agents_remember/application/knowledge_review.py:296-391; mcp/src/agents_remember/serving/review.py:219-298
 | The leaf change-set view whose two modes the last three cases measure. | `leaf_changeset`; `leaf_file_diff`; `recorded_committed_range` | mcp/src/agents_remember/serving/changeset.py:402-489; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
 | The capture owner the fixture and the recheck both call. | `capture_future_code_candidate`; `FutureCodeCandidateIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:14-51 |
 | The fixtures this module consumes instead of introducing a third: the diff-scope fixture that builds the two datasets and the real committed tree, and the read-scope fixture whose paths the cases reuse. | `build_diff_fixture`; `DiffFixture`; `SUCCESSOR_PATH`; `BATCH_PATH_CANDIDATE_TEXT` | mcp/tests/diff_scope_test_support.py:93-94; mcp/tests/diff_scope_test_support.py:113-118; mcp/tests/diff_scope_test_support.py:155-242; mcp/tests/read_scope_test_support.py:116-125 |

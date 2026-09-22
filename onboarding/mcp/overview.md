@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l20`, uncommitted; production line `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
@@ -145,7 +145,7 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:55-83; mcp/src/agents_remember/models/knowledge/review.py:276-287 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:101-105; mcp/src/agents_remember/application/knowledge_review.py:712-759 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:108; mcp/src/agents_remember/application/knowledge_review.py:628-673 |
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -262,7 +262,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:155-185 |
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:477-501 |
-| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:192-273; mcp/src/agents_remember/application/knowledge_review.py:371-453 |
+| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:199-279; mcp/src/agents_remember/application/knowledge_review.py:296-391 |
 | The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_review_surface.py:828-866 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract

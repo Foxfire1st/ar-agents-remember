@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d` |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`, re-derived at the sync against merged base code `f33f58eab87bd4db0eb944999d01808821ef9c3a` / memory `2cb504c80125bbe96680e96625f97ffee6256479` |
 | path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
 | doc_type | `file-level-onboarding` |
@@ -138,9 +138,9 @@ direct evidence.
 | The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
 | The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
 | The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-886 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:218-218; mcp/tests/test-evidence-lanes.toml:231-231; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:218-218; mcp/tests/test-evidence-lanes.toml:231-231; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/tests/test-evidence-lanes.toml:218-218; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:232; mcp/tests/test-evidence-lanes.toml:219; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/tests/test-evidence-lanes.toml:232; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/tests/test-evidence-lanes.toml:219-219; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62 |
 
 ## Cross-Repo References
 

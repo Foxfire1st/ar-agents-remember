@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash |  `d21bc8a6c5d30e2394a72d056bff216b766407c2`|
-| lastVerifiedCommitDate |  2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash |  `02957762709c9b515b4ff57f7f13524a7c0dfb8d`|
+| lastVerifiedCommitDate |  2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `dashboard/src/panels/overview.md` |
@@ -306,9 +306,9 @@ range that row cites.
 | **The statement area's owner: the four branches decided by declared state, with the state lines, the one-sided diff and the no-diff-claimed content path.** | `KnowledgeStatements`; `unavailable`; `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-44; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | **The entry-expansion renderer this file mounts from a row: the state-decided branches, the reused two-sided diff, the bounded-prefix note and the typed refusal.** | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:126-138; dashboard/src/panels/review/SourceContent.tsx:164-222 |
 | The reused diff renderer itself, imported by the statement area from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/review/KnowledgeStatements.tsx:29-29 |
-| The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:328-342; dashboard/src/data/review.ts:389-414; dashboard/src/data/review.ts:348-348 |
+| The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:348-362; dashboard/src/data/review.ts:421-439
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-591; dashboard/src/panels/changeset/ChangeSetViewer.tsx:38-44 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewSubject` | dashboard/src/panels/detail-panel/changeSetBar.tsx:98-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:71-96 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187 |
 
 ## Cross-Repo References
 

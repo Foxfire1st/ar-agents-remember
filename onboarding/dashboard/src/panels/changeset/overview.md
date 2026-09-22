@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61`       |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
+| lastVerifiedCommitHash | `02957762709c9b515b4ff57f7f13524a7c0dfb8d`       |
+| lastVerifiedCommitDate | 2026-09-22T16:02:31+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l45-ar` uncommitted source; base `fb719f8936d337c4685f2758d4ba3731cd8b7fc5` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
@@ -100,7 +100,7 @@ until a file is picked; the back link restores the railed Operations view.
 | The L3 read-only change-set API this screen consumes. | `task_changeset` | mcp/src/agents_remember/serving/changeset.py:100-119 |
 | The same-origin client wrapping that API. | `taskChangeset` | dashboard/src/data/changeset.ts:78-79 |
 | The shell that hosts the takeover + restores the rails. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
-| The detail panel button + counters that open this screen. | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-93 |
+| The detail panel button + counters that open this screen. | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-96 |
 | The reused read-only CodeMirror pane + theme + lang map. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
 | The markdown renderer the sidecar column + rendered-markdown toggle reuse. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 | The siege-tank empty-state backdrop shown until a file is picked. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
@@ -127,13 +127,13 @@ the reason the entry was unreachable.** The L22 increment gave `DocChangeSetBar`
 `selectorKind`/`selectorId` props and gated the entry on `live && selectorId`. No production caller ever
 supplied them: `taskReader.tsx` and the master header pass `kind`/`repo`/`master`/`leaf`/`onOpen` only,
 so the condition could not hold on any real navigation. The props are **gone**; a live leaf's subject
-is read from the server by `useReviewSubject`, which calls `intentReviewEntries(repo, master, leaf)`
+is read from the server by `useReviewCatalogue`, which calls `intentReviewEntries(repo, master, leaf)`
 and keeps `result.entries?.[0]`. The gate is not weakened: a refusal, an empty entry list, a rejected
 promise and a non-live leaf all leave the subject `undefined`, so **no subject means no button** —
 which is the L22 semantics, now reached through a source that can actually produce a subject.
 
 What the entry carries is still an identity, not a path. `{ repo, master, leaf, review: {
-selectorKind: subject.selector_kind, selectorId: subject.selector_id } }` names the task context and
+selectorKind: selected.selector_kind, selectorId: selected.selector_id } }` names the task context and
 the subject's own recorded identity, and that identity now comes from the **server's** resolution over
 the candidate pair rather than from a caller; the browser never chooses the candidate dataset, because
 the resolution behind the route does that from the same task context. The screen that displays a
@@ -144,10 +144,10 @@ that sets it, which is the boundary the two cards divide.
 | --- | --- | --- |
 | The target variant this route's type gained. | "review?: { selectorKind?: ReviewSelectorKind; selectorId?: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:50-50 |
 | The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
-| **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:275-275 |
-| **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: subject.entry.selector_kind"; "selectorId: subject.entry.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:270-271 |
-| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewSubject`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:116-158; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130 |
-| **The one liveness predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:288-301 |
+| **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:239 |
+| **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: selected.selector_kind"; "selectorId: selected.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:329-358 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130 |
+| **The one liveness predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:400-415 |
 
 ## 260921-ICR-L13 The Series View Is Bound To Its Listed Generation
 
@@ -168,6 +168,7 @@ the view (`ChangeSetButton`) carries the published generation into the target fo
 | **The entry button threading the published generation into the viewer target.** | `onOpen` | dashboard/src/panels/detail-panel/changeSetBar.tsx:86-86 |
 
 ## Update History
+- 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved. It records this route's own impact: the series view bound to its listed generation (target pins, list-response preference, per-expansion binding, header caption), the entry button threading, and the R24 boundary. The Purpose and Route Model now say generation-bound instead of "since the series base"/"`<tip>`", and every row into a file this leaf moved was re-derived (serving entry, client, button, hook, predicate, target variant). One known-false prose paragraph is deliberately left for its owner (see report): the L22 section still gates the reviewer entry on `live && subject`, while ICR-R16 made it liveness-alone — reviewer-entry behavior this leaf does not change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. The paragraph said the entry appears "only when the bar's target is a live admitted curator candidate and a selector id was supplied (`live && selectorId`)", and that "the new props are optional and defaulted … so every existing caller that supplies neither renders exactly what it rendered before this leaf" — true when written, and precisely the defect: no production caller supplied a selector, so the entry never rendered on any real navigation. The props are gone; the subject is read from `GET /api/review/intent/entries` by `useReviewSubject`, and the gate is `live && subject`. The card states that this is not a weakening — a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, which is the L22 semantics — and that liveness was extracted into one `leafIsLive` predicate shared with the working action. Three rows that cited the removed props or the old gate were replaced with rows citing the current gate, the server-supplied identity and the shared predicate; no claim was silently dropped. No verification stamp was advanced.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the `review` variant `ChangeSetTarget` gained and why it is a dispatch field rather than a fifth change-set mode, plus the "Intent review" entry `changeSetBar.tsx` adds beside the working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: changeset files changed only by behavior-preserving lint remediation and import-path updates.
@@ -221,7 +222,7 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-52 |
-| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewSubject`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:116-158; dashboard/src/panels/detail-panel/changeSetBar.tsx:208-283; dashboard/src/panels/detail-panel/changeSetBar.tsx:268-274 |
+| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395 |
 | The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:30-39; dashboard/src/panels/review/ReviewSurface.tsx:482-549; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
 
 ## Update History
