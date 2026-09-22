@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
+| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
+| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l14`, uncommitted; production line `a8d2431926d6b130012ca81ed2e85b14721c0615` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l11`, uncommitted; base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
@@ -1688,7 +1688,7 @@ every other read in this route uses.
 | **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** | `list_invariants` | mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | **The same enumeration for the surface's other admitted subject kind.** | `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
-| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:301-318 |
+| The consumer that does the comparing: one `diff_knowledge_scope` per returned identity, with a refused subject dropped rather than listed with a zero. | `list_knowledge_review_entries`; `_recorded_identities` | mcp/src/agents_remember/application/knowledge_review.py:191-264; mcp/src/agents_remember/application/knowledge_review.py:321-340 |
 
 ## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
 

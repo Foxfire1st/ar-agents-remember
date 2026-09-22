@@ -8,8 +8,8 @@
 | lastUpdated | 2026-09-21T15:35+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l5`, uncommitted; production line `702714fc05363cb28eacaf101ba8384475a6aa56` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l18`, uncommitted; production line `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
-| lastVerifiedCommitHash | `71a4433e686b3380af97a0836bb82bab2c8f2aad` |
-| lastVerifiedCommitDate | 2026-09-21T16:29:06+02:00|
+| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
+| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ one refusal. Ranges are the exact construct extents in this candidate.
 | The one conversion of the storage owner's three failure types into a reason string, with the reporting path kept separate from the read path. | `_dataset_identity_of` | mcp/src/agents_remember/application/knowledge_before_half.py:243-254 |
 | **The four-state read: the dataset is read, the record beside it is read, and the three identity fields are compared before a half may be called identified.** | `read_before_half`; `_read_half`; `_origin_mismatch` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:302-317; mcp/src/agents_remember/application/knowledge_before_half.py:320-341 |
 | The path-shaped sibling for a caller that names a file rather than a directory, where absence is deliberately not this reader's answer. | `damaged_before_half_reason` | mcp/src/agents_remember/application/knowledge_before_half.py:289-299 |
-| **The one refusal the review answers an unreadable side with: both sides preflighted, the shipped `candidate_dataset_absent` code reused rather than a shared vocabulary widened, and the state carried in the detail and the offending input.** | `unreadable_half_refusal`; `_unreadable_half_refusal`; `ReviewRefusal` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/knowledge_before_half.py:380-395; mcp/src/agents_remember/models/knowledge/review.py:559-571 |
+| **The one refusal the review answers an unreadable side with: both sides preflighted, the shipped `candidate_dataset_absent` code reused rather than a shared vocabulary widened, and the state carried in the detail and the offending input.** | `unreadable_half_refusal`; `_unreadable_half_refusal`; `ReviewRefusal` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/knowledge_before_half.py:380-395; mcp/src/agents_remember/models/knowledge/review.py:832-846 |
 | The dataset name both halves take, imported rather than re-spelled, so a half's dataset is the file the review opens. | `CANDIDATE_DATABASE_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52 |
 | The model vocabulary the record is built from — the frozen base and the four pattern/length bounds its fields are validated against. | `KnowledgeModel`; `UUID_PATTERN`; `SHA256_PATTERN`; `GIT_OBJECT_PATTERN`; `LABEL_MAX_LENGTH`; `PATH_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/base.py:18-18; mcp/src/agents_remember/models/knowledge/base.py:19-19; mcp/src/agents_remember/models/knowledge/base.py:20-20; mcp/src/agents_remember/models/knowledge/base.py:25-25; mcp/src/agents_remember/models/knowledge/base.py:27-27; mcp/src/agents_remember/models/knowledge/base.py:26-26 |
 | The identity value every reader answers with, the module that produces it, and the receipt the sibling module reads to bind a half to the candidate's own admission. | `SnapshotIdentity`; `read_candidate_receipt` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-86 |

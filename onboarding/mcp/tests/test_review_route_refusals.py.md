@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
+| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -143,7 +143,7 @@ inside the range that row cites.
 | **The status family derived from the refusal's own code, driven through the entry route.** | "test_the_entry_route_maps_each_refusal_code_onto_its_own_status" | mcp/tests/test_review_route_refusals.py:175-204 |
 | **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-169 |
 | The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` | mcp/src/agents_remember/serving/review.py:257-274 |
-| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:110-113 |
+| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:114-114 |
 | The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
 
 ## Cross-Repo References

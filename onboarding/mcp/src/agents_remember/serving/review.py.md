@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash |  `d21bc8a6c5d30e2394a72d056bff216b766407c2`|
-| lastVerifiedCommitDate |  2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash |  `f33f58eab87bd4db0eb944999d01808821ef9c3a`|
+| lastVerifiedCommitDate |  2026-09-22T11:27:22+02:00|
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
@@ -266,7 +266,7 @@ port fields the composition supplies, and the cases that drive the routes with a
 | **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471; mcp/src/agents_remember/serving/_app_common.py:481-489 |
 | The registration call, made before the greedy static mount and now passing all three ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-301 |
 | The composition root that supplies all three ports, so an omitted adapter refuses rather than serving empty. | `review_port`; `review_entries_port`; `review_source_content_port` | mcp/src/agents_remember/cli/dashboard.py:88-126 |
-| **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:979-997 |
+| **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:1016-1034 |
 | **The case that the route serves the typed result and refuses by name with no adapter.** | `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` | mcp/tests/test_knowledge_review_surface.py:1000-1057 |
 | **The cases that drive the expansion route through the real composition: a query missing a tree id refused by the transport, and an unwired process refused by name with `_UNWIRED_SOURCE_CONTENT` rather than an empty file.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `_UNWIRED_SOURCE_CONTENT` | mcp/tests/test_knowledge_review_source_content.py:771-795; mcp/tests/test_knowledge_review_source_content.py:796-821; mcp/src/agents_remember/serving/review.py:99-111 |
 | The client that names this route and reads its typed body whatever the status, so a refusal renders instead of becoming a transport error. | `reviewSourceContent` | dashboard/src/data/review.ts:378-414 |

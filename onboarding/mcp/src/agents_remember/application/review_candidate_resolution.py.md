@@ -8,8 +8,8 @@
 | lastUpdated | 2026-09-22T09:15:00+02:00 |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l2`, uncommitted; base `0fca5c69766aa95eebe950c19fbcdc83864ec35a` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l4`, uncommitted; merged base code `d21bc8a6c5d30e2394a72d056bff216b766407c2` / memory `75bb4d658f165805fc9f9490af95b447c26c2c56` |
-| lastVerifiedCommitHash | `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` |
-| lastVerifiedCommitDate | 2026-09-22T09:38:24+02:00|
+| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
+| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -223,7 +223,7 @@ recheck is deliberately not part of resolution, because it belongs at publicatio
 | **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place.** | `missing_dataset_half` | mcp/src/agents_remember/application/review_candidate_resolution.py:282-300 |
 | **The receipt-derived namespace: read from the candidate's own sealed receipt, the requested repository used only when no receipt exists, and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `read_candidate_receipt`; `CANDIDATE_RECEIPT_NAME` | mcp/src/agents_remember/application/review_candidate_resolution.py:303-331; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-88; mcp/src/agents_remember/models/knowledge/snapshot.py:53-72 |
 | **The one owner for the unreadable-candidate refusal: the code, the detail naming the candidate's own failure, the once-stated repair action, and the preflight form that turns the same question into a value.** | `_REPAIR_CANDIDATE_ACTION`; `unreadable_candidate_refusal`; `candidate_receipt_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:334-338; mcp/src/agents_remember/application/review_candidate_resolution.py:340-356; mcp/src/agents_remember/application/review_candidate_resolution.py:358-372 |
-| **The one construction of the reviewed candidate's reference, shared by the subject review and the task-context review so the two cannot name different leaves for the same resolution.** | `candidate_ref`; `ReviewCandidateRef` | mcp/src/agents_remember/application/review_candidate_resolution.py:205-221; mcp/src/agents_remember/models/knowledge/review.py:178-189 |
+| **The one construction of the reviewed candidate's reference, shared by the subject review and the task-context review so the two cannot name different leaves for the same resolution.** | `candidate_ref`; `ReviewCandidateRef` | mcp/src/agents_remember/application/review_candidate_resolution.py:205-221; mcp/src/agents_remember/models/knowledge/review.py:190-203 |
 | The single refusal builder this surface uses, public because the adapter builds the entry route's refusal with it too. | `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:374-389 |
 | **The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.** | `_captured_candidate`; `capture_future_code_candidate`; `FutureCodeCandidateIdentity` | mcp/src/agents_remember/application/review_candidate_resolution.py:391-405; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:14-51 |
 | The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree. | `capture_future_code_candidate` (head re-read) | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-51 |

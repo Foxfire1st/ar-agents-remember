@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `d21bc8a6c5d30e2394a72d056bff216b766407c2` |
-| lastVerifiedCommitDate | 2026-09-22T08:22:57+02:00|
+| lastVerifiedCommitHash | `f33f58eab87bd4db0eb944999d01808821ef9c3a` |
+| lastVerifiedCommitDate | 2026-09-22T11:27:22+02:00|
 | reviewedWorkingCandidate | `ar/260915-ks-l22` uncommitted source; base `2dcacb27446ecbaba01b69ee32e2ac40a1713b09` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l1`, uncommitted; base `f745e16659c5602252bb185a2ffccc356c2bde26` |
 | reviewedWorkingCandidate | candidate `ar/260921-icr-l3`, uncommitted; base `d80a0513e928ef29a973527d09597c82c96fde87` |
@@ -2426,7 +2426,7 @@ unwired `503`/refusal answers, the status mapping and the serializer are unchang
 | **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` | mcp/src/agents_remember/serving/review.py:219-247; mcp/src/agents_remember/serving/review.py:249-298; mcp/src/agents_remember/serving/review.py:308-308 |
 | The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` | mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:301-306; mcp/src/agents_remember/serving/review.py:300-300; mcp/src/agents_remember/serving/review.py:353-353; mcp/src/agents_remember/serving/review.py:356-356; mcp/src/agents_remember/serving/review.py:257-257 |
 | **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:362-437; mcp/src/agents_remember/application/review_task_context.py:59-104 |
-| **The case that asserts the omission is admitted beside the two kinds, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_surface.py:979-997; mcp/tests/test_knowledge_review_source_endpoints.py:674-750 |
+| **The case that asserts the omission is admitted beside the two kinds, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_surface.py:1016-1034; mcp/tests/test_knowledge_review_source_endpoints.py:674-750 |
 
 ## 260921-ICR-L3 The Reviewer Gains Its Expansion Route, And The Inventory Rows Open Into Their Bound Content
 
