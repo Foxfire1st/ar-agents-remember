@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -155,7 +155,7 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 | The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
 | The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-886 |
 | The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
-| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:222-222 |
+| The integration lane row the fail-closed manifest requires. | "integration = [" |mcp/tests/test-evidence-lanes.toml:225-225|
 | The landing fixture and the public configuration the whole-tool cases build on. | "def _authority_fixture("; "def _closed_external_leaf_worktrees("; "def _public_config(" | mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
 | The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:166-232 |
 | The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-184 |

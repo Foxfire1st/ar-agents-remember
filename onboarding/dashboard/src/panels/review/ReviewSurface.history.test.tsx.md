@@ -1,0 +1,138 @@
+# dashboard/src/panels/review/ReviewSurface.history.test.tsx
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `dashboard/src/panels/review/ReviewSurface.history.test.tsx` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| governingOverview | `dashboard/src/panels/overview.md` |
+
+## Governing Overview
+
+[panels route overview](../overview.md)
+
+## Purpose
+
+**The mounted cases that measure `ICR-R12@v1` at the browser surface**: the entry's historical target
+reaches the server as the record the reader asked for, and the surface *states* which record it is
+reading. `ReviewSurface` is the real component and `intentReview` the real client, so the query string
+asserted below is the one the browser builds, and the provenance line is read out of the rendered DOM
+rather than from a prop this test passed itself. Only `fetch` is stubbed.
+
+The defect these two cases catch is the packet's own: a closed leaf's review used to be offered only
+while the enclosure was live, and the surface had no way to name the record it wanted, so a leaf whose
+worktree cleanup had removed the enclosure could not be reviewed at all. The historical target is what
+the entry now carries, and the provenance line is what tells a reader the panes are the **recorded
+comparison** rather than whatever the repository holds now.
+
+The two cases are deliberately a pair, because one of them alone would leave the other failure open:
+
+- **the recorded read**: the caller passes the record the entry carried, and the case asserts the
+  request URL contains `history=recorded` **and** the subject, that the provenance line is mounted with
+  its sentence, that `data-review-history` reads `recorded`, and that the refusal the recorded read
+  earned still reaches the reader with its action — so a leaf that recorded nothing is a stated state
+  rather than a missing entry;
+- **the live read**: the caller names no record, and the case asserts the request carries **no**
+  `history=` parameter, that no provenance line is mounted, and that `data-review-history` reads
+  `live`. Without it, a surface that always sent the historical form would pass the first case while
+  silently answering a different question for every ordinary live entry.
+
+## Code Commentary
+
+### Logic
+
+**The entry's target is applied to the question rather than to the response.** `ReviewSurface` takes
+`history` as part of its target, `targetKeyOf` includes it in the target key (the key is
+`repo/master/leaf/<history ?? "live">/<question>/<position>`), and `intentReview` appends it to the
+query string only when it is defined. So a response read for one record is never applied to a surface
+that asked for another, and the live read stays byte-identical to the request every existing caller
+makes — which is exactly what the second case pins.
+
+**The provenance line is a claim about everything under it, not decoration.** `ReviewHeader` renders the
+`data-testid="review-history"` paragraph only when the record is `recorded`, and the surface publishes
+`data-review-history` on its own root, so both a reader and a case can see which record the panes are
+read from without opening a pane. The case asserts the rendered sentence contains "recorded comparison"
+and that the refusal region carries `data-review-code="candidate_not_live"` with the
+"records no comparison generation" detail — the shape a closed leaf with nothing recorded really earns.
+
+**Only `fetch` is stubbed; everything else is the shipped client.** `serving()` returns the refusal body
+with a 404 status, which is how the route answers a refusal, and `requestUrl()` reads the first call's
+URL from the fetch mock. The component still resolves through the shared review decode, the real
+`intentReview`, and the real panes' rendering path, so the assertions are about produced behaviour
+rather than about a mock's contract.
+
+### Conventions
+
+The module sits beside the surface it measures and is named for the property it pins rather than for the
+leaf that added it. Constants (`REPO`, `MASTER`, `LEAF`, `SUBJECT`) name one real task context, and
+`NOTHING_RECORDED` is the server's own refusal body — including its `next_action` — so the case fails if
+the surface stops showing an action the server supplied. `afterEach` calls `cleanup()` and
+`unstubAllGlobals()` so no case observes another's DOM or stubbed global.
+
+### Invariants And Boundaries
+
+- **No record is claimed that was not asked for.** The live case asserts the absence of the history
+  parameter and of the provenance line; the recorded case asserts both present with the record named.
+- **The refusal is shown, never hidden behind the entry.** The entry stays openable and the refusal
+  reaches the reader with its code, detail and action.
+- **The assertion reads the built query string.** It is the URL the real client produced, not a
+  hand-built string compared against itself.
+- **The browser boundary is R24/R25's.** This module is a mounted-component case over the real client;
+  the leaf-history drill-down navigation is `ICR-R24@v1`'s and the assembled browser acceptance is
+  `ICR-R25@v1`'s.
+- **No limit was widened to admit these cases.** The surface's own `ReviewHeader`/`ReviewPanes`
+  extraction is what kept the component inside its lint rail; this module adds no ignore and no rule
+  exception.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation could be checked. | — | — |
+
+## Repo-Internal References
+
+Every claim on this card is checkable in the shipped candidate: the module's two cases, the surface and
+client they drive, and the entry that produces the historical target in the first place. Three details a
+reader should carry: the record is part of the surface's **question key**, so switching records reloads
+rather than reinterpreting; the live read's query string is unchanged from every existing caller's; and
+the entry that supplies `history="recorded"` is the change-set bar's closed-leaf branch, which is where
+the "Intent review (recorded)" label is chosen.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:1-14; dashboard/src/panels/review/ReviewSurface.tsx:935-1031; dashboard/src/data/review.ts:462-490 |
+| The one real task context the cases name, and the subject the historical target carries. | `REPO`; `MASTER`; `LEAF`; `SUBJECT` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:19-22 |
+| **The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.** | `NOTHING_RECORDED`; `candidate_not_live` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:26-41 |
+| The two stubs the cases use and the assertion reader: the 404 refusal body, and the first request URL the real client built. | `serving`; `requestUrl`; `fetchMock` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:43-60; dashboard/src/panels/review/ReviewSurface.history.test.tsx:69-77; dashboard/src/panels/review/ReviewSurface.history.test.tsx:108-108 |
+| **The recorded case: the request names the record and the subject, the provenance line is mounted, and the refusal still reaches the reader.** | "history=recorded"; "review-history"; "recorded comparison"; "review-surface"; "review-refusal" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:68-104 |
+| **The live case: no record in the request, no provenance line, and the surface says `live`.** | "history="; "review-history"; "review-surface" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:106-125 |
+| **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** | `targetKeyOf`; `ReviewHeader`; `history?: ReviewHistory`; "review-history"; `data-review-history={history ?? "live"}` | dashboard/src/panels/review/ReviewSurface.tsx:612-631; dashboard/src/panels/review/ReviewSurface.tsx:895-933; dashboard/src/panels/review/ReviewSurface.tsx:82-82; dashboard/src/panels/review/ReviewSurface.tsx:926-926; dashboard/src/panels/review/ReviewSurface.tsx:1001-1001 |
+| **The three panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced.** | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:861-888 |
+| **The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.** | `intentReview`; `history?: ReviewHistory`; `params.history = history`; `export type ReviewHistory = "recorded"` | dashboard/src/data/review.ts:462-490; dashboard/src/data/review.ts:470-470; dashboard/src/data/review.ts:487-487; dashboard/src/data/review.ts:495-495 |
+| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated.** | `LeafEntries`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:301-372; dashboard/src/panels/detail-panel/changeSetBar.tsx:361-361; dashboard/src/panels/detail-panel/changeSetBar.tsx:364-364 |
+| **The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-595 |
+| **The target field the record travels in, beside the subject the entry already carried.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
+| **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** | `RECORDED_HISTORY`; `_admitted_history`; `ReviewQuestionRef`; `ReviewSelectorRef` | mcp/src/agents_remember/serving/review.py:76-76; mcp/src/agents_remember/serving/review.py:396-415; mcp/src/agents_remember/serving/review.py:211-227; mcp/src/agents_remember/serving/review.py:233-233 |
+
+## Cross-Repo References
+
+No cross-repository behavior is exercised by this module. It drives one repository's own review route
+through a stubbed transport.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+- 2026-09-23T05:15:00+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): created this one-to-one card for the mounted client case module this leaf introduced (`ICR-R12@v1`). The card records the two properties the pair pins — the recorded read asks for the record it was handed and says so, and the live read asks for no record and claims none — and why each case is necessary to keep the other's failure open. The boundaries this leaf routes rather than closes are stated: R24 owns the leaf-history navigation and R25 the assembled browser acceptance. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.

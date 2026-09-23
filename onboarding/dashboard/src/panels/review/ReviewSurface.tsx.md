@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-23T02:40+02:00 |
-| lastVerifiedCommitHash |  `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate |  2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash |  `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate |  2026-09-23T05:16:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -286,9 +286,9 @@ range that row cites.
 | --- | --- | --- |
 | **The header's own statement that the surface is display-only, produces no conclusion of its own, and reuses two renderers fed by other owners: `DiffPane` for both operands when both sides recorded one and for the available operand beside a named absence when one side did not, and the Source pane's entry expansion, whose rule `SourceContent` owns.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
 | **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:68-946; dashboard/src/panels/review/ReviewSurface.tsx:784-784; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
-| The takeover class shared with the change-set viewer, and where it is applied. | `TAKEOVER` | dashboard/src/panels/review/ReviewSurface.tsx:79-79; dashboard/src/panels/review/ReviewSurface.tsx:540-540; dashboard/src/panels/review/ReviewSurface.tsx:69-69; dashboard/src/panels/review/ReviewSurface.tsx:623-623 |
-| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `load`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:874-896; dashboard/src/data/review.ts:456-480; dashboard/src/panels/review/ReviewSurface.tsx:45-45; dashboard/src/panels/review/ReviewSurface.tsx:519-519 |
-| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` | dashboard/src/panels/review/ReviewSurface.tsx:81-86; dashboard/src/panels/review/ReviewSurface.tsx:78-78; dashboard/src/panels/review/ReviewSurface.tsx:79-79; dashboard/src/panels/review/ReviewSurface.tsx:113-113; dashboard/src/panels/review/ReviewSurface.tsx:114-114; dashboard/src/panels/review/ReviewSurface.tsx:128-128; dashboard/src/panels/review/ReviewSurface.tsx:140-140; dashboard/src/panels/review/ReviewSurface.tsx:144-144; dashboard/src/panels/review/ReviewSurface.tsx:147-147; dashboard/src/panels/review/ReviewSurface.tsx:163-163; dashboard/src/panels/review/ReviewSurface.tsx:196-196; dashboard/src/panels/review/ReviewSurface.tsx:204-204; dashboard/src/panels/review/ReviewSurface.tsx:215-215; dashboard/src/panels/review/ReviewSurface.tsx:228-228; dashboard/src/panels/review/ReviewSurface.tsx:275-275; dashboard/src/panels/review/ReviewSurface.tsx:303-303; dashboard/src/panels/review/ReviewSurface.tsx:304-304; dashboard/src/panels/review/ReviewSurface.tsx:355-355; dashboard/src/panels/review/ReviewSurface.tsx:392-392; dashboard/src/panels/review/ReviewSurface.tsx:411-411; dashboard/src/panels/review/ReviewSurface.tsx:416-416; dashboard/src/panels/review/ReviewSurface.tsx:445-445; dashboard/src/panels/review/ReviewSurface.tsx:457-457; dashboard/src/panels/review/ReviewSurface.tsx:460-460; dashboard/src/panels/review/ReviewSurface.tsx:467-467; dashboard/src/panels/review/ReviewSurface.tsx:483-483; dashboard/src/panels/review/ReviewSurface.tsx:487-487; dashboard/src/panels/review/ReviewSurface.tsx:488-488; dashboard/src/panels/review/ReviewSurface.tsx:608-608; dashboard/src/panels/review/ReviewSurface.tsx:3-3; dashboard/src/panels/review/ReviewSurface.tsx:84-84; dashboard/src/panels/review/ReviewSurface.tsx:115-115; dashboard/src/panels/review/ReviewSurface.tsx:129-129; dashboard/src/panels/review/ReviewSurface.tsx:407-407; dashboard/src/panels/review/ReviewSurface.tsx:89-89; dashboard/src/panels/review/ReviewSurface.tsx:131-131; dashboard/src/panels/review/ReviewSurface.tsx:230-230; dashboard/src/panels/review/ReviewSurface.tsx:418-418; dashboard/src/panels/review/ReviewSurface.tsx:437-437; dashboard/src/panels/review/ReviewSurface.tsx:469-469 |
+| The takeover class shared with the change-set viewer, and where it is applied. | `TAKEOVER` |dashboard/src/panels/review/ReviewSurface.tsx:85-85|
+| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `load`; `intentReview` |dashboard/src/panels/review/ReviewSurface.tsx:959-982; dashboard/src/data/review.ts:462-490|
+| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` |dashboard/src/panels/review/ReviewSurface.tsx:87-92; dashboard/src/panels/review/ReviewSurface.tsx:94-98; dashboard/src/panels/review/ReviewSurface.tsx:100-103; dashboard/src/panels/review/ReviewSurface.tsx:160-170|
 | **The fifth helper this leaf added: one field value as `(absent)`, `(recorded empty)` or itself, so neither absence nor a recorded empty is printed as a blank.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:171-172; dashboard/src/panels/review/ReviewSurface.tsx:106-106; dashboard/src/panels/review/ReviewSurface.tsx:177-177 |
 | The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:174-186; dashboard/src/panels/review/ReviewSurface.tsx:226-251 |
 | The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:188-201; dashboard/src/panels/review/ReviewSurface.tsx:203-221; dashboard/src/panels/review/ReviewSurface.tsx:255-276 |
@@ -296,8 +296,8 @@ range that row cites.
 | **Pane 1, which delegates its statement area and keeps the comparison line, the mechanical facts, the authored records and the unassessed state.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:278-303; dashboard/src/panels/review/ReviewSurface.tsx:435-491 |
 | **The openable inventory row: the path published to this client rendered as a button carrying `data-path` and `aria-expanded`, its status and renderability beside it, and `SourceContent` mounted beneath it at the two tree ids the inventory named.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:312-358; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | **The byte-form row: listed by its exact byte form with its status and reason, carrying no expansion control, and stating in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/ReviewSurface.tsx:368-380; dashboard/src/panels/review/ReviewSurface.tsx:298-298; dashboard/src/panels/review/ReviewSurface.tsx:352-352 |
-| **The inventory in all three states and never as an empty list, and the one state this leaf added to it — which row is open, and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` | dashboard/src/panels/review/ReviewSurface.tsx:28-28 |
-| **Pane 2: the inventory first, then the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, the unattributed paths and expansion — and the task context it forwards into the inventory so an opened row reads at the surface's own target.** | `SourcePane` | dashboard/src/panels/review/ReviewSurface.tsx:337-393 |
+| **The inventory in all three states and never as an empty list, and the one state this leaf added to it — which row is open, and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` |dashboard/src/panels/review/ReviewSurface.tsx:395-439; dashboard/src/panels/review/ReviewSurface.tsx:28-28|
+| **Pane 2: the inventory first, then the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, the unattributed paths and expansion — and the task context it forwards into the inventory so an opened row reads at the surface's own target.** | `SourcePane` |dashboard/src/panels/review/ReviewSurface.tsx:441-497|
 | Pane 3: the two independent absence states, the observations, and the source-inspection sentence. | `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:493-546 |
 | **The staleness and submission block, where neither state has a favourable member.** | `SubmissionBlock` | dashboard/src/panels/review/ReviewSurface.tsx:548-568; dashboard/src/panels/review/ReviewSurface.tsx:474-474; dashboard/src/panels/review/ReviewSurface.tsx:622-622 |
 | The typed refusal rendered by the one shared block, which this leaf moved to the outcome owner with the rest of the non-payload states. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
@@ -371,3 +371,35 @@ the value.
 
 ## Update History
 - 2026-09-23T02:40:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **the three attribution renderers and their mount points on both panes (879 → 946 lines; `ICR-R26@v1`).** The card records that the labels are displayed rather than computed, that an absent label mounts nothing, and that the same record carries one treatment across both panes. **Citation accounting:** the rows this leaf's insertions moved were re-derived from each renderer's own extent in the 946-line candidate — the per-record blocks `116`/`109`/`225`/`464`→`174-186`/`226-251`, `authoredEffect`/`signalBlock` (six one-line ranges)→`188-201`/`203-221`/`255-276`, `KnowledgePane`→`278-303` with `SourcePane` `435-491`, and `EvidencePane` `395-444`→`493-546`. Wording was retained where the claim still states what the code does. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header already names this leaf's base, and the governed closeout owns the real stamp.
+## 260921-ICR-L12 The Record Is Part Of The Question, And The Header States It
+
+`260921-ICR-L12` (`ICR-R12@v1`) makes the record a first-class part of this surface's question and
+says out loud which record the panes below are read from:
+
+- **`history` joins `ReviewTarget` and the target key.** The key is now
+  `repo/master/leaf/<history ?? "live">/<question>/<position>`, so switching records reloads rather
+  than reinterpreting a response read for another record — the same rule the page cursor already
+  followed. `intentReview` receives it as its last argument.
+- **`ReviewHeader` is the surface's header, extracted as one component because the record statement is
+  a claim about everything under it.** It renders the mounted provenance line
+  (`data-testid="review-history"`) only for the recorded read: "recorded comparison — this leaf's
+  durable generation, re-read from its own record: the panes below are the comparison it bound, not
+  whatever the repository holds now." The root publishes `data-review-history` (`live` or the record)
+  so a reader or a case can see the record without opening a pane.
+- **`ReviewPanes` mounts the three panes and the two controls above them for one payload.**
+- **Both extractions clear the lint rail without widening it.** `ReviewSurface` had grown past its
+  `max-lines-per-function` rail while gaining the record statement; the two components were extracted
+  with no ignore added and no limit changed, and every prop is threaded rather than re-derived.
+
+The refusal path is untouched: a recorded read that earns a refusal still reaches the reader with its
+code, detail and action, which is what makes a leaf that recorded nothing a stated state rather than a
+missing entry.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the record is part of the question, and the header states it (ICR-R12@v1).** `history` joined
+`ReviewTarget` and the target key, so a response is never applied to a surface that asked for another
+record; `ReviewHeader` mounts the provenance line and the root publishes `data-review-history`; and
+`ReviewHeader`/`ReviewPanes` were extracted to clear the `max-lines-per-function` rail with no ignore
+and no limit widened. **Citation accounting:** every row into this module was re-derived against the
+candidate. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and
+the governed closeout owns the real stamp.

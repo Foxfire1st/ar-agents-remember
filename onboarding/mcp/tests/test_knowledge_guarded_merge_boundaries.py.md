@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No domain documentation source is configured for this repository (`system/source
 | The unreachability statements the two policy nodes correspond to. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
 | The conflict key the first two nodes hold to the engine's own operation. | `_conflicting_key`; `AppliedChangeset` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:546-571; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:159-199 |
 | The harness these cases are built on. | `build_case`; `copy_closed`; `materialize_commit` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:219-239; mcp/tests/merge_case_test_support.py:474-484 |
-| The integration-lane row that classifies this module outside the unit budget. | `integration` | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
+| The integration-lane row that classifies this module outside the unit budget. | `integration` |mcp/tests/test-evidence-lanes.toml:225-225|
 | The unit module that carries the rest of the contract. | "The unit population is at its declared ceiling" | mcp/tests/test_knowledge_guarded_merge.py:1-33 |
 
 ## Cross-Repo References

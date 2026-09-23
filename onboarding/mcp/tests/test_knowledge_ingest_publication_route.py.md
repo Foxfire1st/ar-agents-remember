@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_publication_route.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ the same operation at one enclosure's scale.
 | **The read route's owners the fixture resolves the declared location and the read-back through — the same owners the production route uses, which is what makes the fixture an independent side.** | `published_dataset_path`; `resolve_published_intent`; `PublishedIntentSelection`; `contract_context` | mcp/src/agents_remember/application/published_intent.py:200-216; mcp/src/agents_remember/application/published_intent.py:219-243; mcp/src/agents_remember/application/published_intent.py:151-164; mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | The shipped entry point every case drives, and the two real readers it measures through. | `main`; `build_parser`; `knowledge_read_payload`; `ReadToolRequest`; `open_read_only_database` | mcp/src/agents_remember/cli/__main__.py:47-49; mcp/src/agents_remember/cli/__main__.py:17-44; mcp/src/agents_remember/mcp/tools/knowledge.py:283-288; mcp/src/agents_remember/mcp/tools/knowledge.py:117-146; mcp/src/agents_remember/memory/knowledge/connection.py:52-60 |
 | **The existing fixture module this one composes instead of introducing a third support module — the reason its catalog delta is a consumer change only.** | `_one_entry_list`; `_cli_json`; `_commit`; `_git`; `_write_files`; `_cycle01_hand_off`; `_cycle01_candidate_revisions`; `_cycle01_revisions_of` | mcp/tests/test_knowledge_curator_ingest_list.py:1695-1715; mcp/tests/test_knowledge_curator_ingest_list.py:1654-1659; mcp/tests/test_knowledge_curator_ingest_list.py:272-277; mcp/tests/test_knowledge_curator_ingest_list.py:280-291; mcp/tests/test_knowledge_curator_ingest_list.py:265-269; mcp/tests/test_knowledge_curator_ingest_list.py:2758-2763; mcp/tests/test_knowledge_curator_ingest_list.py:2906-2921; mcp/tests/test_knowledge_curator_ingest_list.py:2924-2941 |
-| **The lane row this module occupies, and the two governed consumer rows it joined.** | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/evidence-lifecycle.toml:733-733; mcp/tests/evidence-lifecycle.toml:1271-1271 |
+| **The lane row this module occupies, and the two governed consumer rows it joined.** | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/evidence-lifecycle.toml:736-736; mcp/tests/evidence-lifecycle.toml:1277-1277 |
 | **The catalog digest the two consumer rows moved, and the counts they do not move.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:44-45 |
 | The production route these cases are the regression surface for. | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 

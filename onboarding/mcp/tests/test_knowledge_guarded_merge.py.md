@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T00:45+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -73,9 +73,9 @@ No domain documentation source is configured for this repository (`system/source
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 |**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:116-184 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1290-1290 |
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1290-1290 |
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1294-1294|
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` |mcp/tests/test-evidence-lanes.toml:225-225|
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1294-1294|
 
 ## Cross-Repo References
 
@@ -84,7 +84,7 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1290-1290  |
+|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1294-1294|
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

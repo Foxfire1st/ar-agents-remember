@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T15:35+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -149,7 +149,7 @@ Ranges are the exact construct extents in this candidate.
 | The identity value the identity helper answers with. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 | **The journey fixtures this module owns and the failure-window module imports rather than copies.** | `_digest`; `_identity_of`; `_publish_a_later_line` | mcp/tests/test_knowledge_ingest_failure_windows.py:71-75; mcp/tests/test_knowledge_ingest_failure_windows.py:80-119 |
 | The ingest-list fixture module every one of these cases builds its enclosure from. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:166-179; mcp/tests/test_knowledge_curator_ingest_list.py:1718-1728; mcp/tests/test_knowledge_curator_ingest_list.py:3122-3136; mcp/tests/test_knowledge_curator_ingest_list.py:3139-3162; mcp/tests/test_knowledge_curator_ingest_list.py:1756-1784; mcp/tests/test_knowledge_curator_ingest_list.py:1662-1675; mcp/tests/test_knowledge_curator_ingest_list.py:1695-1715; mcp/tests/test_knowledge_curator_ingest_list.py:1654-1659 |
-| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:87-87 |
+| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:88-88|
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -126,12 +126,12 @@ No domain documentation source is configured for this repository (`system/source
 | The truncation, too-small-budget, execution-bound and absence nodes. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total"; "test_the_declared_bound_admits_a_selection_that_fits_and_refuses_one_that_does_not"; "test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope"; "test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929; mcp/tests/test_knowledge_read_scope.py:930-961; mcp/tests/test_knowledge_read_scope.py:962-981; mcp/tests/test_knowledge_read_scope.py:982-1000 |
 | **The persisted-nothing and namespace-confinement nodes.** | "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged"; "test_the_selection_reads_only_the_requested_namespace" | mcp/tests/test_knowledge_read_scope.py:1001-1058; mcp/tests/test_knowledge_read_scope.py:1059-1163 |
 | The fixture every node builds through the public store operations. | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-284 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:107-107|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:107-107|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
 
 ## Cross-Repo References
 
@@ -140,8 +140,8 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" | mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1434-1434 |
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

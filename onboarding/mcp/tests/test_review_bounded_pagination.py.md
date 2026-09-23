@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_bounded_pagination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The entry stays a catalogue: driving it calls no comparison and no view, and its body carries no page at either dataset size.** | "test_the_entry_read_populates_the_button_without_fetching_record_pages" | mcp/tests/test_review_bounded_pagination.py:841-878 |
 | The page arithmetic under test, and the page value whose constructor refuses a remainder without a cursor. | `comparison_page`; `records_page`; `reset_comparison_page`; `ReviewCollectionPage` | mcp/src/agents_remember/application/review_pagination.py:202-305; mcp/src/agents_remember/models/knowledge/review.py:366-440 |
 | The two page refusal codes the transport cases read. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:149-150 |
-| **The lane row and the three exact-scope consumer rows this module's registration produced.** | "unit-regression"; "mcp/tests/test_review_bounded_pagination.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:163-163; mcp/tests/evidence-lifecycle.toml:1254-1254; mcp/tests/evidence-lifecycle.toml:1421-1421; mcp/tests/evidence-lifecycle.toml:1462-1462 |
+| **The lane row and the three exact-scope consumer rows this module's registration produced.** | "unit-regression"; "mcp/tests/test_review_bounded_pagination.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1255-1255|
 
 ## Cross-Repo References
 

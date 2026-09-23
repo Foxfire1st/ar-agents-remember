@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -487,3 +487,21 @@ stand and belong to the citation-reprojection engine. The body was changed subst
 entry is the history record, not a metadata-only refresh. The metadata block above names this
 leaf's uncommitted candidate as what was read, and `lastVerifiedCommitHash` / `lastVerifiedCommitDate`
 are left exactly as the last real verification set them because no commit contains this candidate.
+## 260921-ICR-L12 The Takeover Hands The Record To The Review Surface
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the takeover: when the change-set target's review
+carries `historical`, `ChangeSetTakeover` mounts `ReviewSurface` with `history="recorded"`, and
+otherwise with `undefined` — the live candidate, which is what every ordinary entry asks for. The
+target's own comment records why the record travels this way: a closed leaf's entry carries it, so the
+surface asks for that leaf's recorded comparison rather than for a live candidate there is none of.
+
+Nothing else in the takeover changed: the review target's subject still travels as it did, the
+`onBack` contract is the same, and the cockpit adds no resolution of its own — the browser names a
+record and the server owns which comparison that record is.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the takeover hands the record to the review surface (ICR-R12@v1).** `ChangeSetTakeover` passes
+`history="recorded"` when the target's review carries `historical`, and nothing otherwise; no
+resolution is added on the client. **Citation accounting:** the rows this leaf's change moved were
+re-derived against the candidate. **Stamp accounting:** no verification stamp was advanced — the
+candidate is uncommitted and the governed closeout owns the real stamp.

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | path | `mcp/tests/test_terminal_observer_health.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -105,7 +105,7 @@ repository-owned serving contract, so no external domain claim is needed.
 | The cross-read table: a fresh notifier cannot mask a stale or failed observer, and a current success beside a fresh notifier reads healthy from its own row. | `test_a_fresh_notifier_cannot_mask_a_stale_or_failed_observer`; `test_a_current_success_beside_a_fresh_notifier_reads_healthy_from_its_own_row` | mcp/tests/test_terminal_observer_health.py:858-896; mcp/tests/test_terminal_observer_health.py:898-931 |
 | The served surface the cases drive: the fourth tail key and the payload model it carries. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:50-66; mcp/src/agents_remember/serving/served_state.py:78-109 |
 | The publication seam and the served payload the cases enter through the real lifespan and the real route handler. | `_observe_terminal_catalog`; `_terminal_observer_health_payload`; `_state_response` | mcp/src/agents_remember/serving/_app_lifespan.py:80-107; mcp/src/agents_remember/serving/_app_lifespan.py:376-394; mcp/src/agents_remember/serving/_app_routes.py:77-108 |
-| The module is registered exactly once, in the explicit unit-regression lane. | "mcp/tests/test_terminal_observer_health.py" | mcp/tests/test-evidence-lanes.toml:203-203; mcp/tests/test-evidence-lanes.toml:201-201 |
+| The module is registered exactly once, in the explicit unit-regression lane. | "mcp/tests/test_terminal_observer_health.py" |mcp/tests/test-evidence-lanes.toml:204-204|
 
 ## Cross-Repo References
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T15:08:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -185,11 +185,11 @@ row cites.
 | **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a read that answered with rows.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:189-230 |
 | **The per-row presence marker: a retired row reads `retired · before-only`, a new one `new · after-only`, and a both-sides row is unmarked.** | `presenceMarker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:232-240 |
 | **The catalogue picker: every recorded subject selectable, the server's own totals beside it, and no row invented.** | `ReviewCataloguePicker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:242-289 |
-| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LiveLeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:291-358 |
-| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LiveLeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:360-398; dashboard/src/panels/detail-panel/changeSetBar.tsx:291-358 |
-| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LiveLeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:291-353
-| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:400-415 |
-| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:582-588; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29 |
+| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
+| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:380-415; dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
+| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:31-95; dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
+| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` |dashboard/src/data/review.ts:597-603; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29|
 | The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8 |
 | **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:113-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
 
@@ -212,3 +212,37 @@ No cross-repository implementation source governs this file.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer entry is reachable now, and this card's account of *why* it was not is the correction that matters.** The `selectorKind`/`selectorId` props are gone. A live leaf's subject is read from the server by the new `useReviewSubject` hook, which calls `intentReviewEntries(repo, master, leaf)` and keeps `result.entries?.[0]`; the gate is now `live && subject`, and the liveness half was extracted into `leafIsLive` so both gated entries read one predicate. The gate is not weakened: a refusal, an empty list, a rejected promise or a non-live leaf all leave `subject` undefined and **no subject means no button**. The card records why that matters — the prop was the unreachable part, because `taskReader.tsx` and the master header pass no selector, so `live && selectorId` could never hold on any real navigation — and records the invariant the hook's own comment states: the id is a recorded identity inside the candidate the server resolved, so the hook chooses no candidate and invents no id. The revision of the previous paragraph is retained in place below in substance: the entry is still added beside the working/committed actions and never in their place, its target still carries the subject's recorded identity rather than a filesystem path, and the reviewer entry still reports no counters. No verification stamp was advanced, because no commit contains this body.
 - 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the reviewer entry beside the change-set actions.** `DocChangeSetBar` gained `selectorKind = "invariant"` / `selectorId` props and a third `ChangeSetButton` labelled *Intent review*, rendered only when the enclosure is live and a `selectorId` is supplied — the same liveness the working action is gated on, and never in the working or committed action's place. Its target carries `review: { selectorKind, selectorId }`, the reviewed subject's recorded identity rather than a filesystem path, because the browser does not choose the candidate. The new paragraph above states that, and states the boundary the bar keeps: it still fetches nothing itself, and the new entry's counter effect reads only the leaf or master request, so no counters are reported for a review. No reference row was touched; ranges into this source belong to the citation-reprojection engine. The metadata block above names this leaf's uncommitted candidate as what was read, and the two verification stamps are left exactly as the last real verification set them. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the change-set bar extracted from `DetailPanel.tsx`. Verification pinned to the leaf base until closeout stamps the code commit.
+## 260921-ICR-L12 Liveness Selects Which Record The Review Is Addressed To, Not Whether It Exists
+
+`260921-ICR-L12` (`ICR-R12@v1`) changes what this bar's liveness means, and that is the whole of
+its change:
+
+- **the Intent review entry is offered for the leaf, always.** It used to be gated on the enclosure
+  being live, which is the intake defect's other face: a closed leaf's worktree is gone and there is no
+  way to open the review that the packet exists to make openable. `live` now selects **which record**
+  the entry is addressed to — the live candidate while the enclosure is live, and the leaf's own
+  recorded comparison once it is closed (`review: { …, historical: true }`, labelled "Intent review
+  (recorded)") — and it is not a gate.
+- **the WORKING change-set stays live-gated.** "What is not committed yet" genuinely does not exist
+  once the enclosure is closed, so that button is still offered only while the leaf is live; the
+  committed action and the review entry are the two that survive.
+- **the catalogue read is no longer gated on liveness either**, because a closed leaf's catalogue is
+  what its record holds. It remains a **refinement and never a gate**: the read's own state is printed
+  beside the entry, and the entry stays openable whatever the read answered — a refusal there is a
+  stated reason, not a missing control.
+- **`LiveLeafEntries` became `LeafEntries`**, since it is no longer only the live leaf's set, and the
+  `live` prop it now takes is threaded from the bar's one `leafIsLive` predicate so the working button
+  and the review's record cannot come to disagree about what "live" means.
+
+The change-set target carries no filesystem path in any branch: the browser still chooses no candidate,
+and the historical entry names the record the server resolves from canonical task context.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **liveness selects which record the review is addressed to, not whether it exists (ICR-R12@v1).**
+The Intent review entry is offered for every leaf — live, or bound to the leaf's recorded comparison
+once the enclosure is closed — while the working change-set stays live-gated; the catalogue read is no
+longer live-gated either and remains a refinement rather than a gate; `LiveLeafEntries` became
+`LeafEntries` with one `live` predicate behind both decisions. **Citation accounting:** every row into
+this module was re-derived against the candidate, including the rename. **Stamp accounting:** no
+verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real
+stamp.

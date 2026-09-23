@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-22T15:12:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`                  |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`                  |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -80,3 +80,31 @@ No cross-repository implementation source governs this file.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
   change-set bar suite split from `DetailPanel.test.tsx`. Verification pinned to the
   leaf base until closeout stamps the code commit.
+## 260921-ICR-L12 The Closed Leaf's Entry Set, And Two Cases For It
+
+`260921-ICR-L12` (`ICR-R12@v1`) rewrites this module's closed-leaf expectation and adds the two
+cases that measure it:
+
+- the existing "no live enclosure" case asserted **exactly one** button (committed). It now asserts
+  what is true instead: committed is always present, working is absent because there is no uncommitted
+  delta once the enclosure is closed, and the Intent review is offered — so the case selects the
+  committed button by its label rather than by position, and the closed-leaf document is built by a
+  shared helper.
+- **"offers the Intent review for a closed leaf, bound to its recorded comparison"** is the packet's
+  defect as a case: the catalogue answers one recorded subject, the picker is mounted, and clicking the
+  entry opens `review: { selectorKind: "invariant", selectorId: "inv-1", historical: true }` — the
+  record the entry is addressed to travels with the subject.
+- **"keeps the closed leaf's Intent review when its record offers no subject"** pins the other half of
+  the same fact: with an empty catalogue the entry is still offered and still opens the recorded
+  comparison (the task-context target), because the read is a refinement and never the gate.
+
+No live-leaf case changed: the working change-set and the live review entry are exactly what they
+were.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the closed leaf's entry set, and two cases for it (ICR-R12@v1).** The "no live enclosure" case now
+expects committed **and** the Intent review with no working button, and two new cases measure the
+recorded target (`historical: true` beside the recorded subject) and that an empty catalogue does not
+remove the entry. No live-leaf case changed. **Citation accounting:** the rows this leaf's insertions
+moved were re-derived against the candidate. **Stamp accounting:** no verification stamp was advanced —
+the candidate is uncommitted and the governed closeout owns the real stamp.

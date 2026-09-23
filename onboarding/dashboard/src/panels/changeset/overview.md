@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`       |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`       |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -139,12 +139,12 @@ that sets it, which is the boundary the two cards divide.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The target variant this route's type gained. | "review?: { selectorKind?: ReviewSelectorKind; selectorId?: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:50-50 |
+| The target variant this route's type gained. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
-| **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:239 |
+| **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:242-242|
 | **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: selected.selector_kind"; "selectorId: selected.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:329-358 |
 | **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130 |
-| **The one liveness predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:400-415 |
+| **The one liveness predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
 
 ## 260921-ICR-L13 The Series View Is Bound To Its Listed Generation
 
@@ -161,8 +161,8 @@ the view (`ChangeSetButton`) carries the published generation into the target fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The generation the open series view is bound to, and the caption that renders it.** | `boundSeriesGeneration`; `SeriesGenerationTag` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:256-256; dashboard/src/panels/changeset/ChangeSetViewer.tsx:268-268 |
-| **The entry button threading the published generation into the viewer target.** | `onOpen` | dashboard/src/panels/detail-panel/changeSetBar.tsx:86-86 |
+| **The generation the open series view is bound to, and the caption that renders it.** | `boundSeriesGeneration`; `SeriesGenerationTag` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:260-267; dashboard/src/panels/changeset/ChangeSetViewer.tsx:272-285|
+| **The entry button threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:86-89 |
 
 ## Update History
 - 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
@@ -227,3 +227,28 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated — citation repair only, forced by this leaf's change to two sources this route overview cites, and no route-level fact changed.** `dashboard/src/panels/detail-panel/changeSetBar.tsx` no longer spells the entry's recorded subject as `subject.selector_kind`/`subject.selector_id` (it is read off the entry read's own value, ICR-R16), so the identity row that anchors that spelling was re-anchored onto the current source text and its range re-derived onto the lines that carry it (`:240-255`); the entry-hook row was re-derived onto the hook's declaration (`:93-135`). No route, panel, takeover dispatch or target shape changed on this route, and no claim's wording was weakened — the two rows still assert exactly what they asserted, against the construct that now holds it. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation forced by this leaf's line shifts; no route impact.** This leaf's dashboard change is confined to the sibling `panels/review/` child and the `data/` route: `panels/review/SourceContent.tsx` is new, `panels/review/ReviewSurface.tsx` grew 462 → 549 lines (its inventory rows are now openable), and `data/review.ts` gained the expansion wire types and `reviewSourceContent`. The one row of the L2 section above that cited `ReviewSurface.tsx` by line was therefore re-derived against the candidate — `ReviewTarget`/`ReviewSurface` `27-37`/`395-462` → `30-39`/`482-549` — and it is the only row this document carries into that file. **The prose is not false and was not reworded:** `ChangeSetTarget.review`'s contract is unchanged (its presence still marks a review, an empty object is still the task-context entry), `ChangeSetViewer`'s own behaviour is unchanged, and the change-set viewer is still never mounted for a review. Nothing in this leaf touches `ChangeSetViewer.tsx`, `ChangeSetPane.tsx`, `DiffPane.tsx` or the change-set route's own API. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and the recorded working candidate records this leaf's uncommitted candidate; no commit contains the new bytes, so closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review field on a change-set target may now carry no selector, and its declaration records what that means: presence marks a review, an empty object is the task-context entry. The viewer's behaviour is unchanged. The section is appended at the end of this route's narrative, and the one row of this document that cited `ChangeSetViewer.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
+## 260921-ICR-L12 The Change-Set Target Carries The Record It Is Read From
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one optional field to this route's `ChangeSetTarget.review`:
+`historical?: boolean`. Absent is the live candidate — what every ordinary entry asks for — and `true`
+is the leaf's own **recorded comparison**, the entry a closed leaf offers because its worktree is gone
+and the durable generation is the only comparison there is.
+
+**The field is part of the target's identity, not a decoration on it.** It travels from the change-set
+bar through the takeover to `ReviewSurface`, which passes it to the review client and keys its state on
+it, so the record the reader chose is the record the server is asked for. No filesystem path is added to
+any target in any branch: the browser names a record and the server owns which comparison that record
+is, exactly as it already owned which candidate the live read resolves.
+
+The committed and working change-set actions themselves are unchanged — this route's own resolution of
+a series or a leaf change-set reads nothing about records — and the change is additive for every
+existing caller.
+
+## Update History
+- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the review target's record (ICR-R12@v1).** The section above records the one
+optional field, that it is part of the target's identity rather than a decoration, and that no
+filesystem path travels with it. **Citation accounting:** every row on this overview that cited
+`ChangeSetViewer.tsx` by line was re-derived against this candidate. **Stamp accounting:** no
+verification stamp was advanced — the header already names this leaf's base as the production line the
+reading was taken against, and nothing in this leaf is committed, so the governed closeout owns the real
+stamp.

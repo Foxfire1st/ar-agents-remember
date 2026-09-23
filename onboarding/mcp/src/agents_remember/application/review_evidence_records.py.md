@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_evidence_records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T02:40+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -179,29 +179,29 @@ composition deliberately leaves unmeasured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of what it owns, the five availability facts, the per-collection isolation and the three responsibilities it leaves to R26, R15 and the owners. | "The complete owner-produced record collection for one review" | mcp/src/agents_remember/application/review_evidence_records.py:1-41 |
-| The published surface, and the one declaration of what "a record this composition cannot serve" means. | `__all__`; `_DAMAGED_RECORD_ERRORS` | mcp/src/agents_remember/application/review_evidence_records.py:99-110 |
-| **The record kinds the authored-effects channel counts, moved here beside the channel that reports them, and the same declaration for the claims collection.** | `AUTHORED_EFFECT_KINDS`; `EVIDENCE_CLAIM_KINDS` | mcp/src/agents_remember/application/review_evidence_records.py:112-119 |
+| The published surface, and the one declaration of what "a record this composition cannot serve" means. | `__all__`; `_DAMAGED_RECORD_ERRORS` |mcp/src/agents_remember/application/review_evidence_records.py:101-108; mcp/src/agents_remember/application/review_evidence_records.py:114-114|
+| **The record kinds the authored-effects channel counts, moved here beside the channel that reports them, and the same declaration for the claims collection.** | `AUTHORED_EFFECT_KINDS`; `EVIDENCE_CLAIM_KINDS` |mcp/src/agents_remember/application/review_evidence_records.py:120-122; mcp/src/agents_remember/application/review_evidence_records.py:123-123|
 | **Every collection with the owner whose read answers for it — the pointer a reader of an absent collection follows — and the five collections plus the measurement, in the order they are read.** | `_COLLECTION_OWNERS`; `_COLLECTION_NAMES` | mcp/src/agents_remember/application/review_evidence_records.py:121-142 |
 | **The one measurement this composition refuses to invent: `not_measured`, the shipped owner named, the next action R15's, and the rule that an empty measurement is not a measurement.** | `_CURRENTNESS` | mcp/src/agents_remember/application/review_evidence_records.py:144-158 |
-| The two matrix-sourced collections, declared as kinds so the channel and the pane cannot disagree, and the next action an unopened dataset earns. | `_SELECTION_KINDS`; `_PLACE_DATASET` | mcp/src/agents_remember/application/review_evidence_records.py:160-171 |
+| The two matrix-sourced collections, declared as kinds so the channel and the pane cannot disagree, and the next action an unopened dataset earns. | `_SELECTION_KINDS`; `_PLACE_DATASET` |mcp/src/agents_remember/application/review_evidence_records.py:166-168; mcp/src/agents_remember/application/review_evidence_records.py:172-175|
 | **The production entry point: same candidate resolution as the surface, and an unresolvable candidate reported per collection rather than as five empty tuples.** | `review_records_for` | mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
 | The assembly of one resolved candidate's bundle: four collections read, one measurement stated. | `_resolved_records` | mcp/src/agents_remember/application/review_evidence_records.py:195-214 |
 | **The two matrix-owned channels, added where the matrix's own answer is, with `not_selected` for a review that never asked and the view's declared row bound carried through.** | `with_selection_channels`; `_selection_channel` | mcp/src/agents_remember/application/review_evidence_records.py:257-306; mcp/src/agents_remember/application/review_evidence_records.py:256-256 |
-| **The three-way assessment split the F09 defect collapsed: located-but-absent is a measured zero, unreadable bytes are unavailable with the file named, and a published authority is recorded.** | `_assessments` | mcp/src/agents_remember/application/review_evidence_records.py:261-302 |
-| **The detection collection read through the owner's own run reader, over the identity listing the owner exposes.** | `_detection_signals`; `recorded_run_ids` | mcp/src/agents_remember/application/review_evidence_records.py:305-331; mcp/src/agents_remember/memory/knowledge/detection.py:565-579 |
-| **The three states of a partly readable collection: no run recorded, all runs unreadable, or a supplied subset with the unreadable identities named.** | `_signal_channel` | mcp/src/agents_remember/application/review_evidence_records.py:334-363 |
+| **The three-way assessment split the F09 defect collapsed: located-but-absent is a measured zero, unreadable bytes are unavailable with the file named, and a published authority is recorded.** | `_assessments` |mcp/src/agents_remember/application/review_evidence_records.py:316-357|
+| **The detection collection read through the owner's own run reader, over the identity listing the owner exposes.** | `_detection_signals`; `recorded_run_ids` |mcp/src/agents_remember/application/review_evidence_records.py:360-386; mcp/src/agents_remember/memory/knowledge/detection.py:565-579|
+| **The three states of a partly readable collection: no run recorded, all runs unreadable, or a supplied subset with the unreadable identities named.** | `_signal_channel` |mcp/src/agents_remember/application/review_evidence_records.py:389-418|
 | **The per-record guard that makes a damaged run survivable: one identity named, its siblings still supplied.** | `_read_signal_runs` | mcp/src/agents_remember/application/review_evidence_records.py:366-391 |
 | **The observation collection selected by both halves of the candidate's own binding, so a foreign candidate's observation is not selected.** | `_observations`; `ObservationCandidateSeed` | mcp/src/agents_remember/application/review_evidence_records.py:442-474; mcp/src/agents_remember/models/knowledge/evidence_read.py:248-272 |
-| **The evidence owner's own `selector_absent` as a measured zero, and every other refusal as unavailability carrying its code and next action.** | `_observation_refusal` | mcp/src/agents_remember/application/review_evidence_records.py:429-451 |
-| **The claims collection as the owner's complete one, read one record at a time so a damaged claim is named and its siblings served.** | `_evidence_claims`; `_claim_records`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:548-572; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1053 |
-| **One claim's authored fields rendered verbatim: author from the admission, lifecycle from the record, declared limitations and asserted coverage as recorded.** | `_claim_record`; `ReviewClaimRecord`; `coverage_identity` | mcp/src/agents_remember/application/review_evidence_records.py:575-598; mcp/src/agents_remember/application/review_record_rendering.py:74-100 |
+| **The evidence owner's own `selector_absent` as a measured zero, and every other refusal as unavailability carrying its code and next action.** | `_observation_refusal` |mcp/src/agents_remember/application/review_evidence_records.py:484-508|
+| **The claims collection as the owner's complete one, read one record at a time so a damaged claim is named and its siblings served.** | `_evidence_claims`; `_claim_records`; `claim_ids` |mcp/src/agents_remember/application/review_evidence_records.py:511-552; mcp/src/agents_remember/application/review_evidence_records.py:555-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054|
+| **One claim's authored fields rendered verbatim: author from the admission, lifecycle from the record, declared limitations and asserted coverage as recorded.** | `_claim_record`; `ReviewClaimRecord`; `coverage_identity` |mcp/src/agents_remember/application/review_evidence_records.py:582-605; mcp/src/agents_remember/application/review_record_rendering.py:73-100; mcp/src/agents_remember/application/review_evidence_records.py:73-73|
 | The candidate read context, and the absent or unopenable dataset reported as unavailability rather than as an empty collection. | `_candidate_context`; `_open_candidate_store`; `_absent_dataset` | mcp/src/agents_remember/application/review_evidence_records.py:612-675; mcp/src/agents_remember/application/review_evidence_records.py:579-604 |
-| **The unresolvable-candidate bundle: every collection unavailable, one entry per class, because nothing resolved and so no owner was asked.** | `_unresolved_channels` | mcp/src/agents_remember/application/review_evidence_records.py:607-627 |
+| **The unresolvable-candidate bundle: every collection unavailable, one entry per class, because nothing resolved and so no owner was asked.** | `_unresolved_channels` |mcp/src/agents_remember/application/review_evidence_records.py:685-705|
 | The one channel construction point: the answer varies, the owner does not. | `_answered`; `_Answer`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:701-812; mcp/src/agents_remember/application/review_evidence_records.py:679-679; mcp/src/agents_remember/application/review_evidence_records.py:708-708 |
 | The four non-answer states and the two notes that keep a partial or bounded collection truthful. | `_recorded`; `_absent`; `_unavailable`; `_not_selected`; `_remaining_note`; `_unreadable_note` | mcp/src/agents_remember/application/review_evidence_records.py:745-855; mcp/src/agents_remember/application/review_evidence_records.py:737-737; mcp/src/agents_remember/application/review_evidence_records.py:743-743; mcp/src/agents_remember/application/review_evidence_records.py:763-763; mcp/src/agents_remember/application/review_evidence_records.py:793-793; mcp/src/agents_remember/application/review_evidence_records.py:825-825 |
-| One unavailability statement: what failed, under which owner status, in the owner's own words. | `_provenance` | mcp/src/agents_remember/application/review_evidence_records.py:756-760 |
+| One unavailability statement: what failed, under which owner status, in the owner's own words. | `_provenance` |mcp/src/agents_remember/application/review_evidence_records.py:865-869|
 | **The availability vocabulary this module builds, and the validator that makes "a count nobody measured" unrepresentable.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:300-412; mcp/src/agents_remember/application/knowledge_review.py:571-584 |
+| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/knowledge_review.py:612-625; mcp/src/agents_remember/application/review_evidence_records.py:264-289 |
 | **The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.** | `without_selected_matrix`; `task_context_review` | mcp/src/agents_remember/application/review_evidence_records.py:220-236; mcp/src/agents_remember/application/review_task_context.py:84-158 |
 | **The production port this bundle is read through, and the adapter's re-export of the resolver so the port keeps resolving without a new home to learn.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:88-102; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/application/knowledge_review.py:81 |
 | **The channel list as part of the served payload, one entry per class the composition read.** | `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:918-958 |
@@ -263,3 +263,23 @@ bundle rather than reading around its owner.
 
 ## Update History
 - 2026-09-23T02:40:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **the claim's own recorded subject revision enters the R14 bundle (840 → 862 lines; `ICR-R26@v1`).** The card records `subject_of_claim` as the read, `_claim_subject_revision`'s invariant-revision-only rule (a facet subject is the absence it is, never narrowed), and that the extension adds a reader rather than a second record reader. **Citation accounting:** `_claim_records` `454-521`→`548-572` (its declaration is now 548) and `_claim_record` `73`/`104`→`548-572`/`575-598`, with `ReviewClaimRecord` re-pointed at its own extent in the record renderer. Wording was retained where the claim still states what the code does. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header already names this leaf's base, and the governed closeout owns the real stamp.
+## 260921-ICR-L12 The Record Bundle Is Read For The Record The Request Named
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one argument to this module's resolution and changes nothing
+else: `review_records_for` now resolves with `recorded=request.history == "recorded"`, so a review of a
+leaf's **recorded** comparison is handed the records of that same recorded pair rather than of whatever
+the leaf holds now. The distinction is the module's own subject applied to a second question: the
+records a caller is handed must belong to the comparison the same request renders, and a bundle read
+from the live pair under a recorded request would attribute records to a comparison they were not
+measured against.
+
+The bundle's own rules are untouched: availability is still a fact per collection, an empty tuple still
+never stands for three different ones, and an unresolved candidate still supplies no records and says
+so per collection rather than claiming an absence.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the record bundle is read for the record the request named (ICR-R12@v1).** `review_records_for`
+resolves with `recorded=request.history == "recorded"`, so the records handed to a caller belong to the
+comparison the same request renders. Nothing else in the bundle changed. **Citation accounting:** every
+row into this module was re-derived against the candidate. **Stamp accounting:** no verification stamp
+was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.

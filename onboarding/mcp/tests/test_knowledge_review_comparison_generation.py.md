@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -155,9 +155,9 @@ would accept it.
 | **The two custody cases: the work branch is not custody, and protected history taking custody stops the pin.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens` | mcp/tests/test_knowledge_review_comparison_generation.py:869-910; mcp/tests/test_knowledge_review_comparison_generation.py:913-966 |
 | The moved-ref refusal, and the dead-versus-live stage sweep driven through a real child process. | `test_a_retention_ref_that_moved_is_never_deleted`; `test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not`; `_stage_left_by_a_dead_process` | mcp/tests/test_knowledge_review_comparison_generation.py:969-1016; mcp/tests/test_knowledge_review_comparison_generation.py:1030-1057; mcp/tests/test_knowledge_review_comparison_generation.py:1173-1194 |
 | **The measured-discard case, and the live-pin-before-release-history case.** | `test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch`; `test_a_frozen_again_comparison_reports_its_live_pin_before_the_release_history` | mcp/tests/test_knowledge_review_comparison_generation.py:1060-1124; mcp/tests/test_knowledge_review_comparison_generation.py:1127-1170 |
-| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:107-107; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" |mcp/tests/test-evidence-lanes.toml:108-108; mcp/tests/test-evidence-lanes.toml:5-5|
 | **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer — each cited down to the artifact's own `consumer_scope` and the list it opens.** | `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:96-96; mcp/tests/evidence-lifecycle.toml:97-97 |
-| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:107-107 |
+| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" |mcp/tests/test-evidence-lanes.toml:108-108|
 | **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1679 |
 | The Git-truth support helpers the module reads its evidence through. | `_git`; `BATCH_PATH`; `BATCH_PATH_CANDIDATE_TEXT` | mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:516-531; mcp/tests/read_scope_test_support.py:118-118; mcp/tests/read_scope_test_support.py:752-767 |
 

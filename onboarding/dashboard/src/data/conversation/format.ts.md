@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/conversation/format.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The A1/A4/A5 convention proofs. | "conversation format conventions (developer findings A1/A4/A5)" | dashboard/src/data/conversation/format.test.ts:5-44 |
 | The R6 `shortId` implementation, including the short-value and suffix branches. | `shortId` | dashboard/src/data/conversation/format.ts:83-86 |
-| The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers. | `ServingBuildStamp`; `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:923-953; dashboard/src/cockpit/Cockpit.tsx:959-986 |
+| The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers. | `ServingBuildStamp`; `AgentNotifierHeartbeatBadge` |dashboard/src/cockpit/Cockpit.tsx:954-984; dashboard/src/cockpit/Cockpit.tsx:990-1017|
 | The focus-handoff fallback that uses `shortId` when no seat label exists (R6). | "shortId(" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:863-863 |
 | The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19). | `AmbientTelemetry` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106 |
 | The library rows consuming `truncateMiddle`/`humanizeAge`. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T13:36+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | path | `mcp/tests/test_terminal_liveness_pane_authority.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -140,9 +140,9 @@ evidence.
 | The non-pane compatibility projection the legacy case pins (control `unsupported`, activity `unknown`, acceptance `unsupported`). | `legacy_control_unsupported_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:72-83 |
 | The pane classifier whose output may only become a diagnostic. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:159-174 |
 | The state-signal eligibility rule the suite leaves dependent on canonical outcome plus a non-null terminal-evidence identity. | `_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:237-260 |
-| The lane registration the fail-closed manifest requires for this module. | "mcp/tests/test_terminal_liveness_pane_authority.py" | mcp/tests/test-evidence-lanes.toml:289-289; mcp/tests/test-evidence-lanes.toml:287-287 |
+| The lane registration the fail-closed manifest requires for this module. | "mcp/tests/test_terminal_liveness_pane_authority.py" |mcp/tests/test-evidence-lanes.toml:290-290|
 | The requirement contract this suite is the executable evidence for: requirement packet `LOCR-R27@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | "Pane classification stays diagnostic-only for turn and terminal truth." | mcp/tests/test_terminal_liveness_pane_authority.py:1-7 |
-| The lane registration the fail-closed manifest requires for this module. | "mcp/tests/test_terminal_liveness_pane_authority.py" | mcp/tests/test-evidence-lanes.toml:289-289; mcp/tests/test-evidence-lanes.toml:287-287 |
+| The lane registration the fail-closed manifest requires for this module. | "mcp/tests/test_terminal_liveness_pane_authority.py" |mcp/tests/test-evidence-lanes.toml:290-290|
 | The pane-authority requirement this suite is the executable evidence for. | "Pane classification stays diagnostic-only for turn and terminal truth." | mcp/tests/test_terminal_liveness_pane_authority.py:1-7 |
 
 ## Cross-Repo References

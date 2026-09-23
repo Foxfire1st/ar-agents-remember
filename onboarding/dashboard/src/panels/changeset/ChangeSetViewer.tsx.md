@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`             |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`             |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -118,15 +118,15 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:355-355; dashboard/src/panels/changeset/ChangeSetViewer.tsx:356-356; dashboard/src/panels/changeset/ChangeSetViewer.tsx:382-382; dashboard/src/panels/changeset/ChangeSetViewer.tsx:184-184; dashboard/src/panels/changeset/ChangeSetViewer.tsx:185-185 |
-| The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption. | "boundSeriesGeneration"; "seriesListMeta"; "SeriesGenerationTag"; "changeset-generation" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:256-256; dashboard/src/panels/changeset/ChangeSetViewer.tsx:245-245; dashboard/src/panels/changeset/ChangeSetViewer.tsx:268-268; dashboard/src/panels/changeset/ChangeSetViewer.tsx:275-275 |
-| The `open` handler invokes `loadDiff`, whose branch chooses the master (generation-bound), leaf, or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:505-505; dashboard/src/panels/changeset/ChangeSetViewer.tsx:201-201; dashboard/src/panels/changeset/ChangeSetViewer.tsx:202-202; dashboard/src/panels/changeset/ChangeSetViewer.tsx:508-508; dashboard/src/panels/changeset/ChangeSetViewer.tsx:513-513 |
+| The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:359-359; dashboard/src/panels/changeset/ChangeSetViewer.tsx:360-360; dashboard/src/panels/changeset/ChangeSetViewer.tsx:386-386; dashboard/src/panels/changeset/ChangeSetViewer.tsx:188-188; dashboard/src/panels/changeset/ChangeSetViewer.tsx:189-189|
+| The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption. | "boundSeriesGeneration"; "seriesListMeta"; "SeriesGenerationTag"; "changeset-generation" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:260-260; dashboard/src/panels/changeset/ChangeSetViewer.tsx:265-265; dashboard/src/panels/changeset/ChangeSetViewer.tsx:272-272; dashboard/src/panels/changeset/ChangeSetViewer.tsx:279-279|
+| The `open` handler invokes `loadDiff`, whose branch chooses the master (generation-bound), leaf, or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:509-509; dashboard/src/panels/changeset/ChangeSetViewer.tsx:205-205; dashboard/src/panels/changeset/ChangeSetViewer.tsx:206-206; dashboard/src/panels/changeset/ChangeSetViewer.tsx:512-512; dashboard/src/panels/changeset/ChangeSetViewer.tsx:517-517|
 | Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:166-171 |
-| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-182; dashboard/src/panels/changeset/ChangeSetViewer.tsx:184-184; dashboard/src/panels/changeset/ChangeSetViewer.tsx:185-185; dashboard/src/panels/changeset/ChangeSetViewer.tsx:202-202 |
-| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:453-453; dashboard/src/panels/changeset/ChangeSetViewer.tsx:468-468; dashboard/src/panels/changeset/ChangeSetViewer.tsx:464-464 |
-| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:586-586 |
-| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:452-452; dashboard/src/panels/changeset/ChangeSetViewer.tsx:459-459 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395
+| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:186-186; dashboard/src/panels/changeset/ChangeSetViewer.tsx:188-188; dashboard/src/panels/changeset/ChangeSetViewer.tsx:189-189; dashboard/src/panels/changeset/ChangeSetViewer.tsx:206-206|
+| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:457-457; dashboard/src/panels/changeset/ChangeSetViewer.tsx:472-472; dashboard/src/panels/changeset/ChangeSetViewer.tsx:468-468|
+| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" |dashboard/src/cockpit/Cockpit.tsx:590-590|
+| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:456-456; dashboard/src/panels/changeset/ChangeSetViewer.tsx:463-463|
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` |dashboard/src/panels/detail-panel/changeSetBar.tsx:31-95; dashboard/src/panels/detail-panel/changeSetBar.tsx:380-415
 | The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode"; "binds master file expansions to the generation the net listing published" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:280-313 |
 
 ## Update History
@@ -179,3 +179,22 @@ source are the citation-reprojection engine's to move, not this pass's. The meta
 names this leaf's uncommitted candidate as what was read, and the two verification stamps are left
 exactly as they were because no commit holds this candidate. The body was changed substantively and
 this entry is the history record, not a metadata-only refresh.
+## 260921-ICR-L12 The Review Target Carries Which Record It Is Read From
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one optional field to this module's `ChangeSetTarget`:
+`review?: { selectorKind?: ReviewSelectorKind; selectorId?: string; historical?: boolean }`. Absent
+means the live candidate, which is what every ordinary entry asks for, and `true` means the leaf's own
+recorded comparison — the entry a **closed** leaf offers, where the worktree is gone and the durable
+generation is the only comparison there is.
+
+The field is part of the target's identity rather than a decoration on it, because the takeover that
+reads the target hands the record to `ReviewSurface` and the surface asks the server for exactly that
+record. Nothing else in the module changed: the committed and working change-set actions are untouched,
+and no filesystem path is added to any target.
+
+## Update History
+- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the review target carries which record it is read from (ICR-R12@v1).** One optional `historical`
+field on the review target, absent for the live candidate and `true` for a closed leaf's recorded
+comparison; the committed and working actions are unchanged. **Citation accounting:** the rows this
+leaf's change moved were re-derived against the candidate. **Stamp accounting:** no verification stamp
+was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.

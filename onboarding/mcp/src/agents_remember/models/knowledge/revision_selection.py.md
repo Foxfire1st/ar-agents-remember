@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/revision_selection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T10:40:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ and the pane field that carries it.
 | The pair drawn from the heads: a selected revision outside the recorded heads is not a head selection. | `_require_the_pair_to_come_from_the_heads` | mcp/src/agents_remember/models/knowledge/revision_selection.py:108-129 |
 | The heads drawn from the retained: a head outside its side's retained list is invented beside the snapshots. | `_require_the_heads_to_come_from_the_retained` | mcp/src/agents_remember/models/knowledge/revision_selection.py:131-150 |
 | The shared bounds every field reads rather than restating. | `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:1-80 |
-| The pane field that carries this value, absent exactly when no subject was compared, with its one-direction validator. | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` | mcp/src/agents_remember/models/knowledge/review.py:707-756; mcp/src/agents_remember/models/knowledge/review.py:714-714 |
+| The pane field that carries this value, absent exactly when no subject was compared, with its one-direction validator. | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` |mcp/src/agents_remember/models/knowledge/review.py:722-722; mcp/src/agents_remember/models/knowledge/review.py:760-771|
 | The policy that computes this value from authored heads. | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Cross-Repo References

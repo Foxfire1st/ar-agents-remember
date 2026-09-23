@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The continuation-binding nodes, each with its own control, and the manifest node that verifies every page's own cursor.** | "test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page"; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_whose_declared_snapshot_was_altered_refuses_rather_than_mixing_revisions"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:613-708; mcp/tests/test_knowledge_read_boundaries.py:711-769; mcp/tests/test_knowledge_read_boundaries.py:772-807; mcp/tests/test_knowledge_read_boundaries.py:891-920; mcp/tests/test_knowledge_read_boundaries.py:923-954 |
 | **The read-only property, measured on a real database file.** | "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:957-957 |
 | **The disclosed unasserted defensive branch this module does not count as coverage.** | `_tree_entry`; `_TreeLookupFailed` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:368-399; mcp/src/agents_remember/memory/knowledge/read_anchors.py:416-423 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" | mcp/tests/test-evidence-lanes.toml:229-229; mcp/tests/test-evidence-lanes.toml:227-227 |
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" |mcp/tests/test-evidence-lanes.toml:230-230|
 
 ## Cross-Repo References
 

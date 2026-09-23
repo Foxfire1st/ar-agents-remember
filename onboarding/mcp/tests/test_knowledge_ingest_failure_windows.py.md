@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_failure_windows.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -156,7 +156,7 @@ Ranges are the exact construct extents in this candidate.
 | The note left where the moved write-site case stood, and the case's own statement of the precondition it measures. The note's own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "The write site's own precondition"; "the write site's own precondition" | mcp/tests/test_knowledge_curator_ingest_list.py:2402-2410; mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The note left where the moved write-site case stood. Its own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "the write site's own precondition" | mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The dataset name the write-site case asserts against. | `CANDIDATE_DATABASE_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52 |
-| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:88-88 |
+| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:89-89|
 
 ## Cross-Repo References
 

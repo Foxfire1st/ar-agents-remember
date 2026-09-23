@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T04:31:57+02:00 |
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -623,12 +623,12 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The target variant that turns the existing takeover into a review. | "review?: { selectorKind?: ReviewSelectorKind; selectorId?: string };" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:44-44; dashboard/src/panels/changeset/ChangeSetViewer.tsx:50-50 |
+| The target variant that turns the existing takeover into a review. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44; dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-46 |
 | The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
-| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:239 |
-| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:400-415 |
+| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:242-242|
+| **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
 | **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-183; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:224-224 |
 
 ## Update History
@@ -1451,3 +1451,24 @@ browser-class A01/A13 journeys are not verified here (**R25** with R24/R17).
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one change that crosses this route: the review reads' refusals now reach the reader, through a route-owned transport decode plus one outcome renderer, with the shared `data/files.ts` client deliberately untouched. It also records that **no route-model, takeover or layout change** accompanies it, and the two measured limits routed to R17/R24 and R25. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation in the L2 record above, forced by this leaf's changes to its cited files; no route impact.** The section cites `panels/review/ReviewSurface.tsx` and `data/review.ts`, and this leaf moved every construct in both: `Inventory`/`inventoryEntry`/`byteNamedEntry` `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`, `ReviewSourceInventory` `168-178` → `169-179`, and `intentReview` `271-290` → `323-342`. Nothing the section claims was falsified — the entry is still offered for every live leaf, the target's selector is still optional with presence marking a review, and the instrument still renders the whole-task inventory in all three states; the inventory's rows additionally open into their content now, which the row's claim says. This leaf (`260921-ICR-L3`) added one child component and one client function and changed no route-level fact. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The dashboard route's reviewer entry is now offered for every live leaf (the server's subject is a refinement, not a gate), the review target's selector is optional with an empty object meaning the task context, and the review panel renders the whole-task source inventory in all three states. The section is appended at the end of this route's narrative, and the row of this document that cited `Cockpit.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
+## 260921-ICR-L12 The Cockpit Hands The Review's Record To The Surface
+
+`260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the cockpit's change-set takeover:
+`ReviewSurface` is mounted with `history="recorded"` when the target's review carries `historical`, and
+with nothing otherwise. The browser therefore names **which record** the review is read from and adds
+no resolution of its own — the subject and the record both travel from the entry, and the server owns
+which comparison that record is.
+
+**Nothing else in the cockpit changed.** The takeover's back contract, the target's subject and the
+series/leaf change-set views are untouched, and the entry that produces the historical target is the
+change-set bar's closed-leaf branch (see the panels route overview), which is also where the "Intent
+review (recorded)" label is chosen. The mounted surface states the record it read in its own header, so
+a reader never has to infer from the panes which comparison is on screen.
+
+## Update History
+- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the takeover's record prop (ICR-R12@v1).** The section above records the one
+prop this leaf added and that the browser adds no resolution of its own. **Citation accounting:** every
+row on this overview that cited `Cockpit.tsx` or `changeSetBar.tsx` by line was re-derived against this
+candidate. **Stamp accounting:** no verification stamp was advanced — the header already names this
+leaf's base as the production line the reading was taken against, and nothing in this leaf is
+committed, so the governed closeout owns the real stamp.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_preview_expectation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:08+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The measured L14 shape: a preview over a live drift snapshot reports no blocker.** | `test_a_preview_over_a_live_drift_snapshot_reports_no_blocker` | mcp/tests/test_terminal_preview_expectation.py:83-91 |
 | **Preview and apply are the same judgement, asserted from four directions in one case.** | `test_the_preview_and_the_real_call_agree_over_the_same_collection` | mcp/tests/test_terminal_preview_expectation.py:94-104 |
 | **The other half of the contract: the fix may not swallow a real failure.** | `test_a_real_drift_snapshot_failure_still_blocks_with_its_reason` | mcp/tests/test_terminal_preview_expectation.py:107-116 |
-| The lane row this module was appended to. | "mcp/tests/test_terminal_preview_expectation.py" | mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/test-evidence-lanes.toml:212-212 |
+| The lane row this module was appended to. | "mcp/tests/test_terminal_preview_expectation.py" |mcp/tests/test-evidence-lanes.toml:215-215|
 
 ## Cross-Repo References
 

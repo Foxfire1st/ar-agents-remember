@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_refusal_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:50+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -124,7 +124,7 @@ they make no acceptance claim.
 | The nine tools `T34` repaired, owned by the sweep module beside the pin they left. | `T34_REPAIRED_TOOLS` | mcp/tests/test_tool_entry_point_sweep.py:103-117 |
 | The sweep whose benign half this module completes, and the world both share. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:325-866 |
 | The advertised roster the population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_refusal_conformance.py" | mcp/tests/test-evidence-lanes.toml:206-206; mcp/tests/test-evidence-lanes.toml:204-204 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_refusal_conformance.py" |mcp/tests/test-evidence-lanes.toml:207-207|
 
 ## Cross-Repo References
 

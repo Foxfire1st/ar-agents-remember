@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T21:21+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
+| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ certification result, and the candidate is uncommitted.
 | The negative control: `failed` is real terminal truth with an evidence identity, is not wakeable, and consumes nothing. | `test_a_failed_reviewer_turn_never_wakes_the_manager_and_stays_eligible` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:605-651 |
 | The fixtures this module imports rather than rebuilds, owned by the sibling relay card. | `_accepted_paster`; `_write_task_topology` | mcp/tests/test_state_signal_relay.py:120-132; mcp/tests/test_state_signal_relay.py:149-193 |
 | The sibling module that owns the relay's own structural contract. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:196-607 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" | mcp/tests/test-evidence-lanes.toml:131-131; mcp/tests/test-evidence-lanes.toml:130-130 |
+| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" |mcp/tests/test-evidence-lanes.toml:132-132|
 
 ## Cross-Repo References
 
