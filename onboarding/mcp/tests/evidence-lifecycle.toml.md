@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `overview.md` |
 ## Governing Overview
 
@@ -1622,3 +1622,33 @@ live count is **66 / 16** — and this leaf's own artifact delta is exactly empt
 ## Update History
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this leaf's new case module joined four artifact consumer lists, which is why six rows in this card were re-anchored.** `"mcp/tests/test_review_external_git_movement_read.py"` was inserted at lines `758`, `1306`, `1429` and `1476`, shifting every citation below each insertion by one line; the rows that name consumer entries in the diff-scope and read-scope shared-support tables now cite those tables themselves (`1403-1439`, `1440-1486`), and the rows naming the eve-capsule, eve-adapter and codex-page artifacts cite those tables (`1506-1527`, `1528-1547`, `1603-1621`). The population is unchanged: 16 contracts and 66 artifacts, and no contract or artifact was added. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **eight consumer rows for two new case modules, nothing registered (`ICR-R22@v1`).** The two modules the leaf adds each consume the same four exact-scope rows, so each list gained both paths; the card names each artifact, its block and entry extents, and the fact that no artifact, no contract and no identity moved. **Citation-shift consequence:** the four two-line insertions at `:802-803`, `:1307-1308`, `:1433-1434` and `:1479-1480` moved every line below them by +2, +4, +6 and +8 respectively, so the file's extent is 1702 → 1710 lines and every range below an insertion reads lower than the account above it records it; the curator repairs those ranges per row, separately. **Stamp accounting:** no verification stamp was advanced — the header's verification pair names this leaf's recorded base `e605822e` because nothing in this leaf is committed, and the governed closeout owns the real stamp.
+
+## 260921-ICR-L31 The Twenty-Seventh And Twenty-Eighth Deliberate Re-Pins
+
+**This leaf registered nothing and moved no artifact's identity, and it re-pinned the catalog twice
+(`ICR-R31@v1`).** The proof's population stays at **sixteen contracts / sixty-six artifacts**. The
+Twenty-seventh re-pin accompanied the leaf's first case module: the census reported
+``missing=['mcp/tests/test_review_family_context.py']`` with ``unsupported=[]`` on both of the
+source-derived consumer rows it reaches — ``mcp/tests/diff_scope_test_support.py`` (the two snapshots,
+their recorded identities and the two real trees the enclosure is built over) and
+``mcp/tests/read_scope_test_support.py`` (the authorship envelope and the recorded family/membership
+topology the composition reads) — so each row gained that one path and the module gained its lane row.
+The catalog moved from ``caf1b9ee…`` to ``b1c38ed8…``.
+
+The Twenty-eighth re-pin accompanied fix round 1, which moved the four population cases into a **new**
+case module rather than growing the first one past the soft rail: the same two ``consumer_scope =
+"exact"`` rows each gained ``mcp/tests/test_review_family_context_population.py`` and that module gained
+its lane row, so the catalog moved from ``b1c38ed8…`` to
+``23dd7c0f85b50585e8968122f60f50e87e15bfbfa241b28b77b7c71b2a41e252``, measured with ``sha256sum`` on
+the resolved candidate.
+
+**Both re-pins are recorded in the module's own docstring, not here**, because that docstring is the
+authority the pin is asserted against; this card records what changed in *this file*: four added
+consumer entries across two rows and no removed row, no added contract and no moved artifact identity.
+
+**Citation accounting:** seven rows of this card were re-anchored through the measured insertion map —
+the two insertions shift every quoted path below them, and each mapped range was confirmed to hold the
+row's anchor **in the right consumer block** rather than at the nearest matching string.
+
+## Update History
+- 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): this file gained the two case modules as consumer paths on two ``consumer_scope = "exact"`` rows, re-pinned as the Twenty-seventh (``caf1b9ee…`` → ``b1c38ed8…``) and Twenty-eighth (``b1c38ed8…`` → ``23dd7c0f…``) deliberate re-pins of ``ICR-R31@v1``; sixteen contracts / sixty-six artifacts unchanged and no artifact identity moved. Body updated with the real section above; no stamp advanced beyond the leaf's base plus the working-tree delta.

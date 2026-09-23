@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_external_movement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T19:45:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -147,10 +147,10 @@ absence of a transition, published exactly when every declared identity still st
 | **The matrix these labels come from, and the recovery each row names.** | `GIT_TRANSITION_SUPPORT` | mcp/src/agents_remember/application/review_external_git_movement.py:143-236 |
 | **The producer that publishes this value from what the repository shows.** | `external_git_movement` | mcp/src/agents_remember/application/review_external_git_movement.py:328-348 |
 | The closeout/integration statement, which repeats the unsupported verdicts whether or not a value was produced. | `_absence_block` | mcp/src/agents_remember/application/review_external_git_movement.py:457-471 |
-| **The payload field this value travels on, and the re-export that keeps its import site.** | `external_git_movement`; `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review.py:1037-1037 |
-| The payload module's own `__all__` entry for the value. | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review.py:78-78 |
-| **The read path that carries the value from the measurement owner to the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:491-496 |
-| The second review boundary that publishes the same value on the task-context path. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:168-168 |
+| **The payload field this value travels on, and the re-export that keeps its import site.** | `external_git_movement`; `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205; mcp/src/agents_remember/models/knowledge/review.py:1051-1051 |
+| The payload module's own `__all__` entry for the value. | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205 |
+| **The read path that carries the value from the measurement owner to the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| The second review boundary that publishes the same value on the task-context path. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | **The case that forges five false shapes, each departing from exactly one validator clause, with the real published value as the accepted control.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:560-633 |
 | The case that pins the control state as the value an untouched leaf publishes. | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:634-655 |
 

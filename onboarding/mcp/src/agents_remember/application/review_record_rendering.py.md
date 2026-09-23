@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_record_rendering.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T02:40+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -201,8 +201,8 @@ whose own record was not supplied, because the record owner supplies every claim
 | The assessment display, its per-record projection, and the examined-inputs fallback to the record's own comparison reference. | `assessment_displays`; `_assessment_display`; `ReviewAssessmentDisplay` | mcp/src/agents_remember/application/review_record_rendering.py:277-302; mcp/src/agents_remember/application/review_record_rendering.py:305-322; mcp/src/agents_remember/models/knowledge/review.py:527-566 |
 | **A verification observation displayed exactly, with no sufficiency field and no invented limitation.** | `observation`; `VerificationObservationPayload` | mcp/src/agents_remember/application/review_record_rendering.py:215-233; mcp/src/agents_remember/models/knowledge/evidence.py:1-40; mcp/src/agents_remember/application/review_record_rendering.py:276-294 |
 | **A detection fact carried with its inputs, versions and scope limitations only — no voice, no severity, no disposition.** | `signal`; `DetectionSignalPayload` | mcp/src/agents_remember/application/review_record_rendering.py:297-311; mcp/src/agents_remember/models/knowledge/detection.py:1-40; mcp/src/agents_remember/models/knowledge/detection.py:635-753|
-| **The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/knowledge_review.py:117-119 |
-| The two callers: the subject composition, which renders the matrix rows beside these records. | `compose_review`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:327-500; mcp/src/agents_remember/application/knowledge_review.py:926-978 |
+| **The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:108-136; mcp/src/agents_remember/application/review_record_rendering.py:183-183 |
+| The two callers: the subject composition, which renders the matrix rows beside these records. | `compose_review`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:327-500; mcp/src/agents_remember/application/knowledge_review.py:1002-1054 |
 | **The second caller, which is why this module exists: the task-context composition renders the same records with no matrix and no comparison.** | `task_context_review`; `_task_context_pane` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:170-193 |
 | The published assessment collection the adapter reads from the curator authority's own publication, with an absent authority treated as empty rather than as an error. | `review_records_for`; `load_curator_coherence_authority` | mcp/src/agents_remember/application/review_evidence_records.py:171-198; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:257-342 |
 | The published surface: the record input set, the empty value, the claim renderer input and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:60-78 |

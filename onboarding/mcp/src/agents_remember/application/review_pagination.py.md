@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_pagination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastUpdated | 2026-09-23T22:45:00+02:00 |
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -134,9 +134,9 @@ where.
 | **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** | `reset_comparison_page` | mcp/src/agents_remember/application/review_pagination.py:272-305 |
 | The one reader of a view quantity, so a page can never publish an unmeasured count. | `_counted` | mcp/src/agents_remember/application/review_pagination.py:308-314 |
 | **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:465-465 |
-| The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:192-196; mcp/src/agents_remember/models/knowledge/review.py:181-185 |
-| The two collections named once, because their cursors are different documents. | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:169-169 |
-| The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158 |
+| The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:187-191; mcp/src/agents_remember/models/knowledge/review.py:198-198 |
+| **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:171-176 |
+| The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 | The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:321-479 |
 | **The route that admits the page size in its own vocabulary before the request model sees it.** | `_admitted_paging`; `paged_review_request` | mcp/src/agents_remember/serving/review.py:517-517; mcp/src/agents_remember/serving/review.py:293-357 |
 | The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:548-569; dashboard/src/data/review.ts:578-580 |
@@ -162,3 +162,25 @@ readers, and every count on a page is measured inside the same process.
   `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` (2026-09-22T20:08:58+02:00); everything this card
   describes is **uncommitted** working-tree bytes in the `ar/260921-icr-l10` worktree, so no commit
   contains them and closeout owns the real stamp.
+
+## 260921-ICR-L31 The Claim About The Named Collections Re-Read Against The Third One
+
+**`ReviewPagedCollection` now names three bounded collections, and this card's claim was corrected
+rather than kept.** `ICR-R31@v1` added `family_members` to the union and to
+`REVIEW_PAGED_COLLECTIONS`, because the family roster is a third owner publishing a cursor: the
+comparison's own cursor positions a page in a union of two snapshots, this view's continuation
+positions one in a single selection of one of them, and the family roster's cursor is the read
+operation's own position in one recorded family revision's scope. Presenting one to another
+collection's owner stays a caller's mistake the owners refuse.
+
+**What did not change here:** this module still pages the two collections it owns. The adapter no
+longer routes the family roster collection through `_collection_page` — that page belongs to the
+family-context projection — so nothing in this module's own behaviour moved with the union.
+
+**Stamp accounting:** the claim was re-read against the anchored construct on the current bytes, its
+wording corrected and its range regenerated to the construct's own extent (`:171-176`), and only then
+was the verification stamp advanced. The hash basis stays the leaf's base commit because the construct
+lives in the working tree; no commit contains what a hash would otherwise claim to have verified.
+
+## Update History
+- 2026-09-23T22:45:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): the row naming the paged-collection union was **re-read and corrected** from "the two collections" to the three it now names, with its range regenerated to `mcp/src/agents_remember/models/knowledge/review.py:171-176` (`ICR-R31@v1` added `family_members`); the card's stamp advanced only after that re-read, and this module's own paging behaviour is unchanged.

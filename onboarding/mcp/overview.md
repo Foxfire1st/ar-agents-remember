@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ assessments while claiming a complete bundle — is caught at the composition ra
 | --- | --- | --- |
 | **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:171-196; mcp/src/agents_remember/application/review_evidence_records.py:137-144; mcp/src/agents_remember/application/review_assessment_currentness.py:65-68 |
 | **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:366-391; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/application/review_evidence_records.py:548-572|
-| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:75-75; mcp/src/agents_remember/models/knowledge/review.py:893-893; mcp/src/agents_remember/models/knowledge/review.py:918-958|
+| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:956-996; mcp/src/agents_remember/models/knowledge/review.py:893-893; mcp/src/agents_remember/models/knowledge/review.py:918-958|
 | **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:85-101; mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
 | The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 
@@ -132,8 +132,8 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:490-501 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1037-1038; mcp/src/agents_remember/application/knowledge_review.py:963-1015 |
+| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:507-518 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1057-1080; mcp/src/agents_remember/application/knowledge_review.py:963-1015 |
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |

@@ -5,11 +5,44 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `4c000b11c5243e4a8e77c08e87984fff00c1d94b`|
-| lastVerifiedCommitDate |  2026-09-23T20:33:15+02:00|
+| lastUpdated | 2026-09-23T22:45:00+02:00 |
+| lastVerifiedCommitHash |  `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`|
+| lastVerifiedCommitDate |  2026-09-23T22:41:36+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L31 The Comparison-Bound Family Review Context
+
+`260921-ICR-L31` (`ICR-R31@v1`) gives the normal task review a composition it had no way to state
+before: for the review's selected subject, **which recorded families it belongs to on each of the two
+bound snapshots, each selected family revision's own authored joint guarantee, and that revision's
+complete recorded member roster — unchanged siblings included**. The flat subject catalogue
+(`ICR-R09@v1`) lists subjects and the relationship union (`ICR-R08@v1`) states movement; neither
+carries the guarantee and its member obligations together, which is what a reviewer of a changed member
+actually has to read.
+
+Two new owners under `mcp/src/agents_remember/application` carry it — `review_family_context.py`
+composes, `review_family_rosters.py` reads one exact family revision's roster — with the value
+vocabulary in `mcp/src/agents_remember/models/knowledge/review_family_context.py`. The composition
+calls the shipped read operation and `ICR-R07@v1`'s own head rule over the snapshots' authored
+predecessor edges, so it selects no revision by label, by version or by order: several legitimate heads
+stay several, carried as inspectable candidates with no revision chosen and no guarantee presented as
+the family's own. A family selection's revision population is the **family owner's own list**, so a
+revision that cites no member is still a revision of its family; a family the snapshot records with a
+guarantee and no members is a context with a measured empty roster; and `no_family_recorded` is a
+measured zero reserved for a family neither snapshot records.
+
+`knowledge_review.compose_review` calls the composition once and carries it on the payload as the
+required `family_context` field; `review_task_context.task_context_review` answers that field with the
+one state that claims nothing, because a review that selected no subject compared no operand. The
+union of bounded collections this surface publishes gained its third member (`family_members`), and the
+one collection the projection continues is one family revision's recorded roster, walked with the read
+owner's own cursor.
+
+Three case modules accompany it (`mcp/tests/test_review_family_context.py`, its `…_population.py`
+sibling added by fix round 1, and `…_values.py`), and the leaf re-pinned the evidence-lifecycle
+catalog twice for the two consumer rows those modules are derived from — sixteen contracts and
+sixty-six artifacts unchanged, no artifact identity moved.
 
 ## 260921-ICR-L23 The Review Surface Measures The Raw-Git Identity Boundary
 
@@ -6264,5 +6297,6 @@ this same candidate; this section records the leaf for a reader who arrived at t
   `mcp/tests/test_worktree_sync.py` to its base bytes — the leaf no longer touches it.
 
 ## Update History
+- 2026-09-23T22:45:00+02:00 — 260921-ICR-L31 curator (memory worktree only; no code changed; no commits; leaf base `4c000b11c5243e4a8e77c08e87984fff00c1d94b` plus the working-tree delta): **this repository's route body now records the comparison-bound family review context (`ICR-R31@v1`)** — the composition that exposes, for a review's selected subject, the recorded families it belongs to on both snapshots with each selected family revision's own authored guarantee and its complete recorded member roster, including unchanged siblings and before-only members. A family selection's revision population is the family owner's own list, so memberless revisions are heads and an authored ambiguity stays `ambiguous` with every head inspectable; a family recorded with no members is a context with a measured empty roster rather than a measured zero; and the review payload's `family_context` field is required, so an absent field can never be read as one. Two new application owners and one new value module carry it, the paged-collection union gained its third member, three case modules measure it, and the evidence-lifecycle catalog was re-pinned twice for the consumer rows they are derived from with contracts and artifacts unchanged.
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this repository overview now states the raw-Git identity boundary, and the statement belongs at this altitude.** `260921-ICR-L23` (`ICR-R23@v1`) makes the review surface measure an identity a raw Git operation replaced with no managed transaction behind it — a fact no earlier reading could state, so a rewritten branch read exactly like an untouched one. The new section above carries the three properties that are repository-level rather than route-level: a replaced identity outranks both carried comparison and recorded rebinding; an unperformed comparison is its own `not-measured` state and is deliberately not `stale`, because disabling submission is a consequence the absence has not earned; and the boundary never gates, leaving the closeout door's own source-lineage checks as the only checks on that transaction. The support matrix lives in `docs/reference/worktrees-c09.md`, which is that route's to carry. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T17:45:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): **route body updated for managed Git recovery rebinding (`ICR-R22@v1`).** The section above records the two new application owners and what each answers, the three modified application owners with their measured line counts, the new record vocabulary and the display-model extraction that returned `models/knowledge/review.py` under the file-size rail, and the two new case modules with their registration. **Citation accounting:** every enforced row this leaf's delta produced was re-derived per row from the changed construct's own declaration — 150 enforced `range_resolution` rows and 7 enforced `claim_reopen` rows cleared to zero — including the ranges into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` and `mcp/tests/test_dependency_ownership_ast_helpers.py`, which were translated through those files' own measured insertions rather than re-guessed, and the five legacy `Generated citation repair` bullets in `models/knowledge/review.py.md` were **retired** with a dated disposition so no projection is claimed current on its own authority. **Stamp accounting:** no verification stamp was advanced — the header names the leaf's recorded base because nothing in this leaf is committed, and the governed closeout owns the real stamp.

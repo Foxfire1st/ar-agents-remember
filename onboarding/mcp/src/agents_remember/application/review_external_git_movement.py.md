@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_external_git_movement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T20:10:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -229,8 +229,8 @@ exception, because a measurement that could not be taken must not fail the read 
 | The replacement spelled from the values the check read rather than from a diagnosis. | `_replacement_clause` | mcp/src/agents_remember/application/review_external_git_movement.py:883-895 |
 | **The value this module publishes, its four-state union and the validator that refuses every false shape.** | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205 |
 | **The transition vocabulary, including `unchanged` as the measured absence of a transition.** | `ExternalGitTransition` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:74-81 |
-| **The review read that calls this owner and carries the value on the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:491-496 |
-| The task-context review boundary, which takes the same measurement and refuses nothing on it. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:168-168 |
+| **The review read that calls this owner and carries the value on the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| The task-context review boundary, which takes the same measurement and refuses nothing on it. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | **The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.** | `review_staleness_with_external_movement` | mcp/src/agents_remember/application/review_sync_movement.py:311-355 |
 | **The closeout preview, closeout apply and integration call sites that attach the statement.** | `external_git_movement_result_block` | mcp/src/agents_remember/application/worktree_tools.py:461-461 |
 | The integration result block that carries the same statement. | `external_git_movement_result_block` | mcp/src/agents_remember/application/worktree_tools.py:1012-1016 |

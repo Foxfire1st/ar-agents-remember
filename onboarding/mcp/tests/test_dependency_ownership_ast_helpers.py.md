@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `overview.md` |
 ## Governing Overview
 
@@ -463,7 +463,7 @@ below `:1271`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The re-pinned constants, with the counts this leaf did not move and the digest the merged catalog carries.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| **The source's own paragraph for this leaf: consumer-only, counts unchanged, and the digest it replaced.** | "260921-ICR-L20"; `LIFECYCLE_CATALOG_SHA256` docstring |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:316; mcp/tests/test_dependency_ownership_ast_helpers.py:376-316|
+| **The source's own paragraph for this leaf: consumer-only, counts unchanged, and the digest it replaced.** | "260921-ICR-L20"; `LIFECYCLE_CATALOG_SHA256` docstring |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:316; mcp/tests/test_dependency_ownership_ast_helpers.py:413-413|
 | **The source's own paragraph for this leaf: consumer-only, counts unchanged, and the digest it replaced.** | "260921-ICR-L20" |mcp/tests/test_dependency_ownership_ast_helpers.py:316-316|
 | The two consumer rows this leaf's module joined, and the lane row the same module occupies. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/evidence-lifecycle.toml:736-736; mcp/tests/evidence-lifecycle.toml:1277-1277; mcp/tests/test-evidence-lanes.toml:90-90 |
 | The catalog check that recomputes the file's sha256 and counts both block kinds beside it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
@@ -497,7 +497,7 @@ prose is the file's own record of the re-pin; the constants, not the prose, rema
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The re-pinned constants, with the counts this leaf did not move and the digest it did.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| **The source's own paragraph for that leaf: consumer-only, two support modules, counts unchanged, and the digest it replaced.** | "260921-ICR-L1" | mcp/tests/test_dependency_ownership_ast_helpers.py:109-49; mcp/tests/test_dependency_ownership_ast_helpers.py:178-183; mcp/tests/test_dependency_ownership_ast_helpers.py:129-129; mcp/tests/test_dependency_ownership_ast_helpers.py:130-130; mcp/tests/test_dependency_ownership_ast_helpers.py:170-170; mcp/tests/test_dependency_ownership_ast_helpers.py:171-171; mcp/tests/test_dependency_ownership_ast_helpers.py:206-206; mcp/tests/test_dependency_ownership_ast_helpers.py:207-207; mcp/tests/test_dependency_ownership_ast_helpers.py:222-222; mcp/tests/test_dependency_ownership_ast_helpers.py:238-238 |
+| **The source's own paragraph for that leaf: consumer-only, two support modules, counts unchanged, and the digest it replaced.** | "260921-ICR-L1" | mcp/tests/test_dependency_ownership_ast_helpers.py:406-411; mcp/tests/test_dependency_ownership_ast_helpers.py:178-183; mcp/tests/test_dependency_ownership_ast_helpers.py:129-129; mcp/tests/test_dependency_ownership_ast_helpers.py:130-130; mcp/tests/test_dependency_ownership_ast_helpers.py:170-170; mcp/tests/test_dependency_ownership_ast_helpers.py:171-171; mcp/tests/test_dependency_ownership_ast_helpers.py:206-206; mcp/tests/test_dependency_ownership_ast_helpers.py:207-207; mcp/tests/test_dependency_ownership_ast_helpers.py:222-222; mcp/tests/test_dependency_ownership_ast_helpers.py:238-238 |
 | The two appended consumer rows, on the two artifacts whose exact lists gained this module. | "mcp/tests/test_knowledge_review_source_endpoints.py" | mcp/tests/evidence-lifecycle.toml:1403-1439; mcp/tests/evidence-lifecycle.toml:1440-1486 |
 | The catalog check that recomputes the file's sha256 and counts both block kinds beside it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
 | The catalog check that recomputes the file's sha256 and counts both block kinds beside it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
@@ -526,8 +526,8 @@ and the constants — not the prose — remain the authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The re-pinned digest and the two counts this leaf did not move.** | "260921-ICR-L18"; `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/test_dependency_ownership_ast_helpers.py:277; mcp/tests/test_dependency_ownership_ast_helpers.py:337-277|
-| **The source's own paragraph for this leaf: consumer-only, two existing support builders reused, counts unchanged, and the digest it replaced.** | "260921-ICR-L18"; `LIFECYCLE_CATALOG_SHA256` docstring |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:277; mcp/tests/test_dependency_ownership_ast_helpers.py:337-277|
+| **The re-pinned digest and the two counts this leaf did not move.** | "260921-ICR-L18"; `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/test_dependency_ownership_ast_helpers.py:277; mcp/tests/test_dependency_ownership_ast_helpers.py:374-388|
+| **The source's own paragraph for this leaf: consumer-only, two existing support builders reused, counts unchanged, and the digest it replaced.** | "260921-ICR-L18"; `LIFECYCLE_CATALOG_SHA256` docstring |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:277; mcp/tests/test_dependency_ownership_ast_helpers.py:390-411|
 | The catalog whose bytes the pin names, and the artifact row whose consumer list gained both modules. | "mcp/tests/test_knowledge_ingest_comparison_generation.py"; "mcp/tests/test_knowledge_ingest_failure_windows.py"; "[[artifact]]" | mcp/tests/evidence-lifecycle.toml:731-732; mcp/tests/evidence-lifecycle.toml:1-1683 |
 | The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest. | `test_production_proof_adds_no_governed_evidence_artifact` |mcp/tests/test_dependency_ownership_ast_helpers.py:655-672|
 | The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest. | `test_production_proof_adds_no_governed_evidence_artifact` |mcp/tests/test_dependency_ownership_ast_helpers.py:655-672|
@@ -573,11 +573,11 @@ the authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The re-pinned digest, with the two counts this change leaves alone.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| **The source's own paragraph for this leaf: the union of two consumer repairs, no registration, counts unchanged, and the digest it replaced. It is no longer first in the docstring — the two later records sit above it.** | "Thirteenth deliberate re-pin (260921-ICR-L6"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:260; mcp/tests/test_dependency_ownership_ast_helpers.py:320-260|
+| **The source's own paragraph for this leaf: the union of two consumer repairs, no registration, counts unchanged, and the digest it replaced. It is no longer first in the docstring — the two later records sit above it.** | "Thirteenth deliberate re-pin (260921-ICR-L6"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:260; mcp/tests/test_dependency_ownership_ast_helpers.py:357-357|
 | The catalog check that recomputes the file's sha256 and counts both block kinds beside it — re-derived here because this leaf's row and paragraph moved it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
 | The catalog check that recomputes the file's sha256 and counts both block kinds beside it — re-derived here because this leaf's row and paragraph moved it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
-| **The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_read_ar_files.py" | mcp/tests/evidence-lifecycle.toml:1472-1472; mcp/tests/evidence-lifecycle.toml:1473-1473 |
-| **The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_read_ar_files.py" | mcp/tests/evidence-lifecycle.toml:1472-1472; mcp/tests/evidence-lifecycle.toml:1473-1473 |
+| **The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_read_ar_files.py" | mcp/tests/evidence-lifecycle.toml:1474-1474; mcp/tests/evidence-lifecycle.toml:1475-1475 |
+| **The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_read_ar_files.py" | mcp/tests/evidence-lifecycle.toml:1474-1474; mcp/tests/evidence-lifecycle.toml:1475-1475 |
 | The artifact those two rows belong to, which is already governed and is why no third fixture was registered. | `"mcp/tests/read_scope_test_support.py"`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:96-1449; mcp/tests/evidence-lifecycle.toml:1418-1450 |
 | The population the pin names, re-derived at the merged tip — **16 contracts and 66 artifacts**, the values the constants below carry. | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-44; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45; mcp/tests/evidence-lifecycle.toml:1-1683
 | **The source's own paragraph for this leaf, first in the docstring: the union of two consumer repairs, no registration, counts unchanged, and the digest it replaced.** | "Thirteenth deliberate re-pin (260921-ICR-L6" |mcp/tests/test_dependency_ownership_ast_helpers.py:260-260|
@@ -667,7 +667,7 @@ module's own collected cases remain the authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The re-pinned constants, with the counts this leaf did not move and the digest it did.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| **The source's own paragraph for `260921-ICR-L3`, third in the docstring after the Seventeenth and the synced union: no registration, two consumer rows, counts unchanged, and the digest it replaced.** | "Fifteenth deliberate re-pin (260921-ICR-L3"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:222; mcp/tests/test_dependency_ownership_ast_helpers.py:282-222|
+| **The source's own paragraph for `260921-ICR-L3`, third in the docstring after the Seventeenth and the synced union: no registration, two consumer rows, counts unchanged, and the digest it replaced.** | "Fifteenth deliberate re-pin (260921-ICR-L3"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:222; mcp/tests/test_dependency_ownership_ast_helpers.py:319-319|
 | **The synced union paragraph, second in the docstring after this leaf's Seventeenth: both leaves' consumer rows in one catalog, and the digest the merged file measures.** | "Sixteenth deliberate re-pin (260921-ICR-L14" |mcp/tests/test_dependency_ownership_ast_helpers.py:200-200|
 | The two consumer rows the leaf's module joined, and the artifact identities they belong to. | "mcp/tests/test_knowledge_review_source_content.py"; `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:1403-1439; mcp/tests/evidence-lifecycle.toml:1440-1486 |
 | The check that recomputes the file's sha256 and counts both block kinds beside it. | `_assert_the_catalog_kept_its_bytes_and_identities` |mcp/tests/test_dependency_ownership_ast_helpers.py:723-739|
@@ -1081,3 +1081,30 @@ remembered delta.
 
 ## Update History
 - 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **the Twenty-sixth deliberate re-pin — the read-side cases' own module (`ICR-R22@v1`, fix round 3).** The new `test_review_sync_movement_read.py` gained its own path on the same four exact-scope rows, no artifact or contract was registered, and the live constant reads `d07c2f9d…` with the counts unchanged at sixteen / sixty-six. This section's own value paragraph above was corrected in place from `3e9105c2…` at 1681 lines to the live pair. **Citation-shift consequence:** the three docstring insertions at `:49`, `:67` and `:88` moved every line below them — the module is 782 → 842 lines and every base line from `:49` onward reads **+60** (`:633` → `:693`, `:690` → `:750`, `:703` → `:763`, `:723` → `:783`), so every range on this card below the docstring reads lower than its account records it; the curator repairs those ranges per row, separately. **Stamp accounting:** no verification stamp was advanced — the header's verification pair names this leaf's recorded base `e605822e` because nothing in this leaf is committed, and the governed closeout owns the real stamp.
+
+## 260921-ICR-L31 The Twenty-Seventh And Twenty-Eighth Re-Pins, And The Catalog Pin They Move
+
+**``LIFECYCLE_CATALOG_SHA256`` now names ``23dd7c0f85b50585e8968122f60f50e87e15bfbfa241b28b77b7c71b2a41e252``
+(`ICR-R31@v1`).** The constant is re-pinned deliberately at every value below, and this leaf moved it
+twice for the two reasons the module's own docstring records in full: the Twenty-seventh re-pin
+followed ``mcp/tests/test_review_family_context.py`` becoming a source-derived consumer of the
+``diff_scope_test_support`` and ``read_scope_test_support`` rows, and the Twenty-eighth followed fix
+round 1's new ``mcp/tests/test_review_family_context_population.py`` joining those same two rows. The
+leaf registered no artifact and no contract of its own, so ``LIFECYCLE_CONTRACT_COUNT`` stays **16** and
+``LIFECYCLE_ARTIFACT_COUNT`` stays **66**, and the proof's own artifact delta remains exactly empty.
+
+**What a reader should take from this card.** The pin is an assertion about bytes: the proof compares
+``sha256sum mcp/tests/evidence-lifecycle.toml`` against this constant, so a consumer row added anywhere
+in that file fails the proof until the constant is re-pinned here — which is why the re-pin is
+deliberate and recorded rather than mechanical. The docstring below the constant is the authority for
+every re-pin's reason; this section records only that two more happened and that neither moved the
+population.
+
+**Citation accounting:** six rows of this card were re-anchored. The prose anchors here quote passages
+of this module's *own* docstring, so each was resolved to the paragraph it names — the L1 entry, the L18
+consequence-repair entry and the L18 entry — and each repaired range was confirmed to hold its quoted
+passage on the frozen bytes. Two descending (``start > end``) ranges, which the checker reads as empty,
+were replaced by the true range of the passage their row names.
+
+## Update History
+- 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): ``LIFECYCLE_CATALOG_SHA256`` re-pinned twice (Twenty-seventh ``caf1b9ee…`` → ``b1c38ed8…``, Twenty-eighth ``b1c38ed8…`` → ``23dd7c0f…``) for the two consumer rows the leaf's three case modules gained, with contracts and artifacts unchanged at sixteen and sixty-six (`ICR-R31@v1`). Body updated with the real section above; no stamp advanced beyond the leaf's base plus the working-tree delta.

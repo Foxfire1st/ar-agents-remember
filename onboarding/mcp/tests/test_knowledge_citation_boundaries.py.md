@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,9 +91,9 @@ No domain documentation source is configured for this repository (`system/source
 | The dataset's own declared tables holding the binding rows, and a generation-4 dataset refused the binding table rather than widened. | `test_the_binding_rows_live_in_the_datasets_own_declared_tables`; `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` | mcp/tests/test_knowledge_citation_boundaries.py:574-611; mcp/tests/test_knowledge_citation_boundaries.py:613-648; mcp/tests/test_knowledge_citation_boundaries.py:550-595 |
 | **The retention cases: a published artifact reads back matched, a missing destination is blocked, changed bytes are mismatched, and the destination is outside the enclosure and the archive by construction.** | `test_a_published_artifact_reads_back_with_its_published_digest`; `test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction`; `test_a_missing_durable_destination_reads_back_as_a_blocked_state`; `test_a_destination_whose_bytes_changed_reads_back_as_mismatched` | mcp/tests/test_knowledge_citation_boundaries.py:635-665; mcp/tests/test_knowledge_citation_boundaries.py:667-685; mcp/tests/test_knowledge_citation_boundaries.py:687-707; mcp/tests/test_knowledge_citation_boundaries.py:709-727 |
 | **The uncovered form produced on a real store by a directly written row pair, counted in a denominator of two and asserted distinct from the recorded-blob mismatch.** | `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` | mcp/tests/test_knowledge_citation_boundaries.py:714-822 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:227-227; mcp/tests/evidence-lifecycle.toml:973-973 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:227-227; mcp/tests/evidence-lifecycle.toml:973-973 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:227-227; mcp/tests/evidence-lifecycle.toml:973-973 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
 
 ## Cross-Repo References
 

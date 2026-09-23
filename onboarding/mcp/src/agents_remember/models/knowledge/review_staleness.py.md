@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_staleness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -172,10 +172,10 @@ changed a home and not an import site.
 | **The `after` validator that refuses every false movement shape — state against moved identities, absence against reason, and `record_readable` against `unavailable`.** | `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:131-187 |
 | **The submission boundary carried as data: two unfavourable states, and `none_is_approval`.** | `ReviewSubmission` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204 |
 | The shared bounds, patterns and base model every field is constrained from. | `PROSE_MAX_LENGTH`; `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:18-27; mcp/src/agents_remember/models/knowledge/base.py:34-39 |
-| **The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.** | `review_staleness`; `ReviewSyncMovement` | mcp/src/agents_remember/models/knowledge/review.py:61-64; mcp/src/agents_remember/models/knowledge/review.py:62-65; mcp/src/agents_remember/models/knowledge/review.py:118-123 |
+| **The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.** | `review_staleness`; `ReviewSyncMovement` | mcp/src/agents_remember/models/knowledge/review.py:61-64; mcp/src/agents_remember/models/knowledge/review.py:62-65; mcp/src/agents_remember/models/knowledge/review_staleness.py:95-197 |
 | **The payload that still declares the staleness, submission and movement fields, and the comment distinguishing "no sync has reported" from "a sync reported agreement".** | `KnowledgeReviewPayload`; `sync_movement` | mcp/src/agents_remember/models/knowledge/review.py:991-1084; mcp/src/agents_remember/models/knowledge/review.py:1019-1026 |
 | **The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.** | `review_staleness`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_comparison_staleness.py:76-97; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| The task-context producer that uses the `not_compared` state because no knowledge operand was compared. | `ReviewStaleness` | mcp/src/agents_remember/application/review_task_context.py:152-159 |
+| The task-context producer that uses the `not_compared` state because no knowledge operand was compared. | `ReviewStaleness` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | The display-only submission producer, whose two states are the model's own members. | `submission` | mcp/src/agents_remember/application/review_record_rendering.py:194-223 |
 | **The projection whose output this model's validator accepts, and the record vocabulary the movement's three states are read from.** | `_project`; `ReviewSyncRebindingVerdict` | mcp/src/agents_remember/application/review_sync_movement.py:165-213; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:97-103 |
 | **The case that pins the four validator clauses one forgery each, with the real published movement as the accepted control.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:258-327 |

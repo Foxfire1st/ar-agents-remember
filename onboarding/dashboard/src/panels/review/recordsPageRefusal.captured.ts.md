@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/recordsPageRefusal.captured.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ No domain documentation source is configured for this repository (`system/source
 | The mounted case that asserts the `page` key is absent and renders the refusal from these bytes. | "states a refused records page from the CAPTURED server body, with its code, identities and a live first-page action" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:316-373 |
 | The client decode these bytes travel through, exactly as the browser's do. | `carriedPage` |dashboard/src/data/review.ts:545-547|
 | **The route's own serialization setting that makes the key absent rather than null.** | `api_review_intent` |mcp/src/agents_remember/serving/review.py:576-624|
-| The published page and refusal shapes the captured body carries. | `ReviewCollectionPage`; `comparison_page_reset` | mcp/src/agents_remember/models/knowledge/review.py:412-488; mcp/src/agents_remember/models/knowledge/review.py:157-157 |
+| The published page and refusal shapes the captured body carries. | `ReviewCollectionPage`; `comparison_page_reset` | mcp/src/agents_remember/models/knowledge/review.py:412-488; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 
 ## Cross-Repo References
 

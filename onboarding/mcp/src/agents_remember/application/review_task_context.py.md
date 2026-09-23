@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_task_context.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
+| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -204,7 +204,7 @@ an absent dataset half changes the *reason* it states, never its ability to answ
 | The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. | `not_compared`; `task_context` | mcp/src/agents_remember/application/review_task_context.py:1-23 |
 | The module's two published names: the composition and its pair measurement. | `__all__` |mcp/src/agents_remember/application/review_task_context.py:88-88|
 | **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** | `unreadable_half_refusal`; `unreadable_half_limitations`; `candidate_receipt_refusal` |mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_task_context.py:174-181; mcp/src/agents_remember/application/review_candidate_resolution.py:403-416|
-| **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** | `task_context_review`; `with_selection_channels`; `candidate_ref`; `require_current_candidate_identity`; `unreadable_half_refusal`; `unreadable_half_limitations`; `source_pane`; `evidence_pane`; `submission`; `attribution_limitations` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:160-167; mcp/src/agents_remember/application/review_candidate_resolution.py:224-254; mcp/src/agents_remember/application/review_evidence_records.py:256-281; mcp/src/agents_remember/application/review_source_inventory.py:556-619; mcp/src/agents_remember/application/review_source_inventory.py:741-763; mcp/src/agents_remember/application/review_task_context.py:182-189 |
+| **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** | `task_context_review`; `with_selection_channels`; `candidate_ref`; `require_current_candidate_identity`; `unreadable_half_refusal`; `unreadable_half_limitations`; `source_pane`; `evidence_pane`; `submission`; `attribution_limitations` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:93-191; mcp/src/agents_remember/application/review_candidate_resolution.py:224-254; mcp/src/agents_remember/application/review_evidence_records.py:256-281; mcp/src/agents_remember/application/review_source_inventory.py:556-619; mcp/src/agents_remember/application/review_source_inventory.py:741-763; mcp/src/agents_remember/application/review_task_context.py:182-189 |
 | **The selection-channel call that makes "this review did not ask" a stated fact rather than an empty collection, and the function that states both compositions' positions from one vocabulary.** | `with_selection_channels`; `_not_selected` | mcp/src/agents_remember/application/review_evidence_records.py:257-815; mcp/src/agents_remember/application/review_evidence_records.py:229-229 |
 | **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** | `pair_attribution`; `_pair_without_namespace`; `_side_from_own_bytes`; `_pair_side` | mcp/src/agents_remember/application/review_task_context.py:231-289; mcp/src/agents_remember/application/review_task_context.py:291-320; mcp/src/agents_remember/application/review_task_context.py:322-349; mcp/src/agents_remember/application/review_task_context.py:351-376 |
 | **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** | `_task_context_pane`; `ReviewSideContent`; `ReviewKnowledgePane` |mcp/src/agents_remember/application/review_task_context.py:184-214; mcp/src/agents_remember/models/knowledge/review.py:220-245; mcp/src/agents_remember/application/review_task_context.py:190-190|
@@ -302,3 +302,26 @@ value the resolution already carries, and the live path through this module is b
 content that was expected and lost. The live path is unchanged. **Citation accounting:** every row into
 this module was re-derived against the candidate. **Stamp accounting:** no verification stamp was
 advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
+
+## 260921-ICR-L31 A Review That Selected No Subject States Its Family Absence In The One Vocabulary
+
+**This entry now answers the family question with the one state that claims nothing
+(`ICR-R31@v1`).** The payload's ``family_context`` field is required, so a task-context review — which
+composes no comparison and selects no subject — supplies a stated context whose state is
+``no_subject_selected`` and whose sentence says that no recorded family, guarantee or member roster was
+resolved, and that the Source pane carries the complete inventory of the bound source pair
+independently of any family membership. The distinction the state keeps is the point: the recorded
+families of a subject nobody named are not an unread scope, not an unavailable one and not a measured
+zero, and collapsing them into ``no_family_recorded`` would report a measurement this entry never took.
+
+**What did not change:** the candidate re-derivation and its receipt, the selection channels, the
+three panes, the ``not_compared`` staleness statement and the five declared limitations are exactly as
+they were. The new field is the only addition, and it is additive to the payload rather than a change
+to what this entry reads.
+
+**Citation accounting:** one row was re-anchored to the ``submission`` call site this row describes
+(the composition's own tail, not the import of the same name) after this leaf's additions moved it. No
+claim cell was re-worded and no stamp was advanced beyond the honest basis below.
+
+## Update History
+- 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): the task-context entry now carries ``family_context`` stating ``no_subject_selected``, so the required field never reads as an unread scope or a measured zero (`ICR-R31@v1`); the composition, the receipt and the limitations are otherwise unchanged. Body updated with the real section above; no stamp advanced beyond the leaf's base plus the working-tree delta.
