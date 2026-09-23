@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ than shifted.
 | **The production entry and the one-rename publication.** | `freeze_review_comparison`; `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276; mcp/src/agents_remember/application/review_comparison_freeze.py:327-351 |
 | **Custody over named durable history only, and the two snapshots copied by the storage owner.** | `custody_names`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:315-341 |
 | **The two deletion owners and the record that precedes every deletion.** | `release_comparison_code_object`; `discard_comparison_snapshots` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210 |
-| **The read-back: per-channel states and `unavailable_channels()`.** | `reopen_comparison_generation`; `ComparisonReopen` | mcp/src/agents_remember/application/review_comparison_reopen.py:196-217; mcp/src/agents_remember/application/review_comparison_reopen.py:152-193 |
+| **The read-back: per-channel states and `unavailable_channels()`.** | `reopen_comparison_generation`; `ComparisonReopen` | mcp/src/agents_remember/application/review_comparison_reopen.py:211-232; mcp/src/agents_remember/application/review_comparison_reopen.py:152-193 |
 | **The Git-object retention member this route's `worktrees/` gained.** | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
 | **The two typed failures, and the two boundaries that decide why they are raised.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-190; mcp/src/agents_remember/errors.py:193-203 |
 | **The one durable-root owner the layout asks instead of restating.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
@@ -132,8 +132,8 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:484-495 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:931-931; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
+| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:490-501 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:944-931; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |

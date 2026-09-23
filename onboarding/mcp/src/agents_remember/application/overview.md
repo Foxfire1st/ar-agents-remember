@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-23T09:35:00+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -199,7 +199,7 @@ rule, the seam, and the deletion.
 | --- | --- | --- |
 | **The new catalogue owner: both snapshots' identity tables, per-row presence, no comparison, no silent drops.** | `read_subject_catalogue`; `_union` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/review_subject_catalogue.py:90-112
 | **The adapter's delegation: the entry half resolves, calls the catalogue, fills the totals and assembles — the per-subject helpers deleted.** | `list_knowledge_review_entries`; `read_subject_catalogue` | mcp/src/agents_remember/application/knowledge_review.py:199-280; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69 |
-| **The presence vocabulary and the totals with their agreement validator.** | `ReviewSubjectPresence`; `ReviewEntry`; `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:196-1174; mcp/src/agents_remember/models/knowledge/review.py:1076-1076; mcp/src/agents_remember/models/knowledge/review.py:289-289 |
+| **The presence vocabulary and the totals with their agreement validator.** | `ReviewSubjectPresence`; `ReviewEntry`; `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:196-1164; mcp/src/agents_remember/models/knowledge/review.py:1076-1076; mcp/src/agents_remember/models/knowledge/review.py:289-289 |
 | **The ten catalogue cases and the re-contracted mechanism case.** | `test_the_catalogue_unions_both_snapshots_with_labels_and_presence`; `test_catalogue_loading_runs_no_comparison` | mcp/tests/test_review_subject_catalogue.py:232-250; mcp/tests/test_review_subject_catalogue.py:511-545; mcp/tests/test_knowledge_review_surface.py:1124-1194 |
 
 ## 260921-ICR-L7 The Statement Sides Are Rendered From Selected Heads, And The Both-Sides Preference Is Deleted
@@ -240,7 +240,7 @@ belongs at this route's altitude is the rule, the seam, and the deletion.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new policy owner: the one head rule, what it reads, what it returns, and why it is its own module.** | `select_subject_revisions`; `revision_heads` | mcp/src/agents_remember/application/review_revision_comparison.py:1-31; mcp/src/agents_remember/application/review_revision_comparison.py:144-187; mcp/src/agents_remember/application/review_revision_comparison.py:81-94 |
-| **The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.** | `select_subject_revisions`; `_knowledge_pane`; `_selected_statements` |mcp/src/agents_remember/application/knowledge_review.py:128-128; mcp/src/agents_remember/application/knowledge_review.py:967-1019; mcp/src/agents_remember/application/knowledge_review.py:931-983|
+| **The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.** | `select_subject_revisions`; `_knowledge_pane`; `_selected_statements` |mcp/src/agents_remember/application/knowledge_review.py:128-128; mcp/src/agents_remember/application/knowledge_review.py:980-1032; mcp/src/agents_remember/application/knowledge_review.py:944-983|
 | **The recorded value the policy returns into, carried on the pane.** | `ReviewRevisionSelection`; `revision_selection` |mcp/src/agents_remember/models/knowledge/revision_selection.py:54-150; mcp/src/agents_remember/models/knowledge/review.py:722-722|
 | **The ten cases that measure the policy, and the two rewritten surface cases beside them.** | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
 
@@ -494,8 +494,8 @@ longer be displayed as two absences.
 | --- | --- | --- |
 | The statement-side projection's whole surface: the three-outcome side contract, the conditions reader, the comparison's own field roster, and the value reader that reserves `None` for absence. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | **The structured-value projection: canonical, bracketed as the pane's own rendering, and bounded with a visible truncation.** | `structured_value_text`; `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TRUNCATION` | mcp/src/agents_remember/application/review_statement_sides.py:55-83 |
-| **The contract that makes `None` mean absence — and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange`; `ReviewSideContent`; `ReviewSideState` |mcp/src/agents_remember/models/knowledge/review.py:484-495; mcp/src/agents_remember/models/knowledge/review.py:220-245; mcp/src/agents_remember/models/knowledge/review.py:198-198|
-| **The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.** | `side_content`; `side_conditions`; `field_changes`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:931-931; mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:131-131; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
+| **The contract that makes `None` mean absence — and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange`; `ReviewSideContent`; `ReviewSideState` |mcp/src/agents_remember/models/knowledge/review.py:490-501; mcp/src/agents_remember/models/knowledge/review.py:220-245; mcp/src/agents_remember/models/knowledge/review.py:198-198|
+| **The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.** | `side_content`; `side_conditions`; `field_changes`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:944-996; mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:139-139; mcp/src/agents_remember/application/knowledge_review.py:131-131; mcp/src/agents_remember/application/knowledge_review.py:138-138; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
 | **The production composition case: a changed structured field carries each side's own projection, the two differ, and each round-trips back to the stored authorship envelope.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -2896,7 +2896,7 @@ than two implementations that could disagree about which paths changed.
 | **The source pane: the inventory first and unconditionally, then the comparison's own attribution facts carried verbatim or stated as not measured.** | `source_pane` | mcp/src/agents_remember/application/review_source_inventory.py:540-580 |
 | **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** | `ReviewRecordInputs`; `refused`; `submission`; `evidence_pane`; `subject_states`; `signal`; `observation` | mcp/src/agents_remember/application/review_record_rendering.py:85-111; mcp/src/agents_remember/application/review_record_rendering.py:255-274; mcp/src/agents_remember/application/review_record_rendering.py:122-149; mcp/src/agents_remember/application/review_record_rendering.py:152-176; mcp/src/agents_remember/application/review_record_rendering.py:178-198; mcp/src/agents_remember/application/review_record_rendering.py:276-294; mcp/src/agents_remember/application/review_record_rendering.py:297-311; mcp/src/agents_remember/application/review_record_rendering.py:213-252; mcp/src/agents_remember/application/review_record_rendering.py:456-473; mcp/src/agents_remember/application/review_record_rendering.py:431-453|
 | **The task-context entry: no comparison faked, the inventory rendered in all three states, the candidate re-checked before publication, and the reason it states — including an absent dataset half.** | `task_context_review`; `task_context_detail`; `_task_context_pane` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:196-228; mcp/src/agents_remember/application/review_task_context.py:170-193 |
-| **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.** | `compose_review`; `_open_dataset_pair`; `_review_matrix`; `_selector_kind_or_absence` |mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/knowledge_review.py:713-747; mcp/src/agents_remember/application/knowledge_review.py:750-792; mcp/src/agents_remember/application/knowledge_review.py:870-879|
+| **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.** | `compose_review`; `_open_dataset_pair`; `_review_matrix`; `_selector_kind_or_absence` |mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/knowledge_review.py:713-747; mcp/src/agents_remember/application/knowledge_review.py:750-792; mcp/src/agents_remember/application/knowledge_review.py:883-892|
 | **The declaration of the inventory's own limit at the top level of the response.** | `_limitations`; `inventory_limitations` |mcp/src/agents_remember/application/knowledge_review.py:923-946; mcp/src/agents_remember/application/review_source_inventory.py:179-191|
 | **The comparison's expansion seam is now a delegation, so this route has one implementation of "what did these two trees change".** | `git_tree_difference_probe`; `tree_difference_observation`; `_RAW_ARGS` | mcp/src/agents_remember/application/knowledge_diff.py:158-173; mcp/src/agents_remember/application/review_source_inventory.py:193-235; mcp/src/agents_remember/application/review_source_inventory.py:74-440 |
 | **The cases that measure the route's new entry and the source half through the real composition and the real route.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by`; `test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial` | mcp/tests/test_knowledge_review_source_endpoints.py:733-811; mcp/tests/test_knowledge_review_source_endpoints.py:812-855; mcp/tests/test_knowledge_review_source_endpoints.py:902-961 |
@@ -3065,3 +3065,64 @@ the adapter.
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **this route gained one module and the review adapter lost its two staleness helpers (`ICR-R17@v1`).** `application/review_comparison_staleness.py` owns the comparison's declared identity and the staleness it earns against a carried previous binding; `knowledge_review.py` is 1077 → 1041 lines with `_comparison_identity` and `_staleness` deleted rather than aliased, and the previous identity now travels on the request instead of as a keyword. **Citation accounting:** the rows into the adapter were re-derived from each construct's own declaration on the 1041-line candidate — `_knowledge_pane` `:931`, `select_subject_revisions` (called at `:471`, declared in `review_revision_comparison.py`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
+
+## 260921-ICR-L22 The Sync Rebinds The Review: Two Owners, And The Read That Renders What It Measured
+
+`260921-ICR-L22` (`ICR-R22@v1`, managed Git recovery rebinding) is the leaf that closes F6's
+non-conforming example on this route — *the old review stays current while its scratch datasets lag the
+merged memory line*. A managed sync carries both of the review's inputs onto the official line, and until
+this leaf neither the sync's own journal nor the reopen channel made the **live** review read say so. The
+route gains **two** purpose-named owners, and the adapter gains one call:
+
+- `application/review_sync_rebinding.py` (**733 L**) — **the durable rebinding record and its readers**:
+  one file per (leaf, generation) under the task's own reports root, written by
+  `record_review_sync_rebinding` (`:271`) from values owners produced (the generation store's own
+  selection, the shipped `capture_future_code_candidate`, and the ordinary publication route at the
+  declared location), read by `read_review_sync_rebinding` (`:376`), checked against the generation by
+  `rebinding_names_the_generation` (`:441`), listed by `read_review_sync_rebindings` (`:479`) and
+  reclaimed by `discard_review_sync_rebindings` (`:505`), with `rebinding_file_name` (`:265`) naming the
+  location and `ReviewSyncRebindingRead` (`:242`) carrying the three-valued read
+  (`recorded` / `not-recorded` / `unreadable`). It measures owners' values and re-implements none of them,
+  and **nothing in it can refuse a sync**.
+- `application/review_sync_movement.py` (**334 L**) — **the read half**: `review_sync_movement` (`:87`)
+  answers what the leaf's own syncs measured against the generation the live read selected, or `None` when
+  there is no measurement *of that generation* — a located record that describes another one is reported
+  as the absence it is rather than as the movement it claims — and
+  `review_staleness_with_sync_movement` (`:309-334`) folds a measured movement into the staleness the
+  payload publishes. **The movement outranks the reader's carried identity**, because it is the stronger
+  fact: R17's `current` would otherwise let the moved review keep reading as untouched, which is the
+  packet's own non-conforming example, and the submission state follows automatically because the payload
+  refuses a `stale` comparison for submission.
+
+**What moved, and what the adapter lost.** `knowledge_review.py` is **1041 → 1054 lines**: it imports the
+two names at `:143-146`, reads the measurement once at `:475`
+(`sync_movement = review_sync_movement(resolved)`), folds it into the staleness it already published at
+`:476-478`, and passes the value to the payload at `:537`. Nothing was deleted from the adapter and no
+seam moved; the value's own field, vocabulary and validator live on the models route
+(`sync_movement: ReviewSyncMovement | None` on the payload), which is where the state a `stale` movement
+carries is refused if it disagrees with what was measured.
+`application/worktree_tools.py` is **1030 → 1035 lines**: the `worktree_sync` tool imports the attachment
+at `:14` and now returns it at `:371-375` (`rebinding_result_block(configured.contract, payload)`), which
+is deliberately *after* the transaction has finished its Git work and written its contract — the
+rebinding measures what the sync resolved and never participates in the transaction's admission, so a
+sync that cannot be measured is returned unchanged, carrying the reason.
+
+**The reopen channel gained a fifth kind.** `application/review_comparison_reopen.py` is
+**730 → 778 lines**: `ComparisonReopen.sync_rebinding` (`:202`) carries what this leaf's own managed syncs
+measured against the generation the reopen resolved, populated at `:360` inside `_read_and_measure`
+(`:308`) through the new private `_measured_rebinding` (`:367`), which re-checks a located record against
+the generation and reports `not-recorded` with the reason when the record's own recorded identities are
+not that generation's. It is **one value rather than a tuple** because a rebinding measures one generation
+and a later sync replaces it — one file per (leaf, generation) — while the generations themselves are
+retained history; and it is `not-recorded` rather than `None` when a generation *was* measured and no sync
+reported against it, because "no managed sync has run" and "a sync ran and recorded nothing" must not read
+as the same answer.
+
+**What this route deliberately does not do.** The record changes no dataset, publishes no successor
+generation and grants no clearance: the remedy it names is the successor that
+`application/review_comparison_freeze.freeze_review_comparison` freezes with the judged generation as its
+`parent`, so supersession is a lineage a reader resolves rather than a claim the record makes. Nothing here
+re-runs a comparison, and nothing here is a review authority beside the shipped one.
+
+## Update History
+- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **route body updated for managed-sync rebinding (`ICR-R22@v1`).** The section above records the two new owners and what each answers, the measurement-versus-absence rules the read keeps, the adapter's measured **+13** lines with the read at `:475`, the fold at `:476-478` and the payload value at `:537`, the sync tool's attachment at `:371-375` after the transaction has completed, and the reopen's fifth channel at `:202` with its generation check at `:367`. **Citation accounting:** every range in the section above was measured on this candidate; rows already on this overview that cite `knowledge_review.py`, `worktree_tools.py` or `review_comparison_reopen.py` by line were **not** touched, because the curator repairs citation ranges separately, per row — this leaf moved all three modules' lines, so those rows read lower than they did. **Stamp accounting:** no verification stamp was advanced — the header's verification pair names this leaf's recorded base `e605822e` because nothing in this leaf is committed, and the governed closeout owns the real stamp.

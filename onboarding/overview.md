@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `e605822eb3bf83bf63a45963c5f51d5fc28859ee`|
-| lastVerifiedCommitDate |  2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash |  `473ad8242bb4c22bdabed5d5253767350381eb3e`|
+| lastVerifiedCommitDate |  2026-09-23T17:26:55+02:00|
 
 > **Status:** active baseline
 
@@ -6200,3 +6200,45 @@ sides of the wire:
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review's comparison identity, the staleness it earns and the reader's refresh (`ICR-R17@v1`).** A new application owner for the identity and the staleness rule, one new optional field on the review request, the route's shape admission of `previousBindingDigest`, and the dashboard's read cycle, refresh control and projection-driven entry invalidation. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
+
+## 260921-ICR-L22 Managed Git Recovery Rebinding
+
+`260921-ICR-L22` (`ICR-R22@v1`) is the leaf that makes a managed sync **measure itself**: after the
+transaction has carried the official line into a leaf, the pair it resolved is compared against the
+comparison generation that leaf published, and that measurement is what a reader of the review sees. The
+five owners below all route to the more specific `mcp/src/agents_remember/application/overview.md`,
+`mcp/src/agents_remember/models/overview.md` and `mcp/tests/overview.md` bodies, which were updated in
+this same candidate; this section records the leaf for a reader who arrived at the root.
+
+- **Application.** `application/review_sync_rebinding.py` (733 lines, new) owns the measurement — the
+  reviewed identities read from the generation's sealed manifest, the resolved source side re-derived by
+  the shipped capture owner, the resolved knowledge side read through the ordinary publication route —
+  and it owns the *reason nothing was measured*: a table with one entry per sync state, so a preview, an
+  already-current leaf, an unresolved sync, a cancellation and a required choice each say which fact was
+  observed instead of one blanket sentence. Its never-raising block runs after the Git transaction and
+  its contract write, so nothing here can refuse a sync. `application/review_sync_movement.py` (334
+  lines, new) is the read half: it resolves what the leaf's own syncs measured against the selected
+  generation and renders it in the review's measured-currentness vocabulary, taking the state from the
+  record's own verdict rather than re-deriving it from the channel matches, because re-deriving it
+  promoted the record's `unmeasured` verdict to agreement.
+- **Application, modified.** `application/worktree_tools.py` (1030 → 1035) returns the `worktree_sync`
+  tool result through that block; `application/review_comparison_reopen.py` (730 → 778) gains a fifth
+  channel, `sync_rebinding`, read through the record and then checked against the generation itself;
+  `application/knowledge_review.py` (1041 → 1054) folds a measured movement into the staleness it
+  publishes and carries the movement on the payload.
+- **Models.** `models/knowledge/review_sync_rebinding.py` (390 lines, new) is the
+  `ar-review-sync-rebinding/v1` record: the reviewed pair, the resolved pair, both channel matches and
+  one three-valued verdict, validated against its own fields so an inconsistent success cannot be
+  constructed. `models/knowledge/review_staleness.py` (204 lines, new) takes `ReviewStaleness`,
+  `ReviewSubmission` and the new `ReviewSyncMovement` out of `models/knowledge/review.py` — which stood
+  at 1198 lines against the repository's 1200-line hard rail — and `review.py` (1198 → 1164) re-exports
+  all three so its importers and tests keep resolving.
+- **Tests.** `mcp/tests/test_review_sync_rebinding.py` (942 lines, new) drives the real production sync
+  tool, the real transaction, the real binary-stage knowledge merge and the real publication owner;
+  `mcp/tests/test_review_sync_movement_read.py` (356 lines, new) owns the read-side cases, sharing its
+  sibling's enclosure fixture rather than duplicating it. Eight consumer rows and two lane rows register
+  them, the catalog digest is re-pinned to `d07c2f9d…`, and the split returned
+  `mcp/tests/test_worktree_sync.py` to its base bytes — the leaf no longer touches it.
+
+## Update History
+- 2026-09-23T17:45:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): **route body updated for managed Git recovery rebinding (`ICR-R22@v1`).** The section above records the two new application owners and what each answers, the three modified application owners with their measured line counts, the new record vocabulary and the display-model extraction that returned `models/knowledge/review.py` under the file-size rail, and the two new case modules with their registration. **Citation accounting:** every enforced row this leaf's delta produced was re-derived per row from the changed construct's own declaration — 150 enforced `range_resolution` rows and 7 enforced `claim_reopen` rows cleared to zero — including the ranges into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` and `mcp/tests/test_dependency_ownership_ast_helpers.py`, which were translated through those files' own measured insertions rather than re-guessed, and the five legacy `Generated citation repair` bullets in `models/knowledge/review.py.md` were **retired** with a dated disposition so no projection is claimed current on its own authority. **Stamp accounting:** no verification stamp was advanced — the header names the leaf's recorded base because nothing in this leaf is committed, and the governed closeout owns the real stamp.

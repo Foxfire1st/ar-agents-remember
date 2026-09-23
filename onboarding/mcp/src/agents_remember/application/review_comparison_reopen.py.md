@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:25:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -172,6 +172,37 @@ database" is a state this channel reports rather than a crash.
 
 None recorded.
 
+### The Fifth Channel: What The Leaf's Own Syncs Measured, Checked Against The Generation (ICR-R22@v1)
+
+`260921-ICR-L22` (`ICR-R22@v1`) adds a **fifth channel** to the outcome, and it is the second one a
+task's own transactions write. `ComparisonReopen.sync_rebinding` (`:202`) carries what this leaf's
+managed syncs measured against this generation. The docstring states its two shapes of absence
+(`:182-189`): it is `None` exactly when the reopen measured no generation at all — the same three
+states that leave `final_output` empty — and `not-recorded` rather than `None` when a generation *was*
+measured and no sync has reported against it, because omitting it would make "no managed sync has run"
+and "a sync ran and recorded nothing" the same answer. It is one value rather than a tuple because a
+rebinding measures one generation and a later sync replaces it — one file per (leaf, generation) — while
+the generations themselves are retained history, so a reader that wants the earlier measurements reads
+the earlier generations.
+
+**It is read at the location and then checked against the generation itself.** `_measured_rebinding`
+(`:367-390`) reads the record with `read_review_sync_rebinding` and keeps it only when
+`rebinding_names_the_generation(read, manifest)` (`:379`) returns it. A record whose identity fields
+were forged is *internally consistent* — the record's own validator re-derives every verdict from the
+fields it carries, and comparing two fabricated identities is still a comparison — so reading the
+location alone would let such a record read as a measurement of **this** generation. A record that does
+not describe this generation is replaced by the honest answer (`:381-390`): `not-recorded`,
+`rebinding=None`, and a detail naming the location and the generation id, because nothing was measured
+here whatever is at the location.
+
+**The channel is a measurement, not an availability requirement, and the call site says so.** It is
+built in `_read_and_measure` (`:360`) beside the fourth channel, so a reader resolving a recorded
+comparison learns whether the pair it bound is still the pair the task holds without re-deriving that
+from a live worktree it may no longer have. `_all_resolved` (`:393-404`) and `unavailable_channels()`
+(`:210-225`) are unchanged: the generation-level state and the list of channels that did not resolve
+still follow from the source, knowledge and evidence channels alone, so "no sync has reported" can
+never be reported as "the comparison cannot be reopened".
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -213,6 +244,7 @@ repository path is a stated relocation boundary owned by ICR-R12/R13.
 | **The cases that measure damage per channel: injected missing and corrupt inputs, and the release path's `custody_observed="absent"` beside `unavailable-history`.** | `test_a_missing_or_damaged_retained_input_is_reported_per_channel`; `test_an_explicit_release_records_unavailable_history_and_is_measured_not_assumed` | mcp/tests/test_knowledge_review_comparison_generation.py:556-598; mcp/tests/test_knowledge_review_comparison_generation.py:483-550 |
 | **The case that reports the live pin before the release history after a re-freeze.** | `test_a_frozen_again_comparison_reports_its_live_pin_before_the_release_history` | mcp/tests/test_knowledge_review_comparison_generation.py:1127-1170 |
 | **The case that reopens in a real child process after the worktree group is removed and Git objects are reclaimed.** | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation`; `_reopen_in_a_new_process` | mcp/tests/test_knowledge_review_comparison_generation.py:336-387; mcp/tests/test_knowledge_review_comparison_generation.py:279-315 |
+| **The fifth channel: what this leaf's own managed syncs measured against this generation (`ICR-R22@v1`), one value whose absence is stated in two shapes, read at the location and then checked against the generation itself — so a forged-but-internally-consistent record reads back `not-recorded` with the reason rather than as a measurement of this generation.** | `sync_rebinding`; `_measured_rebinding`; `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_comparison_reopen.py:182-202; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390; mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
 
 ## Cross-Repo References
 
@@ -225,6 +257,7 @@ absolute path is stated above and owned by ICR-R12/R13.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **the read-back gained a fifth channel — what the leaf's own managed syncs measured against this generation (`ICR-R22@v1`).** `ComparisonReopen.sync_rebinding` (`:202`) is `ReviewSyncRebindingRead | None`, populated by `_measured_rebinding` (`:367-390`) in the one place a generation is resolved and measured. The two-part read is the substance rather than a range refresh: the location is read first and then checked against the generation by `rebinding_names_the_generation` (`:379`), because a record whose identity fields were forged is internally consistent and would otherwise read as a measurement of *this* generation; a record that does not describe it reads back `not-recorded` with the reason (`:381-390`). The new body section also records the channel's two shapes of absence and the boundary it keeps — a measurement is not an availability requirement, and `_all_resolved` (`:393-404`) and `unavailable_channels()` (`:210-225`) are untouched — and the module is 730 → 778 lines. **Citation accounting:** one row was **added** for this leaf's construct (`review_comparison_reopen.py:182-202` and `:367-390`, `application/review_sync_rebinding.py:441-476`); no existing row, anchor or range on this card was moved, re-pointed, re-worded or dropped, because the curator's citation pass owns that work row by row. **Stamp accounting:** the header's verification pair is left exactly as recorded — `3103e1142a3ded8a843c3e5bbefca14861ba4a58` with its own date — and it is **not** advanced here: the fifth channel exists only in this leaf's uncommitted working tree, whose recorded base is `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, so the header's pair still names the last real commit the reading was taken against (this card's own L21 entry) and the governed closeout owns the real stamp.
 - 2026-09-23T09:25:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **the read-back gained a fourth channel, and this card was re-read against the new bytes rather than annotated.** `ComparisonReopen.final_output` now carries what the task's own closeout and integration recorded for the generation (ICR-R21@v1), one entry per phase in phase order, read through `read_final_output_receipts` — so the recorded comparison a reader opens identifies the code, memory and published-knowledge outputs the task *delivered* beside the inputs it was *compared against*, which is that requirement's own sentence. Three content-level facts are recorded rather than a range refresh: the tuple is deliberate (closeout and integration are separate measurements taken at separate moments, and a reader handed one would have to guess which); **a recorded measurement is not an availability requirement** — `_all_resolved` still decides the generation-level state from the source, knowledge and evidence channels alone, so a leaf that closed out before a comparison existed still reopens `available`; and this module is no longer a read path with no consumer, because the closed-leaf review route reaches it. Every cited range on this card was recomputed against the new bytes (the module moved from 699 to 730 lines), and the **two inline ranges that are not table rows** — the addressing pair and `unavailable_channels()` — were corrected with them. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` were advanced to `972b44cc07b307929535fe7974d6a30d53c9c4f1` (this leaf's recorded base, which is the commit the current production line actually carries) with the date of the worker report's own reading, because every construct cited here exists only in this leaf's uncommitted working tree; the header records the honest basis and no commit that does not contain the code is named.
 - 2026-09-23T09:20:00+02:00 — 260921-ICR-L21 curator, **second pass on the round-2 (`pass-with-findings`) bytes: this card quoted the ``final_output`` docstring's earlier, less exact semantics and now matches the corrected text.** The paragraph at `:168-175` was corrected in the candidate (the round-2 verifier's F5) to say that an entry exists **per phase whenever the reopen measured a generation** — a phase that recorded nothing is still an entry carrying `not-recorded` — and that the tuple is empty **exactly when the reopen measured no generation at all** (`absent`, `ambiguous`, `manifest-unreadable`, which ask no phase anything). The card's prose said an empty tuple meant "neither phase recorded a receipt", which named the common case but not the exact rule; it now carries all three facts (a recorded-nothing phase is still an entry; the tuple is empty only for the three no-generation states; and a recorded measurement is not an availability requirement). This is the curator's own read of the corrected bytes, not a quotation of the verifier's finding. The correction is line-neutral — the module is 730 lines before and after and the paragraph occupies `:168-175` in both — so **no cited range on this card moved**, and the fourth-channel row's range (`:186-190`) is unaffected. No new gate finding is expected from it; the citation range covering the corrected paragraph is already cited.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

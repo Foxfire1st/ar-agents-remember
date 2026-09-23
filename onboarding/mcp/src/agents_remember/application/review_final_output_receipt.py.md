@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_final_output_receipt.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:10:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -199,7 +199,7 @@ unmeasured candidate is not an agreeing one.
 | **The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.** | `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:667-723 |
 | **The never-raising entry point and its three states, including `not-applicable` for a series contract.** | `final_output_result_block` | mcp/src/agents_remember/application/review_final_output_receipt.py:726-768 |
 | The wire projection of a published receipt, including the derived sentence. | `_recording_block` | mcp/src/agents_remember/application/review_final_output_receipt.py:771-804 |
-| **The three production call sites: closeout preview, closeout apply and integration.** | `attach_closeout_receipt`; `attach_integration_receipt`; `attach_prepared_selection` | mcp/src/agents_remember/application/worktree_tools.py:405-460; mcp/src/agents_remember/application/worktree_tools.py:950-996 |
+| **The three production call sites: closeout preview, closeout apply and integration.** | `attach_closeout_receipt`; `attach_integration_receipt`; `attach_prepared_selection` | mcp/src/agents_remember/application/worktree_tools.py:405-460; mcp/src/agents_remember/application/worktree_tools.py:955-1001 |
 | **The reopen owner's fourth channel, which is what makes the reader a production consumer.** | `ComparisonReopen.final_output`; `_read_and_measure` | mcp/src/agents_remember/application/review_comparison_reopen.py:160-211; mcp/src/agents_remember/application/review_comparison_reopen.py:293-339 |
 | The generation store's own order and the manifest this module reads and never rewrites. | `read_generation_refs`; `read_manifest`; `generation_directories` | mcp/src/agents_remember/application/review_comparison_generation.py:586-620; mcp/src/agents_remember/application/review_comparison_generation.py:696-724 |
 | The freeze route that publishes the successor a `moved` receipt's remedy names. | `freeze_review_comparison`; `ComparisonFreezeOptions` | mcp/src/agents_remember/application/review_comparison_freeze.py:1-120 |

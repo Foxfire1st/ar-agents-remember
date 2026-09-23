@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:55:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ decides from `state` rather than from text.
 | The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. | `ReviewSourceContentRequest`; `before_code_tree_id`; `after_code_tree_id` | mcp/src/agents_remember/models/knowledge/review_source_content.py:174-188 |
 | **One outcome per result, enforced: a content result carries its expansion and no refusal, a refused result its refusal and no expansion.** | `ReviewSourceContentResult`; `_require_one_outcome`; `operation` | mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211 |
 | The base vocabulary this module extends rather than redeclares: the shared model base and the four length ceilings every field is bounded by. | `KnowledgeModel`; `PROSE_MAX_LENGTH`; `PATH_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `LABEL_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-27; mcp/src/agents_remember/models/knowledge/base.py:34-40 |
-| The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. | `ReviewFileStatus`; `ReviewRefusal` |mcp/src/agents_remember/models/knowledge/review.py:783-783; mcp/src/agents_remember/models/knowledge/review.py:380-392|
+| The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. | `ReviewFileStatus`; `ReviewRefusal` |mcp/src/agents_remember/models/knowledge/review.py:789-783; mcp/src/agents_remember/models/knowledge/review.py:386-398|
 | **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** | `read_review_source_content`; `_side_content`; `_admit`; `_currentness` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:473-492; mcp/src/agents_remember/application/review_source_content.py:293-337; mcp/src/agents_remember/application/review_source_content.py:415-451 |
 | The transport that accepts this request and serializes this result: the third review route, the selector value and the port type. | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:191-208; mcp/src/agents_remember/serving/review.py:96-96|
 | The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. | `ReviewSourceSide`; `ReviewSourceExpansion`; `ReviewSourceContentResult` | dashboard/src/data/review.ts:280-321; dashboard/src/data/review.ts:266-266; dashboard/src/data/review.ts:231-231; dashboard/src/data/review.ts:430-430 |

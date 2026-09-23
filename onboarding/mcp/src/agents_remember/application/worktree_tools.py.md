@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-23T09:30:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview      | `overview.md`                              |
 ## Governing Overview
 
@@ -316,12 +316,12 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:305-328 |
 | Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool`; `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:347-364; mcp/src/agents_remember/application/worktree_tools.py:616-640 |
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:454-494 |
-| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:502-531; mcp/src/agents_remember/application/worktree_tools.py:798-806 |
+| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:502-531; mcp/src/agents_remember/application/worktree_tools.py:803-811 |
 | Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:108-115; mcp/src/agents_remember/worktrees/sync_transaction_state.py:383-399 |
 | Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 | Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`; `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:310-364; mcp/src/agents_remember/models/worktree.py:538-542 |
 | Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout`; `route_review_refusal_projection` | mcp/src/agents_remember/application/worktree_tools.py:950-996; mcp/src/agents_remember/worktrees/route_review.py:183-250; mcp/src/agents_remember/worktrees/route_review.py:549 |
-| **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** | `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt` | mcp/src/agents_remember/application/worktree_tools.py:993-995; mcp/src/agents_remember/application/worktree_tools.py:446-449 |
+| **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** | `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt` | mcp/src/agents_remember/application/worktree_tools.py:998-1000; mcp/src/agents_remember/application/worktree_tools.py:451-454 |
 | Worktree service behavior is owned by the worktree manager and modules. | `agents_remember` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:34 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
@@ -334,6 +334,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | None | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:305-328 |
 | None | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
 | Worktree service behavior is owned by the worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
+| **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.** | `worktree_sync_tool`; `rebinding_result_block`; `resolved_pair_completed` | mcp/src/agents_remember/application/worktree_tools.py:353-375; mcp/src/agents_remember/application/review_sync_rebinding.py:316-323; mcp/src/agents_remember/application/review_sync_rebinding.py:196-220 |
 
 ## Series-Contract Notes
 
@@ -424,6 +425,34 @@ through unchecked — a deliberate, pinned boundary rather than a silent one.
 
 Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
 
+## 260921-ICR-L22 The Sync Measures Its Own Rebinding After The Transaction And Can Never Gate It
+
+`260921-ICR-L22` (`ICR-R22@v1`) changes this adapter in two places and adds no measurement logic of its
+own: one import (`:14`) and the sync entry point's final return. `worktree_sync_tool` (`:353-375`) now
+builds the delegated result into `payload` (`:371`) and returns
+`rebinding_result_block(configured.contract, payload)` (`:375`) instead of returning that result
+directly; the module is **1030 → 1035 lines**.
+
+**The order is the contract.** The block runs *after* the sync has finished its Git work and written
+its contract, so the measurement never participates in the transaction's admission: a completed sync is
+returned unchanged, and a review obligation can never become a gate on the Git transaction it
+describes. Every failure is a state on the payload rather than a refusal — a capture the worktree
+refused (`source-unmeasured`), an unreadable generation record, a filesystem that refuses the write,
+and a payload that is not a carrying sync at all — because the owner,
+`application/review_sync_rebinding.py`'s `rebinding_result_block` (`:316-323`), reports each of them as
+a `state` and never raises.
+
+**What is measured is a finished sync that carried the official line.** `resolved_pair_completed`
+(`:196-220`) requires the operation, a successful result and one of the three carrying states, so a
+preview (`would-sync`) and an `already-current` leaf are told apart by name rather than by a payload key
+happening to be absent; and `record_review_sync_rebinding` (`:271-313`) measures the sync's own result
+payload rather than re-reading the journal, re-running a merge or touching the parked candidate. A
+published rebinding writes `review_rebinding` onto the result — the measured state, the generation it
+supersedes with its binding and manifest digests, the reviewed and resolved candidate trees with the
+code match fact, the knowledge state and digest on both sides, the successor action, and the durable
+evidence reference with its read-back — while a sync with nothing to bind states that instead. The
+field is additive: a caller that does not read it sees the sync result it always saw.
+
 
 ## Cross-Repo References
 
@@ -434,6 +463,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **the sync returns through the rebinding block, so what it resolved is measured against the leaf's published generation and the completed result still cannot be refused by it (`ICR-R22@v1`).** `worktree_sync_tool` (`:353-375`) builds the delegated result into `payload` (`:371`) and returns `rebinding_result_block(configured.contract, payload)` (`:375`), imported on one line (`:14`); the module is 1030 → 1035 lines and the adapter adds no measurement logic of its own. The order is recorded as the contract it is: the block runs after the Git transaction and its contract write, so every outcome — a capture that could not be taken, an unreadable generation record, a refused write — is a `state` on the returned payload rather than a refusal that could gate a completed sync, and only a carrying sync's own resolved pair is measured at all. **Citation accounting:** one row was **added** for this leaf's construct (`worktree_tools.py:353-375`, `application/review_sync_rebinding.py:316-323` and `:196-220`); no existing row, anchor or range on this card was moved, re-pointed, re-worded or dropped — deliberately, because the curator's citation pass owns that work row by row. **Stamp accounting:** the header's verification pair is left exactly as recorded — `3103e1142a3ded8a843c3e5bbefca14861ba4a58` with its own date — and it is **not** advanced: the delegating return exists only in this leaf's uncommitted working tree, whose recorded base is `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, so the header's pair keeps naming the last real commit the reading was taken against, and the governed closeout owns the real stamp.
 - 2026-09-23T09:30:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **the closeout and integration results gained this leaf's final-output attachment (ICR-R21@v1), and the rows whose cited ranges hold the changed declarations were repointed.** `_worktree_closeout` (`:950-996`) now returns the closeout *preview* decorated with `attach_prepared_selection` and the *apply* decorated with `attach_closeout_receipt`; `worktree_integrate_tool` (`:405-460`) attaches `attach_integration_receipt` on `ok` and a non-dry run. The module's twelve added lines are an import block plus those three delegating call sites, and every attachment happens **after** the Git transaction and its contract write, so none of them can gate it — a receipt that cannot be produced is reported as a state in the result. Deliberately **not** rewritten: rows whose cited ranges were already behind their declarations at this leaf's base (`worktree_checkpoint_landing_tool` declared at `:461`, `worktree_pause_tool` at `:502`, `_gate_policy_snapshot` at `:806`) keep their existing cells, because re-deriving them here would be a range reformat rather than a response to this change. Only the ranges this change invalidates were touched, and each new range contains its anchor (`worktree_integrate_tool` at `:405` inside `405-460`; `_worktree_closeout` at `:950` inside `950-996`). **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` were advanced to `972b44cc07b307929535fe7974d6a30d53c9c4f1` — this leaf's recorded base, the commit the current production line actually carries — with the date of the worker report's own reading, because the delegation cited here exists only in this leaf's uncommitted working tree; the header records that honest basis and no commit that does not contain the code is named.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-20T07:31+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"Public sync forwards typed memory choice and continue/cancel control after configured-contract admission."* — names `worktree_sync_tool` and `_configured_control_refusal`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.

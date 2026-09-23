@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_statement_sides.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T17:30:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -151,7 +151,7 @@ case modules that measure it from the composition side and the renderer side.
 | The conditions a side recorded, empty exactly when that side recorded none. | `side_conditions` | mcp/src/agents_remember/application/review_statement_sides.py:120-124 |
 | **The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.** | `field_changes` | mcp/src/agents_remember/application/review_statement_sides.py:135-155 |
 | **`None` reserved for the two real absences, the `Mapping` branch that projects instead, and the tuple join that makes a recorded empty a present-but-empty value.** | `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal. | `ReviewSideState`; `ReviewSideContent` | mcp/src/agents_remember/models/knowledge/review.py:13-13; mcp/src/agents_remember/models/knowledge/review.py:198-198 |
+| The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal. | `ReviewSideState`; `ReviewSideContent` | mcp/src/agents_remember/models/knowledge/review.py:13-13; mcp/src/agents_remember/models/knowledge/review.py:204-198 |
 | **The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange` |mcp/src/agents_remember/models/knowledge/review.py:484-495|
 | The declared prose limit the projection is bounded by. | `PROSE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-24 |
 | The item this module projects: its two payloads and the `changed_fields` roster the rows come from. | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:318-354 |

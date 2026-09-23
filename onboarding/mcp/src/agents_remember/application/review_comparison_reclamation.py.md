@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_reclamation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
+| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -149,7 +149,7 @@ release is taken *before* the ref is removed, because it cannot be recovered aft
 | **The case that measures the discard: a mismatch refused with both files in place and no record, then recorded digests equal to the frozen ones, then both halves reported `unavailable-history`, then the retry recording `None`.** | `test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch` | mcp/tests/test_knowledge_review_comparison_generation.py:1060-1124 |
 | **The case that measures the release: an unavailable-history record, the custody measured before and after reclamation, and a reopen that reports the deletion rather than today's data.** | `test_an_explicit_release_records_unavailable_history_and_is_measured_not_assumed` | mcp/tests/test_knowledge_review_comparison_generation.py:483-550 |
 | **The case that refuses to delete a ref that moved.** | `test_a_retention_ref_that_moved_is_never_deleted` | mcp/tests/test_knowledge_review_comparison_generation.py:969-1016 |
-| The reopen that consumes these records: the per-channel states and the unavailable-history channel. | `reopen_comparison_generation`; `ComparisonSourceChannel`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:196-217; mcp/src/agents_remember/application/review_comparison_reopen.py:96-122; mcp/src/agents_remember/application/review_comparison_reopen.py:124-140 |
+| The reopen that consumes these records: the per-channel states and the unavailable-history channel. | `reopen_comparison_generation`; `ComparisonSourceChannel`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:211-232; mcp/src/agents_remember/application/review_comparison_reopen.py:96-122; mcp/src/agents_remember/application/review_comparison_reopen.py:124-140 |
 
 ## Cross-Repo References
 
