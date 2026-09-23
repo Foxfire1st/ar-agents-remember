@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -49,26 +49,34 @@ compares no knowledge operand at all — it does not select "everything" — and
 in the vocabulary's own words instead of rendering an empty statement. The source pane still carries
 the complete change inventory of the bound pair, which does not depend on knowledge availability.
 
-**Six more responsibilities were extracted in the same passes, and each one is named for what it
-owns.** `application/review_source_inventory.py` measures the exact, status-bearing source-change
-inventory of the bound tree pair and renders the source pane; `application/review_record_rendering.py`
-renders the record collections the caller supplied into the evidence and submission values;
-`application/review_statement_sides.py` projects one comparison item's recorded content into the
-pane's statement sides and mechanical field rows, and is where ICR-R06's one-sided contract lives;
-`application/review_revision_comparison.py` selects which retained revisions those sides render —
-the before head and the after head from the snapshots' own authored successor relationships, with
-explicit ambiguity when no unique head exists, which is ICR-R07's explicit revision comparison;
-`application/review_subject_catalogue.py` enumerates the entry's labelled subject catalogue from
-both snapshots' own identity tables, with totals and per-row presence and **no subject compared to
-earn its row** (ICR-R09, this leaf's extraction); and
-`application/review_task_context.py` composes the entry that needs no selected subject. This adapter
-keeps only imports and calls to them, and every name an importer referenced is re-exported below — the
-statement-side helpers are the **one** move that leaves no alias, because they were private to this
-adapter and no module under `mcp/` imported them, the head-selection rule likewise leaves no alias
-because the both-sides preference it replaces was private to this adapter, and the entry
-enumeration leaves none either: the per-subject compare-to-earn-a-row helpers were private to this
-adapter and the catalogue **replaces their mechanism rather than moving it** — so no importer had
-to learn a new home and no responsibility has two implementations.
+**Seven responsibilities now live in their own modules, and the docstring's own count is one behind
+its list.** `ICR-R17@v1` advanced the docstring's heading from "Five more responsibilities" to "Six
+more responsibilities" when `application/review_comparison_staleness.py` joined the list — the module
+that carries the comparison's own declared identity and the staleness that identity earns against the
+previous binding a refresh read supplies. A reader should carry the arithmetic rather than the heading:
+that paragraph named **six** modules under a heading of "Five" before this leaf, and it now names
+**seven** under a heading of "Six", so the count has been one behind its own list throughout and this
+leaf's addition is the seventh name — the heading moved by one, the list by one, and neither closed the
+gap. The seven are `application/review_source_inventory.py` (the exact, status-bearing source-change
+inventory of the bound tree pair, and the source pane), `application/review_record_rendering.py` (the
+record collections the caller supplied, rendered into the evidence and submission values),
+`application/review_statement_sides.py` (one comparison item's recorded content projected into the
+pane's statement sides and mechanical field rows, where ICR-R06's one-sided contract lives),
+`application/review_revision_comparison.py` (which retained revisions those sides render — the before
+head and the after head from the snapshots' own authored successor relationships, with explicit
+ambiguity when no unique head exists, which is ICR-R07's explicit revision comparison),
+`application/review_subject_catalogue.py` (the entry's labelled subject catalogue from both snapshots'
+own identity tables, with totals and per-row presence and **no subject compared to earn its row**;
+ICR-R09), `application/review_task_context.py` (the entry that needs no selected subject) and
+`application/review_comparison_staleness.py` (the comparison's declared identity and the staleness it
+earns against a carried previous binding; ICR-R17). This adapter keeps only imports and calls to them,
+and every name an importer referenced is re-exported below — the statement-side helpers are the **one**
+move that leaves no alias, because they were private to this adapter and no module under `mcp/`
+imported them; the head-selection rule likewise leaves no alias, because the both-sides preference it
+replaces was private to this adapter; the entry enumeration leaves none either, because the per-subject
+compare-to-earn-a-row helpers were private to this adapter and the catalogue **replaces their mechanism
+rather than moving it**; and this leaf's two helpers leave none for that identical reason, which is
+recorded below — so no importer had to learn a new home and no responsibility has two implementations.
 
 **Every absence is a state.** An unresolvable author, a missing operand, an absent assessment
 collection and a comparison the shipped operation refused each produce a named field or a typed
@@ -264,16 +272,25 @@ wire-visible change is therefore twofold: a unique chain now compares the before
 head instead of the retained predecessor, and a branched identity renders an explicit ambiguity
 instead of a silently chosen pair.
 
-**Staleness and submission are two statements of one fact, and the payload model enforces it.**
-`_staleness` returns `current` when there is no `previous_binding_digest` or it equals the comparison's
-own `binding_digest`, and `stale` otherwise — retaining the previous digest as a *labelled previous
-input* together with the moved axis. `submission` returns `disabled_stale` exactly when stale and
-`unavailable` otherwise, and in both cases publishes `PROPOSED_ASSESSMENT_DISPOSITIONS` rather than a
-control of this module's own. `KnowledgeReviewPayload`'s validator refuses the payload where the two
-disagree, so "an assessment is never submitted against a comparison that has moved" is a property of
-the value; its second validator holds the identity and the staleness state in agreement the other way
-round, so `comparison is None` is true exactly when the state is `not_compared` and the knowledge
-pane's `selection_state` says which question the payload answered.
+**Staleness and submission are two statements of one fact, and in this leaf the rule itself moved out while the coupling stayed here.** `comparison_identity` and `review_staleness` are
+[`application/review_comparison_staleness.py`](review_comparison_staleness.py.md)'s, and the two private
+helpers that used to hold them in this adapter (`_comparison_identity`, `_staleness`) are **deleted, not
+annotated**: nothing under `mcp/` imported them, so the extraction leaves no alias and `__all__` is
+unchanged. What stays here is the call and the reading. `compose_review` computes the identity once
+with `comparison_identity(comparison)` immediately after the comparison and the review-matrix answer,
+calls `review_staleness(identity, request.previous_binding_digest)`, reads `staleness.state == "stale"`
+for the submission state **and** publishes that same `staleness` value on the payload — one
+measurement, so "an assessment is never submitted against a comparison that has moved" cannot be true
+of one field and false of the other. The previous identity is no longer a keyword beside the request
+either: `read_knowledge_review` and `compose_review` lost their `previous_binding_digest` parameter and
+read it from `ReviewSurfaceRequest.previous_binding_digest`, which is one spelling of what was asked.
+`submission` returns `disabled_stale` exactly when stale and `unavailable` otherwise, and in both cases
+publishes `PROPOSED_ASSESSMENT_DISPOSITIONS` rather than a control of this module's own.
+`KnowledgeReviewPayload`'s validator refuses the payload where the two disagree, so "an assessment is
+never submitted against a comparison that has moved" is a property of the value; its second validator
+holds the identity and the staleness state in agreement the other way round, so `comparison is None` is
+true exactly when the state is `not_compared` and the knowledge pane's `selection_state` says which
+question the payload answered.
 
 **The inventory's own state is a declared limit of the response, not a pane detail.** `_limitations`
 carries the comparison's limits and counted omissions **and** `inventory_limitations(inventory)`, so an
@@ -467,8 +484,10 @@ what the anchors are resolved against.
 | The review matrix read as its own step, so the composition reads as measure, branch, open, compare, read, recheck, publish. | `_review_matrix` |mcp/src/agents_remember/application/knowledge_review.py:750-792|
 | The shipped comparison call over the two already-resolved sides, with the probe and the candidate's own namespace passed through and no side or selector added. | `_compare`; `diff_knowledge_scope` |mcp/src/agents_remember/application/knowledge_review.py:544-559; mcp/src/agents_remember/application/knowledge_diff.py:184-238|
 | The narrowing that lets a comparison refusal name a selector that is *absent* as `"no selector"` instead of reading `kind` through `None`, and the refusal it feeds. | `_selector_kind_or_absence`; `_comparison_refusal` |mcp/src/agents_remember/application/knowledge_review.py:870-879; mcp/src/agents_remember/application/knowledge_review.py:882-901|
-| The comparison identity carried verbatim, and the limits/omissions/side-absences **plus the inventory's own state** carried as counted facts at the top level. | `_comparison_identity`; `_limitations`; `inventory_limitations` |mcp/src/agents_remember/application/knowledge_review.py:904-920; mcp/src/agents_remember/application/knowledge_review.py:923-946; mcp/src/agents_remember/application/review_source_inventory.py:179-191|
-| **Staleness and submission as two statements of one fact, and the payload validators that refuse a payload where they disagree — including the one that ties `comparison is None` to `not_compared` and to the knowledge pane's selection state.** | `_staleness`; `submission`; `KnowledgeReviewPayload` | mcp/src/agents_remember/application/knowledge_review.py:34-923; mcp/src/agents_remember/application/review_record_rendering.py:122-149; mcp/src/agents_remember/models/knowledge/review.py:1006-1092; mcp/src/agents_remember/models/knowledge/review.py:814-875 |
+| **The comparison identity carried verbatim — now owned by [`application/review_comparison_staleness.py`](review_comparison_staleness.py.md): this leaf moved the identity helper out of this adapter and **deleted** its private `_comparison_identity` rather than keeping it as an alias, because nothing under `mcp/` imported it.** | `comparison_identity` | mcp/src/agents_remember/application/review_comparison_staleness.py:51-73 |
+| The comparison's declared limits, omissions and side-absences **plus the inventory's own state**, carried as counted facts at the top level. | `_limitations`; `inventory_limitations` | mcp/src/agents_remember/application/knowledge_review.py:905-928; mcp/src/agents_remember/application/review_source_inventory.py:179-191 |
+| **The staleness rule — now owned by the sibling module: agreement, or an absent previous binding, is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named. This leaf deleted the private `_staleness` rather than keeping it as an alias.** | `review_staleness` | mcp/src/agents_remember/application/review_comparison_staleness.py:76-97 |
+| **Submission as the other statement of the same fact, and the payload validators that refuse a payload where the two disagree — including the one that ties `comparison is None` to `not_compared` and to the knowledge pane's selection state.** | `submission`; `KnowledgeReviewPayload`; `_require_the_submission_state_to_follow_staleness`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/application/review_record_rendering.py:183-210; mcp/src/agents_remember/models/knowledge/review.py:1030-1126 |
 | The panes: identities and authored records never rendered as mechanical facts, the whole-task inventory, the six published remaining counts and the measured partition, and the evidence pane's two independent absence states — the last two now the extracted modules' own functions, called by both compositions. | `_knowledge_pane`; `source_pane`; `evidence_pane` | mcp/src/agents_remember/application/knowledge_review.py:926-978; mcp/src/agents_remember/application/review_source_inventory.py:560-613; mcp/src/agents_remember/application/review_record_rendering.py:213-252 |
 | **Pane 1's delegation, and the one wire-visible change this leaf made: the import of the statement-side module and the four calls inside `_knowledge_pane` that replaced the adapter's private `_side_content`/`_conditions`/`_field_changes`, where a changed structured field is now served as each side's own projection instead of `None`.** | `side_content`; `side_conditions`; `field_changes`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:926-978; mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:135-155 |
 | **The cases that measure this adapter's one-sided output through the real composition: an addition, a removal, a one-sided field row, and a structured value served as its own projection on both sides.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after`; `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285; mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
@@ -618,3 +637,43 @@ payload declares which record it read. 1036 → 1077 lines, delegation only. **C
 every row into this module was re-derived against the candidate. **Stamp accounting:** no verification
 stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 
+## 260921-ICR-L17 The Adapter Reads The Previous Identity From The Request And Loses Its Two Staleness Helpers
+
+`260921-ICR-L17` (`ICR-R17@v1`) leaves this adapter a delegator and takes two private helpers out of it.
+The comparison's declared identity and the staleness it earns moved to
+[`application/review_comparison_staleness.py`](review_comparison_staleness.py.md) — a purpose-named
+adjacent owner — and the adapter **1077 → 1041 lines**.
+
+**What is deleted here rather than annotated.** `_comparison_identity` and `_staleness` are gone from
+this file. They were private to it and nothing under `mcp/` imported them, so the extraction leaves **no
+alias and no re-export**: `__all__` is unchanged, and no importer had to learn a new home. Their bodies
+are the sibling module's `comparison_identity` and `review_staleness` verbatim (the moved sentence
+`"Candidate changed — open a new comparison"` and the moved axis `("comparison-binding",)` are worded
+there now), so there is exactly one implementation of each rule.
+
+**What the composition reads instead.** `compose_review` calls `comparison_identity(comparison)` and
+then `review_staleness(identity, request.previous_binding_digest)`, and reads
+`staleness.state == "stale"` for the submission state **and** publishes that same `staleness` value on
+the payload — one measurement, so "an assessment is never submitted against a comparison that has moved"
+cannot be true of one field and false of the other. The comment above the two calls says exactly that.
+
+**The previous identity travels on the request, not beside it.** Both `read_knowledge_review` and
+`compose_review` lost their `previous_binding_digest` keyword; the value is read from
+`ReviewSurfaceRequest.previous_binding_digest`, which the route shape-admits and the client's refresh
+control supplies. `read_knowledge_review`'s docstring records both facts — that the field is the identity
+a reader was looking at carried on the read that replaces it, and that it travels on the request because
+there is one spelling of what was asked.
+
+**The docstring's responsibility count was advanced, and it is still one behind its list.** The
+paragraph that names the extracted owners moved from "Five more responsibilities" to "Six more
+responsibilities" when the new module joined it. It names **seven** modules under that heading, because
+it already named six under a heading of "Five" before this leaf; the Purpose section above records the
+arithmetic rather than repeating the heading.
+
+**What a later reader must not undo.** The identity is **carried, never recomputed**: the helper reads the
+comparison operation's own `binding`/`binding_digest`/`selector_digest` and copies them, and a second
+spelling of that digest is how two readers come to compare two different generations. And the previous
+identity selects nothing — it reaches no dataset path, no candidate resolution and no comparison input.
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the comparison's identity and its staleness rule moved out of this adapter and the previous identity moved onto the request (1077 → 1041 lines; `ICR-R17@v1`).** `_comparison_identity` and `_staleness` are **deleted, not annotated**: both were private to this adapter and nothing under `mcp/` imported them, so the extraction leaves no alias, `__all__` is unchanged, and the two rows that cited them were **replaced, not amended**. The staleness Logic paragraph was **rewritten** for the same reason: its old text was a description of a function that no longer exists here ("`_staleness` returns `current` when there is no `previous_binding_digest`…"), so it now states the two calls `compose_review` makes, the one measurement both the published state and the submission state read from, and the fact that the previous identity is no longer a keyword beside the request but a field on it. The Purpose paragraph that counted the extracted responsibilities was corrected: the docstring's heading advanced "Five more responsibilities" → "Six more responsibilities" while the paragraph names **seven** modules, because it already named six under a heading of "Five" before this leaf — recorded as the arithmetic it is rather than repeated as a count. **Citation accounting:** the two rows this leaf's deletion falsified were split and re-cited from each construct's own declaration on the candidate — the identity and the staleness rule to the sibling module (`comparison_identity` `:51-73`, `review_staleness` `:76-97`), `_limitations` to `:905-928`, `submission` to `review_record_rendering.py:183-210`, and the payload validators to `models/knowledge/review.py:1030-1126`. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the extraction and the deletion exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

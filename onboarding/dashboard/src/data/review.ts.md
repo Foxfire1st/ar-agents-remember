@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash |  `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate |  2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash |  `972b44cc07b307929535fe7974d6a30d53c9c4f1`|
+| lastVerifiedCommitDate |  2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -254,8 +254,8 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | **The source-content request: the task context, the published path and both published generation ids, read with `fetch` because the body is this route's answer whatever the status was.** | `reviewSourceContent` |dashboard/src/data/review.ts:615-633|
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-97; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128 |
-| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:456-618; dashboard/src/data/review.ts:547-547 |
-| **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187 |
+| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:654-672; dashboard/src/data/review.ts:470-486 |
+| **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
 
 ## Cross-Repo References
 
@@ -342,3 +342,31 @@ server's one admitted value and `intentReview` appends it only when defined, so 
 unchanged. **Citation accounting:** the rows this leaf's change moved were re-derived against the
 candidate. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and
 the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Client Builds One Query String And Names The Refresh Parameter Once
+
+`260921-ICR-L17` (`ICR-R17@v1`) gives `intentReview` a ninth argument and moves the query string into
+its own function.
+
+**The ninth argument.** `previousBindingDigest?: string` is the comparison the reader was already
+looking at — the `binding_digest` the displayed payload published — carried only by a read that is
+**replacing** a display rather than making a first one. The response compares it against the comparison
+it rendered, so a candidate that moved while the panel stayed open arrives as the `stale` state with the
+previous identity labelled instead of silently passing as the same generation. The comment above the
+function states what it is not as well: it is the *previous* identity and never a substitute for the
+current one, the read still renders the resolved candidate's own comparison, and a caller cannot use it
+to choose a dataset.
+
+**`reviewQuery` is why the function is a function.** The branch-per-parameter assembly moved out of
+`intentReview` into one helper, for two reasons the comment gives: adding a parameter can no longer
+quietly raise the client's branch count, and the two spellings of "absent" — `undefined` and the empty
+string a form sends — are collapsed once, so neither reaches the server.
+
+**`PREVIOUS_BINDING_QUERY` is the one spelling of the wire name.** It is declared once because the
+server's admission reads the parameter by that exact name (`serving/review.py`, alias
+`previousBindingDigest`), and a second spelling at a call site is how a refresh silently stops carrying
+the identity it is measured against. `reviewQuery` is its only reader.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the client carries the previous binding identity and names its query parameter once (`ICR-R17@v1`).** `intentReview` gains a ninth `previousBindingDigest` argument; the query-string assembly moves into `reviewQuery`, which collapses both spellings of "absent" and appends the identity only when it is a real value; `PREVIOUS_BINDING_QUERY` is the one declaration of the wire name the server admits. **Citation accounting:** the `reviewSourceContent` row was re-derived from its own declaration on the 672-line candidate (`:654`). **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the argument and the helper exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

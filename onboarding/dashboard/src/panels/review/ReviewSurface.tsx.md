@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash |  `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate |  2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash |  `972b44cc07b307929535fe7974d6a30d53c9c4f1`|
+| lastVerifiedCommitDate |  2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -287,8 +287,8 @@ range that row cites.
 | **The header's own statement that the surface is display-only, produces no conclusion of its own, and reuses two renderers fed by other owners: `DiffPane` for both operands when both sides recorded one and for the available operand beside a named absence when one side did not, and the Source pane's entry expansion, whose rule `SourceContent` owns.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
 | **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:68-946; dashboard/src/panels/review/ReviewSurface.tsx:784-784; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
 | The takeover class shared with the change-set viewer, and where it is applied. | `TAKEOVER` |dashboard/src/panels/review/ReviewSurface.tsx:85-85|
-| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `load`; `intentReview` |dashboard/src/panels/review/ReviewSurface.tsx:959-982; dashboard/src/data/review.ts:462-490|
-| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` |dashboard/src/panels/review/ReviewSurface.tsx:87-92; dashboard/src/panels/review/ReviewSurface.tsx:94-98; dashboard/src/panels/review/ReviewSurface.tsx:100-103; dashboard/src/panels/review/ReviewSurface.tsx:160-170|
+| **The one load path: three separate outcome states, a refusal and a payload that can never be on screen together, and no submit handler anywhere.** | `useReviewReadCycle`; `intentReview` |dashboard/src/panels/review/ReviewSurface.tsx:922-934; dashboard/src/data/review.ts:462-490|
+| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` |dashboard/src/panels/review/ReviewSurface.tsx:81-86; dashboard/src/panels/review/ReviewSurface.tsx:88-92; dashboard/src/panels/review/ReviewSurface.tsx:94-98; dashboard/src/panels/review/ReviewSurface.tsx:154-154|
 | **The fifth helper this leaf added: one field value as `(absent)`, `(recorded empty)` or itself, so neither absence nor a recorded empty is printed as a blank.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:171-172; dashboard/src/panels/review/ReviewSurface.tsx:106-106; dashboard/src/panels/review/ReviewSurface.tsx:177-177 |
 | The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:174-186; dashboard/src/panels/review/ReviewSurface.tsx:226-251 |
 | The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:188-201; dashboard/src/panels/review/ReviewSurface.tsx:203-221; dashboard/src/panels/review/ReviewSurface.tsx:255-276 |
@@ -296,7 +296,7 @@ range that row cites.
 | **Pane 1, which delegates its statement area and keeps the comparison line, the mechanical facts, the authored records and the unassessed state.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:278-303; dashboard/src/panels/review/ReviewSurface.tsx:435-491 |
 | **The openable inventory row: the path published to this client rendered as a button carrying `data-path` and `aria-expanded`, its status and renderability beside it, and `SourceContent` mounted beneath it at the two tree ids the inventory named.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:312-358; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | **The byte-form row: listed by its exact byte form with its status and reason, carrying no expansion control, and stating in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/ReviewSurface.tsx:368-380; dashboard/src/panels/review/ReviewSurface.tsx:298-298; dashboard/src/panels/review/ReviewSurface.tsx:352-352 |
-| **The inventory in all three states and never as an empty list, and the one state this leaf added to it — which row is open, and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` |dashboard/src/panels/review/ReviewSurface.tsx:395-439; dashboard/src/panels/review/ReviewSurface.tsx:28-28|
+| **The inventory in all three states and never as an empty list, and the one state this leaf added to it — which row is open, and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` |dashboard/src/panels/review/ReviewSurface.tsx:389-389; dashboard/src/panels/review/ReviewSurface.tsx:28-28|
 | **Pane 2: the inventory first, then the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, the unattributed paths and expansion — and the task context it forwards into the inventory so an opened row reads at the surface's own target.** | `SourcePane` |dashboard/src/panels/review/ReviewSurface.tsx:441-497|
 | Pane 3: the two independent absence states, the observations, and the source-inspection sentence. | `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:493-546 |
 | **The staleness and submission block, where neither state has a favourable member.** | `SubmissionBlock` | dashboard/src/panels/review/ReviewSurface.tsx:548-568; dashboard/src/panels/review/ReviewSurface.tsx:474-474; dashboard/src/panels/review/ReviewSurface.tsx:622-622 |
@@ -304,9 +304,9 @@ range that row cites.
 | **The statement area's owner: the four branches decided by declared state, with the state lines, the one-sided diff and the no-diff-claimed content path.** | `KnowledgeStatements`; `unavailable`; `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-44; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | **The entry-expansion renderer this file mounts from a row: the state-decided branches, the reused two-sided diff, the bounded-prefix note and the typed refusal.** | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:126-138; dashboard/src/panels/review/SourceContent.tsx:164-222 |
 | The reused diff renderer itself, imported by the statement area from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/review/KnowledgeStatements.tsx:29-29 |
-| The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:456-618; dashboard/src/data/review.ts:547-547
+| The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:654-672; dashboard/src/data/review.ts:470-486
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-591; dashboard/src/panels/changeset/ChangeSetViewer.tsx:38-44 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-170; dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `subject.selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-235; dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187 |
 
 ## Cross-Repo References
 
@@ -403,3 +403,36 @@ record; `ReviewHeader` mounts the provenance line and the root publishes `data-r
 and no limit widened. **Citation accounting:** every row into this module was re-derived against the
 candidate. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and
 the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Read Cycle And The Refresh Control Leave The Surface
+
+`260921-ICR-L17` (`ICR-R17@v1`) makes this surface a renderer of a read cycle it no longer owns, and
+takes **462 lines of read logic and rendering out of it**. Two new modules arrive beside it in the same
+child route:
+
+- [`ReviewReadCycle.ts`](ReviewReadCycle.ts.md) owns the question's identity (`targetKeyOf`), the one
+  read started for it (`startRead` through `askReview`) and the state a reader's refresh needs
+  (`useReviewReadCycle`, returning the read, the retained comparison, the carried binding identity and
+  the `refresh` callback). `ReviewPageRequest` is declared there now and imported back, because the page
+  position participates in the target key the hook computes.
+- [`ReviewRefresh.tsx`](ReviewRefresh.tsx.md) owns the reader's explicit refresh control, the notice
+  that answers it, and the one derivation of a claim (`generationOf`). The header receives both as a
+  `refresh` node and mounts them beside the subject line, because the control belongs to the question the
+  header names and the notice describes the comparison the panes below are showing.
+
+**What is deleted here rather than moved.** The inline `load` callback, the `useEffect` that called it,
+the `targetKeyOf` function, the private `ReviewPageRequest` interface and the `useState`/`useCallback`
+read state are all gone: `useReviewReadCycle` supplies `read`, `retained`, `carried` and `refresh`, and
+what stays in this component is the `instead` state, the `selection` state, the coherence check on the
+retained generation and the wiring of the three regions.
+
+**What a later reader must not undo.** The retained generation is still used only when it was read for
+the question on screen now (`retained.key === targetKey`): the check is belt-and-braces beside the
+reset inside the hook, because a payload under a header it was not read for is exactly the mismatch this
+surface must not be able to produce. `retryFor` now takes the hook's `refresh` rather than a reload
+promise, so a retry is the same one read path as the refresh control and can never become a second way
+of composing a review.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the read cycle and the refresh control left the surface for their own modules (`ICR-R17@v1`).** The inline `load` callback, its `useEffect`, `targetKeyOf` and the private `ReviewPageRequest` are **deleted, not annotated**: `ReviewReadCycle.ts` supplies the read, the retained generation, the carried identity and `refresh`, and `ReviewRefresh.tsx` supplies the control and the notice, both mounted through the header's new `refresh` node. `retryFor` re-asks through the same one read path. The coherence check on the retained generation is kept, because a payload read for another question must not render under this one's header. **Citation accounting:** the rows this extraction moved were re-derived from each construct's own declaration on the 986-line candidate — `Inventory` `:389`, `pane` `:81`, `unresolvedList` `:154`, `targetKeyOf` (now `ReviewReadCycle.ts:62-83`, called at `ReviewSurface.tsx:934`) and `reviewSourceContent` (`data/review.ts:654`). **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the extraction exists only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

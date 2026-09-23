@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_revision_comparison.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -150,7 +150,7 @@ three-way decision, the invalid-graph read, the one-sided reuse, and the ten cas
 | Two nonempty sides: cycle with no head fabricated, multi-head ambiguity with no pair, unique heads compared. | `_combine`; `_compared`; `_ambiguous`; `_unresolved` | mcp/src/agents_remember/application/review_revision_comparison.py:237-253; mcp/src/agents_remember/application/review_revision_comparison.py:378-407; mcp/src/agents_remember/application/review_revision_comparison.py:470-506; mcp/src/agents_remember/application/review_revision_comparison.py:509-526 |
 | A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. | `_one_sided` | mcp/src/agents_remember/application/review_revision_comparison.py:410-467 |
 | Operands keyed by stored revision identity, never by stream position or both-sides presence. | `_item_with` | mcp/src/agents_remember/application/review_revision_comparison.py:529-552 |
-| The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. | `select_subject_revisions`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:121-121; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
+| The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. | `select_subject_revisions`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:128-128; mcp/src/agents_remember/application/knowledge_review.py:931-983|
 | The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. | `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:54-150 |
 | The ten cases that measure the policy through the real comparison: two chain defaults, selectable history, two forks, one-sided removal, cycle, dangling edge, order-independence, and the pane's own statements. | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_heads_come_from_successors_not_from_sorted_order`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:416-467; mcp/tests/test_knowledge_review_revision_selection.py:524-536; mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
 

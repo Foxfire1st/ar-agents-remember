@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -165,7 +165,7 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | **The verifier's finding, and the object-type refusal with its control.** | `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | mcp/tests/test_knowledge_review_source_content.py:641-676; mcp/tests/test_knowledge_review_source_content.py:679-722 |
 | **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** | `test_a_path_outside_the_measured_change_set_is_refused_by_name`; `test_a_baseline_that_is_not_the_recorded_base_is_refused`; `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:725-747; mcp/tests/test_knowledge_review_source_content.py:750-768; mcp/tests/test_knowledge_review_source_content.py:771-793; mcp/tests/test_knowledge_review_source_content.py:796-819 |
 | The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:822-840 |
-| **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:93-93; mcp/src/agents_remember/serving/review.py:191-208; mcp/src/agents_remember/serving/review.py:499-519; mcp/src/agents_remember/serving/review.py:102-102; mcp/src/agents_remember/serving/review.py:572-574|
+| **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:584-584; mcp/src/agents_remember/serving/review.py:191-208; mcp/src/agents_remember/serving/review.py:96-96; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:657-659|
 | The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:151-151; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
 | **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:114-114; mcp/tests/evidence-lifecycle.toml:1419-1419; mcp/tests/evidence-lifecycle.toml:1460-1460 |
 

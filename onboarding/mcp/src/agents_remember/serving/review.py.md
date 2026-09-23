@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash |  `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate |  2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash |  `972b44cc07b307929535fe7974d6a30d53c9c4f1`|
+| lastVerifiedCommitDate |  2026-09-23T07:48:19+02:00|
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -244,20 +244,20 @@ port fields the composition supplies, and the cases that drive the routes with a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shim's own statement of what it decides (nothing), why the ports exist rather than direct imports, and the fact that no filesystem path is accepted. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:98-98|
+| The shim's own statement of what it decides (nothing), why the ports exist rather than direct imports, and the fact that no filesystem path is accepted. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:108-108|
 | The published surface: three route constants, three port types, the expansion's selector value, two parsers and one registrar. | `__all__`; `SourceContentRef`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:50-70; mcp/src/agents_remember/serving/review.py:191-208; mcp/src/agents_remember/serving/review.py:102-102|
 | The comparison route constant, GET-only, and the comment recording that the surface produces no record. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:80-80|
 | **The entry route constant and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:86-86|
 | **The expansion route constant and the comment recording why it is a third path: the inventory is the whole task's change set, and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:93-93|
-| The two admitted selector kinds, and the three port types as one-request-in-one-result-out callables. | `SELECTOR_KINDS`; `KnowledgeReviewPort`; `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:98-98; mcp/src/agents_remember/serving/review.py:100-100; mcp/src/agents_remember/serving/review.py:101-101|
+| The two admitted selector kinds, and the three port types as one-request-in-one-result-out callables. | `SELECTOR_KINDS`; `KnowledgeReviewPort`; `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:109-109; mcp/src/agents_remember/serving/review.py:106-106; mcp/src/agents_remember/serving/review.py:108-108|
 | **The entry route's unwired answer: an empty entry list would say "nothing is reviewable here", a different fact from "this process cannot answer".** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:107-116|
 | **The expansion route's own unwired answer, which refuses rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:121-130|
 | **The expansion's whole selector as one value: the task context, the entry path and the two camel-case tree ids, travelling together because any one alone selects nothing.** | `SourceContentRef` |mcp/src/agents_remember/serving/review.py:191-208|
-| **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` |mcp/src/agents_remember/serving/review.py:281-314; mcp/src/agents_remember/serving/review.py:33-33; mcp/src/agents_remember/models/knowledge/read.py:189-193|
+| **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` |mcp/src/agents_remember/serving/review.py:36-36; mcp/src/agents_remember/serving/review.py:294-327; mcp/src/agents_remember/models/knowledge/read.py:189-193|
 | **The expansion's own parse: the path and both tree ids required together, and a blank component refused rather than defaulted, because a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:499-519|
 | **The result-to-status mapping derived from the refusal's own published code, now over three result types: the four candidate codes go to `404`, `review_adapter_unavailable` to `503`, and everything else — including the expansion's `source_content_unresolved` — to `400`.** | `_status_for`; `ReviewSourceContentResult`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:522-539; mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211; mcp/src/agents_remember/models/knowledge/review.py:151-151|
-| **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent_entries` |mcp/src/agents_remember/serving/review.py:542-624; mcp/src/agents_remember/serving/review.py:559-570|
-| **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:572-574; mcp/src/agents_remember/serving/review.py:635-653|
+| **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent_entries` |mcp/src/agents_remember/serving/review.py:627-627; mcp/src/agents_remember/serving/review.py:644-655|
+| **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:658-658; mcp/src/agents_remember/serving/review.py:720-738|
 | The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. | `api_review_intent` |mcp/src/agents_remember/serving/review.py:576-624|
 | The one serializer, which keeps an omitted field absent rather than null and so serves all three result types. | `_json` |mcp/src/agents_remember/serving/review.py:627-632|
 | The `400` body for a query that did not name the generation it wants opened: the offending component, the exact expected set, and the inventory as the address of the content. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:656-672|
@@ -267,7 +267,7 @@ port fields the composition supplies, and the cases that drive the routes with a
 | **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:1016-1034; mcp/tests/test_knowledge_review_surface.py:1015-1015 |
 | **The case that the route serves the typed result and refuses by name with no adapter.** | `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` | mcp/tests/test_knowledge_review_surface.py:1000-1057 |
 | **The cases that drive the expansion route through the real composition: a query missing a tree id refused by the transport, and an unwired process refused by name with `_UNWIRED_SOURCE_CONTENT` rather than an empty file.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `_UNWIRED_SOURCE_CONTENT` |mcp/tests/test_knowledge_review_source_content.py:771-793; mcp/tests/test_knowledge_review_source_content.py:796-819; mcp/src/agents_remember/serving/review.py:121-130|
-| The client that names this route and reads its typed body whatever the status, so a refusal renders instead of becoming a transport error. | `reviewSourceContent` | dashboard/src/data/review.ts:600-618; dashboard/src/data/review.ts:421-421 |
+| The client that names this route and reads its typed body whatever the status, so a refusal renders instead of becoming a transport error. | `reviewSourceContent` | dashboard/src/data/review.ts:654-654; dashboard/src/data/review.ts:421-421 |
 
 ## Cross-Repo References
 
@@ -349,3 +349,35 @@ refuses any other name in the route's own vocabulary and never resolves it to th
 entries route deliberately takes no record parameter, documented at the route. **Citation accounting:**
 every row into this module was re-derived against the candidate. **Stamp accounting:** no verification
 stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Route Admits The Previous Binding In Its Own Vocabulary
+
+`260921-ICR-L17` (`ICR-R17@v1`) makes this route's one query parameter richer and gives the admission
+two fields to answer for instead of one.
+
+**The parameter.** `ReviewQuestionRef` gains
+`previous_binding_digest: Annotated[str | None, Query(alias="previousBindingDigest")]` — the comparison
+the caller was already looking at, when the read replaces one. It is admitted here rather than as a
+sixth route parameter because it is part of the same question (which subject, which record, and which
+generation the answer must be measured against), and because the admission's own vocabulary check
+belongs with the two fields it guards.
+
+**The admission, split into its parts.** `_SHA256_DIGEST` compiles the models' own published
+`SHA256_PATTERN` rather than re-spelling it, so the transport cannot come to accept a shape the request
+model would refuse. `_admitted_binding_digest` treats an **empty spelling as an absent parameter, not a
+value** (`previousBindingDigest=` is what a form sends when nothing was displayed), refuses a
+non-digest with the offending input named and an `expected` that says what the field is for, and
+otherwise returns the value whole. `AdmittedQuestion` is the frozen pair of answers, and
+`_admitted_question` performs both admissions as **one decision** — "is this a question this route can
+address" — returning the problem each failure earns. `paged_review_request` calls it once and puts
+`asked.history` and `asked.previous_binding_digest` on both `ReviewSurfaceRequest` constructions it can
+reach.
+
+**What the transport does not do.** It does not compare the digest, resolve it or repair it. Whether it
+is the comparison that is there now is the owners' answer, and a digest that no longer matches is
+reported as `stale` rather than refused — which is why the shape check is the whole of this route's
+business with the value.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the route admits the previous binding identity in its own vocabulary (`ICR-R17@v1`).** `ReviewQuestionRef` gains the `previousBindingDigest` query parameter; `_SHA256_DIGEST` compiles the models' published pattern instead of re-spelling it; `_admitted_binding_digest` collapses the empty spelling to absent and refuses a non-digest by name; `AdmittedQuestion`/`_admitted_question` answer for the record and the previous identity as one decision, and `paged_review_request` forwards both onto the request without comparing either. **Citation accounting:** the rows this leaf's insertions moved were re-derived from each construct's own declaration on the 757-line candidate — `InvariantIdentitySeed` (declared in `models/knowledge/read.py:174`, imported at `serving/review.py:36`), `__all__` `:53-73`, `SELECTOR_KINDS` `:106`, `KnowledgeReviewPort` `:108`, `KnowledgeReviewEntriesPort` `:109`, `api_review_intent_entries` `:645`, `api_review_intent_source_content` `:658`, `_source_content_response` `:720`, `register_review_routes` `:627`. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the parameter and its admission exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

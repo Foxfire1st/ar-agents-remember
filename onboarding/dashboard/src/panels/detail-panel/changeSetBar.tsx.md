@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -181,15 +181,15 @@ row cites.
 | **The routed debt this card records and does not fix: the counter read's rejection handler, on a different route and client.** | `leafChangeset`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-12; dashboard/src/panels/detail-panel/changeSetBar.tsx:45-78 |
 | The change-set client and route that debt belongs to, which this leaf leaves untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:78-79 |
 | **What the catalogue read answered, as the values the bar needs rather than one collapsed subject: the whole list with the server's totals, the known-empty fact, or the failure.** | `ReviewCatalogueRead`; `totalSubjects`; `invariantTotal`; `familyTotal` | dashboard/src/panels/detail-panel/changeSetBar.tsx:98-120 |
-| **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — the whole catalogue with its totals, known-empty, typed refusal, transport failure or unadmitted state. It replaces `useReviewSubject`, whose `entries?.[0]` was the first-row-only mechanism the packet falsifies.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:15-22; dashboard/src/data/review.ts:403-419 |
+| **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — the whole catalogue with its totals, known-empty, typed refusal, transport failure or unadmitted state. It replaces `useReviewSubject`, whose `entries?.[0]` was the first-row-only mechanism the packet falsifies.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-235; dashboard/src/panels/detail-panel/changeSetBar.tsx:15-22; dashboard/src/data/review.ts:403-419 |
 | **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a read that answered with rows.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:189-230 |
 | **The per-row presence marker: a retired row reads `retired · before-only`, a new one `new · after-only`, and a both-sides row is unmarked.** | `presenceMarker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:232-240 |
 | **The catalogue picker: every recorded subject selectable, the server's own totals beside it, and no row invented.** | `ReviewCataloguePicker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:242-289 |
-| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
-| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:380-415; dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
-| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:31-95; dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371 |
+| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:398-474 |
+| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:398-474 |
+| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:398-398; dashboard/src/panels/detail-panel/changeSetBar.tsx:33-97 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
-| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` |dashboard/src/data/review.ts:597-603; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29|
+| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` |dashboard/src/data/review.ts:636-636; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29|
 | The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8 |
 | **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:113-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
 
@@ -246,3 +246,35 @@ longer live-gated either and remains a refinement rather than a gate; `LiveLeafE
 this module was re-derived against the candidate, including the rename. **Stamp accounting:** no
 verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real
 stamp.
+
+## 260921-ICR-L17 The Entry Read Is Invalidated By The Workspace, Not Repeated On A Timer
+
+`260921-ICR-L17` (`ICR-R17@v1`) closes the packet's second defect at this bar: the catalogue read used to
+depend on the props alone, so the only way to discover data published after the panel opened was to
+close and reopen it.
+
+**The invalidation signal is the store's own projection.** `DocChangeSetBar` subscribes to
+`s.analytics` and threads `reviewDependencyFacts(analytics)` — the projection serialised to a string, or
+`"no-projection"` — down to `LeafEntries` and into `useReviewCatalogue`. `/api/state` and its delta
+channel republish that projection whenever the task documents, drift snapshots, ledgers or series a
+repository records move, and the store keeps its identity while nothing changed and replaces it when
+anything did, so an idle workspace performs **no read at all**: an equal projection serialises to an
+equal string, and the effect's dependency does not change. The comment is explicit that this is a
+subscription to an existing channel and not a poll, and that it reports the **workspace facts moved** —
+never that the candidate changed, because the projection carries no candidate digest and claiming a new
+generation here would assert a measurement nobody made.
+
+**The reader's own control.** `ReviewCatalogueRefresh` is always offered. It carries
+`data-catalogue-stale`, and its mark is derived from `read.facts !== facts` — the facts recorded **with
+the last answer**, not the live value — which is what makes it a statement about the list beside it.
+It is deliberately **not** gated on `loading`: gating it there made the mark appear and vanish inside
+one flush, so the reader was never told at all.
+
+**Two more rules the read keeps.** `catalogueAnswer` is the pure mapping from one route answer to the
+read state (a body this client does not admit is answered as the failure it is rather than read as a
+catalogue), and `useReviewCatalogue` keeps the newest-read-wins sequence guard, so a response for a
+previous leaf can never overwrite the catalogue of the leaf on screen now.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the entry read is invalidated by the workspace projection and refreshed by the reader (`ICR-R17@v1`).** `DocChangeSetBar` subscribes to `analytics` and threads `reviewDependencyFacts` into `useReviewCatalogue`, so a publication after the panel opened is visible without closing it and an idle workspace performs no read at all; the new `ReviewCatalogueRefresh` is always offered and its mark is derived from the facts recorded with the last answer rather than from the live value (not gated on `loading`, which is what made it invisible); `catalogueAnswer` is the one pure mapping from an answer to the read state, and the newest-read-wins guard is kept so a previous leaf's answer cannot win. **Citation accounting:** the rows into this module were re-derived from each construct's own declaration on the 552-line candidate — `DocChangeSetBar` `:483`, `LeafEntries` `:398`, `ReviewEntryState` `:289`, `useReviewCatalogue` `:235`, `leafIsLive` `:537`, `ReviewCatalogueRead` `:102`, `ReviewCataloguePicker` `:342`, `presenceMarker` `:332`. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the invalidation signal and the control exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

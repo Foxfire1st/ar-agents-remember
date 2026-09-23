@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T15:15:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -119,8 +119,8 @@ inert, and the four cases. Every anchor in a row occurs inside the range that ro
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The header's own provenance and its statement of the defect — the hook's `undefined` subject made a refused read and an empty list indistinguishable — with the digest of the measured body.** | `DocChangeSetBar` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:1-25 |
-| The real bar under test and the shipped store-seeding helpers. | `DocChangeSetBar`; `enclosure`; `seedProjection` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:21-25 |
-| The global-fetch restore between cases. | `afterEach` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:21-25; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:108-110 |
+| The real bar under test and the shipped store-seeding helpers. | `DocChangeSetBar`; `enclosure`; `seedProjection` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:25-26 |
+| The global-fetch restore between cases. | `afterEach` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:26-26; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:108-110 |
 | **The one measured refusal body, with its reason, next action and offending input kept verbatim.** | `entryRefusal`; `ENTRY_DETAIL`; `ENTRY_NEXT` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:39-52 |
 | The body the bar's own change-set counter reads answer with, so the entry cases are not disturbed by them. | `COUNTERS` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:54-61 |
 | **The one stub, which answers the entries URL only and lets the counter reads through.** | `serveEntry` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:63-77 |
@@ -130,8 +130,8 @@ inert, and the four cases. Every anchor in a row occurs inside the range that ro
 | **Known empty said for a pair that records no subject, without calling it a failure.** | "says known empty when the pair offers no subject, without calling it a failure" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155 |
 | **A transport failure stated with its reason and with no invented offending input or next action, and the entry still offered.** | "shows a transport failure with its reason, and raises no refusal body it does not have" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176 |
 | **A successful answer carrying the server's recorded subject into the target and printing no state at all — the stub now mirrors the catalogue wire shape additively (`presence`/totals), with no assertion changed.** | "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
-| **The hook and the state renderer these cases drive: the read carried whole, and the entry never gated on it.** | `useReviewCatalogue`; `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:189-230; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-120 |
-| The bar's own composition, where the working change-set, the reviewer entry and the entry read's state are gated on one liveness. | `DocChangeSetBar`; `LeafEntries`; `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:380-415; dashboard/src/panels/detail-panel/changeSetBar.tsx:301-371; dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432 |
+| **The hook and the state renderer these cases drive: the read carried whole, and the entry never gated on it.** | `useReviewCatalogue`; `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:102-121; dashboard/src/panels/detail-panel/changeSetBar.tsx:289-327 |
+| The bar's own composition, where the working change-set, the reviewer entry and the entry read's state are gated on one liveness. | `DocChangeSetBar`; `LeafEntries`; `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:537-537; dashboard/src/panels/detail-panel/changeSetBar.tsx:398-474; dashboard/src/panels/detail-panel/changeSetBar.tsx:483-532 |
 | The client the entry read goes through, which reads the refusal out of the body whatever the status. | `intentReviewEntries` |dashboard/src/data/review.ts:597-603|
 
 ## Cross-Repo References
@@ -148,3 +148,33 @@ same-origin `fetch` and names one repository namespace.
 
 - 2026-09-22T15:15:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **the success case's stub mirrors the catalogue wire shape additively (207 → 210 lines; `ICR-R09@v1`).** `selected_item_count: 3` became `presence: "both"` beside the additive `total_subjects`/`invariant_total`/`family_total` in the `carries the server's recorded subject…` stub — **no assertion changed**, because this module pins the entry's read-state contract, and the traversal claims for the complete catalogue live in `changeSetBar.test.tsx`'s new case. The Logic paragraph records the additive stub rule. **Citation accounting:** the rows into this file re-derived against the 210-line candidate (`entryRefusal` `:31-52` → `:39-52`; the refusal case `:112-136` → `:113-136`; the transport case `:156-175` → `:156-176`; the success case `:177-206` → `:177-209`), and the three neighbour rows that cite `changeSetBar.tsx` were re-pointed to the renamed constructs (`useReviewCatalogue`/`ReviewCatalogueRead`/`LiveLeafEntries`, which replaced `useReviewSubject`/`ReviewSubjectRead` in this leaf's candidate) plus `intentReviewEntries` at its moved `review.ts:403-419`. **Stamp accounting:** the verification pair names the leaf's base — the last real commit the reading was taken against — because the additive stub exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records the entry half of the requirement as four answers rather than four assertions: a never-initialized refusal shown with **every** published field while the entry is still offered and still opens the task context; a subject-less answer stated as known-empty rather than as a failure; a transport failure stated with its reason and with **nothing invented** where the server published nothing; and a successful answer that carries the recorded subject and prints no state at all. It also records the module's own defect statement (the hook's `undefined` subject made a refused read and an empty list indistinguishable) and its provenance (one measured route body with its `sha256-normalized` digest). The card names the routed neighbour explicitly so a later reader does not mistake it for this module's gap: the live-leaf change-set **counter** the same bar renders belongs to a different route, client and owner, and its swallowed refusal detail is routed to R12/R24. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+
+## 260921-ICR-L17 The Entry Notices A New Generation, And No Superseded Read Wins
+
+`260921-ICR-L17` (`ICR-R17@v1`) adds two `describe` blocks and one helper the new cases need.
+
+**What the new cases measure, and why they are here rather than in a new module.** The real
+`DocChangeSetBar` over the real review client, with only `fetch` stubbed and the store driven through
+its **own** public channel: `workspacePublished(revision)` calls `applyDelta("analytics", …)` — the same
+call the SSE `analytics` frame makes — because the defect is that the entry had no fact channel to
+notice, and a re-render of the same props could not have proved anything.
+
+- **the invalidation case** — the entry asks again by itself when the projection is republished (no
+  remount, no prop change, no polling), and the reader's selected identity is narrowed to the newer
+  catalogue rather than opening a stale id;
+- **the explicit control** — `review-catalogue-refresh` re-reads the pair on the reader's own click and
+  reports no movement when nothing moved;
+- **the read race** — an answer for a **previous leaf**, held open until after the bar moved to the
+  second leaf and that leaf's answer rendered, cannot win: neither the picker's value nor the target the
+  entry opens;
+- **the pre-click marker** (`L17-F4`) — the mark is present in a **settled** DOM while the projection has
+  moved past the answer on screen (the re-read is held open, which is the real shape of the window), and
+  gone once the answer for those facts is filed.
+
+**What a later reader must not undo.** The marker case holds the second read open on purpose. Asserting
+the mark without that hold would be asserting a transient commit, and the defect it closes was exactly a
+mark that appeared and vanished inside one flush.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the entry notices a new candidate generation and no superseded read wins (`ICR-R17@v1`).** Two new `describe` blocks drive the real bar over the real client through the store's own `applyDelta("analytics", …)` channel: the self-invalidation case, the explicit refresh control, the previous-leaf race, and the pre-click marker asserted in a settled DOM with the re-read held open. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the new cases exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

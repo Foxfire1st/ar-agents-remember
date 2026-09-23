@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
@@ -81,7 +81,7 @@ traversal R08's, labels R26's.
 | --- | --- | --- |
 | **The new module's own statement of what it measures, and its lane and consumer registrations.** | `create_invariant`; `create_revision`; `unit-regression` | mcp/tests/test_review_subject_catalogue.py:1-7; mcp/tests/test-evidence-lanes.toml:162-162; mcp/tests/evidence-lifecycle.toml:1417-1417; mcp/tests/evidence-lifecycle.toml:1455-1455 |
 | **The union and the kind-grouping pin, and the bounded-loading tripwire.** | `test_the_catalogue_unions_both_snapshots_with_labels_and_presence`; `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist`; `test_catalogue_loading_runs_no_comparison` | mcp/tests/test_review_subject_catalogue.py:232-250; mcp/tests/test_review_subject_catalogue.py:252-283; mcp/tests/test_review_subject_catalogue.py:511-545 |
-| **The re-contracted mechanism case in the surface module.** | `test_the_rendered_pane_types_are_the_three_the_design_names`; `read_subject_catalogue` | mcp/tests/test_knowledge_review_surface.py:1123-1193 |
+| **The re-contracted mechanism case in the surface module.** | `test_the_rendered_pane_types_are_the_three_the_design_names`; `read_subject_catalogue` | mcp/tests/test_knowledge_review_surface.py:46-46 |
 
 ## 260921-ICR-L7 The Explicit-Revision-Comparison Cases: One New Module, Ten Cases, Two Rewrites, And One Lane Row
 
@@ -131,7 +131,7 @@ snapshots.
 | **The two chain defaults with exact selected revision ids.** | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_an_advanced_before_head_moves_the_default_pair` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:282-290 |
 | **The two fork ambiguities and the two lineage failures, each with no pair recorded.** | `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision` | mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:416-467; mcp/tests/test_knowledge_review_revision_selection.py:469-522 |
 | **The pane case that closes the loop through the served payload.** | `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
-| **The two rewritten surface cases: the old both-sides assertions replaced by ambiguity assertions.** | `test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` | mcp/tests/test_knowledge_review_surface.py:321-410; mcp/tests/test_knowledge_review_surface.py:1196-1271 |
+| **The two rewritten surface cases: the old both-sides assertions replaced by ambiguity assertions.** | `test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` | mcp/tests/test_knowledge_review_surface.py:1279-1279; mcp/tests/test_knowledge_review_surface.py:324-413 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **route body update for the relationship case modules (`ICR-R08@v1`).** Three ordinary unit modules (movement, reach and authored-line; twenty-three cases) joined the route, each a source-derived consumer of both exact-scope rows in `mcp/tests/evidence-lifecycle.toml` and each with an `unit-regression` lane row at `mcp/tests/test-evidence-lanes.toml:114-116`; the L8 section above records the cases, the shared-builders rule, and the manifest/catalog consequences (catalog 1689 lines, digest `d2d6dc6a…`, lane manifest 341 lines, `unit-regression` 211). **Citation accounting:** the rows this leaf's moves invalidated were re-derived at their constructs' own extents rather than shifted, and the leaf's own document carries the new module and case citations. **Metadata removal:** this document's candidate-reading metadata rows were removed under the developer's 2026-09-22 rule, and every sentence that pointed at such a row was corrected in the same pass so the document no longer claims the row exists. **Reopened claims:** the two claims the checklist reopened in this document — the ones whose anchor `"mcp/tests/test_knowledge_review_one_sided_statements.py"` did not exist at their earlier stamps — were re-read against the lane rows they name and against the current manifest, their wording retained (the row still states the one-sided-statement cases' lane registration), and their ranges re-derived from the anchor's real position in the 341-line manifest; the citation is current and needs no further repair. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
@@ -5436,10 +5436,10 @@ untouched.
 | --- | --- | --- |
 | The new case module and its lane marker. | "pytestmark = pytest.mark.evidence_unit" | mcp/tests/test_knowledge_review_surface.py:95-95 |
 | The forbidden-name set the whole payload schema is walked against. | `FORBIDDEN_FIELD_NAMES` | mcp/tests/test_knowledge_review_surface.py:98-121 |
-| The row-level proof that a full render stores nothing. | "def test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information(" | mcp/tests/test_knowledge_review_surface.py:459-469; mcp/tests/test_knowledge_review_surface.py:496-496 |
-| The case that the adapter selects nothing, compared value for value. | "def test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered(" | mcp/tests/test_knowledge_review_surface.py:455-501; mcp/tests/test_knowledge_review_surface.py:509-509 |
-| The transport case: typed result, a 400 and a 503. | "def test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter(" | mcp/tests/test_knowledge_review_surface.py:978-1034; mcp/tests/test_knowledge_review_surface.py:1036-1036 |
-| **The two cases that were widened rather than added to: the unresolvable context now also proves the entry read refuses with the same code, and the pane-name case measures the entry list against the shipped comparison's own answer.** | `test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate`; `test_the_rendered_pane_types_are_the_three_the_design_names` | mcp/tests/test_knowledge_review_surface.py:1059-1084; mcp/tests/test_knowledge_review_surface.py:1087-1157 |
+| The row-level proof that a full render stores nothing. | "def test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information(" | mcp/tests/test_knowledge_review_surface.py:499-499; mcp/tests/test_knowledge_review_surface.py:496-496 |
+| The case that the adapter selects nothing, compared value for value. | "def test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered(" | mcp/tests/test_knowledge_review_surface.py:512-512; mcp/tests/test_knowledge_review_surface.py:509-509 |
+| The transport case: typed result, a 400 and a 503. | "def test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter(" | mcp/tests/test_knowledge_review_surface.py:1039-1039; mcp/tests/test_knowledge_review_surface.py:1036-1036 |
+| **The two cases that were widened rather than added to: the unresolvable context now also proves the entry read refuses with the same code, and the pane-name case measures the entry list against the shipped comparison's own answer.** | `test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate`; `test_the_rendered_pane_types_are_the_three_the_design_names` | mcp/tests/test_knowledge_review_surface.py:1178-1178; mcp/tests/test_knowledge_review_surface.py:1206-1276 |
 | The lane row this leaf inserted mid-list. | "mcp/tests/test_knowledge_review_surface.py"; `test_knowledge_review_surface` |mcp/tests/test-evidence-lanes.toml:110-110|
 | The lane row this leaf inserted mid-list. | "mcp/tests/test_knowledge_review_surface.py"; `test_knowledge_review_surface` |mcp/tests/test-evidence-lanes.toml:110-110|
 | The catalogue pin as this leaf left it — 15 / 65, the counts a consumer-only change does not move; `260918-TSIP-L10`'s `T129` reconciliation then added the two registered rows and moved the pair to **16 / 66**, which is what the constants read now. | "LIFECYCLE_CONTRACT_COUNT = 16"; "LIFECYCLE_ARTIFACT_COUNT = 66" | mcp/tests/test_dependency_ownership_ast_helpers.py:44-45 |
@@ -5769,7 +5769,7 @@ untouched.
 | **The independent byte-safe observation the review suites assert against, added to that module.** | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | **The independent byte-safe observation the review suites assert against, added to the module already registered as `knowledge-diff-cases`.** | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | The shared diff fixture that module is registered under, which this change did not alter. | `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:197-233 |
-| **The two new unit cases and the transport assertion the optional selector obliged.** | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`; `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `reviewed_selector` | mcp/tests/test_knowledge_review_surface.py:1197-1274; mcp/tests/test_knowledge_review_surface.py:1275-1313; mcp/tests/test_knowledge_review_surface.py:1015-1033; mcp/tests/test_knowledge_review_surface.py:169-183 |
+| **The two new unit cases and the transport assertion the optional selector obliged.** | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`; `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `reviewed_selector` | mcp/tests/test_knowledge_review_surface.py:1357-1357; mcp/tests/test_knowledge_review_surface.py:1275-1313; mcp/tests/test_knowledge_review_surface.py:1015-1033; mcp/tests/test_knowledge_review_surface.py:169-183 |
 | The lane rows that keep the changed modules in the certifying collection — unchanged by this leaf, because no module was added. | "mcp/tests/test_knowledge_diff_scope.py"; "mcp/tests/test_knowledge_diff_boundaries.py" |mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:231-231|
 
 
@@ -5878,3 +5878,22 @@ catalog is re-pinned deliberately. **Citation accounting:** every row on this ov
 leaf moved them. **Stamp accounting:** no verification stamp was advanced — the header already names
 this leaf's base as the production line the reading was taken against, and nothing in this leaf is
 committed, so the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Surface Test Module Gains One Case And Changes One Helper
+
+`260921-ICR-L17` (`ICR-R17@v1`) touches `test_knowledge_review_surface.py` in two places and no other
+module on this route.
+
+- **`render` asks the way a refresh asks.** The helper's `previous_binding_digest` no longer travels as a
+  keyword beside the request — the adapter's keyword is gone — so it copies the request with
+  `model_copy(update={…})` and calls the composition without a parallel argument. The docstring records
+  that as the contract it is.
+- **One new collected case** (`30 → 31`) drives the real route over `TestClient`: the transport admits the
+  parameter and hands it to the port on the request, the composition answers `stale` with the carried
+  identity labelled and submission disabled **while the rendered comparison keeps its own digest**, a
+  plain read carries nothing and is `current`, and a malformed spelling is a `400` naming the offending
+  input.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the surface test module gains one case and changes one helper (`ICR-R17@v1`).** `render` now asks the way a refresh asks (the identity travels on the request), and the new case drives the real route through `TestClient` to measure admission, forwarding, the `stale`/`current` answers and the malformed-spelling refusal. **Citation accounting:** the rows into this module were re-derived from each construct's own declaration — `read_subject_catalogue` imported at `:46` and called at `:1234`, `test_the_rendered_pane_types_are_the_three_the_design_names` `:1206`, `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` `:1357`. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -627,9 +627,9 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44; dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-46 |
 | The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
-| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:242-242|
+| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
 | **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
-| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-183; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:224-224 |
+| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -1413,7 +1413,7 @@ comparison identity, and the rendering of an inventory in all three of its state
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395
+| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
 | **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:403-403; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
@@ -1472,3 +1472,28 @@ row on this overview that cited `Cockpit.tsx` or `changeSetBar.tsx` by line was 
 candidate. **Stamp accounting:** no verification stamp was advanced — the header already names this
 leaf's base as the production line the reading was taken against, and nothing in this leaf is
 committed, so the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Review Read Cycle, The Refresh Control And The Entry's Invalidation
+
+`260921-ICR-L17` (`ICR-R17@v1`) changes four modules under this route and adds two, and it changes no
+route, takeover dispatch or target shape:
+
+- **`panels/review/ReviewReadCycle.ts`** (new) owns the review surface's read cycle — the question key,
+  one in-flight read per question, newest-read-wins, and the refreshed read as the only one that may
+  carry the displayed comparison's identity.
+- **`panels/review/ReviewRefresh.tsx`** (new) owns the explicit refresh control and the generation
+  notice, whose claim is rendered only when the carrying read has answered.
+- **`panels/review/ReviewSurface.tsx`** delegates both and loses its inline `load`, its `useEffect`,
+  `targetKeyOf` and its private page-request interface.
+- **`panels/detail-panel/changeSetBar.tsx`** makes the entry's catalogue read invalidated by the
+  workspace projection the store already republishes, adds the reader's own refresh control, and keeps
+  the newest-read-wins guard so a previous leaf's answer cannot win.
+- **`data/review.ts`** gains the ninth `intentReview` argument, the `reviewQuery` assembler and the one
+  `PREVIOUS_BINDING_QUERY` spelling.
+
+The rule a reader of this route should carry: a generation claim is only ever rendered when a read
+answered for the identity it describes, and the identity belongs to exactly one question.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review read cycle, the refresh control and the entry's invalidation signal (`ICR-R17@v1`).** Two new modules under `panels/review/`, a lighter `ReviewSurface.tsx`, a projection-invalidated catalogue read with its own refresh control in `changeSetBar.tsx`, and three additions to `data/review.ts`. No route-level fact changed. **Citation accounting:** the rows into the changed modules were re-derived from each construct's own declaration. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

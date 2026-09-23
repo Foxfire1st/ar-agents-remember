@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.paging.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -101,10 +101,10 @@ No domain documentation source is configured for this repository (`system/source
 | **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** | "words a reset from its refusal code, so a foreign cursor is not called a moved comparison" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:374-442 |
 | **The two collections' totals kept apart in the sentence the reader sees.** | "keeps the two collections' totals apart in the sentence the reader sees" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:443-498 |
 | The whole review stays reachable and the selector travels through a paged request. | "keeps the whole review reachable and carries the selector through a paged request" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:499-514 |
-| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:500-541; dashboard/src/data/review.ts:447-475; dashboard/src/data/review.ts:436-445; dashboard/src/data/review.ts:484-490 |
+| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:548-569; dashboard/src/data/review.ts:537-543; dashboard/src/data/review.ts:578-580; dashboard/src/data/review.ts:591-595 |
 | The page contract on the client, including the basis field and the separate refusal. | `ReviewCollectionPage` |dashboard/src/data/review.ts:406-425|
 | **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:786-849; dashboard/src/panels/review/ReviewSurface.tsx:624-660; dashboard/src/panels/review/ReviewSurface.tsx:662-717; dashboard/src/panels/review/ReviewSurface.tsx:719-741; dashboard/src/panels/review/ReviewSurface.tsx:583-622 |
-| The page as part of the read's target key, so a page change is its own read. | `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:612-631|
+| The page as part of the read's target key, so a page change is its own read. | `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:22-22|
 | The published page shape these bodies have: the surface's own page value and its two refusal codes. | `ReviewCollectionPage`; `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:366-440; mcp/src/agents_remember/models/knowledge/review.py:149-150 |
 
 ## Cross-Repo References

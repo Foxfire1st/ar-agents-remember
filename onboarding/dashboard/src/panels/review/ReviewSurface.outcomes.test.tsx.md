@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -170,3 +170,33 @@ same-origin `fetch` and names one repository namespace.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records what the fifteen cases are *for* — the mounted surface for every state that is not a plain success, and the outcome region for the two statements about a measured-empty payload — plus the module's own evidentiary discipline and its two deliberate limits. The discipline: only `fetch` is stubbed, every assertion reads the DOM rather than a prop the test passed, and each refusal body is the real route's measured answer with its `sha256-normalized` digest quoted in the source. The limits: the region cases are region-level **because** the same-target re-read that would reach the retained-known-empty state mounted is not reachable through today's props (the module says so in its own comment), and the module makes **no browser-level claim** — the A01/A13 journeys over a served dashboard belong to R25 with R24/R17. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+
+## 260921-ICR-L17 The Refresh Path, The Carried Identity And The Read Race
+
+`260921-ICR-L17` (`ICR-R17@v1`) adds a third `describe` block — sixteen cases become twenty-two — and
+extends the import list with `act`, which is what lets a case put two React updates in one flush.
+
+**What the new block measures.** `describe("the review surface's refresh control and read race
+(ICR-R17)")` drives the real surface over the real client with only `fetch` stubbed, and its six cases
+pin one property each:
+
+- **the refresh path end to end** — the read carries the identity on screen, the notice names both
+  digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's
+  own `data-comparison`, so wording and DOM cannot drift apart;
+- **a failed refresh** — the labelled old comparison and its error stay on screen and **no** generation
+  claim is rendered, because a read that never reached the server has answered nothing;
+- **the read race** — a slow earlier subject's answer that lands after the newer selection cannot
+  replace it, neither its comparison nor its header;
+- **the same-flush interleaving** (`L17-R2-F1`) — the subject change and the refresh click inside one
+  `act` produce exactly two reads, the second carrying nothing, and no notice at all;
+- **the two single-question cases** (`L17-F1`) — a different subject, and the same subject read from the
+  leaf's record, each carry nothing, and neither leaves a generation claim or a `review-stale` block
+  behind.
+
+**Why the flush cases matter.** They are the only cases that can reach the defects the two fix rounds
+closed: a read-number-only guard and a sticky carried identity are both invisible to a case that lets
+React settle between the two updates.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the refresh path, the carried identity and the read race are measured (`ICR-R17@v1`).** A third `describe` block adds six cases over the real surface and client — the end-to-end refresh, the failed refresh that renders no claim, the superseded-answer race, the same-flush interleaving (`L17-R2-F1`), and the two single-question cases (`L17-F1`) — and the module grows from sixteen to twenty-two cases. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the new cases exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

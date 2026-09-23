@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.history.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -111,19 +111,19 @@ the "Intent review (recorded)" label is chosen.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:1-14; dashboard/src/panels/review/ReviewSurface.tsx:935-1031; dashboard/src/data/review.ts:462-490 |
+| **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:1-14; dashboard/src/panels/review/ReviewSurface.tsx:905-986; dashboard/src/data/review.ts:462-490 |
 | The one real task context the cases name, and the subject the historical target carries. | `REPO`; `MASTER`; `LEAF`; `SUBJECT` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:19-22 |
 | **The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.** | `NOTHING_RECORDED`; `candidate_not_live` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:26-41 |
 | The two stubs the cases use and the assertion reader: the 404 refusal body, and the first request URL the real client built. | `serving`; `requestUrl`; `fetchMock` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:43-60; dashboard/src/panels/review/ReviewSurface.history.test.tsx:69-77; dashboard/src/panels/review/ReviewSurface.history.test.tsx:108-108 |
 | **The recorded case: the request names the record and the subject, the provenance line is mounted, and the refusal still reaches the reader.** | "history=recorded"; "review-history"; "recorded comparison"; "review-surface"; "review-refusal" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:68-104 |
 | **The live case: no record in the request, no provenance line, and the surface says `live`.** | "history="; "review-history"; "review-surface" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:106-125 |
-| **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** | `targetKeyOf`; `ReviewHeader`; `history?: ReviewHistory`; "review-history"; `data-review-history={history ?? "live"}` | dashboard/src/panels/review/ReviewSurface.tsx:612-631; dashboard/src/panels/review/ReviewSurface.tsx:895-933; dashboard/src/panels/review/ReviewSurface.tsx:82-82; dashboard/src/panels/review/ReviewSurface.tsx:926-926; dashboard/src/panels/review/ReviewSurface.tsx:1001-1001 |
+| **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** | `targetKeyOf`; `ReviewHeader`; `history?: ReviewHistory`; "review-history"; `data-review-history={history ?? "live"}` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:895-933; dashboard/src/panels/review/ReviewSurface.tsx:82-82; dashboard/src/panels/review/ReviewSurface.tsx:858-903; dashboard/src/panels/review/ReviewSurface.tsx:949-949 |
 | **The three panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced.** | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:861-888 |
 | **The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.** | `intentReview`; `history?: ReviewHistory`; `params.history = history`; `export type ReviewHistory = "recorded"` | dashboard/src/data/review.ts:462-490; dashboard/src/data/review.ts:470-470; dashboard/src/data/review.ts:487-487; dashboard/src/data/review.ts:495-495 |
-| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated.** | `LeafEntries`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:301-372; dashboard/src/panels/detail-panel/changeSetBar.tsx:361-361; dashboard/src/panels/detail-panel/changeSetBar.tsx:364-364 |
+| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated.** | `LeafEntries`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:398-398; dashboard/src/panels/detail-panel/changeSetBar.tsx:361-361; dashboard/src/panels/detail-panel/changeSetBar.tsx:466-466 |
 | **The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-595 |
 | **The target field the record travels in, beside the subject the entry already carried.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
-| **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** | `RECORDED_HISTORY`; `_admitted_history`; `ReviewQuestionRef`; `ReviewSelectorRef` | mcp/src/agents_remember/serving/review.py:76-76; mcp/src/agents_remember/serving/review.py:396-415; mcp/src/agents_remember/serving/review.py:211-227; mcp/src/agents_remember/serving/review.py:233-233 |
+| **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** | `RECORDED_HISTORY`; `_admitted_history`; `ReviewQuestionRef`; `ReviewSelectorRef` | mcp/src/agents_remember/serving/review.py:419-419; mcp/src/agents_remember/serving/review.py:79-79; mcp/src/agents_remember/serving/review.py:211-227; mcp/src/agents_remember/serving/review.py:246-246 |
 
 ## Cross-Repo References
 

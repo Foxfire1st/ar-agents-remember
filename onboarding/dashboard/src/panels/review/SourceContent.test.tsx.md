@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/SourceContent.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -178,7 +178,7 @@ server half of the same contract that supplies the values.
 | **The two boundaries: the byte-form row listed without an open control (the open-control count asserted to be exactly the text entry), and an inventory that named no code trees offering no expansion at all.** | "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:522-560; dashboard/src/panels/review/SourceContent.test.tsx:562-588 |
 | The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down. | `review-inventory-open`; `Inventory`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:389-433; dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | The renderer under test, and the rules its cases are the evidence for. | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:126-138; dashboard/src/panels/review/SourceContent.tsx:164-222 |
-| The client the real surface reads through, which parses the typed body whatever the HTTP status. | `reviewSourceContent` | dashboard/src/data/review.ts:600-618; dashboard/src/data/review.ts:421-421 |
+| The client the real surface reads through, which parses the typed body whatever the HTTP status. | `reviewSourceContent` | dashboard/src/data/review.ts:654-654; dashboard/src/data/review.ts:421-421 |
 | **The server half of the same contract: the values these cases feed are the shape the production route returns, asserted against real Git objects there.** | "One inventory entry opened into the two bound endpoints' actual content (ICR-R03)." | mcp/tests/test_knowledge_review_source_content.py:1-3 |
 
 ## Cross-Repo References

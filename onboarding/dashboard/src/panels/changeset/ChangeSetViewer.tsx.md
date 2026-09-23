@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`             |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1`             |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -126,7 +126,7 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 | The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:457-457; dashboard/src/panels/changeset/ChangeSetViewer.tsx:472-472; dashboard/src/panels/changeset/ChangeSetViewer.tsx:468-468|
 | The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" |dashboard/src/cockpit/Cockpit.tsx:590-590|
 | The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" |dashboard/src/panels/changeset/ChangeSetViewer.tsx:456-456; dashboard/src/panels/changeset/ChangeSetViewer.tsx:463-463|
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` |dashboard/src/panels/detail-panel/changeSetBar.tsx:31-95; dashboard/src/panels/detail-panel/changeSetBar.tsx:380-415
+| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` |dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:33-97
 | The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode"; "binds master file expansions to the generation the net listing published" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:280-313 |
 
 ## Update History

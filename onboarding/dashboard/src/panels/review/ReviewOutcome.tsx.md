@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewOutcome.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -183,7 +183,7 @@ range that row cites.
 | **The note that keeps a refusal visible beside the inventory the reader asked for instead.** | `TaskContextInsteadNote` | dashboard/src/panels/review/ReviewOutcome.tsx:173-186 |
 | **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** | `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:188-204 |
 | **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal` | dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
-| **The surface that composes it: the four-phase read, the target-keyed retained generation, and the region wired with the retry only for a failed read.** | `ReviewOutcomeRegion`; `retryFor`; `insteadFor`; `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:63-63; dashboard/src/panels/review/ReviewSurface.tsx:592-593; dashboard/src/panels/review/ReviewSurface.tsx:597-606; dashboard/src/panels/review/ReviewSurface.tsx:612-631|
+| **The surface that composes it: the four-phase read, the target-keyed retained generation, and the region wired with the retry only for a failed read.** | `ReviewOutcomeRegion`; `retryFor`; `insteadFor`; `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:592-593; dashboard/src/panels/review/ReviewSurface.tsx:588-589; dashboard/src/panels/review/ReviewSurface.tsx:968-968|
 | **The expansion pane rendering through the same block, which is what makes "one renderer" true across both consumers.** | `ReviewProblemBlock`; `reviewProblemFromCause` | dashboard/src/panels/review/SourceContent.tsx:34-47; dashboard/src/panels/review/SourceContent.tsx:221-230 |
 | **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** | "shows a never-initialized refusal with its reason, offending input and next action"; "keeps source inspection reachable when only intent is unavailable, on request"; "says known empty for a measured empty answer and never for a failure"; "offers an explicit retry for a network failure, and the retry renders the answer"; "never renders a previous target's comparison under a new target's header"; "states a retained known-empty once, as the measured result it is, and never denies it" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:266-283; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:284-313; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:314-325; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:416-457; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-491 |
 | The expansion pane's transport-level cases, which render through this module's one block. | "carries the code, reason, offending input and next action of an unwired adapter" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:52-78 |

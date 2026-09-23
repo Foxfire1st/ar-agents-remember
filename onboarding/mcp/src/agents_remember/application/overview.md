@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-20T13:43:00+02:00 |
@@ -156,7 +156,7 @@ belongs at this route's altitude is the rule, the seam, and the deletion.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new policy owner: the one head rule, what it reads, what it returns, and why it is its own module.** | `select_subject_revisions`; `revision_heads` | mcp/src/agents_remember/application/review_revision_comparison.py:1-31; mcp/src/agents_remember/application/review_revision_comparison.py:144-187; mcp/src/agents_remember/application/review_revision_comparison.py:81-94 |
-| **The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.** | `select_subject_revisions`; `_knowledge_pane`; `_selected_statements` |mcp/src/agents_remember/application/knowledge_review.py:121-121; mcp/src/agents_remember/application/knowledge_review.py:967-1019; mcp/src/agents_remember/application/knowledge_review.py:1022-1045|
+| **The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.** | `select_subject_revisions`; `_knowledge_pane`; `_selected_statements` |mcp/src/agents_remember/application/knowledge_review.py:128-128; mcp/src/agents_remember/application/knowledge_review.py:967-1019; mcp/src/agents_remember/application/knowledge_review.py:931-983|
 | **The recorded value the policy returns into, carried on the pane.** | `ReviewRevisionSelection`; `revision_selection` |mcp/src/agents_remember/models/knowledge/revision_selection.py:54-150; mcp/src/agents_remember/models/knowledge/review.py:722-722|
 | **The ten cases that measure the policy, and the two rewritten surface cases beside them.** | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
 
@@ -411,7 +411,7 @@ longer be displayed as two absences.
 | The statement-side projection's whole surface: the three-outcome side contract, the conditions reader, the comparison's own field roster, and the value reader that reserves `None` for absence. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | **The structured-value projection: canonical, bracketed as the pane's own rendering, and bounded with a visible truncation.** | `structured_value_text`; `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TRUNCATION` | mcp/src/agents_remember/application/review_statement_sides.py:55-83 |
 | **The contract that makes `None` mean absence — and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange`; `ReviewSideContent`; `ReviewSideState` |mcp/src/agents_remember/models/knowledge/review.py:484-495; mcp/src/agents_remember/models/knowledge/review.py:220-245; mcp/src/agents_remember/models/knowledge/review.py:198-198|
-| **The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.** | `side_content`; `side_conditions`; `field_changes`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:133-133; mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:131-131; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
+| **The adapter's delegation: the import block and the four calls inside `_knowledge_pane`, with the composition unchanged.** | `side_content`; `side_conditions`; `field_changes`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:931-931; mcp/src/agents_remember/application/knowledge_review.py:132-132; mcp/src/agents_remember/application/knowledge_review.py:131-131; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
 | **The production composition case: a changed structured field carries each side's own projection, the two differ, and each round-trips back to the stored authorship envelope.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -2950,3 +2950,33 @@ suppression this leaf adds. **Citation accounting:** every row on this overview 
 candidate, because this leaf moved them. **Stamp accounting:** no verification stamp was advanced — the
 header already names this leaf's base as the production line the reading was taken against, and nothing
 in this leaf is committed, so the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Comparison's Identity And Its Staleness Get Their Own Owner
+
+`260921-ICR-L17` (`ICR-R17@v1`) adds **one module** to this route and takes two private helpers out of
+the adapter.
+
+- **The new owner.** [`application/review_comparison_staleness.py`](review_comparison_staleness.py.md)
+  is the seventh purpose-named owner this route has extracted from `knowledge_review.py`. It carries the
+  comparison's own declared identity (`comparison_identity`) and the staleness that identity earns
+  against a *previous* binding a refresh read supplies (`review_staleness`). It hashes nothing, resolves
+  nothing and re-derives nothing: the digest an assessment was bound against is the one the comparison
+  owner published.
+- **What the adapter lost.** `knowledge_review.py` is **1077 → 1041 lines**; its private
+  `_comparison_identity` and `_staleness` are **deleted, not annotated**, because nothing under `mcp/`
+  imported them — so `__all__` is unchanged and no importer had to learn a new home. `compose_review`
+  now calls the sibling's two names, computes the identity **once**, and reads the state once for both
+  the published `staleness` value and the submission state, so the two cannot disagree about the same
+  comparison.
+- **The previous identity moved onto the request.** `read_knowledge_review` and `compose_review` lost
+  their `previous_binding_digest` keyword; the value travels on
+  `ReviewSurfaceRequest.previous_binding_digest`, admitted by `serving/review.py` and supplied by the
+  client's refresh control.
+- **One prose fact a reader should carry.** The adapter's docstring paragraph that names the extracted
+  owners was advanced from "Five more responsibilities" to "Six more responsibilities" by this leaf,
+  while it names **seven** modules — it already named six under a heading of "Five" before this leaf, so
+  the count is one behind its own list and this leaf's addition did not close the gap.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **this route gained one module and the review adapter lost its two staleness helpers (`ICR-R17@v1`).** `application/review_comparison_staleness.py` owns the comparison's declared identity and the staleness it earns against a carried previous binding; `knowledge_review.py` is 1077 → 1041 lines with `_comparison_identity` and `_staleness` deleted rather than aliased, and the previous identity now travels on the request instead of as a keyword. **Citation accounting:** the rows into the adapter were re-derived from each construct's own declaration on the 1041-line candidate — `_knowledge_pane` `:931`, `select_subject_revisions` (called at `:471`, declared in `review_revision_comparison.py`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

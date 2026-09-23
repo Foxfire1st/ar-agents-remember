@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T06:50:00+02:00 |
+| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
+| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -396,7 +396,7 @@ detail.
 | --- | --- | --- |
 | The route's read-only client and its comparison call. | "export const intentReview = (" |dashboard/src/data/review.ts:462-462|
 | **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" |dashboard/src/data/review.ts:597-597|
-| **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` |dashboard/src/data/review.ts:568-573; dashboard/src/data/review.ts:566-566|
+| **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` |dashboard/src/data/review.ts:605-605; dashboard/src/data/review.ts:607-612|
 | **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:575-588|
 | The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9; dashboard/src/data/review.ts:1-10 |
 | The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:14-14; dashboard/src/data/review.ts:34-34 |
@@ -624,8 +624,8 @@ inventory row; the file's own card carries the type-by-type detail.
 | **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:272-287; dashboard/src/data/review.ts:231-231; dashboard/src/data/review.ts:226-226; dashboard/src/data/review.ts:225-225; dashboard/src/data/review.ts:248-248; dashboard/src/data/review.ts:249-249 |
 | **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:298-313; dashboard/src/data/review.ts:243-243; dashboard/src/data/review.ts:264-264 |
 | **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:315-321; dashboard/src/data/review.ts:260-260; dashboard/src/data/review.ts:429-429; dashboard/src/data/review.ts:430-430 |
-| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:600-618; dashboard/src/data/review.ts:421-421 |
-| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` |dashboard/src/data/review.ts:620-620; dashboard/src/data/review.ts:621-621|
+| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:654-654; dashboard/src/data/review.ts:421-421 |
+| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` |dashboard/src/data/review.ts:659-659; dashboard/src/data/review.ts:660-660|
 | The consumer that mounts the renderer beneath an openable row, at the inventory's own two tree ids. | `SourceContent`; `review-inventory-open` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | The renderer the expansion's fields feed, and its three state-decided branches. | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
 
@@ -666,7 +666,7 @@ and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
 | --- | --- | --- |
 | **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:158-171 |
 | **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98 |
-| **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:456-618; dashboard/src/data/review.ts:547-547; dashboard/src/data/review.ts:403-409
+| **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:636-642; dashboard/src/data/review.ts:470-486; dashboard/src/data/review.ts:654-672
 | **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:135-144 |
 
 ## 260921-ICR-L13 The Master Client Is Generation-Bound
@@ -756,3 +756,23 @@ rather than a result field. **Citation accounting:** every row on this overview 
 by line was re-derived against this candidate. **Stamp accounting:** no verification stamp was
 advanced — the header already names this leaf's base as the production line the reading was taken
 against, and nothing in this leaf is committed, so the governed closeout owns the real stamp.
+
+## 260921-ICR-L17 The Review Client Names The Refresh Parameter Once
+
+`260921-ICR-L17` (`ICR-R17@v1`) changes one module on this route, `data/review.ts`, in three ways:
+
+- **a ninth `intentReview` argument** — `previousBindingDigest`, the comparison the reader was already
+  looking at, carried only by a read that replaces a display. It is the *previous* identity and never a
+  substitute for the current one, and the read still renders the resolved candidate's own comparison.
+- **`reviewQuery`** — the query string assembled in one function, so adding a parameter cannot quietly
+  raise the client's branch count and the two spellings of "absent" (`undefined`, and the empty string a
+  form sends) are collapsed once.
+- **`PREVIOUS_BINDING_QUERY`** — the one declaration of the wire name the server admits
+  (`serving/review.py`, alias `previousBindingDigest`). It is declared once because a second spelling at
+  a call site is how a refresh silently stops carrying the identity it is measured against.
+
+Nothing else on this route changed: no other client, no transport rule and no store shape.
+
+
+## Update History
+- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review client carries the previous binding identity and names its query parameter once (`ICR-R17@v1`).** `intentReview` gains its ninth argument, `reviewQuery` assembles the one query string, and `PREVIOUS_BINDING_QUERY` is the single spelling of the wire name the server admits. No other client, transport rule or store shape changed. **Citation accounting:** the rows this insertion moved were re-derived from each construct's own declaration on the 672-line candidate (`ReviewEntry` `:607`, `intentReviewEntries` `:636`, `reviewSourceContent` `:654`, `intentReview` `:470`, `reviewQuery` `:492`, `PREVIOUS_BINDING_QUERY` `:586`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
