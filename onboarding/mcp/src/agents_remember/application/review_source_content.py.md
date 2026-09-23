@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:55:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -206,7 +206,7 @@ that measure it against real repositories.
 | The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. | `resolve_review_candidate`; `require_current_candidate_identity` |mcp/src/agents_remember/application/review_candidate_resolution.py:160-247; mcp/src/agents_remember/application/review_candidate_resolution.py:269-298|
 | **The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `_source_content_response`; `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:584-584; mcp/src/agents_remember/serving/review.py:191-208; mcp/src/agents_remember/serving/review.py:741-757; mcp/src/agents_remember/serving/review.py:635-653; mcp/src/agents_remember/serving/review.py:656-672|
 | The third port the composition root supplies, and the wiring that gives it the real owner. | `review_source_content`; `review_source_content_port` | mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/cli/dashboard.py:109-126 |
-| The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. | `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:157-151; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
+| The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. | `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:159-159 |
 | **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** | `test_a_modified_file_opens_both_endpoints_own_bytes`; `test_an_added_unmapped_file_opens_its_entire_candidate_text`; `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:269-313; mcp/tests/test_knowledge_review_source_content.py:314-336; mcp/tests/test_knowledge_review_source_content.py:495-559; mcp/tests/test_knowledge_review_source_content.py:641-678; mcp/tests/test_knowledge_review_source_content.py:679-724; mcp/tests/test_knowledge_review_source_content.py:796-821 |
 | The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. | `SourceContent`; `Sides`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:164-222; dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:126-138 |
 

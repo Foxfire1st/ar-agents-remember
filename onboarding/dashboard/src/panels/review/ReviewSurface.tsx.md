@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `972b44cc07b307929535fe7974d6a30d53c9c4f1`|
-| lastVerifiedCommitDate |  2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash |  `4c000b11c5243e4a8e77c08e87984fff00c1d94b`|
+| lastVerifiedCommitDate |  2026-09-23T20:33:15+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -436,3 +436,16 @@ of composing a review.
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the read cycle and the refresh control left the surface for their own modules (`ICR-R17@v1`).** The inline `load` callback, its `useEffect`, `targetKeyOf` and the private `ReviewPageRequest` are **deleted, not annotated**: `ReviewReadCycle.ts` supplies the read, the retained generation, the carried identity and `refresh`, and `ReviewRefresh.tsx` supplies the control and the notice, both mounted through the header's new `refresh` node. `retryFor` re-asks through the same one read path. The coherence check on the retained generation is kept, because a payload read for another question must not render under this one's header. **Citation accounting:** the rows this extraction moved were re-derived from each construct's own declaration on the 986-line candidate — `Inventory` `:389`, `pane` `:81`, `unresolvedList` `:154`, `targetKeyOf` (now `ReviewReadCycle.ts:62-83`, called at `ReviewSurface.tsx:934`) and `reviewSourceContent` (`data/review.ts:654`). **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the extraction exists only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.
+
+## 260921-ICR-L23 The Unmeasured Line The Submission Block Mounts
+
+`SubmissionBlock` gains a third mounted line, keyed on `staleness.state === "not-measured"`
+(`:557-565`) and carrying `data-testid="review-staleness-unmeasured"`. It renders the boundary's
+own sentence and nothing else: no previous input is named, because nothing was observed to move,
+and the block's existing `stale` line (`:554`) and disabled-submission state are untouched.
+That is the whole point of the state — a switched checkout or an unreadable generation must not
+be able to read as an ordinary current review on the one line this block mounts, and it must not
+be able to borrow the `stale` rendering that would assert a movement nobody measured.
+
+## Update History
+- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the surface mounts the boundary's own sentence, and this card's body now states where.** `SubmissionBlock` renders `staleness.statement` behind `data-testid="review-staleness-unmeasured"` when the state is `not-measured` (`:557-565`), naming no previous input and borrowing neither the `stale` line (`:554`) nor its disabled-submission state. The new section above records the rendering and the reason it may not read as an ordinary current review. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -360,7 +360,7 @@ judgment and publishes no assessment.
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-432|
-| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` |dashboard/src/data/review.ts:636-642; dashboard/src/data/review.ts:607-612|
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:636-642; dashboard/src/data/review.ts:613-618 |
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
 
@@ -373,7 +373,7 @@ by this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:86-89 |
+| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:90-90 |
 | **The generation state the button carries from a successful master read.** | `MasterNetPins` |dashboard/src/panels/detail-panel/changeSetBar.tsx:10-10|
 
 ## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
@@ -438,7 +438,7 @@ not here.
 | **The row's open state and the generation pair derived from the inventory's own published tree ids.** | `Inventory`; `useState` |dashboard/src/panels/review/ReviewSurface.tsx:389-389; dashboard/src/panels/review/ReviewSurface.tsx:28-28|
 | The pane that forwards the task context an expansion request carries. | `SourcePane` |dashboard/src/panels/review/ReviewSurface.tsx:441-497|
 | **The header's corrected statement of what this child reuses: two renderers, `DiffPane` through the statement area and the Source pane's own entry expansion.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
-| **The new renderer: the three rules decided from a side's declared state, with the no-diff-claimed content path and the state lines.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
+| **The new renderer: the three rules decided from a side's declared state, with the no-diff-claimed content path and the state lines.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:113-113 |
 | **The two provenance and boundary renderings the pane added: a bounded read stated as a prefix of the object, and the leaf-change-set bound stated only when that measurement admitted the path.** | `boundedNote`; `Expansion`; `review-source-truncated`; `review-source-path-bound` | dashboard/src/panels/review/SourceContent.tsx:114-124; dashboard/src/panels/review/SourceContent.tsx:140-162 |
 | **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** | `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:126-138 |
 | **The client's expansion wire types and the request that reads the typed body whatever the status.** | `ReviewSourceSide`; `ReviewSourceExpansion`; `reviewSourceContent` | dashboard/src/data/review.ts:654-672; dashboard/src/data/review.ts:280-287; dashboard/src/data/review.ts:298-313 |
@@ -2980,7 +2980,7 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | --- | --- | --- |
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
-| **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` |dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:940-940|
+| **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:949-949 |
 | **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:289-289; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
 | **R03's pane rendering transported failures through the shared block while its own typed-refusal path stays untouched.** | `ReviewProblemBlock`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:135-147; dashboard/src/panels/review/SourceContent.tsx:188-241 |
 
@@ -3109,4 +3109,5 @@ recorded read, and a later read of the same question all carry nothing.
 
 
 ## Update History
+- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this route's surface changed, and two reference rows here were re-anchored.** `ReviewSurface.tsx` mounts the boundary's own sentence when `staleness.state === "not-measured"` (`:557-565`), and `ReviewSurface.outcomes.test.tsx` carries the case that pins it. The repaired rows are `ReviewEntry` (`613-618`, in the data client this route reads through) and `shownPayload` (`949`, the read that stores the payload with its target key). **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the `panels/review/` child route gained two modules and the surface lost its read cycle (`ICR-R17@v1`).** `ReviewReadCycle.ts` owns the question key, the one read path and the newest-read-wins guard; `ReviewRefresh.tsx` owns the refresh control and the generation notice; `ReviewSurface.tsx` delegates both; `changeSetBar.tsx` gains the projection-driven invalidation and its own refresh control; `data/review.ts` gains the ninth argument and the one query-parameter spelling. **No route-level fact changed**: no new or removed route, no change to the reviewer takeover dispatch, the target shape or the cookie. **Citation accounting:** the rows this document carries into the changed dashboard modules were re-derived from each construct's own declaration (`DocChangeSetBar` `:483`, `useReviewCatalogue` `:235`, `ReviewEntryState` `:289`, `Inventory` `:389`, `ReviewEntry` `data/review.ts:607`, `intentReviewEntries` `:636`, `reviewSourceContent` `:654`, `targetKeyOf` `ReviewReadCycle.ts:65`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

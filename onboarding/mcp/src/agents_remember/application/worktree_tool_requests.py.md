@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ contracts.
 | Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest`; `__post_init__` | mcp/src/agents_remember/application/worktree_tool_requests.py:68-107 |
 | Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages`; `CloseoutApproval`; `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115; mcp/src/agents_remember/application/worktree_tool_requests.py:131-136; mcp/src/agents_remember/application/worktree_tool_requests.py:143-149 |
 | Start consumes its extracted request type. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:103-200 |
-| Operation control consumes its extracted request type. | `worktree_operation_control_tool`; `_operation_control_request_refusal` | mcp/src/agents_remember/application/worktree_tools.py:534-554; mcp/src/agents_remember/application/worktree_tools.py:557-585 |
+| Operation control consumes its extracted request type. | `worktree_operation_control_tool`; `_operation_control_request_refusal` | mcp/src/agents_remember/application/worktree_tools.py:606-636; mcp/src/agents_remember/application/worktree_tools.py:557-585 |
 | The start tool consumes the request types this module extracts. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:121-228 |
 | Closeout apply consumes its extracted request type. | `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:381-396 |
 

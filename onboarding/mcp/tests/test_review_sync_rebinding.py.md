@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -207,7 +207,7 @@ because each of them pins one sentence a verifier could otherwise reproduce as f
 | The one verdict rule, stated once so a writer and the record's validator cannot disagree. | `review_sync_verdict`; `knowledge_channel_match` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:120-161 |
 | **The validator the eight forgeries are aimed at: every verdict re-derived from the identities the record carries.** | `_the_rebinding_agrees_with_itself` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:242-300 |
 | **The clause `F2` pins: the head locates the capture, it does not carry it.** | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:342-363 |
-| **The production call site: the rebinding is attached to the tool result after the transaction has finished and the contract is written.** | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:365-376 |
+| **The production call site: the rebinding is attached to the tool result after the transaction has finished and the contract is written.** | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
 | The shipped capture owner that derives the resolved source side after the sync. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-53 |
 | The freeze owner whose options name the predecessor — the operation the record's remedy names. | `ComparisonFreezeOptions`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:147-147; mcp/src/agents_remember/application/review_comparison_freeze.py:232-232 |
 | The generation store's own layout and manifest readers, which these cases use and never rewrite. | `leaf_generation_root`; `generation_directory`; `read_manifest`; `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:495-521; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |

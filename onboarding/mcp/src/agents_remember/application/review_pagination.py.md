@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_pagination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -133,10 +133,10 @@ where.
 | **The view window stated as the surface's page: `total_basis="walk"`, and the returned rows checked against the bound the caller asked for.** | `records_page`; `RecordsPagePosition` | mcp/src/agents_remember/application/review_pagination.py:233-269; mcp/src/agents_remember/application/review_pagination.py:76-88 |
 | **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** | `reset_comparison_page` | mcp/src/agents_remember/application/review_pagination.py:272-305 |
 | The one reader of a view quantity, so a page can never publish an unmeasured count. | `_counted` | mcp/src/agents_remember/application/review_pagination.py:308-314 |
-| **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:366-440 |
-| The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:179-190; mcp/src/agents_remember/models/knowledge/review.py:170-170 |
-| The two collections named once, because their cursors are different documents. | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:147-147 |
-| The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:155-156 |
+| **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:465-465 |
+| The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:192-196; mcp/src/agents_remember/models/knowledge/review.py:181-185 |
+| The two collections named once, because their cursors are different documents. | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:169-169 |
+| The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158 |
 | The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:321-479 |
 | **The route that admits the page size in its own vocabulary before the request model sees it.** | `_admitted_paging`; `paged_review_request` | mcp/src/agents_remember/serving/review.py:517-517; mcp/src/agents_remember/serving/review.py:293-357 |
 | The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:548-569; dashboard/src/data/review.ts:578-580 |

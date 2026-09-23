@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -200,3 +200,15 @@ React settle between the two updates.
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the refresh path, the carried identity and the read race are measured (`ICR-R17@v1`).** A third `describe` block adds six cases over the real surface and client — the end-to-end refresh, the failed refresh that renders no claim, the superseded-answer race, the same-flush interleaving (`L17-R2-F1`), and the two single-question cases (`L17-F1`) — and the module grows from sixteen to twenty-two cases. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the new cases exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.
+
+## 260921-ICR-L23 The Boundary'S Own Sentence, And What It Must Not Read As
+
+One case joins the module — `renders the boundary's own sentence when it could not compare the
+declared identities (L23)` (`:885-914`). It mounts the subject with a `not-measured` staleness
+whose statement names the uncompared channel, then asserts the three things the state exists for:
+the boundary's sentence is rendered through `review-staleness-unmeasured`; no previous input and
+no "current comparison" wording appears; and `review-stale` is absent, so the unmeasured state
+never borrows the stale rendering.
+
+## Update History
+- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the module gained the case that pins the unmeasured line, and this card's body now states what it asserts.** `renders the boundary's own sentence when it could not compare the declared identities (L23)` (`:885-914`) mounts a `not-measured` payload and asserts the boundary's sentence is rendered, that no previous input or current-comparison wording appears, and that `review-stale` is absent. The new section above is the durable statement. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

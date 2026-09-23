@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 
 ## Purpose
 
@@ -409,3 +409,22 @@ The following current source owns the changed behavior; no external domain sourc
   the final harness effort policy and explicit control-bridge boundary.
 
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator: established governing route coverage for the final candidate.
+
+## 260921-ICR-L23 The Raw-Git Identity Boundary Reference
+
+`docs/reference/worktrees-c09.md` gained **Raw Git Identity Boundary** — the reference statement of
+what the review surface measures when no managed transaction stands behind a moved identity, and
+the support matrix it publishes and reports against. The route now carries, in one place, the
+three properties a reader of the reference needs: the boundary measures the recorded work-branch
+head, the code-base commit and the memory work branch's base, and performs no reconciliation; a
+replaced identity marks the review `stale` and disables submission against it while leaving the
+reviewed generation inspectable; and a boundary that could not compare at all renders
+`not-measured` with its reason rather than a current review, without disabling submission.
+
+The matrix below that prose is the code's own table rather than a summary of it: six transition
+shapes with their measured signature, the boundary state each produces, whether this system
+reconciles it, and the recovery route where one exists. Four of the six are **unsupported** and
+say so instead of being implied by omission, which is the property the section exists to keep.
+
+## Update History
+- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this route's governed reference gained the raw-Git identity boundary section, and this overview now states what it carries.** `docs/reference/worktrees-c09.md` gained **Raw Git Identity Boundary** — the measured identities, the no-reconciliation rule, the `stale` and `not-measured` outcomes, and the support matrix with its four explicitly unsupported transitions. The new section above is a route-level body change, not a metadata refresh. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

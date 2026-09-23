@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -133,7 +133,7 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:490-501 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` |mcp/src/agents_remember/application/knowledge_review.py:944-931; mcp/src/agents_remember/application/knowledge_review.py:967-1019|
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1037-1038; mcp/src/agents_remember/application/knowledge_review.py:963-1015 |
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -251,7 +251,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:477-501 |
 | The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:199-279; mcp/src/agents_remember/application/knowledge_review.py:296-391 |
-| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2006; mcp/tests/test_knowledge_review_surface.py:828-866 |
+| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2008; mcp/tests/test_knowledge_review_surface.py:947-987 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
 
@@ -929,7 +929,7 @@ resolution depends on. The evidence for both halves is
 | The one decision point every launch point calls, with its three answers and named refusals. | `resolve_launch_capsule`; `LaunchCapsuleMode` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-80 |
 | The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
-| D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-444; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
+| D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-445; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
 | The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:805-844 |
 | The production chain read at the consumer's own gate and at the live runtime's system block. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
 
@@ -6088,7 +6088,7 @@ packet owns lives there, because no new application behaviour and no new refusal
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The one mapping both adapters reach, and the one body builder it uses.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:128-169 |
+| **The one mapping both adapters reach, and the one body builder it uses.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:155-169 |
 | **The two actions the bodies gained, and the not-found body's offending input.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` |mcp/src/agents_remember/serving/review.py:149-149; mcp/src/agents_remember/serving/review.py:145-148|
 | **The result-to-status mapping, unchanged, which the new bodies are used beside.** | `_status_for` |mcp/src/agents_remember/serving/review.py:522-539|
 

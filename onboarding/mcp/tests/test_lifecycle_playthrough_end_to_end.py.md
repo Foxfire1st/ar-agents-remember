@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
+| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
 | path | `mcp/tests/test_lifecycle_playthrough_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -142,8 +142,8 @@ direct evidence.
 | The six public drivers the run is expressed in, each a registered tool call. | `_status`; `_integrate`; `_checkpoint`; `_pause`; `_attach`; `_reload` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:78-82; mcp/tests/test_lifecycle_playthrough_end_to_end.py:84-90; mcp/tests/test_lifecycle_playthrough_end_to_end.py:92-98; mcp/tests/test_lifecycle_playthrough_end_to_end.py:100-104; mcp/tests/test_lifecycle_playthrough_end_to_end.py:106-110; mcp/tests/test_lifecycle_playthrough_end_to_end.py:112-113 |
 | The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. | `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
 | The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. | `pause_result`; `_already_stopped_result`; `require_parent_series` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
-| The public tools the master-level beats drive. | "def worktree_attach_tool("; "def worktree_integrate_tool("; "def worktree_checkpoint_landing_tool("; "def worktree_pause_tool(" | mcp/src/agents_remember/application/worktree_tools.py:293-303; mcp/src/agents_remember/application/worktree_tools.py:371-425; mcp/src/agents_remember/application/worktree_tools.py:427-468; mcp/src/agents_remember/application/worktree_tools.py:502-531 |
-| The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. | `checkpoint_landing_eligibility`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265; mcp/src/agents_remember/worktrees/modules/integrate.py:412-458 |
+| The public tools the master-level beats drive. | "def worktree_attach_tool("; "def worktree_integrate_tool("; "def worktree_checkpoint_landing_tool("; "def worktree_pause_tool(" | mcp/src/agents_remember/application/worktree_tools.py:293-303; mcp/src/agents_remember/application/worktree_tools.py:371-425; mcp/src/agents_remember/application/worktree_tools.py:502-531; mcp/src/agents_remember/application/worktree_tools.py:474-474 |
+| The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. | `checkpoint_landing_eligibility`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265; mcp/src/agents_remember/worktrees/modules/integrate.py:412-460 |
 | The shared world fixture and Git helper this module composes instead of re-implementing. | "class QueueFixture:"; "REPO = \"repo-a\""; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:184-694; mcp/tests/test_closeout_queue.py:54-54; mcp/tests/test_worktree_support.py:79-86; mcp/tests/test_worktree_support.py:78-78; mcp/tests/test_worktree_support.py:92-92; mcp/tests/test_worktree_support.py:337-337; mcp/tests/test_worktree_support.py:347-347; mcp/tests/test_worktree_support.py:710-710 |
 | The leaf closeout recording it imports rather than duplicating. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:59-82 |
 | The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" |mcp/tests/test-evidence-lanes.toml:265-265|

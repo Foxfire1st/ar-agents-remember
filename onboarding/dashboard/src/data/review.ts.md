@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `972b44cc07b307929535fe7974d6a30d53c9c4f1`|
-| lastVerifiedCommitDate |  2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash |  `4c000b11c5243e4a8e77c08e87984fff00c1d94b`|
+| lastVerifiedCommitDate |  2026-09-23T20:33:15+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -370,3 +370,20 @@ the identity it is measured against. `reviewQuery` is its only reader.
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the client carries the previous binding identity and names its query parameter once (`ICR-R17@v1`).** `intentReview` gains a ninth `previousBindingDigest` argument; the query-string assembly moves into `reviewQuery`, which collapses both spellings of "absent" and appends the identity only when it is a real value; `PREVIOUS_BINDING_QUERY` is the one declaration of the wire name the server admits. **Citation accounting:** the `reviewSourceContent` row was re-derived from its own declaration on the 672-line candidate (`:654`). **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the argument and the helper exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.
+
+## 260921-ICR-L23 The Raw-Git Boundary's Fourth Staleness State
+
+`ReviewStaleness.state` gains `"not-measured"` beside `"current" | "stale" | "not_compared"`
+(`:357-363`). It is the state the raw-Git identity boundary reports when it could not take its
+comparison **at all** — a checkout that left its declared branch, a recorded object that is gone,
+a generation that could not be read — so this client may not present the displayed comparison as
+the candidate's current one. It is deliberately not `stale`: nothing was observed to move, and
+`stale` additionally disables submission, a consequence an unperformed comparison has not earned.
+The line comment above the union carries that reasoning so the next reader of the type does not
+have to reconstruct it from the server.
+
+The change is one member and one comment: no other field of `ReviewStaleness` moves, and the
+`moved` list stays empty for this state because there is no replaced identity to name.
+
+## Update History
+- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the client gained the raw-Git boundary's fourth staleness state, and this card's body now states it.** `ReviewStaleness.state` accepts `"not-measured"` (`:357-363`), the state the boundary reports when it could not compare the leaf's declared identities at all. It is deliberately not `stale`: nothing was observed to move, and `stale` additionally disables submission, which an unperformed comparison has not earned. The new section above is the durable statement; it is a body change, not a metadata refresh. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
