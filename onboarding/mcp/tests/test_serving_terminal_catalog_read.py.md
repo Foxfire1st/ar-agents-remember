@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-15T13:57+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | path | `mcp/tests/test_serving_terminal_catalog_read.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -125,7 +125,7 @@ certification result.
 | `list_committed()` is the sweeper's own non-blocking contention read, called only from the two contention paths — not a projection read. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
 | The production readers the identity sweep resolves against by object identity. | `read_control_snapshot`; `read_entry_terminal_evidence` | mcp/src/agents_remember/serving/harness_control_client.py:133-142; mcp/src/agents_remember/serving/terminal_evidence.py:187-196 |
 | The sweeper whose re-introduction on the request path the module's cases detect. | `TerminalCatalogLivenessSweeper`; `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:149-322 |
-| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:277-277; mcp/tests/test-evidence-lanes.toml:276-276 |
+| The candidate classifies this module once, in the explicit integration lane. | "mcp/tests/test_serving_terminal_catalog_read.py" | mcp/tests/test-evidence-lanes.toml:278-278; mcp/tests/test-evidence-lanes.toml:276-276 |
 
 ## Cross-Repo References
 

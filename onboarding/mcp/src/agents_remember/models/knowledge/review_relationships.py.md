@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_relationships.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ re-exports them, and the cases that measure the shape through the production com
 | **The labelled rename inference, with the validator that ties a pairing to its state and refuses a similarity word on an unmeasured inference.** | `ReviewRenameInference` | mcp/src/agents_remember/models/knowledge/review_relationships.py:221-255 |
 | **The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.** | `ReviewRelationshipMovement` | mcp/src/agents_remember/models/knowledge/review_relationships.py:258-372 |
 | The application module that builds the movements, and the display module that renders them. | `relationship_movements`; `paired_movement`; `single_sided_movement` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177; mcp/src/agents_remember/application/review_relationship_display.py:107-139; mcp/src/agents_remember/application/review_relationship_display.py:142-174 |
-| The review vocabulary that re-exports these names and gains the two new fields on the pane row. | `ReviewSourceLocation`; `ReviewSourcePane`; `__all__` | mcp/src/agents_remember/models/knowledge/review.py:465-498; mcp/src/agents_remember/models/knowledge/review.py:696-728; mcp/src/agents_remember/models/knowledge/review.py:55-99 |
+| The review vocabulary that re-exports these names and gains the two new fields on the pane row. | `ReviewSourceLocation`; `ReviewSourcePane`; `__all__` | mcp/src/agents_remember/models/knowledge/review.py:644-915; mcp/src/agents_remember/models/knowledge/review.py:696-728; mcp/src/agents_remember/models/knowledge/review.py:55-99 |
 | **The cases that measure the vocabulary through the production composition: the moved realization under one identity, the withdrawn realization, and the ungoverned identity that is never the root.** | `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity`; `test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity`; `test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root` | mcp/tests/test_knowledge_review_relationship_movement.py:447-494; mcp/tests/test_knowledge_review_relationship_movement.py:531-570; mcp/tests/test_knowledge_review_relationship_movement.py:829-857 |
 
 ## Cross-Repo References

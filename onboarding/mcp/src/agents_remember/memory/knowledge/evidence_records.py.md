@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/evidence_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T21:55:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ No domain documentation source is configured for this repository (`system/source
 | The read statements whose declared order columns live in the read-queries module. | `CLAIM_BY_ID`; `OBSERVATION_BY_ID` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:659-659; mcp/src/agents_remember/memory/knowledge/evidence_records.py:678-679 |
 | **The claim-identity listing, decoding nothing, and the whole-listing form unchanged beside it: both run the same identity statement, so the two cannot disagree about which identities exist.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1057-1060; mcp/src/agents_remember/memory/knowledge/evidence_records.py:843-846 |
 | **The single-record reader each listed identity is then read through, which is what makes a per-record guard possible without a second reader.** | `claim_record`; `claimed_coverage_of_claim` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:928-932; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1124-1146 |
-| **The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.** | `_claim_records`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:498-521 |
+| **The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.** | `_claim_records`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/application/review_evidence_records.py:548-572|
 | **The registered surface gained exactly one name (`claim_ids`), and the case that measures the isolation it makes reachable.** | `__all__`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:1148-1180; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
 | The case that asserts there is no blob column and no second content store. | "def test_there_is_no_blob_column_and_no_second_content_store(" | mcp/tests/test_knowledge_evidence_observations.py:871-905 |
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_portable_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ No domain documentation source is configured for this repository (`system/source
 | **Destination admission before any staging work: three states, their own codes, and no stage directory even requested.** | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The typed read of an artifact that is not readable UTF-8 text. | "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:763-763 |
 | The unreachable defence-in-depth branch whose mutation survives for a stated reason. | `_out_of_canonical_order` | mcp/src/agents_remember/memory/knowledge/export_portable.py:931-964 |
-| The integration-lane row this module occupies. | `integration` | mcp/tests/test-evidence-lanes.toml:223-223; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
+| The integration-lane row this module occupies. | `integration` | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
 | The snapshot-lifecycle artifact whose consumer list gained this module. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
 | The merge-cases artifact whose consumer list gained this module. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 | The identity-branching fixture artifact whose consumer list gained this module. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |

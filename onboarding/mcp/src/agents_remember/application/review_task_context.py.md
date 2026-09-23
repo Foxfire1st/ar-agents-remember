@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_task_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-23T02:40+02:00 |
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -205,11 +205,11 @@ an absent dataset half changes the *reason* it states, never its ability to answ
 | The module's two published names: the composition and its pair measurement. | `__all__` | mcp/src/agents_remember/application/review_task_context.py:81-81 |
 | **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** | `unreadable_half_refusal`; `unreadable_half_limitations`; `candidate_receipt_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_task_context.py:160-167; mcp/src/agents_remember/application/review_candidate_resolution.py:358-372 |
 | **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** | `task_context_review`; `with_selection_channels`; `candidate_ref`; `require_current_candidate_identity`; `unreadable_half_refusal`; `unreadable_half_limitations`; `source_pane`; `evidence_pane`; `submission`; `attribution_limitations` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:160-167; mcp/src/agents_remember/application/review_candidate_resolution.py:205-221; mcp/src/agents_remember/application/review_candidate_resolution.py:224-254; mcp/src/agents_remember/application/review_evidence_records.py:256-281; mcp/src/agents_remember/application/review_source_inventory.py:556-619; mcp/src/agents_remember/application/review_record_rendering.py:152-176; mcp/src/agents_remember/application/review_record_rendering.py:122-150; mcp/src/agents_remember/application/review_source_inventory.py:741-763 |
-| **The selection-channel call that makes "this review did not ask" a stated fact rather than an empty collection, and the function that states both compositions' positions from one vocabulary.** | `with_selection_channels`; `_not_selected` | mcp/src/agents_remember/application/review_evidence_records.py:256-256; mcp/src/agents_remember/application/review_evidence_records.py:229-229 |
+| **The selection-channel call that makes "this review did not ask" a stated fact rather than an empty collection, and the function that states both compositions' positions from one vocabulary.** | `with_selection_channels`; `_not_selected` | mcp/src/agents_remember/application/review_evidence_records.py:257-798; mcp/src/agents_remember/application/review_evidence_records.py:229-229 |
 | **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** | `pair_attribution`; `_pair_without_namespace`; `_side_from_own_bytes`; `_pair_side` | mcp/src/agents_remember/application/review_task_context.py:231-289; mcp/src/agents_remember/application/review_task_context.py:291-320; mcp/src/agents_remember/application/review_task_context.py:322-349; mcp/src/agents_remember/application/review_task_context.py:351-376 |
 | **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** | `_task_context_pane`; `ReviewSideContent`; `ReviewKnowledgePane` | mcp/src/agents_remember/application/review_task_context.py:170-193; mcp/src/agents_remember/models/knowledge/review.py:148-174; mcp/src/agents_remember/models/knowledge/review.py:461-516 |
 | **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** | `task_context_detail`; `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_task_context.py:196-228; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:282-300 |
-| **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** | `_require_the_identity_and_staleness_to_agree`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:969-969; mcp/src/agents_remember/models/knowledge/review.py:705-705; mcp/src/agents_remember/models/knowledge/review.py:924-924; mcp/src/agents_remember/models/knowledge/review.py:1040-1040 |
+| **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** | `_require_the_identity_and_staleness_to_agree`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:736-1092; mcp/src/agents_remember/models/knowledge/review.py:705-705; mcp/src/agents_remember/models/knowledge/review.py:924-924; mcp/src/agents_remember/models/knowledge/review.py:1040-1040 |
 | **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** | `compose_review`; `review_inventory` | mcp/src/agents_remember/application/knowledge_review.py:300-412; mcp/src/agents_remember/application/review_source_inventory.py:429-469 |
 | The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. | `review_request_from_query` | mcp/src/agents_remember/serving/review.py:260-260 |
 | The browser entry that offers the task-context target for every live leaf. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395 |
@@ -252,4 +252,24 @@ changed: the construction moved beside `with_selection_channels` so one module o
 unnamed-collection boundary is unchanged and stated: a paged request with no subject is the task context,
 with neither a page nor a refusal. Rows on this card that cited `review_task_context.py` or
 `serving/review.py` by line were re-derived against this candidate. No verification stamp was advanced: nothing in this leaf is committed, so the commit/closeout stamp remains closeout's.
+## 260921-ICR-L26 A Review That Selected No Subject Labels Every Record As The Candidate's
 
+`260921-ICR-L26` (`ICR-R26@v1`) gives the task-context composition the same attribution vocabulary,
+with the one label that is true when nothing was compared: `task_context_applicability(records)` labels
+**every** supplied record `candidate` — the candidate's own input, with its recorded subject beside it —
+and the pane gained the labelled collections and the six-way counts. **376 → 390 lines.**
+
+**Why `candidate` and not `unresolved`.** There is no selected subject and no comparison generation, so
+a record that names a subject is not naming *the* subject, and reporting its binding unresolved would
+claim a question was asked and could not be answered. `candidate` is the label that neither claims the
+record applies to a subject nor reports a failure that did not happen; `task_context_applicability`'s
+own docstring states it, and the summary counts make the whole supplied population visible beside a
+pane that displays none of the two matrix-owned collections.
+
+**The two panes still render one population.** `_task_context_pane` filters its signals and its
+assessment displays through the projection exactly as the subject composition does — the projection is
+the same `ReviewApplicabilityProjection` port — and it carries `context` and `applicability` onto the
+pane, which is empty for a task context because no selection reaches any other identity.
+
+## Update History
+- 2026-09-23T02:40:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **the task-context review labels every supplied record as the candidate's own input (376 → 390 lines; `ICR-R26@v1`).** The card records why `candidate` is the true label when nothing was compared, and that the pane consumes the same projection port as the subject composition. **Citation accounting:** this leaf's insertions moved nothing this card cites by an enforced range — the measured baseline check reports **zero** enforced findings for this card — so only the leaf's own section and this entry were added, and no range was rewritten to fit. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header already names this leaf's base, and the governed closeout owns the real stamp.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ makes an exact retry converge.
 | **Discovery: the one list of published-looking directories, and the pass that skips an unreadable record instead of guessing its fields.** | `generation_directories`; `ComparisonGenerationRef`; `read_generation_refs` | mcp/src/agents_remember/application/review_comparison_generation.py:668-724 |
 | **The one durable-root owner this module asks instead of restating `<task_root>/notes/reports`.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-68 |
 | The R05 constant imported rather than re-spelled, so the accepted spelling and the recorded one cannot drift. | `NOT_RECORDED` | mcp/src/agents_remember/application/knowledge_before_half.py:84-84 |
-| The owners whose values the manifest carries rather than re-derives: the capture identity, the resolved pair, the inventory and the comparison identity. | `FutureCodeCandidateIdentity`; `ReviewCandidateResolution`; `ReviewSourceInventory`; `ComparisonIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22; mcp/src/agents_remember/application/review_candidate_resolution.py:106-135; mcp/src/agents_remember/models/knowledge/review.py:94-94; mcp/src/agents_remember/models/knowledge/review.py:63-63 |
+| The owners whose values the manifest carries rather than re-derives: the capture identity, the resolved pair, the inventory and the comparison identity. | `FutureCodeCandidateIdentity`; `ReviewCandidateResolution`; `ReviewSourceInventory`; `ComparisonIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22; mcp/src/agents_remember/application/review_candidate_resolution.py:106-135; mcp/src/agents_remember/models/knowledge/review.py:324-880; mcp/src/agents_remember/models/knowledge/review.py:63-63 |
 | **The four cases that measure this record's own contract: what it binds, what it refuses to read, what converges, and what a damaged record is reported as.** | `test_the_manifest_binds_the_owners_identities_versions_and_its_own_fields`; `test_a_record_that_cannot_be_read_is_not_a_readable_generation`; `test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor`; `test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference` | mcp/tests/test_knowledge_review_comparison_generation.py:393-477; mcp/tests/test_knowledge_review_comparison_generation.py:601-669; mcp/tests/test_knowledge_review_comparison_generation.py:711-762; mcp/tests/test_knowledge_review_comparison_generation.py:768-836 |
 
 ## Cross-Repo References

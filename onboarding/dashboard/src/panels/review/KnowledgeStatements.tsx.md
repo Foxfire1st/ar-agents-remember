@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/KnowledgeStatements.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -139,8 +139,8 @@ identifier-shaped and the citation grammar refuses it as an anchor.
 | **The available-content path: the explicit no-diff line and the readable operand as content, so no addition or removal is claimed from an unreadable side.** | `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:79-91 |
 | **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
 | The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. | `ReviewSideState`; `ReviewSideContent` | dashboard/src/data/review.ts:42-42; dashboard/src/data/review.ts:15-21; dashboard/src/data/review.ts:36-36; dashboard/src/data/review.ts:122-122; dashboard/src/data/review.ts:123-123; dashboard/src/data/review.ts:33-33; dashboard/src/data/review.ts:37-37 |
-| The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:125-125; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318 |
-| **The delegation: pane 1 renders `KnowledgeStatements` where it used to hold the both-present gate and the `sideState` helper.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:217-217; dashboard/src/panels/review/ReviewSurface.tsx:7-7; dashboard/src/panels/review/ReviewSurface.tsx:48-48; dashboard/src/panels/review/ReviewSurface.tsx:220-220; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624 |
+| The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:125-125; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:169-190|
+| **The delegation: pane 1 renders `KnowledgeStatements` where it used to hold the both-present gate and the `sideState` helper.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:217-217; dashboard/src/panels/review/ReviewSurface.tsx:7-7; dashboard/src/panels/review/ReviewSurface.tsx:48-48; dashboard/src/panels/review/ReviewSurface.tsx:220-220; dashboard/src/panels/review/ReviewSurface.tsx:210-210; dashboard/src/panels/review/ReviewSurface.tsx:624-624; dashboard/src/panels/review/ReviewSurface.tsx:278-303|
 | The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/changeset/DiffPane.tsx:117-117 |
 | The content viewer the unreadable-opposite path reuses, and its own test id. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-20; dashboard/src/panels/file-viewer/FilePane.tsx:49-49 |
 | **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.** | "draws an added invariant's full after statement beside an absent-before label"; "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212; dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259 |

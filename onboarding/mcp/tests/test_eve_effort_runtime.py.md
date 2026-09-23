@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | path | `mcp/tests/test_eve_effort_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -117,7 +117,7 @@ was available for this module.
 | The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
 | The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1191 |
 | The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1361 |
-| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:223-223; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
+| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
 
 ## Cross-Repo References
 

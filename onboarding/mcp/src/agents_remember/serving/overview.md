@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -2504,7 +2504,7 @@ application owner, its vocabulary and the dashboard renderer are on their own ro
 | **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` | mcp/src/agents_remember/serving/review.py:511-511; mcp/src/agents_remember/serving/review.py:512-512; mcp/src/agents_remember/serving/review.py:364-364; mcp/src/agents_remember/serving/review.py:305-305; mcp/src/agents_remember/serving/review.py:304-304 |
 | **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` | mcp/src/agents_remember/serving/review.py:99-111 |
 | **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:481-489 |
-| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:257-274; mcp/src/agents_remember/models/knowledge/review.py:137-137; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
+| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` | mcp/src/agents_remember/serving/review.py:464-481; mcp/src/agents_remember/models/knowledge/review.py:151-151; mcp/src/agents_remember/models/knowledge/review.py:130-130 |
 | The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` | mcp/src/agents_remember/serving/review.py:586-586; mcp/src/agents_remember/serving/review.py:378-378; mcp/src/agents_remember/serving/review.py:385-385 |
 | The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-301 |
 | **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:114-132; mcp/src/agents_remember/cli/dashboard.py:82-82 |

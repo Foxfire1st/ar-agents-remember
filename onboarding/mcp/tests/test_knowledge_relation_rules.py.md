@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_relation_rules.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ No domain documentation source is configured for this repository (`system/source
 | The namespace sweep and the composed application-seam node. | "test_graph_operations_refuse_another_repository_namespace"; "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:473-565; mcp/tests/test_knowledge_relation_rules.py:566-680 |
 | The production modules under test. | `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
 | The application seam this module is the only test importer of. | `create_knowledge_family`; `create_knowledge_family_member`; `create_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-438; mcp/src/agents_remember/application/knowledge.py:471-486; mcp/src/agents_remember/application/knowledge.py:495-510 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_relation_rules.py" | mcp/tests/test-evidence-lanes.toml:115-115; mcp/tests/test-evidence-lanes.toml:122-122 |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_relation_rules.py" | mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:122-122 |
 |  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1195-1195  |
 
 ## Cross-Repo References

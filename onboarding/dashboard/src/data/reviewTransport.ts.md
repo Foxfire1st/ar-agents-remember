@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/reviewTransport.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -191,7 +191,7 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 | **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** | `reviewProblemFromRefusal` | dashboard/src/data/reviewTransport.ts:173-183 |
 | An answer whose `state` this client does not admit is named, never rendered as a review. | `unreadableAnswer` | dashboard/src/data/reviewTransport.ts:185-191 |
 | Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. | `reviewProblemFromCause` | dashboard/src/data/reviewTransport.ts:193-196 |
-| **The client that delegates its three reads here and re-exports this surface as one public entry.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent`; `ReviewTransportError` | dashboard/src/data/review.ts:529-529; dashboard/src/data/review.ts:547-547; dashboard/src/data/review.ts:23-23; dashboard/src/data/review.ts:403-409 |
+| **The client that delegates its three reads here and re-exports this surface as one public entry.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent`; `ReviewTransportError` | dashboard/src/data/review.ts:456-618; dashboard/src/data/review.ts:547-547; dashboard/src/data/review.ts:23-23; dashboard/src/data/review.ts:403-409 |
 | **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
 | The entry bar's own classification of the same codes, printed beside a button that never disappears. | `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:189-227; dashboard/src/panels/detail-panel/changeSetBar.tsx:98-120
 | **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** | `setCounters`; `leafChangeset` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-11; dashboard/src/panels/detail-panel/changeSetBar.tsx:37-55 |

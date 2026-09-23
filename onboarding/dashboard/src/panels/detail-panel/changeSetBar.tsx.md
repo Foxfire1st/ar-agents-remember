@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T15:08:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -189,7 +189,7 @@ row cites.
 | **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LiveLeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:360-398; dashboard/src/panels/detail-panel/changeSetBar.tsx:291-358 |
 | **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LiveLeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:291-353
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:400-415 |
-| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:529-529; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29 |
+| The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:582-588; dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:27-27; dashboard/src/data/review.ts:29-29 |
 | The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8 |
 | **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:113-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
 

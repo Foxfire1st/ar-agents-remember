@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -156,7 +156,7 @@ fifteen cases grouped by what they pin. Every anchor in a row occurs inside the 
 | **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:458-479 |
 | **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-513 |
 | **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:59-70; dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
-| The surface composition these cases drive: the four-phase read and the target-keyed retained generation. | `ReviewSurface`; `targetKeyOf` | dashboard/src/panels/review/ReviewSurface.tsx:784-784; dashboard/src/panels/review/ReviewSurface.tsx:539-539 |
+| The surface composition these cases drive: the four-phase read and the target-keyed retained generation. | `ReviewSurface`; `targetKeyOf` | dashboard/src/panels/review/ReviewSurface.tsx:606-946; dashboard/src/panels/review/ReviewSurface.tsx:539-539 |
 ## Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -1416,8 +1416,8 @@ comparison identity, and the rendering of an inventory in all three of its state
 | **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:360-395
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
-| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:195-195; dashboard/src/data/review.ts:403-403; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
-| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
+| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:403-403; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
+| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:368-433; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
 | The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader

@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated |  2026-09-18T14:55+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -179,7 +179,7 @@ certification pass. Every range was derived against the current 1110-line source
 | The run that joins the figure comparison only when claims are supplied. | `run_all` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1005-1033 |
 | The runner, its repeatable inputs, and the exit status that reports a finding. | `build_parser`; `main` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1036-1110 |
 | The 37 cases that pin these behaviours against the historical artifacts, in both directions. | `LeafDocumentAgainstContractTests`; `MasterRowAgainstLeafDocumentTests`; `RegisterOwnerArrowTests`; `DeclaredFigureCurrencyTests`; `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:257-1140 |
-| The lane this module's contract suite is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:321-321; mcp/tests/test-evidence-lanes.toml:320-320 |
+| The lane this module's contract suite is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" | mcp/tests/test-evidence-lanes.toml:322-322; mcp/tests/test-evidence-lanes.toml:320-320 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_portable_roundtrip.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -124,7 +124,7 @@ No domain documentation source is configured for this repository (`system/source
 | The node that exports a dataset which came through the merge — the composition the next leaves consume. | "test_a_merged_dataset_is_also_exportable_and_restorable" | mcp/tests/test_knowledge_portable_roundtrip.py:489-499 |
 | The destination-behaviour nodes: replacement only for the admitted identity, and byte preservation with no surviving stage. | "test_a_destination_is_replaced_only_for_the_admitted_identity"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage"; "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_dangling_reference_is_refused_at_commit" | mcp/tests/test_knowledge_portable_roundtrip.py:1023-1080; mcp/tests/test_knowledge_portable_roundtrip.py:1105-1123; mcp/tests/test_knowledge_portable_roundtrip.py:1083-1102; mcp/tests/test_knowledge_portable_roundtrip.py:974-1017 |
 | The node that holds the export's identity admission and its no-Git-ancestry boundary. | "test_exporting_a_moved_or_absent_dataset_is_refused"; "test_an_export_carries_no_git_ancestry_and_a_repeat_import_is_a_no_change" | mcp/tests/test_knowledge_portable_roundtrip.py:1129-1156; mcp/tests/test_knowledge_portable_roundtrip.py:502-524 |
-| The lane row that keeps this module in the certifying collection path. | `integration` | mcp/tests/test-evidence-lanes.toml:223-223; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
+| The lane row that keeps this module in the certifying collection path. | `integration` | mcp/tests/test-evidence-lanes.toml:224-224; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:151-151; mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:235-235; mcp/tests/test-evidence-lanes.toml:258-258 |
 |The branch-fixture record whose consumer list this module is declared in.|"contract:knowledge-identity-branching-fixture"| mcp/tests/evidence-lifecycle.toml:1195-1195 |
 |The merge-cases record whose consumer list this module is also declared in.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1290-1290 |
 | The boundary module that imports this module's helpers, so the two are one evidence set, and the onboarding card that records it. | "# mcp/tests/test_knowledge_portable_boundaries.py" | onboarding/mcp/tests/test_knowledge_portable_boundaries.py.md:1-1 |

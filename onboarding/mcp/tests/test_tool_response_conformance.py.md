@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_tool_response_conformance.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -105,7 +105,7 @@ they make no acceptance claim.
 | A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`. | `test_a_queued_operator_inbox_post_still_must_report_its_entry` | mcp/tests/test_tool_response_conformance.py:866-880 |
 | `session_retire` reports the stranded row after the seat is already gone. | `test_session_retire_reports_the_stranded_row_after_the_seat_is_gone` | mcp/tests/test_tool_response_conformance.py:903-932 |
 | The structural delivery projection is declared on the shared base every consumer inherits. | `test_the_structural_delivery_projection_is_declared_on_every_consumer` | mcp/tests/test_tool_response_conformance.py:936-973 |
-| The lane row that keeps this module in the default lane. | "mcp/tests/test_tool_response_conformance.py" | mcp/tests/test-evidence-lanes.toml:317-317; mcp/tests/test-evidence-lanes.toml:316-316 |
+| The lane row that keeps this module in the default lane. | "mcp/tests/test_tool_response_conformance.py" | mcp/tests/test-evidence-lanes.toml:318-318; mcp/tests/test-evidence-lanes.toml:316-316 |
 | The choke point whose guarantee this module moves into the suite. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The registry whose models the structural layer sweeps. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
 | The advertised public roster the surface layer checks against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-22 |

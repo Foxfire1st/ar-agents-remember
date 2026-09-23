@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/detection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T21:50:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -208,7 +208,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The agreement check that keeps the two-place version publication true: namespace, order, policy version, extractor version, declared input set and condition.** | `require_run_signal_agreement`; `_signal_disagreement` | mcp/src/agents_remember/memory/knowledge/detection.py:446-531 |
 | **The read path: the recorded order from the sequence table, and the seal recheck that reports an altered payload as a damaged store.** | `read_detection_run`; `_decode_payload`; `_require_intact_revision` | mcp/src/agents_remember/memory/knowledge/detection.py:582-704; mcp/src/agents_remember/models/knowledge/result.py:106-106 |
 | **The run-identity listing a composing reader addresses its per-run reads by: identities only, in identity order, decoding nothing — so a damaged run does not make the listing unreadable.** | `recorded_run_ids`; `_RECORDED_RUN_IDS` | mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/detection.py:118-124 |
-| **The one composing reader this listing exists for, and the per-record guard it composes with the read above.** | `_detection_signals`; `_read_signal_runs` | mcp/src/agents_remember/application/review_evidence_records.py:202-202; mcp/src/agents_remember/application/review_evidence_records.py:366-391 |
+| **The one composing reader this listing exists for, and the per-record guard it composes with the read above.** | `_detection_signals`; `_read_signal_runs` | mcp/src/agents_remember/application/review_evidence_records.py:353-379; mcp/src/agents_remember/application/review_evidence_records.py:366-391 |
 | **Reproducibility as two ordered sequences plus every differing input or version, writing nothing.** | `compare_detection_runs`; `_run_differences` | mcp/src/agents_remember/memory/knowledge/detection.py:705-761 |
 | The per-side differences: snapshot logical digest, code tree and selector digest. | `_side_differences` | mcp/src/agents_remember/memory/knowledge/detection.py:768-814 |
 | **Currentness marks a run stale from the version comparison alone and returns no signal to reinterpret.** | `run_currentness` | mcp/src/agents_remember/memory/knowledge/detection.py:815-848 |

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | path | `mcp/tests/test_leaf_doc_master_link_binding.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -124,9 +124,9 @@ repository's own source, the real `task_doc` plane and real Git objects.
 | The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:577-663 |
 | The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363; mcp/tests/evidence-lifecycle.toml:326-333; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:337-343; mcp/tests/evidence-lifecycle.toml:384-390 |
 | The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:260-260; mcp/tests/test-evidence-lanes.toml:259-259 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:261-261; mcp/tests/test-evidence-lanes.toml:259-259 |
 | The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-366 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:260-260; mcp/tests/test-evidence-lanes.toml:259-259 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" | mcp/tests/test-evidence-lanes.toml:261-261; mcp/tests/test-evidence-lanes.toml:259-259 |
 
 ## Cross-Repo References
 

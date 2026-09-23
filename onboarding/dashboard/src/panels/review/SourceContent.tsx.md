@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/SourceContent.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -200,7 +200,7 @@ surface over the real client.
 | **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:217-241 |
 | **The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:243-258 |
 | The response envelope whose two states are the two rendered answers. | `ReviewSourceContentResult` | dashboard/src/data/review.ts:260-266 |
-| **The row that opens this renderer: a button carrying the published path, `aria-expanded`, and the generation the content will be read at — drawn only when the inventory named both code trees.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
+| **The row that opens this renderer: a button carrying the published path, `aria-expanded`, and the generation the content will be read at — drawn only when the inventory named both code trees.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:312-358; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | **The parent that owns the open row and passes the two published tree ids down, so the read is the generation the reader was looking at.** | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:291-335 |
 | The header's own statement of the two reused renderers, `DiffPane` for the statements and this module for the Source pane's entry expansion. | `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
 | **The cases that drive the real surface and the real client over a stubbed transport: the addition, the two-sided modification, the binary side, the symlink target and the submodule pointer.** | "draws an added file's entire candidate text beside the named absent side"; "draws a modified file as the two-sided diff of its two bound texts"; "states a binary side's identity and size and draws no content for it"; "carries a symlink's target as content and never claims a document edit"; "reports a submodule pointer by its recorded commit and draws nothing for it" | dashboard/src/panels/review/SourceContent.test.tsx:269-291; dashboard/src/panels/review/SourceContent.test.tsx:293-316; dashboard/src/panels/review/SourceContent.test.tsx:318-339; dashboard/src/panels/review/SourceContent.test.tsx:341-364; dashboard/src/panels/review/SourceContent.test.tsx:366-385 |

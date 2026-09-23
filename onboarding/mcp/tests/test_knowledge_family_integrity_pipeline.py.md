@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_integrity_pipeline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate |  2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -172,7 +172,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The composed seam, acceptance and refusal in one case: the five separated owners asserted against the declared tuple, and the request that omits one refused by name.** | `test_the_one_operation_composes_the_scope_the_run_the_statuses_and_the_routing`; "assert tuple(entry.owner for entry in report.statuses.entries) == PIPELINE_STATUS_OWNERS"; "assert incomplete.state == \"refused\""; "assert \"verification-runner\" in incomplete.refusal.detail" | mcp/tests/test_knowledge_family_integrity_pipeline.py:547-678; mcp/tests/test_knowledge_family_integrity_pipeline.py:370-370 |
 | The declared owner tuple the composed case compares against, defined by the model owner rather than restated here. | `PIPELINE_STATUS_OWNERS` | mcp/src/agents_remember/models/knowledge/family_review.py:95-106 |
 | The shared fixture this module consumes instead of owning, and the artifact rows that declare the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-233; mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/evidence-lifecycle.toml:1392-1415; mcp/tests/evidence-lifecycle.toml:1411-1411; mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/diff_scope_test_support.py:22-22; mcp/tests/diff_scope_test_support.py:93-93; mcp/tests/diff_scope_test_support.py:132-132 |
-| The shared fixture this module consumes instead of owning, and the artifact row that declares the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-197; mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:3-3; mcp/tests/evidence-lifecycle.toml:85-85; mcp/tests/evidence-lifecycle.toml:1412-1412; mcp/tests/evidence-lifecycle.toml:1392-1392; mcp/tests/evidence-lifecycle.toml:1406-1406; mcp/tests/evidence-lifecycle.toml:1408-1408; mcp/tests/test-evidence-lanes.toml:289-289; mcp/tests/evidence-lifecycle.toml:1411-1411; mcp/tests/diff_scope_test_support.py:22-22; mcp/tests/diff_scope_test_support.py:93-93; mcp/tests/diff_scope_test_support.py:132-132 |
+| The shared fixture this module consumes instead of owning, and the artifact row that declares the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-197; mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:3-3; mcp/tests/evidence-lifecycle.toml:85-85; mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/evidence-lifecycle.toml:1392-1392; mcp/tests/evidence-lifecycle.toml:1406-1406; mcp/tests/evidence-lifecycle.toml:1408-1408; mcp/tests/test-evidence-lanes.toml:289-289; mcp/tests/evidence-lifecycle.toml:1411-1411; mcp/tests/diff_scope_test_support.py:22-22; mcp/tests/diff_scope_test_support.py:93-93; mcp/tests/diff_scope_test_support.py:132-132 |
 | The lane row that selects this module into the integration population. | "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"" | mcp/tests/test-evidence-lanes.toml:290-290 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_snapshot_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ No domain documentation source is configured for this repository (`system/source
 | The freeze whose closedness the load-bearing node measures. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109 |
 | The read-side gate and its refusal restatement. | `publication_state`; `unpublished_refusal` | mcp/src/agents_remember/memory/knowledge/materialization.py:34-99; mcp/src/agents_remember/memory/knowledge/materialization.py:102-120 |
 | The shared harness these cases are built on. | `build_case`; `publish`; `byte_copy`; `journal_peer_names` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:357-380; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:410-418 |
-| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:118-118; mcp/tests/test-evidence-lanes.toml:125-125 |
+| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:125-125 |
 
 ## Cross-Repo References
 

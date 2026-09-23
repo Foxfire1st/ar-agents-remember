@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_change_sets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `870701b43039cd205a8c98e418382729510c3de3`|
+| lastVerifiedCommitDate |  2026-09-23T03:12:21+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -174,7 +174,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:919-932 |
 | The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:935-966 |
 | The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:969-983 |
-| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:210-210; mcp/tests/test-evidence-lanes.toml:209-209 |
+| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" | mcp/tests/test-evidence-lanes.toml:211-211; mcp/tests/test-evidence-lanes.toml:209-209 |
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1226-1244; mcp/tests/evidence-lifecycle.toml:1243-1243; mcp/tests/evidence-lifecycle.toml:34-37; mcp/tests/evidence-lifecycle.toml:1249-1249 |
 
 ## Cross-Repo References
