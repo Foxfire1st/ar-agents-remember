@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/review_assessment.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,12 +52,16 @@ neither can be written in the other's shape. Nothing in the module reads the fin
 whether it is *true* — validation is structural only, and a checker that adjudicated the conclusion
 would defeat the separation the type exists to enforce.
 
-`assessment_state_for` is the single place that decides which distinct state a subject is in:
-`none-recorded`, `unresolved`, `stale` or `current`. `none-recorded` is a state of the **subject**,
-not a fourth disposition, which is how absence stays representable as absence;
-`_counts_describe_the_records_that_exist` refuses a count that contradicts the records beside it, so
-a subject with no stored assessment answers zero rather than a favourable default. An assessment the
-caller supplied no measurement for is reported `stale`, never `current`.
+`assessment_state_for` is the single place that decides which state a subject is in. As of
+`260921-ICR-L15` (`ICR-R15@v1`) the **subject** vocabulary has six members — `none-recorded`,
+`unresolved`, `stale`, `not-measured` and `unavailable`, plus `current` — while the per-record
+`AssessmentEntry.currentness` carries the four-member measured status (`not-measured`, `current`,
+`stale`, `unavailable`). `none-recorded` is a state of the **subject**, not a disposition, which is how
+absence stays representable as absence; the validator refuses a count that contradicts the records
+beside it, so a subject with no stored assessment answers zero rather than a favourable default. An
+assessment the caller supplied **no measurement for is reported `not-measured`, never `current` and
+never `stale`**: the absence of a measurement is not evidence of movement, which is the defect this
+leaf closed.
 
 ### Conventions
 
@@ -86,17 +90,17 @@ caller supplied no measurement for is reported `stale`, never `current`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The three kinds of record that must not be promoted into each other. | `ReviewAssessment`; `AssessmentEvidenceReference` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:157-183; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
+| The three kinds of record that must not be promoted into each other. | `ReviewAssessment`; `AssessmentEvidenceReference` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:188-213; mcp/src/agents_remember/models/lifecycles/review_assessment.py:374-395 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | What a caller may author, and the stored record that adds provenance and the examined-input binding. | `ReviewAssessmentRevision`; `ReviewAssessment`; `_AuthoredAssessmentFields`; `ExaminedInputs` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:233-259; mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
-| The closed disposition vocabulary and the validator that keeps the three values from being spelled with each other's shape. | `ReviewAssessmentDisposition`; `_disposition_and_subject_agree` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:49-61; mcp/src/agents_remember/models/lifecycles/review_assessment.py:307-323 |
-| The subject kinds, the identity any kind carries, and the shape rule that pairs revisions with the kinds that have them. | `AssessmentSubject`; `_subject_shape_matches_its_kind` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:100-121; mcp/src/agents_remember/models/lifecycles/review_assessment.py:139-154 |
-| The four states a read reports and the one function that decides which one a subject is in. | `SubjectAssessmentStatus`; `assessment_state_for` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:67-78; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |
-| The read projection a caller receives, which carries identity, disposition and currentness and never a signal's payload. | `AssessmentEntry`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:408-414; mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439 |
+| The closed disposition vocabulary and the validator that keeps the three values from being spelled with each other's shape. | `ReviewAssessmentDisposition`; `_disposition_and_subject_agree` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:49-61; mcp/src/agents_remember/models/lifecycles/review_assessment.py:338-354 |
+| The subject kinds, the identity any kind carries, and the shape rule that pairs revisions with the kinds that have them. | `AssessmentSubject`; `_subject_shape_matches_its_kind` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:131-185; mcp/src/agents_remember/models/lifecycles/review_assessment.py:170-185 |
+| The subject states a read reports and the one function that decides which one a subject is in. | `SubjectAssessmentStatus`; `assessment_state_for` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:95-102; mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-594 |
+| The read projection a caller receives, which carries identity, disposition and currentness and never a signal's payload. | `AssessmentEntry`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:439-451; mcp/src/agents_remember/models/lifecycles/review_assessment.py:453-539 |
 
 ## KS-R15@v1 Review Assessment Record
 
@@ -122,6 +126,7 @@ The additions this card records beyond the module's own shape:
   charter. The consumption-side refusal belongs to the views and review-surface requirements.
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **nine enforced citation findings discharged by re-pointing ranges; no claim, anchor or finding wording changed.** `ICR-R15@v1` rewrote this module's status vocabulary (502 → 620 lines), which moved every construct below the declaration block. **Citation accounting (old → new; every new range was re-read against the declaration it names in this candidate and contains it):** `AssessmentEvidenceReference` `:157-183` → `:188-213` and `ReviewAssessment` `:343-365` → `:374-395`; `_disposition_and_subject_agree` `:307-323` → `:338-354`; `AssessmentSubject` `:100-121` → `:131-185` and `_subject_shape_matches_its_kind` `:139-154` → `:170-185`; `SubjectAssessmentStatus` `:67-78` → `:95-102` and `assessment_state_for` `:441-501` → `:542-594`; `AssessmentEntry` `:408-414` → `:439-451` and `SubjectAssessmentState` `:416-439` → `:453-539`. The last two ranges are the anchors this leaf's own claim-reopen rows name, so those rows are now current rather than merely moved. No row was dropped and none was added. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned. **Left for the pass that may advance the stamp:** the Logic section above still says `assessment_state_for` decides among four states (`none-recorded`, `unresolved`, `stale`, `current`) and that an assessment the caller supplied no measurement for is reported `stale`; the candidate reports `not-measured` for that shape and `SubjectAssessmentStatus` now has six members. Changing those sentences is a claim review, not a range repair, so it is recorded here rather than made silently.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base

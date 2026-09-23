@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -653,7 +653,40 @@ module's own header cites `application/memory_tools.py:100` for `_refuse_officia
 it pins, that definition is at **`:105`** (`:100` is `"onboardingRoot": scope.onboarding_root.as_posix(),`)
 — recorded as the leaf's `R2-3`.
 
+## 260921-ICR-L15 Measured assessment currentness
+
+`ICR-R15@v1` splits one fact this route's section used to fold together — *a record's binding moved* — from
+two it never stated: *nothing measured this record*, and *a measurement found it still current*. The route
+owns both halves of that split: the vocabulary in `family_review.py` (452 → 457 lines) and the reader that
+publishes it in `knowledge_review.py` (210 → 230).
+
+**The vocabulary is the whole six.** `reported_subject_status`'s docstring now names every member the
+projection can answer — `none-recorded`, `stale`, `unavailable`, `unresolved`, `not-measured`, `current` —
+in the projection's own precedence order, where it previously listed four. `not-measured` is what a caller
+whose measurement covered **none** of a record's declared inputs gets, and `unavailable` is what a failed
+measurement gets; neither is a clearance and neither is a movement. There is still no "compatible" member
+and no default, so a subject nobody reviewed answers `none-recorded` rather than the absence being rendered
+as a clearance.
+
+**The count travels the whole pipeline.** `family_review_summaries` passes `state.notMeasuredCount` into
+`AssessmentSummaryInput` beside `unresolvedCount` and `staleCount`, and
+`application/memory_quality/controller.py` (847 → 848 lines) passes the same field through its own
+composition, so the number the checklist renders is the projection's own rather than a second measurement
+taken beside it.
+
+**The persisted checklist gains a `not-measured` limitation row and count, and `stale` narrows to a
+measured movement.** `memory_quality/knowledge_review.py` declares `NOT_MEASURED_BINDING = "not-measured"`,
+adds `notMeasuredCount` to `AssessmentSummary` and `AssessmentSummaryInput`, and renders a dedicated
+limitation row beside the re-worded `stale` row, whose limit now reads *a measurement of the current inputs
+found this record's binding moved*. The reason is the reading a bare `| stale | 0 |` line invites: with an
+unmeasured collection counted nowhere, a zero could be read as "nothing moved" when nothing had been
+measured at all. `summarise_assessment_state` keeps the counts exact — the negative check now includes
+`notMeasuredCount` and the bound is that `staleCount + notMeasuredCount` cannot exceed `assessmentCount` —
+and `_limitations` lists `not-measured` beside the other counted codes, so the section's vocabulary and the
+counts it renders cannot disagree.
+
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the two governed sources this leaf changed under this route: the six-member status vocabulary `reported_subject_status` now enumerates in the projection's own precedence order and the `notMeasuredCount` the pipeline carries end to end (`family_review.py`, 452 → 457 lines, with `application/memory_quality/controller.py` 847 → 848), and the persisted checklist's new `not-measured` limitation row and count beside the narrowed meaning of `stale` (`knowledge_review.py`, 210 → 230). This is a body change and not a metadata-only refresh, which is why it is recorded here. This document carried **no** repairable citation finding, so no citation range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
 - 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `citation_migrate`'s preview answers `ok: true` with `state: planned`, and `remaining` is never read on a dry run; the two facts the old `ok` folded in are now declared separately. Citation range re-derived against the repaired file. Verification metadata stays closeout-owned.

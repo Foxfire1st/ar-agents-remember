@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T09:40:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -23,7 +23,51 @@
 | **The availability vocabulary, its five states and the validator that refuses a favourable default.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
 | **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:49-49; mcp/src/agents_remember/models/knowledge/review.py:886-906; mcp/src/agents_remember/models/knowledge/review.py:918-958|
 | **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** | `_COLLECTION_OWNERS`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:128-812; mcp/src/agents_remember/application/review_evidence_records.py:127-127 |
-| The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:761-787; mcp/tests/test_knowledge_review_evidence_channels.py:789-796 |
+| The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
+
+## 260921-ICR-L15 Measured assessment currentness
+
+**Route meaning changed: an assessment's currentness is now a fact a measurement established, not a
+label derived from whether a mapping was supplied.** Three modules of this route are touched: two change
+their vocabulary, and the third changes only a docstring.
+
+`models/lifecycles/review_assessment.py` (502 → 620 lines) declares the per-record state as the
+four-member `AssessmentBindingStatus` — `not-measured`, `current`, `stale`, `unavailable` — published
+once as `ASSESSMENT_BINDING_STATUSES` and reused as `CURRENTNESS_STATES`, and
+`AssessmentEntry.currentness` carries it. `SubjectAssessmentStatus` gained `not-measured` and
+`unavailable` beside `none-recorded`, which stays the *unassessed* subject's own state rather than a
+fourth disposition. `SubjectAssessmentState` gained `notMeasuredCount` and `unavailableCount` plus the
+validator (`_counts_describe_the_records_that_exist`, `_require_the_counts_to_partition_the_records`,
+`_status_of_records`) that derives the currentness counts from the entries and refuses a status its own
+records contradict, and `assessment_state_for(assessments, *, statuses=None)` reports `not-measured`
+for an assessment nobody measured — there is no argument that means "assume current" and none that
+means "assume stale". The subject status follows the precedence `stale` → `unavailable` → `unresolved`
+→ `not-measured` → `current`.
+
+`models/lifecycles/review_assessment_binding.py` (276 → 497 lines) gained
+`AssessmentCurrentnessMeasurement` (`state` ∈ `measured`/`not-measured`/`unavailable`, the `values` a
+world was read to hold, a `detail`, and the `unmeasured` identities with their own reason) and the whole
+rule in `measured_binding_status`: a failed measurement is `unavailable`; a measured disagreement is
+`stale`, decided by the shipped `disputed_dependencies` comparison; a completed measurement that
+covered every declared identity and disagreed nowhere is `current`; and everything else — including an
+empty measurement — is `not-measured`. `measured_binding_statuses`, `supplied_measurement_statuses`,
+`subject_state` and `unmeasured_identities` carry it to the shapes the composition and the projection
+use. `assessment_currentness`, `disputed_dependencies` and the `require_current_*` refusals are
+**unchanged**: the comparison stays the one equality authority.
+
+`models/knowledge/review.py` is a **docstring-only** change (1198 lines before and after):
+`ReviewAssessmentDisplay.binding_state` is now documented as the measured status carried verbatim, in
+the four states named above. `models/knowledge/review_records.py` is unchanged by this leaf, so nothing
+on the record-availability vocabulary moves.
+
+Three facts a reader of this route should carry:
+
+- **Presence of a mapping is never the decision.** An empty measurement is measured and covers nothing,
+  which is a different fact from a measurement that failed.
+- **An unmeasured binding is neither current nor stale.** Reporting it as either would publish a fact
+  the store never held.
+- **The summary cannot disagree with its records.** The counts partition the entries and the status is
+  re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
 
 ## 260921-ICR-L21 The Final-Output Vocabulary: One Record, Three Verdicts, And A Validator That Re-Derives Them
 
@@ -128,6 +172,7 @@ policy that computes it lives on the application route, not here.
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above) and four enforced citation rows re-pointed.** `ICR-R15@v1` makes an assessment's currentness a measured fact — `models/lifecycles/review_assessment.py` (502 → 620), `models/lifecycles/review_assessment_binding.py` (276 → 497), `models/knowledge/review.py` (docstring-only, net 0 lines) — and the section records the vocabulary at this route's altitude. **Citation accounting for the four `citation_anchor_absent_from_range` rows in this document:** `test_the_channel_model_refuses_a_count_no_owner_measured` and `test_the_wire_payload_carries_the_channels` were cited at `mcp/tests/test_knowledge_review_evidence_channels.py:761-787; :789-796` and now read `:887-912; :959-966`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` and `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` were cited at `mcp/tests/test_knowledge_review_surface.py:1279-1354; :1357-1357` and now read `:1359-1434; :1437-1475`. Each range was re-read against the declaration it names in the leaf's candidate and contains it; finding and anchor wording is unchanged. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned. The report-only rows into `models/knowledge/review.py` that are stale by a move are left to the mechanical projection the check says owns them.
 - 2026-09-23T09:40:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for the final-output vocabulary (`ICR-R21@v1`).** The route gained `models/knowledge/review_final_output_receipt.py` — the record, its match/verdict/state vocabularies, the three pure helpers and the validator — and the section above states what a consumer keys on: `bound` is the only value claiming coverage and it requires a measured match on every channel the generation actually selected, an unmeasured knowledge channel is `unmeasured` rather than matched, and the validator re-derives every verdict from the record's own fields so a forged coverage claim cannot survive a read-back. The operation that produces and reads the record is a new `application/` owner recorded on that route's overview, not here. Per-file citations live in the new sidecar. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
 - 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated (new section above).** The review wire carries the explicit revision selection: `models/knowledge/revision_selection.py` (new, 150 lines) declares the value and its three validators, and `models/knowledge/review.py` (873 → 893 lines) carries it on the pane with the one-direction validator. **Enforced rows re-cited in the same pass:** the L14-table rows this leaf's growth moved (`source_content_unresolved` `114` → `115`, `ReviewRefusal` `812-824` → `832-846`, `KnowledgeReviewResult` `827-842` → `847-864`, `KNOWLEDGE_REVIEW_SURFACE_VERSION` `95` → `96`, `ReviewEvidencePane` `643-680` → `685-721`), the subject-kinds row (`121` → `122`), and the L2 wire-shape rows (`1161-1220` → `1198-1275`, `1223-1261` → `1276-1314`). Header names this leaf's candidate row. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
@@ -2723,7 +2768,7 @@ bump.
 | **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:761-761; mcp/src/agents_remember/models/knowledge/review.py:656-656; mcp/src/agents_remember/models/knowledge/review.py:1100-1116; mcp/src/agents_remember/models/knowledge/review.py:1030-1030; mcp/src/agents_remember/models/knowledge/review.py:680-756|
 | **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` |mcp/src/agents_remember/models/knowledge/review.py:976-1001|
 | **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` |mcp/src/agents_remember/models/knowledge/review.py:130-130|
-| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1279-1354; mcp/tests/test_knowledge_review_surface.py:1357-1357 |
+| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1359-1434; mcp/tests/test_knowledge_review_surface.py:1437-1475 |
 
 
 ## 260921-ICR-L4 The Comparison Vocabulary Gains The Attribution Partition, And The Pane Carries It

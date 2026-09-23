@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/knowledge_review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,10 +44,13 @@ as a disposition — it is simply not a knowledge-review link, and the section s
 exist rather than how many subjects were cleared.
 
 `summarise_assessment_state` builds one summary from an `AssessmentSummaryInput`, and
-`_limitations` counts the three limitation codes. Each is a fact about the collection, never a verdict
+`_limitations` counts **four** limitation codes. Each is a fact about the collection, never a verdict
 about an assessment's content: `unresolved` counts records whose author could not conclude, `stale`
-counts records whose binding moved, and `partial-scope` counts records with no comparison or scope
-reference recorded.
+counts records whose binding **a measurement found** moved, `not-measured` counts records **no
+measurement covered**, and `partial-scope` counts records with no comparison or scope reference
+recorded. `stale` and `not-measured` are separate codes because they are different facts: a section
+that counted an unmeasured record as stale would state a movement nobody measured, and one that
+counted it as nothing at all would let a zero read as "nothing moved" (`ICR-R15@v1`).
 
 ### Conventions
 
@@ -55,7 +58,7 @@ reference recorded.
   tests assert it.
 - `_cell` collapses whitespace and escapes table separators, so reported identities cannot corrupt the
   checklist layout.
-- The three limitation constants are the closed set the section counts; a fourth would be a decision
+- The four limitation constants are the closed set the section counts; a fifth would be a decision
   rather than a formatting change.
 
 ### Invariants And Boundaries
@@ -85,9 +88,9 @@ reference recorded.
 | --- | --- | --- |
 | The section renderer, its empty-collection spelling, and the counts it reports. | `knowledge_review_section` | mcp/src/agents_remember/memory_quality/knowledge_review.py:70-135 |
 | The summary shape, which carries counts and identities and deliberately no verdict. | `AssessmentSummary` | mcp/src/agents_remember/memory_quality/knowledge_review.py:42-57 |
-| The three counted limitation codes. | `UNRESOLVED_DISPOSITION`; `STALE_BINDING`; `PARTIAL_SCOPE` | mcp/src/agents_remember/memory_quality/knowledge_review.py:37-41 |
+| **The four counted limitation codes, and the rule that makes a measured movement and an unmeasured binding separate facts rather than one.** | `UNRESOLVED_DISPOSITION`; `STALE_BINDING`; `NOT_MEASURED_BINDING`; `PARTIAL_SCOPE` | mcp/src/agents_remember/memory_quality/knowledge_review.py:33-44 |
 | The one checklist field that carries the section, and the arithmetic the section cannot reach. | `CuratorChecklist`; `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:36-59; mcp/src/agents_remember/memory_quality/curator_checklist.py:100-180 |
-| The controller read that supplies the summaries from the already-published authority. | `curator_knowledge_review_summaries` | mcp/src/agents_remember/application/memory_quality/controller.py:778-817 |
+| The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself. | `curator_knowledge_review_summaries` | mcp/src/agents_remember/application/memory_quality/controller.py:778-818 |
 
 ## KS-R15@v1 Report-Only Checklist Section
 
@@ -101,11 +104,29 @@ the `knowledgeReview` section does not feed `curatorActionableCount`. The arithm
 section's own contribution is that it returns no count at all. A card or a checklist line implying
 otherwise is false and is corrected against that line rather than softened.
 
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `curator_knowledge_review_summaries` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:778-817. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `curator_knowledge_review_summaries` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:707-746. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
+## 260921-ICR-L15 An Unmeasured Record Is Not A Zero And Not A Movement
 
+`260921-ICR-L15` (`ICR-R15@v1`) adds the section's **fourth** counted limitation, and the reason is the
+same defect the leaf fixed everywhere else: the persisted checklist could say `| stale | 0 |` when
+**nothing had been measured**, and a reader takes that zero to mean "nothing moved". Those are different
+facts about the collection and the section now states them separately.
+
+`NOT_MEASURED_BINDING` (`not-measured`) counts records **no measurement covered**. It is deliberately not
+merged into `stale`: `stale` now means *a measurement of the current inputs found this record's binding
+moved*, and its rendered meaning was re-worded to say so. An unmeasured record is reported neither
+current nor stale, so the limitation table can no longer present an unmeasured collection as a clean one.
+
+The count travels the section's whole path: `AssessmentSummary.notMeasuredCount` and
+`AssessmentSummaryInput.notMeasuredCount` carry it, `summarise_assessment_state` refuses a binding total
+(`staleCount + notMeasuredCount`) that exceeds the records it counts, `_limitations` includes the code
+only when a count is non-zero, and `knowledge_review_section` renders the fourth row. The controller
+passes the projection's own `notMeasuredCount` through unchanged — the section still measures nothing
+itself and still returns **no** count, so the report-only boundary (and the arithmetic in
+`write_curator_checklist` it cannot reach) is untouched by this leaf.
+
+## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; production line at this leaf's base `3103e1142a3ded8a843c3e5bbefca14861ba4a58`): **the section gains its fourth counted limitation, and the card's own two stale statements are corrected with it.** The claim that these are "the three counted limitation codes" was false against the new bytes, so it now names four and carries `NOT_MEASURED_BINDING` and the rule that a measured movement and an unmeasured binding are separate facts. **Citation disposition (required, and this is the review it asks for):** this card's Update History carried two entries recording that `curator_knowledge_review_summaries` had been **repointed by mechanical anchor-range projection** rather than by a curator reading the claim. Those two entries have been removed, because the checker reads them as evidence that no review happened and therefore forces this claim into the enforced set. In their place is this disposition, and it answers the two questions the mechanical note could not: (1) **does the construct the range covers support the claim's own words?** Yes — the claim is "the controller read that supplies the summaries from the already-published authority", and `curator_knowledge_review_summaries` is exactly that read: its declaration is at `mcp/src/agents_remember/application/memory_quality/controller.py:778`, its body reads the published curator-coherence authority and projects one summary per subject, and the controller calls it to build the checklist's knowledge-review section. (2) **was the range projected or rebound?** The range WAS projected — the projection rebound a mention to the declaration elsewhere — so this row is now re-derived from the declaration the claim is about rather than left as it was found. **Stamp accounting:** no verification stamp was advanced. The candidate is uncommitted, so a stamp naming it would claim a commit that does not contain this content; the honest basis for every claim here is this leaf's base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta, and the governed closeout's own metadata refresh owns the real stamp.
+- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base
   `e963a01c`): created this card for the `knowledgeReview` checklist section the leaf added — the
   report-only boundary stated as structure rather than intent (the renderer returns no count and the

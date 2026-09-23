@@ -6,10 +6,26 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `3103e1142a3ded8a843c3e5bbefca14861ba4a58`|
-| lastVerifiedCommitDate |  2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash |  `e605822eb3bf83bf63a45963c5f51d5fc28859ee`|
+| lastVerifiedCommitDate |  2026-09-23T12:19:01+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L15 Measured assessment currentness
+
+`260921-ICR-L15` (`ICR-R15@v1`) makes an assessment's currentness a **measured fact** rather than the
+presence of a mapping. A stored assessment's binding is reported in one of four states — `not-measured`,
+`current`, `stale`, `unavailable` — and the read layer's subject status adds `none-recorded` (the
+unassessed subject) and `unresolved` beside them, `not-measured` being requirement 4.3's fifth state: a
+record nobody measured is reported as exactly that, never promoted to `current` and never demoted to
+`stale`. The rule lives in one place, `models/lifecycles/review_assessment_binding.py`'s
+`measured_binding_status`, over a measurement whose **keys are its coverage**: a failed measurement is
+`unavailable`, a measured disagreement is `stale` (the shipped `disputed_dependencies` comparison's own
+answer), a completed measurement that covered every declared identity and disagreed nowhere is
+`current`, and everything else — including an empty measurement, which is measured and covers nothing —
+is `not-measured`. `assessment_state_for` has no argument meaning "assume current" or "assume stale",
+and `SubjectAssessmentState` re-derives its counts and status from the entries it summarises, so a
+summary that contradicts its own records is unrepresentable.
 
 ## This Repository's Published Knowledge Now Has One Declared Location, And The Ordinary Write Side Reaches It
 
@@ -1194,6 +1210,7 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **body update (new section above): this repository overview now states the measured-currentness vocabulary.** It is a repository-level fact rather than a route one because the same binding states travel through the assessment record, the review display and the read projection, so two otherwise separate routes have to spell them the same way: `models/lifecycles/review_assessment.py` (502 → 620) and `models/lifecycles/review_assessment_binding.py` (276 → 497) declare and measure them, and `models/knowledge/review.py` documents the measured status on `ReviewAssessmentDisplay.binding_state` (docstring-only, net 0 lines). No citation row in this document was enforced, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned.
 - 2026-09-23T10:15+02:00 — 260921-ICR-L21 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `972b44cc07b307929535fe7974d6a30d53c9c4f1` plus the worker's uncommitted delta): **No route impact: this repository overview describes no construct this leaf changed.** The leaf's changed sources all route to a more specific overview whose body was updated in this candidate — `mcp/src/agents_remember/application/review_comparison_reopen.py`, the new `mcp/src/agents_remember/application/review_final_output_receipt.py` and `mcp/src/agents_remember/application/worktree_tools.py` to `mcp/src/agents_remember/application/overview.md`; the new `mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py` to `mcp/src/agents_remember/models/overview.md`; `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_dependency_ownership_ast_helpers.py` and the new `mcp/tests/test_review_final_output_receipt.py` to `mcp/tests/overview.md`. The only changed paths whose nearest governor is this overview are the leaf's own untracked review artifacts under `temp/icr/` — hand-over scratch files that are not onboarded sources and that no repository-level statement here rests on. Reviewed against those bytes and left unchanged: no sentence of this document's body becomes false on this candidate.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **no route-level claim in this document changes; the candidate-reading metadata rows were removed under the developer's 2026-09-22 rule**, and the sentences that pointed at them were corrected in the same pass. The leaf adds the recorded-relationship owners and vocabulary and their three case modules below the review route, which this document reaches through the route cards it already cites. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update, and it is a repository-level fact rather than a route one.** This overview is where two otherwise unrelated routes' shared spelling belongs, and `ICR-R20@v1` created one: the ordinary write route now publishes to the same declared published dataset location the ordinary read route resolves (`<memory_root>/knowledge.sqlite`, the memory worktree inside an enclosure and the canonical external root otherwise). The new section states the three consequences the change exists for — one spelling owned once; a successful exit is not a publication claim because the report carries the destination, the owner's result and an independent read-back; and the knowledge batch and its publication keep their existing owners (`--commit` acquires no Git meaning, and the mounted `knowledge_change` still only names the real entry point). **Citation accounting:** every range was derived from its construct's own extent in this candidate, including the carrier line in `skills/l-01-agent-lifecycles/roles/curator.md` and the mounted refusal in `mcp/registration/knowledge.py`. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.

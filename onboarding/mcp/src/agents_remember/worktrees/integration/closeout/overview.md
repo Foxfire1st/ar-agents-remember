@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:55+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -161,7 +161,33 @@ archive, and never reported as published. `curator_coherence.py` gained the read
 record-side edge recomputation. The shipped exact-coverage obligation is untouched: the assessment
 collection is content beside `judgments`, and publishing one does not disturb it.
 
+## 260921-ICR-L15 Measured assessment currentness
+
+Coherence's assessment projection now reads the shipped measurement classifier instead of deciding
+currentness for itself. `curator_coherence_assessments` and
+`curator_coherence_subject_assessment_state` in `curator_coherence.py` (795 → 800 lines) classify every
+stored record through `models/lifecycles/review_assessment_binding.supplied_measurement_statuses`, so a
+record's state comes from that record's own measurement rather than from a collection-wide verdict.
+
+**Omitting `current` now means nothing measured anything.** The old default read an absent measurement as a
+movement: every record the caller supplied no entry for was reported `stale`. That published a fact the
+store never held — an unmeasured binding stated as a measured change. A caller that supplies no measurement
+at all, or an empty one, now gets what the binding module answers for "nothing measured this":
+`not-measured`, which is neither a clearance nor a movement. A supplied measurement is read the shipped
+comparison's way: an identity it covers that disagrees is a measured movement (`stale`), an identity it
+does not cover is unmeasured (`not-measured`), and only a record whose whole declaration is covered and
+agrees is `current`. `unavailable` stays the failed measurement's state and `none-recorded` stays a subject
+with no stored assessment — neither is manufactured here.
+
+**The helper that computed the old default is gone rather than aliased.** `_stale_assessment_ids` — the
+local list of ids whose recorded binding the caller's mapping disagreed with, which both entry points built
+and then passed as `stale_ids` — was deleted with the `assessment_currentness_for_record` import it used.
+Its one replacement is the private `_measured_state`, which converts the caller's mapping once and is the
+single path both public entry points take, so the collection projection and the per-subject projection
+cannot classify the same record two different ways.
+
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the route's own behaviour change: `curator_coherence_assessments` and `curator_coherence_subject_assessment_state` now classify per record through `supplied_measurement_statuses`, an omitted or empty measurement answers `not-measured` instead of defaulting every record to `stale`, and `_stale_assessment_ids` is deleted rather than kept as an alias. This is a body change and not a metadata-only refresh: the route's governed source changed under this leaf. The two enforced `citation_anchor_absent_from_range` rows this pass cleared live on the `curator_coherence.py` card, not on this overview (`:501-502` → `:501-504` for `curator_coherence_evidence` and `:115-141` → `:115-160` for `curator_coherence_no_impact`), and are recorded in full there; this overview carried no citation finding of its own and no range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the `260915-KS-L15` landing the section above already carries (`65e3791b`): the new `curator_assessment_evidence.py` with its one evidence destination and its read-back, `_exact_review_assessments` and `_published_evidence_bytes` in `curator_coherence_publication.py`, and the read projection and record-side edge recomputation in `curator_coherence.py`. Each was re-read against the file rather than trusted, including the three properties that chose the destination and the blocked state a failed read-back produces. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

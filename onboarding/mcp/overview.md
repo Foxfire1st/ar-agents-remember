@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -52,11 +52,11 @@ assessments while claiming a complete bundle — is caught at the composition ra
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The production record owner: five collections and one stated non-measurement, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `_CURRENTNESS` | mcp/src/agents_remember/application/review_evidence_records.py:174-192; mcp/src/agents_remember/application/review_evidence_records.py:121-142; mcp/src/agents_remember/application/review_evidence_records.py:144-158 |
+| **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:171-196; mcp/src/agents_remember/application/review_evidence_records.py:137-144; mcp/src/agents_remember/application/review_assessment_currentness.py:65-68 |
 | **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:366-391; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/application/review_evidence_records.py:548-572|
 | **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:75-75; mcp/src/agents_remember/models/knowledge/review.py:893-893; mcp/src/agents_remember/models/knowledge/review.py:918-958|
 | **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:85-101; mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
-| The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745; mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
+| The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 
 ## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
 
@@ -6166,6 +6166,7 @@ source inventory R02's and the record bundle R14's. `ICR-R24@v1` owns the leaf-h
 suppression (a local import's `# noqa: PLC0415 - cycle`) and widens no limit or rail.
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **citation accounting on this overview's review-record rows, plus the one anchor left alone.** (a) The production-record-owner row cited `mcp/src/agents_remember/application/review_evidence_records.py:174-192` for `review_records_for`, whose declaration sits at `:171` (extent `:171-196`) — the range was widened to cover it. (b) The two per-record damage cases row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` and `:719-745`; both cases moved down that module in this leaf (they now occupy `:825-844` and `:847-870`), so both ranges were repointed to the lines that carry them. The row's `_COLLECTION_OWNERS` range (`:121-142`) and the task-context case range (`:655-677`) are unchanged. (c) **Left alone and reported:** the same production-record-owner row's third anchor, the anonymous constant `_CURRENTNESS`, was deleted by this leaf's fix round and exists nowhere in the code tree; its range (`:144-158`) is left exactly as written rather than re-pointed at an adjacent construct that would make the cell look current, so that finding stays open for a curator who re-reads the claim itself. No claim or anchor wording was changed anywhere and no range was dropped to silence a row. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **repository body updated for historical committed-leaf review (ICR-R12@v1).** The section above
 records the defect, the one new owner and its two records, the byte-for-byte reproduction across
 cleanup, restart and a later landing, the declared-absence-versus-unavailable distinction, the record

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_review_assessment_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -152,3 +152,28 @@ a **consumer list** changed, and the catalogue guard validates that change in bo
   consumer registrations, and the boundary that survival is read back after cleanup rather than
   asserted. Verification metadata remains closeout-owned; no acceptance or certification claim is
   made.
+
+## 260921-ICR-L15 The Closeout Projection Answers "Measured?" The Same Way The Surface Does
+
+`260921-ICR-L15` (`ICR-R15@v1`) moves this module's integration cases onto the measured vocabulary, and
+the two defects are asserted against each other rather than one at a time.
+
+**The KS-era case was re-contracted, not annotated.** The case that pinned the old default — an
+unmeasured assessment reported `stale` — is now
+`test_an_unmeasured_assessment_is_reported_not_measured_not_current`, and it asserts all four facts the
+new rule states: the subject `status` is `not-measured`, `notMeasuredCount == 1`, `staleCount == 0`,
+and the entry's own `currentness` is `not-measured`. Its second half supplies an **empty** measurement
+(`current={}`) and asserts the same `not-measured` with a zero stale count, which is the packet's
+non-conforming example measured directly: a mapping's presence decides nothing.
+
+**A new case states what does decide.** `test_only_a_complete_measured_match_reports_the_stored_assessment_current`
+drives the real publication, takes the stored record's own declared identities as the measurement, and
+asserts `current` on both the subject status and the entry — so the two halves of the rule (nothing
+measured ⇒ `not-measured`; everything measured and agreeing ⇒ `current`) are pinned through the same
+closeout entry point the rest of the integration suite uses.
+
+The module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
+assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
+
+## Update History
+- 2026-09-23T13:10:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim here is that commit plus the working-tree delta): **the integration cases move onto the measured vocabulary (948 → 988 lines).** The KS-era `…_is_reported_stale_not_current` case was re-contracted into `…_is_reported_not_measured_not_current` (asserting `not-measured`, `notMeasuredCount == 1`, `staleCount == 0`, and an empty measurement answering the same), and `test_only_a_complete_measured_match_reports_the_stored_assessment_current` was added. Recorded in the body rather than as a history-only note because the memory-refresh check requires the sidecar body itself to reflect a changed source. No claim, anchor or citation range changed here, and **no verification stamp was advanced**: the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.

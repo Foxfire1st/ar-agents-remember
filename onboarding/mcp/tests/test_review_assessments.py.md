@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ serves the cases that need a stored projection.
 | The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" |mcp/tests/test-evidence-lanes.toml:211-211; mcp/tests/test-evidence-lanes.toml:5-5|
 | The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
 | The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:110-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188 |
-| The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |
+| The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-594; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |
 | The report-only section the checklist cases assert. | `knowledge_review_section` | mcp/src/agents_remember/memory_quality/knowledge_review.py:70-135 |
 
 ## KS-R15@v1 Unit Protection
@@ -97,6 +97,7 @@ would be a source census rather than a behavioural check; and §6.9's scope refu
 unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim below is that commit plus the working-tree delta): **citation repair only, forced by this leaf's own changes to the sources this card cites.** One row was re-pointed: the state-projection row's `assessment_state_for` range `mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439` → `:542-594`, the function's own extent on this candidate; the sibling `SubjectAssessmentState` range `:441-501` still holds its declaration and was left as it stands. The claim-reopen this anchor also carried is cleared by that one edit — a cited range now contains the declaration line — and not by any wording change. No Finding, anchor or claim was re-worded, no range was deleted and none was appended, and **no verification stamp was advanced**: the candidate is uncommitted, so `lastVerifiedCommitHash`/`lastVerifiedCommitDate` keep the values they hold and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-merge resolution of the parked candidate against the landed ICR-L7 curation (1 region).** Additive union: the module's lane row re-derived to the merged tree (`:204`) with the `unit-regression = [` key (`:5`). Both sides' history preserved. No verification stamp was advanced.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by the lane row this leaf inserted.** This file is not a changed source file. Its one lane-registration row cited `mcp/tests/test-evidence-lanes.toml:197`, one line above the line that carries `"mcp/tests/test_review_assessments.py"` on this candidate; the row was re-read and the range re-derived to `:200`, and its other ranges were read back as still correct. No claim wording or anchor was changed, and **no verification stamp was advanced** — the recorded stamp is kept, because the candidate is uncommitted and closeout owns the real commit.

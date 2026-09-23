@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:23+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -260,3 +260,23 @@ from both.
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the canonical typed memory-quality controller and complete run identity. Verification remains blank until architect-owned closeout stamps the code commit.
+
+## 260921-ICR-L15 The Unmeasured Count Reaches The Checklist
+
+`260921-ICR-L15` (`ICR-R15@v1`) adds one field to this controller's knowledge-review read: the
+projection's own `notMeasuredCount` is now passed through `AssessmentSummaryInput` beside the counts
+already carried, so a subject whose records **no measurement covered** is reported as unmeasured
+instead of being folded into `stale` or into a silent zero.
+
+Nothing else about the read changed, and the boundary this card's own sections describe is untouched.
+`curator_knowledge_review_summaries` still reads the **already published** curator-coherence authority
+and decides nothing about it; the count comes from `curator_coherence_subject_assessment_state`, which
+this leaf re-pointed at the shipped per-record measurement. The read remains structurally outside
+`curatorActionableCount` — it is a factual projection feeding the checklist's report-only
+`knowledgeReview` section, and this leaf gives it no gate consequence. The one visible effect is one
+more counted limitation downstream: the section that consumes these summaries can now say
+`not-measured` rather than letting `| stale | 0 |` be read as "nothing moved" when nothing was
+measured at all.
+
+## Update History
+- 2026-09-23T13:10:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim here is that commit plus the working-tree delta): **the unmeasured count enters the summary input.** This leaf changed this source by one line — `curator_knowledge_review_summaries` passes `state.notMeasuredCount` through — which the memory-refresh check correctly refused to accept as a history-only update, so the read is recorded in the body as a body change and not as a metadata refresh. No claim, anchor or citation range was changed here, and **no verification stamp was advanced**: the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.

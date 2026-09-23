@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,8 +87,8 @@ No external source governs this repository-local lifecycle authority.
 | --- | --- | --- |
 | Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:128-178 |
 | Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:237-322 |
-| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:327-385; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:501-502 |
-| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-141 |
+| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:327-385; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:501-504 |
+| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-160 |
 | Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:551-578 |
 | Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:714-745 |
 | R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:375-454; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:461-518 |
@@ -129,12 +129,17 @@ self-invalidating sequence.
 
 `curator_coherence_assessments` projects the stored collection through `assessment_state_for` without
 deciding anything about it, and `curator_coherence_subject_assessment_state` reports one subject's
-state as one of the four reportable states; `all_assessment_subject_ids` enumerates the subjects a
-record holds. The projection takes the caller's own measurement of the world —
-`assessmentId -> (kind, name) -> (algorithm, digest)` — and an assessment the caller supplied **no
-entry for is reported `stale`, never `current`**: "not measured" is never "still matches". Omitting the
-measurement therefore reports the collection's own identities and dispositions with every record
-marked stale, rather than silently promoting an unmeasured assessment.
+state; `all_assessment_subject_ids` enumerates the subjects a record holds. `260921-ICR-L15`
+(`ICR-R15@v1`) replaced the caller's bare measurement mapping with the shipped
+`AssessmentCurrentnessMeasurement` and classifies **per record** through
+`supplied_measurement_statuses`, so what the caller supplies is a measurement of the world rather than
+a set of stale ids: a record whose declared identities the measurement covers and agrees with is
+`current`, one it holds a different value for is `stale`, and — the case this leaf fixed — an
+assessment the caller supplied **no measurement for is reported `not-measured`, never `stale` and
+never `current`**. Omitting the measurement therefore reports the collection's own identities and
+dispositions without claiming either currency or movement: "not measured" is neither "still matches"
+nor "has moved", and the old `_stale_assessment_ids` helper that produced the false movement is
+deleted rather than aliased.
 
 ## KS-R23@v1 The Paths Resolve A Durable Attestation Copy
 
@@ -153,6 +158,7 @@ against the observed digest, and the refusals that guard it live in the publicat
 card).
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document (two table rows).** (a) The shared-admission row cited `:501-502` for `curator_coherence_evidence`, whose definition this candidate leaves at `:503-504`; the range was widened to `501-504`, which now reaches it. (b) The no-impact row cited `:115-141` for `curator_coherence_no_impact`; the projector's declaration is at `:143` (extent `:143-160`), so the range was widened to `115-160`, which now reaches it and still holds `CuratorCoherenceNoImpact` at `:136`. Claims, anchors and the other ranges are unchanged; no claim was re-worded and no range was dropped to silence a row. **Recorded rather than repaired:** the `KS-R15@v1 Assessment Read Projection` section below still states the superseded default — "an assessment the caller supplied **no entry for is reported `stale`**" — which this leaf's `ICR-R15@v1` change replaces: an omitted or empty measurement now answers `not-measured` through `supplied_measurement_statuses`, and the route overview's own `260921-ICR-L15 Measured assessment currentness` section records the new behaviour. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) and (b) The no-impact row cited `107-112` and `115-132` for `CuratorCoherenceNoImpact` and `curator_coherence_no_impact`; this leaf's changes left the dataclass at `134` and the projector at `141`, so the second range was widened to `115-141`, which now reaches both. (c) The evidence row cited `487-488` (an exception branch) for `curator_coherence_evidence`, whose definition is at `501-502`; that cell cites it now. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `_require_leaf_external_memory` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:673-685. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

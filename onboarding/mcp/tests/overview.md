@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-23T09:45:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
@@ -159,7 +159,7 @@ snapshots.
 | **The two chain defaults with exact selected revision ids.** | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_an_advanced_before_head_moves_the_default_pair` | mcp/tests/test_knowledge_review_revision_selection.py:259-280; mcp/tests/test_knowledge_review_revision_selection.py:282-290 |
 | **The two fork ambiguities and the two lineage failures, each with no pair recorded.** | `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision` | mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:416-467; mcp/tests/test_knowledge_review_revision_selection.py:469-522 |
 | **The pane case that closes the loop through the served payload.** | `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
-| **The two rewritten surface cases: the old both-sides assertions replaced by ambiguity assertions.** | `test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` | mcp/tests/test_knowledge_review_surface.py:1279-1279; mcp/tests/test_knowledge_review_surface.py:324-413 |
+| **The two rewritten surface cases: the old both-sides assertions replaced by ambiguity assertions.** | `test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` | mcp/tests/test_knowledge_review_surface.py:1359-1434; mcp/tests/test_knowledge_review_surface.py:324-413 |
 
 ## Update History
 - 2026-09-23T09:45:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for the final-output case module (`ICR-R21@v1`).** The route gained `mcp/tests/test_review_final_output_receipt.py` (871 L, eleven cases) with its `unit-regression` lane row, three `consumer_scope = "exact"` rows in `evidence-lifecycle.toml` and the `LIFECYCLE_CATALOG_SHA256` re-pin in `test_dependency_ownership_ast_helpers.py`; the population is unchanged at 16 contracts / 66 artifacts. The L21 section above records what the cases actually prove — the whole operation against the store's own reopened truth, the three packet examples as cases, the four cases a round-1 verifier's reproduced false sentence and unprotected narrowing forced, and the two limits (the browser halves remain ICR-R25@v1's; the failed/partial-transaction clause is evidenced by the no-generation case and the `ok`-gated attachments rather than a crashed-closeout fixture). The new module's card carries its own per-case citations. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
@@ -327,8 +327,8 @@ route's own population count moves by one module.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module whose cases are the production-composition evidence, and its lane row.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `unit-regression` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test-evidence-lanes.toml:5-5 |
-| **The two per-record damage cases, which are the ones that make the partial-collection states measured rather than asserted.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
-| **The production port the cases read through, and the bundle they read beside it.** | `review_through_port`; `review_records_for` | mcp/tests/test_knowledge_review_evidence_channels.py:170-177; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
+| **The two per-record damage cases, which are the ones that make the partial-collection states measured rather than asserted.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
+| **The production port the cases read through, and the bundle they read beside it.** | `review_through_port`; `review_records_for` | mcp/tests/test_knowledge_review_evidence_channels.py:170-177; mcp/src/agents_remember/application/review_evidence_records.py:171-196 |
 | The fixture's external-memory shape, which the assessment channel needs. | `build_endpoint_fixture`; `_link_memory_worktree` | mcp/tests/test_knowledge_review_source_endpoints.py:198-231; mcp/tests/test_knowledge_review_source_endpoints.py:304-321 |
 ## 260921-ICR-L4 The Attribution Cases: Nine Partition Cases, Six Precedence And Receipt Cases, Two Extensions
 
@@ -920,7 +920,7 @@ a historical figure from an earlier series line, not the current ceiling.
 | The half's own states: damage named in both of its forms, and an identified generation that a later selected baseline may not replace. | `test_a_damaged_before_half_is_named_and_left_exactly_as_it_is`; `test_an_established_first_generation_is_not_replaced_by_a_later_selected_baseline` | mcp/tests/test_knowledge_curator_ingest_list.py:2276-2343; mcp/tests/test_knowledge_curator_ingest_list.py:2346-2401 |
 | The write site's own byte precondition, and the pair the cold-start run authored read back as an addition. | `test_the_write_site_publishes_only_bytes_that_read_as_a_dataset`; `test_the_first_generation_pair_reviews_the_first_invariant_as_an_addition` | mcp/tests/test_knowledge_ingest_failure_windows.py:263-318; mcp/tests/test_knowledge_curator_ingest_list.py:2009-2076; mcp/tests/test_knowledge_ingest_failure_windows.py:263-320; mcp/tests/test_knowledge_curator_ingest_list.py:2009-2078 |
 | The five helpers, each existing because the before half is derived from an enclosure's own recorded worktree group. | `_review_before_half`; `_cold_start_argv`; `_one_entry_list`; `_private_pair`; `_relocated_contract` | mcp/tests/test_knowledge_curator_ingest_list.py:1662-1675; mcp/tests/test_knowledge_curator_ingest_list.py:1678-1692; mcp/tests/test_knowledge_curator_ingest_list.py:1695-1715; mcp/tests/test_knowledge_curator_ingest_list.py:1718-1728; mcp/tests/test_knowledge_curator_ingest_list.py:1731-1753 |
-| The review surface's three before-half cases, and the task context the entry-route case has to *be*. | `test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name`; `test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising`; `_entry_route_config` | mcp/tests/test_knowledge_review_surface.py:908-971; mcp/tests/test_knowledge_review_surface.py:864-902; mcp/tests/test_knowledge_review_surface.py:974-1012; mcp/tests/test_knowledge_review_surface.py:824-860 |
+| The review surface's three before-half cases, and the task context the entry-route case has to *be*. | `test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name`; `test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising`; `_entry_route_config` | mcp/tests/test_knowledge_review_surface.py:908-971; mcp/tests/test_knowledge_review_surface.py:864-902; mcp/tests/test_knowledge_review_surface.py:974-1012; mcp/tests/test_knowledge_review_surface.py:1057-1095 |
 | The lane row this route's ingest-list module occupies, and the current case budgets. | "mcp/tests/test_knowledge_curator_ingest_list.py"; `unit_case_budget`; `integration_case_budget` |pyproject.toml:278-278; pyproject.toml:279-279; mcp/tests/test-evidence-lanes.toml:87-87|
 
 ## 260915-CAPS-L15 Launch-Wiring Test Population
@@ -5464,10 +5464,10 @@ untouched.
 | --- | --- | --- |
 | The new case module and its lane marker. | "pytestmark = pytest.mark.evidence_unit" | mcp/tests/test_knowledge_review_surface.py:95-95 |
 | The forbidden-name set the whole payload schema is walked against. | `FORBIDDEN_FIELD_NAMES` | mcp/tests/test_knowledge_review_surface.py:98-121 |
-| The row-level proof that a full render stores nothing. | "def test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information(" | mcp/tests/test_knowledge_review_surface.py:499-499; mcp/tests/test_knowledge_review_surface.py:496-496 |
-| The case that the adapter selects nothing, compared value for value. | "def test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered(" | mcp/tests/test_knowledge_review_surface.py:512-512; mcp/tests/test_knowledge_review_surface.py:509-509 |
-| The transport case: typed result, a 400 and a 503. | "def test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter(" | mcp/tests/test_knowledge_review_surface.py:1039-1039; mcp/tests/test_knowledge_review_surface.py:1036-1036 |
-| **The two cases that were widened rather than added to: the unresolvable context now also proves the entry read refuses with the same code, and the pane-name case measures the entry list against the shipped comparison's own answer.** | `test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate`; `test_the_rendered_pane_types_are_the_three_the_design_names` | mcp/tests/test_knowledge_review_surface.py:1178-1178; mcp/tests/test_knowledge_review_surface.py:1206-1276 |
+| The row-level proof that a full render stores nothing. | "def test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information(" | mcp/tests/test_knowledge_review_surface.py:500-500; mcp/tests/test_knowledge_review_surface.py:496-496 |
+| The case that the adapter selects nothing, compared value for value. | "def test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered(" | mcp/tests/test_knowledge_review_surface.py:513-513; mcp/tests/test_knowledge_review_surface.py:509-509 |
+| The transport case: typed result, a 400 and a 503. | "def test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter(" | mcp/tests/test_knowledge_review_surface.py:1119-1119; mcp/tests/test_knowledge_review_surface.py:1036-1036 |
+| **The two cases that were widened rather than added to: the unresolvable context now also proves the entry read refuses with the same code, and the pane-name case measures the entry list against the shipped comparison's own answer.** | `test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate`; `test_the_rendered_pane_types_are_the_three_the_design_names` | mcp/tests/test_knowledge_review_surface.py:1286-1356; mcp/tests/test_knowledge_review_surface.py:1206-1276 |
 | The lane row this leaf inserted mid-list. | "mcp/tests/test_knowledge_review_surface.py"; `test_knowledge_review_surface` |mcp/tests/test-evidence-lanes.toml:110-110|
 | The lane row this leaf inserted mid-list. | "mcp/tests/test_knowledge_review_surface.py"; `test_knowledge_review_surface` |mcp/tests/test-evidence-lanes.toml:110-110|
 | The catalogue pin as this leaf left it — 15 / 65, the counts a consumer-only change does not move; `260918-TSIP-L10`'s `T129` reconciliation then added the two registered rows and moved the pair to **16 / 66**, which is what the constants read now. | "LIFECYCLE_CONTRACT_COUNT = 16"; "LIFECYCLE_ARTIFACT_COUNT = 66" | mcp/tests/test_dependency_ownership_ast_helpers.py:44-45 |
@@ -5797,7 +5797,7 @@ untouched.
 | **The independent byte-safe observation the review suites assert against, added to that module.** | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | **The independent byte-safe observation the review suites assert against, added to the module already registered as `knowledge-diff-cases`.** | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
 | The shared diff fixture that module is registered under, which this change did not alter. | `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:197-233 |
-| **The two new unit cases and the transport assertion the optional selector obliged.** | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`; `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `reviewed_selector` | mcp/tests/test_knowledge_review_surface.py:1357-1357; mcp/tests/test_knowledge_review_surface.py:1275-1313; mcp/tests/test_knowledge_review_surface.py:1015-1033; mcp/tests/test_knowledge_review_surface.py:169-183 |
+| **The two new unit cases and the transport assertion the optional selector obliged.** | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction`; `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `reviewed_selector` | mcp/tests/test_knowledge_review_surface.py:1359-1434; mcp/tests/test_knowledge_review_surface.py:1437-1475; mcp/tests/test_knowledge_review_surface.py:1098-1116; mcp/tests/test_knowledge_review_surface.py:169-183 |
 | The lane rows that keep the changed modules in the certifying collection — unchanged by this leaf, because no module was added. | "mcp/tests/test_knowledge_diff_scope.py"; "mcp/tests/test_knowledge_diff_boundaries.py" |mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:232-232|
 
 
@@ -5925,3 +5925,32 @@ module on this route.
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the surface test module gains one case and changes one helper (`ICR-R17@v1`).** `render` now asks the way a refresh asks (the identity travels on the request), and the new case drives the real route through `TestClient` to measure admission, forwarding, the `stale`/`current` answers and the malformed-spelling refusal. **Citation accounting:** the rows into this module were re-derived from each construct's own declaration — `read_subject_catalogue` imported at `:46` and called at `:1234`, `test_the_rendered_pane_types_are_the_three_the_design_names` `:1206`, `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` `:1357`. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
+
+## 260921-ICR-L15 Measured assessment currentness
+
+`260921-ICR-L15` (`ICR-R15@v1`) rewrites **four governed test sources** on this route and adds no module,
+no lane row and no contract. What it measures is one property from four sides: an assessment is reported
+**current** only against a measurement that was actually taken.
+
+- `mcp/tests/test_knowledge_review_surface.py` — **1395 → 1475 lines.** The currentness case named
+  `test_a_measured_matching_binding_reports_the_assessment_current` was renamed to
+  `test_only_a_complete_matching_measurement_reports_the_assessment_current`, and its input is now a
+  **real measurement** instead of an empty mapping.
+- `mcp/tests/test_review_assessments.py` — **880 → 1028 lines.** New closed-vocabulary cases (the
+  disposition vocabulary is exactly its declared values and an out-of-vocabulary value is refused rather
+  than coerced) and new count-partition cases (a declared count that contradicts the records it claims
+  to partition is refused).
+- `mcp/tests/test_knowledge_review_evidence_channels.py` — **796 → 966 lines.** A new case measures the
+  currentness collection's **exactly three product states** (`recorded` / `none_recorded` /
+  `unavailable`, with a measurement nobody performed refused loudly rather than rendered as
+  `not_measured`), and the measurement case was renamed to
+  `test_the_composition_measures_the_bindings_it_reads` so its name states what it measures.
+- `mcp/tests/test_curator_review_assessment_publication.py` — **948 → 988 lines.** The integration half
+  of the same property: the publication route's cases now drive the matching measurement the renamed
+  unit case measures.
+
+Each module's own card carries its per-case citations; this route's rows into those modules were
+re-derived where this leaf's line changes left them stale, and the entry below records that accounting.
+
+## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim below is that commit plus the working-tree delta): **route body update for the measured-assessment leaf, and the citation repair its line changes forced on this route's own rows.** The section above records the four governed modules this leaf rewrote; twelve ranges on this overview were then re-pointed so a cited range for the named file holds the construct each row names, every one read back at its new lines before it was written: the L7 rewrite row `1279-1279` → `1359-1434`; the L14 per-record damage pair `695-717` → `825-844` and `719-745` → `847-870`; the L14 port row's bundle read `mcp/src/agents_remember/application/review_evidence_records.py:174-192` → `:171-196` (the function's own extent); the L5 before-half row `824-860` → `1057-1095`, replacing a range that held none of that row's anchors with the entry-route case's extent; the three leaf-era rows whose one-line ranges had slipped off the construct they name — stores-nothing `499-499` → `500-500`, selects-nothing `512-512` → `513-513`, and the transport case `1039-1039` → `1119-1119`; the widened-cases row `1178-1178` → `1286-1356`, leaving `1206-1276` untouched because it still holds the loader case's declaration; and the L2 row's three cases `1357-1357` → `1359-1434`, `1275-1313` → `1437-1475` and `1015-1033` → `1098-1116`. No Finding, anchor or claim was re-worded, no range was deleted and none was appended, and **no verification stamp was advanced**: the candidate is uncommitted, so the verification pair keeps the values it holds and the governed closeout owns the real stamp.

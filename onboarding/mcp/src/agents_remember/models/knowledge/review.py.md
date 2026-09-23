@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -476,3 +476,22 @@ admits the spelling in its own vocabulary so a malformed value is a typed 400 ra
 
 ## Update History
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the request names the comparison the reader was already looking at (`ICR-R17@v1`).** `ReviewSurfaceRequest.previous_binding_digest` is a new optional sha256-shaped field: it is the *previous* identity the composition compares the rendered comparison against, it selects nothing, and an absent value means the read replaces nothing (which is `current`). The docstring records both facts. **Citation accounting:** the rows this leaf's nine-line insertion moved were re-derived from each construct's own declaration on the candidate — `KnowledgeReviewResult` `:1119`, `ReviewAuthoredEffect` `:507`, `ReviewObservation` `:607`, `ReviewRemainingCount` `:645`, `ReviewSignal` `:532`, `_require_the_totals_to_describe_the_catalogue` `:1178`, `revision_selection` `:731`. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the field exists only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.
+
+## 260921-ICR-L15 The Displayed Binding State Is A Measured Fact
+
+`260921-ICR-L15` (`ICR-R15@v1`) documents `ReviewAssessmentDisplay.binding_state` as what a
+**measurement** put the binding in, rather than as a status the authority recorded: `current` and
+`stale` are a completed measurement's two answers, `not-measured` says nothing measured the record, and
+`unavailable` says the measurement failed. The field, its type and every other member of this module are
+unchanged — this leaf's edit here is documentation only and the file stays at **1198 lines**, so the
+repository's ≥1200-line census is unmoved.
+
+The change matters because the sentence it replaces ("the authority's own recorded status, carried
+verbatim") described a projection that decided currentness from the **presence of a mapping**: an
+absent measurement was displayed `stale` and an empty one `current`, neither of which the store ever
+recorded. The measured vocabulary now displayed here is produced by
+`application/review_assessment_currentness` and the shipped comparison, and the display still upgrades
+nothing — a `not-measured` binding is neither promoted to `current` nor reported as a movement.
+
+## Update History
+- 2026-09-23T13:10:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim here is that commit plus the working-tree delta): **the displayed binding state is documented as a measured fact (docstring-only; 1198 lines in both trees).** Recorded in the body rather than as a history-only note because the memory-refresh check requires the sidecar body itself to reflect a changed source. No claim, anchor or citation range changed, and **no verification stamp was advanced**: the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.

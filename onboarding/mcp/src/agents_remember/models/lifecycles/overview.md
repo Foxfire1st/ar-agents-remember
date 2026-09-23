@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T18:52+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -244,7 +244,53 @@ the record to the assessment only — which is what keeps it out of the self-inv
 `evidence_dependencies.py` gained that policy and one *permission* on `curator-coherence/v1`, widening
 no kind vocabulary.
 
+## 260921-ICR-L15 Measured assessment currentness
+
+This route's assessment vocabulary now separates **what a measurement established** from **what the
+stored records assert**, and it is a vocabulary change rather than a new read: no invariant of the
+binding rule moved, and the shipped comparison stays the one equality authority.
+
+`review_assessment.py` (502 → 620 lines) declares the per-record state as the four-member
+`AssessmentBindingStatus` — `not-measured`, `current`, `stale`, `unavailable` — published once as
+`ASSESSMENT_BINDING_STATUSES` and reused as `CURRENTNESS_STATES`. `AssessmentEntry.currentness` carries
+it, so a projection reports the state a *measurement* put a binding in rather than a label derived from
+whether a mapping was supplied. `SubjectAssessmentStatus` gained `not-measured` and `unavailable` beside
+the `none-recorded` that stays the *unassessed* subject's own state, because a subject nobody assessed,
+a subject whose records nobody measured and a subject whose measurement failed are three different
+answers. `SubjectAssessmentState` gained `notMeasuredCount`/`unavailableCount` and the validator
+(`_counts_describe_the_records_that_exist`, `_require_the_counts_to_partition_the_records`,
+`_status_of_records`) that derives the currentness counts from the entries and refuses a status its own
+records contradict. `assessment_state_for(assessments, *, statuses=None)` reports `not-measured` for an
+assessment nobody measured, and its signature has no argument that means "assume current" or "assume
+stale"; the subject status follows the precedence `stale` → `unavailable` → `unresolved` →
+`not-measured` → `current`.
+
+`review_assessment_binding.py` (276 → 497 lines) owns the measurement half. The new
+`AssessmentCurrentnessMeasurement` carries `state`, the `values` a world was read to hold, a `detail`,
+and the `unmeasured` identities with their own reason; `CurrentnessMeasurementState` declares the three
+measurement states, and `measured_currentness`, `no_currentness_measurement` and
+`unavailable_currentness_measurement` are the ways to build one. `measured_binding_status` states the
+whole rule: a failed measurement is `unavailable`; a measured disagreement is `stale`, decided by the
+shipped `disputed_dependencies` comparison over the measured values; a completed measurement that
+covered every declared identity and disagreed nowhere is `current`; and everything else — including the
+empty measurement, which is measured and covers nothing — is `not-measured`. Presence of a mapping is
+never the decision. `unmeasured_identities`, `measured_binding_statuses`,
+`supplied_measurement_statuses` and `subject_state(assessments, current=None)` carry that rule into the
+per-record and per-subject shapes the composition and the read projection use. `assessment_currentness`,
+`disputed_dependencies` and the `require_current_*` refusals are **unchanged**: a measured movement is
+still the only thing that can call a binding stale, and nothing here decides equivalence.
+
+Three facts a reader of this route should carry:
+
+- **An unmeasured binding is neither current nor stale.** It is `not-measured`, and reporting it as
+  either would publish a fact the store never held.
+- **A measured zero is not a failure.** An empty measurement is a measurement that covered nothing; a
+  failed one is `unavailable`. The two are different facts.
+- **The summary cannot disagree with its records.** The counts partition the entries and the status is
+  re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
+
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above).** `ICR-R15@v1` makes an assessment's currentness a measured fact: `models/lifecycles/review_assessment.py` (502 → 620) now declares the four-member `AssessmentBindingStatus` and the `not-measured`/`unavailable` subject states with the counts validator, and `models/lifecycles/review_assessment_binding.py` (276 → 497) gains `AssessmentCurrentnessMeasurement` and the whole rule in `measured_binding_status` over it. This route's two cards had no enforced citation row, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: the header's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned, and this entry states a reading against the leaf base named above plus its working-tree delta rather than a verified commit.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
 - 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/lifecycles/finalize.py` declared the two atomic-series projections it was already receiving; this route's composition and ownership are unchanged. The `+4` shift the import caused moved citations only.

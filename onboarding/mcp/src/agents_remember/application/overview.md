@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-23T09:35:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -13,6 +13,44 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L15 Measured assessment currentness
+
+`260921-ICR-L15` (`ICR-R15@v1`) replaces the one entry in the L14 record bundle that this route
+**stated without measuring** with a measurement its own owner produces, and carries it to the payload
+and to the sealed generation.
+
+**A new module owns the measurement.** `application/review_assessment_currentness.py` (226 lines)
+publishes two functions and one owner constant. `comparison_currentness_measurement(resolved)`
+measures the identities the viewed comparison publishes — the resolution's two bound code endpoints,
+the leaf it names and the enclosure contract it read — so it performs no I/O and cannot fail halfway.
+`currentness_channel(collection, measurement, assessments)` states that measurement's availability in
+**exactly three product states**: `recorded` (a measurement was performed, with the number of stored
+bindings it was compared against), `none_recorded` (the authority answered and records no assessment —
+a real zero rather than a silence) and `unavailable` (the authority could not be read, so nothing could
+be measured). None of the three is a favourable default.
+
+**The record bundle now produces it, and the placeholder constant is gone.**
+`application/review_evidence_records.py` (869 → 879) produces the measurement in `_resolved_records` —
+where the L14 record-owner section below still describes a "non-measurement" — and
+`_COLLECTION_OWNERS["assessment_currentness"]` names the real owner rather than a stand-in. The
+unresolved-candidate path reports the collection `unavailable` beside the five owner collections
+instead of leaving it out, because nothing resolved and so no measurement could be made. The constant
+`_CURRENTNESS` — the module-level value that spelled "not measured" — **was DELETED**: that state is
+now one of `currentness_channel`'s three answers, produced from a measurement, so a second spelling of
+it would be the drift the L14 section's own rule forbids.
+
+**The renderer takes the measurement instead of inferring from presence.**
+`application/review_record_rendering.py` (473 → 488) replaced `ReviewRecordInputs.current` (a bare
+mapping) with `currentness: AssessmentCurrentnessMeasurement | None`, and `subject_states` now
+delegates to the shipped projection — `measured_binding_statuses(records.assessments,
+records.currentness)` — rather than testing whether a currentness value was present at all. `None`
+still means "no measurement was supplied", and that state keeps the projection's `stale` rather than
+promoting an unmeasured assessment to `current`.
+
+**The freeze's flag now means what its name says.** `application/review_comparison_freeze.py`
+(744 → 747) carries `current_measured` as "a measurement was performed" rather than "a value was
+present", so a sealed generation records whether the currentness axis was measured.
 
 ## 260921-ICR-L21 The Recorded Comparison Identifies What Closeout And Integration Delivered, And Recording Is Not A Gate
 
@@ -311,12 +349,12 @@ records unfiltered), and what dependency currentness is (R15's measurement).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.** | `review_records_for`; `_resolved_records`; `_COLLECTION_OWNERS` | mcp/src/agents_remember/application/review_evidence_records.py:174-214; mcp/src/agents_remember/application/review_evidence_records.py:121-142 |
+| **The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.** | `review_records_for`; `_resolved_records`; `_COLLECTION_OWNERS` | mcp/src/agents_remember/application/review_evidence_records.py:171-214; mcp/src/agents_remember/application/review_evidence_records.py:121-142 |
 | **The per-record guard that makes a damaged record survivable, and the two owner reads it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:366-391; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-581; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/application/review_evidence_records.py:548-572|
 | **The availability vocabulary, and the validator that refuses a count no owner measured.** | `ReviewRecordChannel`; `ReviewRecordChannelState` | mcp/src/agents_remember/models/knowledge/review_records.py:47-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
 | **The selection channels, added where the matrix's own answer is; and the task-context position that never asked.** | `with_selection_channels`; `_matrix_rows_remaining` |mcp/src/agents_remember/application/review_evidence_records.py:264-289; mcp/src/agents_remember/application/knowledge_review.py:612-625|
 | **The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.** | `review_records_for`; `review_port` | mcp/src/agents_remember/application/knowledge_review.py:81; mcp/src/agents_remember/cli/dashboard.py:88-102 |
-| **The cases that measure the whole thing through the production port, including the two per-record damage cases.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:695-717; mcp/tests/test_knowledge_review_evidence_channels.py:719-745 |
+| **The cases that measure the whole thing through the production port, including the two per-record damage cases.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
 ## 260921-ICR-L4 The Attribution Accounting Gets An Acquisition Owner, And Every Route Reads One Partition
 
 This route gained **one module** and the leaf it belongs to (`260921-ICR-L4`, primary requirement
@@ -1518,6 +1556,7 @@ contains it — no wider. `complete_tool_response` (`:131-145`) is unchanged; th
 `_attach_lifecycle_tail` (`:112-130`), so every response this route completes passes through it.
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate uncommitted; basis: leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body update for measured assessment currentness (`ICR-R15@v1`), and three enforced citation rows re-pointed.** The section above records the new owner (`application/review_assessment_currentness.py`, 226 lines) and the three product states its channel can state, the record bundle's production of the measurement with `_CURRENTNESS` deleted, the renderer's `currentness: AssessmentCurrentnessMeasurement | None` field replacing the bare `current` mapping, and the freeze's `current_measured` flag now meaning "a measurement was performed". **Citation accounting:** the L14 production-owner row's first range widened `review_evidence_records.py:174-214` → `171-214` (its declaration is at 171), and the two per-record damage cases re-pointed to their own extents in `mcp/tests/test_knowledge_review_evidence_channels.py` (`:695-717` → `:825-844` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`, `:719-745` → `:847-870` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`). Finding and Anchor wording unchanged; per-file detail lives in the seven sidecars. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` values are untouched, and the governed closeout owns the real stamp.
 - 2026-09-23T09:35:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for review-to-closeout identity continuity (`ICR-R21@v1`), and the route gained two purpose-named owners plus one test module.** The section above records the split (the record and its vocabulary in `models/knowledge/review_final_output_receipt.py`, the operation in `application/review_final_output_receipt.py`), the three result attachments in `application/worktree_tools.py` (+12 lines, all delegation), the fourth reopen channel, and the two boundaries: **recording is not a gate** (the never-raising wrapper is what the transaction owners call, so a receipt that cannot be produced is a state and never a refusal) and **the reclamation owner has no shipped caller** — routed debt to ICR-R25@v1 with the R11 retention/release route secondary, so reclamation is *not* automatic at this candidate. `application/knowledge_review.py` was **not touched** (byte-identical), because the seam policy moves a touched responsibility and this leaf added none there — the L11 section's recorded boundary that "ICR-R21 wires it at closeout" is now realised. **Citation accounting:** the three `review_comparison_reopen.py` ranges in the L11 row above were re-derived at their constructs' own extents (the module moved 699 → 730 lines with the fourth channel) rather than shifted by a delta, and the read-back row's wording now says four channels rather than three. Per-file citations live in the three new sidecars. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repairs: four rows re-cited to the landed `knowledge_review.py` declarations.** L7's pass cited its uncommitted candidate's positions; the landed file moved them (`select_subject_revisions` import `:90-93`, `_knowledge_pane` `:712-759`, `_selected_statements` `:760-785`, `_selector_kind_or_absence` `:615-626`). Each claim re-read against its declaration with wording retained. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.

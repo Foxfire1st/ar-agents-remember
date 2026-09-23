@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_staleness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
+| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -141,7 +141,7 @@ sites that read them. Every anchor in a row occurs inside the range that row cit
 | **The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.** | `previous_binding_digest` | mcp/src/agents_remember/models/knowledge/review.py:294-299 |
 | **The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.** | `compose_review`; `comparison_identity`; `review_staleness` | mcp/src/agents_remember/application/knowledge_review.py:353-542; mcp/src/agents_remember/application/knowledge_review.py:86-89 |
 | **The transport's admission of the previous identity in the route's own vocabulary, shape-checked against the models' own digest pattern rather than raised out of the request model.** | `_admitted_binding_digest` | mcp/src/agents_remember/serving/review.py:441-464 |
-| **The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.** | `test_the_stale_rule_holds_in_both_directions`; `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` | mcp/tests/test_knowledge_review_surface.py:628-650; mcp/tests/test_knowledge_review_surface.py:1099-1175 |
+| **The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.** | `test_the_stale_rule_holds_in_both_directions`; `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` | mcp/tests/test_knowledge_review_surface.py:628-650; mcp/tests/test_knowledge_review_surface.py:1179-1255 |
 
 ## Cross-Repo References
 
@@ -165,4 +165,5 @@ repository namespace's candidate and carries no identity that ranges beyond it.
 
 
 ## Update History
+- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate uncommitted; basis: leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **one enforced citation row re-pointed.** The R17 transport case is declared at `mcp/tests/test_knowledge_review_surface.py:1179`, not inside the cited range: `1099-1175`→`1179-1255` (the case's own extent). Wording, Finding and Anchor all unchanged. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): the pre-existing pass's card was **read, verified against the source and kept rather than redone**: the module's bytes are unchanged since it was written (`sha256 11e81de2…09dfe89`, 97 lines) and every claim on it — the two published names, the four-line constants block, the carried-never-recomputed rule, the labelled previous input, the `ReviewStaleness` validator pairing — was re-read against the candidate and holds. The citation rows were re-derived in the same pass so the ranges name each construct's own declaration. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against; closeout owns the stamp.
