@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastUpdated | 2026-09-23T09:40:00+02:00 |
+| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
+| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -24,6 +24,34 @@
 | **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:49-49; mcp/src/agents_remember/models/knowledge/review.py:886-906; mcp/src/agents_remember/models/knowledge/review.py:918-958|
 | **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** | `_COLLECTION_OWNERS`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:128-812; mcp/src/agents_remember/application/review_evidence_records.py:127-127 |
 | The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:761-787; mcp/tests/test_knowledge_review_evidence_channels.py:789-796 |
+
+## 260921-ICR-L21 The Final-Output Vocabulary: One Record, Three Verdicts, And A Validator That Re-Derives Them
+
+`260921-ICR-L21` (`ICR-R21@v1`) declares the final-output receipt in a **new sibling module**,
+`models/knowledge/review_final_output_receipt.py`, beside the other review vocabularies and next to the
+record it belongs to (`review.py`). It is the **vocabulary alone** — the operation that selects a
+generation, publishes the receipt and reads it back is
+`application/review_final_output_receipt.py` — so a consumer can hold and validate a receipt without
+importing the operation that produced it.
+
+The vocabulary's shape is the requirement's own rule made unconstructible-if-false:
+
+- **`FinalOutputReceipt` is a set of owner-produced identities and no authored prose** — the generation's
+  seal and manifest digest, the reviewed baseline and candidate code trees, the delivered code
+  commit/tree, the delivered memory-content commit/tree (absent together exactly when
+  `memory_output_state` says so), the published knowledge identity read through the ordinary read route,
+  and the two match verdicts. The one sentence it publishes, `statement`, is derived from those fields.
+- **The verdict has three values, and the third exists because two would state something false.**
+  `bound` is the only value that claims coverage and it requires a measured match on every channel the
+  generation actually **selected**; an unmeasured knowledge channel is `unmeasured`, not matched; a
+  mismatch is `moved`. Likewise `MatchState`'s `not-comparable` is not a softer
+  `differs-from-reviewed-input`, and `PublishedKnowledgeState` keeps `unusable` apart from
+  `not-recorded`.
+- **The validator re-derives every verdict from the record's own fields and refuses a record whose
+  verdicts do not follow** — detectable without the store, which is what stops a forged `bound` from
+  surviving a read-back.
+- **One rule, one expression.** `final_output_verdict` is the single statement of the verdict rule and
+  the writer calls it, so no second copy can drift from the validator.
 
 ## 260921-ICR-L8 The Movement Vocabulary Enters The Review Wire
 
@@ -100,7 +128,7 @@ policy that computes it lives on the application route, not here.
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **route body update for the movement vocabulary (`ICR-R08@v1`).** The route gained `models/knowledge/review_relationships.py` (the movement, sides, states, lineage, gaps, pairing bases and the labelled rename inference) and re-exports it from `models/knowledge/review.py`, which also gains the additive `ReviewSourceLocation`/`ReviewSourcePane` fields; the L8 section above states the field-level change, the additive defaults that keep existing fixtures valid, and the boundary that the dashboard's TypeScript mirror does not carry the new fields yet (`ICR-R24` mounts them). **Citation accounting:** the rows this leaf's moves invalidated were re-derived at their constructs' own extents rather than shifted, and the leaf's own document carries the new module and case citations. **Metadata removal:** this document's candidate-reading metadata rows were removed under the developer's 2026-09-22 rule, and every sentence that pointed at such a row was corrected in the same pass so the document no longer claims the row exists. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
+- 2026-09-23T09:40:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for the final-output vocabulary (`ICR-R21@v1`).** The route gained `models/knowledge/review_final_output_receipt.py` — the record, its match/verdict/state vocabularies, the three pure helpers and the validator — and the section above states what a consumer keys on: `bound` is the only value claiming coverage and it requires a measured match on every channel the generation actually selected, an unmeasured knowledge channel is `unmeasured` rather than matched, and the validator re-derives every verdict from the record's own fields so a forged coverage claim cannot survive a read-back. The operation that produces and reads the record is a new `application/` owner recorded on that route's overview, not here. Per-file citations live in the new sidecar. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
 - 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated (new section above).** The review wire carries the explicit revision selection: `models/knowledge/revision_selection.py` (new, 150 lines) declares the value and its three validators, and `models/knowledge/review.py` (873 → 893 lines) carries it on the pane with the one-direction validator. **Enforced rows re-cited in the same pass:** the L14-table rows this leaf's growth moved (`source_content_unresolved` `114` → `115`, `ReviewRefusal` `812-824` → `832-846`, `KnowledgeReviewResult` `827-842` → `847-864`, `KNOWLEDGE_REVIEW_SURFACE_VERSION` `95` → `96`, `ReviewEvidencePane` `643-680` → `685-721`), the subject-kinds row (`121` → `122`), and the L2 wire-shape rows (`1161-1220` → `1198-1275`, `1223-1261` → `1276-1314`). Header names this leaf's candidate row. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 

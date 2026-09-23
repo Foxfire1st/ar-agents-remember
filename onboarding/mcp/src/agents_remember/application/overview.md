@@ -3,17 +3,63 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastUpdated | 2026-09-23T09:35:00+02:00 |
+| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
+| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L21 The Recorded Comparison Identifies What Closeout And Integration Delivered, And Recording Is Not A Gate
+
+`260921-ICR-L21` (`ICR-R21@v1`, review-to-closeout identity continuity) closes the last gap between the
+two halves of a task's evidence: a generation records what a review **read**, while closeout and
+integration produce what the task **delivered**. A reader holding only "a comparison was made" could not
+tell whether the historical review opens the pair the task actually landed. This route gained **two
+purpose-named owners and one test module**, and `knowledge_review.py` — the master's global write mutex —
+was **not touched at all** (byte-identical), because the seam policy moves a *touched* responsibility and
+this leaf added none there.
+
+- **The record and its vocabulary.** `models/knowledge/review_final_output_receipt.py` owns
+  `FinalOutputReceipt`, its self-consistency validator and the one derived sentence. Its three-valued
+  verdict exists because two values would have to call an unmeasured delivery `bound`: a generation that
+  **selected** a knowledge operand and had no delivered dataset compared against it is `unmeasured`, not
+  matched, and `bound` — the value a consumer keys on as coverage — requires a measured match on every
+  channel the generation actually selected. `not-comparable` is likewise not a softer `differs`.
+- **The operation.** `application/review_final_output_receipt.py` owns the selection (the generation
+  store's own highest recorded index, with `no-generation` ≠ `unreadable` ≠ `ambiguous` and an ambiguous
+  tie recording nothing), the receipt (published through the durable-evidence owner, one file per leaf,
+  generation and phase), and the read-back (recorded / not-recorded / unreadable, beside the generations
+  that supersede it — measured at read time, never written into the record).
+- **It is wired into the production result surfaces.** `application/worktree_tools.py` attaches the
+  selection to the closeout **preview** and the receipt to closeout **apply** and to **integration**;
+  `application/review_comparison_reopen.py` gained a fourth channel, `final_output`, so reopening a
+  recorded comparison reports the delivered code, memory and published-knowledge outputs beside the
+  inputs it was compared against — which is this requirement's own sentence, read through the closed-leaf
+  review route.
+- **Nothing here can gate a transaction.** Recording runs after the Git transaction and its contract
+  write, inside the result builder; the transaction owners call the never-raising wrapper, and a receipt
+  that cannot be produced is reported as a state with its reason. A `moved` receipt deliberately does
+  **not** block: the packet forbids adding a gate, and the remedy it names — publish a successor
+  generation naming this one as its predecessor — is recorded in the receipt's own sentence.
+- **Boundary: the reclamation owner has no shipped caller, and that is routed debt, not an omission.**
+  `discard_final_output_receipts` states it plainly in its own docstring and names its consumers: an
+  explicit retention/release pass and the acceptance corridor that measures reclamation (**ICR-R25@v1**,
+  secondary the R11 retention/release route). It is the same shape the generation owner landed
+  (`review_comparison_reclamation.py` is likewise a named owner no automatic caller invokes) — the receipt
+  is retained evidence, and deleting it during ordinary cleanup would destroy the artifact the requirement
+  asks to survive. **Reclamation is therefore not automatic at this candidate.**
+- **Boundary: direct in-process callers of `git_worktree_manager.closeout_result` see no receipt**, because
+  the production result surface is the MCP tool and `layers.toml` ranks `application` above `worktrees`;
+  no shipped console script routes closeout or integration through the other caller.
+
+This realises the wiring `260921-ICR-L11` recorded as a boundary — *"the freeze is deliberately not wired
+to any route or read path; ICR-R21 wires it at closeout"* — and the per-file detail lives in the three new
+sidecars.
 
 ## 260921-ICR-L8 The Recorded Relationship Union Is Traversed, And Both Sides Of Every Association Are Displayed
 
@@ -360,7 +406,7 @@ measurement, not a second store, and not a new source of authored truth.
 | **The whole definition of durable history for this feature — the protected source branch plus the recorded landed commits — and the reason the work branch is absent.** | `custody_names`; `retain_comparison_source` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:131-165 |
 | **Both halves copied through the storage snapshot owner, under the dataset's own bound namespace, with the two refusals that keep a storage error out of the freeze.** | `retain_knowledge_sides`; `_freeze_side` | mcp/src/agents_remember/application/review_comparison_retention.py:315-341; mcp/src/agents_remember/application/review_comparison_retention.py:400-444 |
 | **The two deletion owners: the record written before the deletion, the measured digest, and the refusal that removes nothing.** | `release_comparison_code_object`; `discard_comparison_snapshots`; `_measure_and_remove` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210; mcp/src/agents_remember/application/review_comparison_reclamation.py:213-241 |
-| **The read-back: one state per channel, `unavailable_channels()`, and the live pin measurement leading the release history.** | `ComparisonReopen`; `reopen_comparison_generation`; `ComparisonSourceChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:152-193; mcp/src/agents_remember/application/review_comparison_reopen.py:196-217; mcp/src/agents_remember/application/review_comparison_reopen.py:96-122 |
+| **The read-back: one state per channel (four of them since ICR-R21@v1), `unavailable_channels()`, and the live pin measurement leading the release history.** | `ComparisonReopen`; `reopen_comparison_generation`; `ComparisonSourceChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:160-211; mcp/src/agents_remember/application/review_comparison_reopen.py:213-234; mcp/src/agents_remember/application/review_comparison_reopen.py:104-129 |
 | **The one durable-root owner the layout asks instead of restating `<task_root>/notes/reports`.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | **The two typed failures this route's deletion and retention boundaries raise.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-190; mcp/src/agents_remember/errors.py:193-203 |
 | **The cases that measure the whole journey, the convergence, the typed absences and the per-channel damage.** | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation`; `test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor`; `test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference`; `test_a_missing_or_damaged_retained_input_is_reported_per_channel` | mcp/tests/test_knowledge_review_comparison_generation.py:336-387; mcp/tests/test_knowledge_review_comparison_generation.py:711-762; mcp/tests/test_knowledge_review_comparison_generation.py:768-836; mcp/tests/test_knowledge_review_comparison_generation.py:556-598 |
@@ -1472,7 +1518,7 @@ contains it — no wider. `complete_tool_response` (`:131-145`) is unchanged; th
 `_attach_lifecycle_tail` (`:112-130`), so every response this route completes passes through it.
 
 ## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **route body update for the recorded relationship union (`ICR-R08@v1`).** The route gained five owners (`review_relationship_movement.py`, `review_relationship_display.py`, `review_recorded_relationships.py`, `review_governing_route.py`, `review_rename_inference.py`); `compose_review` gained an import and one call; `review_source_inventory.py` lost `_location`/`_realization_read_item`/`_change_state` (moved to the display and recorded-relationship owners) and now composes the traversal's own `source_locations`; and the L8 section above states the ruling (the union is not bounded by the comparison's page, the whole authored line is read through ICR-R07's head rule), the author-only pairing with its stated basis, and the reachability of the gap codes. **Citation accounting:** the rows this leaf's moves invalidated were re-derived at their constructs' own extents rather than shifted, and the leaf's own document carries the new module and case citations. **Metadata removal:** this document's candidate-reading metadata rows were removed under the developer's 2026-09-22 rule, and every sentence that pointed at such a row was corrected in the same pass so the document no longer claims the row exists. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
+- 2026-09-23T09:35:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for review-to-closeout identity continuity (`ICR-R21@v1`), and the route gained two purpose-named owners plus one test module.** The section above records the split (the record and its vocabulary in `models/knowledge/review_final_output_receipt.py`, the operation in `application/review_final_output_receipt.py`), the three result attachments in `application/worktree_tools.py` (+12 lines, all delegation), the fourth reopen channel, and the two boundaries: **recording is not a gate** (the never-raising wrapper is what the transaction owners call, so a receipt that cannot be produced is a state and never a refusal) and **the reclamation owner has no shipped caller** — routed debt to ICR-R25@v1 with the R11 retention/release route secondary, so reclamation is *not* automatic at this candidate. `application/knowledge_review.py` was **not touched** (byte-identical), because the seam policy moves a touched responsibility and this leaf added none there — the L11 section's recorded boundary that "ICR-R21 wires it at closeout" is now realised. **Citation accounting:** the three `review_comparison_reopen.py` ranges in the L11 row above were re-derived at their constructs' own extents (the module moved 699 → 730 lines with the fourth channel) rather than shifted by a delta, and the read-back row's wording now says four channels rather than three. Per-file citations live in the three new sidecars. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repairs: four rows re-cited to the landed `knowledge_review.py` declarations.** L7's pass cited its uncommitted candidate's positions; the landed file moved them (`select_subject_revisions` import `:90-93`, `_knowledge_pane` `:712-759`, `_selected_statements` `:760-785`, `_selector_kind_or_absence` `:615-626`). Each claim re-read against its declaration with wording retained. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **this route gained one module and the head-selection seam (new section above).** `application/review_revision_comparison.py` owns the explicit revision-comparison policy; `application/knowledge_review.py` (825 → 843 lines) gains one import plus the one `compose_review` call and loses the private both-sides preference, with `_knowledge_pane` rendering the selection through `_selected_statements`. **Enforced rows re-cited in the same pass:** the L6-section delegation ranges (`side_content` import `93-96` → `101-105`, `_knowledge_pane` `694-727` → `714-761`), the selection-channel row (`_rows_remaining` `542-553` → `562-574`), the comparison-reader row (`_comparison_attribution` `459-469` → `480-492`), the composition row (`_selector_kind_or_absence` `597-606` → `617-628`), the inventory-limit row (`_limitations` `628-651` → `670-695`), the entry-operation row (now three ranges `206-286`/`287-320`/`341-367`), and the before-half case row (`809-847` → `865-905`). Header names this leaf's candidate row. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.

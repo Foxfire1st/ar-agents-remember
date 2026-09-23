@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastUpdated | 2026-09-23T09:55:00+02:00 |
+| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
+| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -36,27 +36,47 @@ account:**
 
 | | measured on the working candidate |
 | --- | --- |
-| Declared lane entries | **318** |
-| `mcp/tests/test_*.py` modules on disk | **318** |
+| Declared lane entries | **327** |
+| `mcp/tests/test_*.py` modules on disk | **327** |
 | Declared-but-absent / present-but-undeclared | **0 / 0** |
-| File extent | **336 lines** |
-| `unit-regression` | **206**, key `:5`, rows `6-211` |
-| `public-contract` | **2**, key `:213`, rows `214-215` |
-| `integration` | **76**, key `:217`, rows `218-293` |
-| `architecture-fitness` | **20**, key `:295`, rows `296-315` |
-| `provider-conformance` | **14**, key `:317`, rows `318-331` |
-| `stress-durability` / `migration` | **0** / **0** (keys `:333` and `:335`) |
+| File extent | **345 lines** |
+| `unit-regression` | **215**, key `:5`, rows `6-220` |
+| `public-contract` | **2**, key `:222`, rows `223-224` |
+| `integration` | **76**, key `:226`, rows `227-302` |
+| `architecture-fitness` | **20**, key `:304`, rows `305-324` |
+| `provider-conformance` | **14**, key `:326`, rows `327-340` |
+| `stress-durability` / `migration` | **0** / **0** (keys `:342` and `:344`) |
 
 **The insertion moved every manifest entry below it, and that is this card's citation fact.** The row at
-`:111` sits below every earlier `260921-ICR` row in the knowledge run and above L16's
-`mcp/tests/test_review_route_refusals.py` row (now `:114`), L3's
-`mcp/tests/test_knowledge_review_source_content.py` row (now `:113`) and L1's
-`mcp/tests/test_knowledge_review_source_endpoints.py` row (now `:112`), so every lane key and every
-row at or below `:111` reads one line lower than the accounts above record it: `public-contract`
-`:212` → `:213`, `integration` `:216` → `:217`, `architecture-fitness` `:294` → `:295`,
-`provider-conformance` `:316` → `:317`, `stress-durability` `:332` → `:333`,
-`migration` `:334` → `:335`. Ranges into this file are the citation-reprojection owner's, and any row
-below `:111` that this card or an earlier account cites has moved with it.
+`:112` (L7's, listed at `:111` in the account above) sits above L16's
+`mcp/tests/test_review_route_refusals.py` row (now `:120`), L3's
+`mcp/tests/test_knowledge_review_source_content.py` row (now `:114`) and L1's
+`mcp/tests/test_knowledge_review_source_endpoints.py` row (now `:113`). Ranges into this file are the
+citation-reprojection owner's, and any row below an insertion that this card or an earlier account cites
+has moved with it.
+
+## 260921-ICR-L21 One Lane Row — The Final-Output-Receipt Cases — **the current account**
+
+`260921-ICR-L21` (ICR-R21@v1) registers **one** module,
+`mcp/tests/test_review_final_output_receipt.py`, as a `unit-regression` row: it sits at
+`mcp/tests/test-evidence-lanes.toml:212`, between L12's `mcp/tests/test_review_assessments.py` row
+(`:211`) and L8's `mcp/tests/test_knowledge_change_sets.py` row (`:213`). The module is hermetic — every
+case builds its own enclosure, datasets and Git objects under `tmp_path` — and it drives the shipped
+freeze, publication, closeout and integration owners, so `unit-regression` is the behaviour-preserving
+classification rather than a budget convenience. The leaf also adds **three** `consumer_scope = "exact"`
+rows to `mcp/tests/evidence-lifecycle.toml` and re-pins `LIFECYCLE_CATALOG_SHA256` in
+`mcp/tests/test_dependency_ownership_ast_helpers.py` (population unchanged at 16 contracts / 66
+artifacts).
+
+**The counts this leaf changed, measured from the manifest rather than by adding to an earlier account:
+declared entries 318 → 327** (the leaf's own row plus eight rows earlier leaves landed after L7's account
+was written), **unit-regression 206 → 215**, **file extent 336 → 345 lines**. Every lane key at or below
+the insertion moved with it — `public-contract` `:213` → `:222`, `integration` `:217` → `:226`,
+`architecture-fitness` `:295` → `:304`, `provider-conformance` `:317` → `:326`, `stress-durability`
+`:333` → `:342`, `migration` `:335` → `:344` — and the per-leaf tables below are **that leaf's own
+as-of account**, kept as history rather than restated here; the live-state table above is the measured
+one. **No claim's wording changed in this pass: the ranges were re-derived at their constructs' own
+current lines.**
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -466,10 +486,10 @@ row is the only content this leaf added to the file.
 | **The new lane row: the source-content cases, in the unit-regression lane, mid-list in the knowledge run.** | "mcp/tests/test_knowledge_review_source_content.py" |mcp/tests/test-evidence-lanes.toml:114-114|
 | The lane key the row is a member of. | "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | The row immediately above the insertion, and the row it displaced. | "mcp/tests/test_knowledge_review_source_endpoints.py"; "mcp/tests/test_knowledge_requirement_reference_contract.py" |mcp/tests/test-evidence-lanes.toml:113-113; mcp/tests/test-evidence-lanes.toml:121-121|
-| **The lane headers below the insertion, each one line lower than the previous account recorded.** | "public-contract = ["; "integration = ["; "architecture-fitness"; "migration = ["; "stress-durability = [" |mcp/tests/test-evidence-lanes.toml:221-221; mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/test-evidence-lanes.toml:303-303; mcp/tests/test-evidence-lanes.toml:343-343; mcp/tests/test-evidence-lanes.toml:341-341|
+| **The lane headers below the insertion, each one line lower than the previous account recorded.** | "public-contract = ["; "integration = ["; "architecture-fitness"; "migration = ["; "stress-durability = [" |mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:226-226; mcp/tests/test-evidence-lanes.toml:304-304; mcp/tests/test-evidence-lanes.toml:344-344; mcp/tests/test-evidence-lanes.toml:342-342|
 | The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_source_content.py:62-62 |
 | What the module measures, and why it needs a real repository rather than a stub: the real routes over the real owners, and the independent Git observation every text is asserted against. | `_served`; `_listed_inventory`; `_expand`; `_subprocess_git` | mcp/tests/test_knowledge_review_source_content.py:177-191; mcp/tests/test_knowledge_review_source_content.py:194-207; mcp/tests/test_knowledge_review_source_content.py:210-227; mcp/tests/test_knowledge_review_source_content.py:104-116 |
-| The two catalog consumer rows the same module joined, and the counts they do not move. | "mcp/tests/test_knowledge_review_source_content.py"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/evidence-lifecycle.toml:1419-1419|
+| The two catalog consumer rows the same module joined, and the counts they do not move. | "mcp/tests/test_knowledge_review_source_content.py"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/evidence-lifecycle.toml:1420-1420|
 
 ## 260921-ICR-L11 Lane Row — The Durable-Comparison-Generation Cases — **the current account**
 ## 260921-ICR-L11 Lane Row — The Durable-Comparison-Generation Cases — **the previous account, superseded on the row and the populations above**
@@ -564,7 +584,7 @@ the merged bytes rather than shifted by a remembered delta.
 | The lane key the row is a member of, and the array header it sits inside. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
 | **The modules the two rows above it register, which is the reading this row's position confirms.** | "mcp/tests/test_knowledge_ingest_comparison_generation.py"; "mcp/tests/test_knowledge_ingest_failure_windows.py" |mcp/tests/test-evidence-lanes.toml:88-88; mcp/tests/test-evidence-lanes.toml:89-89|
 | **The row the merged line adds below this one, and the module it displaced — the second shift the merge applied.** | "mcp/tests/test_knowledge_review_one_sided_statements.py"; "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/test-evidence-lanes.toml:111-111; mcp/tests/test-evidence-lanes.toml:113-113|
-| The lane headers below the insertion whose brackets moved with it. | "public-contract = ["; "integration = ["; "architecture-fitness"; "migration = [" |mcp/tests/test-evidence-lanes.toml:221-221; mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/test-evidence-lanes.toml:303-303; mcp/tests/test-evidence-lanes.toml:343-343|
+| The lane headers below the insertion whose brackets moved with it. | "public-contract = ["; "integration = ["; "architecture-fitness"; "migration = [" |mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:226-226; mcp/tests/test-evidence-lanes.toml:304-304; mcp/tests/test-evidence-lanes.toml:344-344|
 | **The manifest's own shape facts this account states: 331 lines, 313 entries for 313 modules on disk.** | "unit-regression"; "mcp/tests/test_memory_backfill.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:134-134|
 | The two consumer rows in the evidence catalog that the same module joined. | "mcp/tests/test_knowledge_ingest_publication_route.py"; `LIFECYCLE_CATALOG_SHA256` |mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/evidence-lifecycle.toml:736-736|
 | **The manifest's own shape facts this account states: 333 lines, 203 unit-regression entries.** | "unit-regression"; "mcp/tests/test_memory_backfill.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:134-134|
@@ -1838,7 +1858,7 @@ The exact source declarations below establish the current behavior; this invento
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:208-284 |
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:285-306 |
 | Provider contract classifications | "provider-conformance" |mcp/tests/test-evidence-lanes.toml:325-325|
-| Empty former stress/migration populations, in the manifest's two remaining empty lanes | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:147-147|
+| Empty former stress/migration populations, in the manifest's two remaining empty lanes | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:342-343; mcp/tests/test-evidence-lanes.toml:344-345|
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:208-284 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-201 |
 | The manifest still has no default classification for an unregistered test file. | "stress-durability" |mcp/tests/test-evidence-lanes.toml:341-341|
@@ -1864,7 +1884,7 @@ The exact source declarations below establish the current behavior; this invento
 | **The knowledge block's current membership across all four KS leaves**, whose insertion order is why the rows are not contiguous by leaf. | "mcp/tests/test_knowledge_store.py" |mcp/tests/test-evidence-lanes.toml:128-128|
 | **The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value — raised to 400 by this master's owning seat at the `260915-KS-L24` candidate, not by this leaf's fix round, raised to **600** with its unit half to **3000** by `260918-TSIP-L7` on 2026-09-19, and to **1000** with its unit half to **4000** by `260918-TSIP-L13` on 2026-09-20 — which is what the declaration reads now.** | "integration_case_budget = 1000" | pyproject.toml:279-279 |
 | **The unit ceiling, cited as the pinned key and value — raised to 1500 at the `260915-KS-L24` candidate, again to 1600 by that candidate's owning seat, again to 2200 by the merge onto the moved super line, to 2300 by `260915-KS-L21`, to **3000** with its integration half to **600** by `260918-TSIP-L7`'s developer-ruled raise of the pair, and to **4000** with its integration half to **1000** by `260918-TSIP-L13`'s second developer ruling on 2026-09-20, because an over-budget population makes `pytest_collection_finish` raise `UsageError` and run no tests at all. Every earlier value is retained as the ruling that produced it.** | "unit_case_budget = 4000" | pyproject.toml:278-278 |
-| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" |mcp/tests/test-evidence-lanes.toml:229-229; mcp/tests/test-evidence-lanes.toml:228-228|
+| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" |mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/test-evidence-lanes.toml:229-229|
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | Retained unit-regression membership, including the R28 deferred-work, canonical terminal-evidence mapping and L23 registration-order proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-201 |
 | The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 272 now, after the L4, seal-removal, L5, L7, L8, L3, L01 and L17 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" |mcp/tests/test-evidence-lanes.toml:295-295|
@@ -1889,8 +1909,8 @@ The exact source declarations below establish the current behavior; this invento
 | The L05 worker turn owner wake module is registered in the unit-regression lane by the same change set that created it (entry row 105, immediately below `test_state_signal_restart_recovery.py` at `:104` and above `test_state_signal_structural_dispatch_recovery.py` at `:106`) — it seeds owned worker and manager seats on a real `TerminalCatalog`, drives the real `run_agent_notifier_sweep` over a temporary coordination root with real task documents and the real durable stores, issues no HTTP request, starts no server and starts no process, and asserts the whole inbox store rather than its state-signal subset, so the default unit lane is its behaviour-preserving classification. The insertion sits inside the unit run above the rows this card cites, which is why every affected citation here was re-derived against the candidate rather than carried. | "mcp/tests/test_state_signal_worker_wake.py" |mcp/tests/test-evidence-lanes.toml:182-182|
 | The L17 observer-health proof is registered in the unit-regression lane by the same change set that created it (entry row 122, immediately below `test_terminal_liveness_registration_order.py` at `:121`) — it drives the record, the writer, the accumulator and the real `_state_response` handler and `stream_events` generator against stub projectors with no HTTP transport and no server, so the default unit lane is its behaviour-preserving classification. The insertion sits below `test_serving_observation_loop.py` (`:97`) and `test_serving_startup_prime.py` (`:98`), so no earlier row moved. | "mcp/tests/test_terminal_observer_health.py" |mcp/tests/test-evidence-lanes.toml:204-204|
 | The L07 curator-wake proof is registered in the unit-regression lane by the same change set that created it (entry row 102), immediately below `test_state_signal_boundary_delivery.py` at `:101` and above `test_state_signal_relay.py` at `:103` — it drives the real liveness sweeper, the real agent-notifier sweep and the real `run_agent_notifier_sweep` over temporary catalogs and an in-process tmux host, with no HTTP request, no server and no process, so the default unit lane is its behaviour-preserving classification. | "mcp/tests/test_state_signal_curator_wake.py" |mcp/tests/test-evidence-lanes.toml:179-179|
-| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:147-147|
-| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:147-147|
+| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:342-343; mcp/tests/test-evidence-lanes.toml:344-345|
+| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:342-343; mcp/tests/test-evidence-lanes.toml:344-345|
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:208-284 |
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:285-306 |
 | Provider contract classifications | "provider-conformance" |mcp/tests/test-evidence-lanes.toml:325-325|
@@ -1916,7 +1936,7 @@ The exact source declarations below establish the current behavior; this invento
 | **The knowledge block's current membership across all four KS leaves**, whose insertion order is why the rows are not contiguous by leaf. | "mcp/tests/test_knowledge_store.py" |mcp/tests/test-evidence-lanes.toml:128-128|
 | **The integration lane's collected-case cap that constrains lane choice, cited as the pinned key and value — raised to 400 by this master's owning seat at the `260915-KS-L24` candidate, not by this leaf's fix round, raised to **600** with its unit half to **3000** by `260918-TSIP-L7` on 2026-09-19, and to **1000** with its unit half to **4000** by `260918-TSIP-L13` on 2026-09-20 — which is what the declaration reads now.** | "integration_case_budget = 1000" | pyproject.toml:279-279 |
 | **The unit ceiling, cited as the pinned key and value — raised to 1500 at the `260915-KS-L24` candidate, again to 1600 by that candidate's owning seat, again to 2200 by the merge onto the moved super line, to 2300 by `260915-KS-L21`, to **3000** with its integration half to **600** by `260918-TSIP-L7`'s developer-ruled raise of the pair, and to **4000** with its integration half to **1000** by `260918-TSIP-L13`'s second developer ruling on 2026-09-20, because an over-budget population makes `pytest_collection_finish` raise `UsageError` and run no tests at all. Every earlier value is retained as the ruling that produced it.** | "unit_case_budget = 4000" | pyproject.toml:278-278 |
-| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" |mcp/tests/test-evidence-lanes.toml:229-229; mcp/tests/test-evidence-lanes.toml:228-228|
+| **The two lane rows this leaf registered in the same change, both in `integration` because the unit population sits exactly at its declared ceiling.** | "mcp/tests/test_knowledge_portable_roundtrip.py"; "mcp/tests/test_knowledge_portable_boundaries.py" |mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/test-evidence-lanes.toml:229-229|
 | The lane manifest is fail-closed: an unregistered tracked module makes loading refuse rather than classifying it by default. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:99-144 |
 | Retained unit-regression membership, including the R28 deferred-work, canonical terminal-evidence mapping and L23 registration-order proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-201 |
 | The worktree surface's next-move enforcement suite is registered in the integration lane by the same leaf that created it (row 175 at that leaf; row 272 now, after the L4, seal-removal, L5, L7, L8, L3, L01 and L17 insertions). | "mcp/tests/test_worktree_status_terminal_next_tool.py" |mcp/tests/test-evidence-lanes.toml:295-295|
@@ -1945,7 +1965,7 @@ The exact source declarations below establish the current behavior; this invento
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:208-284 |
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:285-306 |
 | Provider contract classifications | "provider-conformance" |mcp/tests/test-evidence-lanes.toml:325-325|
-| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:147-147|
+| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:342-343; mcp/tests/test-evidence-lanes.toml:344-345|
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:208-284 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-201 |
 | The manifest still has no default classification for an unregistered test file. | "stress-durability" |mcp/tests/test-evidence-lanes.toml:341-341|
@@ -1968,7 +1988,7 @@ The exact source declarations below establish the current behavior; this invento
 | Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:169-235 |
 | Retained structural detector classifications | "architecture-fitness" |mcp/tests/test-evidence-lanes.toml:303-303|
 | Provider contract classifications | "provider-conformance" |mcp/tests/test-evidence-lanes.toml:325-325|
-| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:147-147|
+| Empty former stress/migration populations | "stress-durability"; "migration" |mcp/tests/test-evidence-lanes.toml:342-343; mcp/tests/test-evidence-lanes.toml:344-345|
 | L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:169-235 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-162 |
 | The manifest still has no default classification for an unregistered test file. | "stress-durability" |mcp/tests/test-evidence-lanes.toml:341-341|
@@ -2192,10 +2212,10 @@ accounts above state the numbers *their* candidate measured and are retained as 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The registered row itself, in the alphabetical knowledge run between the review-surface module and the requirement-reference contract.** | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/test-evidence-lanes.toml:113-113|
-| The lane key the population is counted from, and the key of the next occupied lane after the insertion. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:221-221|
+| The lane key the population is counted from, and the key of the next occupied lane after the insertion. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:222-222|
 | The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_source_endpoints.py:82-82; mcp/tests/test_knowledge_review_source_endpoints.py:99-99 |
 | The precedent for a `unit-regression` row whose cases really do create Git objects under a temporary root they own. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" |mcp/tests/test-evidence-lanes.toml:217-217|
-| **The catalog consumer rows the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/evidence-lifecycle.toml:1418-1418|
+| **The catalog consumer rows the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/evidence-lifecycle.toml:1419-1419; mcp/tests/evidence-lifecycle.toml:1461-1461|
 
 ## 260921-ICR-L6 Lane Row — The One-Sided-Statement Cases, Beside The Ingest Modules
 
@@ -2240,11 +2260,12 @@ candidate measured and are retained as that record.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The registered row itself, in the alphabetical knowledge run immediately after the review-surface module and before the source-endpoint module.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/test-evidence-lanes.toml:111-111|
-| The lane key the population is counted from, and the key of the next occupied lane after the insertion. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:221-221|
+| The lane key the population is counted from, and the key of the next occupied lane after the insertion. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:222-222|
 | The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_one_sided_statements.py:69-69 |
 | The row this insertion displaced by one line, itself a `260921-ICR-L1` mid-list registration. | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/test-evidence-lanes.toml:113-113|
 | **The catalog consumer row the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/evidence-lifecycle.toml:1461-1461|
 ## Update History
+- 2026-09-23T10:05+02:00 — 260921-ICR-L21 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `972b44cc07b307929535fe7974d6a30d53c9c4f1` plus the worker's uncommitted delta): **body update: the live account was re-measured against the manifest and the twenty-two enforced `citation_anchor_absent_from_range` rows this card carried were repaired by hand.** The delta's one `unit-regression` insertion (`:212`, `mcp/tests/test_review_final_output_receipt.py`) moved every lane header below it by one line — `public-contract` `:222`, `integration` `:226`, `architecture-fitness` `:304`, `stress-durability` `:342`, `migration` `:344` — and displaced the rows below. Each repaired range now names the line that carries its own anchor: the five lane headers at those measured lines, the two empty lanes as their own blocks (`:342-343`, `:344-345`) rather than as a name match earlier in the file, the lane rows of the pause, playthrough, read-pair, guard, catalogue and citation-boundary modules at their measured lines (`:266`, `:272`, `:313`, `:231`, `:233`, `:215`, `:219`, `:300`, `:301`, `:227`), and the catalog consumer entries the same registrations produced, cited on both exact lists. No claim wording and no anchor was changed, no row was dropped to silence a finding, and **no verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-22T15:50:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **body update for the one lane row this leaf's module obliged, and every live row re-derived against the 338-line manifest.** The new `mcp/tests/test_review_subject_catalogue.py` (the ICR-R09 catalogue cases) is registered in the `unit-regression` lane at `:161`, newest-last in file order, which pins no digest and refuses an unregistered module at collection — without the row the lane manifest refuses the repository. **Citation accounting:** every live table row citing a lane position at or below the insertion kept its range; every live row at or above it moved exactly one line (the insertion is the only change to the manifest), re-derived as the cumulative delta per range end rather than by blanket arithmetic, with the ~110 affected rows re-pointed and the ~2260 history lines left byte-identical. The two cross-reference rows into `mcp/tests/evidence-lifecycle.toml` follow that file's own two insertions (`:1416`/`:1453` at this candidate). **Stamp accounting:** the verification pair names the leaf's base — the last real commit the reading was taken against — because the new row exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: two non-conflicted body rows re-derived to the merged tree.** The L3 source-content row (`:112` → `:113`) and the L11 one-sided row (`:112` → `:110`, endpoints half kept at `:112`) were stale after L7's insertion above them; re-read against the lines that carry their anchors. No verification stamp was advanced.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-merge resolution of the parked candidate against the landed ICR-L7 curation (11 regions).** Additive union throughout: L7's revision-selection section kept whole above this leaf's master-net section; L16's section demoted to previous account with the move noted; every conflicted table row collapsed to one row per (Finding, anchors) with manifest ranges re-derived against the merged tree (L7's `:111` row plus this leaf's `:114` row: content `:113`, endpoints `:112`, refusals `:115`, contract `:116`, keys `:214`/`:218`/`:296`/`:318`/`:334`/`:336`, unit-regression 207 rows over 337 lines, 319/319). Malformed range joins from the merge tooling repaired; both sides' history entries kept newest-first below. No verification stamp was advanced.
@@ -2300,10 +2321,10 @@ position in the same pass rather than carried. Older per-candidate accounts abov
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The three registered rows themselves, in the alphabetical knowledge run, and the neighbours they sit between.** | "mcp/tests/test_knowledge_review_relationship_line.py"; "mcp/tests/test_knowledge_review_relationship_movement.py"; "mcp/tests/test_knowledge_review_relationship_reach.py" |mcp/tests/test-evidence-lanes.toml:117-117; mcp/tests/test-evidence-lanes.toml:115-115; mcp/tests/test-evidence-lanes.toml:116-116|
-| The lane key the population is counted from, and the key of the next occupied lane after the insertions. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:221-221|
+| The lane key the population is counted from, and the key of the next occupied lane after the insertions. | "unit-regression = ["; "public-contract = [" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:222-222|
 | The modules' own lane declarations, which make the classification their own rather than a budget convenience. | `pytestmark` | mcp/tests/test_knowledge_review_relationship_movement.py:76-76; mcp/tests/test_knowledge_review_relationship_reach.py:59-59; mcp/tests/test_knowledge_review_relationship_line.py:44-44 |
 | The row the insertions displaced, itself a mid-list registration. | "mcp/tests/test_master_net_generation.py" |mcp/tests/test-evidence-lanes.toml:119-119|
-| **The catalog consumer rows the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_relationship_movement.py" |mcp/tests/evidence-lifecycle.toml:1423-1423|
+| **The catalog consumer rows the same registration produced, which is the other half of this leaf's footprint in the evidence registries.** | "mcp/tests/test_knowledge_review_relationship_movement.py" |mcp/tests/evidence-lifecycle.toml:1424-1424; mcp/tests/evidence-lifecycle.toml:1468-1468|
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **body update for the three lane rows this leaf's case modules obliged (338 → 341 lines).** The movement, reach and authored-line modules of `ICR-R08@v1` were inserted mid-list at `:114`, `:115` and `:116`, so every row below `:113` reads three lines lower and the lane keys moved to `:218`, `:222`, `:300`, `:322`, `:338`/`:340`; `unit-regression` rises by exactly three (208 → 211) and the other five populations are unchanged. Declared lane entries and `test_*.py` modules on disk are both **323**, with no declared-but-absent or present-but-undeclared module. Every citation into this manifest at or below the insertion point was re-derived from the anchor's real position rather than carried by a remembered delta. **Metadata removal:** this card's candidate-reading metadata rows were removed under the developer's 2026-09-22 rule, and the history sentences that pointed at such a row were corrected in the same pass so the document no longer claims the row exists. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.

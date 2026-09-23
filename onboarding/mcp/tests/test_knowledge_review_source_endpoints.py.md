@@ -7,8 +7,8 @@
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
 | lastUpdated | 2026-09-23T04:31 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
+| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -191,7 +191,7 @@ catalog digest are the whole memory-side footprint of adding a case module here.
 | --- | --- | --- |
 | **The module's own statement of what it measures and why injection is excluded: a real enclosure, a real worktree, the real resolution and the real comparison.** | `read_knowledge_review`; `resolve_review_candidate` | mcp/tests/test_knowledge_review_source_endpoints.py:1-25; mcp/tests/test_knowledge_review_source_endpoints.py:44-45 |
 | The lane registration: one `unit-regression` row, which is the whole delivery-category footprint. | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/test-evidence-lanes.toml:113-113|
-| **The catalog footprint: a consumer row on each existing shared-support fixture, so no artifact and no contract is added and the populations do not move.** | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/evidence-lifecycle.toml:1418-1418|
+| **The catalog footprint: a consumer row on each existing shared-support fixture, so no artifact and no contract is added and the populations do not move.** | "mcp/tests/test_knowledge_review_source_endpoints.py" |mcp/tests/evidence-lifecycle.toml:1419-1419; mcp/tests/evidence-lifecycle.toml:1461-1461|
 | The catalog byte pin the new consumer rows oblige, re-pinned deliberately beside the unchanged counts. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-65 |
 | The fixture's own vocabulary: the tracked paths that reproduce the diff fixture's bytes, the two ways a file is in the candidate and in no commit, the ignored boundary path, and the two committed/working contrast paths. | `MODIFIED_PATH`; `ELIGIBLE_UNTRACKED_PATH`; `STAGED_ADDITION_PATH`; `IGNORED_PATH`; `LOCAL_COMMIT_PATH`; `UNCOMMITTED_PATH` | mcp/tests/test_knowledge_review_source_endpoints.py:108-117 |
 | **The live enclosure: the real contract, the real worktree, the real datasets and the real resolution, with `resolve()` asserted to return a resolution rather than a refusal — and the `memory_mode` shape that composes a real memory half for later leaves without changing the default.** | `EndpointFixture`; `build_endpoint_fixture`; `_enclosure`; `_memory_plan`; `_link_memory_worktree`; `_materialize_candidate`; `_place_datasets` | mcp/tests/test_knowledge_review_source_endpoints.py:122-207; mcp/tests/test_knowledge_review_source_endpoints.py:215-248; mcp/tests/test_knowledge_review_source_endpoints.py:250-292; mcp/tests/test_knowledge_review_source_endpoints.py:294-319; mcp/tests/test_knowledge_review_source_endpoints.py:321-338; mcp/tests/test_knowledge_review_source_endpoints.py:340-369; mcp/tests/test_knowledge_review_source_endpoints.py:371-381 |
