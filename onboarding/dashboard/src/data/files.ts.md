@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/files.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`       |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ The module is data contracts plus five fetch helpers:
   available. cit:([`ReversePairing`], dashboard/src/data/files.ts:68-72)
 - cit:([`FilesApiError`], dashboard/src/data/files.ts:76-84) carries the HTTP status plus the server's `status` string code so the UI can show
   the precise reason.
-- cit:([`getJson`, `FilesApiError`, `qs`], dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:99-100) is the shared transport: it `fetch`es a URL and, on a non-ok response, reads the body's
+- cit:([`getJson`, `FilesApiError`, `qs`], dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:104-104) is the shared transport: it `fetch`es a URL and, on a non-ok response, reads the body's
   `status` field (falling back to `statusText`) and throws a `FilesApiError`. As of L4 (D6) `getJson` and
   the `qs` query-string builder are **exported** so the L3 change-set client (`data/changeset.ts`) reuses
   the same fetch wrapper + serving error idiom.
@@ -82,7 +82,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). | `RepoCatalog`; `DirListing`; `FileContent`; `ForwardPairing`; `ReversePairing` | dashboard/src/data/files.ts:27-29; dashboard/src/data/files.ts:38-43; dashboard/src/data/files.ts:51-59; dashboard/src/data/files.ts:62-66; dashboard/src/data/files.ts:68-72 |
-| `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97 |
+| `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:104-104 |
 | Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. | `fetchRepos`; `listDir`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:113-114; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
 | The serving layer registers the four `/api/files/*` endpoints this client calls. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). | `run_scoped` | mcp/src/agents_remember/serving/scope.py:207-227 |
@@ -103,6 +103,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the reader follows the same refusal-carrying shape (D01).** **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebound the stream-sibling row to
   the real `openConversationStream`; exact non-fixing check returns zero findings.

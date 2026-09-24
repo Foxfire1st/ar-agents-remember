@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_bootstrap_procedure.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T12:20:00+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,9 +52,9 @@ curator shape, not an admission, and the route-level cases next to it are what m
 
 | Reading | Case |
 | --- | --- |
-| the seat gate, by observed status | `test_a_session_with_no_task_document_is_admitted_only_for_the_taskless_seat_roles` |
+| the seat gate, by observed status | `test_the_opener_admits_exactly_the_taskless_seat_roles_and_instructs_each` |
 | the admitted taskless seat reaches the foundation | `test_the_admitted_taskless_seat_receives_the_foundation_step` |
-| the curator's own seat opens on a task document | `test_the_curator_seat_is_admitted_on_a_task_document` |
+| the curator's own seat opens on a task document | `test_the_curator_seat_opens_on_a_task_document_and_taskless` |
 | the served catalog publishes the procedure, bytes compared with `skills/` | `test_the_served_catalog_publishes_the_bootstrap_procedure` |
 | every printed invocation resolves in the shipped parser | `test_every_invocation_the_procedure_prints_resolves_in_the_shipped_parser` |
 | the compiled curator shape names the procedure | `test_the_compiled_curator_shape_names_the_procedure_it_would_receive` |
@@ -65,7 +65,7 @@ asserted only that the compiled capsule for a taskless curator names the procedu
 opener refuses that session with `400 task-binding-required` — a session that never opens has no first
 prompt, so nothing is handed over. The three route cases replaced that: they drive the dashboard's own
 open route over the shipped `_scratch_world` and assert the **observed status per role**, with the
-admitted arms as the control. `test_the_curator_seat_is_admitted_on_a_task_document` is the other half
+admitted arms as the control. `test_the_curator_seat_opens_on_a_task_document_and_taskless` is the other half
 — the curator opens **with** a named role scope and receives the procedure.
 
 **The parser case grades both halves at once and executes nothing.** Each invocation the procedure
@@ -117,12 +117,12 @@ No open file-local todos.
 | The placeholder is filled only to satisfy the parser's arity, because the case grades the command line's shape and runs no command. | `PLACEHOLDER_VALUE` | mcp/tests/test_knowledge_bootstrap_procedure.py:116-118 |
 | The served route reads a published skill body through the catalog's own read entry point rather than from `skills/` directly. | `served_body` | mcp/tests/test_knowledge_bootstrap_procedure.py:171-192 |
 | The compiled free-agent instructions for a role are obtained through the launch compiler's own shape. | `free_agent_instructions` | mcp/tests/test_knowledge_bootstrap_procedure.py:194-225 |
-| The cases open seats over the shipped scratch world and compare the observed status per role. | `open_seat`; `test_a_session_with_no_task_document_is_admitted_only_for_the_taskless_seat_roles` | mcp/tests/test_knowledge_bootstrap_procedure.py:227-297 |
-| The one seat the product admits without a task document **and** instructs about the foundation is the bootstrap seat. | `test_the_admitted_taskless_seat_receives_the_foundation_step` | mcp/tests/test_knowledge_bootstrap_procedure.py:298-328 |
-| The curator's own seat opens with a named role scope and receives the procedure, which is the other half of the seat gate. | `test_the_curator_seat_is_admitted_on_a_task_document` | mcp/tests/test_knowledge_bootstrap_procedure.py:329-354 |
+| The cases open seats over the shipped scratch world and compare the observed status per role. | `open_seat`; `test_the_opener_admits_exactly_the_taskless_seat_roles_and_instructs_each` | mcp/tests/test_knowledge_bootstrap_procedure.py:269-353 |
+| The one seat the product admits without a task document **and** instructs about the foundation is the bootstrap seat. | `test_the_admitted_taskless_seat_receives_the_foundation_step` | mcp/tests/test_knowledge_bootstrap_procedure.py:298-328; mcp/tests/test_knowledge_bootstrap_procedure.py:354-354 |
+| The curator's own seat opens with a named role scope and receives the procedure, which is the other half of the seat gate. | `test_the_curator_seat_opens_on_a_task_document_and_taskless` | mcp/tests/test_knowledge_bootstrap_procedure.py:388-417 |
 | The served catalog publishes the procedure, and the served bytes are compared with the canonical tree's. | `test_the_served_catalog_publishes_the_bootstrap_procedure` | mcp/tests/test_knowledge_bootstrap_procedure.py:355-379 |
 | Every invocation the procedure prints is filled and run through the real parser, grading declaration and option-ownership together without executing anything. | `test_every_invocation_the_procedure_prints_resolves_in_the_shipped_parser`; "The requirement's own failure: a document that describes commands which do not exist." | mcp/tests/test_knowledge_bootstrap_procedure.py:380-408 |
-| The curator-shape case measures the **compiler**, which is why it is named for the compiler rather than for an admission. | `test_the_compiled_curator_shape_names_the_procedure_it_would_receive` | mcp/tests/test_knowledge_bootstrap_procedure.py:409-429 |
+| The curator-shape case measures the **compiler**, which is why it is named for the compiler rather than for an admission. | `test_the_compiled_curator_shape_names_the_procedure_it_would_receive` | mcp/tests/test_knowledge_bootstrap_procedure.py:409-429; mcp/tests/test_knowledge_bootstrap_procedure.py:472-472 |
 | The two served skills an ordinary setup follows name the procedure and report the knowledge state. | `test_the_served_setup_and_onboarding_surfaces_reach_the_procedure` | mcp/tests/test_knowledge_bootstrap_procedure.py:430-453 |
 | The launch world the route cases drive is the shipped wiring module's own, not a fixture invented here. | `_scratch_world`; `LEAF_REF` | mcp/tests/test_capsule_launch_wiring.py:1-1 |
 | The module is placed in the evidence-unit lane. | "pytestmark = pytest.mark.evidence_unit" | mcp/tests/test_knowledge_bootstrap_procedure.py:99-99 |
@@ -136,4 +136,5 @@ No sibling repository evidence is needed for this test module.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the false taskless-curator sentences are corrected (D56, and F1 of the leaf's round-one verdict, which was `blocking`).** Four copies of the claim are gone: the module docstring's bullet, a docstring citing a case name that no longer existed after the rename, the bootstrap-seat case's "the one seat" sentence, and the curator-shape case's docstring; every case-name reference in the module now resolves. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T12:20:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **created** for the leaf's new test module (453 L, seven cases). The card records the four readings the module keeps apart, and states plainly which half each case measures — in particular that `test_the_compiled_curator_shape_names_the_procedure_it_would_receive` measures the **compiler** and not an admission, the correction the independent re-verification required after the round-one `blocking` verdict found the module's own name and docstring claiming a session-level delivery while the shipped opener refused that session. It also records the base reproduction (5 failed / 2 passed on base, 7 passed on the candidate) with the two base-passing cases named as the seat gate that constrained the correction rather than as delivered work. No verification stamp is advanced as a commit: the candidate is uncommitted, so the header's pair is the leaf's base commit plus this working-tree delta, and the governed closeout owns the real stamp.

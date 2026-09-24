@@ -6,13 +6,40 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-24T12:28:00+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L32 The Repair Leaf: The Seat Policy Moves, And Two Long-Route Defects Close
+
+`260921-ICR-L32` is a repair leaf, so this route's own record is about what it closed rather than what it
+delivered first.
+
+**The taskless admission now includes the curator (D56).** `serving/task_binding.py`'s `TASKLESS_SEAT_ROLES`
+is `{chat, terminal, bootstrap, curator}` — the developer's 2026-09-24 ruling — and the route-level case
+pins the whole status table rather than the constant. The package half of the coupling is **generated**: the
+six instruction carriers under `mcp/src/agents_remember/package_data/runtime/skills/` were rewritten by
+`scripts/sync-skills.py` from the canonical `skills/**` tree and all nine targets report `ok`. The L27
+section below, which correctly said this constant was **not** modified by **that** leaf, is history and not
+current policy.
+
+**The write plane is named by both its entry points (D55).** The mounted refusal's description and the module
+comment above it now say one writer and **both** shipped CLI entry points; the singular form was true when
+`ICR-R20@v1` landed it and incomplete once `ICR-R29@v1` shipped the second, and the sentence was completed
+rather than deleted.
+
+**Two test-side moves reach this route.** `mcp/tests/test_curator_family_authoring.py` is split (1320 → 818
+plus a 578-line sibling, `test_curator_ingest_write_and_retention.py`), so the ≥1200 census is back to its
+pre-L28 value in both scopes while the catalog keeps **16 contracts / 66 artifacts**; and the D02 NUL-safe
+Git family's cases live in `test_master_net_generation.py` over an eight-name fixture that includes a literal
+backslash on each side.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the repair leaf's own package-side record.** The new section states the taskless admission (`{chat, terminal, bootstrap, curator}`), that its carrier half is generated (`sync-skills.py`, nine targets `ok`), that the mounted refusal now names both write-plane entry points, and the two test-side movements (the 818 + 578 split restoring the census with 16 contracts / 66 artifacts; the D02 cases over an eight-name fixture). It also states that the L27 section's "not modified by this leaf" is history rather than current policy. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Package Publishes A New Procedure, And Its Generated Copies Carry It
 
@@ -249,7 +276,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:110-117 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:263-312; mcp/tests/test_knowledge_ingest_publication_route.py:533-557; mcp/tests/test_knowledge_ingest_publication_route.py:644-699 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:92-93; mcp/tests/evidence-lifecycle.toml:737-737; mcp/tests/evidence-lifecycle.toml:1278-1278 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:92-93; mcp/tests/evidence-lifecycle.toml:737-737; mcp/tests/evidence-lifecycle.toml:1278-1278; mcp/tests/test-evidence-lanes.toml:94-94 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -2157,7 +2184,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
-| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:80-80; mcp/src/agents_remember/application/review_candidate_resolution.py:86-86; mcp/src/agents_remember/application/review_candidate_resolution.py:87-87; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
+| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:80-80; mcp/src/agents_remember/application/review_candidate_resolution.py:86-86; mcp/src/agents_remember/application/review_candidate_resolution.py:87-87; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145; mcp/src/agents_remember/application/review_candidate_resolution.py:76-76 |
 | **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542 |
 | **The namespace read from the candidate's own sealed receipt rather than from the request — the sibling module's operation, which the adapter delegates to.** | `review_namespace` |mcp/src/agents_remember/application/review_candidate_resolution.py:348-373|
 | **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` |mcp/src/agents_remember/application/review_candidate_resolution.py:327-345; mcp/src/agents_remember/application/knowledge_before_half.py:347-377|
@@ -2287,7 +2314,7 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658 |
 | The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
 | The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1766-1925; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1925-2021; mcp/src/agents_remember/application/knowledge_curator_ingest.py:546-1925; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1901-1925 |
-| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1789-1853; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1789-2485 |
+| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1789-1853; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1789-2485; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2490-2490 |
 | The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3249-3491; mcp/src/agents_remember/application/knowledge_curator_ingest.py:682-3491; mcp/src/agents_remember/application/knowledge_curator_ingest.py:599-3491 |
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 

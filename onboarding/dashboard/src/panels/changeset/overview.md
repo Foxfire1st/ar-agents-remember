@@ -6,13 +6,20 @@
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`       |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`       |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src/panels overview](../overview.md)
+
+## 260921-ICR-L32 The Change-Set Read's Refusal Now Reaches The Control That Asked
+
+One of this route's governed sources changed, and the change is about **what a caller can tell apart**. `panels/detail-panel/changeSetBar.tsx` (governed here because this route owns the change-set reading surface) now renders the refusal's own code and reason beside a state marker, with a read still in flight kept as its own state, while the transport half — `data/changeset.ts` carrying the refusal instead of clearing the counters — is recorded on the `dashboard/src/data` route. `ChangeSetViewer.tsx`, which this route is named for, is **byte-identical** on these bytes: the defect was in the live-leaf "committed" control's read, not in the viewer, and saying so is the point of a route record. The case that pins the rendering drives the click and asserts the rendered reason, so "the control is present" is not mistaken for "the control works" — the rule `D49` was recorded for.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set refusal reaches the control.** The new section records the rendering half of the D01 repair on the control this route governs, states that `ChangeSetViewer.tsx` is byte-identical, and points the transport half at the `dashboard/src/data` route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Purpose
 
@@ -95,7 +102,7 @@ until a file is picked; the back link restores the railed Operations view.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The L3 read-only change-set API this screen consumes. | `task_changeset` | mcp/src/agents_remember/serving/changeset.py:100-119 |
-| The same-origin client wrapping that API. | `taskChangeset` | dashboard/src/data/changeset.ts:78-79 |
+| The same-origin client wrapping that API. | `taskChangeset` | dashboard/src/data/changeset.ts:78-79; dashboard/src/data/changeset.ts:33-33; dashboard/src/data/changeset.ts:158-158 |
 | The shell that hosts the takeover + restores the rails. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | The detail panel button + counters that open this screen. | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-96 |
 | The reused read-only CodeMirror pane + theme + lang map. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
@@ -143,7 +150,7 @@ that sets it, which is the boundary the two cards divide.
 | The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
 | **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
 | **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: selected.selector_kind"; "selectorId: selected.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:329-459 |
-| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 | **The one liveness predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
 
 ## 260921-ICR-L13 The Series View Is Bound To Its Listed Generation
@@ -219,7 +226,7 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-52 |
-| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 | The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:819-910; dashboard/src/panels/review/ReviewSurface.tsx:784-784; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
 
 ## Update History

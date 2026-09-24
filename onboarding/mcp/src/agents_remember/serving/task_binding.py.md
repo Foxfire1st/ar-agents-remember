@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/task_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate |  2026-09-16T20:47:18+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate |  2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ the shared terminal opener. It prevents settings lookup or host effects from pre
 document, role, source-lineage, and reviewer-parent validation.
 
 ## Code Commentary
+
+### 260921-ICR-L32 The Taskless Seat Set Admits The Curator
+
+`TASKLESS_SEAT_ROLES` gains `curator` on the developer's **2026-09-24 ruling**, and the commented block above the declaration records why in the product's own terms: a curator whose work is a repository's knowledge foundation has no enclosure and, on a greenfield repository, no task document to bind, yet it still has instructions to receive — and before this ruling no route delivered them. The comment also states what the change is **not**: it is a seat-policy change rather than a consequence of the `c-14-knowledge-bootstrap` procedure, and the curator on the ordinary enclosure route is still task-bound and still arrives through a dispatched brief. Everything else about the gate is unchanged — a taskless role runs no structural altitude check, a supplied document is still resolved and still refused when bad, and an unknown role still takes the structural path. The declaration now sits at `:91` and the gate's read of the set at `:145`.
 
 ### Logic
 
@@ -71,6 +75,7 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D56 admission.** A new subsection records the new membership, the operator's own words the comment quotes, what the change is explicitly not (a seat-policy change, not a consequence of the procedure), and that the rest of the gate's behaviour is unchanged; the declaration's and the read's current lines are stated. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-08-31T12:00+02:00 — Created during ARSPAWN-L5 A005 review repair to replace duplicated,
   late task-binding validation with one pre-settings and pre-host authority. Verification remains

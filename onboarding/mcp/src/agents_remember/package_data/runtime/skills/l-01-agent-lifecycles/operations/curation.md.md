@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -157,17 +157,20 @@ there is still exactly one admitted writer and one declared published location �
 comparison table separates them by **carrier, scope, required inputs, writer entry, onboarding and
 missing inputs** rather than by owner.
 
-The carrier row is the load-bearing one, and it is stated in the product's own refusal: the leaf entry is
-this seat opened on the leaf's task document; the foundation entry is the taskless **bootstrap** seat for
-the read-and-report step, or an instructed session holding the procedure for a taskless run; and **a
-taskless *curator* seat does not exist**, because a session opened for the curator with no task document
-is refused (`400 task-binding-required`, "named role scope is required"). The writer row names both
+The carrier row is the load-bearing one, and `260921-ICR-L32` changed what it says: the leaf entry is
+this seat opened on the leaf's task document; the foundation entry is **a taskless curator session**,
+which the developer's 2026-09-24 ruling admitted to the taskless seat roles and which authors under this
+role's own rules — and it can also be reached through the taskless **bootstrap** seat for the
+read-and-report step, or an instructed session holding the procedure for a taskless run. Every other role
+is still refused (`400 task-binding-required`, "named role scope is required"). The writer row names both
 entries and the enclosure the taskless one refuses (`enclosure_in_scope`, so a bootstrap can never
 publish onto a task's line), and the section keeps the rule that **neither entry substitutes for the
 other** and that no leaf, worktree, enclosure or task document is ever fabricated to give the foundation
 entry an argument list.
 
-> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session is refused `task-binding-required`. Whether `curator` joins that set is a **product** decision under revision — it is a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, and not as a permanent property of the product. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them; do not read this card as already describing a later revision.
+> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session was refused `task-binding-required`. That was true of those bytes and is **superseded** — whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`. The carrier instructions and their ten generated copies changed first and this memory followed them.
+>
+> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule, while every other role is still refused `task-binding-required`. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
 
 Two smaller edits carry the same facts outward: the operation's opening states that it carries the
 repository's first or resumed foundation as the same authoring work with a different admission and scope,
@@ -181,6 +184,7 @@ the bootstrap report, with the areas a partial run did not reach named as not re
 copy and the eight harness starter packages.
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the comparison table's carrier row changes with the policy.** The carrier row now names a taskless curator session (the developer's 2026-09-24 ruling) as the foundation entry's author and the bootstrap seat as its read-and-report half, where it previously said a taskless curator seat does not exist; the L27 note is retained as true at its own bytes and a second dated note states the policy at these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the repository-foundation entry section.** The new section with its six-row comparison table, the carrier row that states a taskless curator seat does not exist, the writer row with `enclosure_in_scope`, the opening sentence about the second bounded entry, the authority gate naming both writers, and the exit paragraph that carries the bootstrap report's facts and the areas a partial run did not reach. **Citation accounting:** the rows this card carries were re-read against this candidate — including the `## Handoff / exit` heading, whose live line was re-derived rather than carried forward — so no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **body update: the packaged copy carries the canonical operation's new step.** The pass now examines family coverage and authors it as part of the same list — a deliberate `no_family` outcome with its basis, an unexamined obligation left without either key so the report names it unexamined, nothing grouped by directory/route/label/shared anchor, and a member change prompting a fresh look at the affected guarantee — and declares every inspected external source so the run retains it in a bounded manifest rather than as a repository path with a Git blob. Written in `skills/l-01-agent-lifecycles/operations/curation.md` and propagated by `scripts/sync-skills.py`. **Citation accounting:** the ranges this card carries into the files this leaf's change set moved were re-derived against the candidate's own bytes rather than shifted by a remembered delta. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

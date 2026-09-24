@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`           |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`           |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 | The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. | `SidecarView` | dashboard/src/panels/file-viewer/DualPane.tsx:14-18 |
 | The one tree explorer rendered twice (code + onboarding sides). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
 | The persisted split/single flag (`localStorage`-backed). | `localStorage` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:1-1 |
-| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141 |
+| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141; dashboard/src/data/files.ts:93-93 |
 | The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
 | The route overview that governs this page. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
 
@@ -89,6 +89,7 @@ StrictMode effects share the in-flight request instead of multiplying boot reads
 memoized between meaningful `active` transitions.
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/git.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ Source declarations and test assertions are distinguished from execution and acc
 | Candidate trees use private indices and exact derived-path exclusions. | `_excluded_pathspec`; `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:38-68 |
 | Filtered status and staging/commit APIs share the exclusion contract. | `_status_args`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:112-116; mcp/src/agents_remember/worktrees/modules/git.py:221-236 |
 | The exact cache pathspec is defined beside the consumer filename. | `LEDGER_RELATIVE_PATH`; `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:24-27 |
-| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `committed_changed_paths`; `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348 |
+| Changed-file reporting preserves its distinct deletion/rename/count semantics. | `committed_changed_paths`; `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:309-348; mcp/src/agents_remember/worktrees/modules/git.py:407-407 |
 
 ## Cross-Repo References
 
@@ -102,6 +102,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the path-enumeration family is NUL-safe (D02).** All four functions read NUL-delimited Git output, pair the two-field rename form positionally, keep every name verbatim, and refuse rather than silently omitting. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:02 UTC — Documented explicit cache exclusions in status, candidate capture, staging, ordinary commits, and verified-index commits; preserved guarded-runner, real-index isolation, hook separation, and changed-path semantics. Working candidate verified by source inspection; commit metadata records real committed history only.

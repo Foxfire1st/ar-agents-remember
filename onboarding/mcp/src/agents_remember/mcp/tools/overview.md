@@ -6,13 +6,28 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
+
+The route's L20 paragraph above was **completed rather than replaced**: the mounted `knowledge_change`
+refusal now names one writer and **both** shipped CLI entry points that reach it — `WRITE_ENTRY_POINT`
+(`agents-remember knowledge-ingest`, a leaf enclosure's ordinary route) beside `TASKLESS_WRITE_ENTRY_POINT`
+(`agents-remember knowledge-bootstrap`, a repository with no enclosure in scope) — and the module comment at
+the top of `knowledge.py` says the same two, so the file no longer contradicts itself 20 lines below a
+comment claiming both names are used wherever a model is told where the write plane is reachable. Nothing
+else on this route moved: the same five builders, the same declared kinds, the same unconditional
+`registration_absent` for every one of them. The second constant is `260921-ICR-L32`'s addition; the first
+sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the write plane is named by both its shipped entry points.** The L20 paragraph is completed to one writer plus both CLI entry points (`WRITE_ENTRY_POINT` beside the new `TASKLESS_WRITE_ENTRY_POINT`), the module comment now agrees with it, and the new section records why the first sentence was true at its own bytes and incomplete after the second route shipped. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
 
@@ -624,9 +639,14 @@ tuple of record kinds this surface may be *asked* about (`evidence_claim`, `veri
 `invariant_revision`, `assumption`, `semantic_change_set`, `requirement_revision`), and the refusal is
 unconditional for every member of it: the shape records that the earlier spelling advertised two "admitted"
 kinds and then refused both anyway, which made the tool's own description false, so the refusal now names
-`WRITE_ENTRY_POINT` — the `agents-remember knowledge-ingest` subcommand — as where the write actually
-happens, because inventing a second write path here is exactly the authority the requirement forbids this
-route to add. `_projection_requests` builds one view request per requested view so
+where the write actually happens — **one** writer, reached by **both** shipped CLI entry points
+(`WRITE_ENTRY_POINT`, the `agents-remember knowledge-ingest` subcommand for a leaf enclosure's ordinary
+route, beside `TASKLESS_WRITE_ENTRY_POINT`, the `agents-remember knowledge-bootstrap` subcommand for a
+repository with no enclosure in scope) — because inventing a second write path here is exactly the
+authority the requirement forbids this route to add. **The second name is `260921-ICR-L32`'s correction of
+this route's own L20 sentence**: `ICR-R20@v1` named only `knowledge-ingest`, which was true when it was the
+sole reachable entry point, and `ICR-R29@v1`'s second route left the naming incomplete in the one place a
+model reads when it decides. `_projection_requests` builds one view request per requested view so
 the projection builder reads each view through the same seam a direct read does, rather than through a
 second selection path.
 

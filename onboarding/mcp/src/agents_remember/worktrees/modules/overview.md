@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,19 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260921-ICR-L32 The Path-Enumeration Family Reads NUL-Delimited Git Output
+
+`worktrees/modules/git.py`'s four path-enumerating functions — `changed_files_with_counts`,
+`changed_worktree_paths`, `_diff_paths` and `committed_changed_paths` — asked Git for line-delimited output
+and rewrote `\` to `/`, so a filename holding a tab, a newline or a backslash became an address no file
+holds. Measured at the leaf's base: five real changes in, four rows out, two addresses resolving to nothing
+and one real untracked change silently absent. `260921-ICR-L32` puts `-z` on all four, pairs
+`--name-status -z` and `--numstat -z` fields positionally including the two-field rename form, drops the
+escape rewrite entirely, and refuses rather than silently omitting — five in, five out, every name verbatim,
+with `committed_changed_paths` keeping its deliberate `is_file` filter so a deleted path is not reported as a
+change. This route's closeout worklists are exactly what the family feeds, so the defect was a
+closeout-input defect as much as a change-set one; `ACCEPTANCE.md` A24 is the row that measures it.
 
 ## 260921-ICR-L11 The Route Gains A Git-Object Retention Owner, And Custody Becomes A Measurement Over Named History
 
@@ -1355,6 +1368,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the path-enumeration family is NUL-safe.** The new section records the measured defect (five real changes in, four rows out, two unresolvable addresses, one change silently absent), the four `-z` reads, the positional pairing including the two-field rename form, the removal of the escape rewrite, and that these functions feed the route's own closeout worklists. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T20:24:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained `modules/code_object_retention.py`.** The section records the three decisions a reader of this route has to carry — one commit plus one `refs/ar/retained-code/` ref keep both bound objects alive; the retention commit's id is a function of the retained objects (identity supplied, dated by the base commit) so a re-created pin is the identical object and an exact re-freeze converges; and custody is measured over the history the caller **names**, with the leaf's own disposable work branch deliberately excluded and an empty name set keeping the pin. It also records the third observation (`absent`) as a reader's value that a record never stores, and one **open boundary**: whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf, which cannot run those transactions. One file-level card was created in the same pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
 - 2026-09-21T01:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches.** The route section above records the one small public `read_anchor` this leaf adds to `memory/knowledge/anchors.py`, with `get_anchor` delegating to it, the intake that resolves a stored anchor through it and refuses a mismatch before any plan exists, and the citation re-measurement this leaf performed in `worktrees/reopen.py`, `worktrees/modules/closeout.py` and `worktrees/modules/startup/`. It also records that `memory/knowledge/merge.py` is byte-unchanged and its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal payloads. This is a body change and not a metadata-only refresh. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.

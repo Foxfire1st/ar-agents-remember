@@ -6,13 +6,30 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260921-ICR-L32 The Mounted Refusal Names Both Shipped Entry Points, And Nothing Else On This Route Moves
+
+One route-level fact, and it is the completion of the L20 section above rather than a new surface. The
+`knowledge_change` registrar's published docstring now names **both** shipped CLI entry points that reach the
+one writer — `agents-remember knowledge-ingest` for a leaf enclosure's ordinary route and
+`agents-remember knowledge-bootstrap` for a repository with no enclosure in scope. No registered name, wire
+argument, response model or registration order changed, and the refusal itself is untouched: every record kind
+is still refused with `registration_absent` and nothing is written.
+**Why it was one name and is now two:** when `ICR-R20@v1` landed the sentence, `knowledge-ingest` **was** the
+only reachable entry point, so the singular form was true; `ICR-R29@v1` then shipped the second and left the
+sentence incomplete in the one place a model reads at the moment it decides. The correction is dated and
+attributed here because the earlier sentence was not false when it was written — it stopped being complete.
+No staleness marker for it was ever recorded in memory, so this section *is* the record.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the mounted refusal names both shipped entry points.** The new section completes the L20 record: `knowledge-ingest` alone was true when that leaf landed the sentence and became incomplete when `ICR-R29@v1` shipped the second route, so the sentence is completed rather than replaced, no registered name or wire argument moved, and no staleness marker for the old singular sentence was ever recorded — this section is that record. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260915-KS-L41 The Knowledge Family Hands Over A Default Repository, Not Half A Resolution Pair
 
@@ -543,13 +560,28 @@ model and no registration order changed.
 
 `knowledge_change` refuses every record kind with `registration_absent` and writes nothing — that is
 its whole body, and it is unchanged. What changed is what its published docstring tells a caller who
-reached it: the reachable write plane entry point, `agents-remember knowledge-ingest`, no longer only
+reached it: the write plane's reachable entry point, `agents-remember knowledge-ingest`, no longer only
 "commits a whole curator hand-off list through the admitted batch" but, **on the curator's ordinary
 route, publishes that candidate to the repository's one declared published dataset location and reads
 the published identity back**. A caller that reads the refusal to learn where writing *does* happen now
 learns the whole route rather than half of it, which is `ICR-R20@v1`'s point: a mounted tool that can
 only name a writer would leave the publication half of the ordinary route undiscoverable from the
 surface a caller most likely consults.
+
+**`260921-ICR-L32` completed that sentence's other half, which `ICR-R20@v1` could not have known about.**
+When L20 landed it, `knowledge-ingest` **was** the only reachable entry point, so naming it alone was
+true; `ICR-R29@v1` then shipped a second (`agents-remember knowledge-bootstrap`, the taskless
+repository-foundation route) and left the docstring singular, which made the sentence incomplete about
+the store in the one place a model reads at the moment it decides. L32 corrected **three** homes to name
+the one writer and **both** shipped CLI entry points that reach it — this registrar's docstring
+(`knowledge.md:125-127`), the module comment in `mcp/tools/knowledge.py` (`:90-93`) and the mounted
+refusal detail (`:425-426`), plus the two further homes `cli/knowledge_ingest.py` (`:112-115`) and
+`application/knowledge_ingest.py` (`:1-9`) that the hand sweep found. Every one was **completed, not
+deleted**, and a case (`test_the_write_plane_is_named_by_both_its_shipped_entry_points`) now pins it.
+**No staleness marker was ever written** for the old singular sentence: the curation that was told to
+record one as "what the surface said at its bytes" did not in fact record it, so a later seat reading
+the durable bytes (not the report) found the singular sentences standing unmarked and corrected them
+here — dated and attributed, so a reader can tell which revision each sentence was true at.
 
 Three things this section deliberately does **not** claim: the family is still the fourteenth and last
 `TOOL_REGISTRARS` entry (five registrars, read → change → diff → integrity → projection); no handler

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T12:20:00+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -45,23 +45,27 @@ track.
 **Which session carries it is the product's decision, and the product decides by the task document.**
 The opener admits a role with **no** task document only for the taskless seats, and the procedure
 quotes the refusal verbatim (`400 {"status": "task-binding-required", "detail": "named role scope is
-required"}`) rather than paraphrasing it. The shipped constant behind that gate is
-`TASKLESS_SEAT_ROLES = frozenset({"chat", "terminal", "bootstrap"})` —
-`mcp/src/agents_remember/serving/task_binding.py:83` — which this leaf does not change. So the
-procedure's own enumeration is the honest one, and there are **three real entries plus one thing that
-does not exist**:
+required"}`) rather than paraphrasing it. The shipped constant behind that gate is `TASKLESS_SEAT_ROLES`
+at `mcp/src/agents_remember/serving/task_binding.py:83`. **`260921-ICR-L32` changed it**: on the
+developer's **2026-09-24 ruling** the set is `{"chat", "terminal", "bootstrap", "curator"}`, and the
+carrier text this card describes now enumerates **three entries plus the taskless curator seat the
+ruling admitted** rather than asserting a fourth that does not exist:
 
 - **A task exists** — the curator is opened on that task's document, and the leaf entry is its writer.
-- **No task exists, first hour** — the **bootstrap** seat carries the procedure: it is the one seat the
-  product admits without a task document *and* instructs about the foundation. It reads the state and
-  reports it; it does **not** author records.
-- **No task exists, the foundation is to be built now** — the taskless writer is run by an instructed
+- **No task exists, first hour** — the **bootstrap** seat carries the read-and-report half: it is the
+  seat the product admits without a task document *and* instructs to read the foundation's state and
+  report it, handing the authoring on. It does **not** author records.
+- **No task exists, the foundation is to be built now** — a **taskless curator session** authors it under
+  the curator's own rules (the ruling's second carrier), and the taskless writer is run by an instructed
   session that holds the procedure, from a workspace with **no enclosure in scope** (the writer refuses
   one with `enclosure_in_scope`, so a bootstrap can never publish onto a task's memory line).
-- **A taskless *curator* seat does not exist.** Admitting the curator seat without a task document is a
-  change to the seat policy, which the procedure neither makes nor implies.
+- **A taskless *curator* seat exists.** `curator` joined the taskless seat roles by the developer's
+  **2026-09-24 ruling**, taken when the missing route was put to them, so a document-less `curator`
+  session is admitted and receives the curator capsule; every other role is still refused.
 
-> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session is refused `task-binding-required`. Whether `curator` joins that set is a **product** decision under revision — it is a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, and not as a permanent property of the product. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them; do not read this card as already describing a later revision.
+> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session was refused `task-binding-required`. That was true of those bytes and is **superseded**: whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`. The carrier instructions and their ten generated copies changed first and this memory followed them.
+>
+> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule (`instructionMode.role` `curator`, task reference `free-agent:curator`), while every other role is still refused `task-binding-required`. `scripts/sync-skills.py --check` reports all nine generated targets `ok`, so all ten copies of this carrier carry the corrected text. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
 
 **Four knowledge states are four different facts, and a fifth is not a state at all.** `not-recorded`
 (uninitialized — no publication is recorded), `recorded` (populated — a dataset bound to this repository
@@ -152,7 +156,7 @@ document is needed to prove this contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The skill is the procedure that authors the knowledge foundation (invariants, families, source realizations, external sources) as distinct from Markdown onboarding, and it adds no role and no second store. | `# c-14-knowledge-bootstrap Knowledge Bootstrap`; "This is a procedure, not a role and not a second orchestration system." | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:6-20 |
-| The new-project entry is a **taskless** seat, and the procedure states the opener's refusal verbatim instead of asserting an admission the product does not make. | `## Who Runs It`; "A taskless *curator* seat does not exist."; `"task-binding-required"` | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:38-71 |
+| The new-project entry is a **taskless** seat, and since the developer's 2026-09-24 ruling the procedure states that a taskless curator seat **exists** and authors the foundation when no task does, instead of asserting a refusal the product no longer makes. | `## Who Runs It`; "A taskless *curator* seat exists"; `"task-binding-required"` | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:38-83 |
 | Onboarding is optional input and never a precondition; a repository with no onboarding file is a supported starting state. | `## When To Use`; "Onboarding is **optional input, never a precondition**." | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:22-36 |
 | The three reachable entries and the delegated-assistance boundary: collection may be delegated, the authored result may not. | "Collection and search assistance may be delegated; the authored result may not."; `enclosure_in_scope` | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:49-77 |
 | Step 1 separates the four knowledge states, and a refused admission is not one of them. | `### 1. Resolve the entry and name the current state`; `not-recorded`; `recorded`; `unusable`; `context-not-admitted`; `snapshot_unavailable` | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:97-111 |
@@ -167,7 +171,7 @@ document is needed to prove this contract.
 | The eight preservation boundaries, including no fabricated leaf/worktree/enclosure, no invented authority, and the delivery gates that keep their owners. | `## Preservation Boundaries`; "No fabricated development leaf, worktree, enclosure or task document" | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:250-269 |
 | The relationship table places the procedure against its neighbours: c-13 reaches it, c-03 names it, c-00 reports the location's state, c-10 is a baseline and not a foundation, and the l-01 carriers house the owner and the first-hour seat. | `## Relationship To Other Skills`; `c-13-install-and-onboard`; `c-03-repo-bootstrap`; `c-00-initialize-memory-repo`; `c-10-adopt-memory-baseline`; `templates/curator-handoff-list.md` | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:271-282 |
 | The acceptance criteria state the reachable entries, the state read before authoring, the planning default, the derived admission, the read-back, partiality, the published location and the no-new-owner boundary. | `## Acceptance Criteria`; "a zero exit status is never quoted as a publication" | mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md:284-304 |
-| The taskless seat set the procedure's gate rests on is the shipped constant, unchanged by this leaf. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/task_binding.py:83-83 |
+| The taskless seat set the procedure's gate rests on, which `260921-ICR-L32` changed on the developer's 2026-09-24 ruling so that it admits `curator`. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/task_binding.py:91-91 |
 | Propagation is generated, not hand-maintained: the root tree is copied into the package-owned copy and the eight harness starter packages. | `CANONICAL_SKILLS`; `TARGETS` | scripts/sync-skills.py:15-56 |
 
 Current working-candidate evidence for this card:
@@ -185,4 +189,5 @@ No sibling repository evidence is needed for this procedure.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the seat policy this card stated is brought forward, dated, and the earlier note is kept as what was true at its own bytes.** `260921-ICR-L32` added `curator` to `TASKLESS_SEAT_ROLES` on the developer's 2026-09-24 ruling and corrected the carrier text this card describes, so the card's own enumeration of entries is restated as the three entries plus the taskless curator seat the ruling admitted; the L27 seat-policy note is retained verbatim in substance, retitled to L27's bytes and marked superseded, and a second note records the policy at **these** bytes (`71a17079…` plus this delta) where a document-less `curator` session is admitted and receives the curator capsule while every other role is still refused. The row naming the constant is corrected with it — the declaration moved to `:91`, and "unchanged by this leaf" was false of L32. No verification stamp is advanced as a commit: the candidate is uncommitted, so the header's pair is the leaf's base commit plus this working-tree delta, and the governed closeout owns the real stamp.
 - 2026-09-24T12:20:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **created.** The card documents the newly delivered `c-14-knowledge-bootstrap` procedure on its generated package-owned copy; the canonical instruction home is root `skills/c-14-knowledge-bootstrap/SKILL.md`, propagated by `scripts/sync-skills.py` into nine generated targets. It records the product's real admission (`TASKLESS_SEAT_ROLES` is `{"chat","terminal","bootstrap"}`, so a taskless **curator** seat is refused `task-binding-required`) instead of the admission an earlier draft of the procedure asserted, the four knowledge states with a refused admission kept out of them, the two writers and the enclosure that separates them, the planning-by-default dry run, and the read-back facts that make a report a result rather than an exit status. No verification stamp is advanced as a commit: the candidate is uncommitted, so the header's pair is the leaf's base commit plus this working-tree delta, and the governed closeout owns the real stamp.

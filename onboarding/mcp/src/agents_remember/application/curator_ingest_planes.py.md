@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_ingest_planes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,10 @@ plane's vocabulary is restated there.
 | Every entry is accounted for, once | A plane's refusal is reported through the entry's own refusal; the entries whose outcome the run could not establish are named as unresolved, and the committed entries the curator examined nothing for are named as unexamined |
 
 ## Code Commentary
+
+### 260921-ICR-L32 The Family Read Learns The Fork Point
+
+`read_curator_planes` gains a keyword-only `fork_point: Path | None`, and its docstring now states why the read is not simply "the candidate's own bytes yet": an **absent** candidate that selected a baseline does not start empty, because admission clones that baseline — so the family revisions the candidate holds on its first write are the baseline's. Reading only the candidate answered `None` ("there is no dataset here") for exactly that run, and a membership naming a revision the **baseline** stores was refused `family_revision_not_stored` while sitting one step away from a candidate that would hold it. The fallback sits here rather than after admission because the CLI's **planning run is the default** and asks the same question, so a fix covering only the committing run would leave the ordinary dry run refusing the same stored revision. `read_stored_family_facts` answering `None` for a candidate that does not exist yet is what keeps a first run's "records no family" distinguishable from "there is no dataset here".
 
 ### Logic
 
@@ -128,7 +132,7 @@ curator-run planes.
 | **`manifest_written` as a fact separate from "the list declared something", because a refused batch still wrote the file it named.** | "manifest_written"; "a report that said otherwise would be" | mcp/src/agents_remember/application/curator_ingest_planes.py:111-115 |
 | The one place the origin references every written row carries are composed. | `refs`; `origin_refs` | mcp/src/agents_remember/application/curator_ingest_planes.py:117-121 |
 | **One entry's refusal answered across both planes, in a fixed order, because both are facts about that one entry.** | `refusal_of` | mcp/src/agents_remember/application/curator_ingest_planes.py:123-141 |
-| **The read-before-you-plan entry point: everything resolved against the candidate as it stands, and nothing written.** | `read_curator_planes`; "Everything here is read and resolved against the candidate as it stands, and nothing is written" | mcp/src/agents_remember/application/curator_ingest_planes.py:144-178 |
+| **The read-before-you-plan entry point: everything resolved against the destination this run will write into, and nothing written.** | `read_curator_planes`; "Everything here is read and resolved against the destination this run will write into, and nothing is written" | mcp/src/agents_remember/application/curator_ingest_planes.py:144-178 |
 | **Both planes' coverage for one report, with the source path claimed only when its state is recorded.** | `plane_coverage`; "SOURCE_MANIFEST_NAME if source_state ==" | mcp/src/agents_remember/application/curator_ingest_planes.py:181-227 |
 | **The source plane's state follows the write rather than the commit, because the manifest precedes the batch that names its digest.** | `_source_state`; "manifest is written *before* the batch it belongs to" | mcp/src/agents_remember/application/curator_ingest_planes.py:230-254 |
 | **Each plane's state and its own sentence, as separate pairs rather than one sentence parameterised by a word, with the family state read from the post-batch read.** | `_plane_states`; "the batch did not commit, so no family row was written here" | mcp/src/agents_remember/application/curator_ingest_planes.py:257-285 |
@@ -148,6 +152,7 @@ list and one candidate dataset under one coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D57 fork-point read.** A new subsection records the keyword-only `fork_point`, why an absent baseline-forked candidate must be read through it, why the fallback belongs before admission (the planning run is the default and asks the same question), and the two distinct answers `read_stored_family_facts` keeps apart. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): created this one-to-one card for the module

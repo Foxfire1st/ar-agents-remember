@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_family_authoring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ assertions compare against.
 **Every assertion that matters reads the store, not the report.** `database_of` (`:206-209`) reopens
 the candidate's sqlite file; `guarantees` (`:242-249`) and `members_of` (`:252-261`) read the
 `family_revision` and `family_member` rows; `conditions_of` (`:264-274`) reads the revision's recorded
-conditions; `provenance_of` (`:304-315`) reads the written provenance; `family_memberships` (`:318-331`)
+conditions; `provenance_of` (`:304-315`) reads the written provenance; `family_memberships` (`:270-279`)
 reads the endpoint triples; `table_counts` (`:284-301`) counts rows per family table. The public route
 is exercised too: `family_view` (`:212-223`) and `invariant_view` (`:226-239`) go through
 `open_read_context` and `read_knowledge_view`, so the stored result is also read back the way a product
@@ -77,17 +77,17 @@ and `committed_invariant` (`:348-359`) resolve a report's identity for the entry
 | A stored revision is examined, not re-declared | `test_a_stored_family_revision_is_examined_and_joined_without_being_re_declared` (`:617-668`) |
 | A changed guarantee is a successor preserving the earlier membership | `test_a_changed_guarantee_is_a_successor_that_preserves_the_earlier_membership` (`:671-744`) |
 | A changed guarantee under one key is refused rather than rewritten | `test_a_changed_guarantee_under_one_key_is_refused_rather_than_rewritten` (`:747-797`) |
-| A stored membership can be retired by the identity this run read | `test_a_stored_membership_can_be_retired_by_the_identity_this_run_read` (`:800-843`) |
-| A retirement naming no stored membership is refused | `test_a_retirement_that_names_no_stored_membership_is_refused` (`:846-871`) |
-| An external source is a manifest reference, never a Git anchor | `test_an_external_source_is_retained_in_a_manifest_and_never_becomes_a_git_anchor` (`:874-935`) |
-| A refused entry spends no family identity | `test_a_declaration_whose_entry_is_refused_spends_no_identity` (`:938-972`) |
-| **A replayed revision still writes the family plane its entry now authors** | `test_a_replayed_revision_still_writes_the_family_plane_its_entry_now_authors` (`:975-1044`) |
-| An exact replay writes nothing and spends no identity | `test_an_exact_replay_writes_nothing_and_spends_no_identity` (`:1047-1085`) |
-| A changed no-family basis on a stored revision is refused by name | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name` (`:1088-1148`) |
-| A run that writes nothing retains no manifest and says so | `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` (`:1151-1191`) |
-| An unversioned source is refused | `test_a_source_with_neither_version_nor_retrieval_time_is_refused` (`:1194-1214`) |
-| A planning run writes no family row and says so | `test_a_planning_run_writes_no_family_row_and_says_so` (`:1217-1242`) |
-| The command line authors the family plane and reports it | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` (`:1245-1320`) |
+| A stored membership can be retired by the identity this run read | `test_a_stored_membership_can_be_retired_by_the_identity_this_run_read` (`:752-797`) |
+| A retirement naming no stored membership is refused | `test_a_retirement_that_names_no_stored_membership_is_refused` (`:798-818`) |
+| An external source is a manifest reference, never a Git anchor | `test_an_external_source_is_retained_in_a_manifest_and_never_becomes_a_git_anchor` (`mcp/tests/test_curator_ingest_write_and_retention.py:132-195`) |
+| A refused entry spends no family identity | `test_a_declaration_whose_entry_is_refused_spends_no_identity` (`mcp/tests/test_curator_ingest_write_and_retention.py:196-232`) |
+| **A replayed revision still writes the family plane its entry now authors** | `test_a_replayed_revision_still_writes_the_family_plane_its_entry_now_authors` (`mcp/tests/test_curator_ingest_write_and_retention.py:233-304`) |
+| An exact replay writes nothing and spends no identity | `test_an_exact_replay_writes_nothing_and_spends_no_identity` (`mcp/tests/test_curator_ingest_write_and_retention.py:305-345`) |
+| A changed no-family basis on a stored revision is refused by name | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name` (`mcp/tests/test_curator_ingest_write_and_retention.py:346-408`) |
+| A run that writes nothing retains no manifest and says so | `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` (`mcp/tests/test_curator_ingest_write_and_retention.py:409-451`) |
+| An unversioned source is refused | `test_a_source_with_neither_version_nor_retrieval_time_is_refused` (`mcp/tests/test_curator_ingest_write_and_retention.py:452-474`) |
+| A planning run writes no family row and says so | `test_a_planning_run_writes_no_family_row_and_says_so` (`mcp/tests/test_curator_ingest_write_and_retention.py:475-502`) |
+| The command line authors the family plane and reports it | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` (`mcp/tests/test_curator_ingest_write_and_retention.py:503-578`) |
 
 **The case that exists because a false sentence was reachable is the replayed-revision one**
 (`:975-1044`). Its own docstring states what it asserts: step 1 authors an entry with a deliberate
@@ -142,34 +142,34 @@ operation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of what it adds and of the eight properties its cases measure.** | "What this module adds is what those cannot reach"; "a membership can be **retired** by the identity of the row this run read" | mcp/tests/test_curator_family_authoring.py:1-27 |
-| **The fixture is imported from the list-driven suite rather than duplicated.** | `AUTHORIZATION`; `CODE_FILE`; `CODE_SYMBOL`; `GONE_PATH`; `SourcePair`; `entry`; `pair`; `symbol`; `target` | mcp/tests/test_curator_family_authoring.py:43-58; mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:182-262; mcp/tests/test_knowledge_curator_ingest_list.py:346-369; mcp/tests/test_knowledge_curator_ingest_list.py:372-375; mcp/tests/test_knowledge_curator_ingest_list.py:384-387 |
-| The authored text the assertions compare against. | `FAMILY_ALPHA`; `FAMILY_BETA`; `GUARANTEE_ALPHA`; `NO_FAMILY_BASIS`; `EXTERNAL_URL`; `EXTERNAL_DIGEST`; `EXTERNAL_LOCATION` | mcp/tests/test_curator_family_authoring.py:71-91 |
-| The four thin builders: one authored decision, one membership, one attach-a-plane call each for family and sources. | `declared`; `membership`; `with_family`; `with_sources` | mcp/tests/test_curator_family_authoring.py:99-148 |
-| The declared-external-source builder and the citation helper. | `source`; `citation` | mcp/tests/test_curator_family_authoring.py:158-181 |
+| **The fixture is imported from the list-driven suite rather than duplicated.** | `AUTHORIZATION`; `CODE_FILE`; `CODE_SYMBOL`; `GONE_PATH`; `SourcePair`; `entry`; `pair`; `symbol`; `target` | mcp/tests/test_curator_family_authoring.py:43-58; mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:182-262; mcp/tests/test_knowledge_curator_ingest_list.py:346-369; mcp/tests/test_knowledge_curator_ingest_list.py:372-375; mcp/tests/test_knowledge_curator_ingest_list.py:384-387; mcp/tests/test_knowledge_curator_ingest_list.py:107-107 |
+| The authored text the assertions compare against. | `FAMILY_ALPHA`; `FAMILY_BETA`; `GUARANTEE_ALPHA`; `NO_FAMILY_BASIS`; `EXTERNAL_URL`; `EXTERNAL_DIGEST`; `EXTERNAL_LOCATION` | mcp/tests/test_curator_family_authoring.py:71-91; mcp/tests/test_curator_ingest_write_and_retention.py:75-75 |
+| The four thin builders: one authored decision, one membership, one attach-a-plane call each for family and sources. | `declared`; `membership`; `with_family`; `with_sources` | mcp/tests/test_curator_family_authoring.py:99-148; mcp/tests/test_curator_ingest_write_and_retention.py:91-91 |
+| The declared-external-source builder and the citation helper. | `source`; `citation` | mcp/tests/test_curator_family_authoring.py:158-181; mcp/tests/test_curator_family_authoring.py:30-30; mcp/tests/test_curator_family_authoring.py:5-5 |
 | The real operation driven once per case, and the candidate directory the store is reopened from. | `ingest`; `candidate_of`; `database_of` | mcp/tests/test_curator_family_authoring.py:184-209 |
 | **The read-back through the shipped public route rather than a raw query.** | `family_view`; `invariant_view`; `open_read_context`; `read_knowledge_view` | mcp/tests/test_curator_family_authoring.py:212-239; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_views.py:86-112 |
-| **The store readers every claim is asserted against: guarantees, member sets, recorded conditions, provenance and endpoints.** | `guarantees`; `members_of`; `conditions_of`; `statements_of`; `table_counts`; `provenance_of`; `family_memberships` | mcp/tests/test_curator_family_authoring.py:242-331 |
+| **The store readers every claim is asserted against: guarantees, member sets, recorded conditions, provenance and endpoints.** | `guarantees`; `members_of`; `conditions_of`; `statements_of`; `table_counts`; `provenance_of`; `family_memberships` | mcp/tests/test_curator_family_authoring.py:208-217; mcp/tests/test_curator_family_authoring.py:218-229; mcp/tests/test_curator_family_authoring.py:230-242; mcp/tests/test_curator_family_authoring.py:243-260; mcp/tests/test_curator_ingest_write_and_retention.py:118-118; mcp/tests/test_curator_family_authoring.py:270-285 |
 | The report identities a case resolves before reading the store. | `committed_revision`; `committed_invariant` | mcp/tests/test_curator_family_authoring.py:334-359 |
 | **A declared family stored as its own guarantee with exact memberships.** | `test_a_declared_family_is_stored_as_its_own_guarantee_with_exact_memberships` | mcp/tests/test_curator_family_authoring.py:367-422 |
 | **Membership is never inferred from a file or a route.** | `test_one_file_and_one_route_are_not_a_family` | mcp/tests/test_curator_family_authoring.py:425-452 |
 | **One revision in two families, and one family across revisions.** | `test_one_revision_can_belong_to_two_families` | mcp/tests/test_curator_family_authoring.py:455-499 |
 | **The deliberate no-family outcome retained with its basis, while an unexamined entry is reported as unexamined rather than family-free.** | `test_a_deliberate_no_family_outcome_is_retained_while_an_unexamined_entry_is_not` | mcp/tests/test_curator_family_authoring.py:507-547 |
-| A blank basis refused instead of stored as an unexplained claim; the undeclared key refused by name. | `test_a_blank_basis_is_refused_instead_of_stored_as_an_unexplained_claim`; `test_a_membership_that_joins_no_declared_family_is_refused_by_name` | mcp/tests/test_curator_family_authoring.py:550-576; mcp/tests/test_curator_family_authoring.py:579-614 |
+| A blank basis refused instead of stored as an unexplained claim; the undeclared key refused by name. | `test_a_blank_basis_is_refused_instead_of_stored_as_an_unexplained_claim`; `test_a_membership_that_joins_no_declared_family_is_refused_by_name` | mcp/tests/test_curator_family_authoring.py:550-576; mcp/tests/test_curator_family_authoring.py:579-614; mcp/tests/test_curator_family_authoring.py:502-502; mcp/tests/test_curator_family_authoring.py:531-531 |
 | **A stored revision examined and joined without being re-declared.** | `test_a_stored_family_revision_is_examined_and_joined_without_being_re_declared` | mcp/tests/test_curator_family_authoring.py:617-668 |
-| **A changed guarantee stored as a successor that preserves the earlier membership, and the same key with a changed guarantee refused rather than rewritten.** | `test_a_changed_guarantee_is_a_successor_that_preserves_the_earlier_membership`; `test_a_changed_guarantee_under_one_key_is_refused_rather_than_rewritten` | mcp/tests/test_curator_family_authoring.py:671-744; mcp/tests/test_curator_family_authoring.py:747-797 |
-| A stored membership retired by the identity this run read, and a retirement naming no stored membership refused. | `test_a_stored_membership_can_be_retired_by_the_identity_this_run_read`; `test_a_retirement_that_names_no_stored_membership_is_refused` | mcp/tests/test_curator_family_authoring.py:800-843; mcp/tests/test_curator_family_authoring.py:846-871 |
-| **The external source retained in a bounded manifest named by the record's own origin reference, with no source anchor fabricated for it.** | `test_an_external_source_is_retained_in_a_manifest_and_never_becomes_a_git_anchor` | mcp/tests/test_curator_family_authoring.py:874-935 |
-| A refused entry spends no family identity. | `test_a_declaration_whose_entry_is_refused_spends_no_identity` | mcp/tests/test_curator_family_authoring.py:938-972 |
-| **The replayed-revision case, which asserts against the reopened dataset rather than the report's own strings.** | `test_a_replayed_revision_still_writes_the_family_plane_its_entry_now_authors` | mcp/tests/test_curator_family_authoring.py:975-1044 |
-| The deliberate complement, which is not the discriminating case because both predicates agree on a fully-stored list. | `test_an_exact_replay_writes_nothing_and_spends_no_identity` | mcp/tests/test_curator_family_authoring.py:1047-1085 |
-| A changed no-family basis on an already-stored revision refused by name; a run that writes nothing retaining no manifest and saying so. | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name`; `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` | mcp/tests/test_curator_family_authoring.py:1088-1148; mcp/tests/test_curator_family_authoring.py:1151-1191 |
-| An unversioned source refused; a planning run writing no family row and saying so. | `test_a_source_with_neither_version_nor_retrieval_time_is_refused`; `test_a_planning_run_writes_no_family_row_and_says_so` | mcp/tests/test_curator_family_authoring.py:1194-1214; mcp/tests/test_curator_family_authoring.py:1217-1242 |
-| **The command line authoring the family plane and reporting it, which is the case the F4 guard bites on.** | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` | mcp/tests/test_curator_family_authoring.py:1245-1320 |
+| **A changed guarantee stored as a successor that preserves the earlier membership, and the same key with a changed guarantee refused rather than rewritten.** | `test_a_changed_guarantee_is_a_successor_that_preserves_the_earlier_membership`; `test_a_changed_guarantee_under_one_key_is_refused_rather_than_rewritten` | mcp/tests/test_curator_family_authoring.py:671-744; mcp/tests/test_curator_family_authoring.py:747-797; mcp/tests/test_curator_family_authoring.py:623-623 |
+| A stored membership retired by the identity this run read, and a retirement naming no stored membership refused. | `test_a_stored_membership_can_be_retired_by_the_identity_this_run_read`; `test_a_retirement_that_names_no_stored_membership_is_refused` | mcp/tests/test_curator_family_authoring.py:752-797; mcp/tests/test_curator_family_authoring.py:798-818; mcp/tests/test_curator_family_authoring.py:798-798; mcp/tests/test_curator_family_authoring.py:752-752 |
+| **The external source retained in a bounded manifest named by the record's own origin reference, with no source anchor fabricated for it.** | `test_an_external_source_is_retained_in_a_manifest_and_never_becomes_a_git_anchor` | mcp/tests/test_curator_ingest_write_and_retention.py:132-195 |
+| A refused entry spends no family identity. | `test_a_declaration_whose_entry_is_refused_spends_no_identity` | mcp/tests/test_curator_ingest_write_and_retention.py:196-232 |
+| **The replayed-revision case, which asserts against the reopened dataset rather than the report's own strings.** | `test_a_replayed_revision_still_writes_the_family_plane_its_entry_now_authors` | mcp/tests/test_curator_ingest_write_and_retention.py:233-304 |
+| The deliberate complement, which is not the discriminating case because both predicates agree on a fully-stored list. | `test_an_exact_replay_writes_nothing_and_spends_no_identity` | mcp/tests/test_curator_ingest_write_and_retention.py:305-345 |
+| A changed no-family basis on an already-stored revision refused by name; a run that writes nothing retaining no manifest and saying so. | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name`; `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` | mcp/tests/test_curator_ingest_write_and_retention.py:346-408; mcp/tests/test_curator_ingest_write_and_retention.py:409-451 |
+| An unversioned source refused; a planning run writing no family row and saying so. | `test_a_source_with_neither_version_nor_retrieval_time_is_refused`; `test_a_planning_run_writes_no_family_row_and_says_so` | mcp/tests/test_curator_ingest_write_and_retention.py:452-474; mcp/tests/test_curator_ingest_write_and_retention.py:475-502 |
+| **The command line authoring the family plane and reporting it, which is the case the F4 guard bites on.** | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` | mcp/tests/test_curator_ingest_write_and_retention.py:503-578 |
 | The operation under test and the report type its outcomes are read from. | `ingest_curator_list`; `IngestReport`; `IngestSelection`; `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1258; mcp/src/agents_remember/application/knowledge_curator_ingest.py:456-538; mcp/src/agents_remember/application/knowledge_curator_ingest.py:215-217 |
 | The view request and family view the read-back builds. | `ViewRequest`; `FamilyView`; `InvariantView` | mcp/src/agents_remember/models/knowledge/view.py:1117-1148; mcp/src/agents_remember/models/knowledge/view.py:995-999; mcp/src/agents_remember/models/knowledge/view.py:988-993 |
 | The command-line entry point one case drives end to end. | `main` | mcp/src/agents_remember/cli/__main__.py:62-64 |
 | The candidate database the store is reopened from. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61 |
-| The list-driven suite whose fixture this module imports rather than duplicating. | `SourcePair`; `entry`; `pair`; `target`; `symbol` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-369; mcp/tests/test_knowledge_curator_ingest_list.py:182-262; mcp/tests/test_knowledge_curator_ingest_list.py:372-375; mcp/tests/test_knowledge_curator_ingest_list.py:384-387 |
+| The list-driven suite whose fixture this module imports rather than duplicating. | `SourcePair`; `entry`; `pair`; `target`; `symbol` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-369; mcp/tests/test_knowledge_curator_ingest_list.py:182-262; mcp/tests/test_knowledge_curator_ingest_list.py:372-375; mcp/tests/test_knowledge_curator_ingest_list.py:384-387; mcp/tests/test_knowledge_curator_ingest_list.py:107-107 |
 
 ## Cross-Repo References
 
@@ -181,6 +181,7 @@ own pair of repositories under `tmp_path`, and the resolved settings' `crossRepo
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the module is split (D54).** It is 818 lines where L28 landed 1320, its family-plane cases stay and the nine write/retention cases moved to the purpose-named sibling; the census returns to 27 offenders under the rail's own file set and 26 under the `mcp/`-only scope. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): created this one-to-one card for the twenty-case module

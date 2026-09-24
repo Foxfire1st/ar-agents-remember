@@ -6,9 +6,16 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../overview.md`                              |
+
+## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
+
+The live-leaf "committed" change-set read used to swallow its own refusal detail, so a **refused** read and an **unanswered** one rendered identically — the defect `260921-ICR-L16` routed to this route's owners and R12/R24 both landed without taking. `260921-ICR-L32` applies the R16 treatment here: `data/changeset.ts` no longer clears the counters and stops on a rejected counters read, it carries the refusal's own code and reason through to the caller, and `data/files.ts` follows the same shape for the reader. A read still in flight is a **third** state and is reported as one, so loading, refused-with-a-named-code-and-reason, and answered-with-counts are three distinguishable renderings rather than two. The rendering half lives on `panels/detail-panel/changeSetBar.tsx`, whose cases drive the click and assert the rendered reason; the route's own typecheck rail is `tsc -b` and it is clean on these bytes.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the D01 refusal is carried end to end.** The new section records that this route's change-set client no longer discards a rejected read's own code and reason, that loading/refused/answered are three distinguishable states, and that the rendering half and its cases live on the detail-panel route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Hot Path Summary
 
@@ -629,7 +636,7 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
 | **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
 | **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
-| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -1413,7 +1420,7 @@ comparison identity, and the rendering of an inventory in all three of its state
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282
+| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557 |
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
 | **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |

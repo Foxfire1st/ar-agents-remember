@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-14T17:20+02:00                        |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`    |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`    |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -71,6 +71,7 @@ configs launch the server by that exact name, so it is never folded into this um
 | **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:50-58 |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the two-subcommand record gains the write plane's own naming.** The card already recorded both subcommands and their different admissions; it now also records that `260921-ICR-L32` corrected the mounted tool description and two module docstrings to name **both** of these entry points where they named one, so this CLI's five-subcommand inventory and the write plane's own description agree. No claim, anchor or citation range changed by the wording added here. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): **the umbrella gains its fifth subcommand, and a

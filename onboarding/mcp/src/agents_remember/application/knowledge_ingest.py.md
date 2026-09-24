@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_ingest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -21,7 +21,11 @@ requirement-shaped item an orchestrator hands over — into the ordered command 
 `ChangeBatch` carries, and commits that batch through the closed write path. Its own docstring
 states the historical fact that makes it load-bearing: before this module existed, "every importer
 of `agents_remember.application.knowledge` was a test and the mounted change tool refused every
-record kind, so the closed write path had no reachable entry point at all." It is therefore the
+record kind, so the closed write path had no reachable entry point at all." **`260921-ICR-L32`
+completed the sentence that follows it**: the seam this module provided is now described as **one of the
+two** routes the write plane is reachable from today — the other being the taskless
+repository-foundation route (`agents-remember knowledge-bootstrap`) — where the singular "the entry point
+this module provided" had been true when only one route existed. It is therefore the
 module in which "the curator's reachable ingest" lives, and the layer above it
 (`application/knowledge_curator_ingest.py`) is the operation that admits a destination, resolves and
 verifies each target, and then calls this module to author the result.
@@ -204,7 +208,7 @@ move when a citation is added.
 | The one authoring step: the revision draft built from the entry's fields and sealed under the admitted destination's own provenance envelope. | `_revision_draft` | mcp/src/agents_remember/application/knowledge_ingest.py:177-218 |
 | The two seams it delegates to: the resolver that reads the identity the candidate actually holds, and the operation that applies the batch under the destination's provenance. | `resolve_candidate_context`; `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:267-285; mcp/src/agents_remember/application/knowledge.py:318-331 |
 | The shapes it builds and returns: the ordered all-or-nothing batch, and the factual receipt whose refusal leaves the logical identity unchanged and reports no touched record. | `ChangeBatch`; `MutationResult` | mcp/src/agents_remember/models/knowledge/candidate.py:676-701; mcp/src/agents_remember/models/knowledge/candidate.py:704-741 |
-| The only production importer, the curator's whole-operation layer, which reuses this module's entry and citation dataclasses and its batch commit, and builds one entry per plan. | "from agents_remember.application.knowledge_ingest import ("; `_curator_entry` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:136-136; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3377-3393 |
+| The only production importer, the curator's whole-operation layer, which reuses this module's entry and citation dataclasses and its batch commit, and builds one entry per plan. | "from agents_remember.application.knowledge_ingest import ("; `_curator_entry` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:136-136; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3377-3393; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1345-1345 |
 | The cases that drive this module directly: one curator entry committed through the public commit entry point, and the documented empty-citations path the whole-operation layer deliberately does not reach. | "from agents_remember.application.knowledge_ingest import ("; "``CuratorEntry.citations`` permits an empty list" | mcp/tests/test_knowledge_curator_ingest.py:34-34; mcp/tests/test_knowledge_curator_ingest_list.py:500-500 |
 
 ## Cross-Repo References
@@ -218,6 +222,7 @@ comes from that admission; the module opens no second repository and names no ex
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the historical sentence is completed.** The Purpose now records that `260921-ICR-L32` reworded this module's own docstring from "the entry point this module provided" to one of the **two** routes the write plane is reachable from today (the other being the taskless repository-foundation route), which is a completion of a sentence that was true when only one route existed rather than a correction of a false one. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **the family plane is delegated to its own owner rather than restated here.** `CuratorEntry` gained `family` and `replayed`; `curator_entry_commands` appends the commands `curator_family_planning.family_commands` builds, with a **replayed** entry contributing its family plane alone because re-issuing its invariant or citations would be refused by the batch's own insert-absence preconditions; and `curator_command_list` is the one composition of a whole list's commands, separable from the batch so the operation can ask what the batch would carry. The two family-identity commands are hoisted to the front, in their own relative order, because a membership checks its family-revision endpoint against the rows that exist at that instant and the producer's entry order says nothing about that.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T15:35+02:00 — 260921-ICR-L18 curator, **the sync's memory-side conflict in this document resolved as a union, and one range corrected that neither side had measured.** The two rows in the conflict are the same claims on both sides and differ only in the ranges they carry. The incoming `260921-ICR-L19` curation's ranges into `mcp/src/agents_remember/application/knowledge_curator_ingest.py` are kept (`:109-109` and `:3073-3087`) — this leaf did not touch that module, and those values are the ones re-derived against the merged candidate — while this leaf's own extraction in `mcp/tests/test_knowledge_curator_ingest_list.py` moved everything above the removal by −1. **One correction rather than a merge:** the range on that test module was `:491-491` incoming and `:490-490` from this leaf, and **neither contains the anchor the row names** — the docstring line the row quotes (`CuratorEntry.citations` permits an empty list) stands at `:500` in the merged candidate, so the range is re-derived to `:500-500`. The `:491-491` value was already ten lines out in the baseline this leaf inherited and was carried faithfully by both sides; it is corrected here rather than shifted again. No claim was dropped, none was invented, and no verification stamp was advanced — the frontmatter tuple remains the master line's.

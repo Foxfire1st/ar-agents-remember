@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -139,14 +139,18 @@ becomes 8). "What it covers" gains the foundation among the first hour's stages,
 selected" records that a repository which resolves but whose knowledge foundation is not recorded is
 reached by **step 6** rather than by a re-entry.
 
-The step states the seat gate in the code's own vocabulary: a session opened for the curator with no task
-document is refused (`400 task-binding-required`, "named role scope is required"), because the roles this
-operation's own carrier belongs to — `bootstrap`, `chat`, `terminal` — are the only ones admitted without
-one. So this seat reads the state, reports which of the four states it is, and hands the authoring on; it
-**authors no records**. The step is also explicitly **not conditional** on the operation's other steps:
+The step states the seat gate in the code's own vocabulary, and `260921-ICR-L32` changed it on the
+developer's 2026-09-24 ruling: the roles admitted without a task document are the taskless seats
+`chat`, `terminal`, `bootstrap` **and `curator`**, while every other role is refused (`400
+task-binding-required`, "named role scope is required"). So this seat reads the state, reports which of
+the four states it is, and hands the authoring on — to a **taskless curator session** for a repository
+with no task at all, which authors the foundation under the curator's own rules; it **authors no
+records** itself. The step is also explicitly **not conditional** on the operation's other steps:
 it needs a memory line that resolves `HEAD`, not an onboarding corpus and not an adopted baseline, so a
 repository whose knowledge begins before its onboarding is a supported order rather than a defect.
-> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where a document-less `curator` session is refused `task-binding-required` because `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}`. Whether `curator` joins that set is a **product** decision under revision — a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, not as a permanent property. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them.
+> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where a document-less `curator` session was refused `task-binding-required` because `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}`. That was true of those bytes and is **superseded** — whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`.
+>
+> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule, while every other role is still refused `task-binding-required`. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
 
 The failure table gains four knowledge rows, and their whole point is that the states stay distinct:
 `not-recorded` (step 6's real work, not a failure), `recorded` (read it before extending it; never
@@ -162,6 +166,7 @@ foundation's state — recorded at an identity, or the named state that says it 
 copy and the eight harness starter packages.
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the step's seat gate changes.** The step now states that the roles admitted without a task document are `chat`, `terminal`, this operation's own carrier and `curator` (the developer's 2026-09-24 ruling), and that it hands the authoring to a taskless curator session for a repository with no task; the L27 note is retained as true at its own bytes with a second dated note for these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: step 6 and the four knowledge rows.** The new step, the renumbered 7/8, the "reached by this operation's step 6 rather than by a re-entry" selection note, the four failure-table rows that keep `not-recorded` / `recorded` / `unusable` / a refused admission distinct, the prohibition on authoring the foundation, and the completion sentence that now carries its state. **Citation accounting:** the rows this card carries were re-read against this candidate and re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Bootstrap` repointed to skills/l-01-agent-lifecycles/roles/bootstrap.md:6-231. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

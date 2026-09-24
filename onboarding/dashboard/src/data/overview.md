@@ -6,13 +6,28 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
+
+The live-leaf "committed" change-set read used to swallow its own refusal detail, so a refused read rendered
+byte-identically to an unanswered one — the defect `260921-ICR-L16` routed here and R12/R24 both landed
+without taking. `260921-ICR-L32` applies the R16 treatment to this client: the rejection handler in
+`data/changeset.ts` no longer clears the counters and stops, it carries the refusal's own code and reason
+through to the caller, and `files.ts` follows the same shape for the reader. A read that is still in flight
+is a **third** state and is reported as one (`data-review-state="loading"` with its own sentence), so
+"loading", "refused with a named code and reason", and "answered with counts" are three distinguishable
+renderings rather than two. The owning route's cases assert the rendered code, the rendered reason, and that
+the control still opens what it names.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set read carries its refusal.** The new section records that `data/changeset.ts` no longer discards a rejected counters read (the D01 defect L16 routed here and R12/R24 both landed without taking), that `files.ts` follows the same shape, and that loading, refused and answered are three distinguishable renderings. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Current Structural Identity Contract
 
@@ -684,7 +699,7 @@ re-derivation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:112-112 |
+| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:112-112; dashboard/src/data/changeset.ts:60-60; dashboard/src/data/changeset.ts:54-54; dashboard/src/data/changeset.ts:188-188; dashboard/src/data/changeset.ts:192-192 |
 
 ## Update History
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated — the master client is generation-bound (new section above).** No review-client fact changed; the R16 routed-debt sentence stands. The one row into the moved client is re-derived (`leafChangeset` `:100-108` → `:135-144`). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.

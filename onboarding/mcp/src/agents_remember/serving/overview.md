@@ -6,13 +6,29 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
+
+The shared task-binding admission now admits a **document-less curator session**: `TASKLESS_SEAT_ROLES` is
+`{chat, terminal, bootstrap, curator}` on the developer's 2026-09-24 ruling, so a session opened for the
+curator with no task document receives the curator's capsule (`free-agent:curator`) instead of `400
+task-binding-required`. Everything else about the gate is unchanged — the structural altitude check still
+does not run for a taskless role, a supplied document is still resolved and still refused when bad, and every
+other role still takes the structural path — and the second reader of the set
+(`serving/terminal_task_assignment.py`) reads the same constant rather than restating it.
+`mcp/tests/test_memory_branch_authority.py`'s pinning assertions were updated with the constant, and a
+route-level case pins the five-arm status table so the admission is held by behaviour and not by the constant
+alone.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the taskless seat set gains the curator.** The new section records the constant's new membership on the developer's 2026-09-24 ruling, the capsule a document-less curator session now receives, that every other behaviour of the gate is unchanged, and the updated pinning assertions plus the route-level five-arm case. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## ARSPAWN-L5 A005 Shared Task-Binding Admission
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`                  |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`                  |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ The change-set bar behavior suite split from `DetailPanel.test.tsx` by the
 doc-reader change-set bar rendering and interactions.
 
 ## Code Commentary
+
+### 260921-ICR-L32 The Refusal Cases For The Live-Leaf Change-Set Read
+
+Three cases in a new `describe("the counter read's refusal (L32/D01)")` block pin the defect D01 was: `renders a refused counter read's own code and reason, never as a read that has not answered` (the refusal's code and reason reach the control, and a refusal no longer renders as a read that has not answered), `keeps a measured empty answer apart from a refusal and from a read that has not answered` (three states, three renderings), and `does not let a superseded read's refusal land on the control that replaced it` (the liveness guard is load-bearing). Against the leaf's base production bytes the first two **fail** — the base-defect witness — while on the candidate the module is **14 passed** (11 pre-existing plus these three). Restoring the old empty rejection handler fails two of them, and deleting the liveness guard fails the third.
 
 ### Logic
 
@@ -71,6 +75,7 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D01 refusal cases.** A new subsection records the three cases this leaf adds in a dedicated describe block, the base-defect witness against the unmodified production bytes, and the two mutations that make the guards load-bearing. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T15:12:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **one new catalogue traversal case (343 → 417 lines; `ICR-R09@v1`).** `offers every catalogue row for review, not just the first` (`:308-377`) stubs a three-row catalogue with totals, asserts every row is rendered with the retired row marked `retired · before-only`, and asserts the second and third rows put their own identities on the Intent review target — falsifying the first-row-only mechanism the packet names. The subject stub in the carried-subject case gained the additive `presence`/totals fields only; its assertions are unchanged. The Logic section records the case and the additive stub rule; the suite row is re-derived (`:14-343` → `:14-417`) and one row was added for the new case. **Stamp accounting:** the verification pair names the leaf's base — the last real commit the reading was taken against — because the new case exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **one new generation case (273 → 343 lines).** The Logic and table record `opens the series view bound to the generation the net published` (`:75-142`); the entry-read cases below it moved with the insertion and the suite row is re-derived (`:13-136` → `:14-343`). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.

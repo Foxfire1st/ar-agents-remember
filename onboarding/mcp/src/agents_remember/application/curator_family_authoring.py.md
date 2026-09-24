@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_family_authoring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -183,7 +183,7 @@ Every claim on this card is checkable in the module's own declarations.
 | The one definition of authored text, and the one definition of an identity field. | `_authored_text`; `_uuid_text` | mcp/src/agents_remember/application/curator_family_authoring.py:498-504; mcp/src/agents_remember/application/curator_family_authoring.py:507-519 |
 | The refusal constructor, bounded by the model's own reference length. | `family_refusal` | mcp/src/agents_remember/application/curator_family_authoring.py:522-525 |
 | **The deliberate no-family outcome as the one stored sentence it becomes, travelling in the revision's own recorded conditions.** | `no_family_condition`; "Family examination: no joint obligation is supported. Basis: " | mcp/src/agents_remember/application/curator_family_authoring.py:528-539 |
-| **The question this module deliberately leaves to the half that holds the candidate: whether a membership naming no declaration still resolves.** | "One refusal, one implementation." | mcp/src/agents_remember/application/curator_family_authoring.py:183-187 |
+| **The question this module deliberately leaves to the half that holds the candidate: whether a membership naming no declaration still resolves.** | "One refusal, one implementation." | mcp/src/agents_remember/application/curator_family_authoring.py:183-187; mcp/src/agents_remember/application/curator_family_authoring.py:188-188 |
 | The bounds this module reads rather than restates. | `LABEL_MAX_LENGTH`; `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `UUID_PATTERN` | mcp/src/agents_remember/models/knowledge/base.py:1-40 |
 | The half that answers the question above, against the candidate. | `plan_entry_family` | mcp/src/agents_remember/application/curator_family_planning.py:536-595 |
 
@@ -198,6 +198,7 @@ reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the family-authoring owner's cases moved to the extracted sibling (D54).** No behaviour of this owner changed; the test module that covered it was split and the module docstring/case names follow. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): created this one-to-one card for the module

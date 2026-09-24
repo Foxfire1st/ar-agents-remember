@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/notes.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,11 +83,12 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The serving endpoints this client wraps. | `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:104-112; mcp/src/agents_remember/serving/notes.py:115-139 |
-| The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:99-100 |
+| The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. | `getJson`; `qs`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:90-97; dashboard/src/data/files.ts:99-100; dashboard/src/data/files.ts:104-104 |
 | The task notes surface owns the listing and delegates reader opening; its reference list gives explicit requirement addresses precedence over note resolution. | `TaskNotes`; `ReferenceList` | dashboard/src/panels/TaskNotes.tsx:170-220; dashboard/src/panels/TaskNotes.tsx:75-129 |
 | The test suite for this module. | "builds the list / read URLs"; "throws the shared FilesApiError on a non-ok response" | dashboard/src/data/notes.test.ts:17-26; dashboard/src/data/notes.test.ts:28-31 |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-05T08:27+02:00 — L31 native curator: Retained the conservative notes resolver after reviewing TaskNotes and ReferenceList; documented requirement-address precedence and delegated reader opening, with exact consumer ranges. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 

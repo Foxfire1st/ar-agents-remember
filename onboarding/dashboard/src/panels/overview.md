@@ -6,9 +6,22 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260921-ICR-L32 The Change-Set Control Renders The Refusal It Receives
+
+`detail-panel/changeSetBar.tsx`'s `ChangeSetButton` for `mode: "committed"` used to clear its counters on a
+rejected read and show nothing else, so a **refused** read and a **pending** one were the same pixels. Since
+`260921-ICR-L32` the control renders the refusal's own code and reason (`data-review-code`, the owner's
+detail text) beside a `data-review-state` marker, keeps the pending state distinct, and still opens the
+change set it names when clicked — the case that pins it drives the click and asserts the rendered reason,
+not merely the absence of counters. The transport half of the same change is recorded on the
+`dashboard/src/data` route.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set control renders its refusal.** The new section records that `detail-panel/changeSetBar.tsx`'s `ChangeSetButton` renders the refusal's own code and reason beside a state marker while still opening what it names, with the case that drives the click and asserts the rendered reason. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Hot Path Summary
 
@@ -367,7 +380,7 @@ judgment and publishes no assessment.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
-| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
 | The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:699-705; dashboard/src/data/review.ts:670-675 |
 
@@ -2943,7 +2956,7 @@ states that its byte-form row cannot be opened — so the measurements below nam
 | **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:444-452; dashboard/src/panels/review/ReviewSurface.tsx:819-910 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
 | **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:302-352; dashboard/src/panels/review/ReviewSurface.tsx:275-300|
-| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |
 
@@ -2990,7 +3003,7 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
 | **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:860-860 |
-| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:289-289; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
+| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:289-289; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
 | **R03's pane rendering transported failures through the shared block while its own typed-refusal path stays untouched.** | `ReviewProblemBlock`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:135-147; dashboard/src/panels/review/SourceContent.tsx:188-241 |
 
 ## Update History

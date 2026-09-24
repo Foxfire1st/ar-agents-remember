@@ -6,10 +6,40 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-24T12:36:00+02:00 |
-| lastVerifiedCommitHash |  `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0`|
-| lastVerifiedCommitDate |  2026-09-24T14:09:40+02:00|
+| lastVerifiedCommitHash |  `86639933d61528387ce106dbd4d7a334bd468671`|
+| lastVerifiedCommitDate |  2026-09-24T18:51:31+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L32 The Pre-R25 Repair: The Seat Policy Moves, And Two Long-Route Defects Close
+
+`260921-ICR-L32` is a repair leaf rather than a requirement's first delivery: it closes findings earlier leaves
+routed away, and one of them changes a **policy** this repository had twice written down.
+
+**The curator seat is admitted taskless (D56).** `serving/task_binding.py`'s `TASKLESS_SEAT_ROLES` gained
+`curator` on the developer's 2026-09-24 ruling, so a document-less session opened for the curator receives the
+curator's capsule (`free-agent:curator`) instead of `400 task-binding-required`, and a route-level case pins
+the whole five-arm status table rather than the constant alone. The coupling is the larger half: L27 had
+landed a sentence saying such a seat does not exist, so the six instruction carriers and all ten of their
+generated copies were corrected first, and a test module's own docstrings with them. The seat-policy notes on
+this repository's cards are dated statements about the bytes each curation read, which is why this leaf adds a
+second note rather than editing the first.
+
+**The Git path-enumeration family is NUL-safe (D02).** `changed_files_with_counts`, `changed_worktree_paths`,
+`_diff_paths` and `committed_changed_paths` now read NUL-delimited Git output on all four, pair the two-field
+rename form correctly, and rewrite nothing — measured, five real changes in and five rows out, where the
+leaf's base returned four rows, two of them addresses no file holds and one real change absent. This is
+`ACCEPTANCE.md`'s A24 row.
+
+**The rail census is restored (D54).** `mcp/tests/test_curator_family_authoring.py` (1320 lines at L28) is
+split into 818 lines plus a purpose-named sibling of 578, so the ≥1200 offender census returns to **27** under
+the rail's own `git ls-files '*.py'` scope and **26** under the narrower `mcp/`-only scope, with the catalog
+still **16 contracts / 66 artifacts**. **Two production sentences now name both write entry points (D55)**
+where they named one, and **the first ordinary `--contract` run of a baseline-forked candidate commits (D57)**
+where it used to refuse a family revision its own baseline stores.
+
+## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the seat policy and the two long-route repairs.** A new section records the developer's 2026-09-24 ruling that admits `curator` to the taskless seat roles with the coupling it carried into six instruction carriers and their ten generated copies, the NUL-safe Git path-enumeration family (`ACCEPTANCE.md` A24), the test-module split that restores the ≥1200 census to **27** under the rail's own file set and **26** under the `mcp/`-only scope with the catalog still **16 contracts / 66 artifacts**, the two-name write-plane correction, and the D57 ordering repair. The L27 paragraph above is restated as the policy **at L27's bytes** with a second dated note for these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Knowledge Foundation Gets A Procedure, And First-Time Creation Gets A Real Entry
 
@@ -38,21 +68,25 @@ states that onboarding is one optional input to it; and the `l-01-agent-lifecycl
 runs it — `roles/curator.md` and `operations/curation.md` own the authoring, `roles/bootstrap.md` and
 `operations/bootstrap.md` own the first-hour seat that reads the foundation's state and hands it on.
 
-**The seat gate is the part most easily stated falsely, and this leaf had to correct it.** The shipped
+**The seat gate is the part most easily stated falsely, and it took a second leaf to finish stating it.** The shipped
 opener admits a role with **no** task document only for the taskless seats
-(`bootstrap`, `chat`, a plain `terminal` pane); a session opened for the **curator** with no task
-document is refused, in the product's own words, `400 {"status": "task-binding-required", "detail":
-"named role scope is required"}`. **A taskless curator seat does not exist**, so a repository that must
-build its foundation before any task exists is reached by the taskless **bootstrap** seat plus the
-published procedure, and the taskless writer runs from a session with **no enclosure in scope** — it
-refuses one (`enclosure_in_scope`) so a bootstrap can never publish onto a task's memory line. An
-independent round-one verdict found the first revision of the delivery asserting the opposite in the
-procedure and in four sibling carriers and called it **`blocking`**; the corrected text states the real
-route, quotes the refusal verbatim, and reports the residual gap as a limit rather than as compliance.
-The code constant behind the gate (`TASKLESS_SEAT_ROLES`) is unchanged by this leaf: the instruction was
-corrected to the product, not the product to the instruction.
+(`bootstrap`, `chat`, a plain `terminal` pane, and — since the developer's **2026-09-24 ruling** —
+`curator`); every other role is refused, in the product's own words, `400 {"status": "task-binding-required",
+"detail": "named role scope is required"}`. At L27's bytes **a taskless curator seat did not exist**, and an
+independent round-one verdict found the first revision of that delivery asserting the opposite in the
+procedure and in four sibling carriers and called it **`blocking`**; that leaf's corrected text stated the
+route which then existed, quoted the refusal verbatim, and reported the residual gap as a limit rather than
+as compliance. **`260921-ICR-L32` then closed the gap from the other side**: on the developer's 2026-09-24
+ruling `curator` joined the taskless seat roles, so a repository that must build its foundation before any
+task exists now has two carriers — a **taskless curator session**, which authors under the curator's own
+rules, and the taskless **bootstrap** seat, which reads the state and hands the step on — while the taskless
+writer still runs from a session with **no enclosure in scope** and refuses one (`enclosure_in_scope`), so a
+bootstrap can never publish onto a task's memory line. The instruction carriers and their ten generated
+copies were corrected first (`scripts/sync-skills.py --check` green) and this memory follows them.
 
-> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session is refused `task-binding-required`. Whether `curator` joins that set is a **product** decision under revision — it is a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, and not as a permanent property of the product. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them; do not read this card as already describing a later revision.
+> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session was refused `task-binding-required`. That was true of those bytes and is **superseded**: whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`. The carrier instructions and their ten generated copies changed first and this memory followed them.
+>
+> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule, while every other role is still refused `task-binding-required`. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
 
 **Four knowledge states are four different facts.** `not-recorded` (no publication is recorded — the
 first-foundation entry), `recorded` (a dataset bound to this repository stands there; read it before
@@ -218,7 +252,10 @@ Three consequences a reader of this overview should carry, because they are what
   not at all.
 - **The knowledge batch and its publication keep their existing owners.** `--commit` is the
   knowledge-batch write word and acquires no Git or acceptance meaning; the mounted `knowledge_change`
-  tool still refuses every record kind and only names the real entry point.
+  tool still refuses every record kind and names the real write route — since `260921-ICR-L32`, **both**
+  shipped CLI entry points that reach the one writer (`knowledge-ingest` on a leaf enclosure's ordinary
+  route and `knowledge-bootstrap` on the taskless repository-foundation one), where `ICR-R20@v1` could
+  name only the first because the second did not exist yet.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |

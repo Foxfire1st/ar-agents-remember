@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_master_net_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
+| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The evidence lane the module runs in. | `pytestmark` | mcp/tests/test_master_net_generation.py:56-56 |
-| The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. | `MasterFixture`; `master_fixture` | mcp/tests/test_master_net_generation.py:110-229; mcp/tests/test_master_net_generation.py:231-235 |
+| The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. | `MasterFixture`; `master_fixture` | mcp/tests/test_master_net_generation.py:110-229; mcp/tests/test_master_net_generation.py:231-235; mcp/tests/test_master_net_generation.py:242-242 |
 | The conforming add-then-remove case and the F1 diff-failure refusal case. | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
 | The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:118-121 |
 | The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. | `select_master_net`; `master_changeset` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/changeset.py:247-323 |
@@ -114,6 +114,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — four cases for the NUL-safe path family (D02, including the no-escape-rewrite proof F4 asked for).** The fixture carries eight names, a tab, a newline and a literal backslash on each side (tracked and untracked); restoring the old `\` → `/` rewrite makes two of the cases fail. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: lane row (`:113` → `:114`) and verification pair re-derived to the merged production line.** ICR-L7 inserted its revision-selection row above. The module, cases and boundaries are unchanged. No verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the nine measured properties (eight plus the F1 diff-failure refusal), the shared `MasterFixture` world, the `evidence_unit` lane with its `:114` row (`:113` before the ICR-L7 sync), and the no-catalog-touch boundary. The F1 case (monkeypatched diff raising after validation, `kind == "unresolvable"`) is part of what this card documents. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `6695a2a12961ef340c8864d56f0a1ce12b51b3c5` (2026-09-22T09:38:24+02:00) while what was actually read is this leaf's uncommitted working tree — this leaf's **uncommitted** candidate, the only tree containing this module. Closeout owns the stamp.
