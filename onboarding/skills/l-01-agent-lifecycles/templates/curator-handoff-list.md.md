@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T02:27+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -202,7 +202,7 @@ by the curator's role file.
 | The four seats on either side of the contract: the worker emits it as its hand-off, the reviewer emits its own in the same shape, the curator ingests it as data by field owner, and the orchestrator passes it through unparaphrased. | "That list is your hand-off to the curator"; "Ingest it as data, and treat the fields by their owner"; "Emit it in the same list shape the worker emits"; "the list is the interface" | skills/l-01-agent-lifecycles/roles/worker.md:84-88; skills/l-01-agent-lifecycles/roles/curator.md:23-31; skills/l-01-agent-lifecycles/roles/reviewer.md:88-96; skills/l-01-agent-lifecycles/roles/orchestrator.md:127-133 |
 | The registry wiring: the four template lists that declare the hand-off list for the seats that emit or ingest it (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). | "master-handover-packet.md"; "turn-report.md"; "curator-brief.md"; "impact-analysis.md" | skills/l-01-agent-lifecycles/composition-manifest.json:231-238; skills/l-01-agent-lifecycles/composition-manifest.json:371-375; skills/l-01-agent-lifecycles/composition-manifest.json:402-405; skills/l-01-agent-lifecycles/composition-manifest.json:433-438 |
 | The corpus router that names this contract on its own line, and the test that pins its one home, its four consequence sections and the registry wiring. | "the **producer's output shape** for the requirement-shaped"; `test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared` | skills/l-01-agent-lifecycles/SKILL.md:138-143; mcp/tests/test_role_instruction_corpus.py:604-640 |
-| Where the blob identity actually enters: the curator's own target plan builds the stored anchor with the tree-read `source_identity`, and the citation carries that anchor plus the claim citing it. | `_TargetPlan`; `citation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:479-540; mcp/src/agents_remember/application/knowledge_curator_ingest.py:528-537 |
+| Where the blob identity actually enters: the curator's own target plan builds the stored anchor with the tree-read `source_identity`, and the citation carries that anchor plus the claim citing it. | `_TargetPlan`; `citation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:536-595 |
 
 ## Cross-Repo References
 

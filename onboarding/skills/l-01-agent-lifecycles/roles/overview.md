@@ -6,8 +6,36 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+
+## 260921-ICR-L28 The Curator Role Authors Family Coverage And Reads Both Planes Back
+
+`260921-ICR-L28` (`ICR-R28@v2`) adds one numbered step to `roles/curator.md` — **Examine family coverage
+and author it, then read the two planes back** — and renumbers the steps after it, so the role's
+readable order is unchanged while its duty set grows by exactly one. Its **function shape** is
+untouched: the role still runs one leaf's whole curation operation, still writes only what is its own,
+and still leaves the coherence authority to the step that already owned it.
+
+**What the role now owns.** Two further hand-off keys are the curator's to author — `family` and
+`external_sources` — and the template states their shape; the producer writes neither. An entry
+carrying neither is reported as **unexamined** rather than as family-free or source-free, and nothing in
+either key may be inferred from a path, a route, a label or a shared anchor. The role authors the
+family identity with its **own** guarantee text and the exact memberships that place exact invariant
+revisions; where no joint obligation is supported it records the deliberate `no_family` outcome **with
+its basis**; and it declares every external source it inspected with its document identity, version or
+retrieval time, inspected-content digest and location.
+
+**The report is read back as a measurement, not as a success signal.** `family` and `sources` each
+carry their own state (`recorded` / `projected` / `not-recorded`), the guarantees authored versus
+examined with their exact revisions, the memberships added, reused and retired, the deliberate
+no-family outcomes with their bases, and the entries neither plane examined. **A plane whose state is
+not `recorded` measured nothing, and its null counts are not zeroes.** The same coverage travels into
+the role's record, so the next seat reads a measured result rather than a claim.
+
+**Why the numbers matter to a role file.** The step is placed before the full
+`memory_quality_check` operation and before the coherence gate, because authoring both planes is part
+of producing the grounded foundation the gate then judges — not a follow-up to it.
 
 ## 260921-ICR-L20 The Curator Role Gains An Authoring Step, And Its Function Shape Is Unchanged
 
@@ -32,7 +60,7 @@ subcommand, which is why the role file's prohibition names it rather than the op
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:112-114; skills/l-01-agent-lifecycles/roles/curator.md:124-126 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:150-152 |
 | The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
@@ -194,7 +222,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:67-77 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:70-98 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -323,6 +351,17 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
+  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator role's new numbered
+  step.** The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block,
+  and this leaf added the family/coverage step and renumbered the following ones without changing that
+  shape. The section records the two keys the curator now authors, that an entry carrying neither is
+  reported as unexamined rather than family-free, and that a plane whose state is not `recorded`
+  measured nothing. **Citation accounting:** the `citation_claim_reopened` rows the product reported for
+  this route's carriers were re-read against the current constructs and disposed of by hand, and the
+  `citation_anchor_absent_from_range` rows were re-anchored to the lines that carry them rather than
+  shifted by a remembered delta. No verification stamp was advanced: the candidate is uncommitted and
+  the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **route body updated for the one role file this leaf moved.** `roles/curator.md` is 144 lines and gained a fourth numbered step in `## Process` (the real knowledge-authoring invocation and what to consume from its report), a permitted-action line naming the subcommand, a prohibition against writing the dataset from this seat, and a report sentence carrying the read-back identity — all **inside** the function shape this route standardized at `260915-CAPS-L22`, with no `**Inherits:**` line, knob block or sibling reference touched. The section also states the two rules the change makes load-bearing (a per-entry refusal is a result, and the mounted `knowledge_change` tool is not a write route). **Citation accounting:** the rows this document already carried into `roles/curator.md` were re-derived rather than shifted — `curator_coherence` `:42-59` → `:46-77`, and the curator row's `:56-56` → `:74-74` — because the file grew five net lines in the workflow's third step and one line in each of two later lists. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
 - 2026-09-20T01:06+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range). The curator row's third citation, `skills/l-01-agent-lifecycles/roles/curator.md:42-52`, stopped short of the fourth numbered duty: `curator_coherence` — the structured authority publication the claim names — is written at 56, so the range was widened to `:42-59`, the four duties the claim summarises. The row's heading and quoted anchors were re-read against their cited ranges and stand, and both other citations are untouched. No claim wording, anchor or other range was changed, and no verification stamp was advanced.

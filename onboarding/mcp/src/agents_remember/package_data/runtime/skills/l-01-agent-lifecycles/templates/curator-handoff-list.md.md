@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -169,7 +169,33 @@ repository, remote or external system contributes to or reads it.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260921-ICR-L28 The Two Authored Keys The Producer Never Writes
+
+`260921-ICR-L28` (`ICR-R28@v2`) adds one section to the canonical `templates/curator-handoff-list.md`
+and therefore to this byte-identical packaged copy: **"The curator's two authored keys beside the
+thirteen fields"**, which states the shape of `family` and `external_sources`. The thirteen fields are
+unchanged — nine producer fields and four curator fields, at revision 1 — and both new keys are
+optional on any entry, with an entry carrying neither reported as **unexamined** rather than as
+family-free or source-free.
+
+- **`family`** carries the justified joint obligation and this entry's exact memberships: a `member`
+  decision with a `declares` block (label, display version, the family's **own** guarantee text and its
+  predecessor revisions) or a named stored `family_revision_id`, plus optional `retire` identities; or
+  a `no_family` decision **with its basis**. `basis` is required wherever the curator decides, one
+  declaration per local key, reuse is by identity rather than by label, and a changed guarantee is a
+  **successor** under a new key naming the stored `family_id` and the revision it supersedes.
+- **`external_sources`** is the bounded manifest declaration: at most 32 sources per entry, each with
+  its document identity, version or retrieval time, inspected-content digest and location. At least one
+  of version/retrieval time is required because a source nobody can find again is refused by name;
+  `content_digest` is the digest of what was inspected or `null`, never a favourable default; and
+  **`external_sources: []` means the curator examined and declared none, while omitting the key means it
+  was not examined** — the report keeps the two apart.
+
+Nothing else about this copy changes: it remains a byte-identical mirror of the canonical file, and the
+section was written there and propagated by `scripts/sync-skills.py`.
+
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **body update: the packaged copy carries the canonical template's new section** stating the shape of the two keys the producer never writes, `family` and `external_sources`, beside the unchanged thirteen fields — one declaration per local key, `basis` required wherever the curator decides, reuse by identity, a changed guarantee as a successor under a new key, at most 32 sources per entry, and `external_sources: []` meaning examined-and-none while an omitted key means not examined. Written in `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` and propagated by `scripts/sync-skills.py`. **Citation accounting:** the ranges this card carries into the files this leaf's change set moved were re-derived against the candidate's own bytes rather than shifted by a remembered delta. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-20T01:30+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared both enforced `citation_anchor_absent_from_range` rows this card carried, by changing only the two quoted anchor texts.** Both rows failed for the same structural reason: the checker removes backticked code spans from a quoted anchor *including their content* before matching, so a quote holding backticks can never be found in a source that still spells them. Row one's second quote was `"Prefer `symbol` in `target` — it survives a move."`, which can only be searched for as `Prefer in — it survives a move.`; it now reads `"it survives a move."`, verbatim on `...templates/curator-handoff-list.md:116` inside the cited `:116-119` and carrying the same Rule 1 fact (target is identity, so a symbol survives a move). Row two's quote was `"copies root `skills/` into the MCP package-data copy"`, searched for as `copies root into the MCP package-data copy`; it now reads `"into the MCP package-data copy"`, verbatim on `AGENTS.md:106` inside the cited `:105-107` (both verified with `grep -n`) and carrying the same fact (that line is the repository's own statement that the sync script copies root `skills/` into the package-data copy). Each row's other anchor — the `\`target\` is a list …` quote at `:110-114` and the corpus test name at `:604-640` — is untouched and still resolves, every range is unchanged, no Finding text was re-worded, and no citation was dropped. Reviewed against the working candidate `ar/260915-ks-l30-ar`; no commit exists for these bytes and the commit stamp is not advanced.
 - 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared none of the 2 enforced citation rows this card carried (citation_anchor_absent_from_range) — both cited ranges were hand-read and already hold the anchor text their claims name verbatim ("Prefer `symbol` in `target` — it survives a move." at mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:116, and "copies root `skills/` into the MCP package-data copy" at AGENTS.md:106), so the finding comes from the anchor being resolved with its backticked spans removed and no citation edit can clear it. No range was changed here; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
 - 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 2 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `curator-handoff-list.md.md:153` (it survives a move.) — re-read the claim against the source line: the anchor literal embedded a code span, which the anchor grammar blanks, so it could never match its own source; re-anchored on a span-free literal from the same sentence; `curator-handoff-list.md.md:160` (into the MCP package-data copy) — re-read the claim against the source line: the anchor literal embedded a code span, which the anchor grammar blanks, so it could never match its own source; re-anchored on a span-free literal from the same sentence.

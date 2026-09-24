@@ -6,10 +6,41 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash |  `63b476297708f779de8ed5c0bf3555b9d1de70c2`|
-| lastVerifiedCommitDate |  2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash |  `0d7910f9d646161c414ed6543453536a3c749d49`|
+| lastVerifiedCommitDate |  2026-09-24T08:10:24+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L28 The Curator's Family Plane And External-Source Plane Reach The Store
+
+`260921-ICR-L28` (`ICR-R28@v2`, grounded family and invariant foundation) is the leaf that makes the
+curator's two authored planes **reach the database** rather than stop in a report. The repository gains
+**five purpose-named application owners** under `mcp/src/agents_remember/application/` — the authored
+family plane, its resolution against the candidate, its coverage, the seam that reads both planes, and
+the bounded external-source manifest — plus one twenty-case test module, thin wiring in the ingest and
+its report, and the curator method in the `l-01-agent-lifecycles` carriers.
+
+**Why the shape is what it is.** The obligation is `ICR-R28@v2`'s: where source evidence and project
+intent justify a joint obligation, the curator authors the family identity, its **independent**
+joint-guarantee revision and memberships linking **exact** family and invariant revisions, while an
+external source is retained through `Authorship.origin_refs` and never through a fabricated Git anchor.
+That splits cleanly into four questions with four owners, and the split is the point: nothing is
+grouped by inference, and no two of the three family outcomes (`member`, a *deliberate* `no_family`
+with its basis, and *unexamined*) can be read as one another anywhere along the seam.
+
+**A closed defect worth carrying forward.** During the fix round the operation could report
+`recorded` / `authored` / `added` over a store holding **zero** family rows: the replay short-circuit
+decided "is there anything left to write" from the *invariant-revision* replay set, so a run whose
+entry's revision already existed skipped the batch — including the family commands the same plan
+carried — while the report was still assembled from the plan's own states. The fix makes the operation
+ask the **batch** what it would carry, and a replayed entry now contributes **its family plane alone**.
+The leaf's own reference rows and history entries record the correction rather than the superseded
+behaviour: a plan-based claim is not evidence of a write.
+
+**Scope boundaries held.** No new agent role, no new store, no bulk Markdown import, and no route that
+lets operational Markdown become the database. The five new owners write nothing themselves: the
+commands travel into the one batch `knowledge_ingest.py` builds, so the one writer and the one
+transaction stay the only implementations.
 
 ## 260921-ICR-L31 The Comparison-Bound Family Review Context
 
@@ -1266,6 +1297,17 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
+  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator's family plane and
+  external-source plane reaching the store.** The repository gained five purpose-named application owners
+  (`curator_family_authoring.py`, `curator_family_planning.py`, `curator_family_coverage.py`,
+  `curator_ingest_planes.py`, `curator_source_manifest.py`), one twenty-case test module
+  (`mcp/tests/test_curator_family_authoring.py`) with its lane and consumer rows, thin ingest/report
+  wiring, and the curator method in the `l-01-agent-lifecycles` carriers. The section states the one
+  fact a reader must not lose: the three family outcomes are three different facts, and the operation
+  was corrected so that a replayed revision still writes the family plane its entry now authors — a
+  report may never name family rows the store does not hold. No verification stamp was advanced: the
+  candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **body update (new section above): this repository overview now states the measured-currentness vocabulary.** It is a repository-level fact rather than a route one because the same binding states travel through the assessment record, the review display and the read projection, so two otherwise separate routes have to spell them the same way: `models/lifecycles/review_assessment.py` (502 → 620) and `models/lifecycles/review_assessment_binding.py` (276 → 497) declare and measure them, and `models/knowledge/review.py` documents the measured status on `ReviewAssessmentDisplay.binding_state` (docstring-only, net 0 lines). No citation row in this document was enforced, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned.
 - 2026-09-23T10:15+02:00 — 260921-ICR-L21 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `972b44cc07b307929535fe7974d6a30d53c9c4f1` plus the worker's uncommitted delta): **No route impact: this repository overview describes no construct this leaf changed.** The leaf's changed sources all route to a more specific overview whose body was updated in this candidate — `mcp/src/agents_remember/application/review_comparison_reopen.py`, the new `mcp/src/agents_remember/application/review_final_output_receipt.py` and `mcp/src/agents_remember/application/worktree_tools.py` to `mcp/src/agents_remember/application/overview.md`; the new `mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py` to `mcp/src/agents_remember/models/overview.md`; `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_dependency_ownership_ast_helpers.py` and the new `mcp/tests/test_review_final_output_receipt.py` to `mcp/tests/overview.md`. The only changed paths whose nearest governor is this overview are the leaf's own untracked review artifacts under `temp/icr/` — hand-over scratch files that are not onboarded sources and that no repository-level statement here rests on. Reviewed against those bytes and left unchanged: no sentence of this document's body becomes false on this candidate.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **no route-level claim in this document changes; the candidate-reading metadata rows were removed under the developer's 2026-09-22 rule**, and the sentences that pointed at them were corrected in the same pass. The leaf adds the recorded-relationship owners and vocabulary and their three case modules below the review route, which this document reaches through the route cards it already cites. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.

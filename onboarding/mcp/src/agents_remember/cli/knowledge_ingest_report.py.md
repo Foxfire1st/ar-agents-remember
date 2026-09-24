@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/knowledge_ingest_report.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -105,11 +105,11 @@ arithmetic and not only from the two lists.
 | **The human rendering, including the one line that is printed whether or not anything was published.** | `summary` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:32-70 |
 | **The machine-readable report, and the two new facts: the destination the run selected and the identity an independent read found there.** | `payload`; `publicationRoute`; `publishedIdentity` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:73-118 |
 | The entry arithmetic, including the explicit `committed` / `refused` counts the boundary case reads. | `_counts` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:154-168 |
-| One read-back as a scannable line, and as the smallest owned object carrying the reader's own sentence. | `_identity_line`; `_read_back_block` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:121-127; mcp/src/agents_remember/cli/knowledge_ingest_report.py:130-144 |
-| One entry's whole outcome, and how a resolved target is rendered per entry. | `_outcome`; `_targets` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:171-205; mcp/src/agents_remember/cli/knowledge_ingest_report.py:147-151 |
+| One read-back as a scannable line, and as the smallest owned object carrying the reader's own sentence. | `_identity_line`; `_read_back_block` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:63-127; mcp/src/agents_remember/cli/knowledge_ingest_report.py:220-234 |
+| One entry's whole outcome, and how a resolved target is rendered per entry. | `_outcome`; `_targets` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:121-205; mcp/src/agents_remember/cli/knowledge_ingest_report.py:266-270 |
 | The declared exports that make this module's two renderings its public surface. | `__all__` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:29-29 |
 | **The caller that supplies both facts, and the surface that stayed behind in the command module: whether a run may proceed at all.** | `_print_report`; `_publication_route`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:626-657; mcp/src/agents_remember/cli/knowledge_ingest.py:602-615; mcp/src/agents_remember/cli/knowledge_ingest.py:660-692 |
-| The operation's own report types this module renders rather than re-declares. | `IngestReport`; `EntryOutcome` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:422-462; mcp/src/agents_remember/application/knowledge_curator_ingest.py:384-395 |
+| The operation's own report types this module renders rather than re-declares. | `IngestReport`; `EntryOutcome` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:451-499; mcp/src/agents_remember/application/knowledge_curator_ingest.py:413-424 |
 | **The read-back value the payload carries, whose three states are the reader's own vocabulary rather than this module's.** | `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:97-112 |
 | The subparser registration that makes `knowledge-ingest` the ninth CLI subcommand whose report this module prints. | "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:35-43 |
 
@@ -123,6 +123,7 @@ repository boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **the report renders both planes.** `payload` gained a `family` block and a `sources` block and `summary` gained one line for each, and every plane carries its **own** state — `recorded`, `projected` or `not-recorded` — so a run that wrote nothing reports null counts rather than zeroes that would read as measured. The source block claims a path and a digest only for the state that actually wrote the manifest.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): created this one-to-one card for the new module. The 135-line report renderer moved out of `cli/knowledge_ingest.py` when `ICR-R20@v1` added two facts to the run's answer, and the extraction is what keeps both files under the repository's size rail: the command module keeps the *decision* surface (which invocation may proceed, which destination it selected) and this module owns the *shape* of what it says. The card records the two new payload fields and why `publishedIdentity`'s absence is a different fact from a `mismatch`, the unconditional publication-route line in the human rendering, the two explicit counts the requirement's boundary case reads, and the string-not-boolean rule the module's own docstring states for `reviewBaseline` and `publicationRoute`. Every range was derived from its construct's own extent in this candidate rather than carried. **Verification metadata:** the card names the production line it was read against — `71a4433e686b3380af97a0836bb82bab2c8f2aad`, this leaf's base — because the module exists only in this leaf's uncommitted candidate, so no commit contains the content a stamp would claim to have verified. That is a statement of *what the reading was against*; the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates, and that remains the real stamp.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,9 +91,9 @@ No domain documentation source is configured for this repository (`system/source
 | The dataset's own declared tables holding the binding rows, and a generation-4 dataset refused the binding table rather than widened. | `test_the_binding_rows_live_in_the_datasets_own_declared_tables`; `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` | mcp/tests/test_knowledge_citation_boundaries.py:574-611; mcp/tests/test_knowledge_citation_boundaries.py:613-648; mcp/tests/test_knowledge_citation_boundaries.py:550-595 |
 | **The retention cases: a published artifact reads back matched, a missing destination is blocked, changed bytes are mismatched, and the destination is outside the enclosure and the archive by construction.** | `test_a_published_artifact_reads_back_with_its_published_digest`; `test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction`; `test_a_missing_durable_destination_reads_back_as_a_blocked_state`; `test_a_destination_whose_bytes_changed_reads_back_as_mismatched` | mcp/tests/test_knowledge_citation_boundaries.py:635-665; mcp/tests/test_knowledge_citation_boundaries.py:667-685; mcp/tests/test_knowledge_citation_boundaries.py:687-707; mcp/tests/test_knowledge_citation_boundaries.py:709-727 |
 | **The uncovered form produced on a real store by a directly written row pair, counted in a denominator of two and asserted distinct from the recorded-blob mismatch.** | `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` | mcp/tests/test_knowledge_citation_boundaries.py:714-822 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:230-230; mcp/tests/evidence-lifecycle.toml:976-976 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:231-231; mcp/tests/evidence-lifecycle.toml:976-976 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:231-231; mcp/tests/evidence-lifecycle.toml:976-976 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:231-231; mcp/tests/evidence-lifecycle.toml:976-976 |
 
 ## Cross-Repo References
 
@@ -105,6 +105,7 @@ temporary Git repository local to each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: module row re-derived to the merged tree (`:218` → `:219`).** ICR-L7 inserted its revision-selection row above, moving this registration one line down; re-read against the line that carries it. No verification stamp was advanced.
 

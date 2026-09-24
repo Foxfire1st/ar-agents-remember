@@ -6,13 +6,50 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L28 The Package Gains The Curator's Two Planes, And One Report Carries Both
+
+`260921-ICR-L28` (`ICR-R28@v2`) gives the MCP package the owners that carry a curator's **authored
+family plane** and **external-source plane** into the knowledge dataset. Five new modules under
+`application/` (`curator_family_authoring.py` 539 L, `curator_family_planning.py` 766 L,
+`curator_family_coverage.py` 287 L, `curator_ingest_planes.py` 285 L, `curator_source_manifest.py`
+456 L), one new test module (`tests/test_curator_family_authoring.py`, twenty cases), and the wiring in
+`application/knowledge_ingest.py`, `application/knowledge_curator_ingest.py` and
+`cli/knowledge_ingest_report.py`.
+
+**The wiring is thin on purpose.** `knowledge_ingest.py`'s `CuratorEntry` gains two fields — the
+resolved `family` authoring and `replayed` — and `curator_entry_commands` delegates the family
+commands to `curator_family_planning.family_commands`; `curator_command_list` becomes the **one**
+composition of a whole list's commands, separable from the batch so the operation can ask what the
+batch *would* carry. The two identity commands (`add_family`, `add_family_revision`) are hoisted to the
+front, because a membership checks its family-revision endpoint against the rows that exist at that
+instant and the producer's entry order says nothing about that.
+
+**The report carries two new blocks.** `cli/knowledge_ingest_report.py` renders `family` and `sources`
+in the JSON payload and one summary line each in the human text, each plane with its **own** state
+(`recorded` / `projected` / `not-recorded`). A plane that did not record reports null counts, never
+zeroes that would read as a measured empty result.
+
+**A closed defect this route must keep visible.** The operation could report `recorded` / `authored` /
+`added` over a store holding zero family rows, because the replay short-circuit asked the
+*invariant-revision* replay set instead of the batch. `knowledge_curator_ingest._run` now short-circuits
+on `read.planned and not pending`, where `pending` is the command list the batch would carry; the route
+leg, the commit and the receipt counts all use that one predicate; and `_record_what_the_batch_will_write`
+records the allocation journals and the manifest only for a run that writes something, so a
+non-committing run cannot burn a family identity or report a digest for bytes no reader can find.
+
+**Catalog accounting.** The new test module took its existing lane row and two consumer rows in
+`evidence-lifecycle.toml`, so the population is unchanged at **16 contracts / 66 artifacts** and the
+`LIFECYCLE_CATALOG_SHA256` pin in `tests/test_dependency_ownership_ast_helpers.py` was re-pinned to the
+new bytes. Nothing else in the package's public surface moved: no tool name, response model or refusal
+code changed.
 
 ## 260921-ICR-L14 The Review's Record Collection Gets One Production Owner, And An Empty Tuple Stops Meaning Three Things
 
@@ -181,7 +218,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:110-117 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:263-312; mcp/tests/test_knowledge_ingest_publication_route.py:533-557; mcp/tests/test_knowledge_ingest_publication_route.py:644-699 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/evidence-lifecycle.toml:736-736; mcp/tests/evidence-lifecycle.toml:1277-1277 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:91-91; mcp/tests/evidence-lifecycle.toml:736-736; mcp/tests/evidence-lifecycle.toml:1277-1277 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -248,7 +285,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | --- | --- | --- |
 | The before half's owner: its layout, its origin record, its four states and the one refusal. | `read_before_half`; `BaselineOrigin`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:89-120; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
 | The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:155-185 |
-| **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1305-1355; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
+| **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1513-1534; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1460-1510; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/cli/knowledge_ingest.py:477-501 |
 | The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:199-279; mcp/src/agents_remember/application/knowledge_review.py:296-391 |
 | The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1892-2008; mcp/tests/test_knowledge_review_surface.py:947-987 |
@@ -2215,15 +2252,26 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | --- | --- | --- |
 | **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens and places that dataset into the review's baseline half.** | `add_arguments`; `run`; `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:660-692; mcp/src/agents_remember/cli/knowledge_ingest.py:504-542 |
 | The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1014-1031 |
-| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
+| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-721; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
 | The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658 |
 | The public selection the next task uses to begin from a prior task's published dataset. | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:171-262; mcp/src/agents_remember/cli/knowledge_ingest.py:360-409 |
-| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1697-1736; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1786-1793; mcp/src/agents_remember/application/knowledge_curator_ingest.py:576-611; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1673-1694 |
-| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1576-1625; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2159-2181 |
-| The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-695; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
+| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1697-1736; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1941-1948; mcp/src/agents_remember/application/knowledge_curator_ingest.py:507-649; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1828-1849 |
+| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1731-1780; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2390-2412 |
+| The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3176-3212; mcp/src/agents_remember/application/knowledge_curator_ingest.py:643-721; mcp/src/agents_remember/application/knowledge_curator_ingest.py:560-572 |
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
+  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator's two authored
+  planes.** The package gained five application owners, one twenty-case test module, the ingest/report
+  wiring they need, and the `l-01-agent-lifecycles` curator carriers. **Citation accounting:** every
+  range this route and its sibling cards carry into the renumbered files
+  (`application/knowledge_curator_ingest.py` 3587 → 3861, `mcp/tests/test-evidence-lanes.toml` +1,
+  `mcp/tests/evidence-lifecycle.toml` +2) was re-derived against this candidate's bytes rather than
+  shifted by a remembered delta, and the rows the product reported as
+  `citation_anchor_absent_from_range` were re-anchored to the constructs they name. No claim and no row
+  was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed
+  closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **the route's catalogue row for `ICR-R08@v1` is unchanged and the document's candidate-reading metadata rows were removed.** The route gained `models/knowledge/review_relationships.py` (the recorded relationship vocabulary) and five application owners, and the source pane's payload gained the relationship collection; this document's own rows that cite the review adapter, the source inventory and the review vocabulary were re-derived at their constructs' new extents rather than shifted, and the metadata rows the developer's 2026-09-22 rule removed were the only metadata change. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the delegation row re-cited to the landed declaration** (`_knowledge_pane` `:712-759`). Wording retained; no stamp advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

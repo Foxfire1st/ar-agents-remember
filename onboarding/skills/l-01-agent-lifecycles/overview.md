@@ -6,8 +6,45 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+
+## 260921-ICR-L28 The Curator Method Grows The Family Plane And The External-Source Manifest
+
+`260921-ICR-L28` (`ICR-R28@v2`) puts the curator's two authored planes into this route's own method
+carriers, so a curator seat authors them as part of the same grounded foundation rather than as a
+separate pass. `roles/curator.md` gains a numbered step (**Examine family coverage and author it, then
+read the two planes back**), `operations/curation.md` gains the same for the reconciliation pass, and
+`templates/curator-handoff-list.md` gains the section that **states the shape** of the two keys the
+producer never writes — `family` and `external_sources` — beside the existing thirteen fields.
+
+**What the method now says, in the carriers' own words.** For every scoped obligation, decide whether
+the evidence and the project's intent justify a **joint obligation**: where they do, author the family
+identity, its **own** guarantee text and the exact memberships that place exact invariant revisions in
+it; where they do not, record the deliberate `no_family` outcome **with its basis**. An obligation may
+belong to several families and several obligations to one. **Nothing is grouped by directory, route,
+label or shared anchor**, and an obligation the pass did not examine is left without either key so the
+report names it **unexamined** — never as family-free. A member or membership change **prompts a fresh
+look at the affected recorded guarantee**; a successor revision is authored only where that is
+justified, the earlier revision and its memberships are kept exactly as recorded, and an implementation
+change never rewrites member intent or family meaning by itself.
+
+**The external source rule is stated where it is most easily got wrong**: declare what you inspected
+with its document identity, its version or retrieval time, the digest of what was read when one was
+taken, and the location — the run retains it in a bounded manifest and binds the authored records'
+origin references to it, so a document is **never** misrepresented as a repository path with a Git
+blob.
+
+**Reading back is part of the step.** `family` and `sources` each carry their own state
+(`recorded` / `projected` / `not-recorded`); a plane whose state is not `recorded` measured nothing, and
+its null counts are not zeroes. The same coverage travels into the role's record: guarantees authored
+and examined with their exact family and invariant revision identities, memberships added/reused/retired,
+the no-family bases with their reasons, the measured unchanged sibling members, and every entry neither
+plane placed.
+
+**Propagation is generated, not hand-maintained.** `scripts/sync-skills.py` writes the package-owned
+copy under `mcp/src/agents_remember/package_data/runtime/skills/` and the eight self-hosted harness
+starter copies, which is why this route's change set shows the same three carriers in each of them.
 
 ## 260921-ICR-L20 The Curator's Authoring Step: The Real Writer, And The Publication It Reads Back
 
@@ -38,9 +75,9 @@ to be written as prose.
 | --- | --- | --- |
 | **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
 | **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; `publicationRoute`; `publishedIdentity` | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
-| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:105-112; skills/l-01-agent-lifecycles/operations/curation.md:141-145 |
-| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:124-126; skills/l-01-agent-lifecycles/roles/curator.md:112-114 |
-| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:155-157; skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
+| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:124-131; skills/l-01-agent-lifecycles/operations/curation.md:160-164 |
+| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:150-152; skills/l-01-agent-lifecycles/roles/curator.md:138-140 |
+| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:174-176; skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
 | The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. | "Where the route reads, and what publishes there."; `--publish` | skills/c-04-retrieval-strategy-router/SKILL.md:181-190 |
 | The write plane the carrier invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 
@@ -211,7 +248,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 | Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated series authority"; "comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:24-24; skills/l-01-agent-lifecycles/core/authority.md:50-68; skills/l-01-agent-lifecycles/core/authority.md:149-149; skills/l-01-agent-lifecycles/core/loop.md:1-1 |
 | The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters"; "serializes the masters" | skills/l-01-agent-lifecycles/criteria/plan-review.md:65-68; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174; docs/reference/execution-topology-migration.md:61-63 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-74 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-137 |
 | Manager owns one real master and its leaf closeout chain. | `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:6-11; skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | `# Worker`; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:6-9; skills/l-01-agent-lifecycles/roles/worker.md:7-17; skills/l-01-agent-lifecycles/roles/worker.md:72-78 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | `## Acceptance is per stable ID and version, never aggregate` | skills/l-01-agent-lifecycles/core/acceptance.md:44-77 |
@@ -329,9 +366,22 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
+  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator method's family and
+  external-source steps.** `roles/curator.md` gained the numbered author-and-read-back step,
+  `operations/curation.md` gained the same for the reconciliation pass, and
+  `templates/curator-handoff-list.md` gained the section stating the shape of `family` and
+  `external_sources` beside the thirteen producer/curator fields. The section records the three rules a
+  seat is most likely to get wrong: an unexamined obligation is never reported as family-free, nothing
+  is grouped by directory/route/label/shared anchor, and an external document never becomes a repository
+  path with a Git blob. **Citation accounting:** the rows this route carries into the three carriers were
+  re-derived against this candidate's bytes rather than shifted by a remembered delta, and the
+  `citation_claim_reopened` rows the product reported for these files were re-read and disposed of by
+  hand. No claim and no row was dropped, and no verification stamp was advanced: the candidate is
+  uncommitted and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **route body updated for the curator's new authoring step, which is an obligation this route's carriers now state rather than an instruction detail.** `roles/curator.md` (144 lines) and `operations/curation.md` (161 lines) gained the real invocation (`knowledge-ingest … --baseline … --publish --commit --json`), what to consume from its report (`committed`/`rulings`/`refused`, `publicationRoute`, `publishedIdentity`), the authority gate that keeps the batch and publication with their existing owners, the rule that a partial hand-off stays partial, the prohibition on writing the dataset from the seat, and the handoff obligation to carry the published identity. The section states the route-level rule those carriers now depend on — `--commit` is the knowledge-batch write word and `--publish` is an explicit selection, never implied — and that `skills/` is canonical with the harness and package-data copies generated from it. **Citation accounting:** the section's ranges were read from the carriers' own post-edit lines, and the rows this document already carried into `roles/curator.md` were re-derived in the same pass (`:56-56` → `:74-74`) because that file grew 5 → 31 net lines at the top of the workflow. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
-- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range) — the dead single-line range skills/l-01-agent-lifecycles/roles/curator.md:31-31 in the curator row was repointed to skills/l-01-agent-lifecycles/roles/curator.md:74-74, which carries `curator_coherence`, while `## Process` and `Reconcile three ways before writing anything` remain held by the same row's other ranges; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
+- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range) — the dead single-line range skills/l-01-agent-lifecycles/roles/curator.md:31-31 in the curator row was repointed to skills/l-01-agent-lifecycles/roles/curator.md:74-137, which carries `curator_coherence`, while `## Process` and `Reconcile three ways before writing anything` remain held by the same row's other ranges; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
 - 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `overview.md:180` (curator_coherence) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
 - 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the last five dead-anchor rows in this document were re-cited to the lines that now carry their facts, not re-pointed at adjacent sites.** `## Delegated Series Authority` was the *casing* of the live `## Delegated series authority` (now at `core/authority.md:149`, and the row already carried the live backticked form), so the quoted duplicate was corrected to the source's own heading text; `Caller kind comes only from process context` was the *casing and location* of `comes only from process context` at `core/authority.md:68`, so the quoted anchor was corrected and the `core/authority.md:50-52` extent widened to `50-68` (the whole `## Dispatch is one structural transaction` section, which still holds `Every launcher or role that dispatches a hosted role calls` at `:52`). `nothing serializes its masters` was carried by the row's sibling anchor in `criteria/plan-review.md` in the *wording the catalog actually uses* (`nothing serializes the masters`, `:65-66`), while the sentence the row quotes verbatim lives in `docs/reference/execution-topology-migration.md:63` — that per-site source was added rather than the anchor re-worded, because the migration note is a real live carrier and the claim's words are true there. The three `## What This Seat Is` anchors were the *rewritten* role files' old section heading: the live equivalent is each file's own `# Curator` / `# Manager` / `# Worker` title plus its opening duty sentence (`You run one leaf's coherence pass and you write onboarding.`, `You drive exactly one master's leaf sequence from dispatch to handover.`, `You build one leaf.`), so the dead heading was replaced by those quotes. No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T13:20+02:00 — 260915-KS-L13 curator (post-merge pass): **stale citations repaired in this document after the master's sync onto its moved super line.** The card rows whose anchors no longer exist anywhere in the indexed corpus were re-worded to the text the split files now carry — the `# Core — The Minimal Lifecycle Frame`, `# Core — Shared Invariants (every role can count on these)`, `## Acceptance is per stable ID and version, never aggregate` and `## Requirement revisions and delivery attempts are separate axes` headings, and `two disjoint caller kinds` — and their cited ranges were widened or given the carrying per-site source. Rows whose anchors name text that exists nowhere in the tree are named in `notes/reports/260915-KS-L13-named-residue.md` rather than re-pointed at an adjacent site.

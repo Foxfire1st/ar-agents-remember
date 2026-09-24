@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
+| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -121,7 +121,34 @@ No sibling-repository contract defines this instruction file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260921-ICR-L28 The Curator's Family Plane And External Sources Join The Reconciliation Pass
+
+`260921-ICR-L28` (`ICR-R28@v2`) adds one numbered step to the canonical `operations/curation.md` and
+therefore to this packaged copy: the pass now **examines family coverage and authors it as part of the
+same list**, and declares every external source it inspected. Three of its rules are the ones a curator
+is most likely to get wrong, and each is stated as a distinction rather than a preference:
+
+- an obligation the pass did not examine is left **without** either key, so the run reports it as
+  **unexamined** rather than as family-free — the two are different facts and lead to opposite actions;
+- nothing is grouped by directory, route, label or shared anchor, so a family exists only where the
+  curator declared one, and `basis` is required wherever the curator decides;
+- a member or membership change **prompts a fresh look** at the affected recorded guarantee, with a
+  successor revision authored only where that is justified and the earlier revision and its memberships
+  preserved exactly as recorded.
+
+**The external-source rule is stated where it is most easily got wrong**: an external document is
+declared with its document identity, its version or retrieval time, the digest of what was inspected
+when one was taken, and the location read; the run retains it in a bounded manifest and binds the
+authored records' origin references to it, so a document is **never** misrepresented as a repository
+path with a Git blob. The pass then reads both planes back from the report — `family` and `sources`,
+each with its own state — and carries that coverage into the handoff, because a plane whose state is
+not `recorded` measured nothing and its null counts are not zeroes.
+
+**This copy is generated.** The step was written in `skills/l-01-agent-lifecycles/operations/curation.md`
+and propagated here by `scripts/sync-skills.py`; nothing in this file is edited by hand.
+
 ## Update History
+- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **body update: the packaged copy carries the canonical operation's new step.** The pass now examines family coverage and authors it as part of the same list — a deliberate `no_family` outcome with its basis, an unexamined obligation left without either key so the report names it unexamined, nothing grouped by directory/route/label/shared anchor, and a member change prompting a fresh look at the affected guarantee — and declares every inspected external source so the run retains it in a bounded manifest rather than as a repository path with a Git blob. Written in `skills/l-01-agent-lifecycles/operations/curation.md` and propagated by `scripts/sync-skills.py`. **Citation accounting:** the ranges this card carries into the files this leaf's change set moved were re-derived against the candidate's own bytes rather than shifted by a remembered delta. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the authoring step this leaf added to the operation block, in the canonical source and therefore in this generated copy.** `skills/l-01-agent-lifecycles/operations/curation.md` is 161 lines where it measured 144 in this card's last reading; `## Normal workflow` gained a third numbered step (the real ingest invocation, `--baseline`, `--publish --commit --json`, and "consume the report, not the exit status"), `## Required inputs` gained the repository's published dataset, `## Authority gates` gained the paragraph keeping the batch and publication with their existing owners, `## Failure handling` gained the rule that a partial or refused hand-off stays partial and visible, and `## Handoff / exit` gained the published dataset identity. **Citation accounting:** the `## Handoff / exit` row this card already carried was re-derived `:121-128` → `:151-151` from the heading's own post-edit line rather than shifted, the new rows were read from the block's own lines, and `# Operation` `:1-1` — the one row that was already correct — was re-verified rather than assumed. This card documents the **generated packaged copy**: the canonical source is the root `skills/` tree, `scripts/sync-skills.py` produces the copy (the leaf ran it and its `--check`, both clean), and no harness skill root was installed. No verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
