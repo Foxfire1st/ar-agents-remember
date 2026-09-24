@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `4c000b11c5243e4a8e77c08e87984fff00c1d94b`|
-| lastVerifiedCommitDate |  2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash |  `63b476297708f779de8ed5c0bf3555b9d1de70c2`|
+| lastVerifiedCommitDate |  2026-09-24T04:10:11+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,13 @@ their public entry: it imports `getReviewJson` and **re-exports** the moved surf
 `reviewProblemFromRefusal`, `unreadableAnswer`, and the `ReviewFailure`/`ReviewFailureToken`/
 `ReviewRefusalFacts` types), so the surface and the task view still import one public entry and no
 existing importer changed its import path.
+
+Since ICR-R31@v1 it is also the public entry for the **family half** of the review contract. That half
+lives in its own mirror module, `data/reviewFamily.ts`, and this module **re-exports** it whole — the
+five values (`FAMILY_CONTEXT_JOIN_KEY`, `FAMILY_SIDES`, `UNRESOLVED_SELECTION_STATES`,
+`guaranteeComparison`, `memberComparison`) and the eighteen types of its vocabulary — so a consumer of
+the review payload imports one public entry rather than two, the same rule the transport already
+follows.
 
 Its own header states the shape it mirrors and the boundary it keeps: it mirrors `data/changeset.ts` — a
 `base` arg with a same-origin default, typed results taken from the application models, a thrown error,
@@ -48,10 +55,23 @@ now speaks — the source-content route has its own wire shape rather than reusi
 ### Logic
 
 **The module is one vocabulary of interfaces plus three request functions; there is no store, no
-reducer and no hook.** It declares seven string-union types, twenty-nine interfaces and three exported
-functions. The absence of state is the point: the review surface owns its own component state
-(`ReviewSurface.tsx`), exactly as the change-set viewer owns its component state, so this module never
-appears in `data/store.ts` and no `useDashboard` selector reads it.
+reducer and no hook.** It declares eight string-union types, thirty-three interfaces and three exported
+functions, and on top of that declared vocabulary it re-exports the family mirror's five values and
+eighteen types (ICR-R31@v1). The absence of state is the point: the review surface owns its own
+component state (`ReviewSurface.tsx`), exactly as the change-set viewer owns its component state, so
+this module never appears in `data/store.ts` and no `useDashboard` selector reads it.
+
+**`ReviewPagedCollection` names three bounded collections, and only two of them are walkable with no
+cursor (ICR-R10, extended by ICR-R31@v1).** The union is
+`"knowledge" | "records" | "family_members"` because the *server* accepts all three — narrowing it
+would misdescribe the wire — and `REVIEW_PAGED_COLLECTIONS` lists all three.
+`REVIEW_WALKABLE_COLLECTIONS` is the separate, smaller set a request may name with **no** cursor:
+`family_members` is excluded because it is not one walk but the set of per-family roster walks a single
+response composed, so naming it without a cursor addresses no single page and earns the server's own
+`comparison_page_unreadable` refusal rather than serving an arbitrary walk's first page. Its walk is
+reached instead by continuing `ReviewFamilyRosterPage.continuation` on the family that published it.
+The two constants therefore answer two different questions — which collections the wire carries, and
+which collections a control may offer as a first page — and neither is derivable from the other.
 
 **`ReviewSideState` and `ReviewSelectorKind` are the two client-side unions, and each mirrors a server
 literal.** `ReviewSideState` is `"present" | "absent" | "binary" | "unresolved"`, mirroring the
@@ -104,8 +124,14 @@ prints.** `ReviewStaleness` carries `state` (`"current" | "stale"`), a `statemen
 clearance.
 
 **`ReviewPayload` and `ReviewResult` are the two response shapes.**
-`ReviewPayload` carries `surface_version`, the `candidate`, the `comparison`, the three panes, the
-`staleness`, the `submission` and a `limitations` list. `ReviewResult` carries `state`
+`ReviewPayload` carries `surface_version`, the `candidate`, the `comparison`, the optional
+`family_context`, the three panes, the `staleness`, the `submission` and a `limitations` list.
+**`family_context` is the one optional member whose absence is a fact of its own (ICR-R31@v1):** the
+route composes one on every answer it returns — including the task-context review, which states
+`no_subject_selected` — so a body without the key did not come from this route (a capture recorded
+before the field existed, a hand-written body), and the client renders that as itself rather than as
+`no_family_recorded`, which asserts that the recorded scope was read and held no family. `ReviewResult`
+carries `state`
 (`"review" | "refused"`), `operation`, `repository_id` and the optional `payload`/`refusal` pair, and
 `ReviewRefusal` carries `code`, `detail`, `next_action` and the optional `offending_input`, `expected`
 and `observed`.
@@ -159,8 +185,11 @@ resolved on the server and the browser must not be able to choose which dataset 
 
 ### Conventions
 
-The module imports three helpers — `FilesApiError`, `getJson` and `qs` from `./files` — and declares
-everything else itself. Interfaces are exported and named with the `Review`/`Comparison` prefix so a
+The module imports `getReviewJson` from `./reviewTransport`, `qs` from `./files` and the
+`ReviewFamilyContext` type from `./reviewFamily`, and declares everything else itself; the transport
+surface (ICR-R16) and the family mirror (ICR-R31@v1) are **re-exported** rather than re-declared, so a
+consumer of either has one import. Interfaces are exported and named with the `Review`/`Comparison`
+prefix so a
 reader can tell a review display value from the change-set client's own types; the optional members use
 `?` with no default, which is the client half of the server's `exclude_none=True`. There is no `default`
 export and no class. The module declares **three** functions, one per request the surface makes, and
@@ -188,7 +217,14 @@ entry half's two types and `intentReviewEntries`, then the expansion half's four
 - **Unrelated clients are untouched.** `getJson` still reads only `body.status` and still throws for the
   routes that use it — which is exactly why the change-set client below is unchanged (see Todos).
 - **A field the server omits is absent rather than defaulted.** Every optional member is optional
-  because the server may not send it, and no fallback value is provided.
+  because the server may not send it, and no fallback value is provided. `ReviewPayload.family_context`
+  is the member this rule is load-bearing for: the route composes one on every answer it returns, so an
+  absent key means the body did not come from this route, and it is never rendered as
+  `no_family_recorded`, which would assert that a measured scope held no family.
+- **A collection may be named with no cursor only when it has a first page.** `REVIEW_WALKABLE_COLLECTIONS`
+  is that set — `knowledge` and `records` — while `family_members` is a member of the wire union and not
+  of it: it is a set of per-family walks, so a cursor-less request for it earns the server's
+  `comparison_page_unreadable` and its walk is continued from the roster page that published the cursor.
 - **Unresolved is displayed, not filled in.** `ReviewUnresolvedReference` appears wherever an
   attribution or a coverage statement can be missing.
 - **Neither display union has a favourable member.** `ReviewSubmission.state` is `unavailable` or
@@ -231,30 +267,30 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The header's own statement of what this file mirrors, the rule that a field the server omits is absent rather than defaulted, and the second model module the expansion types mirror. | `Mirrors`; `FilesApiError`; `same way (ICR-R03)` | dashboard/src/data/review.ts:1-9; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-3; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:25-25; dashboard/src/data/reviewTransport.test.ts:175-175; dashboard/src/data/reviewTransport.test.ts:180-180; dashboard/src/data/reviewTransport.test.ts:295-295; dashboard/src/data/reviewTransport.test.ts:300-300; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
-| The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:33-34 |
-| **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` |dashboard/src/data/review.ts:42-47|
-| The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` |dashboard/src/data/review.ts:49-53|
-| The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. | `ReviewCandidateRef`; `ComparisonIdentity` | dashboard/src/data/review.ts:55-55; dashboard/src/data/review.ts:56-69 |
-| The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:71-75; dashboard/src/data/review.ts:77-83 |
-| The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:91-101; dashboard/src/data/review.ts:144-154 |
-| The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:156-167 |
-| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:169-190; dashboard/src/data/review.ts:256-265; dashboard/src/data/review.ts:344-354 |
-| The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` |dashboard/src/data/review.ts:192-204|
-| **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** | `ReviewRemainingCount`; `value?: number`; `reason?: string` |dashboard/src/data/review.ts:206-210|
-| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:323-329; dashboard/src/data/review.ts:331-342 |
-| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:356-369; dashboard/src/data/review.ts:304-310 |
-| The whole payload and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:371-442; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:335-346 |
-| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` |dashboard/src/data/review.ts:462-490|
-| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` |dashboard/src/data/review.ts:568-573|
-| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:575-588|
-| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` |dashboard/src/data/review.ts:597-603|
-| **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:272-287; dashboard/src/data/review.ts:225-241 |
-| **The expansion value: both sides, both generation ids, the three-member currentness, and `path_bound` naming which measured change set admitted the path.** | `ReviewSourceExpansion` |dashboard/src/data/review.ts:298-313|
-| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` |dashboard/src/data/review.ts:315-321|
-| **The source-content request: the task context, the published path and both published generation ids, read with `fetch` because the body is this route's answer whatever the status was.** | `reviewSourceContent` |dashboard/src/data/review.ts:615-633|
+| The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:63-64 |
+| **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` |dashboard/src/data/review.ts:90-95|
+| The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` |dashboard/src/data/review.ts:97-101|
+| The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. | `ReviewCandidateRef`; `ComparisonIdentity` | dashboard/src/data/review.ts:103-108; dashboard/src/data/review.ts:110-123 |
+| The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:125-129; dashboard/src/data/review.ts:131-137 |
+| The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:139-149; dashboard/src/data/review.ts:192-202 |
+| The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:204-215 |
+| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:217-238; dashboard/src/data/review.ts:304-313; dashboard/src/data/review.ts:392-402 |
+| The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` |dashboard/src/data/review.ts:240-252|
+| **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** | `ReviewRemainingCount`; `value?: number`; `reason?: string` |dashboard/src/data/review.ts:254-258|
+| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:371-377; dashboard/src/data/review.ts:379-390 |
+| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:404-415; dashboard/src/data/review.ts:417-423 |
+| The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:490-497; dashboard/src/data/review.ts:499-505 |
+| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` |dashboard/src/data/review.ts:533-549|
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` |dashboard/src/data/review.ts:670-675|
+| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:677-690|
+| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` |dashboard/src/data/review.ts:699-716|
+| **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:320-327; dashboard/src/data/review.ts:328-335 |
+| **The expansion value: both sides, both generation ids, the three-member currentness, and `path_bound` naming which measured change set admitted the path.** | `ReviewSourceExpansion` |dashboard/src/data/review.ts:346-361|
+| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` |dashboard/src/data/review.ts:363-369|
+| **The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.** | `reviewSourceContent` |dashboard/src/data/review.ts:717-735|
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-97; dashboard/src/data/files.ts:99-101 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128 |
-| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:654-672; dashboard/src/data/review.ts:470-486 |
+| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:717-735 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and leaves the button hidden on a refusal or an empty list.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282 |
 
 ## Cross-Repo References
@@ -290,6 +326,17 @@ one a later reader must not undo:** the route serializes with `exclude_none=True
 *omits* the `page` key instead of sending `null`, and a consumer comparing against `null` never fires
 for a real response. Every consumer reads through the normaliser, and none constructs or parses a
 cursor — the server's own token is echoed back.
+
+**ICR-R31@v1 adds the third member and the walkable subset.** `ReviewPagedCollection` is now
+`"knowledge" | "records" | "family_members"` and `REVIEW_PAGED_COLLECTIONS` lists all three, because
+the *server* accepts all three — narrowing the union would misdescribe the wire.
+`REVIEW_WALKABLE_COLLECTIONS` is the separate two-member set a request may name with **no** cursor, and
+it is the set the collection picker offers. `family_members` is not one walk but the set of per-family
+roster walks a response composed, so naming it without a cursor addresses no single page and fetches the
+server's own `comparison_page_unreadable` refusal rather than an arbitrary walk's first page; its walk
+is continued from `ReviewFamilyRosterPage.continuation` on the family that published it, and a response
+whose page is `family_members` still renders through the same bounds and continuation controls as any
+other.
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
@@ -386,4 +433,5 @@ The change is one member and one comment: no other field of `ReviewStaleness` mo
 `moved` list stays empty for this state because there is no replaced identity to name.
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed, no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **body refresh for the family re-export, the third paged collection and the optional `family_context`, plus the citation repair of this card's 19 unsatisfied rows.** The body now states what this candidate does: this module is the public entry for the **family half** of the contract as well as the transport — the five values and eighteen types of `data/reviewFamily.ts` are re-exported rather than re-declared — `ReviewPagedCollection` is the server's own three-member union while `REVIEW_WALKABLE_COLLECTIONS` is the separate two-member set a request may name with **no** cursor (`family_members` is a set of per-family walks, so a cursor-less request for it earns the server's own `comparison_page_unreadable` and its walk is continued from the roster page that published the cursor), and `ReviewPayload.family_context` is optional with its **absence as a fact of its own** rather than a measured zero. The two counts in the vocabulary sentence were re-counted against this candidate (eight string-union types, thirty-three interfaces), and the Conventions sentence now names the three modules this one actually imports instead of the two helpers it no longer does. **Citation repair:** all 19 `citation_anchor_absent_from_range` findings were cleared by re-pointing each row's citation at the range its own anchor's declaration occupies now — `ReviewCandidateRef`/`ComparisonIdentity` → `103-108`/`110-123`, `ReviewRevisionGroup`/`ReviewFieldChange` → `125-129`/`131-137`, `ReviewAuthoredEffect`/`ReviewSignal` → `139-149`/`192-202`, the three panes → `217-238`/`304-313`/`392-402`, `ReviewEvidenceLink`/`ReviewObservation` → `371-377`/`379-390`, `ReviewStaleness`/`ReviewSubmission` → `404-415`/`417-423`, `ReviewPayload`/`ReviewRefusal`/`ReviewResult` → `425-457`/`490-497`/`499-505`, `ReviewSourceSideState`/`ReviewSourceSide` → `320-327`/`328-335`, `intentReview`/`reviewSourceContent` → `533-549`/`717-735` — and every target range was verified with `sed -n 'START,ENDp'` over the frozen candidate before it was written. No row was dropped; the only table wording changed is the payload row, extended to name the new optional member. Thirteen further rows of the same table whose citations had gone stale under earlier leaves' insertions — `ReviewSideState`/`ReviewSelectorKind`, `ReviewSideContent`, `ReviewUnresolvedReference`, `ReviewAssessmentDisplay`, `ReviewSourceLocation`, `ReviewRemainingCount`, the comparison request, `ReviewEntry`, `ReviewEntryListResult`, `intentReviewEntries`, `ReviewSourceExpansion`, `ReviewSourceContentResult` and the source-content request — were re-pointed to the ranges their anchors occupy now in the same pass, and that last row's `fetch` clause was corrected to the route's own decode, which is what this card's Logic already states. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the client gained the raw-Git boundary's fourth staleness state, and this card's body now states it.** `ReviewStaleness.state` accepts `"not-measured"` (`:357-363`), the state the boundary reports when it could not compare the leaf's declared identities at all. It is deliberately not `stale`: nothing was observed to move, and `stale` additionally disables submission, which an unperformed comparison has not earned. The new section above is the durable statement; it is a body change, not a metadata refresh. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

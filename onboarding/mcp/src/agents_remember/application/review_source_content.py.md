@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:55:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -208,7 +208,7 @@ that measure it against real repositories.
 | The third port the composition root supplies, and the wiring that gives it the real owner. | `review_source_content`; `review_source_content_port` | mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/cli/dashboard.py:109-126 |
 | The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. | `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:159-159 |
 | **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** | `test_a_modified_file_opens_both_endpoints_own_bytes`; `test_an_added_unmapped_file_opens_its_entire_candidate_text`; `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:269-313; mcp/tests/test_knowledge_review_source_content.py:314-336; mcp/tests/test_knowledge_review_source_content.py:495-559; mcp/tests/test_knowledge_review_source_content.py:641-678; mcp/tests/test_knowledge_review_source_content.py:679-724; mcp/tests/test_knowledge_review_source_content.py:796-821 |
-| The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. | `SourceContent`; `Sides`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:164-222; dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:126-138 |
+| The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. | `SourceContent`; `Sides`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:164-222; dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:143-155 |
 
 ## Cross-Repo References
 
@@ -221,6 +221,7 @@ request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **one enforced citation row re-cited to the construct it names, wording unchanged.** The row citing the renderer's refusal block pointed at `SourceContent.tsx:126-138`, which this leaf's growth of `Sides` (the `mode`/`collapse` props) left holding `boundedNote` instead: `refusalBlock` now occupies `143-155`, and that is the range the row carries. The claim's words are untouched and the row's two contributing ranges (`SourceContent` `164-222`, `Sides` `76-112`) are kept verbatim; nothing was deleted or reworded. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T22:55+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.
 

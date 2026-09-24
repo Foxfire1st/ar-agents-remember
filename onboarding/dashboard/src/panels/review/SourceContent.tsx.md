@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/SourceContent.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,12 @@ growing a third view** — `DiffPane` from the change-set route for the two-docu
 from the file-viewer route for a single readable operand — so a reader sees the same diff engine and the
 same viewer here as everywhere else on the cockpit.
 
+Since ICR-R24@v3 it also takes the reader's two display preferences from its caller. The optional
+`mode` (a `DiffMode`) and `collapse` props are threaded straight into `DiffPane` rather than decided
+here, because the explorer above owns the diff layout and the full-file disclosure — and because a
+layout switch there must not be able to reset an expansion here. Their defaults (`"split"` and `false`)
+are exactly the shipped rendering: a split diff of the whole file.
+
 ## Code Commentary
 
 ### Logic
@@ -62,9 +68,11 @@ identity facts are optional and are printed only when the server measured them, 
 object (an `absent` endpoint) says less rather than claiming an identity it does not have.
 
 **Both sides `present` → the shipped two-sided diff, over the two files' own bytes.** `DiffPane` is
-called with `before.text ?? ""`, `after.text ?? ""`, `language={expansion.language}`, `mode="split"`
-and `collapse={false}` — the same shape the change-set viewer and the statement area use. The `?? ""`
-can only apply to a `present` side, which the model guarantees carries text.
+called with `before.text ?? ""`, `after.text ?? ""`, `language={expansion.language}` and the caller's
+`mode`/`collapse` — which default to `"split"` and `false`, the same shape the change-set viewer and the
+statement area use, and which the explorer sets when the reader has chosen an inline layout or asked
+for the whole file. The `?? ""` can only apply to a `present` side, which the model guarantees carries
+text.
 
 **One side `present` (or `symlink`) and the other not textual → the readable operand as content, the
 unavailable side's own reason above it, and an explicit no-diff line.** `review-source-no-diff-claimed`
@@ -118,18 +126,22 @@ is a real read; R03's typed path is below it and unchanged: this module still re
 **Four outcomes, and the order they are decided in.** The component returns the shared failure block
 when `problem` is set, then the `review-source-loading` line (naming the path and "at the listed
 generation") while `result` is `null`, then `refusalBlock` when the typed answer is `refused`, then
-`Expansion` when the answer carries one, and `null` otherwise. The effect sets both `result` and
+`Expansion` — carrying the two display preferences down to `Sides` — when the answer carries one, and
+`null` otherwise. The effect sets both `result` and
 `problem` back to `null` before each read and guards every assignment with a `live` flag its cleanup
 clears, so a superseded read cannot write into the current row; `attempt` is on the effect's key, which
 is what makes the retry a re-read.
 
 ### Conventions
 
-The component takes six props — `repo`, `master`, `leaf`, the `ReviewChangedFile` `entry`, and the two
-generation ids — and its helpers are plain module-level functions in lower case (`textual`, `sideLine`,
+The component takes eight props — the six it has always taken (`repo`, `master`, `leaf`, the
+`ReviewChangedFile` `entry`, and the two
+generation ids) plus the two optional display preferences `mode` and `collapse` (ICR-R24@v3) — and its
+helpers are plain module-level functions in lower case (`textual`, `sideLine`,
 `contentBlock`, `Sides`, `boundedNote`, `refusalBlock`, `Expansion`) with the one exported
 `PascalCase` component, matching the route's idiom. It imports its types and its one function from
-`../../data/review` and both renderers by their shipped paths, and it declares no client, no store and
+`../../data/review`, the `DiffMode` type it now takes from the change-set route's own `DiffPane`, and
+both renderers by their shipped paths, and it declares no client, no store and
 no CSS module. Every rendered fact carries a `data-testid` (`review-source-*`) or a data attribute
 (`data-side-state`, `data-side-truncated`, `data-currentness`), which is how the cases read a side's
 declared state back out of the DOM instead of inferring it from a sentence, and inline `style` objects
@@ -151,7 +163,12 @@ match the cockpit panels' idiom.
 - **Bounded text is stated as bounded.** A truncated side prints its own note naming the sides, beside
   the object identity and size the state line already carries, and the command that reaches the rest.
 - **Both renderers are reused, not re-implemented.** `DiffPane` comes from the change-set route and
-  `FilePane` from the file-viewer route; this module declares neither a differ nor a viewer.
+  `FilePane` from the file-viewer route; this module declares neither a differ nor a viewer, and it
+  decides neither the diff's layout nor its disclosure.
+- **The diff layout and the full-file disclosure are inputs, never state.** `mode` and `collapse` arrive
+  as props and are threaded into `DiffPane`; this module holds no display preference of its own, so a
+  layout switch in the explorer cannot reset an expansion, and the defaults (`"split"`, `false`) are
+  exactly the shipped rendering.
 - **Display-only, and refusal-safe.** One read on mount and on input change, no write, no control; a
   typed refusal and a rejected transport are two different rendered states, and neither is a success.
 - **One renderer for a transported failure.** The block this pane renders for a transport-level answer
@@ -191,17 +208,17 @@ surface over the real client.
 | **The one renderability predicate: a side with `text` is text a reader can be shown, and it is deliberately not the `present` state.** | `textual`; `present` | dashboard/src/panels/review/SourceContent.tsx:40-56 |
 | **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:46-66 |
 | The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:68-74; dashboard/src/panels/file-viewer/FilePane.tsx:20-20; dashboard/src/panels/review/SourceContent.tsx:77-77; dashboard/src/panels/review/SourceContent.tsx:117-117; dashboard/src/panels/review/SourceContent.tsx:118-118 |
-| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:76-112 |
-| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:114-124 |
-| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:126-138 |
-| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command.** | `Expansion`; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:140-162 |
+| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:85-129 |
+| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:131-141 |
+| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:143-155 |
+| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command.** | `Expansion`; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:157-187 |
 | **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** | `SourceContent`; `useEffect` | dashboard/src/panels/review/SourceContent.tsx:164-222 |
-| The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws. | `reviewSourceContent`; `FilesApiError` | dashboard/src/data/review.ts:421-439; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-3; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:5; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
-| **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:217-241 |
-| **The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:243-258 |
-| The response envelope whose two states are the two rendered answers. | `ReviewSourceContentResult` | dashboard/src/data/review.ts:260-266 |
-| **The row that opens this renderer: a button carrying the published path, `aria-expanded`, and the generation the content will be read at — drawn only when the inventory named both code trees.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:312-358; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
-| **The parent that owns the open row and passes the two published tree ids down, so the read is the generation the reader was looking at.** | `Inventory` | dashboard/src/panels/review/ReviewSurface.tsx:291-335 |
+| The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws. | `reviewSourceContent`; `FilesApiError` | dashboard/src/data/review.ts:717-735; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-3; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:5; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
+| **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:320-327; dashboard/src/data/review.ts:328-335 |
+| **The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:346-361 |
+| The response envelope whose two states are the two rendered answers. | `ReviewSourceContentResult` | dashboard/src/data/review.ts:363-369 |
+| **The row that opens this renderer — the explorer's row now: a button carrying the published path, `aria-expanded`, and the generation the content will be read at — drawn only when the inventory named both code trees.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:99-109; dashboard/src/panels/review/SourceExplorer.tsx:116-125 |
+| **The parent that owns the open row and passes the two published tree ids down, so the read is the generation the reader was looking at — the explorer and its rows now, not `ReviewSurface.tsx`.** | `SourceExplorer`; `InventoryRows` | dashboard/src/panels/review/SourceExplorer.tsx:234-315; dashboard/src/panels/review/SourceExplorer.tsx:194-232 |
 | The header's own statement of the two reused renderers, `DiffPane` for the statements and this module for the Source pane's entry expansion. | `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
 | **The cases that drive the real surface and the real client over a stubbed transport: the addition, the two-sided modification, the binary side, the symlink target and the submodule pointer.** | "draws an added file's entire candidate text beside the named absent side"; "draws a modified file as the two-sided diff of its two bound texts"; "states a binary side's identity and size and draws no content for it"; "carries a symlink's target as content and never claims a document edit"; "reports a submodule pointer by its recorded commit and draws nothing for it" | dashboard/src/panels/review/SourceContent.test.tsx:269-291; dashboard/src/panels/review/SourceContent.test.tsx:293-316; dashboard/src/panels/review/SourceContent.test.tsx:318-339; dashboard/src/panels/review/SourceContent.test.tsx:341-364; dashboard/src/panels/review/SourceContent.test.tsx:366-385 |
 | **The generation and boundedness cases: a superseded read keeps the listed generation's text on screen, and a truncated side is stated as a prefix beside its object size.** | "labels a superseded generation while still showing the listed generation's text"; "states a bounded expansion as a prefix of the object" | dashboard/src/panels/review/SourceContent.test.tsx:387-409; dashboard/src/panels/review/SourceContent.test.tsx:411-437 |
@@ -218,6 +235,7 @@ records at one repository's two bound code trees, and carries no identity that r
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed, no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **body refresh for the caller-owned diff layout and full-file disclosure, plus the citation repair of this card's 3 unsatisfied rows.** The card now records the two optional props this candidate added (ICR-R24@v3): `mode` (a `DiffMode`) and `collapse` are threaded into `DiffPane` rather than decided here, so the explorer above owns the layout and the disclosure and a layout switch there cannot reset an expansion; their defaults (`"split"`, `false`) are exactly the shipped rendering. Logic, Conventions (six props → eight, plus the new `DiffMode` import) and Invariants were updated with it, and the four rows the insertion moved (`Sides` → `85-129`, `boundedNote` → `131-141`, `refusalBlock` → `143-155`, `Expansion` → `157-187`) were re-pointed in the same pass. **Citation repair:** the `citation_claim_reopened` and `citation_anchor_absent_from_range` rows for `Inventory` could not be widened, because that construct no longer exists anywhere in `ReviewSurface.tsx` and `inventoryEntry`/`byteNamedEntry` live in `SourceExplorer.tsx` now; both rows were re-pointed at the constructs that really own them (`SourceExplorer.tsx:234-315`/`194-232` for the parent that owns the open row, and `SourceExplorer.tsx:78-129`/`99-109`/`116-125` for the openable row and the `SourceContent` it mounts), with the anchor names corrected to the names those constructs carry (`Inventory` → `SourceExplorer`/`InventoryRows`). Every target range was verified with `sed -n 'START,ENDp'` over the frozen candidate before it was written. No row was dropped and no claim beyond that forced anchor rename was re-worded. Four further rows whose cited `review.ts` ranges this leaf's insertions moved — `ReviewSourceSideState`/`ReviewSourceSide` → `320-327`/`328-335`, `ReviewSourceExpansion` → `346-361`, `ReviewSourceContentResult` → `363-369`, and the client function → `717-735` — were re-pointed in the same pass, each verified the same way. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the pane's transport-level failures now render through the shared block, and R03's typed path is deliberately untouched.** The fix round's F1: the catch keeps `reviewProblemFromCause(cause)` as a `ReviewFailure` and renders it through the shared `ReviewProblemBlock` (`origin="failure"`, `subject="this entry's content"`) with a retry wired to a new `attempt` counter, so an unwired process, an unadmitted query or a socket that never answered shows the code, reason, offending input and next action instead of only `cause.message` — the pre-fix rendering printed `the entry's content could not be read: 503 unavailable` and dropped the adapter's own instruction. `refusalBlock` (R03's typed-refusal rendering), its side states, its generation binding and its own cases are **unchanged and green**, and the card says so explicitly rather than implying the pane was re-specified. Line count 222 → 241. This card is the **body update** for that change; every row of the reference table was re-derived against this candidate in the same pass. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00), and the leaf's own recorded working candidate states what was actually read; nothing in this leaf is committed, so closeout owns the stamp.

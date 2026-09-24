@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.applicability.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T02:30+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -109,9 +109,9 @@ No domain documentation source is configured for this repository (`system/source
 | **The counts case: the six-way partition is rendered beside the collections it filtered.** | "states the six-way counts beside the collections it filtered" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:267-281 |
 | **The historical case: a previous generation is labelled and never reads as the current result.** | "labels a previous generation's record as historical rather than as the current result" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:283-297 |
 | **The additive-compatibility case: a body published before the labels existed still renders.** | "still renders a payload published before the labels existed" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:299-310 |
-| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:107-142; dashboard/src/data/review.ts:169-191 |
+| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:107-142; dashboard/src/data/review.ts:166-178; dashboard/src/data/review.ts:169-191; dashboard/src/data/review.ts:217-238 |
 | **The rendered labels themselves: the per-record note, the context list and the counts block.** | `applicabilityNote`; `contextList`; `applicabilityCounts` | dashboard/src/panels/review/ReviewSurface.tsx:104-152 |
-| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:278-311; dashboard/src/panels/review/ReviewSurface.tsx:493-547 |
+| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:275-300; dashboard/src/panels/review/ReviewSurface.tsx:354-407 |
 | **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** | `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` | mcp/tests/test_knowledge_review_subject_isolation.py:221-252 |
 
 ## Cross-Repo References
@@ -124,4 +124,5 @@ its own origin.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The vocabulary row gained the two ranges its own anchors needed — `ReviewContextRecord` at `data/review.ts:166-178` and `ReviewKnowledgePane` at `:217-238` — while the two contributing ranges it already carried (`ReviewDisplayedApplicability` `107-142`, `ReviewApplicabilitySummary` `169-191`) are kept verbatim; the call-site row followed the two panes this leaf's surface shortened to their own extents (`ReviewSurface.tsx:275-300` for `KnowledgePane`, `:354-407` for `EvidencePane`). No claim was reworded or dropped and no contributing range was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the mounted-surface cases this leaf introduced (`ICR-R26@v1`). The card records the two real wire bodies the module builds (one labelled, one not), the four properties its cases pin — the true subject of a labelled context row and the absence of the sibling's finding, the six-way counts rendered as arithmetic, the historical label with the tree it examined, and the additive compatibility of a pre-label body — and the boundary that these are jsdom mount cases rather than the assembled A14/A15 acceptance R25 owns. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_pagination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -139,7 +139,7 @@ where.
 | The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 | The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:321-479 |
 | **The route that admits the page size in its own vocabulary before the request model sees it.** | `_admitted_paging`; `paged_review_request` | mcp/src/agents_remember/serving/review.py:517-517; mcp/src/agents_remember/serving/review.py:293-357 |
-| The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:548-569; dashboard/src/data/review.ts:578-580 |
+| The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:611-632; dashboard/src/data/review.ts:641-643 |
 
 ## Cross-Repo References
 
@@ -183,4 +183,5 @@ was the verification stamp advanced. The hash basis stays the leaf's base commit
 lives in the working tree; no commit contains what a hash would otherwise claim to have verified.
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **two enforced citation rows re-cited to the constructs they name, wording unchanged.** The row citing the client that renders these pages without constructing a cursor pointed at `data/review.ts:548-569`/`578-580`, ranges the module's growth had left holding neither `pageBounds` nor `carriedPage`; each is now the construct's own extent — `pageBounds` `611-632` and `carriedPage` `641-643`, both verified with `sed -n 'START,ENDp'`. No claim was reworded or dropped and no contributing citation was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T22:45:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): the row naming the paged-collection union was **re-read and corrected** from "the two collections" to the three it now names, with its range regenerated to `mcp/src/agents_remember/models/knowledge/review.py:171-176` (`ICR-R31@v1` added `family_members`); the card's stamp advanced only after that re-read, and this module's own paging behaviour is unchanged.

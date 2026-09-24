@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -156,7 +156,7 @@ fifteen cases grouped by what they pin. Every anchor in a row occurs inside the 
 | **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:458-479 |
 | **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-513 |
 | **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:59-70; dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
-| The surface composition these cases drive: the four-phase read and the target-keyed retained generation. | `ReviewSurface`; `targetKeyOf` | dashboard/src/panels/review/ReviewSurface.tsx:606-946; dashboard/src/panels/review/ReviewSurface.tsx:539-539 |
+| The surface composition these cases drive: the four-phase read and the target-keyed retained generation. | `ReviewSurface`; `targetKeyOf` | dashboard/src/panels/review/ReviewSurface.tsx:819-910; dashboard/src/panels/review/ReviewSurface.tsx:539-539 |
 ## Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed
@@ -211,4 +211,5 @@ no "current comparison" wording appears; and `review-stale` is absent, so the un
 never borrows the stale rendering.
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **one enforced out-of-bounds citation rewritten to the construct it names, wording unchanged.** The row citing the surface composition these cases drive ended `946`, past the end of a `ReviewSurface.tsx` this leaf shortened to `910` lines when the complete source change explorer moved into its own module; it now cites the surface component's own extent, `819-910`, which carries `ReviewSurface` at its declaration. The row's other range (`targetKeyOf` `539-539`) is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the module gained the case that pins the unmeasured line, and this card's body now states what it asserts.** `renders the boundary's own sentence when it could not compare the declared identities (L23)` (`:885-914`) mounts a `not-measured` payload and asserts the boundary's sentence is rendered, that no previous input or current-comparison wording appears, and that `review-stale` is absent. The new section above is the durable statement. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

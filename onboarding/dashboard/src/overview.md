@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Hot Path Summary
@@ -1416,8 +1416,8 @@ comparison identity, and the rendering of an inventory in all three of its state
 | **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
-| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:403-403; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
-| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `Inventory`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:368-433; dashboard/src/panels/review/ReviewSurface.tsx:270-282 |
+| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
+| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:234-315; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
 | The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader
@@ -1496,4 +1496,5 @@ answered for the identity it describes, and the identity belongs to exactly one 
 
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced findings on two rows cleared, wording unchanged.** The client row's `intentReview` citation now points at the request's own declaration extent (`data/review.ts:533-549`) instead of a range the module's growth had left holding nothing the row names, and the rendering row was re-read against this leaf's move of the complete source change explorer out of `ReviewSurface.tsx` into `SourceExplorer.tsx`: the old `Inventory` component is gone, the construct that renders the inventory in all three states with the byte-form rows beside the named ones is the exported `SourceExplorer` (`SourceExplorer.tsx:234-315`), and `inventoryEntry`/`byteNamedEntry` moved verbatim into that module (`:78-129`, `:137-149`) — so the anchor was corrected to the construct the range actually holds and the claim's sub-heading was left as written. The same edit clears this row's reopened claim: every anchor now resolves once in a cited file with its declaration inside a cited range. Contributing citations (`review.ts:244-480`, `:189-189`, `:202-202`) are kept verbatim. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review read cycle, the refresh control and the entry's invalidation signal (`ICR-R17@v1`).** Two new modules under `panels/review/`, a lighter `ReviewSurface.tsx`, a projection-invalidated catalogue read with its own refresh control in `changeSetBar.tsx`, and three additions to `data/review.ts`. No route-level fact changed. **Citation accounting:** the rows into the changed modules were re-derived from each construct's own declaration. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

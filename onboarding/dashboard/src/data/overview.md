@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -288,6 +288,7 @@ ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focu
 | Authoritative terminal open | [terminalOpen.ts](terminalOpen.ts.md) · [terminal.ts](terminal.ts.md) · [sessions.ts](sessions.ts.md) · [launchFlow.ts](launchFlow.ts.md) |
 | Durable terminal transport | [terminal.ts](terminal.ts.md) · [terminal.test.ts](terminal.test.ts.md) |
 | Stream liveness and visible-tab wake policy | [streamLiveness.ts](streamLiveness.ts.md) · [screenWakeLock.ts](screenWakeLock.ts.md) |
+| Review client family mirror | [reviewFamily.ts](reviewFamily.ts.md) |
 
 ## Docs References
 
@@ -396,10 +397,10 @@ detail.
 | --- | --- | --- |
 | The route's read-only client and its comparison call. | "export const intentReview = (" |dashboard/src/data/review.ts:462-462|
 | **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" |dashboard/src/data/review.ts:597-597|
-| **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` | dashboard/src/data/review.ts:607-612; dashboard/src/data/review.ts:613-618 |
+| **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` | dashboard/src/data/review.ts:670-675; dashboard/src/data/review.ts:668-668 |
 | **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:575-588|
 | The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9; dashboard/src/data/review.ts:1-10 |
-| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:14-14; dashboard/src/data/review.ts:34-34 |
+| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:64-64 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
 | The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:442-442 |
 | The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:377-377 |
@@ -577,11 +578,11 @@ no fallback value was introduced for it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:219-254; dashboard/src/data/review.ts:195-195; dashboard/src/data/review.ts:169-179; dashboard/src/data/review.ts:164-164; dashboard/src/data/review.ts:191-191; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
-| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:62-62; dashboard/src/data/review.ts:356-361; dashboard/src/data/review.ts:56-56; dashboard/src/data/review.ts:297-297; dashboard/src/data/review.ts:321-321 |
-| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:371-394; dashboard/src/data/review.ts:99-113; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:312-312; dashboard/src/data/review.ts:339-339; dashboard/src/data/review.ts:169-190|
-| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:456-480; dashboard/src/data/review.ts:348-348 |
-| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `Inventory`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:389-433; dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
+| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:267-273; dashboard/src/data/review.ts:279-284; dashboard/src/data/review.ts:292-302 |
+| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:110-123; dashboard/src/data/review.ts:404-415 |
+| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:217-238|
+| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:533-549 |
+| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `InventoryRows`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceContent.tsx:189-265 |
 
 ## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
 
@@ -621,13 +622,13 @@ inventory row; the file's own card carries the type-by-type detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:272-287; dashboard/src/data/review.ts:231-231; dashboard/src/data/review.ts:226-226; dashboard/src/data/review.ts:225-225; dashboard/src/data/review.ts:248-248; dashboard/src/data/review.ts:249-249 |
-| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:298-313; dashboard/src/data/review.ts:243-243; dashboard/src/data/review.ts:264-264 |
-| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:315-321; dashboard/src/data/review.ts:260-260; dashboard/src/data/review.ts:429-429; dashboard/src/data/review.ts:430-430 |
+| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:320-326; dashboard/src/data/review.ts:328-335 |
+| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:346-361 |
+| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:363-369 |
 | **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:660-678 |
-| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` | dashboard/src/data/review.ts:665-666; dashboard/src/data/review.ts:666-666; dashboard/src/data/review.ts:675-676 |
+| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` | dashboard/src/data/review.ts:722-723; dashboard/src/data/review.ts:732-733 |
 | The consumer that mounts the renderer beneath an openable row, at the inventory's own two tree ids. | `SourceContent`; `review-inventory-open` | dashboard/src/panels/review/ReviewSurface.tsx:214-260; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
-| The renderer the expansion's fields feed, and its three state-decided branches. | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:113-113 |
+| The renderer the expansion's fields feed, and its three state-decided branches. | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:85-129 |
 
 ## 260921-ICR-L16 The Review Route Gets Its Own Transport Owner
 
@@ -666,7 +667,7 @@ and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
 | --- | --- | --- |
 | **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:158-171 |
 | **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98 |
-| **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:636-642; dashboard/src/data/review.ts:470-486; dashboard/src/data/review.ts:654-672
+| **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:699-705; dashboard/src/data/review.ts:717-735
 | **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:135-144 |
 
 ## 260921-ICR-L13 The Master Client Is Generation-Bound
@@ -773,7 +774,39 @@ against, and nothing in this leaf is committed, so the governed closeout owns th
 
 Nothing else on this route changed: no other client, no transport rule and no store shape.
 
+## 260921-ICR-L24 The Family Mirror Module And The Collection A Cursor-Less Request May Not Name
+
+**Route meaning extended: the review client's family half is now a mirror module of its own, and the
+page contract learned one collection a request may not name without a cursor.**
+`dashboard/src/data/reviewFamily.ts` is new and carries the typed per-family contract `ICR-R31@v1`
+publishes — the family context, the guarantee a family revision authored, the roster page and the member
+rows — and `data/review.ts` re-exports every name in it, so the review payload still has one public entry
+and no importer changed its path.
+
+Three facts a reader of this route has to carry away, because each one is a place the client could have
+said something the server did not:
+
+- **`ReviewPagedCollection` gained `family_members`, and the union stays the server's own.** The member is
+  listed because the SERVER accepts it; narrowing the client's union would misdescribe the wire, so the
+  type is a mirror rather than the set of things this client offers.
+- **`REVIEW_WALKABLE_COLLECTIONS` is the set a request may name with NO cursor, and `family_members` is
+  deliberately not in it.** It is not one walk but the set of per-family roster walks a response composed,
+  so a cursor-less request for it addresses no single page and the server refuses it. The family walk is
+  instead continued from the cursor each family's own roster page published — the exclusion states what
+  the server does with the request, not a restriction this client invented.
+- **`ReviewPayload.family_context` is optional, and its ABSENCE is its own fact.** The route composes a
+  family context on every answer it returns, so a body without the key did not come from this route (a
+  capture recorded before the field existed, a hand-written body). It is never a measured zero and never
+  rendered as `no_family_recorded`, which asserts that the recorded scope was read and held no family.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** | `ReviewFamilyContext`; `reviewFamily` | dashboard/src/data/reviewFamily.ts:179-192; dashboard/src/data/review.ts:33-61 |
+| **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** | `ReviewPagedCollection`; `family_members` | dashboard/src/data/review.ts:65-78 |
+| **The set a request may name with no cursor, and the reason `family_members` is not in it.** | `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:84-88 |
+| **The optional family context whose absence says the body did not come from this route.** | `family_context` | dashboard/src/data/review.ts:434-442 |
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **route body updated for the family mirror and the page contract's one unaddressable collection.** The section above records what this leaf changed in the sources this route governs: `data/reviewFamily.ts` is the new typed per-family mirror (`ICR-R31@v1`) that `data/review.ts` re-exports whole, `ReviewPagedCollection` gained `family_members` because the server accepts it while `REVIEW_WALKABLE_COLLECTIONS` is the smaller set a request may name with no cursor, and `ReviewPayload.family_context` is optional with its absence stated as the body's own fact. The `## File Onboarding Map` names the new card. **Citation accounting:** every row on this overview whose anchor no longer sat in its cited range was re-derived from that anchor's own declaration on the frozen candidate; no claim wording changed and no row was dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this route's client changed, and five reference rows here were re-anchored to the candidate's own bytes.** `dashboard/src/data/review.ts` gains `"not-measured"` on `ReviewStaleness.state` (`:357-363`), the state the raw-Git identity boundary reports when it could not compare at all — not `stale`, and not disabling submission. The repaired rows are `ReviewEntry` (`613-618`), the two exported interfaces (`442`, `377`), the source-content client (`660-678`) and the two published tree ids (`665-666`, `675-676`); each had been left pointing at lines an earlier insertion had moved past. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review client carries the previous binding identity and names its query parameter once (`ICR-R17@v1`).** `intentReview` gains its ninth argument, `reviewQuery` assembles the one query string, and `PREVIOUS_BINDING_QUERY` is the single spelling of the wire name the server admits. No other client, transport rule or store shape changed. **Citation accounting:** the rows this insertion moved were re-derived from each construct's own declaration on the 672-line candidate (`ReviewEntry` `:607`, `intentReviewEntries` `:636`, `reviewSourceContent` `:654`, `intentReview` `:470`, `reviewQuery` `:492`, `PREVIOUS_BINDING_QUERY` `:586`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

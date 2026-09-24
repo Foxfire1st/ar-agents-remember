@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash |  `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`|
-| lastVerifiedCommitDate |  2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash |  `63b476297708f779de8ed5c0bf3555b9d1de70c2`|
+| lastVerifiedCommitDate |  2026-09-24T04:10:11+02:00|
 
 > **Status:** active baseline
 
@@ -6300,3 +6300,56 @@ this same candidate; this section records the leaf for a reader who arrived at t
 - 2026-09-23T22:45:00+02:00 — 260921-ICR-L31 curator (memory worktree only; no code changed; no commits; leaf base `4c000b11c5243e4a8e77c08e87984fff00c1d94b` plus the working-tree delta): **this repository's route body now records the comparison-bound family review context (`ICR-R31@v1`)** — the composition that exposes, for a review's selected subject, the recorded families it belongs to on both snapshots with each selected family revision's own authored guarantee and its complete recorded member roster, including unchanged siblings and before-only members. A family selection's revision population is the family owner's own list, so memberless revisions are heads and an authored ambiguity stays `ambiguous` with every head inspectable; a family recorded with no members is a context with a measured empty roster rather than a measured zero; and the review payload's `family_context` field is required, so an absent field can never be read as one. Two new application owners and one new value module carry it, the paged-collection union gained its third member, three case modules measure it, and the evidence-lifecycle catalog was re-pinned twice for the consumer rows they are derived from with contracts and artifacts unchanged.
 - 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this repository overview now states the raw-Git identity boundary, and the statement belongs at this altitude.** `260921-ICR-L23` (`ICR-R23@v1`) makes the review surface measure an identity a raw Git operation replaced with no managed transaction behind it — a fact no earlier reading could state, so a rewritten branch read exactly like an untouched one. The new section above carries the three properties that are repository-level rather than route-level: a replaced identity outranks both carried comparison and recorded rebinding; an unperformed comparison is its own `not-measured` state and is deliberately not `stale`, because disabling submission is a consequence the absence has not earned; and the boundary never gates, leaving the closeout door's own source-lineage checks as the only checks on that transaction. The support matrix lives in `docs/reference/worktrees-c09.md`, which is that route's to carry. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T17:45:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): **route body updated for managed Git recovery rebinding (`ICR-R22@v1`).** The section above records the two new application owners and what each answers, the three modified application owners with their measured line counts, the new record vocabulary and the display-model extraction that returned `models/knowledge/review.py` under the file-size rail, and the two new case modules with their registration. **Citation accounting:** every enforced row this leaf's delta produced was re-derived per row from the changed construct's own declaration — 150 enforced `range_resolution` rows and 7 enforced `claim_reopen` rows cleared to zero — including the ranges into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` and `mcp/tests/test_dependency_ownership_ast_helpers.py`, which were translated through those files' own measured insertions rather than re-guessed, and the five legacy `Generated citation repair` bullets in `models/knowledge/review.py.md` were **retired** with a dated disposition so no projection is claimed current on its own authority. **Stamp accounting:** no verification stamp was advanced — the header names the leaf's recorded base because nothing in this leaf is committed, and the governed closeout owns the real stamp.
+
+## 260921-ICR-L24 The Family-Centred Review Workspace In The Dashboard
+
+`260921-ICR-L24` (`ICR-R24@v3`) puts the accepted reviewer design on the client, and the delta is
+**dashboard-only plus one repository-hygiene repair — it contains zero production Python**. The
+walk-completion correction this surface depends on was re-homed to its owner instead of widened into
+this leaf: it landed as `5f14fc67` on the master from the reopened L31 enclosure.
+
+Three facts belong at repository altitude rather than on any one route.
+
+**The family vocabulary reaches the browser as a mirror that may not narrow.** `reviewFamily.ts` mirrors
+the R31 value tree one-for-one, and its contract is negative: the five context states, the four side
+states and the two member content states are distinct facts a rendering must keep apart, and a field the
+server omits stays `undefined` rather than being defaulted. The two decisions that carry sentences are
+pure and shared — `guaranteeComparison` keeps `unchanged_revision` (one authored revision behind both
+sides, the only shape allowed to say "unchanged") apart from `identical_text` (two distinct revisions
+whose text happens to match) and from a one-sided record, and `memberComparison` decides from each
+member's own carried content, never from revision ids alone, and deliberately carries no sentence at all.
+A row whose content fell outside the page is a fact about the page, never a claim that the snapshot
+records nothing.
+
+**The paged-collection union and the cursor-less set are two different things.** The union gained
+`family_members` because the server accepts it and narrowing the client's union would misdescribe the
+wire; the cursor-less set is the smaller `REVIEW_WALKABLE_COLLECTIONS`, which excludes it because
+`family_members` is not one walk but the set of per-family roster walks a response composes. A control
+offering "first page of family_members" would fetch the server's own refusal, so the family walk is
+stated once and continued from the cursor each family's own roster page published — one handler, mounted
+by both the tree and the centre, over the same value. The review payload's `family_context` is optional
+on the client and its absence is its own fact: it is not a measured zero and is never rendered as
+`no_family_recorded`.
+
+**The reader's state outlives the request.** Selection, filter, diff layout, full-file disclosure and the
+expanded path are owned once, above the pane switch, because a page request is exactly the interaction
+that would otherwise reset them; the surface calls the workspace hook once and passes it down, and no
+payload is retained by doing so. The complete source change explorer is one section, mounted once, with
+the inventory, its entry-opening controls and its byte-form rows moved out of the surface into their own
+module; the surface keeps the three diagnostic panes inside a disclosure, so every control, refusal and
+technical identity they carry stays in the DOM and on the keyboard.
+
+**Repository hygiene.** This leaf appends the `temp/` rule to `.gitignore` and untracks the evidence six
+earlier closeouts committed because they derive their candidate tree with `git add -A`: fifty-two tracked
+evidence files are staged as deletions while the files stay on disk, and `git ls-files temp` is zero.
+That repair is repository-level, not dashboard-level, and it is the reason this leaf's diff names any
+`temp/` path at all.
+
+**Where the walk's live proof sits.** On this enclosure's bytes the roster walk's live route can no
+longer compose the completing page — the enclosure's Python is back at base — so this leaf's walk
+evidence is a recorded route body and the *live* proof belongs to enclosure `260921-icr-l31b-ar` at commit
+`5f14fc67`, which this leaf replays onto. The assembled `R25@v3` acceptance must re-drive that walk live
+on the landed master.
+
+## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed, no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **this repository overview now records the family-centred review workspace and the evidence-hygiene repair at the altitude they belong to.** The section above states the three repository-level facts — the family mirror that may not narrow its vocabulary, the separation between the paged-collection union and the cursor-less walkable set (with the family walk continued only from the cursor its own page published), and the reader state owned once above the pane switch so a page request cannot reset it — plus the `temp/` ignore rule that untracks the evidence six earlier closeouts committed, and the evidence chain for the roster walk (static here; live in enclosure `260921-icr-l31b-ar` at `5f14fc67`). The section is appended so no existing line in this document moved and no citation into it was displaced. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the stamp names the leaf's base plus the working-tree delta, and the governed closeout owns the real stamp.

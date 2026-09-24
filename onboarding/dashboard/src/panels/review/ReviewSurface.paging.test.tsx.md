@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.paging.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
+| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -101,9 +101,9 @@ No domain documentation source is configured for this repository (`system/source
 | **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** | "words a reset from its refusal code, so a foreign cursor is not called a moved comparison" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:374-442 |
 | **The two collections' totals kept apart in the sentence the reader sees.** | "keeps the two collections' totals apart in the sentence the reader sees" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:443-498 |
 | The whole review stays reachable and the selector travels through a paged request. | "keeps the whole review reachable and carries the selector through a paged request" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:499-514 |
-| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:548-569; dashboard/src/data/review.ts:537-543; dashboard/src/data/review.ts:578-580; dashboard/src/data/review.ts:591-595 |
+| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:611-632; dashboard/src/data/review.ts:600-606; dashboard/src/data/review.ts:641-643; dashboard/src/data/review.ts:654-658 |
 | The page contract on the client, including the basis field and the separate refusal. | `ReviewCollectionPage` |dashboard/src/data/review.ts:406-425|
-| **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:786-849; dashboard/src/panels/review/ReviewSurface.tsx:624-660; dashboard/src/panels/review/ReviewSurface.tsx:662-717; dashboard/src/panels/review/ReviewSurface.tsx:719-741; dashboard/src/panels/review/ReviewSurface.tsx:583-622 |
+| **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:786-849; dashboard/src/panels/review/ReviewSurface.tsx:624-660; dashboard/src/panels/review/ReviewSurface.tsx:662-717; dashboard/src/panels/review/ReviewSurface.tsx:719-741; dashboard/src/panels/review/ReviewSurface.tsx:542-575 |
 | The page as part of the read's target key, so a page change is its own read. | `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:22-22|
 | The published page shape these bodies have: the surface's own page value and its two refusal codes. | `ReviewCollectionPage`; `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:412-488; mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 
@@ -117,6 +117,7 @@ this repository's, and `fetch` is the only boundary crossed.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced citation rows re-cited to the constructs they name, wording unchanged.** The client row's four ranges followed their constructs down `data/review.ts` — `pageBounds` `611-632`, `continuationOf` `600-606`, `carriedPage` `641-643`, `RESET_GLOSS` `654-658`, each verified to carry the anchor it is cited for — and the control row's last range was re-pointed to `PagePicker`'s own declaration extent `542-575`, which is what that claim needed: the picker's declaration line now falls inside a cited range, so the claim is no longer reopened. Contributing ranges (`ReviewCollectionPage` `406-425`, the four control ranges, `targetKeyOf` `22-22`) are kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:15:00+02:00 — 260921-ICR-L10 curator: **created.** The module is new in this leaf
   (`ICR-R10@v1`) and this is its one-to-one card. It records the two design facts a later reader would
   otherwise have to rediscover — the refusal case is pointed at a **captured** server body because the
