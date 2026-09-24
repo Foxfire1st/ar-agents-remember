@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -173,7 +173,7 @@ is proven by repository source and tests.
 | The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. | "payload.update(served_state_tail("; "before = served_state_tail(build=runtime.build, heartbeat=heartbeat_payload)"; `_state_response`; "payload = dict(_projection_body_cache.body(delta.data))" | mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:13-13; mcp/tests/test_terminal_observer_health.py:764-764; mcp/src/agents_remember/serving/_app_routes.py:77-106; mcp/src/agents_remember/serving/_app_common.py:123-163 |
 | The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
 | `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
-| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:950-950 |
+| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:950-954 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text("; `bundle_is_current` | scripts/sync-dashboard.py:236-246; scripts/sync-dashboard.py:115-125 |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:110-111 |
 | The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. | `payload` | mcp/src/agents_remember/serving/build_info.py:59-73 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_historical_committed_leaf_review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -147,7 +147,7 @@ state inside the case's own fixture repository, never the source checkout.
 | **The R01 enclosure fixture this module extends, one fresh enclosure per case.** | `closed_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_historical_committed_leaf_review.py:126-130; mcp/tests/test_knowledge_review_source_endpoints.py:215-247; mcp/tests/test_knowledge_review_source_endpoints.py:121-205 |
 | **The production composition the cases read through: the real route, the real collaborators, the real record loader.** | `_serve`; `_subject_params`; `_entry_params`; `_body` | mcp/tests/test_historical_committed_leaf_review.py:133-172 |
 | **The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.** | `_freeze`; `_composition`; `freeze_review_comparison` | mcp/tests/test_historical_committed_leaf_review.py:175-188; mcp/src/agents_remember/application/review_comparison_freeze.py:232-276 |
-| **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** | `_served_in_a_new_process`; `serving_collaborators`; `register_review_routes` | mcp/tests/test_historical_committed_leaf_review.py:66-66; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/serving/review.py:542-624 |
+| **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** | `_served_in_a_new_process`; `serving_collaborators`; `register_review_routes` | mcp/tests/test_historical_committed_leaf_review.py:66-191; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/serving/review.py:542-624 |
 | **The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.** | `_land_a_later_task`; `LATER_TASK_PATH`; `LATER_TASK_TEXT` | mcp/tests/test_historical_committed_leaf_review.py:230-251; mcp/tests/test_historical_committed_leaf_review.py:84-85 |
 | **The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.** | `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte` | mcp/tests/test_historical_committed_leaf_review.py:257-324 |
 | **The restart case: the same bytes from a fresh interpreter that knows only the coordination root.** | `test_a_fresh_process_reconstructs_the_same_recorded_comparison` | mcp/tests/test_historical_committed_leaf_review.py:327-352 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/snapshot_lifecycle_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49`|
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,9 +100,9 @@ No domain documentation source is configured for this repository (`system/source
 | The publication and read-gate drivers. | `publish`; `publication_state` | mcp/tests/snapshot_lifecycle_test_support.py:357-380; mcp/tests/snapshot_lifecycle_test_support.py:382-390 |
 | The file-level probes the durability claims rest on. | `journal_peer_names`; `read_journal_mode`; `file_digest`; `byte_copy`; `row_counts`; `logical_identity_of`; `vacuum` | mcp/tests/snapshot_lifecycle_test_support.py:410-418; mcp/tests/snapshot_lifecycle_test_support.py:433-441; mcp/tests/snapshot_lifecycle_test_support.py:404-408; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:420-431; mcp/tests/snapshot_lifecycle_test_support.py:443-451; mcp/tests/snapshot_lifecycle_test_support.py:323-331 |
 | The real-process crash probe, which asserts the committed batch survived rather than only reporting it. | `crash_and_abandon`; `CrashOutcome` | mcp/tests/snapshot_lifecycle_test_support.py:477-533; mcp/tests/snapshot_lifecycle_test_support.py:468-475 |
-|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1266-1266  |
+|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1267-1276  |
 | The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:91-91; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/test-evidence-lanes.toml:92-94; mcp/tests/test-evidence-lanes.toml:76-83; mcp/tests/test-evidence-lanes.toml:100-107; mcp/tests/test-evidence-lanes.toml:111-111; mcp/tests/evidence-lifecycle.toml:42-42; mcp/tests/evidence-lifecycle.toml:1260-1260; mcp/tests/test-evidence-lanes.toml:109-109; mcp/tests/evidence-lifecycle.toml:1258-1258; mcp/tests/evidence-lifecycle.toml:1301-1301; mcp/tests/test-evidence-lanes.toml:85-85 |
-|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1266-1266  |
+|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1267-1276  |
 | The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:70-70; mcp/tests/test-evidence-lanes.toml:91-91; mcp/tests/test-evidence-lanes.toml:89-89; mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/test-evidence-lanes.toml:92-94; mcp/tests/test-evidence-lanes.toml:76-83; mcp/tests/test-evidence-lanes.toml:100-107; mcp/tests/test-evidence-lanes.toml:111-111; mcp/tests/evidence-lifecycle.toml:42-42; mcp/tests/evidence-lifecycle.toml:1260-1260; mcp/tests/test-evidence-lanes.toml:109-109; mcp/tests/evidence-lifecycle.toml:1258-1258; mcp/tests/evidence-lifecycle.toml:1301-1301; mcp/tests/test-evidence-lanes.toml:85-85 |
 | The application seam this harness admits destinations through. | `admitted_candidate_destination`; `create_knowledge_candidate`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
 

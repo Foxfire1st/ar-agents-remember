@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated | 2026-09-21T23:45+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -326,7 +326,7 @@ the base is not silently dropped by this composition.
 | Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:114-144; mcp/src/agents_remember/cli/dashboard.py:309-333; mcp/src/agents_remember/cli/dashboard.py:67-111 |
 | The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
 | **The review port and the loader it hands the surface, which is the composition the R14 evidence is measured through.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-101; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
-| **The cases that drive this port and prove every available collection arrives with its own channel state.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `review_through_port` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:170-177 |
+| **The cases that drive this port and prove every available collection arrives with its own channel state.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `review_through_port` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:170-183 |
 
 ## Update History
 

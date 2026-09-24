@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/memory_citations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | --- | --- | --- |
 | Declares the citation modes and the repeatable caller-exclude option. | `add_arguments` | mcp/src/agents_remember/cli/memory_citations.py:53-117 |
 | Validates the selected mode, builds the scope and dispatches to the citation tool. | `run` | mcp/src/agents_remember/cli/memory_citations.py:120-184 |
-| The scope that carries the caller's excludes and refuses a meaningless pattern. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:44-55 |
+| The scope that carries the caller's excludes and refuses a meaningless pattern. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
 | The refusal rule for a pattern that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
 
 ## Update History

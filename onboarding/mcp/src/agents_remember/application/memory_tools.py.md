@@ -3,9 +3,9 @@
 | Field                  | Value                                                      |
 | ---------------------- | ---------------------------------------------------------- |
 | repository             | agents-remember                                            |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-24T09:20+02:00 |
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | governingOverview      | `overview.md`                                              |
@@ -101,26 +101,29 @@ package application entry point and resolver contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:352-391; mcp/src/agents_remember/application/memory_tools.py:379-391 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:425-464; mcp/src/agents_remember/application/memory_tools.py:452-464 |
 | The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status`; `baseline_status` | mcp/src/agents_remember/memory/baseline.py:236-275; mcp/src/agents_remember/memory/baseline.py:300-303 |
-| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:342-387; mcp/src/agents_remember/application/memory_tools.py:369-383 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:371-460; mcp/src/agents_remember/application/memory_tools.py:442-456 |
 | Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104; mcp/src/agents_remember/application/memory_scope.py:105-142 |
 | Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:360-381 |
 | The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-291; mcp/src/agents_remember/application/memory_tools.py:279-315 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
-| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:418-478 |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:379-391 |
+| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:491-551 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:452-464 |
 | The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `baseline_status` | mcp/src/agents_remember/memory/baseline.py:300-303 |
-| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:369-387 |
-| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:470-487 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:442-460 |
+| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:543-560 |
 | Canonical quality scope is owned by the focused scope module. | `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104 |
 | Its resolver, which binds a repository to the scope the quality surface runs against. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
 | The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:331-383 |
 | The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
 | The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
-| The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:44-55 |
+| The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
 | The refusal rule for a caller exclude that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
+| **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** | `memory_init_tool`; `_knowledge_foundation_state`; `KNOWLEDGE_BOOTSTRAP_ROUTE` | mcp/src/agents_remember/application/memory_tools.py:346-376; mcp/src/agents_remember/application/memory_tools.py:378-417; mcp/src/agents_remember/application/memory_tools.py:338-343 |
+| **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** | `admit_bootstrap_context`; `BootstrapRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129 |
+| The read that decides the block's state, and the unavailable form its states come from. | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:219-219; mcp/src/agents_remember/application/published_intent.py:168-168 |
 
 ## Cross-Repo References
 
@@ -176,6 +179,24 @@ a misuse behind an envelope.
 is the case that holds that boundary, and the docstring states it.
 
 ## Update History
+
+- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
+  base `0d7910f9d646161c414ed6543453536a3c749d49`): **the memory initializer gained the knowledge half of
+  its own answer (`ICR-R29@v1`).** `memory_init_tool` now attaches a `knowledge` block
+  (`:374-374`) built by `_knowledge_foundation_state` (`:378-417`), which resolves the **bootstrap's own
+  admission** so the location a curator is told to populate is the location the bootstrap publishes to,
+  and reports what a read of it finds now: `recorded` (with the dataset path and the dataset's own
+  logical digest), the read route's own unavailable states (with its code and detail), or
+  `context-not-admitted` when the admission refuses, in which case the block carries the admission's
+  code, detail and named next action rather than a hopeful path. `KNOWLEDGE_BOOTSTRAP_ROUTE`
+  (`:338-343`) is the one route string, named once because two blocks print it. **Nothing here writes**:
+  the initializer still creates no knowledge, because an initializer that created knowledge would be
+  inventing authored content — which is exactly the split this block makes readable instead of leaving
+  "the initializer says nothing about knowledge" to be misread as "the product has no knowledge step".
+  Three reference rows were added for the two functions, the route constant, the admission they resolve
+  and the read whose states the block reports. **No verification stamp was advanced** — the candidate is
+  uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed
+  closeout owns the real code and memory commits.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T34`'s repair here — `memory_baseline_adopt_tool` answers `BranchAuthorityUnavailable` through `_baseline_adopt_refusal` instead of raising, with the catch deliberately narrowed to that one typed condition. Every citation range in this card was re-derived against the repaired file from an enumerated census. Verification metadata stays closeout-owned.
 - 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (three table rows). (a) The carryover-message row cited `369-376`, which ends one line above the `class CarryoverCommitMessages:` the claim names at `377`; the range was widened to `369-383`, so it also reaches `DEFAULT_CARRYOVER_MESSAGES` at `383`. (b) The baseline-status row cited `379-386`, one line above `def memory_baseline_status_tool` at `387`; widened to `379-387`. (c) The quality-run row cited `controller.py:111-133` for `run_memory_quality_request`, whose definition this leaf's changes left at `249-255`, and `308-328` for `_resolve_execution`, which had moved to `360-381`; the cell cites both definitions now. A first pass re-pointed only the range the checker named for `run_memory_quality_request` and the document's own second anchor stopped resolving — caught by re-running the check over the whole cell, which is why both ranges are re-derived here. Claims, anchors and every other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
@@ -218,3 +239,4 @@ is the case that holds that boundary, and the docstring states it.
   `memory_baseline_status` now returns `ok=False` on blocked drift (1.0.0 review remediation).
 - 2026-05-28T19:52+02:00 — Created when memory/onboarding MCP controllers moved into their own
   domain module.
+

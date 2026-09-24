@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_sync_movement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -195,7 +195,7 @@ movement is folded into the staleness the review publishes**, while an absence s
 | --- | --- | --- |
 | **The module's own statement of the requirement, the read-half gap it closes, and the "measures, owns no verdict" boundary.** | "It measures; it owns no verdict of its own." | mcp/src/agents_remember/application/review_sync_movement.py:1-30 |
 | The published surface: exactly the two operations, and the routing that keeps the R17 fold callable beside the movement read. | `__all__` | mcp/src/agents_remember/application/review_sync_movement.py:59-62 |
-| The two channels a moved identity can belong to, and the `channel:identity` spelling. | `_CODE_CHANNEL`; `_KNOWLEDGE_CHANNEL` | mcp/src/agents_remember/application/review_sync_movement.py:70-76 |
+| The two channels a moved identity can belong to, and the `channel:identity` spelling. | `_CODE_CHANNEL`; `_KNOWLEDGE_CHANNEL` | mcp/src/agents_remember/application/review_sync_movement.py:69-76 |
 | **The verdict-to-state mapping stated as a table, and the comment that records why a two-way channel reading would promote `unmeasured` to agreement (G1).** | `_MOVEMENT_STATES` | mcp/src/agents_remember/application/review_sync_movement.py:70-79 |
 | The remedy stated once: the successor generation the record itself names, not an action this module performs. | `_SUPERSESSION` | mcp/src/agents_remember/application/review_sync_movement.py:81-84 |
 | **The never-raising read: no leaf contract, or any store read error, answers `None` so the live review read cannot fail on a measurement.** | `review_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:87-105 |

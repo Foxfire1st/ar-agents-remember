@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -202,7 +202,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/install/runtime.py:633-651; mcp/src/agents_remember/install/runtime.py:829-911 |
 
 | Retirement settings declare the two default-on cleanup toggles. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
-| Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564; mcp/src/agents_remember/application/worktree_tools.py:400-400 |
+| Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564; mcp/src/agents_remember/application/worktree_tools.py:400-413 |
 | Finalization consults its retirement setting at the completed edge. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:891-922; mcp/src/agents_remember/application/worktree_tools.py:884-884 |
 | Seat cleanup remains subordinate to successful completion. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-71 |
 

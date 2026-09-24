@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_composition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:30+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that proves a context whose subject is not a family revision is refused. | "test_a_context_whose_subject_is_not_a_family_revision_is_refused" | mcp/tests/test_knowledge_family_composition.py:893-893 |
 | The case that proves an edge with no declared policy is stored, readable and not traversable. | "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" | mcp/tests/test_knowledge_family_composition.py:453-453 |
 | The lane row this module is registered under, and the unit ceiling it is measured against. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-| The one contract whose consumer list this module joined for its admitted candidate. | "contract:knowledge-facet-cases" | mcp/tests/evidence-lifecycle.toml:1347-1347 |
+| The one contract whose consumer list this module joined for its admitted candidate. | "contract:knowledge-facet-cases" | mcp/tests/evidence-lifecycle.toml:1348-1361 |
 
 ## Cross-Repo References
 

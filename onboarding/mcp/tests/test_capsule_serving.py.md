@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_capsule_serving.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -150,7 +150,7 @@ extension specification, SEP-2640).
 | The serving guarantees: origin and revision kept, revision re-checked, no grant, no body in the listing. | `test_a_served_skill_keeps_its_origin_and_revision`; `test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog`; `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names`; `test_the_discovery_registry_is_not_the_model_visible_catalog` | mcp/tests/test_capsule_serving.py:783-783; mcp/tests/test_capsule_serving.py:796-796; mcp/tests/test_capsule_serving.py:811-811; mcp/tests/test_capsule_serving.py:882-882; mcp/tests/test_capsule_serving.py:787-797; mcp/tests/test_capsule_serving.py:800-812; mcp/tests/test_capsule_serving.py:815-849; mcp/tests/test_capsule_serving.py:886-912 |
 | The two real-process conformance cases: the exchange (capabilities, both methods, resources, refusal) and the traversal refusal. | `test_a_real_client_and_server_exchange_over_the_installed_sdk`; `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1195-1195; mcp/tests/test_capsule_serving.py:1268-1268; mcp/tests/test_capsule_serving.py:1198-1268; mcp/tests/test_capsule_serving.py:1271-1302 |
 | The case that keeps the seeded-mutation evidence honest. | `test_the_mutation_harness_can_actually_fail` | mcp/tests/test_capsule_serving.py:1305-1317 |
-| The evidence-lane row this module is selected by. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:23-23 |
+| The evidence-lane row this module is selected by. | "mcp/tests/test_capsule_serving.py" | mcp/tests/test-evidence-lanes.toml:23-24 |
 
 ## Cross-Repo References
 

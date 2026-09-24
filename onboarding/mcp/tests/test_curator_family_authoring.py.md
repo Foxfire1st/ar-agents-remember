@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_family_authoring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -165,9 +165,9 @@ operation.
 | A changed no-family basis on an already-stored revision refused by name; a run that writes nothing retaining no manifest and saying so. | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name`; `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` | mcp/tests/test_curator_family_authoring.py:1088-1148; mcp/tests/test_curator_family_authoring.py:1151-1191 |
 | An unversioned source refused; a planning run writing no family row and saying so. | `test_a_source_with_neither_version_nor_retrieval_time_is_refused`; `test_a_planning_run_writes_no_family_row_and_says_so` | mcp/tests/test_curator_family_authoring.py:1194-1214; mcp/tests/test_curator_family_authoring.py:1217-1242 |
 | **The command line authoring the family plane and reporting it, which is the case the F4 guard bites on.** | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` | mcp/tests/test_curator_family_authoring.py:1245-1320 |
-| The operation under test and the report type its outcomes are read from. | `ingest_curator_list`; `IngestReport`; `IngestSelection`; `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1074-1194; mcp/src/agents_remember/application/knowledge_curator_ingest.py:451-499; mcp/src/agents_remember/application/knowledge_curator_ingest.py:210-212 |
+| The operation under test and the report type its outcomes are read from. | `ingest_curator_list`; `IngestReport`; `IngestSelection`; `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1258; mcp/src/agents_remember/application/knowledge_curator_ingest.py:456-538; mcp/src/agents_remember/application/knowledge_curator_ingest.py:215-217 |
 | The view request and family view the read-back builds. | `ViewRequest`; `FamilyView`; `InvariantView` | mcp/src/agents_remember/models/knowledge/view.py:1117-1148; mcp/src/agents_remember/models/knowledge/view.py:995-999; mcp/src/agents_remember/models/knowledge/view.py:988-993 |
-| The command-line entry point one case drives end to end. | `main` | mcp/src/agents_remember/cli/__main__.py:47-49 |
+| The command-line entry point one case drives end to end. | `main` | mcp/src/agents_remember/cli/__main__.py:62-64 |
 | The candidate database the store is reopened from. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61 |
 | The list-driven suite whose fixture this module imports rather than duplicating. | `SourcePair`; `entry`; `pair`; `target`; `symbol` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-369; mcp/tests/test_knowledge_curator_ingest_list.py:182-262; mcp/tests/test_knowledge_curator_ingest_list.py:372-375; mcp/tests/test_knowledge_curator_ingest_list.py:384-387 |
 

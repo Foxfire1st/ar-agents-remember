@@ -6,8 +6,8 @@
 | path | `mcp/tests/migration_census_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ No domain documentation source is configured for this repository (`system/source
 | `claim_command_for` records exactly one evidence row per claim — `assessed` when a verdict was supplied and `unassessed` when it was not — and a realization only when one was declared. | `claim_command_for`; `CensusClaimEvidence`; `CensusClaimRealization` | mcp/tests/migration_census_test_support.py:244-289; mcp/src/agents_remember/models/knowledge/census.py:239-259; mcp/src/agents_remember/models/knowledge/census.py:260-273 |
 | `disposition_command_for` builds one `recorded` migration disposition, and `link_command_for` derives one whose `CensusDispositionLink` points at a record the caller names. | `disposition_command_for`; `link_command_for`; `CensusDispositionLink` | mcp/tests/migration_census_test_support.py:292-310; mcp/tests/migration_census_test_support.py:402-419; mcp/src/agents_remember/models/knowledge/census.py:274-289 |
 | `seed_census` is the fixture's contract in executable form, written as one batch: four inventory rows, five claims, four dispositions, and a refusal guard that raises with the batch's own refusal. | `seed_census` | mcp/tests/migration_census_test_support.py:313-399 |
-| **The registered rows that make this file governed evidence:** the `migration-census-cases` contract names this file as its owner and the seed case as its evidence node, and the artifact row names its kind, its authority, its category, its fidelity, its introducer, its lifetime, its exact consumer scope and its one consumer. | `migration-census-cases`; `evidence_node`; `shared-support`; `260915-KS-L21`; `contract:migration-census-cases`; `mcp/tests/test_migration_census.py` | mcp/tests/evidence-lifecycle.toml:74-77 |
+| **The registered rows that make this file governed evidence:** the `migration-census-cases` contract names this file as its owner and the seed case as its evidence node, and the artifact row names its kind, its authority, its category, its fidelity, its introducer, its lifetime, its exact consumer scope and its one consumer. | `migration-census-cases`; `evidence_node`; `shared-support`; `260915-KS-L21`; `contract:migration-census-cases`; `mcp/tests/test_migration_census.py` | mcp/tests/evidence-lifecycle.toml:74-85 |
 | The catalog's pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest, and the case module this fixture serves is the `unit-regression` lane member carrying the leaf's 48 cases. | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256`; `unit-regression` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-46; mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References

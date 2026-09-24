@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-18T19:22+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | governingOverview      | `overview.md`                              |
@@ -77,7 +77,7 @@ run states.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:249-257; mcp/src/agents_remember/application/memory_quality/controller.py:258-266; mcp/src/agents_remember/application/memory_quality/controller.py:267-275 |
-| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:84-104; mcp/src/agents_remember/application/memory_tools.py:216-253; mcp/src/agents_remember/application/memory_tools.py:291-329; mcp/src/agents_remember/application/memory_tools.py:330-347; mcp/src/agents_remember/application/memory_tools.py:391-440; mcp/src/agents_remember/application/memory_tools.py:468-497 |
+| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:92-112; mcp/src/agents_remember/application/memory_tools.py:224-261; mcp/src/agents_remember/application/memory_tools.py:299-337; mcp/src/agents_remember/application/memory_tools.py:346-420; mcp/src/agents_remember/application/memory_tools.py:464-513; mcp/src/agents_remember/application/memory_tools.py:541-570 |
 | The strict sync/start/poll request models and discriminated union. | `MemoryQualitySyncRequest`; `MemoryQualityStartRequest`; `MemoryQualityPollRequest`; `MemoryQualityCheckRequest` | mcp/src/agents_remember/models/memory.py:108-113; mcp/src/agents_remember/models/memory.py:114-119; mcp/src/agents_remember/models/memory.py:120-136; mcp/src/agents_remember/models/memory.py:131-134 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |

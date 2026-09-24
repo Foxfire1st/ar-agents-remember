@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ serves it.
 | Rule 1 continued: the target list is never split, and target is identity while found_at is dated evidence. | "`target` is a list because one requirement can apply in several places."; "it survives a move." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:110-114; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:116-119 |
 | Rule 2, no paraphrase, and the measured byte-identical bar it sets. | "## Rule 2 — no paraphrase: the entry is carried, not rewritten"; "41 entries in, 41 entries out" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:121-128; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:130-131 |
 | The honest-encoding rules: a null evidence locator is a producer's honest record, and an empty target list is the encoding for a ruling that applies nowhere. | "13 of 58"; "is the honest encoding for a ruling that applies nowhere" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:138-140; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:209-212 |
-| The template's own boundary: it states the producer's side only, and the curator consumes the list as data. | "It is not the curator's side." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:225-230 |
+| The template's own boundary: it states the producer's side only, and the curator consumes the list as data. | "It is not the curator's side." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:225-295 |
 | The generator: the canonical root the sync copies from, and the target list whose first entry is this package-data directory. | `CANONICAL_SKILLS`; `TARGETS` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-47 |
 | The serving path: the packaged skills directory and corpus root constants, the shipped tree the server registers, and the corpus-plus-manifest admission the compiler reads through. | `PACKAGED_SKILLS_DIRECTORY`; `PACKAGED_COMPOSITION_ROOT`; `shipped_skill_tree`; `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:29-29; mcp/src/agents_remember/application/skill_resources/provider.py:33-33; mcp/src/agents_remember/application/skill_resources/provider.py:40-47; mcp/src/agents_remember/application/skill_resources/provider.py:51-64 |
 | The install path: the packaged `skills` root is a required runtime tree, and `runtime_install` syncs it into the coordination root's own `skills/` tree. | `require_runtime_tree`; `skills_sync` | mcp/src/agents_remember/install/runtime.py:392-402; mcp/src/agents_remember/install/runtime.py:790-796 |

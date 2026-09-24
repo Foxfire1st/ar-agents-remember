@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_record_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,7 +104,7 @@ concern this repository's own contract write, so the retained source is the dire
 | The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30). | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
 | The contract fields the recorded commits land in. | `integration_strategy`; `integrated_code_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:264-265 |
 | The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
-| The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:630-630 |
+| The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:630-631 |
 
 ## Cross-Repo References
 

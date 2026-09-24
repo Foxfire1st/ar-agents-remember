@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/ModeBar.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-15T17:00                                 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`       |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`       |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ free. (A full `Tabs`/`TabPanel` wiring with `aria-controls` to the viewport is a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The cockpit shell consumes `ModeBar` for the view switcher. | "Views" | dashboard/src/cockpit/Cockpit.tsx:915-915 |
+| The cockpit shell consumes `ModeBar` for the view switcher. | "Views" | dashboard/src/cockpit/Cockpit.tsx:915-919 |
 | The React Aria condition reconciliation it relies on. | `_selected` | dashboard/panda.config.ts:18-18 |
 
 ## Update History

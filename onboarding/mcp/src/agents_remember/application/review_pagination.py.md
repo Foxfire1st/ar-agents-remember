@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_pagination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -133,7 +133,7 @@ where.
 | **The view window stated as the surface's page: `total_basis="walk"`, and the returned rows checked against the bound the caller asked for.** | `records_page`; `RecordsPagePosition` | mcp/src/agents_remember/application/review_pagination.py:233-269; mcp/src/agents_remember/application/review_pagination.py:76-88 |
 | **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** | `reset_comparison_page` | mcp/src/agents_remember/application/review_pagination.py:272-305 |
 | The one reader of a view quantity, so a page can never publish an unmeasured count. | `_counted` | mcp/src/agents_remember/application/review_pagination.py:308-314 |
-| **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:465-465 |
+| **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:465-471 |
 | The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:187-191; mcp/src/agents_remember/models/knowledge/review.py:198-198 |
 | **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:171-176 |
 | The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |

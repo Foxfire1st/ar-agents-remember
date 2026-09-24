@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/knowledge_review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ counted it as nothing at all would let a zero read as "nothing moved" (`ICR-R15@
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact. | "Report-only. This section records what the curator-coherence authority holds; it adds no " | mcp/src/agents_remember/memory_quality/knowledge_review.py:82-82 |
+| The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact. | "Report-only. This section records what the curator-coherence authority holds; it adds no " | mcp/src/agents_remember/memory_quality/knowledge_review.py:82-88 |
 
 ## Repo-Internal References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_relation_rules.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,8 +97,8 @@ No domain documentation source is configured for this repository (`system/source
 | The namespace sweep and the composed application-seam node. | "test_graph_operations_refuse_another_repository_namespace"; "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:473-565; mcp/tests/test_knowledge_relation_rules.py:566-680 |
 | The production modules under test. | `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
 | The application seam this module is the only test importer of. | `create_knowledge_family`; `create_knowledge_family_member`; `create_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:423-438; mcp/src/agents_remember/application/knowledge.py:471-486; mcp/src/agents_remember/application/knowledge.py:495-510 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_relation_rules.py" |mcp/tests/test-evidence-lanes.toml:124-124|
-|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" |mcp/tests/evidence-lifecycle.toml:1198-1198|
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_relation_rules.py" |mcp/tests/test-evidence-lanes.toml:125-126|
+|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" |mcp/tests/evidence-lifecycle.toml:1199-1204|
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_evidence_channels.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T21:30:00+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -152,10 +152,10 @@ register the module.
 | --- | --- | --- |
 | The module's own statement of the defect, the ports it drives, the four record-producing operations, and the five load-bearing properties. | "The production composition supplies every owner-produced record class" | mcp/tests/test_knowledge_review_evidence_channels.py:1-27 |
 | **The live-enclosure fixture with the two reads every case uses, and the two halves of its candidate binding.** | `RecordedFixture`; `records`; `payload` | mcp/tests/test_knowledge_review_evidence_channels.py:131-187 |
-| **The production port every case reads through — the same `serving_collaborators` the dashboard app is built with.** | `review_through_port`; `serving_collaborators` | mcp/tests/test_knowledge_review_evidence_channels.py:170-177; mcp/src/agents_remember/cli/dashboard.py:67-101 |
+| **The production port every case reads through — the same `serving_collaborators` the dashboard app is built with.** | `review_through_port`; `serving_collaborators` | mcp/tests/test_knowledge_review_evidence_channels.py:170-183; mcp/src/agents_remember/cli/dashboard.py:67-101 |
 | **The fixture that produces one record of every class through its own owner, over an external-memory enclosure.** | `build_recorded_fixture`; `recorded`; `build_endpoint_fixture` | mcp/tests/test_knowledge_review_evidence_channels.py:180-226; mcp/tests/test_knowledge_review_source_endpoints.py:107-188 |
 | The four record-producing helpers: the detection run, the claim, the observation and the authored effect. | `_record_detection_run`; `_record_evidence_claim`; `_record_observation`; `_record_authored_effect` | mcp/tests/test_knowledge_review_evidence_channels.py:228-315; mcp/tests/test_knowledge_review_evidence_channels.py:316-337; mcp/tests/test_knowledge_review_evidence_channels.py:338-375; mcp/tests/test_knowledge_review_evidence_channels.py:386-430 |
-| **The damage helper that keeps the dataset readable as this schema: drop the trigger, rewrite the row, restore the trigger with the schema's own SQL.** | `_rewrite_stored_revision`; `_damage_detection_run`; `_damage_claim`; `APPENDED_TRIGGERS` | mcp/tests/test_knowledge_review_evidence_channels.py:431-466; mcp/src/agents_remember/memory/knowledge/schema_v2.py:1-60 |
+| **The damage helper that keeps the dataset readable as this schema: drop the trigger, rewrite the row, restore the trigger with the schema's own SQL.** | `_rewrite_stored_revision`; `_damage_detection_run`; `_damage_claim`; `APPENDED_TRIGGERS` | mcp/tests/test_knowledge_review_evidence_channels.py:431-469; mcp/src/agents_remember/memory/knowledge/schema_v2.py:1-60 |
 | The publication helper the assessment channel is produced through, and the channel index the cases state states with. | `_publish_assessment`; `_assessment_revision`; `_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:467-528; mcp/tests/test_knowledge_review_evidence_channels.py:562-563 |
 | **The case that proves every available class arrives with its owner's own fields, and that a foreign candidate's observation is not selected.** | `test_the_production_composition_supplies_every_owner_produced_record_class` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605 |
 | **The case that measures the two states the defect collapsed, side by side on one fixture.** | `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
@@ -163,10 +163,10 @@ register the module.
 | **The case that distinguishes "not read" from "read and empty" for the matrix-owned collection.** | `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
 | **The case that proves the composition measures the bindings it reads rather than inferring from a mapping's presence, and that a partial measurement promotes nothing to current.** | `test_the_composition_measures_the_bindings_it_reads` | mcp/tests/test_knowledge_review_evidence_channels.py:693-743 |
 | **The two per-record damage cases: one damaged identity named while its siblings are supplied.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
-| **The case that an unresolvable candidate reports every collection unavailable rather than empty.** | `test_an_unresolvable_candidate_reports_every_collection_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:747-759 |
+| **The case that an unresolvable candidate reports every collection unavailable rather than empty.** | `test_an_unresolvable_candidate_reports_every_collection_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:747-873 |
 | **The case that measures the vocabulary's own refusals, and the wire case that the channels travel in the served schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
 | **The lane row that registers the module, and the four catalog consumer rows it is a source-derived consumer of.** | `unit-regression`; `consumers`; `consumer_scope` | mcp/tests/test-evidence-lanes.toml:5-115; mcp/tests/evidence-lifecycle.toml:389-453; mcp/tests/evidence-lifecycle.toml:668-797; mcp/tests/evidence-lifecycle.toml:1392-1414; mcp/tests/evidence-lifecycle.toml:1417-1449 |
-| The composition, the resolver and the vocabulary the cases measure. | `review_records_for`; `with_selection_channels`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:174-238; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
+| The composition, the resolver and the vocabulary the cases measure. | `review_records_for`; `with_selection_channels`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:171-238; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
 
 ## Cross-Repo References
 

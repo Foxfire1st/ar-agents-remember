@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/role_capsules/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No external or domain documentation is configured for this memory root
 | The frozen DTO surface this package re-exports. | `CapsuleAdmittedFacts`; `CapsuleCapsule`; `CapsuleCompilationResult`; `CapsuleBinding` | mcp/src/agents_remember/models/role_capsules/types.py:198-227; mcp/src/agents_remember/models/role_capsules/types.py:435-448; mcp/src/agents_remember/models/role_capsules/types.py:451-475; mcp/src/agents_remember/models/role_capsules/types.py:299-318 |
 | The I/O boundary this package deliberately does not contain. | `compile_admitted_capsule`; `admit_capsule_sources` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/sources.py:78-94 |
 | The sibling package that owns admitted-context resolution and reading. | `CapsuleCompilationOutcome`; `CapsuleAdmissionRequest` | mcp/src/agents_remember/application/role_capsules/__init__.py:9-23 |
-| The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code. | `[contract]`; `rule` | layers.toml:25-25 |
+| The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code. | `[contract]`; `rule` | layers.toml:19-25 |
 | The fitness function and where its result is produced. **Measured on this candidate: the tree does not yet satisfy its own declared target — 16 pre-existing violations, all `worktrees -> memory_quality` and its siblings; none names a role-capsule module and there are 0 undeclared imports.** Do not read this contract as currently satisfied. | `check_layering`; `LayeringReport` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:334-334 |
 | The unit tests that pin the fitness function itself (not this candidate's result). | `_write_tree` | mcp/tests/test_layering.py:1-12 |
 

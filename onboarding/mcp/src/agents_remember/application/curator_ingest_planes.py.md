@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_ingest_planes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -136,7 +136,7 @@ curator-run planes.
 | The two coverage assemblers this module calls rather than copies. | `family_coverage`; `source_coverage` | mcp/src/agents_remember/application/curator_family_coverage.py:116-156; mcp/src/agents_remember/application/curator_source_manifest.py:410-443 |
 | The digest of the list itself, which the origin references name. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-37 |
 | The candidate path the stored facts and the manifest are read and named under. | `candidate_database_path`; `SOURCE_MANIFEST_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61; mcp/src/agents_remember/application/curator_source_manifest.py:70-73 |
-| The operation this module serves, and the point at which it decides whether anything is written at all. | `ingest_curator_list`; `_record_what_the_batch_will_write` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1074-1194; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1255-1291 |
+| The operation this module serves, and the point at which it decides whether anything is written at all. | `ingest_curator_list`; `_record_what_the_batch_will_write` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1258; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1319-1355 |
 
 ## Cross-Repo References
 

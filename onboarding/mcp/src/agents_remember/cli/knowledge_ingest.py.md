@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/knowledge_ingest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -336,7 +336,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | **The cold-start branch, now reached through the owner: a run that named no baseline establishes the review's before half as an explicitly identified empty first generation, carrying the leaf, the contract, the authorization and the code base the report already observed.** | `_establish_first_generation` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516 |
 | **The application owner that act delegates to, the run it is handed, and the value it answers with.** | `establish_first_generation`; `FirstGenerationRun`; `BeforeGeneration` | mcp/src/agents_remember/application/knowledge_first_generation.py:100-124; mcp/src/agents_remember/application/knowledge_first_generation.py:82-88; mcp/src/agents_remember/application/knowledge_first_generation.py:92-97 |
 | The production entry point this adapter calls — the closed write path — and the selection value it is handed, including the baseline a run forks from and the destination it selected. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1014-1031 |
-| **The refusal a selected baseline that is missing or corrupt earns, naming its path and reason and establishing nothing.** | `selected_input_unavailable_refusal`; `_selected_baseline` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-901; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1358-1379 |
+| **The refusal a selected baseline that is missing or corrupt earns, naming its path and reason and establishing nothing.** | `selected_input_unavailable_refusal`; `_selected_baseline` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-901; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1422-1559 |
 | **The three published directory constants this adapter derives its default from — one spelling shared with the reader, which is what connects the write side to the review. They are defined in `application/review_candidate_resolution.py` and re-exported by `knowledge_review.py`, which is the import path this module uses (`:143-145`).** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_CANDIDATE_DIRECTORY`; `REVIEW_BASELINE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:80-80; mcp/src/agents_remember/application/review_candidate_resolution.py:87-87; mcp/src/agents_remember/application/review_candidate_resolution.py:86-86; mcp/src/agents_remember/application/knowledge_review.py:53-55; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
 | The dataset name both halves take, so a placed baseline and an established first generation are the file the review opens. | `CANDIDATE_DATABASE_NAME`; `BASELINE_ORIGIN_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52; mcp/src/agents_remember/application/knowledge_before_half.py:79-79 |
 | The contract the one load yields, and the loader that reads it. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |

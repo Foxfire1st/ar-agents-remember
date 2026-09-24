@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -102,16 +102,16 @@ contract is supported by the implementation and the authorized cache-retirement 
 | Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:212-242; mcp/src/agents_remember/mcp/registration/memory.py:261-292 |
 | The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
 | The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:309-356; mcp/src/agents_remember/application/memory_tools.py:336-348 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:322-361; mcp/src/agents_remember/application/memory_tools.py:349-368 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:342-387; mcp/src/agents_remember/application/memory_tools.py:369-383 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:317-429; mcp/src/agents_remember/application/memory_tools.py:352-421 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:330-434; mcp/src/agents_remember/application/memory_tools.py:422-441 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:371-460; mcp/src/agents_remember/application/memory_tools.py:442-456 |
 | The payload builder for the carryover plan. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
 | The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:225-246 |
 | The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
 | The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:68-77 |
 | The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:80-89 |
 | The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-129 |
-| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:44-55 |
+| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
 | The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
 
 ## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude

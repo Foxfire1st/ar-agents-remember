@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/ChatActivityIndicator.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ the same normalized catalog, not this component's hydration or rendering owner.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `CockpitShell` is the sole catalog driver/reconciler owner for the shared store. | "Catalog ownership is shell-lifetime and view-independent." | dashboard/src/cockpit/Cockpit.tsx:878-878 |
+| `CockpitShell` is the sole catalog driver/reconciler owner for the shared store. | "Catalog ownership is shell-lifetime and view-independent." | dashboard/src/cockpit/Cockpit.tsx:878-882 |
 | `LifecycleList` is this component's sole production consumer. | `LifecycleList` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
 | `SessionRail` is a peer renderer of the same normalized session-state catalog. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission. | "maps an observed busy chat to working"; "omits activity without a live bound harness seat" | dashboard/src/panels/ChatActivityIndicator.test.tsx:23-30; dashboard/src/panels/ChatActivityIndicator.test.tsx:128-137 |

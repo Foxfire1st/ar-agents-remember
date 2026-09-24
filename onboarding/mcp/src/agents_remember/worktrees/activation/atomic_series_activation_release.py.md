@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The selector authority supplies the per-contract activation path, strict observation, and canonical master reference. | "def activation_path("; `observe_atomic_series_path`; `series_master_ref` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:290-335; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:418-431 |
-| Explicit cancellation refuses an absent exact selection and a record that selects another contract. | `release_atomic_series_selection`; `atomic-series-activation-selection-missing`; `atomic-series-activation-selected-contract-mismatch` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:43-47; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:48-52 |
+| Explicit cancellation refuses an absent exact selection and a record that selects another contract. | `release_atomic_series_selection`; `atomic-series-activation-selection-missing`; `atomic-series-activation-selected-contract-mismatch` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:22-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:43-47; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:48-52 |
 | Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract. | `_record_selects_contract`; `_release_record` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:91-118 |
 | The terminal bridge translates exact, absent, unreadable, and different-selection outcomes. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Tests prove exact release addresses only the released contract and that another contract's record is never adopted. | "def test_release_addresses_only_the_released_contract(self) -> None:"; "def test_another_contracts_record_can_never_be_adopted(self) -> None:" | mcp/tests/test_atomic_series_activation.py:152-173; mcp/tests/test_atomic_series_activation.py:174-209 |

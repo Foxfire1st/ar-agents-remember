@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_staleness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -137,8 +137,8 @@ sites that read them. Every anchor in a row occurs inside the range that row cit
 | **The moved sentence and its moved axis, worded where the state is built rather than at a render site.** | `_MOVED_STATEMENT`; `_MOVED_FIELDS` | mcp/src/agents_remember/application/review_comparison_staleness.py:44-48 |
 | **The comparison's own declared identity: the operation's published binding, digest and selector digest copied verbatim with the policy version and both snapshots' own facts, and the assertion that a page declaring no identity is refused rather than given a fallback.** | `comparison_identity`; `ComparisonIdentity` | mcp/src/agents_remember/application/review_comparison_staleness.py:51-73; mcp/src/agents_remember/models/knowledge/review.py:348-386 |
 | **The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.** | `review_staleness`; `ReviewStaleness` | mcp/src/agents_remember/application/review_comparison_staleness.py:76-97; mcp/src/agents_remember/models/knowledge/review.py:985-1010 |
-| **The model validator that makes "a stale claim names its previous input" structural: a `stale` state with no reference and a `current` state carrying one are both unconstructible.** | `_require_the_previous_input_to_be_labelled` | mcp/src/agents_remember/models/knowledge/review_staleness.py:74-82 |
-| **The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.** | `previous_binding_digest` | mcp/src/agents_remember/models/knowledge/review.py:294-299 |
+| **The model validator that makes "a stale claim names its previous input" structural: a `stale` state with no reference and a `current` state carrying one are both unconstructible.** | `_require_the_previous_input_to_be_labelled` | mcp/src/agents_remember/models/knowledge/review_staleness.py:74-85 |
+| **The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.** | `previous_binding_digest` | mcp/src/agents_remember/models/knowledge/review.py:292-299 |
 | **The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.** | `compose_review`; `comparison_identity`; `review_staleness` | mcp/src/agents_remember/application/knowledge_review.py:353-542; mcp/src/agents_remember/application/knowledge_review.py:86-89 |
 | **The transport's admission of the previous identity in the route's own vocabulary, shape-checked against the models' own digest pattern rather than raised out of the request model.** | `_admitted_binding_digest` | mcp/src/agents_remember/serving/review.py:441-464 |
 | **The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.** | `test_the_stale_rule_holds_in_both_directions`; `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` | mcp/tests/test_knowledge_review_surface.py:628-650; mcp/tests/test_knowledge_review_surface.py:1179-1255 |

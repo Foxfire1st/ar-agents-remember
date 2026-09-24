@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ invalidating the notes-specific assertions.
 | The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. | "function noteAsFileContent("; "function dualPaneProps("; "<DualPane {...dualPaneProps(note)} split={false} />" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:120-137; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:204-204 |
 | Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:531-535 |
 | Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:538-541 |
-| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:615-615 |
+| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:615-619 |
 | TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. | "function ReferenceList({" | dashboard/src/panels/TaskNotes.tsx:75-129 |
 
 ## Current L5I Route State

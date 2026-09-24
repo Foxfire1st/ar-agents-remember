@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_family_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -136,7 +136,7 @@ result.
 | A membership the candidate already recorded is reported `reused` rather than `added`. | `_membership_outcome`; "reused" | mcp/src/agents_remember/application/curator_family_coverage.py:266-275 |
 | A retirement reported by its two endpoints and the row identity, with no family key or basis. | `_retired_outcome` | mcp/src/agents_remember/application/curator_family_coverage.py:278-287 |
 | The plans and the measured facts this module reports, owned by the planning half rather than restated here. | `DeclarationPlan`; `MembershipPlan`; `RetirementPlan`; `StoredFamilyFacts`; `CuratorFamilyAuthoring` | mcp/src/agents_remember/application/curator_family_planning.py:326-338; mcp/src/agents_remember/application/curator_family_planning.py:483-493; mcp/src/agents_remember/application/curator_family_planning.py:496-504; mcp/src/agents_remember/application/curator_family_planning.py:204-222; mcp/src/agents_remember/application/curator_family_planning.py:507-533 |
-| The report value this coverage becomes a field of, and the operation that assembles it after the batch. | `IngestReport`; `_report` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:451-499; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3737-3814 |
+| The report value this coverage becomes a field of, and the operation that assembles it after the batch. | `IngestReport`; `_report` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:456-538; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3842-3923 |
 
 ## Cross-Repo References
 

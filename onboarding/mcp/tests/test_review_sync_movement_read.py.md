@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -166,7 +166,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | **The fold that makes a measured movement outrank the reader's carried identity, which is what `F6` renders.** | `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
 | The read route that renders the movement and folds the staleness beside it. | `review_sync_movement`; `sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:483-495; mcp/src/agents_remember/application/knowledge_review.py:555-555 |
 | **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** | `ReviewSyncMovementState`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:45-48; mcp/src/agents_remember/models/knowledge/review_staleness.py:131-187 |
-| **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** | `record_readable`; `reason` | mcp/src/agents_remember/models/knowledge/review_staleness.py:111-129 |
+| **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** | `record_readable`; `reason` | mcp/src/agents_remember/models/knowledge/review_staleness.py:109-129 |
 | The submission vocabulary whose `disabled_stale` state ends the `F6` phase. | `ReviewSubmission`; `"disabled_stale"` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204; mcp/src/agents_remember/application/review_record_rendering.py:194-209 |
 | **The block that says why nothing was bound, which `G2` calls with a failed payload.** | `rebinding_result_block`; `"not-measured"` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373; mcp/src/agents_remember/application/review_sync_rebinding.py:565-582 |
 | **The reader whose `not-recorded` and `unreadable` states the two `G1` cases exercise.** | `read_review_sync_rebinding`; `"unreadable"` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
@@ -176,7 +176,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:376-376; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
 | The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-232 |
 | The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:305-305; mcp/tests/evidence-lifecycle.toml:804-804; mcp/tests/evidence-lifecycle.toml:1310-1310; mcp/tests/evidence-lifecycle.toml:1439-1439; mcp/tests/evidence-lifecycle.toml:1488-1488 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:306-306; mcp/tests/evidence-lifecycle.toml:805-805; mcp/tests/evidence-lifecycle.toml:1311-1311; mcp/tests/evidence-lifecycle.toml:1440-1440; mcp/tests/evidence-lifecycle.toml:1489-1489 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-112; mcp/tests/test_review_sync_rebinding.py:853-867 |
 

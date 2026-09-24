@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-14T17:20+02:00                        |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`    |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`    |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -17,17 +17,28 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers three of them — `dashboard`, `memory-citations`
-and `memory-backfill` — and further CLI adapters slot in as subparsers. Backed by the
-`agents-remember = agents_remember.cli.__main__:main` console script.
+that dispatches subcommands. It registers **five** of them — `dashboard`, `memory-citations`,
+`memory-backfill`, `knowledge-ingest` and `knowledge-bootstrap` — and further CLI adapters slot
+in as subparsers. Backed by the `agents-remember = agents_remember.cli.__main__:main` console
+script.
 
 ## Code Commentary
 
 `build_parser()` builds an `argparse` parser with a required subcommand group and registers
 each subparser through its adapter's own `add_arguments`, setting `func=<adapter>.run`:
-`dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`
-and `memory_backfill.add_arguments`/`memory_backfill.run`. `main(argv=None)` parses and
+`dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`,
+`memory_backfill.add_arguments`/`memory_backfill.run`,
+`knowledge_ingest.add_arguments`/`knowledge_ingest.run` and
+`knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
+
+**The two knowledge subcommands are two different admissions, and the help text says which.**
+`knowledge-ingest` is described as "the knowledge write plane's production entry point" for a
+*leaf's* curator hand-off list; `knowledge-bootstrap` is described as "the taskless bootstrap's
+production entry point", which is what a repository with no leaf reaches. They are separate
+adapters rather than one adapter with a mode, because the two resolve different admissions
+(a leaf enclosure contract, and the settings document's repository entry) and the destination is
+derived in both cases rather than passed.
 
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
@@ -56,8 +67,23 @@ configs launch the server by that exact name, so it is never folded into this um
 | The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
 | The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
+| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:41-48 |
+| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:50-58 |
 
 ## Update History
+
+- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
+  base `0d7910f9d646161c414ed6543453536a3c749d49`): **the umbrella gains its fifth subcommand, and a
+  stale sentence in this card is corrected rather than extended.** The body above said the parser
+  registered **three** subcommands; that sentence had already been false since `knowledge-ingest` was
+  registered, and this leaf adds `knowledge-bootstrap` beside it, so the count and the list are now
+  the five the parser really builds. The registration is the same declarative pair
+  (`add_arguments` + `set_defaults(func=...)`, `:50-58`) and the adapter owns its own flags and exit
+  code, so this module's contribution is still one registration line. Two reference rows were added:
+  the `knowledge-ingest` subparser (`:41-48`) and this leaf's `knowledge-bootstrap` subparser
+  (`:50-58`). **No verification stamp was advanced** — the candidate is uncommitted, so no commit
+  holds the content a stamp would claim to have verified, and the governed closeout owns the real
+  code and memory commits.
 - 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `add_arguments`; `run`, cited at mcp/src/agents_remember/cli/memory_citations.py:48-101 and `:104-165`. The cited ranges hold `def add_arguments(parser: argparse.ArgumentParser) -> None:` at `:53` and `def run(args: argparse.Namespace) -> int:` at `:120`, which is exactly what the claim says the memory-citations adapter registers the same declarative way through; the claim is true as written. A **generated anchor-range projection** had rewritten the range mechanically, which is why the citation was not shown to be current until an agent read it — this is that reading. No range was substituted or deleted, and the verification stamp is **not** advanced.
 - 2026-09-18T16:13:35+00:00: Generated citation repair: `run` repointed to mcp/src/agents_remember/cli/dashboard.py:212-247. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
 
@@ -77,3 +103,4 @@ configs launch the server by that exact name, so it is never folded into this um
 - 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the umbrella `agents-remember`
   dispatcher with the `dashboard` subcommand. Verification metadata pinned until closeout
   stamps the 4a code commit.
+

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ repository prose consumed by the skill router.
 | The six-step dispatch transaction and the two disjoint caller kinds. | `## Dispatch is one structural transaction` | skills/l-01-agent-lifecycles/core/authority.md:56-113; skills/l-01-agent-lifecycles/core/authority.md:50-50 |
 | The escalation ladder and the quo-vadis developer-worthy test. | `## Escalation ladder` | skills/l-01-agent-lifecycles/core/authority.md:118-128 |
 | The watcher ban and the passive liveness duty. | `## Notify-and-stop is safe by design` | skills/l-01-agent-lifecycles/core/authority.md:187-201; skills/l-01-agent-lifecycles/core/authority.md:181-181 |
-| Every role's `**Inherits:**` line names this block, which is how the corpus composes it without duplication. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-289 |
+| Every role's `**Inherits:**` line names this block, which is how the corpus composes it without duplication. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-453 |
 
 ## Cross-Repo References
 

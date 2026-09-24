@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `972b44cc07b307929535fe7974d6a30d53c9c4f1` |
-| lastVerifiedCommitDate | 2026-09-23T07:48:19+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ inert, and the four cases. Every anchor in a row occurs inside the range that ro
 | **A successful answer carrying the server's recorded subject into the target and printing no state at all — the stub now mirrors the catalogue wire shape additively (`presence`/totals), with no assertion changed.** | "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
 | **The hook and the state renderer these cases drive: the read carried whole, and the entry never gated on it.** | `useReviewCatalogue`; `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:102-121; dashboard/src/panels/detail-panel/changeSetBar.tsx:289-327 |
 | The bar's own composition, where the working change-set, the reviewer entry and the entry read's state are gated on one liveness. | `DocChangeSetBar`; `LeafEntries`; `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:537-537; dashboard/src/panels/detail-panel/changeSetBar.tsx:398-474; dashboard/src/panels/detail-panel/changeSetBar.tsx:483-532 |
-| The client the entry read goes through, which reads the refusal out of the body whatever the status. | `intentReviewEntries` |dashboard/src/data/review.ts:597-603|
+| The client the entry read goes through, which reads the refusal out of the body whatever the status. | `intentReviewEntries` |dashboard/src/data/review.ts:597-699|
 
 ## Cross-Repo References
 

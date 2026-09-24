@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_diff_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -121,12 +121,12 @@ repository source and package-local evidence only.
 | The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). | "test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make"; "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set" | mcp/tests/test_knowledge_diff_boundaries.py:769-788; mcp/tests/test_knowledge_diff_boundaries.py:791-847 |
 | **The probe that measured the trees being what makes a gap visible.** | "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:850-912 |
 | The production probe these cases drive rather than substitute. | `git_tree_difference_probe` | mcp/src/agents_remember/application/knowledge_diff.py:162-196 |
-|The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1258-1279; mcp/tests/evidence-lifecycle.toml:1264-1264 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/evidence-lifecycle.toml:1433-1433|
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/evidence-lifecycle.toml:1433-1433|
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1200-1204 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/evidence-lifecycle.toml:1433-1433|
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/evidence-lifecycle.toml:1433-1433|
+|The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1259-1410; mcp/tests/evidence-lifecycle.toml:1265-1265 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:226-231; mcp/tests/evidence-lifecycle.toml:1434-1434|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:226-231; mcp/tests/evidence-lifecycle.toml:1434-1434|
+| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1201-1410 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:226-231; mcp/tests/evidence-lifecycle.toml:1434-1434|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:226-231; mcp/tests/evidence-lifecycle.toml:1434-1434|
 
 ## Cross-Repo References
 
@@ -136,8 +136,8 @@ under `tmp_path`. No configured remote, protected branch or sibling repository i
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No configured cross-repository evidence is claimed. | — | — |
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1200-1204; mcp/tests/evidence-lifecycle.toml:1264-1264 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:225-225; mcp/tests/evidence-lifecycle.toml:1433-1433|
+| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1201-1205; mcp/tests/evidence-lifecycle.toml:1265-1410 |
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/test-evidence-lanes.toml:226-231; mcp/tests/evidence-lifecycle.toml:1434-1434|
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

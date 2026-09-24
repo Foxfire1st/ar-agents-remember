@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_statement_sides.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T17:30:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -152,7 +152,7 @@ case modules that measure it from the composition side and the renderer side.
 | **The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.** | `field_changes` | mcp/src/agents_remember/application/review_statement_sides.py:135-155 |
 | **`None` reserved for the two real absences, the `Mapping` branch that projects instead, and the tuple join that makes a recorded empty a present-but-empty value.** | `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal. | `ReviewSideState`; `ReviewSideContent` | mcp/src/agents_remember/models/knowledge/review.py:228-255; mcp/src/agents_remember/models/knowledge/review.py:204-198 |
-| **The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange` |mcp/src/agents_remember/models/knowledge/review.py:484-495|
+| **The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.** | `ReviewFieldChange` |mcp/src/agents_remember/models/knowledge/review.py:484-507|
 | The declared prose limit the projection is bounded by. | `PROSE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-24 |
 | The item this module projects: its two payloads and the `changed_fields` roster the rows come from. | `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:318-354 |
 | The payload `read_side` returns, with the `statement` and `essential_conditions` fields each projection reads. | `ReadItem` | mcp/src/agents_remember/models/knowledge/read.py:363-401 |

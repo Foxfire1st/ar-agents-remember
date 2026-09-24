@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ well-formed against the shipped evidence-dependency contract.
 | The equality comparison over declared-dependency identities, and the gap it reports. | `disputed_dependencies`; `BindingGap` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:99-122; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:143-172 |
 | The two-member currentness state and the derivation that produces it. | `AssessmentCurrentness`; `assessment_currentness`; `subject_state` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:125-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:175-192; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:401-418 |
 | The refusal that names the recorded digest, the observed state and the exact identity. | `require_current_assessment_binding`; `AssessmentBindingStaleError` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:212-248 |
-| The one edge kind excluded from the comparison, and why the exclusion is structural. | `SELF_REFERENTIAL_KINDS` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:63-65 |
+| The one edge kind excluded from the comparison, and why the exclusion is structural. | `SELF_REFERENTIAL_KINDS` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:63-96 |
 | The shipped precedent whose exact spelling this field reuses. | `DetectionRunCurrentness`; `binding_state` | mcp/src/agents_remember/models/knowledge/detection.py:957-986 |
 
 ## KS-R15@v1 Binding Currentness

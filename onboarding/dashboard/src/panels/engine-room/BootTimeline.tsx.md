@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/BootTimeline.tsx`    |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`             |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`             |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ The `BootTimeline({ node })` component maps the selected steps to `<li>` rows st
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). | "export interface EngineProcessNode {"; "function steadyState(node: EngineProcessNode): StepState {"; "node.health === \"failed\""; "node.providers.some"; "function bootSteps(node: EngineProcessNode): Step[] {"; "node.edges.find"; "node.codeWorktree.exists"; "Memory (${node.memoryMode})" | dashboard/src/panels/engine-room/BootTimeline.tsx:46-47; dashboard/src/panels/engine-room/BootTimeline.tsx:51-51; dashboard/src/panels/engine-room/BootTimeline.tsx:56-56; dashboard/src/panels/engine-room/BootTimeline.tsx:58-58; dashboard/src/panels/engine-room/BootTimeline.tsx:66-66; dashboard/src/panels/engine-room/BootTimeline.tsx:74-74; dashboard/src/types/projection.ts:233-233 |
+| Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). | "export interface EngineProcessNode {"; "function steadyState(node: EngineProcessNode): StepState {"; "node.health === \"failed\""; "node.providers.some"; "function bootSteps(node: EngineProcessNode): Step[] {"; "node.edges.find"; "node.codeWorktree.exists"; "Memory (${node.memoryMode})" | dashboard/src/panels/engine-room/BootTimeline.tsx:46-47; dashboard/src/panels/engine-room/BootTimeline.tsx:51-51; dashboard/src/panels/engine-room/BootTimeline.tsx:56-56; dashboard/src/panels/engine-room/BootTimeline.tsx:58-58; dashboard/src/panels/engine-room/BootTimeline.tsx:66-66; dashboard/src/panels/engine-room/BootTimeline.tsx:74-105; dashboard/src/types/projection.ts:233-233 |
 | `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. | `EngineProcessEdge`; `EDGE_TO_STEP`; "node.edges.find"; "EDGE_TO_STEP[found.state] ?? \"pending\"" | dashboard/src/panels/engine-room/BootTimeline.tsx:20-30; dashboard/src/panels/engine-room/BootTimeline.tsx:58-59; dashboard/src/types/projection.ts:223-231 |
 | `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. | `DISPOSE_PHASES`; `disposeFrontier`; `teardownSteps` | dashboard/src/panels/engine-room/BootTimeline.tsx:86-93; dashboard/src/panels/engine-room/BootTimeline.tsx:99-112; dashboard/src/panels/engine-room/BootTimeline.tsx:114-148 |
 | `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared in the engine-room layout styles. | "export const timeline = css({"; "export const timelineStep = cva({"; "export const timelineMark = cva({"; "export const sectionLabel = css({" | dashboard/src/panels/engine-room/layout.styles.ts:103-103; dashboard/src/panels/engine-room/layout.styles.ts:474-474; dashboard/src/panels/engine-room/layout.styles.ts:482-482; dashboard/src/panels/engine-room/layout.styles.ts:503-503 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ No domain documentation source is configured for this repository (`system/source
 | The command and payload builders the two modules share. | `claim_command`; `observation_command`; `claim_payload`; `observation_payload` | mcp/tests/evidence_test_support.py:339-360; mcp/tests/evidence_test_support.py:382-413; mcp/tests/evidence_test_support.py:496-502; mcp/tests/evidence_test_support.py:505-514 |
 | The artifact, publication and read-context helpers. | `artifact_reference`; `expect_artifact`; `expect_publication`; `read_context` | mcp/tests/evidence_test_support.py:477-484; mcp/tests/evidence_test_support.py:441-446; mcp/tests/evidence_test_support.py:449-454; mcp/tests/evidence_test_support.py:457-473 |
 | The registered owning contract and artifact row that make this file governed evidence: the contract id, its owner and its evidence node, and the artifact's kind and exact consumer scope. | "[[contract]]"; "[[artifact]]"; "shared-support" | mcp/tests/evidence-lifecycle.toml:4-4; mcp/tests/evidence-lifecycle.toml:83-83; mcp/tests/evidence-lifecycle.toml:85-85 |
-| The unit-regression lane rows for this artifact's two consumers. | "mcp/tests/test_knowledge_evidence_claims.py" | mcp/tests/test-evidence-lanes.toml:92-92 |
+| The unit-regression lane rows for this artifact's two consumers. | "mcp/tests/test_knowledge_evidence_claims.py" | mcp/tests/test-evidence-lanes.toml:93-95 |
 
 ## Cross-Repo References
 

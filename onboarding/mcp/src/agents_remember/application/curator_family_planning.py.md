@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/curator_family_planning.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -202,7 +202,7 @@ authored hand-off vocabulary against its own candidate.
 | The shipped member-row decoder the stored facts are read through, rather than a second reading of the table. | `decode_member_row` | mcp/src/agents_remember/memory/knowledge/records.py:413-426 |
 | The command vocabulary this module builds instead of restating: the family and family-member drafts and the four commands. | `AddFamily`; `AddFamilyRevision`; `AddFamilyMember`; `RemoveFamilyMember` | mcp/src/agents_remember/models/knowledge/candidate.py:370-375; mcp/src/agents_remember/models/knowledge/candidate.py:378-382; mcp/src/agents_remember/models/knowledge/candidate.py:408-412; mcp/src/agents_remember/models/knowledge/candidate.py:415-420 |
 | The drafted provenance every family row carries comes from the admitted destination, not from the caller. | `FamilyRevisionDraft`; `FamilyMemberDraft` | mcp/src/agents_remember/models/knowledge/family.py:58-102; mcp/src/agents_remember/models/knowledge/graph.py:49-55 |
-| The operation that calls the journal writer only for a run whose batch writes something, and that builds the one batch these commands join. | `_record_what_the_batch_will_write`; `curator_command_list` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1255-1300; mcp/src/agents_remember/application/knowledge_ingest.py:238-262 |
+| The operation that calls the journal writer only for a run whose batch writes something, and that builds the one batch these commands join. | `_record_what_the_batch_will_write`; `curator_command_list` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1319-1364; mcp/src/agents_remember/application/knowledge_ingest.py:238-262 |
 
 ## Cross-Repo References
 

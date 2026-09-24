@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_family_integrity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -189,7 +189,7 @@ No domain documentation source is configured for this repository (`system/source
 | The five owners, their declared order, and the validator that requires exactly one entry per owner in that order. | `PIPELINE_STATUS_OWNERS`; "if owners != PIPELINE_STATUS_OWNERS:"; "which is not one of its declared " | mcp/src/agents_remember/models/knowledge/family_review.py:95-106; mcp/src/agents_remember/models/knowledge/family_review.py:332-332; mcp/src/agents_remember/models/knowledge/family_review.py:309-315 |
 | **The routing record's arithmetic tie, which is why the report cannot grow a fourth actionability term; the shipped formula it consumes; and the detector-status derivation the seam calls by name.** | `FamilyReviewRouting`; "and gains no fourth"; `curator_actionable_count(repair_count, missing_count, stale_count)`; "def detector_status(" | mcp/src/agents_remember/models/knowledge/family_review.py:423-474; mcp/src/agents_remember/models/knowledge/family_review.py:464-464; mcp/src/agents_remember/memory_quality/family_review.py:387-387; mcp/src/agents_remember/memory_quality/family_review.py:265-265 |
 | **The publication and read-back owners this module delegates to, whose `matched()` composes into the retention record.** | "def publish_durable_evidence"; "def matched(self) -> bool:" | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:122-151; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:84-119 |
-| The subject spelling the routing rows address and the section renderer `section_lines()` delegates to, both defined by their own owners. | "def assessment_subject_id("; "def knowledge_review_section(" | mcp/src/agents_remember/models/lifecycles/review_assessment.py:367-380; mcp/src/agents_remember/memory_quality/knowledge_review.py:70-100 |
+| The subject spelling the routing rows address and the section renderer `section_lines()` delegates to, both defined by their own owners. | "def assessment_subject_id("; "def knowledge_review_section(" | mcp/src/agents_remember/models/lifecycles/review_assessment.py:367-398; mcp/src/agents_remember/memory_quality/knowledge_review.py:70-100 |
 
 ## Cross-Repo References
 

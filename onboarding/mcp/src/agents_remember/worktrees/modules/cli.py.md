@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Purpose
@@ -73,7 +73,7 @@ The following current source boundaries establish the ledger-retirement behavior
 | MCP attachment enters the result-returning application owner without CLI parsing. (`worktree_attach_tool`) | `worktree_attach_tool` | mcp/src/agents_remember/application/worktree_tools.py:293-302 |
 | MCP status enters the result-returning application owner without CLI parsing. (`worktree_status_tool`) | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:305-328 |
 | Start or observe the exact contract-addressed integration operation. (`worktree_integrate_tool`) | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:371-422 |
-| MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`) | `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:826-842 |
+| MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`) | `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:826-847 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`) | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:492-567 |
 
 ## Series-Contract Notes

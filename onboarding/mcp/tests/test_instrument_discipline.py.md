@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_instrument_discipline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T12:30+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -164,7 +164,7 @@ re-derived against the current 537-line source.
 | The transcription is the one the record carries, checked against the record where it still exists. | `test_the_evidence_transcription_is_the_one_the_record_carries` | mcp/tests/test_instrument_discipline.py:523-537 |
 | The module whose admissibility conditions these cases pin. | `counted_pattern`; `capture_bounded_window`; `check_artifact_refusal`; `producer_identity_refusal` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:173-370 |
 | The narrow exit-status rule and the vacuity rule's non-zero quantity. | `TRANSCRIPT_EXIT`; `NONZERO_FINDINGS` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:67-79 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_instrument_discipline.py" |mcp/tests/test-evidence-lanes.toml:308-308|
+| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_instrument_discipline.py" |mcp/tests/test-evidence-lanes.toml:309-317|
 
 ## Cross-Repo References
 

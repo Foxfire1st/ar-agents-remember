@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_retention.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ gets written out of history.
 | The two deletion-owner constants the bindings carry, defined by the module that performs the deletions. | `CODE_OBJECT_DELETION_OWNER`; `SNAPSHOT_DELETION_OWNER` | mcp/src/agents_remember/application/review_comparison_reclamation.py:60-63 |
 | The storage snapshot owner, and the identity value it returns for a proven-closed copy. | `freeze_closed_snapshot`; `SnapshotIdentity` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-160; mcp/src/agents_remember/models/knowledge/candidate.py:1-60 |
 | R05's own reader and its typed-absence spelling, called rather than restated. | `unreadable_half_refusal`; `NOT_RECORDED` | mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/knowledge_before_half.py:84-84 |
-| The namespace a half is opened under, derived from the requested repository and the dataset. | `review_namespace` | mcp/src/agents_remember/application/review_candidate_resolution.py:300-327 |
+| The namespace a half is opened under, derived from the requested repository and the dataset. | `review_namespace` | mcp/src/agents_remember/application/review_candidate_resolution.py:300-348 |
 | The branch spelling the protected source branch is named by. | `local_branch_ref` | mcp/src/agents_remember/worktrees/modules/git.py:79-85 |
 | **The two cases that protect the custody rule: the leaf's own work branch is *not* custody, and genuine protected history taking custody stops the pin while the generation still reopens.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens` | mcp/tests/test_knowledge_review_comparison_generation.py:869-910; mcp/tests/test_knowledge_review_comparison_generation.py:913-966 |
 | **The case that protects the typed absence, and the one that refuses a declared absence beside present bytes.** | `test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference`; `test_a_declared_absence_beside_present_bytes_is_refused` | mcp/tests/test_knowledge_review_comparison_generation.py:768-836; mcp/tests/test_knowledge_review_comparison_generation.py:839-866 |

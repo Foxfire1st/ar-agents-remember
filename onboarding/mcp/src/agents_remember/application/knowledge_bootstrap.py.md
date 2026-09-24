@@ -1,0 +1,217 @@
+# mcp/src/agents_remember/application/knowledge_bootstrap.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/application/knowledge_bootstrap.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-24T09:20+02:00 |
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| governingOverview | `mcp/src/agents_remember/application/overview.md` |
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
+**One taskless bootstrap run (ICR-R29@v1): admit, write through the one write plane, read it back,
+retain the progress.** This is the composition the requirement is about. It owns no write, no identity,
+no namespace and no snapshot: it admits a context, hands the curator's list to the existing ingest
+operation as **one** admitted batch, and then reports what the repository actually holds afterwards.
+Everything in between — the candidate, the namespace, the identity allocation, the first generation, the
+batch, the snapshot and the publication — stays with the shipped owners, which is why a bootstrap and a
+leaf's ordinary authoring cannot drift apart: they are the same operation with different admissions.
+
+**Three decisions are made here, and only three.**
+
+- **What this run forks from.** The destination the ordinary read route selects is read *before* anything
+  is written, through that route's own owner. A location that holds a dataset is the baseline this run
+  forks from and the exact identity its publication may replace; a location that holds nothing is the
+  cold start; a location that holds something which is not a dataset of this code is neither, and the run
+  refuses by name instead of publishing over it or starting a second store beside it.
+- **What is published back.** The publication owner's own result is read back through
+  `published_identity_read_back`, so the report says whether the dataset a *reader* will select is the one
+  the write reported. Exit status is never that proof.
+- **What remains.** The remaining-work manifest is derived from a read of the published dataset through
+  the shipped view API, keyed on the identities the candidate's allocation journal holds — never from the
+  plan and never from the run's own hopes. A store read that cannot be completed produces a named
+  limitation, and an entry whose revision is not in the dataset is `absent` while one whose revision could
+  not be looked for at all is `unmeasured`. **Owed work is carried forward, and re-derived rather than
+  copied**: every entry an inherited record left owed that this run's own list does not mention is added
+  to this run's rows with `outcome` `carried`, its state re-read from the store, so a narrowed resume
+  cannot delete the rest of the debt and an entry the dataset has since received stops being owed.
+
+**The record is written by any committed run, and that is wider than "a run that wrote".** A planning
+run returns the identical projection and persists nothing, exactly as the ingest itself writes nothing
+without the commit word. A **committed** run writes the record even when its batch wrote nothing —
+including the case where the run refused before the batch, because every field in the record is a read of
+the store and of this run's own outcome, so a run that wrote nothing still has something true to retain
+(the owed work it re-derived), and leaving the previous record standing is how a manifest goes stale
+exactly when the candidate binding moved. A published-not run — the batch committed but the publication
+refused — therefore also writes one, and it says the publication was refused and where the destination
+stands instead of borrowing the success of the write half.
+
+## Code Commentary
+
+### Logic
+
+**`bootstrap_knowledge` is the run, and it starts with two refusals before any write** (`:151-231`). The
+retained progress is read first: `retention.state == "moved"` returns
+`staging_belongs_to_another_operation`, because one staging directory belongs to exactly one bootstrap
+operation. Then the destination is read: `before.state == "unusable"` returns `destination_unusable`
+stating that nothing was written and the previous dataset is intact. Only then is the list handed to
+`ingest_curator_list` with an `IngestSelection` carrying the staged candidate directory, the
+authorization reference, `dry_run=not commit`, the baseline the destination read established, and the
+`IngestPublication` with `destination_path` and `expected_destination` — the two halves of the explicit
+update.
+
+**`_read_destination` is the fork decision, and it is three-valued** (`:234-264`).
+`resolve_published_intent` answers `not-recorded` (cold start: no baseline, no expected identity),
+`recorded` (the baseline the run forks from **and** the exact identity its publication may replace — both
+derived from the same read, so a run cannot fork from one dataset and publish over another), or
+`unusable`.
+
+**`_read_back` never reads whatever happens to be there** (`:275-289`). The condition is the run's own
+report: a publication the owner refused established nothing about the destination, and a run whose batch
+did not commit published nothing at all — in both cases the honest answer is that there is nothing to read
+back. Only when the report carries a publication identity is the declared location read back through
+`published_identity_read_back`.
+
+**`_dataset_namespace` reads the namespace rather than assuming it** (`:292-304`). A view read refuses a
+namespace the dataset is not bound to, so the value must come from a read of the file: the pre-run
+destination read, or the identity this run's own publication reported. The docstring is explicit that it
+is never the repository's display name, which is not an identity.
+
+**`_store_state` is where measured absence and an unread location are kept apart** (`:357-400`). A held
+revision found in `contents.revisions` is `stored`; one that was not found under a read that
+*established* absence is `absent`; one that could not be looked for at all is `unmeasured`; an entry with
+no creation operation in the journal is `not-attempted`. The docstring names the case that makes this
+load-bearing: a refused publication leaves a location holding **no dataset at all**, so the committed
+revision is measurably absent and the entry genuinely is outstanding work rather than an unknown.
+
+**An entry the report lost is `unaccounted`, not given the benefit of a group** (`:318-334`). The report
+promises an entry appears in exactly one of `committed`, `rulings` or `refused`; an entry in none of them
+is recorded as `unaccounted`, because a list that lost an entry is a different fact from a list that wrote
+one.
+
+**The record is assembled only from what the run measured** (`:403-430`), and the destination fields say
+which read established them: `_destination_state`/`_destination_identity`/`_destination_detail`
+(`:433-464`) prefer the read-back's own answer when there was one, and `_read_back_state` (`:453-456`) is
+`not-published` when this run published nothing to read. So a publication whose read-back disagrees with
+the writer leaves a record that says so rather than one that repeats the writer's claim.
+
+**`_remaining_basis` states the derivation and the limitation by name** (`:467-501`): the run's own
+per-entry outcomes, the candidate's allocation journal, and a read of the published dataset through the
+invariant view — with the contents state and detail quoted, and the unmeasured entries named as
+`UNMEASURED rather than remaining`.
+
+### Conventions
+
+The module composes the admission, the staging owner, the contents read, the ingest operation, the
+publication route and the published-intent resolver. It writes no knowledge record and imports no
+database driver.
+
+### Invariants And Boundaries
+
+- The operation is the same `ingest_curator_list` a leaf drives; the only difference is the admission.
+- A planning run persists nothing; **any committed run persists a record**, including one whose batch
+  wrote nothing, and a published-not run's record says the publication was refused rather than
+  borrowing the write half's success.
+- A carried entry is re-derived against this run's own store read; the carry is never a copy of the
+  inherited state.
+- `remaining` is measured absence or no attempt; `unmeasured` is a read that could not be completed. They
+  are separate fields.
+- The destination is read **before** any write, and the baseline and the expected identity come from that
+  one read.
+- The read-back is conditional on the run's own report; a refused publication is not read back.
+- An entry the report accounts for in no group is `unaccounted`.
+- No field of the retained record comes from the plan.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+No configured Domain Documentation source applies; `BOOTSTRAP-HANDOVER.md` step 6 ("an empty database or
+exit zero is not a populated foundation") is the process authority this run implements, and it is a
+task-tree document rather than a configured domain source.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external documentation is required for the bootstrap run composition. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The module's own statement of the three decisions and of who owns everything else.** | "Three decisions are made here, and only three"; "they are the same operation" | mcp/src/agents_remember/application/knowledge_bootstrap.py:1-38 |
+| The published surface: the two result values, the reading, the contents re-export and the run. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap.py:82-88 |
+| The destination's three states and the contents read's three states as declared vocabularies. | `DestinationState`; `ContentsState` | mcp/src/agents_remember/application/knowledge_bootstrap.py:90-95 |
+| Why a run did not begin, and the route that re-observes the condition. | `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:94-100 |
+| **The pre-run read: the baseline the run forks from and the exact identity its publication may replace.** | `DestinationReading`; "baseline" | mcp/src/agents_remember/application/knowledge_bootstrap.py:103-117 |
+| Everything one run measured, grouped so the retained record is assembled from one value. | `_ObservedRun` | mcp/src/agents_remember/application/knowledge_bootstrap.py:120-131 |
+| One run's whole result: the admission, the batch, the readback and what remains. | `BootstrapRunResult` | mcp/src/agents_remember/application/knowledge_bootstrap.py:134-148 |
+| **The run: two refusals before any write, then the one admitted batch with the explicit-update publication.** | `bootstrap_knowledge`; "staging_belongs_to_another_operation"; "destination_unusable" | mcp/src/agents_remember/application/knowledge_bootstrap.py:151-231 |
+| **The fork decision through the ordinary read route's owner.** | `_read_destination`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_bootstrap.py:234-303 |
+| The snapshot identity one resolved selection carries. | `_identity_of` | mcp/src/agents_remember/application/knowledge_bootstrap.py:267-333 |
+| **The read-back that happens only when the run's own report says it published something.** | `_read_back`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_bootstrap.py:275-355 |
+| **The namespace read from the dataset rather than assumed, because a view read refuses a foreign one.** | `_dataset_namespace` | mcp/src/agents_remember/application/knowledge_bootstrap.py:292-358 |
+| One entry's row: the run's outcome and the store's independent answer. | `_entry_progress` | mcp/src/agents_remember/application/knowledge_bootstrap.py:307-373 |
+| **Why an entry the report accounts for in no group is `unaccounted`.** | `_outcomes`; "unaccounted" | mcp/src/agents_remember/application/knowledge_bootstrap.py:318-388 |
+| The assembly of one entry's row from the run's outcome and the store's answer. | `_one_entry` | mcp/src/agents_remember/application/knowledge_bootstrap.py:337-403 |
+| **Where measured absence is kept apart from an unread location, including the refused-publication case.** | `_store_state`; "unmeasured"; "absence_established" | mcp/src/agents_remember/application/knowledge_bootstrap.py:419-464 |
+| **The record assembled only from what the run measured, with `remaining` and `unmeasured` as two facts.** | `_progress`; `remaining_basis` | mcp/src/agents_remember/application/knowledge_bootstrap.py:403-495 |
+| The destination fields taken from the read-back when there was one, so a disagreement is readable. | `_destination_state`; `_destination_identity` | mcp/src/agents_remember/application/knowledge_bootstrap.py:433-512 |
+| Which read established the destination fields, or that this run published nothing. | `_read_back_state`; `_destination_detail` | mcp/src/agents_remember/application/knowledge_bootstrap.py:453-528 |
+| **The derivation of both lists stated by name, with the unmeasured entries named as such.** | `_remaining_basis`; "UNMEASURED rather than remaining" | mcp/src/agents_remember/application/knowledge_bootstrap.py:467-577 |
+| **The one operation both admissions reach, and the selection this run hands it.** | `ingest_curator_list`; `IngestSelection`; `IngestPublication`; `HeldOperation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1122; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1103-1103; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1086-1086; mcp/src/agents_remember/application/knowledge_curator_ingest.py:457-457 |
+| The staging owner whose reader and writer this run uses. | `read_progress`; `write_progress`; `staged_candidate_directory`; `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:228-393; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:219-393; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:225-393 |
+| **The bounded contents read the remaining list is derived from.** | `dataset_revisions`; `DatasetContents` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:101-103; mcp/src/agents_remember/application/knowledge_dataset_contents.py:53-103 |
+| The read route's own publication-readback owner. | `published_identity_read_back`; `DeclaredPublicationLocation`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-202; mcp/src/agents_remember/application/knowledge_publication_route.py:69-202; mcp/src/agents_remember/application/knowledge_publication_route.py:98-202 |
+| The resolved published intent, its unavailable form and the selection type. | `resolve_published_intent`; `PublishedIntentUnavailable`; `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:219-219; mcp/src/agents_remember/application/published_intent.py:168-219; mcp/src/agents_remember/application/published_intent.py:152-219 |
+| The identity type the destination reading and the retained record carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
+
+## Cross-Repo References
+
+No cross-repository behavior is implemented in this file: it runs one repository's bootstrap against
+that repository's own admission. The resolved settings' `crossRepo.allow` is empty, so nothing here
+names, reads or writes another repository.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+- 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
+  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
+  corrected docstrings; the card and the source agree** — the module docstring now reads "The record is written by any run that was given the commit word", which is exactly what this card's Logic section says; the third decision bullet still describes the run's own three decisions and the carry-forward is stated in the section this leaf added. All ranges were re-derived for the docstring-only line shift. **No verification stamp was advanced.**
+- 2026-09-24T10:20+02:00 — 260921-ICR-L29 curator, **fix-round bytes** (uncommitted change set on
+  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`; gate `verify-l29-round2.md`,
+  first line `pass-with-findings`): **re-read against the fixed module and rewritten.** Two things this
+  card said are no longer true of the code. (a) It said the record is written only by a run that really
+  wrote; the fixed `bootstrap_knowledge` writes it whenever the developer gave the commit word
+  (`:226-226`), including a run whose batch wrote nothing, because a record left standing is how the owed
+  work goes stale when the candidate binding moved. (b) It described `remaining` as derived from this
+  run's own list alone. The fix round added `_carried_forward` (`:243-293`): every entry an inherited
+  record left owed and this run's list does not mention is carried in with `outcome` `carried` and its
+  state **re-derived against this run's own store read**, so a narrowed resume cannot delete the rest of
+  the debt and an entry the store has since received stops being owed. `BootstrapRunResult` and the
+  retained record both gained the carried set. All line references were re-derived on the 577-line
+  candidate (the module was 473 lines when this card was first written). **No verification stamp was
+  advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory
+  commits.
+
+- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
+  base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module
+  `ICR-R29@v1` introduced as **the bootstrap run composition**. The stamp basis is the leaf's base
+  commit, because the module is untracked there. What a reader must not lose is that this composition
+  owns no write: it hands the same `ingest_curator_list` a different admission, so the candidate,
+  namespace, identity allocation, first generation, batch, snapshot and publication stay with the shipped
+  owners. The second is that the report's claims are **measurements**: a planning run persists nothing, a
+  published-not run records the refusal rather than the write half's success, and `remaining` (measured
+  absence or no attempt) is never merged with `unmeasured` (a read that could not be completed). No
+  verification stamp beyond the leaf's base is advanced: the candidate is uncommitted and the governed
+  closeout owns the real commit.

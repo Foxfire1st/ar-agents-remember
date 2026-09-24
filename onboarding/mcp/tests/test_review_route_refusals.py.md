@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_route_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -140,9 +140,9 @@ inside the range that row cites.
 | **The `FileNotFoundError` mapping this leaf made actionable, keeping the path and adding the action.** | "test_a_missing_path_names_the_path_it_does_not_hold_and_a_next_action" | mcp/tests/test_review_route_refusals.py:133-148 |
 | **The packet's conforming example at the transport: `404` + `candidate_dataset_absent` + the whole refusal, with no `payload` key so it cannot read as a degraded success.** | "test_a_typed_refusal_travels_whole_in_the_body_of_its_own_status" | mcp/tests/test_review_route_refusals.py:151-172 |
 | **The status family derived from the refusal's own code, driven through the entry route.** | "test_the_entry_route_maps_each_refusal_code_onto_its_own_status" | mcp/tests/test_review_route_refusals.py:175-204 |
-| **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-169 |
-| The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:522-539|
-| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` |mcp/tests/test-evidence-lanes.toml:120-120|
+| **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-170 |
+| The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:522-607|
+| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` |mcp/tests/test-evidence-lanes.toml:5-121|
 | The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
 
 ## Cross-Repo References

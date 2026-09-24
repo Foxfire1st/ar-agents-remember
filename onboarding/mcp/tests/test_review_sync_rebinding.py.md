@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -215,7 +215,7 @@ because each of them pins one sentence a verifier could otherwise reproduce as f
 | The shipped endpoint fixture whose enclosure this module's fixture stands on. | `build_endpoint_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:215-249 |
 | The merge-case support whose authored identities and readers the module reuses. | `BASE_REVISION_ID`; `set_label`; `add_anchor`; `labels_of` | mcp/tests/merge_case_test_support.py:54-54; mcp/tests/merge_case_test_support.py:309-340; mcp/tests/merge_case_test_support.py:635-646 |
 | The read-scope support's authorship factory both halves of every dataset are authored with. | `make_read_authorship` | mcp/tests/read_scope_test_support.py:246-246 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:299-304; mcp/tests/evidence-lifecycle.toml:801-803; mcp/tests/evidence-lifecycle.toml:1305-1309; mcp/tests/evidence-lifecycle.toml:1431-1435; mcp/tests/evidence-lifecycle.toml:1477-1481 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:300-305; mcp/tests/evidence-lifecycle.toml:802-804; mcp/tests/evidence-lifecycle.toml:1306-1310; mcp/tests/evidence-lifecycle.toml:1432-1436; mcp/tests/evidence-lifecycle.toml:1478-1482 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** | `read_review_sync_rebinding`; `sync_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:68-71; mcp/src/agents_remember/application/review_comparison_reopen.py:355-390 |
 

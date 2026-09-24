@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_label_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,8 +97,8 @@ No domain documentation source is configured for this repository (`system/source
 | The labelled outcomes for both concepts. | "test_an_invariant_label_edit_writes_and_reads_back"; "test_a_family_label_edit_writes_and_reads_back" | mcp/tests/test_knowledge_label_operations.py:57-93; mcp/tests/test_knowledge_label_operations.py:169-204 |
 | The stale-expectation cases the CAS mutation fails. | "test_a_stale_invariant_label_expectation_refuses_and_leaves_the_row_identical"; "test_a_stale_family_label_expectation_refuses_and_leaves_the_row_identical" | mcp/tests/test_knowledge_label_operations.py:94-140; mcp/tests/test_knowledge_label_operations.py:205-244 |
 | The unknown-identity cases. | "test_an_unknown_invariant_label_target_refuses_without_inventing_a_row"; "test_an_unknown_family_label_target_refuses_without_inventing_a_row" | mcp/tests/test_knowledge_label_operations.py:141-168; mcp/tests/test_knowledge_label_operations.py:245-269 |
-| The fixture contract this module consumes, cited at the replacement-contract line so the anchor resolves once. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1195-1195 |
-| The unit-lane row that makes the module's classification explicit. | "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:101-101 |
+| The fixture contract this module consumes, cited at the replacement-contract line so the anchor resolves once. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1196-1204 |
+| The unit-lane row that makes the module's classification explicit. | "mcp/tests/test_knowledge_label_operations.py" | mcp/tests/test-evidence-lanes.toml:102-104 |
 | The guard and the two entry points these cases drive. | `apply_invariant_label`; `apply_family_label`; `set_invariant_label`; `set_family_label` | mcp/src/agents_remember/memory/knowledge/labels.py:62-99; mcp/src/agents_remember/memory/knowledge/labels.py:124-156; mcp/src/agents_remember/memory/knowledge/labels.py:40-59; mcp/src/agents_remember/memory/knowledge/labels.py:102-121 |
 | The application entry points the cases call. | `set_knowledge_invariant_label`; `set_knowledge_family_label` | mcp/src/agents_remember/application/knowledge.py:224-255 |
 | The batch's independent copy of the expectation rule, which is why this module is separate. | `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:690-727 |

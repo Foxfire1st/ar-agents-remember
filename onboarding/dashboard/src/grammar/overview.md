@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
@@ -131,7 +131,7 @@ Material).
 | The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | "export type State = ", "const ALL_VARIANTS" | dashboard/src/types/projection.ts:15-15; dashboard/src/grammar/Dot.test.tsx:17-17 |
 | The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68 |
 | The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
-| The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" | dashboard/src/cockpit/Cockpit.tsx:657-658 |
+| The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" | dashboard/src/cockpit/Cockpit.tsx:657-661 |
 
 ## 260831-CCR-L23 Requirement-Address Anchors
 

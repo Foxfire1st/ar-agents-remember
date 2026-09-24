@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:05:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ version stated something false, and both are enforced by the validator rather th
 | The code clause, which names both trees it compared. | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:291-299 |
 | **The knowledge clause, which cannot claim an unmeasured comparison: coverage and mismatch are reachable only with a published identity in hand.** | `_knowledge_clause` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:301-320 |
 | The shared shapes this vocabulary reuses rather than re-declaring. | `KnowledgeModel`; `GIT_OBJECT_PATTERN`; `SHA256_PATTERN`; `UUID_PATTERN` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
-| The identity the published channel carries when a dataset really was read. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:1-60 |
+| The identity the published channel carries when a dataset really was read. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:1-111 |
 | **The cases that measure each verdict: full match `bound`, a published dataset the review never compared `moved`, a selected knowledge operand with nothing published `unmeasured` and never `bound`, and a forged `bound` refused at read-back.** | `test_review_receipt_binds_the_delivered_pair_to_the_selected_generation`; `test_review_receipt_reports_a_published_dataset_the_review_never_compared`; `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound`; `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:451-508; mcp/tests/test_review_final_output_receipt.py:544-570; mcp/tests/test_review_final_output_receipt.py:755-788; mcp/tests/test_review_final_output_receipt.py:790-823 |
 
 ## Cross-Repo References

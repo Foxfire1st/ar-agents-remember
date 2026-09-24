@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_graph_reads.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`|
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,8 +95,8 @@ No domain documentation source is configured for this repository (`system/source
 | The forward and reverse reads the cases compare. | `list_claims_for_invariant_revision`; `list_claims_for_anchor`; `list_members`; `list_families_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/memberships.py:255-267; mcp/src/agents_remember/memory/knowledge/memberships.py:270-284; mcp/src/agents_remember/memory/knowledge/realizations.py:271-285; mcp/src/agents_remember/memory/knowledge/realizations.py:288-300 |
 | The before/after pair builder this module consumes. | `build_removed_relation_successor` | mcp/tests/knowledge_graph_test_support.py:217-265 |
 | The locator union whose kinds the cases vary. | `SymbolLocator`; `FileLocator`; `LineRangeLocator` | mcp/src/agents_remember/models/knowledge/source.py:58-78; mcp/src/agents_remember/models/knowledge/source.py:37-42; mcp/src/agents_remember/models/knowledge/source.py:43-57 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_graph_reads.py" | mcp/tests/test-evidence-lanes.toml:102-102 |
-|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1195-1195  |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_graph_reads.py" | mcp/tests/test-evidence-lanes.toml:103-105 |
+|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1196-1204  |
 
 ## Cross-Repo References
 

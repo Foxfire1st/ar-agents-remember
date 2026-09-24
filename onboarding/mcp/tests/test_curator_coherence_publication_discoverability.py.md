@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_coherence_publication_discoverability.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:11+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -135,7 +135,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.** | `test_a_member_added_to_the_declaration_reaches_both_messages` | mcp/tests/test_curator_coherence_publication_discoverability.py:220-240 |
 | The non-publish refusals, by name and in model order, and the freeze branch's preserved message. | `test_non_publish_actions_name_the_publication_member_they_received`; `test_non_publish_refusal_names_every_supplied_field_in_model_order`; `test_freeze_snapshot_keeps_its_own_named_refusal` | mcp/tests/test_curator_coherence_publication_discoverability.py:243-256; mcp/tests/test_curator_coherence_publication_discoverability.py:259-273; mcp/tests/test_curator_coherence_publication_discoverability.py:276-283 |
 | The module this one was split out of, which keeps the Gate-5 orchestration and the shared scaffold. | "Split from ``test_final_full_memory_coherence_certification.py``" | mcp/tests/test_final_full_memory_coherence_certification.py:1-19 |
-| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:218-218|
+| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:219-224|
 
 ## Cross-Repo References
 

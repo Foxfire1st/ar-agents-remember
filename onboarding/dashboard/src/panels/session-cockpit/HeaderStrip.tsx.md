@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-04T00:41+02:00|
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`       |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ provenance; model/effort values and their evidence are not duplicated outside th
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance. | `HeaderStrip`; `header-leaf`; `header-provenance-level` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
+| HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance. | `HeaderStrip`; `header-leaf`; `header-provenance-level` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-185 |
 | Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional. | "renders the §1.2 anatomy in order: identity → controls → state → leaf → diagnostics"; "one plain pair (260723): the control carries model · effort; diagnostics never duplicate it"; "renders no provenance chips for a hand-opened session — absent" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:17-25; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:85-108; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:110-115 |
 | The grammar + single dot renderer the state cluster uses. | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
 | The freshness state consumed (`PerSessionCockpit`). | `PerSessionCockpit` | dashboard/src/data/sessionCockpitStore.ts:113-153 |

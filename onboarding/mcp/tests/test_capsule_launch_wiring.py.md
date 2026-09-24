@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_capsule_launch_wiring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T09:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ No Domain Documentation source is configured in the resolved source registry for
 | The free agent's named absence, and the identity that moves with the seat. | `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat` | mcp/tests/test_capsule_launch_wiring.py:964-988; mcp/tests/test_capsule_launch_wiring.py:990-1018 |
 | D20: a refused stage refuses again in the same process, never passing. | `test_a_refused_stage_refuses_again_in_the_same_process` | mcp/tests/test_capsule_launch_wiring.py:1072-1104 |
 | The two boundary doubles: the vendor-process recorder and the tmux host. | `RecordingTransport`; `_FakeHost` | mcp/tests/test_capsule_launch_wiring.py:133-277; mcp/tests/test_capsule_launch_wiring.py:279-478 |
-| The lane row D9's fail-closed loader requires for every new test module. | "mcp/tests/test_capsule_launch_wiring.py" | mcp/tests/test-evidence-lanes.toml:22-22 |
+| The lane row D9's fail-closed loader requires for every new test module. | "mcp/tests/test_capsule_launch_wiring.py" | mcp/tests/test-evidence-lanes.toml:22-23 |
 | The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations. | `consumers` | mcp/tests/evidence-lifecycle.toml:38-38; mcp/tests/evidence-lifecycle.toml:58-58; mcp/tests/evidence-lifecycle.toml:77-77; mcp/tests/evidence-lifecycle.toml:88-88; mcp/tests/evidence-lifecycle.toml:92-97 |
 | The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46; mcp/tests/test_dependency_ownership_ast_helpers.py:45-45 |
 | The launch points this module drives, and the modules whose wiring it pins. | `spawn_agent_session_tool`; `_open_terminal_response`; `resolve_launch_capsule`; `compile_launch_capsule` | mcp/src/agents_remember/application/terminal_tools.py:822-931; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-334; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |

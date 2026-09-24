@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_response_address_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T19:50+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -140,7 +140,7 @@ they make no acceptance claim.
 | The entry namer `T71` repaired: source path, or the document's own path. | `_refreshed_onboarding_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:127-141 |
 | The bounded count that refuses to count a blank. | `_bounded_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:115-126 |
 | `T64`'s decision: `ok` answers whether the call did what it set out to do, with `state` and `outcome` declared separately. | `payload` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:767-833 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_response_address_binding.py" |mcp/tests/test-evidence-lanes.toml:162-162|
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_response_address_binding.py" |mcp/tests/test-evidence-lanes.toml:163-164|
 | The refusal axes this module reuses rather than re-deriving, so a refusal is judged once. | `refusal_axes` | mcp/tests/test_tool_refusal_conformance.py:250-261 |
 
 ## Cross-Repo References

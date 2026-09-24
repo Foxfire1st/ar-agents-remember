@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,11 +58,11 @@ documentation was invented.
 | The file layer reuses the persistent layout. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:339-339 |
 | The Operations layer reuses the persistent layout. | "const operationsLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:344-344 |
 | The Engine Room layer reuses the persistent layout. | "const engineLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:350-350 |
-| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:701-719 |
-| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:774-774 |
-| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:779-779 |
-| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:791-791 |
-| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:799-799 |
+| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:701-722 |
+| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:774-778 |
+| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:779-783 |
+| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:791-795 |
+| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:799-803 |
 
 | The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:560-560 |
 

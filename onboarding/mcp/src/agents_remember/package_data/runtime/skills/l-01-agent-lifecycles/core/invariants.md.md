@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/invariants.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ repository prose consumed by the skill router.
 | The task-doc → branch → worktree spine and what may create a branch. | `## The spine: task doc → branch → worktree` | skills/l-01-agent-lifecycles/core/invariants.md:36-51 |
 | Knob resolution order, the settings-key rows, and the no-per-harness-files decision. | `## Knob resolution and capability doctrine` | skills/l-01-agent-lifecycles/core/invariants.md:64-81 |
 | The instruction-surface boundary that keeps task doctrine, task format, memory specifics, and role duties in separate owners. | `## Instruction-surface boundaries` | skills/l-01-agent-lifecycles/core/invariants.md:83-93 |
-| Every role's `**Inherits:**` line names this block. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-289 |
+| Every role's `**Inherits:**` line names this block. | `**Inherits:**` | mcp/tests/test_role_instruction_corpus.py:227-453 |
 
 ## Cross-Repo References
 

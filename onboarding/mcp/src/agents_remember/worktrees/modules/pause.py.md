@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/pause.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -169,7 +169,7 @@ No Domain Documentation source is configured for this memory root.
 | The release authority the pause delegates to — strict explicit cancellation release, exact-owner proof, per-contract address, and the refusal statuses the pause explains (a missing selection is deliberately no longer among them). | `release_atomic_series_selection`; `_record_selects_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88 |
 | The observation the already-stopped decision takes rather than assumes: absence is `vacant`, and a record that is not this exact contract refuses instead of being read as inactive. Its `_load_selected_contract` is the earlier guard an **active** foreign record meets, which is why only a **vacant** foreign record reaches the release's `selected-contract-mismatch`. | `observe_atomic_series`; `_observation_from_record`; `_load_selected_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:338-357; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:375-401 |
 | The activation record's contract-derived address is what makes one master's release leave another master's record alone. | `activation_path`; "def contract_fingerprint(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
-| The public tool the pause is reached through, and the payload builder it is reached by. | "def worktree_pause("; "def worktree_pause_payload("; "def worktree_pause_tool(" | mcp/src/agents_remember/mcp/registration/worktrees.py:203-219; mcp/src/agents_remember/mcp/tools/worktree.py:88-95; mcp/src/agents_remember/application/worktree_tools.py:466-495 |
+| The public tool the pause is reached through, and the payload builder it is reached by. | "def worktree_pause("; "def worktree_pause_payload("; "def worktree_pause_tool(" | mcp/src/agents_remember/mcp/registration/worktrees.py:203-219; mcp/src/agents_remember/mcp/tools/worktree.py:88-95; mcp/src/agents_remember/application/worktree_tools.py:466-515 |
 | The facade re-export that keeps the public `git_worktree_manager` import path for the pause. | "from agents_remember.worktrees.modules.pause import pause_result"; "\"pause_result\"," | mcp/src/agents_remember/worktrees/git_worktree_manager.py:86-86; mcp/src/agents_remember/worktrees/git_worktree_manager.py:154-154 |
 | The response model that declares `paused` as the route's own claim. | `WorktreePauseResponse` | mcp/src/agents_remember/models/worktree.py:545-554 |
 | The executable specification of the boundary: the pause's runtime-import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |

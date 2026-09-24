@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_revision_selection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T10:40:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ that selects them.
 | The two lineage failures: a successor cycle and a dangling authored edge, each unresolved with no pair and the reason named. | `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision` | mcp/tests/test_knowledge_review_revision_selection.py:416-467; mcp/tests/test_knowledge_review_revision_selection.py:469-522 |
 | Order-independence: the successor relation beats sorted position. | `test_heads_come_from_successors_not_from_sorted_order` | mcp/tests/test_knowledge_review_revision_selection.py:524-536 |
 | The pane case: the served payload records the compared head pair and renders the heads' own recorded statements as `present`. | `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
-| The lane row, inserted mid-list in the alphabetical knowledge run. | "mcp/tests/test_knowledge_review_revision_selection.py" | mcp/tests/test-evidence-lanes.toml:111-111 |
+| The lane row, inserted mid-list in the alphabetical knowledge run. | "mcp/tests/test_knowledge_review_revision_selection.py" | mcp/tests/test-evidence-lanes.toml:112-114 |
 | The policy the cases measure. | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 | The value the cases assert. | `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:54-74 |
 

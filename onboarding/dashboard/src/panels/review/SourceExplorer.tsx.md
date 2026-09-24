@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/SourceExplorer.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ Every anchor in a row below occurs on a line inside the range that row cites.
 | **The population rule: the family navigation is an attribution lens, and the three inventory states are never rendered as one another.** | "exclusion filter"; "A measured empty set says the two trees agree"; "None of the three is rendered as another" | dashboard/src/panels/review/SourceExplorer.tsx:15-19 |
 | The two preferences are the caller's, so neither a layout switch nor a selection change can collapse an expansion; the open path is this component's only state. | "open path is the only state this component holds" | dashboard/src/panels/review/SourceExplorer.tsx:10-13 |
 | The exported layout type the workspace and the centre both take. | `DiffLayout` | dashboard/src/panels/review/SourceExplorer.tsx:29-29 |
-| One row's extra notes: a mode change, a content classification that is not `unknown`, and the owner's own detail line. | "entry.mode_change"; "entry.content === \"unknown\""; "entry.detail ?? null" | dashboard/src/panels/review/SourceExplorer.tsx:89-93 |
+| One row's extra notes: a mode change, a content classification that is not `unknown`, and the owner's own detail line. | "entry.mode_change"; "entry.content === \"unknown\""; "entry.detail ?? null" | dashboard/src/panels/review/SourceExplorer.tsx:83-93 |
 | The expansion gate and the open row's identity, both derived from the published values. | "const expandable"; "const isOpen" | dashboard/src/panels/review/SourceExplorer.tsx:94-95 |
 | The row itself: the entry test id with its status, and the published path as a button carrying `data-path` and `aria-expanded`. | "review-inventory-entry"; "data-status"; "review-inventory-open"; "data-path={entry.path}"; "aria-expanded={isOpen}" | dashboard/src/panels/review/SourceExplorer.tsx:97-109 |
 | The path printed exactly as published with the status beside it, and the notes after that. | "{entry.path}"; "{entry.status}"; "notes.join" | dashboard/src/panels/review/SourceExplorer.tsx:110-114 |

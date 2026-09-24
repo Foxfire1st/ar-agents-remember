@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_agreement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T05:10+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ make no acceptance claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired). | `_refuse_official_memory` | mcp/src/agents_remember/application/memory_tools.py:105-105 |
+| The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired). | `_refuse_official_memory` | mcp/src/agents_remember/application/memory_tools.py:113-113 |
 | The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. | `World` | mcp/tests/test_memory_citation_agreement.py:287-356 |
 | The live tree, named by the run and skipped when no run names one. | `live_onboarding_root` | mcp/tests/test_memory_citation_agreement.py:273-284 |
 | The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant. | `T52_DEFINITION_OUTSIDE_RANGE` | mcp/tests/test_memory_citation_agreement.py:159-159 |
@@ -231,7 +231,7 @@ make no acceptance claim.
 | Both figures asserted separately at every pinned site, so a site that has moved on is red. | `test_the_live_sites_still_state_the_figures_they_are_pinned_to` | mcp/tests/test_memory_citation_agreement.py:927-959 |
 | The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. | `test_the_two_figure_classes_are_counted_separately` | mcp/tests/test_memory_citation_agreement.py:961-970 |
 | The module's own mutation boundary, read from its own AST (`T114`'s bound). | `test_this_module_shells_out_to_nothing` | mcp/tests/test_memory_citation_agreement.py:1127-1160 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" |mcp/tests/test-evidence-lanes.toml:136-136|
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" |mcp/tests/test-evidence-lanes.toml:137-138|
 | The product counter this module's live case reads, and the code string it emits. | `definition_outside_range_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:466-513 |
 | The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-685 |
 | The payload key the live pin reads. | "definitionsOutsideCitedRanges" | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:718-718 |

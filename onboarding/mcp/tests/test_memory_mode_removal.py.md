@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_mode_removal.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -157,7 +157,7 @@ migration-boundary and instruction-corpus assertions.
 | Both flag narrowers distinguish a typo from a removal. | `test_the_flag_narrowers_do_not_report_a_typo_as_a_removal` | mcp/tests/test_memory_mode_removal.py:673-685 |
 | Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. | `CORRECTED_SURFACES` | mcp/tests/test_memory_mode_removal.py:701-785 |
 | The generated skill copy must equal the canonical tree it is generated from. | `test_the_generated_skill_copy_carries_the_canonical_correction` | mcp/tests/test_memory_mode_removal.py:802-809 |
-| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" |mcp/tests/test-evidence-lanes.toml:143-143|
+| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" |mcp/tests/test-evidence-lanes.toml:144-145|
 | **The leaf enclosure's memory worktree is a supported onboarding root, and the resolver reports the root it was given rather than the official one.** | `test_a_leaf_enclosures_memory_worktree_is_a_supported_onboarding_root` | mcp/tests/test_memory_mode_removal.py:820-834 |
 | **The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.** | `test_a_directory_that_merely_resembles_a_memory_worktree_is_refused` | mcp/tests/test_memory_mode_removal.py:850-860 |
 | **The refusal names both supported shapes and the root it received, so it cannot send the caller in a circle.** | `test_the_onboarding_root_refusal_names_both_shapes_and_the_root_received` | mcp/tests/test_memory_mode_removal.py:863-877 |

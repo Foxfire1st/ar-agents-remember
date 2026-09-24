@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_applicability.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T02:30+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -152,7 +152,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The owner that produces these values, and the one place the policy lives.** | `review_applicability`; `AppliedRecords` | mcp/src/agents_remember/application/review_record_applicability.py:183-214; mcp/src/agents_remember/application/review_record_applicability.py:134-180 |
 | **The re-export that keeps the vocabulary reachable through the payload module, and the five display models that carry a label plus the two panes that carry the context rows and the counts.** | `ReviewAuthoredEffect`; `ReviewKnowledgePane`; `ReviewEvidencePane` | mcp/src/agents_remember/models/knowledge/review.py:483-505; mcp/src/agents_remember/models/knowledge/review.py:680-756; mcp/src/agents_remember/models/knowledge/review.py:918-958 |
 | **The cases that measure the vocabulary's own refusals and its class-set equality with the record vocabulary.** | `test_a_label_and_a_summary_refuse_a_claim_their_recorded_facts_do_not_support`; `test_the_class_vocabulary_is_the_record_vocabulary_minus_its_measurement_channel` | mcp/tests/test_knowledge_review_subject_isolation.py:528-553; mcp/tests/test_knowledge_review_subject_isolation.py:520-525 |
-| **The client mirror of this vocabulary, and the one client case that proves a pre-label payload still renders.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; "still renders a payload published before the labels existed" | dashboard/src/data/review.ts:107-142; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:299-310 |
+| **The client mirror of this vocabulary, and the one client case that proves a pre-label payload still renders.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; "still renders a payload published before the labels existed" | dashboard/src/data/review.ts:107-166; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:299-310 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`                  |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`                  |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ configured for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case. | `describe`; "opens the series view bound to the generation the net published" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-417; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-142 |
-| **The packet's conforming example at the picker: every catalogue row is offered with its totals, the retired row is marked, and the second and third rows are selectable onto the review target.** | "offers every catalogue row for review, not just the first" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:308-377 |
+| **The packet's conforming example at the picker: every catalogue row is offered with its totals, the retired row is marked, and the second and third rows are selectable onto the review target.** | "offers every catalogue row for review, not just the first" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:308-394 |
 
 ## Cross-Repo References
 

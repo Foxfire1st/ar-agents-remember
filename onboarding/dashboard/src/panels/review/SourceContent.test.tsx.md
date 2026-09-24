@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/SourceContent.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -176,9 +176,9 @@ server half of the same contract that supplies the values.
 | **The typed refusal rendered with its code, detail and next action and with no content, and the request carrying the listing's own generation, path and task context.** | "renders a refused entry read as its typed refusal and no content"; "sends the generation and path the listing published, not a re-resolved one" | dashboard/src/panels/review/SourceContent.test.tsx:439-457; dashboard/src/panels/review/SourceContent.test.tsx:459-488 |
 | **The leaf-change-set bound stated when the requested generation could not be measured, with the readable side still drawn and the unreadable one named.** | "states which measured change set admitted the path when the requested one could not be measured" | dashboard/src/panels/review/SourceContent.test.tsx:490-520 |
 | **The two boundaries: the byte-form row listed without an open control (the open-control count asserted to be exactly the text entry), and an inventory that named no code trees offering no expansion at all.** | "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:522-560; dashboard/src/panels/review/SourceContent.test.tsx:562-588 |
-| The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down. | `review-inventory-open`; `SourceExplorer`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:234-315; dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
+| The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down. | `review-inventory-open`; `SourceExplorer`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:102-315; dashboard/src/panels/review/ReviewSurface.tsx:291-335; dashboard/src/panels/review/ReviewSurface.tsx:8-8; dashboard/src/panels/review/ReviewSurface.tsx:49-49; dashboard/src/panels/review/ReviewSurface.tsx:277-277 |
 | The renderer under test, and the rules its cases are the evidence for. | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:76-112; dashboard/src/panels/review/SourceContent.tsx:131-142; dashboard/src/panels/review/SourceContent.tsx:143-155; dashboard/src/panels/review/SourceContent.tsx:164-222 |
-| The client the real surface reads through, which parses the typed body whatever the HTTP status. | `reviewSourceContent` | dashboard/src/data/review.ts:660-678 |
+| The client the real surface reads through, which parses the typed body whatever the HTTP status. | `reviewSourceContent` | dashboard/src/data/review.ts:660-717 |
 | **The server half of the same contract: the values these cases feed are the shape the production route returns, asserted against real Git objects there.** | "One inventory entry opened into the two bound endpoints' actual content (ICR-R03)." | mcp/tests/test_knowledge_review_source_content.py:1-3 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T02:27+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -198,11 +198,11 @@ by the curator's role file.
 | Rule 1 continued: the target list is never split, and target is identity while found_at is dated evidence. | "`target` is a list because one requirement can apply in several places."; "it survives a move." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:110-114; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:116-119 |
 | Rule 2, no paraphrase, and the measured byte-identical bar it sets. | "## Rule 2 — no paraphrase: the entry is carried, not rewritten"; "41 entries in, 41 entries out" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:121-128; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:130-131 |
 | The honest-encoding rules: a null evidence locator is a producer's honest record, and an empty target list is the encoding for a ruling that applies nowhere. | "13 of 58"; "is the honest encoding for a ruling that applies nowhere" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:138-140; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:209-212 |
-| The template's own boundary: it states the producer's side only, and the curator consumes the list as data. | "It is not the curator's side." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:225-230 |
+| The template's own boundary: it states the producer's side only, and the curator consumes the list as data. | "It is not the curator's side." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:225-295 |
 | The four seats on either side of the contract: the worker emits it as its hand-off, the reviewer emits its own in the same shape, the curator ingests it as data by field owner, and the orchestrator passes it through unparaphrased. | "That list is your hand-off to the curator"; "Ingest it as data, and treat the fields by their owner"; "Emit it in the same list shape the worker emits"; "the list is the interface" | skills/l-01-agent-lifecycles/roles/worker.md:84-88; skills/l-01-agent-lifecycles/roles/curator.md:23-31; skills/l-01-agent-lifecycles/roles/reviewer.md:88-96; skills/l-01-agent-lifecycles/roles/orchestrator.md:127-133 |
 | The registry wiring: the four template lists that declare the hand-off list for the seats that emit or ingest it (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). | "master-handover-packet.md"; "turn-report.md"; "curator-brief.md"; "impact-analysis.md" | skills/l-01-agent-lifecycles/composition-manifest.json:231-238; skills/l-01-agent-lifecycles/composition-manifest.json:371-375; skills/l-01-agent-lifecycles/composition-manifest.json:402-405; skills/l-01-agent-lifecycles/composition-manifest.json:433-438 |
 | The corpus router that names this contract on its own line, and the test that pins its one home, its four consequence sections and the registry wiring. | "the **producer's output shape** for the requirement-shaped"; `test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared` | skills/l-01-agent-lifecycles/SKILL.md:138-143; mcp/tests/test_role_instruction_corpus.py:604-640 |
-| Where the blob identity actually enters: the curator's own target plan builds the stored anchor with the tree-read `source_identity`, and the citation carries that anchor plus the claim citing it. | `_TargetPlan`; `citation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:536-595 |
+| Where the blob identity actually enters: the curator's own target plan builds the stored anchor with the tree-read `source_identity`, and the citation carries that anchor plus the claim citing it. | `_TargetPlan`; `citation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:575-634 |
 
 ## Cross-Repo References
 

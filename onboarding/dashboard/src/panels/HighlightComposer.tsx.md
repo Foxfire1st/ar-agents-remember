@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`       |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`       |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets. | `createSession`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/data/sessions.ts:824-844 |
 | Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | `submitSessionText`; `retryRouteFailure`; `keepWaitingForSubmit`; `waitForSubmissionReady` | dashboard/src/data/submitClient.ts:828-873; dashboard/src/data/submitClient.ts:889-907; dashboard/src/data/submitClient.ts:921-949; dashboard/src/data/submitClient.ts:952-976 |
 | Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:391-393 |
-| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:706-706 |
+| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:706-710 |
 | The behavior tests cover direct leaf paste and fallback routing. | "direct leaf pill click submits through /submit; selection alone never acts"; "keeps a rejected direct submit visible with the verbatim detail" | dashboard/src/panels/HighlightComposer.test.tsx:380-420; dashboard/src/panels/HighlightComposer.test.tsx:422-457 |
 | The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning. | `EMPTY_TASK_DOCUMENTS`; "keeps the pre-projection task-document snapshot stable" | dashboard/src/panels/HighlightComposer.tsx:52-55; dashboard/src/panels/HighlightComposer.test.tsx:140-153 |
 

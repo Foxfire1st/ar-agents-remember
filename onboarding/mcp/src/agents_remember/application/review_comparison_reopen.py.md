@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:25:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -229,15 +229,15 @@ repository path is a stated relocation boundary owned by ICR-R12/R13.
 | The knowledge channel's six states and its optional identity and path. | `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:132-147 |
 | The evidence channel: one cited artifact re-read against its recorded digest. | `ComparisonEvidenceChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:150-157 |
 | **The outcome: one state per channel, the generation-level state, and `unavailable_channels()` naming exactly what did not resolve.** | `ComparisonReopen`; `available`; `unavailable_channels` | mcp/src/agents_remember/application/review_comparison_reopen.py:160-211 |
-| **The fourth channel: what the task's own closeout and integration recorded for this generation, one entry per phase in phase order (ICR-R21@v1).** | `final_output`; `FinalOutputReceiptRead` | mcp/src/agents_remember/application/review_comparison_reopen.py:186-190; mcp/src/agents_remember/application/review_final_output_receipt.py:160-176 |
+| **The fourth channel: what the task's own closeout and integration recorded for this generation, one entry per phase in phase order (ICR-R21@v1).** | `final_output`; `FinalOutputReceiptRead` | mcp/src/agents_remember/application/review_comparison_reopen.py:186-201; mcp/src/agents_remember/application/review_final_output_receipt.py:160-176 |
 | **The operation: addressed from the task artifact plane alone, with a named generation or the highest recorded index.** | `reopen_comparison_generation` | mcp/src/agents_remember/application/review_comparison_reopen.py:213-234 |
 | **The named reopen, and the latest-index reopen with its three honest answers (one unreadable record read anyway, several unreadable records, none at all).** | `_reopen_named`; `_reopen_latest` | mcp/src/agents_remember/application/review_comparison_reopen.py:237-290 |
 | **The read-and-measure pass that builds every channel, including the fourth one read in the one place a generation is resolved, and computes the generation-level state from the channels that were expected to resolve.** | `_read_and_measure`; `_SIDES`; `_all_resolved` | mcp/src/agents_remember/application/review_comparison_reopen.py:293-356 |
-| **The source channel's measurement: both objects, the pin, the current custody, and the composed detail that leads with the live fact.** | `_source_channel`; `_current_first` | mcp/src/agents_remember/application/review_comparison_reopen.py:359-424 |
-| **The state order that matters: readability first, the deletion record only for objects that are really gone.** | `_source_state`; `_resolved_source_detail` | mcp/src/agents_remember/application/review_comparison_reopen.py:425-485 |
-| **A knowledge half: the recorded typed absence, the deletion record, then the file — with "a missing expected dataset is unavailable, not absent history" stated in the code.** | `_knowledge_channel`; `_measure_snapshot`; `_compare_snapshot`; `_observed_snapshot` | mcp/src/agents_remember/application/review_comparison_reopen.py:486-596 |
-| **The evidence read-back and its task-root confinement.** | `_evidence_channel`; `_confined_reference` | mcp/src/agents_remember/application/review_comparison_reopen.py:597-649 |
-| The three non-measured answers: ambiguous, unreadable, absent — each with its own remedy. | `_deletion_or_raise`; `_ambiguous`; `_unreadable`; `_absent`; `_refusal` | mcp/src/agents_remember/application/review_comparison_reopen.py:650-726 |
+| **The source channel's measurement: both objects, the pin, the current custody, and the composed detail that leads with the live fact.** | `_source_channel`; `_current_first` | mcp/src/agents_remember/application/review_comparison_reopen.py:359-446 |
+| **The state order that matters: readability first, the deletion record only for objects that are really gone.** | `_source_state`; `_resolved_source_detail` | mcp/src/agents_remember/application/review_comparison_reopen.py:425-491 |
+| **A knowledge half: the recorded typed absence, the deletion record, then the file — with "a missing expected dataset is unavailable, not absent history" stated in the code.** | `_knowledge_channel`; `_measure_snapshot`; `_compare_snapshot`; `_observed_snapshot` | mcp/src/agents_remember/application/review_comparison_reopen.py:486-599 |
+| **The evidence read-back and its task-root confinement.** | `_evidence_channel`; `_confined_reference` | mcp/src/agents_remember/application/review_comparison_reopen.py:597-650 |
+| The three non-measured answers: ambiguous, unreadable, absent — each with its own remedy. | `_deletion_or_raise`; `_ambiguous`; `_unreadable`; `_absent`; `_refusal` | mcp/src/agents_remember/application/review_comparison_reopen.py:650-729 |
 | The record, its discovery pass and its deletion record: the three things this module reads and never writes. | `read_manifest`; `read_generation_refs`; `read_history_deletion`; `task_root_for_review` | mcp/src/agents_remember/application/review_comparison_generation.py:586-620; mcp/src/agents_remember/application/review_comparison_generation.py:696-724; mcp/src/agents_remember/application/review_comparison_generation.py:623-647; mcp/src/agents_remember/application/review_comparison_generation.py:535-543 |
 | **The three-valued observation this module reports, and the pin's own readability question.** | `code_object_observation`; `CodeObjectObservation`; `object_readable`; `retained_object_readable` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-267; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:79-84; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:165-175; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:259-267 |
 | The dataset identity reader a knowledge channel compares against the frozen identity. | `dataset_identity` | mcp/src/agents_remember/memory/knowledge/logical.py:153-176 |

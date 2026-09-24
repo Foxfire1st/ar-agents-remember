@@ -4,8 +4,8 @@
 | ---------------------- | -------------------------------------------------------- |
 | repository             | agents-remember                                          |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | governingOverview      | `../../../overview.md`                                   |
@@ -79,7 +79,7 @@ package source and deterministic production-path tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:45-45; mcp/src/agents_remember/kernel/route_index_census.py:87-87; mcp/src/agents_remember/kernel/route_index_census.py:130-130 |
-| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:291-291 |
+| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:299-299 |
 | Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:511-519; mcp/src/agents_remember/worktrees/modules/onboarding.py:522-530 |
 
 ## Cross-Repo References

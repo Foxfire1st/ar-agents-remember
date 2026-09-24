@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/eve_capsule/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T10:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ was available for this file.
 | The focused cases over this module's refusals, including the unadmitted-surface and projection-disagreement refusals. | `test_materialize_refuses_an_unadmitted_surface_root`; `test_materialize_refuses_a_projection_that_disagrees_with_the_capsule` | mcp/tests/test_eve_capsule_binding.py:233-240; mcp/tests/test_eve_capsule_binding.py:282-295 |
 | The fixture world that supplies this module's real inputs, and — before the wiring landed — the one place `materialize_eve_binding` was called. | `FixtureWorld`; `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:565-620 |
 | The production caller this seam now has, and the launch whose workspace is read back out of the carrier it writes. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| The lifecycle catalog row registering the shared support module this seam's cases rest on, whose four declared consumers the loader re-derives from source. | "path = \"mcp/tests/eve_capsule_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1472-1472 |
+| The lifecycle catalog row registering the shared support module this seam's cases rest on, whose four declared consumers the loader re-derives from source. | "path = \"mcp/tests/eve_capsule_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1473-1473 |
 
 ## Cross-Repo References
 

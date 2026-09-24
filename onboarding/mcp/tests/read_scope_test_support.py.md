@@ -6,8 +6,8 @@
 | path | `mcp/tests/read_scope_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`|
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
+| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -114,8 +114,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The partly-authored retry ordering identity the fix round introduced, and the predecessor label that makes the ordering case deterministic.** | `_ordered_revision_id`; `PREDECESSOR_LABEL`; `_seed_identities` | mcp/tests/read_scope_test_support.py:255-264; mcp/tests/read_scope_test_support.py:102; mcp/tests/read_scope_test_support.py:286-357 |
 | The public builder and the value types a case reads. | `build_read_scope_fixture`; `ReadScopeFixture`; `RevisionSeed`; `RealizationSeed`; `ReadFixtureFamily`; `ReadFixtureRealization` | mcp/tests/read_scope_test_support.py:266-284; mcp/tests/read_scope_test_support.py:174-241; mcp/tests/read_scope_test_support.py:142-153; mcp/tests/read_scope_test_support.py:154-164; mcp/tests/read_scope_test_support.py:165-173; mcp/tests/read_scope_test_support.py:133-141 |
 | The graph builders, all through the public store operations. | `_build_invariants`; `_build_families`; `_build_realizations` | mcp/tests/read_scope_test_support.py:359-373; mcp/tests/read_scope_test_support.py:519-569; mcp/tests/read_scope_test_support.py:586-762 |
-| **The governed-artifact and contract rows that make this module part of the catalog.** | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
-| The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`). | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| **The governed-artifact and contract rows that make this module part of the catalog.** | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1442-1457|
+| The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`). | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1442-1457|
 
 ## Cross-Repo References
 
@@ -124,8 +124,8 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| **The governed-artifact and contract rows that make this module part of the catalog.** | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
-| The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`). | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1441-1441|
+| **The governed-artifact and contract rows that make this module part of the catalog.** | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1442-1457|
+| The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`). | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1442-1457|
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
