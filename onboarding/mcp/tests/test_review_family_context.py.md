@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T22:10:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastUpdated | 2026-09-24T02:20:00+02:00 |
+| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
+| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -30,12 +30,15 @@ review reads are the files its own resolution selected. Nothing here builds a re
 family context, or reads a database the resolution did not choose.
 
 **It is a separate module by the seam the deliverable already has, and it is a disclosed soft-rail
-crossing.** At 946 lines it is above the 900-line soft rail and below the 1,200-line hard rail, and the
-census gained no offender (26 at the candidate over the same scope, 26 at base). Fix round 1 moved the
-four population cases into `mcp/tests/test_review_family_context_population.py` — importing this
-module's enclosure and helpers rather than duplicating them — and the values cases into
-`mcp/tests/test_review_family_context_values.py`; the three modules together are the leaf's case
-population, and each is registered in `mcp/tests/test-evidence-lanes.toml`'s `unit-regression` lane.
+crossing.** At **1,133 lines** — 946 before this reopen's three walk cases — it is above the 900-line
+soft rail and below the 1,200-line hard rail, and the census gained no offender: the offender sets are
+byte-identical at base and candidate, 27 whole-tree and 26 over the `mcp` scope at both. Fix round 1
+moved the four population cases into `mcp/tests/test_review_family_context_population.py` — importing
+this module's enclosure and helpers rather than duplicating them — and the values cases into
+`mcp/tests/test_review_family_context_values.py`; the reopen appended the three walk cases below as
+**insertions only** (187 lines, nothing removed and nothing renamed), so no case that was here before was
+weakened by it. The three modules together are the leaf's case population, and each is registered in
+`mcp/tests/test-evidence-lanes.toml`'s `unit-regression` lane.
 
 ## Code Commentary
 
@@ -64,6 +67,16 @@ table below maps each to the case that pins it and the operation the case drives
 | `test_the_complete_source_population_does_not_grow_with_a_repeated_membership` | `:760` | the complete source inventory and its unique counts do not grow with repeated memberships |
 | `test_the_family_context_reaches_the_client_over_the_real_review_route` | `:878` | the composition reaches the client over the **real** review route, not a constructed payload |
 
+**The reopen added the walk the delivered continuation control actually drives** (`:949-1133`), one case
+per boundary of the corrected completion semantics — these are the bite-proofs for the fix and they
+exercise the route rather than the value:
+
+| Case | Line | The property it pins |
+| --- | --- | --- |
+| `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` | `:1045` | the single-page boundary: one walk page **is** the roster, it is `complete` with `state == "first_page"`, it publishes no cursor, it carries every recorded row, and its sentence says "all carried here" |
+| `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | `:1060` | the shape that used to answer a server failure: a walk's FINAL page is `complete` and `state == "continued"`, carries `0 < carried < members_total`, publishes no cursor, and says "completes the read walk" rather than claiming the whole roster |
+| `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | `:1095` | the multi-page boundary: every step is this route's own answer, every earlier page is incomplete with a cursor, and the pages **together** carried exactly `members_total` — which is the claim the continuation control makes to a reader |
+
 **The scenario is built once and shared, and every population comes from the store's own authors.**
 `FamilyScenario` (`:116-124`) is the frozen handle the cases read; `scenario` (`:127-131`) is the
 module-scoped fixture and `build_family_scenario` (`:134-165`) builds the real enclosure over the shared
@@ -79,12 +92,19 @@ read; `entry_for` (`:267-272`) selects one family's context from the payload and
 composed value rather than a re-implementation of it. `_author_sibling_family_revisions` (`:566-587`)
 builds the ambiguity fixture, `_complete` (`:625-628`) reads a roster page's completeness,
 `_author_added_family` (`:793-831`) builds the one-sided case, and `_review_of_unfamiliar_invariant`
-(`:834-872`) drives a review whose subject the fixture never authored.
+(`:834-872`) drives a review whose subject the fixture never authored. The reopen's two helpers keep the
+walk on the same shipped entry point: `_author_extra_roster_rows` (`:952-998`) authors further memberships
+through the store's own `create_invariant` / `create_revision` / membership owners — each a new invariant
+identity with one revision cited by one membership row — and `_walk_the_route` (`:1001-1042`) follows one
+side's walk exactly as the delivered control does, presenting `pageOf=family_members` with the cursor the
+previous page published and **no page bound**, with `raise_server_exceptions=False` so an unhandled
+failure is visible as the status the browser would receive rather than hidden in a traceback.
 
 **The route case is the leaf's transport proof.** `test_the_family_context_reaches_the_client_over_the_real_review_route`
 (`:878-930`) serves the payload through the real application (`_served`, `:933-946`) and asserts the
 family context arrives over it, which is what distinguishes this deliverable from a display projection
-assembled in the browser.
+assembled in the browser. The three walk cases drive that same served application — same fixture, same
+route, same absence of an injected payload — one page at a time.
 
 ### Conventions
 
@@ -101,6 +121,11 @@ the file rather than buried in an assertion.
   datasets the store's own operations authored.
 - **A truncated roster is never asserted as a whole one**, and the owner's own counts are asserted
   beside the cursor rather than restated.
+- **The walk cases assert the completed page's own share, never a number the run happens to produce.**
+  They pin shape — `0 < carried < members_total` on a completed continued page, the pages together
+  equal to `members_total`, the single-page sentence absent from a multi-page walk's final page — because
+  how many pages a given roster needs is a property of that run's page budgeting, not of the semantics
+  under test. A reader should not read any page count out of this card as a contract.
 - **The ambiguity case asserts a refusal to choose**, not a chosen revision: the candidates are
   inspectable and no guarantee is presented as the family's own.
 - **The disclosed soft-rail crossing is a disclosure, not a rail breach.** 946 lines is under the 1,200
@@ -164,6 +189,11 @@ over the shipped transport rather than being assembled in the browser.
 | The review of a subject the fixture never authored. | `_review_of_unfamiliar_invariant` | mcp/tests/test_review_family_context.py:834-872 |
 | **The context reaching the client over the real review route, which is what makes this a transport proof.** | `test_the_family_context_reaches_the_client_over_the_real_review_route` | mcp/tests/test_review_family_context.py:878-930 |
 | The real application the route case serves. | `_served` | mcp/tests/test_review_family_context.py:933-946 |
+| **Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.** | `_author_extra_roster_rows` | mcp/tests/test_review_family_context.py:952-998 |
+| **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** | `_walk_the_route` | mcp/tests/test_review_family_context.py:1001-1042 |
+| **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** | `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` | mcp/tests/test_review_family_context.py:1045-1057 |
+| **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context.py:1060-1092 |
+| **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1095-1133 |
 | **The production read these cases drive, which composes the context and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:94-139 |
 | The values cases that pin the construction rules of the same deliverable. | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:29-47 |
@@ -176,5 +206,7 @@ leaf enclosure the resolution selected. No remote, credential, network or extern
 no cross-repo reference row is recorded.
 
 ## Update History
+
+- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **this card gained the three walk cases the reopen appended, and its line-count disclosure was corrected.** The reopen's subject is a completion-semantics defect in `ReviewFamilyRevisionContext`, and these cases are its bite-proofs at the route: `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` (`:1045-1057`), `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` (`:1060-1092`) and `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` (`:1095-1133`), with the two helpers they need (`_author_extra_roster_rows` `:952-998`, `_walk_the_route` `:1001-1042`). The module is **946 → 1,133 lines**: still above the 900-line soft rail and below the 1,200-line hard rail, and the census offender sets are byte-identical at base and candidate, so the disclosed crossing did not become a breach. The appended block is **insertions only**, so every citation this card already carried still holds and none was re-anchored. What the card asserts about the new cases is deliberately **shape rather than arithmetic**: how many pages a roster needs is a property of that run's page budgeting (the read walk is bounded over its item population and its byte ceiling, not over rows), so no page count or per-page row count is recorded here as a contract — the cases assert the completed page's own share strictly between zero and the owner's total, the pages summing to that total, and the single-page sentence staying off a multi-page walk's final page. **Stamp accounting: no verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory commits, so the header still names the leaf's base `fdf3e4b6` plus the working-tree delta.
 
 - 2026-09-23T22:10:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): created this one-to-one card for the case module `ICR-R31@v1` introduced as the production-entry measurement of the comparison-bound family context. The stamp basis is honest rather than convenient: the module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf's base commit, and the verified basis is the working-tree delta on top of it — no commit contains what a stamp would otherwise claim to have verified. The card records the two things a reader should not have to rediscover: **every population is authored through the store's own operations over the shared endpoint fixture**, so no case builds a review payload, injects a context or reads a database the resolution did not choose; and **the module is a disclosed soft-rail crossing** at 946 lines — under the 1,200 hard rail, adding no census offender — with the population and values cases split into two sibling modules rather than growing this one. Fix round 1 added the sibling population module after round-1 verification falsified the composition's revision population; this module's own cases were not weakened by that fix, and the split is by seam rather than by line count.

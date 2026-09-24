@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-23T09:35:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
+| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -3150,5 +3150,18 @@ subject compared no operand and its families are not an unread scope. The one bo
 projection adds is *one family revision's recorded roster*, under the ``family_members`` collection
 name, continued with the read owner's own cursor.
 
+**The reopen's correction is stated in the roster read's own sentence, and it is narrow.** A page's
+``complete`` flag is the read **walk's** fact and not the page's: it turns true on the page that finished
+the enumeration, which for a multi-page roster is the **final** page, and that page carries only its own
+share of the selection while the pages before it carried the rest. ``_roster_detail`` therefore states
+three cases rather than two — a walk the read took in one page carried every recorded membership and is
+the roster whole; a walk whose final page is a continuation completed the walk and says so instead of
+claiming the whole roster; and an incomplete page names the remainder and the continuation that reaches
+it. What did **not** change under this route: the read itself, the composition beside it, the cursor
+handling, every refusal, the guarantee path that verifies the family owner's seal on the way out, and
+this collection's own standing as a *set of per-family walks* rather than one walk. No owner, field,
+capability or policy was added, and both modules stay far under the line rail.
+
 ## Update History
+- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **route body updated for the corrected roster-completion semantics.** The paragraph above records what the reopen changed in this route's governed source — ``_roster_detail`` states the completed case in two forms because ``complete`` is the walk's flag, so a roster read in one page is the roster whole while a walk whose final page is a continuation says that instead — and what it deliberately left alone: the read, the composition, the cursor handling, the refusals and the seal-verifying guarantee path. The route's own L31 section was **re-measured, not merely re-stamped**: the roster read's ranges moved by this delta's +12-line insertion and the cross-file page value's by the model module's insertions, and the section above names the corrected semantics rather than the pre-correction ones. **No route impact was claimed as absent and no no-route-impact judgment was published** — this is real body content, and the memory-refresh attestation this route carried for a changed governed source is answered by it. **Stamp accounting: no verification stamp was advanced.** The header's verification pair still names this leaf's recorded base ``fdf3e4b6``, because the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): route body updated for the comparison-bound family review context (`ICR-R31@v1`) — the new composition and roster-read owners under this route, and the two thin callers that carry the value. Citation rows that this leaf's insertions moved were re-anchored to the declarations they name. No route impact was claimed as absent: the section above states what changed in the governed source and in this document.

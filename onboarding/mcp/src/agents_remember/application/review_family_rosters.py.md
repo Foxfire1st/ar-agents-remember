@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_family_rosters.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T22:10:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastUpdated | 2026-09-24T02:20:00+02:00 |
+| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
+| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -87,41 +87,47 @@ response's family contexts the published page is about.
 
 **Every sentence is built from the values the read returned.** `cursor_refusal_detail` (`:358-363`)
 names the case where the read returned neither a page nor a usable refusal. `_roster_detail`
-(`:366-381`) states either that the roster was read whole with its count, or how many memberships the
-page carried against the owner's total, the remainder and the fact that the continuation reaches it.
-`side_statement` (`:384-394`) is the one side context that carries no roster and no count at all.
+(`:366-393`) states how much of the roster *this page* carried, and its completed case splits in two
+because `complete` describes the **walk** rather than the page: a walk the read took in one page
+(`:377-381`, `page.complete and page.state == "first_page"`) carried every recorded membership, so the
+sentence says the roster was read whole with its count; a walk whose final page is a continuation
+(`:382-387`) enumerated the whole selection but carried only that page's own share, so the sentence
+names the owner's total, how many this page carried, and that it completes the read walk while the
+pages before it carried the rest; and an incomplete page (`:388-393`) names the remainder and the
+continuation that reaches it. `side_statement` (`:396-406`) is the one side context that carries no
+roster and no count at all.
 
-**The guarantee comes from the owner that verifies its seal.** `family_guarantee` (`:400-418`) reads one
+**The guarantee comes from the owner that verifies its seal.** `family_guarantee` (`:412-430`) reads one
 family revision through the family owner and returns its stored `joint_guarantee` with the display
 version, origin state, acceptance reference, provenance and payload digest — or `None`, in which case the
 caller states an unreadable side rather than presenting a guarantee it did not get.
 
-**A membership row is the recorded fact and is always carried.** `_members` (`:421-455`) walks the
+**A membership row is the recorded fact and is always carried.** `_members` (`:433-467`) walks the
 page's membership rows; each member's revision **statement** is carried only when the same page selected
 that revision, and is otherwise stated as `content_not_on_page` rather than filled in from a second read
-of a different selection. `_RosterLookups` (`:458-470`) keeps one page's own lookups together — content
+of a different selection. `_RosterLookups` (`:470-482`) keeps one page's own lookups together — content
 items, claim references and union identities — because a content item paired with another page's claims,
 or a movement identity taken from another review, would be a different roster wearing this one's
-membership rows. `_member` (`:473-499`) composes the row: the exact `invariant_revision_id`, the
+membership rows. `_member` (`:485-511`) composes the row: the exact `invariant_revision_id`, the
 member's identity and label, its content when the page carried it, the other family revisions the
 membership owner records it in, the realization-claim references, and a `movement_reference` set only
-when the relationship union's own values display this membership row. `_member_identity` (`:502-515`)
+when the relationship union's own values display this membership row. `_member_identity` (`:514-527`)
 falls back to the store owner for the identity when the page did not carry the revision;
-`_other_families` (`:518-534`) reads the sharing fact from the membership owner and excludes this family
-revision; `_source` (`:537-557`) states one realization claim with the address this read observed and
-the resolution it reached, or states that no address was observed; `_member_detail` (`:560-582`) states
+`_other_families` (`:530-546`) reads the sharing fact from the membership owner and excludes this family
+revision; `_source` (`:549-569`) states one realization claim with the address this read observed and
+the resolution it reached, or states that no address was observed; `_member_detail` (`:572-594`) states
 which facts of the row the read established, including how many further family revisions record the same
-exact revision; `_movement_identities` (`:585-595`) collects the membership identities the union's own
+exact revision; `_movement_identities` (`:597-607`) collects the membership identities the union's own
 movement values display.
 
-**The page and the refusals are the surface's own vocabulary.** `family_member_page` (`:601-623`) states
+**The page and the refusals are the surface's own vocabulary.** `family_member_page` (`:613-635`) states
 one continued roster walk as `ICR-R10@v1`'s `ReviewCollectionPage`, carrying the read owner's own
 `primary_items_total`, `primary_items_returned` and `primary_items_remaining` and its opaque
 snapshot-bound continuation, with a scope naming the exact side and family revision.
-`family_collection_refusal` (`:626-644`) answers a request that named the collection **without** a
+`family_collection_refusal` (`:638-656`) answers a request that named the collection **without** a
 cursor: this collection is a *set* of per-family walks rather than one walk, so naming it addresses no
 single page, and the response still carries every walk's first page on the family contexts themselves.
-`family_context_cursor_refusal` (`:647-685`) answers a cursor that bound no composed walk in the
+`family_context_cursor_refusal` (`:659-697`) answers a cursor that bound no composed walk in the
 surface's own vocabulary: a malformed token earns `comparison_page_unreadable` with the action sentence
 naming what a real cursor looks like, while a well-formed cursor that bound nothing earns
 `comparison_page_reset` with this collection's own action — open a new comparison, because a roster
@@ -146,6 +152,10 @@ composition closes both sides in a `finally` block.
   `enumeration_complete`, and the member value's own validator refuses content beside
   `content_not_on_page` or the reverse — a member whose revision content fell outside the page is listed
   with that state rather than silently missing.
+- **`complete` is the walk's flag and not the page's, so no sentence claims more than the page
+  carried.** A completed page may be read as *the roster, whole* only when it is also the walk's first
+  page; a completed **continued** page says instead that it completes the read walk, because "all
+  carried here" would be false about the store while the pages before it are what carried the rest.
 - **A cursor never crosses a walk or a generation.** A cursor another walk minted is refused and the
   side is re-read from its own first page; a cursor that bound nothing leaves every composed walk's
   first page published beside it.
@@ -193,22 +203,22 @@ synthesized guarantee**.
 | One read of one family revision's recorded scope at the request's own page bound. | `_roster_read` | mcp/src/agents_remember/application/review_family_rosters.py:308-328 |
 | The read owner's own page stated for one family revision's roster, with the scope naming the walk. | `_roster_page` | mcp/src/agents_remember/application/review_family_rosters.py:331-355 |
 | The sentence for a read that returned neither a page nor a usable refusal. | `cursor_refusal_detail` | mcp/src/agents_remember/application/review_family_rosters.py:358-363 |
-| **The sentence stating how much of the roster the page carried and how the remainder is reached.** | `_roster_detail` | mcp/src/agents_remember/application/review_family_rosters.py:366-381 |
-| The one side context that states which fact it is and carries no roster and no count. | `side_statement` | mcp/src/agents_remember/application/review_family_rosters.py:384-394 |
-| **The guarantee read from the owner that verifies the revision's seal, or nothing when no sealed aggregate exists.** | `family_guarantee` | mcp/src/agents_remember/application/review_family_rosters.py:400-418 |
-| **The membership rows the page carried, each member's content carried only when the same page selected that revision.** | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:421-455 |
-| One page's own lookups travelling together, so another page's claims cannot be paired with this roster. | `_RosterLookups` | mcp/src/agents_remember/application/review_family_rosters.py:458-470 |
-| One membership row composed as a member context with its exact revision, its sharing fact and its source references. | `_member` | mcp/src/agents_remember/application/review_family_rosters.py:473-499 |
-| The member identity taken from the page, or from the store owner when the page did not carry the revision. | `_member_identity` | mcp/src/agents_remember/application/review_family_rosters.py:502-515 |
-| **The sharing fact, read from the membership owner and excluding this family revision, so one revision referenced twice is not one fact copied twice.** | `_other_families` | mcp/src/agents_remember/application/review_family_rosters.py:518-534 |
-| One recorded realization claim as an inspectable source reference, or the statement that no address was observed. | `_source` | mcp/src/agents_remember/application/review_family_rosters.py:537-557 |
-| The sentence stating which facts of one membership row this read established. | `_member_detail` | mcp/src/agents_remember/application/review_family_rosters.py:560-582 |
-| The membership identities the relationship union's own movement values display. | `_movement_identities` | mcp/src/agents_remember/application/review_family_rosters.py:585-595 |
-| **One continued roster walk stated as the review surface's own page, with the read owner's own counts and cursor.** | `family_member_page` | mcp/src/agents_remember/application/review_family_rosters.py:601-623 |
-| **The refusal for naming the collection without a cursor: it is a set of per-family walks, so no single page was addressed.** | `family_collection_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:626-644 |
-| **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** | `family_context_cursor_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:647-685 |
+| **The sentence stating how much of the roster the page carried and how the remainder is reached.** | `_roster_detail` | mcp/src/agents_remember/application/review_family_rosters.py:366-393 |
+| The one side context that states which fact it is and carries no roster and no count. | `side_statement` | mcp/src/agents_remember/application/review_family_rosters.py:396-406 |
+| **The guarantee read from the owner that verifies the revision's seal, or nothing when no sealed aggregate exists.** | `family_guarantee` | mcp/src/agents_remember/application/review_family_rosters.py:412-430 |
+| **The membership rows the page carried, each member's content carried only when the same page selected that revision.** | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:433-467 |
+| One page's own lookups travelling together, so another page's claims cannot be paired with this roster. | `_RosterLookups` | mcp/src/agents_remember/application/review_family_rosters.py:470-482 |
+| One membership row composed as a member context with its exact revision, its sharing fact and its source references. | `_member` | mcp/src/agents_remember/application/review_family_rosters.py:485-511 |
+| The member identity taken from the page, or from the store owner when the page did not carry the revision. | `_member_identity` | mcp/src/agents_remember/application/review_family_rosters.py:514-527 |
+| **The sharing fact, read from the membership owner and excluding this family revision, so one revision referenced twice is not one fact copied twice.** | `_other_families` | mcp/src/agents_remember/application/review_family_rosters.py:530-546 |
+| One recorded realization claim as an inspectable source reference, or the statement that no address was observed. | `_source` | mcp/src/agents_remember/application/review_family_rosters.py:549-569 |
+| The sentence stating which facts of one membership row this read established. | `_member_detail` | mcp/src/agents_remember/application/review_family_rosters.py:572-594 |
+| The membership identities the relationship union's own movement values display. | `_movement_identities` | mcp/src/agents_remember/application/review_family_rosters.py:597-607 |
+| **One continued roster walk stated as the review surface's own page, with the read owner's own counts and cursor.** | `family_member_page` | mcp/src/agents_remember/application/review_family_rosters.py:613-635 |
+| **The refusal for naming the collection without a cursor: it is a set of per-family walks, so no single page was addressed.** | `family_collection_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:638-656 |
+| **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** | `family_context_cursor_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:659-697 |
 | The composition that decides which families and revisions this read is called for. | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:254-301 |
-| **The values this read states, whose validators refuse a truncated roster presented as a whole one.** | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:225-268 |
+| **The values this read states, whose validators refuse a truncated roster presented as a whole one.** | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:225-277 |
 | The production review read that asks for this roster and publishes its page. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The cases that drive the roster read through the production review over a real enclosure. | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |
 
@@ -221,5 +231,7 @@ credential, network or external system is involved. No cross-repo reference row 
 no cited range proves a repository or external-system boundary.
 
 ## Update History
+
+- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`, code worktree `ar/260921-icr-l31b`): **the completed sentence on this card was re-described for the corrected completion semantics, and every range was re-anchored past this delta's +12-line insertion.** The correction is the reopen's whole subject: `complete` is the **walk's** flag rather than the page's, so `_roster_detail` (`:366-393`) no longer states two cases — a walk the read took in one **page** (`:377-381`) carried every recorded membership and is the roster whole, a walk whose **final** page is a continuation (`:382-387`) completed the enumeration having carried only that page's own share and now says so instead of "all carried here", and the incomplete branch (`:388-393`) keeps the remainder sentence. What did **not** change, and is recorded so a reader does not infer a wider fix: the module's read, its cursor handling, its refusals, its guarantee path and `complete`'s own meaning (`enumeration_complete`, read from the owner, never written here) are all untouched; this delta is 2 hunks in this module and adds no field, state, capability or policy. Every citation range was re-measured on the candidate bytes — rows at and after the insertion's first line carried +12, `_roster_detail`'s own range grew with its docstring, and the cross-file `ReviewFamilyRosterPage` row now reads `:225-277`. **Stamp accounting: no verification stamp was advanced.** The header's pair still names this leaf's base `fdf3e4b6`, because the candidate is uncommitted and the governed closeout owns the real code and memory commits; the verified basis is that base plus the working-tree delta, exactly as the first curation recorded it.
 
 - 2026-09-23T22:10:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): created this one-to-one card for the roster read `ICR-R31@v1` introduced as **the recorded roster of one selected family revision**, read and stated for the review context. The stamp basis is honest rather than convenient: the module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf's base commit, and the verified basis is the working-tree delta on top of it — no commit contains what a stamp would otherwise claim to have verified. The card records what a consumer has to act on: the collection is a **set of per-family walks**, so naming it without a cursor earns the collection's own refusal (`family_collection_refusal`) while every composed walk's first page stays published on the family contexts themselves; a cursor another walk minted is a **routing fact rather than a fact about the side**, so the side is re-read from its own first page and the refusal is carried back once (`_read_roster`); and the guarantee comes from the family owner that verifies its revision seal, so a missing sealed aggregate is an `unreadable` side and never a synthesized guarantee. Fix round 1 changed this module's request shape rather than its read: `RosterContext` now carries the family owner's own recorded revision list and the axis's own one-sided sentence, so a side context publishes the history its selected revision was chosen from — the population fix whose absence made a memberless family revision invisible in the composition next door.

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-23T09:45:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
+| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
@@ -6035,5 +6035,22 @@ All three joined the ``unit-regression`` lane, and the two consumer rows of
 which is why that file's catalog pin moved twice (the Twenty-seventh and Twenty-eighth deliberate
 re-pins, contracts and artifacts unchanged at sixteen and sixty-six).
 
+**The reopen added the walk cases that make the corrected completion semantics measurable, and they are
+still three modules.** ``mcp/tests/test_review_family_context.py`` gained three cases and two helpers at
+its end: a roster that fits one page is carried whole — complete, ``state == "first_page"``, no cursor,
+every recorded row, and its sentence says so; a long walk's **final** page is complete with
+``state == "continued"`` and carries strictly fewer rows than the owner's total, which is exactly the page
+the pre-correction comparison refused; and a multi-page walk terminates with every step this route's own
+answer and the pages together carrying exactly ``members_total``. ``mcp/tests/test_review_family_context_values.py``
+gained the matching value-level pair: a complete page that is also the walk's **first** page must still
+carry the whole roster it counts, while the same carried rows on a completed **continued** page are
+accepted — so the relaxation cannot become a hole. The two modules are now 1,133 and 262 lines, and the
+cases pin **shape** rather than arithmetic, because how many pages a given roster needs is a property of
+that run's page budgeting rather than of the semantics under test. What the reopen did **not** change in
+this route: the three modules are still three, ``mcp/tests/test_review_family_context_population.py`` is
+untouched, every lane row is unchanged, both consumer rows still hold, and the catalog pin needed no third
+move because no module and no row was added.
+
 ## Update History
+- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **route body updated for the reopen's three walk cases and two value cases.** The paragraph above records what the reopen added to this route's governed sources — the walk cases and their two helpers in the first module, and the both-directions value pair in the third — and what it left unchanged: the module count is still three, the population module and every lane row are untouched, both consumer rows still hold, and the catalog pin moved no third time because no module or row was added (the additions are insertions-only, so no citation on this route was displaced). The route's own L31 body now states the corrected completion semantics the new cases measure instead of leaving the section describing only the pre-reopen case set. **No route impact was claimed as absent and no no-route-impact judgment was published** — this is real body content, and the memory-refresh attestation this route carried for changed governed sources is answered by it. **Stamp accounting: no verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory commits, so the header's pair still names the recorded base ``fdf3e4b6``.
 - 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): route body updated for the three `ICR-R31@v1` case modules, their unit-regression lane rows and the two consumer-row additions that moved the evidence-lifecycle catalog pin twice. Citation rows this leaf's insertions moved were re-anchored through the measured insertion map, each confirmed to hold its anchor in the right block. No route impact was claimed as absent.

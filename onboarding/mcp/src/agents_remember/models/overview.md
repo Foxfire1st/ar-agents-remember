@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-23T09:40:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
+| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -2979,5 +2979,19 @@ entries.
 ``KnowledgeReviewPayload`` carries the required ``family_context`` field so an absent field can never be
 read as a measured zero.
 
+**The reopen corrected one reading of the roster page, and it is a *reading* rather than a new field.**
+``complete`` on ``ReviewFamilyRosterPage`` describes the read **walk and not the page**: a multi-page walk
+completes on its **final** page, and that page carries only its own share of the selection. So a complete
+page is *the roster, whole* exactly when it is also a single page (``state == "first_page"``), and
+``ReviewFamilyRevisionContext``'s validator holds only that case to the revision-wide member count; a
+completed **continued** page is a position in a walk and is accepted, while the same carried rows on a
+walk's first page are still refused as the truncation that guard exists for. Nothing else in this route
+moved: no value gained or lost a field, no ``Literal`` state changed, no signature changed, and
+``complete``'s own meaning — the read owner's own ``enumeration_complete`` — is untouched, because this
+module reads that flag and never writes it. The side context's own class docstring was corrected on these
+bytes to match, because its older sentence still read as though a complete page always carried the whole
+roster.
+
 ## Update History
+- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **route body updated for the corrected roster-page completion semantics.** The paragraph above records the reopen in this route's governed source: ``complete`` is the walk's flag, so only a complete page that is *also* the walk's first page may be read as the whole roster, and ``ReviewFamilyRevisionContext``'s validator now holds exactly that case to the revision-wide count while accepting a completed continued page — with the truncation refusal intact and no field, state or signature added. The rest of the vocabulary this section records is unchanged, including the four side states, the measured-zero rule and the required ``family_context`` payload field. **No route impact was claimed as absent and no no-route-impact judgment was published** — this is real body content, and it is what answers this route's memory-refresh attestation. **Citation accounting:** the ranges in the section above were re-measured on the candidate, where the page value now spans ``:225-277``, the side context ``:280-356`` and the context itself ``:468-548``. **Stamp accounting: no verification stamp was advanced** — nothing in this leaf is committed, so the header's pair still names the recorded base ``fdf3e4b6``.
 - 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): route body updated for the family-context value vocabulary and the third paged collection (`ICR-R31@v1`), including the required ``family_context`` payload field. Citation rows this leaf's insertions moved were re-anchored to the declarations they name. No route impact was claimed as absent.
