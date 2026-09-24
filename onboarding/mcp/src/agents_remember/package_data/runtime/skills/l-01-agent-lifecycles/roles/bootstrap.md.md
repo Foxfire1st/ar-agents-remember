@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastUpdated | 2026-09-24T12:55:00+02:00 |
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -126,10 +126,10 @@ No external or domain documentation governs this repository-local role file.
 | --- | --- | --- |
 | Canonical source this package-data copy is sync-propagated from. | `# Bootstrap` | skills/l-01-agent-lifecycles/roles/bootstrap.md:6-6 |
 | The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call. | "not a task seat: your brief is not a brief — you are started by a call" | skills/l-01-agent-lifecycles/roles/bootstrap.md:9-10 |
-| The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path. | "you are started by a call"; "Nothing dispatches this agent"; "so nothing names a path for it" | skills/l-01-agent-lifecycles/roles/bootstrap.md:9-10; skills/l-01-agent-lifecycles/roles/bootstrap.md:51-51 |
+| The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path. | "you are started by a call"; "Nothing dispatches this agent"; "so nothing names a path for it" | skills/l-01-agent-lifecycles/roles/bootstrap.md:9-10; skills/l-01-agent-lifecycles/roles/bootstrap.md:51-51; skills/l-01-agent-lifecycles/roles/bootstrap.md:63-63 |
 | The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error. | "Not inputs, and their absence is not an error"; "This seat is started before any of them exist" | skills/l-01-agent-lifecycles/roles/bootstrap.md:25-27 |
 | The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief. | "your brief is not a brief"; "are your instructions." | skills/l-01-agent-lifecycles/roles/bootstrap.md:9-10 |
-| The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. | `## What you may do`; `## Stop and report — there is no owning seat above this one before a task exists`; `# Bootstrap Report — <repository>`; "no template file owns this shape" | skills/l-01-agent-lifecycles/roles/bootstrap.md:53-57; skills/l-01-agent-lifecycles/roles/bootstrap.md:97-97; skills/l-01-agent-lifecycles/roles/bootstrap.md:127-127 |
+| The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. | `## What you may do`; `## Stop and report — there is no owning seat above this one before a task exists`; "Bootstrap Report — <repository>" | skills/l-01-agent-lifecycles/roles/bootstrap.md:53-57; skills/l-01-agent-lifecycles/roles/bootstrap.md:97-97; skills/l-01-agent-lifecycles/roles/bootstrap.md:127-127; skills/l-01-agent-lifecycles/roles/bootstrap.md:69-69; skills/l-01-agent-lifecycles/roles/bootstrap.md:146-146; skills/l-01-agent-lifecycles/roles/bootstrap.md:112-112 |
 | The operation block the role carries: workflow, failure inventory and authority gates. | `# Operation — Session Bootstrap` | skills/l-01-agent-lifecycles/operations/bootstrap.md:1-1 |
 | The manifest entry declaring the free-agent altitude, its five tools and its three operations. | "\"altitude\": \"free-agent\"" | skills/l-01-agent-lifecycles/composition-manifest.json:472-472 |
 | The named taskless-seat admission this role's existence depends on. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/task_binding.py:60-83 |
@@ -147,7 +147,31 @@ No sibling-repository contract defines this role file.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260921-ICR-L27 The First-Hour Seat Reaches The Knowledge Foundation And Authors Nothing
+
+`260921-ICR-L27` (`ICR-R27@v1`) gives this role the half of the knowledge bootstrap that exists **before
+a task does**. The role's step 5 makes it the carrier that reads the state at the declared knowledge
+location, reports it, and hands the authoring to a curator — on a task document for a real task, or
+through the taskless writer an instructed session holds — while authoring no records itself. The reason
+is the opener's gate, stated in the role file in the product's own vocabulary: a session opened for the
+curator **with no task document is refused** (`task-binding-required`), while this seat is admitted
+taskless.
+> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where a document-less `curator` session is refused `task-binding-required` because `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}`. Whether `curator` joins that set is a **product** decision under revision — a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, not as a permanent property. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them.
+
+Three smaller edits carry the same obligation: step 2 adds `c-14-knowledge-bootstrap` to the skills this
+seat points at rather than restating; step 3 adds the **commit word** for the foundation as a decision
+that is asked for rather than assumed; and the Outputs template gains a
+`Knowledge foundation: <not-recorded | recorded at <identity> | unusable: <code and path> | not run, and
+why>` line, with a matching self-check row. The prohibition list gains "Never author knowledge records
+either", and the step states plainly that **a repository whose knowledge is not recorded is not reported
+as ready** — the onboarding and the baseline can both be complete while the foundation is still absent,
+and those are separate facts rather than one verdict.
+
+**This card describes a generated copy**, propagated from `skills/l-01-agent-lifecycles/roles/bootstrap.md`
+by `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
+
 ## Update History
+- 2026-09-24T12:42:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the first-hour seat reaches the foundation.** Step 5 (reach it, report the state, hand the authoring on, never report an unrecorded foundation as ready), step 2's `c-14-knowledge-bootstrap` reference, step 3's developer commit word, the Outputs `Knowledge foundation:` line with its self-check row, and the prohibition on authoring knowledge records. The section states the seat gate in the code's own vocabulary because a round-one adversarial verdict was `blocking` on the earlier claim that a document-less curator session is admitted. **Citation accounting:** the row this card carries into `# Bootstrap Report — <repository>` was re-read against the candidate — the anchor's live form is at the Outputs heading's own line — and re-anchored rather than shifted. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-19T22:28:52+00:00: Generated citation repair: "\"altitude\": \"free-agent\"" repointed to skills/l-01-agent-lifecycles/composition-manifest.json:472-472. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T05:26:45+00:00: Generated citation repair: "\"altitude\": \"free-agent\"" repointed to skills/l-01-agent-lifecycles/composition-manifest.json:468-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.

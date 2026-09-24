@@ -5,9 +5,70 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastUpdated | 2026-09-24T12:25:00+02:00 |
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+
+## 260921-ICR-L27 The Repository-Foundation Entry, And The Seat That Is Not Admitted
+
+`260921-ICR-L27` (`ICR-R27@v1`) puts a repository's **first or resumed knowledge foundation** into this
+route's own carriers as a second, bounded shape of the curator's work, and it states the seat gate that
+shape depends on. `roles/curator.md` gains the entry paragraph, a process block and the report facts;
+`operations/curation.md` gains *The repository-foundation entry* section with its comparison table and
+the authority-gate sentence; `roles/bootstrap.md` and `operations/bootstrap.md` gain the first-hour half
+— the seat that reads the foundation's state and hands the authoring on **without authoring anything**.
+
+**The rule a reader must not get wrong, because a round-one verdict was `blocking` on exactly it.** A
+session opened for the curator with **no task document is refused** — `400 task-binding-required`,
+"named role scope is required" — because the opener admits only the taskless seats
+(`bootstrap`, `chat`, a plain `terminal` pane) without one. **A taskless *curator* seat does not
+exist.** Before a task exists the step is therefore carried by the taskless **bootstrap** seat (which
+reads the state and reports it) and by the taskless writer an instructed session holds; the writing
+session itself must have **no enclosure in scope**, because the taskless writer refuses one
+(`enclosure_in_scope`) so a bootstrap can never publish onto a task's line. The carriers state that
+refusal in the code's own vocabulary instead of asserting an admission the product does not make, and
+admitting the curator seat without a task document is a seat-policy change the procedure neither makes
+nor implies.
+
+**What stays identical, and what changes.** The reconciliation and the authored knowledge — supported
+invariants and facets, justified family guarantees with exact memberships, source realizations, external
+sources — belong to the curator on **both** entries, and there is still exactly one admitted writer and
+one declared published location. What changes is the **carrier**, the admission and the scope: the leaf
+entry needs this leaf's enclosure contract, while the repository-foundation entry has no brief, no change
+set and no contract to intake. The `c-14-knowledge-bootstrap` skill owns the procedure; this route's
+carriers own who runs it and what its report owes.
+
+**Completion is a named state, not an omission.** The bootstrap role's report gains a
+`Knowledge foundation:` line, and the operation refuses to read an absent foundation as a ready
+repository: the onboarding and the baseline can both be complete while the knowledge is still
+`not-recorded`, and those are separate facts rather than one verdict. The operation's failure table gains
+four knowledge rows — `not-recorded`, `recorded` at an exact identity, `unusable` with its shipped
+refusal code (`selected_input_unavailable`, `snapshot_unavailable`), and `context-not-admitted` as an
+admission failure that is not a knowledge state at all. Neither the onboarding nor the baseline
+substitutes for the foundation, and the foundation substitutes for neither.
+
+**Propagation is generated, not hand-maintained**, and no harness skill root was installed by this leaf:
+`scripts/sync-skills.py` writes the package-owned copy under
+`mcp/src/agents_remember/package_data/runtime/skills/` and the eight self-hosted harness starter copies.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The foundation entry as a second, bounded shape of the curator's work, with its own carrier and the opener's refusal named rather than an admission assumed. | "named role scope is"; "never required to start." | skills/l-01-agent-lifecycles/roles/curator.md:40-51 |
+| The foundation-entry process block: run the procedure in its order, and which writer belongs to which scope. | `enclosure_in_scope`; "a bootstrap must not publish" | skills/l-01-agent-lifecycles/roles/curator.md:115-124 |
+| The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. | `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" | skills/l-01-agent-lifecycles/roles/curator.md:139-160 |
+| The permitted-action line that names both write-plane entry points and the enclosure the taskless one refuses. | `enclosure_in_scope`; "it refuses one" | skills/l-01-agent-lifecycles/roles/curator.md:170-174 |
+| The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. | "named role scope is required" | skills/l-01-agent-lifecycles/operations/curation.md:23-29 |
+| The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. | `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` | skills/l-01-agent-lifecycles/operations/curation.md:129-152 |
+| The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. | `## Authority gates` | skills/l-01-agent-lifecycles/operations/curation.md:159-168 |
+| The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. | `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:212-225 |
+| The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. | "Reach the knowledge foundation and report its outcome" | skills/l-01-agent-lifecycles/roles/bootstrap.md:49-58 |
+| The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. | "Never author knowledge records either." | skills/l-01-agent-lifecycles/roles/bootstrap.md:136-139 |
+| The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. | "Reach the repository's knowledge foundation." | skills/l-01-agent-lifecycles/operations/bootstrap.md:73-84 |
+| The four knowledge rows the operation's failure table gains, keeping `unusable` and a refused admission distinct from `not-recorded`. | `not-recorded`; `snapshot_unavailable`; `context-not-admitted` | skills/l-01-agent-lifecycles/operations/bootstrap.md:111-114 |
+| The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. | "It does not author the knowledge foundation." | skills/l-01-agent-lifecycles/operations/bootstrap.md:148-150 |
+| The procedure these carriers delegate to, and its own statement that a taskless curator seat does not exist. | `## Who Runs It`; `task-binding-required` | skills/c-14-knowledge-bootstrap/SKILL.md:38-71 |
+
+> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session is refused `task-binding-required`. Whether `curator` joins that set is a **product** decision under revision — it is a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, and not as a permanent property of the product. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them; do not read this card as already describing a later revision.
 
 ## 260921-ICR-L28 The Curator Method Grows The Family Plane And The External-Source Manifest
 
@@ -74,10 +135,10 @@ to be written as prose.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
-| **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; `publicationRoute`; `publishedIdentity` | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
-| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:124-131; skills/l-01-agent-lifecycles/operations/curation.md:160-164 |
-| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:150-152; skills/l-01-agent-lifecycles/roles/curator.md:138-140 |
-| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:174-176; skills/l-01-agent-lifecycles/roles/curator.md:99-101 |
+| **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; `publicationRoute`; `publishedIdentity` | skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:76-77; skills/l-01-agent-lifecycles/operations/curation.md:172-172 |
+| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:124-131; skills/l-01-agent-lifecycles/operations/curation.md:160-164; skills/l-01-agent-lifecycles/operations/curation.md:202-202 |
+| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:150-152; skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:185-185; skills/l-01-agent-lifecycles/roles/curator.md:170-170 |
+| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:174-176; skills/l-01-agent-lifecycles/roles/curator.md:99-101; skills/l-01-agent-lifecycles/operations/curation.md:216-216; skills/l-01-agent-lifecycles/operations/curation.md:217-217 |
 | The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. | "Where the route reads, and what publishes there."; `--publish` | skills/c-04-retrieval-strategy-router/SKILL.md:181-190 |
 | The write plane the carrier invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 
@@ -248,7 +309,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 | Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated series authority"; "comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:24-24; skills/l-01-agent-lifecycles/core/authority.md:50-68; skills/l-01-agent-lifecycles/core/authority.md:149-149; skills/l-01-agent-lifecycles/core/loop.md:1-1 |
 | The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters"; "serializes the masters" | skills/l-01-agent-lifecycles/criteria/plan-review.md:65-68; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174; docs/reference/execution-topology-migration.md:61-63 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-137 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-137; skills/l-01-agent-lifecycles/roles/curator.md:60-60; skills/l-01-agent-lifecycles/roles/curator.md:58-58 |
 | Manager owns one real master and its leaf closeout chain. | `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:6-11; skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | `# Worker`; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:6-9; skills/l-01-agent-lifecycles/roles/worker.md:7-17; skills/l-01-agent-lifecycles/roles/worker.md:72-78 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | `## Acceptance is per stable ID and version, never aggregate` | skills/l-01-agent-lifecycles/core/acceptance.md:44-77 |
@@ -366,6 +427,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-24T12:25:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the repository-foundation entry and the seat gate it depends on.** `roles/curator.md` gained the entry paragraph and process block, `operations/curation.md` gained the comparison-table section and the authority-gate sentence, and `roles/bootstrap.md` / `operations/bootstrap.md` gained the first-hour read-and-hand-on step with the four knowledge rows in the failure table. The section states the rule a reader is most likely to invert — a session opened for the curator with no task document is refused `400 task-binding-required`, so **a taskless curator seat does not exist** and the pre-task step is carried by the taskless bootstrap seat plus the taskless writer with no enclosure in scope — because a round-one adversarial verdict was `blocking` on exactly that sentence in the procedure and its three sibling carriers. **Citation accounting:** the rows this section adds were derived from the carriers' own post-edit lines, not by adding a delta to an old number; the rows this document already carried into `roles/curator.md`, `operations/curation.md` and `skills/c-14-knowledge-bootstrap/SKILL.md` were re-read in the same pass and their drifted ranges re-anchored to the lines that now carry each construct. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator method's family and
   external-source steps.** `roles/curator.md` gained the numbered author-and-read-back step,

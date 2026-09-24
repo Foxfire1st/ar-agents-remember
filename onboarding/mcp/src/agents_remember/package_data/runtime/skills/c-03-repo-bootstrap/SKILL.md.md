@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 
 ## Purpose
 
@@ -62,7 +62,27 @@ No sibling repository evidence is needed for this skill.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260921-ICR-L27 Onboarding Is Not The Repository's Knowledge Foundation, And The Handoff Now Says So
+
+`260921-ICR-L27` (`ICR-R27@v1`) adds one boundary paragraph and one relationship row to this skill, and
+both exist to stop a handoff from reading as complete when the repository's **knowledge foundation** has
+never been authored. The foundation — the authored invariants, families, source realizations and external
+sources in the knowledge database — is a separate step owned by `c-14-knowledge-bootstrap` and carried by
+the curator. Onboarding is **one optional input** to it: the foundation needs no onboarding file to
+start, and this skill neither requires the foundation to exist first nor claims it as its own output.
+
+The handoff must therefore **name** the foundation, with the state of the knowledge location where that
+state is known (`not-recorded`; `recorded`, with the identity; or `unusable`, with its code and path), and
+say that it is the curator's step. An unrun or absent foundation is a **named fact of the handoff**, never
+an omission that the handoff's own "trusted coverage" reads as completeness. Acceptance criterion 17
+carries the same obligation.
+
+**This card describes a generated copy.** The canonical instruction home is
+`skills/c-03-repo-bootstrap/SKILL.md`; `scripts/sync-skills.py` propagates the root tree into this
+package-owned copy and the eight harness starter packages, and nothing here is edited by hand.
+
 ## Update History
+- 2026-09-24T12:40:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the onboarding/knowledge-foundation boundary.** The skill gained the paragraph stating that this skill produces no knowledge records, that the foundation is `c-14-knowledge-bootstrap`'s step carried by the curator, that onboarding is optional input to it, and that an unrun foundation is a named fact of the handoff rather than an omission; plus the relationship-table row and acceptance criterion 17. **Citation accounting:** the rows this card carries into the file were re-read against this candidate rather than shifted by a remembered delta. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 
 
 

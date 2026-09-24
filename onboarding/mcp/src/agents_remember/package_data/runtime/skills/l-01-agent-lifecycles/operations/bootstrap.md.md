@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -131,7 +131,38 @@ No sibling-repository contract defines this operation block.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260921-ICR-L27 The Operation's Sixth Step Reaches The Knowledge Foundation
+
+`260921-ICR-L27` (`ICR-R27@v1`) inserts a new step 6 — *Reach the repository's knowledge foundation* —
+into this operation and renumbers the steps around it (baseline adoption becomes 7, provider indexing
+becomes 8). "What it covers" gains the foundation among the first hour's stages, and "When it is
+selected" records that a repository which resolves but whose knowledge foundation is not recorded is
+reached by **step 6** rather than by a re-entry.
+
+The step states the seat gate in the code's own vocabulary: a session opened for the curator with no task
+document is refused (`400 task-binding-required`, "named role scope is required"), because the roles this
+operation's own carrier belongs to — `bootstrap`, `chat`, `terminal` — are the only ones admitted without
+one. So this seat reads the state, reports which of the four states it is, and hands the authoring on; it
+**authors no records**. The step is also explicitly **not conditional** on the operation's other steps:
+it needs a memory line that resolves `HEAD`, not an onboarding corpus and not an adopted baseline, so a
+repository whose knowledge begins before its onboarding is a supported order rather than a defect.
+> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where a document-less `curator` session is refused `task-binding-required` because `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}`. Whether `curator` joins that set is a **product** decision under revision — a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, not as a permanent property. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them.
+
+The failure table gains four knowledge rows, and their whole point is that the states stay distinct:
+`not-recorded` (step 6's real work, not a failure), `recorded` (read it before extending it; never
+reinitialize), `unusable` with the shipped refusal code (`selected_input_unavailable` when there is no
+file to open, `snapshot_unavailable` when the bytes are not the expected dataset — report state, path and
+code, and never delete, overwrite or migrate it, and never report it as `not-recorded`), and
+`context-not-admitted` as an **admission failure that is not a knowledge state at all**. The prohibition
+list gains "It does not author the knowledge foundation", and the completion sentence now requires the
+foundation's state — recorded at an identity, or the named state that says it is not.
+
+**This card describes a generated copy**, propagated from
+`skills/l-01-agent-lifecycles/operations/bootstrap.md` by `scripts/sync-skills.py` into this package-owned
+copy and the eight harness starter packages.
+
 ## Update History
+- 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: step 6 and the four knowledge rows.** The new step, the renumbered 7/8, the "reached by this operation's step 6 rather than by a re-entry" selection note, the four failure-table rows that keep `not-recorded` / `recorded` / `unusable` / a refused admission distinct, the prohibition on authoring the foundation, and the completion sentence that now carries its state. **Citation accounting:** the rows this card carries were re-read against this candidate and re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Bootstrap` repointed to skills/l-01-agent-lifecycles/roles/bootstrap.md:6-231. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 

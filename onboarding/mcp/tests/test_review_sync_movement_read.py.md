@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -176,7 +176,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:376-376; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
 | The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-232 |
 | The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:306-306; mcp/tests/evidence-lifecycle.toml:805-805; mcp/tests/evidence-lifecycle.toml:1311-1311; mcp/tests/evidence-lifecycle.toml:1440-1440; mcp/tests/evidence-lifecycle.toml:1489-1489 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:306-307; mcp/tests/evidence-lifecycle.toml:805-805; mcp/tests/evidence-lifecycle.toml:1311-1311; mcp/tests/evidence-lifecycle.toml:1440-1440; mcp/tests/evidence-lifecycle.toml:1489-1489 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-112; mcp/tests/test_review_sync_rebinding.py:853-867 |
 

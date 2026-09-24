@@ -5,11 +5,92 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash |  `0d7910f9d646161c414ed6543453536a3c749d49`|
-| lastVerifiedCommitDate |  2026-09-24T08:10:24+02:00|
+| lastUpdated | 2026-09-24T12:36:00+02:00 |
+| lastVerifiedCommitHash |  `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0`|
+| lastVerifiedCommitDate |  2026-09-24T14:09:40+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L27 The Knowledge Foundation Gets A Procedure, And First-Time Creation Gets A Real Entry
+
+`260921-ICR-L27` (`ICR-R27@v1`, curator-led knowledge bootstrap workflow) gives the repository a
+dedicated, operable process for creating a project's **initial knowledge foundation**, and it makes that
+process reachable from ordinary new-project setup and from an explicit bootstrap of an existing project.
+A repository's memory has two halves that are created in different ways: **onboarding** is Markdown a
+seat writes, and the **knowledge foundation** is authored records in the knowledge database —
+invariants and facets, the families and guarantees that hold obligations together, the exact source
+realizations, and the external sources they rest on. Nothing scaffolded the second half, and before this
+leaf the only shipped instruction that authored any knowledge was the leaf route, which requires an
+enclosure contract. A repository whose first knowledge is being written has no leaf and no contract, so
+first-time creation had no operational process at all.
+
+**One new canonical instruction home, and the existing owners around it.** The delivery adds
+`skills/c-14-knowledge-bootstrap/SKILL.md` — a **procedure**, not a role and not a second orchestration
+system. The semantic owner is the existing curator, the writer is the existing admitted knowledge batch
+writer, and the publication lands at the one location the ordinary read route already selects. The
+procedure states the order those owners are used in and the states a run must distinguish; it adds no
+agent, no parallel onboarding track, no second database and no new destination.
+
+**The carriers that reach it are the existing ones, and each gained one bounded step.**
+`c-13-install-and-onboard` delegates the foundation to `c-14` and stops reporting a repository ready
+without its outcome; `c-03-repo-bootstrap` names the foundation in its handoff as a separate step and
+states that onboarding is one optional input to it; and the `l-01-agent-lifecycles` carriers state who
+runs it — `roles/curator.md` and `operations/curation.md` own the authoring, `roles/bootstrap.md` and
+`operations/bootstrap.md` own the first-hour seat that reads the foundation's state and hands it on.
+
+**The seat gate is the part most easily stated falsely, and this leaf had to correct it.** The shipped
+opener admits a role with **no** task document only for the taskless seats
+(`bootstrap`, `chat`, a plain `terminal` pane); a session opened for the **curator** with no task
+document is refused, in the product's own words, `400 {"status": "task-binding-required", "detail":
+"named role scope is required"}`. **A taskless curator seat does not exist**, so a repository that must
+build its foundation before any task exists is reached by the taskless **bootstrap** seat plus the
+published procedure, and the taskless writer runs from a session with **no enclosure in scope** — it
+refuses one (`enclosure_in_scope`) so a bootstrap can never publish onto a task's memory line. An
+independent round-one verdict found the first revision of the delivery asserting the opposite in the
+procedure and in four sibling carriers and called it **`blocking`**; the corrected text states the real
+route, quotes the refusal verbatim, and reports the residual gap as a limit rather than as compliance.
+The code constant behind the gate (`TASKLESS_SEAT_ROLES`) is unchanged by this leaf: the instruction was
+corrected to the product, not the product to the instruction.
+
+> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session is refused `task-binding-required`. Whether `curator` joins that set is a **product** decision under revision — it is a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, and not as a permanent property of the product. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them; do not read this card as already describing a later revision.
+
+**Four knowledge states are four different facts.** `not-recorded` (no publication is recorded — the
+first-foundation entry), `recorded` (a dataset bound to this repository stands there; read it before
+extending and never reinitialize it), `unusable` (something stands there that is not a dataset this
+route can answer from, or it belongs to another repository's authority home, with the shipped refusal
+codes `selected_input_unavailable` and `snapshot_unavailable`), and `context-not-admitted`, which is the
+**admission** refusing and is not a knowledge state at all. A location with no file-system entry is
+`not-recorded`; a directory where the dataset belongs is `unusable`; a null or missing count is never
+rendered as a measured zero, and a missing optional source is absent rather than failed.
+
+**Two writers, and the enclosure is what separates them.** The taskless entry is
+`agents-remember knowledge-bootstrap --repo <repo_id> --list <hand-off list> --authorization-ref <ref>
+--commit`, which derives its own admission from the declared repository entry, the resolved memory line
+and the real revisions — no development leaf, worktree or synthetic enclosure, and no boolean granting
+admission. The leaf route remains `agents-remember knowledge-ingest --contract <this leaf's enclosure
+contract> … --publish --commit --json`. **Planning is the default and planning is the dry run**: without
+the developer's commit word nothing is written, and `--authorization-ref` is both the admission and the
+actor the authorship envelope names, so one reference keeps "who authorized this" and "who authored it"
+one recorded fact. Exit zero is never a publication claim: the report's per-entry outcomes, the
+independent publication read-back (`confirmed` / `mismatch` / `unavailable`), the destination contents
+and the remaining/unmeasured/carried work are what state a result, and an empty destination or a
+committed-nothing batch is not a populated foundation.
+
+**Propagation is generated, and the installed harness roots are a separate, still-open fact.** The root
+`skills/` tree is canonical; `scripts/sync-skills.py` copies it into the package-owned
+`mcp/src/agents_remember/package_data/runtime/skills/` copy and into the eight self-hosted harness
+starter packages. This leaf ran the generator and its `--check`; **no harness skill root was installed**,
+and the installed roots on this host remain stale — measured, `~/.agents/skills` holds `c-04` at 179
+lines against a 241-line source and has **no `c-14` at all**. A claim that a fresh session on this host
+can load the new procedure today would be false, and the leaf makes no such claim.
+
+**One test module carries the delivery's readings.** `mcp/tests/test_knowledge_bootstrap_procedure.py`
+(453 L, seven cases) keeps four readings apart — the served catalog publishes the procedure and the
+served bytes are the canonical tree's; every invocation the procedure prints parses through the shipped
+command line; the seats it names are admitted or refused **by observed status** at the dashboard's own
+open route; and the instructions that are delivered name it. On the leaf's base the module is **5 failed
+/ 2 passed** and on the candidate **7 passed**, with the two base-passing cases disclosed as the seat
+gate that constrained the correction.
 
 ## 260921-ICR-L28 The Curator's Family Plane And External-Source Plane Reach The Store
 
@@ -1297,6 +1378,7 @@ report a target whose canonical source is absent as "in sync", because an empty 
 evidence of a synced tree.
 
 ## Update History
+- 2026-09-24T12:36:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`; gate `verify-l27-round2.md` = `pass-with-findings`, round one = `blocking`): **route body updated for the curator-led knowledge-bootstrap procedure and the real first-time entry.** The section records the two halves of memory (onboarding vs the authored knowledge foundation), the new canonical home `skills/c-14-knowledge-bootstrap/SKILL.md` and the four existing carriers that reach it, the seat gate in the product's own vocabulary (a document-less **curator** session is refused `400 task-binding-required`, so a taskless curator seat does not exist and the pre-task step belongs to the taskless bootstrap seat plus the taskless writer with no enclosure in scope), the four knowledge states with a refused admission kept out of them, the two writers and the planning-by-default dry run, and the generated/installed distinction with the install gap measured rather than assumed. It states plainly that a round-one adversarial verdict was **`blocking`** on the earlier claim that a document-less curator session is admitted, that the constant behind the gate is unchanged, and that the instruction was corrected to the product. **Citation accounting:** the route's own overviews and the cards citing this leaf's two evidence-lane TOMLs were re-read and their drifted ranges re-anchored to the lines that now carry each construct; no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator's family plane and
   external-source plane reaching the store.** The repository gained five purpose-named application owners

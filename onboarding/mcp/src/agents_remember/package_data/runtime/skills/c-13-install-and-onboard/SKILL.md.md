@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -137,7 +137,7 @@ Harness-native setup details now live in the install guides and starter packages
 | Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | `## Stage 0 - Preflight` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:67-103 |
 | Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
 | Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. | `## Stage 2 - Agentic Settings: Interview The Developer` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-189 |
-| Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. | "## Stage 3 - Repository Certification Profile (explicit operation only)"; "## Stage 4 - Memory Repo: Ask Scaffold Vs Existing"; "## Stage 5 - Bootstrap"; "## Stage 6 - Configure Providers To Index" | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:206-243; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:244-262; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:263-272; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:273-297; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:299-299 |
+| Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. | "## Stage 3 - Repository Certification Profile (explicit operation only)"; "## Stage 4 - Memory Repo: Ask Scaffold Vs Existing"; "## Stage 5 - Bootstrap"; "## Stage 6 - Configure Providers To Index" | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:206-243; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:244-262; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:263-272; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:273-297; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:299-299; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:333-333 |
 | The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | "def provider_watchers_tool("; "if action == \"refresh\":"; "if action not in {\"status\", \"start\", \"stop\", \"restart\", \"invalidate-indexes\", \"shutdown-all\"}:"; "if action in {\"start\", \"restart\", \"invalidate-indexes\"}:" | mcp/src/agents_remember/application/provider_tools.py:50-73 |
 | The install-side seeding the interview builds on (copy-if-missing global file). | `seed_agentic_settings` | mcp/src/agents_remember/install/runtime.py:239-255 |
 
@@ -149,7 +149,35 @@ No sibling repository evidence is needed for this skill.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260921-ICR-L27 Setup Also Reaches The Knowledge Foundation, And It Stops Reporting Ready Without It
+
+`260921-ICR-L27` (`ICR-R27@v1`) makes the **knowledge foundation** a named part of this skill's setup
+sequence rather than something a first run silently omits. Stage 5 becomes *Bootstrap, The Knowledge
+Foundation, Then The First Baseline* with three parts, and only its onboarding and baseline halves are
+conditional on a newly scaffolded memory repo: the knowledge half applies to **both** memory-repo
+answers, because an existing memory repo is exactly the case that can have Markdown onboarding and no
+knowledge database.
+
+The skill now reads the state first — `memory_init` returns a `knowledge` block naming where the
+repository's foundation lives and what a read of that location finds now, and
+`agents-remember knowledge-bootstrap --repo <repo_id> --status` reports the same location read-only — and
+runs the foundation step when the location is `not-recorded`. An `unusable` location is reported with its
+code and path and repaired before anything is written to it, because the writer refuses that destination
+by name rather than overwriting it. The report gains the foundation as its own numbered line, and the
+closing verdict must state the foundation's state rather than declaring a repository ready without it.
+
+**The seat is named correctly, and that is deliberate.** This skill never names a role the opener will not
+admit: a session opened for the curator with no task document is refused (`task-binding-required`), so the
+authoring is handed on as `c-14-knowledge-bootstrap` states — the taskless bootstrap seat before a task
+exists, or a curator opened on a task document. The skill delegates the foundation to `c-14` and its own
+stages never author knowledge records, never invent records to make setup look finished, and never create
+a development leaf, worktree or enclosure to give the writer an argument list it does not need.
+
+**This card describes a generated copy**, propagated from `skills/c-13-install-and-onboard/SKILL.md` by
+`scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
+
 ## Update History
+- 2026-09-24T12:40:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the knowledge foundation joins setup.** Stage 5 gained its knowledge half (applying to both memory-repo answers), the state read through `memory_init`'s `knowledge` block and `knowledge-bootstrap --status`, the report's own foundation line, the closing sentence that must state the foundation's state, the anti-pattern that delegates rather than reimplements, and the correct naming of the carrying seat (`task-binding-required` for a document-less curator session). **Citation accounting:** the rows this card carries were re-read against this candidate and the drifted ranges re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `seed_agentic_settings` repointed to mcp/src/agents_remember/install/runtime.py:239-255. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the repository-certification paragraph to separate the profile (an explicitly requested operation) from curation (always complete), and re-pointed the `## Stage 6` citation to the line the source now carries it on.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

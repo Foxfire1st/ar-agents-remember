@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_external_git_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T19:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ cannot drift apart silently.
 | **The module-level case that pins the closeout, closeout-apply and integration results carrying the statement.** | `test_the_closeout_and_integration_results_carry_the_boundary_statement` | mcp/tests/test_review_external_git_movement_read.py:741-800 |
 | **The module-level case that pins the absence a leaf which published nothing reports.** | `test_a_result_whose_leaf_published_nothing_states_the_absence` | mcp/tests/test_review_external_git_movement_read.py:801-820 |
 | **The lane registration that makes these cases part of the governed `integration` population.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/test-evidence-lanes.toml:300-307 |
-| **A lifecycle consumer row that names this module, so the artifact census still counts it.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/evidence-lifecycle.toml:757-760 |
+| **A lifecycle consumer row that names this module, so the artifact census still counts it.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/evidence-lifecycle.toml:757-762; mcp/tests/evidence-lifecycle.toml:1311-1311; mcp/tests/evidence-lifecycle.toml:1434-1434 |
 | The re-pinned catalog digest that owns the lifecycle manifest's exact bytes. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-48 |
 | **The documented section the matrix case asserts against, generated from the production table.** | "Raw Git Identity Boundary" | docs/reference/worktrees-c09.md:113-148 |
 | The sibling module that owns the managed-sync half of the same read, whose fixture this module shares. | `LiveReviewMovementTests` | mcp/tests/test_review_sync_movement_read.py:40-60 |

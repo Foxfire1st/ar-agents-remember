@@ -5,9 +5,32 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `4c000b11c5243e4a8e77c08e87984fff00c1d94b` |
-| lastVerifiedCommitDate | 2026-09-23T20:33:15+02:00|
+| lastUpdated | 2026-09-24T12:34:00+02:00 |
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+
+## 260921-ICR-L27 The Skill Catalogue Gains The Knowledge-Bootstrap Procedure
+
+`260921-ICR-L27` (`ICR-R27@v1`) edits `docs/reference/skills.md` — this route's skill catalogue — in two
+places, and both are statements about what the shipped skill tree contains rather than new product
+behaviour.
+
+**A row is added for the new procedure.** `c-14-knowledge-bootstrap` joins the catalogue with its own
+one-line description: build or resume a repository's knowledge foundation through the existing curator —
+read the current knowledge state, inventory bounded sources, author invariants and families through the
+curator's own writer, publish through the taskless bootstrap, read the result back, and report coverage
+and unresolved work.
+
+**The `c-13-install-and-onboard` row gains the knowledge half of setup.** Its description now lists the
+knowledge foundation among the stages a first run reaches, between onboarding bootstrap and provider
+indexing, so the catalogue no longer implies that a wired package plus an onboarding scaffold is the
+whole of setup. That is the same change the skill itself makes: `c-13` delegates the foundation to
+`c-14` and reports its state rather than reporting a repository ready without it.
+
+**Route boundary.** This is a documentation route: the catalogue describes skills whose canonical home is
+root `skills/**`, and nothing here defines skill behaviour. `docs/**` sits outside the memory layer's
+onboarding `pathRules.include`, so this overview is the route-level record of the change rather than a
+per-file card.
 
 ## Purpose
 
@@ -276,6 +299,7 @@ The following current source owns the changed behavior; no external domain sourc
 | The normalized public input has only two commit legs. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:127-165; mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Update History
+- 2026-09-24T12:34:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the catalogue's two edits.** `docs/reference/skills.md` gains a `c-14-knowledge-bootstrap` row and extends the `c-13-install-and-onboard` row so the knowledge foundation appears among the stages a first run reaches. The section states that both edits describe the shipped skill tree rather than define behaviour, and that the skills' canonical home is root `skills/**`. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 

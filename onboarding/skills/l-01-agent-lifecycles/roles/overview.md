@@ -5,9 +5,39 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastUpdated | 2026-09-24T12:32:00+02:00 |
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+
+## 260921-ICR-L27 The Curator And Bootstrap Roles Get The Repository-Foundation Entry
+
+`260921-ICR-L27` (`ICR-R27@v1`) gives this route's two role files the **repository-foundation entry** —
+the shape a curator's work takes when the scope is a repository's first or resumed knowledge foundation
+rather than one leaf's delta — and the seat gate that shape depends on.
+
+**`roles/curator.md` — the same work, a second carrier.** The role file gains a paragraph stating that
+the foundation entry is a bounded second shape with its own carrier, and a process block that runs the
+`c-14-knowledge-bootstrap` procedure in its order. The ownership is unchanged on both entries: the
+reconciliation and the authored knowledge belong to this seat, and there is still one admitted writer
+and one declared published location. What changes is the carrier, the admission and the scope.
+
+**`roles/bootstrap.md` — the seat that reads and reports, and authors nothing.** The role's step 5 makes
+it the carrier that exists for the foundation before a task does: it reads the state at the declared
+knowledge location, reports it, and hands the authoring to a curator — on a task document, or through the
+taskless writer an instructed session holds. Its output template gains a `Knowledge foundation:` line,
+and its prohibition list gains "Never author knowledge records either."
+
+**The rule both files now state, and that a round-one verdict was `blocking` over.** A session opened
+for the curator with no task document is refused (`400 task-binding-required`, "named role scope is
+required"), because the opener admits only the taskless seats without one. Before a task exists the step
+is therefore carried by the taskless bootstrap seat, not by a curator-labelled session — and the
+writing session for a taskless run must have no enclosure in scope, because the taskless writer refuses
+one (`enclosure_in_scope`). Both files state that refusal in the code's own vocabulary rather than
+asserting an admission the product does not make.
+
+**A repository whose knowledge is not recorded is not reported as ready.** The onboarding and the
+baseline can both be complete while the knowledge foundation is absent; the role file states those as
+separate facts rather than one verdict.
 
 ## 260921-ICR-L28 The Curator Role Authors Family Coverage And Reads Both Planes Back
 
@@ -60,7 +90,7 @@ subcommand, which is why the role file's prohibition names it rather than the op
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:53-66 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:150-152 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:150-152; skills/l-01-agent-lifecycles/roles/curator.md:185-185; skills/l-01-agent-lifecycles/roles/curator.md:170-170 |
 | The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:99-120 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
@@ -222,7 +252,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:70-98 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:70-101; skills/l-01-agent-lifecycles/roles/curator.md:108-108; skills/l-01-agent-lifecycles/roles/curator.md:143-143; skills/l-01-agent-lifecycles/roles/curator.md:169-169 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -351,6 +381,7 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-24T12:32:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the repository-foundation entry in both role files.** `roles/curator.md` gained the entry paragraph and process block; `roles/bootstrap.md` gained step 5 (reach the foundation, report the state, hand the authoring on) with its output line and its prohibition on authoring knowledge records. The section states the seat gate both files now carry in the product's own vocabulary — a session opened for the curator with no task document is refused `400 task-binding-required`, so the pre-task step belongs to the taskless bootstrap seat — because the round-one adversarial verdict was `blocking` on the earlier claim that such a session was admitted. **Citation accounting:** the rows this document already carried into `roles/curator.md` were re-read against this candidate and their drifted ranges re-anchored to the lines that now carry each construct; no claim and no row was dropped. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator role's new numbered
   step.** The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block,

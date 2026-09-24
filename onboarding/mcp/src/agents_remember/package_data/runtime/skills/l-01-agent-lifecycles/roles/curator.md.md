@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49`|
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0`|
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -102,11 +102,11 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | "You run one leaf's coherence pass and you write onboarding."; "Reconcile three ways before writing anything" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:8-9; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:47-47 |
+| The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | "You run one leaf's coherence pass and you write onboarding."; "Reconcile three ways before writing anything" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:8-9; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:47-47; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:60-60 |
 | The role is a self-contained capsule: its brief is its session start, and it declares no inherited shared sources. | "Your brief is your session start" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:9-9 |
-| **The authoring obligation the packaged copy now carries, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Never write the knowledge dataset yourself." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:53-66; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:150-152 |
-| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file, and the authoring step landed in that home too. | `# Operation — Curation`; `## Handoff / exit`; "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:170-180; skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:60-60 |
-| The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-11; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:45-45; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:112-112 |
+| **The authoring obligation the packaged copy now carries, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Never write the knowledge dataset yourself." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:53-69; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:150-152; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:185-185 |
+| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file, and the authoring step landed in that home too. | `# Operation — Curation`; `## Handoff / exit`; "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:170-180; skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:60-60; skills/l-01-agent-lifecycles/operations/curation.md:212-212 |
+| The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-11; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:45-45; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:112-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:139-139; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:58-58 |
 | The canonical source is the doctrine owner. | `# Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-12 |
 | A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:114-116 |
 | MCP package data is an explicit synchronization target. | `TARGETS` | scripts/sync-skills.py:43-47 |
@@ -136,7 +136,37 @@ structured authority. Generated Markdown is returned as projection evidence only
 
 Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
 
+## 260921-ICR-L27 The Repository-Foundation Entry Becomes A Second, Bounded Shape Of This Work
+
+`260921-ICR-L27` (`ICR-R27@v1`) adds the **repository-foundation entry** to this role file: the shape
+this seat's work takes when the scope is a repository's first or resumed knowledge foundation — a new
+project entering ordinary setup, an existing project with Markdown memory and no knowledge database, or
+an explicitly requested bootstrap of an existing project — rather than one leaf's delta. The inputs there
+are the declared repository id, the resolved coordination context, the requested scope, the available
+sources and the current knowledge state: **no brief, no change set and no enclosure contract to intake.**
+
+The ownership is unchanged on both entries — the reconciliation and the authored knowledge are this
+seat's, and there is still one admitted writer and one declared published location. What changes is the
+carrier, the admission and the scope, and the role file states the gate in the code's own vocabulary: a
+session opened for the curator with no task document is refused (`400 task-binding-required`, "named role
+scope is required"), which is why on a repository with no task at all the step is carried by the taskless
+bootstrap seat and by the taskless writer an instructed session holds. The procedure is the
+`c-14-knowledge-bootstrap` skill.
+> **Seat-policy note at these bytes.** This records the policy of the candidate this curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus this leaf's working-tree delta, where a document-less `curator` session is refused `task-binding-required` because `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap"}`. Whether `curator` joins that set is a **product** decision under revision — a named must-close item held for a later repair leaf — so read the sentence above as the policy **at these bytes**, dated 2026-09-24, not as a permanent property. When the seat policy changes, the instruction carriers and their generated copies change first and this memory follows them.
+
+Two further edits keep the role's own record and permissions truthful: the output section gains the
+foundation entry's own facts (the state read before authoring, the areas examined and not examined, each
+entry's outcome, the publication result, the identity an independent read confirmed, and the remaining,
+unmeasured and carried work), and the permitted-action list now names both write-plane entry points —
+`knowledge-ingest` on the leaf entry and `knowledge-bootstrap` on the foundation entry, the latter
+belonging to a session with no enclosure in scope because it refuses one (`enclosure_in_scope`).
+
+**This card describes a generated copy**, propagated from
+`skills/l-01-agent-lifecycles/roles/curator.md` by `scripts/sync-skills.py` into this package-owned copy
+and the eight harness starter packages.
+
 ## Update History
+- 2026-09-24T12:42:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the repository-foundation entry.** The entry paragraph and its refusal, the process block that runs `c-14-knowledge-bootstrap` in its order with the writer chosen by scope, the output section's foundation facts, and the permitted-action line naming both write-plane entry points with the enclosure the taskless one refuses. **Citation accounting:** this card's rows into `## Handoff / exit`, `## Process` and `## Outputs` were re-read against the candidate's own bytes and re-anchored to the lines that now carry each construct, rather than shifted by a remembered delta. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **the packaged role copy carries the canonical role's new numbered step** — examine family coverage and author it, then read the two planes back — with the two hand-off keys the curator now owns and the report sentences the role's record has to carry. Written in `skills/l-01-agent-lifecycles/roles/curator.md` and propagated here by `scripts/sync-skills.py`; nothing in this copy is edited by hand.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

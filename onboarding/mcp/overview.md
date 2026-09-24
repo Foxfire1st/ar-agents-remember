@@ -5,14 +5,45 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastUpdated | 2026-09-24T12:28:00+02:00 |
+| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
+| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L27 The Package Publishes A New Procedure, And Its Generated Copies Carry It
+
+`260921-ICR-L27` (`ICR-R27@v1`) delivers `c-14-knowledge-bootstrap` — the procedure that authors a
+repository's first or resumed **knowledge foundation** — and it reaches this package through the
+**generated** route rather than by a hand edit here. The canonical instruction home is root
+`skills/c-14-knowledge-bootstrap/SKILL.md`; `scripts/sync-skills.py` copies the root `skills/` tree into
+the package-owned copy at `mcp/src/agents_remember/package_data/runtime/skills/` **and** into the eight
+harness starter packages (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/`, `.hermes/`,
+`.openclaw/workspace/`, `.pi/`, `.agents/`) — nine generated targets, and a change is made in the root
+and propagated by running the generator.
+
+**What this package's route owns in the delivery.** The served catalog is the delivery route: a session
+does not read `skills/` directly, it lists what the MCP server publishes and reads one entry back. The
+new procedure must therefore appear in that catalog, and the bytes a reader receives must be the
+canonical tree's — a stale or hand-edited copy would be indistinguishable, from inside a session, from
+shipping the wrong instruction. The leaf pins that by comparing what the catalog serves with `skills/`
+rather than trusting it, and by running every invocation the procedure prints through the shipped
+parser.
+
+**The package-side consequence of the admission gate is unchanged code, not new code.** The procedure's
+entries are the product's real ones because the opener admits a role with no task document only for the
+taskless seats; the constant behind that gate (`TASKLESS_SEAT_ROLES` in
+`mcp/src/agents_remember/serving/task_binding.py`) is **not** modified by this leaf, so the procedure is
+corrected to the product rather than the product to the procedure.
+
+**Where the route's own files changed**, the change is in test evidence registration rather than in
+production code: `mcp/tests/test_knowledge_bootstrap_procedure.py` is new (453 L, seven cases), and the
+two evidence-lane TOMLs gain their consumer rows. Those row additions shift the line numbers of the
+tables they are inserted into, which is why cards citing those TOMLs by line were re-anchored in the
+same pass.
 
 ## 260921-ICR-L28 The Package Gains The Curator's Two Planes, And One Report Carries Both
 
@@ -218,7 +249,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:110-117 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:263-312; mcp/tests/test_knowledge_ingest_publication_route.py:533-557; mcp/tests/test_knowledge_ingest_publication_route.py:644-699 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:92-92; mcp/tests/evidence-lifecycle.toml:737-737; mcp/tests/evidence-lifecycle.toml:1278-1278 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:92-93; mcp/tests/evidence-lifecycle.toml:737-737; mcp/tests/evidence-lifecycle.toml:1278-1278 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -2261,6 +2292,7 @@ refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 | The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2537-2658; mcp/tests/test_knowledge_curator_ingest_list.py:3002-3119 |
 
 ## Update History
+- 2026-09-24T12:28:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the new knowledge-bootstrap procedure and for what this package's route owns in its delivery.** The package-owned copy `mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md` is **generated** from root `skills/c-14-knowledge-bootstrap/SKILL.md` by `scripts/sync-skills.py` (nine generated targets: this copy plus the eight harness starter packages), so the section states that the canonical home is the root tree and that the copies are never edited in place. It also records the route's real ownership: the served catalog is the delivery route, the served bytes are compared with `skills/` rather than trusted, and the admission gate's own constant (`TASKLESS_SEAT_ROLES`) is **not** modified by this leaf — the procedure was corrected to the product. **Citation accounting:** the route's own cards and the cards citing the two evidence-lane TOMLs were re-anchored in this pass, because this leaf's three consumer-row additions shift the line numbers of those tables; no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
   `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator's two authored
   planes.** The package gained five application owners, one twenty-case test module, the ingest/report
