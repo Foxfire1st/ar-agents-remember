@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.history.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ the "Intent review (recorded)" label is chosen.
 | **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** | `targetKeyOf`; `ReviewHeader`; `history?: ReviewHistory`; "review-history"; `data-review-history={history ?? "live"}` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:809-814; dashboard/src/panels/review/ReviewSurface.tsx:73-82; dashboard/src/panels/review/ReviewSurface.tsx:858-903; dashboard/src/panels/review/ReviewSurface.tsx:869-869 |
 | **The three panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced.** | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:712-765 |
 | **The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.** | `intentReview`; `history?: ReviewHistory`; `params.history = history`; `export type ReviewHistory = "recorded"` | dashboard/src/data/review.ts:533-591; dashboard/src/data/review.ts:470-470; dashboard/src/data/review.ts:487-487; dashboard/src/data/review.ts:495-495 |
-| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated.** | `LeafEntries`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:398-398; dashboard/src/panels/detail-panel/changeSetBar.tsx:361-361; dashboard/src/panels/detail-panel/changeSetBar.tsx:463-466; dashboard/src/panels/detail-panel/changeSetBar.tsx:540-540; dashboard/src/panels/detail-panel/changeSetBar.tsx:265-265 |
+| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated.** | `LeafEntries`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:540-540; dashboard/src/panels/detail-panel/changeSetBar.tsx:500-576; dashboard/src/panels/detail-panel/changeSetBar.tsx:568-568 |
 | **The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-595 |
 | **The target field the record travels in, beside the subject the entry already carried.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** | `RECORDED_HISTORY`; `_admitted_history`; `ReviewQuestionRef`; `ReviewSelectorRef` | mcp/src/agents_remember/serving/review.py:419-419; mcp/src/agents_remember/serving/review.py:79-79; mcp/src/agents_remember/serving/review.py:211-227; mcp/src/agents_remember/serving/review.py:246-246 |

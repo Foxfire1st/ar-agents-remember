@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## 260921-ICR-L32 The Change-Set Control Renders The Refusal It Receives
@@ -20,7 +20,41 @@ change set it names when clicked — the case that pins it drives the click and 
 not merely the absence of counters. The transport half of the same change is recorded on the
 `dashboard/src/data` route.
 
+## 260921-ICR-L33 A Landed Master's Leaves, And What A Closed Row Still Says
+
+Three of this route's panels changed, and they change one story: **a master whose work has all landed is
+readable, bounded, and attributable.**
+
+**`lifecycle-list/LifecycleList.tsx`** admits a landed leaf — a non-master task document whose status is
+`Completed` — as a row under its OPEN master, instead of only ever admitting a leaf whose worktree
+physically exists. The supporting rules moved into a new sibling module,
+`lifecycle-list/landedLeaves.ts`: `leafRecordsLandedWork`, `childFactsByParent`/`rowChildFacts`,
+`enclosureForDoc` (the one join, moved so admission and the row builders cannot disagree),
+`markAutoCollapsed`, `rowIsCollapsed` and `landedLeafDocs`. The bounds are two, and both are measured:
+a row whose only children are its own landed leaves is closed by default and prints `N landed`
+(`Tasks · 57 → 167` on the live projection, with 110 landed rows carried at first paint and 19 masters
+held closed); and a row that carries OTHER rows is never closed by that rule, because one orchestration
+row owns a 161-row subtree. The list's header count still counts task ENTRIES rather than projected
+documents, and now says so in its own tooltip.
+
+**`panels/useCollapsedTaskGroups.ts`** gained the second half of the reader's collapse state —
+`operations.tasks.opened.v1`, the keys opened past a row's default, beside the unchanged
+`operations.tasks.collapsed.v1` — and its public signature changed from `toggleCollapsed(key)` to
+`setCollapsed(key, collapsed)`, because only the caller knows the row's default.
+
+**`panels/changeset/ChangeSetViewer.tsx`** is governed by the `changeset/` child route, so its own record
+lives there; what belongs here is the panel-level fact: both of the dashboard's master-net readers pass
+`includeLeaves: true`, superseding the `includeLeaves: false` optimisation commit `a1521685` introduced.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The landed-leaf admission, its default-collapse bound, and the materialization decision that keeps the list finite. | `markAutoCollapsed`; `landedLeafDocs`; `leafRecordsLandedWork` | dashboard/src/panels/lifecycle-list/landedLeaves.ts:125-137; dashboard/src/panels/lifecycle-list/landedLeaves.ts:164-177; dashboard/src/panels/lifecycle-list/landedLeaves.ts:31-33 |
+| The list's own statement of what its header counts. | "task entries this list carries" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:687-698 |
+| The disclosure hook now carrying both halves of the reader's state. | `useCollapsedTaskGroups`; `openedKeys` | dashboard/src/panels/useCollapsedTaskGroups.ts:24-30; dashboard/src/panels/useCollapsedTaskGroups.ts:10-10 |
+| The bar's request for the net's per-leaf attribution. | `includeLeaves` | dashboard/src/panels/detail-panel/changeSetBar.tsx:85-85 |
+
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — the landed-leaf admission, the collapse rule that bounds it, and the per-leaf attribution on both master readers.** The new section names the new `landedLeaves.ts` module and the rules it owns, the two bounds (auto-collapse by child facts; never close a row that carries rows), the live-projection numbers, the collapse hook's second storage key and changed signature, and the superseded `includeLeaves: false` optimisation with the option's retention recorded. **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set control renders its refusal.** The new section records that `detail-panel/changeSetBar.tsx`'s `ChangeSetButton` renders the refusal's own code and reason beside a state marker while still opening what it names, with the case that drives the click and asserts the rendered reason. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Hot Path Summary
@@ -209,19 +243,19 @@ inside agents-remember.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" |dashboard/src/cockpit/Cockpit.tsx:798-798; dashboard/src/cockpit/Cockpit.tsx:804-804|
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" |dashboard/src/cockpit/Cockpit.tsx:804-804; dashboard/src/cockpit/Cockpit.tsx:805-805; dashboard/src/cockpit/Cockpit.tsx:807-807|
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" |dashboard/src/cockpit/Cockpit.tsx:803-803; dashboard/src/cockpit/Cockpit.tsx:809-809|
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" |dashboard/src/cockpit/Cockpit.tsx:809-809; dashboard/src/cockpit/Cockpit.tsx:810-810; dashboard/src/cockpit/Cockpit.tsx:812-812|
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
 | The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
-| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" |dashboard/src/cockpit/Cockpit.tsx:881-881|
+| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" |dashboard/src/cockpit/Cockpit.tsx:886-886|
 | The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 | The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:710-780; dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/HighlightComposer.tsx:238-238 |
 | Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/panels/RailChat.tsx:255-289; dashboard/src/panels/RailChat.tsx:469-537 |
-| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-294; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-224; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:307-307; dashboard/src/grammar/ModeBar.tsx:65-65; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:350-350; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:329-329 |
+| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:235-235 |
 | `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:103-103; dashboard/src/panels/detail-panel/taskReader.tsx:638-638 |
-| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
+| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:375-375 |
 | The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
 | The hand-kept snapshot payload provides the generated timestamp. | "\"generatedAt\": \"2026-06-14T09:01:00+00:00\"" | dashboard/src/fixtures/snapshot.json:1790-1790; dashboard/src/fixtures/snapshot.json:55-55 |
@@ -380,8 +414,8 @@ judgment and publishes no assessment.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
-| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
-| **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
+| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651|
 | The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:699-705; dashboard/src/data/review.ts:670-675 |
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
@@ -395,8 +429,8 @@ by this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:90-90 |
-| **The generation state the button carries from a successful master read.** | `MasterNetPins` |dashboard/src/panels/detail-panel/changeSetBar.tsx:10-10|
+| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
+| **The generation state the button carries from a successful master read.** | `MasterNetPins` |dashboard/src/panels/detail-panel/changeSetBar.tsx:11-11|
 
 ## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
 
@@ -2956,9 +2990,9 @@ states that its byte-form row cannot be opened — so the measurements below nam
 | **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:444-452; dashboard/src/panels/review/ReviewSurface.tsx:819-910 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
 | **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:302-352; dashboard/src/panels/review/ReviewSurface.tsx:275-300|
-| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
-| The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:197-233; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:235-257 |
+| The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-11 |
 
 ## 260921-ICR-L16 The Review Surface Gets Its Outcome Owner, And The Entry Shows Its Own Answer
 
@@ -3003,7 +3037,7 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:85-106; dashboard/src/panels/review/ReviewOutcome.tsx:188-204; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
 | **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:860-860 |
-| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:289-289; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:114-114; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
+| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:391-429; dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
 | **R03's pane rendering transported failures through the shared block while its own typed-refusal path stays untouched.** | `ReviewProblemBlock`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:135-147; dashboard/src/panels/review/SourceContent.tsx:188-241 |
 
 ## Update History

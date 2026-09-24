@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `86639933d61528387ce106dbd4d7a334bd468671`|
-| lastVerifiedCommitDate |  2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash |  `2e11db883f77bb1bf2827ae537b5d1d564e020b3`|
+| lastVerifiedCommitDate |  2026-09-24T22:33:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -372,7 +372,7 @@ range that row cites.
 | The reused diff renderer itself, imported by the statement area from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/review/KnowledgeStatements.tsx:29-29 |
 | The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:717-735 |
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-591; dashboard/src/panels/changeset/ChangeSetViewer.tsx:38-44 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:460-460; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-235; dashboard/src/panels/detail-panel/changeSetBar.tsx:122-187; dashboard/src/panels/detail-panel/changeSetBar.tsx:427-427; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:455-455; dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
 
 ## Cross-Repo References
 

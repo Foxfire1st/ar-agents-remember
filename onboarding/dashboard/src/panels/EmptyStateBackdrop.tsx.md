@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EmptyStateBackdrop.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`                                        |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`                                        |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ empty states that mount it.
 | The honest-motion gate that decides whether the backdrop mounts at all. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
 | `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
 | File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. | `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
-| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:480-546|
+| Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. | `ChangeSetViewer` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:645-725|
 | The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. | "export function EmptyStateBackdrop" | dashboard/src/panels/EmptyStateBackdrop.tsx:52-52 |
 | The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. | "always renders the message children" | dashboard/src/panels/EmptyStateBackdrop.test.tsx:32-37 |
 

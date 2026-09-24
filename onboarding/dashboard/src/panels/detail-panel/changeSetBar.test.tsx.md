@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`                  |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`                  |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -38,6 +38,16 @@ assert the button/bar behavior against the rendered document.
 
 **One case was added for the complete catalogue (`260921-ICR-L9`, `ICR-R09@v1`).** `offers every catalogue row for review, not just the first` stubs the entries route with a three-row catalogue — a `both` row, a retired `before_only` row and an `after_only` row, with `total_subjects: 3` — and asserts the picker renders all three with the server's totals, that the retired row is marked `retired · before-only` rather than dropped or merged into the live population, and that selecting the **second and third** rows puts **their** identities on the Intent review target. That is the packet's non-conforming example ("the API returns multiple entries but only the first is reachable") falsified at the picker: the old hook's `entries?.[0]` selection made rows 2..n unreachable, and this case fails against it. The subject stub in `carries the server's recorded subject when the pair offers one` gained the additive `presence`/totals fields only; its assertions are unchanged.
 
+### 260921-ICR-L33 The Net's Leaf Attribution
+
+One case was added, in the master block: **`carries the master net's leaf attribution beside its total
+(R33.2)`** (`:162-235`). It drives the real `DocChangeSetBar` in `kind="master"` against a stubbed
+route and asserts the rendered `changeset-leaf-attribution` phrase (`2 leaf/leaves · 1 committed ·
+1 working`) beside the net total, that the request carries `includeLeaves=true`, and that a non-master
+read renders no attribution at all — an absent answer is not rendered as a zero. Against the leaf's
+base production bytes the case fails (the base asked with `includeLeaves=false` and rendered no
+attribution), which is what makes it evidence for the change rather than a restatement of it.
+
 ### Conventions
 
 One behavior boundary per suite, per the test-split rule.
@@ -64,7 +74,8 @@ configured for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case. | `describe`; "opens the series view bound to the generation the net published" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-417; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-142 |
-| **The packet's conforming example at the picker: every catalogue row is offered with its totals, the retired row is marked, and the second and third rows are selectable onto the review target.** | "offers every catalogue row for review, not just the first" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:308-394 |
+| **The packet's conforming example at the picker: every catalogue row is offered with its totals, the retired row is marked, and the second and third rows are selectable onto the review target.** | "offers every catalogue row for review, not just the first" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:469-539 |
+| The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule. | "carries the master net's leaf attribution beside its total (R33.2)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:162-235 |
 
 ## Cross-Repo References
 
@@ -75,6 +86,7 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one case added for the net's leaf attribution.** The subsection above records `carries the master net's leaf attribution beside its total (R33.2)`, its base-defect standing, and the absent-answer rule; the catalogue row was re-derived into the case this leaf's insertion moved (`308-394` → `469-539`) with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D01 refusal cases.** A new subsection records the three cases this leaf adds in a dedicated describe block, the base-defect witness against the unmodified production bytes, and the two mutations that make the guards load-bearing. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T15:12:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **one new catalogue traversal case (343 → 417 lines; `ICR-R09@v1`).** `offers every catalogue row for review, not just the first` (`:308-377`) stubs a three-row catalogue with totals, asserts every row is rendered with the retired row marked `retired · before-only`, and asserts the second and third rows put their own identities on the Intent review target — falsifying the first-row-only mechanism the packet names. The subject stub in the carried-subject case gained the additive `presence`/totals fields only; its assertions are unchanged. The Logic section records the case and the additive stub rule; the suite row is re-derived (`:14-343` → `:14-417`) and one row was added for the new case. **Stamp accounting:** the verification pair names the leaf's base — the last real commit the reading was taken against — because the new case exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.

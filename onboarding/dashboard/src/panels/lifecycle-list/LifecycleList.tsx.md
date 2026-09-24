@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`       |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`       |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -32,9 +32,21 @@ document row. Since 260703-L11 an active enclosure is one whose worktree PHYSICA
 `hasLiveWorktree` rule over the projection's stat'ed `codeWorktreeExists`/`memoryWorktreeExists` flags,
 never a cleanup-state proxy: retired/discarded leaves stay hidden as before (their worktrees were
 reaped), and a reopened contract (`cleanup: reopened`) stays hidden until `worktree_start` recreates its
-worktrees. Retired and discarded leaves stay reachable through typed `taskdoc:` links and master-internal
-navigation instead of lingering in the sidebar. Planning/inactive leaves follow the same non-sidebar
-path. The complementary identity rule (260703-L11): each leaf appears ONCE — one task entry per
+worktrees. **Since 260921-ICR-L33 that existence rule governs the LIVE half of the list only.** A leaf
+whose task document is `Completed` — a LANDED leaf, whose worktree closeout removed and which therefore
+can never satisfy `hasLiveWorktree` again — is materialized as a row under its master (marked
+`data-landed="true"`) once that master is open: the reader opened it, or the master is open by default
+because it still holds live worktree work. The supporting rule lives in
+`panels/lifecycle-list/landedLeaves.ts`: `leafRecordsLandedWork` (a non-master doc whose status is
+`Completed`) is the admission test, `childFactsByParent`/`rowChildFacts` count what a row carries, and
+`landedLeafDocs` is the pure materialization decision. Landed rows are bounded by the same section's
+default-collapse rule — a master whose only children are its own landed leaves is held closed and says
+`N landed` in its meta — so the list still does not become one row per task document (534 projected
+documents against 167 entries by default at this leaf, 441 with every closed master opened). Retired,
+discarded, abandoned and still-planning leaves keep the old path: the worktree that landed them is gone
+for the first three, and none of them records landed work. Retired and discarded leaves stay reachable
+through typed `taskdoc:` links and master-internal navigation instead of lingering in the sidebar.
+Planning/inactive leaves follow the same non-sidebar path. The complementary identity rule (260703-L11): each leaf appears ONCE — one task entry per
 `enclosureId` — with a bound lifecycle annotating the doc row rather than duplicating it as a card.
 
 In the `BY REPO` pivot, admitted leaf documents are grouped below their parent/root task and rendered as
@@ -47,7 +59,11 @@ tier ghost wash, chevron `RankBadge`, gold top hairline for orchestration); unco
 every row of a run with no orchestration task (the D3 ruling) — render exactly as before: no tier, no
 badge, no extra indent. `BY PHASE` remains a flat lifecycle/status view. The panel uses React Aria `ListBox` rows with
 typed selection keys (`taskdoc:<docPath>`, `series:<seriesId>`, `lifecycle:<id>`) and keeps the
-user-facing copy as "Tasks" (`Tasks · {n}`, empty state `No tasks.`). Task 11's compact gate badge is
+user-facing copy as "Tasks" (`Tasks · {n}`, empty state `No tasks.`). **`n` counts task ENTRIES, not
+projected documents** — every master, series and lifecycle entry, every leaf with live work, and the
+landed leaves of the parents that are OPEN — and since 260921-ICR-L33 the `h2` carries that meaning in
+its own native `title`, worded for the fresh render (a parent that still holds live work is open by
+default, so its landed leaves are already counted before any click). Task 11's compact gate badge is
 shown when the attached lifecycle has a durable `gate.kind` (`gateHint` returns the kind or `""`). **L17
 removed the wait-loop-era fallback** to a proto `ask` (the question string, else the literal "ask"): under
 notify-and-continue the attention queue carries the notification and only durable gates surface here. Long visible task labels stay
@@ -75,6 +91,19 @@ document/series row represents. It first derives an active enclosure list with t
 `hasLiveWorktree` selector (`codeWorktreeExists || memoryWorktreeExists` — 260703-L11); document
 admission and runtime-only lifecycle fallbacks use that filtered list, while projected task documents
 remain available to Detail/master navigation.
+
+**260921-ICR-L33 added a fourth pass and a default, and their ORDER is the mechanism.** Once every
+non-landed row exists, `markAutoCollapsed(rows)` decides which rows the projection itself holds closed,
+and only then does `appendLandedLeafRows` materialize the landed leaves of the parents that are open.
+The rule is two exclusions, not one: a row is auto-collapsed only when `landedCount > 0` **and**
+`childCount === landedCount` (every child it carries is one of its own landed leaves) **and** it carries
+no OTHER rows (`structuralChildren.get(row.key) ?? 0 === 0`). The third clause is load-bearing — on the
+live projection an orchestration row that commands other masters owns a 161-row subtree, and closing it
+would hide those masters' work behind a disclosure — and it is pinned by a delivered case rather than by
+argument. `rowIsCollapsed` resolves the reader's view of that: an explicit collapse wins, otherwise the
+row's own `autoCollapsed` default decides, and the reader's explicit open (`openedKeys`) overrides it.
+`TaskGroupSection` therefore resolves `collapsedHere` once per group so the depth-stack walk and the
+row's disclosure agree about which rows are open.
 
 One row per `enclosureId` (260703-L11): a `representedEnclosureIds` set records every enclosure a doc
 row resolved through, and the runtime-only lifecycle loop skips a lifecycle whose
@@ -131,14 +160,26 @@ sits one 22px step past the master, and a flat run's rows keep byte-identical st
 feeding React Aria `selectedKeys`, so raw lifecycle ids from older surfaces still highlight the right
 typed row when a matching row exists.
 
+`visibleHierarchyRows` is fed the resolved `collapsedHere` set rather than the raw persisted keys,
+which is what lets an auto-collapsed row hide its landed leaves without the reader's own collapse state
+being rewritten, and a master is given a disclosure (`hasDescendants`) when its inherited structural
+descendants exist **or** it carries children of its own (`item.childCount > 0`) — so a fully landed
+master still has a caret to open.
+
 After hierarchy flattening, `descendantBearingKeys` identifies parent rows with visible descendants.
 In `BY REPO`, `visibleHierarchyRows` walks the depth-first rows with a collapsed-depth stack, hiding
 descendants of collapsed sprint/orchestration or master rows while preserving nested keys' independent
 state. `TaskGroupDisclosure` is a native button with an accurate label and `aria-expanded`; its event
 handlers stop pointer, keyboard, and click propagation so disclosure is not ListBox selection. The
 heading still uses the full `rows.length`, and switching to `BY PHASE` uses the unfiltered flat rows.
-`useCollapsedTaskGroups` defaults to expanded and persists stable typed selection keys in
-`operations.tasks.collapsed.v1`; selectedId and task detail remain controlled by the parent.
+`useCollapsedTaskGroups` owns BOTH halves of the reader's collapse state and persists stable typed
+selection keys in two arrays: `operations.tasks.collapsed.v1` keeps its published meaning (a key in it
+is a row the READER collapsed) and `operations.tasks.opened.v1` is new at 260921-ICR-L33 — the keys the
+reader OPENED past a row's own default, which is what a default-collapsed master needs. The hook returns
+`{ collapsedKeys, openedKeys, setCollapsed }`: `setCollapsed(key, collapsed)` takes the RESOLVED next
+state from the caller, which is the only layer that knows the row's default (a function of the
+projection), and a key never lives in both sets. selectedId and task detail remain controlled by the
+parent.
 
 The row's state mark is `OperationRow.variant`, and BOTH row builders (`docRow`, `seriesRow`) compute
 it as `lifecycle?.state ?? statusVariant(doc.status)`. The two sides of that `??` are different
@@ -194,12 +235,18 @@ derive a task-document row from parent `taskName`, display numbers, filename pre
 `series-contract.md` content. The observer may project many completed/planning/inactive documents for
 reading and master navigation, but the sidebar list stays finite through root/enclosure admission.
 Archived/deleted docs disappear because the observer stops projecting them; status alone is not a
-sidebar disappearance rule. Worktree existence is THE Operations sidebar disappearance rule for leaf
-enclosures (260703-L11): losing the physical worktree removes left-rail eligibility without deleting or
+sidebar disappearance rule. Worktree existence is THE rule for a LIVE leaf enclosure's left-rail
+eligibility (260703-L11): losing the physical worktree removes left-rail eligibility without deleting or
 hiding the task document from master navigation, and no cleanup-state proxy may substitute for the
-stat'ed flags. `BY REPO` hierarchy is presentation over admitted rows only; it must not make
-inactive/planning/worktree-less leaf documents sidebar-eligible. Completed/abandoned/reopened enclosures
-all drop out through the same existence rule, one leaf renders at most one task entry (per
+stat'ed flags. **Since 260921-ICR-L33 one class survives the worktree deliberately and is the only
+exception: a `Completed` leaf documents LANDS work, so its row is admitted under its open master — and
+the admission is status-plus-parent, never "you found it somewhere":** `landedLeafDocs` requires a
+non-master doc, `leafRecordsLandedWork` (status `Completed`), a series index that resolves a parent which
+already HAS a row, and that parent being open. A landed leaf no series index resolves is deliberately
+NOT floated, which the delivered case `keeps a landed leaf that no series index resolves out of the list`
+pins. Abandoned and reopened enclosures still drop out through the existence rule, a PLANNING leaf is
+never a landed row, and every master, series and lifecycle entry keeps its row regardless — so one leaf
+still renders at most one task entry (per
 `enclosureId`), and a doc-less runtime row is nested only on the
 `taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
 row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
@@ -214,7 +261,9 @@ carries `orchestrates` — no doc may be styled as a command row from titles, fo
 lifecycle shape, and a run without an orchestration task must render exactly as pre-L14 (pinned by
 the flat-run regression test). Insignia render only through the shared `grammar/RankBadge`; the
 chips/gate/progress vocabulary and the L11 worktree-truth + one-row-per-enclosure rules are
-untouched by tiering.
+untouched by tiering. The L33 landed-leaf default is not a tier: it applies by CHILD FACTS
+(`childCount === landedCount`, no structural children) and never by tier, status, or row kind, so a
+command row is only ever auto-collapsed when it commands nothing.
 
 Title truncation is presentational only: row selection and React Aria `textValue` still use the resolved
 task label and stable typed row key. The no-horizontal-scroll contract belongs to the Operations list
@@ -238,16 +287,16 @@ role of its own for the same reason.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | `operationRows`; `isRootTaskDoc`; `enclosureForDoc` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:409-466; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1087-1089; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1091-1108 |
-| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:865-910; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:915-926; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1091-1108 |
+| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | `operationRows`; `isRootTaskDoc`; `enclosureForDoc` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:409-466; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1244-1246; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61 |
+| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1072-1083; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1016-1067 |
 | Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | "hides a reopened leaf (cleanup=reopened"; "re-admits a reopened leaf once its worktrees physically exist again"; "hides an abandoned enclosure from the active operations rows"; "nests a doc-less orphan lifecycle under its master instead of floating top-level"; "renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row" | dashboard/src/panels/lifecycle-list/admission.test.tsx:308-308; dashboard/src/panels/lifecycle-list/admission.test.tsx:249-249; dashboard/src/panels/lifecycle-list/admission.test.tsx:463-463; dashboard/src/panels/lifecycle-list/admission.test.tsx:502-502; dashboard/src/panels/lifecycle-list/admission.test.tsx:369-369 |
-| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | `groupRows`; `hierarchyRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:930-945; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:951-978 |
-| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-87; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-116; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-180; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-188; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-214 |
-| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034 |
-| `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830 |
+| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | `groupRows`; `hierarchyRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1085-1100; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1106-1133 |
+| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:72-72; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:109-109; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:127-127; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:191-191; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:199-199; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:209-209; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:225-225 |
+| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:191-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1174-1191 |
+| `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:874-928; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:930-985 |
 | "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:34-34 |
 | `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:105-115; dashboard/src/grammar/Dot.tsx:104-114; dashboard/src/grammar/Dot.tsx:119-129 |
-| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:647-689 |
+| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:779-779 |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | dashboard/src/data/taskHierarchy.ts:91-95; dashboard/src/data/taskHierarchy.ts:98-103; dashboard/src/data/taskHierarchy.ts:109-122 |
 | The V4 chevron insignia rendered on tier rows (size `row`). | `RankBadge` | dashboard/src/grammar/RankBadge.tsx:44-79 |
@@ -257,7 +306,9 @@ role of its own for the same reason.
 | Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | `taskDocSelectionKey`; `seriesSelectionKey`; `lifecycleSelectionKey`; `parseTaskSelection`; `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:18-21; dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:288-293 |
 | The shared `Panel` head/sticky band the pivot sits in. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
 | Task-row pickup spinner/check-chat notice. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
-| Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | `TaskGroupDisclosure`; `useCollapsedTaskGroups` | dashboard/src/panels/TaskGroupDisclosure.tsx:21-46; dashboard/src/panels/useCollapsedTaskGroups.ts:5-28 |
+| Native disclosure control and the stable persisted collapse hook used by the hierarchy renderer, now carrying both halves of the reader's state (collapsed + opened). | `TaskGroupDisclosure`; `useCollapsedTaskGroups`; `setCollapsed`; `openedKeys` | dashboard/src/panels/TaskGroupDisclosure.tsx:21-46; dashboard/src/panels/useCollapsedTaskGroups.ts:24-30; dashboard/src/panels/useCollapsedTaskGroups.ts:36-51 |
+| The landed-leaf rules this list admits rows by, in their own module: what records landed work, what a row carries, the one enclosure join, the default-collapse rule and the materialization decision. | `leafRecordsLandedWork`; `childFactsByParent`; `enclosureForDoc`; `markAutoCollapsed`; `rowIsCollapsed`; `landedLeafDocs` | dashboard/src/panels/lifecycle-list/landedLeaves.ts:31-33; dashboard/src/panels/lifecycle-list/landedLeaves.ts:56-77; dashboard/src/panels/lifecycle-list/landedLeaves.ts:83-95; dashboard/src/panels/lifecycle-list/landedLeaves.ts:125-137; dashboard/src/panels/lifecycle-list/landedLeaves.ts:141-147; dashboard/src/panels/lifecycle-list/landedLeaves.ts:164-177 |
+| The landed/master-default cases this leaf added, including the row-carries-rows guard whose discrimination is proved by mutation. | "holds a fully landed master closed by default and reaches its leaf when opened (R33.1/R33.4)"; "never closes a row that carries OTHER rows, even when its own work has all landed (R33.4)"; "counts the task entries it carries, not the projection's documents (R33.4)" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:478-602; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:603-691; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:416-448 |
 
 ## 260821-CLIVE Discarded Progress Boundary
 
@@ -274,6 +325,7 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — a master's landed leaves reach the list, and the count says what it counts.** Three sentences were false at this candidate and were corrected in place. (1) The Purpose paragraph said sidebar rows are limited to root/master docs, active-enclosure leaves, series fallbacks and runtime fallbacks — i.e. that a leaf gets a row only while its worktree exists. It now records the landed-leaf admission and the module that owns it (`panels/lifecycle-list/landedLeaves.ts`: `leafRecordsLandedWork`, `childFactsByParent`/`rowChildFacts`, `enclosureForDoc`, `markAutoCollapsed`, `rowIsCollapsed`, `landedLeafDocs`), the two bounds that keep the list finite (a row whose only children are its own landed leaves is closed by default and says `N landed`; a row that carries OTHER rows is never closed), and the measured shape (534 projected documents → 167 entries by default, 110 landed rows at first paint, 19 masters held closed, 441 at the ceiling). (2) The `Tasks · {n}` sentence described the copy but not the count: `n` counts task ENTRIES, the `h2` now states that in its own tooltip, and the wording is written for the fresh render. (3) The collapse paragraph said the hook "defaults to expanded and persists stable typed selection keys in `operations.tasks.collapsed.v1`": it now owns both halves (`operations.tasks.opened.v1` for the reader's opens) and returns `{ collapsedKeys, openedKeys, setCollapsed }`. The Invariants paragraph was qualified the same way (worktree existence is THE rule for a LIVE leaf; one landed class survives it deliberately, and an admission needs a resolving parent, never a bare status). **Citation accounting:** every row this leaf's line movement displaced was re-derived against the candidate with the gate's own resolver rather than by adding a delta to an old number. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "from agents_remember.models.task_document import DocStatus" repointed to mcp/src/agents_remember/tasks/document.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged `DocStatus`

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`       |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`       |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -18,7 +18,41 @@
 
 One of this route's governed sources changed, and the change is about **what a caller can tell apart**. `panels/detail-panel/changeSetBar.tsx` (governed here because this route owns the change-set reading surface) now renders the refusal's own code and reason beside a state marker, with a read still in flight kept as its own state, while the transport half — `data/changeset.ts` carrying the refusal instead of clearing the counters — is recorded on the `dashboard/src/data` route. `ChangeSetViewer.tsx`, which this route is named for, is **byte-identical** on these bytes: the defect was in the live-leaf "committed" control's read, not in the viewer, and saying so is the point of a route record. The case that pins the rendering drives the click and asserts the rendered reason, so "the control is present" is not mistaken for "the control works" — the rule `D49` was recorded for.
 
+## 260921-ICR-L33 The Series View Shows What The Net Is Made Of
+
+`ICR-R33` reaches this route in three places, and the first is the one a reader would otherwise be
+misled by.
+
+**The series request now asks for the breakdown.** `ChangeSetViewer`'s `changesetListRequest` passes
+`includeLeaves: true` on the master branch (and `detail-panel/changeSetBar.tsx` does the same for its
+counters read), so `MasterChangeset.leaves` arrives carrying one row per leaf with its own `state` and
+its own counters. A payload that predates the breakdown — or a task/leaf payload, which has no `leaves`
+field at all — reads as no breakdown rather than an invented one (`seriesLeaves` keys on the field's
+presence).
+
+**The answer is rendered as attribution.** `LeafBreakdown` draws a `by leaf (N)` rail beneath the two
+changed-file lists (`changeset-leaves`, one `changeset-leaf-row` per leaf, each with a
+`changeset-leaf-counters` span). Each row is a button that hands the leaf id and the mode its own
+`state` implies to `onOpenLeaf`: `committed` for a landed leaf — the historical route that needs no live
+worktree — and `working` for a leaf still in flight, which is the range that exists for it. `Cockpit`
+supplies `onOpenLeaf` from its own `openChangeSet`, so the leaf opens in THIS takeover instead of a
+second screen.
+
+**What could not be shown is named.** `ChangeSetRefusal` renders the route's own refusal — code, HTTP
+status, reason, offending input and next action — under `data-review-state`/`data-review-code`, and
+`ChangeSetMainPane` names a change-set that measured empty in both halves instead of showing the
+pick-a-file backdrop. Both reuse the existing `ReviewFailure` vocabulary; no second decoder and no new
+route were added.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant. | `includeLeaves`; `seriesLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222; dashboard/src/panels/changeset/ChangeSetViewer.tsx:294-299 |
+| The rendered rail and its per-leaf counters, and the click that opens one leaf's own range. | `LeafBreakdown`; `onOpenLeaf` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:397-429; dashboard/src/panels/changeset/ChangeSetViewer.tsx:715-721 |
+| The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. | `ChangeSetRefusal`; `ChangeSetMainPane` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:506-528; dashboard/src/panels/changeset/ChangeSetViewer.tsx:530-551 |
+| The cockpit re-target that keeps the opened leaf inside this route's takeover. | `onOpenLeaf` | dashboard/src/cockpit/Cockpit.tsx:595-595 |
+
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — the series view shows what the net is made of, and names what it cannot show.** The new section records the `includeLeaves: true` request, the `by leaf (N)` rail and its per-leaf counters, the click that opens a landed leaf's committed range (no live worktree needed) or a working leaf's delta, the cockpit re-target, and the two named states. **One false sentence was corrected in place:** the Purpose paragraph said "series requests omit the unused per-leaf summary" — the superseded `includeLeaves: false` optimisation — and now states the new request shape with the retention of the option recorded explicitly. The Route Model's master bullet now says the breakdown is rendered rather than merely carried. **Citation accounting:** the rows this leaf's line movement displaced were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set refusal reaches the control.** The new section records the rendering half of the D01 repair on the control this route governs, states that `ChangeSetViewer.tsx` is byte-identical, and points the transport half at the `dashboard/src/data` route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Purpose
@@ -35,7 +69,13 @@ body, and the screen's back link restores the rails.
 The viewer renders an explicit loading placeholder until its first change-set
 response and preserves request errors. Working leaf refreshes run the list and
 active-file requests together, then schedule the next cycle only after both
-settle; series requests omit the unused per-leaf summary.
+settle; series requests carry the net's OWN per-leaf breakdown (`includeLeaves: true`, 260921-ICR-L33 /
+R33.2) and render it as a `by leaf (N)` rail, so the net total is attributable to the leaves it sums.
+(The pre-260921-ICR-L33 sentence here said the opposite — "series requests omit the unused per-leaf
+summary" — and was false at this candidate: it described the `includeLeaves: false` optimisation commit
+`a1521685` introduced, which R33.2 supersedes. The option itself is retained by `data/changeset.ts` and
+`serving/changeset.py` for any caller that genuinely renders only the net; no dashboard master reader
+is such a caller any more.)
 
 ## Route Model
 
@@ -52,7 +92,10 @@ settle; series requests omit the unused per-leaf summary.
   the **NET** series diff (`git diff <master-base> <selected-result>`, pinned to the listed generation
   when the entry carries one) via the same endpoint's `master` param, so its
   rows are equally inspectable (the per-leaf counter breakdown rides alongside, each row labelled
-  `committed`/`working`). The list response publishes the bound generation (four commits +
+  `committed`/`working`, and since 260921-ICR-L33 it is RENDERED: a `by leaf (N)` rail under the
+  changed-file lists, one row per leaf with both halves' file/insertion/deletion counts, whose click
+  opens that leaf's own range — `committed` for a landed leaf, `working` for one still in flight —
+  through `onOpenLeaf`, the hook the cockpit supplies so the reader stays in this takeover). The list response publishes the bound generation (four commits +
   deterministic digest) with its currentness, rendered as a header caption, and every file
   expansion carries it — so an opened entry stays bound after the branch advances. **L4a** adds the `leaf`
   target (`+ mode`): a leaf's `committed` (landed) or `working` (uncommitted) change-set via the `leaf` +
@@ -103,7 +146,7 @@ until a file is picked; the back link restores the railed Operations view.
 | --- | --- | --- |
 | The L3 read-only change-set API this screen consumes. | `task_changeset` | mcp/src/agents_remember/serving/changeset.py:100-119 |
 | The same-origin client wrapping that API. | `taskChangeset` | dashboard/src/data/changeset.ts:78-79; dashboard/src/data/changeset.ts:33-33; dashboard/src/data/changeset.ts:158-158 |
-| The shell that hosts the takeover + restores the rails. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| The shell that hosts the takeover + restores the rails. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:886-940 |
 | The detail panel button + counters that open this screen. | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-96 |
 | The reused read-only CodeMirror pane + theme + lang map. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
 | The markdown renderer the sidecar column + rendered-markdown toggle reuse. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
@@ -149,9 +192,9 @@ that sets it, which is the boundary the two cards divide.
 | The target variant this route's type gained. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
 | **The reviewer entry's current gate: it appears beside the working/committed actions whenever the leaf is live, carrying the server's recorded subject when there is one and an empty target when there is not.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
-| **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: selected.selector_kind"; "selectorId: selected.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:329-459 |
-| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/data/review.ts:252-260; dashboard/src/panels/detail-panel/changeSetBar.tsx:18-18; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
-| **The one liveness predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
+| **The identity the entry carries instead of a filesystem path — the server's own resolution, not a caller, and absent when the entry is the task context. Since ICR-R16 the recorded subject is read off the read's own `entry` value, so the spelling names that hop.** | "selectorKind: selected.selector_kind"; "selectorId: selected.selector_id" | dashboard/src/panels/detail-panel/changeSetBar.tsx:561-561; dashboard/src/panels/detail-panel/changeSetBar.tsx:562-562 |
+| **The read that supplies the subject, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/data/review.ts:699-705 |
+| **The one liveness predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651|
 
 ## 260921-ICR-L13 The Series View Is Bound To Its Listed Generation
 
@@ -168,8 +211,8 @@ the view (`ChangeSetButton`) carries the published generation into the target fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The generation the open series view is bound to, and the caption that renders it.** | `boundSeriesGeneration`; `SeriesGenerationTag` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:260-267; dashboard/src/panels/changeset/ChangeSetViewer.tsx:272-285|
-| **The entry button threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:86-90 |
+| **The generation the open series view is bound to, and the caption that renders it.** | `boundSeriesGeneration`; `SeriesGenerationTag` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:305-312; dashboard/src/panels/changeset/ChangeSetViewer.tsx:317-330|
+| **The entry button threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
 
 ## Update History
 - 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
@@ -226,8 +269,8 @@ a task with no recorded invariant still has, and it is why the entry is no longe
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-52 |
-| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:483-483; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
-| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:819-910; dashboard/src/panels/review/ReviewSurface.tsx:784-784; dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:551-551 |
+| The entry that produces the empty target for a live leaf the server offers no subject for. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
+| The surface that receives it and asks for the task's own review. | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:819-910; dashboard/src/panels/review/ReviewSurface.tsx:60-74 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

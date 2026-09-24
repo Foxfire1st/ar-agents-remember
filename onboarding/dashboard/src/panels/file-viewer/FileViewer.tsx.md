@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`           |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`           |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -77,8 +77,8 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 | The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. | `SidecarView` | dashboard/src/panels/file-viewer/DualPane.tsx:14-18 |
 | The one tree explorer rendered twice (code + onboarding sides). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
 | The persisted split/single flag (`localStorage`-backed). | `localStorage` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:1-1 |
-| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:108-111; dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141; dashboard/src/data/files.ts:93-93 |
-| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:850-850 |
+| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141; dashboard/src/data/files.ts:93-93; dashboard/src/data/files.ts:113-116 |
+| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:886-940 |
 | The route overview that governs this page. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
 
 ## Current L5I Maintenance

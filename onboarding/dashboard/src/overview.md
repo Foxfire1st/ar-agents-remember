@@ -6,15 +6,52 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
 The live-leaf "committed" change-set read used to swallow its own refusal detail, so a **refused** read and an **unanswered** one rendered identically — the defect `260921-ICR-L16` routed to this route's owners and R12/R24 both landed without taking. `260921-ICR-L32` applies the R16 treatment here: `data/changeset.ts` no longer clears the counters and stops on a rejected counters read, it carries the refusal's own code and reason through to the caller, and `data/files.ts` follows the same shape for the reader. A read still in flight is a **third** state and is reported as one, so loading, refused-with-a-named-code-and-reason, and answered-with-counts are three distinguishable renderings rather than two. The rendering half lives on `panels/detail-panel/changeSetBar.tsx`, whose cases drive the click and assert the rendered reason; the route's own typecheck rail is `tsc -b` and it is clean on these bytes.
 
+## 260921-ICR-L33 A Landed Master's Leaves, And A Superseded Optimisation
+
+Two of this route's governed sources changed together, and the change is about **what a finished master
+looks like once its worktrees are gone**.
+
+**The operations list admits landed leaves.** `LifecycleList.tsx` used to render a leaf only while its
+worktree physically existed, so a master whose leaves had all closed out rendered as a bare row with
+none of its finished work reachable. It now materializes a `Completed` leaf's row under its open master
+(`data-landed="true"`), bounded by a default-collapse rule — a master whose only children are its own
+landed leaves is held closed and says `N landed` — and by an exclusion that keeps a row carrying OTHER
+rows (`structuralChildren.get(row.key) ?? 0 === 0`) from ever being closed, because one such command
+row owns a 161-row subtree on the live projection. The rules live in the new
+`panels/lifecycle-list/landedLeaves.ts`, and the collapse state gained its second half
+(`operations.tasks.opened.v1`) in `panels/useCollapsedTaskGroups.ts` so "the reader opened it" is
+representable beside "the reader collapsed it". The header count keeps one meaning — task ENTRIES, not
+projected documents (534 documents against 167 entries by default at this leaf) — and now states it in
+the `h2`'s own tooltip.
+
+**The series read asks for the breakdown.** `panels/changeset/ChangeSetViewer.tsx` and
+`panels/detail-panel/changeSetBar.tsx` both pass `includeLeaves: true`, so a master's net arrives with
+one row per leaf; the viewer renders it as a `by leaf (N)` rail whose rows open that leaf's own
+committed range — the historical route, which needs no live worktree — and the bar prints the
+attribution beside the total. **This supersedes the `includeLeaves: false` optimisation** commit
+`a1521685` introduced (its own docstring: callers rendering only the net "can skip those extra per-leaf
+git diffs"). The option is retained by `data/changeset.ts` and the serving route; what changed is that
+no dashboard master reader is a net-only caller any more. What could not be shown is now NAMED: a
+refused read renders the route's own code, status, reason, offending input and next action, and a
+change-set that measured empty in both halves says so instead of showing the pick-a-file backdrop.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The landed-leaf rules, the default-collapse rule and the materialization decision. | `markAutoCollapsed`; `landedLeafDocs` | dashboard/src/panels/lifecycle-list/landedLeaves.ts:125-137; dashboard/src/panels/lifecycle-list/landedLeaves.ts:164-177 |
+| The header count's own statement of what it counts. | "task entries this list carries" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:687-698 |
+| The second half of the reader's collapse state. | `openedKeys`; `setCollapsed` | dashboard/src/panels/useCollapsedTaskGroups.ts:24-30; dashboard/src/panels/useCollapsedTaskGroups.ts:36-51 |
+| Both master readers now ask for the per-leaf breakdown. | `includeLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222; dashboard/src/panels/detail-panel/changeSetBar.tsx:85-85 |
+
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — a landed master's leaves reach the operations list, and the per-leaf scale reaches both change-set readers.** The new section records the landed-leaf admission and its two bounds (the default-collapse rule and the row-carries-rows exclusion), the new `landedLeaves.ts` module, the collapse hook's second storage key, the header count's stated meaning, the `includeLeaves: true` request on both master readers with the superseded optimisation named and its retention recorded, and the two named states (refusal, measured-empty). **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the D01 refusal is carried end to end.** The new section records that this route's change-set client no longer discards a rejected read's own code and reason, that loading/refused/answered are three distinguishable states, and that the rendering half and its cases live on the detail-panel route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Hot Path Summary
@@ -632,11 +669,11 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | --- | --- | --- |
 | The target variant that turns the existing takeover into a review. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44; dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-46 |
-| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:572-572 |
+| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:566-566; dashboard/src/cockpit/Cockpit.tsx:577-577 |
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
 | **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
-| **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:420-505|
-| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:19-19; dashboard/src/panels/detail-panel/changeSetBar.tsx:116-116; dashboard/src/panels/detail-panel/changeSetBar.tsx:130-130; dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:309-309 |
+| **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651|
+| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:20-20 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -1420,7 +1457,7 @@ comparison identity, and the rendering of an inventory in all three of its state
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557 |
+| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
 | **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |

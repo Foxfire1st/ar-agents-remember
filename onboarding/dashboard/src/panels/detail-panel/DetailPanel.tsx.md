@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -91,9 +91,15 @@ failure still shows "Full task document details are unavailable; showing the ava
 
 ### Logic
 
-The series change-set entry point requests the master net counters without the
-optional per-leaf breakdown because this reader only opens the net viewer; the
-existing task and leaf entry behavior is unchanged.
+The series change-set entry point requests the master net counters **with** the per-leaf breakdown
+(`includeLeaves: true`, 260921-ICR-L33 / R33.2) and prints that attribution beside the total
+(`2 leaf/leaves · 1 committed · 1 working`), because the net total IS the sum of those leaves and a
+reviewer must be able to attribute it — the bar's `leafAttribution` reads the master read's own
+`leaves` and renders nothing at all when the answer carried none, rather than a zero. **The sentence
+that stood here said the opposite** — "without the optional per-leaf breakdown because this reader only
+opens the net viewer" — and it was false at this candidate: it recorded the `includeLeaves: false`
+optimisation commit `a1521685` introduced, which R33.2 supersedes. The existing task and leaf entry
+behavior is unchanged.
 
 Resolves `selectedId` through `parseTaskSelection` before choosing content. A `taskdoc:<docPath>` key
 selects a concrete `TaskDocNode`, `series:<seriesId>` selects the legacy folder-keyed series surface,
@@ -344,6 +350,7 @@ master leg of the drill-down).
 | The shared empty-state backdrop the no-selection state renders. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one false sentence corrected in place.** The Logic paragraph claimed this reader requests the master net "without the optional per-leaf breakdown because this reader only opens the net viewer". `changeSetBar.tsx` now passes `includeLeaves: true` and renders the attribution beside the total, so the sentence described a superseded optimisation (commit `a1521685`, whose own docstring is the "render only the net" rationale) as if it were current. The corrected paragraph states the new request shape, the rendered attribution, and the absent-answer rule. The 2026-07-12 entry below stays exactly as written: it is the true record of what L2 did at the time. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `displayedLeafDoc` in the row 312 of this card from dashboard/src/panels/detail-panel/model.ts:136-136 to dashboard/src/panels/detail-panel/model.ts:137-150, the extent of the construct the claim is about (the checker named line(s) [137] as its live location)
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 6

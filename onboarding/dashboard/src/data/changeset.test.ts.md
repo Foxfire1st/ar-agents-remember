@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/changeset.test.ts`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`       |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`       |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,12 @@ retention and the 400/404 response mapping.
 
 The URL contract tests cover the optional master `includeLeaves=false` query
 shape alongside the existing task, file-diff, and leaf selectors, ensuring the
-typed client does not silently drop the performance-critical flag.
+typed client does not silently drop the flag when a caller sets it. **260921-ICR-L33 note, because the
+flag's story changed:** the R33.2 readers pass `includeLeaves: true` (and a contract case for that
+spelling lives in the viewer's own suite), so `false` here pins a retained API path rather than the
+path the product takes. The test file is byte-unchanged by that leaf, and this sentence described the
+mechanism correctly before and after; the note exists so a reader does not infer the product's request
+shape from the pinned flag.
 
 - cit:([`stubFetch`, `afterEach`], dashboard/src/data/changeset.test.ts:6-12; dashboard/src/data/changeset.test.ts:14-14) installs a `vi.fn` `fetch`
   returning a minimal `Response`-shaped object and restores globals after each test.
@@ -80,6 +85,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one dated reader note added; no claim changed.** This test file is byte-unchanged by the leaf, and its `includeLeaves=false` case still passes and is still worth pinning. What changed is what that flag MEANS to a reader: both dashboard master-net readers now pass `includeLeaves: true` (R33.2), so the `false` case documents retained API surface rather than the product's request. The Logic paragraph says so. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **one new pins case (58 → 78 lines).** The Logic and table record `carries generation pins on the master URLs and omits unset pins` (`:59-77`); the pre-existing URL/error rows are kept as recorded (this leaf appends after them, so their ranges stand). The serving-counterpart row is re-derived against this candidate (`_leaf_json` `:493` → `:614`, the `needs master` refusal `:502` → `:623`). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp. The 2026-09-21 mechanical projection bullet below that recorded the superseded ranges (`:493`, `:502`) is retired by this reading.
 

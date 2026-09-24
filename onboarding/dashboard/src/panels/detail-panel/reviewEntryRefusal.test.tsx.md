@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -130,8 +130,8 @@ inert, and the four cases. Every anchor in a row occurs inside the range that ro
 | **Known empty said for a pair that records no subject, without calling it a failure.** | "says known empty when the pair offers no subject, without calling it a failure" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155 |
 | **A transport failure stated with its reason and with no invented offending input or next action, and the entry still offered.** | "shows a transport failure with its reason, and raises no refusal body it does not have" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176 |
 | **A successful answer carrying the server's recorded subject into the target and printing no state at all — the stub now mirrors the catalogue wire shape additively (`presence`/totals), with no assertion changed.** | "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
-| **The hook and the state renderer these cases drive: the read carried whole, and the entry never gated on it.** | `useReviewCatalogue`; `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:235-282; dashboard/src/panels/detail-panel/changeSetBar.tsx:102-121; dashboard/src/panels/detail-panel/changeSetBar.tsx:289-327 |
-| The bar's own composition, where the working change-set, the reviewer entry and the entry read's state are gated on one liveness. | `DocChangeSetBar`; `LeafEntries`; `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:537-537; dashboard/src/panels/detail-panel/changeSetBar.tsx:398-474; dashboard/src/panels/detail-panel/changeSetBar.tsx:483-532; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:579-579 |
+| **The hook and the state renderer these cases drive: the read carried whole, and the entry never gated on it.** | `useReviewCatalogue`; `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:391-429 |
+| The bar's own composition, where the working change-set, the reviewer entry and the entry read's state are gated on one liveness. | `DocChangeSetBar`; `LeafEntries`; `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:537-537; dashboard/src/panels/detail-panel/changeSetBar.tsx:483-532; dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634; dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651 |
 | The client the entry read goes through, which reads the refusal out of the body whatever the status. | `intentReviewEntries` |dashboard/src/data/review.ts:597-699|
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/changeset.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`       |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`       |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,10 +26,15 @@ calls these helpers directly.
 
 ### Logic
 
-`masterChangeset` accepts typed options and serializes `includeLeaves=false`
-when a caller needs only the coherent series net range. The default remains
-the full response with per-leaf summaries, preserving callers that inspect
-that breakdown.
+`masterChangeset` accepts typed options and serializes `includeLeaves` only when a caller sets it
+explicitly (`options.includeLeaves !== undefined`), so omitting it leaves the server's own default — the
+full response with per-leaf summaries — in force. **260921-ICR-L33 changed who asks for what, not this
+client:** both of the dashboard's master-net readers (`panels/changeset/ChangeSetViewer.tsx` and
+`panels/detail-panel/changeSetBar.tsx`) now pass `includeLeaves: true`, because R33.2 makes the
+per-leaf breakdown part of what a master's net must show. The `false` path is retained and still
+pinned by this module's own contract test; it is simply no longer the choice either reader makes, so
+the older phrasing here — that the option exists "when a caller needs only the coherent series net
+range" — is now a statement about the API rather than about the product.
 
 ### 260921-ICR-L13 — Generation pins and the published generation
 
@@ -90,12 +95,12 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. | "export interface MasterNetPins"; "export interface MasterNetGeneration"; "export interface MasterChangeset {" | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:59-59; dashboard/src/data/changeset.ts:67-67; dashboard/src/data/changeset.ts:60-60; dashboard/src/data/changeset.ts:54-54 |
-| Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | "interface TaskChangeset" | dashboard/src/data/changeset.ts:26-26 |
-| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | "export const taskChangeset" | dashboard/src/data/changeset.ts:78-78 |
-| Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | "export const qs" | dashboard/src/data/files.ts:99-99 |
+| Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation). | "interface TaskChangeset" | dashboard/src/data/changeset.ts:34-34 |
+| Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. | "export const taskChangeset" | dashboard/src/data/changeset.ts:158-158 |
+| Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. | "export const qs" | dashboard/src/data/files.ts:104-104 |
 | The serving layer that defines the endpoints + response shapes this client mirrors. | "def register_changeset_routes" | mcp/src/agents_remember/serving/changeset.py:638-638 |
-| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | "export function ChangeSetViewer" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:476-480 |
-| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | "masterChangeset(target.repo" | dashboard/src/panels/detail-panel/changeSetBar.tsx:52-56 |
+| `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. | "export function ChangeSetViewer" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:645-645 |
+| `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. | "masterChangeset(target.repo" | dashboard/src/panels/detail-panel/changeSetBar.tsx:85-85 |
 | The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. | "builds the task / file-diff / master URLs" | dashboard/src/data/changeset.test.ts:17-32 |
 
 ## Cross-Repo References
@@ -108,6 +113,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **the option's description was corrected where it had become a claim about the product.** This client is byte-unchanged by the leaf; the Logic paragraph now states the actual serialization rule (`includeLeaves` is written only when set), that both dashboard master readers pass `true` (R33.2), and that the `false` path survives as supported API surface pinned by the contract test rather than as what the viewer does. **Citation accounting:** the two cross-file rows this leaf's line movement displaced (`ChangeSetViewer` and the bar's `masterChangeset(`) were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the change-set client carries its refusal (D01).** The rejected counters read no longer clears the state and stops: it carries the refusal's own code and reason to the caller, and a read still in flight is kept as its own state, so loading, refused and answered are three distinguishable renderings. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master client is generation-bound (120 → 155 lines).** The section above records `MasterNetPins`/`MasterNetGeneration`, the `generation`+`currentness`+`scope` mirror, the `state`-labelled leaf rows, and pins threaded through `masterChangeset`/`masterFileDiff` with unset pins omitted. **Citation accounting:** every row into this file was re-derived against the moved candidate (the insertion moved `taskChangeset` `:56` → `:78` and `MasterChangeset` `:45` → `:59`), and the three cross-file rows were re-derived against this candidate too (`register_changeset_routes` `:517` → `:638`, `ChangeSetViewer` `:424` → `:476`, the bar's `masterChangeset(` `:39` → `:52`). The reopened claim is retained with its range regenerated onto the declaration the anchor holds. The four mechanical projection bullets below that recorded the superseded ranges (`:517`, `:424`, `:421`, `:39`) are retired by this reading — they pointed at lines that no longer hold their anchors, and this entry is the curator-read evidence that replaces them. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.

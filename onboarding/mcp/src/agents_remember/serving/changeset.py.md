@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`     |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`     |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -69,7 +69,12 @@ slugifies both the request and persisted contract id, preserving master/repo
 qualification for authored mixed-case ids. `master_changeset` keeps the
 coherent series net range and makes the per-leaf `leaves` breakdown opt-in;
 `includeLeaves=false` avoids the extra git work for callers rendering only the
-net files.
+net files. **260921-ICR-L33 note: this endpoint is unchanged, and the sentence above still describes
+it — but no dashboard reader is a net-only caller any more.** Both master-net readers
+(`panels/changeset/ChangeSetViewer.tsx`, `panels/detail-panel/changeSetBar.tsx`) now pass
+`includeLeaves: true`, because R33.2 makes the per-leaf attribution part of what a master's net must
+show; the escape this sentence documents is retained API surface for any caller that genuinely renders
+only the net.
 
 `register_changeset_routes(app, config)` registers three GET routes and
 **must** be called before the greedy static `/` mount (it is, between
@@ -290,6 +295,7 @@ master-route paragraph where they conflict (deleted privates, source-branch fall
 verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one dated reader note added; no claim about this module changed.** This serving module is byte-unchanged by the leaf, and the `includeLeaves` escape it documents — including the extra-git-work rationale — is still exactly what the endpoint does. What changed is the CLIENT side: both dashboard master-net readers now ask for the breakdown (R33.2), so the Logic paragraph records that no dashboard caller takes the net-only path any more while the path itself is retained. **Citation accounting:** the rows this card carries into other files that this leaf moved were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master net is now generation-bound, and selection moved to the new sibling.** The section above records it; the earlier `### Logic` master paragraphs said `_load_master_contract`/`_series_tip`/`_net_changed` lived here with a source-branch fallback, which this leaf deleted and replaced (`master_task_root`/`load_master_contract`/`integrated_tip` with no fallback, plus `_net_diff`), so those paragraphs, the L4 master-route "no refusal shape" paragraph, the card's Purpose-adjacent net description and its master invariant were corrected in the same pass rather than superseded silently. `master_changeset` publishes `generation`+`currentness`+`scope`, `master_file_diff` takes a bundled `MasterFileRef` with pins, both master routes share `_master_json`, breakdown rows carry `state`, and the F1 post-validation diff failure refuses (`unresolvable`) instead of publishing `[]`. **Citation accounting:** every in-file self-citation plus the route extents were re-derived against this candidate (import block + selector dataclasses + docstrings moved everything below `:49`; deleted-privates rows now cite the new module). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.

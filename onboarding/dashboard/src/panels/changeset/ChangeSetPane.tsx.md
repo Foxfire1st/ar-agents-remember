@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetPane.tsx` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-06-29T16:40+02:00                             |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`         |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`         |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -72,8 +72,8 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 | Otherwise it mounts the DiffPane with mode/collapse. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
 | The localStorage-backed flag hook it reuses (per-column keyPrefix). | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
 | The plain read-only pane reused for highlight-off / full-file-plain. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The `FileDiff` shape it renders. | `FileDiff` | dashboard/src/data/changeset.ts:34-41 |
-| The screen that mounts it for the file + partner columns. | `ChangeSetViewer` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:480-546|
+| The `FileDiff` shape it renders. | `FileDiff` | dashboard/src/data/changeset.ts:42-49 |
+| The screen that mounts it for the file + partner columns. | `ChangeSetViewer` |dashboard/src/panels/changeset/ChangeSetViewer.tsx:645-725|
 
 ## Update History
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.

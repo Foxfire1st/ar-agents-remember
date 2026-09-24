@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/changeset/ChangeSetViewer.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-09-22T11:00:00+02:00                                      |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`                  |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`                  |
+| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -26,8 +26,21 @@ master-mode row inspection, the DetailPanel button → target, and the Cockpit t
 ### Logic
 
 The viewer tests cover loading-before-data, explicit request errors, the
-master `includeLeaves=false` request, and a fake-timer working refresh that
+master request's per-leaf breakdown, and a fake-timer working refresh that
 proves no next cycle begins while the prior list/file requests remain pending.
+
+**260921-ICR-L33 turned the master assertion around and added four cases.** The master list request now
+carries `includeLeaves: true` (R33.2), so the pre-existing assertion that pinned `includeLeaves=false`
+was corrected rather than deleted — it still pins the request shape, on the side the product now takes.
+The new cases measure what the answer is used FOR: `lists the master net's leaves, each with its own
+code and memory counters (R33.2)` (`:363-387`) reads each row's `changeset-leaf-counters`;
+`opens a landed leaf's committed change-set — and a working leaf's working delta — from the net
+(R33.3)` (`:388-420`) drives both row kinds and asserts the targets the click produced;
+`names the refusal when a landed leaf's committed range cannot be shown (R33.3)` (`:421-453`) stubs the
+route's real 404 body and asserts the token the route's own code maps to (`not-found`), the status line
+and the reason verbatim; and `names a measured-empty change-set instead of leaving the pane to the
+pick-a-file backdrop (R33.3)` (`:454-473`) asserts the named measurement. Nine of the leaf's ten new
+cases across the three suites fail against the base production bytes; the tenth is a boundary guard.
 
 `stubChangeset()` installs a `vi.fn` `fetch` that returns `MASTER_CHANGESET` for `/api/changeset/master`,
 `TASK_CHANGESET` for `/api/changeset/task`, and `{}` otherwise. Cases:
@@ -70,13 +83,14 @@ design).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | URL-aware `fetch` stub for the change-set endpoints. | `fetch` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:24-42 |
-| Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff. | "renders the changed-file rows + counters for a task scope"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
-| DetailPanel button calls `onOpenChangeSet` with the series target. | `onOpenChangeSet` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:319-319 |
-| Cockpit shows no takeover initially and keeps the rails. | "does not show the takeover initially and keeps the Operations rails" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:331-338 |
+| Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff; the master request asks for its per-leaf breakdown and the four R33 cases measure what the answer is used for. | "renders the changed-file rows + counters for a task scope"; "opens a per-file NET diff from a clickable row in master mode"; "lists the master net's leaves, each with its own code and memory counters (R33.2)"; "names a measured-empty change-set instead of leaving the pane to the pick-a-file backdrop (R33.3)" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-280; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:363-387; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:454-473 |
+| DetailPanel button calls `onOpenChangeSet` with the series target. | `onOpenChangeSet` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:479-479 |
+| Cockpit shows no takeover initially and keeps the rails. | "does not show the takeover initially and keeps the Operations rails" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:491-498 |
 | Generation caption shown and pins carried into expansions. | "binds master file expansions to the generation the net listing published" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:280-313 |
-| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:476-541 |
+| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:645-725 |
 
 ## Update History
+- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — one assertion turned around and four cases added (339 → 476 lines).** The false sentence ("the master `includeLeaves=false` request") was corrected in place: the request now carries `includeLeaves: true` and the pre-existing assertion was flipped rather than dropped, so the shape is still pinned on the side the product takes. The four R33 cases are recorded above with their line ranges, and the row into this file was re-derived against the candidate. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **one new generation case (305 → 339 lines).** The Logic and table record `binds master file expansions to the generation the net listing published` (`:280-313`); the two cases below the insertion moved with it and their rows are re-derived (`:282-293` → `:316-327`, `:297-304` → `:331-338`, `onOpenChangeSet` `:285` → `:319`), as is the subject row (`ChangeSetViewer` `:416-478` → `:476-541`). The rows above the insertion stand. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
