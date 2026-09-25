@@ -6,10 +6,49 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-24T12:36:00+02:00 |
-| lastVerifiedCommitHash |  `86639933d61528387ce106dbd4d7a334bd468671`|
-| lastVerifiedCommitDate |  2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash |  `d9e7e6e79ce532d16c689435ae95a63aab430f94`|
+| lastVerifiedCommitDate |  2026-09-25T22:40:41+02:00|
 
 > **Status:** active baseline
+
+## 260921-ICR-L34 The Intent Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
+
+`260921-ICR-L34` (D62) is a delivery leaf rather than a repair: the repository had a complete, measured
+**producer** for a leaf's durable review comparison and **no caller for it outside its own test suite**,
+so no leaf could record a comparison and the Intent Reviewer's knowledge column rendered its empty
+sheet for every leaf of this master.
+
+**The umbrella CLI gains its sixth subcommand, and it is a caller rather than a mechanism.**
+`agents-remember review-record-comparison` (`cli/review_comparison_record.py`) takes a required
+`--config` (the coordination authority the freeze reads) and a required `--contract` (the write guard:
+a generation is published under the task root that enclosure document records, so no argument list can
+aim a record at another leaf's line), composes the review through the surface's own resolution and
+composition, names the leaf's standing generation as the successor's predecessor, and publishes only
+what that composition bound. It authors no knowledge, places no dataset and establishes no before half.
+One **package-level fact** follows for a reader of this repository: the freeze is a command an operator
+runs while the leaf's enclosure is live, not a route, a pane or a closeout path.
+
+**The ordinary continuity route was broken, and it was invisible.** A dataset's namespace was read from
+`candidate-receipt.json` **alone**. A *candidate* half has one — an admission wrote it — but a **before**
+half placed by a run handed a published `--baseline` never does, because a published dataset is not an
+admitted candidate and carries `baseline-generation.json` instead. The read therefore fell back to the
+requested repository name while the bytes were bound to a namespace id, the storage owner refused the
+mismatch, and the freeze answered `candidate_dataset_absent` — so **every leaf on the ordinary
+`knowledge-ingest --baseline` route produced a comparison that could not be frozen**, and no test could
+see it because the fixtures hand-assemble their pairs. The rule is now **the record beside the bytes**:
+the receipt when there is one, otherwise the before half's own generation record, with the requested
+repository used only when **neither** exists. The consequence a reader acts on is that
+`/api/review/intent` and `/api/review/intent/entries` answer for a leaf of this master from the recorded
+comparison instead of refusing, and the mounted reviewer renders families, joint guarantees, member
+statements, linked expressions and evidence.
+
+**Two limits are recorded rather than smoothed.** The producer is **live-leaf-only**: the retention
+owner requires a captured candidate identity and both closed-leaf resolutions deliberately pass `None`,
+so a closed leaf cannot publish. And the new command is **not idempotent as its own docstring claims** —
+`lineage` sits inside the seal, so naming a standing generation changes the derived id and an ordinary
+retry appends a successor with two full retained knowledge snapshots rather than reusing the record.
+Both are carried on the new sidecar; the per-file detail lives there and in
+`mcp/src/agents_remember/application/review_candidate_resolution.py.md`.
 
 ## 260921-ICR-L32 The Pre-R25 Repair: The Seat Policy Moves, And Two Long-Route Defects Close
 
@@ -39,6 +78,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **route body updated — the Intent Reviewer's comparison becomes recordable.** The new section records the sixth CLI subcommand that gives the freeze owner its first shipped caller (`agents-remember review-record-comparison`, the write-guard role of `--contract`, the predecessor naming that makes a successor readable), the second defect it settled (`review_namespace` read `candidate-receipt.json` alone, so the before half of every `knowledge-ingest --baseline` continuity run was opened under the wrong namespace and the comparison could not be frozen — the rule is now the record beside the bytes), and what a reader of these routes can now do (the intent routes answer from a recorded comparison instead of `candidate_dataset_absent`, and the mounted reviewer renders the family plane). Two limits are carried on the new sidecar rather than here: the producer is live-leaf-only, and the new command is not idempotent as its own docstring claims. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the seat policy and the two long-route repairs.** A new section records the developer's 2026-09-24 ruling that admits `curator` to the taskless seat roles with the coupling it carried into six instruction carriers and their ten generated copies, the NUL-safe Git path-enumeration family (`ACCEPTANCE.md` A24), the test-module split that restores the ≥1200 census to **27** under the rail's own file set and **26** under the `mcp/`-only scope with the catalog still **16 contracts / 66 artifacts**, the two-name write-plane correction, and the D57 ordering repair. The L27 paragraph above is restated as the policy **at L27's bytes** with a second dated note for these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Knowledge Foundation Gets A Procedure, And First-Time Creation Gets A Real Entry

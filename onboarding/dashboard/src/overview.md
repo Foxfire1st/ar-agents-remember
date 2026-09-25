@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
-| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
@@ -19,7 +19,17 @@ The live-leaf "committed" change-set read used to swallow its own refusal detail
 Two of this route's governed sources changed together, and the change is about **what a finished master
 looks like once its worktrees are gone**.
 
-**The operations list admits landed leaves.** `LifecycleList.tsx` used to render a leaf only while its
+> **WITHDRAWN by `a9a1a41b`, recorded by the `260921-ICR-L34` curation.** The paragraph below describes
+> the landed-leaf admission and the collapse hook's second half — a change commit **`a9a1a41b`**
+> (*"Revert L33's operations-list change; clear the pre-existing ruff-format red"*) took back out. That
+> revert was a **direct emergency commit with no curator pass behind it**, so this route went on
+> describing a deleted module: `panels/lifecycle-list/landedLeaves.ts` exists in **neither** tree (and
+> its sidecar was deleted by this curation), `LifecycleList.tsx` is 1189 lines again with no landed pass
+> or default-collapse rule, `hierarchy.test.tsx` is 355 lines again, and `useCollapsedTaskGroups.ts` is
+> back to one collapse set with `toggleCollapsed(key)`. The **second** half of this section — the
+> per-leaf breakdown in the change-set readers — is **not** affected by the revert and stands.
+
+**The operations list admits landed leaves.** *(withdrawn — see the banner above)* `LifecycleList.tsx` used to render a leaf only while its
 worktree physically existed, so a master whose leaves had all closed out rendered as a bare row with
 none of its finished work reachable. It now materializes a `Completed` leaf's row under its open master
 (`data-landed="true"`), bounded by a default-collapse rule — a master whose only children are its own
@@ -45,12 +55,11 @@ change-set that measured empty in both halves says so instead of showing the pic
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The landed-leaf rules, the default-collapse rule and the materialization decision. | `markAutoCollapsed`; `landedLeafDocs` | dashboard/src/panels/lifecycle-list/landedLeaves.ts:125-137; dashboard/src/panels/lifecycle-list/landedLeaves.ts:164-177 |
-| The header count's own statement of what it counts. | "task entries this list carries" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:687-698 |
-| The second half of the reader's collapse state. | `openedKeys`; `setCollapsed` | dashboard/src/panels/useCollapsedTaskGroups.ts:24-30; dashboard/src/panels/useCollapsedTaskGroups.ts:36-51 |
-| Both master readers now ask for the per-leaf breakdown. | `includeLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222; dashboard/src/panels/detail-panel/changeSetBar.tsx:85-85 |
+| The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. | "Tasks · {count}" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:574-574 |
+| Both master readers now ask for the per-leaf breakdown. | `includeLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 |
 
 ## Update History
+- 2026-09-25T22:50:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **route body corrected — the L33 operations-list half is withdrawn because commit `a9a1a41b` reverted it.** A withdrawal banner now heads the L33 section and the withdrawn paragraph carries its own marker; two reference rows citing the deleted `landedLeaves.ts` and the removed `openedKeys`/`setCollapsed` were **deleted rather than re-pointed** (a rename is repairable, a deletion is not), and every other row this pass touched had its range re-derived by locating the anchor literally in the candidate. The section's **second** half — the per-leaf breakdown in the change-set readers — is unaffected by the revert and was left standing. The revert was a direct emergency commit with no curator pass behind it, which is why this route described a module that exists in neither tree. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — a landed master's leaves reach the operations list, and the per-leaf scale reaches both change-set readers.** The new section records the landed-leaf admission and its two bounds (the default-collapse rule and the row-carries-rows exclusion), the new `landedLeaves.ts` module, the collapse hook's second storage key, the header count's stated meaning, the `includeLeaves: true` request on both master readers with the superseded optimisation named and its retention recorded, and the two named states (refusal, measured-empty). **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the D01 refusal is carried end to end.** The new section records that this route's change-set client no longer discards a rejected read's own code and reason, that loading/refused/answered are three distinguishable states, and that the rendering half and its cases live on the detail-panel route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
@@ -501,21 +510,21 @@ references informed product framing only; current code truth stays in agents-rem
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:860-910; dashboard/src/cockpit/Cockpit.tsx:850-850 |
-| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-491 |
-| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-932 |
-| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-584 |
+| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:389-390 |
+| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-2 |
+| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-2 |
+| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-2 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
+| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. | "the five rules"; `SCANNED_ROOTS`; "can a test assert against a payload the server could never send?" | dashboard/src/test/wireFixtureGuard.ts:2-3; dashboard/src/test/wireFixtureGuard.ts:53-53; dashboard/src/test/wireFixtureGuard.ts:136-136 |
 | State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:460-464 |
-| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
-| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
+| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-69; dashboard/src/topology/constel.ts:31-39 |
+| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:10-11; dashboard/src/test/fixtures/overrides.ts:31-32 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public lifecycle recovery commits contain only real code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+| Public lifecycle recovery commits contain only real code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-66 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -616,8 +625,8 @@ fields; the task-artifact takeover remains independently discriminated by notes/
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:334-334 |
-| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1223-1223; dashboard/src/fixtures/snapshot.json:55-55 |
+| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:334-363 |
+| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1223-1224 |
 
 
 ## Integrated IAS Recovery Contract
@@ -668,12 +677,12 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The target variant that turns the existing takeover into a review. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
-| The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:40-44; dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-46 |
-| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:566-566; dashboard/src/cockpit/Cockpit.tsx:577-577 |
-| The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:1-55 |
-| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" |dashboard/src/panels/detail-panel/changeSetBar.tsx:2-2|
-| **The one predicate both gated entries share.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651|
-| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:20-20 |
+| The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
+| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:413-413; dashboard/src/cockpit/Cockpit.tsx:577-577 |
+| The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:35-35 |
+| **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
+| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:607-607 |
+| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:20-21 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -1458,11 +1467,11 @@ comparison identity, and the rendering of an inventory in all three of its state
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
-| **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:32-45 |
-| **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-591 |
-| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:244-480; dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:189-189; dashboard/src/data/review.ts:202-202 |
+| **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
+| **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-600 |
+| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:292-302; dashboard/src/data/review.ts:533-549 |
 | **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:234-315; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
-| The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195; dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
+| The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader
 
@@ -1486,9 +1495,9 @@ browser-class A01/A13 journeys are not verified here (**R25** with R24/R17).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-97 |
-| **The review route's own decode: the body is the answer whatever the status.** | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
-| **The one renderer every non-review state goes through.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171; dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
+| **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:95-102; dashboard/src/data/files.ts:76-84 |
+| **The review route's own decode: the body is the answer whatever the status.** | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:161-171; dashboard/src/data/reviewTransport.ts:97-97 |
+| **The one renderer every non-review state goes through.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:217-251; dashboard/src/panels/review/ReviewOutcome.tsx:113-171 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

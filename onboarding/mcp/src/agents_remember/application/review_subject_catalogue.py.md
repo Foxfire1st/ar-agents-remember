@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_subject_catalogue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T14:35:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -52,12 +52,13 @@ and the task-context source review stay accessible.
 ### Logic
 
 **`read_subject_catalogue` is the one entry point, and it reads both sides under one namespace.**
-The namespace is read once from the candidate's own receipt (`review_namespace`, the resolution
-module's), and both the before and the after store are opened under it, so one catalogue read
-cannot offer its subjects under two different namespaces — the recorded one is what the catalogue
-and the review an entry opens both use. Each side is read through
-`_side_identities` and closed before returning (one `open_existing_knowledge_store` per side, each
-in its own `try/finally`), and the two identity tuples are merged by `_union`.
+The namespace is read once through `review_namespace` (the resolution module's), which takes it from
+the record standing beside each dataset — the candidate's admission receipt when there is one,
+otherwise the before half's own `baseline-generation.json` — and both the before and the after store
+are opened under it, so one catalogue read cannot offer its subjects under two different namespaces:
+the recorded one is what the catalogue and the review an entry opens both use. Each side is read
+through `_side_identities` and closed before returning (one `open_existing_knowledge_store` per side,
+each in its own `try/finally`), and the two identity tuples are merged by `_union`.
 
 **`_side_identities` reads each snapshot through the store's own two list operations.** The
 identities offered are the ones the namespace records and not the ones a second reader of the same
@@ -149,7 +150,7 @@ the adapter that delegates to it, and the ten-case module that measures it.
 | --- | --- | --- |
 | **The module's own statement of the contract: both snapshots, no comparison, no silent drops, zero subjects an empty catalogue.** | `read_subject_catalogue` | mcp/src/agents_remember/application/review_subject_catalogue.py:1-22; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69 |
 | The published surface: one name. | `__all__` | mcp/src/agents_remember/application/review_subject_catalogue.py:39-39 |
-| The one entry point: both stores opened under the receipt-derived namespace, each read and closed, then merged. | `read_subject_catalogue`; `review_namespace`; `open_existing_knowledge_store` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/review_candidate_resolution.py:303-332; mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
+| The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged. | `read_subject_catalogue`; `review_namespace`; `open_existing_knowledge_store` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | The per-side read through the store's own two list operations, with each label travelling beside its side. | `_side_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/review_subject_catalogue.py:72-87; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | **The globally kind-grouped union: the outer loop is the subject kind, the after label wins on overlap, and retired rows keep the before snapshot's own wording.** | `_union` | mcp/src/agents_remember/application/review_subject_catalogue.py:90-112 |
 | The candidate's rows of one kind with the presence both snapshots give them, and the baseline's retired rows of one kind in the before snapshot's own order. | `_after_kind_rows`; `_before_only_kind_rows` | mcp/src/agents_remember/application/review_subject_catalogue.py:115-131; mcp/src/agents_remember/application/review_subject_catalogue.py:134-150 |

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_candidate_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -110,20 +110,39 @@ it by returning a typed result. Both callers run this before they compare: `read
 dataset this candidate forks from" are different next actions a reader cannot choose between from the
 words "the datasets are absent".
 
-**`review_namespace` reads the namespace from the candidate's own receipt, and that is the only
-authority for it.** A request names a *repository* (`agents-remember`); a candidate the write plane
-admitted is bound to a *namespace id* derived from it (`uuid5(namespace, "repository:<name>")`). A
-side opened under the requested spelling therefore refuses against the dataset's own binding — the
-fixture measured `the dataset … is bound to 40d350a6-…, not to the requested repository namespace
+**`review_namespace` reads the namespace from the record standing beside the bytes, and that is the
+only authority for it.** A request names a *repository* (`agents-remember`); a dataset the write plane
+placed is bound to a *namespace id* derived from it (`uuid5(namespace, "repository:<name>")`). A side
+opened under the requested spelling therefore refuses against the dataset's own binding — the fixture
+measured `the dataset … is bound to 40d350a6-…, not to the requested repository namespace
 agents-remember` — which in the live product would have failed the review of every real candidate. So
-the candidate's own **receipt** (`CANDIDATE_RECEIPT_NAME`, written and sealed beside the working
-database by the admission that created it) is read, and `repository_id` from that receipt is the
-namespace both sides are opened under. A candidate with **no** receipt beside its database is a dataset
-handed directly rather than admitted (a fixture, or a pair a caller assembled from two named files):
-for that shape the requested repository is the available identity and is read as it always was. A
-receipt that **exists but cannot be read** is a different fact and is refused, because standing in the
-caller's word for the dataset's own record is exactly how a review comes to read a namespace nothing
-admitted.
+the dataset's own **record** is read, and `repository_id` from that record is the namespace both sides
+are opened under.
+
+**Two records answer, because the two halves of a comparison are placed by two different acts.**
+`260921-ICR-L34` corrected this function: it read `candidate-receipt.json` **alone**, which was right
+for a *candidate* half — an admission writes and seals that receipt beside the working database — and
+wrong for a **before** half placed by a run handed a published `--baseline`. A published dataset is
+not an admitted candidate, so no receipt exists beside it; it carries `baseline-generation.json`
+instead, written by `knowledge_baseline_generation`, and that record names the namespace its captured
+bytes belong to. The corrected rule reads `CANDIDATE_RECEIPT_NAME` first, then the before half's own
+`read_baseline_generation` record, and only then falls back to the requested repository. The
+consequence is a **product** one and not a tidiness one: before the correction the before half of
+every continuity run was opened under the requested repository name while its bytes were bound to a
+namespace id, the storage owner refused that mismatch, and the freeze answered
+`candidate_dataset_absent` — so **every leaf on the ordinary `knowledge-ingest --baseline` route
+produced a comparison that could not be frozen**, and no test could see it because the fixtures
+hand-assemble their pairs and so exercise the no-record shape. The first-generation path hid it too:
+the empty before half it creates is built by the candidate-creation owner, which does leave a receipt
+beside it.
+
+A dataset with **neither** record beside it is one handed directly rather than placed by the write
+plane (a fixture, or a pair a caller assembled from two named files): for that shape the requested
+repository is the available identity and is read as it always was, which is what keeps the
+hand-assembled caller-assembled contract intact. A record that **exists but cannot be read** is a
+different fact and is refused — including a record *path* occupied by something that is not a record
+file — because standing in the caller's word for the dataset's own record is exactly how a review
+comes to read a namespace nothing admitted.
 
 **`refusal(...)` is the single builder of a `ReviewRefusal` in this surface.** It is public because
 both modules build refusals: this module builds the resolution's own, and `knowledge_review` imports it
@@ -175,9 +194,10 @@ owner creates under the worktree group's `reports/`, and the real index is never
 - **The two published directory names are this surface's one spelling.** `REVIEW_BASELINE_DIRECTORY`
   and `REVIEW_CANDIDATE_DIRECTORY` are the names the ingest CLI also reads, so "the candidate the leaf
   authored" and "the candidate the review resolved" are one directory rather than two conventions.
-- **The namespace is the dataset's own, read from its receipt.** The requested repository name is used
-  only when no receipt exists, and a receipt that exists but cannot be read is refused rather than
-  guessed past.
+- **The namespace is the dataset's own, read from the record beside the bytes.** Either record answers
+  — the candidate's admission receipt, or the before half's own generation record — and the requested
+  repository name is used only when **neither** exists. A record that exists but cannot be read is
+  refused rather than guessed past.
 - **An absent dataset half is a named state, never an exception.** `missing_dataset_half` runs before
   any comparison and the refusal names which half is missing.
 - **Rank is the reason the module exists.** `serving` may not import `application`, and the adapter was
@@ -212,20 +232,20 @@ recheck is deliberately not part of resolution, because it belongs at publicatio
 | --- | --- | --- |
 | **The module's own statement of what it binds, why the two sides are immutable object identities, why the working tree is never an endpoint, and that every failure is a named state.** | `code_base_commit`; `capture_future_code_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-28 |
 | The published surface: the three path constants plus the nine callables the adapter re-exports — the seven it already had, `candidate_ref`, and the two unreadable-receipt names this leaf added. | `__all__`; `candidate_ref` |mcp/src/agents_remember/application/review_candidate_resolution.py:73-87; mcp/src/agents_remember/application/review_candidate_resolution.py:250-266|
-| The disposable candidate root and the two directory names, inside the leaf's disposable local root so a review reads no candidate out of the live coordination tree. | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` |mcp/src/agents_remember/application/review_candidate_resolution.py:95-95; mcp/src/agents_remember/application/review_candidate_resolution.py:101-101; mcp/src/agents_remember/application/review_candidate_resolution.py:102-102|
+| The disposable candidate root and the two directory names, inside the leaf's disposable local root so a review reads no candidate out of the live coordination tree. | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` |mcp/src/agents_remember/application/review_candidate_resolution.py:98-98; mcp/src/agents_remember/application/review_candidate_resolution.py:104-104; mcp/src/agents_remember/application/review_candidate_resolution.py:105-105|
 | The three capture fields with the words a refusal names them by, in the owner's own observation order, and the one recapture action three refusals share. | `_CAPTURE_INPUTS`; `_RECAPTURE_ACTION` |mcp/src/agents_remember/application/review_candidate_resolution.py:106-110; mcp/src/agents_remember/application/review_candidate_resolution.py:114-117|
 | **The resolution value: the two datasets, the two code roots, the two tree ids, the carried contract and the captured identity the recheck re-derives.** | `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:106-135 |
 | **The whole resolution: selector screening, the contract locator, the recorded-base precondition, the capture, and the pair composed with both sides bound.** | `resolve_review_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:138-202 |
 | **The re-publication recheck: the shipped capture owner re-run, every moved field named, and a resolution with no capture left exactly as assembled.** | `require_current_candidate_identity` |mcp/src/agents_remember/application/review_candidate_resolution.py:269-298|
 | A moved capture rendered as one refusal carrying **both** complete identities, generated by the model that owns them. | `_moved_candidate_refusal` |mcp/src/agents_remember/application/review_candidate_resolution.py:301-324|
 | **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place.** | `missing_dataset_half` |mcp/src/agents_remember/application/review_candidate_resolution.py:327-345|
-| **The receipt-derived namespace: read from the candidate's own sealed receipt, the requested repository used only when no receipt exists, and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `read_candidate_receipt`; `CANDIDATE_RECEIPT_NAME` |mcp/src/agents_remember/application/review_candidate_resolution.py:348-373; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-86; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53|
-| **The one owner for the unreadable-candidate refusal: the code, the detail naming the candidate's own failure, the once-stated repair action, and the preflight form that turns the same question into a value.** | `_REPAIR_CANDIDATE_ACTION`; `unreadable_candidate_refusal`; `candidate_receipt_refusal` |mcp/src/agents_remember/application/review_candidate_resolution.py:379-382; mcp/src/agents_remember/application/review_candidate_resolution.py:385-400; mcp/src/agents_remember/application/review_candidate_resolution.py:403-416|
+| **The record-beside-the-bytes namespace: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, the requested repository used only when neither record exists, and an unreadable record refused rather than guessed past.** | `review_namespace`; `read_candidate_receipt`; `CANDIDATE_RECEIPT_NAME`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-86; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
+| **The one owner for the unreadable-candidate refusal: the code, the detail naming the candidate's own failure, the once-stated repair action, and the preflight form that turns the same question into a value.** | `_REPAIR_CANDIDATE_ACTION`; `unreadable_candidate_refusal`; `candidate_receipt_refusal` |mcp/src/agents_remember/application/review_candidate_resolution.py:393-399; mcp/src/agents_remember/application/review_candidate_resolution.py:402-417; mcp/src/agents_remember/application/review_candidate_resolution.py:420-433|
 | **The one construction of the reviewed candidate's reference, shared by the subject review and the task-context review so the two cannot name different leaves for the same resolution.** | `candidate_ref`; `ReviewCandidateRef` |mcp/src/agents_remember/application/review_candidate_resolution.py:250-266; mcp/src/agents_remember/models/knowledge/review.py:304-315|
-| The single refusal builder this surface uses, public because the adapter builds the entry route's refusal with it too. | `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:374-389 |
-| **The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.** | `_captured_candidate`; `capture_future_code_candidate`; `FutureCodeCandidateIdentity` |mcp/src/agents_remember/application/review_candidate_resolution.py:436-450; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22|
+| The single refusal builder this surface uses, public because the adapter builds the entry route's refusal with it too. | `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:436-450 |
+| **The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.** | `_captured_candidate`; `capture_future_code_candidate`; `FutureCodeCandidateIdentity` |mcp/src/agents_remember/application/review_candidate_resolution.py:453-467; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22|
 | The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree. | `capture_future_code_candidate` (head re-read) | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-51 |
-| The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word. | `_capture_refusal`; `_status_text` |mcp/src/agents_remember/application/review_candidate_resolution.py:453-464; mcp/src/agents_remember/application/review_candidate_resolution.py:467-470|
+| The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word. | `_capture_refusal`; `_status_text` |mcp/src/agents_remember/application/review_candidate_resolution.py:470-481; mcp/src/agents_remember/application/review_candidate_resolution.py:484-487|
 | The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. | `recorded_leaf_contract`; `load_contract`; `slugify` | mcp/src/agents_remember/application/review_candidate_resolution.py:473-500; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
 | **The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.** | `resolve_review_candidate`; `read_knowledge_review`; `candidate_ref` | mcp/src/agents_remember/application/knowledge_review.py:75-88; mcp/src/agents_remember/application/knowledge_review.py:226-253 |
 | The CLI that reads the two directory names through that re-export. | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
@@ -287,7 +307,48 @@ path and it is recorded as one: the capture itself still reads the live worktree
 two bound objects are read in moved. The R01 case that asserted the worktree path was strengthened to
 measure the stronger fact (`git cat-file -t` in the named repository) rather than merely re-pointed.
 
+## 260921-ICR-L34 The Namespace Comes From The Record Beside The Bytes, And A Continuity Run's Before Half Becomes Freezable
+
+`260921-ICR-L34` (D62 — recording a leaf's comparison generation and the families it binds) made the
+review comparison **producible at all**, and this module carries one of the two defects that stood in
+the way. The producer itself is the CLI's `review-record-comparison`
+([`cli/review_comparison_record.py`](../../cli/review_comparison_record.py.md)), which composes the
+review exactly as the surface does and publishes through the freeze owner.
+
+**One rule changed, in one place.** `review_namespace` read `candidate-receipt.json` alone. A
+*candidate* half has one — an admission wrote it — but a **before** half placed by a run handed a
+published `--baseline` never does, because a published dataset is not an admitted candidate: it
+carries `baseline-generation.json` instead, written by
+[`knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md). The read therefore fell
+back to the *requested repository name* while the bytes were bound to a namespace id, and the storage
+owner refused the mismatch. The function now reads **the record beside the bytes** — the receipt when
+there is one, otherwise the before half's own generation record — and falls back to the requested
+repository only when **neither** record exists, which is exactly the caller-assembled fixture shape
+the docstring already carved out.
+
+**The consequence was a product defect, not a tidiness one.** Every continuity run of
+`knowledge-ingest --baseline` — the ordinary leaf route — produced a leaf whose comparison could not
+be frozen, refused `candidate_dataset_absent` with the detail *"the candidate database is not bound to
+repository namespace agents-remember"*. Nothing could see it while nothing called the freeze: the
+seven test modules that pass hand-assembled pairs exercise the *no-record* shape, and the
+first-generation path hides it because the empty before half it creates is built by the
+candidate-creation owner, which does leave a receipt beside it. The one case this leaf added
+(`test_the_placed_baseline_is_opened_under_its_own_recorded_namespace`, in
+`mcp/tests/test_knowledge_ingest_comparison_generation.py`) drives the real placed-baseline journey and
+bites: reverted in a scratch copy, it fails with `+ agents-remember`, the value that produced the
+refusal.
+
+**Nothing changes for the hand-assembled shape.** A directory with *no* record still answers with the
+requested repository, so the modules that assemble a pair from two named files are untouched; and a
+record that exists but cannot be read — including a record *path* occupied by something that is not a
+record file — is still refused rather than read as absent.
+
+**Boundary this leaf did not cross.** `knowledge-ingest` authors the candidate half and places the
+dataset the leaf forks from; this leaf made that half *openable*, and it authors nothing itself. The
+`# noqa: PLC0415 - cycle` local import L12 added is still the module's only suppression.
+
 ## Update History
+- 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **the namespace is read from the record beside the bytes (D62).** `review_namespace` read `candidate-receipt.json` alone; a **before** half placed by a run handed a published `--baseline` has no receipt — a published dataset is not an admitted candidate — and carries `baseline-generation.json` instead, so the read fell back to the requested repository name while the bytes are bound to a namespace id, and the storage owner refused the mismatch. The consequence was a product defect: **every leaf on the ordinary `knowledge-ingest --baseline` route produced a comparison that could not be frozen**, refused `candidate_dataset_absent`, and no test could see it because the fixtures hand-assemble their pairs. The function now reads the receipt when there is one, otherwise the before half's own `read_baseline_generation` record, and falls back to the requested repository only when neither exists. The prose, the invariant bullet and the reference row that stated the receipt-only rule are corrected in place, and the reference row is re-anchored at the function's own extent (`:351-399`) with the second record named beside it. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so no commit carries the corrected body, and the governed closeout owns the real stamp.
 - 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the closed enclosure resolves from its records (ICR-R12@v1).** `resolve_review_candidate` gained
 `recorded=` and the closed-enclosure branch that delegates to `review_committed_leaf`, so
 `candidate_not_live` now answers only the state where nothing is live **and** nothing is recorded;

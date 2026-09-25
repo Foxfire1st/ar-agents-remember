@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-24T12:30:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
@@ -41,7 +41,46 @@ which is the property the first verdict found unpinned.
 five-arm status case, and `test_tool_refusal_conformance.py` gains the guard that reads the mounted refusal's
 own detail when it is asked to name the write plane.
 
+## 260921-ICR-L34 The Comparison-Generation Module Gains A Fourth Case, And It Protects The Recording Half Of Its Journey
+
+This route's own change for `260921-ICR-L34` is one case in one module, and it belongs at this altitude
+because the defect it seals was invisible to every fixture shape this route already had.
+
+**The module.** `mcp/tests/test_knowledge_ingest_comparison_generation.py` (3 → **4** cases, 323 → 370
+lines) owns the successful journey of one comparison's before side — the shared-path fixture, the two
+retries and the deliberate rebase. Its three cases end with the before half correctly *placed*; the
+fourth, `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` (`:329-370`), protects the
+step after placement: **recording** the comparison. Recording retains each half by copying it through
+the storage owner, and that owner refuses a dataset opened under a namespace it is not bound to.
+
+**The defect, and why no existing fixture could see it.** The namespace was read from
+`candidate-receipt.json` **alone**. A *candidate* half has one, because an admission wrote it; a
+**before** half placed from a named `--baseline` never does, because a published dataset is not an
+admitted candidate — it carries `baseline-generation.json` instead. The read therefore fell back to the
+requested repository name while the bytes are bound to a namespace id, and the freeze refused
+`candidate_dataset_absent`. **Every leaf on the ordinary `knowledge-ingest --baseline` continuity route
+produced a comparison that could not be frozen**, and the fixtures that pass hand-assembled pairs
+exercise the *no-record* shape, so the seven modules that already drove this surface were blind to it;
+the first-generation path hid it too, because the empty before half it creates is built by the
+candidate-creation owner, which does leave a receipt beside it. The rule is now **the record beside the
+bytes** — the receipt when there is one, otherwise the before half's own generation record, with the
+requested repository used only when neither exists.
+
+**What the case measures, and that it bites.** It asserts first that the requested repository and the
+dataset's own namespace **differ** (so it cannot pass vacuously), then opens the half under
+`review_namespace` and reads its own snapshot identity back through `open_read_only_store`. Reverted in
+a scratch copy of the module it fails at `:362` with `+ agents-remember` — the exact value that produced
+the recorded refusal. This is the **narrowest possible** case for the rule: it drives the real
+placed-baseline journey through the shipped CLI and adds no second fixture shape.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The case `260921-ICR-L34` adds, and the three owners it names: the namespace read, the record it now consults, and the store it opens under that namespace.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace`; `review_namespace`; `read_baseline_generation`; `open_read_only_store` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
+| The three cases whose journey this one completes, and the shared-path fixture they start from. | `test_a_second_successful_ingest_over_one_path_keeps_the_original_baseline`; `test_an_exact_retry_and_a_refused_changed_retry_keep_the_original_baseline`; `test_a_deliberate_rebase_begins_a_recorded_generation_with_explicit_lineage`; `_opened_comparison` | mcp/tests/test_knowledge_ingest_comparison_generation.py:153-209; mcp/tests/test_knowledge_ingest_comparison_generation.py:212-260; mcp/tests/test_knowledge_ingest_comparison_generation.py:263-326; mcp/tests/test_knowledge_ingest_comparison_generation.py:118-150 |
+| The rule the case seals, and the second record that answers it. | `review_namespace`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
+
 ## Update History
+- 2026-09-25T22:30:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **route body updated — the comparison-generation module gains a fourth case and this route states what it protects.** The new section records the module's 3 → 4 case growth and its 323 → 370 lines, the defect the fourth case seals and why no fixture shape this route already had could see it (hand-assembled pairs exercise the *no-record* shape; the first-generation path leaves a receipt), what the case asserts so it cannot pass vacuously, and that it bites when the receipt-only read is restored. This **is** the body update the external-memory refresh requires for a route whose governed source changed, not a metadata refresh — the case row in the module's own sidecar carries the detail and this route states the shape. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the split, the corrected seat sentence, and the Git cases.** The new section records the D54 extraction (1320 → 818 plus the 578-line `test_curator_ingest_write_and_retention.py`), the census returning to 27 / 26 in the two scopes with 16 contracts / 66 artifacts and the two consumer rows derived from the census's own failing-run output, the four corrected copies of L27's false taskless-curator sentence (F1, round-one `blocking`), and the four D02 cases whose fixture now carries a literal backslash on each side. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Bootstrap Procedure's Seven Cases: Four Readings, One Base Defect, Three Consumer Rows
@@ -1015,7 +1054,7 @@ one-sided rendering cannot swallow it.
 | **The fixture that makes an addition and a removal real: two independently built snapshots under one namespace, plus the four authored revisions.** | `pair`; `author_invariant`; `AuthoredInvariant`; `OneSidedPair` | mcp/tests/test_knowledge_review_one_sided_statements.py:86-99; mcp/tests/test_knowledge_review_one_sided_statements.py:102-114; mcp/tests/test_knowledge_review_one_sided_statements.py:117-153; mcp/tests/test_knowledge_review_one_sided_statements.py:156-219 |
 | **The addition and the removal: the complete present-side statement beside the named absent side, with the comparison's own side-absence code.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The field-row cases: the roster asserted by exact key set, and the structured value served as its own projection on both sides. | `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not`; `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:288-317; mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
-| The one-sided-record case and the task-context case. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows`; `test_a_review_that_compared_no_subject_serves_no_operand_at_all` | mcp/tests/test_knowledge_review_one_sided_statements.py:353-369; mcp/tests/test_knowledge_review_one_sided_statements.py:372-410 |
+| The one-sided-record case and the task-context case. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows`; `test_a_review_that_compared_no_subject_serves_no_operand_at_all` | mcp/tests/test_knowledge_review_one_sided_statements.py:351-367; mcp/tests/test_knowledge_review_one_sided_statements.py:370-408 |
 | **The catalog consumer row the same registration produced, on the shared read-scope fixture.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/evidence-lifecycle.toml:1462-1477|
 | **The catalog consumer row the same registration produced, on the shared read-scope fixture.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/evidence-lifecycle.toml:1462-1477|
 | **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** | `KnowledgeStatements`; `names an absent field value and a recorded empty one without printing either as blank` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |

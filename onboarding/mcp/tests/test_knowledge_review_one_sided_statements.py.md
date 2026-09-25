@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_one_sided_statements.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ directly with `selector=None` instead, because that path is the point of the cas
   `field_changes == ()` and `before_conditions == ()` while `after_conditions == CONDITIONS`, because
   the comparison reports such a record through its coverage and nine field rows would state nine
   differences where there is one absence.
-- **No subject compared** (`:372-410`): `selection_state == "task_context"`, `comparison is None`,
+- **No subject compared** (`:370-408`): `selection_state == "task_context"`, `comparison is None`,
   both sides `unresolved` with `text is None` and **the same** detail ("no knowledge operand was
   compared"), and an empty roster — the case a one-sided rendering must not swallow.
 
@@ -155,8 +155,8 @@ it.
 | **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | **The field row: the roster asserted by exact key set, the one-sided value kept, and the lifecycle transition beside it.** | `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not` | mcp/tests/test_knowledge_review_one_sided_statements.py:288-317 |
 | **The structured value: both sides present and different, each projection round-tripped back to the stored envelope, and the projection's canonicality pinned.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-350 |
-| The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows` | mcp/tests/test_knowledge_review_one_sided_statements.py:353-369 |
-| **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** | `test_a_review_that_compared_no_subject_serves_no_operand_at_all` | mcp/tests/test_knowledge_review_one_sided_statements.py:372-410 |
+| The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. | `test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows` | mcp/tests/test_knowledge_review_one_sided_statements.py:351-367 |
+| **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** | `test_a_review_that_compared_no_subject_serves_no_operand_at_all` | mcp/tests/test_knowledge_review_one_sided_statements.py:370-408 |
 | **The projection owner whose markers and canonicality this module asserts.** | `structured_value_text`; `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TAIL` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/application/review_statement_sides.py:61-62 |
 | The adapter entry point the cases drive, and the one-sided contract its pane values carry. | `compose_review`; `ReviewCandidateResolution`; `ReviewRecordInputs` | mcp/src/agents_remember/application/knowledge_review.py:69; mcp/src/agents_remember/application/knowledge_review.py:296-391; mcp/src/agents_remember/application/knowledge_review.py:86 |
 | **The fixture this module builds on, and the public store operations it authors through.** | `ReadScopeFixture`; `build_read_scope_fixture`; `open_knowledge_store`; `create_invariant`; `create_revision` | mcp/tests/read_scope_test_support.py:178-243; mcp/tests/read_scope_test_support.py:270-287; mcp/src/agents_remember/memory/knowledge/store.py:767-784; mcp/src/agents_remember/memory/knowledge/store.py:272-272; mcp/src/agents_remember/memory/knowledge/store.py:291-291 |

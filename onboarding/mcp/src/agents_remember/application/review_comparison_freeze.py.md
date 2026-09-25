@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_freeze.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,9 @@ Two entries, one difference:
 - `freeze_comparison_generation` (`:279-309`) takes the already-composed values as a
   `ComparisonGenerationRequest` and is the operation a test or a future caller can drive directly.
 
-**The freeze is deliberately not wired to any route or read path** — see *Invariants And Boundaries*.
+**The freeze is deliberately not wired to any route, read path or closeout path — but since
+`260921-ICR-L34` it does have a production caller**, the CLI subcommand
+`agents-remember review-record-comparison`; see *Invariants And Boundaries*.
 
 ## Code Commentary
 
@@ -143,11 +145,20 @@ rather than widened. `_now()` (`:741-744`) is the module's one clock read.
   unchanged rather than inventing a second reason.
 - **No second capture path and no second snapshot path.** The capture identity is carried verbatim from
   the resolution, and the snapshot bytes come from `freeze_closed_snapshot`.
-- **Boundary: the freeze is deliberately not wired to any route or read path.** Nothing in this leaf
-  calls it from a serving surface, an HTTP route, the dashboard or a closeout path; it is the operation
-  a caller invokes, and wiring it at closeout is ICR-R21's obligation. A reader must not infer from the
-  absence of callers that the operation is dead code — the production entry is complete and measured,
-  and its consumer is a later leaf.
+- **Boundary: the freeze is not wired to any route, read path or closeout path, and it has had a
+  shipped production caller since `260921-ICR-L34`.** The caller is the CLI subcommand
+  `agents-remember review-record-comparison`
+  ([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)), which resolves one
+  enclosure contract, composes through the surface's own resolution and composition, and publishes only
+  what that composition bound. **Superseded in part:** as ICR-L11 wrote it, "nothing in this leaf calls
+  it from a serving surface, an HTTP route, the dashboard or a closeout path … and its consumer is a
+  later leaf". The first half is still true and is the point — a freeze must run while the leaf's
+  enclosure is live, which is exactly when a seat has a shell, so it is a command an operator runs
+  rather than something a route reaches. The second half is no longer true: the consumer exists, and
+  ICR-R21's own wiring is a different thing (it attaches the *selected generation* to the closeout
+  preview and the delivered receipt to closeout apply and integration, and adds the reopen's fourth
+  channel, without calling this operation). A reader must still not read the boundary as dead code:
+  the production entry is complete and measured by fifteen production-composition cases.
 - **Boundary: the freeze does not reclaim a published generation.** Releasing a pin and discarding a
   retained snapshot belong to `review_comparison_reclamation`, and this module neither calls it nor
   reaches for a ref or a snapshot of a generation that is already published.
@@ -214,7 +225,59 @@ under the coordination root, which is outside both the code and the memory repos
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260921-ICR-L34 The Freeze Gets Its Production Caller, And A Placed Baseline Becomes Freezable
+
+`260921-ICR-L34` (D62) is the leaf that made a leaf's review comparison producible at all. Two things
+about *this* module are what it changed or established, and both belong on this card.
+
+**The production entry now has a shipped caller.** `freeze_review_comparison` was complete and measured
+but had **no caller outside the test suite**, so no leaf could publish a generation and every closed
+leaf's review reopened from `history:recorded-source-range`. The caller is the CLI subcommand
+`agents-remember review-record-comparison`
+([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)): it loads one enclosure
+contract, composes a `ReviewSurfaceRequest` from that contract's own recorded identities, and calls this
+function once, printing the outcome. It is deliberately **not** a route, a pane or a closeout path — the
+freeze must run while the enclosure is live, because `review_comparison_retention._unresolved_capture`
+requires `resolved.candidate_identity` and both closed-leaf resolutions deliberately pass `None`, so a
+closed leaf cannot publish at all and the producer is **live-leaf-only by construction**. The boundary
+bullet above is corrected in place.
+
+**The caller is the first shipped caller to supply `parent`, and that is what makes a successor
+readable.** `ComparisonFreezeOptions.parent` is documented as a caller-known fact, and the freeze derives
+the successor's recorded index from it: a caller that names none publishes an **index 1** generation. A
+leaf whose comparison legitimately changed therefore came to hold two index-1 generations with different
+bindings, and `review_comparison_reopen` refuses a tied highest index by design — the leaf's own review
+could no longer say which comparison it was reading. The CLI now discovers the standing generation
+through `read_generation_refs` and names it, so a re-freeze publishes the next index with recorded
+lineage rather than a second claim on index 1. Lineage was chosen over reclamation deliberately:
+`review_comparison_reclamation` deletes only the *content* a manifest names and never the manifest
+itself, so it cannot remove an index-1 identity, and a successor with recorded lineage is the only
+owner-provided resolution.
+
+**Carried, and the single most important thing for the next leaf on this route:** the owner still
+permits the state it then refuses to read. `freeze_comparison_generation` will publish an index-1
+generation for a leaf that already holds a readable one if a caller names no `parent`; the CLI supplies
+it, but the next caller can reintroduce exactly the ambiguity. The guard belongs beside
+`_reuse_or_refuse` — compute the parentless manifest, and if its generation id is *not* already
+published while the leaf holds readable generations, refuse and name the predecessor. It was not added
+here because it changes this owner's contract, and the leaf's mandate was to make the route reachable.
+A second carried fact, measured by the leaf's adversarial verifier: because `lineage` sits **inside**
+the seal (`review_comparison_generation._UNSEALED_FIELDS` names only `binding_digest`, `generation_id`
+and `recorded_at`), naming a parent changes the derived id, so `_publish`'s `if final.exists()` reuse
+branch is never taken in the ordinary sequence and `reused` is unreachable — every no-op retry appends a
+generation with two full retained knowledge snapshots.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The production entry this leaf gave a caller, and the caller itself.** | `freeze_review_comparison`; `run` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276; mcp/src/agents_remember/cli/review_comparison_record.py:141-172 |
+| **The two caller-known option fields the CLI supplies, one of which is the predecessor this leaf is the first shipped caller to name.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS`; `parent` | mcp/src/agents_remember/application/review_comparison_freeze.py:147-166 |
+| **The reuse branch that is never taken in the ordinary sequence, and the seal omissions that make it so.** | `_publish`; `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_freeze.py:327-351; mcp/src/agents_remember/application/review_comparison_generation.py:155-155 |
+| The lineage a named predecessor records: the id *and* that generation's manifest digest, so a successor is readable by identity. | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:617-626; mcp/src/agents_remember/application/review_comparison_generation.py:351-373 |
+| **The live-capture precondition that keeps the producer live-leaf-only: the retention owner requires a captured candidate identity, and both closed-leaf resolutions leave it `None`.** | `_unresolved_capture`; `candidate_identity` | mcp/src/agents_remember/application/review_comparison_retention.py:168-209; mcp/src/agents_remember/application/review_committed_leaf.py:185-215; mcp/src/agents_remember/application/review_committed_leaf.py:238-276 |
+| The discovery the caller reads to name the predecessor, in a total order by index then id. | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:696-724; mcp/src/agents_remember/application/review_comparison_generation.py:686-693 |
+
 ## Update History
+- 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **the production entry acquires its first shipped caller, and the "its consumer is a later leaf" boundary is corrected in place.** The caller is the CLI's `review-record-comparison` (D62), which composes through the surface's own resolution and composition and publishes only what that composition bound; it is deliberately not a route, a pane or a closeout path, because the retention owner requires a captured candidate identity and both closed-leaf resolutions pass `None`, so the producer is live-leaf-only by construction. The caller is also the first to supply `parent`, which is what stops a re-freeze from publishing a second index-1 record under a different binding — the ambiguity `review_comparison_reopen` refuses. **Two carried facts are recorded rather than smoothed:** the owner still permits that ambiguity when a caller names no `parent` (the guard belongs beside `_reuse_or_refuse`, and the fix is a contract change this leaf's mandate did not include), and because `lineage` sits inside the seal, `reused` is unreachable in the ordinary sequence and every no-op retry appends a generation. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so no commit carries the corrected body, and the governed closeout owns the real stamp.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate uncommitted; basis: leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **three enforced rows cleared by one row's ranges — two `range_resolution` findings and the reopened `ReviewRecordInputs` claim.** The record-collection row cited `review_record_rendering.py:84-106` and `:172-172`, while `ReviewRecordInputs` is declared at 109 and `EMPTY_REVIEW_RECORDS` at 183: `84-106`→`109-136` and `172-172`→`183-183`. Wording, Findings and Anchors all unchanged. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

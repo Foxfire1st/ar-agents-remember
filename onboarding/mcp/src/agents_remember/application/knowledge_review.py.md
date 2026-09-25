@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -117,20 +117,30 @@ different next actions a reader cannot choose between from the words "the datase
 it, an absent baseline made the side construction throw `CantOpenError` before the shipped operation
 could return its typed `selected_input_unavailable`.
 
-**`review_namespace` reads the namespace from the candidate's own receipt, and that is the only
-authority for it.** The function is the sibling module's; this adapter is the caller that threads its
-answer through the whole render. A request names a *repository* (`agents-remember`); a candidate the
-write plane admitted is bound to a *namespace id* derived from it
+**`review_namespace` reads the namespace from the record standing beside the bytes, and that is the
+only authority for it.** The function is the sibling module's; this adapter is the caller that threads
+its answer through the whole render. A request names a *repository* (`agents-remember`); a dataset the
+write plane placed is bound to a *namespace id* derived from it
 (`uuid5(namespace, "repository:<name>")`). A side opened under the requested spelling therefore refuses
 against the dataset's own binding — the fixture measured `the dataset … is bound to 40d350a6-…, not to
 the requested repository namespace agents-remember` — which in the live product would have failed the
-review of every real candidate. So the candidate's own **receipt** (written and sealed beside the
-working database by the admission that created it) is read, and `repository_id` from that receipt is the
-namespace `compose_review` opens both sides and the review matrix under. A candidate with **no** receipt
-beside its database is a dataset handed directly rather than admitted (a fixture, or a pair a caller
-assembled from two named files): for that shape the requested repository is the available identity and
-is read as it always was. A receipt that **exists but cannot be read** is refused, because standing in
-the caller's word for the dataset's own record is exactly how a review comes to read a namespace nothing
+review of every real candidate. So the dataset's own **record** is read, and `repository_id` from that
+record is the namespace `compose_review` opens both sides and the review matrix under.
+
+**Two records answer, because the two halves are placed by two different acts.** `260921-ICR-L34`
+corrected this: the read consulted `candidate-receipt.json` **alone**, which a *candidate* half has —
+an admission wrote and sealed it — and a **before** half placed by a run handed a published
+`--baseline` never does, because a published dataset is not an admitted candidate. That half carries
+`baseline-generation.json` instead, written by `knowledge_baseline_generation`, and that record names
+the namespace its captured bytes belong to. The rule now reads the receipt when there is one,
+otherwise the before half's own generation record, and falls back to the requested repository only
+when **neither** exists — the shape a caller-assembled pair has. The consequence was a product defect:
+before the correction the before half of every continuity run was opened under the requested
+repository while its bytes were bound to a namespace id, the storage owner refused the mismatch, and
+the freeze answered `candidate_dataset_absent` — so **no leaf on the ordinary `knowledge-ingest
+--baseline` route could record its comparison**. A dataset with **neither** record beside it keeps the
+requested identity, and a record that **exists but cannot be read** is refused, because standing in the
+caller's word for the dataset's own record is exactly how a review comes to read a namespace nothing
 admitted.
 
 **`list_knowledge_review_entries` is the surface's entry half, and it exists because the reviewed
@@ -475,10 +485,10 @@ what the anchors are resolved against.
 | **The whole comparison operation: delegate the resolution, then compose, with a refused resolution returned as a refused result before any comparison runs.** | `read_knowledge_review`; `refused` | mcp/src/agents_remember/application/knowledge_review.py:220-249; mcp/src/agents_remember/application/review_record_rendering.py:186-193 |
 | **The entry operation: the same resolution as the comparison, then the catalogue read — every recorded identity of both snapshots listed with presence and totals, no subject compared to earn its row — with the unreadable-receipt preflight stated before that read. The enumeration itself is `review_subject_catalogue`'s, and the per-subject compare-to-earn-a-row helpers this module used to own are deleted.** | `list_knowledge_review_entries`; `read_subject_catalogue`; `unreadable_half_refusal`; `candidate_receipt_refusal` |mcp/src/agents_remember/application/knowledge_review.py:238-307; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:403-416|
 | **The catalogue's own population read, which the entry operation delegates to: both snapshots' identities through the store's own two list operations, and the globally kind-grouped union with per-row presence.** | `_side_identities`; `_union`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/review_subject_catalogue.py:72-87; mcp/src/agents_remember/application/review_subject_catalogue.py:90-112; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
-| **The pair preflight and the pair this leaf opened out of it: the absent half named as `baseline` or `candidate`, the sibling fact beside it (a side that is present but cannot be read), the unreadable receipt refused through the shared owner, and the step that runs both only when a subject was named — because a task-context review compares no dataset.** | `missing_dataset_half`; `unreadable_half_refusal`; `unreadable_candidate_refusal`; `_open_dataset_pair` | mcp/src/agents_remember/application/review_candidate_resolution.py:327-345; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/knowledge_review.py:713-785; mcp/src/agents_remember/application/review_candidate_resolution.py:385-400 |
-| **The receipt-derived namespace this adapter threads through the whole render: read from the candidate's own sealed receipt, the requested repository used only when no receipt exists, and an unreadable receipt refused rather than guessed past.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME` |mcp/src/agents_remember/application/review_candidate_resolution.py:348-373; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53|
+| **The pair preflight and the pair this leaf opened out of it: the absent half named as `baseline` or `candidate`, the sibling fact beside it (a side that is present but cannot be read), the unreadable receipt refused through the shared owner, and the step that runs both only when a subject was named — because a task-context review compares no dataset.** | `missing_dataset_half`; `unreadable_half_refusal`; `unreadable_candidate_refusal`; `_open_dataset_pair` | mcp/src/agents_remember/application/review_candidate_resolution.py:330-348; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/knowledge_review.py:713-785; mcp/src/agents_remember/application/review_candidate_resolution.py:402-417 |
+| **The record-beside-the-bytes namespace this adapter threads through the whole render: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, the requested repository used only when neither record exists, and an unreadable record refused rather than guessed past.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316|
 | The entry route's single refusal builder, carrying the resolution's own refusal verbatim. | `_entry_refused` | mcp/src/agents_remember/application/knowledge_review.py:282-294 |
-| **The composition: the observation made once and handed to both renderings, the task-context branch, the three pair refusals (absent, unreadable receipt, unreadable dataset), the comparison, the matrix read through the shipped view operation with its selection channels stated, the endpoint recheck immediately before the payload, and the panes with staleness, submission and the declared limits.** | `compose_review`; `require_current_candidate_identity`; `read_knowledge_view`; `ViewRequest`; `unreadable_half_refusal`; `candidate_receipt_refusal`; `with_selection_channels`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/review_candidate_resolution.py:269-298; mcp/src/agents_remember/application/knowledge_views.py:86-112; mcp/src/agents_remember/models/knowledge/view.py:1117-1148; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:403-416; mcp/src/agents_remember/application/review_evidence_records.py:264-289; mcp/src/agents_remember/application/knowledge_review.py:612-625 |
+| **The composition: the observation made once and handed to both renderings, the task-context branch, the three pair refusals (absent, unreadable receipt, unreadable dataset), the comparison, the matrix read through the shipped view operation with its selection channels stated, the endpoint recheck immediately before the payload, and the panes with staleness, submission and the declared limits.** | `compose_review`; `require_current_candidate_identity`; `read_knowledge_view`; `ViewRequest`; `unreadable_half_refusal`; `candidate_receipt_refusal`; `with_selection_channels`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/review_candidate_resolution.py:272-301; mcp/src/agents_remember/application/knowledge_views.py:86-112; mcp/src/agents_remember/models/knowledge/view.py:1117-1148; mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:420-433; mcp/src/agents_remember/application/review_evidence_records.py:264-289; mcp/src/agents_remember/application/knowledge_review.py:612-625 |
 | **The recorded before/after relationship union traversed from the comparison's own page items and threaded into the source pane (`ICR-R08@v1`): one call, and the adapter adds no traversal logic of its own.** | `relationship_movements`; `RelationshipSources`; `source_pane` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177; mcp/src/agents_remember/application/review_relationship_movement.py:123-139; mcp/src/agents_remember/application/review_source_inventory.py:560-613 |
 | **The comparison's own partition carried verbatim — never recomputed, because a second measurement could only disagree.** | `_comparison_attribution` |mcp/src/agents_remember/application/knowledge_review.py:562-586|
 | The review matrix read as its own step, so the composition reads as measure, branch, open, compare, read, recheck, publish. | `_review_matrix` |mcp/src/agents_remember/application/knowledge_review.py:750-822|

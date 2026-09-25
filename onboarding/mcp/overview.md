@@ -6,13 +6,66 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-24T12:28:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260921-ICR-L34 The Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
+
+`260921-ICR-L34` (D62) closes the gap the Intent Reviewer's whole knowledge column sat behind: the
+package had a complete, measured **producer** of a durable per-leaf comparison generation and **no
+caller for it outside the test suite**, so every leaf reopened from a bare recorded source range and
+the family plane rendered its empty sheet.
+
+**The package gains a sixth subcommand, and it is a caller rather than a mechanism.**
+`cli/review_comparison_record.py` registers `agents-remember review-record-comparison` on the umbrella
+CLI: required `--config` (the coordination authority the freeze reads) and required `--contract` (the
+write guard — a generation is published under the task root that document records, so no argument list
+can aim a record at another leaf's line), plus repeatable `--evidence` and `--historical-absence` and a
+`--json` shape. It authors no knowledge, places no dataset and establishes no before half: those remain
+`knowledge-ingest`'s and the first-generation owner's. It resolves the review exactly as the surface
+does, names the leaf's **standing** generation as the successor's predecessor (a caller that names none
+publishes an index 1 generation, and a second index-1 record under a different binding is the ambiguity
+the reopen refuses by design), and prints the outcome with the freeze's own refusal fields. The
+per-file detail is on the new sidecar.
+
+**The one rule that changed: a dataset's namespace comes from the record beside its bytes.**
+`review_namespace` read `candidate-receipt.json` alone. A *candidate* half has one — an admission wrote
+it — but a **before** half placed by a run handed a published `--baseline` never does, because a
+published dataset is not an admitted candidate: it carries `baseline-generation.json`, written by
+`application/knowledge_baseline_generation`. The read therefore fell back to the requested repository
+name while the bytes were bound to a namespace id, and the storage owner refused the mismatch with
+`candidate_dataset_absent` (*"the candidate database is not bound to repository namespace
+agents-remember"*). **Every leaf on the ordinary continuity route — `knowledge-ingest --baseline` — had
+a comparison that could not be frozen**, and nothing could see it: the fixtures hand-assemble their
+pairs, and the first-generation path hides it because the empty before half it creates is built by the
+candidate-creation owner, which does leave a receipt beside it. The rule is now **the record beside the
+bytes** — the receipt when there is one, otherwise the before half's own generation record — with the
+requested repository used only when **neither** exists, which is the caller-assembled shape.
+
+**What a reader of this package route should carry.** The Intent Reviewer's three GET routes did not
+change, and neither did the resolution, the composition or the subject catalogue: what changed is that
+their producer now has a caller and a placed baseline is openable, so a leaf of this master answers for
+a recorded comparison instead of `candidate_dataset_absent`, and the mounted reviewer renders families,
+joint guarantees, member statements, linked expressions and evidence from the record. Two limits are
+recorded rather than smoothed: the producer is **live-leaf-only** (the retention owner requires a
+captured candidate identity, and both closed-leaf resolutions pass `None`), so a closed leaf cannot
+publish; and the new command is **not idempotent as its own docstring claims** — `lineage` sits inside
+the seal, so naming a standing generation changes the derived id and an ordinary retry appends a
+successor rather than reusing the record. Both are carried on the new sidecar and in this leaf's
+curation report for the next leaf.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The sixth subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
+| **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** | `run`; `_standing_generation`; `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:141-172; mcp/src/agents_remember/cli/review_comparison_record.py:175-199; mcp/src/agents_remember/cli/review_comparison_record.py:87-88 |
+| **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** | `review_namespace`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
+| **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** | `_UNSEALED_FIELDS`; `_lineage` | mcp/src/agents_remember/application/review_comparison_generation.py:155-155; mcp/src/agents_remember/application/review_comparison_freeze.py:617-626 |
+| The case that protects the corrected namespace rule on the real placed-baseline journey. | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 
 ## 260921-ICR-L32 The Repair Leaf: The Seat Policy Moves, And Two Long-Route Defects Close
 
@@ -39,6 +92,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-25T22:30:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **route body updated — the reviewer's comparison becomes recordable and a placed baseline becomes openable.** The new section records the sixth subcommand (`review-record-comparison`) that gives the freeze owner its first shipped caller, the `review_namespace` correction (the namespace is read from the record beside the bytes, so the before half of every `knowledge-ingest --baseline` continuity run stops being unopenable and every such leaf's comparison stops being unfreezable), what a reader can now do, and the two carried limits (the producer is live-leaf-only; the new command is not idempotent as its own docstring claims). The L45 section's receipt-only namespace paragraph and its row are corrected in place with a dated correction block, and an older section's five-subcommand count is corrected in place. **Citation accounting:** the three `REVIEW_*` constant ranges this document carried into `review_candidate_resolution.py` were re-derived against this candidate (`80/86/87` → `98/104/105`). No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the repair leaf's own package-side record.** The new section states the taskless admission (`{chat, terminal, bootstrap, curator}`), that its carrier half is generated (`sync-skills.py`, nine targets `ok`), that the mounted refusal now names both write-plane entry points, and the two test-side movements (the 818 + 578 split restoring the census with 16 contracts / 66 artifacts; the D02 cases over an eight-name fixture). It also states that the L27 section's "not modified by this leaf" is history rather than current policy. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Package Publishes A New Procedure, And Its Generated Copies Carry It
@@ -2161,12 +2215,29 @@ establishes; and a *selected* baseline that is missing or corrupt is refused by 
 empty dataset. An absent half remains its own truthful answer — `candidate_dataset_absent`, now
 **naming which half** is missing — for the case where the establishing run itself left nothing.
 
-**The pair is opened under the candidate's own namespace.** The datasets are bound to a namespace id
-derived from the repository name, so a comparison opened under the requested repository spelling
-refuses against the dataset's own binding; `review_namespace` therefore reads the namespace from the
-candidate's sealed **receipt** (`candidate-receipt.json`) rather than from the request. A dataset
-handed directly with no receipt keeps the requested identity, and a receipt that exists but cannot be
-read is refused rather than guessed past.
+**The pair is opened under the namespace recorded beside each dataset, and the receipt-only rule is
+corrected here (`260921-ICR-L34`).** The paragraphs below as first written said the namespace is read
+from the candidate's sealed **receipt** and that a dataset handed directly with no receipt keeps the
+requested identity. That was false for a **before** half placed by a run handed a published
+`--baseline`: a published dataset is not an admitted candidate, so no receipt exists beside it — it
+carries the before half's own `baseline-generation.json`, written by the ingest's placement owner — and
+the read therefore fell back to the requested repository name while the bytes were bound to a namespace
+id. The storage owner refuses that mismatch, so **every leaf on the ordinary `knowledge-ingest
+--baseline` route produced a leaf whose comparison could not be frozen** (`candidate_dataset_absent`,
+*"the candidate database is not bound to repository namespace agents-remember"*), and no test could see
+it because the fixtures hand-assemble their pairs. The rule is now **the record beside the bytes**: the
+receipt when there is one, otherwise that generation record, and the requested repository only when
+**neither** exists. The text below is retained as the L45 record of the reading at that time.
+
+A request names a *repository*; a dataset the write plane placed is bound to a *namespace id* derived
+from it, and a side opened under the requested repository spelling refuses against the dataset's own
+binding — measured on this leaf's fixture as `bound to 40d350a6-…, not to the requested repository
+namespace agents-remember`, which in the live product would have failed the review of every real
+candidate. So `review_namespace` reads the namespace from the record standing beside the bytes —
+`candidate-receipt.json` when an admission wrote one, otherwise `baseline-generation.json` — and both
+sides and the review matrix are opened under that. A dataset with **neither** record beside it (a
+fixture, a caller-assembled pair) keeps the requested identity as it always did, and a record that
+exists but cannot be read is refused rather than guessed past.
 
 Production wiring lives in the composition root, and it now supplies both ports:
 `cli/dashboard.py`'s `serving_collaborators` builds `review_port` and `review_entries_port` — the
@@ -2184,9 +2255,9 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-298 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:85-94; mcp/src/agents_remember/cli/dashboard.py:96-104 |
-| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:80-80; mcp/src/agents_remember/application/review_candidate_resolution.py:86-86; mcp/src/agents_remember/application/review_candidate_resolution.py:87-87; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145; mcp/src/agents_remember/application/review_candidate_resolution.py:76-76 |
+| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:98-98; mcp/src/agents_remember/application/review_candidate_resolution.py:104-104; mcp/src/agents_remember/application/review_candidate_resolution.py:105-105; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
 | **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:504-542 |
-| **The namespace read from the candidate's own sealed receipt rather than from the request — the sibling module's operation, which the adapter delegates to.** | `review_namespace` |mcp/src/agents_remember/application/review_candidate_resolution.py:348-373|
+| **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** | `review_namespace`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:351-399; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316|
 | **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` |mcp/src/agents_remember/application/review_candidate_resolution.py:327-345; mcp/src/agents_remember/application/knowledge_before_half.py:347-377|
 | The cold-start branch that fills the half when the caller named no baseline, and the two rules that guard the fork-point copy. | `_establish_first_generation`; `_place_or_keep`; `_placement_refusal` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/cli/knowledge_ingest.py:477-501 |
 
@@ -6321,8 +6392,10 @@ block — the location the ordinary read route selects, and the state a read of 
 named next action). It still creates no knowledge: a memory root is a *place*, and the dataset is an
 authored result no initializer may invent. What the block removes is the misreading, not the boundary.
 
-**Two CLI adapters, two admissions.** The umbrella `agents-remember` now registers **five** subcommands;
-`knowledge-ingest` remains the leaf's entry point and `knowledge-bootstrap` is the taskless one. The
+**Two CLI adapters, two admissions.** The umbrella `agents-remember` registered **five** subcommands when
+this section was written; it registers **six** since `260921-ICR-L34` (see that section at the top of
+this document), the sixth being `review-record-comparison`. `knowledge-ingest` remains the leaf's entry
+point and `knowledge-bootstrap` is the taskless one. The
 ingest report's `contractPath`/`contract_path` became `admissionSource`/`admission_source`, because the
 document a run is admitted under is a settings document for a bootstrap and calling it "the contract"
 was false about it (no test and no consumer read the old key).

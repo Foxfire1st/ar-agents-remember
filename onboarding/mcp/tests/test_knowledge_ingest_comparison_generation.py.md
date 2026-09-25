@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T15:35+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 The **successful journey of one comparison's before side**, and the production-composition evidence
-for `ICR-R18@v1`'s conforming and boundary examples. The defect these three cases seal: with **one**
+for `ICR-R18@v1`'s conforming and boundary examples. The defect these cases seal: with **one**
 path used for both `--baseline` and `--publish-to`, two successive successful writes each reported
 `changed` and published — and the second one re-placed the review's before half from the bytes it
 captured, which by then *were* the first run's publication. The comparison then opened on a dataset
@@ -25,6 +25,21 @@ that already contained the addition, so the review showed it present on both sid
 delta. The prior refused-rerun repair (`260915-KS-L47`) did not cover the successful-update path, and
 capturing the baseline earlier cannot cover it either: the bytes are a different dataset by then, not
 a later read of the same one.
+
+**A fourth case, added by `260921-ICR-L34`, protects the second half of the same journey: recording
+the comparison.** The three cases above end with the before half correctly placed; a review of that
+leaf then has to be *recorded*, and recording retains each half by copying it through the storage
+owner, which refuses a dataset opened under a namespace it is not bound to. The namespace was read from
+`candidate-receipt.json` **alone** — which a *candidate* half has, because an admission wrote it, and a
+**before** half placed from a named `--baseline` never does, because a published dataset is not an
+admitted candidate and carries `baseline-generation.json` instead. The read therefore fell back to the
+requested repository name while the bytes are bound to a namespace id, and **every leaf on the ordinary
+continuity route produced a comparison that could not be frozen** (refused `candidate_dataset_absent`).
+`test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` (`:329-370`) drives the real
+placed-baseline journey, asserts that the requested repository and the dataset's own namespace differ
+(so the case cannot pass vacuously), and then opens the half under `review_namespace` and reads its own
+snapshot identity back. It **bites**: reverted in a scratch copy of the module, it fails with
+`+ agents-remember`, the exact value that produced the refusal.
 
 Every case drives the **shipped CLI as a real process** on a real enclosure, so nothing here injects a
 preconstructed report or a hand-built payload:
@@ -34,7 +49,9 @@ preconstructed report or a hand-built payload:
 - **an exact retry and a refused changed retry** leave that dataset byte-identical, which is the
   packet's own boundary example;
 - **a deliberate rebase** begins a new generation whose record names the generation it replaced *and*
-  that generation's exact dataset identity, and whose id a reader can recompute from those facts.
+  that generation's exact dataset identity, and whose id a reader can recompute from those facts;
+- **a placed baseline is opened under its own recorded namespace**, which is what lets the comparison
+  the run opened be recorded at all (leaf `260921-ICR-L34`).
 
 This module **owns the journey fixtures**: `_opened_comparison` builds the state every case starts
 from, and `test_knowledge_ingest_failure_windows.py` imports `_digest`, `_identity_of` and
@@ -143,6 +160,7 @@ Ranges are the exact construct extents in this candidate.
 | **The packet's non-conforming example as a regression: the second successful write lands while the before half stays byte-identical to the fork point and still holds the original identity.** | `test_a_second_successful_ingest_over_one_path_keeps_the_original_baseline` | mcp/tests/test_knowledge_ingest_comparison_generation.py:150-206 |
 | **The packet's boundary example: an exact retry restates nothing and a refused changed retry is not a second way to move the before side.** | `test_an_exact_retry_and_a_refused_changed_retry_keep_the_original_baseline` | mcp/tests/test_knowledge_ingest_comparison_generation.py:209-257 |
 | **The one act allowed to replace a standing baseline, measured as lineage by id and by exact dataset identity, plus an id the reader can recompute.** | `test_a_deliberate_rebase_begins_a_recorded_generation_with_explicit_lineage` | mcp/tests/test_knowledge_ingest_comparison_generation.py:260-323 |
+| **The case `260921-ICR-L34` added: the half a `--baseline` run placed is opened under the namespace its own `baseline-generation.json` names, which is what makes the comparison recordable at all — and it bites when the receipt-only read is restored.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace`; `review_namespace`; `read_baseline_generation`; `open_read_only_store` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 | The generation id the rebase case recomputes and the record reader it compares against. | `generation_identity`; `read_baseline_generation` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:319-348; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
 | The publication owner and selection this module drives the later line through. | `ingest_curator_list`; `IngestSelection`; `IngestPublication` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1015-1031; mcp/src/agents_remember/application/knowledge_curator_ingest.py:998-1011 |
 | The shipped reader the identity helper uses. | `dataset_identity` | mcp/src/agents_remember/memory/knowledge/logical.py:153-175 |
@@ -161,6 +179,7 @@ builds is local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-25T22:30:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **body update — the module gains a fourth case, and it protects the second half of the journey these three measure.** `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` (`:329-370`) drives the real placed-baseline journey and asserts that the requested repository and the dataset's own namespace differ before it opens the half under `review_namespace` and reads its snapshot identity back; the defect it seals is that the namespace was read from `candidate-receipt.json` alone, which a before half placed from a named `--baseline` never has — so every leaf on the ordinary continuity route produced a comparison that could not be frozen, refused `candidate_dataset_absent`, invisibly (the fixtures hand-assemble their pairs and the first-generation path leaves a receipt). This **is** the body update the external-memory refresh asks for, not a metadata refresh: the Purpose now states the fourth fact and its consequence, the case list gained its fourth bullet, and a reference row carries the case and the owners it names. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-14T17:20+02:00                        |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`    |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94`    |
+| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -17,10 +17,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **five** of them — `dashboard`, `memory-citations`,
-`memory-backfill`, `knowledge-ingest` and `knowledge-bootstrap` — and further CLI adapters slot
-in as subparsers. Backed by the `agents-remember = agents_remember.cli.__main__:main` console
-script.
+that dispatches subcommands. It registers **six** of them — `dashboard`, `memory-citations`,
+`memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap` and `review-record-comparison` — and
+further CLI adapters slot in as subparsers. Backed by the
+`agents-remember = agents_remember.cli.__main__:main` console script.
 
 ## Code Commentary
 
@@ -28,8 +28,9 @@ script.
 each subparser through its adapter's own `add_arguments`, setting `func=<adapter>.run`:
 `dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`,
 `memory_backfill.add_arguments`/`memory_backfill.run`,
-`knowledge_ingest.add_arguments`/`knowledge_ingest.run` and
-`knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run`. `main(argv=None)` parses and
+`knowledge_ingest.add_arguments`/`knowledge_ingest.run`,
+`knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run` and
+`review_comparison_record.add_arguments`/`review_comparison_record.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
 
 **The two knowledge subcommands are two different admissions, and the help text says which.**
@@ -67,10 +68,12 @@ configs launch the server by that exact name, so it is never folded into this um
 | The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
 | The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
-| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:41-48 |
-| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:50-58 |
+| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:43-51 |
+| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:52-60 |
+| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller, the umbrella's sixth subcommand and the reason the count above is six.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
 
 ## Update History
+- 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **the umbrella gains its sixth subcommand, and the count is corrected rather than extended.** `260921-ICR-L34` (D62) registers `review-record-comparison`, the CLI caller that gives the review comparison's freeze owner its first production caller outside the test suite; the registration is the same declarative pair (`add_arguments` + `set_defaults(func=...)`, `:61-69`) and the adapter owns its own flags and exit code. The body above said the parser registered **five** subcommands and listed them; it now says six and names this one, and the Code Commentary's registration list gained the sixth pair. The `260921-ICR-L29` entry below, which correctly said the count was five *then*, is history and not current policy. **No verification stamp was advanced** — the candidate is uncommitted, so no commit carries the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the two-subcommand record gains the write plane's own naming.** The card already recorded both subcommands and their different admissions; it now also records that `260921-ICR-L32` corrected the mounted tool description and two module docstrings to name **both** of these entry points where they named one, so this CLI's five-subcommand inventory and the write plane's own description agree. No claim, anchor or citation range changed by the wording added here. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
