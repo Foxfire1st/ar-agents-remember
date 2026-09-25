@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.walkFinal.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ finding names the exact key path and value a reader can re-check.
 | **The case this body exists for, including what it says about the defect the corrected guard answers — on the pre-correction bytes this page's request was answered with HTTP 500.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster"; "HTTP 500"; "completion guard was corrected"; "completes the read walk"; `WALK_FINAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:642-671; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:52-52|
 | **Where the two sentences are composed by their owner: the single-page `read whole` branch and the completing-walk branch, decided by the walk's own flag.** | "read whole"; "completes the read walk" | mcp/src/agents_remember/application/review_family_rosters.py:380-386 |
 | **The corrected guard that makes a continued final page answerable at all, with the comment recording the HTTP 500 it answers.** | `single_page_walk`; "HTTP 500" | mcp/src/agents_remember/models/knowledge/review_family_context.py:340-346; mcp/src/agents_remember/models/knowledge/review_family_context.py:344-345 |
-| **The client's two wordings for the pair, so a reader can see the sentence this body must reach and the one it must not.** | "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:265-272 |
+| **The client's two wordings for the pair, so a reader can see the sentence this body must reach and the one it must not.** | "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:278-285; dashboard/src/panels/review/FamilyTree.tsx:284-285 |
 
 ## Cross-Repo References
 

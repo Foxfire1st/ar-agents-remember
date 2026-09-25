@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.identical.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ finding names the exact key path and value a reader can re-check.
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
 | **The case this body exists for: it asserts the distinct revisions and the authored-between-them sentence, refuses both "unchanged" renderings, and then asserts the one same-revision family as unchanged.** | "distinguishes two distinct revisions with identical text from one unchanged revision"; "A revision was authored between them; the text is what did not move."; `IDENTICAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:499-520; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:49-49|
 | **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee`; `memberComparison` | dashboard/src/data/reviewFamily.ts:217-222; dashboard/src/data/reviewFamily.ts:224-233; dashboard/src/data/reviewFamily.ts:249-259; dashboard/src/data/reviewFamily.ts:285-296 |
-| **The two renderings the case reads: the identical-text block naming both revision identities, and the fact line that words the shape.** | `review-center-guarantee-identical-text`; `review-center-guarantee-unchanged`; `identical_text`; `one_sided` | dashboard/src/panels/review/FamilyReviewCenter.tsx:145-171; dashboard/src/panels/review/FamilyReviewCenter.tsx:690-700 |
+| **The two renderings the case reads: the identical-text block naming both revision identities, and the fact line that words the shape.** | `review-center-guarantee-identical-text`; `review-center-guarantee-unchanged`; `identical_text`; `one_sided` | dashboard/src/panels/review/FamilyReviewCenter.tsx:131-713; dashboard/src/panels/review/FamilyReviewCenter.tsx:155-713; dashboard/src/panels/review/FamilyReviewCenter.tsx:155-717 |
 
 ## Cross-Repo References
 

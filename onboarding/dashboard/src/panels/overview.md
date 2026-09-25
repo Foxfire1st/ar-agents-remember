@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## 260921-ICR-L32 The Change-Set Control Renders The Refusal It Receives
@@ -61,9 +61,90 @@ lives there; what belongs here is the panel-level fact: both of the dashboard's 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`. | "Tasks · {count}" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:574-574 |
-| The bar's request for the net's per-leaf attribution. | `includeLeaves` | dashboard/src/panels/detail-panel/changeSetBar.tsx:85-85 |
+| The bar's request for the net's per-leaf attribution. | `includeLeaves` | dashboard/src/panels/detail-panel/changeSetBar.tsx:109-109 |
+
+## 260921-ICR-L25 The Change-Set Bar Names An Unrecorded Range, And The Jump Sits Above The Tree
+
+Two panels on this route changed, and each change is the same shape: **a surface stopped describing a
+state it was not in.**
+
+**`detail-panel/changeSetBar.tsx` — an unrecorded change-set range is named, not printed as a zero
+(register B6).** A `committed` read of a live leaf has no landed commit to read yet. The route used to
+answer that state with a `404`, which the browser logs as a console error on the page whose accepted
+criterion is **zero** — and the bar probes that view as soon as a leaf document is opened. The route
+now answers it in the body (`state: "unrecorded"` plus its own sentence naming the missing endpoint
+and the two views that produce it), and the bar renders it as the control's **own** state
+(`data-review-state="unrecorded"`, distinct from `known-empty`) while **withholding the `+0 −0`
+total**: a zero of nothing is not a measurement. The three genuinely distinct refusals are untouched —
+an unknown leaf is still a `404`, a bad or absent `mode` a `400`, an enclosure `scope` its own `404`.
+
+**`review/ReviewWorkspace.tsx` and `review/FamilyReviewCenter.tsx` — the narrow-screen route moved
+above the tree, and the empty column names its own plane (register B3).** The accepted design's finding
+P2-3 puts the "jump to the selected review" affordance **near the top** precisely because the family
+tree's height is why it exists; rendered immediately before the centre column instead, it sat at
+`y=1183` in a 900 px viewport — reachable only after the scroll it exists to avoid. It is now one
+`NarrowJump` mounted between the header and the tree, and the tree itself is unchanged. The centre's
+empty sentence used to read "No family or member is selected", which collided with the **server's** own
+"selected" on the same screen (the header's composed-context count, the tree's "this review selected
+<revision>", a roster line's "the page is the whole selection"), so a reader comparing them read a
+contradiction that was a collision of vocabularies; it now says a family or member has not been
+**chosen in this column** yet and states that the header's composition and the tree's revision selection
+are not choices made here. **The sentence was not false about its own state** — the measured
+`data-selection-kind` is `none`, with no `aria-current` in the tree, until the reader chooses — so this
+is a wording fix and the layout of the centre was deliberately not changed. **One caveat the round-2
+verifier measured, and round 3 then removed (its F2):** at 320 px the reviewer had supplied no scrollport
+of its own, so with `MAIN` at `overflow-y: hidden` its 7 620 px of content were reachable only by
+programmatic focus scroll — the narrow reader's route to the review was not one they could scroll. That
+is fixed on the reviewer's own side (`ReviewSurface.tsx`'s root is now the scrollport, `userScrollableCount`
+0 → 1); the composition requirement and the wording fix are unchanged by it.
+
+**Two further lines of the same accepted design were addressed on this route, and the second one is
+only half fixed — stated here as the independent verifier measured it.** `review/FamilyTree.tsx`
+carried the review surface's **only** raw colour literals (`oklch(0.82 0.16 75 / 0.08)` and
+`… / 0.16` — `--amber`'s channels copied by hand); both are now one `AMBER_WASH(percent)` helper
+stating `color-mix(in oklab, var(--amber) N%, transparent)`, because an `oklch` mix interpolates the
+**hue** and that is how the accepted page's own row first came out visibly teal (register B1).
+**The form of that claim which is true, and the form which is not:** the raw amber-wash literal is
+gone, the wash computes as `oklab` through `var(--amber)`, and hue 215 is absent — but "zero `oklch`
+users remain in the review surface" is **false as worded**, because `getComputedStyle` resolves
+`var(--token)` and this dashboard's tokens are themselves defined in `oklch`
+(`styles/tokens.css:8-23`), so token-resolved `oklch` values are everywhere in the surface by design.
+A reader scanning computed styles for the word `oklch` will conclude the fix failed unless this is
+said. `review/SourceExplorer.tsx`'s path button gained `overflow-wrap: anywhere` and
+`max-width: 100%`, which is what lets the column shrink: measured at 320 px, one
+`review-inventory-open` button was 556 px wide inside a 294 px column with its right 262 px neither
+visible nor reachable, and it now wraps inside its container (register B7).
+
+**B7 needed a second round, and the two readings of its residual are both worth keeping.** Round 2
+claimed the residual was *"the cockpit's own status bar, outside the review surface"*; that was
+**false as worded** — the count had been classified against the **inner**
+`[data-testid="review-workspace"]` root (`ReviewWorkspace.tsx:515`) while the Intent Reviewer's own
+root is `[data-testid="review-surface"]` (`ReviewSurface.tsx:906`, mounted by `Cockpit.tsx:585`).
+Against the reviewer's own root, **51 of the 64** elements past the right edge at 320 px were **inside**
+the reviewer (13 were cockpit chrome), the pane sections were **565 px wide in a 294 px column** with
+`pannableCount 0`, and the vertical half was worse: **nothing in the document was user-scrollable**,
+because `MAIN` is `overflow-y: hidden` carrying 7 620 px in a 706 px box. **Round 3 fixed both halves in
+the reviewer's own code** (`ReviewSurface.tsx`): the panes got `min-width: 0` +
+`overflow-wrap: anywhere`, the disclosure track became `minmax(0, 1fr)`, the header row wraps, and the
+surface root took `height: 100%` / `minHeight: 0` / `overflowY: auto`. Re-measured: descendants of
+`review-surface` past the edge **51 → 0**, total **64 → 13**, panes **565 → 294 px** in a 294 px column,
+the root's own **311/294 → 294/294**, `userScrollableCount` **0 → 1**, and a wheel over the review moves
+the surface **0 → 800 px**. **The number was not improved by changing the root** — the inner root's
+count was 0 in both rounds, which is precisely why F1 was a classification defect. **What remains
+routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate `overflow: hidden`
+(`cockpit/Cockpit.tsx:323`, *"the viewport does not scroll — its panel scrolls on its own"*, shared by
+every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `includeLeaves` repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:109-109. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `App` repointed to dashboard/src/App.tsx:10-19. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `Cockpit` repointed to dashboard/src/cockpit/Cockpit.tsx:366-390. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `SessionComposer` repointed to dashboard/src/panels/SessionComposer.tsx:57-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: "onClick={() => onOpen(generation ? { ...target, generation } : target)}" repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `fieldValue` repointed to dashboard/src/panels/review/ReviewSurface.tsx:182-183. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (uncommitted change set, now also carrying `panels/review/ReviewSurface.tsx` and the new `panels/review/ReviewSurface.narrow.test.tsx`; round-3 report `report-l25-round3.md` = `cf6fb86e4d20cf5a1baf6bd093e4d9b1ccbf017062503da23edbf40d44e52b86`): **route body updated — B7's residual is superseded a second time, and this route now records both readings of it.** Round 2 said the residual was cockpit chrome "outside the review surface"; the round-2 verifier showed that was false as worded (classified against the inner `review-workspace` root, while the reviewer's own root is `review-surface`: 51 of 64 inside); **round 3 then fixed the reviewer's own overflow and its own scrollport**, so the section states the measurement that was wrong, the measurement that replaced it, and the fix that closed it — 51 → 0 inside the reviewer root, 64 → 13 total, panes 565 → 294 px, `userScrollableCount` 0 → 1 — rather than only the final number. **The B3 caveat was corrected too:** its "nothing is user-scrollable at 320 px" note described the pre-round-3 state and now records that round 3 fixed it on the reviewer's side while the composition requirement and the wording fix are unchanged. **Named as routed, and now the shell's rather than the reviewer's:** `MAIN`'s deliberate `overflow: hidden` and the 13 cockpit-chrome elements, owned by R24's cockpit takeover. **What remains the shell's consequence, stated so it is not lost:** any other panel in this shell that renders taller than the viewport without its own scrollport has the same defect — the change-set takeover shares it. **Citation accounting:** the new section's rows cite the reviewer root's own current line (`ReviewSurface.tsx:906`) and the shell's decision line (`cockpit/Cockpit.tsx:323`); no earlier row was weakened to fit. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2, **correction against the independent verifier** (same uncommitted change set; verifier `verify-l25-round2.md` first line `pass-with-findings`, sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`; findings F1/F2/F5): **two sentences this route's L25 section carried were false as worded and are corrected in place.** (1) "The overflow that remains at that width is the cockpit's own status bar, outside this route" — the count was classified against the **inner** `[data-testid="review-workspace"]` root, but the Intent Reviewer's own root is `[data-testid="review-surface"]`; re-measured against both, **51 of the 64** overflowing elements at 320 px are **inside** the reviewer and 13 are cockpit chrome, `pannableCount 0` of 64 — so the residual is inside B7's own criterion and inside this route, **routed as a named residual rather than placed outside it**. The verifier's F2 adds the vertical half: at 320 px **nothing in the document is user-scrollable** (`MAIN` `overflow-y: hidden`, 5 375–7 620 px of content, window exactly viewport-height). (2) The B1 claim is narrowed to the form that is true — the raw amber-wash literal is gone, the wash computes as `oklab` through `var(--amber)`, hue 215 absent — because "zero `oklch` users remain in the review surface" is false while the tokens themselves are defined in `oklch` (`styles/tokens.css:8-23`). **What did not change:** the path/explorer fix is real and measured (252 px in a 252 px container), the page no longer overflows **horizontally** at 1600 or 320, and the composition and wording fixes stand. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the section above records four accepted-design defects addressed on this route rather than re-measured.** The committed probe's unrecorded state is answered in the body and rendered as the control's own state with its total withheld (B6); the narrow jump route is composed above the family tree and the centre's empty sentence names its own plane (B3); the tree's hand-copied `oklch` washes become one token-derived `oklab` helper (B1); and the explorer's path button wraps instead of being clipped (B7). The section names what is **routed** rather than absorbed and states that the B3 sentence was a **wording** defect and not a false claim about the pane's own state. **The B1 and B7 sentences this entry first carried were corrected by the dated entry above, on the independent verifier's own measurement.** **Citation accounting:** every row this route's line movement displaced was re-derived from each construct's declaration at this candidate; the rows into `changeSetBar.tsx` moved with the file's own insertions (`useReviewCatalogue` `:337-384` → `:371-424`, `leafIsLive` `:607` → `:673-688`, `ReviewEntryState` `:391-429` → `:425-467`, `includeLeaves` `:85` → `:93`) and the rows into `SourceExplorer.tsx` moved with that file's own additions (`inventoryEntry` `:78-129` → `:90-148`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-25T22:50:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **route body corrected — two of the three L33 panels are withdrawn because commit `a9a1a41b` reverted them.** A withdrawal banner now heads the L33 section and the two paragraphs about `lifecycle-list/LifecycleList.tsx` and `panels/useCollapsedTaskGroups.ts` carry their own marker; two reference rows citing the deleted `landedLeaves.ts` and the removed `openedKeys` were deleted rather than re-pointed, and every other row this pass touched had its range re-derived by locating the anchor literally in the candidate. The **third** panel's paragraphs (`panels/changeset/`, the per-leaf breakdown) are unaffected by the revert and were left standing, as was the header-count sentence the reverted list still carries. The revert was a direct emergency commit with no curator pass behind it, which is why this route described a module that exists in neither tree; the deleted module's own sidecar was removed by the same curation. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — the landed-leaf admission, the collapse rule that bounds it, and the per-leaf attribution on both master readers.** The new section names the new `landedLeaves.ts` module and the rules it owns, the two bounds (auto-collapse by child facts; never close a row that carries rows), the live-projection numbers, the collapse hook's second storage key and changed signature, and the superseded `includeLeaves: false` optimisation with the option's retention recorded. **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set control renders its refusal.** The new section records that `detail-panel/changeSetBar.tsx`'s `ChangeSetButton` renders the refusal's own code and reason beside a state marker while still opening what it names, with the case that drives the click and asserts the rendered reason. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
@@ -257,11 +338,11 @@ inside agents-remember.
 | The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:803-807; dashboard/src/cockpit/Cockpit.tsx:809-810 |
 | The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:809-810; dashboard/src/cockpit/Cockpit.tsx:810-810; dashboard/src/cockpit/Cockpit.tsx:812-812 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:24-56; dashboard/src/data/store.ts:329-401; dashboard/src/data/store.ts:18-19 |
-| The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:8-8 |
-| The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:22-22 |
+| The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
+| The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:366-390 |
 | `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:886-940 |
 | The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:2-2 |
-| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:37-43 |
+| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:715-787; dashboard/src/panels/HighlightComposer.tsx:602-602; dashboard/src/panels/HighlightComposer.tsx:254-256 |
 | Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/panels/RailChat.tsx:255-289; dashboard/src/panels/RailChat.tsx:469-537 |
 | `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-259 |
@@ -425,8 +506,8 @@ judgment and publishes no assessment.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
-| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
-| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:607-607 |
+| **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:673-688 |
 | The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:699-704; dashboard/src/data/review.ts:670-675 |
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
@@ -440,7 +521,7 @@ by this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:126-126 |
+| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:151-151 |
 | **The generation state the button carries from a successful master read.** | `MasterNetPins` | dashboard/src/panels/detail-panel/changeSetBar.tsx:11-12 |
 
 ## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
@@ -500,9 +581,9 @@ not here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The rendered entry that opens its own content: the published path as a button with `data-path` and `aria-expanded`, drawn only when the inventory named both code trees, with `SourceContent` mounted beneath an open row.** | `inventoryEntry`; `review-inventory-open` | dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:102-103 |
-| **The byte-form row's explicit non-addressability: listed by its exact bytes, carrying no expansion control, and saying in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/SourceExplorer.tsx:137-149; dashboard/src/panels/review/SourceExplorer.tsx:143-143 |
-| **The row's open state and the generation pair derived from the inventory's own published tree ids.** | `InventoryRows`; `useState` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/ReviewSurface.tsx:28-28 |
+| **The rendered entry that opens its own content: the published path as a button with `data-path` and `aria-expanded`, drawn only when the inventory named both code trees, with `SourceContent` mounted beneath an open row.** | `inventoryEntry`; `review-inventory-open` | dashboard/src/panels/review/SourceExplorer.tsx:90-148; dashboard/src/panels/review/SourceExplorer.tsx:102-103 |
+| **The byte-form row's explicit non-addressability: listed by its exact bytes, carrying no expansion control, and saying in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/SourceExplorer.tsx:149-164; dashboard/src/panels/review/SourceExplorer.tsx:143-143 |
+| **The row's open state and the generation pair derived from the inventory's own published tree ids.** | `InventoryRows`; `useState` | dashboard/src/panels/review/SourceExplorer.tsx:206-244; dashboard/src/panels/review/ReviewSurface.tsx:28-28 |
 | The pane that forwards the task context an expansion request carries. | `SourcePane` | dashboard/src/panels/review/ReviewSurface.tsx:302-352 |
 | **The header's corrected statement of what this child reuses: two renderers, `DiffPane` through the statement area and the Source pane's own entry expansion.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:5-6; dashboard/src/panels/review/ReviewSurface.tsx:7-9; dashboard/src/panels/review/ReviewSurface.tsx:8-8 |
 | **The new renderer: the three rules decided from a side's declared state, with the no-diff-claimed content path and the state lines.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:85-129; dashboard/src/panels/review/SourceContent.tsx:121-121 |
@@ -545,7 +626,7 @@ route, no takeover change, and the child's file cards are the authority for the 
 | **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** | `KnowledgeStatements`; `unavailable`; `oneSidedDiff`; `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:93-118; dashboard/src/panels/review/KnowledgeStatements.tsx:17-18; dashboard/src/panels/review/KnowledgeStatements.tsx:66-77; dashboard/src/panels/review/KnowledgeStatements.tsx:80-91 |
 | **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:36-44 |
 | **Pane 1's delegation, and the header's statement of what the surface reuses — now two renderers, this one and the Source pane's entry expansion.** Ranges re-derived against this candidate. | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:275-300; dashboard/src/panels/review/ReviewSurface.tsx:7-9; dashboard/src/panels/review/ReviewSurface.tsx:54-54 |
-| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:168-168 |
+| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:182-183 |
 | **Pane 1's delegation, and the header's corrected statement of what the surface reuses.** Ranges re-derived against this candidate. | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:275-300; dashboard/src/panels/review/ReviewSurface.tsx:7-9; dashboard/src/panels/review/ReviewSurface.tsx:54-54 |
 | **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | "draws an added invariant's full after statement beside an absent-before label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:194-212 |
 | The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable"; "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:214-228; dashboard/src/panels/review/KnowledgeStatements.test.tsx:243-259; dashboard/src/panels/review/KnowledgeStatements.test.tsx:265-265 |
@@ -591,7 +672,7 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 | Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:275-300 |
 | Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:302-352 |
 | Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:354-407 |
-| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:293-293 |
+| The unassessed state, printed rather than defaulted. | "UNASSESSED — no assessment is recorded against this subject." | dashboard/src/panels/review/ReviewSurface.tsx:307-307; dashboard/src/panels/review/ReviewSurface.tsx:414-414 |
 | The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:409-438 |
 | The refusal rendering, which left the surface for the outcome owner: one block prints every field the owner published, and both the surface and the expansion pane render it. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:113-171 |
 | **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `DiffPane`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:29-29; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
@@ -2999,9 +3080,9 @@ states that its byte-form row cannot be opened — so the measurements below nam
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:819-910 |
-| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
+| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:206-244; dashboard/src/panels/review/SourceExplorer.tsx:90-148; dashboard/src/panels/review/SourceExplorer.tsx:149-164 |
 | **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:275-300; dashboard/src/panels/review/ReviewSurface.tsx:302-352 |
-| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424; dashboard/src/panels/detail-panel/changeSetBar.tsx:619-672 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
 
@@ -3048,7 +3129,7 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:217-251; dashboard/src/panels/review/ReviewOutcome.tsx:7-9; dashboard/src/panels/review/ReviewOutcome.tsx:192-204 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:113-171; dashboard/src/panels/review/ReviewOutcome.tsx:29-30 |
 | **The identity a read answers for, and the read that stores the payload with it and drops it for another question.** | `targetKeyOf`; `shownPayload` | dashboard/src/panels/review/ReviewSurface.tsx:22-22; dashboard/src/panels/review/ReviewSurface.tsx:57-57 |
-| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:142-143; dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
+| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:425-467; dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424 |
 | **R03's pane rendering transported failures through the shared block while its own typed-refusal path stays untouched.** | `ReviewProblemBlock`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:30-31; dashboard/src/panels/review/SourceContent.tsx:29-30 |
 
 ## Update History

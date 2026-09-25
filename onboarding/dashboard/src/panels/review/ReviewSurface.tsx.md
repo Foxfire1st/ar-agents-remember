@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `2e11db883f77bb1bf2827ae537b5d1d564e020b3`|
-| lastVerifiedCommitDate |  2026-09-24T22:33:57+02:00|
+| lastVerifiedCommitHash |  `09329a7ee598920c519b06305b73ba8e48d72c88`|
+| lastVerifiedCommitDate |  2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -308,6 +308,24 @@ appears in this file**: it moved with the statement area into
 - **The refusal is a phase, not an error string.** `readFrom` produces it; `ReviewOutcomeRegion` renders
   it with every field the owner published.
 - **The retry belongs to the state with no owner-published route.** Only a `failed` read gets one.
+- **The reviewer supplies its own vertical scrollport, because the shell's is deliberately absent
+  (260921-ICR-L25 round 3, register B7).** `cockpit/Cockpit.tsx` sets `MAIN` to `overflow: hidden` as
+  a documented, shared decision — *"the viewport does not scroll, its panel scrolls on its own"* — so
+  a panel that supplies none renders its whole height into a clipped box. Measured before this fix at
+  320 px: `review-surface` held 7 620 px of content in a 706 px box, `userScrollableCount` was **0**,
+  the window was exactly viewport-height, and three wheel trials moved nothing — a long guarantee was
+  reachable only by the browser's programmatic focus scroll. The root now carries `height: 100%`,
+  `minHeight: 0`, `minWidth: 0`, `overflowY: "auto"`, which *fills* the shell's row instead of growing
+  past it. **This file does not change the shell's decision**, and the shell-level choice stays routed.
+- **The complete-payload panes may shrink and wrap, and that is a layout requirement rather than a
+  style choice.** Each pane is a **grid item** of the disclosure, so its automatic minimum size is
+  content-based unless told otherwise; the identities printed here are single unbreakable tokens (a
+  64-character comparison reference measured 539 px, a repository path 565 px) and the inherited
+  `break-word` does **not** lower min-content. `pane` therefore carries `minWidth: 0` and
+  `overflowWrap: "anywhere"`, and the disclosure's own track is `minmax(0, 1fr)` rather than the
+  implicit `auto` — the track must be allowed to shrink below its items' min-content for the panes'
+  `min-width: 0` to take effect. The header row wraps for the same reason: at 320 px it was the last
+  thing past the viewport edge, one unbreakable line of identities beside two controls.
 - **Boundary.** This is a presentation component. It holds no durable state, resolves no candidate and
   owns no route — and it owns no statement-side rule either, since R06 gave that rule a file of its own,
   nor the entry-expansion rule, which R03 gave to `SourceContent.tsx`, nor the outcome states, which
@@ -353,11 +371,11 @@ range that row cites.
 | **The header's own statement that the surface is display-only, produces no conclusion of its own, and reuses two renderers fed by other owners: `DiffPane` for both operands when both sides recorded one and for the available operand beside a named absence when one side did not, and the Source pane's entry expansion, whose rule `SourceContent` owns.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
 | **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:819-910 |
 | The takeover class shared with the change-set viewer, and where it is applied. | `TAKEOVER` |dashboard/src/panels/review/ReviewSurface.tsx:76-77; dashboard/src/panels/review/ReviewSurface.tsx:757-757|
-| **The one load path: the read cycle's hook supplies the read, the retained comparison and the refresh; the phases are rendered as themselves and there is no submit handler anywhere.** | `useReviewReadCycle`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:844-853; dashboard/src/data/review.ts:533-549 |
-| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` |dashboard/src/panels/review/ReviewSurface.tsx:78-83; dashboard/src/panels/review/ReviewSurface.tsx:85-89; dashboard/src/panels/review/ReviewSurface.tsx:91-100; dashboard/src/panels/review/ReviewSurface.tsx:151-167|
-| **The fifth helper this leaf added: one field value as `(absent)`, `(recorded empty)` or itself, so neither absence nor a recorded empty is printed as a blank.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:168-170; dashboard/src/panels/review/ReviewSurface.tsx:242-242 |
-| The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:171-183; dashboard/src/panels/review/ReviewSurface.tsx:290-290; dashboard/src/panels/review/ReviewSurface.tsx:397-397 |
-| The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:185-198; dashboard/src/panels/review/ReviewSurface.tsx:200-218; dashboard/src/panels/review/ReviewSurface.tsx:252-273 |
+| **The one load path: the read cycle's hook supplies the read, the retained comparison and the refresh; the phases are rendered as themselves and there is no submit handler anywhere.** | `useReviewReadCycle`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:55-55; dashboard/src/panels/review/ReviewSurface.tsx:884-884; dashboard/src/data/review.ts:533-549 |
+| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` | dashboard/src/panels/review/ReviewSurface.tsx:89-89; dashboard/src/panels/review/ReviewSurface.tsx:99-99; dashboard/src/panels/review/ReviewSurface.tsx:105-105; dashboard/src/panels/review/ReviewSurface.tsx:165-165 |
+| **The fifth helper this leaf added: one field value as `(absent)`, `(recorded empty)` or itself, so neither absence nor a recorded empty is printed as a blank.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:182-182; dashboard/src/panels/review/ReviewSurface.tsx:256-256 |
+| The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:185-185; dashboard/src/panels/review/ReviewSurface.tsx:304-304; dashboard/src/panels/review/ReviewSurface.tsx:411-411 |
+| The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:165-311 |
 | The mechanical half of pane 1: the conditions each side recorded, the retained revisions per side, and every field transition through `fieldValue`. | `KnowledgeFacts`; `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:171-251; dashboard/src/panels/review/ReviewSurface.tsx:113-113; dashboard/src/panels/review/ReviewSurface.tsx:221-221; dashboard/src/panels/review/ReviewSurface.tsx:106-106; dashboard/src/panels/review/ReviewSurface.tsx:177-177 |
 | **Pane 1, which delegates its statement area and keeps the comparison line, the mechanical facts, the authored records and the unassessed state.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:275-300 |
 | **The openable inventory row — the explorer's now, not this file's: the path published to this client rendered as a button carrying `data-path` and `aria-expanded`, its status and renderability beside it, and `SourceContent` mounted beneath it at the two tree ids the inventory named.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:99-109; dashboard/src/panels/review/SourceExplorer.tsx:116-125 |
@@ -372,7 +390,7 @@ range that row cites.
 | The reused diff renderer itself, imported by the statement area from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/review/KnowledgeStatements.tsx:29-29 |
 | The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:717-735 |
 | **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-591; dashboard/src/panels/changeset/ChangeSetViewer.tsx:38-44 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:455-455; dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
+| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:384-565 |
 
 ## Cross-Repo References
 
@@ -383,7 +401,67 @@ namespace's records and carries no identity that ranges beyond it.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260921-ICR-L25 Round 3 — The Reviewer's Own Narrow-Width Shape
+
+**This surface gained its own scrollport and the layout constraints that let its panes fit a narrow
+column.** The work is one round of the accepted design's B7 line, and it was driven by the round-2
+verifier's findings F1 and F2 — so the shape of the change is best read as *two answers to two measured
+facts*, not as a restyle.
+
+**F2's answer: a vertical affordance of this panel's own.** The cockpit's `MAIN` is `overflow: hidden` by
+a deliberate, documented shell decision (`cockpit/Cockpit.tsx`: *"the viewport does not scroll, its panel
+scrolls on its own"*), shared with every other view. This panel had supplied no scrollport, so at 320 px
+it rendered 7 620 px of content into a 706 px box that clipped it: `userScrollableCount` was **0**, the
+window was exactly viewport-height, three wheel trials moved nothing, and a long guarantee was reachable
+only by the browser's programmatic focus scroll. The root now carries
+`style={{ height: "100%", minHeight: 0, minWidth: 0, overflowY: "auto" }}` — `height: 100%` plus
+`minHeight: 0` *fills* the shell's row instead of growing past it, and `overflowY: auto` is the
+scrollport a reader can move. **The shell was not changed and its decision is not overridden here.**
+
+**F1's answer: the panes may shrink and wrap.** F1's measurement is what named the real cause — 51 of the
+64 overflowing elements at 320 px were descendants of `[data-testid="review-surface"]` (the reviewer's own
+root, `:906`), not of the inner `review-workspace`, and the pane sections were **565 px wide inside a
+294 px column** with no pannable ancestor. The cause is a grid-item minimum, not a width: each pane is a
+**grid item** of the disclosure, so its automatic minimum size is content-based unless it is told
+otherwise, and the identities this surface prints are single unbreakable tokens — a 64-character
+comparison reference measured **539 px**, a repository path **565 px** — while the inherited `break-word`
+does **not** lower min-content. Three declarations answer it together, and none of them works alone:
+
+- `pane` carries `minWidth: 0` and `overflowWrap: "anywhere"` (`:89-97`);
+- the disclosure's own grid track is `minmax(0, 1fr)`, not the implicit `auto` (`:774-782`), because the
+  track must be allowed to shrink below its items' min-content for the panes' `min-width: 0` to bite;
+- the header row wraps (`flexWrap: "wrap"`) and the subject span takes its own `minWidth: 0` +
+  `overflowWrap: "anywhere"` (`:828-848`), because at 320 px that row was the last thing past the edge —
+  one unbreakable line of identities beside two controls, pushing the refresh control 4 px out.
+
+**The regression pin, and what it does not claim.** `ReviewSurface.narrow.test.tsx` is the new
+acceptance module for this change and it asserts **these declarations**, on `review-surface` rather than
+on the inner root, precisely because neither round's defect was a wrong computation a rendered-text case
+could catch. It is honest about its own limit: jsdom has no layout engine, so a `getBoundingClientRect()`
+case there would read zeros and pass vacuously, and the module labels itself a **pin** while pointing at
+the served-bundle probe for the measurement. Its card is
+[ReviewSurface.narrow.test.tsx](ReviewSurface.narrow.test.tsx.md).
+
+**Re-measured after the fix, and stated as the round-3 measurement reports it:** descendants of
+`review-surface` past the viewport edge went **51 → 0** and the total **64 → 13**, with all 13 in neither
+review root — they are cockpit chrome. `review-surface` is now the scrollport (`userScrollableCount`
+0 → 1; a wheel over the review moves it 0 → 800 px), and `MAIN` no longer clips (its `scrollHeight`
+7620 → 706, equal to its `clientHeight`). **The number was not improved by changing the root** — the
+inner root's count was already 0 in both rounds, which is exactly why F1 was a classification defect.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The pane helper's two load-bearing declarations, and the comment that states why each one is required rather than cosmetic.** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewSurface.tsx:8-97 |
+| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:771-786 |
+| **The header row that wraps, and the subject span's own break opportunity and zero minimum.** | `ReviewHeader`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.tsx:797-857 |
+| **The reviewer's own vertical scrollport on its own root, with the shell's decision left where it belongs.** | `review-surface`; "overflowY: auto"; "height: 100%"; "minHeight: 0" | dashboard/src/panels/review/ReviewSurface.tsx:903-920 |
+| The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:36-36 |
+| The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:323-323 |
+
 ## Update History
+- 2026-09-26T00:35+02:00 — 260921-ICR-L25 curator, round 3 (re-read of a reopened claim on the round-3 change itself; leaf `260921-ICR-L25`): **the reopened `pane` claim was re-read against the current anchored construct and both its wording and its range are correct as they now stand.** The finding is the expected consequence of this round editing the very construct the claim is about: `pane` gained `minWidth: 0` and `overflowWrap: "anywhere"` in this leaf's round 3, so its evidence legitimately changed after the card was verified. The claim's own words — that the four helpers keep the pane bodies readable and that the attribution prints an unresolved author rather than an anonymous one — still hold, and the row now cites each helper's own declaration. **The round-3 section above was written in this same pass and is the body update this change required**; this entry records the re-read the guidance asks for. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewHeader`; `flexWrap` repointed to dashboard/src/panels/review/ReviewSurface.tsx:797-857; dashboard/src/panels/review/ReviewSurface.tsx:831-831. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 verifier `verify-l25-round2.md` sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`, findings F1/F2): **body update — the surface gained its own scrollport and the declarations that let its panes fit a narrow column, and this card gained the round-3 section and the two invariants that state them.** The new section records F2's answer (the panel's own `overflowY: auto` scrollport, with the shell's `MAIN: overflow: hidden` left as the shell's deliberate decision rather than overridden) and F1's answer (the real cause is a **grid-item minimum**, so `minWidth: 0` + `overflowWrap: "anywhere"` on `pane`, `minmax(0, 1fr)` on the disclosure track, and a wrapping header row — three declarations of which none works alone), plus the re-measured after-state (51 → 0 inside the reviewer root, 64 → 13 with the 13 in neither root; `userScrollableCount` 0 → 1; `MAIN.scrollHeight` 7620 → 706). It names the new pin module and its card, and states plainly that the pin holds **declarations** and not pixels. **Citation accounting:** every row this round's insertions displaced was re-derived from each construct's declaration at this tip; the two pre-existing rows into `changeSetBar.tsx` (`:455`, `:337-384` for `selector_id`/`useReviewCatalogue`) were checked and left where their anchors still resolve. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the outcome states left this file, the read became four phases, and the retained generation is now keyed to the question it was read for.** This is the body update for that change, and it corrects three statements the card previously made rather than carrying them: (1) "three states carry the outcome" — `payload`/`refusal`/`error` are replaced by one `ReviewRead` phase plus `retained` and `instead`; (2) "the component's single `useState` for `payload` holds the refetch outcome, so a refusal and a stale payload can never be on screen together" — that is no longer the mechanism and no longer the rule: a **failed** read deliberately keeps the last coherent comparison on screen, while a **typed refusal** replaces the panes, and the asymmetry lives in `shownPayload`; (3) the `RefusalBlock` paragraph — the inline `RefusalBlock` and the `review-error` paragraph were **removed, not duplicated**, and `ReviewOutcome.tsx` owns them. The new mechanism is recorded in full: `targetKeyOf` as the one identity a read answers for, the reset in `load` plus the render-time check as the two halves of "never under the wrong header", `instead` as the second explicitly-asked question (asked with no selector), and `retryFor`/`insteadFor` as the only two controls the composition adds. The card also records **two measured limits as routed, not fixed**: the **in-flight** prop/question race (pre-existing at HEAD and on the round-1 bytes, routed to **R17** with R24) and the **browser-class A01/A13 journeys** (not verified by this leaf; **R25** with R24/R17). Line count 549 → 632. Every row of the reference table was re-derived against this candidate. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00), and the leaf's own recorded working candidate states what was actually read; nothing in this leaf is committed, so closeout owns the stamp.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the Source pane's inventory rows became the way into their own content, and the file grew 462 → 549 lines.** `inventoryEntry` gained `repo`/`master`/`leaf`/`generation`/`open`/`onOpen` and now renders the published path as a `<button data-testid="review-inventory-open" data-path=… aria-expanded=…>` **only when the inventory named both code trees**, mounting the new `SourceContent` beneath an open row at those two tree ids; `byteNamedEntry` gained `data-testid="review-byte-path-not-addressable"`, which states that a byte-form row cannot be opened through this surface because no expansion request can name it; `Inventory` gained `const [open, setOpen] = useState<string | null>(null)`, derives the generation pair from its own published `before_code_tree_id`/`after_code_tree_id`, and is now the one stateful sub-component on this card; `SourcePane` forwards the task context into `Inventory`; and the header now names **two** reused renderers — `DiffPane` (through `KnowledgeStatements`) and `SourceContent` — instead of one. The body was updated before this entry: Purpose, the Conventions paragraph (the import, and the one stateful sub-component), two new invariants (an entry opens at the generation the listing published; a byte-named row is marked unopenable rather than offered a control), the boundary sentence, and Todos. **Citation accounting:** every row of the reference table was re-derived against this candidate and the re-derived rows are stated here so a reader can audit the pass — `ReviewSurface.tsx` header `1-7` → `1-9`, `ReviewTarget` `27-37` → `30-39`, `ReviewSurface` `395-462` → `482-549`, `TAKEOVER` `38`/`453` → `41`/`540`, `pane`/`muted`/`attribution`/`unresolvedList` `40-74` → `43-71`, `fieldValue` `70-77` → `78-79`, `assessmentBlock` `78-90` → `81-92`, `authoredEffect`/`signalBlock` `91-126` → `94-125`, `KnowledgeFacts` `127-155` → `130-155`, `AuthoredRecords` `156-178` → `159-180`, `KnowledgePane` `179-206` → `182-205`, `SourcePane` `265-307` → `337-393`, `EvidencePane` `308-358` → `395-444`, `SubmissionBlock` `359-380` → `446-466`, `RefusalBlock` `381-394` → `468-480`, and `review.ts` `intentReview` `271-285` → `328-342`; three rows were added for the constructs this leaf introduced (`inventoryEntry`/`review-inventory-open`/`SourceContent` at `214-260`, `byteNamedEntry`/`review-byte-path-not-addressable` at `270-282`, `Inventory`/`useState` at `291-335`), and one cross-range correction was made on the cockpit/target row (`ChangeSetViewer.review` `41` → `38-44`, so the anchor occurs inside the cited range). The superseded L6 row values are left in place in the entry below, because this history is append-only and that entry was true of the candidate it names. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and the recorded working candidate states the leaf's own uncommitted candidate; no commit contains the bytes this card now describes, so closeout owns the real stamp.

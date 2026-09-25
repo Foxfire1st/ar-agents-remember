@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -26,7 +26,22 @@ is a **third** state and is reported as one (`data-review-state="loading"` with 
 renderings rather than two. The owning route's cases assert the rendered code, the rendered reason, and that
 the control still opens what it names.
 
+## 260921-ICR-L25 The Change-Set Client Carries The Leaf View's Own Recordedness
+
+`data/changeset.ts`'s `TaskChangeset` gained the leaf view's `state`/`stateDetail`, and they are what
+keep an **unrecorded** range apart from a **measured empty** one (register B6). A `committed` read of a
+live leaf has no landed commit to read yet; the serving route answers that state in the body rather
+than refusing it with a `404`, because a `404` for a state the change-set bar probes on **every** live
+leaf is a browser console error on the page whose accepted criterion is zero. The client's part is
+deliberately thin and that is the point: both fields are **optional** (so the enclosure-scoped
+`taskChangeset` and the master read are untouched), and `stateDetail` is the server's own sentence
+carried to the caller **verbatim** rather than summarised here — one vocabulary, not two. The rendering
+consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` shows
+`unrecorded` as its own state and **withholds the `+0 −0` total**, since a zero of nothing is not a
+measurement.
+
 ## Update History
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the section above records the client half of an unrecorded range being named rather than refused.** `TaskChangeset.state`/`stateDetail` are optional mirrors of the server's `LeafChangeSet` addition, `stateDetail` is carried verbatim, and the rendering rule lives on the owning route. **Citation accounting:** every row this interface growth displaced on this route was re-derived from each construct's declaration at this tip — `MasterNetPins` `:46` → `:63`, `MasterNetGeneration` `:52` → `:69`, `MasterChangeset` `:59` → `:76`, `TaskChangeset` `:33` → `:41-48`, `masterFileDiff` `:112` → `:129-142`, `taskChangeset` `:188`/`:192` → `:167`, `getJson` `:135-144` → `:144`. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set read carries its refusal.** The new section records that `data/changeset.ts` no longer discards a rejected counters read (the D01 defect L16 routed here and R12/R24 both landed without taking), that `files.ts` follows the same shape, and that loading, refused and answered are three distinguishable renderings. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Current Structural Identity Contract
@@ -597,7 +612,7 @@ no fallback value was introduced for it.
 | **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:110-123; dashboard/src/data/review.ts:404-415 |
 | The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:217-238|
 | **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:533-549 |
-| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `InventoryRows`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceContent.tsx:189-265 |
+| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `InventoryRows`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:206-244; dashboard/src/panels/review/SourceContent.tsx:189-265 |
 
 ## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
 
@@ -683,7 +698,7 @@ and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
 | **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:158-171 |
 | **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98 |
 | **The comparison and entry reads and the expansion read, all delegating to the one decode.** | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:699-705; dashboard/src/data/review.ts:717-735
-| **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:135-144 |
+| **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:144-144 |
 
 ## 260921-ICR-L13 The Master Client Is Generation-Bound
 
@@ -699,7 +714,7 @@ re-derivation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:46-46; dashboard/src/data/changeset.ts:52-52; dashboard/src/data/changeset.ts:112-112; dashboard/src/data/changeset.ts:60-60; dashboard/src/data/changeset.ts:54-54; dashboard/src/data/changeset.ts:188-188; dashboard/src/data/changeset.ts:192-192 |
+| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:63-63; dashboard/src/data/changeset.ts:69-69; dashboard/src/data/changeset.ts:201-223; dashboard/src/data/changeset.ts:76-76 |
 
 ## Update History
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated — the master client is generation-bound (new section above).** No review-client fact changed; the R16 routed-debt sentence stands. The one row into the moved client is re-derived (`leafChangeset` `:100-108` → `:135-144`). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.

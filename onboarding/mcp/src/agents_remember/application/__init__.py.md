@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route overview documents the split application package layout. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1067-1068 |
+| The route overview documents the split application package layout. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1069-1069; onboarding/mcp/src/agents_remember/application/overview.md:2893-2893 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History

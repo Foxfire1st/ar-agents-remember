@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/changeset_endpoints.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T13:07:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -118,10 +118,18 @@ No domain documentation source is configured for this repository (`system/source
 Every claim on this card is checkable in the shipped candidate: this module's own docstring and
 functions, the contract loader whose recorded cells it reads, the Git helper it probes with, the
 caller that owns the two sides' independent degradation, and the case module that measures both the
-bound range and the unrecorded-endpoint refusal. Two details a reader should carry: the *closeout*
+bound range and the unrecorded-endpoint answer. Two details a reader should carry: the *closeout*
 cell is preferred over the *integration* cell only because a comparison against the working view is
 made against it, not because the integration cell is less recorded; and `kind` is the whole reason
 the exception is a type rather than a message — the caller branches on `NOT_RECORDED` alone.
+
+**260921-ICR-L25 changed what the caller does with that branch, not what this module does.** This
+module still raises `RecordedEndpointAbsent(kind="not-recorded")` for a side whose landed commit is
+not recorded yet — it owns *which* Git objects a range binds and has no view about HTTP. What changed
+is one layer up: `serving/changeset.py`'s `_leaf_range` now **catches** that absence for the **code**
+side and carries its sentence into the response body as `state="unrecorded"` / `stateDetail`, instead
+of letting it reach the route as a `404` (register B6). The memory side's degradation and the
+`no-repository`/`unresolvable` refusals are untouched.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -130,14 +138,14 @@ the exception is a type rather than a message — the caller branches on `NOT_RE
 | The two side names, which are the words the change-set payload already uses for its halves. | `CODE_SIDE`; `MEMORY_SIDE` | mcp/src/agents_remember/serving/changeset_endpoints.py:38-41 |
 | The three absence kinds and the single degradable one. | `RecordedEndpointAbsenceKind`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:43-50 |
 | **The range value: the two recorded ids plus the repository that holds them, because an id without its repository is not resolvable.** | `RecordedRange` | mcp/src/agents_remember/serving/changeset_endpoints.py:53-65 |
-| **The absence type: a `FileNotFoundError` so the existing routes map it to a 404 by name, with `kind` carrying the reason apart.** | `RecordedEndpointAbsent` | mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
+| **The absence type: a `FileNotFoundError`, with `kind` carrying the reason apart — the code side's `not-recorded` instance is caught by `_leaf_range` and published as the body's state rather than reaching the route as a 404 (260921-ICR-L25).** | `RecordedEndpointAbsent` | mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
 | **The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.** | `recorded_committed_range` | mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
 | The two recorded cells per side, with the closeout cell preferred over the integration cell and the base side having no fallback. | `_recorded_commits` | mcp/src/agents_remember/serving/changeset_endpoints.py:128-139 |
 | The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf. | `_leaf` | mcp/src/agents_remember/serving/changeset_endpoints.py:142-145 |
 | **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** | `_unresolvable`; `run_git` | mcp/src/agents_remember/serving/changeset_endpoints.py:148-154; mcp/src/agents_remember/kernel/git_command.py:150-216 |
 | The contract whose recorded cells this module reads, and the cells themselves. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:430-472 |
-| **The caller that owns the degradation policy: the code half keeps the refusal while only an unrecorded **memory** half may empty, and both sides resolve independently.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:345-389; mcp/src/agents_remember/serving/changeset.py:456-489; mcp/src/agents_remember/serving/changeset.py:577-577; mcp/src/agents_remember/serving/changeset.py:666-666 |
-| **The case module that measures the bound range, the immovable endpoint, the refusal, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_refused_rather_than_read_from_head`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:609-659; mcp/tests/test_knowledge_review_source_endpoints.py:662-684; mcp/tests/test_knowledge_review_source_endpoints.py:687-730 |
+| **The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:386-440; mcp/src/agents_remember/serving/changeset.py:596-630 |
+| **The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:642-692; mcp/tests/test_knowledge_review_source_endpoints.py:695-741; mcp/tests/test_knowledge_review_source_endpoints.py:744-792; mcp/tests/test_knowledge_review_source_endpoints.py:795-839 |
 
 ## Cross-Repo References
 
@@ -150,5 +158,6 @@ ranges beyond them.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **body update — the card's account of what the caller does with `NOT_RECORDED` was corrected in place; no claim about this module changed.** This file is **byte-unchanged** by the round-2 change set: it still raises `RecordedEndpointAbsent(kind="not-recorded")` and still owns which Git objects a range binds. What changed is one layer up — `serving/changeset.py`'s `_leaf_range` now catches that absence for the **code** side and carries its sentence into the body as `state="unrecorded"` / `stateDetail` instead of letting it reach the route as a `404` (register B6) — so the Summary paragraph and the two rows that stated the old degradation policy were corrected rather than left standing, and the absence-type row now says which caller catches it. **Citation accounting:** both rows into `serving/changeset.py` were re-derived against the round-2 tip, where the L1 pairs were also stale (`:345-389`/`:456-489`/`:577`/`:666` → `_leaf_range` `:386-440` and `leaf_file_diff` `:596-630`), and the case-module row now carries the renamed case's name and its four current ranges. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, base `f745e16659c5602252bb185a2ffccc356c2bde26`): created this one-to-one card for the resolver the leaf introduced for committed change-set ranges. The card records the behaviour change rather than only the new module: `mode=committed` for a live leaf with no recorded landed commit is now a **typed refusal** (`RecordedEndpointAbsent` with `kind`), where `serving/changeset.py` previously substituted the worktree's `HEAD` and labelled that range the landed delta; `not-recorded` is the only absence a half may degrade to empty for, so an unrecorded **memory** half still leaves the code half published while the code half keeps its refusal; and both endpoints are checked against the repository that holds them via `git cat-file -e` instead of escaping as an unhandled Git failure. **Stamp accounting:** the two verification rows name `f745e16659c5602252bb185a2ffccc356c2bde26`, the last real commit on this line, because the external-memory refresh gate requires verification metadata before the memory commit; every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the content those rows would otherwise claim to have verified, so the governed closeout owns the real stamp.

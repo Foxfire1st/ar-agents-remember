@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -79,18 +79,46 @@ schema only; the file grows 1136 → 1155 lines, soft band, green via
   their identity: `code_base`/`code_tip` plus `memory_base`/`memory_tip` (empty when the
   master shows no memory half) and the deterministic `digest`. A completed master's
   recorded result re-resolves from these rather than from the live branch tip.
-  cit:([`MasterNetGeneration`], mcp/src/agents_remember/serving/response_contract.py:857-869)
+  cit:([`MasterNetGeneration`], mcp/src/agents_remember/serving/response_contract.py:871-883)
 - `MasterChangeSet` gains `generation: MasterNetGeneration | None` (absent only for the
   unknown-master degradation), `currentness: "current" | "superseded" | "unmeasured"`, and
   `scope: "integrated"` — the one scope the selection ever serves.
-  cit:([`MasterChangeSet`], mcp/src/agents_remember/serving/response_contract.py:872-882)
+  cit:([`MasterChangeSet`], mcp/src/agents_remember/serving/response_contract.py:886-902)
 - `LeafSummary` gains `state: "committed" | "working"` (default `committed`) so an
   in-flight preview rides beside the net, never silently inside it.
-  cit:([`LeafSummary`], mcp/src/agents_remember/serving/response_contract.py:849-854)
+  cit:([`LeafSummary`], mcp/src/agents_remember/serving/response_contract.py:863-868)
 
 Routed boundaries recorded here, not closed here: R24 owns the leaf-history catalogue and
 drill-down UI on top of `leaves[].state` and per-view `generation`; R12 owns
 committed-leaf historical views; the browser-class journeys belong to R25.
+
+## 260921-ICR-L25 Current Delta — The Leaf View Names Whether Its Range Is Recorded
+
+**`LeafChangeSet` gains `state` and `state_detail`, and they exist to keep two states apart that were
+previously collapsed.** `state: Literal["recorded", "unrecorded"]` (default `"recorded"`, wire
+`state`) says whether the view's own endpoints are recorded; `state_detail: str` (wire `stateDetail`)
+carries the route's own sentence naming the missing endpoint and the action that produces it.
+
+`unrecorded` is a `committed` view of a leaf whose landed commit nothing has recorded yet — the state
+every live leaf is in before its closeout, and one the change-set bar probes as soon as a leaf
+document is opened. It is **answered rather than refused** because the resource exists and only its
+second endpoint does not, and because a `404` for it was a browser console error on the page whose
+accepted criterion is zero (register B6). The counters that ride beside it are a measured zero **of
+nothing**, which is exactly why the state has to be explicit: no reader may take them for "the leaf
+landed nothing", and the client withholds its total for the same reason.
+
+**`LeafChangeSet` remains a `TaskChangeSet` subclass with the `mode` echo, so this is one added
+field pair and no shape change.** The class is also now the third of the three fresh fields this
+route family publishes, so the annotate-only `TaskChangeSet` is untouched and the two
+members it inherits (`code`, `memory`, `counters`) are unchanged. The refusal table is unchanged:
+this is a `200` body contract, not a new status.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| **The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.** | `LeafChangeSet`; "state: Literal[\"recorded\", \"unrecorded\"]"; `state_detail` | mcp/src/agents_remember/serving/response_contract.py:843-860 |
+| **The producer that publishes it, with the counter zero it exists to annotate.** | `leaf_changeset` | mcp/src/agents_remember/serving/changeset.py:455-497 |
+| **The client mirror and the control that renders the state and withholds the total.** | `TaskChangeset`; `ChangeSetButton` | dashboard/src/data/changeset.ts:41-48; dashboard/src/panels/detail-panel/changeSetBar.tsx:47-181 |
+| **The cases that measure the discriminator and the route status.** | `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` | mcp/tests/test_knowledge_review_source_endpoints.py:695-741; mcp/tests/test_knowledge_review_source_endpoints.py:744-792 |
 
 ## Docs References
 
@@ -100,16 +128,18 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state. | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:857-869; mcp/src/agents_remember/serving/response_contract.py:872-882; mcp/src/agents_remember/serving/response_contract.py:849-854 |
-| The catalog wire mirrors structural binding, replacement, and the private dispatch receipt. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:281-363 |
-| Open and seat-conflict responses carry structural identity. | `TerminalOpened` | mcp/src/agents_remember/serving/response_contract.py:399-423 |
-| Task assignment success/refusal use task-document identity. | `TerminalTaskAttached` | mcp/src/agents_remember/serving/response_contract.py:442-460 |
+| The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state. | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:871-883; mcp/src/agents_remember/serving/response_contract.py:886-902; mcp/src/agents_remember/serving/response_contract.py:863-868 |
+| **The leaf view's own recordedness: the `state` discriminator, its `recorded` default, and the route's sentence it carries (260921-ICR-L25).** | `LeafChangeSet`; `state_detail` | mcp/src/agents_remember/serving/response_contract.py:843-860 |
+| The catalog wire mirrors structural binding, replacement, and the private dispatch receipt. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:281-400 |
+| Open and seat-conflict responses carry structural identity. | `TerminalOpened` | mcp/src/agents_remember/serving/response_contract.py:403-443 |
+| Task assignment success/refusal use task-document identity. | `TerminalTaskAttached` | mcp/src/agents_remember/serving/response_contract.py:446-460 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **body update — `LeafChangeSet` gains the `state`/`stateDetail` pair, and the section above records why.** It is a declarative addition with a `recorded` default, so every existing caller and every existing response is unchanged; what it buys is the distinction between a range **unrecorded** (the live leaf before its closeout) and one **measured empty**, since the counters beside an unrecorded range are a zero of nothing (register B6). **Citation accounting:** the three L13 `cit:`s and the four rows of the reference table were re-derived from each class's own declaration at this tip — the L25 insertion sits **above** `LeafSummary`, so `MasterNetGeneration` `:857-869` → `:871-883`, `MasterChangeSet` `:872-882` → `:886-902`, `LeafSummary` `:849-854` → `:863-868`, and the three terminal rows were re-derived too (`TerminalCatalogEntryWire` `:281-363` → `:281-400`, `TerminalOpened` `:399-423` → `:403-443`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master-net vocabulary.** The section above records `MasterNetGeneration`, the three new `MasterChangeSet` members and `LeafSummary.state` with measured ranges; the R24/R12/R25 boundaries are recorded as routed, not closed. No earlier claim is superseded (additive schema). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.

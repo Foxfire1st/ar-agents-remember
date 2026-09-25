@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`|
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -168,7 +168,7 @@ boundaries rather than duplicating their policy.
 | Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228 |
 | The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:298-298; mcp/src/agents_remember/serving/app.py:302-302 |
 | The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:248-248 |
-| The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. | "SESSION_CONTROL_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1113-1120; mcp/src/agents_remember/serving/response_contract.py:1132-1132 |
+| The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. | "SESSION_CONTROL_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1146-1146 |
 | The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery. | "class PreDispatchFailureRefusal(" | mcp/src/agents_remember/serving/response_contract.py:162-168 |
 
 

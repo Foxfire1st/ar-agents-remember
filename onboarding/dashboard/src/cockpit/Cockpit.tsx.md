@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
-| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -261,7 +261,7 @@ the reviewed task evidence for any current behavioral claim.
 | The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:66-73; dashboard/src/cockpit/Cockpit.tsx:75-83 |
 | The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:328-334 |
 | The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
-| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1099-1126 |
+| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1129-1156 |
 | The boot-time effects flag it persists to. | "calm-cockpit" | dashboard/src/main.tsx:15-15 |
 | The honest-motion gate the rail transition + the toggle drive. | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
 | The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:365-389 |
@@ -270,17 +270,17 @@ the reviewed task evidence for any current behavioral claim.
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:48-59; dashboard/src/data/taskIdentity.ts:65-71 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:160-160 |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:803-807 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:812-812 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:79-122; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:173-245 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:715-787 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:710-714 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:719-719 |
 | Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:460-460 |
 | Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:441-441 |
 | The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:439-439 |
 | metricsFor builds the client rollup from lifecycles and spreads the derived state counts. | "export function metricsFor(" | dashboard/src/types/projection.ts:466-466 |
 | The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
-| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:969-996 |
+| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:999-1026 |
 | The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-62 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
@@ -300,6 +300,10 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `EffectsToggle` repointed to dashboard/src/cockpit/Cockpit.tsx:1129-1156. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:812-812. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:719-719. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `AgentNotifierHeartbeatBadge` repointed to dashboard/src/cockpit/Cockpit.tsx:999-1026. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — the takeover re-targets itself for a leaf opened from the master's net (R33.3).** The section above records the new `onOpenChangeSet`/`onOpenLeaf` thread, that the same takeover is re-targeted rather than a second screen opened, and that the review dispatch is untouched. **Citation accounting:** the rows this leaf's line movement displaced were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:803-803. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
@@ -58,7 +58,76 @@ change-set that measured empty in both halves says so instead of showing the pic
 | The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. | "Tasks · {count}" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:574-574 |
 | Both master readers now ask for the per-leaf breakdown. | `includeLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 |
 
+## 260921-ICR-L25 Four Accepted-Design Defects Fixed Across This Route's Panels
+
+The round-2 acceptance work fixed four defects the accepted design revealed, and each one is a surface
+that had been describing a state it was not in. Grouped here because they are one body of work across
+this route, with the detail on each panel's own route.
+
+**An unrecorded change-set range is named, not printed as a zero (B6).** A `committed` read of a live
+leaf has no landed commit to read yet; the route answered that state with a `404`, which is a browser
+console error on the page whose accepted criterion is **zero** — and the bar probes it on every leaf's
+open. It is now answered in the body (`state: "unrecorded"` + the route's own sentence), carried by
+`data/changeset.ts`'s optional `state`/`stateDetail`, and rendered by
+`panels/detail-panel/changeSetBar.tsx` as the control's **own** state with its `+0 −0` total withheld.
+An unknown leaf, a bad `mode` and an enclosure `scope` remain three distinct refusals.
+
+**The narrow jump route sits above the family tree, and the empty centre names its own plane (B3).**
+The accepted design's finding P2-3 requires the affordance "near the top" because the tree's height is
+why it exists; it was rendered below the tree, at `y=1183` in a 900 px viewport. It is now one
+`NarrowJump` in `panels/review/ReviewWorkspace.tsx`, between the header and the tree, with the tree
+untouched. `panels/review/FamilyReviewCenter.tsx`'s empty sentence said "No family or member is
+selected", colliding with the **server's** "selected" used on the same screen; it now says a family or
+member has not been **chosen in this column** yet. The measured `data-selection-kind` was `none` and no
+tree row carried `aria-current`, so the sentence was never false about its own pane: this is a wording
+fix and the centre's layout was deliberately not changed. **One caveat the round-2 verifier measured,
+which round 3 then removed on the reviewer's own side (F2):** at 320 px the reviewer had supplied no
+scrollport of its own, so with `MAIN` at `overflow-y: hidden` its 7 620 px of content were reachable only
+by programmatic focus scroll — the narrow reader's route to the review was not one they could scroll.
+`panels/review/ReviewSurface.tsx`'s root is now the scrollport (`userScrollableCount` **0 → 1**, a wheel
+over the review moving it **0 → 800 px**), so the affordance reaches a column a reader can actually
+scroll. The composition requirement and the wording fix are unchanged by that.
+
+**The review surface's raw colour literal is gone (B1), and the claim is stated in the form that is
+true.** `panels/review/FamilyTree.tsx` carried the only two raw literals — `oklch(0.82 0.16 75 / 0.08)`
+and `… / 0.16`, `--amber`'s channels copied by hand — and they are now one `AMBER_WASH(percent)` helper
+stating `color-mix(in oklab, var(--amber) N%, transparent)`. The interpolation space is the reason it
+matters: an `oklch` mix interpolates the **hue**, which is how the accepted page's own selected row first
+came out visibly teal. **What is false as worded, and must not be repeated:** *"zero `oklch` users remain
+in the review surface"* — the dashboard's own tokens are defined in `oklch` (`styles/tokens.css:8-23`) and
+`getComputedStyle` resolves `var(--token)`, so token-resolved `oklch` values are everywhere in the surface
+**by design**. **What is true and measured:** the raw amber-wash literal is gone, the wash computes as
+`oklab(0.82 0.041411 0.154548 / 0.08)` through `var(--amber)`, and hue **215** appears nowhere in the
+review sources. A reader scanning computed styles for the word `oklch` will otherwise conclude the fix
+failed.
+
+**A long path wraps instead of being clipped (B7), and B7 took two rounds to close — both readings of
+its residual are recorded here.** `panels/review/SourceExplorer.tsx`'s path button gained
+`overflow-wrap: anywhere` and `max-width: 100%`; measured at 320 px it was 556 px wide inside a 294 px
+column with its right 262 px neither visible nor reachable, because a `mono` path has a very
+**min-content** width and `anywhere` — unlike `break-word` — lowers it. Round 2 then claimed the residual
+was cockpit chrome *"outside the review surface"*, and **that was false as worded**: the count had been
+classified against the **inner** `[data-testid="review-workspace"]` root while the Intent Reviewer's own
+root is `[data-testid="review-surface"]` (`ReviewSurface.tsx:906`, mounted by `Cockpit.tsx:585`).
+Against the reviewer's own root, **51 of the 64** elements past the right edge at 320 px were **inside**
+the reviewer (13 were chrome), the pane sections were 565 px in a 294 px column, and **nothing in the
+document was user-scrollable at all**. **Round 3 fixed both halves in the reviewer's own code:** the panes
+got `min-width: 0` + `overflow-wrap: anywhere`, the disclosure track became `minmax(0, 1fr)`, the header
+row wraps, and the surface root took `height: 100%` / `minHeight: 0` / `overflowY: auto`. Re-measured:
+descendants of `review-surface` past the edge **51 → 0**, total **64 → 13**, panes **565 → 294 px** in a
+294 px column, the root's own **311/294 → 294/294**, `userScrollableCount` **0 → 1**, a wheel over the
+review moving the surface **0 → 800 px**. **The number was not improved by changing the root** — the inner
+root's count was 0 in both rounds. **Routed, and now the shell's rather than the reviewer's:** `MAIN`'s
+deliberate `overflow: hidden` (`cockpit/Cockpit.tsx:323`, *"the viewport does not scroll — its panel
+scrolls on its own"*, shared by every view) and the **13** cockpit-chrome elements, owned by R24's
+cockpit takeover. **The shell consequence, stated so it is not lost:** any other panel in this shell that
+renders taller than the viewport without its own scrollport has the same defect.
+
 ## Update History
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `AsJsonModule`; `Overrides` repointed to dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (uncommitted change set, now also carrying `panels/review/ReviewSurface.tsx` and the new `panels/review/ReviewSurface.narrow.test.tsx`; round-2 verifier `verify-l25-round2.md` sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`; round-3 report `report-l25-round3.md` = `cf6fb86e4d20cf5a1baf6bd093e4d9b1ccbf017062503da23bf40d44e52b86`): **route body updated — B7's residual is superseded a second time and the B3 caveat is corrected.** The B7 paragraph now records all three states of one claim (round 2's "outside the review surface" phrasing, the verifier's refutation of it with the reviewer's own root, and round 3's fix of both the horizontal and the vertical half) rather than only the last number, and it names the cause round 3 removed — a grid-item minimum, with the panes 565 px in a 294 px column. The B3 caveat's "nothing is user-scrollable at 320 px" described the pre-round-3 state and now records that round 3 supplied the reviewer's own scrollport (`userScrollableCount` 0 → 1). **What remains routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate `overflow: hidden` decision and the 13 cockpit-chrome elements, owned by R24's cockpit takeover — with the consequence stated that any other panel in this shell lacking its own scrollport shares the defect. **Citation accounting:** the section's rows now cite the reviewer root's own current line and the shell's decision line; no earlier claim was weakened to fit. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2, **correction against the independent verifier** (same uncommitted change set; verifier `verify-l25-round2.md` first line `pass-with-findings`, sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`; findings F1/F2/F5): **the B7 sentence this route's L25 section carried was false as worded and is corrected in place.** The residual at 320 px is **not** cockpit chrome alone: the Intent Reviewer's own root is `[data-testid="review-surface"]` while `review-workspace` is an **inner** root, and classified against the reviewer's own root **51 of the 64** overflowing elements are **inside** the reviewer (13 are chrome) with `pannableCount 0`, so the residual sits inside B7's own criterion and is **routed as a named residual rather than placed outside the surface**. The verifier's F2 adds the vertical half — at 320 px **nothing in the document is user-scrollable** (`MAIN` `overflow-y: hidden`, 5 375–7 620 px of content). The B1 claim is likewise narrowed to the form that is true (raw amber-wash literal gone, wash computes `oklab` through `var(--amber)`, hue 215 absent), because "zero `oklch` users remain in the review surface" is false while the dashboard's own tokens are defined in `oklch`. **What did not change:** the path/explorer fix is real and measured, and the page no longer overflows horizontally at either width. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the section above records the four accepted-design defects fixed across this route's panels, with the detail left on each panel's own route.** B6 (the unrecorded change-set range answered and named, with its total withheld), B3 (the jump above the tree, and the empty centre's plane-naming sentence — stated as a **wording** fix, not a false-state fix, because the measured `data-selection-kind` was `none`), B1 (the review surface's only raw `oklch` literals replaced by one token-derived `oklab` helper) and B7 (the path button wraps). The section also names what is **routed** rather than absorbed: the cockpit chrome's residual 320 px overflow, owned by R24. **Citation accounting:** the rows on this route that cite the changed panels were re-derived from each construct's declaration at this candidate (`leafIsLive` `:607` → `:673-688`, `useReviewCatalogue` `:337-384` → `:371-424`, `DocChangeSetBar` `:585-634` → `:619-672`, the explorer's inventory rows `:234-315`/`:78-129`/`:137-149` → `:246-327`/`:90-148`/`:149-164`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-25T22:50:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **route body corrected — the L33 operations-list half is withdrawn because commit `a9a1a41b` reverted it.** A withdrawal banner now heads the L33 section and the withdrawn paragraph carries its own marker; two reference rows citing the deleted `landedLeaves.ts` and the removed `openedKeys`/`setCollapsed` were **deleted rather than re-pointed** (a rename is repairable, a deletion is not), and every other row this pass touched had its range re-derived by locating the anchor literally in the candidate. The section's **second** half — the per-leaf breakdown in the change-set readers — is unaffected by the revert and was left standing. The revert was a direct emergency commit with no curator pass behind it, which is why this route described a module that exists in neither tree. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — a landed master's leaves reach the operations list, and the per-leaf scale reaches both change-set readers.** The new section records the landed-leaf admission and its two bounds (the default-collapse rule and the row-carries-rows exclusion), the new `landedLeaves.ts` module, the collapse hook's second storage key, the header count's stated meaning, the `includeLeaves: true` request on both master readers with the superseded optimisation named and its retention recorded, and the two named states (refusal, measured-empty). **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the D01 refusal is carried end to end.** The new section records that this route's change-set client no longer discards a rejected read's own code and reason, that loading/refused/answered are three distinguishable states, and that the rendering half and its cases live on the detail-panel route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
@@ -518,7 +587,7 @@ references informed product framing only; current code truth stays in agents-rem
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. | "the five rules"; `SCANNED_ROOTS`; "can a test assert against a payload the server could never send?" | dashboard/src/test/wireFixtureGuard.ts:2-3; dashboard/src/test/wireFixtureGuard.ts:53-53; dashboard/src/test/wireFixtureGuard.ts:136-136 |
 | State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:460-464 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-69; dashboard/src/topology/constel.ts:31-39 |
-| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:10-11; dashboard/src/test/fixtures/overrides.ts:31-32 |
+| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66; dashboard/src/test/servedProjection.ts:22-32 |
 
 Current working-candidate evidence for this route:
 
@@ -681,8 +750,8 @@ function (`reviewSourceContent`), and its own record lives in the `panels/` rout
 | The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:413-413; dashboard/src/cockpit/Cockpit.tsx:577-577 |
 | The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:35-35 |
 | **The reviewer entry: offered for every live leaf, with the server's subject travelling as a refinement rather than as a gate.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
-| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:607-607 |
-| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:20-21 |
+| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:673-688 |
+| **The read that supplies the subject catalogue, taking the task context and nothing else.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424; dashboard/src/panels/detail-panel/changeSetBar.tsx:20-21 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -1466,11 +1535,11 @@ comparison identity, and the rendering of an inventory in all three of its state
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634 |
+| **The entry that is now offered for every live leaf, with the server's subject catalogue as a refinement rather than a gate.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424; dashboard/src/panels/detail-panel/changeSetBar.tsx:619-672 |
 | **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
 | **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:561-600 |
 | **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:292-302; dashboard/src/data/review.ts:533-549 |
-| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:234-315; dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:137-149 |
+| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:246-327; dashboard/src/panels/review/SourceExplorer.tsx:90-148; dashboard/src/panels/review/SourceExplorer.tsx:149-164 |
 | The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader

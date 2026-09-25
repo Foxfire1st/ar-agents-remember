@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.truncated.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -153,8 +153,8 @@ finding names the exact key path and value a reader can re-check.
 | **The case this body exists for: the page-scoped sentence, the owner's own two numbers, and the explicit refusal of "measured zero".** | "says a bounded roster carried none of the measured rows, never that the read measured zero"; "this page carried no member row"; `TRUNCATED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:429-450 |
 | **The walk case this body starts, whose second step is the sibling `continued` body, and the bounded-centre and workspace-state cases it also feeds.** | "walks a family roster only from the cursor that family's own page published"; `CONTINUED`; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:276-320; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:463-497; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:672-725; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:48-48|
 | The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:617-641 |
-| **The client owner of the three kept-apart facts, including the branch that may not be reached from these bytes, and the per-side carried-of-measured line whose numbers the case reads.** | `emptyRosterSentence`; "this page carried no member row"; "The continuation beside each bounded roster reaches the rows this page did not carry."; "the read measured zero memberships"; "Three facts, kept apart"; `carriedOf`; "recorded membership row(s) it measured" | dashboard/src/panels/review/FamilyTree.tsx:279-302; dashboard/src/panels/review/FamilyTree.tsx:275-277 |
-| **The centre's own bounded-missing-row sentence, mounted from the same owner's counts, and the completing-walk wording beside it.** | "is a position in a bounded walk"; "the continuation beside it reaches the rows this page did not carry"; "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyReviewCenter.tsx:255-262; dashboard/src/panels/review/FamilyTree.tsx:265-272 |
+| **The client owner of the three kept-apart facts, including the branch that may not be reached from these bytes, and the per-side carried-of-measured line whose numbers the case reads.** | `emptyRosterSentence`; "this page carried no member row"; "The continuation beside each bounded roster reaches the rows this page did not carry."; "the read measured zero memberships"; "Three facts, kept apart"; `carriedOf`; "recorded membership row(s) it measured" | dashboard/src/panels/review/FamilyTree.tsx:285-315 |
+| **The centre's own bounded-missing-row sentence, mounted from the same owner's counts, and the completing-walk wording beside it.** | "is a position in a bounded walk"; "the continuation beside it reaches the rows this page did not carry"; "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyReviewCenter.tsx:255-262; dashboard/src/panels/review/FamilyTree.tsx:278-285; dashboard/src/panels/review/FamilyTree.tsx:284-285 |
 
 ## Cross-Repo References
 

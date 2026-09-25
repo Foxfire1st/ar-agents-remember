@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3` |
-| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -52,11 +52,19 @@ in its own state (`MasterChangeset["leaves"] | null`, present only when the payl
 and `leafAttribution` renders `<N> leaf/leaves< · C committed>< · W working>` in a
 `changeset-leaf-attribution` span beside the total — or nothing at all when the answer carried no
 breakdown, because an absent answer is not a zero. That is what makes the net total attributable to the
-leaves it sums, on the same control that opens the net viewer. Its rejection handler is still
-`() => live && setCounters(null)` — so a failed counter read leaves the button without a total **and
-without a reason**. That is the change-set client's behaviour, deliberately untouched by ICR-R16 (see
-the routed-debt note below); this leaf's generation threading changes what a successful master
-read carries, not what a failed one reports.
+leaves it sums, on the same control that opens the net viewer. This leaf's generation threading changes
+what a successful master read carries, not what a failed one reports.
+
+**Since 260921-ICR-L25 the button carries the leaf view's own `state` and withholds a zero of
+nothing (register B6).** A `committed` read of a live leaf has no landed commit to read yet; the route
+**answers** that state in the body (`state: "unrecorded"` plus its own sentence naming the missing
+endpoint and the two views that produce it) instead of refusing it with a `404`. The button stores the
+sentence in its own `unrecorded` state, renders it as the control's **own** state
+(`data-testid="changeset-state"`, `data-review-state="unrecorded"`, distinct from `known-empty`), and
+**withholds the `+0 −0` total** — `total` is `null` whenever `unrecorded !== null`, because a zero of
+nothing is not a measurement. The consequence for the rejection path is that the two are now
+distinguishable end to end: an answered-but-unrecorded range names what is missing, while a genuinely
+failed read still prints its own refusal with its code, reason and next action.
 
 **`DocChangeSetBar` branches on `kind` and gates the live block on one predicate.** A master gets the
 series button; a leaf gets `committed` unconditionally (its landed delta) plus, **when the leaf's
@@ -157,14 +165,16 @@ match the cockpit panels' idiom, and each rendered fact carries a `data-*` attri
 
 ### Todos
 
-One routed item is recorded rather than fixed, because it is a different route, client and owner:
+None open on this file. One item this card used to record as routed debt is **closed**:
 
-- **The live-leaf `committed`/`working` change-set counter still swallows its own refusal detail.**
-  `ChangeSetButton`'s rejection handler is `() => live && setCounters(null)` and the read goes through
-  `data/changeset.ts` → `getJson` → `/api/changeset/task`, so a failed counter read simply disappears
-  with no reason and no next action. That is the change-set client, not the review transport, and it is
-  **routed to R12 (historical committed-leaf review) / R24 (usable review navigation)**. Measured in
-  this leaf; not fixed here, to keep the blast radius to the review route.
+- **CLOSED — the live-leaf `committed`/`working` change-set counter no longer swallows its own
+  refusal detail.** The rejection handler is now `setProblem(reviewProblemFromCause(cause))` and the
+  suite asserts the **rendered** refusal rather than merely the absence of counters
+  (`changeSetBar.test.tsx:626`). It was recorded here as routed to R12/R24 when ICR-R16 measured it;
+  the 260921-ICR-L25 change set closed it at source and at client, and round 2 additionally measured
+  the rendered half for the **unrecorded** answer on the mounted product (register D01). What remains
+  unmeasured is a *rendered refusal* answer on a live page — that is Class 3 (the browser suite is
+  Dagger-only) and is named as a gap rather than claimed.
 
 ## Docs References
 
@@ -183,20 +193,21 @@ row cites.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The change-set button, its own counter read, and the generation it threads from a successful master read into the viewer target. | `ChangeSetButton`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:29-93 |
-| **The routed debt this card records and does not fix: the counter read's rejection handler, on a different route and client.** | `leafChangeset`; `setCounters` | dashboard/src/panels/detail-panel/changeSetBar.tsx:6-12; dashboard/src/panels/detail-panel/changeSetBar.tsx:45-78 |
-| The change-set client and route that debt belongs to, which this leaf leaves untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:135-135; dashboard/src/data/changeset.ts:33-33; dashboard/src/data/changeset.ts:158-159 |
-| **What the catalogue read answered, as the values the bar needs rather than one collapsed subject: the whole list with the server's totals, the known-empty fact, or the failure.** | `ReviewCatalogueRead`; `totalSubjects`; `invariantTotal`; `familyTotal` | dashboard/src/panels/detail-panel/changeSetBar.tsx:204-223; dashboard/src/panels/detail-panel/changeSetBar.tsx:207-207; dashboard/src/panels/detail-panel/changeSetBar.tsx:208-208; dashboard/src/panels/detail-panel/changeSetBar.tsx:209-209 |
+| The change-set button, its own counter read, the generation it threads from a successful master read into the viewer target, and (260921-ICR-L25) the `unrecorded` state it carries and the total it withholds. | `ChangeSetButton`; `setCounters`; `setUnrecorded` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-181 |
+| **The leaf view's own answered-but-unrecorded state, printed as its own state beside the entry and never as a measured empty one.** | `ChangeSetReadState`; `data-review-state`; "unrecorded" | dashboard/src/panels/detail-panel/changeSetBar.tsx:182-237 |
+| **The CLOSED item this card used to record as routed debt: the counter read's rejection handler now carries the refusal's own code and reason, and the suite asserts the rendered refusal.** | `leafChangeset`; `setProblem`; `reviewProblemFromCause` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-104; dashboard/src/panels/detail-panel/changeSetBar.tsx:12-138; dashboard/src/panels/detail-panel/changeSetBar.tsx:12-418 |
+| The change-set client the counter read belongs to, which now carries `state`/`stateDetail` through to the caller. | `getJson`; `taskChangeset`; `TaskChangeset` | dashboard/src/data/changeset.ts:144-149; dashboard/src/data/changeset.ts:167-167; dashboard/src/data/changeset.ts:224-234; dashboard/src/data/changeset.ts:41-48 |
+| **What the catalogue read answered, as the values the bar needs rather than one collapsed subject: the whole list with the server's totals, the known-empty fact, or the failure.** | `ReviewCatalogueRead`; `totalSubjects`; `invariantTotal`; `familyTotal` | dashboard/src/panels/detail-panel/changeSetBar.tsx:238-257; dashboard/src/panels/detail-panel/changeSetBar.tsx:241-241; dashboard/src/panels/detail-panel/changeSetBar.tsx:242-242; dashboard/src/panels/detail-panel/changeSetBar.tsx:243-243 |
 | **The hook: nothing fetched for a non-live leaf, `loading` before the read, and every answer carried — the whole catalogue with its totals, known-empty, typed refusal, transport failure or unadmitted state. It replaces `useReviewSubject`, whose `entries?.[0]` was the first-row-only mechanism the packet falsifies.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:15-22; dashboard/src/panels/detail-panel/changeSetBar.tsx:337-384 |
-| **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a read that answered with rows.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:391-429 |
-| **The per-row presence marker: a retired row reads `retired · before-only`, a new one `new · after-only`, and a both-sides row is unmarked.** | `presenceMarker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:434-438 |
-| **The catalogue picker: every recorded subject selectable, the server's own totals beside it, and no row invented.** | `ReviewCataloguePicker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:444-488 |
-| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:500-576 |
-| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:557-557; dashboard/src/panels/detail-panel/changeSetBar.tsx:585-634; dashboard/src/panels/detail-panel/changeSetBar.tsx:500-576 |
-| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:33-97; dashboard/src/panels/detail-panel/changeSetBar.tsx:500-576 |
-| **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:639-651|
+| **The entry read's own state printed beside the entry, with the reason, the offending input and the next action only where the owner published them, and nothing at all for a read that answered with rows.** | `ReviewEntryState`; `review-entry-state`; `data-review-state` | dashboard/src/panels/detail-panel/changeSetBar.tsx:425-467 |
+| **The per-row presence marker: a retired row reads `retired · before-only`, a new one `new · after-only`, and a both-sides row is unmarked.** | `presenceMarker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:481-485 |
+| **The catalogue picker: every recorded subject selectable, the server's own totals beside it, and no row invented.** | `ReviewCataloguePicker` | dashboard/src/panels/detail-panel/changeSetBar.tsx:478-533 |
+| **The extracted live-leaf fragment: the working button, the Intent review button whose target carries the selected row (first row by default, the reader's pick afterwards, a stale pick falling back), the picker and the entry state.** | `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:534-618 |
+| **The bar's composition: the master/leaf branch, the one liveness predicate, and the live fragment that offers the working button, the reviewer entry and the entry's own state.** | `DocChangeSetBar`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:619-672; dashboard/src/panels/detail-panel/changeSetBar.tsx:534-618 |
+| **The reviewer entry's target, built from the selected catalogue row when the server offered rows and as the task-context target when it did not — never a missing control.** | `ChangeSetButton`; `LeafEntries` | dashboard/src/panels/detail-panel/changeSetBar.tsx:47-181; dashboard/src/panels/detail-panel/changeSetBar.tsx:534-618 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` |dashboard/src/panels/detail-panel/changeSetBar.tsx:673-688|
 | The review client's public entry, which owns the decode this bar classifies through. | `intentReviewEntries`; `reviewProblemFromRefusal`; `reviewProblemFromCause`; `unreadableAnswer` | dashboard/src/data/review.ts:28-28; dashboard/src/data/review.ts:30-30; dashboard/src/data/review.ts:29-29; dashboard/src/data/review.ts:699-705 |
-| The change-set client's own comment, whose error idiom the counter read inherits. | `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:135-135; dashboard/src/data/changeset.ts:33-33 |
+| The change-set client's own comment, whose error idiom the counter read inherits, and the `state`/`stateDetail` pair its leaf view now carries. | `FilesApiError`; `TaskChangeset` | dashboard/src/data/changeset.ts:144-144; dashboard/src/data/changeset.ts:41-48; dashboard/src/data/changeset.ts:1-8 |
 | **The four entry cases: the refusal shown with its fields while the entry is still offered, the known-empty answer, the transport failure with nothing invented, and the successful answer printing no state.** | "shows a never-initialized refusal beside the entry and still offers the entry"; "says known empty when the pair offers no subject, without calling it a failure"; "shows a transport failure with its reason, and raises no refusal body it does not have"; "carries the server's recorded subject into the entry, and prints no state for an answer" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:113-136; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:137-155; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:156-176; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:177-209 |
 
 ## Cross-Repo References
@@ -208,6 +219,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `presenceMarker` repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:481-485. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **body update — the bar carries the leaf view's `unrecorded` state, and the routed debt this card recorded is closed rather than still open.** The Logic paragraph now records the new `unrecorded` state (`data-review-state="unrecorded"`, distinct from `known-empty`), that the route answers that state in the body instead of refusing it with a `404` (register B6), and that the control **withholds its `+0 −0` total** because a zero of nothing is not a measurement. The `### Todos` section's routed item — "the live-leaf `committed`/`working` change-set counter still swallows its own refusal detail", with the rejection handler quoted as `() => live && setCounters(null)` — is corrected to **CLOSED**: the handler is `setProblem(reviewProblemFromCause(cause))`, the suite asserts the rendered refusal, and round 2 measured the rendered half for the unrecorded answer on the mounted product (register D01); what stays unmeasured is a rendered *refusal* on a live page, which is Class 3 and named as a gap. **Citation accounting:** every row whose range this file's own insertion displaced was re-derived from each construct's declaration at this tip — `ChangeSetButton` `:47-181`, `ChangeSetReadState` `:182-237`, `ReviewCatalogueRead` `:238-257`, `ReviewEntryState` `:425-467`, `presenceMarker` `:468-477`, `ReviewCataloguePicker` `:478-533`, `LeafEntries` `:534-618`, `DocChangeSetBar` `:619-672`, `leafIsLive` `:673-688` — and the cross-file rows were re-derived too (`getJson` `changeset.ts:135` → `:144`, `TaskChangeset` `:33` → `:41-48`, `masterChangeset(` `:52` → `:93`, `includeLeaves` `:85` → `:93`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — the bar asks for the net's per-leaf breakdown and prints its attribution (R33.2).** The Logic paragraph now records the `includeLeaves: true` request, the `leaves` state and the `leafAttribution` phrase beside the total, with the absent-answer rule. **Citation accounting:** the rows this leaf's line movement displaced were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the control renders the refusal it receives (D01).** `ChangeSetButton` shows the refusal's own code and reason beside a state marker while still opening what it names, and the case that pins it drives the click and asserts the rendered reason. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

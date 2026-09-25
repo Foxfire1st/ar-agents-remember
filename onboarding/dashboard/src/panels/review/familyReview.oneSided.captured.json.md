@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -146,7 +146,7 @@ finding names the exact key path and value a reader can re-check.
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
 | **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:522-540; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:50-50|
 | **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:285-296; dashboard/src/data/reviewFamily.ts:298-321 |
-| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:490-495; dashboard/src/panels/review/FamilyReviewCenter.tsx:226-232 |
+| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:508-508; dashboard/src/panels/review/FamilyReviewCenter.tsx:226-232 |
 | **The comparison wrapper this body must NOT reach, and the guarantee-level one-sided block the seven bodies never compose.** | `review-center-member-one-sided`; `one_sided`; `identical_text` | dashboard/src/panels/review/FamilyReviewCenter.tsx:288-296; dashboard/src/panels/review/FamilyReviewCenter.tsx:690-700; dashboard/src/data/reviewFamily.ts:224-233 |
 
 ## Cross-Repo References

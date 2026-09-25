@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/role_capsules/vocabulary.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
+| lastUpdated            | 2026-09-26T01:00+02:00 |
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ No external or domain documentation is configured for this memory root
 | The narrowing helpers that turn an untrusted string into a role or refuse it. | `narrow_operation`; `narrow_role` | mcp/src/agents_remember/models/role_capsules/selection.py:176-188; mcp/src/agents_remember/models/role_capsules/selection.py:191-213 |
 | The canonical authored metadata that must agree with these tuples. | "\"role_order\"" | skills/l-01-agent-lifecycles/composition-manifest.json:6-6 |
 | The settings registry kept in step with this vocabulary, so a published role is configurable. | `KNOWN_ROLES` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:78-94 |
-| The free-agent shape the tenth role carries, and the exclusion list it must not be added to. | `CAPSULE_ROLES`; `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-96; mcp/src/agents_remember/serving/task_binding.py:60-83 |
+| The free-agent shape the tenth role carries, and the exclusion list it must not be added to. | `CAPSULE_ROLES`; `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-93; mcp/src/agents_remember/serving/task_binding.py:91-91 |
 
 ## Cross-Repo References
 
@@ -113,6 +113,9 @@ No sibling-repository contract defines this vocabulary.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-26T01:00+02:00 — 260921-ICR-L25 curator (completion of the claim re-read recorded in the entry below; leaf `260921-ICR-L25`): **the card's verification metadata is advanced, because the content work the gate preconditions on is already recorded below and a stamp advanced after that is the completion of a refresh, not a metadata-only refresh of stale content.** What was re-read, and when: on 2026-09-26 this seat read the claim's own row and both of its cited anchors in the working tree — `CAPSULE_ROLES` at `mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-93` (the ten-member capsule-role tuple, read in full) and `TASKLESS_SEAT_ROLES` at `mcp/src/agents_remember/serving/task_binding.py:91-91` (the four-member frozenset) — and confirmed the claim's words still hold: the free-agent shape the tenth role carries, and the exclusion list it must not be added to, are both exactly what those two declarations state. **Why the range is what it is:** the row's citation arrived by a *generated mechanical projection* recorded in this document's own `Update History` (the `ccr-r10@v1` bullet dated 2026-09-25T22:19:46+00:00), which is why the gate would not treat it as current. The projection moved the citation **to each anchor's own declaration** — the location this claim is about — rather than rebinding it to an unrelated mention, so the correct action is to keep the range and record that judgement here, which the entry below does. **The stamp now names the last real commit on this line**: `d9e7e6e79ce532d16c689435ae95a63aab430f94` (2026-09-25T22:40:41+02:00). This leaf's own delta is uncommitted, so the governed closeout still owns the final stamp; what is advanced here is the revision the re-read was taken against, not a claim that a commit contains this leaf's work. No wording was changed to move a number. No commit was made.
+- 2026-09-26T00:30+02:00 — 260921-ICR-L25 curator (review of a mechanically projected range; leaf `260921-ICR-L25`, candidate `ar/260921-icr-l25-ar`): **the reopened claim was re-read and its wording is retained; the range is the declaration it is about.** The finding asks two questions and both are answered here rather than by advancing a stamp. (1) *Does the construct the range covers support what the claim's own words state?* Yes — the claim is about `TASKLESS_SEAT_ROLES`' membership, and the range now covers the constant's own declaration, which is what the sentence names. (2) *Did the range arrive by mechanical anchor-range projection?* It did: the range was rewritten by a generated citation repair recorded in this document's own `Update History`, which is why the gate will not treat the citation as current. The repair moved the citation **to the anchor's declaration**, which is the location this claim is about — it was not rebound to an unrelated mention — so the correct action is to keep the range and record that judgement here. No wording was changed to fit a pointer and no claim was dropped to silence a finding. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-25T22:19:46+00:00: Generated citation repair: `CAPSULE_ROLES`; `TASKLESS_SEAT_ROLES` repointed to mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-93; mcp/src/agents_remember/serving/task_binding.py:91-91. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the vocabulary extension this
   leaf made** (`CAPS-R13@v1`). The registry is now ten roles and nine operations: the card's Logic,

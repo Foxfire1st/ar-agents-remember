@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewRefresh.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
+| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -162,10 +162,10 @@ the range that row cites.
 | **The sentence, chosen by the state, with each clause a fact the answer published — and the first fix round's correction, which made it say which generation the panes below hold.** | "the candidate's comparison moved"; "the comparison below is still the candidate's current one" | dashboard/src/panels/review/ReviewRefresh.tsx:77-79 |
 | **The one derivation of a claim: the phase gate first, then the carried identity, then the payload the surface renders, and the state decided by comparing the two digests.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:103-117 |
 | **The reason the phase gate exists — a read that never reached the server has answered nothing, so a failure renders no "still current" claim beside its own error — and the reason both digests come from the rendered payload.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:86-117 |
-| **The one call site: the surface hands the control its `refresh`, the read's loading phase as `busy`, and the generation derived from the read, the carried identity and the shown payload.** | `ReviewRefresh`; `generationOf` | dashboard/src/panels/review/ReviewSurface.tsx:881-885 |
+| **The one call site: the surface hands the control its `refresh`, the read's loading phase as `busy`, and the generation derived from the read, the carried identity and the shown payload.** | `ReviewRefresh`; `generationOf` | dashboard/src/panels/review/ReviewSurface.tsx:56-56; dashboard/src/panels/review/ReviewSurface.tsx:931-931 |
 | **The case that measures the whole refresh path through the real surface and client: the read carries the displayed identity, the notice names both digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's own `data-comparison`.** | "re-reads the same question carrying the binding identity on screen, and names what moved" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:564-608 |
 | **The case that pins the phase gate: a failed refresh keeps the labelled old comparison and its error and renders no generation claim at all.** | "keeps the labelled old comparison and its error when the refresh fails" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:610-637 |
-| The staleness rendering the notice sits beside: the server's own statement, including the labelled previous input that disabled submission. | "review-stale" | dashboard/src/panels/review/ReviewSurface.tsx:413-417 |
+| The staleness rendering the notice sits beside: the server's own statement, including the labelled previous input that disabled submission. | "review-stale" | dashboard/src/panels/review/ReviewSurface.tsx:428-428; dashboard/src/panels/review/ReviewSurface.tsx:437-437 |
 
 ## Cross-Repo References
 
