@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/reviewFamily.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `63b476297708f779de8ed5c0bf3555b9d1de70c2` |
-| lastVerifiedCommitDate | 2026-09-24T04:10:11+02:00|
+| lastVerifiedCommitHash | `1fa2588a048e14f6aff236b896caa32d3a7f26c7` |
+| lastVerifiedCommitDate | 2026-09-26T04:04:54+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -228,7 +228,7 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 | The payload key whose absence is its own fact — a body that is not a measured zero and is never shown as `no_family_recorded`. | "family_context?: ReviewFamilyContext" | dashboard/src/data/review.ts:435-442 |
 | **The server module this file mirrors, and the packet revision that asked for the vocabulary.** | "ICR-R31@v1" | mcp/src/agents_remember/models/knowledge/review_family_context.py:1-3 |
 | The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate. | "A guarantee is the family's own authored text"; "The five status dimensions stay separate" | mcp/src/agents_remember/models/knowledge/review_family_context.py:10-24 |
-| **The two consumers of the exported values: the tree reads the snapshot order, the centre reads both comparison functions from the re-exporting entry.** | `FAMILY_SIDES`; `guaranteeComparison`; `memberComparison` | dashboard/src/panels/review/FamilyTree.tsx:40-40; dashboard/src/panels/review/FamilyReviewCenter.tsx:38-38 |
+| **The two consumers of the exported values: the tree reads the snapshot order, the centre reads both comparison functions from the re-exporting entry.** | `FAMILY_SIDES`; `guaranteeComparison`; `memberComparison` | dashboard/src/panels/review/FamilyTree.tsx:40-40; dashboard/src/panels/review/FamilyReviewCenter.tsx:39-39 |
 
 ## Cross-Repo References
 
@@ -241,4 +241,5 @@ one association it carries is an in-repository contract rather than a cross-repo
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the row naming the two consumers of the exported values was re-anchored, and no claim wording changed.** L36 added one import line at the top of `panels/review/FamilyReviewCenter.tsx`, so the `FAMILY_SIDES` / `guaranteeComparison` / `memberComparison` import moved `:38-38` → `:39-39`. This is the whole of the change: the module's contract, its two consumers and its re-export are unaltered. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): created this one-to-one card for the review contract's family mirror. It records that `reviewFamily.ts` is the client-side mirror of `models/knowledge/review_family_context.py` (`ICR-R31@v1`, consumed by `ICR-R24@v3`), that it may neither narrow the server's vocabulary nor default a field the server omits, that the five context states, four side states and two member content states stay distinct with a server-omitted field left `undefined`, that `FAMILY_CONTEXT_JOIN_KEY` is the one join and a value rather than prose, that `guaranteeComparison()` has five shapes and only `unchanged_revision` may say the guarantee is unchanged, that `memberComparison()` returns `not_on_page`/`one_sided`/`unchanged_revision`/`changed` from each member's own carried `state` and carries no sentence because the caller decides, and that `FAMILY_SIDES` and `UNRESOLVED_SELECTION_STATES` are the two remaining exported values. Every row of the reference table was derived against this leaf's candidate, and every anchor in a row occurs inside the range that row cites. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, so the stamp names the leaf's base plus the working-tree delta, and governed closeout owns the real stamp.

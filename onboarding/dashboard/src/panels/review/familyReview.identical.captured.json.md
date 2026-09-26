@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.identical.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `1fa2588a048e14f6aff236b896caa32d3a7f26c7` |
+| lastVerifiedCommitDate | 2026-09-26T04:04:54+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ finding names the exact key path and value a reader can re-check.
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
 | **The case this body exists for: it asserts the distinct revisions and the authored-between-them sentence, refuses both "unchanged" renderings, and then asserts the one same-revision family as unchanged.** | "distinguishes two distinct revisions with identical text from one unchanged revision"; "A revision was authored between them; the text is what did not move."; `IDENTICAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:499-520; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:49-49|
 | **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee`; `memberComparison` | dashboard/src/data/reviewFamily.ts:217-222; dashboard/src/data/reviewFamily.ts:224-233; dashboard/src/data/reviewFamily.ts:249-259; dashboard/src/data/reviewFamily.ts:285-296 |
-| **The two renderings the case reads: the identical-text block naming both revision identities, and the fact line that words the shape.** | `review-center-guarantee-identical-text`; `review-center-guarantee-unchanged`; `identical_text`; `one_sided` | dashboard/src/panels/review/FamilyReviewCenter.tsx:131-713; dashboard/src/panels/review/FamilyReviewCenter.tsx:155-713; dashboard/src/panels/review/FamilyReviewCenter.tsx:155-717 |
+| **The two renderings the case reads: the identical-text block naming both revision identities, and the fact line that words the shape.** | `review-center-guarantee-identical-text`; `review-center-guarantee-unchanged`; `identical_text`; `one_sided` | dashboard/src/panels/review/FamilyReviewCenter.tsx:132-1230; dashboard/src/panels/review/FamilyReviewCenter.tsx:156-1230; dashboard/src/panels/review/FamilyReviewCenter.tsx:156-1234 |
 
 ## Cross-Repo References
 
@@ -154,4 +154,6 @@ repository's own route over this repository's own fixture enclosure.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, second move:** the F1 fix round moved the guarantee-level blocks in `panels/review/FamilyReviewCenter.tsx` again, so this card's three ranges became `:132-1230`, `:156-1230` and `:156-1234`; the anchors still resolve inside them. The captured body itself is unchanged. No verification stamp was advanced.
+- 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the row naming the two renderings this body's case reads was re-anchored, and no claim wording changed.** L36's insertion moved the guarantee-level blocks those anchors live in, so the three ranges became `:132-1200`, `:156-1200` and `:156-1204`; the anchors (`review-center-guarantee-identical-text`, `review-center-guarantee-unchanged`, `identical_text`, `one_sided`) all resolve inside them. The captured body itself is unchanged and this leaf re-measured A3's member order on the new build as untouched. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the leaf's identical-text guarantee body.** It records the file's exact identity (45,393 bytes; sha256 `b018b63cd2df28e6a2a3dc16d639bf8f4bcdbc4541e2e1639e6e23bb92bd7062`) and the state it pins apart from its six siblings: **two DISTINCT family revisions whose authored guarantee text is identical**, carrying two different payload digests and the same `joint_guarantee` string, beside the one shape that really is one revision on both snapshots (same revision, same digest) — so this single body holds both the `identical_text` shape and the `unchanged_revision` shape the case must keep apart. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.

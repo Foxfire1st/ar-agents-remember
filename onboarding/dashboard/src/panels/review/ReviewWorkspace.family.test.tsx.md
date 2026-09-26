@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.family.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T03:00:00+02:00 |
+| lastVerifiedCommitHash | `1fa2588a048e14f6aff236b896caa32d3a7f26c7` |
+| lastVerifiedCommitDate | 2026-09-26T04:04:54+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -46,20 +46,30 @@ what the surface is mounted over in every case below; the live walk's own proof 
 `260921-icr-l31b-ar` at commit `5f14fc67`, not in this module.
 
 **Verification stamp.** `lastVerifiedCommitHash` names the leaf's base commit
-`5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`; this module exists only in the leaf's **uncommitted working
+`09329a7ee598920c519b06305b73ba8e48d72c88`; this module exists only in the leaf's **uncommitted working
 tree**, so the stamp means "leaf base commit plus this leaf's working-tree delta" and does not claim that
-the commit holds this content. Governed closeout owns the real stamp.
+the commit holds this content. Governed closeout owns the real stamp. (Corrected 2026-09-26 by the
+260921-ICR-L36 curator: this paragraph named `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` while the header
+above names `09329a7e…`. The header is the stamp; `5f14fc67` is the live walk's own proof commit, named in
+the Todos below, and the paragraph had borrowed it. The two commits are different facts and the sentence
+now says which is which.)
 
 ## Code Commentary
 
 ### Logic
 
-**The module carries nineteen cases** (`grep -c '^  it('` on this candidate), all inside one
+**The module carries twenty-one cases** (`grep -c '^  it('` on this candidate), all inside one
 `describe("ReviewSurface family-centered workspace (ICR-R24@v3)")`. They fall into three groups: the
 original layout cases (the tree, the centre, the explorer, the roster walk, the no-family-context body, the
 expansion preference, keyboard traversal and the filter), the fix-round cases that pin a sentence's
 direction or a distinction a repair could collapse, and the two page-request case that pins the reader's
-workspace state across the pane switch.
+workspace state across the pane switch. **The count is stated rather than implied, and it was wrong in the
+other direction before this pass:** the module's own `grep -c` reads **20** at the leaf's base commit
+`09329a7e`, which is what the L25 round-2 history entry already recorded ("the module's twentieth"), while
+this card's body still said nineteen; 260921-ICR-L36 adds the twenty-first and the body now matches the
+file. Nothing about the module's meaning changed when the number was corrected — but a card whose stated
+count disagrees with its own `grep` is a card a reader stops trusting, which is why the number is fixed
+here with the two cases that were missing from the enumerated list rather than silently incremented.
 
 **The harness is four pieces and no more.** `serving(queue)` stubs one `vi.stubGlobal("fetch", …)` for the
 whole surface: it records every URL it was asked for and answers `/source-content` requests with
@@ -77,7 +87,7 @@ declare — and throws loudly rather than mounting the surface under a wrong sub
 module's own reading instead of silently re-pointing an assertion, and several cases additionally read
 which row they are about out of the DOM before asking the centre, for the same reason.
 
-**The nineteen cases and what each one pins:**
+**The twenty-one cases and what each one pins:**
 
 1. *renders the recorded families, their authored guarantees and the full member statements* — the context's
    own `partial` state is not upgraded, each family's guarantee is printed as the revision's own authored
@@ -153,6 +163,54 @@ which row they are about out of the DOM before asking the centre, for the same r
     only", and a five-value snapshot (`selectionKind`, `centreControls`, `filter`, `layout`, `fullFile`) is
     asserted identical **after each of two page requests**, both issued by the centre's own continuation
     control; the last assertion is that exactly three request URLs were seen.
+20. *(260921-ICR-L25, register B3)* *composes the narrow jump route above the family tree, with the tree
+    intact* — `review-jump-to-selection` must precede `review-family-tree` in **document order**
+    (`DOCUMENT_POSITION_FOLLOWING`), both families and their member rows are still rendered, and activating
+    the control focuses `review-center-column`. It pins composition rather than a pixel, because a jsdom
+    render has no layout and the pixels are the mounted capture's job. **This case was in the module and in
+    the citation table below but not in this list until the 260921-ICR-L36 pass**, which is why the list read
+    nineteen against a file that carried twenty.
+21. *(260921-ICR-L36, fix round included)* *renders the family's changed expression excerpts,
+    deduplicated, over the captured family* — the whole collection, over the real `WALK_FINAL` body, with
+    the expectation **computed from that body** by a module-local helper rather than typed: the rendered row
+    count is the body's **distinct** excerpt set and is asserted **not** to be its changed-row count, every
+    rendered row's `data-collapsed-rows` is one of the body's own group sizes and the group sizes sum back
+    to the row total the verdict states, and at least one row collapsed more than one row. It then reads the
+    verdict sentence for both counts and for the notion it counted ("not the comparison's own measured change
+    set"), and asserts A4's first half is untouched — the member-roster counts line still reports the read's
+    own measured rows and the roster still exposes more than one member opener. The helper
+    `familyExpressionArithmetic` (`:805-903`) is written **in the case's own module rather than imported from
+    the component**, so the assertion is checked against the captured body and not against the
+    implementation it tests, and every step narrows at runtime the way `firstFamilyId` does because a
+    captured body is `unknown` on purpose.
+    **The fix round replaced this case's divergent predicate and added the row-by-row check, and that is the
+    part that matters.** The predicate is now **divergence of the reading**: for each excerpt key it compares
+    the **sets of resolutions** the two sides gave (`distinct.size > 1`), so a key merely *seen* on two sides
+    is not divergence — the case bites only where the two sides read the address differently. (The
+    pre-repair predicate filtered keys whose distinct **side names** numbered more than one, which a
+    genuinely divergent address never satisfied once `observed` was in the key; the independent verifier
+    measured that as vacuous for the claim and this card recorded it. **That note is superseded**: the
+    predicate now selects the real divergence, and the case fails when the key is reverted — `Tests 3 failed
+    | 25 passed (28)` with `expected [ 'after' ] to deeply equal [ 'after', 'before' ]`.) For each divergent
+    excerpt the case asserts the rendered `data-sides` equals the body's own side list **and** that the
+    resolution line contains each side's reading string; and then, **for every rendered row**, it asserts the
+    row's `data-sides` equals the sides the body resolves that excerpt on — the page's own both-sides
+    sentence checked row by row against the body rather than read from the page.
+    **The honest bound this case carries and the card must not drop:** the divergent path is evidenced
+    against the **captured `familyReview.walkFinal` body through a labelled fixture**, and that label is the
+    whole of its evidence. The divergence is exercised against the captured `familyReview.walkFinal` body through a **labelled
+    fixture**, and that label is the whole of its evidence. Live data was searched: **the search reached 3
+    families served by 1 leaf** (`260921-ICR-L34`, which returns `entries` with 3 families), and the other
+    **35 leaves refused `candidate_dataset_absent`** — each records no comparison generation, so no knowledge
+    operand exists for a subject to be listed from — and therefore **carry nothing to search. Absent is not
+    measured:** those 35 were not searched and found clean; they were unreachable, and a family that cannot
+    be listed cannot be shown to be divergence-free. **`260921-ICR-L36` is one of those 35**, so this leaf's
+    own live data carries no divergent family either. Read from `f1/raw/live-truth.json` and reproduced
+    independently by the verifier in `f1v/raw/vf1-live-scan.json` (`leavesAttempted: 36`, `leavesResolved:
+    1`, `leavesRefused: 35`, `refusalCodes: ["candidate_dataset_absent"]`, `familiesServed: 3`,
+    `familiesWithDivergence: 0`, `totalDivergent: 0`).
+    The live family renders the same 2 excerpts as before, and no part of this card may be read as a claim
+    that live data exercises the divergent path.
 
 ### Conventions
 
@@ -172,10 +230,14 @@ handle on the DOM (`review-family-tree`, `review-family`, `review-family-guarant
 `review-center-family-empty`, `review-center-full-file`, `review-source-explorer`, `review-inventory`,
 `review-population-scope`, `review-inventory-open`, `review-display-state`, `review-diff-layout`,
 `review-full-file`, `review-workspace`, `review-roster-walk`, `review-page-collection`,
-`review-page-option`, `review-page-bounds`, `review-scope-families`), and the cases read server-published
-values off data attributes (`dataset.familyState`, `dataset.contextState`, `dataset.inventoryState`,
+`review-page-option`, `review-page-bounds`, `review-scope-families`, and — since 260921-ICR-L36 —
+`review-center-family-expressions`, `review-center-family-expression`,
+`review-center-family-expression-resolution`, `review-center-family-expressions-verdict`), and the cases
+read server-published values off data attributes (`dataset.familyState`, `dataset.contextState`,
+`dataset.inventoryState`,
 `dataset.rosterComplete`, `dataset.continuation`, `dataset.sides`, `dataset.diffLayout`, `dataset.fullFile`,
-`dataset.selectionKind`, `dataset.family`). `STATE`-style literals are never invented: every expected
+`dataset.selectionKind`, `dataset.family`, and on each excerpt row `dataset.collapsedRows`, `dataset.path`,
+`dataset.sides`). `STATE`-style literals are never invented: every expected
 sentence is either the capture's own or the owner's own string, and where a sentence is shared the case
 asserts identity rather than similarity. Every case awaits the element it needs rather than a timeout, and
 the two loops that search the DOM for a shape throw with the sentences they did see when they find none.
@@ -187,6 +249,11 @@ the two loops that search the DOM for a shape throw with the sentences they did 
   tree. No case passes a prop and then asserts on it.
 - **The bodies are the real route's own captured bytes.** No payload is assembled in this module; the one
   hand-written body is a typed refusal for the source-content read, which no case asserts content about.
+- **An expectation about a computed count is computed from the body, not typed and not imported.** The A4
+  case reads its distinct-set, group-size and divergent-address expectations out of the captured body with a
+  module-local helper, and the sibling unit lane (`familyExpressions.test.ts`) is the one that calls the
+  shipped function. One lane checks the **wire**, the other checks the **arithmetic**; a case that did both
+  against the same object would prove neither (260921-ICR-L36).
 - **A case that must know which row it is about reads that out of the DOM**, not out of a capture's row
   order, so a re-captured body cannot silently re-point it.
 - **These are not browser evidence.** The Playwright configs here are Dagger-only, so this module proves the
@@ -208,7 +275,8 @@ the two loops that search the DOM for a shape throw with the sentences they did 
   the pane switch.
 - **Boundary.** This module owns no production behaviour: the sentences it pins belong to `FamilyTree.tsx`
   (`emptyRosterSentence`, `completionNote`, the roster lines and the walk control), `FamilyReviewCenter.tsx`
-  (the centre's heading, counts and per-shape blocks) and `SourceExplorer.tsx` (the population sentence); the
+  (the centre's heading, counts, per-shape blocks and — since 260921-ICR-L36 — the family's deduplicated
+  expression collection) and `SourceExplorer.tsx` (the population sentence); the
   page-collection union belongs to `data/review.ts` and the page request type to `ReviewReadCycle.ts`.
 
 ### Todos
@@ -230,7 +298,7 @@ The statements below are grounded in repository source only.
 
 Every claim on this card is checkable in the shipped candidate: the module's own statement of what it
 exercises and of what it does not claim, the four pieces of its harness, the captured bodies it reads, and
-each of the nineteen cases by its own name. Every anchor in a row below occurs on a line inside the range
+each of the twenty-one cases by its own name. Every anchor in a row below occurs on a line inside the range
 that row cites; the anchor of a case row is that case's own `it(...)` name, which occurs on the line that
 opens the case.
 
@@ -268,14 +336,16 @@ opens the case.
 | **Fix round 1: the centre's empty-roster line is the tree's own string for the same family — one implementation mounted twice.** | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:617-641 |
 | **Fix round 3: the page that completes a multi-page walk is stated as the walk's last page, never as the whole roster.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:642-671 |
 | **Fix round 5, V10: all five workspace values survive two page requests issued by the centre's own continuation control, and exactly three request URLs are seen.** | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:672-725 |
-| **260921-ICR-L25, register B3: the narrow jump route is composed ABOVE the family tree and the tree is intact — the case pins document order (`DOCUMENT_POSITION_FOLLOWING`), that both families and their member rows are still rendered, and that activating the control focuses the centre column. It pins composition rather than a pixel, because a jsdom render has no layout and the pixels are the mounted capture's job.** | "composes the narrow jump route above the family tree, with the tree intact" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:735-753 |
+| **260921-ICR-L25, register B3: the narrow jump route is composed ABOVE the family tree and the tree is intact — the case pins document order (`DOCUMENT_POSITION_FOLLOWING`), that both families and their member rows are still rendered, and that activating the control focuses the centre column. It pins composition rather than a pixel, because a jsdom render has no layout and the pixels are the mounted capture's job.** | "composes the narrow jump route above the family tree, with the tree intact" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:905-924 |
+| **260921-ICR-L36 (fix round included): the family's rendered excerpt collection is the body's DISTINCT excerpt set and not its changed-row count, every row's `data-collapsed-rows` is one of the body's group sizes, every divergent excerpt's `data-sides` and per-side reading strings match the body's, and EVERY rendered row's `data-sides` equals the sides the body resolves it on. The predicate is divergence of the reading (distinct resolution sets across sides), not "seen on two sides".** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `review-center-family-expressions`; `review-center-family-expression-resolution`; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:735-803 |
+| **The arithmetic that case's expectation is read from, deliberately written in the case's module rather than imported from the component, so the assertion checks the body and not the implementation it tests. It computes the excerpt key the fixed module uses (`path \0 recorded`), the per-side resolution sets the divergent predicate compares, and the side list every rendered row is checked against.** | "function familyExpressionArithmetic"; `divergent`; `groups`; "the captured body records no changed expression in any family" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:805-903 |
 | **The owner of the shared empty-roster sentence: one exported function with both the measured-zero and the page-scoped branches, mounted by the tree and by the centre.** | `emptyRosterSentence`; "the read measured zero memberships for the selected family revision"; "this page carried no member row" | dashboard/src/panels/review/FamilyTree.tsx:266-293; dashboard/src/panels/review/FamilyTree.tsx:266-317 |
 | The owner of the completion sentence: `complete` is the read walk's flag, so a one-page walk is the whole selection while a final page is only its last position. | `completionNote`; "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:5-284; dashboard/src/panels/review/FamilyTree.tsx:189-284; dashboard/src/panels/review/FamilyTree.tsx:260-284; dashboard/src/panels/review/FamilyTree.tsx:275-284; dashboard/src/panels/review/FamilyTree.tsx:278-284; dashboard/src/panels/review/FamilyTree.tsx:278-308 |
 | The tree's own roster line, whose test id the centre re-mounts under its own name. | `RosterLine`; `review-family-roster` | dashboard/src/panels/review/FamilyTree.tsx:246-281 |
 | The tree's own continuation control, which publishes the cursor it was given and is the component the centre mounts a second time. | `RosterNext`; `review-family-roster-next`; `data-continuation={page.continuation}` | dashboard/src/panels/review/FamilyTree.tsx:324-355 |
-| The centre's empty-roster line mounts the tree's own function, which is what makes the shared-sentence case an identity rather than a resemblance. | `review-center-family-empty`; `emptyRosterSentence(entry)` | dashboard/src/panels/review/FamilyReviewCenter.tsx:44-44; dashboard/src/panels/review/FamilyReviewCenter.tsx:669-669 |
-| The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness. | `memberContextHeading`; `memberContextCounts`; "this page carried ${carriedCarried} member row(s) of them" | dashboard/src/panels/review/FamilyReviewCenter.tsx:577-582; dashboard/src/panels/review/FamilyReviewCenter.tsx:588-597 |
-| The centre's per-shape blocks the identity, content-not-on-page and one-sided cases read. | "review-center-guarantee-unchanged"; "review-center-guarantee-identical-text"; "review-center-member-not-on-page"; "review-center-member-one-sided-note" | dashboard/src/panels/review/FamilyReviewCenter.tsx:146-157; dashboard/src/panels/review/FamilyReviewCenter.tsx:229-229; dashboard/src/panels/review/FamilyReviewCenter.tsx:292-292 |
+| The centre's empty-roster line mounts the tree's own function, which is what makes the shared-sentence case an identity rather than a resemblance. | `review-center-family-empty`; `emptyRosterSentence(entry)` | dashboard/src/panels/review/FamilyReviewCenter.tsx:45-45; dashboard/src/panels/review/FamilyReviewCenter.tsx:1134-1135 |
+| The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness. | `memberContextHeading`; `memberContextCounts`; "this page carried ${carriedCarried} member row(s) of them" | dashboard/src/panels/review/FamilyReviewCenter.tsx:1053-1061; dashboard/src/panels/review/FamilyReviewCenter.tsx:1063-1076 |
+| The centre's per-shape blocks the identity, content-not-on-page and one-sided cases read. | "review-center-guarantee-unchanged"; "review-center-guarantee-identical-text"; "review-center-member-not-on-page"; "review-center-member-one-sided-note" | dashboard/src/panels/review/FamilyReviewCenter.tsx:147-158; dashboard/src/panels/review/FamilyReviewCenter.tsx:230-230; dashboard/src/panels/review/FamilyReviewCenter.tsx:293-293 |
 | **The server-side rule the walk case pins: `family_members` is in the paged union because the server accepts it, and deliberately not among the walkable collections, because that collection is the set of per-family walks and a cursor-less request earns the server's own refusal.** | `family_members`; `REVIEW_WALKABLE_COLLECTIONS`; `comparison_page_unreadable` | dashboard/src/data/review.ts:71-88 |
 | The one page request type a roster continuation builds. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:62-66 |
 | The explorer whose population sentence case 4 asserts is unchanged by a selection. | "review-population-scope"; "it never removes one from this list" | dashboard/src/panels/review/SourceExplorer.tsx:299-299; dashboard/src/panels/review/SourceExplorer.tsx:301-301 |
@@ -291,6 +361,12 @@ one enclosure's captured bodies and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T03:50:00+02:00 — 260921-ICR-L36 curator, **final wording pass (the last correction), and two round-1 sentences this seat repeats are corrected or bounded here.** (1) **The replacement clause is not to be quoted as self-evidently true** (F-V1-3, low; a reword is in flight). The page's notion sentence reads *"every row below names the resolution of each side whose read resolved its address's recorded bytes, so an address the two sides read differently prints both readings rather than one."* The phrase *"resolved its address's recorded bytes"* **collides with the product's own name for `exact_recorded_blob`**: the clause holds under the reading the code implements — a side's read result is printed for the side that produced it, which the fix verifier asserted **row by row on the rendered page** — and fails under the literal reading, where every changed side is `recorded_blob_mismatch` and has not "resolved" its recorded bytes. The body now quotes it **with the reading named**, and says so. (2) **"No claim in the leaf rests on a fixture" is falsified, and this card does not say it** (F-V1-4, low — the one round-1 sentence the corrected pass did not cover). The **divergent-rendering** claim rests on the captured `familyReview.walkFinal` body through a **labelled fixture**, because live data carries no divergent family: the search reached **3 families served by 1 leaf**, with **35 leaves refusing `candidate_dataset_absent`** and therefore **absent, not measured**, `260921-ICR-L36` among them. Every `CONSTRUCTED` label in the unit lane is about that module's own inputs and is **not** a claim about the leaf's evidence. (3) **Routed, not absorbed:** **F-V1-6** and **F-V1-7** are the verifier's remaining low findings and belong to the worker/verifier seats; the subject-catalogue route's deliberate `candidate_dataset_absent`, the shell-level scroll decision with its 13 chrome elements, and **D63**, **D64**, **D68**, **D70** remain routed exactly as before. (4) **One report-side caveat that is NOT a card fact and is deliberately not propagated as settled:** the report's `dashboard/src` digest `08de88e7…` does not reproduce under a stated method (the verifier measured `fb387272…`), and three B4 content heights differ between the two seats by 20–70 px. No card here quotes a digest or a height, and none should: those numbers were measured by one seat and may differ by seat. No verification stamp was advanced; no commit was made.
+- 2026-09-26T03:35:00+02:00 — 260921-ICR-L36 curator, **the authoritative statement of the divergent bound; it supersedes every earlier phrasing of it in this document, and the entry below is corrected in place for its refusal reason only (same seat, same uncommitted pass, minutes old, and a wrong reason code must not stand).** The orchestrator passed this seat a summary of the zero-divergence measurement whose scope was too wide — "scanned every family of all 36 leaves" — and the artifact does not support that scope. Measured from `temp/icr/f1/raw/live-truth.json` and reproduced independently by the verifier in `temp/icr/f1v/raw/vf1-live-scan.json`: **36 leaves attempted; 1 resolved (`260921-ICR-L34`, state `entries`, 3 families); 35 refused with code `candidate_dataset_absent`** (each records no comparison generation, so no knowledge operand exists for a subject to be listed from); **3 families served; 0 divergent addresses**. The rule this document now carries is the point of the correction: **absent is not measured.** The 35 were not searched and found clean — they were unreachable, and a family that cannot be listed cannot be shown to be divergence-free. **`260921-ICR-L36` is itself one of those 35**, so this leaf's own live data carries no divergent family either. The bounded conclusion that stands: the divergence is exercised against the captured `familyReview.walkFinal` body through a **labelled fixture** — now verified: the divergent address renders `before exact_recorded_blob · after recorded_blob_mismatch` with `data-sides = "before,after"`, and reverting `excerptKey` fails the shipped suite at `ReviewWorkspace.family.test.tsx:777` — and live data reached 3 families of 1 leaf with none divergent. **Also settled by that verification:** the false sentence is gone from the shipped bundle, the rendered page and the report, and the replacement sentence the cards quote was checked for truth about every row the page renders and none was found untrue. No verification stamp was advanced; no commit was made.
+- 2026-09-26T03:20:00+02:00 — 260921-ICR-L36 curator, **same-pass correction of the entry below, which is left standing as the record of what this pass first wrote.** The entry below says the divergence scan "scanned every family of all 36 leaves and measured zero divergent addresses". **That is an over-claim about the population, and the artifact does not support it.** Read from the fix round's own `temp/icr/f1/raw/live-truth.json` and reproduced independently by the verifier in `temp/icr/f1v/raw/vf1-live-scan.json`, the measurement is: **36 leaves attempted, 35 refused `candidate_dataset_absent`** (each records no comparison generation, so no knowledge operand exists for a subject to be listed from — **absent is not measured**), **1 resolved** (`260921-ICR-L34`, which returns `entries` with **3 families**), and of those 3 families examined **0 carry a divergent address** (`familiesExamined: 3`, `familiesWithDivergence: 0`, `totalDivergent: 0`). **The zero is measured over 3 families, not over all 36 leaves** — 35 of them never answered — and the body of this document now says so, naming the examined population and citing both artifacts. The measured conclusion is unchanged and the bound it exists for is unchanged: no live family in the population the scan could reach records a divergence, so the divergent rendering is evidenced against the captured `familyReview.walkFinal` body through a fixture-backed API and is labelled as such. Only the population was overstated; no stamp was advanced; no commit was made.
+- 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **post-fix pass: the F1 repair round landed and item 21 is re-read against the fixed case.** The case's body changed in three ways and this card now states all three. (1) **The divergent predicate is replaced.** It is now divergence of the **reading** — for each excerpt key the helper compares the **sets of resolutions** the two sides gave (`distinct.size > 1`) — so a key merely *seen* on two sides is not divergence, and the case bites only where the two sides read the address differently. The pre-repair predicate filtered keys whose distinct **side names** numbered more than one, which a genuinely divergent address never satisfied once `observed` was in the key; the independent verifier measured that as vacuous and the entry below records it. **That note is superseded here rather than deleted**, and the case now demonstrably bites: reverting the key produces `Tests 3 failed | 25 passed (28)` with `expected [ 'after' ] to deeply equal [ 'after', 'before' ]`. (2) **A row-by-row check was added**: for every rendered row the case asserts `data-sides` equals the sides the captured body resolves that excerpt on, and for each divergent excerpt it asserts both the side list and that the resolution line contains each side's reading string — the page's own sentence checked against the body rather than read from the page. (3) **The honest bound is recorded**: the divergent path is evidenced against the captured `familyReview.walkFinal` body through a **fixture-backed API**, labelled as such, because the fix round scanned every family of all **36** leaves and measured **zero** divergent addresses — the live family renders the same 2 excerpts as before, and this card may not be read as claiming live data exercises the divergent path. **Nothing else about the module moved:** it still carries twenty-one cases, the captured bodies are still read rather than typed, and the two pre-existing contradictions this pass corrected (the false "nineteen cases" count and the stamp paragraph naming a commit its own header does not) stand corrected. **Citation accounting:** the case's row moved `:735-790` → `:735-803`, the helper's row `:792-862` → `:805-903`, the narrow-jump case `:864-882` → `:905-924` (it moved with the case above it), and the three cross-file rows into `FamilyReviewCenter.tsx` were re-derived there (`emptyRosterSentence` import `:45-45` unchanged, its mount `:1104-1105` → `:1134-1135`, `memberContextHeading` `:1026-1031` → `:1053-1061`, `memberContextCounts` `:1037-1046` → `:1063-1076`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
+- 2026-09-26T02:45:00+02:00 — 260921-ICR-L36 curator, **same-pass correction of the entry below, which is left standing as the record of what this pass first wrote.** The independent verifier's `verify-l36.md` (first line `pass-with-findings`) filed **F1** against one rendering claim this leaf's case 21 asserts, and the entry below repeats it: *a divergent address renders both sides' resolutions.* **That claim is false as measured.** The excerpt identity is `path \0 recorded \0 observed`, and a divergence changes `observed`, so the two sides of a divergent address mint **two different keys**; the side-pairing lookup finds one side only, and the mounted product renders `src/batch.py`, revision `d24e5187…`, with `sides: ["after"]` — one side. The verdict's own clause "each row below names both" is untrue for that row. The case's `divergentPaths` predicate is **vacuous for that claim**: it filters keys whose distinct **side names** number more than one, which a genuinely divergent address never satisfies (it never appears on both sides of one key); what it selects is addresses recorded on both sides with identical resolutions. **The body was corrected in this same pass** — item 21, the citation row for case 21 and the citation row for `familyExpressionArithmetic` each now state the defect instead of the refuted claim — and the true statement until the fix lands is: *the excerpt identity is deduplicated correctly, the change IS surfaced, and the per-side pairing of a divergent address is being fixed because the key separates the two sides it is meant to join.* **What the verifier upheld is not weakened by this:** the dedup arithmetic survived two independent re-derivations (8 membership rows, 8 changed row instances, 2 distinct keys, 6 collapsed, `8 − 2 = 6`), the over-collapse probe found no over-collapse, A3/A5/B4 reproduced exactly, and the before state is a measured zero. No verification stamp was advanced. No commit was made.
+- 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (leaf `260921-ICR-L36`, memory worktree only; code worktree uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`, memory base `52c025e6f2c38d3207274d55e00a8889c0459bad`; worker report `temp/icr/report-l36.md`): **body update — the module's twenty-first case is recorded, and this card's own case count is corrected rather than incremented.** The new case (item 21) mounts the real surface over the captured `WALK_FINAL` body and holds A4's collection to the body's own arithmetic: the rendered row count is the body's **distinct** excerpt set and is asserted **not** to be its changed-row count, every rendered row's `data-collapsed-rows` is one of the body's own group sizes and they sum back to the verdict's row total, a divergent address renders both sides' resolutions, and A4's first half (the member roster) is asserted untouched. Its expectation is computed by a module-local helper (`familyExpressionArithmetic`, item's own range `:792-862`) rather than imported from the component, so the assertion checks the captured body and not the implementation it tests — and the card now says why that is deliberate. **A pre-existing contradiction in this card was corrected in the same pass, honestly:** the body said "The module carries nineteen cases" and "each of the nineteen cases by its own name" while `grep -c '^  it('` reads **20** at the leaf's base commit — and the L25 round-2 history entry three lines above already recorded "the module's twentieth". Item 20 (the narrow jump case) existed in the module and in the citation table but not in the enumerated list. The count is now **twenty-one** in all three places and items 20 and 21 were added, so the sentence and the file agree. **A second pre-existing contradiction was corrected too:** this card's own "Verification stamp" paragraph named `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` as the header's stamp while the header names `09329a7e…`; `5f14fc67` is the live walk's proof commit named in the Todos, and the paragraph had borrowed it. It now names the header's own value and says which commit is which. **Citation accounting:** every row whose range this leaf's insertion displaced was re-derived from each construct's declaration at this tip — the centre's `emptyRosterSentence` import `:44-44` → `:45-45` and its mount `:669-669` → `:1105-1105`, `memberContextHeading` `:577-582` → `:1026-1031`, `memberContextCounts` `:588-597` → `:1037-1046`, the per-shape blocks `:146-157`/`:229-229`/`:292-292` → `:147-158`/`:230-230`/`:293-293`, and the narrow-jump case `:735-753` → `:864-882` (it moved because the new case was inserted above it). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `emptyRosterSentence`; "the read measured zero memberships for the selected family revision"; "this page carried no member row" repointed to dashboard/src/panels/review/FamilyTree.tsx:298-317; dashboard/src/panels/review/FamilyTree.tsx:305-305; dashboard/src/panels/review/FamilyTree.tsx:293-293. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `RosterLine` repointed to dashboard/src/panels/review/FamilyTree.tsx:246-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `memberContextHeading`; `memberContextCounts`; "this page carried ${carriedCarried} member row(s) of them" repointed to dashboard/src/panels/review/FamilyReviewCenter.tsx:577-582; dashboard/src/panels/review/FamilyReviewCenter.tsx:588-597; dashboard/src/panels/review/FamilyReviewCenter.tsx:595-595. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
