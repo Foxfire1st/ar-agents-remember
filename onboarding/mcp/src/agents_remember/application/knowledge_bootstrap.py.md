@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -148,31 +148,31 @@ task-tree document rather than a configured domain source.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of the three decisions and of who owns everything else.** | "Three decisions are made here, and only three"; "they are the same operation" | mcp/src/agents_remember/application/knowledge_bootstrap.py:1-38 |
-| The published surface: the two result values, the reading, the contents re-export and the run. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap.py:82-88 |
-| The destination's three states and the contents read's three states as declared vocabularies. | `DestinationState`; `ContentsState` | mcp/src/agents_remember/application/knowledge_bootstrap.py:90-95 |
-| Why a run did not begin, and the route that re-observes the condition. | `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:94-100 |
-| **The pre-run read: the baseline the run forks from and the exact identity its publication may replace.** | `DestinationReading`; "baseline" | mcp/src/agents_remember/application/knowledge_bootstrap.py:103-117 |
-| Everything one run measured, grouped so the retained record is assembled from one value. | `_ObservedRun` | mcp/src/agents_remember/application/knowledge_bootstrap.py:120-131 |
-| One run's whole result: the admission, the batch, the readback and what remains. | `BootstrapRunResult` | mcp/src/agents_remember/application/knowledge_bootstrap.py:134-148 |
-| **The run: two refusals before any write, then the one admitted batch with the explicit-update publication.** | `bootstrap_knowledge`; "staging_belongs_to_another_operation"; "destination_unusable" | mcp/src/agents_remember/application/knowledge_bootstrap.py:151-231 |
-| **The fork decision through the ordinary read route's owner.** | `_read_destination`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_bootstrap.py:234-303 |
-| The snapshot identity one resolved selection carries. | `_identity_of` | mcp/src/agents_remember/application/knowledge_bootstrap.py:267-333 |
-| **The read-back that happens only when the run's own report says it published something.** | `_read_back`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_bootstrap.py:275-355 |
-| **The namespace read from the dataset rather than assumed, because a view read refuses a foreign one.** | `_dataset_namespace` | mcp/src/agents_remember/application/knowledge_bootstrap.py:292-358 |
-| One entry's row: the run's outcome and the store's independent answer. | `_entry_progress` | mcp/src/agents_remember/application/knowledge_bootstrap.py:307-373 |
-| **Why an entry the report accounts for in no group is `unaccounted`.** | `_outcomes`; "unaccounted" | mcp/src/agents_remember/application/knowledge_bootstrap.py:318-388 |
-| The assembly of one entry's row from the run's outcome and the store's answer. | `_one_entry` | mcp/src/agents_remember/application/knowledge_bootstrap.py:337-403 |
+| The published surface: the two result values, the reading, the contents re-export and the run. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap.py:86-92 |
+| The destination's three states and the contents read's three states as declared vocabularies. | `DestinationState`; `ContentsState` | mcp/src/agents_remember/application/knowledge_bootstrap.py:94-95 |
+| Why a run did not begin, and the route that re-observes the condition. | `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:98-104 |
+| **The pre-run read: the baseline the run forks from and the exact identity its publication may replace.** | `DestinationReading`; "baseline" | mcp/src/agents_remember/application/knowledge_bootstrap.py:107-121 |
+| Everything one run measured, grouped so the retained record is assembled from one value. | `_ObservedRun` | mcp/src/agents_remember/application/knowledge_bootstrap.py:124-136 |
+| One run's whole result: the admission, the batch, the readback and what remains. | `BootstrapRunResult` | mcp/src/agents_remember/application/knowledge_bootstrap.py:139-154 |
+| **The run: two refusals before any write, then the one admitted batch with the explicit-update publication.** | `bootstrap_knowledge`; "staging_belongs_to_another_operation"; "destination_unusable" | mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244 |
+| **The fork decision through the ordinary read route's owner.** | `_read_destination`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_bootstrap.py:300-330 |
+| The snapshot identity one resolved selection carries. | `_identity_of` | mcp/src/agents_remember/application/knowledge_bootstrap.py:333-338 |
+| **The read-back that happens only when the run's own report says it published something.** | `_read_back`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_bootstrap.py:341-355 |
+| **The namespace read from the dataset rather than assumed, because a view read refuses a foreign one.** | `_dataset_namespace` | mcp/src/agents_remember/application/knowledge_bootstrap.py:358-370 |
+| One entry's row: the run's outcome and the store's independent answer. | `_entry_progress` | mcp/src/agents_remember/application/knowledge_bootstrap.py:373-381 |
+| **Why an entry the report accounts for in no group is `unaccounted`.** | `_outcomes`; "unaccounted" | mcp/src/agents_remember/application/knowledge_bootstrap.py:384-400 |
+| The assembly of one entry's row from the run's outcome and the store's answer. | `_one_entry` | mcp/src/agents_remember/application/knowledge_bootstrap.py:403-420 |
 | **Where measured absence is kept apart from an unread location, including the refused-publication case.** | `_store_state`; "unmeasured"; "absence_established" | mcp/src/agents_remember/application/knowledge_bootstrap.py:419-464 |
-| **The record assembled only from what the run measured, with `remaining` and `unmeasured` as two facts.** | `_progress`; `remaining_basis` | mcp/src/agents_remember/application/knowledge_bootstrap.py:403-495 |
-| The destination fields taken from the read-back when there was one, so a disagreement is readable. | `_destination_state`; `_destination_identity` | mcp/src/agents_remember/application/knowledge_bootstrap.py:433-512 |
-| Which read established the destination fields, or that this run published nothing. | `_read_back_state`; `_destination_detail` | mcp/src/agents_remember/application/knowledge_bootstrap.py:453-528 |
-| **The derivation of both lists stated by name, with the unmeasured entries named as such.** | `_remaining_basis`; "UNMEASURED rather than remaining" | mcp/src/agents_remember/application/knowledge_bootstrap.py:467-577 |
-| **The one operation both admissions reach, and the selection this run hands it.** | `ingest_curator_list`; `IngestSelection`; `IngestPublication`; `HeldOperation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1122; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1103-1103; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1086-1086; mcp/src/agents_remember/application/knowledge_curator_ingest.py:457-457 |
-| The staging owner whose reader and writer this run uses. | `read_progress`; `write_progress`; `staged_candidate_directory`; `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:228-393; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:219-393; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:225-393 |
-| **The bounded contents read the remaining list is derived from.** | `dataset_revisions`; `DatasetContents` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:101-103; mcp/src/agents_remember/application/knowledge_dataset_contents.py:53-103 |
-| The read route's own publication-readback owner. | `published_identity_read_back`; `DeclaredPublicationLocation`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-202; mcp/src/agents_remember/application/knowledge_publication_route.py:69-202; mcp/src/agents_remember/application/knowledge_publication_route.py:98-202 |
-| The resolved published intent, its unavailable form and the selection type. | `resolve_published_intent`; `PublishedIntentUnavailable`; `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:219-219; mcp/src/agents_remember/application/published_intent.py:168-219; mcp/src/agents_remember/application/published_intent.py:152-219 |
-| The identity type the destination reading and the retained record carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
+| **The record assembled only from what the run measured, with `remaining` and `unmeasured` as two facts.** | `_progress`; `remaining_basis` | mcp/src/agents_remember/application/knowledge_bootstrap.py:469-499 |
+| The destination fields taken from the read-back when there was one, so a disagreement is readable. | `_destination_state`; `_destination_identity` | mcp/src/agents_remember/application/knowledge_bootstrap.py:502-509; mcp/src/agents_remember/application/knowledge_bootstrap.py:512-519 |
+| Which read established the destination fields, or that this run published nothing. | `_read_back_state`; `_destination_detail` | mcp/src/agents_remember/application/knowledge_bootstrap.py:522-525; mcp/src/agents_remember/application/knowledge_bootstrap.py:528-533 |
+| **The derivation of both lists stated by name, with the unmeasured entries named as such.** | `_remaining_basis`; "UNMEASURED rather than remaining" | mcp/src/agents_remember/application/knowledge_bootstrap.py:536-582 |
+| **The one operation both admissions reach, and the selection this run hands it.** | `ingest_curator_list`; `IngestSelection`; `IngestPublication`; `HeldOperation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1091-1108; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1074-1088; mcp/src/agents_remember/application/knowledge_curator_ingest.py:459-483 |
+| The staging owner whose reader and writer this run uses. | `read_progress`; `write_progress`; `staged_candidate_directory`; `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:230-233; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:236-239; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:253-323; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:393-415 |
+| **The bounded contents read the remaining list is derived from.** | `dataset_revisions`; `DatasetContents` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:55-100; mcp/src/agents_remember/application/knowledge_dataset_contents.py:103-182 |
+| The read route's own publication-readback owner. | `published_identity_read_back`; `DeclaredPublicationLocation`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-250; mcp/src/agents_remember/application/knowledge_publication_route.py:68-80; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112 |
+| The resolved published intent, its unavailable form and the selection type. | `resolve_published_intent`; `PublishedIntentUnavailable`; `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:219-243; mcp/src/agents_remember/application/published_intent.py:167-184; mcp/src/agents_remember/application/published_intent.py:151-164 |
+| The identity type the destination reading and the retained record carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 
 ## Cross-Repo References
 
@@ -185,6 +185,7 @@ names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
   corrected docstrings; the card and the source agree** — the module docstring now reads "The record is written by any run that was given the commit word", which is exactly what this card's Logic section says; the third decision bullet still describes the run's own three decisions and the carry-forward is stated in the section this leaf added. All ranges were re-derived for the docstring-only line shift. **No verification stamp was advanced.**

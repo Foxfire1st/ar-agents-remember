@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.paging.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T00:15:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,8 @@ one that offers itself for a body that published no cursor at all (so the button
 ## Code Commentary
 
 ### Logic
+
+The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 
 **The request is asserted, not just the render.** The advancing case asserts that the *second* request
 carries the cursor the server published rather than the one the client was standing on, and that the
@@ -91,8 +93,8 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of what it exercises, of the defect it catches, and of the two wrong repairs it also fails against.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:1-19 |
-| The two opaque cursors, verbatim from the evidence run: one per collection, which is why mixing them up would be a defect. | `KNOWLEDGE_CURSOR`; `RECORDS_CURSOR` | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:38-41 |
-| The captured server body the refusal case renders. | `RECORDS_PAGE_REFUSAL_RESPONSE` | dashboard/src/panels/review/recordsPageRefusal.captured.ts:1-29 |
+| The two opaque cursors, verbatim from the evidence run: one per collection, which is why mixing them up would be a defect. | `KNOWLEDGE_CURSOR`; `RECORDS_CURSOR` | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:46-48 |
+| The captured server body the refusal case renders. | `RECORDS_PAGE_REFUSAL_RESPONSE` | dashboard/src/panels/review/recordsPageRefusal.captured.ts:29-399 |
 | **The bounds, the scope and the one action that reaches the rest.** | "states the bounds and scope of a page and offers the one action that reaches the rest" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:160-189 |
 | **The advancing case: the second request carries the cursor the server published, and the bounds move.** | "advances with the cursor the server published, and keeps the same collection" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:190-235 |
 | **No next action for a body that published no cursor, whatever it reported.** | "offers no next action for a page that published no cursor, whatever it reported" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:236-267 |
@@ -101,11 +103,11 @@ No domain documentation source is configured for this repository (`system/source
 | **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** | "words a reset from its refusal code, so a foreign cursor is not called a moved comparison" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:374-442 |
 | **The two collections' totals kept apart in the sentence the reader sees.** | "keeps the two collections' totals apart in the sentence the reader sees" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:443-498 |
 | The whole review stays reachable and the selector travels through a paged request. | "keeps the whole review reachable and carries the selector through a paged request" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:499-514 |
-| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:611-632; dashboard/src/data/review.ts:600-606; dashboard/src/data/review.ts:641-643; dashboard/src/data/review.ts:654-658 |
-| The page contract on the client, including the basis field and the separate refusal. | `ReviewCollectionPage` |dashboard/src/data/review.ts:406-449|
-| **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:786-849; dashboard/src/panels/review/ReviewSurface.tsx:624-660; dashboard/src/panels/review/ReviewSurface.tsx:662-717; dashboard/src/panels/review/ReviewSurface.tsx:719-741; dashboard/src/panels/review/ReviewSurface.tsx:542-575 |
-| The page as part of the read's target key, so a page change is its own read. | `targetKeyOf` |dashboard/src/panels/review/ReviewSurface.tsx:22-22|
-| The published page shape these bodies have: the surface's own page value and its two refusal codes. | `ReviewCollectionPage`; `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:412-488; mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
+| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:651-653; dashboard/src/data/review.ts:664-668; dashboard/src/data/review.ts:621-642; dashboard/src/data/review.ts:610-616 |
+| The page contract on the client, including the basis field and the separate refusal. | `ReviewCollectionPage` |dashboard/src/data/review.ts:479-498|
+| **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:786-849; dashboard/src/panels/review/ReviewSurface.tsx:468-510; dashboard/src/panels/review/ReviewSurface.tsx:512-545; dashboard/src/panels/review/ReviewSurface.tsx:547-582; dashboard/src/panels/review/ReviewSurface.tsx:593-615; dashboard/src/panels/review/ReviewSurface.tsx:617-656; dashboard/src/panels/review/ReviewSurface.tsx:719-741 |
+| The read target key includes page position, making a page change a distinct read. | `targetKeyOf` | dashboard/src/panels/review/ReviewReadCycle.ts:71-89 |
+| The published page shape these bodies have: the surface's own page value and its two refusal codes. | `ReviewCollectionPage`; `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:418-492; mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 
 ## Cross-Repo References
 
@@ -117,6 +119,10 @@ this repository's, and `fetch` is the only boundary crossed.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:10:33+00:00: Generated citation repair: `KNOWLEDGE_CURSOR`; `RECORDS_CURSOR` repointed to dashboard/src/panels/review/ReviewSurface.paging.test.tsx:46-47; dashboard/src/panels/review/ReviewSurface.paging.test.tsx:48-48. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:10:33+00:00: Generated citation repair: `ReviewCollectionPage` repointed to dashboard/src/data/review.ts:479-498. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced citation rows re-cited to the constructs they name, wording unchanged.** The client row's four ranges followed their constructs down `data/review.ts` — `pageBounds` `611-632`, `continuationOf` `600-606`, `carriedPage` `641-643`, `RESET_GLOSS` `654-658`, each verified to carry the anchor it is cited for — and the control row's last range was re-pointed to `PagePicker`'s own declaration extent `542-575`, which is what that claim needed: the picker's declaration line now falls inside a cited range, so the claim is no longer reopened. Contributing ranges (`ReviewCollectionPage` `406-425`, the four control ranges, `targetKeyOf` `22-22`) are kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:15:00+02:00 — 260921-ICR-L10 curator: **created.** The module is new in this leaf
   (`ICR-R10@v1`) and this is its one-to-one card. It records the two design facts a later reader would

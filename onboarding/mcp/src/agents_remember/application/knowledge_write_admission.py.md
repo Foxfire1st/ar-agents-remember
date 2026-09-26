@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_write_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -109,16 +109,16 @@ this value implements, and it is a task-tree document rather than a configured d
 | --- | --- | --- |
 | **The module's own statement of the gap it closes and of why a second write path was refused.** | "repository's *first* knowledge"; "line 11" | mcp/src/agents_remember/application/knowledge_write_admission.py:1-35 |
 | The published surface: the two kind constants, the value, the provenance and the two builders. | `__all__` | mcp/src/agents_remember/application/knowledge_write_admission.py:45-53 |
-| **The two admissions as a declared, stored vocabulary rather than a boolean.** | `AdmissionKind`; `ENCLOSURE_ADMISSION_KIND`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:55-60 |
+| **The two admissions as a declared, stored vocabulary rather than a boolean.** | `AdmissionKind`; `ENCLOSURE_ADMISSION_KIND`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:57-57; mcp/src/agents_remember/application/knowledge_write_admission.py:59-60 |
 | **Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.** | `AdmissionProvenance`; "authority" | mcp/src/agents_remember/application/knowledge_write_admission.py:63-76 |
 | **The facts one admitted write is bound to, including the retry scope and the two exact source revisions.** | `KnowledgeWriteAdmission`; "``scope`` is the **retry scope**" | mcp/src/agents_remember/application/knowledge_write_admission.py:79-106 |
-| The optional memory repository against the required memory worktree the operation refuses on. | `memory_repo_path`; `memory_worktree` | mcp/src/agents_remember/application/knowledge_write_admission.py:103-115 |
-| Which authority admitted this write, and whether it was derived without an enclosure. | `kind`; `is_bootstrap` | mcp/src/agents_remember/application/knowledge_write_admission.py:121-131 |
+| The optional memory repository against the required memory worktree the operation refuses on. | `memory_repo_path`; `memory_worktree` | mcp/src/agents_remember/application/knowledge_write_admission.py:114-115 |
+| Which authority admitted this write, and whether it was derived without an enclosure. | `kind`; `is_bootstrap` | mcp/src/agents_remember/application/knowledge_write_admission.py:121-125; mcp/src/agents_remember/application/knowledge_write_admission.py:127-131 |
 | **The enclosure adapter that derives nothing and states that a real contract admitted the write.** | `enclosure_admission`; "It derives nothing" | mcp/src/agents_remember/application/knowledge_write_admission.py:134-165 |
 | **The one coercion at the front door: an existing admission is passed through untouched, never re-derived.** | `as_write_admission`; "is passed through untouched" | mcp/src/agents_remember/application/knowledge_write_admission.py:168-184 |
-| The shipped contract loader and the document type the enclosure adapter reads. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:234-234; mcp/src/agents_remember/worktrees/worktree_contract.py:437-437 |
+| The shipped contract loader and the document type the enclosure adapter reads. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | **The second real admission this value exists to carry, and the resolver that builds it.** | `admit_bootstrap_context`; `bootstrap_scope` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:154-162 |
-| The one operation both admissions reach, unchanged. | `ingest_curator_list` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1122-1122 |
+| The one operation both admissions reach, unchanged. | `ingest_curator_list` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235 |
 
 ## Cross-Repo References
 
@@ -130,6 +130,7 @@ settings' `crossRepo.allow` is empty, so nothing here names, reads or writes ano
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:14:21+00:00: Generated citation repair: `ingest_curator_list` repointed to mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module

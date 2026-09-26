@@ -5,9 +5,13 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-24T12:32:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+
+## Curator authored knowledge and retained review
+
+The curator remains the leaf memory writer and the bounded taskless foundation author. Leaf ingest requires explicit semantic scope and reports family, source and publication planes independently. Before handoff the role uses the existing comparison producer and carries its actual generation or refusal, including code-only work with validated unchanged knowledge. Lifecycle, code edits and closeout ownership stay with their existing seats.
 
 ## 260921-ICR-L32 The Curator Role Is Admitted Taskless, And The Bootstrap Role Reads Rather Than Reaches
 
@@ -105,9 +109,9 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:150-152; skills/l-01-agent-lifecycles/roles/curator.md:185-185; skills/l-01-agent-lifecycles/roles/curator.md:170-170; skills/l-01-agent-lifecycles/roles/curator.md:187-187; skills/l-01-agent-lifecycles/roles/curator.md:172-172 |
-| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:149-150 |
+| **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:78-78 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:184-184; skills/l-01-agent-lifecycles/roles/curator.md:201-201 |
+| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:161-162 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
 ## Purpose
@@ -268,7 +272,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; "# Curator"; "Run the complete curation operation at intake and after every repair"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:6-9; skills/l-01-agent-lifecycles/roles/curator.md:70-101; skills/l-01-agent-lifecycles/roles/curator.md:108-108; skills/l-01-agent-lifecycles/roles/curator.md:143-143; skills/l-01-agent-lifecycles/roles/curator.md:169-169; skills/l-01-agent-lifecycles/roles/curator.md:102-102; skills/l-01-agent-lifecycles/roles/curator.md:109-109 |
+| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-152; skills/l-01-agent-lifecycles/roles/curator.md:179-196; skills/l-01-agent-lifecycles/roles/curator.md:197-211 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -397,6 +401,9 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-26T21:21:16+00:00: Generated citation repair: "knowledge hand-off result"; "published dataset identity" repointed to skills/l-01-agent-lifecycles/roles/curator.md:161-161; skills/l-01-agent-lifecycles/roles/curator.md:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T19:49:05Z — Reconciled the current reviewer and curator responsibilities without changing role or transaction authority.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" repointed to skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "knowledge hand-off result"; "published dataset identity" repointed to skills/l-01-agent-lifecycles/roles/curator.md:149-149; skills/l-01-agent-lifecycles/roles/curator.md:150-150. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — two of the ten role files moved.** The new section records `roles/curator.md`'s either-way admission and its choice of the taskless writer for a taskless run, `roles/bootstrap.md`'s statement of the admission in the product's own words, and that both were propagated into all ten copies by the generator. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.

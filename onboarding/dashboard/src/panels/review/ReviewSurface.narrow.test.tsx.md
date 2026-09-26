@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.narrow.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T00:15:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,8 @@ dropped again; it does not claim to be the measurement.
 ## Code Commentary
 
 ### Logic
+
+The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 
 **One fixture builder and one mount, so the three cases cannot drift apart.** `payload()` returns a complete
 `ReviewPayload` whose `comparison.reference` is one 64-character token (`:41`) and whose digests are
@@ -126,16 +128,16 @@ row occurs inside the range that row cites.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** | `payload`; "1678adab6416222068ba391db5b8b48d7c38b5b8c859adeac36fad3d0a2a" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:36-102 |
-| The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure. | `reviewed`; `mount`; `review-surface`; `review-details` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:104-130 |
-| The leak guard: `cleanup()` and `vi.unstubAllGlobals()` after every case. | `afterEach`; `vi.unstubAllGlobals()` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:132-135 |
-| **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** | `isZeroLength` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:137-137 |
-| **Case 1: the reviewer's own vertical scrollport, asserted on `review-surface` — the root that names the boundary between this surface and the inner `review-workspace`.** | "gives the reviewer its own vertical scrollport on its own root"; `overflowY`; `minHeight`; `height` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:140-150 |
-| **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** | "lets every complete-payload pane shrink and wrap its long identities"; `data-pane`; `panes.length` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:152-162 |
-| **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** | "constrains the disclosure's grid track and wraps the header row"; `gridTemplateColumns`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:164-177 |
-| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:89-89 |
-| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:89-89 |
-| The shared client whose read this module mounts through, and whose decode the fixture satisfies. | `ReviewPayload`; `ReviewResult` | dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:499-505 |
+| **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** | `payload`; "1678adab6416222068ba391db5b8b48d7c38b5b8c859adeac36fad3d0a2a" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
+| The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure. | `reviewed`; `mount`; `review-surface`; `review-details` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:112-117; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:119-138 |
+| The teardown cleans the mounted tree and restores stubbed globals. | "afterEach(() => {" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:140-143 |
+| **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** | `isZeroLength` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:145-145 |
+| The own-root scrollport case checks the reviewer height and vertical overflow boundary. | "gives the reviewer its own vertical scrollport on its own root" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:148-158 |
+| **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** | "lets every complete-payload pane shrink and wrap its long identities"; `data-pane`; `panes.length` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:160-170 |
+| **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** | "constrains the disclosure's grid track and wraps the header row"; `gridTemplateColumns`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184 |
+| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:82-90 |
+| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:82-90 |
+| The shared client whose read this module mounts through, and whose decode the fixture satisfies. | `ReviewPayload`; `ReviewResult` | dashboard/src/data/review.ts:435-467; dashboard/src/data/review.ts:509-515 |
 
 ## Cross-Repo References
 
@@ -147,5 +149,11 @@ No cross-repository behavior is exercised in this file. Every response is served
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:10:14+00:00: Generated citation repair: `isZeroLength` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:145-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:10:14+00:00: Generated citation repair: `gridTemplateColumns`; `flexWrap`; "constrains the disclosure's grid track and wraps the header row" repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:178-178; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:182-182; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:10:14+00:00: Generated citation repair: `pane` repointed to dashboard/src/panels/review/ReviewSurface.tsx:82-90. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:10:14+00:00: Generated citation repair: `pane` repointed to dashboard/src/panels/review/ReviewSurface.tsx:82-90. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewPayload`; `ReviewResult` repointed to dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:499-505. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (candidate `ar/260921-icr-l25-ar`; the file is **untracked** in the code worktree, so no commit contains it — code worktree HEAD is `d9e7e6e79ce532d16c689435ae95a63aab430f94` and that is the last real commit on this line; memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`): **created this one-to-one card for the new acceptance module (register B7, round 3).** The file has no previous onboarding because the file itself is new in this round, so this is a create rather than a refresh; the 1-to-1 source mapping is what obliges it. The card records the module's own stated limit (jsdom cannot lay anything out, so the cases hold the **declarations** the repair consists of and a `getBoundingClientRect()` case here would pass vacuously), the deliberately unbreakable 64-character fixture token that reproduces the defect's shape rather than a smaller one, the three cases by name, the `review-surface`-not-`review-workspace` root distinction the first case exists to name, and the non-empty-input assertion that keeps the pane loop from being vacuous. **Stamp accounting:** no verification stamp was advanced beyond naming the line's HEAD — the file is uncommitted, so the governed closeout owns the real stamp, and a stamp naming a commit that does not contain the file would be a fabricated provenance claim. No commit was made.

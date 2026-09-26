@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `1fa2588a048e14f6aff236b896caa32d3a7f26c7` |
-| lastVerifiedCommitDate | 2026-09-26T04:04:54+02:00|
+| lastUpdated | 2026-09-26T20:20:54Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,103 +16,15 @@
 
 ## Purpose
 
-The family-centered review workspace: scope header, family tree, the unified central reading path, and —
-through the centre — the complete source change explorer. The module states its own ownership in its
-header comment: **the three things the accepted layout treats as one composition** are which family or
-member is selected, the reader's display preferences (diff layout, full-file disclosure, and which listed
-path is expanded) and the narrow-screen route from the tree to the selected review. The payload's own
-panes stay in `ReviewSurface.tsx`, which mounts this workspace **inside the read cycle it already owns**:
-one read, one question, one outcome region, one page control.
-
-**Why the preferences live here rather than in the components below.** `ICR-R24@v3` requires the reader's
-full-file disclosure and current selection to survive a diff-layout switch and a change of selection.
-State owned by the tree, by the centre or by the explorer would be reset by exactly the interaction the
-requirement is about, so it is lifted to the one component whose lifetime spans them. The preferences are
-display facts only: they change no request and no stored value.
-
-**Why the state is exported and owned one level higher still (fix round 5, V10).** A page request changes
-the read's question, so the payload is `null` while it is in flight and this whole subtree — including
-`ReviewPanes`, which returns `null` for a null payload — unmounts and mounts again. State owned here would
-therefore be destroyed and re-initialised by every page read, which is what the round-4 verification
-measured: the selection fell back to `none`, the filter to `""`, the diff layout to `split`, full-file to
-`true`, and the centre's own continuation control became single-use because its selection was gone by the
-time the page arrived. `useWorkspaceState()` is therefore exported, the surface calls it **once above the
-pane switch**, and this file receives the value as a prop.
-
-**Verification stamp.** `lastVerifiedCommitHash` names the leaf's base commit
-`5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`; this workspace and the layout it belongs to exist only in the
-leaf's **uncommitted working tree**, so the stamp means "leaf base commit plus this leaf's working-tree
-delta" and does not claim that the commit holds this content. Governed closeout owns the real stamp.
+Own the family-centered review layout and its transient inspection state: one scope header, one combined rail and the unified intent/source/evidence center.
 
 ## Code Commentary
 
 ### Logic
 
-**The header band is two components, because the roster-walk line is about the page and the rest is about
-the question.** `WorkspaceHeader` mounts `ScopeHeader` and then `RosterWalkNotice`. `ScopeHeader` prints,
-in order: the title, the task context and subject line (`whole task (no subject selected)` when neither
-selector is present), the record line (`record: the leaf's recorded comparison` or `the live candidate`,
-plus `source inventory: <state>`, its `(partial)` marker and `changed paths listed: <listed_total>`), the
-comparison line (reference, policy version, and both exact endpoints with `not recorded` for an absent
-one) or the sentence that no knowledge comparison was made and the inventory below is the review
-population, and finally the family line — either `${state}: ${families_returned} of ${families_total}
-recorded family context(s) composed.` or the statement that this body carries no family context at all.
-That last sentence is load-bearing: a body with no family context is **not** a measured zero.
+Member navigation calls the existing subject reader using the member invariant identity while retaining its family/roster context. The narrow jump focuses the center without the browser default scroll, then scrolls to its start so the selected heading and guarantee remain visible. Layout, full-file disclosure and open path are unchanged by the jump.
 
-**`RosterWalkNotice` names which family revision's walk the displayed page is a position in.** It reads the
-payload through `carriedPage(payload)`, returns `null` unless the page's collection is `family_members`,
-and otherwise prints the page's own `scope` (or `the page published no scope` when the scope is empty)
-and whether it was `continued from the cursor this walk published` or `the walk's first page`. It exists
-so a reader never has to guess which family a continuation cursor belongs to.
-
-**`FamilyNotComposed` renders the three absent-ish states apart, and says which one it is.** It always
-renders the `review-family-tree` section, carrying `data-family-state={context?.state ?? "absent"}`, and
-the `review-family-context` paragraph carries `data-context-state` the same way. For an `undefined`
-context it prints the body's own sentence — no family context was read into this body, nothing here is
-shown as a family population, this is not a measured zero and not an unavailable read, and the complete
-source explorer below is unaffected — plus the recorded limitations when the context does carry any.
-`composed(context)` is the one gate: the interactive `FamilyTree` is mounted only for `recorded` or
-`partial`, and `FamilyColumn` mounts `FamilyNotComposed` otherwise.
-
-**`NarrowJump` is the narrow-screen route to the review, and it is composed ABOVE the family tree.**
-`jump` is a real `<button data-testid="review-jump-to-selection">` rather than a styled anchor because
-there is no URL to change; its click calls `center.current?.focus()`. Its stylesheet rule hides it above
-`60.01rem`, where the centre is already beside the tree: on a narrow screen the reader scrolls a long tree
-and then needs one control that reaches the selected review. **Its placement is the whole point
-(260921-ICR-L25, register B3, the accepted design's finding P2-3):** the accepted page puts the
-affordance "near the top" at `y≈307` so a narrow reader reaches the review **without first scrolling
-the tree** — the same finding records the rail at 2,298 px pushing the review to y=2,821 px. It was
-previously rendered immediately before the centre column, i.e. **below** the tree, where it sat at
-`y=1183` in a 900 px viewport: visible only after the scroll it exists to avoid. It is now one
-`NarrowJump` component mounted once, between the header and `FamilyColumn`, so the tree keeps exactly
-what it shows and only the control's composition changed. `CenterColumn` renders
-`<div ref={center} tabIndex={-1} data-testid="review-center-column">`, which is what makes the focus
-target real, and it holds `FamilyReviewCenter`, then `DisplayControls`, then the `review-display-state`
-line (`display: <layout> diff · full file | changed regions only · expanded: <path> | no entry expanded`).
-`CenterColumn` now also carries `onRosterNext`, so the centre's own continuation control reaches the
-workspace's one roster handler.
-
-**`useWorkspaceState()` is the workspace's whole local state, and it is exported for one reason.** It
-holds the selection (`FamilySelection | null`, starting `null`), the filter (`""`), the diff layout
-(`"split"`), the full-file disclosure (`true`) and `openPath` (`null`), plus two refs: `opener`, the
-control that opened the current expansion, and `center`, the column the narrow-screen route focuses.
-`openFromCenter(path)` stores `document.activeElement` before opening; `closePath(null)` restores focus to
-that opener, so closing an expansion returns the reader to where they were rather than to the top of the
-document. `WorkspaceState` is the exported interface the surface types its prop with.
-
-**`rosterWalk(onPageSelect)` is the one handler the tree's control and the centre's control share.** Both
-are the same `RosterNext` component over the same value, so a factory that ignores the family and side it
-is handed and sends only `{ of: "family_members", continuation }` is what makes it impossible for them to
-ask different questions: a roster cursor names the one walk it continues, so the family and the side are
-the page's own scope rather than the request's. `ReviewWorkspace` builds it once as
-`const walkRoster = rosterWalk(onPageSelect)` and threads it into `FamilyColumn` and `SelectionColumn`
-alike. `onPageSelect` is the **surface's** page control — a family roster continuation is a page request
-like any other and goes through the read cycle the surface already owns rather than a second reader.
-
-**`DisplayControls` is mounted twice on purpose.** The same two values are reachable from the centre column
-as well as from the explorer's own bar, because a reader looking at a diff should not have to scroll to the
-explorer to change how it is drawn. Both copies write the one pair of values this workspace owns; both
-publish machine-readable state (`data-testid`, `data-diff-layout`, `data-full-file`, `aria-pressed`).
+useWorkspaceState holds selected family/member, search, diff layout, full-file disclosure, expanded path and focus references above paged reads. Changed regions are the initial display. WorkspaceRail combines recorded catalogue navigation, the loaded guarantee/member subtree and the complete source inventory. sourceAttribution uses only the backend mapped and unmapped partitions; everything else is unknown. recordLabelOf distinguishes reconstructed recorded endpoints from frozen historical and live comparisons. The center reuses FamilyReviewCenter and ReviewExpressions; desktop rail scrolling is independent.
 
 ### Conventions
 
@@ -133,29 +45,7 @@ case can read the live preferences off the element. No `useEffect` and no fetch 
 
 ### Invariants And Boundaries
 
-- **This file owns three things and nothing else.** Selection, the reader's display preferences and the
-  narrow-screen route. The payload's panes, the read, the question's identity, the outcome region and the
-  page control all belong to `ReviewSurface.tsx`; `onPageSelect` is the surface's one page control, passed
-  down rather than re-created.
-- **The display preferences are display facts.** `layout`, `fullFile` and `openPath` change no request and
-  no stored value; they exist so that a diff-layout switch or a selection change cannot collapse an
-  expansion or reset the reader's disclosure.
-- **State whose lifetime must span the pane switch is owned above it.** `useWorkspaceState` is exported
-  and the surface calls it once, above `ReviewPanes`; anything owned below would be destroyed by every
-  page read (fix round 5, V10).
-- **The narrow-screen route is a button, not an anchor.** There is no URL to change; it moves focus to the
-  centre column, which the centre renders as a real focus target (`tabIndex={-1}`).
-- **The tree's control and the centre's control are one handler.** Both receive `walkRoster`; only the
-  continuation travels, because the family and side are the page's own scope.
-- **A body with no family context is neither a measured zero nor an unavailable read.** `FamilyNotComposed`
-  states that fact, `composed()` gates the interactive tree, and the source explorer below is unaffected.
-- **The scope header prints identities, not conclusions.** Task, record, comparison reference, policy
-  version, tree ids and the measured listed-path count are printed because they are what a reader quotes to
-  reproduce the read; nothing here summarises what the panes conclude, because they conclude nothing.
-- **Boundary.** This module renders the tree (`FamilyTree.tsx`), the centre
-  (`FamilyReviewCenter.tsx`) and the explorer (`SourceExplorer.tsx`); the sentences those owners print,
-  the roving-focus traversal and the inventory's own population statement are theirs, not this file's.
-  The `DiffLayout` type is taken from the explorer rather than declared here.
+Semantic selection never filters the full changed-file population. Confirmed no-family, unselected, absent and unreadable context remain different states. Display preferences do not change knowledge or comparison identity.
 
 ### Todos
 
@@ -174,51 +64,15 @@ The statements below are grounded in repository source only.
 
 ## Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the module's own statement of what it owns,
-the two-column grid and its narrow reflow, the scope header and its five lines, the roster-walk notice, the
-three absent-ish family states, the columns and their gates, the exported workspace state and its focus
-memory, the one roster handler, the two mount points of the display controls, and the surface that calls
-the hook once above the pane switch. Every anchor in a row below occurs on a line inside the range that row
-cites.
+The current ownership and boundaries above are grounded in these source declarations.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The module's own statement of what it owns — which family or member is selected, the reader's display preferences (diff layout, full-file disclosure, which listed path is expanded) and the narrow-screen route from the tree to the selected review — with the payload's own panes left to `ReviewSurface`, which mounts this workspace inside the read cycle it already owns.** | "WHAT THIS OWNS"; "ICR-R24@v3"; `ReviewSurface` | dashboard/src/panels/review/ReviewWorkspace.tsx:1-18 |
-| Why the preferences are lifted to this component rather than owned below it: the interaction the requirement is about is exactly what would reset them. | "lifted to the one component whose lifetime spans" | dashboard/src/panels/review/ReviewWorkspace.tsx:9-13 |
-| The two-column grid, and the one-column reflow that is the narrow layout the route exists for. | `workspace`; "@media (max-width: 60rem)" | dashboard/src/panels/review/ReviewWorkspace.tsx:35-41 |
-| The imports that fix the boundary: one value from the data layer and the layout type taken from the explorer. | `carriedPage`; `DiffLayout` | dashboard/src/panels/review/ReviewWorkspace.tsx:20-33 |
-| The narrow-screen route's own style: hidden above `60.01rem`, where the centre already sits beside the tree. | `jump`; "@media (min-width: 60.01rem)" | dashboard/src/panels/review/ReviewWorkspace.tsx:79-95 |
-| **The narrow-screen route itself, now extracted into one `NarrowJump` component: a real button because there is no URL to change, moving focus into the centre column.** | `NarrowJump`; "review-jump-to-selection"; "center.current?.focus()" | dashboard/src/panels/review/ReviewWorkspace.tsx:96-112 |
-| `ScopeHeader`: the task context, the subject or `whole task (no subject selected)`, and the test ids of the three context lines. | `ScopeHeader`; "review-scope-header"; "review-scope-task"; "whole task (no subject selected)" | dashboard/src/panels/review/ReviewWorkspace.tsx:113-165 |
-| The header's record line: which record the panes below are read from, the inventory's state and partial flag, and the measured count of listed changed paths. | "review-scope-record"; "inventory.listed_total"; "inventory.partial" | dashboard/src/panels/review/ReviewWorkspace.tsx:141-141; dashboard/src/panels/review/ReviewWorkspace.tsx:144-144 |
-| The comparison line with the policy and both exact endpoints, and the sentence a body with no comparison gets instead. | "review-scope-comparison"; "no knowledge comparison was made" | dashboard/src/panels/review/ReviewWorkspace.tsx:147-154; dashboard/src/panels/review/ReviewWorkspace.tsx:153-154 |
-| The family line: the composed counts, or the fact that this body carries no family context and no family reading may be made from it. | "review-scope-families"; `families_returned`; "that is not a measured zero" | dashboard/src/panels/review/ReviewWorkspace.tsx:158-158; dashboard/src/panels/review/ReviewWorkspace.tsx:160-161 |
-| **`RosterWalkNotice`: which family revision's walk this response is a page of, from the page's own scope, or `null` when the page is not a `family_members` walk.** | `RosterWalkNotice`; `family_members`; `review-roster-walk`; `continued_from` | dashboard/src/panels/review/ReviewWorkspace.tsx:96-177; dashboard/src/panels/review/ReviewWorkspace.tsx:167-177; dashboard/src/panels/review/ReviewWorkspace.tsx:170-177; dashboard/src/panels/review/ReviewWorkspace.tsx:172-177; dashboard/src/panels/review/ReviewWorkspace.tsx:177-209; dashboard/src/panels/review/ReviewWorkspace.tsx:177-229; dashboard/src/panels/review/ReviewWorkspace.tsx:177-267; dashboard/src/panels/review/ReviewWorkspace.tsx:177-273 |
-| **`FamilyNotComposed`, which renders the body's own no-family-context state and the recorded limitations, carrying the state on two data attributes.** | `FamilyNotComposed`; `review-family-tree`; `data-family-state`; `review-family-limitation` | dashboard/src/panels/review/ReviewWorkspace.tsx:162-189 |
-| A body with no family context at all is neither a measured zero nor an unavailable read, and the complete source explorer below is unaffected by it. | "not a measured zero and not an unavailable read" | dashboard/src/panels/review/ReviewWorkspace.tsx:202-202 |
-| The tree column's gate: the interactive tree only when the body composed one. | `composed`; `FamilyColumn`; `FamilyNotComposed` | dashboard/src/panels/review/ReviewWorkspace.tsx:220-251; dashboard/src/panels/review/ReviewWorkspace.tsx:216-218 |
-| The centre column: a real focus target holding the centre component and the workspace's roster handler. | `CenterColumn`; `review-center-column`; `onRosterNext` | dashboard/src/panels/review/ReviewWorkspace.tsx:303-390 |
-| The display-state line: the layout, the full-file disclosure, and the expanded path or the fact that no entry is expanded. | "review-display-state"; "no entry expanded" | dashboard/src/panels/review/ReviewWorkspace.tsx:351-361 |
-| **Why the state is exported and owned by the surface: a page request nulls the payload, so this subtree unmounts, and the round-4 verification measured every value falling back and the centre's control becoming single-use.** | "IT IS EXPORTED"; "ICR-L24 fix round 5, V10"; "single-use" | dashboard/src/panels/review/ReviewWorkspace.tsx:366-376 |
-| The exported state's shape: the selection, the filter, the three display preferences and the focus memory. | `WorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:377-390 |
-| The one hook that creates it, with the defaults the round-4 measurement saw reset (`split`, full file on, nothing expanded). | `useWorkspaceState`; `useState<DiffLayout>("split")`; `useState(true)` | dashboard/src/panels/review/ReviewWorkspace.tsx:392-424 |
-| The focus memory: the control that opened an expansion is remembered, and closing restores focus rather than sending the reader to the top of the document. | `openFromCenter`; `document.activeElement`; `closePath`; `opener.current?.focus()` | dashboard/src/panels/review/ReviewWorkspace.tsx:402-409 |
-| The header band: the scope header plus the roster-walk notice. | `WorkspaceHeader`; `RosterWalkNotice` | dashboard/src/panels/review/ReviewWorkspace.tsx:170-464; dashboard/src/panels/review/ReviewWorkspace.tsx:170-456 |
-| **One roster-walk handler for the whole workspace: the family and the side are the page's own scope, so only the continuation travels — the single `{ of: "family_members", continuation }` page request.** | `rosterWalk`; "of: \"family_members\"" | dashboard/src/panels/review/ReviewWorkspace.tsx:465-470 |
-| The component's whole input: the payload, the three task identifiers, the optional selector and record, the surface's one page control, and the surface-owned state. | `ReviewWorkspace`; `onPageSelect`; "state: WorkspaceState" | dashboard/src/panels/review/ReviewWorkspace.tsx:472-495 |
-| The one place the handler is built, and the state it destructures rather than re-deriving. | "walkRoster = rosterWalk(onPageSelect)" | dashboard/src/panels/review/ReviewWorkspace.tsx:496-510 |
-| The workspace root, publishing the two display preferences as data attributes a case can read. | "review-workspace"; "data-diff-layout={layout}"; "data-full-file" | dashboard/src/panels/review/ReviewWorkspace.tsx:512-518 |
-| **The composition itself: header, the narrow jump route ABOVE the tree, then the tree column, then the selection column carrying the centre's continuation handler.** | `WorkspaceHeader`; `NarrowJump`; `FamilyColumn`; `SelectionColumn` | dashboard/src/panels/review/ReviewWorkspace.tsx:519-554; dashboard/src/panels/review/ReviewWorkspace.tsx:428-464; dashboard/src/panels/review/ReviewWorkspace.tsx:96-112; dashboard/src/panels/review/ReviewWorkspace.tsx:220-251; dashboard/src/panels/review/ReviewWorkspace.tsx:252-302 |
-| The centre's own copy of the two display controls, so a reader looking at a diff need not scroll to the explorer to change how it is drawn. | `DisplayControls`; `review-center-display-controls`; `review-center-diff-layout`; `review-center-full-file` | dashboard/src/panels/review/ReviewWorkspace.tsx:559-592 |
-| The explorer's exported layout type, which this workspace takes rather than declaring its own. | `DiffLayout` | dashboard/src/panels/review/SourceExplorer.tsx:29-29 |
-| The tree the family column mounts when this body composed one. | "export function FamilyTree(" | dashboard/src/panels/review/FamilyTree.tsx:695-770 |
-| The centre component the workspace mounts. | "export function FamilyReviewCenter(" | dashboard/src/panels/review/FamilyReviewCenter.tsx:1336-1336 |
-| The explorer the centre mounts at the payload's own inventory, receiving the caller-owned preferences and the workspace-owned open path. | `SourceExplorer`; `open={openPath}`; `onOpen={onOpenPath}` | dashboard/src/panels/review/FamilyReviewCenter.tsx:1405-1416 |
-| The page request a roster continuation builds is the read cycle's own type, so it is a page request like any other. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:62-66 |
-| The one page reading this file delegates to the data layer: the payload's page, with both spellings of "no page" collapsed into one value. | `carriedPage` | dashboard/src/data/review.ts:641-643 |
-| **The surface calls the hook once, above the pane switch — the fix round's own wiring.** | `useWorkspaceState` | dashboard/src/panels/review/ReviewSurface.tsx:58-58; dashboard/src/panels/review/ReviewSurface.tsx:749-749; dashboard/src/panels/review/ReviewSurface.tsx:881-881 |
-| The pane switch's own declaration of why the state may not live below it: this function returns `null` while a page read is in flight. | "workspace: ReturnType<typeof useWorkspaceState>" | dashboard/src/panels/review/ReviewSurface.tsx:749-749 |
-| The mount: the workspace receives the surface's one page control and the surface-owned state. | "onPageSelect={onSelect}"; "state={workspace}" | dashboard/src/panels/review/ReviewSurface.tsx:764-765 |
+| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:159-196 |
+| `ReviewWorkspace` owns the behavior described above. | `ReviewWorkspace` | dashboard/src/panels/review/ReviewWorkspace.tsx:208-287 |
+| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:306-376 |
+| `recordLabelOf` owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewWorkspace.tsx:378-382 |
+| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:457-470 |
 
 ## Cross-Repo References
 
@@ -231,6 +85,11 @@ payload's own candidate published.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:11:04+00:00: Generated citation repair: `ReviewWorkspace` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:208-287. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:11:04+00:00: Generated citation repair: `sourceAttribution` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:457-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T20:20:54Z — Reconciled authoritative subject reads, exact revision comparison and accessible selection behavior.
+- 2026-09-26T19:49:05Z — Reconciled single-rail ownership, source attribution labels, changed-region default and historical reconstruction labeling.
 - 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, second move:** the F1 fix round added 30 net lines to `panels/review/FamilyReviewCenter.tsx` (1419 lines, was 1389), so this card's two rows into it were re-derived from each construct's own declaration at the new tip — `FamilyReviewCenter` `:1306-1306` → `:1336-1336`, the explorer mount it resolves `:1375-1386` → `:1405-1416`. No claim wording changed. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
 - 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the two rows this card carries into `panels/review/FamilyReviewCenter.tsx` were re-anchored, and no claim wording changed.** L36 inserted ~449 lines into that file above the centre root, so `FamilyReviewCenter` moved `:818-818` → `:1306-1306` and the explorer mount it resolves moved `:879-890` → `:1375-1386`. Both new ranges were derived from each construct's own declaration at this tip, not by arithmetic on the old ones. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `ScopeHeader`; "review-scope-header"; "review-scope-task"; "whole task (no subject selected)" repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:113-165; dashboard/src/panels/review/ReviewWorkspace.tsx:133-133; dashboard/src/panels/review/ReviewWorkspace.tsx:135-135; dashboard/src/panels/review/ReviewWorkspace.tsx:139-139. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

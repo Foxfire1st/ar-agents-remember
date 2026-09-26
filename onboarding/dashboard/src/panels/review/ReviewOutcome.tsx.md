@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewOutcome.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T07:05:34+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,8 @@ answers for the *intent* half alone and only as a separate question the reader a
 ## Code Commentary
 
 ### Logic
+
+ReviewProblemBlock leads with a compact unavailable label and preserves code, reason, offending input and recovery inside Reason and recovery. Network retry and the explicit source-review action keep their existing eligibility rules. Refusal, transport failure, loading and measured empty remain distinct.
 
 **`ReviewRead` is the read's four phases, and the three that are not panes are rendered here.** The
 union is `{phase:"loading"} | {phase:"reviewed", payload} | {phase:"refused", problem} |
@@ -173,20 +175,24 @@ range that row cites.
 | --- | --- | --- |
 | **The header's own vocabulary of the states a reader is owed distinctly, and its statement that nothing here invents a recovery route or renders an absent answer as an empty review.** | `known-empty`; `not-initialized`; `unavailable-history`; `validation`; `authority`; `domain-refused`; `network`; `unreadable` | dashboard/src/panels/review/ReviewOutcome.tsx:1-25 |
 | The one projection and the one accessor this module imports, from the review client's public entry. | `intentOnlyRefusal`; `reviewProblemFromRefusal`; `unreadableAnswer` | dashboard/src/panels/review/ReviewOutcome.tsx:27-32 |
-| **The read's four phases as one value, so a refusal and a payload can never both be the read.** | `ReviewRead` | dashboard/src/panels/review/ReviewOutcome.tsx:36-41 |
-| **The one place a typed result becomes a phase: an unadmitted or payload-less answer is a failure, never an empty review.** | `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:43-57 |
-| **What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.** | `shownPayload` | dashboard/src/panels/review/ReviewOutcome.tsx:59-70 |
-| The one accessor for the failure a phase carries. | `problemOf` | dashboard/src/panels/review/ReviewOutcome.tsx:72-73 |
-| **The in-flight state as its own rendering, so "nothing has answered yet" is distinguishable from "the answer was empty" and from every refusal.** | `ReviewLoading` | dashboard/src/panels/review/ReviewOutcome.tsx:75-83 |
-| **Known-empty as a measurement of four facts, never a mood.** | `knownEmpty`; `KnownEmptyNote` | dashboard/src/panels/review/ReviewOutcome.tsx:85-106 |
-| **The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.** | `ReviewProblemBlock`; `review-offending-input`; `review-next-action`; `review-retry` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
-| **The note that keeps a refusal visible beside the inventory the reader asked for instead.** | `TaskContextInsteadNote` | dashboard/src/panels/review/ReviewOutcome.tsx:173-186 |
-| **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** | `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:188-204 |
-| **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal` | dashboard/src/panels/review/ReviewOutcome.tsx:206-251 |
-| **The surface that composes it: the four-phase read, the target-keyed retained generation, and the region wired with the retry only for a failed read.** | `ReviewOutcomeRegion`; `retryFor`; `insteadFor`; `targetKeyOf` | dashboard/src/panels/review/ReviewSurface.tsx:22-943; dashboard/src/panels/review/ReviewSurface.tsx:22-944 |
-| **The expansion pane rendering through the same block, which is what makes "one renderer" true across both consumers.** | `ReviewProblemBlock`; `reviewProblemFromCause` | dashboard/src/panels/review/SourceContent.tsx:34-47; dashboard/src/panels/review/SourceContent.tsx:221-230 |
+| **The read's four phases as one value, so a refusal and a payload can never both be the read.** | `ReviewRead` | dashboard/src/panels/review/ReviewOutcome.tsx:33-37 |
+| **The one place a typed result becomes a phase: an unadmitted or payload-less answer is a failure, never an empty review.** | `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:42-55 |
+| **What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.** | `shownPayload` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68 |
+| The one accessor for the failure a phase carries. | `problemOf` | dashboard/src/panels/review/ReviewOutcome.tsx:70-71 |
+| **The in-flight state as its own rendering, so "nothing has answered yet" is distinguishable from "the answer was empty" and from every refusal.** | `ReviewLoading` | dashboard/src/panels/review/ReviewOutcome.tsx:75-81 |
+| **Known-empty as a measurement of four facts, never a mood.** | `knownEmpty`; `KnownEmptyNote` | dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:96-108 |
+| **The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.** | `ReviewProblemBlock`; `review-offending-input`; `review-next-action`; `review-retry` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177 |
+| **The note that keeps a refusal visible beside the inventory the reader asked for instead.** | `TaskContextInsteadNote` | dashboard/src/panels/review/ReviewOutcome.tsx:183-195 |
+| **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** | `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:201-213 |
+| **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal` | dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
+| The surface wires the outcome region to the target-bound read and appropriate retry/source actions. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
+| SourceContent consumes the shared problem renderer for transported failures. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:167-227 |
 | **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** | "shows a never-initialized refusal with its reason, offending input and next action"; "keeps source inspection reachable when only intent is unavailable, on request"; "says known empty for a measured empty answer and never for a failure"; "offers an explicit retry for a network failure, and the retry renders the answer"; "never renders a previous target's comparison under a new target's header"; "states a retained known-empty once, as the measured result it is, and never denies it" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:266-283; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:284-313; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:314-325; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:416-457; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-491 |
 | The expansion pane's transport-level cases, which render through this module's one block. | "carries the code, reason, offending input and next action of an unwired adapter" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:52-78 |
+
+| `ReviewProblemBlock` owns the behavior described above. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-117 |
+| `ReviewOutcomeRegion` owns the behavior described above. | `ReviewOutcomeRegion` | dashboard/src/panels/review/ReviewOutcome.tsx:226-228 |
+| `knownEmpty` owns the behavior described above. | `knownEmpty` | dashboard/src/panels/review/ReviewOutcome.tsx:86-88 |
 
 ## Cross-Repo References
 
@@ -198,6 +204,10 @@ records and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:09:39+00:00: Generated citation repair: `ReviewRead` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:33-37. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:09:39+00:00: Generated citation repair: `readFrom` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:42-55. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:09:39+00:00: Generated citation repair: `problemOf` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:70-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T19:49:05Z — Reconciled the changed ownership and current behavior with the source.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** This leaf shortened `ReviewSurface.tsx` (995 → 910 lines) by moving the complete source change explorer into its own module, which moved every construct this row cites: the region's mount is now `888-895` (carrying `ReviewOutcomeRegion`, `retryFor` and `insteadFor` at their call sites, which also clears the range's out-of-bounds end) and the two helpers' own declaration extents are `458-459` (`retryFor`) and `463-472` (`insteadFor`). The row's `targetKeyOf` range `22-22` is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 

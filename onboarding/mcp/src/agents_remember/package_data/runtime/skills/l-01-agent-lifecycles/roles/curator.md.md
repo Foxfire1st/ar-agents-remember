@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`|
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,8 @@ role states its own seat's side of the workflow instead of carrying the whole pr
 ## Code Commentary
 
 ### Logic
+
+The generated curator role requires explicit authored semantic scope before ingest and uses the existing review-record-comparison producer before handoff, including legitimate code-only work. Producer fields stay unchanged; family/source planes and publication readback remain independently reported.
 
 The synchronized role keeps curator at **leaf altitude**: one fresh seat per leaf coherence pass,
 spawned after builder code and, when review was requested, the review evidence. Its authority boundary
@@ -104,13 +106,13 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | --- | --- | --- |
 | The packaged curator declares the same seat, authority boundary, and three-way responsibility as the canonical source. | "You run one leaf's coherence pass and you write onboarding."; "Reconcile three ways before writing anything" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:8-9; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:47-47; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:60-60; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:61-61 |
 | The role is a self-contained capsule: its brief is its session start, and it declares no inherited shared sources. | "Your brief is your session start" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:9-9 |
-| **The authoring obligation the packaged copy now carries, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Never write the knowledge dataset yourself." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:53-69; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:150-152; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:185-185; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:70-70; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:187-187 |
-| The curation procedure — inputs, workflow, authority gates, failure handling, handoff — has one home outside the role file, and the authoring step landed in that home too. | `# Operation — Curation`; `## Handoff / exit`; "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:170-180; skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:60-60; skills/l-01-agent-lifecycles/operations/curation.md:212-212; skills/l-01-agent-lifecycles/operations/curation.md:213-213 |
-| The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-11; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:45-45; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:112-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:139-139; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:58-58; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:141-141; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:59-59 |
-| The canonical source is the doctrine owner. | `# Curator` | skills/l-01-agent-lifecycles/roles/curator.md:1-12 |
+| **The authoring obligation the packaged copy now carries, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Never write the knowledge dataset yourself." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:70-70; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:201-201 |
+| The curation operation owns the normal authoring workflow and its handoff contract. | `## Normal workflow`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:54-129; skills/l-01-agent-lifecycles/operations/curation.md:248-261 |
+| The role states inputs, process and outputs explicitly. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:11-58; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:59-152; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:153-178 |
+| The canonical source is the doctrine owner. | `# Curator` | skills/l-01-agent-lifecycles/roles/curator.md:6-222 |
 | A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:114-116 |
-| MCP package data is an explicit synchronization target. | `TARGETS` | scripts/sync-skills.py:43-47 |
-| Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
+| MCP package data is an explicit synchronization target. | `TARGETS` | scripts/sync-skills.py:43-56 |
+| Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-139; scripts/sync-skills.py:188-201 |
 
 ## L23 Final Candidate Disposition
 
@@ -171,6 +173,8 @@ belonging to a session with no enclosure in scope because it refuses one (`enclo
 and the eight harness starter packages.
 
 ## Update History
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T19:49:05Z — The generated curator role requires explicit authored semantic scope before ingest and uses the existing review-record-comparison producer before handoff, including legitimate code-only work. Producer fields stay unchanged; family/source planes and publication readback remain independently reported.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — this seat is admitted taskless.** The foundation-entry paragraph now says the seat opens either way (on a leaf's task document, or with none as the taskless carrier of the repository-foundation entry, per the developer's 2026-09-24 ruling) instead of asserting that a document-less curator session is refused; the L27 seat-policy note is kept as the statement true at L27's bytes and a second dated note records the policy at these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T12:42:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the repository-foundation entry.** The entry paragraph and its refusal, the process block that runs `c-14-knowledge-bootstrap` in its order with the writer chosen by scope, the output section's foundation facts, and the permitted-action line naming both write-plane entry points with the enclosure the taskless one refuses. **Citation accounting:** this card's rows into `## Handoff / exit`, `## Process` and `## Outputs` were re-read against the candidate's own bytes and re-anchored to the lines that now carry each construct, rather than shifted by a remembered delta. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **the packaged role copy carries the canonical role's new numbered step** — examine family coverage and author it, then read the two planes back — with the two hand-off keys the curator now owns and the report sentences the role's record has to carry. Written in `skills/l-01-agent-lifecycles/roles/curator.md` and propagated here by `scripts/sync-skills.py`; nothing in this copy is edited by hand.

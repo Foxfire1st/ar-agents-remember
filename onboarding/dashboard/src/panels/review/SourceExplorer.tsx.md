@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/SourceExplorer.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,79 +16,13 @@
 
 ## Purpose
 
-The complete source change explorer: **every changed path of the comparison's bound pair, openable at the
-generation the listing named**, with an explicit diff layout and full-file control. It became its own
-module because `ReviewSurface.tsx` is over the repository's file-size rail and the explorer is a
-responsibility of its own — it owns one inventory's three states, the entries' opening controls and the two
-display preferences a reader sets while reading.
-
-**What it must not do, in the module's own words.** It lists *every* changed path the inventory measured,
-including the ones no family or invariant attribution reaches: the family navigation is an **attribution
-lens, never an exclusion filter**. The three inventory states are never rendered as one another — a
-measured empty set says the two trees agree, an unavailable measurement says nothing was observed and why,
-and a partial one says which entries could not be classified or carried as names.
-
-**The two preferences are the reader's, not the selection's (`ICR-R24@v3`).** `layout` (split/inline) and
-`fullFile` are owned by the caller and passed down, so switching the diff layout while a file is expanded
-cannot reset that expansion, and selecting another family or member cannot either. The open path is the only
-state this component holds, and it is keyed by the path the server published — and it too is owned by the
-caller, so a linked expression in the central review can open the same entry.
-
-**Verification stamp.** `lastVerifiedCommitHash` names the leaf's base commit
-`5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`; this module exists only in the leaf's **uncommitted working
-tree**, so the stamp means "leaf base commit plus this leaf's working-tree delta" and does not claim that
-the commit holds this content. Governed closeout owns the real stamp.
+List the complete measured source-change population independently of family or invariant selection, with every textual or byte-named path retained.
 
 ## Code Commentary
 
 ### Logic
 
-**`SourceExplorer` is the section, and its population sentence is the inventory's own.** The root is
-`<section data-testid="review-source-explorer" data-inventory-state={inventory.state}>`. Its bar carries
-the heading and `DisplayControls`; then the `review-inventory` paragraph prints `source change inventory
-(<state>[, partial]): <listed_total> listed path(s)[ + N by byte form] — <detail>`; then
-`review-population-scope` states that this explorer is the whole measured change set of the comparison's
-bound pair and that **a family or member selection below attributes changes; it never removes one from this
-list**; then `InventoryRows`; then, only when there are any, the `review-inventory-unclassified` tail naming
-the listed paths whose kind or status these owners could not report; then the
-`review-inventory-command` line: the reproducing `command` and, when both ids are present, the
-`before_code_tree_id → after_code_tree_id` pair. The population sentence depends on no family or member
-selection at all, which is why it is stated here rather than inside the family navigation.
-
-**`InventoryRows` derives the one generation object from the inventory's own published tree ids and renders
-two lists.** `generation` is `{ before: inventory.before_code_tree_id, after: inventory.after_code_tree_id }`,
-and `byByteForm` is `inventory.unrepresentable_paths ?? []`. The measured entries render as one `<ul>`
-(each through `inventoryEntry`), and the byte-form paths as a second `<ul>` (each through `byteNamedEntry`).
-Either list is omitted when it is empty rather than rendered as an empty list.
-
-**`inventoryEntry` is one row and the way into its own content.** It joins the row's extra notes —
-`mode changed`, `content: <state>` unless the content is `unknown`, and the owner's own `detail` — and then
-computes `expandable = generation.before !== undefined && generation.after !== undefined` and
-`isOpen = open === entry.path`. The `<li>` carries `data-testid="review-inventory-entry"` and
-`data-status={entry.status}`. When the inventory named both code trees the path is rendered inside a
-`<button data-testid="review-inventory-open" data-path={entry.path} aria-expanded={isOpen}>` prefixed with
-`▾ ` or `▸ `, and the same click toggles the row closed (`onOpen(isOpen ? null : entry.path)`); otherwise
-the path is printed as plain `<code>`. Either way the status follows the path, and the notes follow the
-status. When the row is open **and** expandable, the same function mounts `SourceContent` beneath it with
-the task context (`repo`/`master`/`leaf`), the row's own entry, the two published tree ids
-(`beforeCodeTreeId`/`afterCodeTreeId`), `mode={layout}` and `collapse={!fullFile}` — so the content a reader
-opens is the generation the listing named, drawn with the caller's two preferences. The path text is
-printed exactly as it was published: a tab or a newline inside a name is part of the address.
-
-**`byteNamedEntry` is the one row that must not look openable, and it says so.** It renders the `<li>` with
-`data-testid="review-inventory-byte-path"` and `data-status`, the exact `entry.path_bytes` inside `<code>`,
-the status, a `mode changed` marker when there is one, the owner's `detail`, and then the
-`data-testid="review-byte-path-not-addressable"` sentence: this row's content is not openable through this
-surface, because its name is carried as bytes for identification and no expansion request can name it.
-There is no `<button>` and no expansion affordance at all — that is `ICR-R03`'s boundary inherited from a
-text-only vocabulary, not a decision taken here.
-
-**`DisplayControls` is the reader's two preferences as controls rather than decorations.** It renders a
-`<span data-testid="review-display-controls" data-diff-layout={layout}>` holding a labelled
-`<select data-testid="review-diff-layout">` with `split`/`inline` (the change handler maps anything that is
-not `"inline"` back to `"split"`) and a `<button data-testid="review-full-file" data-full-file={...}
-aria-pressed={fullFile}>` whose label is `showing full file` or `showing changed regions`. Neither control
-claims anything about the comparison.
+InventoryRows renders all entries and unrepresentable byte names. Each textual entry carries the backend-derived mapped, unmapped or unknown attribution label. With showContent=false the workspace rail owns navigation while ReviewExpressions opens the actual diff in the center; otherwise SourceContent can expand the row at the listing bound trees. Layout and full-file preferences are caller-owned. Inventory details retain the owner explanation, reproducing command and exact tree IDs.
 
 ### Conventions
 
@@ -110,61 +44,7 @@ request construction appear in this file: the expansion is a child component's r
 
 ### Invariants And Boundaries
 
-- **Every changed path the inventory measured is listed.** The byte-form rows are a second list, not an
-  omission; a path whose content cannot be rendered is still a change that must be listed.
-- **The family navigation is an attribution lens, never an exclusion filter.** A selection attributes
-  changes and never removes one from the list, and the population sentence says so on the page.
-- **The three inventory states are never rendered as one another.** A measured empty set, an unavailable
-  measurement and a partial one are three different facts, and the state also rides
-  `data-inventory-state` on the section.
-- **`layout` and `fullFile` are the caller's, so neither a diff-layout switch nor a family/member selection
-  can collapse an expansion.** `open` is the caller's for the same reason; this component holds no state.
-- **A listed entry opens at the generation the listing named.** The two tree ids are the inventory's own
-  `before_code_tree_id`/`after_code_tree_id`, travel with the request, and a row opened after the branch
-  moved still shows the generation the reader was looking at.
-- **A row whose name is bytes is listed and marked unopenable, not offered a control.** `byteNamedEntry`
-  carries the exact byte form, the status, the reason and no expansion affordance, because no request this
-  vocabulary can spell would address it.
-- **An entry is openable only when the inventory named both code trees.** `expandable` gates the button,
-  so a row is never offered a control that could not fetch anything.
-- **The path is printed exactly as published.** A tab or a newline inside a name is part of the address, and
-  the same string is the button's `data-path`.
-- **A long path wraps and the control stays unclipped.** The path is a `mono` string with no spaces in
-  it, so it has a very large **min-content** width; without a break opportunity the button takes that
-  width, every grid item above it refuses to shrink, and the whole column grows past its track.
-  `rowButton` therefore carries `overflowWrap: "anywhere"` and `maxWidth: "100%"` (260921-ICR-L25,
-  register B7). The property that matters is the one `break-word` does **not** have: `anywhere` also
-  lowers the element's own min-content width, which is what lets the column shrink instead of
-  overflowing. Measured on the mounted product at 320 px before the fix, one `review-inventory-open`
-  button was **556 px wide inside a 294 px column** and its right 262 px was cut off by the app shell's
-  `overflow-x: hidden` with **no pannable ancestor** — neither visible nor reachable; after the fix it
-  is 252 px in a 252 px container with `scrollWidth == clientWidth`.
-- **`inReviewSurface: 0` was true of the wrong root, and the B7 line was completed in round 3 — the whole
-  history, because two successive readings of this one sentence were both wrong.** The round-2 sentence
-  this card first carried — *"the residual 64 are the cockpit's own status bar, **outside the review
-  surface**"* — was **false as worded** (round-2 verifier's F1, `verify-l25-round2.md`, sha256
-  `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`): the count had been classified
-  against the **inner** `[data-testid="review-workspace"]` root (`ReviewWorkspace.tsx:515`) while the
-  Intent Reviewer's own root is `[data-testid="review-surface"]` (`ReviewSurface.tsx:906`, mounted by
-  `Cockpit.tsx:585`). Against the reviewer's own root, **51 of the 64** overflowing elements at 320 px
-  were descendants of the reviewer — sections 565 px wide inside a 294 px column, `pannableCount 0` of
-  64, the root's own `scrollWidth 311 > clientWidth 294` — and the vertical half was worse: **nothing in
-  the document was user-scrollable at all**, because `MAIN` is `overflow-y: hidden` carrying 7 620 px of
-  content in a 706 px box. **Round 3 then fixed both halves in the reviewer's own code**, and the numbers
-  are re-measured: descendants of `review-surface` past the edge **51 → 0**, total **64 → 13** with all
-  13 in *neither* review root (cockpit chrome), the pane sections **294 px in a 294 px column** (were
-  565), the root's own `scrollWidth`/`clientWidth` **311/294 → 294/294**, and `userScrollableCount`
-  **0 → 1** as `review-surface` itself became the scrollport (a wheel over the review moves it
-  **0 → 800 px**). **The improvement was not bought by changing the root**: the inner root's count was 0
-  in *both* rounds. The cause round 3 removed was a **grid-item minimum**, not a width — each pane is a
-  grid item whose automatic minimum size is content-based, and `break-word` does not lower min-content —
-  which is why the same `min-width: 0` + `overflow-wrap: anywhere` pair this card's own `rowButton`
-  carries is also what the panes needed. **What remains routed, and it is no longer the reviewer's:** the
-  shell's deliberate `MAIN: overflow: hidden` decision and its **13** cockpit-chrome elements, owned by
-  R24's cockpit takeover.
-- **Boundary.** This module lists and opens; it measures nothing. The inventory, its state, its counts and
-  its `command` are the server's, the expansion's own branches and refusals belong to `SourceContent.tsx`,
-  and the diff renderer is reached from there rather than re-implemented here.
+Unavailable inventory is not a measured zero. Partial and unclassified entries remain visible. Byte-named paths remain listed even when the request vocabulary cannot address them for expansion. Semantic selection never narrows this population.
 
 ### Todos
 
@@ -183,37 +63,15 @@ The statements below are grounded in repository source only.
 
 ## Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the module's own statement of its
-responsibility and of the rule it must not break, the caller-owned preferences and open path, the two row
-renderers and the generation they open at, the display controls, the inventory's own population sentence,
-the unclassified tail and the reproducing command, plus the owners it reuses and the centre that mounts it.
-Every anchor in a row below occurs on a line inside the range that row cites.
+The current ownership and boundaries above are grounded in these source declarations.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The module's own statement of what it is and why it is its own module, and the two renderers it reuses rather than restating.** | "The complete source change explorer"; "WHY THIS IS ITS OWN MODULE"; "ICR-R24@v3"; `DiffPane` | dashboard/src/panels/review/SourceExplorer.tsx:1-19 |
-| **The population rule: the family navigation is an attribution lens, and the three inventory states are never rendered as one another.** | "exclusion filter"; "A measured empty set says the two trees agree"; "None of the three is rendered as another" | dashboard/src/panels/review/SourceExplorer.tsx:15-19 |
-| The two preferences are the caller's, so neither a layout switch nor a selection change can collapse an expansion; the open path is this component's only state. | "open path is the only state this component holds" | dashboard/src/panels/review/SourceExplorer.tsx:10-13 |
-| The exported layout type the workspace and the centre both take. | `DiffLayout` | dashboard/src/panels/review/SourceExplorer.tsx:29-29 |
-| One row's extra notes: a mode change, a content classification that is not `unknown`, and the owner's own detail line. | "entry.mode_change"; "entry.content === \"unknown\""; "entry.detail ?? null" | dashboard/src/panels/review/SourceExplorer.tsx:102-104; dashboard/src/panels/review/SourceExplorer.tsx:103-104; dashboard/src/panels/review/SourceExplorer.tsx:104-153; dashboard/src/panels/review/SourceExplorer.tsx:104-273 |
-| **The row's own control style, and (260921-ICR-L25) the two properties that keep a long path wrapped and unclipped.** | `rowButton`; `overflowWrap`; `maxWidth` | dashboard/src/panels/review/SourceExplorer.tsx:60-89 |
-| The expansion gate and the open row's identity, both derived from the published values. | "const expandable"; "const isOpen" | dashboard/src/panels/review/SourceExplorer.tsx:106-107 |
-| The row itself: the entry test id with its status, and the published path as a button carrying `data-path` and `aria-expanded`. | "review-inventory-entry"; "data-status"; "review-inventory-open"; "data-path={entry.path}"; "aria-expanded={isOpen}" | dashboard/src/panels/review/SourceExplorer.tsx:63-148 |
-| The path printed exactly as published with the status beside it, and the notes after that. | "{entry.path}"; "{entry.status}"; "notes.join" | dashboard/src/panels/review/SourceExplorer.tsx:109-126; dashboard/src/panels/review/SourceExplorer.tsx:125-126; dashboard/src/panels/review/SourceExplorer.tsx:126-151 |
-| **The open row's content: `SourceContent` mounted with the task context, the row's entry, the inventory's two tree ids and the caller's layout and full-file disclosure.** | `SourceContent`; `beforeCodeTreeId`; `afterCodeTreeId`; `mode={layout}`; `collapse={!fullFile}` | dashboard/src/panels/review/SourceExplorer.tsx:7-134; dashboard/src/panels/review/SourceExplorer.tsx:27-134; dashboard/src/panels/review/SourceExplorer.tsx:128-134 |
-| **The byte-form row: listed by its exact byte form with its status and detail, carrying no expansion control, and stating in words that no expansion request can name it.** | "review-inventory-byte-path"; "entry.path_bytes"; "review-byte-path-not-addressable" | dashboard/src/panels/review/SourceExplorer.tsx:151-155; dashboard/src/panels/review/SourceExplorer.tsx:152-155 |
-| The byte-form row's own sentence: its content is not openable through this surface because its name is carried as bytes. | "not openable through this surface" | dashboard/src/panels/review/SourceExplorer.tsx:156-156 |
-| The explorer's two display controls, with the layout and full-file values published as data attributes and an `aria-pressed` state. | "review-display-controls"; "review-diff-layout"; "review-full-file"; "data-full-file" | dashboard/src/panels/review/SourceExplorer.tsx:153-189 |
-| The rows list: every measured entry, then every path carried by byte form, with the generation taken from the inventory's own tree ids. | `InventoryRows`; `inventory.entries.map`; `byByteForm.map(byteNamedEntry)` | dashboard/src/panels/review/SourceExplorer.tsx:194-232 |
-| The explorer section, its own inventory state attribute, and the bar holding the heading and the controls. | `SourceExplorer`; "review-source-explorer"; "data-inventory-state"; "Complete source change explorer" | dashboard/src/panels/review/SourceExplorer.tsx:246-246; dashboard/src/panels/review/SourceExplorer.tsx:279-279; dashboard/src/panels/review/SourceExplorer.tsx:280-280; dashboard/src/panels/review/SourceExplorer.tsx:283-283; dashboard/src/panels/review/SourceExplorer.tsx:294-294 |
-| **The inventory's own population sentence: the state, the partial flag, the measured listed total, the byte-form count and the owner's detail.** | "review-inventory"; `listed_total`; "by byte form"; "inventory.detail" | dashboard/src/panels/review/SourceExplorer.tsx:63-203; dashboard/src/panels/review/SourceExplorer.tsx:63-297 |
-| **The module's own statement that a family or member selection attributes changes and never removes one from this list.** | "review-population-scope"; "it never removes one from this list" | dashboard/src/panels/review/SourceExplorer.tsx:299-299; dashboard/src/panels/review/SourceExplorer.tsx:301-301 |
-| The unclassified tail: the listed paths whose kind or status these owners could not report. | "review-inventory-unclassified"; "unclassified.length" | dashboard/src/panels/review/SourceExplorer.tsx:313-314; dashboard/src/panels/review/SourceExplorer.tsx:314-315 |
-| The reproducing command with both tree ids, so a reader can re-measure the listing. | `review-inventory-command`; `inventory.command`; `before_code_tree_id` | dashboard/src/panels/review/SourceExplorer.tsx:226-226; dashboard/src/panels/review/SourceExplorer.tsx:321-321; dashboard/src/panels/review/SourceExplorer.tsx:322-322 |
-| The open path is owned by the workspace rather than by this component, so a linked expression in the central review can open the same entry. | "owned by the workspace rather than by this component" | dashboard/src/panels/review/SourceExplorer.tsx:266-266 |
-| The entry-expansion renderer this module mounts and does not restate. | "export function SourceContent(" | dashboard/src/panels/review/SourceContent.tsx:189-189 |
-| The centre that mounts this explorer at the payload's own inventory, handing it the caller-owned preferences and the workspace-owned open path. | `SourceExplorer`; `open={openPath}`; `onOpen={onOpenPath}` | dashboard/src/panels/review/SourceExplorer.tsx:246-246 |
-| The workspace that owns the open path and the two preferences this explorer renders. | `useWorkspaceState`; `openFromCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:387-387; dashboard/src/panels/review/ReviewWorkspace.tsx:392-424 |
+| `SourceExplorer` owns the behavior described above. | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
+| `InventoryRows` owns the behavior described above. | `InventoryRows` | dashboard/src/panels/review/SourceExplorer.tsx:170-222 |
+| `inventoryEntry` owns the behavior described above. | `inventoryEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116 |
+| `byteNamedEntry` owns the behavior described above. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
+| `InventoryDetails` owns the behavior described above. | `InventoryDetails` | dashboard/src/panels/review/SourceExplorer.tsx:312-325 |
 
 ## Cross-Repo References
 
@@ -225,6 +83,7 @@ changed paths and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T19:49:05Z — Reconciled rail-only navigation, explicit attribution labels and retained inventory details.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "const expandable"; "const isOpen" repointed to dashboard/src/panels/review/SourceExplorer.tsx:106-106; dashboard/src/panels/review/SourceExplorer.tsx:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "not openable through this surface" repointed to dashboard/src/panels/review/SourceExplorer.tsx:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "review-population-scope"; "it never removes one from this list" repointed to dashboard/src/panels/review/SourceExplorer.tsx:299-299; dashboard/src/panels/review/SourceExplorer.tsx:301-301. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

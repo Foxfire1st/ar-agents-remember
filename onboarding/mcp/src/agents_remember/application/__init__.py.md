@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,11 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route overview documents the split application package layout. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1069-1069; onboarding/mcp/src/agents_remember/application/overview.md:2893-2893 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1088-1090 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+- 2026-09-26T21:37:21Z — Reconciled the reference with the current source owner while retaining its scope and history.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **the duplicated Hot Path row is one row again, re-pointed at the heading.** The union had carried the claim twice (both citing `:669-669`, which holds neither the heading nor the layout paragraph after this leaf's and siblings' overview edits); the surviving row cites `:701-703`, the heading plus the paragraph it introduces. Wording unchanged; no stamp advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the one enforced citation row was re-read and re-pointed at the heading the claim is about.** The claim — "The route overview documents the split application package layout" — names the anchor `"## Hot Path Summary"`, and its cited `application/overview.md:337-337` held neither the heading nor anything about the split layout. The heading the claim is about is the section heading of the route overview's own body, which the candidate carried at **612** when this row was written (`553` earlier in the same session — that document is being edited concurrently by other seats, and this range names the heading as read at this pass); the row now cites `612-614`, the heading plus the paragraph it introduces. The other occurrences of that text in the file are inside Update-History entries *describing* a past re-point, which is not what this claim is about — so the range names the heading, not a mention of it. Claim wording, the second row, both anchors and the two verification rows are unchanged; this is a citation-only repair and `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.

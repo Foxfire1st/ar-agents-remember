@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ Every operation block shares one five-part shape — who carries it, required in
 ## Code Commentary
 
 ### Logic
+
+The generated curation procedure records the task comparison after reconciliation. Changed knowledge first uses ordinary ingest/publication; code-only work explicitly requests --unchanged-knowledge. It preserves the producer generation identity or exact refusal without inventing knowledge to obtain a review.
 
 `## Who carries it, and their job` separates two disjoint jobs in one table: the curator reconciles and
 writes memory, the manager compiles the brief and owns the transaction. `## Normal workflow` step 5 is the complete curation check set rather than a named scoped check: the
@@ -184,6 +186,7 @@ the bootstrap report, with the areas a partial run did not reach named as not re
 copy and the eight harness starter packages.
 
 ## Update History
+- 2026-09-26T19:49:05Z — The generated curation procedure records the task comparison after reconciliation. Changed knowledge first uses ordinary ingest/publication; code-only work explicitly requests --unchanged-knowledge. It preserves the producer generation identity or exact refusal without inventing knowledge to obtain a review.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the comparison table's carrier row changes with the policy.** The carrier row now names a taskless curator session (the developer's 2026-09-24 ruling) as the foundation entry's author and the bootstrap seat as its read-and-report half, where it previously said a taskless curator seat does not exist; the L27 note is retained as true at its own bytes and a second dated note states the policy at these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the repository-foundation entry section.** The new section with its six-row comparison table, the carrier row that states a taskless curator seat does not exist, the writer row with `enclosure_in_scope`, the opening sentence about the second bounded entry, the authority gate naming both writers, and the exit paragraph that carries the bootstrap report's facts and the areas a partial run did not reach. **Citation accounting:** the rows this card carries were re-read against this candidate — including the `## Handoff / exit` heading, whose live line was re-derived rather than carried forward — so no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **body update: the packaged copy carries the canonical operation's new step.** The pass now examines family coverage and authors it as part of the same list — a deliberate `no_family` outcome with its basis, an unexamined obligation left without either key so the report names it unexamined, nothing grouped by directory/route/label/shared anchor, and a member change prompting a fresh look at the affected guarantee — and declares every inspected external source so the run retains it in a bounded manifest rather than as a repository path with a Git blob. Written in `skills/l-01-agent-lifecycles/operations/curation.md` and propagated by `scripts/sync-skills.py`. **Citation accounting:** the ranges this card carries into the files this leaf's change set moved were re-derived against the candidate's own bytes rather than shifted by a remembered delta. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.

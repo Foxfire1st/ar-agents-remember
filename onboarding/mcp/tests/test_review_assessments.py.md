@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T11:39:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,11 +78,11 @@ serves the cases that need a stored projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" |mcp/tests/test-evidence-lanes.toml:216-217; mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:218-218 |
-| The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:261-324; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341; mcp/src/agents_remember/models/lifecycles/review_assessment.py:343-365 |
-| The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:110-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:162-188 |
-| The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-594; mcp/src/agents_remember/models/lifecycles/review_assessment.py:441-501 |
-| The report-only section the checklist cases assert. | `knowledge_review_section` | mcp/src/agents_remember/memory_quality/knowledge_review.py:70-135 |
+| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:292-354; mcp/src/agents_remember/models/lifecycles/review_assessment.py:357-371; mcp/src/agents_remember/models/lifecycles/review_assessment.py:374-395; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341 |
+| The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:125-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:143-172; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:195-220 |
+| The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:453-539; mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-594 |
+| The report-only section the checklist cases assert. | `knowledge_review_section` | mcp/src/agents_remember/memory_quality/knowledge_review.py:76-142 |
 
 ## KS-R15@v1 Unit Protection
 
@@ -97,6 +97,7 @@ would be a source census rather than a behavioural check; and §6.9's scope refu
 unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
 
 ## Update History
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim below is that commit plus the working-tree delta): **citation repair only, forced by this leaf's own changes to the sources this card cites.** One row was re-pointed: the state-projection row's `assessment_state_for` range `mcp/src/agents_remember/models/lifecycles/review_assessment.py:416-439` → `:542-594`, the function's own extent on this candidate; the sibling `SubjectAssessmentState` range `:441-501` still holds its declaration and was left as it stands. The claim-reopen this anchor also carried is cleared by that one edit — a cited range now contains the declaration line — and not by any wording change. No Finding, anchor or claim was re-worded, no range was deleted and none was appended, and **no verification stamp was advanced**: the candidate is uncommitted, so `lastVerifiedCommitHash`/`lastVerifiedCommitDate` keep the values they hold and the governed closeout owns the real stamp.

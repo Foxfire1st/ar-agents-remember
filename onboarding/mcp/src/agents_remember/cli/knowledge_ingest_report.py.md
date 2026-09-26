@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/knowledge_ingest_report.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -121,13 +121,13 @@ arithmetic and not only from the two lists.
 | **The key this leaf renamed, because the document a run is admitted under is not always a contract.** | `admissionSource`; `report.admission_source` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:44-44; mcp/src/agents_remember/cli/knowledge_ingest_report.py:96-96 |
 | The two authored planes the payload carries, each with its own state and sentence. | `_family_block`; `_source_block`; `family`; `sources` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:131-182; mcp/src/agents_remember/cli/knowledge_ingest_report.py:183-214 |
 | The entry arithmetic, including the explicit `committed` / `refused` counts the boundary case reads. | `_counts` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:277-291 |
-| One read-back as a scannable line, and as the smallest owned object carrying the reader's own sentence. | `_identity_line`; `_read_back_block` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:215-223; mcp/src/agents_remember/cli/knowledge_ingest_report.py:224-240 |
-| The two plane lines the human rendering appends. | `_family_line`; `_source_line` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:241-257; mcp/src/agents_remember/cli/knowledge_ingest_report.py:258-269 |
-| One entry's whole outcome, and how a resolved target is rendered per entry. | `_outcome`; `_targets` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:294-328; mcp/src/agents_remember/cli/knowledge_ingest_report.py:270-276 |
+| One read-back as a scannable line, and as the smallest owned object carrying the reader's own sentence. | `_identity_line`; `_read_back_block` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:215-221; mcp/src/agents_remember/cli/knowledge_ingest_report.py:224-238 |
+| The two plane lines the human rendering appends. | `_family_line`; `_source_line` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:241-255; mcp/src/agents_remember/cli/knowledge_ingest_report.py:258-267 |
+| One entry's whole outcome, and how a resolved target is rendered per entry. | `_outcome`; `_targets` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:294-328; mcp/src/agents_remember/cli/knowledge_ingest_report.py:270-274 |
 | The declared exports that make this module's two renderings its public surface. | `__all__` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:31-31 |
-| **The caller that supplies both facts, and the surface that stayed behind in the command module: whether a run may proceed at all.** | `_print_report`; `_publication_route`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:626-657; mcp/src/agents_remember/cli/knowledge_ingest.py:602-615; mcp/src/agents_remember/cli/knowledge_ingest.py:660-692 |
-| **The operation's own report types this module renders rather than re-declares, including the held operations and the admission source.** | `IngestReport`; `HeldOperation`; `EntryOutcome` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:484-499; mcp/src/agents_remember/application/knowledge_curator_ingest.py:457-457; mcp/src/agents_remember/application/knowledge_curator_ingest.py:419-424 |
-| **The read-back value the payload carries, whose three states are the reader's own vocabulary rather than this module's.** | `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:98-112 |
+| **The caller that supplies both facts, and the surface that stayed behind in the command module: whether a run may proceed at all.** | `_print_report`; `_publication_route`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:603-616; mcp/src/agents_remember/cli/knowledge_ingest.py:627-658; mcp/src/agents_remember/cli/knowledge_ingest.py:661-693 |
+| **The operation's own report types this module renders rather than re-declares, including the held operations and the admission source.** | `IngestReport`; `HeldOperation`; `EntryOutcome` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:421-432; mcp/src/agents_remember/application/knowledge_curator_ingest.py:459-483; mcp/src/agents_remember/application/knowledge_curator_ingest.py:486-541 |
+| **The read-back value the payload carries, whose three states are the reader's own vocabulary rather than this module's.** | `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:97-112 |
 | The subparser registrations that make `knowledge-ingest` and `knowledge-bootstrap` reachable surfaces whose report vocabulary this module's spellings are shared with. | "knowledge-ingest"; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:41-48; mcp/src/agents_remember/cli/__main__.py:50-58 |
 
 ## Cross-Repo References
@@ -140,6 +140,7 @@ repository boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): **one payload key renamed because its own name had

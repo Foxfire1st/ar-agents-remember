@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,8 @@ intent, ruled task/developer intent, and implemented reality so accepted memory 
 current contracts rather than a leaf transcript.
 
 ## Logic
+
+The curator authors applicability, conditions and exclusions before invariant ingest and preserves producer fields. Before leaf handoff the role records the task comparison through the existing producer, including explicitly validated unchanged knowledge for code-only work. The resulting generation or refusal is review evidence, not a new closeout gate.
 
 The curator consumes the real leaf task/design rulings, complete fed code change set, builder turn
 report, the exact approved stable-ID + version packets, the reviewer's independent per-revision
@@ -112,12 +114,12 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | --- | --- | --- |
 | The seat definition names the three-way reconciliation and onboarding-only boundary. | "**You run one leaf's coherence pass and you write onboarding.**" | skills/l-01-agent-lifecycles/roles/curator.md:8-9 |
 | Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, durable reports, and the producers' curator hand-off list. | "## Inputs"; "the producers' curator hand-off list" | skills/l-01-agent-lifecycles/roles/curator.md:11-31 |
-| **The authoring step this leaf added: the real invocation, the report fields to consume, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76 |
-| The permitted-action line that names the subcommand, and the report sentence that carries the published identity into the handoff. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself."; "knowledge hand-off result" | skills/l-01-agent-lifecycles/roles/curator.md:138-140; skills/l-01-agent-lifecycles/roles/curator.md:147-152; skills/l-01-agent-lifecycles/roles/curator.md:120-122; skills/l-01-agent-lifecycles/roles/curator.md:185-185; skills/l-01-agent-lifecycles/roles/curator.md:170-170; skills/l-01-agent-lifecycles/roles/curator.md:187-187; skills/l-01-agent-lifecycles/roles/curator.md:172-172 |
-| Inspection classifies contract disposition rather than equating test-green with intent-green. | "Do not confuse **test-green with intent-green**" | skills/l-01-agent-lifecycles/roles/curator.md:131-131 |
+| **The authoring step this leaf added: the real invocation, the report fields to consume, and the prohibition that keeps the dataset out of this seat's hands.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:78-78 |
+| The permitted-action line that names the subcommand, and the report sentence that carries the published identity into the handoff. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself."; "knowledge hand-off result" | skills/l-01-agent-lifecycles/roles/curator.md:184-184; skills/l-01-agent-lifecycles/roles/curator.md:201-201; skills/l-01-agent-lifecycles/roles/curator.md:161-161 |
+| Inspection classifies contract disposition rather than equating test-green with intent-green. | "Do not confuse **test-green with intent-green**" | skills/l-01-agent-lifecycles/roles/curator.md:143-143 |
 | Current intent, evidence, and semantic history are separate information planes. | "Reconcile three ways before writing anything" | skills/l-01-agent-lifecycles/roles/curator.md:61-61 |
-| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "Run the complete curation operation at intake and after every repair" | skills/l-01-agent-lifecycles/roles/curator.md:102-102 |
-| The write plane the authoring step invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1034-1153; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "Run the complete curation operation at intake and after every repair" | skills/l-01-agent-lifecycles/roles/curator.md:110-110 |
+| The write plane the authoring step invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 
 ## 260821-DAGQC-L2 Quality Invocation
 
@@ -127,6 +129,10 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+- 2026-09-26T21:21:04+00:00: Generated citation repair: "Do not confuse **test-green with intent-green**" repointed to skills/l-01-agent-lifecycles/roles/curator.md:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:21:04+00:00: Generated citation repair: "Run the complete curation operation at intake and after every repair" repointed to skills/l-01-agent-lifecycles/roles/curator.md:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T19:49:05Z — Reconciled authored scope, explicit installed invocation and ordinary comparison recording where this source owns them.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" repointed to skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "Do not confuse **test-green with intent-green**" repointed to skills/l-01-agent-lifecycles/roles/curator.md:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "Reconcile three ways before writing anything" repointed to skills/l-01-agent-lifecycles/roles/curator.md:61-61. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

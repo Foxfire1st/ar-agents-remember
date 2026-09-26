@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash |  `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate |  2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T20:20:54Z |
+| lastVerifiedCommitHash |  `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
+| lastVerifiedCommitDate |  2026-09-27T00:14:33+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,220 +16,15 @@
 
 ## Purpose
 
-The Intent Reviewer surface: three panes over one comparison, and **every state that is not a review**.
-The header states the boundary in one line — **the surface is display-only** — and then the three things
-that follow from it: it renders records other owners store, it carries every attribution it was given,
-and it produces no conclusion of its own, so there is no summary, no severity, no score and no control
-that writes anything.
-
-Since ICR-R16 the header also states the read's four phases, because the surface's job at the transport
-boundary is to render each of them as itself: `loading` while the request is in flight, `reviewed` (with
-the known-empty note when the answer measured nothing), `refused` for the owner's typed refusal, and
-`failed` for a transport-level failure — an unwired adapter, an unadmitted input, no HTTP response at
-all. Every non-review phase goes through `ReviewOutcome.tsx`, which carries the server's own code,
-reason, offending input and next action, so an actionable refusal is visible instead of `404 Not Found`.
-The header then states the two guarantees this file is responsible for keeping: **a failed read never
-erases the last coherent comparison** (it stays on screen, labelled, and no empty review is claimed for
-it), and **a retained comparison is stored and shown with the question it was read for** (`targetKeyOf`),
-so a payload is never rendered under a header it was not read for. The **two** renderers it reuses are fed by other owners: the `DiffPane` fed the
-statements the comparison published — **both operands when both sides recorded one, and the available
-operand beside the named absence when one side did not** (that second case is ICR-R06's, and its rule
-lives in `KnowledgeStatements.tsx`, which this file delegates the whole statement area to) — and the
-Source pane's own entry expansion, whose rule lives in `SourceContent.tsx` and which is what a listed
-inventory entry opens into.
-
-Since ICR-R24@v3 the surface is a **composition** rather than three panes and two controls. It mounts
-`ReviewWorkspace` as the reading path — scope/status header, the family tree and the unified central
-column, with the complete source change explorer beneath it — and **retains** the three panes below
-that inside one `<details data-testid="review-details">` disclosure, so every control, refusal,
-limitation and technical identity they carry is still on the page, reached deliberately instead of
-being the first thing a reviewer has to read past. The inventory body, `inventoryEntry` and
-`byteNamedEntry` are [`SourceExplorer.tsx`](SourceExplorer.tsx.md)'s now: this file renders no
-inventory, and the Source pane states where the one explorer is rather than rendering a second answer
-to "which paths changed".
-
-This is a new route under `panels/`, mounted through the cockpit's change-set takeover rather than
-through a route of its own: `ChangeSetTarget` carries an optional `review` variant and `Cockpit.tsx`'s
-`ChangeSetTakeover` renders this component instead of `ChangeSetViewer` when it is present, under
-`data-view="intent-review"`.
+Compose the normal Intent Reviewer from one subject catalogue, one comparison read cycle and a family-centered workspace. The surface is read-only and produces no semantic judgment.
 
 ## Code Commentary
 
 ### Logic
 
-**`ReviewTarget` is the component's whole input, plus a back callback.** It carries `repo`, `master`,
-`leaf` and the two optional selector fields — a task context and one *recorded* subject, and nothing
-else — and `ReviewSurface` takes `ReviewTarget & { onBack: () => void }`. No path is accepted, so the
-component cannot name a dataset; the server resolves the candidate from the task context the target
-carries. Both selector fields are optional because a task-context review names no subject, and the
-header line prints `whole task (no subject selected)` when neither is present.
+The subject-selection callback carries the chosen family context into the new subject read. Selecting a member requests its invariant through the existing read cycle; it does not render a family payload as that member own assessment.
 
-**The load is one `useCallback` plus one `useEffect`, and three values carry the outcome.** `read` is a
-`ReviewRead` phase (`loading` | `reviewed` | `refused` | `failed`) produced by `readFrom(result)` or, on
-a throw, `{ phase: "failed", problem: reviewProblemFromCause(cause) }`; `retained` is the last payload
-this surface really read, stored **with the key it was read for**; and `instead` is the refusal the
-reader answered by asking for the task's own source inventory. `load` sets `loading`, drops a retained
-payload whose key is no longer the current question, calls
-`intentReview(repo, master, leaf, instead ? undefined : selectorKind, instead ? undefined : selectorId)`
-— the `instead` branch is the second, explicitly asked question, asked with **no selector** — and stores
-the phase and, for a `review` answer with a payload, `{ key: targetKey, payload }`. The effect depends on
-`load`, whose dependency array is the target fields plus `instead` and `targetKey`, so a target or
-question change refetches and an unrelated re-render does not. There is no submit handler, no form and
-no POST anywhere in the file — which is the display-only boundary expressed as the absence of a code
-path.
-
-**The retained generation is keyed to the question it was read for, and that key is what makes the two
-guarantees one mechanism.** `targetKeyOf(repo, master, leaf, instead, selectorKind, selectorId)` is the
-one definition of the identity a read answers for — the task context **and** the question asked
-(`task-context` when the reader asked for the inventory instead, otherwise `<kind>:<id>`). `load` drops a
-retained payload whose key differs from the current one, and the render re-checks `retained.key ===
-targetKey` before `shownPayload` uses it — belt-and-braces beside the reset, because a payload under a
-header it was not read for is exactly the mismatch this surface must not be able to produce. `coherent`
-is therefore `null` for any other question, and `lastCoherent` is passed to the region only for a
-`failed` read.
-
-**Four small helpers keep the pane bodies readable, and a fifth now serves pane 1's field rows.**
-`pane(title, children)` wraps a section with `data-pane={title}`; `muted(text, testid?)` renders the
-secondary-line paragraph the panes use for a stated absence; `attribution(author?, inputs)` renders
-`author: unresolved reference` when the author is `undefined` and `author: <name>` otherwise,
-appending the examined inputs when there are any; and `unresolvedList(entries)` renders the
-`review-unresolved` list, or `null` when there is nothing unresolved. **`fieldValue(value?)` is the
-fifth, and it is the one this leaf added:** one mechanical field transition has three different facts
-behind its two values — a value the server did not send is the recorded fact that the field was
-*absent* on that side (`(absent)`), a value that IS there and is empty is a *recorded empty* list
-(`(recorded empty)`), and anything else prints as itself. So no row is ever silently blank and no
-reader has to decide which of the two a gap meant. **`sideState` is gone**, and its removal is the
-seam: the statement area is no longer rendered here at all.
-
-**The statement area is delegated, and that delegation is the R06 rule's one home.**
-`KnowledgePane` renders `<KnowledgeStatements before={knowledge.before_statement}
-after={knowledge.after_statement} />` where it used to hold the both-sides-present gate plus the two
-`sideState` paragraphs. `KnowledgeStatements.tsx` owns the four branches (both present → the shipped
-two-sided diff; one present beside an `absent` → a one-sided diff with the absent side named above it;
-one present beside `binary`/`unresolved` → the available text as content, the reason beside it, and no
-diff; neither present → both state lines) and it, not this file, imports `DiffPane` and `FilePane`.
-
-**The three panes are three components, each reading only its own pane off the payload.**
-`KnowledgePane` prints the comparison reference and policy (or `no knowledge comparison was made ·
-<selection_detail>`), the delegated statement area, `KnowledgeFacts`, `AuthoredRecords`, the
-assessments or the `review-unassessed` line, and the pane's own unresolved list. `SourcePane` opens
-with the `review-source-explorer-pointer` paragraph — which names where the one explorer is, with the
-measured listed-path count and the inventory's state — and prints the locations with their role
-(`unclassified (no role recorded)` when the
-role is absent), a `before-only` marker, the change state and the resolution, then the
-`review-remaining` line that renders `name: not measured (reason)` when `value` is `undefined` and
-`name: <value>` otherwise, then the unattributed paths and the expansion reference with its command,
-or the stated absence of an expansion. `EvidencePane` branches on `evidence_state`: `recorded`
-renders the `review-evidence` link list and the `review-observations` list, otherwise it prints "No
-recorded evidence links", then states that source-based inspection remains available when
-`source_inspection_available`, then the assessments or the `review-unassessed` line, then the pane's
-unresolved list.
-
-**`KnowledgeFacts` and `AuthoredRecords` are extracted so pane 1 reads as a composition.**
-`KnowledgeFacts` renders the essential conditions each side recorded (only when at least one side has
-any), the retained-revision groups as `side:record_id=count` joined by `·` or `none selected`, and
-every field transition as `field: <beforeValue> → <afterValue>` through `fieldValue` — so an absent
-value and a recorded empty one are two different words and neither is a blank. `AuthoredRecords`
-renders the authored effects and the detection signals **under their own headings, in their own
-lists** — "Authored effects and preservation claims" and "Detection signals (facts, not findings)" —
-which is the display half of the vocabulary's rule that a signal is never rendered in the shape of a
-finding. Each authored effect prints its `record_kind`, its label, its id, its rationale and its
-attribution; each signal prints its condition, input set, id, extractor and policy versions, its
-relationship paths and its scope limitations, and nothing else.
-
-**`assessmentBlock` reuses one renderer for both panes' assessment lists.**
-`KnowledgePane` and `EvidencePane` both map `assessmentBlock`, which prints the disposition, the
-finding, the rationale, the attribution with the examined inputs, the binding state as
-`data-binding`, and the role when it is present. There is no second rendering of a recorded
-assessment, so the two panes cannot disagree about how one looks.
-
-**`SubmissionBlock` prints staleness and submission together, because they are one fact.**
-It prints the stale line with the statement and the previous input reference only when
-`staleness.state === "stale"`, then the submission state as `DISABLED` or `not offered` with the
-reason, the next action, and the dispositions the existing authority accepts with the standing
-sentence that none is publication approval.
-
-**`RefusalBlock` is gone: the outcome states left this file.** The old inline `RefusalBlock` and the
-generic `review-error` paragraph were **removed, not duplicated** — `ReviewOutcome.tsx` now owns the
-loading line, the known-empty note, the one refusal/failure block (with every field the owner published)
-and the two notes about a shown payload. What stays here is the wiring: `retryFor(read, load)` offers the
-retry **only** for a `failed` read (a typed refusal keeps its owner's own next action), and
-`insteadFor(read, problem, instead, setInstead)` offers the source-inventory control only for a `refused`
-read whose code is intent-only and only when the reader has not already taken it. `ReviewSurface`'s
-returned tree carries `data-testid="review-surface"`, `data-comparison` from the **shown** payload's
-comparison reference (optional-chained, so an absent identity is an absent attribute rather than a
-crash) and `data-review-target` from the three task identifiers, so the subject and the comparison a
-rendering belongs to are on the element rather than inferred from its text.
-
-**The takeover class is shared with the change-set viewer.** `TAKEOVER = "changeset-viewer"` is applied
-to the pane grid **inside the disclosure**, so the surface inherits the takeover layout rather than
-declaring a second one, while the component is mounted under its own `data-view="intent-review"` on the
-cockpit side.
-
-**The workspace is the reading path, and the three panes are retained beneath it.** `ReviewPanes`
-mounts `SubmissionBlock`, `PageControls` and then `ReviewWorkspace` — scope/status header, family tree
-and the unified central column, with `SourceExplorer` as the population section — and puts the three
-panes inside one `<details data-testid="review-details">` whose summary reads "complete payload details
-— knowledge, attribution, evidence and refusal records". A disclosure is used rather than a tab bar
-because collapsing it hides nothing from the DOM and nothing from the keyboard. `ReviewPanes` also
-gained `selectorKind`/`selectorId`/`history`, because the workspace it mounts needs the same question
-identity the read was asked for.
-
-**The reader's local workspace state is owned here, above the pane switch.** `ReviewSurface` calls
-`useWorkspaceState()` and passes the value down as `workspace` (the workspace receives it as `state`),
-because `ReviewPanes` returns `null` while a page read is in flight: state owned below that switch is
-destroyed and re-initialised by every page request, which discarded the reader's display choices (the
-family/member selection, the filter, the diff layout, the full-file disclosure and the expanded path)
-and made the centre's continuation control single-use (ICR-L24 fix round 5, V10).
-
-**The collection picker offers only the collections that have a first page (ICR-R31@v1).** `PagePicker`
-maps `REVIEW_WALKABLE_COLLECTIONS`, so the two options beside "whole review" are `knowledge` and
-`records`. The client's `ReviewPagedCollection` still carries all three members and this narrows
-nothing about the server contract: `family_members` is the set of per-family roster walks a response
-composed rather than one walk, so naming it with no cursor would be a control that fetches the server's
-own `comparison_page_unreadable` refusal for a question the reader did not mean to ask. A response whose
-page *is* `family_members` renders through the same bounds and continuation controls as any other.
-
-**The surface renders a review that compared nothing, and the inventory it used to render has one owner
-elsewhere.** The header prints `whole task (no subject selected)` when no selector was named.
-`KnowledgePane` prints the comparison identity when there is one and
-`no knowledge comparison was made · <selection_detail>` when there is not, under the `review-selection`
-test id. The inventory body, `inventoryEntry` and `byteNamedEntry` were **deleted here and moved to
-[`SourceExplorer.tsx`](SourceExplorer.tsx.md)**, which the workspace mounts once as the population
-section: it renders all three inventory states (measured, partial, unavailable) and never as an empty
-list, prints `listed_total`, the `+ N by byte form` count, the server's own `detail` and the reproducing
-`command` with both tree ids, prints one changed path exactly as published with its status and its
-renderability beside it, and prints a changed path whose name cannot be carried as text by its exact
-byte form with its status and the stated reason. `SourcePane` therefore carries the attribution side of
-the same records plus the pointer paragraph, because a second inventory here would be a second answer
-to "which paths changed".
-
-**A listed entry is still the way into its own content, and the open row is the explorer's.** It is
-`SourceExplorer`'s `open` prop — the path the server published — and it is owned by the workspace rather
-than by the explorer, so a linked expression in the central column can open the same entry and neither a
-diff layout switch nor a family selection collapses it. `InventoryRows` derives the `generation` object
-from the inventory's own `before_code_tree_id`/`after_code_tree_id`, and `inventoryEntry` renders the
-row's path as a `<button data-testid="review-inventory-open" data-path={entry.path}
-aria-expanded={isOpen}>` **only when the inventory named both code trees**; the same click toggles the
-row closed. The path text is still printed literally — a tab or a newline inside a name is part of the
-address, and the address is also the button's `data-path`, which is how a case or a reader can find the
-row it means. When a row is open it mounts `SourceContent` beneath it with the task context
-(`repo`/`master`/`leaf`), the two published tree ids and the reader's `layout`/`fullFile` preferences,
-so the content a reader opens is the generation the listing named.
-
-**The byte-form row is the one row that must not look openable, and it says so.** `byteNamedEntry` (now
-`SourceExplorer.tsx`'s) has no control at all and carries
-`data-testid="review-byte-path-not-addressable"`, which states that the row's content cannot be opened
-through this surface because its name is carried as bytes for identification and no expansion request
-can name it. A reader can still act on the bytes beside it with Git directly; what the pane must not do
-is imply that clicking it would open anything. That is the boundary ICR-R03 inherits from the text-only
-vocabulary rather than a decision taken here.
-
-**The pane grid no longer forwards the task context, because it no longer mounts the expansion.** The
-three panes receive the payload alone; `ReviewPanes` forwards `repo`/`master`/`leaf`, the selector and
-the history into `ReviewWorkspace`, which passes them on to `SourceExplorer` — the same three the root's
-`data-review-target` stamps. Nothing in this file resolves a tree, a path or a generation: the ids it
-forwards are the ones the server published to this client.
+useSurface gets recorded subjects through useReviewNavigation and passes the chosen identity to useReviewReadCycle. Changing subjects clears the prior page request and local family selection while the workspace display preferences persist. The retained payload is shown only when its full target key matches the question on screen. ReviewPanes mounts one workspace; records, pagination, submission contract and complete technical panes remain inspectable in the technical-details disclosure. Typed outcomes stay with ReviewOutcome, refresh identity with ReviewRefresh, source bytes with SourceContent, and family/intent/source composition with ReviewWorkspace.
 
 ### Conventions
 
@@ -257,89 +52,7 @@ appears in this file**: it moved with the statement area into
 
 ### Invariants And Boundaries
 
-- **Display-only.** The file contains no POST, no form and no submit handler; the one request is a
-  read, and the submission block prints the authority's path rather than offering a control.
-- **No conclusion is rendered.** There is no summary, severity, score, verdict or approval anywhere in
-  the tree; the surface prints the records and the attributions it was given.
-- **A side's state is printed by its new owner, and this file does not re-decide it.**
-  `KnowledgeStatements` renders every non-two-sided area's state lines and chooses diff versus content
-  from the declared states; this file passes the two `ReviewSideContent` values through unchanged.
-- **A field row's absence and its recorded-empty value are two different words.** `fieldValue` is the
-  only place a missing value becomes text, and it prints `(absent)` for the first and
-  `(recorded empty)` for the second.
-- **The diff renderer is reused, not re-implemented.** It is reached through `KnowledgeStatements`
-  (which imports `DiffPane` from the change-set route and `FilePane` from the file-viewer route)
-  rather than declared a second time here.
-- **The three panes are retained, not removed.** They are mounted inside one
-  `<details data-testid="review-details">` disclosure below the workspace: collapsing it hides nothing
-  from the DOM and nothing from the keyboard, so every control, refusal, limitation and technical
-  identity they carry is still on the page.
-- **The reader's workspace state is owned above the pane switch.** `useWorkspaceState()` is called by
-  `ReviewSurface` and passed down, because `ReviewPanes` returns `null` while a page read is in flight;
-  state owned below that switch is destroyed and re-initialised by every page request.
-- **The inventory has exactly one owner.** The inventory body, `inventoryEntry` and `byteNamedEntry`
-  live in `SourceExplorer.tsx`, which the workspace mounts once; `SourcePane` prints where the explorer
-  is and never renders a second inventory, because two renderings of the measured change set would be
-  two answers to "which paths changed".
-- **A listed entry opens at the generation the listing published.** `SourceExplorer` addresses the open
-  row by the path the server published and forwards that inventory's own `before_code_tree_id` /
-  `after_code_tree_id` into `SourceContent`; this file never resolves a tree, a path or a generation,
-  and no expansion control is rendered when the inventory named no pair.
-- **The open row and the display preferences are the reader's, and survive the switch.** The expanded
-  path lives in the workspace state, and `layout`/`fullFile` are passed down to `SourceContent` rather
-  than held beside it, so a layout switch cannot reset an expansion.
-- **A collection is offered with no cursor only when it has a first page.** `PagePicker` maps
-  `REVIEW_WALKABLE_COLLECTIONS`; `family_members` is reachable by continuing the roster page that
-  published its cursor, and its absence from the picker narrows no part of the server contract.
-- **A row whose name is bytes is listed and marked unopenable, not offered a control.**
-  `byteNamedEntry` (in `SourceExplorer.tsx`) renders the exact byte form and the
-  `review-byte-path-not-addressable` statement, and carries no expansion affordance, because no request
-  this vocabulary can spell would address it.
-- **An unresolved attribution is printed, never dropped.** `attribution` prints
-  `author: unresolved reference` for an absent author, and `unresolvedList` renders each pane's own
-  unresolved rows.
-- **Staleness and submission are printed together and neither has a favourable member.** The stale line
-  appears only for `stale`, and the submission state is `DISABLED` or `not offered`.
-- **A failure never erases the last coherent comparison, and never invents an empty one.** The retained
-  payload is shown, labelled, and no empty review is claimed for it; the two statements about a shown
-  payload are decided in `ReviewOutcomeRegion`.
-- **A comparison is never rendered under a header it was not read for.** The key is `targetKeyOf`'s, and
-  both the reset inside `useReviewReadCycle` and the render-time check read it.
-- **The refusal is a phase, not an error string.** `readFrom` produces it; `ReviewOutcomeRegion` renders
-  it with every field the owner published.
-- **The retry belongs to the state with no owner-published route.** Only a `failed` read gets one.
-- **The reviewer supplies its own vertical scrollport, because the shell's is deliberately absent
-  (260921-ICR-L25 round 3, register B7).** `cockpit/Cockpit.tsx` sets `MAIN` to `overflow: hidden` as
-  a documented, shared decision — *"the viewport does not scroll, its panel scrolls on its own"* — so
-  a panel that supplies none renders its whole height into a clipped box. Measured before this fix at
-  320 px: `review-surface` held 7 620 px of content in a 706 px box, `userScrollableCount` was **0**,
-  the window was exactly viewport-height, and three wheel trials moved nothing — a long guarantee was
-  reachable only by the browser's programmatic focus scroll. The root now carries `height: 100%`,
-  `minHeight: 0`, `minWidth: 0`, `overflowY: "auto"`, which *fills* the shell's row instead of growing
-  past it. **This file does not change the shell's decision**, and the shell-level choice stays routed.
-- **The complete-payload panes may shrink and wrap, and that is a layout requirement rather than a
-  style choice.** Each pane is a **grid item** of the disclosure, so its automatic minimum size is
-  content-based unless told otherwise; the identities printed here are single unbreakable tokens (a
-  64-character comparison reference measured 539 px, a repository path 565 px) and the inherited
-  `break-word` does **not** lower min-content. `pane` therefore carries `minWidth: 0` and
-  `overflowWrap: "anywhere"`, and the disclosure's own track is `minmax(0, 1fr)` rather than the
-  implicit `auto` — the track must be allowed to shrink below its items' min-content for the panes'
-  `min-width: 0` to take effect. The header row wraps for the same reason: at 320 px it was the last
-  thing past the viewport edge, one unbreakable line of identities beside two controls.
-- **Boundary.** This is a presentation component. It holds no durable state, resolves no candidate and
-  owns no route — and it owns no statement-side rule either, since R06 gave that rule a file of its own,
-  nor the entry-expansion rule, which R03 gave to `SourceContent.tsx`, nor the outcome states, which
-  R16 gave to `ReviewOutcome.tsx`, nor the inventory, which ICR-R24@v3 gave to `SourceExplorer.tsx`.
-- **Two measured limits of this mechanism, recorded as routed rather than fixed.** (1) An **in-flight**
-  prop/question change can still let an earlier read settle under a newer header: if target A's request
-  is still pending when the props change to B and B's read fails, A's late response still reaches
-  `setRead(readFrom(result))` and its payload renders under B's header. The retained-key guard protects
-  the `retained` path, not the read phase. It is **pre-existing** — measured identically at HEAD and on
-  the round-1 bytes, so it is not introduced here — and it is **routed to R17 (coherent live refresh)**,
-  with R24 for the interaction side. The retained-generation guarantee holds for every **settled**
-  change (a delivered target change, a same-target selector change, an A→B→A round trip, and a retry).
-  (2) The **browser-class A01/A13 journeys** — a served dashboard bundle, a real browser, and the
-  retry-vs-target race — are **not verified by this leaf** and belong to **R25 with R24/R17**.
+No browser path selects a dataset. Failed reads may retain only the last coherent answer to the same question and never invent an empty review. One-sided statements, subject applicability, evidence currentness and authored assessments retain their existing owners. Source review remains reachable when only intent is unavailable.
 
 ### Todos
 
@@ -358,39 +71,14 @@ No domain documentation source is configured for this repository (`system/source
 
 ## Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the header's own statement of the
-display-only boundary and of the two reused renderers, the target the component takes, the one load
-path, the three panes and their sub-components, the openable inventory row and the entry it mounts,
-the byte-form row's explicit non-addressability, the refusal block, the two delegations, and the
-cockpit and change-set files that mount it. Every row was re-derived against this candidate — this
-leaf's additions moved every construct below pane 1 — and every anchor in a row occurs inside the
-range that row cites.
+The current ownership and boundaries above are grounded in these source declarations.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The header's own statement that the surface is display-only, produces no conclusion of its own, and reuses two renderers fed by other owners: `DiffPane` for both operands when both sides recorded one and for the available operand beside a named absence when one side did not, and the Source pane's entry expansion, whose rule `SourceContent` owns.** | `DiffPane`; `KnowledgeStatements`; `SourceContent` | dashboard/src/panels/review/ReviewSurface.tsx:1-9 |
-| **The whole input: a task context and one recorded subject, plus the back callback, with no path.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:819-910 |
-| The takeover class shared with the change-set viewer, and where it is applied. | `TAKEOVER` |dashboard/src/panels/review/ReviewSurface.tsx:76-77; dashboard/src/panels/review/ReviewSurface.tsx:757-757|
-| **The one load path: the read cycle's hook supplies the read, the retained comparison and the refresh; the phases are rendered as themselves and there is no submit handler anywhere.** | `useReviewReadCycle`; `intentReview` | dashboard/src/panels/review/ReviewSurface.tsx:55-55; dashboard/src/panels/review/ReviewSurface.tsx:884-884; dashboard/src/data/review.ts:533-549 |
-| The four helpers that keep the pane bodies readable, including the attribution that prints an unresolved author rather than an anonymous one. | `pane`; `muted`; `attribution`; `unresolvedList` | dashboard/src/panels/review/ReviewSurface.tsx:89-89; dashboard/src/panels/review/ReviewSurface.tsx:99-99; dashboard/src/panels/review/ReviewSurface.tsx:105-105; dashboard/src/panels/review/ReviewSurface.tsx:165-165 |
-| **The fifth helper this leaf added: one field value as `(absent)`, `(recorded empty)` or itself, so neither absence nor a recorded empty is printed as a blank.** | `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:182-182; dashboard/src/panels/review/ReviewSurface.tsx:256-256 |
-| The one assessment renderer both panes reuse, so the two cannot disagree about how a recorded assessment looks. | `assessmentBlock` | dashboard/src/panels/review/ReviewSurface.tsx:185-185; dashboard/src/panels/review/ReviewSurface.tsx:304-304; dashboard/src/panels/review/ReviewSurface.tsx:411-411 |
-| The authored record and the detection fact rendered under their own headings in their own lists. | `authoredEffect`; `signalBlock`; `AuthoredRecords` | dashboard/src/panels/review/ReviewSurface.tsx:165-311 |
-| The mechanical half of pane 1: the conditions each side recorded, the retained revisions per side, and every field transition through `fieldValue`. | `KnowledgeFacts`; `fieldValue` | dashboard/src/panels/review/ReviewSurface.tsx:171-251; dashboard/src/panels/review/ReviewSurface.tsx:113-113; dashboard/src/panels/review/ReviewSurface.tsx:221-221; dashboard/src/panels/review/ReviewSurface.tsx:106-106; dashboard/src/panels/review/ReviewSurface.tsx:177-177 |
-| **Pane 1, which delegates its statement area and keeps the comparison line, the mechanical facts, the authored records and the unassessed state.** | `KnowledgePane`; `KnowledgeStatements` | dashboard/src/panels/review/ReviewSurface.tsx:275-300 |
-| **The openable inventory row — the explorer's now, not this file's: the path published to this client rendered as a button carrying `data-path` and `aria-expanded`, its status and renderability beside it, and `SourceContent` mounted beneath it at the two tree ids the inventory named.** | `inventoryEntry`; `review-inventory-open`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:78-129; dashboard/src/panels/review/SourceExplorer.tsx:99-109; dashboard/src/panels/review/SourceExplorer.tsx:116-125 |
-| **The byte-form row — the explorer's now: listed by its exact byte form with its status and reason, carrying no expansion control, and stating in words that no expansion request can name it.** | `byteNamedEntry`; `review-byte-path-not-addressable` | dashboard/src/panels/review/SourceExplorer.tsx:137-149; dashboard/src/panels/review/SourceExplorer.tsx:227-229 |
-| **The inventory in all three states and never as an empty list, and the one state it holds — which row is open, and the generation pair derived from the inventory's own published tree ids — are the explorer's now: this file mounts the explorer and carries no inventory body and no open-path state of its own.** | `InventoryRows`; `SourceExplorer` |dashboard/src/panels/review/SourceExplorer.tsx:194-232; dashboard/src/panels/review/SourceExplorer.tsx:234-315|
-| **Pane 2: the explorer pointer first — it names where the one inventory is instead of rendering a second — then the locations with an unclassified role kept as such, the remaining counts where an unmeasured quantity states its reason, and the unattributed paths and expansion.** | `SourcePane` |dashboard/src/panels/review/ReviewSurface.tsx:302-352|
-| Pane 3: the two independent absence states, the observations, and the source-inspection sentence. | `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:354-407; dashboard/src/panels/review/ReviewSurface.tsx:760-760 |
-| **The staleness and submission block, where neither state has a favourable member.** | `SubmissionBlock` | dashboard/src/panels/review/ReviewSurface.tsx:409-438; dashboard/src/panels/review/ReviewSurface.tsx:740-740 |
-| The typed refusal rendered by the one shared block, which this leaf moved to the outcome owner with the rest of the non-payload states. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:108-171 |
-| **The statement area's owner: the four branches decided by declared state, with the state lines, the one-sided diff and the no-diff-claimed content path.** | `KnowledgeStatements`; `unavailable`; `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:32-44; dashboard/src/panels/review/KnowledgeStatements.tsx:93-118 |
-| **The entry-expansion renderer an openable row mounts — the explorer's row now: the state-decided branches, the reused two-sided diff, the bounded-prefix note and the typed refusal.** | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:189-265; dashboard/src/panels/review/SourceContent.tsx:85-129; dashboard/src/panels/review/SourceContent.tsx:131-141; dashboard/src/panels/review/SourceContent.tsx:143-155 |
-| The reused diff renderer itself, imported by the statement area from the change-set route rather than re-implemented. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-48; dashboard/src/panels/review/KnowledgeStatements.tsx:29-29 |
-| The client this component reads through, and the expansion read its rows make. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:533-549; dashboard/src/data/review.ts:717-735 |
-| **The cockpit takeover that mounts this component under its own view, and the target variant that selects it.** | `ChangeSetTakeover`; `review` | dashboard/src/cockpit/Cockpit.tsx:561-591; dashboard/src/panels/changeset/ChangeSetViewer.tsx:38-44 |
-| **The reviewer entry that opens this target, added beside the working and committed actions: it reads its subject from the server's own resolution rather than from a caller-supplied prop.** | `selector_id`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:384-565 |
+| `useSurface` owns the behavior described above. | `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854 |
+| `ReviewPanes` owns the behavior described above. | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:658-720 |
+| `ReviewSurface` owns the behavior described above. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
+| `PageControls` owns the behavior described above. | `PageControls` | dashboard/src/panels/review/ReviewSurface.tsx:617-656 |
 
 ## Cross-Repo References
 
@@ -452,13 +140,18 @@ inner root's count was already 0 in both rounds, which is exactly why F1 was a c
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The pane helper's two load-bearing declarations, and the comment that states why each one is required rather than cosmetic.** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewSurface.tsx:8-97 |
-| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:771-786 |
-| **The header row that wraps, and the subject span's own break opportunity and zero minimum.** | `ReviewHeader`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.tsx:797-857 |
-| **The reviewer's own vertical scrollport on its own root, with the shell's decision left where it belongs.** | `review-surface`; "overflowY: auto"; "height: 100%"; "minHeight: 0" | dashboard/src/panels/review/ReviewSurface.tsx:903-920 |
-| The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:36-36 |
+| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:80-80; dashboard/src/panels/review/ReviewSurface.tsx:706-706 |
+| The header wraps the task/subject controls while keeping their context and refresh action available. | `ReviewHeader` | dashboard/src/panels/review/ReviewSurface.tsx:722-776 |
+| The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:49-78; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
+| The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
 | The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:323-323 |
 
 ## Update History
+- 2026-09-26T21:10:43+00:00: Generated citation repair: `TAKEOVER`; `gridTemplateColumns` repointed to dashboard/src/panels/review/ReviewSurface.tsx:80-80; dashboard/src/panels/review/ReviewSurface.tsx:706-706. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:10:43+00:00: Generated citation repair: `payload` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
+- 2026-09-26T20:20:54Z — Reconciled authoritative subject reads, exact revision comparison and accessible selection behavior.
+- 2026-09-26T19:49:05Z — Reconciled the shared navigation, single read-cycle composition and progressive technical details.
 - 2026-09-26T00:35+02:00 — 260921-ICR-L25 curator, round 3 (re-read of a reopened claim on the round-3 change itself; leaf `260921-ICR-L25`): **the reopened `pane` claim was re-read against the current anchored construct and both its wording and its range are correct as they now stand.** The finding is the expected consequence of this round editing the very construct the claim is about: `pane` gained `minWidth: 0` and `overflowWrap: "anywhere"` in this leaf's round 3, so its evidence legitimately changed after the card was verified. The claim's own words — that the four helpers keep the pane bodies readable and that the attribution prints an unresolved author rather than an anonymous one — still hold, and the row now cites each helper's own declaration. **The round-3 section above was written in this same pass and is the body update this change required**; this entry records the re-read the guidance asks for. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewHeader`; `flexWrap` repointed to dashboard/src/panels/review/ReviewSurface.tsx:797-857; dashboard/src/panels/review/ReviewSurface.tsx:831-831. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 verifier `verify-l25-round2.md` sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`, findings F1/F2): **body update — the surface gained its own scrollport and the declarations that let its panes fit a narrow column, and this card gained the round-3 section and the two invariants that state them.** The new section records F2's answer (the panel's own `overflowY: auto` scrollport, with the shell's `MAIN: overflow: hidden` left as the shell's deliberate decision rather than overridden) and F1's answer (the real cause is a **grid-item minimum**, so `minWidth: 0` + `overflowWrap: "anywhere"` on `pane`, `minmax(0, 1fr)` on the disclosure track, and a wrapping header row — three declarations of which none works alone), plus the re-measured after-state (51 → 0 inside the reviewer root, 64 → 13 with the 13 in neither root; `userScrollableCount` 0 → 1; `MAIN.scrollHeight` 7620 → 706). It names the new pin module and its card, and states plainly that the pin holds **declarations** and not pixels. **Citation accounting:** every row this round's insertions displaced was re-derived from each construct's declaration at this tip; the two pre-existing rows into `changeSetBar.tsx` (`:455`, `:337-384` for `selector_id`/`useReviewCatalogue`) were checked and left where their anchors still resolve. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.

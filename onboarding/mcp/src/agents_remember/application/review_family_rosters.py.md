@@ -5,10 +5,10 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_family_rosters.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T02:20:00+02:00 |
-| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
-| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
+| lastUpdated | 2026-09-26T21:21:39Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
@@ -168,6 +168,8 @@ composition closes both sides in a `finally` block.
 
 ### Todos
 
+Known projection limit: `_members` joins source claims only to membership rows carried on the same bounded page. A continuation containing realization claims but no membership rows can therefore be marked complete while returning no member contexts for those claims. An omitted member source in this state is not proof that the published dataset has no realization. Reconsider this limitation when continuation-only source items remain reachable through the member projection and composed review. The underlying stored records and read-owner counts remain distinct from this projection defect.
+
 None recorded.
 
 ## Docs References
@@ -190,8 +192,8 @@ synthesized guarantee**.
 | --- | --- | --- |
 | **The three owners this module calls and the fact that none is duplicated.** | "Three owners are called and none is duplicated" | mcp/src/agents_remember/application/review_family_rosters.py:1-22 |
 | The published surface: the twelve names the composition consumes. | `__all__` | mcp/src/agents_remember/application/review_family_rosters.py:66-79 |
-| **The review surface's collection name for one family revision's recorded member roster, so a cursor and its walk are never paired by guesswork.** | `FAMILY_MEMBERS_COLLECTION` | mcp/src/agents_remember/application/review_family_rosters.py:81-84 |
-| The read owner's own refusal code for a cursor that binds another selection. | `_CURSOR_MISMATCH` | mcp/src/agents_remember/application/review_family_rosters.py:86-88 |
+| **The review surface's collection name for one family revision's recorded member roster, so a cursor and its walk are never paired by guesswork.** | `FAMILY_MEMBERS_COLLECTION` | mcp/src/agents_remember/application/review_family_rosters.py:84-84 |
+| The read owner's own refusal code for a cursor that binds another selection. | `_CURSOR_MISMATCH` | mcp/src/agents_remember/application/review_family_rosters.py:88-88 |
 | One roster read's page bound, movement union and cursor, travelling as one request. | `RosterReadRequest` | mcp/src/agents_remember/application/review_family_rosters.py:91-103 |
 | **Which revision one roster read is for, the family owner's recorded list, and the axis's own sentence for a one-sided selection.** | `RosterContext` | mcp/src/agents_remember/application/review_family_rosters.py:106-124 |
 | One bound snapshot as this composition reads it, with the reason it could not be opened when it could not. | `FamilyRosterSide` | mcp/src/agents_remember/application/review_family_rosters.py:130-148 |
@@ -222,6 +224,8 @@ synthesized guarantee**.
 | The production review read that asks for this roster and publishes its page. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The cases that drive the roster read through the production review over a real enclosure. | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |
 
+| The page-local join emits members only for carried membership items. | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:433-467 |
+
 ## Cross-Repo References
 
 No cross-repository behavior is implemented in this module. The snapshots it opens, the namespace it
@@ -231,6 +235,7 @@ credential, network or external system is involved. No cross-repo reference row 
 no cited range proves a repository or external-system boundary.
 
 ## Update History
+- 2026-09-26T21:21:39Z — Recorded the realization-only continuation projection limit and its reconsideration condition; storage absence is not inferred.
 
 - 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`, code worktree `ar/260921-icr-l31b`): **the completed sentence on this card was re-described for the corrected completion semantics, and every range was re-anchored past this delta's +12-line insertion.** The correction is the reopen's whole subject: `complete` is the **walk's** flag rather than the page's, so `_roster_detail` (`:366-393`) no longer states two cases — a walk the read took in one **page** (`:377-381`) carried every recorded membership and is the roster whole, a walk whose **final** page is a continuation (`:382-387`) completed the enumeration having carried only that page's own share and now says so instead of "all carried here", and the incomplete branch (`:388-393`) keeps the remainder sentence. What did **not** change, and is recorded so a reader does not infer a wider fix: the module's read, its cursor handling, its refusals, its guarantee path and `complete`'s own meaning (`enumeration_complete`, read from the owner, never written here) are all untouched; this delta is 2 hunks in this module and adds no field, state, capability or policy. Every citation range was re-measured on the candidate bytes — rows at and after the insertion's first line carried +12, `_roster_detail`'s own range grew with its docstring, and the cross-file `ReviewFamilyRosterPage` row now reads `:225-277`. **Stamp accounting: no verification stamp was advanced.** The header's pair still names this leaf's base `fdf3e4b6`, because the candidate is uncommitted and the governed closeout owns the real code and memory commits; the verified basis is that base plus the working-tree delta, exactly as the first curation recorded it.
 

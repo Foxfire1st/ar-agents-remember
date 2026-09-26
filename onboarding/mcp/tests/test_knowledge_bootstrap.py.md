@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T10:20+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-26T19:49:05Z |
+| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
+| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,8 @@ so the code and this card carry one number rather than two.
 ## Code Commentary
 
 ### Logic
+
+The shared handoff builder now supplies explicit semantic applicability, conditions and exclusions. Existing tests continue to exercise their original publication, retry, lineage and refusal behavior under the current scope-required admission; the fixture does not authorize inferred or migrated scope.
 
 **The world builder is the fixture, and it makes "no enclosure was fabricated" measurable**
 (`World`, `:99-123`). `world` (`:153-194`) creates the code checkout, the external memory repository and
@@ -142,34 +144,34 @@ No configured Domain Documentation source applies.
 | --- | --- | --- |
 | **The module's own statement of the third option, the real world, and that comparisons are not made against the run's prose.** | "a second **real** admission"; "the run's own prose" | mcp/tests/test_knowledge_bootstrap.py:1-45 |
 | **The world the cases run in, with the destination and the admission resolved through the production owners.** | `World`; `destination`; `admitted` | mcp/tests/test_knowledge_bootstrap.py:99-122 |
-| The Git and filesystem helpers the world is built with. | `_git`; `_write`; `_commit` | mcp/tests/test_knowledge_bootstrap.py:124-152 |
-| **The fixture: a real code checkout, a real external memory repository and a real settings document.** | `world` | mcp/tests/test_knowledge_bootstrap.py:153-194 |
-| The hand-off entry and list builders. | `entry`; `hand_off` | mcp/tests/test_knowledge_bootstrap.py:195-233 |
-| The invocation builder and the driver that returns the exit code beside the parsed JSON. | `argv`; `cli` | mcp/tests/test_knowledge_bootstrap.py:232-254 |
-| **The readbacks: statements and revisions from the mounted view surface, and the manifest read off disk.** | `statements`; `revisions`; `progress_record` | mcp/tests/test_knowledge_bootstrap.py:255-289 |
-| **The bootstrapped admission's own provenance, authority and both source revisions, with no contract file in the world and the contents block naming this run as publisher.** | `test_a_repository_with_no_leaf_bootstraps_and_publishes_where_readers_look`; "repository-bootstrap"; `destinationContents` | mcp/tests/test_knowledge_bootstrap.py:290-343 |
-| **An exact retry reusing operation and record identity without a duplicate row.** | `test_an_exact_retry_reuses_operation_and_record_identity` | mcp/tests/test_knowledge_bootstrap.py:344-378 |
-| **Existing knowledge not overwritten, and a semantic update getting its own revision.** | `test_existing_knowledge_is_not_overwritten_and_a_semantic_update_gets_its_own_revision` | mcp/tests/test_knowledge_bootstrap.py:379-424 |
-| **A resume keeping the identity the earlier run was allocated.** | `test_an_interrupted_bootstrap_resumes_from_retained_identity_bound_progress` | mcp/tests/test_knowledge_bootstrap.py:425-478 |
-| **A planning run writing no batch, no publication and no progress record at all.** | `test_a_planning_run_writes_no_batch_no_publication_and_no_progress_record`; `BOOTSTRAP_PROGRESS_NAME` | mcp/tests/test_knowledge_bootstrap.py:479-509 |
-| **The packet's non-conforming example driven both ways: cleanup refuses unpublished work and removes published staging.** | `test_cleanup_cannot_destroy_unpublised_work_and_removes_published_staging` | mcp/tests/test_knowledge_bootstrap.py:506-572 |
-| **A moved source revision as an explicit re-observation condition, leaving the destination byte-identical.** | `test_a_moved_source_revision_is_an_explicit_re_observation_condition`; "candidate_binding_changed" | mcp/tests/test_knowledge_bootstrap.py:573-622 |
-| An undeclared repository refused by name. | `test_a_repository_the_settings_do_not_declare_is_refused_by_name` | mcp/tests/test_knowledge_bootstrap.py:623-653 |
-| **The destination derived rather than accepted, with the argument surface inspected for a way to aim it.** | `test_the_destination_is_derived_and_no_argument_can_aim_it_elsewhere`; "expected_destination" | mcp/tests/test_knowledge_bootstrap.py:654-682 |
-| **The candidate's only home is the bootstrap's own staging root, and the leaf review-candidate root is absent.** | `test_a_repository_without_a_leaf_writes_its_only_candidate_under_the_staging_root`; `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/tests/test_knowledge_bootstrap.py:678-700 |
-| The memory initializer naming the knowledge foundation and its measured state. | `test_memory_init_names_the_knowledge_foundation_and_what_is_there_now` | mcp/tests/test_knowledge_bootstrap.py:701-734 |
-| An unusable destination refused instead of published over. | `test_an_unusable_destination_refuses_instead_of_publishing_over_it` | mcp/tests/test_knowledge_bootstrap.py:735-756 |
-| **A partial run naming the refused entry as remaining and publishing exactly what committed.** | `test_a_partial_run_names_the_refused_entry_as_remaining_and_publishes_only_what_committed` | mcp/tests/test_knowledge_bootstrap.py:757-797 |
-| **Cleanup removing a staging that holds a measured zero rather than an assumed emptiness.** | `test_cleanup_removes_a_staging_that_holds_no_authored_row` | mcp/tests/test_knowledge_bootstrap.py:798-846 |
-| **A refused publication is not success: the entry is named remaining against a location measured to hold no dataset, and the contents block says this run published nothing.** | `test_a_refused_publication_is_not_success_and_names_the_work_as_remaining`; `publishedByThisRun` | mcp/tests/test_knowledge_bootstrap.py:847-896 |
-| **The case that makes the staging-ownership guard bite: another scope's retained record refuses by name, exit 2, destination untouched.** | `test_a_retained_record_for_another_operation_refuses_before_anything_is_written`; "staging_belongs_to_another_operation" | mcp/tests/test_knowledge_bootstrap.py:897-930 |
-| **The narrowed resume that must not delete the rest of the debt, asserted on the record read off disk.** | `test_a_narrowed_resume_keeps_the_owed_entry_named_on_disk`; "carried" | mcp/tests/test_knowledge_bootstrap.py:929-966 |
-| **A committed run that wrote nothing still refreshes the manifest rather than leaving the previous record standing.** | `test_a_run_that_commits_nothing_still_refreshes_the_manifest` | mcp/tests/test_knowledge_bootstrap.py:967-1003 |
-| **A carried entry re-derived against this run's own store read, so it stops being owed once the dataset holds it.** | `test_a_carried_entry_the_repository_has_since_received_is_no_longer_owed` | mcp/tests/test_knowledge_bootstrap.py:1004-1049 |
-| **The admission the cases exercise through the shipped command line.** | `admit_bootstrap_context`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151 |
-| **The run composition whose per-entry rows, carried set and remaining list the cases assert.** | `bootstrap_knowledge`; `BootstrapRunResult`; `_carried_forward` | mcp/src/agents_remember/application/knowledge_bootstrap.py:153-240; mcp/src/agents_remember/application/knowledge_bootstrap.py:136-151; mcp/src/agents_remember/application/knowledge_bootstrap.py:243-293 |
-| The cleanup owner whose two measured facts the cleanup cases drive. | `discard_bootstrap_staging` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:416-479 |
-| The record name the cases read off disk, and the reader that reconstructs it. | `BOOTSTRAP_PROGRESS_NAME`; `read_progress` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:72-73; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:73-321 |
+| The Git and filesystem helpers the world is built with. | `_git`; `_write`; `_commit` | mcp/tests/test_knowledge_bootstrap.py:131-142; mcp/tests/test_knowledge_bootstrap.py:145-149; mcp/tests/test_knowledge_bootstrap.py:152-157 |
+| **The fixture: a real code checkout, a real external memory repository and a real settings document.** | `world` | mcp/tests/test_knowledge_bootstrap.py:160-199 |
+| The hand-off entry and list builders. | `entry`; `hand_off` | mcp/tests/test_knowledge_bootstrap.py:202-235; mcp/tests/test_knowledge_bootstrap.py:238-241 |
+| The invocation builder and the driver that returns the exit code beside the parsed JSON. | `argv`; `cli` | mcp/tests/test_knowledge_bootstrap.py:244-256; mcp/tests/test_knowledge_bootstrap.py:259-264 |
+| **The readbacks: statements and revisions from the mounted view surface, and the manifest read off disk.** | `statements`; `revisions`; `progress_record` | mcp/tests/test_knowledge_bootstrap.py:267-276; mcp/tests/test_knowledge_bootstrap.py:279-290; mcp/tests/test_knowledge_bootstrap.py:293-299 |
+| The taskless bootstrap case checks admitted source provenance and the declared publication route. | `test_a_repository_with_no_leaf_bootstraps_and_publishes_where_readers_look` | mcp/tests/test_knowledge_bootstrap.py:302-353 |
+| **An exact retry reusing operation and record identity without a duplicate row.** | `test_an_exact_retry_reuses_operation_and_record_identity` | mcp/tests/test_knowledge_bootstrap.py:356-388 |
+| **Existing knowledge not overwritten, and a semantic update getting its own revision.** | `test_existing_knowledge_is_not_overwritten_and_a_semantic_update_gets_its_own_revision` | mcp/tests/test_knowledge_bootstrap.py:391-434 |
+| **A resume keeping the identity the earlier run was allocated.** | `test_an_interrupted_bootstrap_resumes_from_retained_identity_bound_progress` | mcp/tests/test_knowledge_bootstrap.py:437-488 |
+| The planning case checks that no batch, publication or progress record is written. | `test_a_planning_run_writes_no_batch_no_publication_and_no_progress_record` | mcp/tests/test_knowledge_bootstrap.py:491-515 |
+| **The packet's non-conforming example driven both ways: cleanup refuses unpublished work and removes published staging.** | `test_cleanup_cannot_destroy_unpublised_work_and_removes_published_staging` | mcp/tests/test_knowledge_bootstrap.py:518-582 |
+| **A moved source revision as an explicit re-observation condition, leaving the destination byte-identical.** | `test_a_moved_source_revision_is_an_explicit_re_observation_condition`; "candidate_binding_changed" | mcp/tests/test_knowledge_bootstrap.py:585-632 |
+| An undeclared repository refused by name. | `test_a_repository_the_settings_do_not_declare_is_refused_by_name` | mcp/tests/test_knowledge_bootstrap.py:635-663 |
+| **The destination derived rather than accepted, with the argument surface inspected for a way to aim it.** | `test_the_destination_is_derived_and_no_argument_can_aim_it_elsewhere`; "expected_destination" | mcp/tests/test_knowledge_bootstrap.py:666-687 |
+| The taskless candidate belongs to its staging root rather than a fabricated leaf candidate root. | `test_a_repository_without_a_leaf_writes_its_only_candidate_under_the_staging_root` | mcp/tests/test_knowledge_bootstrap.py:690-710 |
+| The memory initializer naming the knowledge foundation and its measured state. | `test_memory_init_names_the_knowledge_foundation_and_what_is_there_now` | mcp/tests/test_knowledge_bootstrap.py:713-744 |
+| An unusable destination refused instead of published over. | `test_an_unusable_destination_refuses_instead_of_publishing_over_it` | mcp/tests/test_knowledge_bootstrap.py:747-766 |
+| **A partial run naming the refused entry as remaining and publishing exactly what committed.** | `test_a_partial_run_names_the_refused_entry_as_remaining_and_publishes_only_what_committed` | mcp/tests/test_knowledge_bootstrap.py:769-807 |
+| **Cleanup removing a staging that holds a measured zero rather than an assumed emptiness.** | `test_cleanup_removes_a_staging_that_holds_no_authored_row` | mcp/tests/test_knowledge_bootstrap.py:810-856 |
+| **A refused publication is not success: the entry is named remaining against a location measured to hold no dataset, and the contents block says this run published nothing.** | `test_a_refused_publication_is_not_success_and_names_the_work_as_remaining`; `publishedByThisRun` | mcp/tests/test_knowledge_bootstrap.py:859-906 |
+| **The case that makes the staging-ownership guard bite: another scope's retained record refuses by name, exit 2, destination untouched.** | `test_a_retained_record_for_another_operation_refuses_before_anything_is_written`; "staging_belongs_to_another_operation" | mcp/tests/test_knowledge_bootstrap.py:909-938 |
+| **The narrowed resume that must not delete the rest of the debt, asserted on the record read off disk.** | `test_a_narrowed_resume_keeps_the_owed_entry_named_on_disk`; "carried" | mcp/tests/test_knowledge_bootstrap.py:941-976 |
+| **A committed run that wrote nothing still refreshes the manifest rather than leaving the previous record standing.** | `test_a_run_that_commits_nothing_still_refreshes_the_manifest` | mcp/tests/test_knowledge_bootstrap.py:979-1013 |
+| **A carried entry re-derived against this run's own store read, so it stops being owed once the dataset holds it.** | `test_a_carried_entry_the_repository_has_since_received_is_no_longer_owed` | mcp/tests/test_knowledge_bootstrap.py:1016-1062 |
+| **The admission the cases exercise through the shipped command line.** | `admit_bootstrap_context`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
+| **The run composition whose per-entry rows, carried set and remaining list the cases assert.** | `bootstrap_knowledge`; `BootstrapRunResult`; `_carried_forward` | mcp/src/agents_remember/application/knowledge_bootstrap.py:139-154; mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244; mcp/src/agents_remember/application/knowledge_bootstrap.py:247-297 |
+| The cleanup owner whose two measured facts the cleanup cases drive. | `discard_bootstrap_staging` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
+| The record name the cases read off disk, and the reader that reconstructs it. | `BOOTSTRAP_PROGRESS_NAME`; `read_progress` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:73-73; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:253-323 |
 | The read surface the stored statements are read back through. | `knowledge_read_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:289-294 |
 | The leaf review-candidate root name this module asserts is absent from a bootstrap world. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:203-203 |
 
@@ -184,6 +186,12 @@ or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-26T21:18:31+00:00: Generated citation repair: `entry`; `hand_off` repointed to mcp/tests/test_knowledge_bootstrap.py:202-235; mcp/tests/test_knowledge_bootstrap.py:238-241. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:18:31+00:00: Generated citation repair: `argv`; `cli` repointed to mcp/tests/test_knowledge_bootstrap.py:244-256; mcp/tests/test_knowledge_bootstrap.py:259-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:18:31+00:00: Generated citation repair: `statements`; `revisions`; `progress_record` repointed to mcp/tests/test_knowledge_bootstrap.py:267-276; mcp/tests/test_knowledge_bootstrap.py:279-290; mcp/tests/test_knowledge_bootstrap.py:293-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:18:31+00:00: Generated citation repair: `test_the_destination_is_derived_and_no_argument_can_aim_it_elsewhere`; "expected_destination" repointed to mcp/tests/test_knowledge_bootstrap.py:666-687; mcp/tests/test_knowledge_bootstrap.py:687-687. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T21:18:31+00:00: Generated citation repair: `test_a_retained_record_for_another_operation_refuses_before_anything_is_written`; "staging_belongs_to_another_operation" repointed to mcp/tests/test_knowledge_bootstrap.py:909-938; mcp/tests/test_knowledge_bootstrap.py:935-935. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-26T19:49:05Z — The shared handoff builder now supplies explicit semantic applicability, conditions and exclusions. Existing tests continue to exercise their original publication, retry, lineage and refusal behavior under the current scope-required admission; the fixture does not authorize inferred or migrated scope.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `knowledge_read_payload` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:289-294. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
