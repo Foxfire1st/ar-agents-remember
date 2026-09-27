@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-27T02:21:35Z |
+| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
+| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 **The comparison-bound family context through the production composition (ICR-R31@v1).** These cases
 drive the review the dashboard drives — the shipped read over a real leaf enclosure with a real Git
 worktree and two real knowledge datasets — and measure the one composition `ICR-R31@v1` adds: the
-recorded families the selected subject belongs to on each snapshot, each selected family revision's own
+directly discovered family identities on either snapshot, each independently selected family revision's own
 authored guarantee, and that revision's recorded member roster, **including the siblings a reviewer has
 to be able to read beside a changed member**.
 
@@ -44,6 +44,8 @@ weakened by it. The three modules together are the leaf's case population, and e
 
 ### Logic
 
+The family-selection descriptions distinguish missing family records from missing membership of the selected invariant. The latter does not erase a family counterpart or restrict independent authored-head selection. This module’s executable tests are unchanged by L40; the new countercases and revised history expectation live in the population suite.
+
 The multi-page walk assertions count unique `member_id` values across sparse context updates. A member may be represented on content, membership and claim pages, so summing projected rows would overcount a valid walk. The first page must expose remaining primary items; it need not lack a member already represented by content.
 
 **The load-bearing properties, one case each.** The module's own docstring lists them (`:15-25`); the
@@ -51,7 +53,7 @@ table below maps each to the case that pins it and the operation the case drives
 
 | Case | Line | The property it pins |
 | --- | --- | --- |
-| `test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees` | `:284` | a selected invariant resolves **every** recorded family it belongs to on both snapshots, each with its exact selected family revision, its own stored guarantee text and its recorded roster |
+| `test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees` | `:284` | a selected invariant discovers its directly recorded family identities and resolves each independently on both snapshots, with its own selected authored head, guarantee and exact roster |
 | `test_a_family_that_did_not_move_is_still_composed_at_its_own_revision` | `:321` | an unchanged family still yields a context at its own revision |
 | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | `:342` | a successor that drops a member does **not** inherit the parent's roster, and the dropped membership is still carried on the side that records it |
 | `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` | `:384` | one invariant recorded under two families is one canonical revision referenced twice; the unique count does not grow with the repeated membership |
@@ -197,7 +199,7 @@ over the shipped transport rather than being assembled in the browser.
 | **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context.py:1060-1095 |
 | **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1098-1137 |
 | **The production read these cases drive, which composes the context and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
-| The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:97-142 |
+| The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:89-134 |
 | The values cases that pin the construction rules of the same deliverable. | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:29-47 |
 
 ## Cross-Repo References
@@ -208,6 +210,10 @@ leaf enclosure the resolution selected. No remote, credential, network or extern
 no cross-repo reference row is recorded.
 
 ## Update History
+- 2026-09-27T02:33:48+00:00: Generated citation repair: `test_the_canonical_memberless_successor_shape_is_an_ambiguity` repointed to mcp/tests/test_review_family_context_population.py:89-134. No content impact: mechanical anchor-range projection bound to citation source snapshot 8d622ab90c9b13974d7092fdff43b4fba5681d634b1dc5af7229f82cc78dbdaa; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-27T02:21:35Z — L40: reconciled the three documentation-only corrections to independent family selection and genuine family absence. No executable case or older history was rewritten; verification metadata remains unchanged.
+
 
 - 2026-09-27T00:59:43+00:00 — Updated walk-population interpretation to exact unique member identities across sparse updates. Completion still belongs to the read walk and never proves that its last page carries the whole roster.
 

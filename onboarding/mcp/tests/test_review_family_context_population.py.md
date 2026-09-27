@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context_population.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-27T02:21:35Z |
+| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
+| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -16,118 +16,70 @@
 
 ## Purpose
 
-**The family revision population and exact bounded-page population, and the states they decide.** The composition's cases in `mcp/tests/test_review_family_context.py` measure what one family
-context *carries*; these four measure the **population that decides it**, which is where this leaf's one
-real defect lived: the revision population of a family selection must be the family owner's own revision
-list, because a family revision that cites no member is still a revision of that family. Deriving the
-population from membership-bearing read rows instead made a memberless head invisible — and that is the
-repository's own canonical ambiguity shape, and the normal intermediate state of a curator who authors a
-family revision before its memberships.
-
-**Three of the four cases fail on the pre-fix bytes; the fourth is the guard against over-correcting.**
-That asymmetry is the module's design, and it is what makes these cases a bite-proof rather than a
-restatement of the fix: the pre-fix run printed exactly the three wrong values the round-1 verification
-falsified, and the fourth case fails only if the fix turns a genuinely absent family into an empty one.
-
-**The enclosure, the authored movement and the request helpers are the sibling case module's, imported
-rather than duplicated** (`:22-26`) — the pattern this test tree already uses for shared fixtures. This
-module builds no fixture of its own beyond the three authors below.
+Exercises the independent family revision population and bounded readback through real authored stores, application composition and HTTP continuation. Its selected-member cases separate primary invariant absence or removal from the family’s independently recorded counterpart.
 
 ## Code Commentary
 
 ### Logic
 
-`recorded_population` obtains expected exact membership/revision and claim sets from the authorship owners. `walk_responses` follows the real HTTP route's published cursors at a fixed bound. The sparse-page case uses page sizes one and two, asserts content-only and claim-only updates, exact whole-walk sets and unchanged primary knowledge, evidence, comparison and complete inventory. Repeated sparse member contexts are expected; raw row sums are not unique membership counts.
+The canonical memberless-head and recorded-empty-family cases keep ambiguity, genuine absence and measured empty roster distinct. Family revision populations and history are checked against the family owner’s own stored lists.
 
-**Each case drives one population question through the production read and asserts the state it
-decides.** The table is the module's own list, with what each case protects.
+The history case now treats a competing memberless head as genuine ambiguity even when only another head contains the selected invariant. It checks the complete retained population and both sides’ candidate head guarantees, with no selected guarantee on an unresolved side. A separate exact-family-revision request retains the named old revision and checks the complete recorded history. The prior membership-subset expectation was deliberately corrected rather than retained as a compatibility mode.
 
-| Case | Line | What it protects |
-| --- | --- | --- |
-| `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | `:94` | the canonical shape — two legitimate successors of one predecessor, neither citing a member — is an **ambiguous** authored ambiguity: every head an inspectable candidate and **no** revision chosen, never a `compared` pair naming the superseded revision |
-| `test_a_recorded_family_with_no_members_is_recorded_not_absent` | `:165` | a family the snapshot records with an authored guarantee and **no** membership rows is `recorded`, carrying its guarantee and a *measured* empty roster, not `no_family_recorded` |
-| `test_the_history_sentence_is_measured_against_the_family_owner` | `:241` | the selection's history sentence is measured against the family owner, so a revision no membership reached is still counted as recorded history rather than reported as zero |
-| `test_the_measured_zero_and_the_absent_family_stay_distinct` | `:311` | a family **no** snapshot records is still the measured zero — the over-correction guard, which passes on both byte sets by design |
+The new-member case authors a candidate-only invariant and an existing family’s successor retaining exact old siblings plus that member. The primary before statement stays absent, while family before/after guarantees and rosters are both present. The removed-member case authors a successor omitting the selected member and proves that the old after-side predecessor membership still exists; this prevents an empty-counterpart-only fix from passing.
 
-**The read helpers name each side's own recorded list, which is the fact the cases turn on.**
-`recorded_revisions` (`:66-75`) reads the family owner's own revision list for a side, `family_selection`
-(`:78-84`) builds the review request for a family selector, and `family_context` (`:87-91`) selects that
-family's context out of the payload — so a case asserts against the owner's list and the composed
-context, never against a copied number.
-
-**The authors build exactly the shapes the pre-fix bytes got wrong.**
-`_author_memberless_successor` (`:142-153`) authors one successor family revision that cites no member,
-`_author_memberless_successors` (`:156-162`) authors the canonical pair,
-`_author_recorded_empty_family` (`:202-238`) authors a family revision with a guarantee and no
-memberships at all (with its label and guarantee taken from the module's own constants, `:62-63`), and
-`_withdraw_parent_membership` (`:282-308`) drives the shape the history sentence got wrong — the parent's
-membership withdrawn on the candidate with a memberless successor added, which the pre-fix bytes
-reported as `0 other recorded revision(s)` while the owner recorded three.
+`_assert_primary_unchanged` checks revision selection, before/after statement and conditions, the entire evidence pane and the complete source inventory across those family-only changes. Existing sparse HTTP page walks retain exact member/claim coverage, page bounds and primary panes across continuation; repeated member contexts are not counted as distinct memberships.
 
 ### Conventions
 
-The module imports its enclosure, its authored movement and its request helpers from the sibling case
-module rather than rebuilding them (`:28-56`), selects its markers once with `pytestmark` (`:58`), and
-keeps the two authored strings it needs at module level (`:62-63`). `pytest.raises`-free: every case
-asserts a composed state, because the failure it protects against is a wrong *value*, not an exception.
+Keep the existing comparison, family, authored-head, roster and source/evidence owners. This module's role is documented by its own source and the concrete references below; it introduces no alternate store, selection policy or publication authority.
 
 ### Invariants And Boundaries
 
-- **A memberless family revision is a revision of its family.** Every case here exists because that one
-  sentence was false in the pre-fix composition.
-- **The measured zero and the recorded-empty family are different facts.** The fourth case is the guard:
-  a family neither snapshot records stays `no_family_recorded` (and a family neither records is refused
-  by the comparison before a context exists), so the fix cannot convert a genuinely absent family into an
-  empty one.
-- **The ambiguity case asserts a refusal to choose.** Several legitimate heads stay several, and no
-  guarantee is presented as the family's own on that selection.
-- **Boundary:** the original cases protect revision-selection population; the sparse-page case also protects the exact member/claim population transported over the real application and HTTP path. Rendered behavior remains the dashboard tests' responsibility.
+- The family owner’s independent recorded population includes memberless heads and revisions not containing the selected invariant.
+- A new primary invariant is genuinely before-absent without making its existing family before-absent.
+- A removed member does not make an old stored predecessor the family’s current head.
+- Exact revision selection and authored ambiguity are preserved independently of primary invariant selection.
+- Fixtures and passing tests are bounded verification, not published project intent or installed product acceptance.
 
 ### Todos
 
-None recorded.
+No unrelated repair is assigned to this file. Installed product evidence and historical assessment loading remain separately reported outcomes, not conclusions of these source references.
 
 ## Docs References
 
-No configured domain documentation could be consulted for this module. The resolved memory layer's
-`system/sources.md` carries no `Domain Documentation` category — its whole body is "No entries
-configured yet." — so there is no external or domain source to check and no documentation row is
-recorded here.
-
-## Repo-Internal References
-
-Every claim on this card is checkable in the module's own cases and in the shape the production
-composition builds. The three details a reader should carry: **the family owner's own revision list is
-the population, so a memberless revision is a head**; **a family recorded with a guarantee and no
-members is `recorded` with a measured empty roster**, not a measured zero; and **the fourth case is the
-over-correction guard**, which distinguishes the measured zero from an absent family.
+No configured Domain Documentation source applies to this repository-owned contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The defect these cases came from, the one case each they pin, and the fact that three of the four fail on the pre-fix bytes.** | "The composition's cases in" | mcp/tests/test_review_family_context_population.py:1-26 |
-| The family owner's own recorded revision list for one side. | `recorded_revisions` | mcp/tests/test_review_family_context_population.py:69-78 |
-| The review request built for a family selector. | `family_selection` | mcp/tests/test_review_family_context_population.py:81-87 |
-| One family's context selected out of the payload. | `family_context` | mcp/tests/test_review_family_context_population.py:90-94 |
-| **The canonical memberless-successor shape held as an authored ambiguity with every head inspectable and no revision chosen.** | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:97-142 |
-| The author of one memberless successor family revision. | `_author_memberless_successor` | mcp/tests/test_review_family_context_population.py:145-156 |
-| The canonical pair of memberless successors. | `_author_memberless_successors` | mcp/tests/test_review_family_context_population.py:159-165 |
-| **A recorded family with an authored guarantee and no members held as `recorded` with a measured empty roster.** | `test_a_recorded_family_with_no_members_is_recorded_not_absent` | mcp/tests/test_review_family_context_population.py:168-202 |
-| The author of a guarantee-bearing family revision with no memberships. | `_author_recorded_empty_family` | mcp/tests/test_review_family_context_population.py:205-241 |
-| **The history sentence measured against the family owner rather than the selected population.** | `test_the_history_sentence_is_measured_against_the_family_owner` | mcp/tests/test_review_family_context_population.py:244-282 |
-| The withdrawn parent membership with a memberless successor added — the shape printing `0 other recorded revision(s)` before the fix. | `_withdraw_parent_membership` | mcp/tests/test_review_family_context_population.py:285-311 |
-| **The over-correction guard: a family no snapshot records stays the measured zero.** | `test_the_measured_zero_and_the_absent_family_stay_distinct` | mcp/tests/test_review_family_context_population.py:314-346 |
-| **The fix these cases pin: a family selection's population is every revision the family owner records.** | `_applicable_family` | mcp/src/agents_remember/application/review_family_context.py:538-562 |
-| **The history sentence the third case measures, read from the family owner on both snapshots.** | `_selection_sentence` | mcp/src/agents_remember/application/review_family_context.py:768-803 |
-| The sibling case module whose enclosure and helpers this module imports. | `build_family_scenario` | mcp/tests/test_review_family_context.py:134-165 |
-| The composition cases this module complements rather than repeats. | `test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision` | mcp/tests/test_review_family_context.py:523-563 |
+| The operative contract is defined by the repository sources below. | — | — |
+
+## Repo-Internal References
+
+These current owners and cases establish the stated behavior.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Competing memberless heads remain ambiguous. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:89-134 |
+| A recorded memberless family retains its guarantee and measured empty roster. | `test_a_recorded_family_with_no_members_is_recorded_not_absent` | mcp/tests/test_review_family_context_population.py:160-194 |
+| Independent ambiguity and explicit-revision history are both checked. | `test_the_history_sentence_is_measured_against_the_family_owner` | mcp/tests/test_review_family_context_population.py:236-288 |
+| A new member retains the family’s existing before counterpart. | `test_a_new_member_keeps_the_existing_familys_before_context` | mcp/tests/test_review_family_context_population.py:321-349 |
+| A retained predecessor membership cannot pin the family after selection. | `test_a_removed_member_does_not_pin_family_context_to_its_retained_predecessor` | mcp/tests/test_review_family_context_population.py:352-381 |
+| Primary knowledge, evidence and complete source inventory stay independent. | `_assert_primary_unchanged` | mcp/tests/test_review_family_context_population.py:291-300 |
+| Sparse pages preserve the recorded population and primary panes through real HTTP walks. | `test_content_and_claim_only_pages_preserve_the_authored_population` | mcp/tests/test_review_family_context_population.py:508-560 |
 
 ## Cross-Repo References
 
-No cross-repository behavior is exercised by these cases. The enclosure and the two knowledge datasets
-belong to this repository's own fixture support and to the leaf enclosure the resolution selected; no
-remote, credential, network or external system is involved, so no cross-repo reference row is recorded.
+No sibling repository defines this file's behavior.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+
+- 2026-09-27T02:21:35Z — L40: Recorded the new/removed-member regressions and the explicit correction of the old membership-subset ambiguity expectation, preserving the earlier L38 sparse-page coverage. Existing verification stamps and all prior history are preserved; working-source provenance is retained in task notes and actual commit stamping remains closeout-owned.
+
 
 - 2026-09-27T00:59:43+00:00 — Added exact sparse-page population coverage through the public authorship owners and real HTTP read. Counts derive from unique stored identities; bounded content/claim pages and unchanged primary/source/evidence facts are asserted without a constructed display payload.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_family_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T02:20:00+02:00 |
-| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
-| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
+| lastUpdated | 2026-09-27T02:33:35Z |
+| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
+| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -225,7 +225,7 @@ guarantee**.
 | Where each independent fact beside this context is owned, and the key that joins them. | `ReviewFamilyContextReferences` | mcp/src/agents_remember/models/knowledge/review_family_context.py:446-465 |
 | The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. | `ReviewFamilyContext` | mcp/src/agents_remember/models/knowledge/review_family_context.py:468-548 |
 | **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:493-548 |
-| **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:254-301 |
+| **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:245-292 |
 | The roster read that supplies each side's guarantee, its members and its page. | `read_family_roster` | mcp/src/agents_remember/application/review_family_rosters.py:209-272 |
 | **The production review read that composes the context once and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The payload field itself, required rather than optional so an absent field can never be read as a measured zero. | `family_context` | mcp/src/agents_remember/models/knowledge/review.py:1035-1035 |
@@ -241,6 +241,9 @@ system appears in any shape here, so no cross-repo reference row is recorded —
 repository or external-system boundary.
 
 ## Update History
+
+- 2026-09-27T02:33:35Z — L40: No content impact: rebound only the reference to the changed family-context composition entry. The value model and its validators are unchanged; unrelated normalization proposals were not applied.
+
 
 - 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **the roster page's completion semantics on this card were corrected, and every range was re-anchored past this delta's insertions.** The reopen's subject is that `complete` describes the **WALK and not the page**: `ReviewFamilyRosterPage`'s docstring paragraph (`:237-244`) now says so, and `_require_the_state_to_match_what_it_carries` (`:310-356`) holds only a **single-page** walk — `single_page_walk = self.page.complete and self.page.state == "first_page"` — to the revision-wide member count. The card previously read "a complete page carries every membership the owner counted, never fewer", which was the pre-correction rule and is **false for a completed continued page**; it now states the corrected rule and says explicitly that nothing about the truncation the guard exists for was relaxed (a complete page that continued nothing *is* the whole roster, so the same carried rows on a walk's first page are still refused). What did **not** change: no new field, `Literal` state, capability, policy or signature; `complete`'s own meaning (`enumeration_complete`, the read owner's flag) is untouched and this module only *reads* it; the `len(members) > members_total` bound is untouched. Every range was re-measured on the candidate bytes (`ReviewFamilyRosterPage` `:225-277`, `ReviewFamilyRevisionContext` `:280-356`, `ReviewFamilyContext` `:468-548`, and the prose clauses at `:323-328`, `:428-432`, `:515-522`), and one reference row was added for the corrected docstring paragraph. **Stamp accounting: no verification stamp was advanced.** The header's pair still names this leaf's base `fdf3e4b6`, because the candidate is uncommitted and the governed closeout owns the real code and memory commits; the verified basis is that base plus the working-tree delta, exactly as the first curation recorded it. *Note for the reader:* this card describes the corrected semantics only. The pre-correction comparison was a real defect — it produced an unhandled server failure on an ordinary multi-page roster — and the source's own comments record it as fixed; the sentence on the older class docstring that still read "a complete page carries all of it" was corrected on these bytes after independent verification flagged it.
 

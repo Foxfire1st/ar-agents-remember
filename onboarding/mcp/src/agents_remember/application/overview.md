@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-27T02:21:35Z |
+| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
+| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -3348,39 +3348,20 @@ re-runs a comparison, and nothing here is a review authority beside the shipped 
 
 ## 260921-ICR-L31 The Comparison-Bound Family Review Context
 
-**This route gained one composition owner and two thin callers (`ICR-R31@v1`).**
-``mcp/src/agents_remember/application/review_family_context.py`` composes, for the review's selected
-subject, which recorded families it belongs to on each of the two bound snapshots, each selected family
-revision's own authored joint guarantee and that revision's complete recorded member roster — unchanged
-siblings included. It calls the shipped read operation with the reviewed identity's own seed and
-``ICR-R07@v1``'s own head rule over the snapshots' authored predecessor edges, so it selects no revision
-by label, by version or by order: several legitimate heads stay several, carried as inspectable
-candidates with no revision chosen and no guarantee presented as the family's own.
-``mcp/src/agents_remember/application/review_family_rosters.py`` is the read half — one exact family
-revision's guarantee (whose seal the family owner verifies on the way out), its membership rows with
-each member's exact invariant revision, the realization claims that reach source expressions, and the
-page and cursor that reach the rest.
+The existing family-context composition discovers direct family identities through the invariant read policy, then resolves each independently on both bound snapshots through the family owner and authored head rule. Primary membership absence cannot erase a known family’s counterpart or pin it to a retained historical predecessor. Explicit family revisions remain exact, memberless competing heads remain ambiguous, and genuinely absent/unreadable scope remains distinct.
 
-``knowledge_review.compose_review`` calls the composition once, after the relationship union its member
-contexts reference, and carries the value on the payload; ``review_task_context.task_context_review``
-answers the required field with the one state that claims nothing, because a review that selected no
-subject compared no operand and its families are not an unread scope. The one bounded collection this
-projection adds is *one family revision's recorded roster*, under the ``family_members`` collection
-name, continued with the read owner's own cursor.
+The roster owner still reads each selected family revision’s own guarantee, exact memberships and bounded content/claims. Continuation advances its existing comparison/subject-bound walk; a complete final page need not carry the whole roster. No extra family is discovered through sibling rosters. Primary invariant operands, evidence and complete source inventory remain independently composed by their existing owners.
 
-**The reopen's correction is stated in the roster read's own sentence, and it is narrow.** A page's
-``complete`` flag is the read **walk's** fact and not the page's: it turns true on the page that finished
-the enumeration, which for a multi-page roster is the **final** page, and that page carries only its own
-share of the selection while the pages before it carried the rest. ``_roster_detail`` therefore states
-three cases rather than two — a walk the read took in one page carried every recorded membership and is
-the roster whole; a walk whose final page is a continuation completed the walk and says so instead of
-claiming the whole roster; and an incomplete page names the remainder and the continuation that reaches
-it. What did **not** change under this route: the read itself, the composition beside it, the cursor
-handling, every refusal, the guarantee path that verifies the family owner's seal on the way out, and
-this collection's own standing as a *set of per-family walks* rather than one walk. No owner, field,
-capability or policy was added, and both modules stay far under the line rail.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Direct policy discovery is separated from independent family composition. | `_applicable_invariant` | mcp/src/agents_remember/application/review_family_context.py:545-566 |
+| Both family sides use the existing family/head/roster owners. | `_entry` | mcp/src/agents_remember/application/review_family_context.py:572-635 |
+| Ambiguity remains explicit rather than selecting a membership-bearing head. | `_selection` | mcp/src/agents_remember/application/review_family_context.py:677-722 |
 
 ## Update History
+
+- 2026-09-27T02:21:35Z — L40: Updated the current R31 route account for independent family context; no schema, store, traversal or writer authority changed. Prior route history and verification stamps remain unchanged.
+
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): **route body updated for the taskless knowledge

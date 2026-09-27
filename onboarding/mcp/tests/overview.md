@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-27T02:21:35Z |
+| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
+| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
@@ -6360,44 +6360,20 @@ rather than registrations.
 
 ## 260921-ICR-L31 Three Case Modules For The Family Review Context
 
-**This route gained three case modules and two manifest registrations (`ICR-R31@v1`).**
-``mcp/tests/test_review_family_context.py`` drives the production review over a real leaf enclosure with
-two real knowledge datasets and measures the composition: a selected invariant resolving every recorded
-family it belongs to, a successor revision read from its own rows rather than inheriting its parent's
-roster, one canonical member revision referenced in two contexts without inflating the unique count, a
-member change making its context available and concluding nothing about the guarantee, the measured
-zero, the truncated roster, the cursor that continues exactly the walk that minted it, and the context
-reaching the client over the real review route. ``mcp/tests/test_review_family_context_population.py``
-measures the *population* those contexts are built from — the canonical memberless-successor ambiguity,
-the family recorded with a guarantee and no members, the owner-measured history sentence and the
-measured zero against an absent family — three of its four cases failing on the pre-fix bytes by
-design. ``mcp/tests/test_review_family_context_values.py`` measures the values' own construction rules:
-a context whose counts do not describe its rosters, a truncated roster page presented as complete, a
-side that read nothing carrying a roster, and a recorded side naming a revision its family does not
-record.
+The existing family-context suite drives real store-authored snapshots through application and HTTP composition. It covers direct family discovery, each revision’s own guarantee/roster, shared canonical members, genuine absent/no-family/unreadable states, partial walks and owner-bound cursor refusals. The value suite retains count, revision-membership and page-shape construction rules.
 
-All three joined the ``unit-regression`` lane, and the two consumer rows of
-``mcp/tests/evidence-lifecycle.toml`` that the first two modules are derived from gained their paths —
-which is why that file's catalog pin moved twice (the Twenty-seventh and Twenty-eighth deliberate
-re-pins, contracts and artifacts unchanged at sixteen and sixty-six).
+The population suite now proves that a new member retains its existing family before context and that a removed member cannot pin after context to a retained predecessor. Its revised history case checks independent memberless-head ambiguity, then separately requests an exact revision to inspect recorded history. Primary invariant operands, evidence and source inventory are asserted unchanged. Existing sparse-page/continuation cases remain; no test module or evidence-lane registration was added for this correction.
 
-**The reopen added the walk cases that make the corrected completion semantics measurable, and they are
-still three modules.** ``mcp/tests/test_review_family_context.py`` gained three cases and two helpers at
-its end: a roster that fits one page is carried whole — complete, ``state == "first_page"``, no cursor,
-every recorded row, and its sentence says so; a long walk's **final** page is complete with
-``state == "continued"`` and carries strictly fewer rows than the owner's total, which is exactly the page
-the pre-correction comparison refused; and a multi-page walk terminates with every step this route's own
-answer and the pages together carrying exactly ``members_total``. ``mcp/tests/test_review_family_context_values.py``
-gained the matching value-level pair: a complete page that is also the walk's **first** page must still
-carry the whole roster it counts, while the same carried rows on a completed **continued** page are
-accepted — so the relaxation cannot become a hole. The two modules are now 1,133 and 262 lines, and the
-cases pin **shape** rather than arithmetic, because how many pages a given roster needs is a property of
-that run's page budgeting rather than of the semantics under test. What the reopen did **not** change in
-this route: the three modules are still three, ``mcp/tests/test_review_family_context_population.py`` is
-untouched, every lane row is unchanged, both consumer rows still hold, and the catalog pin needed no third
-move because no module and no row was added.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| New-member context preserves the independent family counterpart. | `test_a_new_member_keeps_the_existing_familys_before_context` | mcp/tests/test_review_family_context_population.py:321-349 |
+| Removed-member context follows the real successor while old membership remains stored. | `test_a_removed_member_does_not_pin_family_context_to_its_retained_predecessor` | mcp/tests/test_review_family_context_population.py:352-381 |
+| Genuine ambiguity and exact requested history are distinct assertions. | `test_the_history_sentence_is_measured_against_the_family_owner` | mcp/tests/test_review_family_context_population.py:236-288 |
 
 ## Update History
+
+- 2026-09-27T02:21:35Z — L40: Reconciled the accepted population semantics and preserved existing paging/value coverage; no broader suite or certification claim. Prior route history and verification stamps remain unchanged.
+
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): **route body updated for the taskless bootstrap's
