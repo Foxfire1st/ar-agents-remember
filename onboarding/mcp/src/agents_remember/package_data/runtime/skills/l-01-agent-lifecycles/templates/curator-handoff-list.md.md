@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-26T23:48:33Z |
+| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
+| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -16,187 +16,66 @@
 
 ## Purpose
 
-The **packaged, generated mirror** of the curator hand-off list template: the copy of
-`skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` that ships inside the
-`agents_remember` package's runtime data and is served to clients as part of the shipped skills
-tree. Its content is the producer's output shape for the requirement-shaped items a leaf's builder,
-reviewer and orchestrator hand to the curator — thirteen fields split nine producer to four curator,
-two rules (co-resolution and no-paraphrase) and the honest encodings for rulings with no placement.
+Packaged runtime copy of the canonical skills/l-01-agent-lifecycles/templates/curator-handoff-list.md. It is synchronized by the existing skill propagation owner and introduces no independent doctrine.
 
-**This copy is byte-identical to the canonical source.** `diff` between
-`skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` and this file is empty, both files
-are 230 lines, their MD5 digests are both `6ab039ac49385760f44a3a50347a8de0`, and both were last
-touched by the same commit — `7e6936c0d3b87f2fa0f462c5c63d6d86441ef10b` — which is what the shared
-`lastVerifiedCommitHash` on this card and on the canonical card records. It is therefore a mirror
-rather than a variant: a content edit belongs in `skills/` and reaches this path only through
-`python3 scripts/sync-skills.py`, never by editing this file (the repository's own `AGENTS.md`
-states the rule: "Do not edit generated skill copies directly; edit root `skills/` and run
-`python3 scripts/sync-skills.py`.").
+Defines the producer/curator handoff data boundary. Nine producer fields travel unchanged; the curator resolves the outcome and authors semantic scope, family coverage and external-source provenance.
 
 ## Code Commentary
 
 ### Logic
 
-The generated handoff template makes applicability, conditions and exclusions curator-owned semantic scope. Missing scope remains unfilled curation. Changed scope under an allocated entry key is a content conflict that needs a successor; historical records are never silently migrated.
+Producer entries identify one obligation and all its targets together. Target locators are required; evidence locators may be absent. Statements and producer dispositions are preserved rather than paraphrased. Applicability, conditions and exclusions are authored before invariant ingest.
 
-**The content is the contract, and this copy carries it unchanged.** The thirteen fields are split by
-ownership — nine producer (`id`, `statement`, `kind`, `target`, `found_at`, `disposition`,
-`disposition_source`, `evidence`, `authority`) and four curator (`resolution`, `validated_at`,
-`record_action`, `supersedes`) — because "a producer that fills a curator field has made the decision
-the curator exists to make." Every entry carries all thirteen keys with the curator fields `null`.
-The per-field table names the owner and payload of each; `target` is "**where it applies** — a list
-of `{path, locator, governing_route}`", `found_at` is "**where it was evidenced** — a list of
-`{path, locator, commit}`", and `disposition` is free text carried verbatim while `kind` may be an
-enum.
+The family plane distinguishes declared guarantees, exact memberships, deliberate no-family and unexamined entries. A successor declaration may include `retain_memberships`, with each item exactly `member_id` and a nonblank `basis`. Read the exact family view first: a family_member row’s subject.record_id is the stored membership ID, and its statement names the invariant revision.
 
-**The shape block and its locator rules are what a producer copies.** The JSON skeleton carries the
-thirteen keys; `target[].locator` is required and is `{kind: "symbol", value}` or
-`{kind: "line_range", start, end}` or `{kind: "file"}`, line ranges are one-based and inclusive, and
-`found_at[].locator` may additionally be `null` because "the source says it was found, not where" is
-information.
+The references must resolve in the selected dataset within an explicitly declared same-family predecessor. Omitted/empty retention keeps none. No current-head lookup or implicit roster inheritance is permitted. Repeated IDs, duplicate new endpoints and retain/retire conflicts refuse. A changed nonempty retention set or basis under an allocated declaration key is a content conflict.
 
-**Rule 1 is co-resolution and Rule 2 is no paraphrase; both carry their measured cost.** A `target`
-entry is a path *and* the construct inside it from one resolution act, because two independent
-resolutions "do not compose, they disagree." The rule is measured: of 40 requirement entries on a
-real leaf, "**20 named no path at all**, and **6 of the 20 that did named a file that did not hold
-the construct**." `target` is a list and is never split, because splitting breaks `supersedes`;
-`target` is identity while `found_at` is dated evidence, so `symbol` is preferred because "it
-survives a move." Rule 2 carries `statement`, `kind`, `disposition`, `evidence` and every `found_at`
-record verbatim, with the bar measured as "41 entries in, 41 entries out." Only `id` spelling and
-path spelling may change.
-
-**The honest encodings and the boundary close the document.** `target: []` is the honest encoding for
-a ruling that applies nowhere (eight of the fixture's 41 entries), a `null` evidence locator is a
-producer's honest record (13 of 58 real evidence records), a memory path is written once and
-memory-root-relative without the `onboarding/` prefix, and `disposition` records the verdict the
-producer actually holds while `disposition_source` records where it came from when that is not the
-producer's own list. The last section states the template's boundary: "It is not the curator's side."
-The curator consumes the list as data, fills the four curator fields, and decides what the record
-does about each entry.
-
-**How this copy is generated, shipped and consumed.** `scripts/sync-skills.py` treats the repository's
-root `skills/` tree as canonical (`CANONICAL_SKILLS`) and copies it into nine targets, the first of
-which is the MCP package data directory `mcp/src/agents_remember/package_data/runtime/skills`. The
-copy is a whole-tree `shutil.copytree` into a staging path followed by two renames, and the script's
-`sync_target` refuses to sync the canonical tree onto itself. At runtime the shipped tree is the
-package's own copy: `application/skill_resources/provider.py` fixes `PACKAGED_SKILLS_DIRECTORY =
-"runtime/skills"`, admits the lifecycle corpus inside it as `PACKAGED_COMPOSITION_ROOT =
-"l-01-agent-lifecycles"`, and yields the corpus root and its manifest together through
-`shipped_composition_corpus()` — "the two are one value because they are one admission." That is why
-this file's path exists at all: the compiler reads the packaged corpus, not the authored tree.
-`runtime_install` then ships a coordinator-facing copy as well: `install/runtime.py` requires the
-packaged `skills` root to exist, and syncs it from the runtime asset root into
-`<coordination-root>/skills` through a `RuntimeTreeSync`, preserving the tree's own `AGENTS.md`.
+The public writer adds successor edges while leaving old records unchanged. Check `retainedFromMemberId`, measured unchanged-sibling counts and the published exact roster. This syntax extends a declaration carried by a genuine obligation; it is not a standalone family-only operation. External evidence retains document identity and provenance instead of fabricated Git anchors.
 
 ### Conventions
 
-The file is generated output and carries no header marker of its own — unlike the harness starter
-files, which say so in a comment — so the rule that it is not edited directly lives in `AGENTS.md`
-and in the sync script rather than in the file. It preserves the canonical tree's structure exactly
-(`l-01-agent-lifecycles/templates/curator-handoff-list.md` under `runtime/skills/`), so a skill-URI
-path stays valid whether the reader resolved it from the authored tree or from the packaged copy. The
-sync script ignores only `.DS_Store`, `.pytest_cache`, `.ruff_cache`, `__pycache__` and `*.pyc`, so
-every content byte of this file is a deliberate copy of the canonical file rather than a build
-product. Because the whole tree is replaced on each sync, a local edit to this file is not merged —
-it is overwritten on the next run, and `--check` reports the tree as out of sync in the meantime.
+Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
 
 ### Invariants And Boundaries
 
-- **This file is a byte-identical mirror, not an independent document.** Its content, its line count
-  and its last commit match `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md`; a
-  content change is made in `skills/` and propagated, never made here.
-- **The canonical tree is the only edit surface.** `scripts/sync-skills.py` copies `skills/` into
-  this path among nine targets and refuses to sync the canonical tree onto itself.
-- **The packaged copy is what the compiler reads.** `shipped_composition_corpus()` resolves the
-  corpus root and the manifest under `runtime/skills`, so a corpus that disagrees with the authored
-  tree is what a served capsule would actually compile.
-- **The corpus root and its manifest are admitted together.** One without the other, or a manifest
-  read from another root, "is a pairing that cannot select a source set."
-- **The contract's content rules are unchanged by packaging.** The thirteen fields with four null
-  curator fields, the required target locator, one-based inclusive ranges, the null evidence locator,
-  the never-split target list and the no-paraphrase rule all hold exactly as the canonical file
-  states them.
-- **A hand edit here does not survive.** The sync replaces the whole tree through a staged copy, so a
-  local change is discarded rather than merged, and `--check` is the way a stale copy is detected.
-- **The installed coordinator copy is a third copy of the same bytes.** `runtime_install` syncs the
-  packaged runtime `skills` root into the coordination root, so the packaged copy is the source of
-  what a coordinator sees, not a separate artifact.
+- Ground every record in accepted scope and real source evidence; do not create records to inflate coverage.
+- Exact retained revisions are reused without rewriting old meaning or provenance.
+- New membership edges are not new invariant revisions or semantic acceptance.
+- A refusal or unexamined plane stays explicit; no favorable default substitutes for it.
 
 ### Todos
 
-No task-independent follow-up is recorded in the source. The generated copy carries no marker of its
-own provenance, so the "do not edit generated copies" rule lives only in `AGENTS.md` and in the sync
-script; that split is deliberate (the same script writes nine harness copies) rather than an open
-item.
+No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
 ## Docs References
 
-No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
+No configured Domain Documentation source applies to this repository-owned contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| The operative contract is defined by the repository sources cited below. | — | — |
 
 ## Repo-Internal References
 
-The first row is the mirror proof: the same lines of both copies are cited side by side, so a reader
-can confirm that this generated file carries the canonical text at the same coordinates. The
-remaining content rows cite this copy, and the last four cite the packaging code that generates and
-serves it.
+These references name the current owners and the behavior they establish.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The mirror proof: this packaged copy and the canonical `skills/` file carry the same opening text at the same line range, so the generated file is a byte-identical copy rather than a variant. | "producer's output shape"; "the requirement-shaped items a leaf's builder and reviewer already"; "where the two disagree, the schema note wins" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:3-6; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:3-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-14 |
-| The thirteen fields and the nine-producer/four-curator ownership split that is the point of the contract. | "Thirteen fields, and each has a job"; "the four the curator decides or verifies are" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:21-25; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:27-32 |
-| The per-field table: each of the thirteen rows names its owner and what the field carries. | "the entry's stable identity, in the producer's own spelling" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:34-48 |
-| The JSON skeleton a producer copies, with all thirteen keys and the four curator fields null. | "<the producer's own stable spelling>" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:56-82 |
-| The locator rules: the required target locator, the three locator kinds, one-based inclusive ranges, and the permitted null on a found_at locator. | "Line ranges are **one-based and inclusive**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:84-90 |
-| Rule 1, co-resolution: name where the thing lives rather than where you looked, with the measured cost of getting it wrong. | "## Rule 1 — co-resolution: name where the thing lives, not where you looked"; "of 40 requirement entries" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:92-92; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:125-125 |
-| Rule 1 continued: the target list is never split, and target is identity while found_at is dated evidence. | "`target` is a list because one requirement can apply in several places."; "it survives a move." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:134-134; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:140-140 |
-| Rule 2, no paraphrase, and the measured byte-identical bar it sets. | "## Rule 2 — no paraphrase: the entry is carried, not rewritten"; "41 entries in, 41 entries out" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:145-145; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:154-154 |
-| The honest-encoding rules: a null evidence locator is a producer's honest record, and an empty target list is the encoding for a ruling that applies nowhere. | "13 of 58"; "is the honest encoding for a ruling that applies nowhere" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:162-162; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:233-233 |
-| The template's own boundary: it states the producer's side only, and the curator consumes the list as data. | "It is not the curator's side." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:319-319 |
-| The generator: the canonical root the sync copies from, and the target list whose first entry is this package-data directory. | `CANONICAL_SKILLS`; `TARGETS` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56 |
-| The serving path: the packaged skills directory and corpus root constants, the shipped tree the server registers, and the corpus-plus-manifest admission the compiler reads through. | `PACKAGED_SKILLS_DIRECTORY`; `PACKAGED_COMPOSITION_ROOT`; `shipped_skill_tree`; `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:29-29; mcp/src/agents_remember/application/skill_resources/provider.py:33-33; mcp/src/agents_remember/application/skill_resources/provider.py:39-47; mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
-| The install path: the packaged `skills` root is a required runtime tree, and `runtime_install` syncs it into the coordination root's own `skills/` tree. | `require_runtime_tree`; `skills_sync` | mcp/src/agents_remember/install/runtime.py:392-403; mcp/src/agents_remember/install/runtime.py:790-794 |
-| The rules that keep this copy generated: the repository's own statement that the sync script copies root `skills/` into the package-data copy, and the corpus test that pins the contract's one home and its consequences. | "into the MCP package-data copy"; `test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared` | AGENTS.md:105-107; mcp/tests/test_role_instruction_corpus.py:604-640 |
+| Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:94-144 |
+| The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:297-365 |
 
 ## Cross-Repo References
 
-No cross-repository behavior is implemented in this file. The packaged copy is generated inside this
-repository from this repository's own `skills/` tree and served from the same package; no sibling
-repository, remote or external system contributes to or reads it.
+No sibling repository defines this file's contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## 260921-ICR-L28 The Two Authored Keys The Producer Never Writes
-
-`260921-ICR-L28` (`ICR-R28@v2`) adds one section to the canonical `templates/curator-handoff-list.md`
-and therefore to this byte-identical packaged copy: **"The curator's two authored keys beside the
-thirteen fields"**, which states the shape of `family` and `external_sources`. The thirteen fields are
-unchanged — nine producer fields and four curator fields, at revision 1 — and both new keys are
-optional on any entry, with an entry carrying neither reported as **unexamined** rather than as
-family-free or source-free.
-
-- **`family`** carries the justified joint obligation and this entry's exact memberships: a `member`
-  decision with a `declares` block (label, display version, the family's **own** guarantee text and its
-  predecessor revisions) or a named stored `family_revision_id`, plus optional `retire` identities; or
-  a `no_family` decision **with its basis**. `basis` is required wherever the curator decides, one
-  declaration per local key, reuse is by identity rather than by label, and a changed guarantee is a
-  **successor** under a new key naming the stored `family_id` and the revision it supersedes.
-- **`external_sources`** is the bounded manifest declaration: at most 32 sources per entry, each with
-  its document identity, version or retrieval time, inspected-content digest and location. At least one
-  of version/retrieval time is required because a source nobody can find again is refused by name;
-  `content_digest` is the digest of what was inspected or `null`, never a favourable default; and
-  **`external_sources: []` means the curator examined and declared none, while omitting the key means it
-  was not examined** — the report keeps the two apart.
-
-Nothing else about this copy changes: it remains a byte-identical mirror of the canonical file, and the
-section was written there and propagated by `scripts/sync-skills.py`.
+| No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+
+- 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
+
 - 2026-09-26T21:17:04+00:00: Generated citation repair: "It is not the curator's side." repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:319-319. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — The generated handoff template makes applicability, conditions and exclusions curator-owned semantic scope. Missing scope remains unfilled curation. Changed scope under an allocated entry key is a content conflict that needs a successor; historical records are never silently migrated.

@@ -5,9 +5,17 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T00:34:45Z |
+| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
+| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+
+## Explicit sibling selection in curation
+
+A curator adding obligations to a family successor reads and names the exact old membership IDs with authored retention bases. Canonical role, operation and handoff carriers require this selection and published roster readback; no unchanged invariant is revised merely to populate the successor. The existing writer and role boundaries remain.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The canonical handoff explains exact stored-sibling selection and readback. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:297-365 |
 
 ## Curator semantic scope and comparison handoff
 
@@ -77,13 +85,13 @@ substitutes for the foundation, and the foundation substitutes for neither.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The foundation entry as a second, bounded shape of the curator's work, with its own carrier and the seat's admission stated **either way** rather than a refusal assumed. | "This seat is admitted for it either way:"; "never required to start." | skills/l-01-agent-lifecycles/roles/curator.md:40-53 |
-| The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-152 |
-| The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. | `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" | skills/l-01-agent-lifecycles/roles/curator.md:153-178 |
-| Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. | `## What you may do` | skills/l-01-agent-lifecycles/roles/curator.md:179-196 |
+| The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-156 |
+| The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. | `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" | skills/l-01-agent-lifecycles/roles/curator.md:157-182 |
+| Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. | `## What you may do` | skills/l-01-agent-lifecycles/roles/curator.md:183-200 |
 | The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. | "named role scope is required" | skills/l-01-agent-lifecycles/operations/curation.md:23-29; skills/l-01-agent-lifecycles/operations/curation.md:26-26 |
-| The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. | `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` | skills/l-01-agent-lifecycles/operations/curation.md:165-194 |
-| The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. | `## Authority gates` | skills/l-01-agent-lifecycles/operations/curation.md:195-230 |
-| The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. | `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:248-261 |
+| The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. | `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` | skills/l-01-agent-lifecycles/operations/curation.md:169-198 |
+| The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. | `## Authority gates` | skills/l-01-agent-lifecycles/operations/curation.md:199-234 |
+| The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. | `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:252-265 |
 | The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. | "Reach the knowledge foundation and report its outcome" | skills/l-01-agent-lifecycles/roles/bootstrap.md:49-58 |
 | The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. | "Never author knowledge records either." | skills/l-01-agent-lifecycles/roles/bootstrap.md:136-139 |
 | The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. | "Reach the repository's knowledge foundation." | skills/l-01-agent-lifecycles/operations/bootstrap.md:73-84 |
@@ -165,9 +173,9 @@ to be written as prose.
 | --- | --- | --- |
 | **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:78-78 |
 | **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; `publicationRoute`; `publishedIdentity` | skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:76-77; skills/l-01-agent-lifecycles/operations/curation.md:172-172; skills/l-01-agent-lifecycles/operations/curation.md:79-79; skills/l-01-agent-lifecycles/operations/curation.md:77-78 |
-| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:200-200; skills/l-01-agent-lifecycles/operations/curation.md:238-238 |
-| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:201-201; skills/l-01-agent-lifecycles/roles/curator.md:184-184 |
-| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:252-252; skills/l-01-agent-lifecycles/roles/curator.md:161-161; skills/l-01-agent-lifecycles/operations/curation.md:253-253; skills/l-01-agent-lifecycles/roles/curator.md:162-162 |
+| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:204-204; skills/l-01-agent-lifecycles/operations/curation.md:242-242 |
+| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:188-188; skills/l-01-agent-lifecycles/roles/curator.md:205-205 |
+| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:256-256; skills/l-01-agent-lifecycles/operations/curation.md:257-257; skills/l-01-agent-lifecycles/roles/curator.md:165-165; skills/l-01-agent-lifecycles/roles/curator.md:166-166 |
 | The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. | "Where the route reads, and what publishes there."; `--publish` | skills/c-04-retrieval-strategy-router/SKILL.md:181-190 |
 | The write plane the carrier invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 
@@ -338,7 +346,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 | Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated series authority"; "comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:24-66; skills/l-01-agent-lifecycles/core/authority.md:50-68; skills/l-01-agent-lifecycles/core/authority.md:149-166; skills/l-01-agent-lifecycles/core/loop.md:1-115 |
 | The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters"; "serializes the masters" | skills/l-01-agent-lifecycles/criteria/plan-review.md:65-68; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174; docs/reference/execution-topology-migration.md:61-63 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-137; skills/l-01-agent-lifecycles/roles/curator.md:60-60; skills/l-01-agent-lifecycles/roles/curator.md:58-58; skills/l-01-agent-lifecycles/roles/curator.md:61-61; skills/l-01-agent-lifecycles/roles/curator.md:59-152 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:74-137; skills/l-01-agent-lifecycles/roles/curator.md:60-60; skills/l-01-agent-lifecycles/roles/curator.md:58-58; skills/l-01-agent-lifecycles/roles/curator.md:61-61; skills/l-01-agent-lifecycles/roles/curator.md:59-156 |
 | Manager owns one real master and its leaf closeout chain. | `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:6-211; skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | `# Worker`; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:6-146; skills/l-01-agent-lifecycles/roles/worker.md:7-17; skills/l-01-agent-lifecycles/roles/worker.md:72-78 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | `## Acceptance is per stable ID and version, never aggregate` | skills/l-01-agent-lifecycles/core/acceptance.md:44-78 |
@@ -456,6 +464,12 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+
+- 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
+
+
+- 2026-09-26T23:48:33Z — L39: Reconciled the explicit retained-sibling input across existing curator carriers; no role, admission or transaction authority changed.
+
 - 2026-09-26T21:20:53+00:00: Generated citation repair: `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" repointed to skills/l-01-agent-lifecycles/roles/curator.md:153-178; skills/l-01-agent-lifecycles/roles/curator.md:169-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:20:53+00:00: Generated citation repair: `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` repointed to skills/l-01-agent-lifecycles/operations/curation.md:165-194; skills/l-01-agent-lifecycles/operations/curation.md:184-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:20:53+00:00: Generated citation repair: `## Authority gates` repointed to skills/l-01-agent-lifecycles/operations/curation.md:195-230. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

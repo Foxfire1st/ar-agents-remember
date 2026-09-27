@@ -5,9 +5,17 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T00:34:45Z |
+| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
+| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+
+## Curator successor-family examination
+
+The curator role requires explicit stored membership IDs and authored bases when retaining unchanged siblings in a justified family successor. It preserves each existing invariant revision and checks the ordinary published roster. The role’s code, task-state and Git prohibitions remain unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The curator process carries exact retained-sibling authoring and readback. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-156 |
 
 ## Curator authored knowledge and retained review
 
@@ -110,8 +118,8 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:78-78 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:184-184; skills/l-01-agent-lifecycles/roles/curator.md:201-201 |
-| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:161-162 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:188-188; skills/l-01-agent-lifecycles/roles/curator.md:205-205 |
+| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:165-166 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
 ## Purpose
@@ -272,7 +280,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-152; skills/l-01-agent-lifecycles/roles/curator.md:179-196; skills/l-01-agent-lifecycles/roles/curator.md:197-211 |
+| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-156; skills/l-01-agent-lifecycles/roles/curator.md:183-200; skills/l-01-agent-lifecycles/roles/curator.md:201-215 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -401,6 +409,13 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+
+- 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
+
+- 2026-09-27T00:23:53+00:00: Generated citation repair: "knowledge hand-off result"; "published dataset identity" repointed to skills/l-01-agent-lifecycles/roles/curator.md:165-165; skills/l-01-agent-lifecycles/roles/curator.md:166-166. No content impact: mechanical anchor-range projection bound to citation source snapshot b3d8afb8f498929bc7654ed009a5dcd2751720da84f958f62808fd0ab2890e00; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-26T23:48:33Z — L39: No route impact: the curator’s existing knowledge-authoring responsibility gains an exact input, without a new role or authority. Current guidance is stated above.
+
 - 2026-09-26T21:21:16+00:00: Generated citation repair: "knowledge hand-off result"; "published dataset identity" repointed to skills/l-01-agent-lifecycles/roles/curator.md:161-161; skills/l-01-agent-lifecycles/roles/curator.md:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — Reconciled the current reviewer and curator responsibilities without changing role or transaction authority.
