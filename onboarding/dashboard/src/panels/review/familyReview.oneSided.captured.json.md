@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T01:27:31+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,8 @@ records no row".
 ## Code Commentary
 
 ### Logic
+
+The capture bytes and their recorded page facts are unchanged. Its current mounted case uses the loaded-context vocabulary and the exact page/side distinction below; a completed walk is not proof that its last body alone carries every member or claim.
 
 **The body is a continued page of the before side's walk.** `payload.page` is `collection:
 "family_members"`, `state: "continued"`, `returned` 5, `remaining` 6, `total` 11 on
@@ -144,7 +146,7 @@ finding names the exact key path and value a reader can re-check.
 | The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.oneSided.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
 | **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:532-550; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:546-546; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:58-58 |
+| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:531-549; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:545-545; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:58-58 |
 | **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:285-296; dashboard/src/data/reviewFamily.ts:298-321 |
 | **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:410-410; dashboard/src/panels/review/FamilyTree.tsx:411-411; dashboard/src/panels/review/FamilyReviewCenter.tsx:567-567; dashboard/src/panels/review/FamilyReviewCenter.tsx:201-201; dashboard/src/panels/review/FamilyReviewCenter.tsx:202-202 |
 | Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | `SelectedStatement`; `UnavailableMember` | dashboard/src/panels/review/SubjectReview.tsx:53-114; dashboard/src/panels/review/FamilyReviewCenter.tsx:764-787 |
@@ -158,7 +160,10 @@ repository's own route over this repository's own fixture enclosure.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+
 ## Update History
+
+- 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, second move:** the F1 fix round shifted the member-statement and guarantee-level blocks in `panels/review/FamilyReviewCenter.tsx` below the A4 section, so the guarantee-level fact line moved `:1177-1187` → `:1207-1217` (the two member-statement ranges `:227-233` and `:289-297` are above the insertion and did not move). No claim wording changed. No verification stamp was advanced.
 - 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the two rows this card carries into `panels/review/FamilyReviewCenter.tsx` were re-anchored, and no claim wording changed.** The member statement block's not-carried line moved `:226-232` → `:227-233`, the comparison wrapper `:288-296` → `:289-297`, and the guarantee-level fact line `:690-700` → `:1177-1187`; each new range was derived from the construct's own declaration at this tip. The captured body and this card's claims about it are unchanged. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.

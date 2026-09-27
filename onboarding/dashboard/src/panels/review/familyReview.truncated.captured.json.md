@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.truncated.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T01:27:31+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,8 @@ the cursor that page continues.
 ## Code Commentary
 
 ### Logic
+
+The current consumer sends the exact cursor published by the selected side. This older continued capture answers the after-side walk; when the control selected the before walk or another primary revision selection, the client rejects that response and retains the coherent display. A capture being a valid server answer for one cursor does not make it a valid answer for every sibling control. Valid complete walks are covered by the separate familyPaging capture and read-cycle cases.
 
 **Every roster page on this body is a position in a walk with nothing carried.** Each side's page block
 is `complete: false`, `state: "first_page"`, `page_size=1`, and publishes a `continuation`; the counts
@@ -150,11 +152,11 @@ finding names the exact key path and value a reader can re-check.
 | The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.truncated.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
 | **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| The bounded-roster case states owner totals while refusing to call the current empty page a measured zero. | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:439-460 |
-| **The walk case this body starts, whose second step is the sibling `continued` body, and the bounded-centre and workspace-state cases it also feeds.** | "walks a family roster only from the cursor that family's own page published"; `CONTINUED`; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:286-330; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:56-56; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:473-507; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:638-691 |
-| The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:583-607 |
+| The bounded-roster case states owner totals while refusing to call the current empty page a measured zero. | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:438-459 |
+| The bounded capture keeps the exact continuation, owner-measured counts and reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:286-329; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:472-506; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:637-690 |
+| The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:582-606 |
 | Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:222-236; dashboard/src/panels/review/FamilyTree.tsx:218-220 |
-| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:519-580; dashboard/src/panels/review/FamilyTree.tsx:211-216 |
+| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594; dashboard/src/panels/review/FamilyTree.tsx:211-216 |
 
 ## Cross-Repo References
 
@@ -165,7 +167,10 @@ repository's own route over this repository's own fixture enclosure.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+
 ## Update History
+
+- 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T21:12:36+00:00: Generated citation repair: "prints one empty-roster sentence in both columns, not two that happen to agree" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:583-607. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, re-checked at the post-fix tip:** `missingRowNote` sits above the A4 section, so this card's range `:256-263` is unchanged by the F1 fix round; it is re-confirmed here rather than left implicit. No verification stamp was advanced.

@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-27T00:16:25Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T00:59:43+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -121,6 +121,8 @@ is split into 818 lines plus a 578-line purpose-named module, which is where the
 `curator_family_authoring.py` and `curator_ingest_planes.py` now live; nothing these owners do changed.
 
 ## Update History
+
+- 2026-09-27T00:59:43+00:00 — Updated the family-read route account for exact sparse member updates. The existing membership and bounded read owners remain authoritative; no route, schema or selection policy changed.
 
 - 2026-09-27T00:16:25Z — L39 W2: Reconciled family conflict eligibility at the existing parser boundary; no new owner or authority. Prior source and review history remain attributable.
 
@@ -3451,3 +3453,7 @@ read route's own owner, so the writer and a later task's planner cannot disagree
 repository's knowledge lives. The staging root is derived from the resolved context's own temp root, and
 its cleanup owner is the one irreversible act on this path, guarded by two reads rather than by an
 inference about whether the run "finished".
+
+## Sparse family member projection
+
+The existing review_family_rosters owner resolves recorded membership only for exact revision IDs represented by the bounded page's content, membership or claim items. Sparse updates keep their claims reachable even when the membership row arrived elsewhere. The selected-content boundary, family guarantee owner, traversal policy, page limits and snapshot-bound cursors stay unchanged. A completed page completes the walk; it does not assert that the page alone contains all context.

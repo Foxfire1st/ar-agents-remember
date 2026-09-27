@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.continued.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T01:27:31+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ on both snapshots and only the after side's content is missing from this page.
 ## Code Commentary
 
 ### Logic
+
+The current consumer sends the exact cursor published by the selected side. This older continued capture answers the after-side walk; when the control selected the before walk or another primary revision selection, the client rejects that response and retains the coherent display. A capture being a valid server answer for one cursor does not make it a valid answer for every sibling control. Valid complete walks are covered by the separate familyPaging capture and read-cycle cases.
 
 **The page block is the continuation answer, with both cursors on the wire.** `collection:
 "family_members"`, `state: "continued"`, `continued_from` and `continuation` carried as opaque base64
@@ -143,9 +145,9 @@ finding names the exact key path and value a reader can re-check.
 | The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.continued.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:43-52; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:62-89; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:57-57|
 | **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| **The walk case this body answers, including the assertion that the value sent is the value the roster page published, unchanged.** | "walks a family roster only from the cursor that family's own page published"; `TRUNCATED`; `CONTINUED`; "The value sent is the value the family context's own roster page published, unchanged." | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:276-320; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:48-48; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:47-47|
-| The continuation cases preserve page-scoped missing content and owner-measured totals without inventing primary statement absence. | "does not turn an uncarried roster operand into an absent statement"; "retains a bounded before-only membership without claiming that the invariant was removed"; "heads a bounded member context partial and counts the owner's rows, not this page's" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:551-567; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:569-581; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:473-507 |
-| The captured continuation verifies that family selection, filter, layout, full-file preference and continuation controls survive two page reads. | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:638-691 |
+| The client sends the selected published cursor unchanged and rejects this capture when it answers another side or primary selection. | "sends the family's published cursor and refuses a response from another walk"; `TRUNCATED`; `CONTINUED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:286-329; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:55-56 |
+| The continuation cases preserve page-scoped missing content and owner-measured totals without inventing primary statement absence. | "does not turn an uncarried roster operand into an absent statement"; "retains a bounded before-only membership without claiming that the invariant was removed"; "heads a bounded member context partial and counts the owner's rows, not this page's" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:550-566; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:568-580; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:472-506 |
+| The captured continuation verifies that family selection, filter, layout, full-file preference and continuation controls survive two page reads. | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:637-690 |
 | **The vocabulary the page-scoped row is read through: `content_not_on_page` as the state the distinction rests on, and `not_on_page` versus `one_sided` as two different facts.** | `content_not_on_page`; `not_on_page`; `one_sided`; `oneSidedMember` | dashboard/src/data/reviewFamily.ts:264-278; dashboard/src/data/reviewFamily.ts:298-321; dashboard/src/data/reviewFamily.ts:63-73 |
 
 ## Cross-Repo References
@@ -157,6 +159,9 @@ repository's own route over this repository's own fixture enclosure.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+
 ## Update History
+
+- 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T21:37:21Z — Reconciled the reference with the current source owner while retaining its scope and history.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the leaf's continued-roster body.** It records the file's exact identity (48,240 bytes; sha256 `792d00c45728e6daf6a1b8a32424ad7b23edfa263e0abbbce7d4f1a3cc3bb04d`) and the state it pins apart from its siblings: a **page of a walk continued from a published cursor**, whose `payload.page.continued_from` is byte-equal to the `continuation` the sibling `truncated` body's after roster page published (both decode to `position 1`) — the cross-body fact that makes "the client sends the cursor the server published" checkable without a browser. It also records that this body carries the **both-sides-listed** membership row whose content fell outside the page (member `68584c1e-4952-4295-a304-c4ce25029a5b`, revision `30000000-0000-4000-8000-5a554b06baf8`), which is the page-scoped sentence pair the two fix-round cases drive. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.

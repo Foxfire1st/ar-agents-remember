@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-27T00:34:45Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T00:59:43+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
@@ -128,6 +128,8 @@ leaf is still a named `404`**.
 | The producer both cases drive. | `leaf_changeset`; `LeafChangeSet` | mcp/src/agents_remember/serving/changeset.py:455-494; mcp/src/agents_remember/serving/response_contract.py:843-860 |
 
 ## Update History
+
+- 2026-09-27T00:59:43+00:00 — Updated the family-test route account for exact bounded member/claim population and unique-identity walk assertions. Existing fixture/authorship/HTTP owners are reused; no new test lane or catalog authority is introduced.
 
 - 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
 
@@ -6446,3 +6448,7 @@ remaining against a location **measured** to hold no dataset (`storeState == "ab
 candidate holds no authored revision, which is a measurement of emptiness rather than an assumption of
 it. A third case asserts the destination is derived rather than accepted, by inspecting the argument
 surface for any way to aim it.
+
+## Exact population through bounded family pages
+
+The family-population tests read expected membership and claim identities from the public authorship owners and follow actual HTTP continuations at fixed small bounds. They assert exact whole-walk coverage for content-only and claim-only pages, while primary knowledge, evidence, comparison identity and complete source inventory remain unchanged. The companion context-walk cases count unique membership identities instead of repeated sparse projection rows.

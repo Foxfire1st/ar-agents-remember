@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T02:20:00+02:00 |
-| lastVerifiedCommitHash | `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` |
-| lastVerifiedCommitDate | 2026-09-24T02:30:06+02:00|
+| lastUpdated | 2026-09-27T00:59:43+00:00 |
+| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
+| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,8 @@ weakened by it. The three modules together are the leaf's case population, and e
 
 ### Logic
 
+The multi-page walk assertions count unique `member_id` values across sparse context updates. A member may be represented on content, membership and claim pages, so summing projected rows would overcount a valid walk. The first page must expose remaining primary items; it need not lack a member already represented by content.
+
 **The load-bearing properties, one case each.** The module's own docstring lists them (`:15-25`); the
 table below maps each to the case that pins it and the operation the case drives.
 
@@ -75,7 +77,7 @@ exercise the route rather than the value:
 | --- | --- | --- |
 | `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` | `:1045` | the single-page boundary: one walk page **is** the roster, it is `complete` with `state == "first_page"`, it publishes no cursor, it carries every recorded row, and its sentence says "all carried here" |
 | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | `:1060` | the shape that used to answer a server failure: a walk's FINAL page is `complete` and `state == "continued"`, carries `0 < carried < members_total`, publishes no cursor, and says "completes the read walk" rather than claiming the whole roster |
-| `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | `:1095` | the multi-page boundary: every step is this route's own answer, every earlier page is incomplete with a cursor, and the pages **together** carried exactly `members_total` — which is the claim the continuation control makes to a reader |
+| `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | `:1095` | the multi-page boundary: every step is this route's own answer, every earlier page is incomplete with a cursor, and the pages **together** identify exactly `members_total` unique memberships — which is the claim the continuation control makes to a reader |
 
 **The scenario is built once and shared, and every population comes from the store's own authors.**
 `FamilyScenario` (`:116-124`) is the frozen handle the cases read; `scenario` (`:127-131`) is the
@@ -123,7 +125,7 @@ the file rather than buried in an assertion.
   beside the cursor rather than restated.
 - **The walk cases assert the completed page's own share, never a number the run happens to produce.**
   They pin shape — `0 < carried < members_total` on a completed continued page, the pages together
-  equal to `members_total`, the single-page sentence absent from a multi-page walk's final page — because
+  identify `members_total` unique memberships, the single-page sentence absent from a multi-page walk's final page — because
   how many pages a given roster needs is a property of that run's page budgeting, not of the semantics
   under test. A reader should not read any page count out of this card as a contract.
 - **The ambiguity case asserts a refusal to choose**, not a chosen revision: the candidates are
@@ -192,10 +194,10 @@ over the shipped transport rather than being assembled in the browser.
 | **Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.** | `_author_extra_roster_rows` | mcp/tests/test_review_family_context.py:952-998 |
 | **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** | `_walk_the_route` | mcp/tests/test_review_family_context.py:1001-1042 |
 | **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** | `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` | mcp/tests/test_review_family_context.py:1045-1057 |
-| **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context.py:1060-1092 |
-| **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1095-1133 |
+| **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context.py:1060-1095 |
+| **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1098-1137 |
 | **The production read these cases drive, which composes the context and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
-| The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:94-139 |
+| The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:97-142 |
 | The values cases that pin the construction rules of the same deliverable. | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:29-47 |
 
 ## Cross-Repo References
@@ -206,6 +208,8 @@ leaf enclosure the resolution selected. No remote, credential, network or extern
 no cross-repo reference row is recorded.
 
 ## Update History
+
+- 2026-09-27T00:59:43+00:00 — Updated walk-population interpretation to exact unique member identities across sparse updates. Completion still belongs to the read walk and never proves that its last page carries the whole roster.
 
 - 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **this card gained the three walk cases the reopen appended, and its line-count disclosure was corrected.** The reopen's subject is a completion-semantics defect in `ReviewFamilyRevisionContext`, and these cases are its bite-proofs at the route: `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` (`:1045-1057`), `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` (`:1060-1092`) and `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` (`:1095-1133`), with the two helpers they need (`_author_extra_roster_rows` `:952-998`, `_walk_the_route` `:1001-1042`). The module is **946 → 1,133 lines**: still above the 900-line soft rail and below the 1,200-line hard rail, and the census offender sets are byte-identical at base and candidate, so the disclosed crossing did not become a breach. The appended block is **insertions only**, so every citation this card already carried still holds and none was re-anchored. What the card asserts about the new cases is deliberately **shape rather than arithmetic**: how many pages a roster needs is a property of that run's page budgeting (the read walk is bounded over its item population and its byte ceiling, not over rows), so no page count or per-page row count is recorded here as a contract — the cases assert the completed page's own share strictly between zero and the owner's total, the pages summing to that total, and the single-page sentence staying off a multi-page walk's final page. **Stamp accounting: no verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory commits, so the header still names the leaf's base `fdf3e4b6` plus the working-tree delta.
 
