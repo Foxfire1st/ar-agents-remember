@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:12+02:00|
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -131,16 +131,16 @@ None.
 | The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:867-894 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:897-913 |
 | A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-926 |
-| **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326 |
-| **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:353-377; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
-| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:70-70 |
+| **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:333-345; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:351-361 |
+| **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:388-412; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
+| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
 | The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:433-472 |
 | The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-788 |
 | The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:796-827 |
 | The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:856-883 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:886-902 |
 | A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-916 |
-| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:70-70 |
+| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
 | The second half of the L23 split, which now owns the publication-input cases this card used to describe. | "The curator-coherence request states its own publication inputs" | mcp/tests/test_curator_coherence_publication_discoverability.py:1-14 |
 
 ## KS-R15@v1 Content-Member Assertion Re-Scope
@@ -164,6 +164,10 @@ asserted at `mcp/tests/test_curator_coherence_publication_discoverability.py:201
 because the re-scope's history is this card's, and the case's current home is that one's.
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 3 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 2 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_historical_committed_leaf_review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:34:45Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -146,7 +146,7 @@ state inside the case's own fixture repository, never the source checkout.
 | **The child that reopens the same comparison in an interpreter sharing no state with the parent.** | `_CHILD_SERVE` | mcp/tests/test_historical_committed_leaf_review.py:90-123 |
 | **The R01 enclosure fixture this module extends, one fresh enclosure per case.** | `closed_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_historical_committed_leaf_review.py:126-130; mcp/tests/test_knowledge_review_source_endpoints.py:126-210; mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
 | **The production composition the cases read through: the real route, the real collaborators, the real record loader.** | `_serve`; `_subject_params`; `_entry_params`; `_body` | mcp/tests/test_historical_committed_leaf_review.py:133-147; mcp/tests/test_historical_committed_leaf_review.py:150-162; mcp/tests/test_historical_committed_leaf_review.py:165-166; mcp/tests/test_historical_committed_leaf_review.py:169-172 |
-| **The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.** | `_freeze`; `_composition`; `freeze_review_comparison` | mcp/tests/test_historical_committed_leaf_review.py:175-179; mcp/tests/test_historical_committed_leaf_review.py:182-188; mcp/src/agents_remember/application/review_comparison_freeze.py:233-252 |
+| **The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.** | `_freeze`; `_composition`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/tests/test_historical_committed_leaf_review.py:175-179; mcp/tests/test_historical_committed_leaf_review.py:182-188 |
 | **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** | `_served_in_a_new_process`; `serving_collaborators`; `register_review_routes` | mcp/tests/test_historical_committed_leaf_review.py:66-191; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/serving/review.py:542-624 |
 | **The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.** | `_land_a_later_task`; `LATER_TASK_PATH`; `LATER_TASK_TEXT` | mcp/tests/test_historical_committed_leaf_review.py:84-85; mcp/tests/test_historical_committed_leaf_review.py:230-251 |
 | **The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.** | `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte` | mcp/tests/test_historical_committed_leaf_review.py:257-324 |
@@ -172,6 +172,8 @@ worktree with an external memory half, and every case reads that repository's ow
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 
 - 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
 

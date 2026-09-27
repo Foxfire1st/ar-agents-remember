@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -20,8 +20,8 @@ The installed review-record-comparison CLI remains the one review producer. Its 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `add_arguments` owns the behavior described above. | `add_arguments` | mcp/src/agents_remember/cli/review_comparison_record.py:97-143 |
-| `run` owns the behavior described above. | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:146-180 |
+| `add_arguments` owns the behavior described above. | `add_arguments` | mcp/src/agents_remember/cli/review_comparison_record.py:105-159 |
+| `run` owns the behavior described above. | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:162-202 |
 
 ## 260921-ICR-L34 The Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
 
@@ -71,9 +71,9 @@ curation report for the next leaf.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The sixth subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
-| **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** | `run`; `_standing_generation`; `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:87-87; mcp/src/agents_remember/cli/review_comparison_record.py:146-180; mcp/src/agents_remember/cli/review_comparison_record.py:183-207; mcp/src/agents_remember/cli/review_comparison_record.py:86-87 |
+| **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** | `run`; `_standing_generation`; `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:162-202; mcp/src/agents_remember/cli/review_comparison_record.py:95-95; mcp/src/agents_remember/cli/review_comparison_record.py:205-229; mcp/src/agents_remember/cli/review_comparison_record.py:94-95 |
 | **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** | `review_namespace`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-390; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
-| **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** | `_UNSEALED_FIELDS`; `_lineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:628-637; mcp/src/agents_remember/application/review_comparison_generation.py:155-155 |
+| **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** | `_UNSEALED_FIELDS`; `_lineage` | mcp/src/agents_remember/application/review_comparison_generation.py:162-162; mcp/src/agents_remember/application/review_comparison_freeze.py:728-737 |
 | The case that protects the corrected namespace rule on the real placed-baseline journey. | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 
 ## 260921-ICR-L32 The Repair Leaf: The Seat Policy Moves, And Two Long-Route Defects Close
@@ -101,6 +101,12 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 6 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 4 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
 
 - 2026-09-26T23:48:33Z — L39: No route impact: explicit stored-sibling retention remains within the existing application family planner, report renderer, tests and synchronized curator instructions. The repository/package purpose, entity boundaries and one-writer ownership are unchanged; detailed behavior is recorded in the governing application and test overviews.
 
@@ -217,8 +223,8 @@ assessments while claiming a complete bundle — is caught at the composition ra
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:171-196; mcp/src/agents_remember/application/review_evidence_records.py:137-144; mcp/src/agents_remember/application/review_assessment_currentness.py:68-68 |
-| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:379-379; mcp/src/agents_remember/application/review_evidence_records.py:424-449; mcp/src/agents_remember/application/review_evidence_records.py:498-521; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/application/review_evidence_records.py:558-582|
+| **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_assessment_currentness.py:69-69 |
+| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054|
 | **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:956-996; mcp/src/agents_remember/models/knowledge/review.py:893-893|
 | **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:88-102; mcp/tests/test_knowledge_review_evidence_channels.py:621-647 |
 | The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:669-690 |
@@ -257,9 +263,9 @@ than shifted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** | `ComparisonGenerationManifest`; `read_manifest`; `generation_identity` | mcp/src/agents_remember/application/review_comparison_generation.py:376-469; mcp/src/agents_remember/application/review_comparison_generation.py:546-554; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
-| **The production entry and the one-rename publication.** | `freeze_review_comparison`; `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-252; mcp/src/agents_remember/application/review_comparison_freeze.py:338-362 |
-| **Custody over named durable history only, and the two snapshots copied by the storage owner.** | `custody_names`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:315-341 |
+| **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** | `ComparisonGenerationManifest`; `read_manifest`; `generation_identity` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:575-583; mcp/src/agents_remember/application/review_comparison_generation.py:546-554; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
+| **The production entry and the one-rename publication.** | `freeze_review_comparison`; `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/src/agents_remember/application/review_comparison_freeze.py:406-430 |
+| **Custody over named durable history only, and the two snapshots copied by the storage owner.** | `custody_names`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295; mcp/src/agents_remember/application/review_comparison_retention.py:381-407 |
 | **The two deletion owners and the record that precedes every deletion.** | `release_comparison_code_object`; `discard_comparison_snapshots` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210 |
 | **The read-back: per-channel states and `unavailable_channels()`.** | `reopen_comparison_generation`; `ComparisonReopen` | mcp/src/agents_remember/application/review_comparison_reopen.py:228-249; mcp/src/agents_remember/application/review_comparison_reopen.py:164-225 |
 | **The Git-object retention member this route's `worktrees/` gained.** | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
@@ -346,7 +352,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-137 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:117-117 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:99-99 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:101-101 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -6433,3 +6439,7 @@ candidate's allocation journal and a read of the published dataset — never fro
 are two fields, and cleanup removes the staging root only when a read establishes that the published
 location holds exactly the staged dataset, or that the staged candidate holds no authored revision at
 all.
+
+## Normal comparison capture and explicit recovery
+
+The existing review-record-comparison command now records actual owner-produced assessment inputs through the normal resolved-pair freeze. Its paired recovery controls select an exact retained parent and original curator generation. The packaged curation operation documents both paths and remains synchronized from the canonical skill. No new knowledge writer, semantic store or automatic historical repair is introduced.

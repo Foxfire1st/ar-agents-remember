@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_record_rendering.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T02:40+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-27T05:31:41+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,7 @@ where the two surfaces come to disagree about what an unassessed subject looks l
 Nothing here selects a record, resolves a reference or decides an outcome. Every function takes the
 typed value another owner published and returns the surface's own display value:
 
-- an assessment collection is projected per subject with its currentness **as measured** — a caller
-  that supplied no `current` mapping gets every assessment reported `stale`, because the shipped
-  projection refuses to promote an unmeasured assessment and this module does not improve on it;
+- an assessment collection is projected per subject with its currentness **as measured** — the supplied measurement and availability remain the authority; an unmeasured binding is not promoted to current;
 - an empty assessment collection is `unassessed` and an empty evidence collection is `none_recorded`,
   and neither has a favourable member to default to;
 - a detection signal is carried with its condition, inputs, versions and scope limitations only, and
@@ -55,6 +53,8 @@ importers (`cli/dashboard.py` and two test modules) keep resolving without a new
 ## Code Commentary
 
 ### Logic
+
+`ReviewRecordInputs.artifacts` carries immutable owner references for the producer. The renderer transports them with the typed bundle and does not derive, select or validate curator authority from their names. Record availability still travels separately from tuple length, including uncaptured and unavailable history.
 
 **`ReviewRecordInputs` is the frozen set of collections the renderer is handed, and it is a dataclass
 rather than a pydantic model because it carries other owners' live record objects rather than a wire
@@ -147,7 +147,7 @@ nothing.
 - **The renderer renders what it is given.** No function here resolves a reference, selects a record,
   ranks a subject or decides an outcome; the collections belong to other owners' read paths.
 - **An absence is never a favourable default.** No assessments ⇒ `unassessed`; no evidence ⇒
-  `none_recorded`; no `current` measurement ⇒ every assessment `stale`. None of the three is a
+  `none_recorded`; no measurement ⇒ the binding remains explicitly not measured. None of the three is a
   clearance.
 - **The availability list is carried, never recomputed.** `channels` reaches the pane exactly as the
   composition supplied it; this module never derives a state from a collection's length, because the
@@ -192,28 +192,34 @@ whose own record was not supplied, because the record owner supplies every claim
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of what it renders, why it is separate, and the three rules its values obey. | `unassessed`; `none_recorded` | mcp/src/agents_remember/application/review_record_rendering.py:1-18 |
-| The published surface: the record input set, the empty value, and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:60-78 |
-| **The collections the renderer is given, with the currentness measurement optional and its absence meaning "unmeasured".** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:183-183; mcp/src/agents_remember/application/review_record_rendering.py:85-111 |
+| The published surface: the record input set, the empty value, and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:61-76 |
+| **The collections the renderer is given, with the currentness measurement optional and its absence meaning "unmeasured".** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:109-141; mcp/src/agents_remember/application/review_record_rendering.py:188-188 |
 | **The one refused-result builder the whole surface reaches, so a refusal is a state and never a degraded success.** | `refused`; `KnowledgeReviewResult` | mcp/src/agents_remember/application/review_record_rendering.py:186-191; mcp/src/agents_remember/models/knowledge/review.py:1119-1134 |
-| **Whether an assessment may be submitted: `disabled_stale` or `unavailable`, and never a private write path — the next action names the existing curator authority.** | `submission`; `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/application/review_record_rendering.py:183-210; mcp/src/agents_remember/models/knowledge/review.py:137-141 |
-| **Pane 3: the evidence links with their unresolved coverage, the observations displayed exactly, and the two absence states computed from the collections themselves.** | `evidence_pane`; `ReviewEvidenceLink`; `ReviewEvidencePane` | mcp/src/agents_remember/application/review_record_rendering.py:213-252; mcp/src/agents_remember/application/review_record_rendering.py:344-344; mcp/src/agents_remember/models/knowledge/review.py:569-580; mcp/src/agents_remember/models/knowledge/review.py:918-958 |
-| **The per-subject projection that reports an unmeasured assessment `stale` rather than promoting it to current.** | `subject_states`; `assessment_state_for` | mcp/src/agents_remember/application/review_record_rendering.py:266-291; mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-596 |
-| The assessment display, its per-record projection, and the examined-inputs fallback to the record's own comparison reference. | `assessment_displays`; `_assessment_display`; `ReviewAssessmentDisplay` | mcp/src/agents_remember/application/review_record_rendering.py:277-302; mcp/src/agents_remember/application/review_record_rendering.py:305-322; mcp/src/agents_remember/models/knowledge/review.py:527-566 |
-| **A verification observation displayed exactly, with no sufficiency field and no invented limitation.** | `observation`; `VerificationObservationPayload` | mcp/src/agents_remember/application/review_record_rendering.py:215-233; mcp/src/agents_remember/models/knowledge/evidence.py:1-40; mcp/src/agents_remember/application/review_record_rendering.py:276-294 |
-| **A detection fact carried with its inputs, versions and scope limitations only — no voice, no severity, no disposition.** | `signal`; `DetectionSignalPayload` | mcp/src/agents_remember/application/review_record_rendering.py:297-311; mcp/src/agents_remember/models/knowledge/detection.py:1-40; mcp/src/agents_remember/models/knowledge/detection.py:635-753|
-| **The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:108-136; mcp/src/agents_remember/application/review_record_rendering.py:183-183 |
+| **Whether an assessment may be submitted: `disabled_stale` or `unavailable`, and never a private write path — the next action names the existing curator authority.** | `submission`; `PROPOSED_ASSESSMENT_DISPOSITIONS` | mcp/src/agents_remember/application/review_record_rendering.py:199-226; mcp/src/agents_remember/models/knowledge/review.py:146-150 |
+| **Pane 3: the evidence links with their unresolved coverage, the observations displayed exactly, and the two absence states computed from the collections themselves.** | `evidence_pane`; `ReviewEvidenceLink`; `ReviewEvidencePane` | mcp/src/agents_remember/application/review_record_rendering.py:229-268; mcp/src/agents_remember/models/knowledge/review.py:607-618; mcp/src/agents_remember/models/knowledge/review.py:956-996 |
+| **The per-subject projection that reports an unmeasured assessment `stale` rather than promoting it to current.** | `subject_states`; `assessment_state_for` | mcp/src/agents_remember/application/review_record_rendering.py:271-294; mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-596 |
+| The assessment display, its per-record projection, and the examined-inputs fallback to the record's own comparison reference. | `assessment_displays`; `_assessment_display`; `ReviewAssessmentDisplay` | mcp/src/agents_remember/application/review_record_rendering.py:297-322; mcp/src/agents_remember/application/review_record_rendering.py:310-310; mcp/src/agents_remember/application/review_record_rendering.py:325-342; mcp/src/agents_remember/models/knowledge/review.py:527-566 |
+| **A verification observation displayed exactly, with no sufficiency field and no invented limitation.** | `observation`; `VerificationObservationPayload` | mcp/src/agents_remember/application/review_record_rendering.py:451-473; mcp/src/agents_remember/models/knowledge/evidence.py:1-40 |
+| **A detection fact carried with its inputs, versions and scope limitations only — no voice, no severity, no disposition.** | `signal`; `DetectionSignalPayload` | mcp/src/agents_remember/application/review_record_rendering.py:476-493; mcp/src/agents_remember/models/knowledge/detection.py:1-40; mcp/src/agents_remember/models/knowledge/detection.py:635-753|
+| **The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:109-141; mcp/src/agents_remember/application/review_record_rendering.py:188-188 |
 | The two callers: the subject composition, which renders the matrix rows beside these records. | `compose_review`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:327-500; mcp/src/agents_remember/application/knowledge_review.py:1002-1054 |
 | **The second caller, which is why this module exists: the task-context composition renders the same records with no matrix and no comparison.** | `task_context_review`; `_task_context_pane` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:170-193 |
-| The published assessment collection the adapter reads from the curator authority's own publication, with an absent authority treated as empty rather than as an error. | `review_records_for`; `load_curator_coherence_authority` | mcp/src/agents_remember/application/review_evidence_records.py:171-198; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:257-342 |
-| The published surface: the record input set, the empty value, the claim renderer input and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:60-78 |
-| **The collections the renderer is given — including the supplied claims and the availability list — with the currentness measurement optional and its absence meaning "unmeasured".** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:183-185 |
-| **One claim's own recorded fields as the evidence owner serves them, with the authored limitations verbatim and nothing derived.** | `ReviewClaimRecord` | mcp/src/agents_remember/application/review_record_rendering.py:61-82 |
-| **Pane 3: the links rendered from each claim's own record, the observations displayed exactly, the two absence states computed from the collections, and the availability list carried onto the pane unchanged.** | `evidence_pane`; `ReviewEvidenceLink`; `ReviewEvidencePane` | mcp/src/agents_remember/application/review_record_rendering.py:213-252; mcp/src/agents_remember/application/review_record_rendering.py:344-344; mcp/src/agents_remember/models/knowledge/review.py:569-580; mcp/src/agents_remember/models/knowledge/review.py:918-958 |
-| **The one per-claim projection and its two shapes: a supplied claim's own author, lifecycle, limitations and coverage, or an identity whose missing content is named as unresolved.** | `_evidence_link` | mcp/src/agents_remember/application/review_record_rendering.py:325-368 |
-| **The record owner that resolves the collections and builds each claim's renderer input, and which the adapter re-exports instead of owning.** | `review_records_for`; `_claim_record` | mcp/src/agents_remember/application/review_evidence_records.py:575-598; mcp/src/agents_remember/application/review_evidence_records.py:548-572; mcp/src/agents_remember/application/review_evidence_records.py:171-196|
+| The published assessment collection the adapter reads from the curator authority's own publication, with an absent authority treated as empty rather than as an error. | `review_records_for`; `load_curator_coherence_authority` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:227-272 |
+| The published surface: the record input set, the empty value, the claim renderer input and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:61-76 |
+| **The collections the renderer is given — including the supplied claims and the availability list — with the currentness measurement optional and its absence meaning "unmeasured".** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:109-141; mcp/src/agents_remember/application/review_record_rendering.py:188-188 |
+| **One claim's own recorded fields as the evidence owner serves them, with the authored limitations verbatim and nothing derived.** | `ReviewClaimRecord` | mcp/src/agents_remember/application/review_record_rendering.py:79-106 |
+| **Pane 3: the links rendered from each claim's own record, the observations displayed exactly, the two absence states computed from the collections, and the availability list carried onto the pane unchanged.** | `evidence_pane`; `ReviewEvidenceLink`; `ReviewEvidencePane` | mcp/src/agents_remember/application/review_record_rendering.py:229-268; mcp/src/agents_remember/models/knowledge/review.py:607-618; mcp/src/agents_remember/models/knowledge/review.py:956-996 |
+| **The one per-claim projection and its two shapes: a supplied claim's own author, lifecycle, limitations and coverage, or an identity whose missing content is named as unresolved.** | `_evidence_link` | mcp/src/agents_remember/application/review_record_rendering.py:345-388 |
+| **The record owner that resolves the collections and builds each claim's renderer input, and which the adapter re-exports instead of owning.** | `review_records_for`; `_claim_record` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:548-571|
 | **The cases that measure the rendered values: unassessed is never defaulted to compatible, a passing observation is never invariant-satisfied, and a detection signal carries no severity.** | `test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible`; `test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied`; `test_a_detection_signal_carries_its_facts_and_scope_limitations_and_no_severity`; `test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one` | mcp/tests/test_knowledge_review_surface.py:606-622; mcp/tests/test_knowledge_review_surface.py:588-603; mcp/tests/test_knowledge_review_surface.py:650-659; mcp/tests/test_knowledge_review_surface.py:560-584 |
 | **The rendering a task-context review produces for the same records, measured through the real composition.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_source_endpoints.py:842-918 |
 | **The cases that measure the two new claim-link shapes: an authored claim rendering its own limitations and coverage, and a damaged claim's identity kept with its content named unresolved.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Owner artifacts accompany the record collections without becoming a second store. | `ReviewRecordInputs` | mcp/src/agents_remember/application/review_record_rendering.py:109-141 |
 
 ## Cross-Repo References
 
@@ -225,6 +231,14 @@ owners into this surface's display values and touches no boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 3 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 10 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 9 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:56:35+00:00 — Recorded the immutable artifact carrier and corrected the currentness account to its existing measured/not-measured owner. Verification hashes/dates remain closeout-owned.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` repointed to mcp/tests/test_knowledge_review_source_endpoints.py:842-918. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **three enforced rows re-cited.** The pane-3 row, the second-caller row and the assessment-collection row cited pre-merge ranges; they now cite the merged declarations (`review_record_rendering.py:152-176`, `review_task_context.py:84-158`/`170-193`, `review_evidence_records.py:174-192`). Wording unchanged; no stamp advanced.

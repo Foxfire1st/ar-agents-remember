@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:22+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-27T05:23:46+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,11 +23,13 @@ four-action public request/response API, and — since the closeout plane was cu
 its two paths, its digest and its evidence. Under CCR-R03@v1 the memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:190-234).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:83-109; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:226-307).
 
 ## Code Commentary
 
 ### Logic
+
+`CuratorCoherenceRecordedJudgment.evidenceArtifact` is an optional owner-stamped existing path/SHA/size value; its digest must equal the originally recorded judgment hash. It is absent from caller judgment inputs and omitted canonically when absent, so old record seals stay intact. `ValidatedCuratorCoherenceGeneration` carries a digest-addressed integrity result without a live authority claim; `ValidatedCuratorCoherence` remains the live selected authority result. `CuratorCoherencePaths.judgment_evidence` derives custody under the existing artifact root.
 
 `CuratorQualityAttestation` accepts only the exact `ar-curator-memory-quality/v1` schema and checks
 candidate count and uniqueness. `CuratorCoherenceRecord` keeps semantic requirement revision,
@@ -55,7 +57,7 @@ digest), exact code and memory candidate trees (git-object digests), the rendere
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:95-132; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:135-158).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:152-175).
 
 ### Conventions
 
@@ -94,15 +96,22 @@ No configured external documentation applies; the schemas are repository-owned.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:66-92 |
-| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-235 |
-| The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-501 |
-| **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:305-317; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:323-333 |
-| **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** | `publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:360-384 |
-| **The sibling refusal that names the publication-only field a read action received.** | `forbidden_publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:387-390 |
-| **The statement of the complete publication input set, read from the declaration at call time.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:393-418 |
-| **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** | `_publication_inputs_supplied`; `_action_has_one_input_shape` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:471-485; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:487-501 |
+| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:83-109 |
+| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:226-307 |
+| The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:449-529 |
+| **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:333-345; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:351-361 |
+| **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** | `publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:388-412 |
+| **The sibling refusal that names the publication-only field a read action received.** | `forbidden_publication_refusal` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:415-418 |
+| **The statement of the complete publication input set, read from the declaration at call time.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
+| **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** | `_publication_inputs_supplied`; `_action_has_one_input_shape` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:499-513; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:515-529 |
 | The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`; `dependency`; `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:267-302 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Owner custody preserves original judgment bytes and old encoding. | `CuratorCoherenceRecordedJudgment` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:201-223 |
+| A durable generation integrity result makes no live readiness claim. | `ValidatedCuratorCoherenceGeneration` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:608-616 |
 
 ## Cross-Repo References
 
@@ -203,6 +212,10 @@ than recording a path whose bytes do not match `attestationSha256` (see the publ
 closeout route).
 
 ## Update History
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 5 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:58:33+00:00 — Recorded optional owner custody and the separate durable-generation result while preserving strict caller inputs and old encodings. Verification hashes/dates remain closeout-owned.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `forbidden_publication_refusal` repointed to mcp/src/agents_remember/models/lifecycles/curator_coherence.py:387-390. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T19:22+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the declaration item 18's second measurement added to this model.** `CuratorCoherenceRecord` now carries the optional `attestationCopyPath` (`:221`), the task-root-relative address of the durable copy the publication writes beside the record; the record's own `attestationPath` is enclosure-local and `lifecycle_finalize_task` reclaims the enclosure, so before this field every authority's `attestationSha256` named bytes no longer recoverable anywhere. The card's body gains the section above stating why the field is optional, that it adds no record validity rule, and that publication refuses rather than records a path whose bytes do not match the digest. Nothing in the R24 publication-set declaration, the record schema's other fields, or the four-action request shape moved; the two `cit:` claims in this card were re-read against the current source and still hold, and the reference-table ranges are left to the citation-range repair pass that owns them. This card's source is delivered but **uncommitted**, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp.

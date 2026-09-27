@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T18:52+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastUpdated | 2026-09-27T05:02:28+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -290,6 +290,8 @@ Three facts a reader of this route should carry:
   re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
 
 ## Update History
+
+- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above).** `ICR-R15@v1` makes an assessment's currentness a measured fact: `models/lifecycles/review_assessment.py` (502 → 620) now declares the four-member `AssessmentBindingStatus` and the `not-measured`/`unavailable` subject states with the counts validator, and `models/lifecycles/review_assessment_binding.py` (276 → 497) gains `AssessmentCurrentnessMeasurement` and the whole rule in `measured_binding_status` over it. This route's two cards had no enforced citation row, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: the header's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned, and this entry states a reading against the leaf base named above plus its working-tree delta rather than a verified commit.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
@@ -355,3 +357,7 @@ Recorded the current private preparation/publication ownership from source. Exis
   exact candidate and recovery-commit evidence used by monotonic restart reconciliation; no private
   operation identity entered agent-facing projections. Verification remains closeout-owned.
 - 2026-08-13T08:40+02:00 — Created for the L23 move that groups lifecycle response, finalizer, and asynchronous-operation models under one cohesive route. Verification metadata remains closeout-owned.
+
+## Retained curator generation and judgment custody
+
+The existing recorded judgment may carry owner-stamped path/SHA/size custody under the existing curator artifact root. Original authored citation/hash remain unchanged, caller judgment inputs cannot provide replacement custody, and canonical omission preserves older sealed records. A typed ValidatedCuratorCoherenceGeneration represents durable integrity separately from live authority/currentness.

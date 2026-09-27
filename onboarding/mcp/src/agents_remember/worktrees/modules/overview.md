@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -70,8 +70,8 @@ holding bytes that are no longer there. That is exactly the state a released-and
 | **The third observation, which a record never stores.** | `code_object_observation`; `CUSTODY_UNREADABLE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:79-84 |
 | The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143 |
 | The typed failure every ref outcome raises. | `CodeObjectRetentionError` | mcp/src/agents_remember/errors.py:180-190 |
-| **The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.** | `custody_names`; `_pinned_outcome` | mcp/src/agents_remember/application/review_comparison_retention.py:212-229; mcp/src/agents_remember/application/review_comparison_retention.py:246-292 |
-| **The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens`; `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:869-910; mcp/tests/test_knowledge_review_comparison_generation.py:913-966; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
+| **The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.** | `custody_names`; `_pinned_outcome` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295; mcp/src/agents_remember/application/review_comparison_retention.py:312-358 |
+| **The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens`; `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:871-912; mcp/tests/test_knowledge_review_comparison_generation.py:915-968; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
 
 **One boundary this route inherits and does not settle.** Whether a *landed* integration or closeout
 operation objects to the `refs/ar/retained-code/` namespace was **not measured** by this leaf, which
@@ -1368,6 +1368,10 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the path-enumeration family is NUL-safe.** The new section records the measured defect (five real changes in, four rows out, two unresolvable addresses, one change silently absent), the four `-z` reads, the positional pairing including the two-field rename form, the removal of the escape rewrite, and that these functions feed the route's own closeout worklists. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T20:24:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this route gained `modules/code_object_retention.py`.** The section records the three decisions a reader of this route has to carry — one commit plus one `refs/ar/retained-code/` ref keep both bound objects alive; the retention commit's id is a function of the retained objects (identity supplied, dated by the base commit) so a re-created pin is the identical object and an exact re-freeze converges; and custody is measured over the history the caller **names**, with the leaf's own disposable work branch deliberately excluded and an empty name set keeping the pin. It also records the third observation (`absent`) as a reader's value that a record never stores, and one **open boundary**: whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf, which cannot run those transactions. One file-level card was created in the same pass. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_committed_leaf.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,8 @@ source-change inventory stays R02's, and the frozen record bundle stays R14's.
 ## Code Commentary
 
 ### Logic
+
+An explicit `generation_id` selects one named retained comparison through the existing reopen owner. It does not select the newest directory or recreate a worktree. The returned historical resolution keeps `candidate_identity=None`; an explicit successor recovery may consume the manifest's recorded capture only inside the retention owner.
 
 The no-generation branch now reconstructs both exact recorded source and memory endpoints. read_recorded_knowledge owns private knowledge materialization and its lifetime, and the resolution uses the dataset declared namespace. The payload labels reconstructed recorded endpoints explicitly. An existing frozen generation still wins; ambiguous/unreadable frozen history never triggers reconstruction or substitution.
 
@@ -152,7 +154,7 @@ dependency is one-way at runtime and both modules publish the same resolution va
   the recorded range by R01's committed-range owner; this module selects and reports, and re-implements
   neither.
 - **A closed resolution carries no captured candidate identity, by design.** The recheck belongs to a
-  live capture, and a generation can therefore never be re-frozen from a historical resolution.
+  live capture, and ordinary live capture still cannot consume it. Explicit recovery selects an exact generation and asks the existing retention owner to validate its recorded capture without making the resolution live.
 - **A declared absence and unavailable content are different facts and are never each other's
   wording.** The partition is R11's own `TYPED_ABSENCE_STATES`, and only the unresolved states are
   called unavailable.
@@ -192,26 +194,26 @@ silencing no other rule.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The historical resolver prefers the retained generation and reconstructs exact recorded endpoints only when no generation exists. | `resolve_committed_leaf_review`; `_generation_resolution`; `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:163-193; mcp/src/agents_remember/application/review_committed_leaf.py:216-254; mcp/src/agents_remember/application/review_committed_leaf.py:315-352 |
+| The historical resolver prefers the retained generation and reconstructs exact recorded endpoints only when no generation exists. | `resolve_committed_leaf_review`; `_generation_resolution`; `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202; mcp/src/agents_remember/application/review_committed_leaf.py:225-263; mcp/src/agents_remember/application/review_committed_leaf.py:324-361 |
 | **The published surface: the two record names, the three declared-limit prefixes, the closing sentence, the review value and the four entry callables.** | `__all__` | mcp/src/agents_remember/application/review_committed_leaf.py:60-73 |
 | **The two records a closed leaf is reopened from, named once because a second spelling would be a second vocabulary.** | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:77-78 |
 | **The declared-limit vocabulary every fact is published at the top level of the response under.** | `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX` | mcp/src/agents_remember/application/review_committed_leaf.py:84-86 |
 | **The one sentence the surface publishes when a closed leaf's review is opened, stated here so the entry, the review and the expansion cannot describe the same resolution three ways.** | `CLOSED_LEAF_REVIEW_SENTENCE` | mcp/src/agents_remember/application/review_committed_leaf.py:91-95 |
 | **The six intent-half states this surface may declare: its own `retained`, the two typed absences that are history (R05's `not-recorded`, R11's `not-selected`), and the three unresolved states kept apart from them.** | `IntentState`; `_UNAVAILABLE_INTENT_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:101-108; mcp/src/agents_remember/application/review_committed_leaf.py:111-113 |
 | **The record one closed leaf's review was reopened from: the reopen owner's own answer, the two bound trees, and the two properties that name which record answered and which half channel it measured.** | `ClosedLeafReview`; `state`; `intent` | mcp/src/agents_remember/application/review_committed_leaf.py:116-160 |
-| **The whole resolution, in the packet's order: the recorded contract, R11's reopen, the reopen's own refusal for an unreadable record, and the generation-or-range branch.** | `resolve_committed_leaf_review`; `recorded_leaf_contract`; `reopen_comparison_generation` | mcp/src/agents_remember/application/review_committed_leaf.py:163-193; mcp/src/agents_remember/application/review_candidate_resolution.py:490-517; mcp/src/agents_remember/application/review_comparison_reopen.py:228-249 |
-| **An unreadable or ambiguous generation refused in the reopen's own words rather than in a sentence invented here.** | `_reopen_refusal` | mcp/src/agents_remember/application/review_committed_leaf.py:196-210 |
-| **The generation resolution: the two retained snapshots, the record's own two code objects read in the repository the record names, and the deliberately absent captured identity.** | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:216-254 |
-| **One half's dataset: the generation's own retained copy, or the leaf's own disposable path when the record states the half was never kept.** | `_half_database`; `_disposable_half` | mcp/src/agents_remember/application/review_committed_leaf.py:257-276; mcp/src/agents_remember/application/review_committed_leaf.py:279-288 |
-| **The namespace the retained halves are read under, taken from the dataset identities the generation recorded.** | `_retained_namespace` | mcp/src/agents_remember/application/review_committed_leaf.py:291-309 |
-| **The recorded-range resolution: R01's committed-range owner, the two recorded endpoints, and the explicit statement that no generation was published.** | `_recorded_range_resolution`; `recorded_committed_range` | mcp/src/agents_remember/application/review_committed_leaf.py:315-352; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
-| **The endpoint is a tree, resolved in the repository the range names, because the expansion owner refuses a commit, a blob or a tag by name.** | `_tree_of` | mcp/src/agents_remember/application/review_committed_leaf.py:355-380 |
-| **The F2 fix: the refusal branched on the endpoint's own kind, so a recorded endpoint that does not resolve is `candidate_unresolved` and only "nothing live and nothing recorded" keeps `candidate_not_live`.** | `_no_recorded_range_refusal`; `RecordedEndpointAbsent` | mcp/src/agents_remember/application/review_committed_leaf.py:383-423; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
-| **The declared facts one reopened review publishes, and the empty tuple a live candidate earns so a live response is unchanged.** | `closed_leaf_limitations` | mcp/src/agents_remember/application/review_committed_leaf.py:429-462 |
-| **The one sentence a reopened review states about the operand it did not compare, with the record's own state deciding which fact leads.** | `closed_leaf_intent_detail`; `_intent_sentence` | mcp/src/agents_remember/application/review_committed_leaf.py:465-477; mcp/src/agents_remember/application/review_committed_leaf.py:599-652 |
-| **The F1 fix: the refusal the entry route and the subject composition share, partitioning the half reasons through R11's own typed-absence set and wording a declared absence apart from a channel that is unavailable.** | `closed_leaf_dataset_refusal`; `_stated_sentence`; `_unresolved_sentence`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:480-541; mcp/src/agents_remember/application/review_committed_leaf.py:552-560; mcp/src/agents_remember/application/review_committed_leaf.py:563-572; mcp/src/agents_remember/application/review_comparison_generation.py:144-144 |
-| **Which half cannot be compared and why: the record's own channel state first, the disk asked only for a half the record retained.** | `_half_reason`; `_half_present`; `_intent_state` | mcp/src/agents_remember/application/review_committed_leaf.py:575-589; mcp/src/agents_remember/application/review_committed_leaf.py:592-596; mcp/src/agents_remember/application/review_committed_leaf.py:655-666 |
-| **The two halves in the order every report of them uses, and the two directory names imported from the live resolution rather than re-spelled.** | `_SIDES`; `_HALF_DIRECTORY`; `_DISPOSABLE_RELATIVE` | mcp/src/agents_remember/application/review_committed_leaf.py:670-670; mcp/src/agents_remember/application/review_committed_leaf.py:675-675; mcp/src/agents_remember/application/review_committed_leaf.py:679-679 |
+| **The whole resolution, in the packet's order: the recorded contract, R11's reopen, the reopen's own refusal for an unreadable record, and the generation-or-range branch.** | `resolve_committed_leaf_review`; `recorded_leaf_contract`; `reopen_comparison_generation` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202; mcp/src/agents_remember/application/review_candidate_resolution.py:490-517; mcp/src/agents_remember/application/review_comparison_reopen.py:228-249 |
+| **An unreadable or ambiguous generation refused in the reopen's own words rather than in a sentence invented here.** | `_reopen_refusal` | mcp/src/agents_remember/application/review_committed_leaf.py:205-219 |
+| **The generation resolution: the two retained snapshots, the record's own two code objects read in the repository the record names, and the deliberately absent captured identity.** | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:225-263 |
+| **One half's dataset: the generation's own retained copy, or the leaf's own disposable path when the record states the half was never kept.** | `_half_database`; `_disposable_half` | mcp/src/agents_remember/application/review_committed_leaf.py:266-285; mcp/src/agents_remember/application/review_committed_leaf.py:288-297 |
+| **The namespace the retained halves are read under, taken from the dataset identities the generation recorded.** | `_retained_namespace` | mcp/src/agents_remember/application/review_committed_leaf.py:300-318 |
+| **The recorded-range resolution: R01's committed-range owner, the two recorded endpoints, and the explicit statement that no generation was published.** | `_recorded_range_resolution`; `recorded_committed_range` | mcp/src/agents_remember/application/review_committed_leaf.py:324-361; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
+| **The endpoint is a tree, resolved in the repository the range names, because the expansion owner refuses a commit, a blob or a tag by name.** | `_tree_of` | mcp/src/agents_remember/application/review_committed_leaf.py:364-389 |
+| **The F2 fix: the refusal branched on the endpoint's own kind, so a recorded endpoint that does not resolve is `candidate_unresolved` and only "nothing live and nothing recorded" keeps `candidate_not_live`.** | `_no_recorded_range_refusal`; `RecordedEndpointAbsent` | mcp/src/agents_remember/application/review_committed_leaf.py:392-432; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
+| **The declared facts one reopened review publishes, and the empty tuple a live candidate earns so a live response is unchanged.** | `closed_leaf_limitations` | mcp/src/agents_remember/application/review_committed_leaf.py:438-471 |
+| **The one sentence a reopened review states about the operand it did not compare, with the record's own state deciding which fact leads.** | `closed_leaf_intent_detail`; `_intent_sentence` | mcp/src/agents_remember/application/review_committed_leaf.py:474-486; mcp/src/agents_remember/application/review_committed_leaf.py:608-661 |
+| **The F1 fix: the refusal the entry route and the subject composition share, partitioning the half reasons through R11's own typed-absence set and wording a declared absence apart from a channel that is unavailable.** | `closed_leaf_dataset_refusal`; `_stated_sentence`; `_unresolved_sentence`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:489-550; mcp/src/agents_remember/application/review_committed_leaf.py:561-569; mcp/src/agents_remember/application/review_committed_leaf.py:572-581; mcp/src/agents_remember/application/review_comparison_generation.py:151-151 |
+| **Which half cannot be compared and why: the record's own channel state first, the disk asked only for a half the record retained.** | `_half_reason`; `_half_present`; `_intent_state` | mcp/src/agents_remember/application/review_committed_leaf.py:584-598; mcp/src/agents_remember/application/review_committed_leaf.py:601-605; mcp/src/agents_remember/application/review_committed_leaf.py:664-675 |
+| **The two halves in the order every report of them uses, and the two directory names imported from the live resolution rather than re-spelled.** | `_SIDES`; `_HALF_DIRECTORY`; `_DISPOSABLE_RELATIVE` | mcp/src/agents_remember/application/review_committed_leaf.py:679-679; mcp/src/agents_remember/application/review_committed_leaf.py:684-684; mcp/src/agents_remember/application/review_committed_leaf.py:688-688 |
 | **The value this resolution is composed into, and the field that carries the record rather than a live capture.** | `ReviewCandidateResolution`; `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:123-160; mcp/src/agents_remember/application/review_candidate_resolution.py:436-450 |
 | **The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.** | `resolve_review_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250 |
 | **The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.** | `ComparisonReopen`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:136-151; mcp/src/agents_remember/application/review_comparison_reopen.py:164-225 |
@@ -221,6 +223,12 @@ silencing no other rule.
 | `_recorded_range_resolution` owns the behavior described above. | `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:315-317 |
 | `_generation_resolution` owns the behavior described above. | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:216-218 |
 | `resolve_committed_leaf_review` owns the behavior described above. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:163-165 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| An explicit generation is resolved through the same committed-leaf owner. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202 |
 
 ## Cross-Repo References
 
@@ -233,6 +241,12 @@ namespace the request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 11 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 3 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:56:35+00:00 — Documented exact-generation selection and the strict separation between historical resolution and live capture. Verification hashes/dates remain closeout-owned.
 - 2026-09-26T21:14:45+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:60-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:14:45+00:00: Generated citation repair: `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:77-77; mcp/src/agents_remember/application/review_committed_leaf.py:78-78. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:14:45+00:00: Generated citation repair: `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:84-84; mcp/src/agents_remember/application/review_committed_leaf.py:85-85; mcp/src/agents_remember/application/review_committed_leaf.py:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

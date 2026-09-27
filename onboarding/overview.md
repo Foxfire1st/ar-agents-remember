@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash |  `c114deaca13555f3c5121a7f5b803233b6bd866c`|
-| lastVerifiedCommitDate |  2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T05:41:59+00:00 |
+| lastVerifiedCommitHash |  `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`|
+| lastVerifiedCommitDate |  2026-09-27T07:57:14+02:00|
 
 > **Status:** active baseline
 
@@ -6589,3 +6589,16 @@ on the landed master.
 
 ## Update History
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed, no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **this repository overview now records the family-centred review workspace and the evidence-hygiene repair at the altitude they belong to.** The section above states the three repository-level facts — the family mirror that may not narrow its vocabulary, the separation between the paged-collection union and the cursor-less walkable set (with the family walk continued only from the cursor its own page published), and the reader state owned once above the pane switch so a page request cannot reset it — plus the `temp/` ignore rule that untracks the evidence six earlier closeouts committed, and the evidence chain for the roster walk (static here; live in enclosure `260921-icr-l31b-ar` at `5f14fc67`). The section is appended so no existing line in this document moved and no citation into it was displaced. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the stamp names the leaf's base plus the working-tree delta, and the governed closeout owns the real stamp.
+
+## Authored assessments survive comparison cleanup
+
+The ordinary comparison producer now captures the actual curator-owned assessment inputs for its resolved source and knowledge pair. Reopened history reads the pinned immutable curator generation and retained evidence, while live readiness still validates live inputs. Explicit recovery names both a retained parent comparison and the original curator digest; it preserves the historical operands and authored judgments. An uncaptured channel stays unknown, an empty measured collection stays empty, and missing expected artifacts refuse.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ordinary capture preserves the actual owner inputs at the resolved pair. | `freeze_resolved_review` | mcp/src/agents_remember/application/review_comparison_freeze.py:261-316 |
+| Explicit recovery preserves the named historical comparison and curator identity. | `recover_review_comparison` | mcp/src/agents_remember/application/review_comparison_recovery.py:28-83 |
+
+## Update History
+
+- 2026-09-27T05:41:59+00:00 — Recorded the L41 repository-level capture and recovery ownership introduced by the changed canonical curation carrier and its comparison owners. This is scoped current guidance; historical entries, verification stamps and earlier judgments remain unchanged.

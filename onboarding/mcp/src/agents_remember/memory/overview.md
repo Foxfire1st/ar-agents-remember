@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-26T20:13:29Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:23:46+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -70,7 +70,7 @@ rather than restating the path.
 | --- | --- | --- |
 | **The exported root, and the shipped value it returns.** | `durable_reports_root`; `_TASK_RELATIVE_REPORTS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:55-55; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | The single-file publication the export deliberately does not replace. | `publish_durable_evidence`; `_require_one_file_name` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:219-229 |
-| **Its first consumer, which derives the whole generation layout from it.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory` | mcp/src/agents_remember/application/review_comparison_generation.py:495-498; mcp/src/agents_remember/application/review_comparison_generation.py:501-504; mcp/src/agents_remember/application/review_comparison_generation.py:507-510 |
+| **Its first consumer, which derives the whole generation layout from it.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory` | mcp/src/agents_remember/application/review_comparison_generation.py:524-527; mcp/src/agents_remember/application/review_comparison_generation.py:530-533; mcp/src/agents_remember/application/review_comparison_generation.py:536-539 |
 | The per-file detail for the module that gained the export: the durable root and the shipped value it returns. | `durable_reports_root`; `_TASK_RELATIVE_REPORTS` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:55-55; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | The per-file detail for the module that gained the export. | "# mcp/src/agents_remember/memory/knowledge/durable_evidence.py" | onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-119 |
 
@@ -96,7 +96,7 @@ statement and one function each, and the write paths are untouched.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The detection owner's identity listing, decoding nothing, and the composing reader it exists for.** | `recorded_run_ids`; `_RECORDED_RUN_IDS`; `_read_signal_runs` | mcp/src/agents_remember/memory/knowledge/detection.py:118-120; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/application/review_evidence_records.py:379-379; mcp/src/agents_remember/application/review_evidence_records.py:424-449 |
+| **The detection owner's identity listing, decoding nothing, and the composing reader it exists for.** | `recorded_run_ids`; `_RECORDED_RUN_IDS`; `_read_signal_runs` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/memory/knowledge/detection.py:118-120; mcp/src/agents_remember/memory/knowledge/detection.py:565-579 |
 | **The evidence owner's identity listing beside the unchanged whole-collection read.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:843-846; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1057-1060 |
 | **The single-record readers each listed identity is read through.** | `claim_record`; `read_detection_run` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:928-931; mcp/src/agents_remember/memory/knowledge/detection.py:582-625 |
 | The cases that measure the per-record isolation on both collections through the production port. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
@@ -1235,7 +1235,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:237-237 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:240-240 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1496,6 +1496,9 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-27T05:28:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:240-240. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 2 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-26T21:16:13+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:13:29Z — Recorded the exact-source capture and controlled candidate code-progression owners.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

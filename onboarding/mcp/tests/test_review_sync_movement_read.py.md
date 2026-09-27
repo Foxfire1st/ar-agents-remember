@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_sync_movement_read.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:31:41+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -167,16 +167,16 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | The read route that renders the movement and folds the staleness beside it. | `review_sync_movement`; `sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:489-489; mcp/src/agents_remember/application/knowledge_review.py:555-555 |
 | **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** | `ReviewSyncMovementState`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:48-48; mcp/src/agents_remember/models/knowledge/review_staleness.py:141-197 |
 | **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** | `record_readable`; `reason` | mcp/src/agents_remember/models/knowledge/review_staleness.py:125-125; mcp/src/agents_remember/models/knowledge/review_staleness.py:137-137 |
-| The submission vocabulary whose `disabled_stale` state ends the `F6` phase. | `ReviewSubmission`; `"disabled_stale"` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204; mcp/src/agents_remember/application/review_record_rendering.py:194-209 |
+| The submission vocabulary whose `disabled_stale` state ends the `F6` phase. | `ReviewSubmission`; `"disabled_stale"` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204; mcp/src/agents_remember/application/review_record_rendering.py:199-226 |
 | **The block that says why nothing was bound, which `G2` calls with a failed payload.** | `rebinding_result_block`; `"not-measured"` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373; mcp/src/agents_remember/application/review_sync_rebinding.py:565-582 |
 | **The reader whose `not-recorded` and `unreadable` states the two `G1` cases exercise.** | `read_review_sync_rebinding`; `"unreadable"` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
 | **The half that makes a valid record naming another comparison unusable: it is compared against the sealed manifest.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
 | The one durable location per (leaf, generation) the cases write, read and unlink. | `rebinding_file_name`; `durable_reports_root` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-268; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | The record model and its self-consistency validator the projected movement reads. | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-390 |
-| The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:376-469; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
-| The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-252 |
+| The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
+| The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:312-312 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:315-315 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-378; mcp/tests/test_review_sync_rebinding.py:853-867 |
 
@@ -191,6 +191,9 @@ record the same leaf's own managed syncs published at that repository's durable 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
+- 2026-09-27T05:29:43+00:00: Generated citation repair: "mcp/tests/test_review_sync_movement_read.py" repointed to mcp/tests/test-evidence-lanes.toml:315-315. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:20:23+00:00: Generated citation repair: `freeze_review_comparison` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:233-252. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.

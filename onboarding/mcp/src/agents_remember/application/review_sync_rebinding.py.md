@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -203,9 +203,9 @@ measurement of a generation**, because a forged record is internally consistent.
 | The canonical `sha256:<hex>` reference of one published artifact's bytes. | `_digest` | mcp/src/agents_remember/application/review_sync_rebinding.py:730-733 |
 | **The one verdict rule the writer and the record's validator share.** | `review_sync_verdict` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:142-161 |
 | The sealed record itself: the reviewed pair, the resolved pair, both channel matches and the state. | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-390 |
-| The generation store's own order and the manifest this module reads and never rewrites. | `read_generation_refs`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:696-724; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
+| The generation store's own order and the manifest this module reads and never rewrites. | `read_generation_refs`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
 | The selection rule this record names, owned by the final-output receipt module. | `select_review_generation` | mcp/src/agents_remember/application/review_final_output_receipt.py:182-213 |
-| The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276 |
+| The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The durable-evidence pair every rebinding is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | **The shipped capture owner whose add-all tree is the resolved source side.** | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
 | The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:219-243 |
@@ -227,4 +227,8 @@ that follows from a recorded absolute path is stated above.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 2 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **ICR-R22@v1's operation** — measuring one comparison generation against the exact source/knowledge pair a managed sync resolved, and publishing that measurement as a durable `ar-review-sync-rebinding/v1` record. It records what a consumer has to act on: a completed sync is three checked facts (the operation, `ok`, and one of three carrying states), and every state that carried nothing has its own sentence rather than a blanket one; **nothing here can refuse a sync**, because the block runs after the Git transaction and turns every failure into a state; a capture the worktree refused publishes **no** record rather than an invented candidate tree; the read-back separates `recorded`, `not-recorded` and `unreadable`; and the record is checked against the **store** before it is read as a measurement of a generation, because a record forged field-by-field with its verdict is internally consistent. Two boundaries are carried as boundaries and not as defects: the leaf-wide reader `read_review_sync_rebindings` and the reclamation owner `discard_review_sync_rebindings` have **no mounted tool caller** and say so in their own docstrings (the per-generation read is reached in production from the reopen owner); and the record's remedy is the freeze owner's act, which this module names and never performs. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.

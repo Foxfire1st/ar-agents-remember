@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:26+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-27T05:23:46+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ beside the record.
 
 ### Logic
 
+After exact judgment admission and predecessor checks, `_publish` retains the original judgment bytes through the existing custody owner. Once the immutable record/projection and attestation copy exist, their shared generation integrity read must succeed before the stable canonical pointer is replaced. Alias, foreign-path or corrupt-evidence rejection leaves the prior canonical authority intact. Live source and original-input checks remain part of the CAS window.
+
 `prepare` returns all current identities and the raw stable-authority predecessor digest, and its
 summary is `publication_input_statement()` read from the request model's declaration: it names the
 per-candidate judgments and every publication member, and marks the two members it does not derive
@@ -45,7 +47,7 @@ Under CCR-R03@v1 `_record` now builds the immutable record's `curator-coherence/
 declaration from the observed code/memory candidate trees, task-topology fingerprint,
 digest-bearing task intent, attestation and report digests, every judgment evidence digest, and the
 predecessor authority digest — so the published generation is a declared content-addressed consumer
-of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:352-451).
+of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464).
 
 ### Conventions
 
@@ -85,13 +87,19 @@ No external documentation governs this local transaction.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public action dispatcher keeps one tool surface. | `curator_coherence_action` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:88-98 |
-| **The prepare response composes its summary from the request model's publication declaration, so it states every publication input.** | `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:145-160 |
-| **The statement `prepare` carries, defined on the request-model route rather than here.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:386-411 |
-| Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:144-219 |
-| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:728-763 |
-| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:766-799 |
-| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:352-451 |
+| The public action dispatcher keeps one tool surface. | `curator_coherence_action` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:93-103 |
+| **The prepare response composes its summary from the request model's publication declaration, so it states every publication input.** | `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:150-165 |
+| **The statement `prepare` carries, defined on the request-model route rather than here.** | `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
+| Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:173-256 |
+| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:732-767 |
+| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:770-803 |
+| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Full generation integrity is proved before canonical authority replacement. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:173-256 |
 
 ## Cross-Repo References
 
@@ -210,6 +218,10 @@ have read are still readable, and a second publication over unchanged bytes reus
 copy instead of rewriting it.
 
 ## Update History
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:58:33+00:00 — Documented judgment custody and integrity-before-canonical-replacement ordering without changing publication authority. Verification hashes/dates remain closeout-owned.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `_publish_generation` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:728-763. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: `_publish_snapshot` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:766-799. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

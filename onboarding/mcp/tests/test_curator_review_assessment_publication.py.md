@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_curator_review_assessment_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:34:45Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T05:43:38+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,12 +109,12 @@ the production path to drive.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:238-238; mcp/tests/test-evidence-lanes.toml:315-315 |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:238-238; mcp/tests/test-evidence-lanes.toml:315-315 |
-|The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/test-evidence-lanes.toml:294; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-420 |
-| The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. | `curator_coherence_action`; `_exact_review_assessments`; `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:91-101; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:255-309; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:359-460 |
-| The destination and read-back the survival and blocked cases measure. | `publish_assessment_evidence_bytes`; `read_back_published_bytes`; `AssessmentEvidenceBlockedError` | mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:64-94; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:152-192; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:195-239 |
-| The typed collection the publish action accepts and the uniqueness rule it enforces. | `CuratorCoherenceRecord`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:198-279; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-501 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:317-317; mcp/tests/test-evidence-lanes.toml:240-240 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:317-317; mcp/tests/test-evidence-lanes.toml:240-240 |
+|The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/test-evidence-lanes.toml:317-317; mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-420 |
+| The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. | `curator_coherence_action`; `_exact_review_assessments`; `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:93-103; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:259-313; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464 |
+| The destination and read-back the survival and blocked cases measure. | `publish_assessment_evidence_bytes`; `read_back_published_bytes`; `AssessmentEvidenceBlockedError` | mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:66-96; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:154-194; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:197-219 |
+| The typed collection the publish action accepts and the uniqueness rule it enforces. | `CuratorCoherenceRecord`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:226-307; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:449-529 |
 
 ## KS-R15@v1 Integration Protection
 
@@ -135,6 +135,8 @@ new shared support module was written. The evidence-lifecycle catalogue's identi
 a **consumer list** changed, and the catalogue guard validates that change in both directions.
 
 ## Update History
+
+- 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 3 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
 
 - 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
 

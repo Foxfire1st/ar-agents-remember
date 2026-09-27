@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_curator_coherence_publication_discoverability.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:11+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`|
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -121,12 +121,12 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of the property, and of its place in the split. | "The curator-coherence request states its own publication inputs" | mcp/tests/test_curator_coherence_publication_discoverability.py:1-14 |
-| **The one declaration: nine members in the request model's own order, the first two flagged caller-supplied.** | `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:320-332 |
-| The member record the declaration is built from. | `PublicationMember` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:306-317 |
-| **The refusal that names the missing members, and the text `prepare` renders from the same declaration.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:360-384; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:393-418 |
-| The request model whose field order the positive control compares against. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-501 |
-| The two content members that are publication inputs but not among the nine. | `JUDGMENTS_MEMBER`; `REVIEW_ASSESSMENTS_MEMBER` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:337-337; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:343-343 |
-| The shipped action entry point, and the `prepare` branch whose text the cases read. | `curator_coherence_action`; `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:91-94; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:148-148 |
+| **The one declaration: nine members in the request model's own order, the first two flagged caller-supplied.** | `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:351-361 |
+| The member record the declaration is built from. | `PublicationMember` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:333-345 |
+| **The refusal that names the missing members, and the text `prepare` renders from the same declaration.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:388-412; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
+| The request model whose field order the positive control compares against. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:449-529 |
+| The two content members that are publication inputs but not among the nine. | `JUDGMENTS_MEMBER`; `REVIEW_ASSESSMENTS_MEMBER` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:365-365; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:371-371 |
+| The shipped action entry point, and the `prepare` branch whose text the cases read. | `curator_coherence_action`; `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:93-103; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:150-165 |
 | The module's own mirrors of the declaration, of a full request, and the three helpers that turn a request into the refusal's detail. | `_PUBLICATION_INPUT_NAMES`; `_MEMBER_VALUES`; `_publication_request`; `_refusal_message`; `_missing_detail` | mcp/tests/test_curator_coherence_publication_discoverability.py:55-65; mcp/tests/test_curator_coherence_publication_discoverability.py:67-80; mcp/tests/test_curator_coherence_publication_discoverability.py:92-95; mcp/tests/test_curator_coherence_publication_discoverability.py:98-108 |
 | **The one stubbed boundary: the real `prepare` over a stubbed observation, so the asserted summary is the one a caller receives.** | `_prepared_payload` | mcp/tests/test_curator_coherence_publication_discoverability.py:111-142 |
 | One member omitted alone, and all nine omitted, in declaration order. | `test_publish_refusal_names_the_one_missing_publication_member`; `test_publish_refusal_without_any_member_names_all_nine_in_declaration_order` | mcp/tests/test_curator_coherence_publication_discoverability.py:145-162; mcp/tests/test_curator_coherence_publication_discoverability.py:165-175 |
@@ -135,7 +135,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.** | `test_a_member_added_to_the_declaration_reaches_both_messages` | mcp/tests/test_curator_coherence_publication_discoverability.py:220-240 |
 | The non-publish refusals, by name and in model order, and the freeze branch's preserved message. | `test_non_publish_actions_name_the_publication_member_they_received`; `test_non_publish_refusal_names_every_supplied_field_in_model_order`; `test_freeze_snapshot_keeps_its_own_named_refusal` | mcp/tests/test_curator_coherence_publication_discoverability.py:243-256; mcp/tests/test_curator_coherence_publication_discoverability.py:259-273; mcp/tests/test_curator_coherence_publication_discoverability.py:276-283 |
 | The module this one was split out of, which keeps the Gate-5 orchestration and the shared scaffold. | "Split from ``test_final_full_memory_coherence_certification.py``" | mcp/tests/test_final_full_memory_coherence_certification.py:1-19 |
-| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:226-226|
+| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:233-233|
 
 ## Cross-Repo References
 
@@ -147,6 +147,10 @@ repository's own model and publication route over a stubbed observation.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 3 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 5 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_curator_coherence_publication_discoverability.py" repointed to mcp/tests/test-evidence-lanes.toml:226-226. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_curator_coherence_publication_discoverability.py" repointed to mcp/tests/test-evidence-lanes.toml:207-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.

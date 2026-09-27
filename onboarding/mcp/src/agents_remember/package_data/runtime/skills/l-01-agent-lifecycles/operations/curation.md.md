@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastUpdated | 2026-09-27T04:58:33+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ Carries the curation operation: reconcile the current and approved intent with i
 ## Code Commentary
 
 ### Logic
+
+The canonical curation carrier states that normal comparison recording collects actual R14 records and retains exact immutable curator artifacts. Historical review reads those pins. Explicit recovery requires a named retained parent plus its original curator record digest; old judgments and old generations are preserved, and current source/pointers are never substitutes. This packaged copy remains generated from the canonical skill.
 
 The family step now requires an explicit unchanged sibling set on a justified successor declaration. Each `declares.retain_memberships` reference names a stored membership read from the exact predecessor family and includes the curator’s basis. Old invariant revisions and memberships remain unchanged; no predecessor roster or allocation journal is copied implicitly.
 
@@ -70,6 +72,8 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+
+- 2026-09-27T04:58:33+00:00 — Updated the packaged carrier account for normal assessment capture and explicit retained-history recovery. Verification hashes/dates remain closeout-owned.
 
 - 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
 

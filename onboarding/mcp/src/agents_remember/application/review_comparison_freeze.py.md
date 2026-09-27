@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_comparison_freeze.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:41:59+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -29,15 +29,7 @@ are copied by the storage snapshot owner (`freeze_closed_snapshot`), the invento
 objects and snapshots belongs to `review_comparison_retention` — "the only thing in this package that
 writes a ref".
 
-Two entries, one difference:
-
-- `freeze_review_comparison` (`:232-276`) is the **production entry**. It calls `resolve_review_candidate`
-  and then `compose_review` exactly as the review surface does — including the composition's own
-  pre-publication recheck that refuses a candidate whose captured endpoint moved — and freezes only what
-  that composition actually bound. A refused composition freezes nothing and returns its refusal
-  unchanged, so a generation is never published for a comparison the surface declined to make.
-- `freeze_comparison_generation` (`:279-309`) takes the already-composed values as a
-  `ComparisonGenerationRequest` and is the operation a test or a future caller can drive directly.
+The production entry resolves once and delegates to `freeze_resolved_review`. That shared entry collects normal R14 owner inputs for the exact resolved pair when no explicit bundle was supplied, composes the review, and hands the resulting bindings to `freeze_comparison_generation`. A caller-supplied bundle remains explicit: positive assessments must carry their complete immutable owner artifacts and exact unique assessment-channel provenance. Missing, incompatible or duplicate required provenance refuses before retention or publication; optional low-level currentness is independent.
 
 **The freeze is deliberately not wired to any route, read path or closeout path — but since
 `260921-ICR-L34` it does have a production caller**, the CLI subcommand
@@ -46,6 +38,8 @@ Two entries, one difference:
 ## Code Commentary
 
 ### Logic
+
+Reserved curator owner references are admitted only through validated record inputs. Generic evidence citations cannot impersonate them. A named expected artifact that failed validation refuses capture; a genuinely non-applicable curator plane remains explicit unavailable metadata while otherwise valid source/knowledge capture proceeds. Explicit EMPTY input never silently fetches today's authority.
 
 freeze_resolved_review accepts an already resolved admitted pair, composes it through the same review owner, and passes only that composition to the existing generation freeze. freeze_review_comparison remains the normal resolver entry. The explicit unchanged-knowledge producer uses this seam after its own checks; no second retention implementation is introduced.
 
@@ -115,11 +109,7 @@ do with them. Per binding:
 digest and length. That is what makes the citation checkable at reopen rather than merely recorded; a
 path that does not resolve or does not read is a refusal, not a citation nobody can follow.
 
-**The options value exists because four caller-known facts travel together.** `ComparisonFreezeOptions`
-(`:146-163`) carries the record collections, the cited artifacts, the halves the caller has established
-carry no recorded generation (`historical_absence`), and the generation this one supersedes (`parent`).
-One frozen default, `EMPTY_FREEZE_OPTIONS` (`:163`), is a module-level value rather than a per-call
-default, because a default built per call would rebuild the tuple it holds.
+**The options value carries the caller-known contributions.** `ComparisonFreezeOptions` carries optional owner records, cited artifacts, explicit historical absence and the predecessor. Omitted records ask the existing collection owner for the already resolved pair; explicit recovery alone sets `retain_parent_inputs` to reuse the named historical capture. `EMPTY_FREEZE_OPTIONS` is the shared frozen default.
 
 ### Conventions
 
@@ -154,9 +144,7 @@ rather than widened. `_now()` (`:741-744`) is the module's one clock read.
   enclosure contract, composes through the surface's own resolution and composition, and publishes only
   what that composition bound. **Superseded in part:** as ICR-L11 wrote it, "nothing in this leaf calls
   it from a serving surface, an HTTP route, the dashboard or a closeout path … and its consumer is a
-  later leaf". The first half is still true and is the point — a freeze must run while the leaf's
-  enclosure is live, which is exactly when a seat has a shell, so it is a command an operator runs
-  rather than something a route reaches. The second half is no longer true: the consumer exists, and
+  later leaf". The first half is still true and is the point — ordinary capture uses a live resolved pair and explicit recovery uses a named retained parent through the same owners. The operation remains an explicit command rather than a read-side mutation. The second half is no longer true: the consumer exists, and
   ICR-R21's own wiring is a different thing (it attaches the *selected generation* to the closeout
   preview and the delivered receipt to closeout apply and integration, and adds the reopen's fourth
   channel, without calling this operation). A reader must still not read the boundary as dead code:
@@ -189,38 +177,45 @@ possible; and a receipt the comparison does not read is never allowed to gate a 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of the composition rule and of the one-rename publication. | `freeze_closed_snapshot`; `review_comparison_retention` | mcp/src/agents_remember/application/review_comparison_freeze.py:1-42 |
-| The published surface and the three shipped refusal codes it reuses. | `__all__`; `_ABSENT`; `_UNRESOLVED`; `_REFUSED` | mcp/src/agents_remember/application/review_comparison_freeze.py:113-122; mcp/src/agents_remember/application/review_comparison_freeze.py:128-130 |
-| **The four caller-known facts that travel together, and the one empty contribution.** | `ComparisonEvidenceInput`; `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:133-144; mcp/src/agents_remember/application/review_comparison_freeze.py:147-160; mcp/src/agents_remember/application/review_comparison_freeze.py:164-164 |
-| **Everything one freeze binds, as values other owners produced**, including the declared historical absences and the predecessor. | `ComparisonGenerationRequest` | mcp/src/agents_remember/application/review_comparison_freeze.py:167-185 |
-| **The outcome: a published record, or the refusal that stopped it, with `reused` separating the two ways a freeze succeeds.** | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:188-208 |
-| The staging directory and the pin *this call* created, kept apart because an existing pin belongs to an already-published generation. | `_Staged`; `_FreezeRefused` | mcp/src/agents_remember/application/review_comparison_freeze.py:211-222; mcp/src/agents_remember/application/review_comparison_freeze.py:225-230 |
-| **The production entry: resolve exactly as the surface does, compose exactly as the surface does, freeze only what was bound.** | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-252 |
-| **The operation itself, and its two reclaim paths — its own refusal and a hard failure raised outside its control flow.** | `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:290-320 |
-| The refusal for a comparison with no task artifact plane to survive in. | `_no_task_root_refusal` | mcp/src/agents_remember/application/review_comparison_freeze.py:323-335 |
-| **Stage, seal, and publish by one rename.** | `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:338-362 |
-| **Convergence on an already-published record, and the refusal to overwrite one with a different binding.** | `_reuse_or_refuse` | mcp/src/agents_remember/application/review_comparison_freeze.py:365-397 |
-| The knowledge halves, retained through the retention owner, with its refusal stopping the freeze. | `_retained_knowledge` | mcp/src/agents_remember/application/review_comparison_freeze.py:400-414 |
-| The refusal for a failure the freeze could not classify, whose next action states that nothing was published. | `_storage_refusal`; `_reclaim` | mcp/src/agents_remember/application/review_comparison_freeze.py:417-428; mcp/src/agents_remember/application/review_comparison_freeze.py:431-442 |
-| **The field set assembled from the owners' own values, each nested value dumped through its owner's model.** | `_manifest_payload`; `_json` | mcp/src/agents_remember/application/review_comparison_freeze.py:448-481; mcp/src/agents_remember/application/review_comparison_freeze.py:484-488 |
-| **The scope: R02's inventory payload digested verbatim, and a selector identity read from the seed's own declared field.** | `_scope_binding`; `_selector_id` | mcp/src/agents_remember/application/review_comparison_freeze.py:491-505; mcp/src/agents_remember/application/review_comparison_freeze.py:508-521 |
-| **The record binding, which asserts what the composition supplied and explicitly not what an owner published (R14's fact).** | `_record_binding` | mcp/src/agents_remember/application/review_comparison_freeze.py:524-558 |
-| **A citation read and digested while freezing, and the task-root confinement that refuses one that escapes.** | `_evidence_references`; `_evidence_reference`; `_confined` | mcp/src/agents_remember/application/review_comparison_freeze.py:561-566; mcp/src/agents_remember/application/review_comparison_freeze.py:569-601; mcp/src/agents_remember/application/review_comparison_freeze.py:604-610 |
-| **Every policy stamp as a constant its owner publishes.** | `_policy_stamps` | mcp/src/agents_remember/application/review_comparison_freeze.py:613-625 |
-| **The lineage, and the candidate receipt digest that is `None` rather than fatal when unreadable.** | `_lineage`; `_receipt_digest` | mcp/src/agents_remember/application/review_comparison_freeze.py:628-637; mcp/src/agents_remember/application/review_comparison_freeze.py:640-655 |
-| **The one hidden stage, the sweep that runs before it, and the pid-based liveness question that makes "reclaim only from the dead" possible.** | `_stage`; `_sweep_stale_stages`; `_issuer_alive` | mcp/src/agents_remember/application/review_comparison_freeze.py:661-675; mcp/src/agents_remember/application/review_comparison_freeze.py:678-698; mcp/src/agents_remember/application/review_comparison_freeze.py:701-722 |
-| The two quiet cleanups: one stage removal and one pin release, neither of which may replace the refusal. | `_discard_stage`; `_release_quietly`; `_refused`; `_now` | mcp/src/agents_remember/application/review_comparison_freeze.py:725-728; mcp/src/agents_remember/application/review_comparison_freeze.py:731-746; mcp/src/agents_remember/application/review_comparison_freeze.py:749-752; mcp/src/agents_remember/application/review_comparison_freeze.py:755-758 |
-| The owners it composes rather than re-implements. | `resolve_review_candidate`; `compose_review`; `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:138-202; mcp/src/agents_remember/application/review_candidate_resolution.py:106-135; mcp/src/agents_remember/application/knowledge_review.py:300-412 |
-| The retention owner this module hands the code pin and the two snapshots to. | `retain_comparison_source`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:131-165; mcp/src/agents_remember/application/review_comparison_retention.py:315-341 |
-| The record the freeze seals, and the `assemble_manifest` that seals and derives the id in one call. | `ComparisonGenerationManifest`; `assemble_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:376-469; mcp/src/agents_remember/application/review_comparison_generation.py:557-580 |
+| The published surface and the three shipped refusal codes it reuses. | `__all__`; `_ABSENT`; `_UNRESOLVED`; `_REFUSED` | mcp/src/agents_remember/application/review_comparison_freeze.py:118-127; mcp/src/agents_remember/application/review_comparison_freeze.py:133-133; mcp/src/agents_remember/application/review_comparison_freeze.py:134-134; mcp/src/agents_remember/application/review_comparison_freeze.py:135-135 |
+| **The caller-known contributions and the shared default that collects actual owner inputs.** | `ComparisonEvidenceInput`; `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:138-149; mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:169-169 |
+| **Everything one freeze binds, as values other owners produced**, including the declared historical absences and the predecessor. | `ComparisonGenerationRequest` | mcp/src/agents_remember/application/review_comparison_freeze.py:172-191 |
+| **The outcome: a published record, or the refusal that stopped it, with `reused` separating the two ways a freeze succeeds.** | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:195-214 |
+| The staging directory and the pin *this call* created, kept apart because an existing pin belongs to an already-published generation. | `_Staged`; `_FreezeRefused` | mcp/src/agents_remember/application/review_comparison_freeze.py:217-228; mcp/src/agents_remember/application/review_comparison_freeze.py:231-236 |
+| **The production entry: resolve exactly as the surface does, compose exactly as the surface does, freeze only what was bound.** | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
+| **The operation itself, and its two reclaim paths — its own refusal and a hard failure raised outside its control flow.** | `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:319-354 |
+| The refusal for a comparison with no task artifact plane to survive in. | `_no_task_root_refusal` | mcp/src/agents_remember/application/review_comparison_freeze.py:391-403 |
+| **Stage, seal, and publish by one rename.** | `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:406-430 |
+| **Convergence on an already-published record, and the refusal to overwrite one with a different binding.** | `_reuse_or_refuse` | mcp/src/agents_remember/application/review_comparison_freeze.py:433-465 |
+| The knowledge halves, retained through the retention owner, with its refusal stopping the freeze. | `_retained_knowledge` | mcp/src/agents_remember/application/review_comparison_freeze.py:468-482 |
+| The refusal for a failure the freeze could not classify, whose next action states that nothing was published. | `_storage_refusal`; `_reclaim` | mcp/src/agents_remember/application/review_comparison_freeze.py:485-496; mcp/src/agents_remember/application/review_comparison_freeze.py:499-510 |
+| **The field set assembled from the owners' own values, each nested value dumped through its owner's model.** | `_manifest_payload`; `_json` | mcp/src/agents_remember/application/review_comparison_freeze.py:516-549; mcp/src/agents_remember/application/review_comparison_freeze.py:552-556 |
+| **The scope: R02's inventory payload digested verbatim, and a selector identity read from the seed's own declared field.** | `_scope_binding`; `_selector_id` | mcp/src/agents_remember/application/review_comparison_freeze.py:559-573; mcp/src/agents_remember/application/review_comparison_freeze.py:576-589 |
+| **The record binding, which asserts what the composition supplied and explicitly not what an owner published (R14's fact).** | `_record_binding` | mcp/src/agents_remember/application/review_comparison_freeze.py:592-629 |
+| **A citation read and digested while freezing, and the task-root confinement that refuses one that escapes.** | `_evidence_references`; `_evidence_reference`; `_confined` | mcp/src/agents_remember/application/review_comparison_freeze.py:632-666; mcp/src/agents_remember/application/review_comparison_freeze.py:669-701; mcp/src/agents_remember/application/review_comparison_freeze.py:704-710 |
+| **Every policy stamp as a constant its owner publishes.** | `_policy_stamps` | mcp/src/agents_remember/application/review_comparison_freeze.py:713-725 |
+| **The lineage, and the candidate receipt digest that is `None` rather than fatal when unreadable.** | `_lineage`; `_receipt_digest` | mcp/src/agents_remember/application/review_comparison_freeze.py:728-737; mcp/src/agents_remember/application/review_comparison_freeze.py:740-755 |
+| **The one hidden stage, the sweep that runs before it, and the pid-based liveness question that makes "reclaim only from the dead" possible.** | `_stage`; `_sweep_stale_stages`; `_issuer_alive` | mcp/src/agents_remember/application/review_comparison_freeze.py:761-775; mcp/src/agents_remember/application/review_comparison_freeze.py:778-798; mcp/src/agents_remember/application/review_comparison_freeze.py:801-822 |
+| The two quiet cleanups: one stage removal and one pin release, neither of which may replace the refusal. | `_discard_stage`; `_release_quietly`; `_refused`; `_now` | mcp/src/agents_remember/application/review_comparison_freeze.py:825-828; mcp/src/agents_remember/application/review_comparison_freeze.py:831-846; mcp/src/agents_remember/application/review_comparison_freeze.py:855-858; mcp/src/agents_remember/application/review_comparison_freeze.py:849-852 |
+| The owners it composes rather than re-implements. | `resolve_review_candidate`; `compose_review`; `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250; mcp/src/agents_remember/application/knowledge_review.py:371-611; mcp/src/agents_remember/application/review_candidate_resolution.py:124-160 |
+| The retention owner this module hands the code pin and the two snapshots to. | `retain_comparison_source`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:134-170; mcp/src/agents_remember/application/review_comparison_retention.py:381-407 |
+| The record the freeze seals, and the `assemble_manifest` that seals and derives the id in one call. | `ComparisonGenerationManifest`; `assemble_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:586-609 |
 | The storage snapshot owner the two knowledge halves are copied through. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137 |
-| The record-collection inputs the caller supplies and the empty value the freeze defaults to. | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:108-136; mcp/src/agents_remember/application/review_record_rendering.py:183-183 |
-| **The production-composition case: a refused freeze publishes nothing, leaves no hidden stage, releases the pin it created, and the same leaf freezes afterwards.** | `test_a_refused_freeze_publishes_nothing_and_reclaims_its_stage_and_pin` | mcp/tests/test_knowledge_review_comparison_generation.py:675-708 |
-| **The case that separates a stage a dead freeze left from a live one, driven through a real child process.** | `test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not`; `_stage_left_by_a_dead_process` | mcp/tests/test_knowledge_review_comparison_generation.py:1030-1057; mcp/tests/test_knowledge_review_comparison_generation.py:1173-1194 |
+| The record-collection inputs the caller supplies and the empty value the freeze defaults to. | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:109-141; mcp/src/agents_remember/application/review_record_rendering.py:188-188 |
+| **The production-composition case: a refused freeze publishes nothing, leaves no hidden stage, releases the pin it created, and the same leaf freezes afterwards.** | `test_a_refused_freeze_publishes_nothing_and_reclaims_its_stage_and_pin` | mcp/tests/test_knowledge_review_comparison_generation.py:677-710 |
+| **The case that separates a stage a dead freeze left from a live one, driven through a real child process.** | `test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not`; `_stage_left_by_a_dead_process` | mcp/tests/test_knowledge_review_comparison_generation.py:1032-1059; mcp/tests/test_knowledge_review_comparison_generation.py:1175-1196 |
 | **The end-to-end journey the packet names: freeze, `git gc --prune=now` measured against a control object, remove the worktree, reopen in a child process.** | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation`; `_reopen_in_a_new_process`; `_write_control_object` | mcp/tests/test_knowledge_review_comparison_generation.py:236-241; mcp/tests/test_knowledge_review_comparison_generation.py:279-315; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
 
 | `freeze_resolved_review` owns the behavior described above. | `freeze_resolved_review` | mcp/src/agents_remember/application/review_comparison_freeze.py:255-257 |
 | `freeze_review_comparison` owns the behavior described above. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-235 |
 | `freeze_comparison_generation` owns the behavior described above. | `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:290-292 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ordinary and explicit recovery paths share exact resolved-pair composition. | `freeze_resolved_review` | mcp/src/agents_remember/application/review_comparison_freeze.py:261-316 |
+| Complete authentic owner records and channel provenance are checked before publication. | `_record_input_refusal` | mcp/src/agents_remember/application/review_comparison_freeze.py:357-388 |
 
 ## Cross-Repo References
 
@@ -242,11 +237,7 @@ leaf's review reopened from `history:recorded-source-range`. The caller is the C
 `agents-remember review-record-comparison`
 ([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)): it loads one enclosure
 contract, composes a `ReviewSurfaceRequest` from that contract's own recorded identities, and calls this
-function once, printing the outcome. It is deliberately **not** a route, a pane or a closeout path — the
-freeze must run while the enclosure is live, because `review_comparison_retention._unresolved_capture`
-requires `resolved.candidate_identity` and both closed-leaf resolutions deliberately pass `None`, so a
-closed leaf cannot publish at all and the producer is **live-leaf-only by construction**. The boundary
-bullet above is corrected in place.
+function once, printing the outcome. Ordinary capture still requires the live candidate identity. L41 also permits the CLI to recover from an explicitly named retained parent and original curator digest. The retention owner revalidates that historical capture; closed resolutions continue to carry no live candidate identity.
 
 **The caller is the first shipped caller to supply `parent`, and that is what makes a successor
 readable.** `ComparisonFreezeOptions.parent` is documented as a caller-known fact, and the freeze derives
@@ -275,14 +266,24 @@ generation with two full retained knowledge snapshots.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The production entry this leaf gave a caller, and the caller itself.** | `freeze_review_comparison`; `run` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-252; mcp/src/agents_remember/cli/review_comparison_record.py:146-180 |
-| **The two caller-known option fields the CLI supplies, one of which is the predecessor this leaf is the first shipped caller to name.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS`; `parent` | mcp/src/agents_remember/application/review_comparison_freeze.py:147-160; mcp/src/agents_remember/application/review_comparison_freeze.py:164-164 |
-| **The reuse branch that is never taken in the ordinary sequence, and the seal omissions that make it so.** | `_publish`; `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_freeze.py:338-362; mcp/src/agents_remember/application/review_comparison_generation.py:155-155 |
-| The lineage a named predecessor records: the id *and* that generation's manifest digest, so a successor is readable by identity. | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:628-637; mcp/src/agents_remember/application/review_comparison_generation.py:351-373 |
-| **The live-capture precondition that keeps the producer live-leaf-only: the retention owner requires a captured candidate identity, and both closed-leaf resolutions leave it `None`.** | `_unresolved_capture`; `candidate_identity` | mcp/src/agents_remember/application/review_comparison_retention.py:168-209; mcp/src/agents_remember/application/review_committed_leaf.py:185-215; mcp/src/agents_remember/application/review_committed_leaf.py:238-276 |
-| The discovery the caller reads to name the predecessor, in a total order by index then id. | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:685-693; mcp/src/agents_remember/application/review_comparison_generation.py:696-724 |
+| **The production entry this leaf gave a caller, and the caller itself.** | `freeze_review_comparison`; `run` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/src/agents_remember/cli/review_comparison_record.py:162-202 |
+| **The caller options, including explicit predecessor identity and retained-parent recovery control.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS`; `parent` | mcp/src/agents_remember/application/review_comparison_freeze.py:153-165; mcp/src/agents_remember/application/review_comparison_freeze.py:169-169 |
+| **The reuse branch that is never taken in the ordinary sequence, and the seal omissions that make it so.** | `_publish`; `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_freeze.py:406-430; mcp/src/agents_remember/application/review_comparison_generation.py:162-162 |
+| The lineage a named predecessor records: the id *and* that generation's manifest digest, so a successor is readable by identity. | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:728-737; mcp/src/agents_remember/application/review_comparison_generation.py:380-402 |
+| Ordinary publication requires a live capture; explicit recovery revalidates the named retained parent capture without inventing a live identity. | `_unresolved_capture`; `_retained_capture` | mcp/src/agents_remember/application/review_comparison_retention.py:173-220; mcp/src/agents_remember/application/review_comparison_retention.py:223-275 |
+| The discovery the caller reads to name the predecessor, in a total order by index then id. | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:714-722; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
 
 ## Update History
+
+- 2026-09-27T05:41:59+00:00 — Reconciled the options claim with omitted-record collection and explicit retained-parent recovery; removed the superseded fixed field counts. Verification remains closeout-owned.
+
+- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 3 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
+
+- 2026-09-27T05:25:19+00:00 — Reconciled the L41 moved record/path owners and explicit retained-parent recovery boundary with current source. Prior generated history and real verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 22 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:56:35+00:00 — Reconciled the ordinary resolved-pair record collection, positive owner-input admission, and explicit retained-parent path while preserving atomic publication and failure reclamation. Verification hashes/dates remain closeout-owned.
 - 2026-09-26T21:14:55+00:00: Generated citation repair: `__all__`; `_ABSENT`; `_UNRESOLVED`; `_REFUSED` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:113-122; mcp/src/agents_remember/application/review_comparison_freeze.py:128-128; mcp/src/agents_remember/application/review_comparison_freeze.py:129-129; mcp/src/agents_remember/application/review_comparison_freeze.py:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:14:55+00:00: Generated citation repair: `ComparisonEvidenceInput`; `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:133-144; mcp/src/agents_remember/application/review_comparison_freeze.py:147-160; mcp/src/agents_remember/application/review_comparison_freeze.py:164-164. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:14:55+00:00: Generated citation repair: `_policy_stamps` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:613-625. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

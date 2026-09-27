@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-18T18:55+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastUpdated | 2026-09-27T05:02:28+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -187,6 +187,8 @@ single path both public entry points take, so the collection projection and the 
 cannot classify the same record two different ways.
 
 ## Update History
+
+- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the route's own behaviour change: `curator_coherence_assessments` and `curator_coherence_subject_assessment_state` now classify per record through `supplied_measurement_statuses`, an omitted or empty measurement answers `not-measured` instead of defaulting every record to `stale`, and `_stale_assessment_ids` is deleted rather than kept as an alias. This is a body change and not a metadata-only refresh: the route's governed source changed under this leaf. The two enforced `citation_anchor_absent_from_range` rows this pass cleared live on the `curator_coherence.py` card, not on this overview (`:501-502` → `:501-504` for `curator_coherence_evidence` and `:115-141` → `:115-160` for `curator_coherence_no_impact`), and are recorded in full there; this overview carried no citation finding of its own and no range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the `260915-KS-L15` landing the section above already carries (`65e3791b`): the new `curator_assessment_evidence.py` with its one evidence destination and its read-back, `_exact_review_assessments` and `_published_evidence_bytes` in `curator_coherence_publication.py`, and the read projection and record-side edge recomputation in `curator_coherence.py`. Each was re-read against the file rather than trusted, including the three properties that chose the destination and the blocked state a failed read-back produces. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
@@ -247,3 +249,7 @@ Recorded the current private preparation/publication ownership from source. Exis
 
 - 2026-08-25T15:44+02:00 — Created for the recoverable closeout-door/journal boundary.
   Verification remains closeout-owned.
+
+## Shared curator integrity and live readiness
+
+Curator path/namespace resolution and immutable generation integrity have focused shared owners. Judgment publication retains admitted bytes under the existing task artifact root; historical reads use that custody and publisher-recorded assessment destinations. The shared generation read runs before canonical pointer replacement. Strict live validation still checks live quality, dependencies and original cited inputs; durable integrity never substitutes for readiness.

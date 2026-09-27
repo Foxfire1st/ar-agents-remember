@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/cli/review_comparison_record.py` |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`    |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:41:59+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`    |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -40,6 +40,8 @@ than letting it be inferred.
 ## Code Commentary
 
 ### Logic
+
+The paired `--recover-generation` and `--curator-record-digest` controls explicitly select one retained task-context parent and its original validated curator generation. Unpaired or conflicting live/absence controls refuse. Recovery delegates to `recover_review_comparison`, preserving old generations and original judgments; it neither scans arbitrary receipts nor creates a live candidate from historical inputs. An exact recovery retry uses the same explicit parent, unlike the ordinary command's standing-predecessor succession.
 
 The explicit --unchanged-knowledge option routes code-only work through freeze_unchanged_knowledge_review; ordinary invocation continues to freeze the existing curated pair. The command still requires the real settings and enclosure contract, carries predecessor generation identity, and reports publication or refusal. It authors no knowledge or assessment and never defaults to the unchanged mode.
 
@@ -181,24 +183,24 @@ as a carried limitation rather than as a claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of why the command exists, why `--contract` is the write guard, why `--config` is required, what it deliberately does not do, and why planning is not offered.** | `freeze_review_comparison`; `history:recorded-source-range` | mcp/src/agents_remember/cli/review_comparison_record.py:1-44 |
-| The published surface: the two exits, the argument declaration, the report builder and the run. | `__all__` | mcp/src/agents_remember/cli/review_comparison_record.py:74-80 |
-| **The two exits, and the one that is an outcome rather than an error code.** | `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:86-87 |
-| The one evidence separator, chosen so an owner cannot be read out of a path, and the two sides an absence may be declared for. | `_EVIDENCE_SEPARATOR`; `_ABSENCE_SIDES` | mcp/src/agents_remember/cli/review_comparison_record.py:91-91; mcp/src/agents_remember/cli/review_comparison_record.py:94-94 |
-| **The declared inputs: two required (`--config`, `--contract`), two repeatable (`--evidence`, `--historical-absence`) and the report-shape switch.** | `add_arguments`; `--config`; `--contract`; `--evidence`; `--historical-absence`; `--json` | mcp/src/agents_remember/cli/review_comparison_record.py:97-143 |
-| **The whole run: the argument-list answer, the predecessor, the request composed from the contract, the one freeze call and the outcome as the exit code.** | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:146-180 |
-| **The predecessor decision: the highest recorded index, the tie broken by the record's own instant, and `None` for a leaf that has published nothing.** | `_standing_generation` | mcp/src/agents_remember/cli/review_comparison_record.py:183-207 |
-| One generation's own recorded instant, and the empty string that keeps an unreadable record from raising mid-report. | `_recorded_at` | mcp/src/agents_remember/cli/review_comparison_record.py:210-220 |
-| **The argument-list facts answered before anything is read: the two blank checks, the contract load carrying its owner's typed failure, and the two option fields this command supplies.** | `_invocation` | mcp/src/agents_remember/cli/review_comparison_record.py:223-250 |
-| **A citation that is not a citation: the separator split, the two empty halves, and the absolute-or-`..` path a task-relative citation may not be.** | `_evidence_inputs` | mcp/src/agents_remember/cli/review_comparison_record.py:253-275 |
-| **The report built from the record's own fields, with a refusal in the comparison vocabulary's own four and the published half read off the manifest block by block.** | `report_payload` | mcp/src/agents_remember/cli/review_comparison_record.py:278-356 |
-| The same facts as lines, with the predecessor line stating `nothing (first generation)` when none was named. | `_print_report` | mcp/src/agents_remember/cli/review_comparison_record.py:359-404 |
-| **The freeze owner this adapter gives its production caller: resolve and compose exactly as the surface does, then freeze only what that composition bound.** | `freeze_review_comparison`; `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:233-252; mcp/src/agents_remember/application/review_comparison_freeze.py:290-320 |
-| **The caller-known facts that travel together, one of which is the predecessor — the field this adapter is the first shipped caller to supply.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:147-160; mcp/src/agents_remember/application/review_comparison_freeze.py:164-164 |
-| The outcome value the report and the exit code both read. | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:188-208 |
-| **The lineage a named predecessor produces: the generation id *and* that generation's manifest digest, and the successor's recorded index.** | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:628-637; mcp/src/agents_remember/application/review_comparison_generation.py:351-373 |
-| **The seal's own omission set, which is why naming a predecessor changes the binding digest and therefore the derived id — the fact behind this card's carried limitation.** | `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_generation.py:155-155 |
-| **The discovery the predecessor decision reads, and the address it answers with.** | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:685-693; mcp/src/agents_remember/application/review_comparison_generation.py:696-724 |
-| The one manifest file name the recorded instant is read through. | `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:126-126 |
+| The published surface: the two exits, the argument declaration, the report builder and the run. | `__all__` | mcp/src/agents_remember/cli/review_comparison_record.py:82-88 |
+| **The two exits, and the one that is an outcome rather than an error code.** | `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:94-94; mcp/src/agents_remember/cli/review_comparison_record.py:95-95 |
+| The one evidence separator, chosen so an owner cannot be read out of a path, and the two sides an absence may be declared for. | `_EVIDENCE_SEPARATOR`; `_ABSENCE_SIDES` | mcp/src/agents_remember/cli/review_comparison_record.py:99-99; mcp/src/agents_remember/cli/review_comparison_record.py:102-102 |
+| **The declared inputs: required authority and contract, repeatable evidence and historical absence, unchanged-knowledge mode, paired explicit recovery identifiers, and report format.** | `add_arguments`; `--config`; `--contract`; `--evidence`; `--historical-absence`; `--json` | mcp/src/agents_remember/cli/review_comparison_record.py:105-159 |
+| **The whole run: the argument-list answer, the predecessor, the request composed from the contract, the one freeze call and the outcome as the exit code.** | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:162-202 |
+| **The predecessor decision: the highest recorded index, the tie broken by the record's own instant, and `None` for a leaf that has published nothing.** | `_standing_generation` | mcp/src/agents_remember/cli/review_comparison_record.py:205-229 |
+| One generation's own recorded instant, and the empty string that keeps an unreadable record from raising mid-report. | `_recorded_at` | mcp/src/agents_remember/cli/review_comparison_record.py:232-242 |
+| **The argument-list facts answered before anything is read: the two blank checks, the contract load carrying its owner's typed failure, and the two option fields this command supplies.** | `_invocation` | mcp/src/agents_remember/cli/review_comparison_record.py:245-275 |
+| **A citation that is not a citation: the separator split, the two empty halves, and the absolute-or-`..` path a task-relative citation may not be.** | `_evidence_inputs` | mcp/src/agents_remember/cli/review_comparison_record.py:294-318 |
+| **The report built from the record's own fields, with a refusal in the comparison vocabulary's own four and the published half read off the manifest block by block.** | `report_payload` | mcp/src/agents_remember/cli/review_comparison_record.py:321-399 |
+| The same facts as lines, with the predecessor line stating `nothing (first generation)` when none was named. | `_print_report` | mcp/src/agents_remember/cli/review_comparison_record.py:402-447 |
+| **The freeze owner this adapter gives its production caller: resolve and compose exactly as the surface does, then freeze only what that composition bound.** | `freeze_review_comparison`; `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/src/agents_remember/application/review_comparison_freeze.py:319-354 |
+| **The caller-known facts that travel together, one of which is the predecessor — the field this adapter is the first shipped caller to supply.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:169-169 |
+| The outcome value the report and the exit code both read. | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:195-214 |
+| **The lineage a named predecessor produces: the generation id *and* that generation's manifest digest, and the successor's recorded index.** | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:728-737; mcp/src/agents_remember/application/review_comparison_generation.py:380-402 |
+| **The seal's own omission set, which is why naming a predecessor changes the binding digest and therefore the derived id — the fact behind this card's carried limitation.** | `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_generation.py:162-162 |
+| **The discovery the predecessor decision reads, and the address it answers with.** | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:714-722; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
+| The one manifest file name the recorded instant is read through. | `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:133-133 |
 | **The request value composed from the contract's own recorded identities rather than from anything the caller spelled.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:262-324 |
 | The contract loader whose typed failure the invocation answer carries, and the contract whose recorded task root the generation is published under. | `load_contract`; `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The authority loader and its typed failure, so an unreadable settings document is a named refusal rather than a traceback. | `load_config`; `ConfigError` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-77 |
@@ -208,6 +210,12 @@ as a carried limitation rather than as a claim.
 
 | `add_arguments` owns the behavior described above. | `add_arguments` | mcp/src/agents_remember/cli/review_comparison_record.py:97-99 |
 | `run` owns the behavior described above. | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:146-148 |
+
+The following declarations carry the changed boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Recovery controls are paired and incompatible live selections refuse. | `_recovery_arguments` | mcp/src/agents_remember/cli/review_comparison_record.py:278-291 |
 
 ## Cross-Repo References
 
@@ -221,6 +229,14 @@ own authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:41:59+00:00 — Retained the CLI argument claim with its current unchanged-knowledge and explicit recovery inputs. Verification remains closeout-owned.
+
+- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 10 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
+
+- 2026-09-27T04:56:35+00:00 — Documented the explicit paired recovery controls, their refusal boundary and reuse of the existing producer/retention owners. Verification hashes/dates remain closeout-owned.
 - 2026-09-26T21:15:59+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/cli/review_comparison_record.py:74-80. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:15:59+00:00: Generated citation repair: `EXIT_PUBLISHED`; `EXIT_REFUSED` repointed to mcp/src/agents_remember/cli/review_comparison_record.py:86-86; mcp/src/agents_remember/cli/review_comparison_record.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:15:59+00:00: Generated citation repair: `_EVIDENCE_SEPARATOR`; `_ABSENCE_SIDES` repointed to mcp/src/agents_remember/cli/review_comparison_record.py:91-91; mcp/src/agents_remember/cli/review_comparison_record.py:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 | A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:107-131; mcp/src/agents_remember/application/memory_quality/controller.py:317-337; mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
 | The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195 |
-| R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
+| R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149 |
 
 ## Cross-Repo References
 
@@ -158,6 +158,8 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T20:45:18+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **re-read the reopened claim at :91 and advanced the verification stamp.** The row's `citation_claim_reopened` finding held that its evidence changed after verification — ``write_curator_checklist`` changed structurally from code commit `9f88a6de572dc15bbed1802cf08b77c1193fb24c` to the working tree — and that only a re-read plus a stamp advance clears it; a citation edit cannot. The wording is retained because it still holds against `5e4eb651`: the function is still declared at :113, still replaces the deterministic checklist and its attestation atomically (the enclosure report projection), and still returns the compact wire summary whose `curatorActionableCount` is `curator_actionable_count(repair, missing, stale)` — commit-owned and report-only findings stay outside the actionable arithmetic. The citation is current: `write_curator_checklist` is declared at :113 inside the cited 113-195. No claim, Anchor cell or range was re-worded or dropped; `lastVerifiedCommitHash` advanced to `5e4eb651be0691e2d2a90ea59bc662f92050db25` and `lastVerifiedCommitDate` to `2026-09-18T20:45:18+02:00` — the committed (code, memory) pair that now carries these bytes.
 - 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-27T05:23:46+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -209,13 +209,13 @@ because each of them pins one sentence a verifier could otherwise reproduce as f
 | **The clause `F2` pins: the head locates the capture, it does not carry it.** | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:342-363 |
 | **The production call site: the rebinding is attached to the tool result after the transaction has finished and the contract is written.** | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
 | The shipped capture owner that derives the resolved source side after the sync. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The freeze owner whose options name the predecessor — the operation the record's remedy names. | `ComparisonFreezeOptions`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:147-160; mcp/src/agents_remember/application/review_comparison_freeze.py:233-252 |
-| The generation store's own layout and manifest readers, which these cases use and never rewrite. | `leaf_generation_root`; `generation_directory`; `read_manifest`; `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:126-126; mcp/src/agents_remember/application/review_comparison_generation.py:501-504; mcp/src/agents_remember/application/review_comparison_generation.py:507-510; mcp/src/agents_remember/application/review_comparison_generation.py:586-620 |
+| The freeze owner whose options name the predecessor — the operation the record's remedy names. | `ComparisonFreezeOptions`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
+| The generation store's own layout and manifest readers, which these cases use and never rewrite. | `leaf_generation_root`; `generation_directory`; `read_manifest`; `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:530-533; mcp/src/agents_remember/application/review_comparison_generation.py:536-539; mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:133-133 |
 | The durable-evidence pair every record is published and read back through. | `durable_reports_root`; `publish_durable_evidence`; `read_back_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203 |
 | The shipped endpoint fixture whose enclosure this module's fixture stands on. | `build_endpoint_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
 | The merge-case support whose authored identities and readers the module reuses. | `BASE_REVISION_ID`; `set_label`; `add_anchor`; `labels_of` | mcp/tests/merge_case_test_support.py:54-54; mcp/tests/merge_case_test_support.py:309-314; mcp/tests/merge_case_test_support.py:323-338; mcp/tests/merge_case_test_support.py:635-644 |
 | The read-scope support's authorship factory both halves of every dataset are authored with. | `make_read_authorship` | mcp/tests/read_scope_test_support.py:246-256 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:311-311 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:314-314 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** | `read_review_sync_rebinding`; `sync_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:68-71; mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:378-378 |
 
@@ -232,6 +232,9 @@ invented namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-27T05:29:48+00:00: Generated citation repair: "mcp/tests/test_review_sync_rebinding.py" repointed to mcp/tests/test-evidence-lanes.toml:314-314. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00 |
+| lastUpdated | 2026-09-27T05:30:43+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ matrix in the evidence-dependency test suite fixes the contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | `EvidenceDependencyKind`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:31-50; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
-| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `memory_quality_attestation_dependencies`; `MEMORY_QUALITY_ATTESTATION_VALIDATOR` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:40-40; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:94-131 |
+| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `memory_quality_attestation_dependencies`; `MEMORY_QUALITY_ATTESTATION_VALIDATOR` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:58-58; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149 |
 | The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | `closeout_door_dependencies`; `require_closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:158-196; mcp/src/agents_remember/models/lifecycles/door.py:199-226 |
 | Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `lifecycle_operation_dependencies`; `LifecycleOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:334-337; mcp/src/agents_remember/models/lifecycles/operation.py:438-493 |
 | Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `require_current_route_review_task_intent` | mcp/src/agents_remember/worktrees/route_review.py:292-347; mcp/src/agents_remember/worktrees/route_review.py:392-415 |
@@ -128,6 +128,10 @@ there, for the direction reason above. This entry therefore adds one policy and 
 additive kind of change a new record type is supposed to make in this module.
 
 ## Update History
+
+- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
+
+- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): **re-read this card against the changed source and recorded the two entries the leaf added.** The `curator-coherence/v1` policy gained the `review-record` optional **permission** (the kind already existed) so the coherence record can declare a typed edge to each stored assessment, and a new `review-assessment/v1` policy requires exactly the clause-five inputs. The body above states both, states that no kind vocabulary was widened, and states why `review-record` is deliberately not required inside the assessment. The reference rows this card carries were re-derived from the current file while re-reading it, because the leaf's insertions moved every anchor below them: `EvidenceDependencies` is now `:99-119`, `dependency` `:243-252`, `require_evidence_dependencies` `:267-302` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
 
 

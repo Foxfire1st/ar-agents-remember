@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T21:25:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastUpdated | 2026-09-27T05:31:41+00:00 |
+| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
+| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -134,7 +134,7 @@ and in the cases that measure both the vocabulary's refusals and the wire payloa
 | **The validator that makes "a count nobody measured" unrepresentable — four refusals plus the required next action on every non-answer.** | `_require_an_answer_to_carry_its_count` | mcp/src/agents_remember/models/knowledge/review_records.py:91-123 |
 | The shared bounds the model takes rather than restating. | `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
 | **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:71-127; mcp/src/agents_remember/models/knowledge/review.py:51-51; mcp/src/agents_remember/models/knowledge/review.py:918-958; mcp/src/agents_remember/models/knowledge/review.py:52-52; mcp/src/agents_remember/models/knowledge/review.py:956-996 |
-| **The composition that resolves every channel through the owner of each collection this vocabulary names.** | `_COLLECTION_OWNERS`; `_channel`; `ReviewRecordChannel` |mcp/src/agents_remember/application/review_evidence_records.py:137-144; mcp/src/agents_remember/application/review_evidence_records.py:808-819; mcp/src/agents_remember/application/review_evidence_records.py:778-778|
+| **The composition that resolves every channel through the owner of each collection this vocabulary names.** | `_COLLECTION_OWNERS`; `_channel`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_evidence_records.py:781-792; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
 | **The cases that measure the vocabulary's own refusals and its presence in the served wire schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
 
 ## Cross-Repo References
@@ -147,6 +147,8 @@ no boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **three enforced citation rows re-pointed; this card's own source module is unchanged by the leaf.** `models/knowledge/review_records.py` is not a governed source of `260921-ICR-L15` (that leaf changes `models/lifecycles/review_assessment.py`, `models/lifecycles/review_assessment_binding.py` and, by docstring only, `models/knowledge/review.py`), so nothing this card states about the record-availability vocabulary moved and no claim wording changed. **Citation accounting:** the owner row's `_COLLECTION_OWNERS` range `mcp/src/agents_remember/application/review_evidence_records.py:128-135` now reads `:137-144`; the case row's `test_the_channel_model_refuses_a_count_no_owner_measured` range `mcp/tests/test_knowledge_review_evidence_channels.py:761-787` now reads `:887-912`, and `test_the_wire_payload_carries_the_channels` `:789-796` now reads `:959-966`. Each range was re-read against the declaration it names in this candidate and contains it; finding and anchor wording is unchanged. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned. The two `citation_provenance_invalid` rows this card carries are closeout-owned — they need a real code commit and a ledger-mapped memory commit — so no curator range edit discharges them.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The re-export row cited `models/knowledge/review.py:643-666` for the pane, which the six-counts and partition growth moved; it now cites `:665-701`. Wording unchanged; no stamp advanced.
