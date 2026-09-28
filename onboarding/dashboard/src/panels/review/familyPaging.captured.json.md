@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyPaging.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T02:44:54Z |
-| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97`|
-| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ The document's identifiers and walks are paired with the existing real-route pro
 | The fixture names its exact selected family, subject and before walk. | "family_id"; "subject_id"; "before" | dashboard/src/panels/review/familyPaging.captured.json:1-5 |
 | The second collection holds the after-side walk. | "after" | dashboard/src/panels/review/familyPaging.captured.json:3183-3184 |
 | The producer follows published HTTP cursors under one fixed bound. | `walk_responses` | mcp/tests/test_review_family_context_population.py:475-497 |
-| The consumer reads the complete captured bodies before mounting the actual read cycle. | "familyPaging.captured.json" | dashboard/src/panels/review/ReviewReadCycle.family.test.tsx:12-30 |
+| The consumer reads the complete captured bodies before mounting the actual read cycle. | "familyPaging.captured.json" | dashboard/src/panels/review/ReviewReadCycle.family.test.tsx:12-35 |
 
 ## Cross-Repo References
 
@@ -64,6 +64,8 @@ No external repository boundary is introduced.
 | No cross-repository reference is required. | — | — |
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: the bytes are unchanged (still the `a5bec6c3` capture). Re-measured the range into `ReviewReadCycle.family.test.tsx`, whose header grew by the not-re-captured statement.
 
 - 2026-09-27T02:44:54Z — L40: No content impact: reviewed the existing claim against the same named moved source owner and retained its meaning while rebinding the reference. This source artifact is unchanged; prior history and verification metadata remain intact.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T17:21:23+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -24,6 +24,26 @@
 | **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:918-958; mcp/src/agents_remember/models/knowledge/review.py:101-102; mcp/src/agents_remember/models/knowledge/review.py:956-991 |
 | **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** | `_COLLECTION_OWNERS`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_evidence_records.py:781-792; mcp/src/agents_remember/application/review_evidence_records.py:127-127 |
 | The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
+
+## 260921-ICR-L44 Two Pure Extractions, And The Anchor Observation Gains A Structured Region
+
+Two value vocabularies moved into their own modules, each re-exported unchanged by the module it left so
+every existing import keeps working: the anchor-observation vocabulary (`AnchorResolutionState`,
+`ANCHOR_RESOLUTIONS`, `AnchorResolution`) now lives in `models/knowledge/read_anchor.py` (re-exported by
+`read.py`), and the family member-source reference (`ReviewFamilyMemberSource`,
+`ReviewSourceLocatorState`, `source_locator_state`) in `models/knowledge/review_family_source.py`
+(re-exported by `review_family_context.py`). Both moves kept their source modules under the 600-line
+pressure line. Two additive wire changes rode with them: `AnchorResolution.resolved_ranges` — structured
+one-based line ranges, allowed only on `exact_recorded_blob` — appears on **every** anchor observation
+(knowledge read pages, diff observations, the family roster), and the member source gained `locator`,
+`resolved_ranges` and a required `locator_state`, with `role`/`rationale` required. The locator state is
+decided by one function shared by the producer and the validator, so a region can never be stated on
+bytes the side did not find.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The anchor observation and its region validator. | `AnchorResolution` | mcp/src/agents_remember/models/knowledge/read_anchor.py:48-78 |
+| The member-source reference and its one locator-state rule. | `ReviewFamilyMemberSource`; `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_source.py:36-123 |
 
 ## 260921-ICR-L15 Measured assessment currentness
 
@@ -172,6 +192,10 @@ policy that computes it lives on the application route, not here.
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
+
+- 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the two pure extractions (`read_anchor.py`, `review_family_source.py`, both re-exported by the modules they left) and the two additive wire changes (`AnchorResolution.resolved_ranges` on every anchor observation; the member source's locator, ranges and required state/role/rationale), and re-measured the ranges into `read.py` the extraction shifted.
 
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): `models/knowledge/review_source_content.py` gained `ReviewSourceAdmission`, `ReviewSourceExpansionStatus` (inventory status plus expansion-only `unchanged`), `admission`/`admission_detail` on the expansion, and a validator tying attributed context to `unchanged` and `requested_generation`. No route impact: the models route's vocabulary-only role and module set are unchanged; the detail lives on that module's card.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
@@ -1408,14 +1432,14 @@ write path refuses cannot be presented as a seed that is answered with an absenc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read sub-route module: the closed seed union, the context, the page and the cursor. | `KnowledgeReadSeed`; `PathSeed`; `KnowledgeReadContext`; `KnowledgeReadPage`; `KnowledgeReadCursor` | mcp/src/agents_remember/models/knowledge/read.py:204-213; mcp/src/agents_remember/models/knowledge/read.py:144-171; mcp/src/agents_remember/models/knowledge/read.py:216-263; mcp/src/agents_remember/models/knowledge/read.py:451-482; mcp/src/agents_remember/models/knowledge/read.py:514-531 |
-| **The corrected count model and the truncated page that cannot claim completeness.** | `KnowledgeReadCounts`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:404-448; mcp/src/agents_remember/models/knowledge/read.py:451-482 |
+| The read sub-route module: the closed seed union, the context, the page and the cursor. | `KnowledgeReadSeed`; `PathSeed`; `KnowledgeReadContext`; `KnowledgeReadPage`; `KnowledgeReadCursor` | mcp/src/agents_remember/models/knowledge/read.py:188-197; mcp/src/agents_remember/models/knowledge/read.py:128-155; mcp/src/agents_remember/models/knowledge/read.py:200-247; mcp/src/agents_remember/models/knowledge/read.py:417-448; mcp/src/agents_remember/models/knowledge/read.py:480-497 |
+| **The corrected count model and the truncated page that cannot claim completeness.** | `KnowledgeReadCounts`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:370-414; mcp/src/agents_remember/models/knowledge/read.py:417-448 |
 | The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The write path's delegation of its pathspec half to that one rule. | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
 | **The facade's ninth source, which this leaf did add to `__all__`.** | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/__init__.py:71-71 |
-| The cursor decoder the read re-exports through the facade. | `continue_from_cursor` | mcp/src/agents_remember/models/knowledge/read.py:582-588 |
-| The cursor encoder the read re-exports through the facade. | `cursor_for` | mcp/src/agents_remember/models/knowledge/read.py:561-579 |
+| The cursor decoder the read re-exports through the facade. | `continue_from_cursor` | mcp/src/agents_remember/models/knowledge/read.py:548-554 |
+| The cursor encoder the read re-exports through the facade. | `cursor_for` | mcp/src/agents_remember/models/knowledge/read.py:527-545 |
 | The nodes that hold these models to their own invariants. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_of_one_item_still_advertises_the_second_location" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:547-657 |
 
 ## 260915-KS-L8 The Comparison Vocabulary

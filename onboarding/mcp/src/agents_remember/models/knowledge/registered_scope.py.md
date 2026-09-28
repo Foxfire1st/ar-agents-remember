@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/registered_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:02+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash |  `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
+| lastVerifiedCommitDate |  2026-09-28T17:43:09+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The construction version, declared in the shipped policy-constant idiom beside the read's and the detector's own versions. | `SCOPE_CONSTRUCTION_VERSION`; `KNOWLEDGE_READ_POLICY_VERSION`; `DETECTION_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/registered_scope.py:76-76; mcp/src/agents_remember/models/knowledge/read.py:87-87; mcp/src/agents_remember/models/knowledge/detection.py:101-101 |
+| The construction version, declared in the shipped policy-constant idiom beside the read's and the detector's own versions. | `SCOPE_CONSTRUCTION_VERSION`; `KNOWLEDGE_READ_POLICY_VERSION`; `DETECTION_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/registered_scope.py:76-76; mcp/src/agents_remember/models/knowledge/read.py:91-91; mcp/src/agents_remember/models/knowledge/detection.py:101-101 |
 | The two declared sides, spelled once as a literal and once as the ordered tuple. | `ScopeSnapshotSide`; `SCOPE_SIDES` | mcp/src/agents_remember/models/knowledge/registered_scope.py:81-81; mcp/src/agents_remember/models/knowledge/registered_scope.py:83-83 |
 | The two closed vocabularies a caller branches on: the three followed edge kinds, and the four declared inputs a refusal may name. | `ScopeEdgeKind`; `SCOPE_EDGE_KINDS`; `ScopeMissingInputKind` | mcp/src/agents_remember/models/knowledge/registered_scope.py:88-88; mcp/src/agents_remember/models/knowledge/registered_scope.py:90-94; mcp/src/agents_remember/models/knowledge/registered_scope.py:99-104 |
 | One side's declaration as an exact snapshot identity plus the selection policy version it was read under. | `ScopeSnapshotDeclaration` | mcp/src/agents_remember/models/knowledge/registered_scope.py:107-120 |
@@ -167,7 +167,7 @@ No domain documentation source is configured for this repository (`system/source
 | The refusal naming the exact missing input, the validator that keeps its typed half naming the same input, and the advertised next action. | `ScopeConstructionRefusal`; `_require_the_refusal_to_name_the_same_input`; `next_action` | mcp/src/agents_remember/models/knowledge/registered_scope.py:349-361; mcp/src/agents_remember/models/knowledge/registered_scope.py:363-376; mcp/src/agents_remember/models/knowledge/registered_scope.py:378-381 |
 | The one ordinary function: a declared changed path is refused unless it is a plain repository-relative spelling within the shipped path bound. | `scope_path_is_recorded`; "if len(cleaned) > PATH_MAX_LENGTH:" | mcp/src/agents_remember/models/knowledge/registered_scope.py:384-403; mcp/src/agents_remember/models/knowledge/base.py:27-27 |
 | The frozen, extra-forbidding base every shape derives from, the snapshot identity a side is declared as, and the shipped typed refusal the construction wrapper carries. | `model_config`; `SnapshotIdentity`; `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/candidate.py:185-194; mcp/src/agents_remember/models/knowledge/result.py:235-245; mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
-| The read path's own selection counts — including items remaining and advertised expansions — none of which any record in this module has a slot for. | `KnowledgeReadCounts`; `primary_items_remaining` | mcp/src/agents_remember/models/knowledge/read.py:404-429 |
+| The read path's own selection counts — including items remaining and advertised expansions — none of which any record in this module has a slot for. | `KnowledgeReadCounts`; `primary_items_remaining` | mcp/src/agents_remember/models/knowledge/read.py:370-395 |
 | The sibling pipeline vocabulary that consumes a scope, and which states in its own docstring that it redefines none of the records it composes. | "redefines none of theirs" | mcp/src/agents_remember/models/knowledge/family_review.py:1-6 |
 
 ## Cross-Repo References
@@ -181,5 +181,8 @@ store-local, and the module imports nothing outside `agents_remember.models.know
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
+
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T14:02+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the registered review scope's frozen vocabulary. It records the four closed vocabularies and the construction version, the declaration's one-snapshot-per-side and both-halves-of-a-policy rules, the followed edge that must carry the snapshot it was read from and may carry a policy only when it is a composition edge, the membership as recorded identities with no evidence-claim channel at this base, and the deliberate absences (no partial scope, no frontier field, no inferred member, no minted identity, no refusal code of its own). This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.

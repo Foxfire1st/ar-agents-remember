@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.walkFinal.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T01:27:31+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded by the leaf's probe (`temp/icr/probe-l24-family-body.py`) and installed as the fixture the
+recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
 family workspace case stubs `fetch` with. **62,079 bytes; sha256
 `9e41d766f7caacf5183b7599ad7a655fa462a919d840aac756fe1a7a3f656df2`** — the largest of the leaf's seven
 bodies. It is untracked in this leaf's working tree (`??`), so these are candidate bytes a reader
@@ -157,12 +157,13 @@ finding names the exact key path and value a reader can re-check.
 | **The corrected sentence itself, naming the pages before it as the ones that carried the rest.** | "this page carried 11 of them and completes the read walk, the pages before it carried the rest"; "the pages before it carried the rest" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
 | **The contrast inside the same body: a roster the read took in one page, read whole, with both rows carried.** | "was read whole: 2 recorded membership(s), all carried here"; "\"page\":{\"complete\":true,\"counts\""; "\"state\":\"first_page\""; "e3488f05-332f-4553-90d9-139e4ada169b"; "daadb69b-0a88-40ef-8edc-51bed48a32e3" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
 | **The two families of the body, the revision the completing page belongs to, and the owner's measured counts for the whole context.** | "a33d139e-5a2e-44c1-aab2-2ea7be05df30"; "acb2c150-1004-4341-a6fd-7b6762427713"; "18c530d5-d41e-4fc6-8b51-85f5408a4ae9"; "\"membership_rows_total\":78"; "\"unique_member_revision_total\":14" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.walkFinal.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
-| **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| **The case this body exists for, including what it says about the defect the corrected guard answers — on the pre-correction bytes this page's request was answered with HTTP 500.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster"; "HTTP 500"; "completion guard was corrected"; "completes the read walk"; `WALK_FINAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:607-636; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:614-614; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:613-613; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:635-635; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:60-60 |
+| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.walkFinal.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
+| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
+| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.walkFinal.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
+| **The case this body exists for, including what it says about the defect the corrected guard answers — on the pre-correction bytes this page's request was answered with HTTP 500.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster"; "HTTP 500"; "completion guard was corrected"; "completes the read walk"; `WALK_FINAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:617-646; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:624-624; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:623-623; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:645-645; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:70-70 |
 | The roster owner separates a whole single-page selection from a final continuation that completes a walk. | `_roster_detail` | mcp/src/agents_remember/application/review_family_rosters.py:367-397 |
-| **The corrected guard that makes a continued final page answerable at all, with the comment recording the HTTP 500 it answers.** | `single_page_walk`; "HTTP 500" | mcp/src/agents_remember/models/knowledge/review_family_context.py:342-342; mcp/src/agents_remember/models/knowledge/review_family_context.py:344-344 |
+| **The corrected guard that makes a continued final page answerable at all, with the comment recording the HTTP 500 it answers.** | `single_page_walk`; "HTTP 500" | mcp/src/agents_remember/models/knowledge/review_family_context.py:316-316; mcp/src/agents_remember/models/knowledge/review_family_context.py:318-318 |
 | **The client's two wordings for the pair, so a reader can see the sentence this body must reach and the one it must not.** | "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:214-214; dashboard/src/panels/review/FamilyTree.tsx:215-215 |
 
 ## Cross-Repo References
@@ -176,6 +177,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 
 - 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

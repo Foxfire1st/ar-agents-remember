@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context_values.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T02:44:54Z |
-| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
-| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ real-boundary test.
 
 ### Logic
 
-**Every case departs from the honest value in exactly one way, so a refusal is attributable.** The six
+**Every case departs from the honest value in exactly one way, so a refusal is attributable.** The seven
 cases and the clause each one exercises:
 
 | Case | Line | The single departure it refuses |
@@ -51,9 +51,10 @@ cases and the clause each one exercises:
 | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | `:95` | a recorded side naming a revision the family owner does not record for that snapshot — the fix-round-1 clause that makes an unrecorded selection unreachable |
 | `test_a_complete_walk_that_is_one_page_must_carry_the_whole_roster` | `:114` | a complete page that is also the walk's first page carrying **none** of the rows it counts — the truncation the guard exists for, still refused after this reopen's relaxation |
 | `test_a_final_page_of_a_multi_page_walk_may_carry_only_its_own_share` | `:128` | **not a refusal:** it pins the correction itself — a completed **continued** page carrying only its own share is accepted, and the same carried rows moved onto a first page are refused |
+| `test_a_member_source_may_not_state_a_region_its_observation_does_not_support` | `:167` | a member source whose locator state, locator, ranges and resolution disagree — ranges beside a non-exact resolution, a `resolved` state with no range, `whole_file` claimed for a symbol locator, ranges presented as `unresolved`, a locator with no observed address — and a source missing its stored `role` or `rationale`; the honest `resolved` source and a `not_observed` source are accepted. Unlike the other cases it builds its own honest source dict rather than departing from `_honest_context` |
 
 **The honest fixture is built once and mutated, not re-authored per case.** `_honest_context`
-(`:166-262`) assembles a complete, internally consistent context — two sides with their selected
+(`:219-315`) assembles a complete, internally consistent context — two sides with their selected
 revisions, guarantees and rosters, one shared member reference, and the counts that follow from them — so
 each case's assertion is about the *one* clause it breaks rather than about a hand-built inconsistency
 that could be refused for several reasons at once. The imports (`:15-27`) are the value types under test
@@ -111,16 +112,18 @@ share is accepted.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The two halves of the deliverable: the production composition measured in the sibling module, and the value rules measured here, with the honest fixture explicitly not evidence about the store.** | "Each case mutates one internally consistent value and shows the construction refusing it" | mcp/tests/test_review_family_context_values.py:1-13 |
-| **Counts that do not describe the entries and rosters beside them.** | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:29-47 |
-| **A roster page whose completeness, remainder and cursor disagree, so a truncated roster cannot read as the whole one.** | `test_a_roster_page_may_not_present_a_truncated_roster_as_a_complete_one` | mcp/tests/test_review_family_context_values.py:50-77 |
-| A side that recorded no context carrying members or a member count. | `test_a_side_that_read_nothing_may_not_carry_a_roster` | mcp/tests/test_review_family_context_values.py:80-92 |
-| **A recorded side naming a revision the family owner does not record — the value-level half of the population fix.** | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | mcp/tests/test_review_family_context_values.py:95-111 |
-| **The corrected guard's real subject, still enforced: a complete page that is also the walk's first page carries every row it counts.** | `test_a_complete_walk_that_is_one_page_must_carry_the_whole_roster` | mcp/tests/test_review_family_context_values.py:114-125 |
-| **The correction itself, pinned with the same carried rows: a completed continued page is accepted, and those rows on a first page are refused, so the relaxation is not a hole.** | `test_a_final_page_of_a_multi_page_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context_values.py:128-163 |
-| The one internally consistent context every case departs from by exactly one clause. | `_honest_context` | mcp/tests/test_review_family_context_values.py:166-262 |
-| **The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:310-356 |
-| The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:493-548 |
-| The validator refusing a truncated roster presented as a complete one. | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:255-277 |
+| **Counts that do not describe the entries and rosters beside them.** | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:30-48 |
+| **A roster page whose completeness, remainder and cursor disagree, so a truncated roster cannot read as the whole one.** | `test_a_roster_page_may_not_present_a_truncated_roster_as_a_complete_one` | mcp/tests/test_review_family_context_values.py:51-78 |
+| A side that recorded no context carrying members or a member count. | `test_a_side_that_read_nothing_may_not_carry_a_roster` | mcp/tests/test_review_family_context_values.py:81-93 |
+| **A recorded side naming a revision the family owner does not record — the value-level half of the population fix.** | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | mcp/tests/test_review_family_context_values.py:96-112 |
+| **The corrected guard's real subject, still enforced: a complete page that is also the walk's first page carries every row it counts.** | `test_a_complete_walk_that_is_one_page_must_carry_the_whole_roster` | mcp/tests/test_review_family_context_values.py:115-126 |
+| **The correction itself, pinned with the same carried rows: a completed continued page is accepted, and those rows on a first page are refused, so the relaxation is not a hole.** | `test_a_final_page_of_a_multi_page_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context_values.py:129-164 |
+| **A member source's locator state, locator, ranges and resolution are one fact, and a source without its stored role or rationale is refused.** | `test_a_member_source_may_not_state_a_region_its_observation_does_not_support` | mcp/tests/test_review_family_context_values.py:167-216 |
+| The validators that case exercises. | `_require_the_locator_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_source.py:82-105 |
+| The one internally consistent context every roster-and-count case departs from by exactly one clause. | `_honest_context` | mcp/tests/test_review_family_context_values.py:219-315 |
+| **The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:284-330 |
+| The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:467-522 |
+| The validator refusing a truncated roster presented as a complete one. | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:229-251 |
 | The production-entry cases this module is the value half of. | `test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees` | mcp/tests/test_review_family_context.py:284-318 |
 | The population case independently checks authored-head ambiguity and explicitly requested revision history. | `test_the_history_sentence_is_measured_against_the_family_owner` | mcp/tests/test_review_family_context_population.py:236-288 |
 
@@ -131,6 +134,8 @@ refusals those values' own validators raise; no store, enclosure, network or ext
 so no cross-repo reference row is recorded.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the seventh value case, `test_a_member_source_may_not_state_a_region_its_observation_does_not_support` (locator state, locator, ranges and resolution are one fact; role and rationale required), with its rows, and corrected the honest-fixture range. No verification stamp was advanced.
 
 - 2026-09-27T02:44:54Z — L40: No content impact: clarified the linked population case’s corrected ambiguity/exact-history meaning. This value-test source and its construction rules are unchanged.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T01:27:31+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded by the leaf's probe (`temp/icr/probe-l24-family-body.py`) and installed as the fixture the
+recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
 family workspace case stubs `fetch` with. **40,941 bytes; sha256
 `383bd101a349b2d054dca8ab7fb05cf8d182612dc17cdced57bae5c358af4db1`.** It is untracked in this leaf's
 working tree (`??`), so these are candidate bytes a reader re-checks against the file, not bytes any
@@ -143,11 +143,12 @@ finding names the exact key path and value a reader can re-check.
 | **The one uncarried row of the whole body: its revision identity, its member identity, and the state that says the row is recorded while its content is not on the page.** | "63a89639-aac8-4802-ba97-3324c3f6acaf"; "f117ecca-1d81-4e46-b91c-c2c8d36675a0"; "\"state\":\"content_not_on_page\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
 | **The two families and the rosters this page measured against what it carried, including the one-row sides.** | "c47d4be4-4780-483a-a43b-3eedb7022507"; "dc9b58d2-f5d0-4a9c-b6df-1ec44c422f94"; "762083cc-a98b-4afe-9cfb-a5be1fe7bb67"; "af44f607-e364-443a-8cee-fe2a1d4e8e82"; "74555fd7-8d39-4561-a672-f9973f74c0d4"; "holds 2 recorded membership(s) and this page carried 1"; "\"members_total\":2" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
 | **The other one-snapshot fact: two unresolved attribution rows, each displaying a record held by one snapshot as present outside the selection rather than as a deletion.** | "this record is held by one snapshot and was not reached by the other side's declared selection; it is displayed as present outside the selection and never as a deletion"; "\"recorded_reference\":\"21fcbbd7-a5a8-4903-a4d4-e96abbb6d0ce\""; "\"recorded_reference\":\"23053fbb-423f-4a36-a1eb-3972f3aa22d1\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.oneSided.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
-| **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:531-549; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:545-545; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:58-58 |
-| **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:285-296; dashboard/src/data/reviewFamily.ts:298-321 |
+| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.oneSided.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
+| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
+| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.oneSided.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
+| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:541-559; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:555-555; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:68-68 |
+| **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:311-322; dashboard/src/data/reviewFamily.ts:324-347 |
 | **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:410-410; dashboard/src/panels/review/FamilyTree.tsx:411-411; dashboard/src/panels/review/FamilyReviewCenter.tsx:567-567; dashboard/src/panels/review/FamilyReviewCenter.tsx:201-201; dashboard/src/panels/review/FamilyReviewCenter.tsx:202-202 |
 | Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | `SelectedStatement`; `UnavailableMember` | dashboard/src/panels/review/SubjectReview.tsx:53-114; dashboard/src/panels/review/FamilyReviewCenter.tsx:764-787 |
 
@@ -162,6 +163,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 
 - 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

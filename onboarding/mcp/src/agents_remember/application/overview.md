@@ -3,12 +3,31 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
+
+## 260921-ICR-L44 A Family Member's Sources Carry Their Own Region, Projected By A Dedicated Owner
+
+The family roster read (`review_family_rosters.py`) no longer projects realization claims itself: each
+member's claims go through `review_family_sources.member_source`, a focused owner of one claim → one
+side-bound `ReviewFamilyMemberSource`. Beside the fields the roster already published, every source now
+carries — per side and per claim — the anchor's structured recorded `locator`, the `resolved_ranges` that
+side's anchor resolver placed it on in the exact recorded blob, and a `locator_state`
+(`resolved` / `whole_file` / `unresolved` / `not_observed`) stated through the model's one rule. Role and
+rationale are carried exactly as stored and a claim read without them is refused. Nothing in this route
+resolves, searches or re-anchors a range, and no region is ever read from the `detail` sentence: the
+ranges are the resolver's (`memory/knowledge/read_anchors.py`). Two members realized in one file therefore
+keep two regions, and a side holding other bytes than the claim recorded states `unresolved` with no
+range.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one projection of a realization claim into its source reference. | `member_source` | mcp/src/agents_remember/application/review_family_sources.py:27-51 |
+| The roster's member composition calling it once per claim. | `member_source` | mcp/src/agents_remember/application/review_family_rosters.py:523-523 |
 
 ## Exact sibling retention in curator family successors
 
@@ -137,6 +156,9 @@ is split into 818 lines plus a 578-line purpose-named module, which is where the
 `curator_family_authoring.py` and `curator_ingest_planes.py` now live; nothing these owners do changed.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the new member-source owner `review_family_sources.py`, which the roster read now calls per claim and which carries each source's per-side locator, resolved ranges and locator state. Route meaning changed: projection moved to a dedicated owner; no read policy changed.
+
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the source-content route gained two owners and one admitted population.** Added the section *Comparison-bound attributed unchanged source content* (the three-owner split, comparison binding, exact spelling, undetermined link, and the Architect's four scope rulings), qualified the L3 section's "a path in neither is refused" seam as extended, and re-pointed its seven rows whose constructs moved into `review_source_admission.py` or shifted up in `review_source_content.py`. File-level detail stays on the three module cards. No stamp advanced; closeout owns it.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.

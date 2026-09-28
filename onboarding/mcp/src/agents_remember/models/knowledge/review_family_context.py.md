@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_family_context.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T02:33:35Z |
-| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
-| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -60,13 +60,20 @@ travel together because an accepted origin without the authority that accepted i
 acceptance nobody recorded. There is no field for a derived summary and no field that could hold a
 verdict about whether the guarantee still holds.
 
-**A source reference carries its address and its observation, or neither.**
-`ReviewFamilyMemberSource` (`:134-163`) is one recorded realization claim: the claim's own identity, the
-author's recorded role and rationale, and the address this read observed. Its validator
-(`_require_an_address_to_travel_with_its_observation`, `:155-163`) refuses the two halves apart, because
-an address without an observation reads as a resolved realization while a resolution without an address
-names nothing. Whether the address resolves stays with the source inventory and the relationship union;
-`detail` states the absence rather than leaving an empty resolution to be read as agreement.
+**A source reference carries its address and its observation, or neither — and it is declared next
+door.** `ReviewFamilyMemberSource`, its `ReviewSourceLocatorState` and the `source_locator_state` rule
+live in `models/knowledge/review_family_source.py` and are imported and re-exported here unchanged, so
+every existing import from this module keeps working (a pure extraction that kept this module under the
+600-line pressure line). The reference is one recorded realization claim: the claim's own identity, its
+stored role and rationale (both required), the address this read observed, and — per side and per
+claim — the anchor's structured recorded `locator`, the `resolved_ranges` the side's anchor resolver
+placed it on in that side's exact recorded blob, and a `locator_state` (`resolved` / `whole_file` /
+`unresolved` / `not_observed`). Its validators refuse an address without its observation, a locator
+without its address, ranges beside any resolution other than `exact_recorded_blob`, and a state that
+disagrees with the locator, ranges and resolution carried beside it. See that module's card for the rule.
+Whether the address resolves still stays with the source inventory and the relationship union; `detail`
+states the absence rather than leaving an empty resolution to be read as agreement, and no region is ever
+read back out of it.
 
 **A member is one canonical revision, referenced wherever it is recorded.**
 `ReviewFamilyMember` (`:166-222`) carries the membership row's own `member_id` beside the exact
@@ -144,12 +151,13 @@ distinct member revisions.
 ### Conventions
 
 Every value extends `KnowledgeModel` and takes its bounds from `models/knowledge/base.py`
-(`LABEL_MAX_LENGTH`, `PATH_MAX_LENGTH`, `PROSE_MAX_LENGTH`, `REFERENCE_MAX_LENGTH`,
-`SHA256_PATTERN`). The module imports only value types it embeds — `KnowledgeReadCounts` from
-`models/knowledge/read.py` and `ReviewRevisionSelection` from
-`models/knowledge/revision_selection.py` (`:46-47`) — and defines no behaviour beyond its validators.
-`__all__` (`:49-63`) publishes the thirteen names the composition, the roster read, the review payload
-and the transport consume, in one alphabetical list. Collection fields default to `()` and optional
+(`LABEL_MAX_LENGTH`, `PROSE_MAX_LENGTH`, `REFERENCE_MAX_LENGTH`, `SHA256_PATTERN`). The module
+imports only value types it embeds — `KnowledgeReadCounts` from `models/knowledge/read.py`,
+`ReviewRevisionSelection` from `models/knowledge/revision_selection.py`, and the member-source reference
+from `models/knowledge/review_family_source.py` — and defines no behaviour beyond its validators.
+`__all__` publishes the fifteen names the composition, the roster read, the review payload and the
+transport consume, in one alphabetical list, including the two re-exported source-reference names
+`ReviewSourceLocatorState` and `source_locator_state`. Collection fields default to `()` and optional
 scalars to `None`, so a caller constructing a value states what it read and omits what it did not.
 
 ### Invariants And Boundaries
@@ -201,36 +209,36 @@ guarantee**.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The four refusals this vocabulary encodes: an authored guarantee never assembled from members, a membership citing one exact family revision and one exact member revision, a side stating which snapshot fact it is, and five status dimensions that never collapse.** | "A guarantee is the family's own authored text, never assembled from members." | mcp/src/agents_remember/models/knowledge/review_family_context.py:1-30 |
-| The published surface: the thirteen names the composition, the roster read, the payload and the transport consume. | `__all__` | mcp/src/agents_remember/models/knowledge/review_family_context.py:49-63 |
-| **The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.** | `ReviewFamilyContextState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:72-78 |
-| The two snapshots a side context or a label may name, so no value can name a third. | `ReviewFamilySideName` | mcp/src/agents_remember/models/knowledge/review_family_context.py:82-82 |
-| **The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.** | `ReviewFamilySideState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:89-89 |
-| One family's own four states, including the unresolved one that chose no revision. | `ReviewFamilyEntryState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:95-95 |
-| **The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.** | `FAMILY_CONTEXT_JOIN_KEY` | mcp/src/agents_remember/models/knowledge/review_family_context.py:101-101 |
-| **The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.** | `RELATIONSHIP_UNION_OWNER`; `SOURCE_INVENTORY_OWNER`; `EVIDENCE_LINKS_OWNER`; `OBSERVATIONS_OWNER`; `ASSESSMENTS_OWNER`; `APPLICABILITY_OWNER` | mcp/src/agents_remember/models/knowledge/review_family_context.py:106-111 |
-| One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal. | `ReviewFamilyGuarantee` | mcp/src/agents_remember/models/knowledge/review_family_context.py:114-131 |
-| One recorded realization claim as an inspectable source reference. | `ReviewFamilyMemberSource` | mcp/src/agents_remember/models/knowledge/review_family_context.py:134-163 |
-| **The validator refusing an address without its observation, so a reference never reads as a resolved realization.** | `_require_an_address_to_travel_with_its_observation` | mcp/src/agents_remember/models/knowledge/review_family_context.py:155-163 |
-| One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. | `ReviewFamilyMember` | mcp/src/agents_remember/models/knowledge/review_family_context.py:166-222 |
-| **The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.** | `_require_the_content_state_to_match_the_content` | mcp/src/agents_remember/models/knowledge/review_family_context.py:198-222 |
-| The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest. | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:225-277 |
-| **The docstring paragraph stating that `complete` is the WALK's flag and not the page's, so a completed continued page is a position in a walk and only a single page may be read as the roster whole.** | "``complete`` describes the WALK, not the page." | mcp/src/agents_remember/models/knowledge/review_family_context.py:237-244 |
-| **The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.** | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:255-277 |
-| One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list. | `ReviewFamilyRevisionContext` | mcp/src/agents_remember/models/knowledge/review_family_context.py:280-356 |
-| **The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.** | `recorded_revision_ids` | mcp/src/agents_remember/models/knowledge/review_family_context.py:303-303 |
-| **The validator requiring a recorded side to name the revision it read and carry the page it read, requiring that revision to be one the family owner records, and — this delta's correction — holding only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:310-356 |
-| One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage. | `ReviewFamilyContextEntry` | mcp/src/agents_remember/models/knowledge/review_family_context.py:359-443 |
-| The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots. | `_require_the_entry_to_describe_one_family` | mcp/src/agents_remember/models/knowledge/review_family_context.py:379-393 |
-| **The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.** | `_require_the_state_to_match_its_candidates_and_sides` | mcp/src/agents_remember/models/knowledge/review_family_context.py:395-443 |
-| Where each independent fact beside this context is owned, and the key that joins them. | `ReviewFamilyContextReferences` | mcp/src/agents_remember/models/knowledge/review_family_context.py:446-465 |
-| The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. | `ReviewFamilyContext` | mcp/src/agents_remember/models/knowledge/review_family_context.py:468-548 |
-| **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:493-548 |
+| The published surface: the fifteen names the composition, the roster read, the payload and the transport consume. | `__all__` | mcp/src/agents_remember/models/knowledge/review_family_context.py:53-69 |
+| **The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.** | `ReviewFamilyContextState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:78-84 |
+| The two snapshots a side context or a label may name, so no value can name a third. | `ReviewFamilySideName` | mcp/src/agents_remember/models/knowledge/review_family_context.py:88-88 |
+| **The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.** | `ReviewFamilySideState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:95-95 |
+| One family's own four states, including the unresolved one that chose no revision. | `ReviewFamilyEntryState` | mcp/src/agents_remember/models/knowledge/review_family_context.py:101-101 |
+| **The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.** | `FAMILY_CONTEXT_JOIN_KEY` | mcp/src/agents_remember/models/knowledge/review_family_context.py:107-107 |
+| **The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.** | `RELATIONSHIP_UNION_OWNER`; `SOURCE_INVENTORY_OWNER`; `EVIDENCE_LINKS_OWNER`; `OBSERVATIONS_OWNER`; `ASSESSMENTS_OWNER`; `APPLICABILITY_OWNER` | mcp/src/agents_remember/models/knowledge/review_family_context.py:112-117 |
+| One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal. | `ReviewFamilyGuarantee` | mcp/src/agents_remember/models/knowledge/review_family_context.py:120-137 |
+| **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** | `ReviewFamilyMemberSource`; `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_context.py:46-50; mcp/src/agents_remember/models/knowledge/review_family_source.py:36-123 |
+| **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** | `_require_an_address_to_travel_with_its_observation` | mcp/src/agents_remember/models/knowledge/review_family_source.py:67-80 |
+| One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. | `ReviewFamilyMember` | mcp/src/agents_remember/models/knowledge/review_family_context.py:140-196 |
+| **The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.** | `_require_the_content_state_to_match_the_content` | mcp/src/agents_remember/models/knowledge/review_family_context.py:172-196 |
+| The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest. | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:199-251 |
+| **The docstring paragraph stating that `complete` is the WALK's flag and not the page's, so a completed continued page is a position in a walk and only a single page may be read as the roster whole.** | "``complete`` describes the WALK, not the page." | mcp/src/agents_remember/models/knowledge/review_family_context.py:211-218 |
+| **The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.** | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:229-251 |
+| One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list. | `ReviewFamilyRevisionContext` | mcp/src/agents_remember/models/knowledge/review_family_context.py:254-330 |
+| **The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.** | `recorded_revision_ids` | mcp/src/agents_remember/models/knowledge/review_family_context.py:277-277 |
+| **The validator requiring a recorded side to name the revision it read and carry the page it read, requiring that revision to be one the family owner records, and — this delta's correction — holding only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:284-330 |
+| One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage. | `ReviewFamilyContextEntry` | mcp/src/agents_remember/models/knowledge/review_family_context.py:333-417 |
+| The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots. | `_require_the_entry_to_describe_one_family` | mcp/src/agents_remember/models/knowledge/review_family_context.py:353-367 |
+| **The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.** | `_require_the_state_to_match_its_candidates_and_sides` | mcp/src/agents_remember/models/knowledge/review_family_context.py:369-417 |
+| Where each independent fact beside this context is owned, and the key that joins them. | `ReviewFamilyContextReferences` | mcp/src/agents_remember/models/knowledge/review_family_context.py:420-439 |
+| The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations. | `ReviewFamilyContext` | mcp/src/agents_remember/models/knowledge/review_family_context.py:442-522 |
+| **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:467-522 |
 | **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:245-292 |
 | The roster read that supplies each side's guarantee, its members and its page. | `read_family_roster` | mcp/src/agents_remember/application/review_family_rosters.py:209-272 |
 | **The production review read that composes the context once and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The payload field itself, required rather than optional so an absent field can never be read as a measured zero. | `family_context` | mcp/src/agents_remember/models/knowledge/review.py:1035-1035 |
 | The task-context review, which states `no_subject_selected` because it compared no knowledge operand. | `task_context_review` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
-| The values cases that pin the construction rules this module enforces. | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | mcp/tests/test_review_family_context_values.py:95-111 |
+| The values cases that pin the construction rules this module enforces. | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | mcp/tests/test_review_family_context_values.py:96-112 |
 
 ## Cross-Repo References
 
@@ -241,6 +249,8 @@ system appears in any shape here, so no cross-repo reference row is recorded —
 repository or external-system boundary.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the member-source reference (`ReviewFamilyMemberSource`, `ReviewSourceLocatorState`, `source_locator_state`) moved to `models/knowledge/review_family_source.py` and is re-exported here; the card now describes the per-side structured locator, resolved ranges and locator state, the required role/rationale, and the fifteen-name `__all__`, re-points the moved rows and re-measures every range the extraction shifted. No other vocabulary rule changed. No verification stamp was advanced.
 
 - 2026-09-27T02:33:35Z — L40: No content impact: rebound only the reference to the changed family-context composition entry. The value model and its validators are unchanged; unrelated normalization proposals were not applied.
 

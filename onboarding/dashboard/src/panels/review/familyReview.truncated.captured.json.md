@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.truncated.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T01:27:31+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded by the leaf's probe (`temp/icr/probe-l24-family-body.py`) and installed as the fixture the
+recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
 family workspace case stubs `fetch` with. **31,590 bytes; sha256
 `91b6a1d6b4a2885389b80355a1dbf7aade71d00693556960d8a9d7bbe0efa9d6`.** It is untracked in this leaf's
 working tree (`??`), so these are candidate bytes a reader re-checks against the file, not bytes any
@@ -149,12 +149,13 @@ finding names the exact key path and value a reader can re-check.
 | **The page-scoped fact in the owner's own words: two recorded rows measured, none carried, on a page that is a position in a walk and publishes the cursor that reaches the rest.** | "holds 2 recorded membership(s) and this page carried 0"; "\"members_total\":2"; "\"page\":{\"complete\":false,\"continuation\""; "\"state\":\"first_page\""; "\"page_size=1" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
 | **The walk arithmetic behind the sentence: one item returned per side, with twelve and eleven remaining of thirteen and twelve items, and the same for the second family.** | "\"primary_items_remaining\":12"; "\"primary_items_remaining\":11" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
 | **The same two families, revisions and authored texts the `complete` body records — so the only difference between the pair is what the pages carried.** | "65a7c216-c8d0-422d-a114-6822fba97f90"; "c23a294f-fb8a-45e4-b930-3dedbdb751bb"; "e38f2f7c-ef1c-4044-9c4e-f13b0b566939"; "7d5100c2-e038-439b-987a-13758488c098"; "The retry budget is shared by integration and synchronization." | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.truncated.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
-| **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| The bounded-roster case states owner totals while refusing to call the current empty page a measured zero. | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:438-459 |
-| The bounded capture keeps the exact continuation, owner-measured counts and reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:286-329; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:472-506; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:637-690 |
-| The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:582-606 |
+| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.truncated.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
+| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
+| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.truncated.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
+| The bounded-roster case states owner totals while refusing to call the current empty page a measured zero. | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:448-469 |
+| The bounded capture keeps the exact continuation, owner-measured counts and reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:296-339; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:482-516; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:647-700 |
+| The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:592-616 |
 | Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:222-236; dashboard/src/panels/review/FamilyTree.tsx:218-220 |
 | Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594; dashboard/src/panels/review/FamilyTree.tsx:211-216 |
 
@@ -169,6 +170,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 
 - 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
 - 2026-09-26T21:12:36+00:00: Generated citation repair: "prints one empty-roster sentence in both columns, not two that happen to agree" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:583-607. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

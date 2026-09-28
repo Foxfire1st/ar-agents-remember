@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_family_rosters.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T02:44:54Z |
-| lastVerifiedCommitHash | `c8d6ebe2289731c7693eb890b806a2f3490f3e97` |
-| lastVerifiedCommitDate | 2026-09-27T04:55:05+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ caller states an unreadable side rather than presenting a guarantee it did not g
 
 **Each page identifies the exact revisions it represents, even when their record kinds are split across pages.** `_members` unions the revision IDs from this page's content, claims and membership items, then resolves each pair through `memberships.find_membership_by_pair` for the selected family revision. It projects only recorded associations in that bounded set. `_RosterLookups` still contains only this page's selected content and source claims, so a later claim can carry `content_not_on_page` without losing its exact membership or fabricating a statement. The client can enrich an earlier member context with that sparse update.
 
-`_member` carries the stored membership identity, exact invariant revision, known identity/label, page-selected content, recorded sharing and this page's claims. `_other_families` still obtains sharing from the membership owner; `_source` preserves each claim's recorded and observed source identity and resolution. Movement references remain the comparison union's facts. This is a projection correction, not a whole-roster fetch or another read policy.
+`_member` carries the stored membership identity, exact invariant revision, known identity/label, page-selected content, recorded sharing and this page's claims. `_other_families` still obtains sharing from the membership owner. **Each claim's source reference is projected by `member_source` in `application/review_family_sources.py`**, which this module imports and calls once per claim; the private `_source` projection that used to live here is gone. That projection preserves each claim's recorded and observed source identity, resolution and `detail`, and adds the side's structured recorded locator, resolved line ranges and locator state, so two members realized in one file keep two regions (see that module's card). Movement references remain the comparison union's facts. This is a projection correction, not a whole-roster fetch or another read policy.
 
 **The page and the refusals are the surface's own vocabulary.** `family_member_page` states
 one continued roster walk as `ICR-R10@v1`'s `ReviewCollectionPage`, carrying the read owner's own
@@ -118,7 +118,7 @@ either moved.
 `__all__` publishes the twelve names the composition consumes, in one alphabetical list. The
 module imports the shipped read operation and its request/seed/budget/context values, the family and
 membership owners, the read-only connection and predecessor-edge query, the store opener, the refusal
-type, the review surface's page and refusal values, and the values it states. It defines no
+type, the review surface's page and refusal values, the member-source projection, and the values it states. It defines no
 SQL of its own and opens no store it does not close: `open_family_side` returns the side and the
 composition closes both sides in a `finally` block.
 
@@ -190,14 +190,14 @@ synthesized guarantee**.
 | One membership row composed as a member context with its exact revision, its sharing fact and its source references. | `_member` | mcp/src/agents_remember/application/review_family_rosters.py:498-526 |
 | The member identity taken from the page, or from the store owner when the page did not carry the revision. | `_member_identity` | mcp/src/agents_remember/application/review_family_rosters.py:529-542 |
 | **The sharing fact, read from the membership owner and excluding this family revision, so one revision referenced twice is not one fact copied twice.** | `_other_families` | mcp/src/agents_remember/application/review_family_rosters.py:545-561 |
-| One recorded realization claim as an inspectable source reference, or the statement that no address was observed. | `_source` | mcp/src/agents_remember/application/review_family_rosters.py:564-584 |
-| The sentence stating which facts of one membership row this read established. | `_member_detail` | mcp/src/agents_remember/application/review_family_rosters.py:587-609 |
-| The membership identities the relationship union's own movement values display. | `_movement_identities` | mcp/src/agents_remember/application/review_family_rosters.py:612-622 |
-| **One continued roster walk stated as the review surface's own page, with the read owner's own counts and cursor.** | `family_member_page` | mcp/src/agents_remember/application/review_family_rosters.py:628-650 |
-| **The refusal for naming the collection without a cursor: it is a set of per-family walks, so no single page was addressed.** | `family_collection_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:653-671 |
-| **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** | `family_context_cursor_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:674-712 |
+| **Each recorded realization claim projected by the dedicated source module — with its per-side locator, resolved ranges and locator state — rather than by a private projection here.** | `member_source` | mcp/src/agents_remember/application/review_family_rosters.py:32-32; mcp/src/agents_remember/application/review_family_rosters.py:523-523; mcp/src/agents_remember/application/review_family_sources.py:27-51 |
+| The sentence stating which facts of one membership row this read established. | `_member_detail` | mcp/src/agents_remember/application/review_family_rosters.py:564-586 |
+| The membership identities the relationship union's own movement values display. | `_movement_identities` | mcp/src/agents_remember/application/review_family_rosters.py:589-599 |
+| **One continued roster walk stated as the review surface's own page, with the read owner's own counts and cursor.** | `family_member_page` | mcp/src/agents_remember/application/review_family_rosters.py:605-627 |
+| **The refusal for naming the collection without a cursor: it is a set of per-family walks, so no single page was addressed.** | `family_collection_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:630-648 |
+| **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** | `family_context_cursor_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:651-689 |
 | The composition that decides which families and revisions this read is called for. | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:245-292 |
-| **The values this read states, whose validators refuse a truncated roster presented as a whole one.** | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:225-277 |
+| **The values this read states, whose validators refuse a truncated roster presented as a whole one.** | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:199-251 |
 | The production review read that asks for this roster and publishes its page. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
 | The cases that drive the roster read through the production review over a real enclosure. | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |
 
@@ -212,6 +212,8 @@ credential, network or external system is involved. No cross-repo reference row 
 no cited range proves a repository or external-system boundary.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the private `_source` projection was removed; each claim is now projected by `application/review_family_sources.member_source`, which adds the per-side structured locator, resolved ranges and locator state. Updated the member paragraph, conventions and the source row, and re-measured every range the removal shifted (the refusal row that ran past the file's end now reads its real extent). No read, cursor, refusal or guarantee behaviour changed. No verification stamp was advanced.
 
 - 2026-09-27T02:44:54Z — L40: No content impact: reviewed the existing claim against the same named moved source owner and retained its meaning while rebinding the reference. This source artifact is unchanged; prior history and verification metadata remain intact.
 

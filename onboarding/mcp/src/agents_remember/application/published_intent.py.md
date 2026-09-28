@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/published_intent.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -175,8 +175,8 @@ repository source only.
 | The read-only connection the authority check opens, and the authority-home row it reads. | `open_read_only_database`; `bound_repository` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63; mcp/src/agents_remember/memory/knowledge/logical.py:178-197 |
 | The one Git command this route runs, through the shared owner. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-214 |
 | The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. | `_absence_refusal`; `_invariant_identity_is_recorded`; `_family_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_read.py:357-389; mcp/src/agents_remember/application/knowledge_read.py:392-414; mcp/src/agents_remember/application/knowledge_read.py:417-439 |
-| The typed seeds and budget this route constructs, and the policy version the recorded block carries. | `PathSeed`; `KnowledgeReadBudget`; `KnowledgeReadRequest`; `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:144-171; mcp/src/agents_remember/models/knowledge/read.py:266-275; mcp/src/agents_remember/models/knowledge/read.py:278-288; mcp/src/agents_remember/models/knowledge/read.py:87-87 |
-| The refusal and item shapes this route renders without re-spelling. | `KnowledgeRefusal`; `ReadItem` | mcp/src/agents_remember/models/knowledge/result.py:235-245; mcp/src/agents_remember/models/knowledge/read.py:363-401 |
+| The typed seeds and budget this route constructs, and the policy version the recorded block carries. | `PathSeed`; `KnowledgeReadBudget`; `KnowledgeReadRequest`; `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:128-155; mcp/src/agents_remember/models/knowledge/read.py:250-259; mcp/src/agents_remember/models/knowledge/read.py:262-272; mcp/src/agents_remember/models/knowledge/read.py:91-91 |
+| The refusal and item shapes this route renders without re-spelling. | `KnowledgeRefusal`; `ReadItem` | mcp/src/agents_remember/models/knowledge/result.py:235-245; mcp/src/agents_remember/models/knowledge/read.py:329-367 |
 | The storage failure class the input-fact set is built around. | `KnowledgeStorageError` | mcp/src/agents_remember/memory/knowledge/refusals.py:27-32 |
 | **The resolver rule this card's memory-root paragraph states: the contract's memory worktree when one is in scope, the canonical external memory root otherwise.** | `_effective_memory_root` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:356-359 |
 | **The application-layer cases that measure this module's route: the exact identities, the named absences, the seed refusals and the identity-seeded page.** | `test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities`; `test_a_repository_that_publishes_nothing_reports_not_recorded`; `test_a_dataset_that_is_not_a_dataset_names_the_failed_binding`; `test_a_directory_at_the_publication_path_is_not_reported_as_nothing_recorded`; `test_a_seed_that_is_not_a_typed_seed_is_refused_rather_than_raising`; `test_a_dataset_bound_to_another_repository_is_never_silently_read`; `test_a_path_the_snapshot_records_nothing_about_is_a_named_absence`; `test_an_identity_the_snapshot_does_not_hold_is_a_named_absence`; `test_a_path_no_recorded_anchor_could_carry_is_refused_as_a_seed`; `test_the_resolved_source_pair_is_what_recorded_anchors_are_observed_against`; `test_an_identity_seeded_page_carries_exact_retained_revisions` | mcp/tests/test_read_ar_files.py:426-461; mcp/tests/test_read_ar_files.py:463-472; mcp/tests/test_read_ar_files.py:474-481; mcp/tests/test_read_ar_files.py:483-499; mcp/tests/test_read_ar_files.py:501-519; mcp/tests/test_read_ar_files.py:546-557; mcp/tests/test_read_ar_files.py:559-567; mcp/tests/test_read_ar_files.py:569-594; mcp/tests/test_read_ar_files.py:596-603; mcp/tests/test_read_ar_files.py:605-631; mcp/tests/test_read_ar_files.py:633-659 |
@@ -194,6 +194,9 @@ memory layer this repository's own coordination declaration resolves, and reache
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
+
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: `_PUBLICATION_FAILURES` repointed to mcp/src/agents_remember/application/published_intent.py:135-135. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 

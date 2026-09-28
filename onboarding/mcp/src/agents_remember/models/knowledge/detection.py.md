@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/detection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-28T17:10:27+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -132,9 +132,15 @@ per model declares the shape:
   signal must carry are required even though three of them are frequently empty, so a signal that
   observed nothing *states* that rather than leaving the field to a default that reads the same as a
   construction that forgot it.
-- Verified policy relations are stated in the docstring with the file and line that carries them
-  (`models/knowledge/diff.py:12-13`, `models/knowledge/read.py:112-130`,
-  `memory/knowledge/read_anchors.py:132-139`), so a reader can check the precedent rather than trust it.
+- Verified policy relations are stated in comments that name the precedent, so a reader can check it
+  rather than trust it. The two read-vocabulary precedents are now named by module and symbol rather than
+  by line number: `read.KNOWLEDGE_READ_POLICY_VERSION` in `models/knowledge/read.py`, and
+  `read_anchor.AnchorResolutionState` (beside `ANCHOR_RESOLUTIONS`) in `models/knowledge/read_anchor.py`,
+  where the anchor vocabulary now lives. The `DIFF_POLICY_VERSION` pointer still names
+  `models/knowledge/diff.py:98` (the constant is now declared a few lines lower), and the `DETECTION_EXTRACTOR_VERSION` comment still cites
+  `memory/knowledge/read_anchors.py:132-139` and says the resolver has no symbol extractor. That last
+  statement no longer describes the resolver, which resolves symbol locators through the shipped extractor
+  (`_observed_symbol`); treat the comment as the version's origin note, not as a current fact.
 - The `Literal` and its tuple are declared **twice on purpose** and a case asserts they agree.
 
 ### Invariants And Boundaries
@@ -195,7 +201,9 @@ No domain documentation source is configured for this repository (`system/source
 | The envelope registry these payload models are registered in, which is why the field set is declared once here. | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
 | The comparison the walk reads, and the shipped statement that a comparison is not a conclusion. | `KnowledgeDiffResult`; `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:733-818; mcp/src/agents_remember/models/knowledge/diff.py:333-370 |
 | The refusal type a documented refusal would be carried on. | `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/result.py:225-235 |
-| **The anchor resolution state that carries `unsupported_locator`, which is why the extractor version is authored here rather than imported.** | `AnchorResolutionState` | mcp/src/agents_remember/models/knowledge/read.py:112-120 |
+| **The anchor resolution state that carries `unsupported_locator`, which is why the extractor version is authored here rather than imported.** | `AnchorResolutionState` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-35 |
+| The precedent comments naming the read-vocabulary constants by module and symbol rather than by line. | "read.KNOWLEDGE_READ_POLICY_VERSION"; "read_anchor.AnchorResolutionState" | mcp/src/agents_remember/models/knowledge/detection.py:96-100; mcp/src/agents_remember/models/knowledge/detection.py:195-199 |
+| The extractor-version origin note, whose claim that the resolver has no symbol extractor predates the resolver's symbol path. | `DETECTION_EXTRACTOR_VERSION` | mcp/src/agents_remember/models/knowledge/detection.py:102-108 |
 
 ## Cross-Repo References
 
@@ -206,6 +214,11 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-28T17:10:27+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `58e22246cc09ef0ee12095e284a111a475081c38`): the L44-A4 comment-only change replaced the two line-number precedents with module-and-symbol names (`read.KNOWLEDGE_READ_POLICY_VERSION`, `read_anchor.AnchorResolutionState`). The conventions note now says so, supersedes this card's earlier 16:55 note that those pointers no longer land, and records that the unchanged `DETECTION_EXTRACTOR_VERSION` comment's claim of no symbol extractor no longer describes the resolver. Rows added for both comment blocks. No behaviour changed.
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): this card's source is unchanged, but the anchor vocabulary it cites moved to `models/knowledge/read_anchor.py`: the row now cites that module, and the conventions note now says the docstring's line-number pointers (`read.py:112-130` and the `read_anchors.py` pointer) no longer land on their constructs, so a reader should follow the names.
+
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The `KnowledgeDiffResult`/`KnowledgeDiffItem` row cited `models/knowledge/diff.py:501-520`/`318-340`, which the attribution-partition growth moved; it now cites the declarations at `:733-818`/`:333-370`. Wording unchanged; no stamp advanced.
 - 2026-09-18T15:12:32+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.

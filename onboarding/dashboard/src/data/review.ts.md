@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash |  `55c62237132eaa56b0df28ae5a8420a8dc05303d`|
-| lastVerifiedCommitDate |  2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash |  `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
+| lastVerifiedCommitDate |  2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,9 @@ existing importer changed its import path.
 Since ICR-R31@v1 it is also the public entry for the **family half** of the review contract. That half
 lives in its own mirror module, `data/reviewFamily.ts`, and this module **re-exports** it whole — the
 five values (`FAMILY_CONTEXT_JOIN_KEY`, `FAMILY_SIDES`, `UNRESOLVED_SELECTION_STATES`,
-`guaranteeComparison`, `memberComparison`) and the eighteen types of its vocabulary — so a consumer of
+`guaranteeComparison`, `memberComparison`) and the twenty-one types of its vocabulary — including the
+member-source locator types `ReviewSourceLocator`, `ReviewSourceLineRange` and
+`ReviewSourceLocatorState` added for ICR-R31@v1's per-side locators — so a consumer of
 the review payload imports one public entry rather than two, the same rule the transport already
 follows.
 
@@ -59,7 +61,7 @@ The client mirrors the server existing revision_selection and record channels. C
 **The module is one vocabulary of interfaces plus three request functions; there is no store, no
 reducer and no hook.** It declares eight string-union types, thirty-three interfaces and three exported
 functions, and on top of that declared vocabulary it re-exports the family mirror's five values and
-eighteen types (ICR-R31@v1). The absence of state is the point: the review surface owns its own
+twenty-one types (ICR-R31@v1). The absence of state is the point: the review surface owns its own
 component state (`ReviewSurface.tsx`), exactly as the change-set viewer owns its component state, so
 this module never appears in `data/store.ts` and no `useDashboard` selector reads it.
 
@@ -269,30 +271,31 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The header's own statement of what this file mirrors, the rule that a field the server omits is absent rather than defaulted, and the second model module the expansion types mirror. | `Mirrors`; `FilesApiError`; `same way (ICR-R03)` | dashboard/src/data/review.ts:1-9; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-4; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:25-25; dashboard/src/data/reviewTransport.test.ts:175-175; dashboard/src/data/reviewTransport.test.ts:180-180; dashboard/src/data/reviewTransport.test.ts:295-295; dashboard/src/data/reviewTransport.test.ts:300-300; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112; dashboard/src/data/changeset.ts:33-33 |
-| The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:63-64 |
-| **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` |dashboard/src/data/review.ts:90-95|
-| The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` |dashboard/src/data/review.ts:97-101|
-| The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. | `ReviewCandidateRef`; `ComparisonIdentity` | dashboard/src/data/review.ts:103-108; dashboard/src/data/review.ts:110-123 |
-| The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:125-129; dashboard/src/data/review.ts:131-137 |
-| The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:139-149; dashboard/src/data/review.ts:192-202 |
-| The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:204-215 |
-| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:217-239; dashboard/src/data/review.ts:305-314; dashboard/src/data/review.ts:413-424 |
-| The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` |dashboard/src/data/review.ts:241-253|
-| **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** | `ReviewRemainingCount`; `value?: number`; `reason?: string` |dashboard/src/data/review.ts:255-259|
-| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:384-390; dashboard/src/data/review.ts:392-403 |
-| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:426-437; dashboard/src/data/review.ts:439-445 |
-| The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:447-479; dashboard/src/data/review.ts:512-519; dashboard/src/data/review.ts:521-527 |
-| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` |dashboard/src/data/review.ts:555-571|
-| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` |dashboard/src/data/review.ts:692-697|
-| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:699-712|
-| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` |dashboard/src/data/review.ts:721-727|
-| **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:321-327; dashboard/src/data/review.ts:329-336 |
-| **The expansion value: both sides, both generation ids, the three-member currentness, `path_bound` naming which measured change set bounded the path, and `admission` naming why it was opened (a changed path, or unchanged context a recorded realization of the same comparison links).** | `ReviewSourceAdmission`; `ReviewSourceExpansion` |dashboard/src/data/review.ts:355-374|
-| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` |dashboard/src/data/review.ts:376-382|
-| **The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.** | `reviewSourceContent` |dashboard/src/data/review.ts:739-757|
+| **The family mirror's re-export: five values and twenty-one types, including the three member-source locator types.** | `ReviewSourceLocator`; `ReviewSourceLineRange`; `ReviewSourceLocatorState` | dashboard/src/data/review.ts:35-64 |
+| The two client-side unions, each mirroring a server literal. | `ReviewSideState`; `ReviewSelectorKind` | dashboard/src/data/review.ts:66-67 |
+| **The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.** | `ReviewSideContent` |dashboard/src/data/review.ts:93-98|
+| The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. | `ReviewUnresolvedReference` |dashboard/src/data/review.ts:100-104|
+| The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. | `ReviewCandidateRef`; `ComparisonIdentity` | dashboard/src/data/review.ts:106-111; dashboard/src/data/review.ts:113-126 |
+| The per-side revision count and the field transition whose absent value is the recorded fact. | `ReviewRevisionGroup`; `ReviewFieldChange` | dashboard/src/data/review.ts:128-132; dashboard/src/data/review.ts:134-140 |
+| The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. | `ReviewAuthoredEffect`; `ReviewSignal` | dashboard/src/data/review.ts:142-152; dashboard/src/data/review.ts:195-205 |
+| The assessment display with its author, examined inputs, binding state and evidence refs. | `ReviewAssessmentDisplay` | dashboard/src/data/review.ts:207-218 |
+| The three panes, each carrying its own `unresolved` rows. | `ReviewKnowledgePane`; `ReviewSourcePane`; `ReviewEvidencePane` | dashboard/src/data/review.ts:220-242; dashboard/src/data/review.ts:308-317; dashboard/src/data/review.ts:416-427 |
+| The selected source location with its optional role and its three-member change state. | `ReviewSourceLocation` |dashboard/src/data/review.ts:244-256|
+| **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** | `ReviewRemainingCount`; `value?: number`; `reason?: string` |dashboard/src/data/review.ts:258-262|
+| The evidence claim reference and the observation displayed exactly. | `ReviewEvidenceLink`; `ReviewObservation` | dashboard/src/data/review.ts:387-393; dashboard/src/data/review.ts:395-406 |
+| **The two display unions with no favourable member.** | `ReviewStaleness`; `ReviewSubmission` | dashboard/src/data/review.ts:429-440; dashboard/src/data/review.ts:442-448 |
+| The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes. | `ReviewPayload`; `ReviewRefusal`; `ReviewResult` | dashboard/src/data/review.ts:450-482; dashboard/src/data/review.ts:515-522; dashboard/src/data/review.ts:524-530 |
+| **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** | `intentReview` |dashboard/src/data/review.ts:558-574|
+| **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry` |dashboard/src/data/review.ts:695-700|
+| **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:702-715|
+| **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** | `intentReviewEntries` |dashboard/src/data/review.ts:724-730|
+| **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:324-330; dashboard/src/data/review.ts:332-339 |
+| **The expansion value: both sides, both generation ids, the three-member currentness, `path_bound` naming which measured change set bounded the path, and `admission` naming why it was opened (a changed path, or unchanged context a recorded realization of the same comparison links).** | `ReviewSourceAdmission`; `ReviewSourceExpansion` |dashboard/src/data/review.ts:358-377|
+| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` |dashboard/src/data/review.ts:379-385|
+| **The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.** | `reviewSourceContent` |dashboard/src/data/review.ts:742-760|
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:95-102; dashboard/src/data/files.ts:104-105 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128; dashboard/src/data/changeset.ts:167-168 |
-| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:555-571; dashboard/src/data/review.ts:739-757 |
+| The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:558-574; dashboard/src/data/review.ts:742-760 |
 | **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and keeps the source-review entry available when the catalogue refuses or returns no subjects.** | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:63-110 |
 
 ## Cross-Repo References
@@ -305,6 +308,9 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the family re-export now includes the three member-source locator types; corrected the stated type count from eighteen to twenty-one and added the re-export row. No other client behaviour changed. No verification stamp was advanced.
+
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the source-content client type gained the typed admission.** `ReviewSourceAdmission`, `admission`/`admission_detail` on `ReviewSourceExpansion`, and `status: ReviewFileStatus | "unchanged"` mirror the server model; the header comment now names both admitted populations (L43-R1-F3). No request or UI behavior changed (the pane's labelling is L49's). The Logic paragraph and expansion row were updated; twelve rows whose ranges this insertion displaced were re-pointed (+10 for the expansion block, +12 below it), each verified against the candidate. No stamp advanced; closeout owns it.
 - 2026-09-26T21:07:40+00:00: Generated citation repair: `ReviewEntry` repointed to dashboard/src/data/review.ts:680-685. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

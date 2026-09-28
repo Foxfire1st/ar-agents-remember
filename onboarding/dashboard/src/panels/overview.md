@@ -5,10 +5,29 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260921-ICR-L44 Two Family Bodies Re-Captured Under A Receipt, Five Still At Their Earlier Capture
+
+The review cases' captured route bodies are no longer one provenance generation. `familyReview.complete`
+and `familyReview.identical` (and `subjectReview.family` / `subjectReview.invariant`) were re-captured
+over HTTP from the real review route so their member sources carry `locator`, `resolved_ranges` and
+`locator_state`; each re-capture is recorded in a receipt beside the fixtures —
+`review/familyReview.capture-provenance.json` (new) and `review/subjectReview.capture-provenance.json`.
+`familyReview.truncated`, `.continued`, `.oneSided`, `.walkFinal` and `.emptyRoster` still hold their
+capture at `63b47629`, and `familyPaging` its capture at `a5bec6c3`: the current route resolves roster
+members from content and claim items too, so it cannot reproduce the first states, and several cases
+assert those older states. The receipt's worker-stated `not_recaptured` section and the case headers say
+so; their re-capture or retirement is open work that belongs with the change moving those cases to the
+current route.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The receipt's not-re-captured section. | "not_recaptured" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
+| The case header stating which bodies were re-captured. | "familyReview.capture-provenance.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-19 |
 
 ## Current family-centered review ownership
 
@@ -147,6 +166,8 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section recording that two family bodies (and two subject bodies) were re-captured under receipts while five family bodies and `familyPaging` keep their earlier captures, and added the new receipt to the file onboarding map.
 
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No route impact: `review/SourceContent.test.tsx`'s `expansion` builder only gained the two now-required fields (`admission: "changed"`, `admission_detail`); no panel, case or rendered behavior changed, and labelling attributed unchanged context is L49's. Two rows citing displaced lines were re-pointed (verified at base and candidate). No stamp advanced.
 - 2026-09-27T01:16:27+00:00 — Re-resolved only the changed review-source references. The helper-pair citation names both actual definitions, and the central renderer, read cycle and mounted case retain their specific subject. Unrelated normalization and inherited ambiguous anchors were left outside this repair.
@@ -341,7 +362,7 @@ the Chats refactor does not move those routes.
 | Review child route — the family tree and the central reading path | [FamilyTree.tsx](review/FamilyTree.tsx.md) · [FamilyReviewCenter.tsx](review/FamilyReviewCenter.tsx.md) |
 | Review child route — the workspace and the source explorer | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [SourceExplorer.tsx](review/SourceExplorer.tsx.md) |
 | Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
-| Review child route — the captured family bodies those cases are driven with | [familyReview.complete.captured.json](review/familyReview.complete.captured.json.md) · [familyReview.continued.captured.json](review/familyReview.continued.captured.json.md) · [familyReview.emptyRoster.captured.json](review/familyReview.emptyRoster.captured.json.md) · [familyReview.identical.captured.json](review/familyReview.identical.captured.json.md) · [familyReview.oneSided.captured.json](review/familyReview.oneSided.captured.json.md) · [familyReview.truncated.captured.json](review/familyReview.truncated.captured.json.md) · [familyReview.walkFinal.captured.json](review/familyReview.walkFinal.captured.json.md) |
+| Review child route — the captured family bodies those cases are driven with | [familyReview.complete.captured.json](review/familyReview.complete.captured.json.md) · [familyReview.continued.captured.json](review/familyReview.continued.captured.json.md) · [familyReview.emptyRoster.captured.json](review/familyReview.emptyRoster.captured.json.md) · [familyReview.identical.captured.json](review/familyReview.identical.captured.json.md) · [familyReview.oneSided.captured.json](review/familyReview.oneSided.captured.json.md) · [familyReview.truncated.captured.json](review/familyReview.truncated.captured.json.md) · [familyReview.walkFinal.captured.json](review/familyReview.walkFinal.captured.json.md) · [familyReview.capture-provenance.json](review/familyReview.capture-provenance.json.md) |
 
 ## Docs References
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T17:21:23+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,12 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1135-1138 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1157-1160 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+
+- 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No content impact: this card's source is unchanged; its memory-relative citation to the application overview's `## Hot Path Summary` was re-measured after this leaf's new overview section moved that heading.
 
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: the application route overview gained the 25-line *Comparison-bound attributed unchanged source content* section above its hot path, so the "## Hot Path Summary" row now cites `overview.md:1135-1138`, where the same heading and summary sit; claim wording unchanged (memory-quality `citation_anchor_absent_from_range`). No stamp advanced.
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.

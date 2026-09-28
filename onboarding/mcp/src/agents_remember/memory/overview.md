@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T05:23:46+00:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,21 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L44 The Anchor Resolver States The Region It Already Measured
+
+`knowledge/read_anchors.py` now reports, beside its unchanged `detail` sentence, the line ranges an exact
+recorded blob supports as structured values on `AnchorResolution.resolved_ranges`: every defining extent
+for a `symbol` locator, the recorded range for a `line_range` locator **only when the blob holds those
+lines**, and none for a `file` locator. A recorded range past the blob's end keeps `exact_recorded_blob`
+— the blob-identity fact attribution and diff accounting act on — carries no range, and says why in
+`detail`. The resolver still never re-anchors, searches or clips a recorded range and still publishes no
+bytes; it reads the exact blob's lines only to measure a symbol's extents or a range's bounds.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The bound-checked line-range observation. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
+| The symbol observation carrying every defining extent. | `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:227-300 |
 
 ## Curator candidate source continuity
 
@@ -1198,8 +1213,8 @@ one leaf's curation pass.
 | **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** | `select_recorded_scope`; `_member_revision_ids`; `_frontier_expansions`; `_sort_key` | mcp/src/agents_remember/memory/knowledge/read.py:193-238; mcp/src/agents_remember/memory/knowledge/read.py:342-352; mcp/src/agents_remember/memory/knowledge/read.py:355-390; mcp/src/agents_remember/memory/knowledge/read.py:469-480 |
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:762-816 |
 | **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** | `_page_counts` | mcp/src/agents_remember/memory/knowledge/read.py:842-866 |
-| The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:404-448 |
-| **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:103-165; mcp/src/agents_remember/memory/knowledge/read_anchors.py:426-452; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
+| The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:370-414 |
+| **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:106-168; mcp/src/agents_remember/memory/knowledge/read_anchors.py:490-516; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-61; mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-83; mcp/src/agents_remember/memory/knowledge/read_refusals.py:86-112; mcp/src/agents_remember/memory/knowledge/read_refusals.py:115-139; mcp/src/agents_remember/memory/knowledge/read_refusals.py:142-166; mcp/src/agents_remember/memory/knowledge/read_refusals.py:169-189 |
 | **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 | The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
@@ -1235,7 +1250,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:242-242 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:243-243 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1496,7 +1511,11 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section recording that the anchor resolver now states the region it measured as structured `resolved_ranges`, with the exact-blob bound check for recorded line ranges.
+
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
+
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-27T05:28:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:240-240. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
 

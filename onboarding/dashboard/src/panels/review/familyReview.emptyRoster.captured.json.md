@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.emptyRoster.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T00:43:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T16:55:00+02:00 |
+| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
+| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded by the leaf's probe (`temp/icr/probe-l24-family-body.py`) and installed as the fixture the
+recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
 family workspace case stubs `fetch` with. **20,125 bytes; sha256
 `ec6a1fdacd91f83733cbba35daf92d699545f113c97607e8db09dda50a0d29ea`.** It is untracked in this leaf's
 working tree (`??`), so these are candidate bytes a reader re-checks against the file, not bytes any
@@ -137,12 +137,13 @@ finding names the exact key path and value a reader can re-check.
 | **The walk's own arithmetic, which is what makes "read whole" the honest branch: one item measured, returned and remaining, and no memberships in the selection.** | "\"primary_items_remaining\":0,\"primary_items_returned\":1,\"primary_items_total\":1"; "\"memberships_total\":0"; "\"counts\":{\"advertised_expansions_total\":0" | dashboard/src/panels/review/familyReview.emptyRoster.captured.json:1-1 |
 | **The one family, the unique revision both snapshots record, and the authored guarantee the case is named for.** | "04eb4368-3363-4a69-b646-b0dfc3d0e6c2"; "1f4742f9-999e-4f9e-a494-3ea1a571d827"; "A guarantee recorded for a family with no members."; "each the unique revision its own snapshot records for this family" | dashboard/src/panels/review/familyReview.emptyRoster.captured.json:1-1 |
 | **The one place this body itself says "measured zero": another owner's channel, not the roster — the distinction a reader grepping the file must keep.** | "the evidence owner's own answer is a measured zero, not an unread authority" | dashboard/src/panels/review/familyReview.emptyRoster.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that reads the family id out of the body instead of typing it. | `captured("familyReview.emptyRoster.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:65-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-97|
-| **The provenance of every captured body: the real route's bytes recorded by the leaf's probe, with the real client and component tree reading them in the cases.** | "holds the bytes"; "probe-l24-family-body.py" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:6-12 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-27 |
-| The actual measured-zero fixture remains distinct from a bounded page carrying no member rows. | "still says the measured zero when the read really measured zero memberships" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:462-471 |
-| A body without family context is treated as absent attribution, not a measured zero. | "renders a body that carries no family context as that fact, never as a measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:332-351 |
-| **Where the two sentence branches are composed: the owner's `read whole` branch for a single-page walk and its completing-walk sibling, decided by the walk's own flag.** | "read whole"; "completes the read walk"; `single_page_walk` | mcp/src/agents_remember/application/review_family_rosters.py:380-386; mcp/src/agents_remember/models/knowledge/review_family_context.py:344-344 |
+| The one constant that binds this body to its case, and the runtime narrowing that reads the family id out of the body instead of typing it. | `captured("familyReview.emptyRoster.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
+| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — it was reproducible on the current route but carries no member source, so it was deliberately left as captured. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
+| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.emptyRoster.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
+| The actual measured-zero fixture remains distinct from a bounded page carrying no member rows. | "still says the measured zero when the read really measured zero memberships" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:471-481 |
+| A body without family context is treated as absent attribution, not a measured zero. | "renders a body that carries no family context as that fact, never as a measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:341-361 |
+| **Where the two sentence branches are composed: the owner's `read whole` branch for a single-page walk and its completing-walk sibling, decided by the walk's own flag.** | "read whole"; "completes the read walk"; `single_page_walk` | mcp/src/agents_remember/application/review_family_rosters.py:378-389; mcp/src/agents_remember/models/knowledge/review_family_context.py:318-318 |
 
 ## Cross-Repo References
 
@@ -154,5 +155,8 @@ repository's own route over this repository's own fixture enclosure.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
+
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the leaf's measured-zero roster body.** It records the file's exact identity (20,125 bytes; sha256 `ec6a1fdacd91f83733cbba35daf92d699545f113c97607e8db09dda50a0d29ea`) and the state it pins apart from its six siblings: **the read genuinely measured zero memberships** — the only body here where that sentence is true — with the family context in its one `recorded` state, a one-page walk taken whole (`complete: true`, `state: "first_page"`), `members_total` 0, and the guarantee `A guarantee recorded for a family with no members.` The card also records the trap it carries: the phrase "measured zero" occurs in this file only in an **evidence channel's** own detail about a different owner, and the roster sentence is composed elsewhere. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.
