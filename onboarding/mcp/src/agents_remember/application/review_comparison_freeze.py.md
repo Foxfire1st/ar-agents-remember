@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_freeze.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:41:59+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -197,7 +197,7 @@ possible; and a receipt the comparison does not read is never allowed to gate a 
 | **The lineage, and the candidate receipt digest that is `None` rather than fatal when unreadable.** | `_lineage`; `_receipt_digest` | mcp/src/agents_remember/application/review_comparison_freeze.py:728-737; mcp/src/agents_remember/application/review_comparison_freeze.py:740-755 |
 | **The one hidden stage, the sweep that runs before it, and the pid-based liveness question that makes "reclaim only from the dead" possible.** | `_stage`; `_sweep_stale_stages`; `_issuer_alive` | mcp/src/agents_remember/application/review_comparison_freeze.py:761-775; mcp/src/agents_remember/application/review_comparison_freeze.py:778-798; mcp/src/agents_remember/application/review_comparison_freeze.py:801-822 |
 | The two quiet cleanups: one stage removal and one pin release, neither of which may replace the refusal. | `_discard_stage`; `_release_quietly`; `_refused`; `_now` | mcp/src/agents_remember/application/review_comparison_freeze.py:825-828; mcp/src/agents_remember/application/review_comparison_freeze.py:831-846; mcp/src/agents_remember/application/review_comparison_freeze.py:855-858; mcp/src/agents_remember/application/review_comparison_freeze.py:849-852 |
-| The owners it composes rather than re-implements. | `resolve_review_candidate`; `compose_review`; `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250; mcp/src/agents_remember/application/knowledge_review.py:371-611; mcp/src/agents_remember/application/review_candidate_resolution.py:124-160 |
+| The owners it composes rather than re-implements. | `resolve_review_candidate`; `compose_review`; `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250; mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/review_candidate_resolution.py:124-160 |
 | The retention owner this module hands the code pin and the two snapshots to. | `retain_comparison_source`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:134-170; mcp/src/agents_remember/application/review_comparison_retention.py:381-407 |
 | The record the freeze seals, and the `assemble_manifest` that seals and derives the id in one call. | `ComparisonGenerationManifest`; `assemble_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:586-609 |
 | The storage snapshot owner the two knowledge halves are copied through. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137 |
@@ -274,6 +274,7 @@ generation with two full retained knowledge snapshots.
 | The discovery the caller reads to name the predecessor, in a total order by index then id. | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:714-722; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:41:59+00:00 — Reconciled the options claim with omitted-record collection and explicit retained-parent recovery; removed the superseded fixed field counts. Verification remains closeout-owned.
 

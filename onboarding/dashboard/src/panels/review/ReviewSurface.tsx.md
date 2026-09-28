@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:20:54Z |
-| lastVerifiedCommitHash |  `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate |  2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T17:11:24+02:00 |
+| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
+| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,16 @@ Compose the normal Intent Reviewer from one subject catalogue, one comparison re
 The subject-selection callback carries the chosen family context into the new subject read. Selecting a member requests its invariant through the existing read cycle; it does not render a family payload as that member own assessment.
 
 useSurface gets recorded subjects through useReviewNavigation and passes the chosen identity to useReviewReadCycle. Changing subjects clears the prior page request and local family selection while the workspace display preferences persist. The retained payload is shown only when its full target key matches the question on screen. ReviewPanes mounts one workspace; records, pagination, submission contract and complete technical panes remain inspectable in the technical-details disclosure. Typed outcomes stay with ReviewOutcome, refresh identity with ReviewRefresh, source bytes with SourceContent, and family/intent/source composition with ReviewWorkspace.
+
+Since `260921-ICR-L47`, `useSurface` passes `hold: navigation.settling` to `useReviewReadCycle`, so the
+reviewer's first read waits (at most `SUBJECT_HOLD_MS`) for the catalogue to choose a subject, and calls
+`useObservedComparison(navigation.observeComparison, shown)` so the navigation re-reads its catalogue only
+when the displayed snapshot pair changes. The file grew by 3 lines to 931, over the 900-line soft rail
+(L47-R1-F5, routed to L48, which reworks this file).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The held first read and the snapshot observation. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:779-857 |
 
 ### Conventions
 
@@ -140,13 +150,14 @@ inner root's count was already 0 in both rounds, which is exactly why F1 was a c
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The pane helper's two load-bearing declarations, and the comment that states why each one is required rather than cosmetic.** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewSurface.tsx:8-97 |
-| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:80-80; dashboard/src/panels/review/ReviewSurface.tsx:706-706 |
+| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:81-81; dashboard/src/panels/review/ReviewSurface.tsx:707-707 |
 | The header wraps the task/subject controls while keeping their context and refresh action available. | `ReviewHeader` | dashboard/src/panels/review/ReviewSurface.tsx:722-776 |
 | The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:49-78; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
 | The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
-| The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:323-323 |
+| The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:324-324 |
 
 ## Update History
+- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the surface wires the navigation's hold and snapshot observation (`ICR-R24@v3`).** Records the two added calls and the soft-rail overrun routed to L48 (L47-R1-F5). Displaced rows re-pointed. No stamp advanced.
 - 2026-09-26T21:10:43+00:00: Generated citation repair: `TAKEOVER`; `gridTemplateColumns` repointed to dashboard/src/panels/review/ReviewSurface.tsx:80-80; dashboard/src/panels/review/ReviewSurface.tsx:706-706. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:43+00:00: Generated citation repair: `payload` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

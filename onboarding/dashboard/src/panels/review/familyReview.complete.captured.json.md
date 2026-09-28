@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/familyReview.complete.captured.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -148,7 +148,7 @@ finding names the exact key path and value a reader can re-check.
 | **The two families' display labels, and that both selections are recorded comparisons.** | "\"display_label\":\"retry-budget-family\""; "\"display_label\":\"retry-and-anchor-family\""; "\"state\":\"compared\"" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
 | **Each member source's structured locator and state: file locators only, `whole_file` on the exact blob, `unresolved` where the path is absent, and no resolved range anywhere.** | "\"locator\":{\"kind\":\"file\"}"; "\"locator_state\":\"whole_file\""; "\"locator_state\":\"unresolved\""; "\"resolution\":\"path_absent\""; "\"resolved_ranges\":[]" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
 | **Every member row on the page carries its revision content, which is why all eight rows are readable statements rather than page-scoped notices.** | "\"state\":\"recorded\""; "\"members_total\":2" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.complete.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:53-62; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:72-99; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:67-67|
+| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.complete.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:63-72; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:82-109; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:77-77 |
 | **The provenance of this body: re-captured over HTTP by the producer, command and source tree the receipt names, carrying each member source's structured locator, resolved ranges and locator state.** | "familyReview.capture-provenance.json"; "re-captured over HTTP" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-13 |
 | **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** | "familyReview.complete.captured.json"; "captured_source_tree" | dashboard/src/panels/review/familyReview.capture-provenance.json:1-25 |
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
@@ -166,6 +166,7 @@ repository's own route over this repository's own fixture enclosure.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/panels/review/ReviewWorkspace.family.test.tsx`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the body was re-captured over HTTP from the real review route (47,035 bytes; sha256 `1a218df3…e91f`, recorded in `familyReview.capture-provenance.json`) so its member sources carry `locator`, `resolved_ranges` and `locator_state`. Every identity in it is new, so the card now names labels and sentences instead of per-build UUIDs, states the roster sentence as the route now words it (`this page supplies 2 member context update(s)`), describes the four sources' locator states, and points its provenance at the receipt instead of the retired probe. The shapes it pins are unchanged. No verification stamp was advanced.
 

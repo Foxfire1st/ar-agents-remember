@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `overview.md` |
 ## Governing Overview
 
@@ -701,7 +701,7 @@ other row's identity moved**:
 | **The row this leaf registered: its own case module, on the read-scope artifact's `consumer_scope = "exact"` list.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/evidence-lifecycle.toml:1484-1484|
 | **The row this leaf registered: its own case module, on the read-scope artifact's `consumer_scope = "exact"` list.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" |mcp/tests/evidence-lifecycle.toml:1484-1484|
 | **The row L18's landed consequence repair had already carried, now the row immediately below this leaf's: `mcp/tests/test_read_ar_files.py` imports the same fixture and was the path L19's landing left unregistered. The two are kept as a set — the census compares consumer sets — so each path is named exactly once.** | "mcp/tests/test_read_ar_files.py"; "from read_scope_test_support import" | mcp/tests/evidence-lifecycle.toml:389-454; mcp/tests/test_read_ar_files.py:56-56 |
-| The artifact both rows belong to: its `[[artifact]]` block, its `knowledge-read-scope-cases` owner, its `consumer_scope = "exact"` and the list's exact extent on the merged candidate. | `"mcp/tests/read_scope_test_support.py"`; `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:1415-1448 |
+| The artifact both rows belong to: its `[[artifact]]` block, its `knowledge-read-scope-cases` owner, its `consumer_scope = "exact"` and the list's exact extent on the merged candidate. | `"mcp/tests/read_scope_test_support.py"`; `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:1417-1450 |
 | The constant this file's bytes pin, re-pinned at the sync, and the two count constants this change leaves alone. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-46 |
 
 **Population, measured on the merged candidate: sixteen contracts and sixty-six artifacts** (`grep -c
@@ -812,6 +812,7 @@ rows citing this file were re-pointed through the exact base-to-candidate line m
 | The snapshot-lifecycle support artifact's consumer list with the new exact consumer. | "mcp/tests/test_curator_realization_authoring.py"; "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1278-1286 |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/evidence-lifecycle.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:15:06+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): added this section for the two inserted consumer rows and re-pointed every body citation below `:699` through the exact base-to-candidate line map (same line content as at base). No stamp advanced; closeout owns it.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): recorded the one consumer row `mcp/tests/test_review_family_member_sources.py` on the read-scope artifact's exact list, the unmoved counts and the byte-pin state, and re-measured every range the one-line insertion shifted. No verification stamp was advanced.

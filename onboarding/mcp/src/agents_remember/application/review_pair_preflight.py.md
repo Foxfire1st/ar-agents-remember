@@ -1,0 +1,86 @@
+# mcp/src/agents_remember/application/review_pair_preflight.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/application/review_pair_preflight.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-28T16:55:21+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| governingOverview | `mcp/src/agents_remember/application/overview.md` |
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
+**The one rule by which a resolved review pair is refused as a whole, before any subject is read from
+it.** Two reads ask the whole pair a question before a reviewer opens it: the subject catalogue
+(`knowledge_review.list_knowledge_review_entries`) and the changed-intent summary
+([`review_intent_summary`](review_intent_summary.py.md)). They must refuse by the same rule and in the
+same order, or the task entry could offer a count for a pair its catalogue refuses. Leaf
+`260921-ICR-L47` extracted the rule out of `list_knowledge_review_entries` so both callers share it.
+
+## Code Commentary
+
+### Logic
+
+`pair_preflight_refusal(resolved)` returns the **first** refusal, in this fixed order, or `None`:
+
+1. `closed_leaf_dataset_refusal` — a closed leaf's record answers in its own words; a half the leaf
+   never recorded is a fact about history, not lost content (`ICR-R12`);
+2. `absent_pair_refusal` — a live pair with an absent half names the half and the file
+   (`candidate_dataset_absent`), because authoring a candidate and placing the baseline it forks from
+   are different actions;
+3. `unreadable_half_refusal` — a half that is present but is not a readable dataset;
+4. `candidate_receipt_refusal` — an unreadable candidate receipt.
+
+`absent_pair_refusal` is the former private `knowledge_review._absent_pair_refusal`, moved unchanged
+(same code, detail, next action and offending input).
+
+### Conventions
+
+It reads each half only as far as those checks need; what the pair *holds* is the caller's question.
+Every refusal is a typed `ReviewRefusal` from the existing owners — this module mints no new code.
+
+### Invariants And Boundaries
+
+- One order for both callers. Reordering here changes both answers together, which is the point.
+- A closed leaf's declared absence and a live leaf's missing file stay two different refusals.
+- No dataset is substituted and nothing is read out of the live coordination tree.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured for this module.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant domain documentation was found. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The four refusals in their fixed order. | `pair_preflight_refusal`; `closed_leaf_dataset_refusal`; `unreadable_half_refusal`; `candidate_receipt_refusal` | mcp/src/agents_remember/application/review_pair_preflight.py:34-42 |
+| The live pair's absent-half refusal, naming the half and the file. | `absent_pair_refusal`; "candidate_dataset_absent" | mcp/src/agents_remember/application/review_pair_preflight.py:45-71 |
+| The catalogue caller: one call, refused before any subject is listed. | `list_knowledge_review_entries`; `pair_preflight_refusal` | mcp/src/agents_remember/application/knowledge_review.py:256-317 |
+| The summary caller: the same call before either side is read. | `intent_summary_of`; `pair_preflight_refusal` | mcp/src/agents_remember/application/review_intent_summary.py:137-167 |
+| The absent-half probe it builds on. | `missing_dataset_half` | mcp/src/agents_remember/application/review_candidate_resolution.py:330-348 |
+
+## Cross-Repo References
+
+No cross-repository behavior.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repo references found. | — | — |
+
+## Update History
+
+- 2026-09-28T16:55:21+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the pair preflight extracted from `knowledge_review.list_knowledge_review_entries` (`ICR-R24@v3`). The catalogue's refusal order is preserved exactly; the changed-intent summary now shares it. The verification pair names the code base; closeout owns the real stamp.

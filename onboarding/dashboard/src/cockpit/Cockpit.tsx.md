@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-28T17:11:24+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -199,6 +199,19 @@ include worktree-group/code-worktree/memory-worktree facts at the leaf bind poin
 
 **One comment, and it records a shape the dispatch already supported.** The `ChangeSetTakeover` component's review branch gained a comment stating that a review target may carry a subject's selector **or none at all** — the task-context entry opens the review on the task, and `ReviewSurface` asks the server for exactly what it was handed. The dispatch itself was not changed: it already forwarded an optional selector, which is why the task-context target reaches the surface without a code change here. Nothing else in the cockpit moved, and the two lines are the whole of this file's diff.
 
+**The shell provides the entry's re-validation context (`260921-ICR-L47`, ruling 2026-09-28T16:27:28+02:00
+on L47-R1-F2).** `CockpitShell` wraps its tree in
+`<IntentEntryRevalidation shown={state.view === "operations" && !state.takeover}>`. The Operations
+`DetailPanel` is never unmounted (only hidden during view switches and takeovers), so remounting could not
+re-read the entry; instead the generation increments when `shown` turns true — a view switch back to
+Operations or any takeover closing (the reviewer, a change set, notes) — and the entry's summary re-reads
+once. This is 3 lines of wiring (1156 → 1159, already in the 900–1200 soft band; the diff is mostly
+re-indentation); review R2 judged it wiring, not feature logic (O-R2-2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The provider around the shell, shown only for Operations with no takeover. | `IntentEntryRevalidation`; "state.view === \"operations\" && !state.takeover" | dashboard/src/cockpit/Cockpit.tsx:887-943 |
+
 ### Conventions
 
 Panda `css`/`cva`/`cx`. The marker classes (`cockpit--shell`/`shell__body`/`rail`/`viewport`) are kept
@@ -257,7 +270,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:207-223 |
 | Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-451 |
-| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:454-454 |
+| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:455-455 |
 | The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:66-73; dashboard/src/cockpit/Cockpit.tsx:75-83 |
 | The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:328-334 |
 | The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
@@ -270,11 +283,11 @@ the reviewed task evidence for any current behavioral claim.
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:48-59; dashboard/src/data/taskIdentity.ts:65-71 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:160-160 |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:812-812 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:813-813 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:79-122; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:173-245 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:715-787 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:719-719 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:720-720 |
 | Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:460-460 |
 | Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:441-441 |
 | The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:439-439 |
@@ -300,6 +313,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the shell provides the Intent review re-validation context (`ICR-R24@v3`; L47-R1-F2 ruling).** New Logic paragraph and row. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `EffectsToggle` repointed to dashboard/src/cockpit/Cockpit.tsx:1129-1156. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:812-812. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:719-719. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

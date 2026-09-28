@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-28T17:06:19+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## 260921-ICR-L44 Two Family Bodies Re-Captured Under A Receipt, Five Still At Their Earlier Capture
@@ -33,7 +33,7 @@ current route.
 
 SubjectReview owns central statements and evidence from the exact server-selected subject. Member selection uses the ordinary invariant read while preserving family context; confirmed no-family and ambiguous revision states retain their own truthful rendering.
 
-ReviewSurface composes the shared catalogue and existing comparison read cycle. ReviewWorkspace owns one family/subject/source rail and the unified center; ReviewExpressions opens actual bound diffs after intent, while familyExpressions owns the existing pure grouping. FamilyTree preserves full statements and unchanged siblings. The complete source inventory remains independent of attribution; diagnostics remain inspectable through disclosure.
+ReviewSurface composes the reviewer's catalogue (read once on entry since `260921-ICR-L47`) and the existing comparison read cycle. ReviewWorkspace owns one family/subject/source rail and the unified center; ReviewExpressions opens actual bound diffs after intent, while familyExpressions owns the existing pure grouping. FamilyTree preserves full statements and unchanged siblings. The complete source inventory remains independent of attribution; diagnostics remain inspectable through disclosure.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -91,7 +91,7 @@ lives there; what belongs here is the panel-level fact: both of the dashboard's 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`. | "Tasks · {count}" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:574-574 |
-| The bar's request for the net's per-leaf attribution. | `includeLeaves` | dashboard/src/panels/detail-panel/changeSetBar.tsx:98-98 |
+| The bar's request for the net's per-leaf attribution. | `includeLeaves` | dashboard/src/panels/detail-panel/changeSetBar.tsx:112-112 |
 
 ## 260921-ICR-L25 The Change-Set Bar Names An Unrecorded Range, And The Jump Sits Above The Tree
 
@@ -388,7 +388,7 @@ inside agents-remember.
 | --- | --- | --- |
 | The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:76-84 |
 | The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:803-807; dashboard/src/cockpit/Cockpit.tsx:809-810 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:809-810; dashboard/src/cockpit/Cockpit.tsx:810-810; dashboard/src/cockpit/Cockpit.tsx:812-812 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:810-811; dashboard/src/cockpit/Cockpit.tsx:811-811; dashboard/src/cockpit/Cockpit.tsx:813-813 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:24-56; dashboard/src/data/store.ts:329-401; dashboard/src/data/store.ts:18-19 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
 | The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:366-390 |
@@ -527,6 +527,10 @@ viewer change; file-level detail lives in the panel sidecars.
 
 ## 260915-KS-L45 The Task-View Entry Into The Review Panel Is Reachable
 
+*(Historical. The gate and subject read below were superseded by `260921-ICR-L2`/`L12` — the entry is
+offered for every leaf — and the subject read left the entry entirely in `260921-ICR-L47`; see the L47
+section at the end of this overview.)*
+
 The review panel existed before this leaf; what did not exist was a **navigation** into it on a live
 leaf task. `detail-panel/changeSetBar.tsx` is where that is decided, and the decision is now made from
 the server rather than from a prop:
@@ -559,7 +563,7 @@ judgment and publishes no assessment.
 | --- | --- | --- |
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:63-110 |
-| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:560-572 |
+| **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:397-409 |
 | The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:721-727; dashboard/src/data/review.ts:692-697 |
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
@@ -573,8 +577,8 @@ by this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:140-140 |
-| **The generation state the button carries from a successful master read.** | `MasterNetPins` | dashboard/src/panels/detail-panel/changeSetBar.tsx:11-12 |
+| **The entry threading the published generation into the viewer target.** | "onClick={() => onOpen(generation ? { ...target, generation } : target)}" | dashboard/src/panels/detail-panel/changeSetBar.tsx:151-164 |
+| **The generation state the button carries from a successful master read.** | `MasterNetPins` | dashboard/src/panels/detail-panel/changeSetBar.tsx:13-14 |
 
 ## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
 
@@ -721,8 +725,8 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The child route entry component. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
-| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:272-272 |
-| Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:299-299 |
+| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane" | dashboard/src/panels/review/ReviewSurface.tsx:273-273 |
+| Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane" | dashboard/src/panels/review/ReviewSurface.tsx:300-300 |
 | Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewSurface.tsx:354-407 |
 | The technical panes print the owner assessment state rather than deriving a favorable judgment. | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewSurface.tsx:272-297; dashboard/src/panels/review/ReviewSurface.tsx:356-412 |
 | The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewSurface.tsx:409-438 |
@@ -3134,7 +3138,7 @@ states that its byte-form row cannot be opened — so the measurements below nam
 | **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:60-74; dashboard/src/panels/review/ReviewSurface.tsx:40-47; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130; dashboard/src/panels/review/SourceExplorer.tsx:170-222 |
 | **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. | `SourcePane`; `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:299-354; dashboard/src/panels/review/ReviewSurface.tsx:272-297 |
-| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:63-110; dashboard/src/panels/detail-panel/changeSetBar.tsx:506-555 |
+| **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
 
@@ -3181,7 +3185,7 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:29-30 |
 | The read key names the actual question, and retention is shown only for that same question. | `targetKeyOf`; `useSurface` | dashboard/src/panels/review/ReviewReadCycle.ts:73-91; dashboard/src/panels/review/ReviewSurface.tsx:778-854 |
-| **The entry's own read state, printed beside a button that never disappears.** | `ReviewEntryState`; `useReviewCatalogue` | dashboard/src/panels/detail-panel/changeSetBar.tsx:316-350; dashboard/src/panels/detail-panel/changeSetBar.tsx:439-439; dashboard/src/panels/detail-panel/changeSetBar.tsx:371-424; dashboard/src/data/useReviewCatalogue.ts:63-110 |
+| **The entry's own read state on a control that never disappears — since `260921-ICR-L47` a brief word from the changed-intent summary read, with the owner's explanation in a disclosure (the catalogue-based `ReviewEntryState` recorded above is gone).** | `IntentCounts`; `IntentDetails`; `briefProblem` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:24-80; dashboard/src/panels/detail-panel/entryState.tsx:35-48 |
 | The source pane keeps shared transport failure rendering separate from the source owner typed refusal. | `SourceContent`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:167-227; dashboard/src/panels/review/SourceContent.tsx:112-124 |
 
 ## Update History
@@ -3299,6 +3303,7 @@ one read at the detail-panel entry. No route, takeover dispatch or target shape 
 - `panels/detail-panel/changeSetBar.tsx` gains the store-projection invalidation signal
   (`reviewDependencyFacts`), an always-offered refresh control (`ReviewCatalogueRefresh`) whose mark is
   derived from the facts recorded with the last answer, and the pure `catalogueAnswer` mapping.
+  *(Superseded by `260921-ICR-L47`: the signal and the control are removed; see that section below.)*
 - `data/review.ts` gains the ninth `intentReview` argument, the `reviewQuery` assembler and the single
   `PREVIOUS_BINDING_QUERY` spelling of the wire name.
 
@@ -3476,3 +3481,55 @@ an address only one side carried prints that side's alone."* The dedup arithmeti
 ## Bounded family context across review pages
 
 The existing ReviewReadCycle retains exact member content and source claims only within an admitted same-comparison, same-subject family-side-revision continuation. Rejected continuations state failure beside the retained coherent display; refresh and subject/history changes remain replacement reads. FamilyTree, FamilyReviewCenter and ReviewExpressions distinguish loaded context from raw item counts and partial/unavailable source scope. Source inventory, primary statement and evidence remain their existing owners' facts. The captured-page regression fixture and mounted read-cycle cases document this boundary.
+
+## 260921-ICR-L47 The Task Entry Is One Compact Intent Review Control; The Reviewer Owns Its Catalogue
+
+`260921-ICR-L47` (`ICR-R24@v3`) changes both child routes that meet at the review entry. **It
+supersedes** the entry-side catalogue design recorded above in the KS-L45, L9, L16 and L17 sections.
+
+**`detail-panel/` — the entry.**
+
+- The Intent review is one control, `⇄ Intent review +N −N` (`(recorded)` for a closed leaf), rendered
+  by the new [`detail-panel/intentReviewEntry.tsx`](detail-panel/intentReviewEntry.tsx.md). Its
+  numbers are the comparison's **changed-intent counts** from `GET /api/review/intent/summary`
+  ([`data/reviewIntentSummary.ts`](../data/reviewIntentSummary.ts.md)): `+` counts invariant and
+  joint-guarantee revisions only the after side holds, `−` those only the before side holds, a revised
+  statement once on each side. They are never the change set's line totals, which the entry used to
+  show because it reused `ChangeSetButton` (and made a second identical committed request).
+- The entry reads **no subject catalogue**, offers no picker, has no refresh control, prints no
+  paragraph and subscribes to no global analytics document. It always opens the task-context review.
+- `unavailable` and `partial` are explicit brief states (`no knowledge yet`, `offline`, `unreadable`,
+  `partial`), never `+0 −0`. The owner's code, reason, offending input and next action sit in a closed
+  `<details>` disclosure beside the control ([`detail-panel/entryState.tsx`](detail-panel/entryState.tsx.md));
+  the change-set controls use the same brief-word-plus-disclosure pattern (ICR-R16).
+- The summary re-reads when this leaf's own lifecycle facts move and when the entry's re-validation
+  generation moves — on re-showing the task detail, on leaving the reviewer and on the reviewer's own
+  refresh (Architect ruling 2026-09-28T16:27:28+02:00; no event system). Unrelated workspace
+  publications cause no read. A live push while the same panel stays open is not delivered.
+
+**`review/` — the reviewer.**
+
+- The reviewer reads the catalogue **once when it opens**, keyed on the comparison
+  (`repo/master/leaf/history` plus a generation that moves only when the displayed snapshot pair
+  changes), not on the analytics document (`review/ReviewNavigation.tsx`, `data/useReviewCatalogue.ts`).
+- Its first review read is **held** until the catalogue chooses a subject, so a prompt catalogue costs
+  one subject read instead of a whole-task read and then a subject read. The hold is **bounded**
+  (`SUBJECT_HOLD_MS = 750`, L47-R1-F1): a slow or stalled catalogue releases into the task-context review
+  and source explorer, and the first subject is selected when the catalogue answers.
+- The reviewer's own "Refresh subjects"/refresh control is kept, and its refresh also re-validates the
+  entry's summary.
+
+**Known, routed, not delivered here.** A catalogue that answers after the bound moves the reader to the
+first family and drops keyboard focus (review R2 observation O-R2-1; the remount is owned by L48).
+`ReviewSurface.tsx` is 931 lines, over the 900-line soft rail (L47-R1-F5, routed to L48).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The compact control, its brief states and its disclosure. | `IntentReviewEntry`; `IntentCounts`; `IntentDetails` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:24-120 |
+| The entry mounted in place of a change-set button. | `LeafEntries`; `IntentReviewEntry` | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306 |
+| The leaf-scoped facts and re-validation generation. | `DocChangeSetBar`; `leafFacts`; `useIntentEntryGeneration` | dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
+| The reviewer's comparison-keyed catalogue, bounded hold and snapshot observation. | `SUBJECT_HOLD_MS`; `useReviewNavigation`; `useObservedComparison` | dashboard/src/panels/review/ReviewNavigation.tsx:146-211 |
+| The first read held while the navigation settles. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:810-834 |
+
+## Update History
+- 2026-09-28T17:06:19+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`; review R2 pass-with-notes): **route body updated — the compact Intent review entry and the reviewer-owned catalogue (`ICR-R24@v3`).** New section at the end records the entry (one control, intent counts, brief states, leaf-scoped re-validation) and the reviewer (catalogue once on entry, bounded first-read hold), and that it supersedes the entry-side catalogue accounts in the KS-L45, L9, L16 and L17 sections; the KS-L45 section and the L17 bullet are annotated, and the L16 row naming `ReviewEntryState` is reworded and re-cited. Displaced rows into files L47 changed were re-pointed from the base-to-candidate line mapping. No stamp advanced.

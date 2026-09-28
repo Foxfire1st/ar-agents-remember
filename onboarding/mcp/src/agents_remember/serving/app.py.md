@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-28T17:13:48+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -32,6 +32,18 @@ cached process identity projected by MCP `server_info`.
 
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
 
+
+## 260921-ICR-L47 The Changed-Intent Summary Route Is Registered Beside The Reviewer Family
+
+Right after `register_review_routes(...)`, `create_app` calls
+`register_review_summary_route(app, collaborators.review_intent_summary)` — the separate module
+`serving/review_summary.py`, kept out of `serving/review.py` because that module is past the size rail. It
+is still registered before `mount_static(app)`. A process composed without the port answers the route with
+a named 503; with it, every typed summary state is a 200 (`ICR-R24@v3`).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The import and the registration after the reviewer family. | `register_review_summary_route`; `collaborators.review_intent_summary` | mcp/src/agents_remember/serving/app.py:140-140; mcp/src/agents_remember/serving/app.py:303-303 |
 
 ## 260921-ICR-L3 Reviewer Route Registration Carries All Three Ports
 
@@ -119,7 +131,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:255-323 |
 | One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:166-252; mcp/src/agents_remember/serving/app.py:199-199; mcp/src/agents_remember/serving/app.py:243-243 |
-| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:341-341 |
+| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:343-343 |
 
 ## Cross-Repo References
 
@@ -158,12 +170,13 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/app.py:166-252; mcp/src/agents_remember/serving/app.py:246-246; mcp/src/agents_remember/serving/_app_common.py:491-499 |
+| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/app.py:167-253; mcp/src/agents_remember/serving/app.py:247-247; mcp/src/agents_remember/serving/_app_common.py:501-509 |
 | **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.** | `register_review_routes`; `review_source_content` | mcp/src/agents_remember/serving/app.py:295-301; mcp/src/agents_remember/serving/_app_common.py:481-489 |
 | The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-127 |
 | The gate whose behaviour the port's presence decides. | `resolve_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
 ## Update History
+- 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the summary route is registered beside the reviewer family (`ICR-R24@v3`).** New section and row. Displaced rows were re-pointed. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the reviewer route family is now registered with all three collaborator ports.** `create_app`'s `register_review_routes(...)` call gained a fifth argument, `collaborators.review_source_content`, and was reformatted from one line to five so each port reads on its own. This is the only change this leaf makes to this module, and the new section states what it means here: the registration still sits beside the other route families and still precedes `mount_static(app)`, every argument is still a collaborator port rather than an adapter composed in this file, and the third port's absence is the entry-content route's own named refusal instead of an empty file. The L45 section's "**both** collaborator ports" is flagged as superseded in place, keeping its ordering constraint and no-adapter rule intact. **Citation accounting:** every row into this source was re-read against the candidate and re-derived, because this leaf's +4-line reformat moved every construct below it and this card's earlier ranges had already drifted: `create_app` `253-310` → `255-323` (the construct's real extent, decorator-free); `_build_serving_runtime` `165-252` → `166-252` with its two seam lines `198-198`/`242-242` → `199-199`/`243-243`; `"\"TerminalAttachTaskRequest\","` `337-337` → `341-341`; the compiler-port row's second anchor, `ServingCollaborators.capsule_launch` — a dotted span no line can literally hold — became `capsule_launch`; `LaunchCapsuleResolver` over its real field line and `_app_common.py:491-499`; `serving_collaborators` `dashboard.py:67-83` → `67-127`. One row was added for the new fifth argument. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer route family is now registered with both collaborator ports.** `create_app` calls `register_review_routes(app, config, collaborators.knowledge_review, collaborators.knowledge_review_entries)` beside the other route-family registrations and before the greedy static mount, so both reviewer routes — the comparison and the entry list — are reachable in every app this module builds, and a process that wires only one of the two refuses the other route by name rather than serving an empty surface. This line is the one place the surface's two-routes-one-composition-root shape is visible, and the new section records it. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -211,7 +211,7 @@ measurement of a generation**, because a forged record is internally consistent.
 | The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:219-243 |
 | **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-375 |
 | **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** | `ComparisonReopen`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
-| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:357-555 |
+| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:320-518 |
 | **The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.** | `ManagedSyncReviewRebindingTests` | mcp/tests/test_review_sync_rebinding.py:381-818 |
 | The live code/memory worktree pair the managed-sync cases are built on. | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-378 |
 | **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** | `LiveReviewMovementTests`; `test_the_live_review_read_renders_what_the_sync_moved`; `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:38-325; mcp/tests/test_review_sync_movement_read.py:41-102; mcp/tests/test_review_sync_movement_read.py:258-325 |
@@ -227,6 +227,7 @@ that follows from a recorded absolute path is stated above.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 2 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

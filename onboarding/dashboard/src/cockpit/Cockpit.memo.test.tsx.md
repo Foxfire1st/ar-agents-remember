@@ -6,8 +6,8 @@
 | path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate |  2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
+| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -55,14 +55,14 @@ documentation was invented.
 | The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | "function CountedEngineRoom()", "function CountedDetailPanel(props: ComponentProps<typeof Real>)", "function CountedSessionsView(props: ComponentProps<typeof Real>)", "function CountedFileViewer(props: ComponentProps<typeof Real>)", "function CountedAttentionQueue(props: ComponentProps<typeof Real>)", "function CountedLifecycleList(props: ComponentProps<typeof Real>)", "function CountedEventRiver()" | dashboard/src/cockpit/Cockpit.memo.test.tsx:32-32; dashboard/src/cockpit/Cockpit.memo.test.tsx:43-43; dashboard/src/cockpit/Cockpit.memo.test.tsx:54-54; dashboard/src/cockpit/Cockpit.memo.test.tsx:65-65; dashboard/src/cockpit/Cockpit.memo.test.tsx:76-76; dashboard/src/cockpit/Cockpit.memo.test.tsx:87-87; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98 |
 | The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | "keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290 |
 | The persistent layer layout is declared once for Chats. | "const chatsLayer = css({" | dashboard/src/cockpit/Cockpit.tsx:328-334 |
-| The file layer reuses the persistent layout. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:339-339 |
-| The Operations layer reuses the persistent layout. | "const operationsLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:344-344 |
-| The Engine Room layer reuses the persistent layout. | "const engineLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:350-350 |
-| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:727-727 |
-| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:783-783 |
-| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:788-788 |
-| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:800-800 |
-| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:808-808 |
+| The file layer reuses the persistent layout. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:340-340 |
+| The Operations layer reuses the persistent layout. | "const operationsLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:345-345 |
+| The Engine Room layer reuses the persistent layout. | "const engineLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:351-351 |
+| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:728-728 |
+| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:784-784 |
+| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:789-789 |
+| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:801-801 |
+| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:809-809 |
 
 | The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:560-560 |
 
@@ -75,6 +75,7 @@ No meaningful cross-repository references found.
 | This is dashboard-local test coverage. | "persistent layers skip the setView reconcile (260721 tab-switch CPU)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:218-322 |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "function ViewLayer({" repointed to dashboard/src/cockpit/Cockpit.tsx:727-727. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:783-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:788-788. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

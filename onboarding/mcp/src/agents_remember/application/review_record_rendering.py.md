@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_record_rendering.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -202,7 +202,7 @@ whose own record was not supplied, because the record owner supplies every claim
 | **A verification observation displayed exactly, with no sufficiency field and no invented limitation.** | `observation`; `VerificationObservationPayload` | mcp/src/agents_remember/application/review_record_rendering.py:451-473; mcp/src/agents_remember/models/knowledge/evidence.py:1-40 |
 | **A detection fact carried with its inputs, versions and scope limitations only — no voice, no severity, no disposition.** | `signal`; `DetectionSignalPayload` | mcp/src/agents_remember/application/review_record_rendering.py:476-493; mcp/src/agents_remember/models/knowledge/detection.py:1-40; mcp/src/agents_remember/models/knowledge/detection.py:635-753|
 | **The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.** | `ReviewRecordInputs`; `EMPTY_REVIEW_RECORDS` | mcp/src/agents_remember/application/review_record_rendering.py:109-141; mcp/src/agents_remember/application/review_record_rendering.py:188-188 |
-| The two callers: the subject composition, which renders the matrix rows beside these records. | `compose_review`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:327-500; mcp/src/agents_remember/application/knowledge_review.py:1002-1054 |
+| The two callers: the subject composition, which renders the matrix rows beside these records. | `compose_review`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:317-463; mcp/src/agents_remember/application/knowledge_review.py:965-1017 |
 | **The second caller, which is why this module exists: the task-context composition renders the same records with no matrix and no comparison.** | `task_context_review`; `_task_context_pane` | mcp/src/agents_remember/application/review_task_context.py:84-158; mcp/src/agents_remember/application/review_task_context.py:170-193 |
 | The published assessment collection the adapter reads from the curator authority's own publication, with an absent authority treated as empty rather than as an error. | `review_records_for`; `load_curator_coherence_authority` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:227-272 |
 | The published surface: the record input set, the empty value, the claim renderer input and the seven renderers. | `__all__` | mcp/src/agents_remember/application/review_record_rendering.py:61-76 |
@@ -231,6 +231,7 @@ owners into this surface's display values and touches no boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 3 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
 

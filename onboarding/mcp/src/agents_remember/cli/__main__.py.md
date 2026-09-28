@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-14T17:20+02:00                        |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94`    |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`    |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ configs launch the server by that exact name, so it is never folded into this um
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:212-247 |
+| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:225-260 |
 | The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:20-67 |
 | The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
@@ -73,6 +73,7 @@ configs launch the server by that exact name, so it is never folded into this um
 | **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller, the umbrella's sixth subcommand and the reason the count above is six.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/cli/dashboard.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **the umbrella gains its sixth subcommand, and the count is corrected rather than extended.** `260921-ICR-L34` (D62) registers `review-record-comparison`, the CLI caller that gives the review comparison's freeze owner its first production caller outside the test suite; the registration is the same declarative pair (`add_arguments` + `set_defaults(func=...)`, `:61-69`) and the adapter owns its own flags and exit code. The body above said the parser registered **five** subcommands and listed them; it now says six and names this one, and the Code Commentary's registration list gained the sixth pair. The `260921-ICR-L29` entry below, which correctly said the count was five *then*, is history and not current policy. **No verification stamp was advanced** — the candidate is uncommitted, so no commit carries the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the two-subcommand record gains the write plane's own naming.** The card already recorded both subcommands and their different admissions; it now also records that `260921-ICR-L32` corrected the mounted tool description and two module docstrings to name **both** of these entry points where they named one, so this CLI's five-subcommand inventory and the write plane's own description agree. No claim, anchor or citation range changed by the wording added here. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 

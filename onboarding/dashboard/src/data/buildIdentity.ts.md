@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ proven by repository source and direct consumers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. | "export interface ServingBuild {" | dashboard/src/types/projection.ts:569-569 |
-| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:933-963 |
+| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:940-966 |
 | Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
 ## Cross-Repo References
@@ -76,6 +76,7 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
   claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this

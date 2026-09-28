@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewReadCycle.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T17:11:24+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -150,6 +150,20 @@ identity reaching the notice has an answer behind it by construction.
 
 **Loaded state is local presentation, not a second knowledge authority.** `mergeMember` preserves recorded content while adding exact claims; `mergeFamilySide` preserves independent progress and admits identical replay; `mergeFamilyContinuation` overlays only family context onto the latest owner response. Completeness requires completed recorded sides with all measured member contexts and recorded content; explicit not-recorded sides remain absence.
 
+**The first read can be held (`260921-ICR-L47`).** `ReviewReadQuestion` gained an optional `hold`, and
+`useReviewReadCycle` takes `hold = false`: while `hold` is true the read effect returns without starting a
+read, so the surface does not ask for a question it is about to replace. `ReviewSurface.tsx` passes
+`hold: navigation.settling`, which is true only while the reviewer was opened with no subject, the catalogue
+has not answered, and the bounded `SUBJECT_HOLD_MS` (750 ms) has not expired (`ReviewNavigation.tsx`). The
+two display refs are now kept by a small `useLatest` helper (a ref updated every render), extracted to keep
+the hook under the per-function line rail; it changes no read rule.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The optional hold on the question. | `ReviewReadQuestion`; `hold?: boolean` | dashboard/src/panels/review/ReviewReadCycle.ts:408-420 |
+| The latest-value ref helper. | `useLatest` | dashboard/src/panels/review/ReviewReadCycle.ts:424-428 |
+| No read starts while held. | `useReviewReadCycle`; "if (hold) return undefined" | dashboard/src/panels/review/ReviewReadCycle.ts:430-539 |
+
 ### Conventions
 
 One hook owns the read sequence and retained presentation. Module-private functions separate request, continuation admission, exact member merging and independent side-walk composition; private interfaces keep each retained read and request together. Everything crossing the
@@ -225,10 +239,10 @@ identity's single-read rule. Every anchor in a row occurs inside the range that 
 | **The hook's contract: the read, the retained generation and its key, the identity described for the question on screen now, and the reader's own refresh.** | `ReviewReadCycle` | dashboard/src/panels/review/ReviewReadCycle.ts:392-406 |
 | **The hook itself: the four pieces of state, the memoised request fields, the sequence counter, the two refs and the single effect that starts a read.** | `useReviewReadCycle`; `reads`; `carriedRef` | dashboard/src/panels/review/ReviewReadCycle.ts:419-528 |
 | **`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.** | `refresh`; `refreshNonce` | dashboard/src/panels/review/ReviewReadCycle.ts:435-435; dashboard/src/panels/review/ReviewReadCycle.ts:496-510 |
-| **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** | `carriedHere` | dashboard/src/panels/review/ReviewReadCycle.ts:522-525 |
+| **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** | `carriedHere` | dashboard/src/panels/review/ReviewReadCycle.ts:533-536 |
 | **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** | `ReviewRead`; `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:33-37; dashboard/src/panels/review/ReviewOutcome.tsx:42-55 |
 | **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** | `intentReview`; `reviewQuery` | dashboard/src/data/review.ts:543-559; dashboard/src/data/review.ts:565-596 |
-| **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** | `PREVIOUS_BINDING_QUERY` | dashboard/src/data/review.ts:671-671 |
+| **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** | `PREVIOUS_BINDING_QUERY` | dashboard/src/data/review.ts:674-674 |
 | The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
 | **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:107-121 |
 | **The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.** | "carries the identity into a read that replaces it, and into no other question (L17-F1)"; "never carries a live identity into a recorded read, nor a recorded one into a live read (L17-F1)"; "renders no generation claim when the subject change and the refresh land in one flush (L17-R2-F1)" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:692-883 |
@@ -247,6 +261,8 @@ and one leaf id and is served by the same-origin dashboard route.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
+- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the read cycle can hold its first read (`ICR-R24@v3`).** Records `hold` on the question and in the effect, and the `useLatest` extraction for the two display refs; the read rules above are unchanged. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T01:16:27+00:00 — Re-resolved import, hook, refresh and continuation references against their actual constructs. Ambiguous name-only repairs were not accepted: imports remain cited at the import block, and hook/refresh claims at their own definitions. No verification stamp was advanced.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/review_family_context.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -235,7 +235,7 @@ guarantee**.
 | **The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.** | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:467-522 |
 | **The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.** | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:245-292 |
 | The roster read that supplies each side's guarantee, its members and its page. | `read_family_roster` | mcp/src/agents_remember/application/review_family_rosters.py:209-272 |
-| **The production review read that composes the context once and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| **The production review read that composes the context once and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574 |
 | The payload field itself, required rather than optional so an absent field can never be read as a measured zero. | `family_context` | mcp/src/agents_remember/models/knowledge/review.py:1035-1035 |
 | The task-context review, which states `no_subject_selected` because it compared no knowledge operand. | `task_context_review` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | The values cases that pin the construction rules this module enforces. | `test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record` | mcp/tests/test_review_family_context_values.py:96-112 |
@@ -249,6 +249,7 @@ system appears in any shape here, so no cross-repo reference row is recorded —
 repository or external-system boundary.
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the member-source reference (`ReviewFamilyMemberSource`, `ReviewSourceLocatorState`, `source_locator_state`) moved to `models/knowledge/review_family_source.py` and is re-exported here; the card now describes the per-side structured locator, resolved ranges and locator state, the required role/rationale, and the fifteen-name `__all__`, re-points the moved rows and re-measures every range the extraction shifted. No other vocabulary rule changed. No verification stamp was advanced.
 

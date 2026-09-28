@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No domain documentation source is configured for this repository (`system/source
 | The unreachability statements the two policy nodes correspond to. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
 | The conflict key the first two nodes hold to the engine's own operation. | `_conflicting_key`; `AppliedChangeset` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:546-571; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:159-199 |
 | The harness these cases are built on. | `build_case`; `copy_closed`; `materialize_commit` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:219-239; mcp/tests/merge_case_test_support.py:474-484 |
-| The integration-lane row that classifies this module outside the unit budget. | `integration` |mcp/tests/test-evidence-lanes.toml:244-244|
+| The integration-lane row that classifies this module outside the unit budget. | `integration` | mcp/tests/test-evidence-lanes.toml:245-245 |
 | The unit module that carries the rest of the contract. | "The unit population is at its declared ceiling" | mcp/tests/test_knowledge_guarded_merge.py:1-33 |
 
 ## Cross-Repo References
@@ -84,6 +84,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.

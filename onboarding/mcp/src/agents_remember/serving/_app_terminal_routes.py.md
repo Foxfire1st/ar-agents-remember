@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-17T09:40+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ No Domain Documentation source is configured.
 | Catalog/open payloads use current structural binding. | `_terminal_entry_payload` | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-237 |
 | Task assignment delegates validation and generalized mutation. | `_attach_task_response` | mcp/src/agents_remember/serving/_app_terminal_routes.py:392-451 |
 | The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`. | `_open_terminal_response`; `resolve_launch_capsule`; `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. | `ServingCollaborators.capsule_launch`; `serving_collaborators` | mcp/src/agents_remember/serving/_app_common.py:455-462; mcp/src/agents_remember/cli/dashboard.py:67-83 |
+| The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. | `ServingCollaborators.capsule_launch`; `serving_collaborators` | mcp/src/agents_remember/serving/_app_common.py:457-464; mcp/src/agents_remember/cli/dashboard.py:67-89 |
 | The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. | `session_backend`; `terminal_launch_detail` | mcp/src/agents_remember/serving/terminal_opener.py:163-173; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
 | The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:816-872 |
 
@@ -163,6 +163,8 @@ preserve status, detail, and the strict projection. The dashboard receives
 operator-actionable evidence while the catalog remains unchanged.
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/cli/dashboard.py`, `mcp/src/agents_remember/serving/_app_common.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`, `mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-17T09:40+02:00 — 260915-CAPS-L15 curator: **route meaning changed — this route is now a

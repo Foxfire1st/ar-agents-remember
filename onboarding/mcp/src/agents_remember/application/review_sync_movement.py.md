@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_sync_movement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -214,7 +214,7 @@ movement is folded into the staleness the review publishes**, while an absence s
 | The sealed manifest this module reads and never rewrites, its knowledge sides, and the binding each side reports. | `ComparisonGenerationManifest`; `knowledge_side`; `read_manifest`; `COMPARISON_MANIFEST_NAME`; `ComparisonKnowledgeBinding` | mcp/src/agents_remember/application/review_comparison_generation.py:182-216; mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:492-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:133-133 |
 | The resolution whose `contract` decides whether a generation can be resolved at all. | `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:121-159 |
 | **The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.** | `ReviewSyncMovement`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:85-187; mcp/src/agents_remember/models/knowledge/review_staleness.py:131-187 |
-| **The live read that consumes both operations and folds the movement into the staleness it publishes.** | `compose_review`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:365-576; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
+| **The live read that consumes both operations and folds the movement into the staleness it publishes.** | `compose_review`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:328-539; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
 | The payload field the movement is published on, beside the staleness it is folded into. | `KnowledgeReviewPayload`; `sync_movement` | mcp/src/agents_remember/models/knowledge/review.py:991-1084; mcp/src/agents_remember/models/knowledge/review.py:1019-1026 |
 | **The reopen channel reading the same durable record for itself, with the same location-then-generation order.** | `sync_rebinding`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:351-360; mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:367-392 |
 | The sync tool's projection point, where the write half is attached after the Git work has finished. | `worktree_sync_tool`; `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:356-380 |
@@ -236,6 +236,7 @@ No cross-repo reference row is recorded here because no cited range proves a rep
 boundary.
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_citation_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,9 +91,9 @@ No domain documentation source is configured for this repository (`system/source
 | The dataset's own declared tables holding the binding rows, and a generation-4 dataset refused the binding table rather than widened. | `test_the_binding_rows_live_in_the_datasets_own_declared_tables`; `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` | mcp/tests/test_knowledge_citation_boundaries.py:598-628; mcp/tests/test_knowledge_citation_boundaries.py:613-648; mcp/tests/test_knowledge_citation_boundaries.py:550-595 |
 | **The retention cases: a published artifact reads back matched, a missing destination is blocked, changed bytes are mismatched, and the destination is outside the enclosure and the archive by construction.** | `test_a_published_artifact_reads_back_with_its_published_digest`; `test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction`; `test_a_missing_durable_destination_reads_back_as_a_blocked_state`; `test_a_destination_whose_bytes_changed_reads_back_as_mismatched` | mcp/tests/test_knowledge_citation_boundaries.py:635-649; mcp/tests/test_knowledge_citation_boundaries.py:652-669; mcp/tests/test_knowledge_citation_boundaries.py:672-691; mcp/tests/test_knowledge_citation_boundaries.py:694-711; mcp/tests/test_knowledge_citation_boundaries.py:709-727 |
 | **The uncovered form produced on a real store by a directly written row pair, counted in a denominator of two and asserted distinct from the recorded-blob mismatch.** | `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` | mcp/tests/test_knowledge_citation_boundaries.py:714-822 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:241-241 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:241-241 |
-| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:241-241 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:246-246 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:246-246 |
+| The integration lane row this module occupies. | "mcp/tests/test_knowledge_citation_boundaries.py" | mcp/tests/test-evidence-lanes.toml:246-246 |
 
 ## Cross-Repo References
 
@@ -105,6 +105,7 @@ temporary Git repository local to each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

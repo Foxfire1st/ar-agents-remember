@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_comparison_staleness.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T06:50:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -139,7 +139,7 @@ sites that read them. Every anchor in a row occurs inside the range that row cit
 | **The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.** | `review_staleness`; `ReviewStaleness` | mcp/src/agents_remember/application/review_comparison_staleness.py:76-97; mcp/src/agents_remember/models/knowledge/review.py:985-1010 |
 | **The model validator that makes "a stale claim names its previous input" structural: a `stale` state with no reference and a `current` state carrying one are both unconstructible.** | `_require_the_previous_input_to_be_labelled` | mcp/src/agents_remember/models/knowledge/review_staleness.py:74-85 |
 | **The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.** | `previous_binding_digest` | mcp/src/agents_remember/models/knowledge/review.py:292-299 |
-| **The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.** | `compose_review`; `comparison_identity`; `review_staleness` | mcp/src/agents_remember/application/knowledge_review.py:353-542; mcp/src/agents_remember/application/knowledge_review.py:86-89 |
+| **The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.** | `compose_review`; `comparison_identity`; `review_staleness` | mcp/src/agents_remember/application/knowledge_review.py:317-505; mcp/src/agents_remember/application/knowledge_review.py:85-88 |
 | **The transport's admission of the previous identity in the route's own vocabulary, shape-checked against the models' own digest pattern rather than raised out of the request model.** | `_admitted_binding_digest` | mcp/src/agents_remember/serving/review.py:441-464 |
 | **The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.** | `test_the_stale_rule_holds_in_both_directions`; `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` | mcp/tests/test_knowledge_review_surface.py:628-650; mcp/tests/test_knowledge_review_surface.py:1179-1255 |
 
@@ -153,6 +153,7 @@ repository namespace's candidate and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-23T06:30:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **created.** This module is new in this leaf and this is its one-to-one card. It records the two responsibilities the over-limit adapter's packet moved out (`comparison_identity`, `review_staleness`), the rule that an identity is carried rather than recomputed, the rule that a carried identity is the caller's *previous input* and never an authority, the structural pairing the `ReviewStaleness` validator enforces (a `stale` state always names its previous reference), and the fact that both old private helpers were private to the adapter so the extraction leaves no alias and `__all__` is unchanged there. The one honest limit is recorded rather than closed: the request field cannot tell "a refresh" from "any read carrying a digest", and a caller that carries one on a first read is answered `stale` about an identity it never displayed — the honest answer to the question asked, and a ruling item rather than a defect of this module. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` (2026-09-23T05:16:40+02:00); everything this card describes is **uncommitted** working-tree bytes in the `ar/260921-icr-l17` worktree, so no commit contains the code a stamp would claim to have verified. What was actually read is that working tree, and the governed closeout owns the real stamp.
 
 

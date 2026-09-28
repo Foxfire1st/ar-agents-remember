@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_task_context.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -210,9 +210,9 @@ an absent dataset half changes the *reason* it states, never its ability to answ
 | **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** | `_task_context_pane`; `ReviewSideContent`; `ReviewKnowledgePane` |mcp/src/agents_remember/application/review_task_context.py:204-234; mcp/src/agents_remember/models/knowledge/review.py:234-259; mcp/src/agents_remember/application/review_task_context.py:190-190|
 | **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** | `task_context_detail`; `missing_dataset_half`; `unreadable_half_refusal` |mcp/src/agents_remember/application/review_task_context.py:237-277; mcp/src/agents_remember/application/review_candidate_resolution.py:330-348; mcp/src/agents_remember/application/knowledge_before_half.py:347-377|
 | **The validators that hold the three spellings of "nothing was compared" in agreement, so the composition cannot publish a payload that disagrees with itself.** | `_require_the_identity_and_staleness_to_agree`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review.py:999-1107; mcp/src/agents_remember/models/knowledge/review_staleness.py:51-92; mcp/src/agents_remember/models/knowledge/review.py:774-781 |
-| **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** | `compose_review`; `review_inventory` | mcp/src/agents_remember/application/knowledge_review.py:371-611; mcp/src/agents_remember/application/review_source_inventory.py:429-469 |
+| **The branch that reaches this composition: the observation made once, the inventory rendered from it, then the selector branch.** | `compose_review`; `review_inventory` | mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/review_source_inventory.py:429-469 |
 | The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. | `review_request_from_query` |mcp/src/agents_remember/serving/review.py:294-327|
-| The browser entry that offers the task-context target for every live leaf. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:63-110; dashboard/src/panels/detail-panel/changeSetBar.tsx:506-555 |
+| The browser entry that offers the task-context target for every live leaf. | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
 | **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `build_endpoint_fixture`; `task_request` | mcp/tests/test_knowledge_review_source_endpoints.py:154-167; mcp/tests/test_knowledge_review_source_endpoints.py:220-252; mcp/tests/test_knowledge_review_source_endpoints.py:842-918 |
 | **The case that measures the selection channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `not_selected` while the candidate-owned collections stay supplied.** | `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:669-690 |
 | The dashboard case that measures the same entry from the browser side: the server offers no subject and the target is still `review: {}`. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:170-195 |
@@ -228,6 +228,7 @@ namespace the request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/useReviewCatalogue.ts`, `dashboard/src/panels/detail-panel/changeSetBar.tsx`, `mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

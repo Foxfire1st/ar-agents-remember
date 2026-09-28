@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/reviewTransport.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -193,7 +193,7 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 | Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. | `reviewProblemFromCause` | dashboard/src/data/reviewTransport.ts:195-196 |
 | The three public client reads use the shared review transport. | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:555-571; dashboard/src/data/review.ts:721-727; dashboard/src/data/review.ts:739-757 |
 | **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
-| The entry bar's own classification of the same codes, printed beside a button that never disappears. | `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:316-350; dashboard/src/data/useReviewCatalogue.ts:13-24 |
+| The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`). | `briefProblem`; `problemSentence`; `problem.token` | dashboard/src/panels/detail-panel/entryState.tsx:35-60 |
 | **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** | `setCounters`; `leafChangeset` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-104; dashboard/src/panels/detail-panel/changeSetBar.tsx:12-114 |
 | The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-10; dashboard/src/data/changeset.ts:144-149; dashboard/src/data/changeset.ts:167-168; dashboard/src/data/changeset.ts:224-234 |
 | **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** | "resolves a 404 typed refusal through the review client, refusal intact"; "drops the same body through getJson: the shared client's semantics are unchanged"; "carries a transport-level refusal body's reason, offending input and next action"; "offers an explicit retry for a network failure, and the retry renders the answer" | dashboard/src/data/reviewTransport.test.ts:156-186; dashboard/src/data/reviewTransport.test.ts:217-236; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376 |
@@ -208,6 +208,7 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:04:44+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **claim re-read and corrected.** The row about the entry bar's classification named `ReviewEntryState`, which L47 deleted; the entry now shows `briefProblem`'s word keyed on the same shared token and puts `problemSentence` in a disclosure. Reworded and re-cited to `panels/detail-panel/entryState.tsx`. This transport module is unchanged. No stamp advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — Repointed shared catalogue/grouping ownership to the extracted source; source-review entry remains available independently of knowledge.

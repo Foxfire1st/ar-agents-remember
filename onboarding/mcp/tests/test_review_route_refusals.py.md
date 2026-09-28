@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_route_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ inside the range that row cites.
 | **The status family derived from the refusal's own code, driven through the entry route.** | "test_the_entry_route_maps_each_refusal_code_onto_its_own_status" | mcp/tests/test_review_route_refusals.py:175-204 |
 | **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-170 |
 | The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:522-607|
-| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` |mcp/tests/test-evidence-lanes.toml:132-132|
+| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:133-133 |
 | The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
 
 ## Cross-Repo References
@@ -155,6 +155,7 @@ candidate and the app under test is built in-process.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

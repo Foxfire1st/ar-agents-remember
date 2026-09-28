@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`                  |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-28T17:10:24+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`                  |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -32,11 +32,21 @@ Uses the shared `test-utils.tsx` seeds to mount a reader with a change-set bar a
 assert the button/bar behavior against the rendered document.
 
 
-**Three cases were added, and they are the three answers the entry read can give.** The first asserts the **task-context** path: the server answers the entries route with an empty list, the bar still offers the reviewer, and activating it hands the cockpit `review: {}` — no selector, because there is none. The second asserts the **refinement**: when the server offers a recorded subject, the target carries that `selectorKind`/`selectorId`. The third asserts **survival**: an entry read that itself fails leaves the button in place rather than removing it. The subject case flushes the pending entry read before asserting, because the entry is offered from task context immediately — a click that lands before the server answers opens the whole-task review, and that ordering is asserted rather than hidden by timing.
+**The Intent review cases (rewritten by `260921-ICR-L47`, `ICR-R24@v3`).** The entry is now the compact
+`IntentReviewEntry` fed by the changed-intent summary, so the former catalogue cases (task-context on an
+empty list, the recorded subject carried into the target, the complete-catalogue picker) were replaced:
+`opens the task-context review; the reviewer chooses the subject` answers the summary with `+1 −1`, asserts
+the counts and the live label, and asserts the click opens `review: {}` — no subject, because the reviewer
+chooses it. `keeps the entry when the summary read itself fails` rejects the summary fetch and asserts the
+button stays, shows no numbers, carries `data-review-state="network"` and the word `offline`, and — after
+opening the `?` disclosure — that the disclosure names `network` and the reason `socket closed` (the
+L47-R1-F4 fix restored this assertion).
 
 **One case was added for the bound generation.** `opens the series view bound to the generation the net published` stubs the master net with its four endpoints and asserts the entry carries those pins into the viewer target, so the view and its expansions read the listed generation rather than re-resolving the live tip. cit:(["opens the series view bound to the generation the net published"], dashboard/src/panels/detail-panel/changeSetBar.test.tsx:236-303)
 
-**One case was added for the complete catalogue (`260921-ICR-L9`, `ICR-R09@v1`).** `offers every catalogue row for review, not just the first` stubs the entries route with a three-row catalogue — a `both` row, a retired `before_only` row and an `after_only` row, with `total_subjects: 3` — and asserts the picker renders all three with the server's totals, that the retired row is marked `retired · before-only` rather than dropped or merged into the live population, and that selecting the **second and third** rows puts **their** identities on the Intent review target. That is the packet's non-conforming example ("the API returns multiple entries but only the first is reachable") falsified at the picker: the old hook's `entries?.[0]` selection made rows 2..n unreachable, and this case fails against it. The subject stub in `carries the server's recorded subject when the pair offers one` gained the additive `presence`/totals fields only; its assertions are unchanged.
+*(The L9 complete-catalogue case, `offers every catalogue row for review, not just the first`, was removed by
+`260921-ICR-L47`: the entry no longer offers a picker; the reviewer's own catalogue owns traversal of every
+subject.)*
 
 ### 260921-ICR-L33 The Net's Leaf Attribution
 
@@ -54,7 +64,7 @@ One behavior boundary per suite, per the test-split rule.
 
 ### Invariants And Boundaries
 
-Assertions were preserved verbatim from the monolithic suite; the two stubs that mirror the wire shape were updated additively (catalogue `presence`/totals) and their assertions are unchanged.
+Assertions were preserved verbatim from the monolithic suite until `260921-ICR-L47`, which replaced the Intent review cases because the entry's design changed (compact control over the changed-intent summary, no catalogue at the entry); the change-set, series, generation, attribution and counter-refusal cases are unchanged.
 
 ### Todos
 
@@ -74,8 +84,9 @@ configured for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case. | `describe`; "opens the series view bound to the generation the net published" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-417; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-142 |
-| **The packet's conforming example at the picker: every catalogue row is offered with its totals, the retired row is marked, and the second and third rows are selectable onto the review target.** | "offers every catalogue row for review, not just the first" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:469-539 |
-| The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule. | "carries the master net's leaf attribution beside its total (R33.2)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:162-235 |
+| **The Intent review opens the task-context review and the reviewer chooses the subject; a failed summary read keeps the entry with `offline` and the reason in the disclosure.** | "opens the task-context review; the reviewer chooses the subject"; "keeps the entry when the summary read itself fails" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:393-444 |
+| **The closed leaf's recorded entry with intent counts, and its survival when knowledge is unavailable.** | "offers the Intent review for a closed leaf, bound to its recorded comparison"; "keeps the closed leaf's Intent review when its knowledge is unavailable" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-130 |
+| The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule. | "carries the master net's leaf attribution beside its total (R33.2)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:160-233 |
 
 ## Cross-Repo References
 
@@ -86,6 +97,7 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-28T17:10:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the Intent review cases were rewritten for the compact entry (`ICR-R24@v3`).** The Logic paragraph on the three catalogue-answer cases and the L9 complete-catalogue paragraph are replaced by the current cases (task-context open with intent counts; failed summary read with `offline` and the disclosure reason, L47-R1-F4); the L12 section's two closed-leaf bullets are annotated with their current form; the Invariants sentence now says why assertions changed. The reopened row that named the removed L9 case was replaced by rows citing the current cases. No stamp advanced; closeout owns the real stamp.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "opens the series view bound to the generation the net published" repointed to dashboard/src/panels/detail-panel/changeSetBar.test.tsx:236-303. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one case added for the net's leaf attribution.** The subsection above records `carries the master net's leaf attribution beside its total (R33.2)`, its base-defect standing, and the absent-answer rule; the catalogue row was re-derived into the case this leaf's insertion moved (`308-394` → `469-539`) with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D01 refusal cases.** A new subsection records the three cases this leaf adds in a dedicated describe block, the base-defect witness against the unmodified production bytes, and the two mutations that make the guards load-bearing. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
@@ -109,12 +121,13 @@ cases that measure it:
   committed button by its label rather than by position, and the closed-leaf document is built by a
   shared helper.
 - **"offers the Intent review for a closed leaf, bound to its recorded comparison"** is the packet's
-  defect as a case: the catalogue answers one recorded subject, the picker is mounted, and clicking the
-  entry opens `review: { selectorKind: "invariant", selectorId: "inv-1", historical: true }` — the
-  record the entry is addressed to travels with the subject.
-- **"keeps the closed leaf's Intent review when its record offers no subject"** pins the other half of
-  the same fact: with an empty catalogue the entry is still offered and still opens the recorded
-  comparison (the task-context target), because the read is a refinement and never the gate.
+  defect as a case. *(Since `260921-ICR-L47`: the summary answers `+2 −1`, the entry reads
+  `Intent review (recorded)` with those counts, no picker is mounted, and the click opens
+  `review: { historical: true }` with no subject.)*
+- **"keeps the closed leaf's Intent review when its record offers no subject"** pinned the other half.
+  *(Since `260921-ICR-L47` it is "keeps the closed leaf's Intent review when its knowledge is
+  unavailable": the summary answers `unavailable`, and the entry is still offered and still opens the
+  recorded comparison, because the summary is a label and never the gate.)*
 
 No live-leaf case changed: the working change-set and the live review entry are exactly what they
 were.

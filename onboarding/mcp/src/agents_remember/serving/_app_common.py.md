@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-28T17:13:48+02:00 |
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -42,6 +42,15 @@ a process that omits it **refuses** a role-configured launch by name
 declared on both `ServingCollaborators` and `_ServingRuntime`, and `serving/app.py` copies it from the
 first onto the second.
 
+Since `260921-ICR-L47`, `ServingCollaborators` also declares `review_intent_summary:
+ReviewIntentSummaryPort | None = None` — the same adapter's changed-intent summary, a fourth port because it
+answers a fourth question from the same resolution without loading the subject catalogue. Omitting it makes
+the summary route refuse by name (503), because "this process cannot count" is not "nothing changed".
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The optional summary port on the collaborator record. | `review_intent_summary`; `ReviewIntentSummaryPort` | mcp/src/agents_remember/serving/_app_common.py:492-499 |
+
 ### Conventions
 
 Wire parsing belongs here; structural qualification and mutation delegate to owned services. The
@@ -75,7 +84,7 @@ No Domain Documentation source is configured.
 | Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:308-312 |
 | The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:505-538 |
 | The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:128-168 |
-| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:491-499; mcp/src/agents_remember/serving/_app_common.py:532-532; mcp/src/agents_remember/serving/launch_capsule.py:162-163 |
+| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:501-509; mcp/src/agents_remember/serving/_app_common.py:542-542; mcp/src/agents_remember/serving/launch_capsule.py:162-163 |
 | **The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:36-40; mcp/src/agents_remember/serving/_app_common.py:481-489; mcp/src/agents_remember/serving/review.py:83-83 |
 | The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-127 |
 | The refusals the port's presence decides, in the one gate every launch point calls. | `resolve_launch_capsule`; `capsule-resolver-unavailable` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
@@ -156,6 +165,7 @@ let the serving process register task-bound worker/reviewer/curator first eviden
 retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
 ## Update History
+- 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the collaborator record gains the optional changed-intent summary port (`ICR-R24@v3`).** New Logic paragraph and row. Displaced rows were re-pointed. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the collaborator record gained the third review port, and the section that counted two was superseded in place rather than left contradicting the source.** `ServingCollaborators.review_source_content: ReviewSourceContentPort | None = None` carries the callable that opens one listed inventory entry at the two code trees the listing published; it is imported beside `KnowledgeReviewPort` and `KnowledgeReviewEntriesPort` in one grouped import from `agents_remember.serving.review`. The new section records the field's own stated reason for being a third port rather than a field on the review payload (the inventory is the whole task's change set, and the route that opens one entry reads two Git objects the payload never carried) and the distinction the missing-port answer preserves: "this process cannot read the entry" is not "this entry has no content", so an omitted port refuses by name instead of serving an empty file. The L45 section's "carries **two** reviewer fields" is now flagged as superseded by the section above it, keeping its layering reason and wiring site intact — the same in-place idiom the L22 section already uses. **Citation accounting:** every row into this source was re-read against the candidate and re-derived from the construct's real extent, because this leaf's +16-line insertion moved everything below it. `TerminalAttachTaskRequest` `300-304` → `308-312`; `_ServingRuntime` `481-514` → `505-538`; `stream_events` `120-157` → `128-168`; the compiler-port row's dotted anchors (`ServingCollaborators.capsule_launch`; `_ServingRuntime.capsule_launch`), which no line can literally hold, became the real identifiers `capsule_launch`; `LaunchCapsuleResolver` over `491-499`; `532-532`; `launch_capsule.py:162-163`; `serving_collaborators` `dashboard.py:67-83` → `67-127`. One row was added for the new port, and no claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the collaborator record gained the reviewer's entry port beside its comparison port.** `ServingCollaborators.knowledge_review_entries: KnowledgeReviewEntriesPort | None = None` carries the callable that answers the entry route — the task context alone in, one `ReviewEntryListResult` out — and `_app_common.py` is where it crosses from `application` into `serving`. The new section states why the entry port is separate rather than a mode of the first: the entry route is the only one a task view can call before it knows a subject, and answering an unwired process with an empty list would say "nothing is reviewable here", a different fact from "this process cannot answer", so the missing-port answer must be a named refusal. That makes three ports on this record of one shape, so a reader comparing them gets the layering rule rather than three unrelated defaults. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.

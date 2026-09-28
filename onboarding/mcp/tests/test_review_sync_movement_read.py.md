@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -164,7 +164,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | One accepted record projected, with resolved identities carried exactly on the channel that moved. | `_project` | mcp/src/agents_remember/application/review_sync_movement.py:167-215 |
 | The unmeasured reason in the record's own words, and the one sentence each state publishes. | `_unmeasured_reason`; `_statement`; `_measured_clause` | mcp/src/agents_remember/application/review_sync_movement.py:218-236; mcp/src/agents_remember/application/review_sync_movement.py:239-283; mcp/src/agents_remember/application/review_sync_movement.py:286-308 |
 | **The fold that makes a measured movement outrank the reader's carried identity, which is what `F6` renders.** | `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| The read route that renders the movement and folds the staleness beside it. | `review_sync_movement`; `sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:489-489; mcp/src/agents_remember/application/knowledge_review.py:555-555 |
+| The read route that renders the movement and folds the staleness beside it. | `review_sync_movement`; `sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:452-452; mcp/src/agents_remember/application/knowledge_review.py:518-518 |
 | **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** | `ReviewSyncMovementState`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:48-48; mcp/src/agents_remember/models/knowledge/review_staleness.py:141-197 |
 | **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** | `record_readable`; `reason` | mcp/src/agents_remember/models/knowledge/review_staleness.py:125-125; mcp/src/agents_remember/models/knowledge/review_staleness.py:137-137 |
 | The submission vocabulary whose `disabled_stale` state ends the `F6` phase. | `ReviewSubmission`; `"disabled_stale"` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204; mcp/src/agents_remember/application/review_record_rendering.py:199-226 |
@@ -176,7 +176,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
 | The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:319-319 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:320-320 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-378; mcp/tests/test_review_sync_rebinding.py:853-867 |
 
@@ -191,6 +191,7 @@ record the same leaf's own managed syncs published at that repository's durable 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.

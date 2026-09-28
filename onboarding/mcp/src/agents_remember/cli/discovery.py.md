@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/discovery.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-09-21T22:40:00+02:00                    |
-| lastVerifiedCommitHash | `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`   |
-| lastVerifiedCommitDate | 2026-09-22T00:48:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`   |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -73,12 +73,13 @@ over three named helpers that carry that totality explicitly:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:288-288; mcp/src/agents_remember/cli/dashboard.py:290-290 |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:288-288; mcp/src/agents_remember/cli/dashboard.py:290-290 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:301-301; mcp/src/agents_remember/cli/dashboard.py:303-303 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:301-301; mcp/src/agents_remember/cli/dashboard.py:303-303 |
 | The settings loader the discovered path feeds (`load_config`). | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167 |
 | Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the one enforced citation row was re-read and re-derived because this leaf's line shifts moved the constructs it names.** The row's two anchors live in `cli/dashboard.py`, which this leaf's +16-line insertion pushed down: `config_path = args.config or discover_config()` is now at 283 (was 267) and `except (ConfigDiscoveryError, ConfigError) as error:` at 285 (was 269). Both ranges were re-derived from the candidate (`267-267` → `283-283`; `269-269` → `285-285`) and both anchors were verified to occur literally at those lines. The claim wording, the other two rows, the anchors themselves and the two verification rows are unchanged — this is a citation-only repair, and `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `load_config` repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_evidence_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -201,7 +201,7 @@ composition deliberately leaves unmeasured.
 | The four non-answer states and the two notes that keep a partial or bounded collection truthful. | `_recorded`; `_absent`; `_unavailable`; `_not_selected`; `_remaining_note`; `_unreadable_note` | mcp/src/agents_remember/application/review_evidence_records.py:725-736; mcp/src/agents_remember/application/review_evidence_records.py:739-742; mcp/src/agents_remember/application/review_evidence_records.py:745-762; mcp/src/agents_remember/application/review_evidence_records.py:765-778; mcp/src/agents_remember/application/review_evidence_records.py:795-824; mcp/src/agents_remember/application/review_evidence_records.py:827-835 |
 | One unavailability statement: what failed, under which owner status, in the owner's own words. | `_provenance` |mcp/src/agents_remember/application/review_evidence_records.py:838-842|
 | **The availability vocabulary this module builds, and the validator that makes "a count nobody measured" unrepresentable.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/review_evidence_records.py:274-299; mcp/src/agents_remember/application/knowledge_review.py:353-541; mcp/src/agents_remember/application/knowledge_review.py:612-625 |
+| **The subject composition's own call site: it adds the two matrix-owned channels where the matrix's answer is, and reports the view's declared row bound.** | `with_selection_channels`; `compose_review`; `_matrix_rows_remaining` | mcp/src/agents_remember/application/review_evidence_records.py:274-299; mcp/src/agents_remember/application/knowledge_review.py:317-504; mcp/src/agents_remember/application/knowledge_review.py:575-588 |
 | **The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.** | `without_selected_matrix`; `task_context_review` | mcp/src/agents_remember/application/review_evidence_records.py:238-254; mcp/src/agents_remember/application/review_task_context.py:84-158 |
 | **The production port this bundle is read through, and the adapter's re-export of the resolver so the port keeps resolving without a new home to learn.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:88-102; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/application/knowledge_review.py:81 |
 | **The channel list as part of the served payload, one entry per class the composition read.** | `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:918-963 |
@@ -223,6 +223,7 @@ enclosure's own curator authority and touches no repository boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 2 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash |  `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate |  2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
+| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -261,7 +261,7 @@ port fields the composition supplies, and the cases that drive the routes with a
 | The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. | `api_review_intent` |mcp/src/agents_remember/serving/review.py:661-709|
 | The one serializer, which keeps an omitted field absent rather than null and so serves all three result types. | `_json` |mcp/src/agents_remember/serving/review.py:627-654|
 | The `400` body for a query that did not name the generation it wants opened: the offending component, the exact expected set, and the inventory as the address of the content. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:656-734|
-| **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:460-460; mcp/src/agents_remember/serving/_app_common.py:471-471; mcp/src/agents_remember/serving/_app_common.py:481-489 |
+| **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:461-461; mcp/src/agents_remember/serving/_app_common.py:472-472; mcp/src/agents_remember/serving/_app_common.py:482-490 |
 | The registration call, made before the greedy static mount and now passing all three ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-301 |
 | The composition root that supplies all three ports, so an omitted adapter refuses rather than serving empty. | `review_port`; `review_entries_port`; `review_source_content_port` | mcp/src/agents_remember/cli/dashboard.py:88-126 |
 | **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_surface.py:1098-1116; mcp/tests/test_knowledge_review_surface.py:1015-1015 |
@@ -279,7 +279,7 @@ candidate and carry no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
 
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.

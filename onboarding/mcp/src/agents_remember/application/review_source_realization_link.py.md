@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_source_realization_link.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d`|
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ No domain documentation source is configured for this repository (`system/source
 | **One half asked by the exact claim-at-path query, with unreadable kept apart from not linked.** | `_side_reading`; `_sentence` | mcp/src/agents_remember/application/review_source_realization_link.py:252-276; mcp/src/agents_remember/application/review_source_realization_link.py:279-285 |
 | The read owner's identity resolution and exact claim-at-path query this module re-uses. | `open_read_context`; `fetch_realizations_at_path` | mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
 | The generation owners that bind a superseded pair to its retained knowledge. | `read_generation_refs`; `read_manifest`; `task_root_for_review`; `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_comparison_generation.py:725-753; mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:564-572; mcp/src/agents_remember/application/review_committed_leaf.py:163-202 |
-| The namespace record and the path-seed shape rule. | `review_namespace`; `PathSeed` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-390; mcp/src/agents_remember/models/knowledge/read.py:144-171 |
+| The namespace record and the path-seed shape rule. | `review_namespace`; `PathSeed` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-390; mcp/src/agents_remember/models/knowledge/read.py:128-155 |
 | **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** | `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one`; `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes`; `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation`; `test_a_padded_spelling_is_never_admitted_as_attributed_context`; `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path` | mcp/tests/test_knowledge_review_attributed_source_content.py:167-197; mcp/tests/test_knowledge_review_attributed_source_content.py:200-247; mcp/tests/test_knowledge_review_attributed_source_content.py:250-269; mcp/tests/test_knowledge_review_attributed_source_content.py:272-296; mcp/tests/test_knowledge_review_attributed_source_content.py:299-323 |
 
 ## Cross-Repo References
@@ -122,4 +122,5 @@ to one leaf's comparison in one repository namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/application/review_candidate_resolution.py`, `mcp/src/agents_remember/models/knowledge/read.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): created this card for the new owner of the comparison-bound realization-link question behind attributed unchanged source reads. It records the comparison binding (current pair, exactly recorded superseded pair, or nothing), the exact-spelling rule (L43-R1-F1), the exact claim-at-path query that scope size cannot fail and the undetermined answer for unreadable knowledge (L43-R1-F2), and the Architect ruling that a stale anchor still links. Verification stamp names the code base; the module exists only in the uncommitted candidate and closeout owns the real stamp.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_family_rosters.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -198,7 +198,7 @@ synthesized guarantee**.
 | **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** | `family_context_cursor_refusal` | mcp/src/agents_remember/application/review_family_rosters.py:651-689 |
 | The composition that decides which families and revisions this read is called for. | `review_family_context` | mcp/src/agents_remember/application/review_family_context.py:245-292 |
 | **The values this read states, whose validators refuse a truncated roster presented as a whole one.** | `ReviewFamilyRosterPage` | mcp/src/agents_remember/models/knowledge/review_family_context.py:199-251 |
-| The production review read that asks for this roster and publishes its page. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| The production review read that asks for this roster and publishes its page. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574 |
 | The cases that drive the roster read through the production review over a real enclosure. | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |
 
 | The page-local join emits members only for carried membership items. | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:433-467 |
@@ -212,6 +212,7 @@ credential, network or external system is involved. No cross-repo reference row 
 no cited range proves a repository or external-system boundary.
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the private `_source` projection was removed; each claim is now projected by `application/review_family_sources.member_source`, which adds the per-side structured locator, resolved ranges and locator state. Updated the member paragraph, conventions and the source row, and re-measured every range the removal shifted (the refusal row that ran past the file's end now reads its real extent). No read, cursor, refusal or guarantee behaviour changed. No verification stamp was advanced.
 

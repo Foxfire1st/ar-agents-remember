@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_committed_leaf.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -217,7 +217,7 @@ silencing no other rule.
 | **The value this resolution is composed into, and the field that carries the record rather than a live capture.** | `ReviewCandidateResolution`; `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:123-160; mcp/src/agents_remember/application/review_candidate_resolution.py:436-450 |
 | **The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.** | `resolve_review_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250 |
 | **The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.** | `ComparisonReopen`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:136-151; mcp/src/agents_remember/application/review_comparison_reopen.py:164-225 |
-| **The two routes that publish these declarations: the entry refusal and the review's declared limits.** | `list_knowledge_review_entries`; `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:256-325; mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| **The two routes that publish these declarations: the entry refusal and the review's declared limits.** | `list_knowledge_review_entries`; `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:256-316; mcp/src/agents_remember/application/knowledge_review.py:334-574 |
 | **The case module that measures the whole chain through the real composition and the real HTTP route.** | `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte`; `test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence` | mcp/tests/test_historical_committed_leaf_review.py:257-324; mcp/tests/test_historical_committed_leaf_review.py:387-446 |
 
 | `_recorded_range_resolution` owns the behavior described above. | `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:315-317 |
@@ -241,6 +241,7 @@ namespace the request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 11 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

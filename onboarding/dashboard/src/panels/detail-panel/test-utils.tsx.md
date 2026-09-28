@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-09-21T14:59:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new
 `stubCounters` installs deterministic counter hooks.
 
 
-**`stubCounters` gained one optional argument, and it is what lets a test choose which answer the entry read gives.** `stubCounters(reviewEntry?: unknown)` answers `/api/review/intent/entries` with whatever the caller passes — a recorded subject, an empty list, or a refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
+**`stubCounters` takes one optional argument, and it is what lets a test choose which answer the Intent review control reads.** Since `260921-ICR-L47` it is `stubCounters(reviewSummary?: unknown)` and answers `/api/review/intent/summary` (previously `reviewEntry` answering `/api/review/intent/entries`, which the entry no longer reads) with whatever the caller passes — counts, partial counts, or an unavailable refusal — and keeps its previous behaviour when the argument is omitted (the route falls through to the counters body, which is what a caller that does not exercise the entry wants). The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
 
 ### Conventions
 
@@ -88,6 +88,7 @@ No helper behavior changed. `seriesNode()` now defaults the required `discardedC
 existing required `seats` and repository-qualified topology defaults remain intact.
 
 ## Update History
+- 2026-09-28T17:10:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the counter stub answers the changed-intent summary route instead of the catalogue route (`ICR-R24@v3`).** `stubCounters(reviewEntry?)` became `stubCounters(reviewSummary?)` and answers `/api/review/intent/summary`; the paragraph now says so. No stamp advanced; closeout owns the real stamp.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **one optional argument on the counter stub.** `stubCounters(reviewEntry?)` now optionally answers the review-entry route, so the bar's three entry cases can present a subject, an empty list and a refusal through the same fixture; omitted, the stub behaves exactly as before. The row in the reference table was re-derived against this candidate. **Stamp accounting:** the previous verification stamp is left as it was, because nothing in this leaf is committed; the claims this card's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 

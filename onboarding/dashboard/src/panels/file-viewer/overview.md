@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`       |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`       |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ a file is selected; kept mounted so state survives a tab switch.
 | --- | --- | --- |
 | The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:113-116 |
-| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:335-338; dashboard/src/cockpit/Cockpit.tsx:774-776; dashboard/src/cockpit/Cockpit.tsx:339-339 |
+| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:336-339; dashboard/src/cockpit/Cockpit.tsx:775-777; dashboard/src/cockpit/Cockpit.tsx:340-340 |
 | The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Current L5I Route State
@@ -113,3 +113,6 @@ in-flight read during development effect replay.
   centre tab over the L1 files API with repo/scope selectors, a code tree + an onboarding tree (Headless
   Tree), a read-only CodeMirror dual-pane, and bidirectional code↔onboarding pairing; kept mounted across
   tab switches. Verification metadata pinned to the task base until closeout stamps the L2 code commit.
+
+## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.

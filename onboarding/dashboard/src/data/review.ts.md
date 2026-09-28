@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/review.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash |  `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate |  2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
+| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -296,7 +296,7 @@ construct below the source pane — and every anchor in a row occurs inside the 
 | **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** | `getJson`; `FilesApiError`; `qs` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:95-102; dashboard/src/data/files.ts:104-105 |
 | The sibling client whose shape this file mirrors, including its own no-store-mutation comment. | `taskChangeset`; `FilesApiError` | dashboard/src/data/changeset.ts:1-8; dashboard/src/data/changeset.ts:25-25; dashboard/src/data/changeset.ts:78-78; dashboard/src/data/changeset.ts:128-128; dashboard/src/data/changeset.ts:167-168 |
 | The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. | `intentReview`; `reviewSourceContent` | dashboard/src/data/review.ts:558-574; dashboard/src/data/review.ts:742-760 |
-| **The task-view consumer that makes the entry reachable: the hook that asks this client for the leaf's reviewable subjects and keeps the source-review entry available when the catalogue refuses or returns no subjects.** | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:63-110 |
+| **The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.** | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/data/useReviewCatalogue.ts:79-111 |
 
 ## Cross-Repo References
 
@@ -308,7 +308,7 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
-
+- 2026-09-28T17:04:44+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **claim re-read and corrected — the catalogue consumer is now the reviewer, not the task entry (`ICR-R24@v3`).** The one row naming `useReviewCatalogue` said the task view used it to make the entry reachable; the entry now reads `/api/review/intent/summary` (`data/reviewIntentSummary.ts`) and the catalogue is read by `panels/review/ReviewNavigation.tsx` on entry. The row is reworded and re-cited to the hook's current extent. This client module itself is unchanged by L47. No stamp advanced.
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the family re-export now includes the three member-source locator types; corrected the stated type count from eighteen to twenty-one and added the re-export row. No other client behaviour changed. No verification stamp was advanced.
 
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the source-content client type gained the typed admission.** `ReviewSourceAdmission`, `admission`/`admission_detail` on `ReviewSourceExpansion`, and `status: ReviewFileStatus | "unchanged"` mirror the server model; the header comment now names both admitted populations (L43-R1-F3). No request or UI behavior changed (the pane's labelling is L49's). The Logic paragraph and expansion row were updated; twelve rows whose ranges this insertion displaced were re-pointed (+10 for the expansion block, +12 below it), each verified against the candidate. No stamp advanced; closeout owns it.

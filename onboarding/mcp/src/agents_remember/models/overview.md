@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -192,8 +192,9 @@ policy that computes it lives on the application route, not here.
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
-
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
+
+- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body reviewed — one new knowledge model, `knowledge/review_intent_summary.py` (`ICR-R24@v3`).** It declares `ReviewIntentSummaryResult` (`counted`/`partial`/`unavailable`, exactly one of counts or refusal) and `ReviewIntentCounts` (plus/minus equal to their per-kind parts; typed `realization_only`, `membership_only`, `unresolved`); its card records the semantics. No route-level contract of `models/` changed. No stamp advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the two pure extractions (`read_anchor.py`, `review_family_source.py`, both re-exported by the modules they left) and the two additive wire changes (`AnchorResolution.resolved_ranges` on every anchor observation; the member source's locator, ranges and required state/role/rationale), and re-measured the ranges into `read.py` the extraction shifted.
 
@@ -3025,3 +3026,21 @@ roster.
 ## Update History
 - 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **route body updated for the corrected roster-page completion semantics.** The paragraph above records the reopen in this route's governed source: ``complete`` is the walk's flag, so only a complete page that is *also* the walk's first page may be read as the whole roster, and ``ReviewFamilyRevisionContext``'s validator now holds exactly that case to the revision-wide count while accepting a completed continued page — with the truncation refusal intact and no field, state or signature added. The rest of the vocabulary this section records is unchanged, including the four side states, the measured-zero rule and the required ``family_context`` payload field. **No route impact was claimed as absent and no no-route-impact judgment was published** — this is real body content, and it is what answers this route's memory-refresh attestation. **Citation accounting:** the ranges in the section above were re-measured on the candidate, where the page value now spans ``:225-277``, the side context ``:280-356`` and the context itself ``:468-548``. **Stamp accounting: no verification stamp was advanced** — nothing in this leaf is committed, so the header's pair still names the recorded base ``fdf3e4b6``.
 - 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): route body updated for the family-context value vocabulary and the third paged collection (`ICR-R31@v1`), including the required ``family_context`` payload field. Citation rows this leaf's insertions moved were re-anchored to the declarations they name. No route impact was claimed as absent.
+
+## 260921-ICR-L47 The Changed-Intent Summary Model
+
+`models/knowledge/` gains [`review_intent_summary.py`](knowledge/review_intent_summary.py.md), the typed
+vocabulary of the task entry's `Intent review +N −N` (`ICR-R24@v3`). `ReviewIntentSummaryResult` is
+`counted`, `partial` or `unavailable` and carries **exactly one** of counts or the owner's refusal, so an
+unread comparison cannot be serialized as a measured `+0 −0`; `ReviewIntentCounts` makes `added`/`removed`
+equal to the sums of their per-kind parts (invariants, joint guarantees) and keeps `realization_only`,
+`membership_only` and `unresolved` outside plus/minus. Like the sibling review models it selects and
+compares nothing; the application owner computes the numbers.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The counts and their sum check. | `ReviewIntentCounts`; `_require_the_totals_to_be_their_parts` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:55-84 |
+| One outcome per state. | `ReviewIntentSummaryResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:87-115 |
+
+## Update History
+- 2026-09-28T17:30:36+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — new section for the changed-intent summary model.** The earlier history-only entry for this leaf was not a body update; this section is. No stamp advanced.

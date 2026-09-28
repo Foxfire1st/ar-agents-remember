@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -31,11 +31,12 @@ the whole client-side contract; no rendering reads the new fields yet.
 
 ## Recorded reviewer catalogue
 
-useReviewCatalogue.ts owns the catalogue read used by both task entry and the reviewer. It preserves complete recorded subjects, counts and distinct failure states, and suppresses rows from another task while the current target is pending.
+useReviewCatalogue.ts owns the reviewer's catalogue read (since `260921-ICR-L47` the task entry no longer reads it; it reads the changed-intent summary through reviewIntentSummary.ts instead). The read is keyed on the comparison's identity, preserves complete recorded subjects, counts and distinct failure states, and suppresses rows from another comparison while the current one is pending. intentEntryRevalidation.tsx holds the entry's re-validation generation (re-show, return from the reviewer, reviewer refresh), with no event system.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `useReviewCatalogue` owns the behavior described above. | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:63-110 |
+| `useReviewCatalogue` owns the behavior described above. | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:79-111 |
+| The entry's summary read and its re-validation generation. | `useIntentReviewSummary`; `IntentEntryRevalidation` | dashboard/src/data/reviewIntentSummary.ts:84-109; dashboard/src/data/intentEntryRevalidation.tsx:29-54 |
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
@@ -64,9 +65,9 @@ consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` 
 measurement.
 
 ## Update History
-
+- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
-
+- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — the catalogue read became the reviewer's, and two new modules serve the entry (`ICR-R24@v3`).** The first section now says the task entry reads the changed-intent summary (`reviewIntentSummary.ts`) instead of the catalogue, that the catalogue is keyed on the comparison, and that `intentEntryRevalidation.tsx` carries the ruled re-validation points. No stamp advanced.
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the family mirror's three locator declarations and the member source's new fields, re-exported through `review.ts`, and re-measured the ranges into `review.ts` its three-line insertion shifted.
 
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `snapshots_impl/_task_documents.py` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
@@ -466,15 +467,15 @@ detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route's read-only client and its comparison call. | "export const intentReview = (" |dashboard/src/data/review.ts:555-555|
-| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" |dashboard/src/data/review.ts:721-721|
+| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:558-558 |
+| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:724-724 |
 | **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` | dashboard/src/data/review.ts:690-690; dashboard/src/data/review.ts:692-697 |
-| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` |dashboard/src/data/review.ts:687-700|
+| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:690-703 |
 | The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9; dashboard/src/data/review.ts:1-10 |
-| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:64-64 |
+| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:67-67 |
 | The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
-| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:521-521 |
-| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:447-447 |
+| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:524-524 |
+| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:450-450 |
 
 ## Update History
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
@@ -875,9 +876,9 @@ said something the server did not:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** | `ReviewFamilyContext`; `reviewFamily` | dashboard/src/data/reviewFamily.ts:179-192; dashboard/src/data/review.ts:33-61 |
-| **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** | `ReviewPagedCollection`; `family_members` | dashboard/src/data/review.ts:65-78 |
-| **The set a request may name with no cursor, and the reason `family_members` is not in it.** | `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:88-88 |
-| **The optional family context whose absence says the body did not come from this route.** | `family_context` | dashboard/src/data/review.ts:464-464 |
+| **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** | `ReviewPagedCollection`; `family_members` | dashboard/src/data/review.ts:68-81 |
+| **The set a request may name with no cursor, and the reason `family_members` is not in it.** | `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:91-91 |
+| **The optional family context whose absence says the body did not come from this route.** | `family_context` | dashboard/src/data/review.ts:467-467 |
 
 ## Update History
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **route body updated for the family mirror and the page contract's one unaddressable collection.** The section above records what this leaf changed in the sources this route governs: `data/reviewFamily.ts` is the new typed per-family mirror (`ICR-R31@v1`) that `data/review.ts` re-exports whole, `ReviewPagedCollection` gained `family_members` because the server accepts it while `REVIEW_WALKABLE_COLLECTIONS` is the smaller set a request may name with no cursor, and `ReviewPayload.family_context` is optional with its absence stated as the body's own fact. The `## File Onboarding Map` names the new card. **Citation accounting:** every row on this overview whose anchor no longer sat in its cited range was re-derived from that anchor's own declaration on the frozen candidate; no claim wording changed and no row was dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.

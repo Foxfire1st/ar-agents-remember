@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
+| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1250,7 +1250,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:244-244 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:245-245 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1511,8 +1511,8 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section recording that the anchor resolver now states the region it measured as structured `resolved_ranges`, with the exact-blob bound check for recorded line ranges.
 
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
