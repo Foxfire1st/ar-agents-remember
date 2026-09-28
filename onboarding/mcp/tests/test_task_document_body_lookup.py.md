@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_document_body_lookup.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:27:50+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ own test fixtures and assertions, so the retained source is the direct evidence.
 | The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. | `test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept` | mcp/tests/test_task_document_body_lookup.py:231-263 |
 | The production read under test, and the only place that reads masters for it. | `read_task_document_body`; `_graph_master_docs` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:161-201; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:204-224 |
 | The bounded enumeration and the named-path probe under test. | `_iter_task_json`; `_canonical_task_json_candidates` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:74-90; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:93-113 |
-| The lane registration. | "mcp/tests/test_task_document_body_lookup.py" | mcp/tests/test-evidence-lanes.toml:211-211 |
+| The lane registration. | "mcp/tests/test_task_document_body_lookup.py" | mcp/tests/test-evidence-lanes.toml:212-212 |
 
 ## Cross-Repo References
 
@@ -132,6 +132,7 @@ installation involved.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 

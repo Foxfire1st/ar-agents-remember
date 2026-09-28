@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_intent_summary.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:21+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ No Domain Documentation source is configured for this test module.
 | Divergent heads are `partial`. | `test_an_identity_without_one_head_makes_the_summary_partial` | mcp/tests/test_review_intent_summary.py:383-403 |
 | Absent knowledge is `unavailable`, never zero. | `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` | mcp/tests/test_review_intent_summary.py:406-418 |
 | 200 for every typed state, 503 unwired. | `test_the_route_answers_every_typed_state_in_the_body` | mcp/tests/test_review_intent_summary.py:421-457 |
-| The lane registration. | "mcp/tests/test_review_intent_summary.py" | mcp/tests/test-evidence-lanes.toml:183-183 |
+| The lane registration. | "mcp/tests/test_review_intent_summary.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
 
 ## Cross-Repo References
 
@@ -84,6 +84,7 @@ No cross-repository behavior.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-28T16:55:21+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the new summary test module (six cases after A2 added the record-only case). The verification pair names the code base; closeout owns the real stamp.

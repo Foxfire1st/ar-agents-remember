@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_family_integrity_pipeline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash |  `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate |  2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash |  `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`|
+| lastVerifiedCommitDate |  2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -172,8 +172,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The composed seam, acceptance and refusal in one case: the five separated owners asserted against the declared tuple, and the request that omits one refused by name.** | `test_the_one_operation_composes_the_scope_the_run_the_statuses_and_the_routing`; "assert tuple(entry.owner for entry in report.statuses.entries) == PIPELINE_STATUS_OWNERS"; "assert incomplete.state == \"refused\""; "assert \"verification-runner\" in incomplete.refusal.detail" | mcp/tests/test_knowledge_family_integrity_pipeline.py:547-678; mcp/tests/test_knowledge_family_integrity_pipeline.py:370-370 |
 | The declared owner tuple the composed case compares against, defined by the model owner rather than restated here. | `PIPELINE_STATUS_OWNERS` | mcp/src/agents_remember/models/knowledge/family_review.py:95-106 |
 | The shared fixture this module consumes instead of owning, and the artifact rows that declare the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-197; mcp/tests/evidence-lifecycle.toml:1406-1442; mcp/tests/evidence-lifecycle.toml:1443-1508 |
-| The shared fixture this module consumes instead of owning, and the artifact row that declares the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-197; mcp/tests/evidence-lifecycle.toml:85-85; mcp/tests/evidence-lifecycle.toml:1406-1442; mcp/tests/evidence-lifecycle.toml:1443-1508; mcp/tests/test-evidence-lanes.toml:308-308 |
-| The lane row that selects this module into the integration population. | "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"" |mcp/tests/test-evidence-lanes.toml:314-314|
+| The shared fixture this module consumes instead of owning, and the artifact row that declares the module a consumer of it. | "def build_diff_fixture"; "kind = \"shared-support\""; "mcp/tests/test_knowledge_family_integrity_pipeline.py" | mcp/tests/diff_scope_test_support.py:197-197; mcp/tests/evidence-lifecycle.toml:85-85; mcp/tests/evidence-lifecycle.toml:1406-1442; mcp/tests/evidence-lifecycle.toml:1443-1508; mcp/tests/test-evidence-lanes.toml:309-309 |
+| The lane row that selects this module into the integration population. | "\"mcp/tests/test_knowledge_family_integrity_pipeline.py\"" |mcp/tests/test-evidence-lanes.toml:315-315|
 
 ## Cross-Repo References
 
@@ -186,6 +186,7 @@ one temporary directory for the case that needs it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `test_the_detector_emits_the_same_signal_kind_for_a_budget_change_and_a_comments_only_change`; "conclusion_bearing_fields(DetectionSignalPayload) == ()"; "assert produced.registered_scope_status == \"complete_for_declared_policy\"" repointed to mcp/tests/test_knowledge_family_integrity_pipeline.py:258-277; mcp/tests/test_knowledge_family_integrity_pipeline.py:272-272; mcp/tests/test_knowledge_family_integrity_pipeline.py:277-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

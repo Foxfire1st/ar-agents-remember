@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`|
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -72,9 +72,9 @@ No domain documentation source is configured for this repository (`system/source
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:72-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:117-186 |
+|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:117-187 |
 |The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1307-1307|
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:245-245 |
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:246-246 |
 |The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1307-1307|
 
 ## Cross-Repo References
@@ -87,6 +87,7 @@ No cross-repository behavior is implemented in this file.
 |  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1307-1307|
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. One range that spans the insertion was widened by one line. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 

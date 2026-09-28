@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:23:46+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -215,7 +215,7 @@ because each of them pins one sentence a verifier could otherwise reproduce as f
 | The shipped endpoint fixture whose enclosure this module's fixture stands on. | `build_endpoint_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
 | The merge-case support whose authored identities and readers the module reuses. | `BASE_REVISION_ID`; `set_label`; `add_anchor`; `labels_of` | mcp/tests/merge_case_test_support.py:54-54; mcp/tests/merge_case_test_support.py:309-314; mcp/tests/merge_case_test_support.py:323-338; mcp/tests/merge_case_test_support.py:635-644 |
 | The read-scope support's authorship factory both halves of every dataset are authored with. | `make_read_authorship` | mcp/tests/read_scope_test_support.py:246-256 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:319-319 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:320-320 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** | `read_review_sync_rebinding`; `sync_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:68-71; mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:378-378 |
 
@@ -232,6 +232,7 @@ invented namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

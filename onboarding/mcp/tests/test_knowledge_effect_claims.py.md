@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_effect_claims.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash |  `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate |  2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -162,7 +162,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts no field of the mechanical comparison can hold an authored meaning. | `test_no_field_of_the_mechanical_comparison_can_hold_an_authored_meaning` | mcp/tests/test_knowledge_effect_claims.py:954-968 |
 | The case that asserts the record group's own operation vocabulary declares the read and no write path beside the batch. | `test_the_record_groups_own_operation_vocabulary_declares_the_read_and_nothing_else` | mcp/tests/test_knowledge_effect_claims.py:971-981 |
 | The case that asserts a stored requirement revision is written by the requirement module's own operation and left untouched, with this record group's change-set list empty. | `test_a_stored_requirement_revision_is_untouched_by_this_record_group` | mcp/tests/test_knowledge_effect_claims.py:984-1004 |
-| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_effect_claims.py" |mcp/tests/test-evidence-lanes.toml:224-224|
+| The lane row placing this module in the unit population. | "mcp/tests/test_knowledge_effect_claims.py" |mcp/tests/test-evidence-lanes.toml:225-225|
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_effect_claims.py"` | mcp/tests/evidence-lifecycle.toml:1098-1103; mcp/tests/evidence-lifecycle.toml:1121-1121; mcp/tests/evidence-lifecycle.toml:28-35; mcp/tests/evidence-lifecycle.toml:1252-1252; mcp/tests/evidence-lifecycle.toml:1254-1262; mcp/tests/evidence-lifecycle.toml:1335-1335 |
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_effect_claims.py"` | mcp/tests/evidence-lifecycle.toml:1098-1103; mcp/tests/evidence-lifecycle.toml:1121-1121; mcp/tests/evidence-lifecycle.toml:28-35; mcp/tests/evidence-lifecycle.toml:1247-1247; mcp/tests/evidence-lifecycle.toml:1254-1262; mcp/tests/evidence-lifecycle.toml:1335-1335 |
 | The registration listing this module among the exact consumers of the shared earlier-generation case support. | "knowledge-generation-cases"; `"mcp/tests/test_knowledge_effect_claims.py"` | mcp/tests/evidence-lifecycle.toml:1175-1180; mcp/tests/evidence-lifecycle.toml:1208-1208; mcp/tests/evidence-lifecycle.toml:43-50; mcp/tests/evidence-lifecycle.toml:1252-1252; mcp/tests/evidence-lifecycle.toml:1254-1262; mcp/tests/evidence-lifecycle.toml:1335-1335 |
@@ -178,6 +178,7 @@ under a temporary root and construct no process, publication or Git object.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved () were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

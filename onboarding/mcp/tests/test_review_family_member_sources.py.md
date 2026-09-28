@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_family_member_sources.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:42:25+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ The rows name the fixture, the reader and each case, plus the owners they drive.
 | The legacy fields keep their values. | "test_the_existing_source_fields_keep_their_published_values" | mcp/tests/test_review_family_member_sources.py:364-385 |
 | The projection under test. | `member_source` | mcp/src/agents_remember/application/review_family_sources.py:27-51 |
 | The resolver that fills the ranges. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-| The lane registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/test-evidence-lanes.toml:182-182 |
+| The lane registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/test-evidence-lanes.toml:183-183 |
 | The shared-fixture consumer registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/evidence-lifecycle.toml:1499-1499 |
 
 ## Cross-Repo References
@@ -108,6 +108,7 @@ No cross-repository behavior is exercised; the Git repository and datasets are t
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:49:33+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync): No content impact: citation ranges into files L45 changes (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact line map from `9b2f775f` to the synced candidate; each moved row cites the same line content. Wording unchanged; no stamp advanced.
 
 - 2026-09-28T16:42:25+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this one-to-one card for the production-path cases of ICR-R31@v1's member-source locators — distinct regions for two members in one file, an unchanged range on both sides of a changed file, explicit unresolved states, a range past the blob end, a double definition and unchanged legacy fields. The module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf base and the verified basis is the working-tree delta on top of it; the closeout records the real commit.

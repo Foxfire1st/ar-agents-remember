@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
+| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
 | path | `mcp/tests/test_eve_effort_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -117,7 +117,7 @@ was available for this module.
 | The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
 | The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1191 |
 | The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1361 |
-| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:245-245 |
+| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:246-246 |
 
 ## Cross-Repo References
 
@@ -129,6 +129,7 @@ a dependency rather than a sibling Agents Remember repository.
 | The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. | `EveEffortConsumerTests`; `_one_level` | eve_runtime/package.json:15-20; eve_runtime/README.md:25-25; mcp/tests/test_eve_effort_runtime.py:175-215; mcp/tests/test_eve_effort_runtime.py:108-163 |
 
 ## Update History
+- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
