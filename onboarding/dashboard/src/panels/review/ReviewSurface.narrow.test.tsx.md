@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.narrow.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T21:38:01+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -135,8 +135,8 @@ row occurs inside the range that row cites.
 | The own-root scrollport case checks the reviewer height and vertical overflow boundary. | "gives the reviewer its own vertical scrollport on its own root" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:148-158 |
 | **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** | "lets every complete-payload pane shrink and wrap its long identities"; `data-pane`; `panes.length` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:160-170 |
 | **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** | "constrains the disclosure's grid track and wraps the header row"; `gridTemplateColumns`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184 |
-| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:82-90 |
-| The pane helper's own declaration, which the pin's first case depends on. | `pane` | dashboard/src/panels/review/ReviewSurface.tsx:82-90 |
+| The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). | "const pane = (title: string, children: React.ReactNode) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:25-33 |
+| The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). | "const pane = (title: string, children: React.ReactNode) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:25-33 |
 | The shared client whose read this module mounts through, and whose decode the fixture satisfies. | `ReviewPayload`; `ReviewResult` | dashboard/src/data/review.ts:447-479; dashboard/src/data/review.ts:521-527 |
 
 ## Cross-Repo References
@@ -149,6 +149,8 @@ No cross-repository behavior is exercised in this file. Every response is served
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the two pane-helper rows because an older *Generated citation repair* bullet in this card names `pane`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`const pane = (title: string, children: React.ReactNode) =>`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
+- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — the `pane` helper moved.** L48 moved the record panes, with `pane` and its `minWidth: 0` / `overflowWrap: 'anywhere'` declarations, verbatim into `ReviewRecordPanes.tsx`; the disclosure track `minmax(0, 1fr)` moved with `ReviewTechnicalDetails`. The pin still asserts the same declarations on the same rendered surface, so both duplicate rows were re-pointed rather than reworded. The mechanical-repair bullets below are superseded by this re-read. No verification stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-26T21:10:14+00:00: Generated citation repair: `isZeroLength` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:145-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:14+00:00: Generated citation repair: `gridTemplateColumns`; `flexWrap`; "constrains the disclosure's grid track and wraps the header row" repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:178-178; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:182-182; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

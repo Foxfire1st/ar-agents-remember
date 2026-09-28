@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewOutcome.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T21:42:39+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -65,6 +65,15 @@ about the leaf's current state, so it **replaces** the panes rather than sitting
 server has just declined to stand behind — while a transport failure is not an answer about the
 comparison at all, so the comparison the surface already had stays on screen.
 
+**Since `260921-ICR-L48`, `shownPayload` decides the subject's reading, not whether the shell stays.** It
+is still keyed to the question on screen, so a newly selected subject that fails or is refused has no
+shown payload. What the surface keeps around it is the read cycle's `frame` (the task context's last
+admitted payload): when a frame exists, the workspace, navigation and source explorer stay mounted and the
+requested subject's pending state, failure or refusal is stated **in the reading area**, labelled with that
+subject, through this module's own `ReviewProblemBlock` (the surface passes it the subject label). Only a
+read with no frame at all — the reviewer's first read — still renders its loading line or problem block
+here at the surface level, as before.
+
 **`problemOf(read)` is the one accessor for the failure a phase carries**, so no caller re-derives which
 phases have one.
 
@@ -95,8 +104,11 @@ failed read deny; a retained **measured-empty** generation is an earlier read's 
 it is stated as the known-empty result it is rather than denied.
 
 **`ReviewOutcomeRegion` is the one place those notes are decided, and the two statements about a shown
-payload are mutually exclusive there.** It renders the loading line for `loading`; the one problem block
-for a carried problem, with `origin` chosen from the phase; the instead-note when a refusal was answered
+payload are mutually exclusive there.** It renders the loading line for `loading` (`loadingLine`); the one
+problem block for a carried problem, with `origin` chosen from the phase (`problemLine`) — both suppressed
+when the surface passes `readingInWorkspace`, because the workspace then states that read in its reading
+area, labelled with the requested subject, and a surface-level line would be a second, subject-less
+statement of the same read (L48); the instead-note when a refusal was answered
 by the inventory and the read has since come back `reviewed`; `KnownEmptyNote` when the shown payload is
 measured-empty; and `RetainedGenerationNote` only when there is a `lastCoherent` payload that is **not**
 measured-empty. A retained known-empty is therefore stated once, as the measured result it is, and never
@@ -122,8 +134,14 @@ data attribute (`data-review-state`, `data-review-code`).
   everything else it does not recognize becomes a `failed` phase that names the state.
 - **A failure is never known-empty, and known-empty is never a failure.** `knownEmpty` is reachable only
   from a `reviewed` payload, and its four conditions are all measurements.
-- **A typed refusal replaces the panes; a transport failure does not erase them.** That asymmetry lives
-  in `shownPayload`, in one place.
+- **A typed refusal replaces the subject's reading; a transport failure does not erase a retained
+  comparison of the same question.** That asymmetry lives in `shownPayload`, in one place. Since L48 a
+  refusal no longer replaces the *shell*: when the task context has a frame, the workspace stays mounted
+  and the refusal is stated once, in the reading area, for the requested subject (Architect ruling on
+  L48-R1). The superseded wording "a typed refusal replaces the panes" held only while every refusal
+  unmounted the workspace.
+- **One statement per read.** A read is stated either by this region at the surface level or by the
+  workspace's reading area (`readingInWorkspace`), never both.
 - **Exactly one renderer for a `ReviewFailure`.** There is one `ReviewProblemBlock` definition, and both
   the surface's outcome region and the expansion pane render it — the expansion pane imports it rather
   than re-implementing a block for the same shape. Two *condensed* lines remain by design (the entry bar
@@ -184,14 +202,14 @@ range that row cites.
 | **The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.** | `ReviewProblemBlock`; `review-offending-input`; `review-next-action`; `review-retry` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177 |
 | **The note that keeps a refusal visible beside the inventory the reader asked for instead.** | `TaskContextInsteadNote` | dashboard/src/panels/review/ReviewOutcome.tsx:183-195 |
 | **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** | `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:201-213 |
-| **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal` | dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
-| The surface wires the outcome region to the target-bound read and appropriate retry/source actions. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
-| SourceContent consumes the shared problem renderer for transported failures. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:167-227 |
-| **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** | "shows a never-initialized refusal with its reason, offending input and next action"; "keeps source inspection reachable when only intent is unavailable, on request"; "says known empty for a measured empty answer and never for a failure"; "offers an explicit retry for a network failure, and the retry renders the answer"; "never renders a previous target's comparison under a new target's header"; "states a retained known-empty once, as the measured result it is, and never denies it" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:266-283; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:284-313; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:314-325; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:416-457; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-491 |
+| **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal`; `readingInWorkspace`; `loadingLine`; `problemLine` | dashboard/src/panels/review/ReviewOutcome.tsx:215-234; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
+| The surface wires the outcome region to the target-bound read and appropriate retry/source actions. | `useSurface`; `ReviewSurface`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:440-519; dashboard/src/panels/review/ReviewSurface.tsx:521-585; dashboard/src/panels/review/ReviewSurface.tsx:362-382 |
+| SourceContent consumes the shared problem renderer for transported failures. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:222-271 |
+| **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** | "shows a never-initialized refusal with its reason, offending input and next action"; "keeps source inspection reachable when only intent is unavailable, on request"; "says known empty for a measured empty answer and never for a failure"; "offers an explicit retry for a network failure, and the retry renders the answer"; "never renders a previous target's comparison under a new target's header"; "states a retained known-empty once, as the measured result it is, and never denies it" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:274-290; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:292-320; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:322-332; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:365-383; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:424-465; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:496-505 |
 | The expansion pane's transport-level cases, which render through this module's one block. | "carries the code, reason, offending input and next action of an unwired adapter" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:52-78 |
 
 | `ReviewProblemBlock` owns the behavior described above. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-117 |
-| `ReviewOutcomeRegion` owns the behavior described above. | `ReviewOutcomeRegion` | dashboard/src/panels/review/ReviewOutcome.tsx:226-228 |
+| `ReviewOutcomeRegion` owns the behavior described above. | `ReviewOutcomeRegion` | dashboard/src/panels/review/ReviewOutcome.tsx:247-249 |
 | `knownEmpty` owns the behavior described above. | `knownEmpty` | dashboard/src/panels/review/ReviewOutcome.tsx:86-88 |
 
 ## Cross-Repo References
@@ -204,6 +222,7 @@ records and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:42:39+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the region yields to the workspace's reading area (`ICR-R24@v3`; L48-R1-F1 ruling; R16 preserved).** `ReviewOutcomeRegion` gained `readingInWorkspace` and two extracted helpers (`loadingLine`, `problemLine`) that suppress the surface-level loading line and problem block when the mounted workspace states the requested subject's read. The card's invariant "a typed refusal replaces the panes" is **superseded** by the Architect's L48-R1 ruling: a refusal still replaces the subject's reading (`shownPayload` unchanged), but no longer the shell when a frame exists. R16's distinct, owner-worded states are **preserved** — the same `ReviewProblemBlock` renders them, now labelled with the requested subject. The reopened `useSurface`/`ReviewSurface` claim was re-read and holds; rows re-derived. No stamp advanced.
 - 2026-09-26T21:09:39+00:00: Generated citation repair: `ReviewRead` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:33-37. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:09:39+00:00: Generated citation repair: `readFrom` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:42-55. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:09:39+00:00: Generated citation repair: `problemOf` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:70-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

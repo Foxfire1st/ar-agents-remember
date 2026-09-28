@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.family.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-28T21:38:01+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -359,9 +359,9 @@ opens the case.
 | The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness. | `memberContextHeading`; `memberContextCounts`; "loaded context contains ${carriedCarried} member row(s) of them" | dashboard/src/panels/review/FamilyReviewCenter.tsx:512-517; dashboard/src/panels/review/FamilyReviewCenter.tsx:519-531 |
 | Roster revision content and authoritative selected-subject statements remain separate rendering responsibilities. | `MemberStatement`; `SelectedStatement` | dashboard/src/panels/review/FamilyReviewCenter.tsx:198-214; dashboard/src/panels/review/SubjectReview.tsx:53-114 |
 | **The server-side rule the walk case pins: `family_members` is in the paged union because the server accepts it, and deliberately not among the walkable collections, because that collection is the set of per-family walks and a cursor-less request earns the server's own refusal.** | `ReviewPagedCollection`; `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:81-81; dashboard/src/data/review.ts:91-91 |
-| The one page request type a roster continuation builds. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:64-68 |
+| The one page request type a roster continuation builds. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:73-77 |
 | The source explorer retains the complete inventory independently of semantic selection. | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
-| The workspace hook preserves display state and the source opener needed for focus return. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:159-196 |
+| The workspace hook preserves display state and the source opener needed for focus return. | "export function useWorkspaceState(): WorkspaceState {" | dashboard/src/panels/review/ReviewWorkspace.tsx:147-184 |
 
 ## Cross-Repo References
 
@@ -373,6 +373,8 @@ one enclosure's captured bodies and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the workspace-hook row because an older *Generated citation repair* bullet in this card names `useWorkspaceState`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function useWorkspaceState(): WorkspaceState {`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
+- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — `useWorkspaceState` changed shape.** Its `focusSelection` ref now records the element that had focus at selection time (`{ from }`) instead of a boolean, so the answer's focus lands only when the reader has not moved it (L48-R1-F2). The claim this module relies on — the hook keeps display state above read-cycle remounts and keeps the source opener needed for focus return — still holds; the row was re-pointed, as was the moved `ReviewPageRequest` row. No verification stamp was advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the module header no longer names a probe script: it states that `complete` and `identical` were re-captured under `familyReview.capture-provenance.json` and carry the structured locator fields, while `truncated`, `continued`, `oneSided`, `walkFinal` and `emptyRoster` still hold their `63b47629` capture and why. Corrected the provenance paragraph and row accordingly and re-measured every range the longer header shifted. No case changed. No verification stamp was advanced.
 

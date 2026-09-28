@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/SourceContent.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastUpdated | 2026-09-28T21:43:34+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -89,8 +89,8 @@ no-diff note: there is no operand to caveat, so the pane states what each endpoi
 
 **The generation is an input, never a lookup.** `SourceContent` takes `beforeCodeTreeId` and
 `afterCodeTreeId` from the caller — the ids the inventory published to this client — and sends them
-with every read; the `useEffect` key is
-`[repo, master, leaf, entry.path, beforeCodeTreeId, afterCodeTreeId]`, so a different row or a
+with every read; since L48 the read's identity is `sourceContentKey(repo, master, leaf, path,
+beforeCodeTreeId, afterCodeTreeId)` (declared in `ReviewReadCache.ts`), so a different row or a
 different listed generation is a different read and an unrelated re-render is not. A read therefore
 describes the generation the reader was looking at even after the branch moved, which is what makes the
 `currentness` line meaningful.
@@ -129,10 +129,18 @@ is a real read; R03's typed path is below it and unchanged: this module still re
 when `problem` is set, then the `review-source-loading` line (naming the path and "at the listed
 generation") while `result` is `null`, then `refusalBlock` when the typed answer is `refused`, then
 `Expansion` — carrying the two display preferences down to `Sides` — when the answer carries one, and
-`null` otherwise. The effect sets both `result` and
-`problem` back to `null` before each read and guards every assignment with a `live` flag its cleanup
-clears, so a superseded read cannot write into the current row; `attempt` is on the effect's key, which
-is what makes the retry a re-read.
+`null` otherwise.
+
+**The read is `useSourceContentRead`, and its answer is bound to its key (L48).** The hook holds the answer
+and the failure *together with the request key they answer*, and derives what to render: the surface
+cache's kept answer for this key, else the stored answer if its key is this key, else nothing; the failure
+is shown only when there is no result and its key is this key. So a different path or generation can
+never render a previous entry's content or failure, without the old reset-to-`null` before each read. A
+`live` flag cleared by the effect's cleanup still drops a superseded read. The hook reads through the
+surface's `ReviewReadCache` (via `ReviewReadCacheContext`): a cache hit issues no request, and an answer
+is offered to the cache, which keeps it only when it is `content` with an expansion. Content rendered
+outside a review surface has no provider and reads every time, as before. The retry clears the failure
+and bumps `attempt`, which is on the effect's dependencies, so a retried read is a real read.
 
 ### Conventions
 
@@ -171,13 +179,18 @@ match the cockpit panels' idiom.
   as props and are threaded into `DiffPane`; this module holds no display preference of its own, so a
   layout switch in the explorer cannot reset an expansion, and the defaults (`"split"`, `false`) are
   exactly the shipped rendering.
-- **Display-only, and refusal-safe.** One read on mount and on input change, no write, no control; a
+- **Display-only, and refusal-safe.** One read per request key and mounted review surface (a reopened
+  file at the same trees is served from the surface's cache), no write, no control; a
   typed refusal and a rejected transport are two different rendered states, and neither is a success.
 - **One renderer for a transported failure.** The block this pane renders for a transport-level answer
   is the shared `ReviewProblemBlock` imported from `ReviewOutcome.tsx`, not a second block declared for
   this pane; R03's own typed-refusal block stays this module's and is not re-specified.
 - **A retry is a real re-read.** It re-arms the effect through `attempt` rather than re-rendering the
-  stored failure, so the second read travels the same path as the first.
+  stored failure, so the second read travels the same path as the first. A failure or refusal is never
+  kept by the cache, so it is always asked again.
+- **An answer never outlives its key.** Result and failure are bound to `sourceContentKey`; the cache is
+  emptied by the surface whenever an answer from another comparison generation arrives (see
+  `ReviewReadCache.ts`).
 - **Boundary.** It owns one entry's *rendering* contract. Which generation is bound, which change set
   admits the path, what each side's state is and what its bytes are belong to the server
   (`models/knowledge/review_source_content.py` and the source-content route); this file re-derives
@@ -206,15 +219,16 @@ surface over the real client.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The header's own record of the defect and of the three rendering rules, including the rule that an `absent` side is a measured fact rather than an empty file.** | `ReviewSourceContentResult`; `DiffPane`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:1-38; dashboard/src/panels/review/SourceContent.tsx:40-40; dashboard/src/panels/review/SourceContent.tsx:188-188 |
-| SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes. | `SourceContent`; `Sides`; `contentBlock` | dashboard/src/panels/review/SourceContent.tsx:167-227; dashboard/src/panels/review/SourceContent.tsx:54-98; dashboard/src/panels/review/SourceContent.tsx:43-52 |
-| Text renderability is determined by the supplied text value, rather than inferred from a present-state label. | `textual` | dashboard/src/panels/review/SourceContent.tsx:16-16 |
-| **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:20-41 |
-| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:43-52; dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:54-98 |
-| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:100-110 |
-| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:112-124 |
-| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command.** | `Expansion`; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:126-165 |
-| **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** | `SourceContent`; `useEffect` | dashboard/src/panels/review/SourceContent.tsx:167-227 |
+| SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes. | `SourceContent`; "function Sides({"; `contentBlock` | dashboard/src/panels/review/SourceContent.tsx:222-271; dashboard/src/panels/review/SourceContent.tsx:55-99; dashboard/src/panels/review/SourceContent.tsx:44-53 |
+| Text renderability is determined by the supplied text value, rather than inferred from a present-state label. | `textual` | dashboard/src/panels/review/SourceContent.tsx:17-17 |
+| **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:21-42 |
+| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:44-53; dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:55-99 |
+| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:101-111 |
+| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:113-125 |
+| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command.** | `Expansion`; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:127-166 |
+| **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** | `SourceContent`; `useSourceContentRead`; `useEffect` | dashboard/src/panels/review/SourceContent.tsx:222-271; dashboard/src/panels/review/SourceContent.tsx:180-220 |
+| **The key the read is bound to, and the cache it reads through (L48).** | `sourceContentKey`; `keepSource`; `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:95-104; dashboard/src/panels/review/ReviewReadCache.ts:139-145; dashboard/src/panels/review/ReviewReadCache.ts:152-154 |
 | The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws. | `reviewSourceContent`; `FilesApiError` | dashboard/src/data/review.ts:727-745; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-4; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:5-5; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
 | **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:321-327; dashboard/src/data/review.ts:329-336 |
 | **The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:347-362 |
@@ -227,9 +241,9 @@ surface over the real client.
 | **The failure and provenance cases: a typed refusal with no content, the exact generation and path the listing published, and the leaf-change-set bound stated when the requested generation could not be measured.** | "renders a refused entry read as its typed refusal and no content"; "sends the generation and path the listing published, not a re-resolved one"; "states which measured change set admitted the path when the requested one could not be measured" | dashboard/src/panels/review/SourceContent.test.tsx:439-457; dashboard/src/panels/review/SourceContent.test.tsx:459-488; dashboard/src/panels/review/SourceContent.test.tsx:490-520 |
 | **The two boundary cases: the byte-form row is listed without an open control, and an inventory that named no code trees offers no expansion at all.** | "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:522-560; dashboard/src/panels/review/SourceContent.test.tsx:562-588 |
 
-| `Expansion` owns the behavior described above. | `Expansion` | dashboard/src/panels/review/SourceContent.tsx:126-128 |
-| `SourceContent` owns the behavior described above. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:167-169 |
-| `Sides` owns the behavior described above. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:54-56 |
+| `Expansion` owns the behavior described above. | `Expansion` | dashboard/src/panels/review/SourceContent.tsx:127-129 |
+| `SourceContent` owns the behavior described above. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:222-224 |
+| `Sides` owns the behavior described above. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:55-57 |
 
 ## Cross-Repo References
 
@@ -241,6 +255,8 @@ records at one repository's two bound code trees, and carries no identity that r
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the component row because an older *Generated citation repair* bullet in this card names `Sides`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`function Sides({`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
+- 2026-09-28T21:43:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the content read is keyed and cached per comparison (`ICR-R24@v3`).** The read moved into `useSourceContentRead`, which binds its answer and failure to `sourceContentKey` and reads through the surface's `ReviewReadCache`; reopening a file at the same code trees costs no request. The card's statement that the effect resets `result`/`problem` to `null` before each read is **superseded** by key-bound derivation (a previous entry's content or failure can no longer render under another key, and the answer no longer vanishes on remount). The generation paragraph, the four-outcomes paragraph and the invariants were updated; the reopened `SourceContent` claim was re-read (the four outcomes and their order are unchanged); every row re-derived after the one-line import shift, one row added for the key and cache. No stamp advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-26T21:11:23+00:00: Generated citation repair: `Sides` repointed to dashboard/src/panels/review/SourceContent.tsx:54-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:11:23+00:00: Generated citation repair: `boundedNote` repointed to dashboard/src/panels/review/SourceContent.tsx:100-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

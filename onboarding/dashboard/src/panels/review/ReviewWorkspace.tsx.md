@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:20:54Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T21:44:14+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Own the family-centered review layout and its transient inspection state: one scope header, one combined rail and the unified intent/source/evidence center.
+Own the family-centered review layout and its transient inspection state: one scope header, one combined rail and the unified intent/source/evidence center. Since `260921-ICR-L48` (`ICR-R24@v3`) the workspace also **stays mounted across subject selection**: while the selected subject has no answer, only its reading area changes, to a status bound to the requested subject.
 
 ## Code Commentary
 
@@ -24,7 +24,11 @@ Own the family-centered review layout and its transient inspection state: one sc
 
 Member navigation calls the existing subject reader using the member invariant identity while retaining its family/roster context. The narrow jump focuses the center without the browser default scroll, then scrolls to its start so the selected heading and guarantee remain visible. Layout, full-file disclosure and open path are unchanged by the jump.
 
-useWorkspaceState holds selected family/member, search, diff layout, full-file disclosure, expanded path and focus references above paged reads. Changed regions are the initial display. WorkspaceRail combines recorded catalogue navigation, the loaded guarantee/member subtree and the complete source inventory. sourceAttribution uses only the backend mapped and unmapped partitions; everything else is unknown. recordLabelOf distinguishes reconstructed recorded endpoints from frozen historical and live comparisons. The center reuses FamilyReviewCenter and ReviewExpressions; desktop rail scrolling is independent.
+useWorkspaceState holds selected family/member, search, diff layout, full-file disclosure, expanded path and focus references above paged reads. Changed regions are the initial display. WorkspaceRail combines recorded catalogue navigation, the loaded guarantee/member subtree and the complete source inventory. sourceAttribution uses only the backend mapped and unmapped partitions; everything else is unknown. The scope header (and its `recordLabelOf`, which distinguishes reconstructed recorded endpoints from frozen historical and live comparisons) moved to `ReviewScopeHeader.tsx` in L48; the workspace mounts it with a `status` derived from `reading`. The center reuses FamilyReviewCenter and ReviewExpressions; desktop rail scrolling is independent.
+
+**The unanswered subject (L48).** `ReviewWorkspace` takes an optional `reading: ReadingStatus | null`. The surface sets it only when the subject on screen has no answer and the task context has a `frame`; `payload` is then that frame, used for the shell only. `ReadingStatus` carries the read cycle's key for the requested question, the requested subject (`kind:id`), its label and, for a failed or refused read, the owner's problem block (`problem`; `null` while pending). `WorkspaceCenter` is the reading-area column — one DOM node (`review-center-column`) for the life of the workspace — and swaps only its content: `ReadingStatusCenter` renders `review-reading-pending` (`aria-busy`, `role="status"`, "Reading <label>…") or `review-reading-problem` ("<label> could not be read" plus the owner block, with `data-problem-key`/`data-problem-subject`), else the answered subject's `FamilyReviewCenter` and roster note. While unanswered, the tree marks only the reader's explicit choice (`state.chosen`) — deriving one from the frame would mark the previous subject's family as the requested subject's context.
+
+**Focus after a selection (L48-R1-F2).** `focusSelection` holds `{ from }`, the element that had focus when the reader selected. `useSelectionFocus` runs on the next payload, clears the request, and moves focus to the selected tree node (or the center) only if focus is still on `from` or has fallen to `body`; focus the reader moved while the subject was pending is kept.
 
 ### Conventions
 
@@ -33,19 +37,22 @@ Styles come from `../../../styled-system/css` as module-level constants (`worksp
 hooks from `react`; the payload types (`ReviewPayload`, `ReviewFamilyContext`, `ReviewFamilySideName`,
 `ReviewSelectorKind`) as type-only imports from `../../data/review`; `carriedPage` as the module's one
 value import from that entry; `ReviewPageRequest` as a type-only import from `./ReviewReadCycle`;
-`FamilyReviewCenter`, `FamilyTree`/`FamilySelection` and the type-only `DiffLayout` from their own modules.
+`FamilyReviewCenter`, `FamilyTree`/`FamilySelection`, `ReviewScopeHeader` and the type-only `DiffLayout` from their own modules.
 Every sub-component is a plain function taking the values it renders; props are threaded rather than
 re-derived, so two mount points of the same control cannot drift. Test ids are the contract
-(`review-workspace`, `review-scope-header`, `review-scope-task`, `review-scope-record`,
-`review-scope-comparison`, `review-scope-families`, `review-roster-walk`, `review-family-tree`,
+(`review-workspace`, the `review-scope-*` ids now rendered by `ReviewScopeHeader.tsx`, `review-reading-pending`,
+`review-reading-problem`, `review-roster-walk`, `review-family-tree`,
 `review-family-context`, `review-family-limitation`, `review-jump-to-selection`, `review-center-column`,
 `review-display-state`, `review-center-display-controls`, `review-center-diff-layout`,
 `review-center-full-file`), and the workspace root publishes `data-diff-layout` and `data-full-file` so a
-case can read the live preferences off the element. No `useEffect` and no fetch appear in this file.
+case can read the live preferences off the element. No fetch appears in this file; its one `useEffect` is
+`useSelectionFocus`.
 
 ### Invariants And Boundaries
 
 Semantic selection never filters the full changed-file population. Confirmed no-family, unselected, absent and unreadable context remain different states. Display preferences do not change knowledge or comparison identity.
+
+**R26 isolation under a retained shell (L48).** While `reading` is set, nothing of the frame's subject is rendered as the requested subject's reading: the center shows only the requested subject's status, the scope header replaces its subject-bound lines, and the tree marks only the explicit choice. The rail's tree and source explorer keep the frame's attribution labels while the subject is pending or unavailable (A2 observation A2-O3): those are comparison-level labels of the task's source changes, not the new subject's intent. A selection never unmounts the workspace, its navigation, tree or open disclosures; only a read with no frame at all (the reviewer's first) has no workspace to keep.
 
 ### Todos
 
@@ -68,11 +75,14 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:159-196 |
-| `ReviewWorkspace` owns the behavior described above. | `ReviewWorkspace` | dashboard/src/panels/review/ReviewWorkspace.tsx:208-287 |
-| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:306-376 |
-| `recordLabelOf` owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewWorkspace.tsx:378-382 |
-| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:457-470 |
+| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:147-184 |
+| `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
+| **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:85-127 |
+| **The reading-area column: one DOM node, only its content swapped.** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:277-326 |
+| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:473-487; dashboard/src/panels/review/ReviewWorkspace.tsx:129-145 |
+| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
+| `recordLabelOf` (moved to the scope header's module by L48) owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewScopeHeader.tsx:108-112 |
+| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:495-508 |
 
 ## Cross-Repo References
 
@@ -85,6 +95,8 @@ payload's own candidate published.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the component row because an older *Generated citation repair* bullet in this card names `ReviewWorkspace`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function ReviewWorkspace({`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
+- 2026-09-28T21:44:14+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the workspace stays mounted across selection (`ICR-R24@v3`; L48-R1-F1/F2 rulings; `ICR-R26` preserved).** New: `ReadingStatus`, `ReadingStatusCenter` (pending or could-not-be-read, labelled with the requested subject), `WorkspaceCenter` (one reading-area column whose content alone is swapped), and the moved-focus guard in `useSelectionFocus` (`focusSelection` now `{ from }`). `ScopeHeader` and `recordLabelOf` moved to `ReviewScopeHeader.tsx` (L47-R1-F5 file budget). The implementation **extends** the card's layout contract and **supersedes** the implicit expectation that a subject change remounts the workspace. Purpose, Logic, Conventions (including the wrong pre-existing "no `useEffect`" statement) and Invariants updated; the three reopened claims were re-read; rows re-derived, three rows added. No stamp advanced.
 - 2026-09-26T21:11:04+00:00: Generated citation repair: `ReviewWorkspace` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:208-287. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:11:04+00:00: Generated citation repair: `sourceAttribution` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:457-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

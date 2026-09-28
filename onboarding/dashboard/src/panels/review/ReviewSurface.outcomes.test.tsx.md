@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T21:41:55+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -75,8 +75,17 @@ retry renders the answer; a subject-level refusal stays distinct under its own c
 **The F4 case is the cross-target prohibition, and it is mounted rather than asserted at the region.**
 "never renders a previous target's comparison under a new target's header" reads a real comparison for
 one subject, then re-renders the surface for a **different** subject whose read fails, and asserts the
-new header carries no `review-inventory`, no `review-retained-generation` and no `data-comparison` — so
-a payload read for another question cannot appear under this one.
+new header carries no `review-retained-generation` and no `data-comparison` — so a payload read for
+another question cannot appear under this one.
+
+**Since `260921-ICR-L48` the same case also pins what stays.** The Architect's L48-R1 ruling keeps the
+workspace mounted when a newly selected subject's read fails, so the case now asserts that the failure is
+stated in the reading area labelled with the requested subject (`review-reading-problem` with
+`data-problem-subject="invariant:a-different-subject"`), that the task's own source inventory
+(`review-inventory`, six changed files) **stays**, and that no `review-center` (A's reading) is rendered.
+The earlier assertion that `review-inventory` disappears was **superseded** by that ruling, not weakened:
+the inventory belongs to the task, not to either subject, and R26 isolation is still asserted on the
+subject-bound parts.
 
 **`describe("the outcome region's two statements about a measured-empty payload")` pins the rule where
 it lives, and says why there.** The comment above it records the measured reachability fact: the state
@@ -153,12 +162,12 @@ fifteen cases grouped by what they pin. Every anchor in a row occurs inside the 
 | **The three distinct failure states asserted apart in sequence.** | "keeps the unavailable-adapter, validation and authority states apart" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:326-356 |
 | **The retry offered for a network failure, and the retry rendering the answer.** | "offers an explicit retry for a network failure, and the retry renders the answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376 |
 | A subject-level refusal distinct under its own code. | "keeps a subject-level refusal distinct, under its own code" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:377-402 |
-| **An answer whose state this client does not admit is named, never rendered as a review.** | "names an answer whose state it does not admit, instead of rendering it as a review" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:403-415 |
-| **The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.** | "never renders a previous target's comparison under a new target's header" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:416-457 |
-| **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:467-471; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:473-482; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:484-487 |
-| **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:481-513 |
-| **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68; dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
-| The real surface composes the target-bound read and retained comparison that these cases exercise. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
+| **An answer whose state this client does not admit is named, never rendered as a review.** | "names an answer whose state it does not admit, instead of rendering it as a review" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:411-422 |
+| **The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.** | "never renders a previous target's comparison under a new target's header" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:424-465 |
+| **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:468-478; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:480-489; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:491-494 |
+| **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:496-528 |
+| **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68; dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
+| The real surface composes the target-bound read and retained comparison that these cases exercise. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:440-519; dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
 ## Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed
@@ -169,6 +178,7 @@ same-origin `fetch` and names one repository namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:41:55+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the cross-target case now asserts what stays, per the L48-R1 ruling (`ICR-R24@v3`, preserving `ICR-R26`).** The assertion that the previous subject's `review-inventory` disappears after the new subject's read fails contradicted the Architect's ruling that a failed or refused selection keeps the workspace mounted; A2 replaced it with: the failure is labelled with the requested subject in `review-reading-problem`, the task inventory stays, and no `review-center` is rendered, while the retained-generation and `data-comparison` negatives are unchanged. The card's F4 paragraph was corrected to say so (the old statement is **superseded**, not carried). The reopened `useSurface`/`ReviewSurface` claim was re-read — the real surface still composes the target-bound read and the retained comparison — and every row this leaf displaced was re-derived from its case or declaration. No stamp advanced.
 - 2026-09-26T21:10:23+00:00: Generated citation repair: `DATASET_ABSENT`; `BAD_REQUEST`; `UNWIRED`; `BAD_PATH`; `INVENTORY_DETAIL` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:50-60; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:68-78; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:79-85; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:86-92; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:94-96. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:23+00:00: Generated citation repair: `reviewed` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:200-205. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:23+00:00: Generated citation repair: `response`; `serving` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:225-232; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:234-238. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

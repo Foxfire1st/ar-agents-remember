@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:11:24+02:00 |
-| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-28T21:46:09+02:00 |
+| lastVerifiedCommitHash |  `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
+| lastVerifiedCommitDate |  2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Compose the normal Intent Reviewer from one subject catalogue, one comparison read cycle and a family-centered workspace. The surface is read-only and produces no semantic judgment.
+Compose the normal Intent Reviewer from one subject catalogue, one comparison read cycle and a family-centered workspace. The surface is read-only and produces no semantic judgment. Since `260921-ICR-L48` (`ICR-R24@v3`) it also decides **which payload the workspace is mounted over**: the answer for the subject on screen, or — while that subject is pending, failed or refused — the task context's last admitted `frame`, so a selection never unmounts the workspace, its navigation or its open disclosures.
 
 ## Code Commentary
 
@@ -24,17 +24,20 @@ Compose the normal Intent Reviewer from one subject catalogue, one comparison re
 
 The subject-selection callback carries the chosen family context into the new subject read. Selecting a member requests its invariant through the existing read cycle; it does not render a family payload as that member own assessment.
 
-useSurface gets recorded subjects through useReviewNavigation and passes the chosen identity to useReviewReadCycle. Changing subjects clears the prior page request and local family selection while the workspace display preferences persist. The retained payload is shown only when its full target key matches the question on screen. ReviewPanes mounts one workspace; records, pagination, submission contract and complete technical panes remain inspectable in the technical-details disclosure. Typed outcomes stay with ReviewOutcome, refresh identity with ReviewRefresh, source bytes with SourceContent, and family/intent/source composition with ReviewWorkspace.
+useSurface gets recorded subjects through useReviewNavigation and passes the chosen identity to useReviewReadCycle. Changing subjects (`selectSubject`) records the element that had focus (`focusSelection = { from }`), clears the prior page request and local family selection while the workspace display preferences persist. The retained payload is shown only when its full target key matches the question on screen. ReviewPanes mounts one workspace; records, pagination, submission contract and complete technical panes remain inspectable in the technical-details disclosure, whose renderers moved to `ReviewRecordPanes.tsx` (`ReviewTechnicalDetails`) in L48. Typed outcomes stay with ReviewOutcome, refresh identity with ReviewRefresh, source bytes with SourceContent, and family/intent/source composition with ReviewWorkspace.
+
+**The mounted shell (L48).** `useSurface` owns one `ReviewReadCache` per mounted surface (`useState(() => new ReviewReadCache())`), passes it to the read cycle and provides it to source content through `ReviewReadCacheContext`. It computes `reading` with `readingStatusOf` only when a `frame` exists and no payload answers the question on screen: the status is keyed to the read cycle's target key, names the requested subject (`kind:id`, labelled from the catalogue entry when there is one) and, for a failed or refused read, carries the owner's `ReviewProblemBlock` labelled with that subject (retry for a transport failure, the source-changes offer for an intent-only refusal). `ReviewPanes` renders the workspace over `shown ?? (reading ? frame : null)`, passes `reading` only when nothing answers, and hands `ReviewTechnicalDetails` the answer alone (or an `unanswered` label), so records are never shown under another subject; the page controls render only for an answer. The root publishes `data-review-pending` or `data-review-unavailable` with the requested subject, and `ReviewOutcomeRegion` receives `readingInWorkspace` so the read is stated once. `useReaderEngagement` on the root reports reader gestures to `navigation.engage` (the late-catalogue rule, see `ReviewNavigation.tsx`).
 
 Since `260921-ICR-L47`, `useSurface` passes `hold: navigation.settling` to `useReviewReadCycle`, so the
 reviewer's first read waits (at most `SUBJECT_HOLD_MS`) for the catalogue to choose a subject, and calls
 `useObservedComparison(navigation.observeComparison, shown)` so the navigation re-reads its catalogue only
 when the displayed snapshot pair changes. The file grew by 3 lines to 931, over the 900-line soft rail
-(L47-R1-F5, routed to L48, which reworks this file).
+(L47-R1-F5, routed to L48, which reworks this file). **L48 closed it:** the record panes moved to
+`ReviewRecordPanes.tsx`, leaving this file at 585 lines.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The held first read and the snapshot observation. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:779-857 |
+| The held first read and the snapshot observation. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:471-496 |
 
 ### Conventions
 
@@ -55,14 +58,16 @@ every list item carries a stable `key` derived from the record's own identifiers
 carry the machine-readable facts — `data-pane`, `data-binding`, `data-change-state`,
 `data-submission-state`, `data-testid` — so the surface's behaviour is inspectable without reading its
 text. Sub-components are plain functions taking the payload or the pane they render; **none of them
-holds state**, and the only reader state this file owns is `instead`, `selection` and the
-`useWorkspaceState()` value, all three held by `ReviewSurface` itself. `data-side-state` **no longer
+holds state**, and the only reader state this file owns is `instead`, `selection`, the
+`useWorkspaceState()` value and (L48) the surface's read cache, all held by `useSurface` for
+`ReviewSurface`. The per-record keys and `data-*` attributes listed above now live with the record
+renderers in `ReviewRecordPanes.tsx`. `data-side-state` **no longer
 appears in this file**: it moved with the statement area into
 `KnowledgeStatements.tsx`, where the same attribute still spells a side's declared state.
 
 ### Invariants And Boundaries
 
-No browser path selects a dataset. Failed reads may retain only the last coherent answer to the same question and never invent an empty review. One-sided statements, subject applicability, evidence currentness and authored assessments retain their existing owners. Source review remains reachable when only intent is unavailable.
+No browser path selects a dataset. Failed reads may retain only the last coherent answer to the same question and never invent an empty review. The frame keeps only the shell: nothing of the frame's subject is rendered as the requested subject's reading, records or comparison identity (`ICR-R26` isolation, L48). A selection never unmounts the workspace once a frame exists; only the first read, which has no frame, is stated at the surface level. One-sided statements, subject applicability, evidence currentness and authored assessments retain their existing owners. Source review remains reachable when only intent is unavailable.
 
 ### Todos
 
@@ -85,10 +90,11 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `useSurface` owns the behavior described above. | `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854 |
-| `ReviewPanes` owns the behavior described above. | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:658-720 |
-| `ReviewSurface` owns the behavior described above. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
-| `PageControls` owns the behavior described above. | `PageControls` | dashboard/src/panels/review/ReviewSurface.tsx:617-656 |
+| `useSurface` owns the behavior described above, including the cache, `selectSubject` and the `reading` status. | `useSurface`; `selectSubject`; `ReviewReadCache` | dashboard/src/panels/review/ReviewSurface.tsx:440-519 |
+| The unanswered subject's status, keyed and labelled with the requested subject. | `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:359-382 |
+| `ReviewPanes` owns the behavior described above: the workspace over the answer or the frame, and the records only for an answer. | `ReviewPanes`; `ReviewTechnicalDetails` | dashboard/src/panels/review/ReviewSurface.tsx:295-357 |
+| `ReviewSurface` owns the behavior described above, including the cache provider, the pending/unavailable root attributes and the engagement observer. | `ReviewSurface`; `ReviewReadCacheContext`; `useReaderEngagement` | dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
+| `PageControls` owns the behavior described above. | `PageControls` | dashboard/src/panels/review/ReviewSurface.tsx:254-293 |
 
 ## Cross-Repo References
 
@@ -149,14 +155,16 @@ inner root's count was already 0 in both rounds, which is exactly why F1 was a c
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The pane helper's two load-bearing declarations, and the comment that states why each one is required rather than cosmetic.** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewSurface.tsx:8-97 |
-| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | `TAKEOVER`; `gridTemplateColumns`; `review-details` | dashboard/src/panels/review/ReviewSurface.tsx:81-81; dashboard/src/panels/review/ReviewSurface.tsx:707-707 |
-| The header wraps the task/subject controls while keeping their context and refresh action available. | `ReviewHeader` | dashboard/src/panels/review/ReviewSurface.tsx:722-776 |
-| The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:49-78; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
+| **The pane helper's two load-bearing declarations (moved unchanged to `ReviewRecordPanes.tsx` by L48).** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:25-33 |
+| **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | "const TAKEOVER = 'changeset-viewer'"; "gridTemplateColumns: 'minmax(0, 1fr)'"; `review-details` | dashboard/src/panels/review/ReviewRecordPanes.tsx:23-23; dashboard/src/panels/review/ReviewRecordPanes.tsx:399-420 |
+| The header wraps the task/subject controls while keeping their context and refresh action available. | `ReviewHeader` | dashboard/src/panels/review/ReviewSurface.tsx:384-438 |
+| The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:50-79; dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
 | The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
 | The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:324-324 |
 
 ## Update History
+- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the disclosure-track row because an older *Generated citation repair* bullet in this card names `TAKEOVER` and `gridTemplateColumns`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`const TAKEOVER = 'changeset-viewer'`, `gridTemplateColumns: 'minmax(0, 1fr)'`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
+- 2026-09-28T21:46:09+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the reviewer stays mounted across subject selection (`ICR-R24@v3`; Architect ruling on L48-R1 F1/F2; L47-R1-F5; `ICR-R26`/`R17`/`R10`/`R12`/`R16` preserved).** The surface now owns one bounded `ReviewReadCache`, computes a subject-bound `reading` status (`readingStatusOf`) over the read cycle's `frame`, mounts the workspace over the answer or that frame, hands records only for an answer, publishes pending/unavailable root attributes, and observes reader engagement. The record panes moved to `ReviewRecordPanes.tsx` (931 → 585 lines), closing L47-R1-F5. The card's L47-era account that a selection re-reads into an unmounted surface is **superseded**; the rule that a payload is shown only under its own target key is **preserved** and now also governs the shell. Purpose, Logic, Conventions and Invariants updated; the five reopened claims were re-read; the round-3 rows now cite the moved `pane`/`TAKEOVER`/disclosure track in `ReviewRecordPanes.tsx` (the old "comment that states why" wording named a comment that does not exist and was dropped). Historical section prose (line counts, `:NN` ranges) is left as the dated record it is. No stamp advanced.
 - 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the surface wires the navigation's hold and snapshot observation (`ICR-R24@v3`).** Records the two added calls and the soft-rail overrun routed to L48 (L47-R1-F5). Displaced rows re-pointed. No stamp advanced.
 - 2026-09-26T21:10:43+00:00: Generated citation repair: `TAKEOVER`; `gridTemplateColumns` repointed to dashboard/src/panels/review/ReviewSurface.tsx:80-80; dashboard/src/panels/review/ReviewSurface.tsx:706-706. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:43+00:00: Generated citation repair: `payload` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

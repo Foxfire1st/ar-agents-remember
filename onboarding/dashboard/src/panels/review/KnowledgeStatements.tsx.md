@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/KnowledgeStatements.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:20:54Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T21:38:01+02:00 |
+| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
+| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ identifier-shaped and the citation grammar refuses it as an anchor.
 | **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
 | The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. | `ReviewSideState`; `ReviewSideContent` | dashboard/src/data/review.ts:63-63; dashboard/src/data/review.ts:15-21; dashboard/src/data/review.ts:36-36; dashboard/src/data/review.ts:122-122; dashboard/src/data/review.ts:123-123; dashboard/src/data/review.ts:90-95; dashboard/src/data/review.ts:37-37 |
 | The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:125-125; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:217-239|
-| The technical knowledge pane delegates its statement operands to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewSurface.tsx:272-297 |
+| The technical knowledge pane delegates its statement operands to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240 |
 | The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118; dashboard/src/panels/changeset/DiffPane.tsx:117-117 |
 | The content viewer the unreadable-opposite path reuses, and its own test id. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50; dashboard/src/panels/file-viewer/FilePane.tsx:49-49 |
 | **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.** | "draws an added invariant's full after statement beside an absent-before label"; "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:195-213; dashboard/src/panels/review/KnowledgeStatements.test.tsx:215-229; dashboard/src/panels/review/KnowledgeStatements.test.tsx:244-260 |
@@ -162,6 +162,7 @@ namespace's records and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — `KnowledgePane` moved, unchanged, from `ReviewSurface.tsx` into the new `ReviewRecordPanes.tsx`.** The claim that the technical knowledge pane hands its before/after statements to `KnowledgeStatements` was re-read against the moved declaration and still holds word for word; only the citation was re-pointed. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T20:20:54Z — Carried the central layout into the existing statement renderer without changing one-sided or unavailable operand semantics.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The two client rows followed their own anchors down `data/review.ts` — `ReviewSideState` to its literal at `63-63`, `ReviewSideContent` to its own extent `90-95` (taking the range that had stopped holding it), and `ReviewKnowledgePane` to `217-238` — and the delegation row followed `KnowledgePane` to `ReviewSurface.tsx:275-300`, because this leaf shortened that surface while the knowledge pane kept its body. Every other citation these rows carry (`15-21`, `36-36`, `37-37`, `122-122`, `123-123`, `125-125`, `119-119`, `318-318`, and the `ReviewSurface.tsx` set) is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
