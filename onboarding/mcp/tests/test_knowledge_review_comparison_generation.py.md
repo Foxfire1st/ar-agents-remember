@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ would accept it.
 | The module's own statement of the packet's journey and of the load-bearing property behind each case. | "ICR-R11@v1" | mcp/tests/test_knowledge_review_comparison_generation.py:1-30 |
 | The lane marker, the two content constants the fixture edits without staging, and the cited-evidence paths. | `pytestmark`; `CANDIDATE_CONTENT_PATH`; `CANDIDATE_CONTENT`; `_EVIDENCE_RELATIVE`; `_EVIDENCE_TEXT`; `_EVIDENCE_REWRITTEN` | mcp/tests/test_knowledge_review_comparison_generation.py:81-81; mcp/tests/test_knowledge_review_comparison_generation.py:85-86; mcp/tests/test_knowledge_review_comparison_generation.py:94-96 |
 | **The child program: a real restart that builds its own config, reopens from the task artifact plane alone, and reads the candidate bytes back through `git show`.** | `_CHILD_REOPEN`; `_reopen_in_a_new_process` | mcp/tests/test_knowledge_review_comparison_generation.py:102-164; mcp/tests/test_knowledge_review_comparison_generation.py:279-315 |
-| The shared R01 production fixture these cases build on rather than duplicating. | `comparison_fixture`; `build_endpoint_fixture`; `EndpointFixture`; `LEAF_ID` | mcp/tests/test_knowledge_review_comparison_generation.py:167-171; mcp/tests/test_knowledge_review_source_endpoints.py:84-84; mcp/tests/test_knowledge_review_source_endpoints.py:106-106; mcp/tests/test_knowledge_review_source_endpoints.py:126-210; mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
+| The shared R01 production fixture these cases build on rather than duplicating. | `comparison_fixture`; `build_endpoint_fixture`; `EndpointFixture`; `LEAF_ID` | mcp/tests/test_knowledge_review_comparison_generation.py:167-171; mcp/tests/test_knowledge_review_source_endpoints.py:71-71; mcp/tests/test_knowledge_review_source_endpoints.py:93-93; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
 | The freeze helper that requires a published generation, and the evidence-citation options. | `_freeze`; `_cite_evidence`; `_evidence_options` | mcp/tests/test_knowledge_review_comparison_generation.py:174-185; mcp/tests/test_knowledge_review_comparison_generation.py:188-194; mcp/tests/test_knowledge_review_comparison_generation.py:197-200 |
 | **The injection helpers: the reclamation control object, the fabrication's own reseal, the hidden-stage list and the `refs/ar/` list.** | `_write_control_object`; `_reseal`; `_hidden_stages`; `_refs`; `_object_present`; `_digest` | mcp/tests/test_knowledge_review_comparison_generation.py:220-221; mcp/tests/test_knowledge_review_comparison_generation.py:224-226; mcp/tests/test_knowledge_review_comparison_generation.py:229-233; mcp/tests/test_knowledge_review_comparison_generation.py:236-241; mcp/tests/test_knowledge_review_comparison_generation.py:244-253; mcp/tests/test_knowledge_review_comparison_generation.py:259-262 |
 | The independent counter-value the "what the record binds" case compares against. | `_live_composition` | mcp/tests/test_knowledge_review_comparison_generation.py:318-330 |
@@ -160,7 +160,7 @@ would accept it.
 | The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:120-120; mcp/tests/test-evidence-lanes.toml:5-5 |
 | **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer — each cited down to the artifact's own `consumer_scope` and the list it opens.** | `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:96-96; mcp/tests/evidence-lifecycle.toml:97-97 |
 | The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:120-120|
-| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1682 |
+| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1711 |
 | The Git-truth support helpers the module reads its evidence through. | `_git`; `BATCH_PATH`; `BATCH_PATH_CANDIDATE_TEXT` | mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:516-531; mcp/tests/read_scope_test_support.py:118-118; mcp/tests/read_scope_test_support.py:752-767 |
 
 The following declarations carry the changed boundary.
@@ -179,6 +179,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 5 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 2 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.

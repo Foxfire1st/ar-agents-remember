@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_relationship_movement.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -126,7 +126,7 @@ fixture builders, the read-back helpers and the eleven cases.
 | The authored split and merge read from the candidate's own predecessor rows. | `test_the_authored_split_and_merge_are_displayed_from_the_candidates_own_edges` | mcp/tests/test_knowledge_review_relationship_movement.py:723-753 |
 | The family reassignment, the route reassignment and the ungoverned identity. | `test_a_family_association_reassigned_to_a_new_revision_displays_both_recorded_sides`; `test_a_governing_route_reassignment_displays_both_recorded_routes`; `test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root` | mcp/tests/test_knowledge_review_relationship_movement.py:759-800; mcp/tests/test_knowledge_review_relationship_movement.py:803-826; mcp/tests/test_knowledge_review_relationship_movement.py:829-857 |
 | **The unresolved anchor keeps its own state and reason.** | `test_a_side_that_did_not_resolve_exactly_keeps_its_own_state_and_reason` | mcp/tests/test_knowledge_review_relationship_movement.py:860-891 |
-| The two exact-scope support modules this case module consumes, registered on both consumer rows of the lifecycle catalog. | `build_diff_fixture`; `build_endpoint_fixture` | mcp/tests/diff_scope_test_support.py:197-241; mcp/tests/test_knowledge_review_source_endpoints.py:215-247 |
+| The two exact-scope support modules this case module consumes, registered on both consumer rows of the lifecycle catalog. | `build_diff_fixture`; `build_endpoint_fixture` | mcp/tests/diff_scope_test_support.py:197-241; mcp/tests/test_knowledge_review_source_endpoints.py:202-234 |
 
 ## Cross-Repo References
 
@@ -138,4 +138,5 @@ No cross-repository behavior is exercised in this file.
 
 ## Update History
 
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the eleven cases that measure the packet's Required Behavior, Failure And Recovery Behavior and boundary examples through actual store operations and the production composition, the fixture builders the two sibling case modules import, and the module's governed registration: a source-derived consumer of both `consumer_scope = "exact"` rows in `mcp/tests/evidence-lifecycle.toml` (the Eighteenth deliberate re-pin) plus its own `unit-regression` lane row in `mcp/tests/test-evidence-lanes.toml`. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.

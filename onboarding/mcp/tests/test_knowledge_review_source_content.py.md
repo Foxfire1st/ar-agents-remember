@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -152,7 +152,7 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | The lane marker and the content-class constants, one path per class the packet names. | `pytestmark`; `BINARY_PATH`; `SYMLINK_PATH`; `SUBMODULE_PATH`; `MODE_ONLY_PATH`; `TYPE_CHANGE_PATH`; `OVERSIZED_PATH`; `ODD_NAME_PATH`; `OVERSIZED_LINES` | mcp/tests/test_knowledge_review_source_content.py:62-62; mcp/tests/test_knowledge_review_source_content.py:68-68; mcp/tests/test_knowledge_review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:72-72; mcp/tests/test_knowledge_review_source_content.py:74-75; mcp/tests/test_knowledge_review_source_content.py:77-77; mcp/tests/test_knowledge_review_source_content.py:80-80; mcp/tests/test_knowledge_review_source_content.py:83-83 |
 | The independent Git observation: undecoded bytes, `None` on an error, and an isolated environment. | `_blob_text`; `_object_id`; `_subprocess_git` | mcp/tests/test_knowledge_review_source_content.py:89-94; mcp/tests/test_knowledge_review_source_content.py:97-101; mcp/tests/test_knowledge_review_source_content.py:104-116 |
 | **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** | `UnusualContent`; `_materialize_unusual` | mcp/tests/test_knowledge_review_source_content.py:119-124; mcp/tests/test_knowledge_review_source_content.py:127-166 |
-| **The shared R01 production fixture these cases extend rather than duplicate.** | `content_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_knowledge_review_source_content.py:169-174; mcp/tests/test_knowledge_review_source_endpoints.py:126-210; mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
+| **The shared R01 production fixture these cases extend rather than duplicate.** | `content_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_knowledge_review_source_content.py:169-174; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
 | **The routes wired as the composition root wires them, over the real application owners.** | `_served`; `register_review_routes`; `read_review_source_content` | mcp/tests/test_knowledge_review_source_content.py:177-191; mcp/src/agents_remember/serving/review.py:219-298; mcp/src/agents_remember/application/review_source_content.py:110-131 |
 | The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. | `_listed_inventory`; `_expand`; `_expansion` | mcp/tests/test_knowledge_review_source_content.py:194-207; mcp/tests/test_knowledge_review_source_content.py:210-227; mcp/tests/test_knowledge_review_source_content.py:230-239 |
 | The falsifiers for path confinement: the recorded base's paths that no change set contains. | `_side`; `_unchanged_paths` | mcp/tests/test_knowledge_review_source_content.py:242-244; mcp/tests/test_knowledge_review_source_content.py:247-263 |
@@ -169,7 +169,7 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:824-842 |
 | **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:584-604; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:96-96; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:657-659|
 | The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:159-160 |
-| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
+| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:128-128 |
 
 ## Cross-Repo References
 
@@ -181,6 +181,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the confinement case's stated property narrowed with the 2026-09-28 admission ruling** — it no longer means "no path outside the inventory is ever read" but "an unchanged path no recorded realization links is refused"; the test body is unchanged and its docstring now says so (L43-R1-F3). The case table, the Invariants bullet and the four rows below it were updated (+2 lines from the docstring); the lane row now cites `test-evidence-lanes.toml:125`, where the entry actually sits. No stamp advanced; closeout owns it.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

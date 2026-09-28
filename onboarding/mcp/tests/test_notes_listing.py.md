@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_notes_listing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T17:07:38+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -133,7 +133,7 @@ own test fixtures and assertions, so the retained source is the direct evidence.
 | The refusal and read table. | `_REFUSALS`; `test_scoped_refusals_and_note_reads_keep_their_wire_answers` | mcp/tests/test_notes_listing.py:237-246; mcp/tests/test_notes_listing.py:249-256 |
 | The production walk under test: symlink-only confinement, descriptor descent, and the sort key's errno parity. | `_confined_stat`; `_open_subdir`; `_is_dir` | mcp/src/agents_remember/serving/notes.py:113-127; mcp/src/agents_remember/serving/notes.py:142-162; mcp/src/agents_remember/serving/notes.py:99-110 |
 | The routes under test. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:279-288 |
-| The lane registration. | "mcp/tests/test_notes_listing.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
+| The lane registration. | "mcp/tests/test_notes_listing.py" | mcp/tests/test-evidence-lanes.toml:165-165 |
 
 ## Cross-Repo References
 
@@ -146,4 +146,5 @@ installation involved.
 
 ## Update History
 
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:07:38+02:00 — 260921-ICR-L55 curator (uncommitted candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`, re-validated after the L44/L45/L47 sync): created this card for the new module (5 functions, 6 cases). It covers the L55-A2 loop and file-traversing symlink entries and the directory-swap case. The card is derived from the candidate source, the worker report and reviews R1/R2. The stamp names the code base, and closeout owns the real commit stamp.

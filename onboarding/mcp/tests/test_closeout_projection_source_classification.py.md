@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | path | `mcp/tests/test_closeout_projection_source_classification.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -110,8 +110,8 @@ repository's own source and its own declared refusal codes.
 | The single declaration that owns the capacity codes and their classification. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:34-34; mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:38-40 |
 | The raiser that publishes the code the first case reads back. | `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:165-174 |
 | The fixture this module composes instead of rebuilding the world. | `QueueFixture`; `REPO`; `SPRINT` | mcp/tests/test_closeout_queue.py:54-55; mcp/tests/test_closeout_queue.py:184-694 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:410-410; mcp/tests/evidence-lifecycle.toml:191-191; mcp/tests/evidence-lifecycle.toml:380-380; mcp/tests/evidence-lifecycle.toml:464-464; mcp/tests/evidence-lifecycle.toml:467-467; mcp/tests/evidence-lifecycle.toml:1172-1172; mcp/tests/evidence-lifecycle.toml:1196-1196; mcp/tests/evidence-lifecycle.toml:1225-1225; mcp/tests/evidence-lifecycle.toml:1245-1245; mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/evidence-lifecycle.toml:1612-1612; mcp/tests/evidence-lifecycle.toml:1651-1651; mcp/tests/evidence-lifecycle.toml:1687-1687 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" |mcp/tests/test-evidence-lanes.toml:257-257|
+| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:410-410; mcp/tests/evidence-lifecycle.toml:191-191; mcp/tests/evidence-lifecycle.toml:380-380; mcp/tests/evidence-lifecycle.toml:466-466; mcp/tests/evidence-lifecycle.toml:469-469; mcp/tests/evidence-lifecycle.toml:1181-1181; mcp/tests/evidence-lifecycle.toml:1205-1205; mcp/tests/evidence-lifecycle.toml:1234-1234; mcp/tests/evidence-lifecycle.toml:1254-1254; mcp/tests/evidence-lifecycle.toml:1498-1498; mcp/tests/evidence-lifecycle.toml:1641-1641; mcp/tests/evidence-lifecycle.toml:1680-1680; mcp/tests/evidence-lifecycle.toml:1716-1716 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" |mcp/tests/test-evidence-lanes.toml:260-260|
 
 ## Cross-Repo References
 
@@ -126,6 +126,7 @@ by this focused module.
 | The fixture's repositories are real temporary Git repositories created per case, not mocks. | `QueueFixture` | mcp/tests/test_closeout_queue.py:184-694 |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 11 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -192,6 +192,7 @@ policy that computes it lives on the application route, not here.
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 7 citations into `mcp/tests/test_knowledge_diff_scope.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_diff_attribution.py`. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
 
 - 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body reviewed — one new knowledge model, `knowledge/review_intent_summary.py` (`ICR-R24@v3`).** It declares `ReviewIntentSummaryResult` (`counted`/`partial`/`unavailable`, exactly one of counts or refusal) and `ReviewIntentCounts` (plus/minus equal to their per-kind parts; typed `realization_only`, `membership_only`, `unresolved`); its card records the semantics. No route-level contract of `models/` changed. No stamp advanced.
@@ -1511,7 +1512,7 @@ comparison vocabulary, exactly as it does not re-export the portable or merge vo
 | **The comparison's own cursor and its two functions, deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:831-845; mcp/src/agents_remember/models/knowledge/diff.py:847-864; mcp/src/agents_remember/models/knowledge/diff.py:866-887 |
 | **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
 | **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:498-525; mcp/tests/test_knowledge_diff_boundaries.py:527-554 |
-| The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:678-739; mcp/tests/test_knowledge_diff_scope.py:603-675 |
+| The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:652-713; mcp/tests/test_knowledge_diff_scope.py:577-649 |
 
 ## 260915-KS-L10 The Route Operations, And The Envelope's Refusal
 
@@ -2799,7 +2800,7 @@ bump.
 | **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:1066-1082; mcp/src/agents_remember/models/knowledge/review.py:991-1030; mcp/src/agents_remember/models/knowledge/review.py:680-756; mcp/src/agents_remember/models/knowledge/review.py:712-788; mcp/src/agents_remember/models/knowledge/review.py:999-1107 |
 | **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` |mcp/src/agents_remember/models/knowledge/review_staleness.py:51-82|
 | **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` |mcp/src/agents_remember/models/knowledge/review.py:130-139|
-| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:1359-1434; mcp/tests/test_knowledge_review_surface.py:1437-1475 |
+| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:940-1015; mcp/tests/test_knowledge_review_surface.py:1018-1056 |
 
 
 ## 260921-ICR-L4 The Comparison Vocabulary Gains The Attribution Partition, And The Pane Carries It
@@ -2824,7 +2825,7 @@ still validate.
 | **The partition value with its validator and its three bucket accessors, and one side's contribution beside it.** | `SourceAttribution`; `ChangedPathAttribution`; `AttributionSide` | mcp/src/agents_remember/models/knowledge/diff.py:509-628; mcp/src/agents_remember/models/knowledge/diff.py:473-507; mcp/src/agents_remember/models/knowledge/diff.py:459-471 |
 | **The two new closed-vocabulary members, and the model's own second producer of the undetermined limit.** | `DiffOmissionReason`; `DiffLimitation`; `_attribution_not_measured` | mcp/src/agents_remember/models/knowledge/diff.py:154-168; mcp/src/agents_remember/models/knowledge/diff.py:170-182; mcp/src/agents_remember/models/knowledge/diff.py:821-829 |
 | **The six counts declared once, and the pane that carries the partition.** | `ReviewRemainingCountName`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:611-915; mcp/src/agents_remember/models/knowledge/review.py:921-953; mcp/src/agents_remember/models/knowledge/review.py:96-96 |
-| **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"; "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_scope.py:822-900; mcp/tests/test_knowledge_diff_scope.py:1287-1314; mcp/tests/test_knowledge_diff_scope.py:1316-1384 |
+| **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"; "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_attribution.py:64-142; mcp/tests/test_knowledge_diff_attribution.py:529-556; mcp/tests/test_knowledge_diff_attribution.py:558-626 |
 
 
 ## Update History

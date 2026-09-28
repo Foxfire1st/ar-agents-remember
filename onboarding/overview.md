@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-27T05:41:59+00:00 |
-| lastVerifiedCommitHash |  `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate |  2026-09-28T18:11:05+02:00|
+| lastUpdated | 2026-09-28T23:41:23+02:00 |
+| lastVerifiedCommitHash |  `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate |  2026-09-29T00:17:28+02:00|
 
 > **Status:** active baseline
 
@@ -101,6 +101,7 @@ where it used to refuse a family revision its own baseline stores.
 
 ## Update History
 
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): a factual note in the Intent Reviewer route-impact section: `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` now lives in `mcp/tests/test_knowledge_review_resolution_and_route.py`, moved verbatim by this leaf's file-size split. No other content changed, and no stamp was advanced.
 - 2026-09-28T17:17:14+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the L45 section: the one knowledge writer requires an authored rationale per new realization target and generates none; canonical skill texts at root, copies by generator only. No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: No route impact: explicit stored-sibling retention remains within the existing application family planner, report renderer, tests and synchronized curator instructions. The repository/package purpose, entity boundaries and one-writer ownership are unchanged; detailed behavior is recorded in the governing application and test overviews.
@@ -607,7 +608,9 @@ its constructors, and the dashboard panes that render it. Four facts belong at r
    `test_a_missing_side_is_its_own_state_and_never_an_empty_string`,
    `test_a_stale_comparison_keeps_the_previous_input_and_disables_submission` and
    `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` would each
-   redden on the corresponding regression. No case was added or replaced by this pass.
+   redden on the corresponding regression. No case was added or replaced by this pass. (Since
+   `260921-ICR-L57`, the resolution case lives in `mcp/tests/test_knowledge_review_resolution_and_route.py`,
+   moved verbatim with the surface module's other resolution and transport cases.)
 
 ### 260915-CAPS-L6 Route Impact — A Native eve Session Adapter, And A Root Tree Outside The Path Rules
 

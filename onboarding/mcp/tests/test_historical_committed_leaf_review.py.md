@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_historical_committed_leaf_review.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -144,7 +144,7 @@ state inside the case's own fixture repository, never the source checkout.
 | **The module's own statement of the defect it measures, the six load-bearing properties, and that every case reads the production composition rather than a prebuilt payload.** | "candidate_not_live" | mcp/tests/test_historical_committed_leaf_review.py:1-27 |
 | The route every case drives, and the lane the module belongs to. | `REVIEW_ROUTE`; `pytestmark` | mcp/tests/test_historical_committed_leaf_review.py:77-77; mcp/tests/test_historical_committed_leaf_review.py:79-79 |
 | **The child that reopens the same comparison in an interpreter sharing no state with the parent.** | `_CHILD_SERVE` | mcp/tests/test_historical_committed_leaf_review.py:90-123 |
-| **The R01 enclosure fixture this module extends, one fresh enclosure per case.** | `closed_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_historical_committed_leaf_review.py:126-130; mcp/tests/test_knowledge_review_source_endpoints.py:126-210; mcp/tests/test_knowledge_review_source_endpoints.py:220-252 |
+| **The R01 enclosure fixture this module extends, one fresh enclosure per case.** | `closed_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_historical_committed_leaf_review.py:126-130; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
 | **The production composition the cases read through: the real route, the real collaborators, the real record loader.** | `_serve`; `_subject_params`; `_entry_params`; `_body` | mcp/tests/test_historical_committed_leaf_review.py:133-147; mcp/tests/test_historical_committed_leaf_review.py:150-162; mcp/tests/test_historical_committed_leaf_review.py:165-166; mcp/tests/test_historical_committed_leaf_review.py:169-172 |
 | **The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.** | `_freeze`; `_composition`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/tests/test_historical_committed_leaf_review.py:175-179; mcp/tests/test_historical_committed_leaf_review.py:182-188 |
 | **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** | `_served_in_a_new_process`; `serving_collaborators`; `register_review_routes` | mcp/tests/test_historical_committed_leaf_review.py:66-191; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/serving/review.py:542-624 |
@@ -159,7 +159,7 @@ state inside the case's own fixture repository, never the source checkout.
 | **The per-channel failure case: the affected channel unavailable with the record's own deletion statement, and nothing substituted.** | `test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted` | mcp/tests/test_historical_committed_leaf_review.py:556-620 |
 | **The one state in which the intake defect's code is still the honest answer.** | `test_a_closed_leaf_with_nothing_recorded_is_refused_by_name` | mcp/tests/test_historical_committed_leaf_review.py:623-641 |
 | **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE`; `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX`; `ClosedLeafReview` | mcp/src/agents_remember/application/review_committed_leaf.py:77-77; mcp/src/agents_remember/application/review_committed_leaf.py:78-78; mcp/src/agents_remember/application/review_committed_leaf.py:84-84; mcp/src/agents_remember/application/review_committed_leaf.py:85-85; mcp/src/agents_remember/application/review_committed_leaf.py:86-86; mcp/src/agents_remember/application/review_committed_leaf.py:116-160 |
-| **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** | "mcp/tests/test_historical_committed_leaf_review.py" | mcp/tests/test-evidence-lanes.toml:81-81; mcp/tests/evidence-lifecycle.toml:730-730; mcp/tests/evidence-lifecycle.toml:1414-1414; mcp/tests/evidence-lifecycle.toml:1447-1447 |
+| **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** | "mcp/tests/test_historical_committed_leaf_review.py" | mcp/tests/test-evidence-lanes.toml:81-81; mcp/tests/evidence-lifecycle.toml:735-735; mcp/tests/evidence-lifecycle.toml:1426-1426; mcp/tests/evidence-lifecycle.toml:1463-1463 |
 | **The re-pin that keeps the catalog identity of the lifecycle TOML deliberate rather than incidental.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
 
 ## Cross-Repo References
@@ -172,6 +172,7 @@ worktree with an external memory half, and every case reads that repository's ow
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 5 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

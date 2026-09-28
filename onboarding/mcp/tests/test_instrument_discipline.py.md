@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_instrument_discipline.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T12:30+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -164,7 +164,7 @@ re-derived against the current 537-line source.
 | The transcription is the one the record carries, checked against the record where it still exists. | `test_the_evidence_transcription_is_the_one_the_record_carries` | mcp/tests/test_instrument_discipline.py:523-537 |
 | The module whose admissibility conditions these cases pin. | `counted_pattern`; `capture_bounded_window`; `check_artifact_refusal`; `producer_identity_refusal` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:173-370 |
 | The narrow exit-status rule and the vacuity rule's non-zero quantity. | `TRANSCRIPT_EXIT`; `NONZERO_FINDINGS` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:67-79 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_instrument_discipline.py" |mcp/tests/test-evidence-lanes.toml:324-324|
+| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_instrument_discipline.py" |mcp/tests/test-evidence-lanes.toml:327-327|
 
 ## Cross-Repo References
 
@@ -176,6 +176,7 @@ allowance is empty and no external source is relied upon here.
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

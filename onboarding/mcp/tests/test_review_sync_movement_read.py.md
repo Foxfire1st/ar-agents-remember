@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_sync_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -176,7 +176,7 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 | The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
 | The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:322-322 |
+| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:325-325 |
 | The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-378; mcp/tests/test_review_sync_rebinding.py:853-867 |
 
@@ -191,6 +191,7 @@ record the same leaf's own managed syncs published at that repository's durable 
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.

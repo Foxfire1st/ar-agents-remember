@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_diff_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-28T23:41:23+02:00 |
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,13 @@
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
 in-process with no repository working tree, no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:76`.
+`mcp/tests/test-evidence-lanes.toml:138`.
+
+**The attribution partition's nine cases live next door.** `260921-ICR-L4` appended nine `ICR-R04@v1`
+cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
+[`test_knowledge_diff_attribution.py`](test_knowledge_diff_attribution.py.md) to bring this module back
+under the 1200-line rail, which leaves these thirteen cases in 790 lines. That module imports `diff_seed`
+and `run_diff` from here, so both drive the comparison the same way.
 
 Every case is named for the property it protects rather than for the fixture state it happens to use,
 and the population is deliberately one case per packet obligation: statement-only, source-only,
@@ -27,8 +33,8 @@ removed link, unchanged sibling, divergent revisions, explicit per-side selector
 present-outside-selection distinction, the display filter, the filter's binding, the limitation
 validator, truncation, and the no-trees expansion.
 
-**Frozen identity of this file: 779 lines.** The line numbers in the references below are measured
-against that file. The leaf's own evidence artifacts republish a **`M25`/`M26` citation pair that does
+**Frozen identity at review: 779 lines.** The bare `:NNN` line numbers in the prose below were measured
+against that file; the reference table cites the current 790-line module. The leaf's own evidence artifacts republish a **`M25`/`M26` citation pair that does
 not exist on these bytes** — `scope:640` / `:678` and `scope:565` / `:620`, which are the **pre-round
 741-line file's** numbers — and are carried to
 `KS-R09`/`L9` as documentation debt (ledger entry **A9**, finding **`L8-W1`**). **This card's numbers are
@@ -141,26 +147,20 @@ repository source and package-local evidence only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The unit marker, the fixture, the seed and the public-seam driver every case uses. | `pytestmark`; `fixture`; `diff_seed`; `run_diff` | mcp/tests/test_knowledge_diff_scope.py:52-53; mcp/tests/test_knowledge_diff_scope.py:58-63; mcp/tests/test_knowledge_diff_scope.py:66-73; mcp/tests/test_knowledge_diff_scope.py:76-111 |
-| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_scope.py:114-131; mcp/tests/test_knowledge_diff_scope.py:142-142; mcp/tests/test_knowledge_diff_scope.py:222-222; mcp/tests/test_knowledge_diff_scope.py:299-299; mcp/tests/test_knowledge_diff_scope.py:598-598; mcp/tests/test_knowledge_diff_scope.py:599-599; mcp/tests/test_knowledge_diff_scope.py:149-149; mcp/tests/test_knowledge_diff_scope.py:182-182; mcp/tests/test_knowledge_diff_scope.py:183-183; mcp/tests/test_knowledge_diff_scope.py:264-264; mcp/tests/test_knowledge_diff_scope.py:351-351; mcp/tests/test_knowledge_diff_scope.py:441-441; mcp/tests/test_knowledge_diff_scope.py:442-442; mcp/tests/test_knowledge_diff_scope.py:476-476; mcp/tests/test_knowledge_diff_scope.py:482-482; mcp/tests/test_knowledge_diff_scope.py:600-600 |
-| **The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.** | "test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced"; "test_the_identity_seed_retains_a_revision_group_for_each_side_even_where_they_diverge" | mcp/tests/test_knowledge_diff_scope.py:137-174; mcp/tests/test_knowledge_diff_scope.py:376-404 |
-| **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** | "test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed" | mcp/tests/test_knowledge_diff_scope.py:177-219 |
-| The statement-only change that still returns the attributed code. | "test_a_statement_revision_with_an_unmoved_source_reports_the_change_and_keeps_the_code_visible" | mcp/tests/test_knowledge_diff_scope.py:222-252 |
-| **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** | "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" | mcp/tests/test_knowledge_diff_scope.py:255-303 |
-| **The packet's first non-conforming example, and the node `M1`/`M2` kill.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:309-342 |
-| **The explicit per-side selectors addressing two different exact revisions of one identity.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:390-421 |
-| **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:424-530 |
-| **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** | "test_a_role_filter_narrows_the_display_and_never_the_comparison"; "test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it" | mcp/tests/test_knowledge_diff_scope.py:536-573; mcp/tests/test_knowledge_diff_scope.py:604-629 |
-| **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** | "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:603-675 |
-| **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
-| The no-trees expansion that claims no change set. | "test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set" | mcp/tests/test_knowledge_diff_scope.py:742-779 |
+| The unit marker, the fixture, the seed and the public-seam driver every case uses. | `pytestmark`; `fixture`; `diff_seed`; `run_diff` | mcp/tests/test_knowledge_diff_scope.py:54-54; mcp/tests/test_knowledge_diff_scope.py:61-65; mcp/tests/test_knowledge_diff_scope.py:68-75; mcp/tests/test_knowledge_diff_scope.py:78-113 |
+| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_scope.py:88-105; mcp/tests/test_knowledge_diff_scope.py:116-116; mcp/tests/test_knowledge_diff_scope.py:196-196; mcp/tests/test_knowledge_diff_scope.py:273-273; mcp/tests/test_knowledge_diff_scope.py:572-572; mcp/tests/test_knowledge_diff_scope.py:573-573; mcp/tests/test_knowledge_diff_scope.py:123-123; mcp/tests/test_knowledge_diff_scope.py:156-156; mcp/tests/test_knowledge_diff_scope.py:157-157; mcp/tests/test_knowledge_diff_scope.py:238-238; mcp/tests/test_knowledge_diff_scope.py:325-325; mcp/tests/test_knowledge_diff_scope.py:415-415; mcp/tests/test_knowledge_diff_scope.py:416-416; mcp/tests/test_knowledge_diff_scope.py:450-450; mcp/tests/test_knowledge_diff_scope.py:456-456; mcp/tests/test_knowledge_diff_scope.py:574-574 |
+| **The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.** | "test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced"; "test_the_identity_seed_retains_a_revision_group_for_each_side_even_where_they_diverge" | mcp/tests/test_knowledge_diff_scope.py:111-148; mcp/tests/test_knowledge_diff_scope.py:350-378 |
+| **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** | "test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed" | mcp/tests/test_knowledge_diff_scope.py:151-193 |
+| The statement-only change that still returns the attributed code. | "test_a_statement_revision_with_an_unmoved_source_reports_the_change_and_keeps_the_code_visible" | mcp/tests/test_knowledge_diff_scope.py:196-226 |
+| **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** | "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" | mcp/tests/test_knowledge_diff_scope.py:229-277 |
+| **The packet's first non-conforming example, and the node `M1`/`M2` kill.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:283-316 |
+| **The explicit per-side selectors addressing two different exact revisions of one identity.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:364-395 |
+| **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:398-504 |
+| **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** | "test_a_role_filter_narrows_the_display_and_never_the_comparison"; "test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it" | mcp/tests/test_knowledge_diff_scope.py:510-547; mcp/tests/test_knowledge_diff_scope.py:578-603 |
+| **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** | "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:577-649 |
+| **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:652-713 |
+| The no-trees expansion that claims no change set. | "test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set" | mcp/tests/test_knowledge_diff_scope.py:716-753 |
 | The fixture these cases run on. | `build_diff_fixture`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/diff_scope_test_support.py:148-186 |
-| **The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive" | mcp/tests/test_knowledge_diff_scope.py:822-900 |
-| **The boundary case: a change mapped only to another invariant is outside selection, never unregistered.** | "test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered" | mcp/tests/test_knowledge_diff_scope.py:902-942 |
-| **The family-subject case: a family's members' own links count as selected attribution.** | "test_a_family_subject_counts_its_members_own_links_as_selected_attribution" | mcp/tests/test_knowledge_diff_scope.py:944-977 |
-| **The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution.** | "test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution"; "test_a_stale_or_unresolvable_mapping_does_not_establish_attribution" | mcp/tests/test_knowledge_diff_scope.py:979-1058; mcp/tests/test_knowledge_diff_scope.py:1060-1182 |
-| **The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.** | "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"; "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence" | mcp/tests/test_knowledge_diff_scope.py:1184-1247; mcp/tests/test_knowledge_diff_scope.py:1249-1285 |
-| **The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope.** | "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_scope.py:1287-1314; mcp/tests/test_knowledge_diff_scope.py:1316-1384 |
 |**The unit-lane row this module occupies, and the governed support artifact it consumes.**|"evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\""| mcp/tests/evidence-lifecycle.toml:62-62 |
 
 ## Cross-Repo References
@@ -174,6 +174,7 @@ the comparison's source resolution is driven through the fixture's own committed
 | **The unit-lane row this module occupies, and the governed support artifact it consumes.** | "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" | mcp/tests/evidence-lifecycle.toml:62-62 |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): **the attribution section moved out, verbatim.** The worker moved the nine `ICR-R04@v1` attribution-partition cases into `test_knowledge_diff_attribution.py` (1384 → 790 lines here, 22 → 13 cases). The collected node names are identical apart from the module name. Their six reference rows moved to that module's new card, and Purpose now points there and names the current lane row. The helper row's four ranges were re-derived (`pytestmark` `:54`, `fixture` `:61-65`, `diff_seed` `:68-75`, `run_diff` `:78-113`). They had already drifted by 28 to 29 lines before this leaf. Every other range was re-pointed through the exact base-to-candidate line map. The prose line numbers stay as measured on the frozen 779-line file, and now say so. No stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **two enforced rows re-cited** (identity-seed `:376-404`, filter-bound `:604-629`). Wording unchanged; no stamp advanced.
 - 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **nine new cases for the attribution partition (789 → 1384 lines).** The module now measures ICR-R04@v1 through the production composition: the once-partitioned measured changes with disjoint/exhaustive buckets; the outside-selection boundary; the family-subject membership; the stale/unresolvable-mapping precedence (both the arithmetic case and the production-composition case that authors the claims into the candidate snapshot and asserts the shipped reader's own resolutions); the half-inspected undetermined rule; the legitimately-empty side; the unavailable-partition honesty rule; and the partial-observation denominator scope. The pre-existing rows are untouched — the new cases are appended after the module's former end, so no earlier range moved. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/facet_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastUpdated | 2026-09-28T23:41:23+02:00 |
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,16 @@ exactly one declared consumer, `mcp/tests/test_knowledge_facets.py`.
   revision — before this leaf existed — by building the recorded fixture and serializing what the shipped
   operations returned. The module's docstring says so, and the case that consumes them compares against
   them, so a shipped selection that moved would fail a measurement rather than a self-consistency check.
+- **The page and result digests were re-measured once, deliberately, for one additive field.**
+  `260921-ICR-L44` made the read contract's anchor observation (`AnchorResolution`) always serialize
+  `resolved_ranges`. That list is empty for this fixture's one whole-file locator, so each serialization
+  gained exactly one `,"resolved_ranges":[]` (21 bytes). `260921-ICR-L57` re-measured
+  `PRE_LEAF_PAGE_DIGEST` and `PRE_LEAF_RESULT_DIGEST` (`0cebda8b…` and `6e290ce6…`) and kept the
+  originals (`d2df8e74…` and `9deba0cf…`) in the source comment beside them. Deleting that one string
+  from each serialization reproduces the original bytes. The dataset digest, the selected items, the
+  limits and every other field are unchanged, so the comparison still measures that facets leave the
+  shipped selection where it was. The leaf's rule applies to any later drift: an intended read-contract
+  change is re-pinned with its measured cause, and an unintended one restores byte identity.
 - **The recorded fixture is one construction, in one order.** `build_recorded_fixture` creates the file
   through `open_database` + `create_schema_statements(GENERATION_2)`, sets `PRAGMA user_version` to
   generation 2's own version, inserts the one `repository` row, then authors one invariant and revision,
@@ -89,7 +99,8 @@ exactly one declared consumer, `mcp/tests/test_knowledge_facets.py`.
 
 - A store produced by `build_admitted_candidate` is an **admitted** candidate: its provenance comes from
   `write_authorship` and the destination, not from any payload a case supplies.
-- The recorded fixture's digests are only meaningful against the exact construction above. A change to the
+- The recorded fixture's digests are only meaningful against the exact construction above **and the read
+  contract's serialized shape**; the one re-measurement so far is named in Logic. A change to the
   fixture's identities, order or authorship instant invalidates the comparison, which is why the
   construction and the constants live in one module rather than in the case that reads them.
 - **Boundary.** It is test support and is not importable by production code; it creates files only under the
@@ -112,18 +123,18 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The measured pre-leaf constants, recorded with the construction that produced them.** | `PRE_LEAF_GENERATION_2_FINGERPRINT`; `PRE_LEAF_DATASET_DIGEST`; `PRE_LEAF_PAGE_DIGEST`; `PRE_LEAF_RESULT_DIGEST` | mcp/tests/facet_test_support.py:92-100; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-284 |
-| The one admitted candidate, built through the production seam with provenance from `write_authorship`. | `build_admitted_candidate` | mcp/tests/facet_test_support.py:177-192 |
-| **The recorded fixture: generation 2's own DDL, fixed identities, a fixed authorship instant, and the production authoring calls.** | `build_recorded_fixture`; `build_recorded_generation_2_dataset` | mcp/tests/facet_test_support.py:535-658; mcp/tests/facet_test_support.py:516-532 |
-| The count helper that measures the open dataset's own declared tables. | `table_counts` | mcp/tests/facet_test_support.py:452-458 |
-| **The one write driver that maps a command kind to the operation that owns it and carries the admitted envelope.** | `write_facet` | mcp/tests/facet_test_support.py:362-380 |
-| The three convenience wrappers that assert the write was applied before returning identities. | `store_facet`; `attach_facet`; `author_explanation` | mcp/tests/facet_test_support.py:394-416; mcp/tests/facet_test_support.py:419-431; mcp/tests/facet_test_support.py:434-449 |
-| **The batch driver and the context resolution a batch precondition is built from.** | `apply_commands`; `resolve_context` | mcp/tests/facet_test_support.py:353-359; mcp/tests/facet_test_support.py:340-350 |
-| The authored subject and the one stored target of every attachment kind. | `seed_subject`; `endpoints_for_subject` | mcp/tests/facet_test_support.py:195-223; mcp/tests/facet_test_support.py:322-337 |
-| **The recursive union walk and the three closed-vocabulary questions the cases ask through it.** | `member_models`; `payload_kinds`; `declared_subject_kinds`; `command_kinds` | mcp/tests/facet_test_support.py:474-513 |
-| The one valid payload per subtype and the one noun per endpoint kind. | `MINIMAL_PAYLOADS`; `ENDPOINT_NOUNS` | mcp/tests/facet_test_support.py:132-169 |
-| The twelve shipped command kinds as data, so the widened union is measured against a stated set. | `SHIPPED_COMMAND_KINDS` | mcp/tests/facet_test_support.py:115-130 |
-| **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1356-1356 |
+| **The measured pre-leaf constants, recorded with the construction that produced them.** | `PRE_LEAF_GENERATION_2_FINGERPRINT`; `PRE_LEAF_DATASET_DIGEST`; `PRE_LEAF_PAGE_DIGEST`; `PRE_LEAF_RESULT_DIGEST` | mcp/tests/facet_test_support.py:92-110; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-284 |
+| The one admitted candidate, built through the production seam with provenance from `write_authorship`. | `build_admitted_candidate` | mcp/tests/facet_test_support.py:187-202 |
+| **The recorded fixture: generation 2's own DDL, fixed identities, a fixed authorship instant, and the production authoring calls.** | `build_recorded_fixture`; `build_recorded_generation_2_dataset` | mcp/tests/facet_test_support.py:545-668; mcp/tests/facet_test_support.py:526-542 |
+| The count helper that measures the open dataset's own declared tables. | `table_counts` | mcp/tests/facet_test_support.py:462-468 |
+| **The one write driver that maps a command kind to the operation that owns it and carries the admitted envelope.** | `write_facet` | mcp/tests/facet_test_support.py:372-390 |
+| The three convenience wrappers that assert the write was applied before returning identities. | `store_facet`; `attach_facet`; `author_explanation` | mcp/tests/facet_test_support.py:404-426; mcp/tests/facet_test_support.py:429-441; mcp/tests/facet_test_support.py:444-459 |
+| **The batch driver and the context resolution a batch precondition is built from.** | `apply_commands`; `resolve_context` | mcp/tests/facet_test_support.py:363-369; mcp/tests/facet_test_support.py:350-360 |
+| The authored subject and the one stored target of every attachment kind. | `seed_subject`; `endpoints_for_subject` | mcp/tests/facet_test_support.py:205-233; mcp/tests/facet_test_support.py:332-347 |
+| **The recursive union walk and the three closed-vocabulary questions the cases ask through it.** | `member_models`; `payload_kinds`; `declared_subject_kinds`; `command_kinds` | mcp/tests/facet_test_support.py:484-523 |
+| The one valid payload per subtype and the one noun per endpoint kind. | `MINIMAL_PAYLOADS`; `ENDPOINT_NOUNS` | mcp/tests/facet_test_support.py:142-179 |
+| The twelve shipped command kinds as data, so the widened union is measured against a stated set. | `SHIPPED_COMMAND_KINDS` | mcp/tests/facet_test_support.py:125-140 |
+| **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1368-1368 |
 | The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:173-180; mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:186-192; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-196; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313; |
 | The cases this harness exists for, and the byte-identity node that reads the measured constants. | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:1002-1017; mcp/tests/test_knowledge_facets.py:935-979; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:1214-1214; mcp/tests/test_knowledge_facets.py:1162-1162 |
 | The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:129-141; mcp/src/agents_remember/memory/knowledge/schema_generations.py:175-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313 |
@@ -138,6 +149,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): **the page and result digests were re-measured for L44's additive `resolved_ranges` field.** The worker serialized the recorded fixture at `9b2f775f^` and at the tip. Each serialization differs only by one `,"resolved_ranges":[]` on the single file-locator anchor, and removing it reproduces the pre-leaf bytes. The worker then updated the two constants and wrote the cause and the original digests into a source comment. This follows the `260921-ICR-L44` F6 ruling that the field is additive on every anchor observation. Logic and Invariants now record this re-measurement and the leaf's rule for later drift (re-pin an intended contract change with its cause; restore an unintended one). Ranges were re-pointed through the exact base-to-candidate line map, and the constants row now spans the comment. No stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "path = \"mcp/tests/facet_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1354-1354. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

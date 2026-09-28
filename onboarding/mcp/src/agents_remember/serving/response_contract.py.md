@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ this is a `200` body contract, not a new status.
 | **The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.** | `LeafChangeSet`; "state: Literal[\"recorded\", \"unrecorded\"]"; `state_detail` | mcp/src/agents_remember/serving/response_contract.py:843-860 |
 | **The producer that publishes it, with the counter zero it exists to annotate.** | `leaf_changeset` | mcp/src/agents_remember/serving/changeset.py:455-497 |
 | **The client mirror and the control that renders the state and withholds the total.** | `TaskChangeset`; `ChangeSetButton` | dashboard/src/data/changeset.ts:41-48; dashboard/src/panels/detail-panel/changeSetBar.tsx:47-181 |
-| **The cases that measure the discriminator and the route status.** | `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` | mcp/tests/test_knowledge_review_source_endpoints.py:695-741; mcp/tests/test_knowledge_review_source_endpoints.py:744-792 |
+| **The cases that measure the discriminator and the route status.** | `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` | mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779 |
 
 ## Docs References
 
@@ -139,6 +139,7 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **body update — `LeafChangeSet` gains the `state`/`stateDetail` pair, and the section above records why.** It is a declarative addition with a `recorded` default, so every existing caller and every existing response is unchanged; what it buys is the distinction between a range **unrecorded** (the live leaf before its closeout) and one **measured empty**, since the counters beside an unrecorded range are a zero of nothing (register B6). **Citation accounting:** the three L13 `cit:`s and the four rows of the reference table were re-derived from each class's own declaration at this tip — the L25 insertion sits **above** `LeafSummary`, so `MasterNetGeneration` `:857-869` → `:871-883`, `MasterChangeSet` `:872-882` → `:886-902`, `LeafSummary` `:849-854` → `:863-868`, and the three terminal rows were re-derived too (`TerminalCatalogEntryWire` `:281-363` → `:281-400`, `TerminalOpened` `:399-423` → `:403-443`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 

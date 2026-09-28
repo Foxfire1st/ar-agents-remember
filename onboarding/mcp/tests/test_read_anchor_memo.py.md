@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_read_anchor_memo.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T23:11:42+02:00 |
-| lastVerifiedCommitHash |  `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
-| lastVerifiedCommitDate |  2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash |  `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate |  2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ No Domain Documentation source is configured for this test module.
 | Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound. | "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" | mcp/tests/test_read_anchor_memo.py:301-369 |
 | **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.** | "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" | mcp/tests/test_read_anchor_memo.py:372-414 |
 | **No repository's answers served for another, and one parse per grammar.** | "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" | mcp/tests/test_read_anchor_memo.py:417-511 |
-| The lane registration. | "mcp/tests/test_read_anchor_memo.py" | mcp/tests/test-evidence-lanes.toml:173-173 |
+| The lane registration. | "mcp/tests/test_read_anchor_memo.py" | mcp/tests/test-evidence-lanes.toml:176-176 |
 
 ## Cross-Repo References
 
@@ -105,4 +105,5 @@ No cross-repository behavior.
 
 ## Update History
 
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`; review R2 PASS on the unchanged A2 diff): created this one-to-one card for the memo's test module — its real-Git fixtures and spies, and the nine cases (same answers from one read per object, failures asked again, abbreviations never remembered, the weight bound under eviction and concurrency, availability never remembered, no cross-repository or cross-grammar reuse). Verification metadata remains empty until closeout stamps the code commit.

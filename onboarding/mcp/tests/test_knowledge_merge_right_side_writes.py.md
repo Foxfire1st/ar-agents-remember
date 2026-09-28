@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_merge_right_side_writes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:09+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -136,8 +136,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The published-candidate case: the right side's own label is read back out of the merged file.** | `test_a_right_side_update_is_replayed_and_the_published_candidate_carries_it` | mcp/tests/test_knowledge_merge_right_side_writes.py:183-215 |
 | **The reparent case, with the two sibling assertions that separate "the right row moved" from "something moved".** | `test_a_replayed_reparent_moves_the_row_it_names_and_no_other` | mcp/tests/test_knowledge_merge_right_side_writes.py:218-241 |
 | **The cycle case: `lineage_cycle` attributed to the merge, nothing published, the three inputs byte-identical.** | `test_a_replayed_route_reparent_that_closes_a_cycle_refuses_the_whole_merge` | mcp/tests/test_knowledge_merge_right_side_writes.py:244-285 |
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:229-229|
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:229-229|
+| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:232-232|
+| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:232-232|
 
 ## Cross-Repo References
 
@@ -149,6 +149,7 @@ datasets under `tmp_path` and asserts one repository's own merge.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

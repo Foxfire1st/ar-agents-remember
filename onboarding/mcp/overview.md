@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -124,6 +124,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/src/agents_remember/memory/knowledge/evidence_records.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:16:46+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the L45 section (two new application modules, the removed generated rationale, and the regenerated package skill copies carrying the per-target rationale shape). The `_with_replays` claim was re-read (it now calls `curator_stored_revisions.stored_revisions`; wording holds). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): the source-content port row named `_admit`, which moved to `application/review_source_admission.py` as `admit_source_path`; the row now cites it and names the second admitted population (unchanged context a recorded realization of the same comparison links, per the 2026-09-28 ruling). No route impact otherwise: the port, route and composition are unchanged. No stamp advanced.
 
@@ -249,7 +250,7 @@ assessments while claiming a complete bundle — is caught at the composition ra
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_assessment_currentness.py:69-69 |
-| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054|
+| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850|
 | **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:956-996; mcp/src/agents_remember/models/knowledge/review.py:893-893|
 | **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:88-102; mcp/tests/test_knowledge_review_evidence_channels.py:621-647 |
 | The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:669-690 |
@@ -447,7 +448,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1619-1640; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1561-1616; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:478-502; mcp/src/agents_remember/cli/knowledge_ingest.py:505-543; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516 |
 | The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:256-316; mcp/src/agents_remember/application/knowledge_review.py:334-574 |
-| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1899-2013; mcp/tests/test_knowledge_review_surface.py:947-985 |
+| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1899-2013; mcp/tests/test_knowledge_review_resolution_and_route.py:134-172 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
 

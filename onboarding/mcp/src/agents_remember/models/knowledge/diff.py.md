@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge/diff.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -185,8 +185,8 @@ No domain documentation source is configured for this repository (`system/source
 | **The comparison's own cursor and the two functions that encode and decode it — deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:831-845; mcp/src/agents_remember/models/knowledge/diff.py:847-864; mcp/src/agents_remember/models/knowledge/diff.py:866-887 |
 | The canonical spelling of one filter's effect, bound into a continuation. | `filter_policy` | mcp/src/agents_remember/models/knowledge/diff.py:889-892 |
 | **The node that measures the absence the request shape cannot carry: nine verdict words searched over the whole serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
-| **The node that holds the two change statements apart, and the node that measures the limitation validator.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_scope.py:603-675 |
-| **The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:678-739 |
+| **The node that holds the two change statements apart, and the node that measures the limitation validator.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_scope.py:577-649 |
+| **The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:652-713 |
 | The one member this leaf added to the operation union, and the vocabulary the new refusals reuse. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-147; mcp/src/agents_remember/models/knowledge/result.py:151-222 |
 
 ## Cross-Repo References
@@ -199,6 +199,7 @@ caller supplied; no second repository, ledger or coordination path is read.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test_knowledge_diff_scope.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
 - 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the vocabulary gained the attribution partition for ICR-R04@v1.** `ATTRIBUTION_GRANULARITY` (`changed_path`), `AttributionBucket` (three), `AttributionLink` (four — the two `outside` members are different facts), `AttributionSideState` (three), `AttributionSide`, `ChangedPathAttribution` and `SourceAttribution` (634 → 892 lines) with the disjoint-plus-exhaustive validator that refuses a repeated path, disagreeing totals, an unavailable partition carrying a number, and buckets that do not sum. `DiffOmissionReason` gained `attribution_not_determined` and `DiffLimitation` gained `unknown_attribution_changed_paths` — two limits, not one — with the model's own `_attribution_not_measured` as the undetermined limit's second producer beside the display's. The "gap is a value" section now states the partition and its three lists; every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.

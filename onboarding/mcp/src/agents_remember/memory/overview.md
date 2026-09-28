@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-28T23:11:42+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastUpdated | 2026-09-28T23:41:23+02:00 |
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,22 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L57 The Observation Row Codec Is Its Own Module, And `evidence_records` Still Answers For It
+
+`knowledge/evidence_records.py` had reached 1210 lines, over the 1200-line rail. `260921-ICR-L57` moved
+the one codec with no dependency on the others, the `verification_observation` row codec, verbatim into
+`knowledge/evidence_observation_rows.py`: `observation_cells`, `OBSERVATION_COLUMNS`, `observation_row`,
+`observation_row_digest`, `decode_observation_row` and the private column-group decoders.
+`evidence_records` imports all five public names and keeps them in its `__all__`, so `evidence.py`,
+`evidence_read.py` and the tests still reach the codec through `evidence_records`. No import site and
+no behaviour changed (1006 lines remain). For this route the rule is unchanged: `evidence_records` is
+the one public door to the supporting-record codecs; the new module is where one of them is defined.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The re-export and the registered surface that keep callers on `evidence_records`. | "from agents_remember.memory.knowledge.evidence_observation_rows import ("; `__all__` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:39-45; mcp/src/agents_remember/memory/knowledge/evidence_records.py:944-1006 |
+| The codec's own module statement. | "This is the observation half of" | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:1-12 |
 
 ## 260921-ICR-L56 Anchor Observation Remembers Immutable Answers, Never Availability
 
@@ -132,8 +148,8 @@ statement and one function each, and the write paths are untouched.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The detection owner's identity listing, decoding nothing, and the composing reader it exists for.** | `recorded_run_ids`; `_RECORDED_RUN_IDS`; `_read_signal_runs` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/memory/knowledge/detection.py:118-120; mcp/src/agents_remember/memory/knowledge/detection.py:565-579 |
-| **The evidence owner's identity listing beside the unchanged whole-collection read.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:843-846; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1042-1054; mcp/src/agents_remember/memory/knowledge/evidence_records.py:1057-1060 |
-| **The single-record readers each listed identity is read through.** | `claim_record`; `read_detection_run` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:928-931; mcp/src/agents_remember/memory/knowledge/detection.py:582-625 |
+| **The evidence owner's identity listing beside the unchanged whole-collection read.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:639-642; mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850; mcp/src/agents_remember/memory/knowledge/evidence_records.py:853-856 |
+| **The single-record readers each listed identity is read through.** | `claim_record`; `read_detection_run` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:724-727; mcp/src/agents_remember/memory/knowledge/detection.py:582-625 |
 | The cases that measure the per-record isolation on both collections through the production port. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
 
 ## 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
@@ -1241,7 +1257,7 @@ one leaf's curation pass.
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-603 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
-| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1139-1139 |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1148-1148 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
@@ -1270,7 +1286,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:247-247 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:250-250 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1531,6 +1547,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): body update: added the section for the observation row codec, which moved into `knowledge/evidence_observation_rows.py` and is re-exported from `evidence_records`. The move was behaviour-preserving and no caller changed. Re-pointed the 6 citation-table ranges into `evidence_records.py` through the exact base-to-candidate line map. No stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): body update — added the *Anchor Observation Remembers Immutable Answers, Never Availability* section for the new `knowledge/read_anchor_memo.py` module and the owner/storage split with `knowledge/read_anchors.py` (per-file detail is in the two cards). Re-derived the four `read_anchors.py` ranges this overview cites against the candidate (`_observed_line_range`, `_observed_symbol`, `observe_anchor`, `_confined_posix_relative`) and re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted its row at `:173`. Wording of existing rows unchanged; no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.

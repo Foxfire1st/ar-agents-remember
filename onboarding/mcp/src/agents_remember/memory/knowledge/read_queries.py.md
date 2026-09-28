@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_queries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -125,7 +125,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The predecessor-edge union both tables feed, and the reason a consumer must ask each table with its own probe.** | `fetch_predecessor_edges` | mcp/src/agents_remember/memory/knowledge/read_queries.py:455-461 |
 | **The one cell decoder a read page and the logical digest share, made public for exactly this reuse.** | `cell_value`; `_cell` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248; mcp/src/agents_remember/memory/knowledge/logical.py:251-263 |
 | The declarations these statements are built from. | `CANONICAL_TABLES`; `CANONICAL_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:31-45; mcp/src/agents_remember/memory/knowledge/schema.py:47-112 |
-| **The node that asserts the union identity back against the two per-table edge sets, and the two dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:424-530 |
+| **The node that asserts the union identity back against the two per-table edge sets, and the two dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:398-504 |
 
 ## Cross-Repo References
 
@@ -136,6 +136,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test_knowledge_diff_scope.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this card's claims against the source and re-cited the rows this leaf's additions moved.** The module is the package's one statement module, and this leaf added to it the six order-column registrations and the three projection lookups the Family view uses — beside, and not inside, the retrieval selection's own statements. The existence probes the comparison module consumes were re-cited to their own extents, because a single projected range for four anchors was evidence of nothing. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_candidate_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T04:31:57+02:00 |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -249,7 +249,7 @@ recheck is deliberately not part of resolution, because it belongs at publicatio
 | The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. | `recorded_leaf_contract`; `load_contract`; `slugify` | mcp/src/agents_remember/application/review_candidate_resolution.py:473-500; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
 | **The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.** | `resolve_review_candidate`; `read_knowledge_review`; `candidate_ref` | mcp/src/agents_remember/application/knowledge_review.py:75-88; mcp/src/agents_remember/application/knowledge_review.py:226-253 |
 | The CLI that reads the two directory names through that re-export. | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
-| **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** | `test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree`; `test_a_capture_input_that_moves_before_publication_is_refused_by_name` |mcp/tests/test_knowledge_review_source_endpoints.py:436-478; mcp/tests/test_knowledge_review_source_endpoints.py:546-570|
+| **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** | `test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree`; `test_a_capture_input_that_moves_before_publication_is_refused_by_name` |mcp/tests/test_knowledge_review_source_endpoints.py:423-465; mcp/tests/test_knowledge_review_source_endpoints.py:533-557|
 
 ## Cross-Repo References
 
@@ -262,6 +262,7 @@ request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **header union only.** The landed line's stamp (`8ff80ce0`) is kept and this leaf's candidate row now names the merged base; the module itself is untouched by landed siblings (still 448 lines), so every reference row already reads against the merged tree. No verification stamp was advanced.
 - 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the one owner for the unreadable-candidate refusal (402 → 448 lines).** `unreadable_candidate_refusal` and its preflight form `candidate_receipt_refusal` are now the only place the refusal's code, detail, next action and offending input exist — the entry route, the subject route and the task-context route all read them — and the actionable repair instruction reaches the task-context body, where the previous round had measured it absent. `__all__` is nine callables. Every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.

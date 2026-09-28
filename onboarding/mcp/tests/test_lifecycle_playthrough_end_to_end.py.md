@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | path | `mcp/tests/test_lifecycle_playthrough_end_to_end.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -146,10 +146,10 @@ direct evidence.
 | The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. | `checkpoint_landing_eligibility`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265; mcp/src/agents_remember/worktrees/modules/integrate.py:412-460 |
 | The shared world fixture and Git helper this module composes instead of re-implementing. | "class QueueFixture:"; "REPO = \"repo-a\""; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:184-694; mcp/tests/test_closeout_queue.py:54-54; mcp/tests/test_worktree_support.py:79-86; mcp/tests/test_worktree_support.py:78-78; mcp/tests/test_worktree_support.py:92-92; mcp/tests/test_worktree_support.py:337-337; mcp/tests/test_worktree_support.py:347-347; mcp/tests/test_worktree_support.py:710-710 |
 | The leaf closeout recording it imports rather than duplicating. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:59-82 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" |mcp/tests/test-evidence-lanes.toml:278-278|
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" |mcp/tests/test-evidence-lanes.toml:281-281|
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390; mcp/tests/evidence-lifecycle.toml:381-381; mcp/tests/evidence-lifecycle.toml:421-421 |
 | The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" |mcp/tests/test-evidence-lanes.toml:278-278|
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" |mcp/tests/test-evidence-lanes.toml:281-281|
 | The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:338-343; mcp/tests/evidence-lifecycle.toml:385-390 |
 | The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:279-279 |
 
@@ -163,6 +163,7 @@ by the module's own fixture; no sibling repository or external system participat
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

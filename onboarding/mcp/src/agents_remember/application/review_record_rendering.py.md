@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_record_rendering.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -211,8 +211,8 @@ whose own record was not supplied, because the record owner supplies every claim
 | **Pane 3: the links rendered from each claim's own record, the observations displayed exactly, the two absence states computed from the collections, and the availability list carried onto the pane unchanged.** | `evidence_pane`; `ReviewEvidenceLink`; `ReviewEvidencePane` | mcp/src/agents_remember/application/review_record_rendering.py:229-268; mcp/src/agents_remember/models/knowledge/review.py:607-618; mcp/src/agents_remember/models/knowledge/review.py:956-996 |
 | **The one per-claim projection and its two shapes: a supplied claim's own author, lifecycle, limitations and coverage, or an identity whose missing content is named as unresolved.** | `_evidence_link` | mcp/src/agents_remember/application/review_record_rendering.py:345-388 |
 | **The record owner that resolves the collections and builds each claim's renderer input, and which the adapter re-exports instead of owning.** | `review_records_for`; `_claim_record` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:548-571|
-| **The cases that measure the rendered values: unassessed is never defaulted to compatible, a passing observation is never invariant-satisfied, and a detection signal carries no severity.** | `test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible`; `test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied`; `test_a_detection_signal_carries_its_facts_and_scope_limitations_and_no_severity`; `test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one` | mcp/tests/test_knowledge_review_surface.py:606-622; mcp/tests/test_knowledge_review_surface.py:588-603; mcp/tests/test_knowledge_review_surface.py:650-659; mcp/tests/test_knowledge_review_surface.py:560-584 |
-| **The rendering a task-context review produces for the same records, measured through the real composition.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_source_endpoints.py:842-918 |
+| **The cases that measure the rendered values: unassessed is never defaulted to compatible, a passing observation is never invariant-satisfied, and a detection signal carries no severity.** | `test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible`; `test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied`; `test_a_detection_signal_carries_its_facts_and_scope_limitations_and_no_severity`; `test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one` | mcp/tests/test_knowledge_review_surface.py:603-619; mcp/tests/test_knowledge_review_surface.py:585-600; mcp/tests/test_knowledge_review_surface.py:647-656; mcp/tests/test_knowledge_review_surface.py:557-581 |
+| **The rendering a task-context review produces for the same records, measured through the real composition.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` | mcp/tests/test_knowledge_review_source_endpoints.py:829-905 |
 | **The cases that measure the two new claim-link shapes: an authored claim rendering its own limitations and coverage, and a damaged claim's identity kept with its content named unresolved.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
 
 The following declarations carry the changed boundary.
@@ -231,6 +231,7 @@ owners into this surface's display values and touches no boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 5 citations into `mcp/tests/test_knowledge_review_source_endpoints.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 3 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.

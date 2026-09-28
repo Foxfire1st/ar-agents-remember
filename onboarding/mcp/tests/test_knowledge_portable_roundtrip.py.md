@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_portable_roundtrip.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -124,9 +124,9 @@ No domain documentation source is configured for this repository (`system/source
 | The node that exports a dataset which came through the merge — the composition the next leaves consume. | "test_a_merged_dataset_is_also_exportable_and_restorable" | mcp/tests/test_knowledge_portable_roundtrip.py:489-499 |
 | The destination-behaviour nodes: replacement only for the admitted identity, and byte preservation with no surviving stage. | "test_a_destination_is_replaced_only_for_the_admitted_identity"; "test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage"; "test_a_successful_import_leaves_no_stage_journal_or_peer_behind"; "test_a_dangling_reference_is_refused_at_commit" | mcp/tests/test_knowledge_portable_roundtrip.py:1023-1080; mcp/tests/test_knowledge_portable_roundtrip.py:1105-1123; mcp/tests/test_knowledge_portable_roundtrip.py:1083-1102; mcp/tests/test_knowledge_portable_roundtrip.py:974-1017 |
 | The node that holds the export's identity admission and its no-Git-ancestry boundary. | "test_exporting_a_moved_or_absent_dataset_is_refused"; "test_an_export_carries_no_git_ancestry_and_a_repeat_import_is_a_no_change" | mcp/tests/test_knowledge_portable_roundtrip.py:1129-1156; mcp/tests/test_knowledge_portable_roundtrip.py:502-524 |
-| The lane row that keeps this module in the certifying collection path. | `integration` | mcp/tests/test-evidence-lanes.toml:247-247 |
-|The branch-fixture record whose consumer list this module is declared in.|"contract:knowledge-identity-branching-fixture"|mcp/tests/evidence-lifecycle.toml:1208-1208|
-|The merge-cases record whose consumer list this module is also declared in.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1307-1307|
+| The lane row that keeps this module in the certifying collection path. | `integration` | mcp/tests/test-evidence-lanes.toml:250-250 |
+|The branch-fixture record whose consumer list this module is declared in.|"contract:knowledge-identity-branching-fixture"|mcp/tests/evidence-lifecycle.toml:1217-1217|
+|The merge-cases record whose consumer list this module is also declared in.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1319-1319|
 | The boundary module that imports this module's helpers, so the two are one evidence set, and the onboarding card that records it. | "# mcp/tests/test_knowledge_portable_boundaries.py" | onboarding/mcp/tests/test_knowledge_portable_boundaries.py.md:1-1 |
 
 ## Cross-Repo References
@@ -138,6 +138,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.

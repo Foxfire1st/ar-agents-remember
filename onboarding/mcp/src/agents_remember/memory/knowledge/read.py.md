@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -215,7 +215,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The nodes that measure the packet's `P/I1/F/J1/G/K1` rule, including the explicit `G` expansion that reaches K1.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_selecting_the_advertised_family_explicitly_is_what_reaches_the_further_realizations"; "test_an_exact_family_revision_seed_stops_after_its_own_members" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:246-274; mcp/tests/test_knowledge_read_scope.py:206-245 |
 | **The nodes that measure the corrected page counts: a one-item page still advertising the second location, and the union of all pages equalling the declared set.** | "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection" | mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_scope.py:658-721 |
 | The ordering, truncation, budget, bound and absence nodes. | "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"; "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total" | mcp/tests/test_knowledge_read_scope.py:722-837; mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929 |
-| **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:390-421 |
+| **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:364-395 |
 | The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. | `read_scope_test_support.py`; `cell_value` | mcp/tests/read_scope_test_support.py:1-51; mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 
 ## Cross-Repo References
@@ -228,6 +228,7 @@ caller opened; no second repository, ledger or coordination path is read.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test_knowledge_diff_scope.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/models/knowledge/read.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 

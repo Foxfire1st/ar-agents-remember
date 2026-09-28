@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_catalog_gate_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T19:10+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
+| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
+| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -118,8 +118,8 @@ No domain documentation source is configured for this repository (`system/source
 | The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. | `synthetic_repo` | mcp/tests/test_evidence_catalog_gate_boundaries.py:49-65 |
 | The catalog's own digest and declared populations, read rather than pinned. | `populations` | mcp/tests/test_evidence_catalog_gate_boundaries.py:68-76 |
 | **The case: the oracle refuses the doctored tree while the pinned catalog's bytes and populations are identical.** | `test_the_oracle_reddens_while_the_byte_pin_stays_green` | mcp/tests/test_evidence_catalog_gate_boundaries.py:79-118 |
-| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" |mcp/tests/test-evidence-lanes.toml:230-230|
-| The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-177; mcp/tests/evidence-lifecycle.toml:809-809 |
+| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" |mcp/tests/test-evidence-lanes.toml:233-233|
+| The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-177; mcp/tests/evidence-lifecycle.toml:814-814 |
 
 ## Cross-Repo References
 
@@ -131,6 +131,7 @@ created under `tmp_path` and never touches the checkout's own Git store.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
