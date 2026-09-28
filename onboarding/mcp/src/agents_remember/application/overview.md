@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastUpdated | 2026-09-28T12:38:10+02:00 |
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -36,6 +36,27 @@ Closed leaves with no frozen generation read exact recorded memory endpoints thr
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `read_recorded_knowledge` owns the behavior described above. | `read_recorded_knowledge` | mcp/src/agents_remember/application/review_recorded_knowledge.py:52-82 |
+
+## Comparison-bound attributed unchanged source content
+
+The review's source-content read now opens two populations, and the decision is split across three
+owners. `review_source_content` reads bytes at the two requested trees and assembles the expansion;
+`review_source_admission` decides whether the path is admitted — a changed path of a measured change
+set, or an unchanged path of a **measured** pair that a realization recorded in that comparison's own
+knowledge is anchored at — and every other path is refused by name; `review_source_realization_link`
+answers the link question with the knowledge read owner's exact claim-at-path query against the
+comparison's own snapshots (the resolution's halves for the current pair, the retained halves of a
+generation that recorded exactly a superseded pair, nothing otherwise). Attributed context is typed
+`admission="attributed_unchanged"` with status `unchanged`, never enters the inventory or its counts,
+and requires the exact spelling a recorded anchor carries. Unreadable knowledge makes the link
+undetermined rather than absent. A stale anchor still admits; unmeasured and unfrozen superseded pairs
+admit nothing (Architect rulings closing L43-R1-F4). Changed-path answers are unchanged from before.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The admission order and the three refusals. | `admit_source_path`; `_attributed_or_refused` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_admission.py:131-157 |
+| The comparison binding and the exact per-half link query. | `_bound_knowledge`; `_side_reading` | mcp/src/agents_remember/application/review_source_realization_link.py:172-232; mcp/src/agents_remember/application/review_source_realization_link.py:252-276 |
+| The content read hands the inventory to the admission owner before reading any byte. | `_content` | mcp/src/agents_remember/application/review_source_content.py:241-285 |
 
 ## 260921-ICR-L34 The Review's Comparison Gets A Producer, And The Namespace Comes From The Record Beside The Bytes
 
@@ -116,6 +137,7 @@ is split into 818 lines plus a 578-line purpose-named module, which is where the
 `curator_family_authoring.py` and `curator_ingest_planes.py` now live; nothing these owners do changed.
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the source-content route gained two owners and one admitted population.** Added the section *Comparison-bound attributed unchanged source content* (the three-owner split, comparison binding, exact spelling, undetermined link, and the Architect's four scope rulings), qualified the L3 section's "a path in neither is refused" seam as extended, and re-pointed its seven rows whose constructs moved into `review_source_admission.py` or shifted up in `review_source_content.py`. File-level detail stays on the three module cards. No stamp advanced; closeout owns it.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
 
@@ -458,7 +480,10 @@ at all — the change set this leaf's review actually publishes (its recorded ba
 candidate tree it binds now). The admitting measurement is published on the answer as
 `path_bound`/`path_bound_detail`, so a row always says which change set listed it. A path in neither is
 refused by name in every state, which is what keeps this route a change-set read rather than a general
-file reader over the recorded base. Two further admissions gate the read before any object is touched:
+file reader over the recorded base. (Since 260921-ICR-L43 one further population is admitted — an
+unchanged path of a measured pair that a recorded realization of the same comparison links — and the
+admission policy lives in `review_source_admission.py`; see *Comparison-bound attributed unchanged
+source content* above.) Two further admissions gate the read before any object is touched:
 the two ids must be complete Git object identities, and the after generation must name a **tree** — a
 commit, a blob or a tag this repository holds is refused by name, while an object it does *not* hold
 stays a per-side `unavailable` measurement rather than a refusal, because refusing would hide the
@@ -479,13 +504,13 @@ panels route.
 | **The one entry point: resolve, screen the four admission facts, then read — with the currentness measurement taken after the bytes so it can only qualify them.** | `read_review_source_content` | mcp/src/agents_remember/application/review_source_content.py:110-131 |
 | **The four admissions, each a distinct named refusal: a complete object identity per side, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** | `_inadmissible` | mcp/src/agents_remember/application/review_source_content.py:140-207 |
 | **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement.** | `_non_tree_generation` | mcp/src/agents_remember/application/review_source_content.py:210-238 |
-| **The confinement itself: exactly two admitting measurements — the requested generation's own change set, or, when that measurement is unavailable, the change set this leaf's review publishes — with the admitting measurement carried on the value.** | `_admit`; `_Admission` | mcp/src/agents_remember/application/review_source_content.py:284-290; mcp/src/agents_remember/application/review_source_content.py:293-337 |
-| The two refusals that keep the read confined, and the status an admitted entry keeps when the pair's change set was not measured. | `_unconfined`; `_not_listed`; `_status` | mcp/src/agents_remember/application/review_source_content.py:340-371; mcp/src/agents_remember/application/review_source_content.py:374-392; mcp/src/agents_remember/application/review_source_content.py:395-403 |
-| **The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.** | `_currentness` | mcp/src/agents_remember/application/review_source_content.py:415-451 |
-| **One endpoint's content with the three outcomes kept apart, and the entry's kind deciding before its bytes: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target.** | `_side_content`; `_entry_content` | mcp/src/agents_remember/application/review_source_content.py:473-492; mcp/src/agents_remember/application/review_source_content.py:495-517 |
-| The two reasons no text form exists, and the bounded decode that carries a prefix rather than the whole object. | `_decoded`; `_binary_detail`; `_text_detail` | mcp/src/agents_remember/application/review_source_content.py:564-578; mcp/src/agents_remember/application/review_source_content.py:581-594; mcp/src/agents_remember/application/review_source_content.py:597-606 |
-| **The tree read: a literal pathspec, because a measured pathname is an address and not a pattern, and the answer checked against the path that was asked about.** | `_tree_entry`; `_parsed_record` | mcp/src/agents_remember/application/review_source_content.py:618-642; mcp/src/agents_remember/application/review_source_content.py:645-658 |
-| The exact reproduction line a reader acts on, and the second path check that refuses the spellings Git could not have reported. | `_reproduction`; `_addressable` | mcp/src/agents_remember/application/review_source_content.py:677-689; mcp/src/agents_remember/application/review_source_content.py:712-723 |
+| **The confinement itself, now in the admission owner: a changed path of a measured change set (the requested generation's own, or, when that measurement is unavailable, the one this leaf's review publishes), or since L43 an unchanged path a recorded realization of the same comparison links — with the admission carried on the value.** | `admit_source_path`; `SourceAdmission` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_admission.py:54-83 |
+| The refusals that keep the read confined, and the status an admitted path keeps when the pair's change set was not measured. | `_unconfined`; `_not_listed`; `SourceAdmission` | mcp/src/agents_remember/application/review_source_admission.py:160-191; mcp/src/agents_remember/application/review_source_admission.py:194-213; mcp/src/agents_remember/application/review_source_admission.py:54-83 |
+| **The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.** | `_currentness` | mcp/src/agents_remember/application/review_source_content.py:288-324 |
+| **One endpoint's content with the three outcomes kept apart, and the entry's kind deciding before its bytes: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target.** | `_side_content`; `_entry_content` | mcp/src/agents_remember/application/review_source_content.py:346-365; mcp/src/agents_remember/application/review_source_content.py:368-390 |
+| The two reasons no text form exists, and the bounded decode that carries a prefix rather than the whole object. | `_decoded`; `_binary_detail`; `_text_detail` | mcp/src/agents_remember/application/review_source_content.py:437-451; mcp/src/agents_remember/application/review_source_content.py:454-467; mcp/src/agents_remember/application/review_source_content.py:470-479 |
+| **The tree read: a literal pathspec, because a measured pathname is an address and not a pattern, and the answer checked against the path that was asked about.** | `_tree_entry`; `_parsed_record` | mcp/src/agents_remember/application/review_source_content.py:491-515; mcp/src/agents_remember/application/review_source_content.py:518-531 |
+| The exact reproduction line a reader acts on, and the second path check that refuses the spellings Git could not have reported. | `_reproduction`; `_addressable` | mcp/src/agents_remember/application/review_source_content.py:550-562; mcp/src/agents_remember/application/review_source_content.py:585-596 |
 | **The owners this module calls instead of re-implementing: the inventory measurement and its side value, the resolution, and the shipped recheck.** | `review_inventory`; `source_tree_side`; `resolve_review_candidate`; `require_current_candidate_identity` |mcp/src/agents_remember/application/review_source_inventory.py:429-469; mcp/src/agents_remember/application/review_source_inventory.py:168-176; mcp/src/agents_remember/application/review_candidate_resolution.py:163-250; mcp/src/agents_remember/application/review_candidate_resolution.py:272-301|
 | **The third collaborator port that carries this owner into the serving tier.** | `review_source_content`; `review_source_content_port` | mcp/src/agents_remember/serving/_app_common.py:481-481; mcp/src/agents_remember/cli/dashboard.py:114-124 |
 | **The production-composition cases: both endpoints' own bytes against an independent `git show`, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** | `test_a_modified_file_opens_both_endpoints_own_bytes`; `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | mcp/tests/test_knowledge_review_source_content.py:269-311; mcp/tests/test_knowledge_review_source_content.py:599-638; mcp/tests/test_knowledge_review_source_content.py:641-676; mcp/tests/test_knowledge_review_source_content.py:679-719 |

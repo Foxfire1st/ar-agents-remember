@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Current family-centered review ownership
@@ -148,6 +148,7 @@ every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeo
 
 ## Update History
 
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No route impact: `review/SourceContent.test.tsx`'s `expansion` builder only gained the two now-required fields (`admission: "changed"`, `admission_detail`); no panel, case or rendered behavior changed, and labelling attributed unchanged context is L49's. Two rows citing displaced lines were re-pointed (verified at base and candidate). No stamp advanced.
 - 2026-09-27T01:16:27+00:00 — Re-resolved only the changed review-source references. The helper-pair citation names both actual definitions, and the central renderer, read cycle and mounted case retain their specific subject. Unrelated normalization and inherited ambiguous anchors were left outside this repair.
 
 - 2026-09-27T00:59:43+00:00 — Updated the review child-route contract for exact bounded continuation, coherent failure retention and truthful loaded scope. No source/knowledge selection authority, route ownership or store is added.
@@ -538,7 +539,7 @@ judgment and publishes no assessment.
 | **The gate: a live leaf and a server-returned subject, with the subject's own recorded kind and id carried into the target.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
 | **The hook that asks the server for the leaf's reviewable subjects and keeps the first.** | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:63-110 |
 | **The one liveness predicate both gated entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:560-572 |
-| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:709-715; dashboard/src/data/review.ts:680-685 |
+| The client the hook calls, whose `ReviewEntry` has no path field on purpose. | `intentReviewEntries`; `ReviewEntry` | dashboard/src/data/review.ts:721-727; dashboard/src/data/review.ts:692-697 |
 
 ## 260921-ICR-L13 The Change-Set Entry Threads The Published Generation
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastUpdated | 2026-09-28T12:38:10+02:00 |
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -173,6 +173,7 @@ policy that computes it lives on the application route, not here.
 
 ## Update History
 
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): `models/knowledge/review_source_content.py` gained `ReviewSourceAdmission`, `ReviewSourceExpansionStatus` (inventory status plus expansion-only `unchanged`), `admission`/`admission_detail` on the expansion, and a validator tying attributed context to `unchanged` and `requested_generation`. No route impact: the models route's vocabulary-only role and module set are unchanged; the detail lives on that module's card.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 
 - 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.

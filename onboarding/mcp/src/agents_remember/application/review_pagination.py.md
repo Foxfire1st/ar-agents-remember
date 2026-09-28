@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_pagination.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T22:45:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -139,7 +139,7 @@ where.
 | The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
 | The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:321-479 |
 | **The route that admits the page size in its own vocabulary before the request model sees it.** | `_admitted_paging`; `paged_review_request` | mcp/src/agents_remember/serving/review.py:517-517; mcp/src/agents_remember/serving/review.py:293-357 |
-| The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:611-632; dashboard/src/data/review.ts:641-643 |
+| The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:623-644; dashboard/src/data/review.ts:653-655 |
 
 ## Cross-Repo References
 
@@ -151,6 +151,7 @@ readers, and every count on a page is measured inside the same process.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-23T00:15:00+02:00 — 260921-ICR-L10 curator: **created.** The module is new in this leaf
   (`ICR-R10@v1`, complete bounded pagination) and this is its one-to-one card. It records the two
   ownership boundaries a later reader would otherwise have to rediscover from the diff — the cursor is

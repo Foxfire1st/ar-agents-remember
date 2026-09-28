@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -101,6 +101,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): the source-content port row named `_admit`, which moved to `application/review_source_admission.py` as `admit_source_path`; the row now cites it and names the second admitted population (unchanged context a recorded realization of the same comparison links, per the 2026-09-28 ruling). No route impact otherwise: the port, route and composition are unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 6 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 
@@ -6266,7 +6267,7 @@ their own routes; this section records only what this package's route model gain
 | **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
 | **The third collaborator port, with the reason it is a port rather than a field on the review payload.** | `review_source_content`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/_app_common.py:481-481; mcp/src/agents_remember/serving/review.py:83-83 |
 | **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
-| **The application owner the port carries: the two admitted measured change sets, both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `_admit` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:293-337 |
+| **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
 | The composition root's third review port, and the registration call that passes all three collaborators. | `review_source_content_port`; `register_review_routes` | mcp/src/agents_remember/cli/dashboard.py:114-124; mcp/src/agents_remember/serving/app.py:295-301 |
 | **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** | `SOURCE_CONTENT_REFERENCE`; `ReviewSourceExpansion` | mcp/src/agents_remember/application/review_source_content.py:56-56; mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/src/agents_remember/models/knowledge/review_source_content.py:136-171 |
 | The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:771-793; mcp/tests/test_knowledge_review_source_content.py:796-819; mcp/tests/test_knowledge_review_source_content.py:641-676 |

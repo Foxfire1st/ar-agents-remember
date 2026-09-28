@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/reviewTransport.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -191,7 +191,7 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 | **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** | `reviewProblemFromRefusal` | dashboard/src/data/reviewTransport.ts:176-183 |
 | An answer whose `state` this client does not admit is named, never rendered as a review. | `unreadableAnswer` | dashboard/src/data/reviewTransport.ts:187-191 |
 | Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. | `reviewProblemFromCause` | dashboard/src/data/reviewTransport.ts:195-196 |
-| The three public client reads use the shared review transport. | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:543-559; dashboard/src/data/review.ts:709-715; dashboard/src/data/review.ts:727-745 |
+| The three public client reads use the shared review transport. | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:555-571; dashboard/src/data/review.ts:721-727; dashboard/src/data/review.ts:739-757 |
 | **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
 | The entry bar's own classification of the same codes, printed beside a button that never disappears. | `ReviewEntryState`; `ReviewCatalogueRead` | dashboard/src/panels/detail-panel/changeSetBar.tsx:316-350; dashboard/src/data/useReviewCatalogue.ts:13-24 |
 | **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** | `setCounters`; `leafChangeset` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-104; dashboard/src/panels/detail-panel/changeSetBar.tsx:12-114 |
@@ -208,6 +208,7 @@ one repository namespace in the query string.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — Repointed shared catalogue/grouping ownership to the extracted source; source-review entry remains available independently of knowledge.
 - 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **citation repair only; no claim about this module changed.** The row that names this file's own subject by contrast — the change-set client and the route the D01 debt belonged to — cited `data/changeset.ts` by four stale coordinates. They are re-derived against this tip: the file's header contract (`:1-10`), the `getChangeSetJson` reader the client's refusal idiom lives in (`:144-149`), and the two leaf helpers (`:167`, `:224-234`). The sentence's meaning is unchanged: this is a different client, route and owner from the review transport, and it is where D01 was carried and closed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_review_source_content.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T12:38:10+02:00 |
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -86,11 +86,11 @@ only the packet's boundary forbids it.
 | `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` (`:599-638`) | a real prune of one loose blob: both trees are whole, so the generation *is* measured, and the unreadable object is named rather than substituted |
 | `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` (`:641-676`) | the verifier's finding: an unmeasured pair must not become an open file reader — both falsifying paths are refused by name |
 | `test_a_generation_that_names_a_commit_is_refused_rather_than_served` (`:679-722`) | only the object's own type separates a commit id from a tree id, and the control beside it shows the listed tree id still opens |
-| `test_a_path_outside_the_measured_change_set_is_refused_by_name` (`:725-747`) | the route expands the inventory's entries and reads no path outside them |
-| `test_a_baseline_that_is_not_the_recorded_base_is_refused` (`:750-768`) | the server reads this leaf's recorded base and substitutes no other generation |
-| `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport` (`:771-793`) | a missing tree id is a bad request naming the input it expected: the server never chooses the generation for a caller |
-| `test_an_unwired_process_refuses_the_route_by_name` (`:796-819`) | a process composed without the port answers 503 with "no review adapter is wired" rather than serving an empty file |
-| `test_the_listed_entry_and_its_expansion_describe_the_same_path` (`:822-840`) | the expansion echoes the listed generation, path, status and reference, so what was opened is what was listed |
+| `test_a_path_outside_the_measured_change_set_is_refused_by_name` (`:725-749`) | an unchanged path no recorded realization links is refused by name; with no knowledge bound (`datasets=False`) only the inventory's entries are readable. The one other admitted population — unchanged context a recorded realization of the same comparison links — is measured in `test_knowledge_review_attributed_source_content.py` |
+| `test_a_baseline_that_is_not_the_recorded_base_is_refused` (`:752-770`) | the server reads this leaf's recorded base and substitutes no other generation |
+| `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport` (`:773-795`) | a missing tree id is a bad request naming the input it expected: the server never chooses the generation for a caller |
+| `test_an_unwired_process_refuses_the_route_by_name` (`:798-821`) | a process composed without the port answers 503 with "no review adapter is wired" rather than serving an empty file |
+| `test_the_listed_entry_and_its_expansion_describe_the_same_path` (`:824-842`) | the expansion echoes the listed generation, path, status and reference, so what was opened is what was listed |
 
 ### Conventions
 
@@ -111,13 +111,15 @@ coordination tree. Each case builds its own enclosure and worktree under `tmp_pa
 - **Production composition only.** No case injects a preconstructed expansion, a fake diff payload or a
   hand-assembled resolution; every value the answer carries is produced by the shipped owner.
 - **The generation is the caller's, never the server's.** Both tree ids travel in the query and the
-  request parser refuses a blank one (`:771-793`), which is what keeps an opened entry bound to the
+  request parser refuses a blank one (`:773-795`), which is what keeps an opened entry bound to the
   generation the reader was looking at.
 - **A missing object is a stated state, not an empty file.** `absent`, `unavailable`, `binary`,
   `symlink` and `submodule` are each distinguished from `present`, and no case accepts a substituted
   working-tree byte for a side that could not be read.
-- **The boundary is the measured change set.** With an unmeasurable requested pair the leaf's own review
-  still bounds the path, and the falsifiers prove it (`:641-676`).
+- **The boundary is the measured change set, plus recorded-realization context.** With an unmeasurable
+  requested pair the leaf's own review still bounds the path, and the falsifiers prove it (`:641-676`);
+  this fixture binds no knowledge, so the attributed-unchanged admission (260921-ICR-L43) never
+  applies here and is measured by the sibling attributed module.
 - **Damage is injected into real artifacts** — a deleted loose object, an unheld tree id, a commit id in
   a tree-id field — so the states are measured on the real readers rather than simulated.
 - **No case reaches a browser or a pane.** The surface itself is R12/R13/R17/R20/R21 territory; this leaf
@@ -163,11 +165,11 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | **The generation binding: the listed bytes survive the branch moving, the move is stated, and the control re-lists.** | `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` | mcp/tests/test_knowledge_review_source_content.py:495-557 |
 | **The two availability cases: an unheld tree, and a real prune of one loose blob.** | `test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable`; `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` | mcp/tests/test_knowledge_review_source_content.py:560-596; mcp/tests/test_knowledge_review_source_content.py:599-638 |
 | **The verifier's finding, and the object-type refusal with its control.** | `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | mcp/tests/test_knowledge_review_source_content.py:641-676; mcp/tests/test_knowledge_review_source_content.py:679-719 |
-| **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** | `test_a_path_outside_the_measured_change_set_is_refused_by_name`; `test_a_baseline_that_is_not_the_recorded_base_is_refused`; `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:725-747; mcp/tests/test_knowledge_review_source_content.py:750-768; mcp/tests/test_knowledge_review_source_content.py:771-793; mcp/tests/test_knowledge_review_source_content.py:796-819 |
-| The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:822-840 |
+| **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** | `test_a_path_outside_the_measured_change_set_is_refused_by_name`; `test_a_baseline_that_is_not_the_recorded_base_is_refused`; `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:725-749; mcp/tests/test_knowledge_review_source_content.py:752-770; mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821 |
+| The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:824-842 |
 | **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:584-604; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:96-96; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:657-659|
 | The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:159-160 |
-| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:122-122 |
+| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
 
 ## Cross-Repo References
 
@@ -179,6 +181,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the confinement case's stated property narrowed with the 2026-09-28 admission ruling** — it no longer means "no path outside the inventory is ever read" but "an unchanged path no recorded realization links is refused"; the test body is unchanged and its docstring now says so (L43-R1-F3). The case table, the Invariants bullet and the four rows below it were updated (+2 lines from the docstring); the lane row now cites `test-evidence-lanes.toml:125`, where the entry actually sits. No stamp advanced; closeout owns it.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 - 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.

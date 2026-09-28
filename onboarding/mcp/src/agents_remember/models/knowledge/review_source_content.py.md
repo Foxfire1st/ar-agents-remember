@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_source_content.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T22:55:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-28T12:38:10+02:00 |
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -18,8 +18,8 @@
 
 The wire vocabulary of **one inventory entry opened into its actual content** (ICR-R03@v1). The
 review's Source pane lists changes; this module is the shape of what one of those rows expands *into* —
-both bound endpoints' content, the generation they were read at, and the measurement that admitted the
-path.
+both bound endpoints' content, the generation they were read at, the measurement that bounded the
+path, and why the path was opened at all (`admission`).
 
 It is a separate module from `models/knowledge/review.py` for two reasons the module's own docstring
 states: it answers a different question (not "what did this task change" but "what exactly do these two
@@ -84,6 +84,17 @@ actually publishes bounded the request instead. The second is **not a wider read
 a changed path of a measured pair — and it is stated rather than implied, so a reader can always tell
 which change set the row came from. `path_bound_detail` carries the admitting measurement's own words.
 
+**`admission` states why the path was opened, so a renderer never infers it.** `changed` is a path a
+measured change set lists; `attributed_unchanged` is a path the requested pair's measured change set
+does **not** list, opened only because a realization recorded in the bound comparison's own knowledge
+is anchored at it (260921-ICR-L43, under the 2026-09-28 admission ruling). `status` widens to
+`ReviewSourceExpansionStatus` — the inventory's `ReviewFileStatus` plus `unchanged` — for expansions
+only; the inventory vocabulary is untouched. `unchanged` is a measurement (the pair was compared and
+does not differ here) and stays apart from `unknown` (no comparison was made).
+`_require_attributed_context_to_be_a_measured_unchanged_path` makes two misstatements
+unconstructible: `attributed_unchanged` exactly when `status == "unchanged"`, and an attributed path
+bounded by anything other than `requested_generation`.
+
 **`command` is evidence beside the content and never a substitute for it.** It is the exact
 reproduction of the two reads, naming both trees and the path, so a reader can obtain the same bytes
 without this surface; a reference with no text is the failure this vocabulary exists to make
@@ -102,13 +113,13 @@ and cannot read the absence of content as an empty file. `operation` is the fixe
 
 ### Conventions
 
-`__all__` publishes exactly the seven wire names this vocabulary is: the request, the result, the
-expansion, the side, the three closed literal sets and the currentness/path-bound aliases. The module
+`__all__` publishes nine wire names: the request, the result, the expansion, the side, the side-state
+literal, and the currentness, path-bound, admission and expansion-status aliases. The module
 imports only what it extends: `KnowledgeModel` and the four length ceilings from
 `models/knowledge/base.py` (`PROSE_MAX_LENGTH`, `LABEL_MAX_LENGTH`, `REFERENCE_MAX_LENGTH`,
 `PATH_MAX_LENGTH`), and `ReviewFileStatus`/`ReviewRefusal` from `models/knowledge/review.py` — the
 expansion carries the inventory's own status vocabulary and the review's own refusal shape rather than
-declaring second ones. Every field is length-bounded at the type, and the two `model_validator`
+declaring second ones. Every field is length-bounded at the type, and the three `model_validator`
 methods are the only logic: this module computes nothing.
 
 ### Invariants And Boundaries
@@ -121,9 +132,10 @@ methods are the only logic: this module computes nothing.
   `byte_length` is the exact object size beside it.
 - **The generation is echoed, never re-derived.** The two tree ids on the value are the caller's own,
   and `currentness` is a statement about them rather than a substitution for them.
-- **The admitting measurement is named.** `path_bound` is a closed two-value set and
-  `path_bound_detail` says what that measurement was, so a path can never be read without saying which
-  change set listed it.
+- **The bounding measurement and the admission are named.** `path_bound` is a closed two-value set
+  with its detail, and `admission` (`changed` | `attributed_unchanged`) with its detail says why the
+  path was opened; attributed context is always `unchanged` and always bounded by
+  `requested_generation`, so unchanged context can never be presented as a change or vice versa.
 - **One outcome per result.** A content result carries no refusal and a refused result carries no
   expansion; the two can never be mixed.
 - **This module is vocabulary only.** It selects nothing, ranks nothing, reads nothing and writes
@@ -152,20 +164,22 @@ decides from `state` rather than from text.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The module's own statement of why the vocabulary is separate from the review payload and of the three structural prohibitions it carries.** | `ReviewSourceSide` | mcp/src/agents_remember/models/knowledge/review_source_content.py:93-133 |
-| The published surface: the request, the result, the expansion, the side, and the three closed literal sets. | `__all__`; `ReviewSourceExpansion`; `ReviewSourceContentRequest`; `ReviewSourceContentResult` | mcp/src/agents_remember/models/knowledge/review_source_content.py:43-51; mcp/src/agents_remember/models/knowledge/review_source_content.py:136-171; mcp/src/agents_remember/models/knowledge/review_source_content.py:174-188; mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211 |
-| **The six side states, with the comment that states why `absent` and `unavailable` must never be conflated.** | `ReviewSourceSideState` | mcp/src/agents_remember/models/knowledge/review_source_content.py:67-74 |
-| The only two states that may carry text, and the reason every other state carries none. | `_TEXT_STATES` | mcp/src/agents_remember/models/knowledge/review_source_content.py:79-79 |
-| The three-value statement of whether the requested generation is still the pair the leaf binds, and the closed set naming which measurement admitted a path. | `ReviewSourceCurrentness`; `ReviewSourcePathBound` | mcp/src/agents_remember/models/knowledge/review_source_content.py:84-84; mcp/src/agents_remember/models/knowledge/review_source_content.py:90-90 |
-| **The four structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side.** | `_require_text_exactly_when_the_side_is_textual` | mcp/src/agents_remember/models/knowledge/review_source_content.py:110-133 |
-| **The expansion: the requested generation echoed back, the currentness statement, the admitting measurement with its own detail, and the reproduction command beside the content.** | `ReviewSourceExpansion`; `path_bound_detail`; `command` | mcp/src/agents_remember/models/knowledge/review_source_content.py:136-171 |
-| The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. | `ReviewSourceContentRequest`; `before_code_tree_id`; `after_code_tree_id` | mcp/src/agents_remember/models/knowledge/review_source_content.py:174-188 |
-| **One outcome per result, enforced: a content result carries its expansion and no refusal, a refused result its refusal and no expansion.** | `ReviewSourceContentResult`; `_require_one_outcome`; `operation` | mcp/src/agents_remember/models/knowledge/review_source_content.py:191-211 |
+| **The module's own statement of why the vocabulary is separate from the review payload and of the three structural prohibitions it carries.** | `ReviewSourceSide` | mcp/src/agents_remember/models/knowledge/review_source_content.py:110-150 |
+| The published surface: the request, the result, the expansion, the side, and the three closed literal sets. | `__all__`; `ReviewSourceExpansion`; `ReviewSourceContentRequest`; `ReviewSourceContentResult` | mcp/src/agents_remember/models/knowledge/review_source_content.py:43-53; mcp/src/agents_remember/models/knowledge/review_source_content.py:153-214; mcp/src/agents_remember/models/knowledge/review_source_content.py:217-231; mcp/src/agents_remember/models/knowledge/review_source_content.py:234-254 |
+| **The six side states, with the comment that states why `absent` and `unavailable` must never be conflated.** | `ReviewSourceSideState` | mcp/src/agents_remember/models/knowledge/review_source_content.py:69-76 |
+| The only two states that may carry text, and the reason every other state carries none. | `_TEXT_STATES` | mcp/src/agents_remember/models/knowledge/review_source_content.py:81-81 |
+| The three-value statement of whether the requested generation is still the pair the leaf binds, and the closed set naming which measurement admitted a path. | `ReviewSourceCurrentness`; `ReviewSourcePathBound` | mcp/src/agents_remember/models/knowledge/review_source_content.py:86-86; mcp/src/agents_remember/models/knowledge/review_source_content.py:95-95 |
+| **Why a path was opened, and the expansion-only status that adds `unchanged` beside the inventory's vocabulary.** | `ReviewSourceAdmission`; `ReviewSourceExpansionStatus` | mcp/src/agents_remember/models/knowledge/review_source_content.py:97-107 |
+| **The four structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side.** | `_require_text_exactly_when_the_side_is_textual` | mcp/src/agents_remember/models/knowledge/review_source_content.py:127-150 |
+| **The expansion: the requested generation echoed back, the currentness statement, the bounding measurement and the admission with their own details, and the reproduction command beside the content.** | `ReviewSourceExpansion`; `path_bound_detail`; `admission_detail`; `command` | mcp/src/agents_remember/models/knowledge/review_source_content.py:153-214 |
+| **Attributed context is exactly the `unchanged` expansion and is bounded only by the requested generation.** | `_require_attributed_context_to_be_a_measured_unchanged_path` | mcp/src/agents_remember/models/knowledge/review_source_content.py:198-214 |
+| The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. | `ReviewSourceContentRequest`; `before_code_tree_id`; `after_code_tree_id` | mcp/src/agents_remember/models/knowledge/review_source_content.py:217-231 |
+| **One outcome per result, enforced: a content result carries its expansion and no refusal, a refused result its refusal and no expansion.** | `ReviewSourceContentResult`; `_require_one_outcome`; `operation` | mcp/src/agents_remember/models/knowledge/review_source_content.py:234-254 |
 | The base vocabulary this module extends rather than redeclares: the shared model base and the four length ceilings every field is bounded by. | `KnowledgeModel`; `PROSE_MAX_LENGTH`; `PATH_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `LABEL_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-27; mcp/src/agents_remember/models/knowledge/base.py:34-37 |
 | The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. | `ReviewFileStatus`; `ReviewRefusal` | mcp/src/agents_remember/models/knowledge/review.py:797-797; mcp/src/agents_remember/models/knowledge/review.py:403-415 |
-| **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** | `read_review_source_content`; `_side_content`; `_admit`; `_currentness` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:473-492; mcp/src/agents_remember/application/review_source_content.py:293-337; mcp/src/agents_remember/application/review_source_content.py:415-451 |
+| **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** | `read_review_source_content`; `_side_content`; `admit_source_path`; `_currentness` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_content.py:346-365; mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_content.py:288-324 |
 | The transport that accepts this request and serializes this result: the third review route, the selector value and the port type. | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:96-96|
-| The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. | `ReviewSourceSide`; `ReviewSourceExpansion`; `ReviewSourceContentResult` | dashboard/src/data/review.ts:329-336; dashboard/src/data/review.ts:347-362; dashboard/src/data/review.ts:364-370; dashboard/src/data/review.ts:430-430 |
+| The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. | `ReviewSourceSide`; `ReviewSourceExpansion`; `ReviewSourceContentResult` | dashboard/src/data/review.ts:329-336; dashboard/src/data/review.ts:355-374; dashboard/src/data/review.ts:376-382 |
 | **The renderer that decides from `state` and never from text: both-present draws the shipped diff, otherwise each textual side is drawn as content beside a note that no diff is claimed.** | `Sides`; `sideLine`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:20-41; dashboard/src/panels/review/SourceContent.tsx:54-98; dashboard/src/panels/review/SourceContent.tsx:100-110; dashboard/src/panels/review/SourceContent.tsx:112-124; dashboard/src/panels/review/SourceContent.tsx:131-142; dashboard/src/panels/review/SourceContent.tsx:143-155 |
 | **The cases that hold the vocabulary to its own prohibitions over real objects: each non-text kind, a stated bounded expansion, the requested generation served after the branch advanced, and the two admitted measurements.** | `test_a_binary_entry_states_its_kind_identity_and_size_with_no_text`; `test_a_symlink_entry_carries_the_link_target_and_never_a_document`; `test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes`; `test_oversized_content_is_a_stated_bounded_expansion`; `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` | mcp/tests/test_knowledge_review_source_content.py:384-400; mcp/tests/test_knowledge_review_source_content.py:403-417; mcp/tests/test_knowledge_review_source_content.py:420-436; mcp/tests/test_knowledge_review_source_content.py:473-489; mcp/tests/test_knowledge_review_source_content.py:495-557 |
 
@@ -179,6 +193,7 @@ namespace's review and carries no identity that ranges beyond the repository the
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the expansion gained a typed admission.** `ReviewSourceAdmission` (`changed` | `attributed_unchanged`), `admission`/`admission_detail` on `ReviewSourceExpansion`, `ReviewSourceExpansionStatus` (inventory status plus expansion-only `unchanged`), and a third validator tying attributed context to `unchanged` and `requested_generation`. The `ReviewSourcePathBound` comment now names both admitted populations (L43-R1-F3). Purpose, Logic, Conventions and Invariants were extended; every reference range was re-derived from the candidate. No stamp advanced; closeout owns it.
 - 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The dashboard delta moved every construct these rows cite: the client mirror's three interfaces now sit at `data/review.ts:328-335` (`ReviewSourceSide`), `:346-361` (`ReviewSourceExpansion`) and `:363-369` (`ReviewSourceContentResult`), and the renderer's two helpers at `SourceContent.tsx:131-142` (`boundedNote`) and `:143-155` (`refusalBlock`), because `Sides` gained the `mode`/`collapse` props this leaf threads through. Each row's contributing ranges (`SourceContent` `164-222`/`Sides` `76-112`/`sideLine` `49-66`, and the fourth client range) are kept verbatim, and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The reused-vocabulary row cited `models/knowledge/review.py:500-500`/`791-803`, which the six-counts and partition growth moved; it now cites the declarations at `:513-513`/`812-824`. Wording unchanged; no stamp advanced.

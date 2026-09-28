@@ -6,8 +6,8 @@
 | path | `dashboard/src/panels/review/ReviewReadCycle.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
+| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -228,7 +228,7 @@ identity's single-read rule. Every anchor in a row occurs inside the range that 
 | **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** | `carriedHere` | dashboard/src/panels/review/ReviewReadCycle.ts:522-525 |
 | **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** | `ReviewRead`; `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:33-37; dashboard/src/panels/review/ReviewOutcome.tsx:42-55 |
 | **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** | `intentReview`; `reviewQuery` | dashboard/src/data/review.ts:543-559; dashboard/src/data/review.ts:565-596 |
-| **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** | `PREVIOUS_BINDING_QUERY` | dashboard/src/data/review.ts:659-659 |
+| **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** | `PREVIOUS_BINDING_QUERY` | dashboard/src/data/review.ts:671-671 |
 | The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:778-854; dashboard/src/panels/review/ReviewSurface.tsx:856-928 |
 | **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:107-121 |
 | **The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.** | "carries the identity into a read that replaces it, and into no other question (L17-F1)"; "never carries a live identity into a recorded read, nor a recorded one into a live read (L17-F1)"; "renders no generation claim when the subject change and the refresh land in one flush (L17-R2-F1)" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:692-883 |
@@ -247,6 +247,7 @@ and one leaf id and is served by the same-origin dashboard route.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T01:16:27+00:00 — Re-resolved import, hook, refresh and continuation references against their actual constructs. Ambiguous name-only repairs were not accepted: imports remain cited at the import block, and hook/refresh claims at their own definitions. No verification stamp was advanced.
 
