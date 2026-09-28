@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_diff_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
+| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -122,11 +122,11 @@ repository source and package-local evidence only.
 | **The probe that measured the trees being what makes a gap visible.** | "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:850-912 |
 | The production probe these cases drive rather than substitute. | `git_tree_difference_probe` | mcp/src/agents_remember/application/knowledge_diff.py:162-196 |
 |The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1259-1410; mcp/tests/evidence-lifecycle.toml:1265-1265 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:233-233|
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:233-233|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:234-234|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:234-234|
 | The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1201-1410 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:233-233|
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:233-233|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:234-234|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:234-234|
 
 ## Cross-Repo References
 
@@ -137,9 +137,10 @@ under `tmp_path`. No configured remote, protected branch or sibling repository i
 | --- | --- | --- |
 | No configured cross-repository evidence is claimed. | — | — |
 | The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1201-1205; mcp/tests/evidence-lifecycle.toml:1265-1410 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:233-233|
+| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" |mcp/tests/evidence-lifecycle.toml:1453-1453; mcp/tests/test-evidence-lanes.toml:234-234|
 
 ## Update History
+- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

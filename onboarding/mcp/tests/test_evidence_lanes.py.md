@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_lanes.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38`|
+| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,10 +78,11 @@ outright — `ERROR: test evidence lanes have 1 finding(s): … no tests ran` �
 on *before* the row existed gives `INTERNALERROR> AssertionError … crashitem`, which is the
 symptom `T48` recorded.
 
-**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:232`),
+**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:233`),
 recorded by `260831-LOCR-L07`.
 
 ## Update History
+- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): two cases added: the hook's armed state read from the plugin manager, and the shipped loader's verdict on this population (`T48`/`T49`). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 

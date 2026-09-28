@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
-| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
+| lastUpdated            | 2026-09-28T16:28:50+02:00 |
+| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
+| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 
 ## What This Area Is
 
@@ -68,6 +68,9 @@ observer write side through `kernel/primitives/observer_paths.py`).
    they do not synthesize an agent-visible leaf-address field. The task-document reader likewise
    copies explicit master nature and sprint graph, derives waves from that validated graph, and
    includes those cells in body-revision identity so topology changes invalidate the projection.
+   The always-on readers enumerate the canonical task corpus through one bounded walk
+   (`snapshots_impl/_common.py::_iter_task_json`, three listed levels). The on-demand single-document
+   body read (`/api/task-document`) never enumerates it.
 3. `project_and_write` ties reading, pure reduction, and the atomic write together.
 
 ## Load-Bearing Files
@@ -88,6 +91,12 @@ observer write side through `kernel/primitives/observer_paths.py`).
   every genuine invalidity still withholds the document. The strict end of that split stays with
   authoring and with the enforcement folds, exactly as `snapshots_impl/_runtime.py:121-123` states it.
 - Projection writes are atomic; readers never observe half-written state.
+- **A request-path reader must cost what it names, not what the corpus holds.** The projector's pass
+  and the HTTP body read run in one process and compete for one GIL, so a corpus-sized read on either
+  side slows the other (260921-ICR-L42: review R1 attributed almost all of the browser's 3.865 s leaf read to
+  three concurrent whole-corpus enumerations). The body read opens only the requested document and the masters its
+  sprint graph names. The always-on enumeration lists only `tasks/<repository>/<task>/` and returns
+  exactly the list the earlier recursive glob did. Neither adds an index, persistent cache or store.
 - Readers may consume observer projection/reducer APIs; observer event mutation remains
   with its write-side owner. Layering permits serving to consume lower observer APIs.
 
@@ -156,7 +165,7 @@ authority; projection never exposes worker or resume identity.
 
 ## 260815-DAG-L12 Route Impact
 
-The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes every valid master payload in the projected set — no bound evicts a document, so all of them are indexed (260916-TDPU; it formerly indexed only the bounded payload window) — `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
+The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes every valid master payload in the projected set for the summary reader — no bound evicts a document, so all of them are indexed (260916-TDPU; it formerly indexed only the bounded payload window); the on-demand body read, since 260921-ICR-L42, builds the same table from only the masters its graph names — `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
 
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -212,8 +221,33 @@ Two things stay out of scope deliberately, recorded on the reader's card rather 
 sixth same-class drop site at `snapshots_impl/_closeout_queue.py:33-36`, and the residual unprunable-loc
 gap (a loc pydantic augments, such as the legacy `ref`), which stays fail-closed.
 
+## 260921-ICR-L42 Bounded Task-Document Reads (Route Impact)
+
+The change spans two files of this route with one purpose. `snapshots_impl/_task_documents.py`'s body
+read stopped building its master join table from the whole corpus. It now reads the requested
+document and, for a sprint only, the masters its graph names (`_graph_master_docs`, through
+`_common._canonical_task_json_candidates`). `snapshots_impl/_common.py::_iter_task_json` stopped
+recursively globbing every JSON under `tasks/`. It now walks only the three canonical levels, for the
+same result. The route-level consequence is that both costs follow what is named, while the served
+projection is byte-identical. That was checked on 561 live canonical bodies and 15 probe paths,
+including every 404 case.
+
+The projector's own pass (`projection_inputs.py` → `read_closeout_queues`, and on task refresh
+`read_task_documents` and `read_series_documents`) uses the same enumeration, so it also becomes
+cheaper. Its cache discipline is unchanged. The body read no longer touches the shared
+`TaskDocumentPayloadCache`, so HTTP threads no longer mutate it alongside the projector thread. The
+installed-build confirmation (concurrent master+leaf reads, projector CPU) belongs to leaf L50. The
+notes-listing request belongs to leaf L55 and the eager review catalogue to leaf L47; both are separate
+costs this route change does not claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The body read and its graph-only join table. | `read_task_document_body`; `_graph_master_docs` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:161-201; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:204-224 |
+| The bounded canonical enumeration every always-on reader uses. | `_iter_task_json` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:74-90 |
+
 ## Update History
 
+- 2026-09-28T16:28:50+02:00 — 260921-ICR-L42 route impact (curator, uncommitted candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): **task-document reads on this route became bounded by what they name.** Added the route invariant that a request-path reader must cost what it names, because the projector and the HTTP reads share one GIL. Added one Operating Model sentence separating the always-on enumeration from the on-demand body read. Corrected the L12 route-impact sentence, which implied the body read indexes the whole projected set. Added the L42 route-impact section with the byte-identity evidence and the costs routed to L47, L50 and L55. No stamp was advanced; closeout owns it.
 - 2026-09-16T14:20+02:00 — 260916-TDPU route impact (curator, uncommitted change set on
   `ar/260916-tdpu`, base `67b21aeb`): **the task-document summary bound is gone from this route.**
   `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and

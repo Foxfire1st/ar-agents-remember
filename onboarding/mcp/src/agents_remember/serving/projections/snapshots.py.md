@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`       |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38`       |
+| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ mutate them.
 Task-document scans still share the short TTL parse cache, and the always-on task and series surfaces
 project **every** canonical task document — the newest bounded window of 250 nodes each was removed by
 260916-TDPU, so no summary bound remains (see that entry in the Update History and the rationale at
-`snapshots_impl/_common.py:63-69`). The summary surfaces still omit reader bodies; `_task_doc_node`
+`snapshots_impl/_common.py:65-71`). The summary surfaces still omit reader bodies; `_task_doc_node`
 computes `bodyRevision` from the omitted fields and receives an explicit `include_body` choice.
 Lifecycle binding was factored into `_TaskDocumentLifecycleMaps` so summary and on-demand paths resolve
 the same runtime context.
@@ -387,7 +387,7 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
   `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and `_stat_mtime_ns` are gone, so
   the readers project every canonical document they enumerate — no window, no eviction, no truncation
   flag. Reintroducing a bound requires a larger one that announces its own truncation and offers a way
-  to reach what it hid (`snapshots_impl/_common.py:63-69`); a silent cap is what this removal exists to
+  to reach what it hid (`snapshots_impl/_common.py:65-71`); a silent cap is what this removal exists to
   end.
 - **Masters have two surfaces:** `read_task_documents` projects the concrete active master document for
   direct Operations selection, while `read_series_documents` also projects the folder-keyed checklist
@@ -420,11 +420,11 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:199-200; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:569-569 |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:258-258 |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-303; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:338-338 |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:569-575 |
-| Every one of these task-document parse sites now reads through the one tolerant `_projected_document`, so an unknown key written by a newer build no longer deletes the whole document; every other validation failure still withholds it. | `_projected_document` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:78-102 |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:227-228; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:597-597 |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:286-286 |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:330-331; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:366-366 |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:597-603 |
+| Every one of these task-document parse sites now reads through the one tolerant `_projected_document`, so an unknown key written by a newer build no longer deletes the whole document; every other validation failure still withholds it. | `_projected_document` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:79-103 |
 | The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:804-819; mcp/src/agents_remember/observer/projection.py:736-801; mcp/src/agents_remember/observer/projection.py:832-860 |
 | The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:55-65 |
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:157-175 |
@@ -456,6 +456,7 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `snapshots_impl/_common.py`, `snapshots_impl/_task_documents.py` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def read_series_documents(" repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:258-258. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _task_doc_node(" repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:569-569. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_projected_document` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:78-102. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

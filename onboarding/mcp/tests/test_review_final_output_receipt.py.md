@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_final_output_receipt.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:15:00+02:00 |
-| lastVerifiedCommitHash | `3103e1142a3ded8a843c3e5bbefca14861ba4a58` |
-| lastVerifiedCommitDate | 2026-09-23T10:14:17+02:00|
+| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
+| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ narrowing, so each of them fails if that behaviour is reverted.
 | **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** | `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound` | mcp/tests/test_review_final_output_receipt.py:755-788 |
 | **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** | `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:790-823 |
 | **The consumer case: the reopened generation reports what the task delivered, phase by phase.** | `test_the_reopened_generation_reports_what_the_task_delivered` | mcp/tests/test_review_final_output_receipt.py:825-871 |
-| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:212-212; mcp/tests/evidence-lifecycle.toml:801-801; mcp/tests/evidence-lifecycle.toml:1428-1428; mcp/tests/evidence-lifecycle.toml:1472-1472; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
+| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:213-213; mcp/tests/evidence-lifecycle.toml:801-801; mcp/tests/evidence-lifecycle.toml:1428-1428; mcp/tests/evidence-lifecycle.toml:1472-1472; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 
 ## Cross-Repo References
 
@@ -184,4 +184,5 @@ repository rather than to an invented one.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-23T09:15:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): created this one-to-one card for the test module this leaf introduced to evidence **ICR-R21@v1** — the recorded comparison beside what closeout and integration delivered. It records what the cases actually prove: the fixture is a **measured** requirement rather than a shortcut (the shared read-scope fixture binds another repository's authority home, and the publication read-back consults it); the assertions compare every recorded identity against the store's own reopened truth rather than against the receipt's words; the three packet examples are cases rather than prose; and four of the eleven cases exist because a round-1 verifier reproduced a false coverage sentence and an unprotected narrowing, so reverting either behaviour fails a case. Two limits are carried as limits: the browser halves of A17/A20/A22 remain ICR-R25@v1's, and the failed/partial-transaction clause is evidenced by the no-generation case plus the `ok`-gated attachments rather than by a crashed-closeout fixture with a frozen generation. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `972b44cc07b307929535fe7974d6a30d53c9c4f1`, this leaf's recorded base, whose date is the worker report's own timestamp — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
