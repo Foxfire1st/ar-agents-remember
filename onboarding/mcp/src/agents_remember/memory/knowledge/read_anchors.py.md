@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/read_anchors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-28T23:11:42+02:00 |
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,13 @@ that used to collapse into one `None` are three genuinely different facts here:
 | `unsupported_locator` | **The spelling is not addressable as a confined tree path, so the tree was never asked.** The cause is in `detail`. | `_UnaddressableRecordedPath`, and the symbol-locator branch |
 | `recorded_object_unavailable` | **The lookup did not answer**: the requested tree is not in the repository, or Git ran and failed, or Git could not be run at all. | the availability guard, and `_TreeLookupFailed` |
 
+**It also remembers, for the life of the process, the answers Git and the parser gave about complete
+object ids** (tree entries, blob lines, per-blob definitions), so repeated observation of the same
+anchors — every owner of one review, every subject of one comparison — costs one Git read and one parse
+per object instead of one per observation. The tables live in
+[`read_anchor_memo.py`](read_anchor_memo.py.md); **what may be remembered, and what never is, is decided
+here** (see *The process-lifetime memo* below). Responses are byte-identical with and without it.
+
 ## Code Commentary
 
 ### Logic
@@ -45,13 +52,19 @@ statement:
 - A context naming **both** `repository_root` and `code_tree_id` gets `_TreeAnchorResolver`, whose
   `tree_is_available` is decided **once at construction** (`_tree_exists`, `git cat-file -e <tree>^{tree}`),
   so an unavailable tree is one failure named once instead of an identical per-item error on every page.
+  **That probe is never remembered across resolvers**: every new resolver asks Git again, because whether
+  a repository still *holds* a tree is a fact about the repository, not the id (review L56-R1-F1).
 - `KnowledgeReadContext` refuses a *half-specified* resolution (tree without root, or root without tree)
   at construction, precisely so this module never has to report a caller's mistake as a fact about an
   anchor.
 
 `observe_anchor` decides in one fixed order, and the order is the contract: `not_requested` →
-symbol locator (`unsupported_locator`) → tree unavailable (`recorded_object_unavailable`) → the tree
-lookup → the entry. Only the last step can report an absence.
+tree unavailable (`recorded_object_unavailable`) → the tree lookup (an unaddressable spelling is
+`unsupported_locator`, a lookup that did not answer is `recorded_object_unavailable`) → the entry, where
+a `symbol` or `line_range` locator on the exact recorded blob is measured. Only the entry step can
+report an absence. (An earlier account put a symbol-locator refusal before the tree check; since the
+symbol observer landed, a symbol locator is resolved *after* the exact-blob match, in `_observed_symbol`,
+and is `unsupported_locator` only when its path has no grammar or the grammar or blob cannot be read.)
 
 `_observed_entry` turns one `ls-tree` entry into the observation it supports:
 
@@ -70,8 +83,8 @@ locator addresses in those exact bytes, and the model refuses ranges beside any 
 
 | Locator kind | What `resolved_ranges` carries on `exact_recorded_blob` |
 | --- | --- |
-| `symbol` | **every** extent the shipped extractor finds defining the name, in order, de-duplicated (`_defining_extents` now returns `(start, end)` pairs; the `detail` sentence is spelled from them and reads exactly as before) |
-| `line_range` | the recorded range itself **only if the blob holds those lines** — `_observed_line_range` reads the blob's lines once (`_recorded_lines`, the same call the symbol path makes) and compares the recorded `end_line` with `_line_count` |
+| `symbol` | **every** extent the shipped extractor finds defining the name, in order, de-duplicated (`_blob_definitions` parses the blob once and keeps each defined name's distinct `(start, end)` pairs; `_defining_extents` looks the name up in that mapping; the `detail` sentence is spelled from them and reads exactly as before) |
+| `line_range` | the recorded range itself **only if the blob holds those lines** — `_observed_line_range` reads the blob's lines once (`_recorded_lines`, the same read `_blob_definitions` makes for the symbol path) and compares the recorded `end_line` with `_line_count` |
 | `file` | nothing: a file locator addresses the whole blob and names no range |
 
 **A recorded range past the blob's end keeps `exact_recorded_blob` and carries no range.** Its `detail`
@@ -130,6 +143,41 @@ a reader must keep:
   kill that appeared to prove it also appears with the production line untouched. The `OSError` half has
   its own case (`mcp/tests/test_knowledge_read_paths.py:539`).
 
+**The process-lifetime memo (260921-ICR-L56, ICR-R24@v3).** A first visit to a family or invariant
+subject used to spend most of its time re-observing the same anchors (hundreds of Git spawns and ~100
+tree-sitter parses for ~20 tree paths and ~18 blobs). Three answers are now remembered in
+[`read_anchor_memo.py`](read_anchor_memo.py.md), each keyed by the repository root Git runs against plus
+the complete object id(s) the answer is a function of:
+
+| Table | Key | Filled by | What is remembered |
+| --- | --- | --- | --- |
+| `TREE_ENTRIES` | (root, tree id, confined path) | `_tree_entry` | the parsed `ls-tree` entry **or `None`** — Git's own "no entry at this path" about an existing immutable tree is as permanent as a found entry |
+| `BLOB_LINES` | (root, blob id) | `_recorded_lines` | the blob's lines as an immutable **tuple**, because one answer is shared by every later caller |
+| `BLOB_DEFINITIONS` | (root, blob id, grammar of the path's suffix) | `_blob_definitions` | a read-only mapping of every defined name to its distinct `(start, end)` extents — one parse serves every symbol anchored in the blob, and one grammar's parse is never served for another's |
+
+The rules a successor must keep, because each was either a review finding or is what makes "never
+stale" true:
+
+- **Only answers are remembered, and only for a complete id.** A value is put *after* Git or the parser
+  answered; `OSError`, a non-zero exit, `_BlobUnreadable` and `GrammarUnavailableError` all leave the
+  memo untouched, so a later success is observed. A question asked with a ref, `HEAD` or an abbreviation
+  is never remembered (`is_complete_object_id` is the one admission test).
+- **Whether the repository holds the tree is never remembered.** `_tree_exists` runs on every resolver
+  construction and the remembered answers are consulted only behind a probe that succeeded, so a tree
+  that was released and pruned, lost its alternate or became unreadable is reported
+  `recorded_object_unavailable` for every anchor, exactly as before the memo. An earlier attempt
+  remembered positive probes and was blocked for this (review L56-R1-F1).
+- **Two documented residuals sit outside that guard** (they are in the module docstring, not defects to
+  "fix" silently): a repository that still holds the tree but has lost one of its blobs (corruption, or
+  a partial clone whose promisor never supplied it) is answered from memory for a blob read earlier in
+  the same process; and a caller of `observe_anchor` that builds no resolver skips the probe altogether.
+  The one such production caller is curator ingest (`knowledge_curator_ingest._observe`), which reads the
+  tree's membership in the same run before it observes.
+- **No invalidation exists and none is needed**: every key is an immutable object id. The bounds cap
+  memory only (see the memo card for their approximate-weight semantics).
+- **Nothing about the response changed.** Base and memo candidate served sha256-identical bodies on
+  every review route measured (66 URLs); the memo is invisible to callers and no signature changed.
+
 ### Conventions
 
 - A locator whose stored form decoded to a mapping is classified through one accessor
@@ -156,6 +204,9 @@ a reader must keep:
   was never addressed against the tree at all. If a distinct member is ever wanted for it, that is an
   owner decision and not a leaf edit.
 - **`path_absent` is reported only for a real absence**, and every other refusal names its own cause.
+- **A remembered answer is only ever a content fact keyed by complete object ids**, never a failure,
+  never an abbreviation or ref, and never the fact that a repository holds an object; the observation
+  a caller receives is the one the unremembered path gives.
 - **Boundary.** This module observes. It does not decide which anchors a selection exposes (that is
   `read.py`'s `resolve_anchor` seam), does not select, does not page, does not refuse a read, and writes
   nothing.
@@ -166,6 +217,9 @@ None recorded. Two carried observations belong to the owning seat rather than to
 `unsupported_locator` mapping for an unaddressable spelling is documented rather than given its own
 vocabulary member (an owner decision), and `_tree_entry`'s non-zero-exit branch is disclosed as an
 unasserted defensive branch rather than presented as coverage (L9 ledger **A6**).
+
+The module is at 597 lines after 260921-ICR-L56, at the top of the 600-line healthy band, so the next
+addition here should consider a split first.
 
 ## Docs References
 
@@ -180,17 +234,21 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The three genuinely different facts, and the rule that a caller is never told "absent" for a spelling that was refused.** | `observe_anchor`; `_UnaddressableRecordedPath`; `_TreeLookupFailed` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:104-175; mcp/src/agents_remember/memory/knowledge/read_anchors.py:290-371 |
-| **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** | `_confined_posix_relative` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:490-516 |
-| **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** | `_tree_entry`; `_parse_ls_tree`; `_observed_entry`; `_TREE_ENTRY_MODES` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:432-463; mcp/src/agents_remember/memory/knowledge/read_anchors.py:519-529; mcp/src/agents_remember/memory/knowledge/read_anchors.py:171-224; mcp/src/agents_remember/memory/knowledge/read_anchors.py:40-44 |
+| **The three genuinely different facts, and the rule that a caller is never told "absent" for a spelling that was refused.** | `observe_anchor`; `_UnaddressableRecordedPath`; `_TreeLookupFailed` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:130-192; mcp/src/agents_remember/memory/knowledge/read_anchors.py:534-555 |
+| **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** | `_confined_posix_relative` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:558-584 |
+| **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** | `_tree_entry`; `_parse_ls_tree`; `_observed_entry`; `_TREE_ENTRY_MODES` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:491-531; mcp/src/agents_remember/memory/knowledge/read_anchors.py:587-597; mcp/src/agents_remember/memory/knowledge/read_anchors.py:195-248; mcp/src/agents_remember/memory/knowledge/read_anchors.py:66-70 |
 | The shared rule the typed write and seed boundaries apply, with the measured Git table in its docstring. | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
-| The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. | `anchor_resolver_for`; `_UnrequestedAnchorResolver`; `_TreeAnchorResolver`; `_tree_exists` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:50-101; mcp/src/agents_remember/memory/knowledge/read_anchors.py:248-252 |
+| The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. | `anchor_resolver_for`; `_UnrequestedAnchorResolver`; `_TreeAnchorResolver`; `_tree_exists` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:76-127; mcp/src/agents_remember/memory/knowledge/read_anchors.py:479-488 |
 | The observation vocabulary this module reports into (seven members), declared in `read_anchor.py` and imported through `read.py`'s re-export, with the validator that refuses ranges beside any resolution other than the exact recorded blob. | `AnchorResolutionState`; `AnchorResolution`; `_require_ranges_only_on_the_recorded_bytes` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-35; mcp/src/agents_remember/models/knowledge/read_anchor.py:48-78 |
-| **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** | `_observed_line_range`; `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:203-214; mcp/src/agents_remember/memory/knowledge/read_anchors.py:227-300; mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-| **A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.** | `_observed_symbol`; `resolved_ranges` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:227-300 |
-| **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-| How many lines a blob holds, where a final newline ends the last line. | `_line_count` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:354-357 |
-| The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings. | `_defining_extents` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:379-392 |
+| **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** | `_observed_line_range`; `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:195-248; mcp/src/agents_remember/memory/knowledge/read_anchors.py:251-323; mcp/src/agents_remember/memory/knowledge/read_anchors.py:326-374 |
+| **A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.** | `_observed_symbol`; `resolved_ranges` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:251-323 |
+| **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:326-374 |
+| How many lines a blob holds, where a final newline ends the last line. | `_line_count` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:377-380 |
+| The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name. | `_blob_definitions`; `_defining_extents` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:410-446 |
+| **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** | `_tree_entry`; `_recorded_lines`; `_blob_definitions` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:491-531; mcp/src/agents_remember/memory/knowledge/read_anchors.py:387-431 |
+| **The tree probe that is never remembered, run once per resolver, and the guard that serves remembered answers only behind it; the two residuals stated in the module docstring.** | `_tree_exists`; `_TreeAnchorResolver`; "Two cases fall outside that guard" | mcp/src/agents_remember/memory/knowledge/read_anchors.py:479-488; mcp/src/agents_remember/memory/knowledge/read_anchors.py:108-127; mcp/src/agents_remember/memory/knowledge/read_anchors.py:24-31 |
+| The tables, their keys and the one admission test for a key. | `TREE_ENTRIES`; `BLOB_LINES`; `BLOB_DEFINITIONS`; `is_complete_object_id` | mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:51-54; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:154-160 |
+| **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.** | "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" | mcp/tests/test_read_anchor_memo.py:187-298; mcp/tests/test_read_anchor_memo.py:387-511 |
 | **The cases that pin the ranges: two members at distinct ranges in one file, a double definition carrying both ranges, a range past the blob end unresolved, and a mismatched blob carrying none.** | "test_a_recorded_range_past_the_blob_end_is_unresolved_with_no_range"; "test_a_symbol_defined_twice_carries_every_defining_range" | mcp/tests/test_review_family_member_sources.py:339-351; mcp/tests/test_review_family_member_sources.py:354-361 |
 | **The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.** | "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_paths.py:370-444 |
 | **The case that drives the second producer: a Git this process cannot run.** | "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:539-644 |
@@ -209,6 +267,7 @@ repository root the caller supplied; no second repository, ledger or coordinatio
 
 ## Update History
 
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`; reviewed diff unchanged from A2 tree `483c6e10`, review R2 PASS): **extends** the observation contract with the process-lifetime memo (ICR-R24@v3). Added the Purpose paragraph and *The process-lifetime memo* section: the three tables and their keys, answers-only and complete-id-only admission, the per-resolver tree probe that is never remembered (the fix for review L56-R1-F1), and the two residuals the module docstring names (a present tree whose blob is lost; resolver-less callers, of which curator ingest is the one production caller). Recorded that `_recorded_lines` returns a shared tuple and that `_blob_definitions` parses once per (root, blob, grammar) while `_defining_extents` only looks names up; added one invariant and the 597-line size note. **Corrected** a pre-existing inaccuracy: the stated decision order no longer puts a symbol-locator refusal before the tree check (symbol locators are observed after the exact-blob match, as they already were at the base). Re-read the reopened `_defining_extents`, `_line_count`, `_tree_entry` and `_tree_exists` claims (wording retained or extended as above) and re-derived every range on this card against the candidate; added four rows for the memo and its test module. No verification stamp was advanced; closeout owns it.
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the resolver now reports the region an exact recorded blob supports as structured `resolved_ranges` (every defining extent of a symbol; a recorded line range only when the blob holds those lines; none for a file locator), with `detail` unchanged. Recorded the bound check (`_observed_line_range`, `_line_count`), that an out-of-range recorded range keeps `exact_recorded_blob` and carries no range, and corrected the convention that no content is read (the exact blob's lines are read to measure extents and bounds; nothing but numbers leaves the module). Re-pointed the vocabulary row to `read_anchor.py` and re-measured shifted ranges. No verification stamp was advanced.
 
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-18T13:43+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | path | `mcp/tests/test_codex_capsule_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -100,7 +100,7 @@ No Domain Documentation entries are configured in the resolved source registry.
 | A malformed payload refuses before delivery, and the value type guards its own wire form. | `test_a_malformed_capsule_payload_is_refused_before_delivery`; `test_the_carrier_value_type_guards_its_own_wire_form` | mcp/tests/test_codex_capsule_delivery.py:816-885; mcp/tests/test_codex_capsule_delivery.py:886-959 |
 | The session decision path compares the recorded binding and digest across four resume branches. | `test_the_session_decision_path_compares_the_recorded_binding_and_digest` | mcp/tests/test_codex_capsule_delivery.py:1055-1120 |
 | The live case runs against the installed app-server; a version mismatch skips with its reason. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1208-1256 |
-| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:347-347 |
+| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:348-348 |
 
 ## Cross-Repo References
 
@@ -111,6 +111,7 @@ The live case and the instruction-channel fixture are pinned to the installed ve
 | The live case is gated on the installed CLI version and reports a mismatch as a skip, never as a pass. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1206-1256 |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_final_output_receipt.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T09:15:00+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ narrowing, so each of them fails if that behaviour is reverted.
 | **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** | `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound` | mcp/tests/test_review_final_output_receipt.py:755-788 |
 | **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** | `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:790-823 |
 | **The consumer case: the reopened generation reports what the task delivered, phase by phase.** | `test_the_reopened_generation_reports_what_the_task_delivered` | mcp/tests/test_review_final_output_receipt.py:825-871 |
-| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:216-216; mcp/tests/evidence-lifecycle.toml:802-802; mcp/tests/evidence-lifecycle.toml:1430-1430; mcp/tests/evidence-lifecycle.toml:1474-1474; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
+| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:217-217; mcp/tests/evidence-lifecycle.toml:802-802; mcp/tests/evidence-lifecycle.toml:1430-1430; mcp/tests/evidence-lifecycle.toml:1474-1474; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 
 ## Cross-Repo References
 
@@ -184,6 +184,7 @@ repository rather than to an invented one.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_paths.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`|
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -102,11 +102,11 @@ No domain documentation source is configured for this repository (`system/source
 | **The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.** | "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_paths.py:370-444 |
 | **The lookup that ran and could not answer, refused as unavailable rather than absent.** | "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:445-538 |
 | **The lookup that could not be run at all, reported as the same fact.** | "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path" | mcp/tests/test_knowledge_read_paths.py:539-644 |
-| **The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.** | `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:490-516; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
+| **The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.** | `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:558-584; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | **The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.** | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
 | **The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.** | `PathSeed` | mcp/src/agents_remember/models/knowledge/read.py:128-155 |
 | **The pre-existing sibling node's `detail` assertion, which round 3 added (the fourth worktree edit).** | "the unavailable tree is the producer that answers here, and its detail says which fact it is" | mcp/tests/test_knowledge_read_paths.py:451-542 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_paths.py" |mcp/tests/test-evidence-lanes.toml:244-244|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_paths.py" |mcp/tests/test-evidence-lanes.toml:245-245|
 
 ## Cross-Repo References
 
@@ -117,6 +117,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base; and re-derived the `_confined_posix_relative` range in `read_anchors.py` (now `:558-584`), which moved when this leaf added the memo code above it. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

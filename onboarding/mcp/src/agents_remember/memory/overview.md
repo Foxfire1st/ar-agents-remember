@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastUpdated | 2026-09-28T23:11:42+02:00 |
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,26 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260921-ICR-L56 Anchor Observation Remembers Immutable Answers, Never Availability
+
+Anchor observation now keeps a bounded, process-lifetime memo so one review's owners and one comparison's
+subjects stop re-asking Git and re-parsing the same trees and blobs (ICR-R24@v3; first family/invariant
+visit about 1.3–1.6 s → about 0.3 s, with sha256-identical responses). The split across this route is
+deliberate: **`knowledge/read_anchor_memo.py` stores and bounds** (a weight-bounded LRU table, three
+tables keyed by repository root plus complete object ids, the one complete-id admission test) and knows
+nothing about anchors; **`knowledge/read_anchors.py` decides what may be remembered** — only content
+answers (tree entries including a definite absence, blob lines, per-grammar definitions), only after Git
+or the parser answered, only for complete ids. Whether a repository still *holds* a tree is never
+remembered: every resolver probes it afresh and remembered answers are served only behind that probe. The
+two uncovered residuals (a present tree whose blob was lost; resolver-less callers, i.e. curator ingest)
+are stated in the owner's docstring and card. No store, daemon, invalidation or caller signature was
+added.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. | "What is never remembered is whether the repository still *holds* the tree" | mcp/src/agents_remember/memory/knowledge/read_anchors.py:17-34 |
+| The memo module's tables and admission test. | `is_complete_object_id`; `BoundedMemo`; `TREE_ENTRIES`; `BLOB_LINES`; `BLOB_DEFINITIONS` | mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:51-122; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:154-160 |
 
 ## 260921-ICR-L44 The Anchor Resolver States The Region It Already Measured
 
@@ -29,8 +49,8 @@ bytes; it reads the exact blob's lines only to measure a symbol's extents or a r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bound-checked line-range observation. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-| The symbol observation carrying every defining extent. | `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:227-300 |
+| The bound-checked line-range observation. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:326-374 |
+| The symbol observation carrying every defining extent. | `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:251-323 |
 
 ## Curator candidate source continuity
 
@@ -1214,7 +1234,7 @@ one leaf's curation pass.
 | Whole-item paging over an already-selected scope. | `page_of_scope` | mcp/src/agents_remember/memory/knowledge/read.py:762-816 |
 | **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** | `_page_counts` | mcp/src/agents_remember/memory/knowledge/read.py:842-866 |
 | The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:370-414 |
-| **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:106-168; mcp/src/agents_remember/memory/knowledge/read_anchors.py:490-516; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
+| **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:130-192; mcp/src/agents_remember/memory/knowledge/read_anchors.py:558-584; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
 | The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-61; mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-83; mcp/src/agents_remember/memory/knowledge/read_refusals.py:86-112; mcp/src/agents_remember/memory/knowledge/read_refusals.py:115-139; mcp/src/agents_remember/memory/knowledge/read_refusals.py:142-166; mcp/src/agents_remember/memory/knowledge/read_refusals.py:169-189 |
 | **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 | The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
@@ -1250,7 +1270,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:246-246 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:247-247 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1511,6 +1531,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): body update — added the *Anchor Observation Remembers Immutable Answers, Never Availability* section for the new `knowledge/read_anchor_memo.py` module and the owner/storage split with `knowledge/read_anchors.py` (per-file detail is in the two cards). Re-derived the four `read_anchors.py` ranges this overview cites against the candidate (`_observed_line_range`, `_observed_symbol`, `observe_anchor`, `_confined_posix_relative`) and re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted its row at `:173`. Wording of existing rows unchanged; no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

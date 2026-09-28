@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_family_member_sources.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:42:25+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -95,8 +95,8 @@ The rows name the fixture, the reader and each case, plus the owners they drive.
 | A doubly-defined symbol carries both ranges. | "test_a_symbol_defined_twice_carries_every_defining_range" | mcp/tests/test_review_family_member_sources.py:354-361 |
 | The legacy fields keep their values. | "test_the_existing_source_fields_keep_their_published_values" | mcp/tests/test_review_family_member_sources.py:364-385 |
 | The projection under test. | `member_source` | mcp/src/agents_remember/application/review_family_sources.py:27-51 |
-| The resolver that fills the ranges. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-| The lane registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/test-evidence-lanes.toml:183-183 |
+| The resolver that fills the ranges. | `_observed_line_range` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:326-374 |
+| The lane registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/test-evidence-lanes.toml:184-184 |
 | The shared-fixture consumer registration. | "mcp/tests/test_review_family_member_sources.py" | mcp/tests/evidence-lifecycle.toml:1499-1499 |
 
 ## Cross-Repo References
@@ -108,6 +108,7 @@ No cross-repository behavior is exercised; the Git repository and datasets are t
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base; and re-derived the `_observed_line_range` range in `read_anchors.py` (now `:326-374`), which moved when this leaf added the memo code above it. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:49:33+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync): No content impact: citation ranges into files L45 changes (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact line map from `9b2f775f` to the synced candidate; each moved row cites the same line content. Wording unchanged; no stamp advanced.
 

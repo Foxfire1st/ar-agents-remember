@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_projection_vault_safety.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
+| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -189,7 +189,7 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module docstring states the plan's one-acceptance-case rule, names the eight checkpoints, and names the two proof obligations that need real records.** | "One acceptance case covers it" | mcp/tests/test_knowledge_projection_vault_safety.py:1-13; mcp/src/agents_remember/memory/knowledge/managed_projection.py:33-36 |
-| The module declares the integration marker at module level and pins the renderer version its destination profile and rendered outputs both carry. | "pytestmark = pytest.mark.integration" | mcp/tests/test_knowledge_projection_vault_safety.py:52-52; mcp/tests/test-evidence-lanes.toml:199-275 |
+| The module declares the integration marker at module level and pins the renderer version its destination profile and rendered outputs both carry. | "pytestmark = pytest.mark.integration" | mcp/tests/test_knowledge_projection_vault_safety.py:52-52; mcp/tests/test-evidence-lanes.toml:200-276 |
 | **The fixture is the shared real dataset: one repository built through the public write operations, left closed, whose `database_path` and `repository_id` every case addresses.** | `build_read_scope_fixture` | mcp/tests/test_knowledge_projection_vault_safety.py:51-55; mcp/tests/read_scope_test_support.py:173-239; mcp/tests/read_scope_test_support.py:266-283; mcp/tests/evidence-lifecycle.toml:1411-1414 |
 | Three local helpers name the acceptance profile, build one rendered output over the pinned renderer version, and read the destination manifest. | `_manifest` | mcp/tests/test_knowledge_projection_vault_safety.py:85-86 |
 | **The one acceptance case drives all eight checkpoints over one destination and one manifest lineage, then asserts the checkpoint id set and the final manifest generation.** | `test_the_vault_safety_contract_holds_for_all_eight_checkpoints_in_one_scenario` | mcp/tests/test_knowledge_projection_vault_safety.py:83-116 |
@@ -217,6 +217,7 @@ nothing it asserts reaches a second repository, a network, a provider or a Git r
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_change_sets.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`|
-| lastVerifiedCommitDate |  2026-09-28T20:30:48+02:00|
+| lastVerifiedCommitHash |  `69883386d36d7cdb7faeed5bdf275ddd66d87aea`|
+| lastVerifiedCommitDate |  2026-09-28T23:28:51+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -174,7 +174,7 @@ No domain documentation source is configured for this repository (`system/source
 | The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:919-932 |
 | The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:935-966 |
 | The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:969-983 |
-| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" |mcp/tests/test-evidence-lanes.toml:224-224|
+| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" |mcp/tests/test-evidence-lanes.toml:225-225|
 | The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1229-1247; mcp/tests/evidence-lifecycle.toml:1246-1246; mcp/tests/evidence-lifecycle.toml:34-37; mcp/tests/evidence-lifecycle.toml:1252-1260 |
 
 ## Cross-Repo References
@@ -187,6 +187,7 @@ under a temporary root and construct no process, publication or Git object.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/evidence-lifecycle.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
