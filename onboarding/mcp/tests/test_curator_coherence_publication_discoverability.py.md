@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_coherence_publication_discoverability.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38`|
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -135,7 +135,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.** | `test_a_member_added_to_the_declaration_reaches_both_messages` | mcp/tests/test_curator_coherence_publication_discoverability.py:220-240 |
 | The non-publish refusals, by name and in model order, and the freeze branch's preserved message. | `test_non_publish_actions_name_the_publication_member_they_received`; `test_non_publish_refusal_names_every_supplied_field_in_model_order`; `test_freeze_snapshot_keeps_its_own_named_refusal` | mcp/tests/test_curator_coherence_publication_discoverability.py:243-256; mcp/tests/test_curator_coherence_publication_discoverability.py:259-273; mcp/tests/test_curator_coherence_publication_discoverability.py:276-283 |
 | The module this one was split out of, which keeps the Gate-5 orchestration and the shared scaffold. | "Split from ``test_final_full_memory_coherence_certification.py``" | mcp/tests/test_final_full_memory_coherence_certification.py:1-19 |
-| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:235-235|
+| The lane row this module was appended to. | "mcp/tests/test_curator_coherence_publication_discoverability.py" |mcp/tests/test-evidence-lanes.toml:237-237|
 
 ## Cross-Repo References
 
@@ -147,6 +147,7 @@ repository's own model and publication route over a stubbed observation.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 

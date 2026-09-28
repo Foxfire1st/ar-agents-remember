@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678`|
-| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ This template records the exact checks and their failed or not-run status as han
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. | `# Template — Curator Brief`; `**This template feeds inputs; it does not author rules.**` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-13; skills/l-01-agent-lifecycles/templates/curator-brief.md:16-21 |
-| The curator's three-way reconciliation procedure has one home outside the brief. | `# Operation — Curation`; `## Normal workflow` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:41-77 |
+| The curator's three-way reconciliation procedure has one home outside the brief. | `# Operation — Curation`; `## Normal workflow` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:41-80 |
 | The truth boundary the brief obeys, and the curator's handoff artifact, have one home. | `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates` | skills/l-01-agent-lifecycles/core/acceptance.md:1-1; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
 | The canonical template is the doctrine owner. | `# Template — Curator Brief` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1 |
 | Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
@@ -108,6 +108,7 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`skills/l-01-agent-lifecycles/operations/curation.md`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
 - 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.

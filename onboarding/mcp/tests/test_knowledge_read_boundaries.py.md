@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_boundaries.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The continuation-binding nodes, each with its own control, and the manifest node that verifies every page's own cursor.** | "test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page"; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_whose_declared_snapshot_was_altered_refuses_rather_than_mixing_revisions"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:613-708; mcp/tests/test_knowledge_read_boundaries.py:711-769; mcp/tests/test_knowledge_read_boundaries.py:772-807; mcp/tests/test_knowledge_read_boundaries.py:891-920; mcp/tests/test_knowledge_read_boundaries.py:923-954 |
 | **The read-only property, measured on a real database file.** | "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:957-957 |
 | **The disclosed unasserted defensive branch this module does not count as coverage.** | `_tree_entry`; `_TreeLookupFailed` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:432-463; mcp/src/agents_remember/memory/knowledge/read_anchors.py:480-487 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" |mcp/tests/test-evidence-lanes.toml:248-248|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_boundaries.py" |mcp/tests/test-evidence-lanes.toml:249-249|
 
 ## Cross-Repo References
 
@@ -119,6 +119,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
 

@@ -4,8 +4,8 @@
 | --- | --- |
 | repository | agents-remember |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -137,9 +137,9 @@ direct evidence.
 | The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
 | The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
 | The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-904 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" |mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:227-232; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65|
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" |mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:227-232; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65|
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" |mcp/tests/test-evidence-lanes.toml:242-242; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62|
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" |mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:229-234; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65|
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" |mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:229-234; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65|
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" |mcp/tests/test-evidence-lanes.toml:244-244; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62|
 
 ## Cross-Repo References
 
@@ -151,6 +151,7 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 

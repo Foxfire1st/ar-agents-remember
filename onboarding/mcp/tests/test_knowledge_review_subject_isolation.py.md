@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_subject_isolation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T02:30+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -184,7 +184,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The production port every case reads through.** | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-132 |
 | **The production policy these cases measure.** | `review_applicability`; `AppliedRecords` | mcp/src/agents_remember/application/review_record_applicability.py:183-214; mcp/src/agents_remember/application/review_record_applicability.py:134-180 |
 | **The vocabulary these cases read their assertions from.** | `ReviewDisplayedApplicability`; `ReviewApplicabilitySummary` | mcp/src/agents_remember/models/knowledge/review_applicability.py:96-137; mcp/src/agents_remember/models/knowledge/review_applicability.py:169-222 |
-| **The lane row that registers this module — `unit-regression` is a bare TOML key, so it is named here rather than anchored — and the first of the four consumer rows its cases are derived for.** | "mcp/tests/test_knowledge_review_subject_isolation.py" | mcp/tests/test-evidence-lanes.toml:114-118; mcp/tests/evidence-lifecycle.toml:454-455 |
+| **The lane row that registers this module — `unit-regression` is a bare TOML key, so it is named here rather than anchored — and the first of the four consumer rows its cases are derived for.** | "mcp/tests/test_knowledge_review_subject_isolation.py" | mcp/tests/test-evidence-lanes.toml:115-119; mcp/tests/evidence-lifecycle.toml:454-455 |
 
 ## Cross-Repo References
 
@@ -196,4 +196,5 @@ worktree with an external memory half.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the case module this leaf introduced (`ICR-R26@v1`). The card records the enclosure the cases drive, that every supplied record class is produced by its owning operation rather than assembled by hand, and each of the thirteen cases as the one property it pins — including the three findings the fix rounds closed (F-V1's malformed revision binding, F-V2's page-independent classification and F-V6's honest `direct` basis), which are recorded as current behaviour rather than as history. The lane row and the four exact-scope consumer rows the census derived are named, so a reader can see what registers this module and on what evidence. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.

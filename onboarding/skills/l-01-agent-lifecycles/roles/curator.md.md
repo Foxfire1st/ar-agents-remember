@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c`|
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,11 @@ When a family successor adds obligations, the curator selects unchanged siblings
 The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. Per-entry results, both coverage planes and published identity are read as separate facts. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
 
 The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
+
+Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure every hand-off target carries
+its own authored `rationale` (why that place carries the obligation, specific to the construct it names,
+optional `role`) before ingest, writing it from the evidence where the producer gave none; the writer
+never generates one and refuses an unexplained target with `realization_rationale_absent`.
 
 ### Conventions
 
@@ -60,8 +65,9 @@ These references name the current owners and the behavior they establish.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Required task, source, handoff and publication inputs. | `## Inputs` | skills/l-01-agent-lifecycles/roles/curator.md:11-58 |
-| Three-way reconciliation, explicit retention, writer/readback and full quality duties. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-156 |
-| The curator’s prohibited writes and source-stamp boundary. | `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:201-215 |
+| Three-way reconciliation, explicit retention, writer/readback and full quality duties. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-159 |
+| The curator’s prohibited writes and source-stamp boundary. | `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:204-218 |
+| Process step 3 requires an authored rationale on every hand-off target before ingest. | "every target carries its own authored" | skills/l-01-agent-lifecycles/roles/curator.md:70-76 |
 
 ## Cross-Repo References
 
@@ -72,6 +78,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic records Process step 3's new duty (every target carries an authored rationale before ingest; the writer generates none); new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
 

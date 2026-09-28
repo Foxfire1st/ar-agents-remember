@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,22 @@ The family plane distinguishes declared guarantees, exact memberships, deliberat
 The references must resolve in the selected dataset within an explicitly declared same-family predecessor. Omitted/empty retention keeps none. No current-head lookup or implicit roster inheritance is permitted. Repeated IDs, duplicate new endpoints and retain/retire conflicts refuse. A changed nonempty retention set or basis under an allocated declaration key is a content conflict.
 
 The public writer adds successor edges while leaving old records unchanged. Check `retainedFromMemberId`, measured unchanged-sibling counts and the published exact roster. This syntax extends a declaration carried by a genuine obligation; it is not a standalone family-only operation. External evidence retains document identity and provenance instead of fabricated Git anchors.
+
+Since leaf `260921-ICR-L45` (developer ruling "require rationale"; Architect rulings on reviews R1–R3)
+each `target` element is `{path, locator, governing_route, rationale, role}`: `rationale` is the required
+authored explanation of why that place carries the obligation, `role` is optional (omit to inherit the
+entry's `realization_role`; only when neither level states one is the claim `unclassified`), and an entry
+may state `realization_rationale` / `realization_role` as an explicit default. The writer never generates a
+rationale. It refuses, per entry and before minting, a target with no rationale
+(`realization_rationale_absent`), non-string values (`realization_value_not_text`), unknown role words
+including `"absent"` (`realization_role_unknown`), rationales over 20000 characters
+(`realization_rationale_too_long`), and the placeholder route word `absent` in any case
+(`realization_governing_route_absent_literal`) — a missing route is spelled by omitting the key. An exact
+retry of an already committed entry is not checked again. The authority paragraph states that this element
+shape supersedes rule 1's `{path, locator, governing_route}` in the external schema note
+*260915-KS-curator-handoff-list-schema.md* revision 1 (not edited; it lives outside this repository), while
+the rest of rule 1 stands; the verbatim worked examples predate per-target rationale and say so.
+This package copy is generated from the canonical root template by `scripts/sync-skills.py`.
 
 ### Conventions
 
@@ -61,8 +77,9 @@ These references name the current owners and the behavior they establish.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:94-144 |
-| The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:297-365 |
+| Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
+| The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
+| **Per-target realization rationale and role, and the stated supersession of revision 1's target element shape (generated copy).** | "Realization rationale and role: one authored explanation per target"; "this file's element shape supersedes rule 1's" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
 
 ## Cross-Repo References
 
@@ -73,6 +90,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — this generated copy now carries the per-target rationale/role element shape, the named refusals and the supersession statement (regenerated by `sync-skills.py`, byte-identical to the canonical template). No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
 

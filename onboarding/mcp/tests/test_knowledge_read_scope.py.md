@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_read_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -126,12 +126,12 @@ No domain documentation source is configured for this repository (`system/source
 | The truncation, too-small-budget, execution-bound and absence nodes. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total"; "test_the_declared_bound_admits_a_selection_that_fits_and_refuses_one_that_does_not"; "test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope"; "test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929; mcp/tests/test_knowledge_read_scope.py:930-961; mcp/tests/test_knowledge_read_scope.py:962-981; mcp/tests/test_knowledge_read_scope.py:982-1000 |
 | **The persisted-nothing and namespace-confinement nodes.** | "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged"; "test_the_selection_reads_only_the_requested_namespace" | mcp/tests/test_knowledge_read_scope.py:1001-1058; mcp/tests/test_knowledge_read_scope.py:1059-1163 |
 | The fixture every node builds through the public store operations. | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-284 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:111-111|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:111-111|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:112-112|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:112-112|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
 
 ## Cross-Repo References
 
@@ -140,10 +140,11 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1461-1461|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1463-1463|
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_read_scope.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1461-1461. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1461-1461. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

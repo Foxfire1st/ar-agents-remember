@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_family_authoring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ operation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of what it adds and of the eight properties its cases measure.** | "What this module adds is what those cannot reach"; "a membership can be **retired** by the identity of the row this run read" | mcp/tests/test_curator_family_authoring.py:1-27 |
-| The family suite imports the shared admitted source fixture and handoff builders rather than duplicating them. | `SourcePair`; `entry`; `pair`; `symbol`; `target` | mcp/tests/test_knowledge_curator_ingest_list.py:166-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-374; mcp/tests/test_knowledge_curator_ingest_list.py:183-262; mcp/tests/test_knowledge_curator_ingest_list.py:389-392; mcp/tests/test_knowledge_curator_ingest_list.py:377-380 |
+| The family suite imports the shared admitted source fixture and handoff builders rather than duplicating them. | `SourcePair`; `entry`; `pair`; `symbol`; `target` | mcp/tests/test_knowledge_curator_ingest_list.py:166-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-376; mcp/tests/test_knowledge_curator_ingest_list.py:183-262; mcp/tests/test_knowledge_curator_ingest_list.py:391-394; mcp/tests/test_knowledge_curator_ingest_list.py:379-382 |
 | The authored text the assertions compare against. | `FAMILY_ALPHA`; `FAMILY_BETA`; `GUARANTEE_ALPHA`; `NO_FAMILY_BASIS`; `EXTERNAL_URL`; `EXTERNAL_DIGEST`; `EXTERNAL_LOCATION` | mcp/tests/test_curator_family_authoring.py:71-91; mcp/tests/test_curator_ingest_write_and_retention.py:75-75 |
 | The four thin builders: one authored decision, one membership, one attach-a-plane call each for family and sources. | `declared`; `membership`; `with_family`; `with_sources` | mcp/tests/test_curator_family_authoring.py:99-117; mcp/tests/test_curator_family_authoring.py:120-134; mcp/tests/test_curator_family_authoring.py:137-141; mcp/tests/test_curator_ingest_write_and_retention.py:91-95 |
 | The declared-external-source builder and the citation helper. | `source`; `citation` | mcp/tests/test_curator_family_authoring.py:158-181; mcp/tests/test_curator_family_authoring.py:30-30; mcp/tests/test_curator_family_authoring.py:144-147 |
@@ -165,11 +165,11 @@ operation.
 | A changed no-family basis on an already-stored revision refused by name; a run that writes nothing retaining no manifest and saying so. | `test_a_changed_no_family_basis_on_a_stored_revision_is_refused_by_name`; `test_a_run_that_writes_nothing_retains_no_manifest_and_says_so` | mcp/tests/test_curator_ingest_write_and_retention.py:346-406; mcp/tests/test_curator_ingest_write_and_retention.py:409-449 |
 | An unversioned source refused; a planning run writing no family row and saying so. | `test_a_source_with_neither_version_nor_retrieval_time_is_refused`; `test_a_planning_run_writes_no_family_row_and_says_so` | mcp/tests/test_curator_ingest_write_and_retention.py:452-472; mcp/tests/test_curator_ingest_write_and_retention.py:475-500 |
 | **The command line authoring the family plane and reporting it, which is the case the F4 guard bites on.** | `test_the_curator_command_line_authors_the_family_plane_and_reports_it` | mcp/tests/test_curator_ingest_write_and_retention.py:503-578 |
-| The operation under test and the report type its outcomes are read from. | `ingest_curator_list`; `IngestReport`; `IngestSelection`; `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:486-541; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1091-1108; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_curator_ingest.py:220-220 |
+| The operation under test and the report type its outcomes are read from. | `ingest_curator_list`; `IngestReport`; `IngestSelection`; `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:495-550; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1096-1113; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_curator_ingest.py:229-229 |
 | The view request and family view the read-back builds. | `ViewRequest`; `FamilyView`; `InvariantView` | mcp/src/agents_remember/models/knowledge/view.py:1117-1148; mcp/src/agents_remember/models/knowledge/view.py:995-999; mcp/src/agents_remember/models/knowledge/view.py:988-992 |
 | The command-line entry point one case drives end to end. | `main` | mcp/src/agents_remember/cli/__main__.py:73-75 |
 | The candidate database the store is reopened from. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61 |
-| The shared list fixture owns source-pair setup and the entry/target/symbol builders. | `SourcePair`; `entry`; `pair`; `target`; `symbol` | mcp/tests/test_knowledge_curator_ingest_list.py:166-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-374; mcp/tests/test_knowledge_curator_ingest_list.py:183-262; mcp/tests/test_knowledge_curator_ingest_list.py:377-380; mcp/tests/test_knowledge_curator_ingest_list.py:389-392 |
+| The shared list fixture owns source-pair setup and the entry/target/symbol builders. | `SourcePair`; `entry`; `pair`; `target`; `symbol` | mcp/tests/test_knowledge_curator_ingest_list.py:166-179; mcp/tests/test_knowledge_curator_ingest_list.py:346-376; mcp/tests/test_knowledge_curator_ingest_list.py:183-262; mcp/tests/test_knowledge_curator_ingest_list.py:379-382; mcp/tests/test_knowledge_curator_ingest_list.py:391-394 |
 
 ## Cross-Repo References
 
@@ -181,6 +181,7 @@ own pair of repositories under `tmp_path`, and the resolved settings' `crossRepo
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/test_knowledge_curator_ingest_list.py`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `ingest`; `candidate_of`; `database_of` repointed to mcp/tests/test_curator_family_authoring.py:150-163; mcp/tests/test_curator_family_authoring.py:166-169; mcp/tests/test_curator_family_authoring.py:172-175. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `committed_revision`; `committed_invariant` repointed to mcp/tests/test_curator_family_authoring.py:286-297; mcp/tests/test_curator_family_authoring.py:300-311. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_review_assessment_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,9 +109,9 @@ the production path to drive.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:320-320; mcp/tests/test-evidence-lanes.toml:243-243 |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:320-320; mcp/tests/test-evidence-lanes.toml:243-243 |
-|The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/test-evidence-lanes.toml:320-320; mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-420 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:321-321; mcp/tests/test-evidence-lanes.toml:244-244 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:321-321; mcp/tests/test-evidence-lanes.toml:244-244 |
+|The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/test-evidence-lanes.toml:321-321; mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-420 |
 | The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. | `curator_coherence_action`; `_exact_review_assessments`; `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:93-103; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:259-313; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464 |
 | The destination and read-back the survival and blocked cases measure. | `publish_assessment_evidence_bytes`; `read_back_published_bytes`; `AssessmentEvidenceBlockedError` | mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:66-96; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:154-194; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:197-219 |
 | The typed collection the publish action accepts and the uniqueness rule it enforces. | `CuratorCoherenceRecord`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:226-307; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:449-529 |
@@ -135,6 +135,7 @@ new shared support module was written. The evidence-lifecycle catalogue's identi
 a **consumer list** changed, and the catalogue guard validates that change in both directions.
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
 

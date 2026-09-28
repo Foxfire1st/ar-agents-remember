@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_master_net_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ the reviewed task evidence for any current behavioral claim.
 | The evidence lane the module runs in. | `pytestmark` | mcp/tests/test_master_net_generation.py:67-67 |
 | The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. | `MasterFixture`; `master_fixture` | mcp/tests/test_master_net_generation.py:110-229; mcp/tests/test_master_net_generation.py:231-235; mcp/tests/test_master_net_generation.py:242-242 |
 | The conforming add-then-remove case and the F1 diff-failure refusal case. | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
-| The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:131-131 |
+| The lane row that makes these cases run. | `test_master_net_generation` | mcp/tests/test-evidence-lanes.toml:132-132 |
 | The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. | `select_master_net`; `master_changeset` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/changeset.py:247-323 |
 
 ## Cross-Repo References
@@ -114,6 +114,7 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

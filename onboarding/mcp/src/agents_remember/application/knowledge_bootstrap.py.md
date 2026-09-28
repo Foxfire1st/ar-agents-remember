@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ task-tree document rather than a configured domain source.
 | The destination fields taken from the read-back when there was one, so a disagreement is readable. | `_destination_state`; `_destination_identity` | mcp/src/agents_remember/application/knowledge_bootstrap.py:502-509; mcp/src/agents_remember/application/knowledge_bootstrap.py:512-519 |
 | Which read established the destination fields, or that this run published nothing. | `_read_back_state`; `_destination_detail` | mcp/src/agents_remember/application/knowledge_bootstrap.py:522-525; mcp/src/agents_remember/application/knowledge_bootstrap.py:528-533 |
 | **The derivation of both lists stated by name, with the unmeasured entries named as such.** | `_remaining_basis`; "UNMEASURED rather than remaining" | mcp/src/agents_remember/application/knowledge_bootstrap.py:536-582 |
-| **The one operation both admissions reach, and the selection this run hands it.** | `ingest_curator_list`; `IngestSelection`; `IngestPublication`; `HeldOperation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1091-1108; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1074-1088; mcp/src/agents_remember/application/knowledge_curator_ingest.py:459-483 |
+| **The one operation both admissions reach, and the selection this run hands it.** | `ingest_curator_list`; `IngestSelection`; `IngestPublication`; `HeldOperation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1096-1113; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1079-1093; mcp/src/agents_remember/application/knowledge_curator_ingest.py:468-492 |
 | The staging owner whose reader and writer this run uses. | `read_progress`; `write_progress`; `staged_candidate_directory`; `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:230-233; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:236-239; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:253-323; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:393-415 |
 | **The bounded contents read the remaining list is derived from.** | `dataset_revisions`; `DatasetContents` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:55-100; mcp/src/agents_remember/application/knowledge_dataset_contents.py:103-182 |
 | The read route's own publication-readback owner. | `published_identity_read_back`; `DeclaredPublicationLocation`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-250; mcp/src/agents_remember/application/knowledge_publication_route.py:68-80; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112 |
@@ -185,6 +185,7 @@ names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the

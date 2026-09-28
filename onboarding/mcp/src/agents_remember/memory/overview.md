@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1221,7 +1221,7 @@ one leaf's curation pass.
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-603 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
-| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1138-1138 |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1139-1139 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
@@ -1250,7 +1250,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:243-243 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:244-244 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1511,6 +1511,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section recording that the anchor resolver now states the region it measured as structured `resolved_ranges`, with the exact-blob bound check for recorded line ranges.
 
@@ -1759,7 +1760,7 @@ disposal or the two-phase creation moved.
 | --- | --- | --- |
 | The authored-decision channel as a sequence, and the one matching rule that still bounds it to a single row. | `MergeRequest`; `apply_changeset`; `_authored_decision` | mcp/src/agents_remember/models/knowledge/merge.py:286-325; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:291-397; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:504-534 |
 | The taxonomy's one key predicate and the namer built on it, so the builder and the operator-facing name cannot disagree. | `_TAXONOMY`; `_CONFLICT_NAMES`; `_conflict_key`; `_conflict_name` | mcp/src/agents_remember/memory/knowledge/merge.py:785-790; mcp/src/agents_remember/memory/knowledge/merge.py:793-800; mcp/src/agents_remember/memory/knowledge/merge.py:803-821; mcp/src/agents_remember/memory/knowledge/merge.py:824-827 |
-| The candidate layout's fixed part and its owner-writable part. | `candidate_database_path`; "curator-allocation-journal.json" | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61; mcp/src/agents_remember/application/knowledge_curator_ingest.py:194-194; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:1-11 |
+| The candidate layout's fixed part and its owner-writable part. | `candidate_database_path`; "curator-allocation-journal.json" | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61; mcp/src/agents_remember/application/knowledge_curator_ingest.py:203-203; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:1-11 |
 
 ## Update History
 - 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **route body updated.** The section above records this route's own impact — two enumerating read methods on `OpenedKnowledgeStore` (`list_invariants`, `list_families`), each returning every recorded identity of its kind ordered by the identity's own column, decoded through the shared row decoders, with no filter and no count. It states the boundary explicitly: the enumeration is not a selection rule, and the comparing-and-dropping belongs to `application/knowledge_review.py`. Three rows were added and the L42 section below is untouched and keeps its own history block.

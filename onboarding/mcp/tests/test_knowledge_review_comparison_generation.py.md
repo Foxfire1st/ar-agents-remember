@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -157,10 +157,10 @@ would accept it.
 | **The two custody cases: the work branch is not custody, and protected history taking custody stops the pin.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens` | mcp/tests/test_knowledge_review_comparison_generation.py:871-912; mcp/tests/test_knowledge_review_comparison_generation.py:915-968 |
 | The moved-ref refusal, and the dead-versus-live stage sweep driven through a real child process. | `test_a_retention_ref_that_moved_is_never_deleted`; `test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not`; `_stage_left_by_a_dead_process` | mcp/tests/test_knowledge_review_comparison_generation.py:971-1018; mcp/tests/test_knowledge_review_comparison_generation.py:1032-1059; mcp/tests/test_knowledge_review_comparison_generation.py:1175-1196 |
 | **The measured-discard case, and the live-pin-before-release-history case.** | `test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch`; `test_a_frozen_again_comparison_reports_its_live_pin_before_the_release_history` | mcp/tests/test_knowledge_review_comparison_generation.py:1062-1126; mcp/tests/test_knowledge_review_comparison_generation.py:1129-1172 |
-| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:119-119; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:120-120; mcp/tests/test-evidence-lanes.toml:5-5 |
 | **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer — each cited down to the artifact's own `consumer_scope` and the list it opens.** | `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:96-96; mcp/tests/evidence-lifecycle.toml:97-97 |
-| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:119-119|
-| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1679 |
+| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" |mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:120-120|
+| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1682 |
 | The Git-truth support helpers the module reads its evidence through. | `_git`; `BATCH_PATH`; `BATCH_PATH_CANDIDATE_TEXT` | mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:516-531; mcp/tests/read_scope_test_support.py:118-118; mcp/tests/read_scope_test_support.py:752-767 |
 
 The following declarations carry the changed boundary.
@@ -179,6 +179,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 2 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
 - 2026-09-27T05:29:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_review_comparison_generation.py" repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.

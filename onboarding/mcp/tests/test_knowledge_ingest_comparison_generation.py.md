@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -162,12 +162,12 @@ Ranges are the exact construct extents in this candidate.
 | **The one act allowed to replace a standing baseline, measured as lineage by id and by exact dataset identity, plus an id the reader can recompute.** | `test_a_deliberate_rebase_begins_a_recorded_generation_with_explicit_lineage` | mcp/tests/test_knowledge_ingest_comparison_generation.py:263-326 |
 | **The case `260921-ICR-L34` added: the half a `--baseline` run placed is opened under the namespace its own `baseline-generation.json` names, which is what makes the comparison recordable at all — and it bites when the receipt-only read is restored.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace`; `review_namespace`; `read_baseline_generation`; `open_read_only_store` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 | The generation id the rebase case recomputes and the record reader it compares against. | `generation_identity`; `read_baseline_generation` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:319-348; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
-| The publication owner and selection this module drives the later line through. | `ingest_curator_list`; `IngestSelection`; `IngestPublication` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1074-1088; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1091-1108; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1015-1031; mcp/src/agents_remember/application/knowledge_curator_ingest.py:998-1011 |
+| The publication owner and selection this module drives the later line through. | `ingest_curator_list`; `IngestSelection`; `IngestPublication` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1079-1093; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1096-1113; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1020-1036; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1003-1016 |
 | The shipped reader the identity helper uses. | `dataset_identity` | mcp/src/agents_remember/memory/knowledge/logical.py:153-175 |
 | The identity value the identity helper answers with. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 | **The journey fixtures this module owns and the failure-window module imports rather than copies.** | `_digest`; `_identity_of`; `_publish_a_later_line` | mcp/tests/test_knowledge_ingest_failure_windows.py:71-75; mcp/tests/test_knowledge_ingest_failure_windows.py:80-119 |
-| The ingest-list fixture module every one of these cases builds its enclosure from. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:1723-1733; mcp/tests/test_knowledge_curator_ingest_list.py:3127-3141; mcp/tests/test_knowledge_curator_ingest_list.py:3144-3167; mcp/tests/test_knowledge_curator_ingest_list.py:1761-1789; mcp/tests/test_knowledge_curator_ingest_list.py:1667-1680; mcp/tests/test_knowledge_curator_ingest_list.py:1700-1720; mcp/tests/test_knowledge_curator_ingest_list.py:1659-1664 |
-| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:97-97 |
+| The ingest-list fixture module every one of these cases builds its enclosure from. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:1725-1735; mcp/tests/test_knowledge_curator_ingest_list.py:3129-3143; mcp/tests/test_knowledge_curator_ingest_list.py:3146-3169; mcp/tests/test_knowledge_curator_ingest_list.py:1763-1791; mcp/tests/test_knowledge_curator_ingest_list.py:1669-1682; mcp/tests/test_knowledge_curator_ingest_list.py:1702-1722; mcp/tests/test_knowledge_curator_ingest_list.py:1661-1666 |
+| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:98-98 |
 
 ## Cross-Repo References
 
@@ -179,6 +179,7 @@ builds is local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_knowledge_curator_ingest_list.py`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38`|
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -72,10 +72,10 @@ No domain documentation source is configured for this repository (`system/source
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:72-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:116-184 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1305-1305|
-| The lane manifest rows that classify both modules. | `unit-regression`; `integration` |mcp/tests/test-evidence-lanes.toml:241-241|
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1305-1305|
+|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:117-186 |
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1307-1307|
+| The lane manifest rows that classify both modules. | `unit-regression`; `integration` |mcp/tests/test-evidence-lanes.toml:243-243|
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1307-1307|
 
 ## Cross-Repo References
 
@@ -84,9 +84,10 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1305-1305|
+|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1307-1307|
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

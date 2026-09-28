@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `55c62237132eaa56b0df28ae5a8420a8dc05303d` |
-| lastVerifiedCommitDate | 2026-09-28T16:17:26+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -169,7 +169,7 @@ the real HTTP transport, so a passing case has proved the query contract and the
 | The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:824-842 |
 | **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:584-604; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:96-96; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:657-659|
 | The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:159-160 |
-| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
+| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
 
 ## Cross-Repo References
 
@@ -181,6 +181,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the confinement case's stated property narrowed with the 2026-09-28 admission ruling** — it no longer means "no path outside the inventory is ever read" but "an unchanged path no recorded realization links is refused"; the test body is unchanged and its docstring now says so (L43-R1-F3). The case table, the Invariants bullet and the four rows below it were updated (+2 lines from the docstring); the lane row now cites `test-evidence-lanes.toml:125`, where the entry actually sits. No stamp advanced; closeout owns it.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.

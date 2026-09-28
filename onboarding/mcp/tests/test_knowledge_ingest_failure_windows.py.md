@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_ingest_failure_windows.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -152,11 +152,11 @@ Ranges are the exact construct extents in this candidate.
 | The CLI entry point every CLI-driven case runs. | `main` | mcp/src/agents_remember/cli/__main__.py:73-75 |
 | The shipped builders for a real dataset the write-site case publishes. | `build_case`; `create` | mcp/tests/snapshot_lifecycle_test_support.py:178-205; mcp/tests/snapshot_lifecycle_test_support.py:208-211 |
 | The journey fixtures this module imports rather than copies. | `_digest`; `_identity_of`; `_publish_a_later_line` | mcp/tests/test_knowledge_ingest_comparison_generation.py:71-74; mcp/tests/test_knowledge_ingest_comparison_generation.py:77-80; mcp/tests/test_knowledge_ingest_comparison_generation.py:83-115 |
-| The enclosure and CLI fixture helpers this module imports from the ingest-list module. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:1723-1733; mcp/tests/test_knowledge_curator_ingest_list.py:3127-3141; mcp/tests/test_knowledge_curator_ingest_list.py:3144-3167; mcp/tests/test_knowledge_curator_ingest_list.py:1761-1789; mcp/tests/test_knowledge_curator_ingest_list.py:1667-1680; mcp/tests/test_knowledge_curator_ingest_list.py:1700-1720; mcp/tests/test_knowledge_curator_ingest_list.py:1659-1664 |
-| The note left where the moved write-site case stood, and the case's own statement of the precondition it measures. The note's own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "The write site's own precondition"; "the write site's own precondition" | mcp/tests/test_knowledge_curator_ingest_list.py:2402-2410; mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
+| The enclosure and CLI fixture helpers this module imports from the ingest-list module. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:1725-1735; mcp/tests/test_knowledge_curator_ingest_list.py:3129-3143; mcp/tests/test_knowledge_curator_ingest_list.py:3146-3169; mcp/tests/test_knowledge_curator_ingest_list.py:1763-1791; mcp/tests/test_knowledge_curator_ingest_list.py:1669-1682; mcp/tests/test_knowledge_curator_ingest_list.py:1702-1722; mcp/tests/test_knowledge_curator_ingest_list.py:1661-1666 |
+| The note left where the moved write-site case stood, and the case's own statement of the precondition it measures. The note's own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "The write site's own precondition"; "the write site's own precondition" | mcp/tests/test_knowledge_curator_ingest_list.py:2404-2412; mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The note left where the moved write-site case stood. Its own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "the write site's own precondition" | mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The dataset name the write-site case asserts against. | `CANDIDATE_DATABASE_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52 |
-| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:98-98 |
+| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:99-99 |
 
 ## Cross-Repo References
 
@@ -168,6 +168,7 @@ local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_knowledge_curator_ingest_list.py`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
 

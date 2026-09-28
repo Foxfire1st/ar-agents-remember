@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_evidence_channels.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:23:46+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -165,7 +165,7 @@ register the module.
 | **The two per-record damage cases: one damaged identity named while its siblings are supplied.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
 | **The case that an unresolvable candidate reports every collection unavailable rather than empty.** | `test_an_unresolvable_candidate_reports_every_collection_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:747-873 |
 | **The case that measures the vocabulary's own refusals, and the wire case that the channels travel in the served schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
-| **The lane row that registers the module, and the four catalog consumer rows it is a source-derived consumer of.** | `unit-regression`; `consumers`; `consumer_scope` | mcp/tests/test-evidence-lanes.toml:5-115; mcp/tests/evidence-lifecycle.toml:389-453; mcp/tests/evidence-lifecycle.toml:668-797; mcp/tests/evidence-lifecycle.toml:1392-1414; mcp/tests/evidence-lifecycle.toml:1417-1449 |
+| **The lane row that registers the module, and the four catalog consumer rows it is a source-derived consumer of.** | `unit-regression`; `consumers`; `consumer_scope` | mcp/tests/test-evidence-lanes.toml:5-116; mcp/tests/evidence-lifecycle.toml:389-453; mcp/tests/evidence-lifecycle.toml:668-798; mcp/tests/evidence-lifecycle.toml:1394-1416; mcp/tests/evidence-lifecycle.toml:1419-1451 |
 | The composition, the resolver and the vocabulary the cases measure. | `review_records_for`; `with_selection_channels`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:274-299; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
 
 ## Cross-Repo References
@@ -178,6 +178,7 @@ temporary directories and it touches no repository boundary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim below is that commit plus the working-tree delta): **citation repair only, forced by this leaf's rewrite of this module (796 → 966 lines).** Six ranges were re-pointed or widened against the construct each row names, and every one was read back before it was written: the fixture row `:131-167` → `:131-187` (widened to the lines that now carry `RecordedFixture`, `records` and `payload`, whose declaration is `:180`); the helper row's channel index `:548-550` → `:562-563` (`_channels` moved there); the per-record damage pair `:695-717` → `:825-844` and `:719-745` → `:847-870`; and the vocabulary/wire pair `:761-787` → `:887-912` and `:789-796` → `:959-966`. One row could **not** be repaired and was left exactly as it stands: `test_no_measurement_is_reported_as_one` (`:679-693`) is the case this leaf renamed — the name exists nowhere in the code tree, the successor that measures the same property is `test_the_composition_measures_the_bindings_it_reads` (`:693`) — and the checker's own remediation for that class is to re-read the claim, which is a claim-content decision and not a range edit, so no anchor was renamed and no pointer was invented. The claim-reopen that row carries is left with it for the same reason. No Finding, anchor or claim wording changed, no range was deleted and none was appended, and **no verification stamp was advanced**: the candidate is uncommitted, so `lastVerifiedCommitHash`/`lastVerifiedCommitDate` keep the values they hold and the governed closeout owns the real stamp.

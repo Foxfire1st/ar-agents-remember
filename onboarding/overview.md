@@ -6,14 +6,32 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-27T05:41:59+00:00 |
-| lastVerifiedCommitHash |  `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`|
-| lastVerifiedCommitDate |  2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash |  `eda947325ccbe0791973953265278597e968a34a`|
+| lastVerifiedCommitDate |  2026-09-28T18:11:05+02:00|
 
 > **Status:** active baseline
 
 ## Current reviewer and publication ownership
 
 The Intent Reviewer composes recorded family context with complete source review. Its normal entry shares one subject catalogue with the task entry; source selection remains independent of attribution. Historical reads prefer retained comparisons and otherwise reconstruct only exact recorded source and memory endpoints with that distinction visible. Ordinary curation publishes through the admitted knowledge writer and records the reviewed comparison; code-only recording explicitly validates unchanged knowledge. Curators author applicability, conditions and exclusions instead of relying on a workflow-shaped default.
+
+## 260921-ICR-L45 Curators Author A Rationale Per Realization Target; The Writer Generates None
+
+Repository-level consequence of leaf `260921-ICR-L45` (ICR-R20@v1 repair; developer ruling "require
+rationale"): the one knowledge writer (`knowledge-ingest` / `knowledge-bootstrap`, both driving
+`application/knowledge_curator_ingest.py`) no longer fabricates realization rationale. Every **new**
+realization target must carry an authored `rationale` (its own, or the entry's explicit
+`realization_rationale` default); otherwise its entry is refused by name before any identity is minted.
+The canonical instructions that teach this live at repository root — `skills/l-01-agent-lifecycles/`
+(`templates/curator-handoff-list.md`, `roles/curator.md`, `operations/curation.md`) and
+`skills/c-14-knowledge-bootstrap/SKILL.md` — and reach the package and the eight harness starter
+packages only through `scripts/sync-skills.py`. Knowledge already published keeps its old generated
+sentences unchanged; replacing them is authored successor work, not a rewrite. Exact retries of
+operations already committed replay unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The canonical template's per-target rationale section. | "Realization rationale and role: one authored explanation per target" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-101 |
 
 ## 260921-ICR-L34 The Intent Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
 
@@ -82,6 +100,8 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+
+- 2026-09-28T17:17:14+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the L45 section: the one knowledge writer requires an authored rationale per new realization target and generates none; canonical skill texts at root, copies by generator only. No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: No route impact: explicit stored-sibling retention remains within the existing application family planner, report renderer, tests and synchronized curator instructions. The repository/package purpose, entity boundaries and one-writer ownership are unchanged; detailed behavior is recorded in the governing application and test overviews.
 

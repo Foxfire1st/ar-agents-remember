@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -133,14 +133,14 @@ None.
 | A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-926 |
 | **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:333-345; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:351-361 |
 | **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:388-412; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
-| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
+| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:72-72 |
 | The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:433-472 |
 | The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-788 |
 | The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:796-827 |
 | The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:856-883 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:886-902 |
 | A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-916 |
-| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:71-71 |
+| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:72-72 |
 | The second half of the L23 split, which now owns the publication-input cases this card used to describe. | "The curator-coherence request states its own publication inputs" | mcp/tests/test_curator_coherence_publication_discoverability.py:1-14 |
 
 ## KS-R15@v1 Content-Member Assertion Re-Scope
@@ -164,6 +164,7 @@ asserted at `mcp/tests/test_curator_coherence_publication_discoverability.py:201
 because the re-scope's history is this card's, and the case's current home is that one's.
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 3 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

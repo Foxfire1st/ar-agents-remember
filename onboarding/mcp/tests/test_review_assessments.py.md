@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_assessments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ serves the cases that need a stored projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:228-228; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_review_assessments.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:229-229; mcp/tests/test-evidence-lanes.toml:5-5 |
 | The record, its submission shape and the validator the shape cases drive. | `ReviewAssessment`; `ReviewAssessmentRevision`; `_AuthoredAssessmentFields` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:292-354; mcp/src/agents_remember/models/lifecycles/review_assessment.py:357-371; mcp/src/agents_remember/models/lifecycles/review_assessment.py:374-395; mcp/src/agents_remember/models/lifecycles/review_assessment.py:326-341 |
 | The equality comparison and the stale-marking the binding cases drive. | `disputed_dependencies`; `AssessmentCurrentness`; `require_current_assessment_binding` | mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:92-107; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:125-140; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:143-172; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:195-220 |
 | The state projection the read cases drive. | `assessment_state_for`; `SubjectAssessmentState` | mcp/src/agents_remember/models/lifecycles/review_assessment.py:453-539; mcp/src/agents_remember/models/lifecycles/review_assessment.py:542-594 |
@@ -97,6 +97,7 @@ would be a source census rather than a behavioural check; and §6.9's scope refu
 unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
 
 ## Update History
+- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
 

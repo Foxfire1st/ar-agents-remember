@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,11 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1157-1160 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1198-1201 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+- 2026-09-28T17:24:12+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: the application route overview gained this leaf's 41-line *Authored realization rationale per target, required at admission* section, moving "## Hot Path Summary" from `:1157` (after L44) to `:1198`; the row was re-cited to `:1198-1201` (same section content). Wording unchanged; no stamp advanced.
 
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No content impact: this card's source is unchanged; its memory-relative citation to the application overview's `## Hot Path Summary` was re-measured after this leaf's new overview section moved that heading.
 

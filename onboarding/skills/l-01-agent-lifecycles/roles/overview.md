@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-27T00:34:45Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
+| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
+| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
 
 ## Curator successor-family examination
 
@@ -15,7 +15,20 @@ The curator role requires explicit stored membership IDs and authored bases when
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curator process carries exact retained-sibling authoring and readback. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-156 |
+| The curator process carries exact retained-sibling authoring and readback. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-159 |
+
+## Curator authors a rationale for every realization target (260921-ICR-L45)
+
+Process step 3 of the curator role now requires every hand-off target to carry its own authored
+`rationale` (why that place carries the obligation, specific to the construct it names) and an optional
+`role` before ingest; where the producer gave none, the curator writes it from the evidence. That is
+supplying a missing explanation, not re-deriving a producer field. The writer never generates one and
+refuses an unexplained target with `realization_rationale_absent`. The role's code, task-state and Git
+prohibitions are unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The curator's step-3 rationale duty. | "every target carries its own authored" | skills/l-01-agent-lifecycles/roles/curator.md:70-76 |
 
 ## Curator authored knowledge and retained review
 
@@ -117,9 +130,9 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:78-78 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:188-188; skills/l-01-agent-lifecycles/roles/curator.md:205-205 |
-| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:165-166 |
+| **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:81-81 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:191-191; skills/l-01-agent-lifecycles/roles/curator.md:208-208 |
+| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:168-169 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
 ## Purpose
@@ -280,7 +293,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-156; skills/l-01-agent-lifecycles/roles/curator.md:183-200; skills/l-01-agent-lifecycles/roles/curator.md:201-215 |
+| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-159; skills/l-01-agent-lifecycles/roles/curator.md:186-203; skills/l-01-agent-lifecycles/roles/curator.md:204-218 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -409,6 +422,7 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the section for Process step 3's per-target realization rationale duty. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
 
