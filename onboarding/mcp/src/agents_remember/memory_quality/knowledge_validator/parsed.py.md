@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@
 - `disallowed_relations` checks each raw link against `RELATIONS_BY_KIND` before the model runs, and records the field `links.<i>.relation`. `drop_unnamed_relation_error` then removes the model's own duplicate error, which names no field (review R1 finding 3).
 - `history` requires `knowledge/history/<owner-id>.json` and parses with `parse_history_document` (shape only).
 - `sidecar` requires a file or route sidecar at exactly `file_sidecar_path`/`route_sidecar_path` of its own `path`.
-- `knowledge/census/` is skipped until MIK-R20 registers its schemas.
+- `knowledge/census/` is skipped here (`CENSUS_DIRECTORY`): since MIK-R20 (leaf 260928-MIK-L20) census files are read by `rules_census` through `memory_quality/knowledge_census`, not by this parser, so the validator is not forked and census problems are owned by the `R20.*` rules.
 - `parse_sidecars_leniently` reads only the sidecars of a *base* tree that parse, ignoring everything else; the registry uses it to find carried anchors.
 
 ### Conventions
@@ -44,7 +44,6 @@
 
 ### Todos
 
-- `knowledge/census/` is not read until MIK-R20.
 - When a record has both a disallowed relation and another model-level error, Pydantic stops at the first failing validator, so the second error appears only after the first is repaired (review R1 round 2 note).
 
 ## Docs References
@@ -83,4 +82,5 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **body update — census files are now read by `rules_census`, not skipped pending MIK-R20.** The code change is docstring-only (`parse` still skips `knowledge/census/`); the Logic bullet now says who reads them, and the stale Todo "`knowledge/census/` is not read until MIK-R20" was removed because MIK-R20 has landed its reader. No citation moved: the docstring kept its line count. No verification stamp was advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

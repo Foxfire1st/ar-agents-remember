@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -91,11 +91,16 @@ dependency on the closeout plane.
   `rules_structure.py` and `rules_references.py` register MIK-R22's 16 rules (3 report-only);
   `family_routes.py` and `rules_routes.py` (MIK-R04, added by 260928-MIK-L04) hold the family route
   state and mechanical suggestion and register six route rules (3 report-only, 3 writer-reported);
+  `rules_census.py` (MIK-R20, added by 260928-MIK-L20) registers the nine refusing census rules;
   `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
   `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
   worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
   above: it validates only trees that carry `knowledge/layout.json`, and before MIK-R37 no production
   tree does.
+- `knowledge_census/` (MIK-R20, added by 260928-MIK-L20) is the migration census over text files:
+  `files.py` reads `knowledge/census/`, `checks.py` holds the integrity and append-only checks the
+  validator registers, `measures.py` the Doc12 measures and `report.py` the per-census report. It reads
+  bytes only; the Git-reading inventory and the writer are in `memory/knowledge_census/`.
 - `check.py` normalizes check names, dispatches quality runners, and returns one
   combined payload.
 - `integrity/onboarding_drift_check/` contains the moved `c-02-memory-quality-control` skill drift classifier
@@ -763,7 +768,38 @@ suggestion and the `agents-remember knowledge-routes` command.
 | The six registered rules, three report-only and three writer-reported. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
 | The registry flag a writer reads. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
 
+## 260928-MIK-L20 The Migration Census Joins This Route
+
+**MIK-R20@v2 adds `knowledge_census/`, the census over text files, and nine census rules to the validator's
+one registry.** The package reads a memory tree's bytes only and depends on nothing above `models`:
+
+- [`files.py`](knowledge_census/files.py.md) reads every file under `knowledge/census/` into parsed census
+  directories and problems (location, schema, census and route-slug agreement, canonical formatting, and a
+  census missing its baseline or inventory).
+- [`checks.py`](knowledge_census/checks.py.md) holds the nine refusing rules: shape, canonical, pinned
+  (exactly `baseline.json` and `inventory.json` never change once committed), claim rows, stable claim fields
+  (`id`, `text`, `location`, `kind` and `applicability` never change), claim records, known routes, and the
+  append-only status and assessment rules (prefix at one base, subsequence at a merge).
+- [`measures.py`](knowledge_census/measures.py.md) computes `N = T + F + U + P` over the assessable cohort and
+  the Doc12 measures; a zero denominator is "not applicable", and every percentage carries its counts.
+- [`report.py`](knowledge_census/report.py.md) builds one report per census, sliced by route and claim kind,
+  with each route's governing status (the latest entry across every census).
+- [`__init__.py`](knowledge_census/__init__.py.md) re-exports them.
+- [`knowledge_validator/rules_census.py`](knowledge_validator/rules_census.py.md) registers the nine rules,
+  running the checks once per validation; `validator.py` imports it. `parsed.py` still skips
+  `knowledge/census/`, so the validator is not forked.
+
+No separate `knowledge_census/overview.md` was created, following the sibling subpackages. The census writer
+(`memory/knowledge_census/writer.py`) runs the same checks before every write.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The nine census rules. | `CENSUS_RULES` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:52-65 |
+| The measures in Doc12's order. | `compute_measures` | mcp/src/agents_remember/memory_quality/knowledge_census/measures.py:137-160 |
+| The registration with the validator. | `CENSUS_VALIDATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_census.py:54-57 |
+
 ## Update History
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Migration Census Joins This Route"** for the five new `knowledge_census/` cards and the new `knowledge_validator/rules_census.py` card, plus the `validator.py` and `parsed.py` changes; the Route Model gains a `knowledge_census/` bullet and names `rules_census.py`. No separate `knowledge_census/overview.md` was created. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Route Rules Join The Knowledge Validator"** for the two new cards (`family_routes.py`, `rules_routes.py`) and the `registry.py`/`trees.py`/`validator.py`/`__init__.py` changes. The L22 section's `__init__`, registry and validator rows were re-pointed by the exact line shift (the validator row's two ranges put back in anchor order), and the installed fixer re-normalised older passing ranges in this document; no claim wording changed there. No stamp advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated — the mandatory knowledge validator joins this route.** Added `knowledge_validator/` to the Route Model and the Hot Path Summary, a new first invariant (no converted memory commit without a passing validator run; no skip), and the section "260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route". The package's eleven modules got new file cards governed by this overview; no separate `knowledge_validator/overview.md` was created, following the sibling subpackages. No verification stamp was advanced.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the two governed sources this leaf changed under this route: the six-member status vocabulary `reported_subject_status` now enumerates in the projection's own precedence order and the `notMeasuredCount` the pipeline carries end to end (`family_review.py`, 452 → 457 lines, with `application/memory_quality/controller.py` 847 → 848), and the persisted checklist's new `not-measured` limitation row and count beside the narrowed meaning of `stale` (`knowledge_review.py`, 210 → 230). This is a body change and not a metadata-only refresh, which is why it is recorded here. This document carried **no** repairable citation finding, so no citation range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

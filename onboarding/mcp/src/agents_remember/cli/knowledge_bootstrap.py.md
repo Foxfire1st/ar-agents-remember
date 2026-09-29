@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ this entry point implements, and it is a task-tree document rather than a config
 | **The admission resolver this entry point is the public face of.** | `admit_bootstrap_context`; `BootstrapRefusal`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
 | **The run this subcommand drives, and its refusal value.** | `bootstrap_knowledge`; `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:98-104; mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244 |
 | **The bounded cleanup owner behind `--discard-staging`.** | `discard_bootstrap_staging`; `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:214-221; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
-| The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:57-65 |
+| The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:60-68 |
 
 ## Cross-Repo References
 
@@ -151,6 +151,7 @@ empty, so nothing here names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 registers `knowledge-census` in `cli/__main__.py` (one import line and a longer docstring sentence), which moves the later registrations down by two lines; this card's registration row was re-pointed to the new extent, its claim unchanged. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): No content impact: the `knowledge-bootstrap` registration row re-pointed to `cli/__main__.py:54-62` after MIK-R21 registered `knowledge-format` above it; the other re-pointed rows are the anchor-range projection's. Claim meaning unchanged; no stamp advanced.

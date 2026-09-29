@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1558,7 +1558,35 @@ index schema, the key and the cache are unchanged.
 | The ancestor list ends with the root route. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:356-365 |
 | A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
 
+## 260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`
+
+**Route impact (MIK-R20@v2).** The new package `knowledge_census/` is the census's Git-reading and writing
+half; its reading, checks, measures and report are in `memory_quality/knowledge_census/`, which this package
+may import because `memory` ranks above `memory_quality`. No separate `knowledge_census/overview.md` was
+created: like `knowledge_index/`, `knowledge/` and `migration/`, it is governed by this overview.
+
+- [`knowledge_census/inventory.py`](knowledge_census/inventory.py.md): `take_inventory` resolves the code and
+  memory revisions to exact commits and lists both trees through Git objects only; a revision that names no
+  commit, or a tree Git cannot list, is refused with `CensusBaselineError`. The inventory is mechanical: one
+  row per in-scope source file and per onboarding artifact, each with its nearest governing onboarding route.
+- [`knowledge_census/writer.py`](knowledge_census/writer.py.md): `CensusWriter` creates a census once (the
+  inventory first, the baseline last as the commit point), appends claims, assessments and route statuses,
+  and sets dispositions. Every write runs the same census checks the validator registers against the current
+  tree and writes nothing when refused. It refuses a memory tree without `knowledge/layout.json`, so it never
+  touches production memory before MIK-R37.
+- [`knowledge_census/__init__.py`](knowledge_census/__init__.py.md) re-exports both.
+
+The legacy database census described in "260915-KS-L21 The Census Apparatus" above (`migration/census*.py`,
+`knowledge/census_records.py` and the generation-9 tables) is untouched and remains reachable until MIK-R26
+(leaf L26) retires it, by architect ruling.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| An unreadable baseline is refused. | `resolve_commit` | mcp/src/agents_remember/memory/knowledge_census/inventory.py:56-69 |
+| Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
+
 ## Update History
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`"** with the three new cards it governs (`__init__`, `inventory`, `writer`). No separate `knowledge_census/overview.md` was created, following the `knowledge_index/` precedent. The legacy database census stays until L26. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 The Index Matches The Root Family Route"** for the `query.py` change. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`" with the seven new cards it governs. No separate `knowledge_index/overview.md` was created: the sibling packages `knowledge/` and `migration/` have none, and this overview governs them. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): body update: added the section for the observation row codec, which moved into `knowledge/evidence_observation_rows.py` and is re-exported from `evidence_records`. The move was behaviour-preserving and no caller changed. Re-pointed the 6 citation-table ranges into `evidence_records.py` through the exact base-to-candidate line map. No stamp was advanced.

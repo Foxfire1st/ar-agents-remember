@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -202,10 +202,27 @@ refused everywhere.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared route-directory type. | `RoutePath` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:115-118 |
+| The shared route-directory type. | `RoutePath` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:115-117 |
 | The family record's routes use it. | `FamilyRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:141-160 |
 
+## 260928-MIK-L20 The Census File Formats
+
+**Route impact (MIK-R20@v2).** [`knowledge_files/census.py`](knowledge_files/census.py.md) declares the four
+`ar-census-*/v1` schemas (baseline, inventory, claims, route status), the injective `route_slug` (the root
+route `.` is `@root`), `mint_claim_id` (`CLM-` plus six Crockford characters) and `governing_status`, the
+"latest status entry across every census" rule, at this rank so every layer can apply it.
+[`knowledge_files/documents.py`](knowledge_files/documents.py.md) registers the four schemas in
+`SCHEMA_MODELS` and `CensusDocument` in `KnowledgeDocument`. The models check shape only; append-only and
+pinning are the validator's census rules. The legacy `knowledge/census.py` vocabulary is kept for the claim
+kinds and applicability and stays until MIK-R26 (leaf L26).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The four census schemas registered for dispatch. | `CENSUS_MODELS` | mcp/src/agents_remember/models/knowledge_files/census.py:428-433 |
+| The latest status entry across every census governs. | `governing_status` | mcp/src/agents_remember/models/knowledge_files/census.py:447-464 |
+
 ## Update History
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Census File Formats"** for the new `knowledge_files/census.py` card and the `documents.py` registration. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 A Family Route May Be The Repository Root, `.`"** for `RoutePath` and `FamilyRecord.routes`. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Knowledge Tool Responses Name A Memory Tree". The reopened `published_intent_block` row of the `read_files.py` section was re-read: the owning module still decides the block's shape and this model still carries it as a dict, so its wording is retained; the fixer's generated bullet for it, written minutes earlier in this same pass, is folded into this entry. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 7 citations into `mcp/tests/test_knowledge_diff_scope.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_diff_attribution.py`. Wording is unchanged, and no stamp was advanced.
@@ -2813,7 +2830,7 @@ bump.
 | **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** | `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:921-953 |
 | **The request whose selector may be absent, and the absence as a meaning rather than a default.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:262-324 |
 | **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** | `ComparisonIdentity`; `_require_the_knowledge_half_to_be_all_or_nothing` |mcp/src/agents_remember/models/knowledge/review.py:362-400|
-| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:999-1107; mcp/src/agents_remember/models/knowledge/review.py:718-794 |
+| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:718-794; mcp/src/agents_remember/models/knowledge/review.py:999-1107 |
 | **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` |mcp/src/agents_remember/models/knowledge/review_staleness.py:51-92|
 | **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` |mcp/src/agents_remember/models/knowledge/review.py:139-139|
 | The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:940-1015; mcp/tests/test_knowledge_review_surface.py:1018-1056 |
@@ -3089,8 +3106,8 @@ only production consumer is `cli/knowledge_format.py`.
 | --- | --- | --- |
 | The package map and the shape-only boundary. | "Integrity (IDs resolve, markers match" | mcp/src/agents_remember/models/knowledge_files/__init__.py:25-26 |
 | The base every file model inherits. | `FileModel` | mcp/src/agents_remember/models/knowledge_files/shapes.py:50-75 |
-| An invariant record carries no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:116-137 |
-| Schema dispatch refuses unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:79-88 |
+| An invariant record carries no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:117-138 |
+| Schema dispatch refuses unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:84-93 |
 
 ## Update History
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the `models/knowledge_files/` sub-package** (seven modules, each with its own new card). No route-level contract of the existing models changed. No stamp advanced.
@@ -3118,7 +3135,7 @@ installed runtime imports the package yet, so production behavior is unchanged.
 | The history file: one owner, one row per subject, a strict `closed` flag. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:293-337 |
 | The row-kind registry. | `HISTORY_ROW_KINDS` | mcp/src/agents_remember/models/knowledge_files/history.py:261-264 |
 | The freeze predicate. | `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:373-381 |
-| The history schema in the dispatch table. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:62-68 |
+| The history schema in the dispatch table. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
 | The history row ID kind. | `ROW_PREFIXES` | mcp/src/agents_remember/models/knowledge_files/ids.py:65-65 |
 
 ## 260928-MIK-L23 The Knowledge Tool Responses Name A Memory Tree

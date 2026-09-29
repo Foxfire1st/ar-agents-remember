@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/history.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T06:00:00+02:00 |
-| lastVerifiedCommitHash | `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c`|
-| lastVerifiedCommitDate | 2026-09-29T06:13:16+02:00|
+| lastUpdated | 2026-09-29T09:30:11+02:00 |
+| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
+| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ each rule.
 | The freeze predicate. | `is_closed_history`; `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:351-370; mcp/src/agents_remember/models/knowledge_files/history.py:373-381 |
 | Re-anchoring checked against K_C. | `reanchor_mismatches`; `sidecar_entry_anchors` | mcp/src/agents_remember/models/knowledge_files/history.py:389-401; mcp/src/agents_remember/models/knowledge_files/history.py:404-409 |
 | The revision binding for invariant and family rows. | `invariant_revision_violation`; `stale_examined_members` | mcp/src/agents_remember/models/knowledge_files/history.py:422-442; mcp/src/agents_remember/models/knowledge_files/history.py:445-456 |
-| The history schema is dispatched by `documents.py`. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:62-68 |
+| The history schema is dispatched by `documents.py`. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
 | Closed files stay byte-identical, even when reformatted. | `test_closed_in_base_implies_byte_identical_in_candidate` | mcp/tests/test_knowledge_history_files.py:320-348 |
 
 ## Cross-Repo References
@@ -135,4 +135,5 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 adds the census import and the `CensusDocument` member to `models/knowledge_files/documents.py`, so its `SCHEMA_MODELS` table moved to `:64-71`; this card's history-schema row was re-pointed, its claim unchanged (the history schema is still registered there). No verification stamp was advanced.
 - 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta, after worker fix round 1): created this card for the new file MIK-R07 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
