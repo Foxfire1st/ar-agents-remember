@@ -6,8 +6,26 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+
+## Test proofs in the curator hand-off template (260928-MIK-L28)
+
+`templates/curator-handoff-list.md`'s writer section (MIK-R12) now serves MIK-R28. Its evidence bullet names
+both forms in which evidence names a test: a test ID `path::name`, or a path plus symbol `path -k name`
+(one identifier, `.py` files; architect ruling). It says that `needs_facet` offers the statement only as a
+draft while the curator authors the facet, which states what this test demonstrates and not the invariant's
+statement, and that a test file named without a test is `unresolvable`. A new bullet, "Proofs are shown and
+counted (MIK-R28)", tells the curator that the `invariant` and `family` views of a converted tree return the
+proofs, that the checklist lists the invariants without any proof as information and not as a gate, and that
+a curator pass turns a migrated record's "Evidence: …" text into proofs through `proofs`, with an authored
+facet. It applies only on a converted memory tree; nothing a producer emits changes, and no role, operation or
+other template in this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Both evidence forms, and the facet authored beside the statement draft. | "as a path plus symbol"; "offers the statement as a draft" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529 |
+| The views, the informational list and the migration pass. | "Proofs are shown and counted (MIK-R28)." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
 
 ## The file writer's sections in the curator hand-off template (260928-MIK-L12)
 
@@ -22,7 +40,7 @@ operation or other template in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-587; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -36,7 +54,7 @@ a route. Nothing a producer emits changes. No role, operation or other template 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-460; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:478-478 |
+| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:478-478 |
 
 ## Where a hand-off entry lands once knowledge is text (260928-MIK-L21)
 
@@ -527,6 +545,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section "Test proofs in the curator hand-off template": both evidence forms (the ruled `path -k name`), the facet authored beside the statement draft, and the new "Proofs are shown and counted (MIK-R28)" bullet. Two rows. The installed `memory-citations --fix` widened the MIK-R12 and MIK-R04 rows' heading citations to their sections, with no wording change.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "The file writer's sections in the curator hand-off template (260928-MIK-L12)".** The L04 section's row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "Family routes in the curator hand-off template (260928-MIK-L04)"** for the template's new MIK-R04 subsection. No stamp advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the curator hand-off template's informational MIK-R21 section.** No stamp advanced.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_writer/authoring.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3`|
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,11 @@ here judges meaning, and nothing is written to disk.
   locator; entry origin is `{leaf, handoffEntry}`. `_remove_unnamed_entries` removes, and reports
   `removed`, only this owner's earlier entries from the same hand-off entry that this run no longer names
   (ruling F3); another leaf's entries never match.
-- **Cited tests** (`_cited_test`): each `path::name` in evidence is reported `proof_written`, `needs_facet`
-  (it resolves at C; a draft facet from the statement is offered) or `unresolvable`. Evidence never becomes
-  a proof without the curator's facet (ruling 4; MIK-R28 builds on this).
+- **Cited tests** (`_cited_test`): each test the evidence names, as `path::name` or `path -k name`
+  (`handoff.tests_named_in`), is reported `proof_written`, `needs_facet` (it resolves at C; a draft facet
+  from the statement is offered) or `unresolvable`. A test module named without a test in it is reported
+  `unresolvable` with the remedy (write `path::<name>` or `path -k <name>`). Evidence never becomes a proof
+  without the curator's facet (ruling 4; MIK-R28 rule 2).
 - **History rows** (`_write_rows`, `_row`): one row per subject in `knowledge/history/<owner>.json`; the row
   ID is reused by subject; a closed file is refused (MIK-R07 rule 7). Invariant rows get the invariant's
   revision and `covers` with `before` (the base anchor, or `absent`) and `after`; re-anchoring writes the new
@@ -71,6 +73,19 @@ here judges meaning, and nothing is written to disk.
 - The report `note` path of the first fix round is no longer used for foreign evidence; `notes` stays in
   the report shape (`report.py`) and is currently never appended to by this module.
 
+## 260928-MIK-L28 A Test File Named Without A Test Is Reported (MIK-R28 Rule 2)
+
+`_cited_test` now also takes a `TestFileMention`: evidence that names a test module but no test in it.
+It is reported `unresolvable` with the remedy text, never silently skipped, so rule 2's "evidence that
+names no resolvable test is reported" holds for the bare-file case too. The evidence text itself is still
+stored in `origin.handoff`, as the MIK-R12 writer already did. A proof is still written only from a `proofs[]` item that carries the
+curator's facet; the report offers the statement only as a draft.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Both forms become proofs once faceted; an absent test and a bare test file are reported. | `test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported` | mcp/tests/test_knowledge_proofs.py:155-200 |
+| No sidecar until the facet is authored; a blank facet is refused and writes nothing. | `test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft` | mcp/tests/test_knowledge_proofs.py:203-224 |
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -90,18 +105,18 @@ The mechanical fields, by concern.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fields that carry no meaning; a change elsewhere is a new revision. | `NON_MEANING_FIELDS` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:77-77 |
-| The operation: entries, records, rows, then unstored foreign evidence refuses. | `run` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:118-146 |
-| ID assignment and rerun reuse. | `_assign_ids` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:161-184 |
-| Origin: own records gain evidence, another owner's origin is kept exactly. | `_origin` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:219-254 |
-| Revision once per leaf against the base. | `_place_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:256-285 |
-| Records of any kind, with defaults and resolved links. | `_write_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:348-376 |
-| Realization and proof entries upserted in the sidecar. | `_upsert_entry` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:400-443 |
-| A rerun removes only this owner's unnamed entries. | `_remove_unnamed_entries` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:445-469 |
-| What became of a test the evidence names. | `_cited_test` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:513-527 |
-| History rows into the owner's file; a closed file is frozen. | `_write_rows` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:531-554 |
-| Foreign evidence stored in this owner's row reason. | `_reason_with_evidence` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:580-589 |
-| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:642-662 |
+| Fields that carry no meaning; a change elsewhere is a new revision. | `NON_MEANING_FIELDS` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:79-79 |
+| The operation: entries, records, rows, then unstored foreign evidence refuses. | `run` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:120-148 |
+| ID assignment and rerun reuse. | `_assign_ids` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:163-186 |
+| Origin: own records gain evidence, another owner's origin is kept exactly. | `_origin` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:221-256 |
+| Revision once per leaf against the base. | `_place_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:258-287 |
+| Records of any kind, with defaults and resolved links. | `_write_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:350-378 |
+| Realization and proof entries upserted in the sidecar. | `_upsert_entry` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:402-445 |
+| A rerun removes only this owner's unnamed entries. | `_remove_unnamed_entries` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:447-471 |
+| What became of a test the evidence names, and a test file named without a test is `unresolvable`. | `_cited_test`; `TestFileMention` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:515-541 |
+| History rows into the owner's file; a closed file is frozen. | `_write_rows` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:545-568 |
+| Foreign evidence stored in this owner's row reason. | `_reason_with_evidence` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:594-603 |
+| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:656-676 |
 | The conforming example: decision, realization and proof, validated. | `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` | mcp/tests/test_knowledge_writer.py:133-159 |
 | Rerun idempotence. | `test_a_rerun_of_the_same_list_writes_the_same_files_with_the_same_ids` | mcp/tests/test_knowledge_writer.py:285-295 |
 | Revision increments once; foreign evidence goes to this leaf's row. | `test_a_meaning_change_increments_the_revision_once_against_the_base` | mcp/tests/test_knowledge_writer.py:369-402 |
@@ -116,6 +131,8 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): Added the section "260928-MIK-L28 A Test File Named Without A Test Is Reported": `_cited_test` reports a `TestFileMention` as `unresolvable` with its remedy. The "Cited tests" Logic bullet now names both evidence forms and the bare-file case, and the `_cited_test` row says so. Two test rows. The other ranges were re-pointed by the installed `memory-citations --fix`. No verification stamp was advanced.
+- 2026-09-29T13:25:18+00:00: Generated citation repair: `NON_MEANING_FIELDS` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:79-79. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

@@ -6,10 +6,29 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash |  `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate |  2026-09-29T10:38:08+02:00|
+| lastVerifiedCommitHash |  `e49ba07865b3848cd36759cea6b37bba7d0d51c3`|
+| lastVerifiedCommitDate |  2026-09-29T15:47:03+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L28 Test Proofs Are Read Back And Listed, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L28` (MIK-R28@v1): the tests that prove an invariant become
+first-class. Hand-off evidence names a test as `path::name` or as `path -k name` (architect ruling), and a
+proof is still written only once the curator authors its facet.
+[`application/knowledge_proofs.py`](mcp/src/agents_remember/application/overview.md) reads proofs back for
+`knowledge_read`'s `invariant` and `family` views (an optional `proofs` field, accepted by architect ruling)
+and lists the invariants without proof in the curator checklist, as information and never counted toward
+`curatorActionableCount` (architect ruling). Rule 3 and the stale-proof clause moved to L08 and L03 by
+architect ruling. The canonical curator hand-off template's writer section now names both evidence forms and
+gains "Proofs are shown and counted (MIK-R28)", synchronized by `scripts/sync-skills.py` into the package copy
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: no production memory tree is converted, and database reads carry no `proofs`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's new proof guidance. | "as a path plus symbol"; "Proofs are shown and counted (MIK-R28)." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
+| The two readings of proofs. | `tree_view_proofs`; `invariants_without_proof` | mcp/src/agents_remember/application/knowledge_proofs.py:69-87; mcp/src/agents_remember/application/knowledge_proofs.py:157-190 |
 
 ## 260928-MIK-L21 The Text Knowledge Format Is Declared, Not Yet Used
 
@@ -47,7 +66,7 @@ runtime does changes before MIK-R37**: no production memory tree is converted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-587; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
 | The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:50-54 |
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
@@ -63,7 +82,7 @@ memory tree is converted or holds a family record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's family-routes subsection. | `### Family routes (MIK-R04)`; "as deep as makes sense" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-460; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:468-468 |
+| The template's family-routes subsection. | `### Family routes (MIK-R04)`; "as deep as makes sense" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:468-468 |
 
 ## Current reviewer and publication ownership
 
@@ -154,6 +173,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section: the repository-level consequence of first-class test proofs, with the architect rulings, and the curator hand-off template reaching the package copy and the eight harness starter copies this route governs (they have no cards, as in the L04, L12 and L21 precedent). Two rows. The installed `memory-citations --fix` re-pointed the rows citing files this change moved (the controller, the lanes file) and normalised others (the template section ranges, `read_files.py`), with no wording change.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The Curator Writer Writes Knowledge As Files, Not Yet Used"**: the repository-level consequence (the new writer package, the per-tree dispatch of the two CLI entry points, the one `content` definition, and the template section reaching the package copy and the 8 harness starter copies, which this route governs). No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Routes Are Checked, Not Yet Used"**: the repository-level consequence of MIK-R04, including the template subsection that reached the eight harness starter copies this route governs. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
@@ -402,7 +422,7 @@ Three consequences a reader of this overview should carry, because they are what
 | --- | --- | --- |
 | **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:140-140; mcp/src/agents_remember/application/published_intent.py:239-255 |
 | **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
-| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:313-349; mcp/src/agents_remember/cli/knowledge_ingest.py:394-406; mcp/src/agents_remember/cli/knowledge_ingest.py:614-627 |
+| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628 |
 | The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:70-70 |
 | The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:109-141 |
@@ -6233,8 +6253,8 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:360-380; mcp/src/agents_remember/application/memory_quality/controller.py:383-435; mcp/src/agents_remember/application/memory_quality/controller.py:465-638 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586; mcp/src/agents_remember/application/memory_quality/controller.py:671-707 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:363-383; mcp/src/agents_remember/application/memory_quality/controller.py:386-457; mcp/src/agents_remember/application/memory_quality/controller.py:487-661 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:552-588; mcp/src/agents_remember/application/memory_quality/controller.py:688-724 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:754-818 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
@@ -6542,10 +6562,10 @@ sidecar there.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/application/published_intent.py:239-255; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
-| **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:93-159; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:99-170; mcp/src/agents_remember/models/read_files.py:74-74 |
 | **The canonical retrieval carrier, whose new section directs a caller to the route.** | `## Published Intent Before Planning` | skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |
 | **The generated copy of that carrier this package ships, regenerated from the authored source.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |
-| **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`; `CARRIER` | mcp/tests/test_read_ar_files.py:24-24; mcp/tests/test_read_ar_files.py:521-544 |
+| **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`; `CARRIER` | mcp/tests/test_read_ar_files.py:24-24; mcp/tests/test_read_ar_files.py:529-552 |
 
 ## Update History
 - 2026-09-24T21:16+02:00 — 260921-ICR-L25 curator (same uncommitted change set on `ar/260921-icr-l25-ar`, code base `86639933d61528387ce106dbd4d7a334bd468671` with an **empty** working-tree delta, memory base `1e241048382a4ff8833d8b0c82ffd2e3122f9ded`; gate `verify-l25.md` = `pass-with-findings`; the orchestrator widened this seat's authorising scope for exactly this edit after the curator reported it under the narrower brief instead of fixing it): **one count in the L19 section above corrected in place, dated — the second falsehood this seat found, and false for a reason other than the pre-L25 refresh.** The sentence said `scripts/sync-skills.py` regenerated "all nine in-repo copies … (this package's `package_data/runtime/skills/` copy and the **seven** harness starter folders)", which is false against its own parenthesis (`1 + 7 ≠ 9`) and against the generator, while the count it belongs to — "all nine in-repo copies" — was already correct and is unchanged. **Measured at this correction, from the accepted revision `86639933`:** `scripts/sync-skills.py`'s own `TARGETS` (`scripts/sync-skills.py:43-56`) holds **nine** entries — the `mcp package data` target (`mcp/src/agents_remember/package_data/runtime/skills`) plus **eight** harness starter packages, every one present in the tree with 15 entries: `.claude/skills`, `.codex/skills`, `.cursor/skills`, `.github-vscode/skills`, `.hermes/skills`, `.openclaw/workspace/skills`, `.pi/skills` and `.agents/skills`. So the word is **eight**, and the parenthesis now reads `1 + 8 = 9` like the count beside it. **Corroboration inside this same document, which was right all along:** the Feature Inventory row at `onboarding/overview.md:1118` states that `scripts/sync-skills.py` fans root `skills/` into "those nine targets (the eight harness roots plus the MCP package-data tree)", and the `mcp` pillar's L27 section states "eight harness starter packages … nine generated targets" — this L19 sentence was the one home that disagreed, and a whole-onboarding sweep for `starter folders` finds no other. No card was created; no verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.

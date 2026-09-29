@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,11 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1202-1205 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1206-1209 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged; its memory-relative citation into `application/overview.md` was re-pointed from `1202-1205` to `1206-1209`, because this pass's history lines in that overview moved the "## Hot Path Summary" heading four lines down. No claim wording changed. No verification stamp was advanced.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Its memory-relative citation into `application/overview.md` moved two lines down, because this pass added two Update History lines there (the installed fixer's projection and this curator's entry). It was re-pointed from `1200-1203` to `1202-1205` with no wording change. No verification stamp was advanced.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): No content impact: this card's source is unchanged; its memory-relative citation to the application overview's "## Hot Path Summary" heading was re-pointed from `:1199-1202` to `:1200-1203`, because this leaf's one-line Update History entry near the top of that overview moved the heading down by one line. No claim wording changed.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged; its memory-relative citation to the application overview's "## Hot Path Summary" heading was re-pointed from `:1198-1201` to `:1199-1202`, because this leaf's one-line Update History entry near the top of that overview moved the heading down by one line. No claim wording changed.

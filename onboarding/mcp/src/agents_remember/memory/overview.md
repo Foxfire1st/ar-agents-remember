@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -51,7 +51,7 @@ added.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. | "What is never remembered is whether the repository still *holds* the tree" | mcp/src/agents_remember/memory/knowledge/read_anchors.py:17-34 |
-| The memo module's tables and admission test. | `is_complete_object_id`; `BoundedMemo`; `TREE_ENTRIES`; `BLOB_LINES`; `BLOB_DEFINITIONS` | mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:51-122; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:154-160 |
+| The memo module's tables and admission test. | `is_complete_object_id`; `BoundedMemo`; `TREE_ENTRIES`; `BLOB_LINES`; `BLOB_DEFINITIONS` | mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:51-54; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:61-122; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py:154-160 |
 
 ## 260921-ICR-L44 The Anchor Resolver States The Region It Already Measured
 
@@ -1286,7 +1286,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:250-250 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:267-267 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1555,7 +1555,7 @@ index schema, the key and the cache are unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The ancestor list ends with the root route. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:356-365 |
+| The candidate list is the path and every ancestor, nearest first, and ends with the root route `.`. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:383-392 |
 | A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
 
 ## 260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`
@@ -1586,6 +1586,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the index's two proof lookups, `proofs_of` and `invariants_without_proof`, with the architect ruling that the "without proof" list is information, not a gate. One row. The reopened `_self_and_ancestors` claim was re-read against the working tree: the function is unchanged and sits 27 lines lower. The row now states what the function returns (the path and every ancestor, nearest first, ending with `.`), and its generated repair bullet was removed because the claim was reworded. Other rows citing files this change moved were re-pointed by the installed `memory-citations --fix`, with no wording change.
+- 2026-09-29T13:25:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:267-267. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New section: the `conversion/` package and its ten cards. The package gets **no overview of its own**, following its siblings `knowledge/`, `migration/`, `knowledge_census/` and `knowledge_index/`. The section records the architect rulings the cards carry and adds seven rows.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`"** with the three new cards it governs (`__init__`, `inventory`, `writer`). No separate `knowledge_census/overview.md` was created, following the `knowledge_index/` precedent. The legacy database census stays until L26. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 The Index Matches The Root Family Route"** for the `query.py` change. No stamp advanced.
@@ -1801,7 +1803,7 @@ every other read in this route uses.
 | **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** | `list_invariants` | mcp/src/agents_remember/memory/knowledge/store.py:181-197 |
 | **The same enumeration for the surface's other admitted subject kind.** | `list_families` | mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 | The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. | `decode_invariant_row`; `decode_family_row` | mcp/src/agents_remember/memory/knowledge/records.py:122-131; mcp/src/agents_remember/memory/knowledge/records.py:275-284 |
-| The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). | `list_knowledge_review_entries`; `read_subject_catalogue` | mcp/src/agents_remember/application/knowledge_review.py:256-325; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69 |
+| The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). | `list_knowledge_review_entries`; `read_subject_catalogue` | mcp/src/agents_remember/application/knowledge_review.py:256-317; mcp/src/agents_remember/application/review_subject_catalogue.py:47-69 |
 
 ## 260915-KS-L43 The Merge Carries Every Accepted Decision, And Its Conflict Taxonomy Gets One Key
 
@@ -1942,9 +1944,9 @@ production memory tree is converted, so the installed runtime never reaches it.
 | --- | --- | --- |
 | The package map. | "No knowledge writer writes the index" | mcp/src/agents_remember/memory/knowledge_index/__init__.py:1-20 |
 | The captured-state key. | `directory_snapshot`; `_capture` | mcp/src/agents_remember/memory/knowledge_index/tree.py:92-110; mcp/src/agents_remember/memory/knowledge_index/tree.py:122-144 |
-| The build, which names every failing file. | `build_index`; `parse_tree` | mcp/src/agents_remember/memory/knowledge_index/build.py:132-159; mcp/src/agents_remember/memory/knowledge_index/build.py:120-129 |
-| Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:85-105; mcp/src/agents_remember/memory/knowledge_index/projection.py:68-68 |
-| The cache refuses a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-91 |
+| The build, which names every failing file. | `build_index`; `parse_tree` | mcp/src/agents_remember/memory/knowledge_index/build.py:120-129; mcp/src/agents_remember/memory/knowledge_index/build.py:132-159 |
+| Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:68-68; mcp/src/agents_remember/memory/knowledge_index/projection.py:85-105 |
+| The cache refuses a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-164 |
 
 
 ## 260928-MIK-L24 Conversion And Boundary Crossing: A New Package, `conversion/`
@@ -1989,12 +1991,27 @@ so the installed runtime never reaches it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package map. | "the deterministic conversion" | mcp/src/agents_remember/memory/conversion/__init__.py:1-10 |
-| The pure conversion, its version pin and its validation. | `convert_memory`; `CONVERSION_FORMAT_VERSION` | mcp/src/agents_remember/memory/conversion/convert.py:387-431; mcp/src/agents_remember/memory/conversion/convert.py:44-50 |
+| The pure conversion, its version pin and its validation. | `convert_memory`; `CONVERSION_FORMAT_VERSION` | mcp/src/agents_remember/memory/conversion/convert.py:44-44; mcp/src/agents_remember/memory/conversion/convert.py:387-431 |
 | No anchor text lost: it is kept in the note. | `unbound_anchor_text` | mcp/src/agents_remember/memory/conversion/citations.py:197-224 |
 | The read-only reader. | `export_database` | mcp/src/agents_remember/memory/conversion/legacy_db.py:181-188 |
 | Rule 7 for any comparison consumer. | `comparison_sides` | mcp/src/agents_remember/memory/conversion/base.py:152-167 |
 | Rule 8's item rules and conflict markers. | `merge_item`; `CONFLICT_MARKER` | mcp/src/agents_remember/memory/conversion/crossing.py:113-124; mcp/src/agents_remember/memory/conversion/crossing.py:43-43 |
 | Rule 8's steps. | `cross` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:224-280 |
+
+## 260928-MIK-L28 The Index Answers Proofs, And The Invariants Without One
+
+**Route meaning extended (MIK-R28@v1 rules 4 and 5).** [`knowledge_index/query.py`](knowledge_index/query.py.md)
+gains two lookups over the `ix_entry` proof rows the MIK-R23 build already writes: `proofs_of(invariant_ids)`
+and `invariants_without_proof()`, which lists the **live** invariants (a retired one is not listed) that no
+proof entry names. Both carry the index state like every other answer. Their consumer is
+`application/knowledge_proofs.py`, for `knowledge_read`'s `invariant` and `family` views and for the curator
+checklist's "without proof" section. That list is **information, not a gate (architect ruling,
+2026-09-29)**: the admission rule accepts criteria other than a proving test. The index is still derived,
+never written by a knowledge writer, and unreached by the installed runtime before MIK-R37.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:260-282 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

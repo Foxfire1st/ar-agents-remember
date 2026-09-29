@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -157,10 +157,10 @@ would accept it.
 | **The two custody cases: the work branch is not custody, and protected history taking custody stops the pin.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens` | mcp/tests/test_knowledge_review_comparison_generation.py:871-912; mcp/tests/test_knowledge_review_comparison_generation.py:915-968 |
 | The moved-ref refusal, and the dead-versus-live stage sweep driven through a real child process. | `test_a_retention_ref_that_moved_is_never_deleted`; `test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not`; `_stage_left_by_a_dead_process` | mcp/tests/test_knowledge_review_comparison_generation.py:971-1018; mcp/tests/test_knowledge_review_comparison_generation.py:1032-1059; mcp/tests/test_knowledge_review_comparison_generation.py:1175-1196 |
 | **The measured-discard case, and the live-pin-before-release-history case.** | `test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch`; `test_a_frozen_again_comparison_reports_its_live_pin_before_the_release_history` | mcp/tests/test_knowledge_review_comparison_generation.py:1062-1126; mcp/tests/test_knowledge_review_comparison_generation.py:1129-1172 |
-| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:136-136; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module was registered under, inside the array whose own key declares the classification. | "mcp/tests/test_knowledge_review_comparison_generation.py"; "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:137-137; mcp/tests/test-evidence-lanes.toml:5-5 |
 | **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer — each cited down to the artifact's own `consumer_scope` and the list it opens.** | `consumer_scope`; `consumers` | mcp/tests/evidence-lifecycle.toml:96-96; mcp/tests/evidence-lifecycle.toml:97-97 |
-| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:136-136 |
-| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1711 |
+| The lane row this module was registered under. | `unit-regression`; "mcp/tests/test_knowledge_review_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:137-137 |
+| **The two exact-consumer rows this module was added to, because its imports make it a source-derived consumer.** | `consumers`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:83-101; mcp/tests/evidence-lifecycle.toml:97-1712 |
 | The Git-truth support helpers the module reads its evidence through. | `_git`; `BATCH_PATH`; `BATCH_PATH_CANDIDATE_TEXT` | mcp/tests/diff_scope_test_support.py:113-113; mcp/tests/diff_scope_test_support.py:516-531; mcp/tests/read_scope_test_support.py:118-118; mcp/tests/read_scope_test_support.py:752-767 |
 
 The following declarations carry the changed boundary.
@@ -179,6 +179,7 @@ task-artifact root under `tmp_path` for each case.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`mcp/tests/evidence-lifecycle.toml` and `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the exact base-to-working line map (multi-anchor rows the installed fixer declined); no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`test-evidence-lanes.toml`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): No content impact: this card's source is unchanged; its citations into `mcp/tests/test-evidence-lanes.toml` moved by this leaf's two-line `unit-regression` insertion at `:107-108` and were re-pointed (by the installed anchor-range projection where it could, otherwise by exact base-to-working line mapping). Each re-pointed row cites the same lane line it cited at base; no claim wording changed and no verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 inserts two `unit-regression` rows at `mcp/tests/test-evidence-lanes.toml:102-103`, which moves every later lane row down by two lines; this card's lane-row citations were re-pointed by that exact shift (by base-to-working line mapping where the installed fixer declined a multi-anchor row), their claims unchanged. No verification stamp was advanced.

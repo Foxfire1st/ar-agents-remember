@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-18T20:52+02:00 |
-| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b` |
-| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
+| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
+| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -161,7 +161,7 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
+| Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational "without proof" list. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:363-383; mcp/src/agents_remember/application/memory_quality/controller.py:386-457; mcp/src/agents_remember/application/memory_quality/controller.py:487-661 |
 | Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:600-636 |
 | Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/application/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
@@ -197,6 +197,7 @@ this route's *consumers*, and three of those changes are things a reader of the 
   line range; until then the convention is to add at the end of the file.
 
 ## Update History
+- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): No source this overview governs changed. The one reopened claim, about `_attach_curator_checklist` in `application/memory_quality/controller.py`, was re-read against the working tree: the function changed (MIK-R28 passes the checklist its informational "without proof" list), and the claim still holds. The row now says the publication also carries that list on a converted tree, and it is re-cited to the three functions' measured extents (`363-383`, `386-457`, `487-661`); its old single range `295-441` no longer held them. No verification stamp was advanced.
 - 2026-09-18T20:52+02:00 — 260915-KS-L23 curator (terminal leaf, uncommitted change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): a **body section added**, not a metadata-only advance. The route's own sources are unchanged at the leaf's landing (empty diff, measured) while its *consumers* changed in three ways the section records — the two-gate separation, the single root-level budget declaration, and the appended registry consumer rows whose line shift re-projected this card's own citation ranges (D-36). The stamp advances to `5e4eb651` on the strength of that content, and the `_attach_final_full_catalog` citation was re-projected to `application/memory_quality/controller.py:600-646` in the same pass.
 
 - 2026-09-18T14:57+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
