@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-29T07:08:34+02:00 |
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -98,6 +98,19 @@ effect. A decision still answers only the row it named, and every conflict no de
 action, are refused by name. `_reconcile_preview` routes a dry run to the read-only preview and refuses with
 `sync-resolution-not-active` when no knowledge conflict is retained.
 
+**The memory merge is validated against the code side's result (MIK-R22 rule 8).** `_run_side` and
+`_finish_retained_merge` pass `paired_code=_paired_code(record)` into `start_side_merge` and
+`continue_side_merge`. `_paired_code` returns the code side's `resultHead` (as a `PairedCode` with the
+code repository) once the code side is `completed`, and `None` otherwise; `sync_transaction_git` then
+refuses a *converted* memory merge with no paired code commit. When the validator refuses,
+`SyncKnowledgeValidationError` is caught before the generic `SyncGitProofError` in both `_run_automatic`
+and `_finish_retained_merge`, and `_knowledge_validation_refused` returns the manual-repair result
+`sync-knowledge-validation-refused`. Its summary is every violation followed by a recovery line: repair
+the files in the memory worktree, stage them, then rerun `worktree_sync` (with
+`resolution_action='continue'` when the phase is `memory-resolution-required`), or cancel with
+`resolution_action='cancel'`. The phase is not changed and the merge stays staged, so the same call
+resumes and re-validates.
+
 ### Conventions
 
 The driver owns phase routing and delegates Git mechanics, journal storage, pinned authority,
@@ -113,6 +126,7 @@ consumer artifact on the memory side, not a second source of sync truth.
 - New moving-side admission cannot adopt an unrelated active merge.
 - Real content conflicts stay resumable, and exact merge/ref proofs cannot be replaced by a cache match.
 - Parked work must be restored or explicitly reported before terminal completion.
+- **A validator refusal is recoverable and never committed around.** `sync-knowledge-validation-refused` leaves the phase and the staged merge in place, names every violation and the recovery call; there is no sync input that skips validation.
 - **`resolution_action='reconcile'` is admitted only with a knowledge resolution, and the two are refused
   as a pair.** `knowledge_resolution` is read only with `reconcile`, which is what keeps a decided input
   from travelling with an action that would ignore it.
@@ -150,20 +164,23 @@ Source declarations and test assertions are distinguished from execution and acc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The driver validates choices and routes retained or new transactions, including the reconcile/decision pairing. | `sync_contract_under_authority`; `sync_input_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:86-114; mcp/src/agents_remember/worktrees/sync_transaction.py:181-220 |
-| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:408-425; mcp/src/agents_remember/worktrees/sync_transaction.py:904-910 |
-| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:354-382; mcp/src/agents_remember/worktrees/sync_transaction.py:581-602 |
-| **The side the retained phase names is read in one place, so phase and side cannot disagree.** | `_retained_side` | mcp/src/agents_remember/worktrees/sync_transaction.py:603-610 |
-| **The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.** | `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:611-647 |
-| **The authored-decision route: validate against the journal, re-run the adapter with every decision this side has already accepted plus the new one, then finish the retained merge.** | `_reconcile_knowledge_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:650-709 |
-| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:759-794; mcp/src/agents_remember/worktrees/sync_transaction.py:814-822; mcp/src/agents_remember/worktrees/sync_transaction.py:805-811 |
-| **The bounded refusal that stops the recovery cycling: a row an already-accepted decision answered that came back anyway.** | `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:712-741 |
-| **The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.** | `_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction.py:825-842 |
-| **The read-only dry run of an authored decision.** | `_reconcile_preview` | mcp/src/agents_remember/worktrees/sync_transaction.py:486-499 |
-| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs, and now returns the adapter's refusal with the merge outcome. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:141-167; mcp/src/agents_remember/worktrees/sync_transaction_git.py:305-318; mcp/src/agents_remember/worktrees/sync_transaction_git.py:319-340; mcp/src/agents_remember/worktrees/sync_transaction_git.py:571-581; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
+| The driver validates choices and routes retained or new transactions, including the reconcile/decision pairing. | `sync_contract_under_authority`; `sync_input_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:88-116; mcp/src/agents_remember/worktrees/sync_transaction.py:183-222 |
+| Dirty work admission and parking use complete typed side records. | `_preflight_participating_sides`; `_side_live_complete` | mcp/src/agents_remember/worktrees/sync_transaction.py:410-425; mcp/src/agents_remember/worktrees/sync_transaction.py:938-944 |
+| Currentness and continuation use Git facts and content-only conflicts. | `_already_current_result`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:356-384; mcp/src/agents_remember/worktrees/sync_transaction.py:613-634 |
+| The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. | `_knowledge_validation_refused`; `_run_automatic`; `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:585-601; mcp/src/agents_remember/worktrees/sync_transaction.py:520-547; mcp/src/agents_remember/worktrees/sync_transaction.py:643-681 |
+| The memory merge is paired with the code side's settled result commit, or with nothing before it settles. | `_paired_code` | mcp/src/agents_remember/worktrees/sync_transaction.py:604-610 |
+| A resolved memory conflict that breaks validation is refused on `continue` and syncs after the repair. | `test_a_resolved_memory_conflict_that_breaks_validation_is_refused_on_continue` | mcp/tests/test_knowledge_validator_routes.py:244-277 |
+| **The side the retained phase names is read in one place, so phase and side cannot disagree.** | `_retained_side` | mcp/src/agents_remember/worktrees/sync_transaction.py:635-640 |
+| **The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.** | `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:643-681 |
+| **The authored-decision route: validate against the journal, re-run the adapter with every decision this side has already accepted plus the new one, then finish the retained merge.** | `_reconcile_knowledge_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:684-743 |
+| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:793-828; mcp/src/agents_remember/worktrees/sync_transaction.py:848-856; mcp/src/agents_remember/worktrees/sync_transaction.py:839-845 |
+| **The bounded refusal that stops the recovery cycling: a row an already-accepted decision answered that came back anyway.** | `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:746-775 |
+| **The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.** | `_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction.py:859-876 |
+| **The read-only dry run of an authored decision.** | `_reconcile_preview` | mcp/src/agents_remember/worktrees/sync_transaction.py:488-501 |
+| The delegated Git owner excludes only the memory cache while retaining exact native merge proofs, and now returns the adapter's refusal with the merge outcome. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:147-171; mcp/src/agents_remember/worktrees/sync_transaction_git.py:311-312; mcp/src/agents_remember/worktrees/sync_transaction_git.py:599-607; mcp/src/agents_remember/worktrees/sync_transaction_git.py:325-338; mcp/src/agents_remember/worktrees/sync_transaction_git.py:40-54 |
 | Pinned authority and parked-work restoration remain separate owners. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
-| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-283 |
-| **The integration case that drives the authored decision through this driver and asserts the advertised call is the one that settles it.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled` | mcp/tests/test_worktree_sync.py:250-338 |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
+| **The integration case that drives the authored decision through this driver and asserts the advertised call is the one that settles it.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled` | mcp/tests/test_worktree_sync.py:268-354 |
 
 ## Cross-Repo References
 
@@ -175,6 +192,9 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented how the driver pairs the memory merge with the code side's result (`_paired_code`), maps a MIK-R22 validator refusal to `sync-knowledge-validation-refused` with a recovery line on both the automatic and the retained-conflict path (`_knowledge_validation_refused`), and keeps the merge staged. Added the matching invariant and three reference rows. The verification stamp is unchanged; closeout owns it.
+- 2026-09-29T05:01:35+00:00: Generated citation repair: `_retained_side` repointed to mcp/src/agents_remember/worktrees/sync_transaction.py:635-640. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T05:01:35+00:00: Generated citation repair: `_knowledge_conflict` repointed to mcp/src/agents_remember/worktrees/sync_transaction.py:859-876. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the recovery now journals accepted decisions and refuses to cycle, and the card records both halves.** `_reconcile_knowledge_resolution` builds `accepted = (*side.knowledgeReconciliations, args.knowledge_resolution)` and hands the whole sequence to `reconcile_side_merge`, journaling it on the next `resolution_required`; `_finish_retained_merge` clears `knowledgeReconciliations` with the conflict it belongs to. Before this change a decision that settled one conflict was forgotten the moment the next one was authored, so a merge holding two conflicts alternated between the same two rows forever: twelve applications, the cap, no settlement. The measured repair is two applications and a settled merge (`evidence/after-independent/recovery-progress-after.json`, against `recovery-progress-before.json`). A new `_reconcile_progress_refusal` is the **bounded refusal** that replaces the old "reconcile until it lands": when a row an already-accepted decision answered comes back anyway, the retraction could not hold it, and the operation stops with `sync-resolution-cycling`, naming the exact row and the two honest next steps (resolve it in the worktree and continue, or cancel) instead of journaling the same decision a second time. Three claims were rewritten rather than annotated — the continuation paragraph now names the field it clears, the authored-decision paragraph now says that every accepted decision persists and why, and the invariants section gained one bullet for the pair — and one was added for the progress refusal. The merge guard is untouched and is stated as such: `_independent_insert_refusal` still refuses two independent insertions of one identity, and each decision still answers only the row it named. **Citation accounting:** `_reconcile_knowledge_resolution` `:649-688`→`:650-709`, `_finish_retained_merge` `:611-648`→`:611-647`, `_reconcile_preview` `:486-501`→`:486-499`, the validate-the-caller's-error row to `:759-794`/`:814-822`/`:805-811`, the driver row to `:86-114`/`:181-220`, and a new row for `_reconcile_progress_refusal` at `:712-741`. No anchor was renamed and no citation was dropped. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.

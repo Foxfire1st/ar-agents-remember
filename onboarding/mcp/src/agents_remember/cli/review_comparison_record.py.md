@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/review_comparison_record.py` |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated | 2026-09-27T05:41:59+00:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`    |
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`    |
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -204,7 +204,7 @@ as a carried limitation rather than as a claim.
 | **The request value composed from the contract's own recorded identities rather than from anything the caller spelled.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:262-324 |
 | The contract loader whose typed failure the invocation answer carries, and the contract whose recorded task root the generation is published under. | `load_contract`; `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The authority loader and its typed failure, so an unreadable settings document is a named refusal rather than a traceback. | `load_config`; `ConfigError` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-77 |
-| **The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:69-77 |
+| **The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:76-84 |
 | The read the recorded refusal and the recorded source range are named by, so this command's record is what the surface reopens. | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:77-78 |
 | **The case that protects the journey this command completes: a baseline placed by a `--baseline` run is opened under the namespace its own record names.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 
@@ -229,6 +229,7 @@ own authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): No content impact: citation-only re-measure. This card cites `cli/__main__.py`, where the `knowledge-validate` subparser insertion moved the `review-record-comparison` registration down six lines. Ranges were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact line shift, and a per-document check then reported 0 findings. The claims were re-read and are unchanged. No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): No content impact: the registration row re-pointed to `cli/__main__.py:69-77` after MIK-R21 registered `knowledge-format`, and its finding no longer calls this the sixth subparser (the umbrella now has seven). Claim meaning unchanged; no stamp advanced.
 
 - 2026-09-27T05:41:59+00:00 — Retained the CLI argument claim with its current unchanged-knowledge and explicit recovery inputs. Verification remains closeout-owned.

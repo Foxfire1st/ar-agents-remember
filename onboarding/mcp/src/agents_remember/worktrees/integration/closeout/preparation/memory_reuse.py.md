@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,10 +57,10 @@ These source owners establish the behavior and boundaries above. Citation ranges
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The observer excludes cache status and binds actual HEAD/tree plus the certified content subject. | `observe_existing_memory_proof`; `head_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
-| The exact raw HEAD tree is checked before projected content is inspected. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:451-465; mcp/src/agents_remember/kernel/git_command.py:472-472 |
-| Only root memory.md is removed when proving equality with a required memory certificate subject. | `_existing_preparation_entries`; `_require_existing_preparation` | mcp/src/agents_remember/kernel/git_command.py:468-486; mcp/src/agents_remember/kernel/git_command.py:451-465 |
+| The exact raw HEAD tree is checked before projected content is inspected. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:492-506; mcp/src/agents_remember/kernel/git_command.py:513-513 |
+| Only root memory.md is removed when proving equality with a required memory certificate subject. | `_existing_preparation_entries`; `_require_existing_preparation` | mcp/src/agents_remember/kernel/git_command.py:509-527; mcp/src/agents_remember/kernel/git_command.py:492-506 |
 | The closed record hashes the raw and certified identities separately. | `ExistingMemoryPreparationProof` | mcp/src/agents_remember/models/lifecycles/preparation.py:43-69 |
-| The shared exact Git pathspec names only the derived root cache. | `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:25-27 |
+| The shared exact Git pathspec names only the derived root cache. | `MEMORY_CACHE_EXCLUDE` | mcp/src/agents_remember/kernel/memory_ledger.py:27-27 |
 
 ## Cross-Repo References
 
@@ -71,6 +71,7 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 | No distinct cross-repository evidence source is configured for this file. | — | — |
 
 ## Update History
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): No content impact: citation-only re-measure. This card cites `kernel/git_command.py`, where the new `read_git_blobs_bytes` and the `_run_git` stdin change moved the preparation helpers down by 41 lines. Ranges were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact line shift, and a per-document check then reported 0 findings. The claims were re-read and are unchanged. No verification stamp was advanced.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:59+00:00 — Current uncommitted candidate: Replaced ledger/mapping authority with read-only current-HEAD reuse and independently bound cache-free content; cache-only staging no longer creates a memory output. Source SHA-256 `e76443ad8abc02674ccbbe5993104ab93f8f74601e9ed051545ed22dd419bbc8`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.

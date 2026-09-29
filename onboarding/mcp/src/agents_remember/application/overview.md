@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-29T07:08:34+02:00 |
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -3567,5 +3567,22 @@ behaviour to preserve.
 | The shared preflight in its fixed order. | `pair_preflight_refusal` | mcp/src/agents_remember/application/review_pair_preflight.py:34-42 |
 | The catalogue caller delegating to it. | `list_knowledge_review_entries`; `pair_preflight_refusal` | mcp/src/agents_remember/application/knowledge_review.py:256-317 |
 
+## 260928-MIK-L22 The Default Worktree Services Bind The Knowledge Validator
+
+**Route meaning extended (MIK-R22@v1).** The default composition
+[`worktree_services.py`](worktree_services.py.md) now binds one more adapter:
+`knowledge_validation=GitKnowledgeValidation()`, from `memory_quality.knowledge_validator.commit_route`.
+It implements `worktrees.services.KnowledgeValidationPort`, the port through which the worktree layer's
+memory commit routes reach the mandatory knowledge validator without importing `memory_quality`. This
+composition root is the only place it is bound; a process whose bundle lacks it refuses a converted memory
+commit instead of skipping validation. Before MIK-R37 no production memory tree is converted, so binding
+it changes no behaviour today.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The default bundle binds the knowledge validator. | `build_default_worktree_services`; `GitKnowledgeValidation` | mcp/src/agents_remember/application/worktree_services.py:206-215; mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:26-54 |
+| The port it satisfies. | `KnowledgeValidationPort` | mcp/src/agents_remember/worktrees/services.py:131-147 |
+
 ## Update History
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L22 The Default Worktree Services Bind The Knowledge Validator": the default composition binds `GitKnowledgeValidation` to the worktree layer's new `KnowledgeValidationPort`, and is the only place it is bound. No verification stamp was advanced.
 - 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — the changed-intent summary and the shared pair preflight (`ICR-R24@v3`).** New section appended at the end (appended rather than inserted, so the line-cited parts of this overview do not move). Displaced rows into `knowledge_review.py` were re-pointed from the base-to-candidate line mapping. No stamp advanced.

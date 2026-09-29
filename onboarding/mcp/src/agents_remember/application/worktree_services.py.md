@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/worktree_services.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
+| lastUpdated | 2026-09-29T07:08:34+02:00 |
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Builds the default service bundle that lets lower-level worktree operations use provider lifecycle, memory checking, citation guards and Gate-5 rail definitions without importing those higher-level packages.
+Builds the default service bundle that lets lower-level worktree operations use provider lifecycle, memory checking, citation guards, Gate-5 rail definitions and the mandatory knowledge validator without importing those higher-level packages.
 
 ## Code Commentary
 
@@ -25,6 +25,8 @@ Builds the default service bundle that lets lower-level worktree operations use 
 ProviderLifecycleAdapter translates the worktree-owned setup specification into provider-owned requests and delegates setup/status/teardown. MemoryQualityAdapter delegates check-group discovery, drift context and memory checks. CitationGuardAdapter obtains the memory-quality citation cache guard.
 
 CertificationMemoryRailsAdapter delegates the admitted selection id to gate_five_memory_rails. build_default_worktree_services installs this adapter beside the existing three services; the re-exported bind_worktree_services installs the resulting bundle when the MCP/CLI composition calls it.
+
+Since MIK-R22 the default bundle also binds `knowledge_validation=GitKnowledgeValidation()`, imported from `memory_quality.knowledge_validator.commit_route`. It implements `worktrees.services.KnowledgeValidationPort`, so the worktree layer's memory commit routes (today the managed sync's memory merge) can run the validator without importing `memory_quality`.
 
 ### Conventions
 
@@ -36,6 +38,7 @@ Keep imports of providers and memory_quality at this composition boundary. Workt
 - Supplying Gate-5 rail definitions does not invoke full memory certification or publish coherence.
 - Default composition must bind the rail adapter before the Agents Remember certification-record seam requests it.
 - Preserve provider teardown and citation-guard ownership while extending the bundle.
+- The knowledge validator is bound here and nowhere else. A process that builds its bundle without it gets a refusal, not a skipped validation, for any converted memory commit.
 
 ### Todos
 
@@ -66,7 +69,7 @@ The cited source establishes the current contracts and boundaries described abov
 | Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:33-139 |
 | Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:140-187 |
 | The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:188-202 |
-| The default bundle composes the declared worktree services. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:203-211 |
+| The default bundle composes the declared worktree services, including the knowledge validator. | `build_default_worktree_services`; `GitKnowledgeValidation` | mcp/src/agents_remember/application/worktree_services.py:206-215; mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:26-54 |
 | The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:181-184 |
 
 ## Cross-Repo References
@@ -78,6 +81,8 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented the MIK-R22 binding of `GitKnowledgeValidation` in `build_default_worktree_services` and its boundary (bound only here; an unbound validator refuses a converted memory commit). Re-measured the bundle row after the three-line import insertion. The verification stamp is unchanged; closeout owns it.
 
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
   prepared-certification adapter import moved to the closeout plane. Re-read every cited range

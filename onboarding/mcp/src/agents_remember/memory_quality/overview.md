@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-19T23:02+02:00 |
-| lastVerifiedCommitHash | `e605822eb3bf83bf63a45963c5f51d5fc28859ee` |
-| lastVerifiedCommitDate | 2026-09-23T12:19:01+02:00|
+| lastUpdated | 2026-09-29T07:08:34+02:00 |
+| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
+| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -58,7 +58,7 @@ checks that enforce repository memory conventions.
 
 ## Hot Path Summary
 
-`worktrees/modules/memory_candidate_pair.py` — moved out of this route by commit `806649b9` — binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable.
+`worktrees/modules/memory_candidate_pair.py` — moved out of this route by commit `806649b9` — binds repository/worktree identity, branches, bases, onboarding and contract facts without requiring a cached ledger file or hashing its path into authority. Citation provenance snapshots read substantive memory content while excluding only root `memory.md`; actual source/candidate drift remains detectable. `knowledge_validator/` (MIK-R22) is the mandatory validator for converted text knowledge: one rule registry, run before any converted memory commit.
 
 ## Detailed Route Context
 
@@ -83,6 +83,17 @@ dependency on the closeout plane.
 
 ## Route Model
 
+- `knowledge_validator/` (MIK-R22, added by 260928-MIK-L22) is the mandatory knowledge
+  validator for the converted text layout (Doc14). `trees.py` reads a memory tree's `knowledge/`
+  and `onboarding/` bytes (directory or Git) and the paired code tree's paths; `parsed.py` reads each
+  file once through the MIK-R21/R07 models and attributes every problem to one rule; `markers.py` is the
+  `[n]` marker grammar; `registry.py` is the single rule registry (rule 9) and the validation context;
+  `rules_structure.py` and `rules_references.py` register MIK-R22's 16 rules (3 report-only);
+  `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
+  `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
+  worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
+  above: it validates only trees that carry `knowledge/layout.json`, and before MIK-R37 no production
+  tree does.
 - `check.py` normalizes check names, dispatches quality runners, and returns one
   combined payload.
 - `integrity/onboarding_drift_check/` contains the moved `c-02-memory-quality-control` skill drift classifier
@@ -138,6 +149,12 @@ after this leaf's re-scope, so the next leaf that must edit it has to split it f
 
 
 ## Invariants And Boundaries
+
+- **No converted memory commit is made without a passing run of `knowledge_validator`.** Every
+  commit route calls one registry through `require_valid_commit` (or the worktree port that wraps it);
+  there is no skip parameter, no CLI flag that skips a rule, and a report-only rule never refuses.
+  The validator judges shape, identity, references, ownership, families, anchor paths and history
+  freezing, never meaning or currentness.
 
 - Task-start work should use `drift_check` to build the onboarding worklist.
 - Curator starts with the full contract-scoped `memory_quality_check`, uses its single enclosure
@@ -685,7 +702,37 @@ measured at all. `summarise_assessment_state` keeps the counts exact — the neg
 and `_limitations` lists `not-measured` beside the other counted codes, so the section's vocabulary and the
 counts it renders cannot disagree.
 
+## 260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route
+
+**This route gained `knowledge_validator/`, the integrity check that replaces database constraints once
+knowledge is text in Git (D18).** It is governed here rather than by its own overview, following the
+sibling subpackages (`final_certification/`, `integrity/`, `style/`), which have none. Its
+file-level cards carry the per-module detail; the route-level facts are these:
+
+- **One registry, run everywhere.** MIK-R22 registers 16 rules (rules 1–7), and later packets (MIK-R04,
+  R20, R27, R13) add theirs with `register_rule`. Every caller (the managed sync's memory merge today,
+  the `agents-remember knowledge-validate` command, later the writer and MIK-R09's routes) runs all of
+  them. Three rules are report-only by registry flag: a file sidecar without Markdown, an unresolved
+  reference target, and a carried anchor at an absent path.
+- **Where it sits in the layering.** The package ranks with `memory_quality`, so the worktree layer
+  reaches it only through `worktrees.services.KnowledgeValidationPort`, which
+  `application/worktree_services.py` binds to `commit_route.GitKnowledgeValidation`. The CLI imports it
+  directly, and `cli/knowledge_format.py` shares its `trees.is_excluded_from_knowledge` predicate.
+- **Production is unchanged before MIK-R37.** Applicability is the layout marker on the candidate or any
+  base; the live memory repository has none, so every route returns before the validator runs.
+- **What it does not judge.** Meaning (Doc13), and whether an anchor's content still matches the code
+  (currentness, MIK-R03). Only path existence is checked, and only for anchors no base carries.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:49-68 |
+| The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:60-66; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:69-72 |
+| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:82-97; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:76-79 |
+| The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:26-54 |
+| The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
+
 ## Update History
+- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated — the mandatory knowledge validator joins this route.** Added `knowledge_validator/` to the Route Model and the Hot Path Summary, a new first invariant (no converted memory commit without a passing validator run; no skip), and the section "260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route". The package's eleven modules got new file cards governed by this overview; no separate `knowledge_validator/overview.md` was created, following the sibling subpackages. No verification stamp was advanced.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the two governed sources this leaf changed under this route: the six-member status vocabulary `reported_subject_status` now enumerates in the projection's own precedence order and the `notMeasuredCount` the pipeline carries end to end (`family_review.py`, 452 → 457 lines, with `application/memory_quality/controller.py` 847 → 848), and the persisted checklist's new `not-measured` limitation row and count beside the narrowed meaning of `stale` (`knowledge_review.py`, 210 → 230). This is a body change and not a metadata-only refresh, which is why it is recorded here. This document carried **no** repairable citation finding, so no citation range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
