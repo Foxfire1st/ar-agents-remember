@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash |  `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate |  2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T10:05:46+02:00 |
+| lastVerifiedCommitHash |  `cd3e943d740b490d391722389af0a6bca0ccf93e`|
+| lastVerifiedCommitDate |  2026-09-29T10:38:08+02:00|
 
 > **Status:** active baseline
 
@@ -28,6 +28,28 @@ curator hand-off template (synchronized into the package and the eight harness s
 | The format declaration's own statement that text files become the source of truth. | "Text files in the memory repository are the source of truth for knowledge" | mcp/src/agents_remember/models/knowledge_files/__init__.py:3-3 |
 | The template's informational section and its no-change-before-MIK-R37 statement. | "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:427-427 |
 
+## 260928-MIK-L12 The Curator Writer Writes Knowledge As Files, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L12` (MIK-R12@v2): the package gains the curator file writer,
+[`application/knowledge_writer/`](mcp/src/agents_remember/application/overview.md), which creates and updates
+every knowledge kind (invariant, family, decision and the seven other facet records; realization and proof
+entries; history rows) as files, fills every mechanical field (IDs, anchors with `blob` and `content` at the
+code candidate C, revisions, origin with the hand-off evidence, canonical formatting), and runs the knowledge
+validator over the whole resulting tree before it writes anything. `agents-remember knowledge-ingest` and
+`agents-remember knowledge-bootstrap` choose their writer by the memory tree they write: a converted tree
+(`knowledge/layout.json`) goes to the file writer, and every other tree keeps today's database ingest
+unchanged; the database modules stay until MIK-R26 (leaf L26), and `knowledge_change` stays registered and
+refusing. An anchor's `content` has exactly one definition,
+[`models/knowledge_files/anchor_content.py`](mcp/src/agents_remember/models/overview.md). The canonical
+curator hand-off template gained the section "The file writer's sections (MIK-R12)", synchronized by
+`scripts/sync-skills.py` into the package copy and the eight harness starter copies. **Nothing the installed
+runtime does changes before MIK-R37**: no production memory tree is converted.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:50-54 |
+
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
 
 Repository-level consequence of leaf `260928-MIK-L04` (MIK-R04@v2): in the text knowledge format a family
@@ -41,7 +63,7 @@ memory tree is converted or holds a family record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's family-routes subsection. | `### Family routes (MIK-R04)`; "as deep as makes sense" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:467-467 |
+| The template's family-routes subsection. | `### Family routes (MIK-R04)`; "as deep as makes sense" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-460; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:468-468 |
 
 ## Current reviewer and publication ownership
 
@@ -132,6 +154,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The Curator Writer Writes Knowledge As Files, Not Yet Used"**: the repository-level consequence (the new writer package, the per-tree dispatch of the two CLI entry points, the one `content` definition, and the template section reaching the package copy and the 8 harness starter copies, which this route governs). No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Routes Are Checked, Not Yet Used"**: the repository-level consequence of MIK-R04, including the template subsection that reached the eight harness starter copies this route governs. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new repository-level section for the declared text knowledge format** (`models/knowledge_files/`, `agents-remember knowledge-format`) and the curator hand-off template's informational MIK-R21 section, including its synchronized harness copies under this route. No stamp advanced.
@@ -379,10 +402,10 @@ Three consequences a reader of this overview should carry, because they are what
 | --- | --- | --- |
 | **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:140-140; mcp/src/agents_remember/application/published_intent.py:239-255 |
 | **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
-| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:302-338; mcp/src/agents_remember/cli/knowledge_ingest.py:383-395; mcp/src/agents_remember/cli/knowledge_ingest.py:603-616 |
+| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:313-349; mcp/src/agents_remember/cli/knowledge_ingest.py:394-406; mcp/src/agents_remember/cli/knowledge_ingest.py:614-627 |
 | The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:70-70 |
-| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:109-140 |
+| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:109-141 |
 
 ## Memory Preparation And Final Certification
 

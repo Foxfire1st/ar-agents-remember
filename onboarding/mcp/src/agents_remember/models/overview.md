@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
+| lastUpdated | 2026-09-29T10:05:46+02:00 |
+| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
+| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -221,7 +221,22 @@ kinds and applicability and stays until MIK-R26 (leaf L26).
 | The four census schemas registered for dispatch. | `CENSUS_MODELS` | mcp/src/agents_remember/models/knowledge_files/census.py:428-433 |
 | The latest status entry across every census governs. | `governing_status` | mcp/src/agents_remember/models/knowledge_files/census.py:447-464 |
 
+## 260928-MIK-L12 The One Definition Of An Anchor's `content`
+
+**Route impact (MIK-R12@v2, architect ruling 5).** [`knowledge_files/anchor_content.py`](knowledge_files/anchor_content.py.md)
+fixes which bytes an anchor's `content` hashes: a line range is its lines (one-based, inclusive), each with its
+own terminator exactly as the blob holds it, split on `\n` only and never decoded; a file anchor is the whole
+blob; `content` is `sha256:<hex>` of those bytes. The curator writer records `content` through it, and L24's
+converter and every later leaf (MIK-R03, R08) must compute it here too; the Doc14/L21 fixture hashes are
+illustrative. It is not re-exported from `knowledge_files/__init__.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The range's bytes. | `range_bytes` | mcp/src/agents_remember/models/knowledge_files/anchor_content.py:48-58 |
+| The content identity. | `content_identity` | mcp/src/agents_remember/models/knowledge_files/anchor_content.py:61-64 |
+
 ## Update History
+- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The One Definition Of An Anchor's `content`"** for the new `anchor_content.py` card. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Census File Formats"** for the new `knowledge_files/census.py` card and the `documents.py` registration. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 A Family Route May Be The Repository Root, `.`"** for `RoutePath` and `FamilyRecord.routes`. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Knowledge Tool Responses Name A Memory Tree". The reopened `published_intent_block` row of the `read_files.py` section was re-read: the owning module still decides the block's shape and this model still carries it as a dict, so its wording is retained; the fixer's generated bullet for it, written minutes earlier in this same pass, is folded into this entry. No verification stamp was advanced.

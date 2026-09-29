@@ -5,14 +5,25 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-29T10:05:46+02:00 |
+| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
+| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L12 The Mounted Refusal Names The File Route
+
+`knowledge_change_payload` still refuses every kind with `registration_absent`; its refusal detail gained one
+sentence: on a converted memory tree (`knowledge/layout.json`) both shipped CLI entry points write knowledge
+files through the curator file writer (MIK-R12) instead of the database. The tool stays registered and refusing
+by architect ruling, until MIK-R26 (leaf L26). No builder, request model or other payload on this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:486-505 |
 
 ## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
 
@@ -27,6 +38,7 @@ else on this route moved: the same five builders, the same declared kinds, the s
 sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
 
 ## Update History
+- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The Mounted Refusal Names The File Route".** No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 A `databasePath` May Name A Converted Memory Tree" for the builders' shared dataset selection, the new response fields and the refusal mapping. No verification stamp was advanced.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the write plane is named by both its shipped entry points.** The L20 paragraph is completed to one writer plus both CLI entry points (`WRITE_ENTRY_POINT` beside the new `TASKLESS_WRITE_ENTRY_POINT`), the module comment now agrees with it, and the new section records why the first sentence was true at its own bytes and incomplete after the second route shipped. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 

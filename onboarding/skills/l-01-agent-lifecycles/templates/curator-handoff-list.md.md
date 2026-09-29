@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T10:05:46+02:00 |
+| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
+| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,23 @@ reported, never refused, and a retired family exempt; an added route must be a c
 carried absent one is reported for MIK-R06; and `agents-remember knowledge-routes`, whose suggestion is
 labelled `mechanical` and never writes a route. It changes nothing a producer emits.
 
+Since leaf `260928-MIK-L12` (MIK-R12) the template decides that mapping — `incidental` is written as
+`support` — and gains its own section, **"The file writer's sections (MIK-R12)"**, after the MIK-R21
+section. It applies only on a **converted** memory tree (the layout marker); on unconverted memory, which
+is every tree until the cutover (MIK-R37), the installed ingest is unchanged, and the producer's thirteen
+fields do not change either. It documents the list-or-object document with `entries`, `records` and
+`history`; the curator keys on entries (`scope`, `admission`, `status`, `invariant_id`, `supersedes`,
+`proofs: [{test, facet}]`); that an entry naming no record is refused unless a `records` item names it;
+that evidence is stored in `origin.handoff.evidence` of this leaf's own record, and for another leaf's
+record in this leaf's `history` row about it (without the row the run is refused); rerun removal of this
+leaf's unnamed entries; the `path::name` evidence states (`proof_written`, `needs_facet`,
+`unresolvable`); record items of the ten kinds; history rows and their four cover forms; `handoff:<key>`
+handles; what the writer fills in (IDs, anchors at C with `blob` and `content`, revisions against the
+memory base, origin, row fields, canonical formatting, whole-file row agreement); and what it checks (the
+validator over the resulting tree, all-or-nothing, the MIK-R04 route rules reported inside the writer
+while every commit route still refuses them, planning without `--commit`, a non-blank
+`--authorization-ref` recorded in the report).
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -93,8 +110,9 @@ These references name the current owners and the behavior they establish.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:481-481 |
-| **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-457 |
+| **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-460; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:482-482 |
+| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:578-578; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
 | **Per-target realization rationale and role, the value/vocabulary/length/route rules, the committed-retry exemption, and the stated supersession of revision 1's target element shape.** | "Realization rationale and role: one authored explanation per target"; "this file's element shape supersedes rule 1's" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
@@ -108,6 +126,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **body update — the template gains the section "The file writer's sections (MIK-R12)"** after the MIK-R21 section, and the `incidental` line now says the writer writes it as `support`. The Logic paragraph records both, including that the section applies only to converted memory and changes nothing a producer emits; one row was added (`:485`, `:578`, `:451`). The claim that the `incidental` mapping "is MIK-R12's to decide" is kept as the MIK-R21 history it is, and the new paragraph states the decision. The same section reaches the package copy and the 8 harness starter copies through `scripts/sync-skills.py` (the L04 merge kept "Family routes (MIK-R04)" first). The MIK-R04 row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — the template gains the curator-guidance subsection "Family routes (MIK-R04)"** inside the MIK-R21 section. The Logic paragraph above records what it says and that it changes nothing a producer emits; one reference row cites it (`:459`, `:481`). No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **body update — the template gains the informational section "Where an entry lands once knowledge is text (MIK-R21)".** The Logic paragraph above records what it maps and that it changes nothing a producer emits before MIK-R37; one reference row cites it (`:425-457`). No verification stamp was advanced.
 - 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic states the per-target `{path, locator, governing_route, rationale, role}` element shape, the required authored rationale, the named refusals and the supersession of the external schema note revision 1's rule-1 element shape; new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.

@@ -5,9 +5,24 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-29T10:05:46+02:00 |
+| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
+| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+
+## The file writer's sections in the curator hand-off template (260928-MIK-L12)
+
+`templates/curator-handoff-list.md` gained the section "The file writer's sections (MIK-R12)", after the MIK-R21
+section and its "Family routes (MIK-R04)" subsection. It applies only on a converted memory tree; on unconverted
+memory, which is every tree until MIK-R37, the installed ingest is unchanged. It documents the curator's side of
+the file writer: the list-or-object document with `entries`, `records` and `history`; the curator keys on entries
+(`scope`, `admission`, `status`, `invariant_id`, `supersedes`, `proofs`); record items of the ten kinds; history
+rows and their cover forms; `handoff:<key>` handles; what the writer fills in; and what it checks. The
+`incidental` line now says the writer writes it as `support`. Nothing a producer emits changes. No role,
+operation or other template in this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -21,7 +36,7 @@ a route. Nothing a producer emits changes. No role, operation or other template 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:477-477 |
+| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-460; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:478-478 |
 
 ## Where a hand-off entry lands once knowledge is text (260928-MIK-L21)
 
@@ -36,7 +51,7 @@ in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section heading and its no-change statement. | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-427 |
+| The section heading and its no-change statement. | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
 | `incidental` has no spelling in the file format. | "has no spelling in the file format" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:450-450 |
 
 ## Explicit sibling selection in curation
@@ -512,6 +527,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "The file writer's sections in the curator hand-off template (260928-MIK-L12)".** The L04 section's row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "Family routes in the curator hand-off template (260928-MIK-L04)"** for the template's new MIK-R04 subsection. No stamp advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the curator hand-off template's informational MIK-R21 section.** No stamp advanced.
 - 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the per-target realization rationale section (template shape, supersession of the external schema note revision 1's rule-1 element shape, role/operation/c-14 duties). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
