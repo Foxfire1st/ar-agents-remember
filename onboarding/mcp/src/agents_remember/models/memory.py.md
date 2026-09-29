@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-18T19:22+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | path                   | `mcp/src/agents_remember/models/memory.py` |
 | doc_type               | `file-level-onboarding`                    |
 | governingOverview      | `overview.md`                              |
@@ -23,7 +23,7 @@ memory initialization, baseline, and carryover MCP tools.
 
 L23 adds the flexible `CitationFixResponse` envelope, pinning the public operation discriminator while retaining guarded tool detail.
 
-cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:13-27) is strict because drift summaries have a stable
+cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:15-29) is strict because drift summaries have a stable
 status, count, report, and actionable-sample shape. Its cit:(["status: DriftStatus"], mcp/src/agents_remember/models/memory.py:20-20) is
 `DriftStatus`, **imported** from
 `memory_quality.integrity.onboarding_drift_check.models`:
@@ -76,12 +76,12 @@ run states.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:249-257; mcp/src/agents_remember/application/memory_quality/controller.py:258-266; mcp/src/agents_remember/application/memory_quality/controller.py:267-275 |
-| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:92-112; mcp/src/agents_remember/application/memory_tools.py:224-261; mcp/src/agents_remember/application/memory_tools.py:299-337; mcp/src/agents_remember/application/memory_tools.py:346-420; mcp/src/agents_remember/application/memory_tools.py:464-513; mcp/src/agents_remember/application/memory_tools.py:541-570 |
-| The strict sync/start/poll request models and discriminated union. | `MemoryQualitySyncRequest`; `MemoryQualityStartRequest`; `MemoryQualityPollRequest`; `MemoryQualityCheckRequest` | mcp/src/agents_remember/models/memory.py:108-113; mcp/src/agents_remember/models/memory.py:114-119; mcp/src/agents_remember/models/memory.py:120-136; mcp/src/agents_remember/models/memory.py:131-134 |
-| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
-| `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
-| The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:13-23 |
+| Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:253-261; mcp/src/agents_remember/application/memory_quality/controller.py:262-270; mcp/src/agents_remember/application/memory_quality/controller.py:271-279 |
+| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:93-111; mcp/src/agents_remember/application/memory_tools.py:233-276; mcp/src/agents_remember/application/memory_tools.py:316-352; mcp/src/agents_remember/application/memory_tools.py:363-392; mcp/src/agents_remember/application/memory_tools.py:481-488; mcp/src/agents_remember/application/memory_tools.py:491-528; mcp/src/agents_remember/application/memory_tools.py:558-565; mcp/src/agents_remember/application/memory_tools.py:568-585 |
+| The strict sync/start/poll request models and discriminated union. | `MemoryQualitySyncRequest`; `MemoryQualityStartRequest`; `MemoryQualityPollRequest`; `MemoryQualityCheckRequest` | mcp/src/agents_remember/models/memory.py:108-111; mcp/src/agents_remember/models/memory.py:114-117; mcp/src/agents_remember/models/memory.py:120-128; mcp/src/agents_remember/models/memory.py:131-131 |
+| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-29 |
+| `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-24 |
+| The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:14-24 |
 
 ## 260815-DAG-L3 Attestation Response Field
 
@@ -127,6 +127,7 @@ It is **declared** rather than left to the flexible envelope, by this package's 
 and D-33 names the memory-quality and citation surfaces.
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/memory_quality/controller.py`, `mcp/src/agents_remember/application/memory_tools.py`, `mcp/src/agents_remember/models/drift.py`, `mcp/src/agents_remember/models/memory.py`, moved by MIK-R30's line insertions (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-working line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The request-model row's last range `125-125` (`mode: Literal["poll"]`) stopped six lines above `type MemoryQualityCheckRequest = Annotated[…` at `131`; it was widened to `125-131`. (b) The entry-point row cited `memory_tools.py:352-409` for `memory_carryover_plan_tool`, whose definition is at `416`; the range was widened to `352-416`, so the tail of the cited span is the entry point the claim names. Claims, anchors and every other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "status: DriftStatus" repointed to mcp/src/agents_remember/models/memory.py:20-20. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.

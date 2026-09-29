@@ -6,13 +6,44 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083` |
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L30 The Onboarding Refresh Gate On History Files, Inert Until The Cutover
+
+`260928-MIK-L30` (MIK-R30@v1) builds the onboarding gate that replaces Update History and the verification
+stamps once memory is converted (D23).
+
+- **The rule:** `worktrees/modules/onboarding_trace.py`, a pure function over K_B and K_C. One
+  `onboarding_trace` item per changed sidecar-stored source with a card (`onboarding:<path>`) and per nearest
+  governing route (`onboarding:<route>/overview`, `onboarding:overview` at the root). An item is satisfied by
+  a counted change or by the leaf's `no_impact` row; a mechanical anchor refresh (`blob`, line numbers,
+  `content`) never counts.
+- **The sides and the one list:** `application/knowledge_worklist/onboarding_trace.py` registers the kind,
+  resolves the sides (the converted base read through the extended cache in `base_cache.py`) and merges the
+  items into `knowledge-worklist.json`; `leaf.py` exposes `leaf_onboarding_trace_sides`.
+- **Enforcement where today's gate runs:** `application/memory_quality/controller.py` (one repair finding per
+  missing trace) and `application/prepared_certification.py` (the closeout refusal names every missing trace).
+  `worktrees/modules/onboarding.py` holds the two entry points and stops stamping `lastVerifiedCommit*` on a
+  converted tree; the history-order fixer is not applicable there. The writer accepts the onboarding row
+  (`knowledge_writer/authoring.py`), and the hand-off template documents it.
+- **Architect rulings (2026-09-29):** 18:49:50 (on converted trees only a counted change or a history row satisfies a trace, so curator-coherence no-impact judgments no longer count there; `onboarding_trace` items go into the persisted `knowledge-worklist.json`; the root route's subject is `onboarding:overview`; the converted-base cache is v2 and also holds onboarding Markdown; deleting `memory_quality/style/update_history/` is left to MIK-R37; the wiring outside the Scope list is accepted); 19:23:45 (mixed formats give an incomplete side, never a vacuous pass; items are sorted by `(kind, subject)`; a v1 cache file is ignored and rewritten; an unreadable sidecar never satisfies a trace); 19:53:54 (`onboarding_item_open` agrees with the live gate; an unreadable K_B sidecar is an incomplete input, an unreadable K_C sidecar keeps the item open, and a readable repair counts).
+- **Inert before MIK-R37:** `leaf_onboarding_trace_sides` returns `None` for every unconverted leaf, so the
+  installed runtime keeps today's gate; the worker and reviewer measured today's refusal and stamps
+  byte-identical to base on an unconverted clone.
+- **Tests:** `test_onboarding_trace_gate.py` (15 cases) and one lane row; two worklist-leaf assertions count
+  the new items. No catalog change and no re-pin.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The rule's statement for converted trees. | "The onboarding refresh gate on history files (MIK-R30), for converted memory trees." | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:1-27 |
+| The memory-quality dispatch between the two gates. | `_onboarding_refresh_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:683-733 |
+| The gate chooser both enforcement points share. | `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:406-439 |
 
 ## 260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover
 
@@ -76,7 +107,7 @@ sides are unconverted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:403-434 |
+| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483 |
 | The CLI subcommand. | `run`; `leaf_worklist` | mcp/src/agents_remember/cli/knowledge_worklist.py:93-108 |
 
 ## 260928-MIK-L28 First-Class Test Proofs Are Read Back And Listed, Not Yet Used
@@ -450,6 +481,10 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-29T19:00:13+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T19:00:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T19:00:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:780-816. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "260928-MIK-L30 The Onboarding Refresh Gate On History Files, Inert Until The Cutover": the whole leaf and every architect ruling (18:49:50, 19:23:45, 19:53:54). Three rows. Rows citing moved lines were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T18:08:35+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T18:08:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:122-122. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **route body updated for MIK-R03.** Added the section "260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover" at the top: the whole leaf and every architect ruling. Three rows.
@@ -728,7 +763,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:112-144 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:147-147 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:122-122 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -979,9 +1014,9 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:512-692; mcp/src/agents_remember/application/memory_quality/controller.py:365-385; mcp/src/agents_remember/application/memory_quality/controller.py:388-462 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:739-775 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:754-818 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:516-680; mcp/src/agents_remember/application/memory_quality/controller.py:369-389; mcp/src/agents_remember/application/memory_quality/controller.py:392-466 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:780-816 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:

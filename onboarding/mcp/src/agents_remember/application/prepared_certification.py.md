@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/prepared_certification.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-17T11:05+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,6 +62,20 @@ half of the same contract the citation index itself states — a bound that is e
 reported, actionable state, never a silent omission and never a whole-tree refusal of the quality
 surface.
 
+### The onboarding gate at closeout (MIK-R30)
+
+`_realize_prepared_memory` now asks `leaf_onboarding_trace_sides(current.contract, memory_tree=memory)`
+first. With sides (a converted K_B or K_C), it runs `validate_onboarding_traces_for_context`, which refuses
+naming every missing trace, every unreadable input and today's missing onboarding. With `None` it runs
+today's `validate_onboarding_refresh_plan_for_context` and `validate_route_overview_refresh_plan_for_context`
+exactly as before. This file is outside MIK-R30's Scope list, but rule 6 names "the closeout validator", and
+the architect accepted it as necessary wiring (ruling 2026-09-29T18:49:50 (6)).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The closeout validator's dispatch between the two gates. | `_realize_prepared_memory`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/application/prepared_certification.py:342-421 |
+| The refusal names each missing trace. | `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses` | mcp/tests/test_onboarding_trace_gate.py:335-349 |
+
 ### Conventions
 
 Use the named source owners directly. The module was introduced in landed commit
@@ -91,17 +105,17 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The certification's own source index, or a named refusal with a next step. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:415-437 |
-| The candidate route whose register record the closeout gate sees. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:440-554 |
-| The reopened handoff this certification reads. | `_current` | mcp/src/agents_remember/application/prepared_certification.py:144-152 |
-| The scope authority preserved while final HEAD-based checks read the proved view. | `_PreparedScopeAuthority` | mcp/src/agents_remember/application/prepared_certification.py:156-196 |
-| Publication of the selected code artifacts and the final catalog. | `_export` | mcp/src/agents_remember/application/prepared_certification.py:592-641 |
-| The emitted final catalog. | `_manifest` | mcp/src/agents_remember/application/prepared_certification.py:644-693 |
-| Selection of the original Gate-5 result/certificate. | `_select` | mcp/src/agents_remember/application/prepared_certification.py:696-746 |
-| The adapter the lifecycle owner drives. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:749-813 |
-| The index acquisition the refusal wraps. | `open_repository_index`; `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
+| The certification's own source index, or a named refusal with a next step. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:424-446 |
+| The candidate route whose register record the closeout gate sees. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:449-568 |
+| The reopened handoff this certification reads. | `_current` | mcp/src/agents_remember/application/prepared_certification.py:146-154 |
+| The scope authority preserved while final HEAD-based checks read the proved view. | `_PreparedScopeAuthority` | mcp/src/agents_remember/application/prepared_certification.py:157-198 |
+| Publication of the selected code artifacts and the final catalog. | `_export` | mcp/src/agents_remember/application/prepared_certification.py:606-655 |
+| The emitted final catalog. | `_manifest` | mcp/src/agents_remember/application/prepared_certification.py:658-707 |
+| Selection of the original Gate-5 result/certificate. | `_select` | mcp/src/agents_remember/application/prepared_certification.py:710-760 |
+| The adapter the lifecycle owner drives. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
+| The index acquisition the refusal wraps. | `open_repository_index`; `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:180-274; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:360-431 |
 | The typed error the acquisition failure becomes. | `SourceIndexError` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:64-65 |
-| The route value the certification reads. | `Trees` | mcp/src/agents_remember/memory_quality/style/citations/resolution.py:30-78 |
+| The route value the certification reads. | `Trees` | mcp/src/agents_remember/memory_quality/style/citations/resolution.py:37-148 |
 | The case pinning the gate's own declared check group degrading the same way. | `test_the_closeout_gates_own_check_group_degrades_the_same_way` | mcp/tests/test_citation_index_resilience.py:631-656 |
 
 ## Cross-Repo References
@@ -111,6 +125,7 @@ No source-local TODO is asserted here.
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the subsection "The onboarding gate at closeout (MIK-R30)": the converted-tree dispatch in `_realize_prepared_memory`, with architect ruling 2026-09-29T18:49:50 (6) accepting this file as wiring. Rows below the import and the dispatch were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 

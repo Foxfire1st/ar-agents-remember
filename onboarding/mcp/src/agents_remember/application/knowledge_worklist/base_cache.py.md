@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_worklist/base_cache.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,9 +35,10 @@ byte-identical worklists.
   a working tree (`rev-parse --is-inside-work-tree`), and returns `None` (no cache) when it is, or when the
   directory cannot be created. Nothing is created before that check.
 - `load(key)` gunzips and parses the file, and returns the files only when `format` is
-  `knowledge-worklist-base/v1` and the stored `key` matches; any read or parse failure is a miss. A hit
+  `knowledge-worklist-base/v2` (since MIK-R30; it was `v1`) and the stored `key` matches; any read or parse failure is a miss. A hit
   touches the file's mtime.
-- `store(key, files)` writes `{format, key, files}` (the converted tree's indexed JSON files as text) with
+- `store(key, files)` writes `{format, key, files}` (the converted tree's indexed JSON files and, since
+  MIK-R30, its onboarding Markdown, as text) with
   `atomic_write_bytes` and a zero gzip mtime; a non-UTF-8 file makes the base uncacheable and a write
   failure is ignored. `_evict` then keeps the `MAX_FILES` (32) newest files.
 
@@ -64,6 +65,34 @@ byte-identical worklists.
   raise; `recompute_leaf_worklist` then reports an `incomplete` "worklist run" for that run. Suppressing
   `OSError` around the sort would close it.
 
+## 260928-MIK-L30 One Cache For Both Consumers (MIK-R30, Ruling 18:49:50 (4))
+
+The onboarding gate also compares K_B as its conversion, and it needs the onboarding Markdown, which the v1
+cache did not hold. The architect ruled that L08's cache is extended rather than having the gate reconvert
+K_B on every run (about 30 s on the real tree):
+
+- **`converted_base_files(memory_repository, memory_commit, *, code, version, cache_directory)`** is now the
+  one read-or-convert-and-store path, used by the worklist (`leaf._converted_base_side`) and the gate
+  (`onboarding_trace.onboarding_trace_sides`). It moved here from `leaf.py` unchanged in substance: it picks
+  K_B's own paired code commit when the code store holds it, B otherwise, and keys the cache on (K_B commit,
+  version, that code commit).
+- **`is_cached_path(path)`** selects what is stored: an indexed JSON file, or Markdown under `onboarding/`
+  outside any dot-directory.
+- **`FORMAT` is `knowledge-worklist-base/v2`.** A v1 file holds no Markdown and would make every card look
+  new to the gate, so a v1 file is ignored and rewritten, as the format rule already did for any other
+  format (ruling 19:23:45 N3; pinned by a test).
+- Location, key, eviction and the refusal inside a Git working tree are unchanged. The worker measured the
+  gate's sides at 29.4 s cold and 0.7 to 0.8 s from the cache on the real ICR L47 scratch copy.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The docstring's contents rule: JSON for the worklist, Markdown for the gate, v1 never read. | "held no Markdown, so its files are never read as a gate's base" | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:11-15 |
+| The v2 format constant. | `FORMAT` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:48-48 |
+| What the cache holds. | `is_cached_path` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:130-137 |
+| The one read-or-convert path both consumers use. | `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:140-172 |
+| The gate reads its converted K_B through it. | `onboarding_trace_sides`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:109-157 |
+| The cache holds the Markdown, and a v1 file is ignored and rewritten. | `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` | mcp/tests/test_onboarding_trace_gate.py:552-604 |
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -82,13 +111,13 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The key, location, contents and eviction rules. | "A directory inside any Git working tree is refused" | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:1-18 |
-| The cache location and format constants. | `CACHE_DIRECTORY_PARTS`; `MAX_FILES` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:40-40; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:42-42 |
-| The default directory and the key. | `default_base_cache_directory`; `base_cache_key` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:46-49; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:52-53 |
-| A location inside a working tree is refused before anything is created. | `open` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:62-76 |
-| A hit only for this format and key. | `load` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:81-100 |
-| Atomic writes and eviction. | `store`; `_evict` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:102-120 |
-| The caller that reads or fills the cache. | `_converted_base_side`; `ConvertedBaseCache` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:280-318 |
-| Cached by commit, version and code commit; a refused location converts and creates nothing. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:720-754 |
+| The cache location and format constants. | `CACHE_DIRECTORY_PARTS`; `MAX_FILES` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:47-47; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:49-49 |
+| The default directory and the key. | `default_base_cache_directory`; `base_cache_key` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:53-56; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:59-60 |
+| A location inside a working tree is refused before anything is created. | `open` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:69-83 |
+| A hit only for this format and key. | `load` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:88-107 |
+| Atomic writes and eviction. | `store`; `_evict` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:109-121; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:123-127 |
+| The worklist's converted K_B, now read through the shared read-or-convert path. | `_converted_base_side`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:282-306 |
+| Cached by commit, version and code commit; a refused location converts and creates nothing. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:729-763 |
 
 ## Cross-Repo References
 
@@ -99,6 +128,8 @@ No meaningful cross-repo references found: the cache lives in the coordination r
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T18:59:28+00:00: Generated citation repair: `store`; `_evict` repointed to mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:109-121; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:123-127. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 One Cache For Both Consumers": `converted_base_files` (moved here from `leaf.py`), `is_cached_path`, and the v2 format that also holds onboarding Markdown, with architect rulings 2026-09-29T18:49:50 (4) and 19:23:45 (N3). The `load` and `store` Logic bullets now name v2 and the Markdown. **The caller row was reworded and re-cited**: `_converted_base_side` no longer opens `ConvertedBaseCache` itself but calls `converted_base_files`. Rows below the changed docstring were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

@@ -6,10 +6,29 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash |  `719acba61e491d0b7f1ee82dbeea5314ecec5083`|
-| lastVerifiedCommitDate |  2026-09-29T20:27:14+02:00|
+| lastVerifiedCommitHash |  `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
+| lastVerifiedCommitDate |  2026-09-29T21:14:42+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L30` (MIK-R30@v1): once a memory tree is converted, the
+onboarding refresh gate no longer reads Update History or `lastVerifiedCommit*`. Every changed source file's
+card, and its nearest governing route overview, needs either a counted change (Markdown, or a sidecar field
+other than an anchor's `blob`, line numbers and `content`) or an `onboarding_trace` row with disposition
+`no_impact` in the leaf's history file. The rule is
+[`worktrees/modules/onboarding_trace.py`](mcp/src/agents_remember/worktrees/modules/overview.md); the
+curator's memory-quality run and the closeout validator dispatch to it only on a converted tree, and its items
+join the leaf's worklist. The canonical curator hand-off template's writer section gains a bullet for the
+onboarding row, synchronized by `scripts/sync-skills.py` into the package copy and the eight harness starter
+copies this route governs. **Architect rulings (2026-09-29):** 18:49:50 (on converted trees only a counted change or a history row satisfies a trace, so curator-coherence no-impact judgments no longer count there; `onboarding_trace` items go into the persisted `knowledge-worklist.json`; the root route's subject is `onboarding:overview`; the converted-base cache is v2 and also holds onboarding Markdown; deleting `memory_quality/style/update_history/` is left to MIK-R37; the wiring outside the Scope list is accepted); 19:23:45 (mixed formats give an incomplete side, never a vacuous pass; items are sorted by `(kind, subject)`; a v1 cache file is ignored and rewritten; an unreadable sidecar never satisfies a trace); 19:53:54 (`onboarding_item_open` agrees with the live gate; an unreadable K_B sidecar is an incomplete input, an unreadable K_C sidecar keeps the item open, and a readable repair counts). **Nothing the installed runtime does changes before MIK-R37**: every
+unconverted tree keeps today's gate, byte-identical, including this master's own closeouts.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The hand-off template's onboarding-row bullet, mirrored into the starter copies. | "An onboarding row (MIK-R30, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
+| The history-file gate's rule. | `onboarding_trace_result`; `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481; mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:484-491 |
 
 ## 260928-MIK-L28 Test Proofs Are Read Back And Listed, Not Yet Used
 
@@ -66,7 +85,7 @@ runtime does changes before MIK-R37**: no production memory tree is converted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-587; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
 | The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
@@ -173,6 +192,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section "260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used": the repository-level consequence, all architect rulings of 18:49:50, 19:23:45 and 19:53:54, and the template bullet reaching the eight harness starter copies this route governs. Two rows. The `_attach_final_full_catalog` row's controller ranges were moved by MIK-R30's insertion above the function and re-pointed. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R03 moved lines in `published_intent.py` and `registration/knowledge.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). The fixer also normalised passing ranges in rows that cite files this leaf did not change; those ranges are measurement-true. No claim, anchor or source file of this card changed.
 - 2026-09-29T15:47:34+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `writer.py`, `controller.py`, `knowledge.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
@@ -6256,9 +6276,9 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:365-385; mcp/src/agents_remember/application/memory_quality/controller.py:388-462; mcp/src/agents_remember/application/memory_quality/controller.py:512-692 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:577-617; mcp/src/agents_remember/application/memory_quality/controller.py:739-775 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:754-818 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:369-389; mcp/src/agents_remember/application/memory_quality/controller.py:392-466; mcp/src/agents_remember/application/memory_quality/controller.py:516-680 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:581-621; mcp/src/agents_remember/application/memory_quality/controller.py:780-816 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:

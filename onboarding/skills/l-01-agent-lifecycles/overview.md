@@ -6,8 +6,23 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+
+## The onboarding row in the curator hand-off template (260928-MIK-L30)
+
+`templates/curator-handoff-list.md`'s writer section (MIK-R12) now serves MIK-R30. Its list of history-row
+forms gains the **onboarding row**, for converted memory only: subject `onboarding:<source path>` or
+`onboarding:<route>/overview` (`onboarding:overview` for the root route), disposition `no_impact`, and nothing
+else. It records that a changed source file's card or its governing route overview was reviewed and needs no
+change; a counted change (the Markdown, or a sidecar field other than an anchor's `blob`, line numbers and
+`content`) needs no row. On a converted tree only such a change or such a row satisfies the onboarding gate
+(architect ruling 2026-09-29T18:49:50 (1)). Nothing a producer emits changes, and no role, operation or other
+template in this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The onboarding-row history form in the writer section. | "An onboarding row (MIK-R30, converted memory only)"; "needs no row." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
 
 ## Test proofs in the curator hand-off template (260928-MIK-L28)
 
@@ -40,7 +55,7 @@ operation or other template in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-587; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -545,6 +560,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "The onboarding row in the curator hand-off template (260928-MIK-L30)", with architect ruling 2026-09-29T18:49:50 (1). One row. The six inserted template lines moved later template lines only; the L12, L04 and L21 sections cite lines above the insertion or were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section "Test proofs in the curator hand-off template": both evidence forms (the ruled `path -k name`), the facet authored beside the statement draft, and the new "Proofs are shown and counted (MIK-R28)" bullet. Two rows. The installed `memory-citations --fix` widened the MIK-R12 and MIK-R04 rows' heading citations to their sections, with no wording change.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "The file writer's sections in the curator hand-off template (260928-MIK-L12)".** The L04 section's row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "Family routes in the curator hand-off template (260928-MIK-L04)"** for the template's new MIK-R04 subsection. No stamp advanced.

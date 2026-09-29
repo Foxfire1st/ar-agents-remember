@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/knowledge_files/history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,8 +56,8 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   the structured list field `markers` (`Text` values, at least one entry when present), one entry per
   marker line. A line longer than one text value is split deterministically into consecutive pieces,
   and `reason` becomes a short fixed summary. A real card gained 81 marker lines, 29,351 characters in
-  all, which no single `reason` could hold. Registering the kind minimally is accepted; its semantics
-  and any widening stay MIK-R30's (L30), which inherits the `markers` field.
+  all, which no single `reason` could hold. Registering the kind minimally was accepted at L24; MIK-R30
+  (L30) then gave it its semantics without changing the model (see the L30 section below).
 - `HISTORY_ROW_KINDS` is the row-kind registry, now holding `invariant`, `family` and
   `onboarding_trace`; `row_kind_for_subject` and `parse_row` dispatch a row to the one kind whose
   subject form it has, and refuse a subject no kind claims. Later packets (MIK-R06, R10, R11, R14)
@@ -104,6 +104,21 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
 D28 names seven dispositions; the family `retired` token follows MIK-R07 rule 5 and the architect's
 ruling. Doc14 §4.7 still shows the older illustrative history shape; the architect owns that update.
 
+## 260928-MIK-L30 What An Onboarding Row Means (MIK-R30)
+
+L30 changes only the `OnboardingTraceRow` docstring; the model is L24's, unchanged. The docstring now states
+MIK-R30's semantics: on a converted tree, a row with disposition `no_impact` satisfies the onboarding gate's
+item for a changed source file's card or governing route overview that has no counted change
+(`worktrees/modules/onboarding_trace.py`); `no_impact` is the only disposition; the curator writes it through
+the writer's `history` section (`authoring._onboarding_row`), and MIK-R24 rule 8 step 1 also writes it by
+moving an open leaf's markers. The root route's subject is `onboarding:overview` (architect ruling
+2026-09-29T18:49:50 (3)).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The row kind's docstring, with MIK-R30's semantics and the root subject. | `OnboardingTraceRow`; "satisfies the onboarding gate's item" | mcp/src/agents_remember/models/knowledge_files/history.py:250-272 |
+| The gate that reads these rows. | `_history_rows` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:338-360 |
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -129,13 +144,13 @@ each rule.
 | What each disposition's covers must show. | `_COVER_REQUIREMENTS`; `_require_disposition_evidence` | mcp/src/agents_remember/models/knowledge_files/history.py:165-187; mcp/src/agents_remember/models/knowledge_files/history.py:190-206 |
 | The invariant row. | `InvariantRow` | mcp/src/agents_remember/models/knowledge_files/history.py:209-225 |
 | The family row and its examined members. | `ExaminedMember`; `FamilyRow` | mcp/src/agents_remember/models/knowledge_files/history.py:228-232; mcp/src/agents_remember/models/knowledge_files/history.py:235-247 |
-| The onboarding-trace row: one disposition, and the moved marker lines as a structured list. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:250-268 |
-| The row-kind registry, now with three kinds, and dispatch. | `HISTORY_ROW_KINDS`; `row_kind_for_subject` | mcp/src/agents_remember/models/knowledge_files/history.py:282-286; mcp/src/agents_remember/models/knowledge_files/history.py:289-295 |
+| The onboarding-trace row: one disposition, and the moved marker lines as a structured list. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:250-272 |
+| The row-kind registry, now with three kinds, and dispatch. | `HISTORY_ROW_KINDS`; `row_kind_for_subject` | mcp/src/agents_remember/models/knowledge_files/history.py:286-290; mcp/src/agents_remember/models/knowledge_files/history.py:293-299 |
 | Many long marker lines move into one valid row. | `test_many_long_markers_move_into_one_valid_history_row` | mcp/tests/test_knowledge_crossing.py:217-243 |
-| The file: one owner, one row per subject. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:315-359 |
-| The freeze predicate. | `is_closed_history`; `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:373-392; mcp/src/agents_remember/models/knowledge_files/history.py:395-403 |
-| Re-anchoring checked against K_C. | `reanchor_mismatches`; `sidecar_entry_anchors` | mcp/src/agents_remember/models/knowledge_files/history.py:411-423; mcp/src/agents_remember/models/knowledge_files/history.py:426-431 |
-| The revision binding for invariant and family rows. | `invariant_revision_violation`; `stale_examined_members` | mcp/src/agents_remember/models/knowledge_files/history.py:444-464; mcp/src/agents_remember/models/knowledge_files/history.py:467-478 |
+| The file: one owner, one row per subject. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:319-363 |
+| The freeze predicate. | `is_closed_history`; `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:377-396; mcp/src/agents_remember/models/knowledge_files/history.py:399-407 |
+| Re-anchoring checked against K_C. | `reanchor_mismatches`; `sidecar_entry_anchors` | mcp/src/agents_remember/models/knowledge_files/history.py:415-427; mcp/src/agents_remember/models/knowledge_files/history.py:430-435 |
+| The revision binding for invariant and family rows. | `invariant_revision_violation`; `stale_examined_members` | mcp/src/agents_remember/models/knowledge_files/history.py:448-468; mcp/src/agents_remember/models/knowledge_files/history.py:471-482 |
 | The history schema is dispatched by `documents.py`. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
 | Closed files stay byte-identical, even when reformatted. | `test_closed_in_base_implies_byte_identical_in_candidate` | mcp/tests/test_knowledge_history_files.py:322-350 |
 
@@ -151,6 +166,7 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 What An Onboarding Row Means" (the docstring-only change, recording architect ruling 2026-09-29T18:49:50 (3)) and reworded the Logic sentence that left the kind's semantics to L30. Rows below the docstring were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the `onboarding_trace` row kind (registered by MIK-R24, owned by MIK-R30).** Added a Logic bullet for `OnboardingTraceRow`, including the architect ruling N1: the moved marker lines go in the structured `markers` list, and `reason` is a short fixed summary. **Corrected claims this change made untrue:** the registry holds three kinds, not two; MIK-R30 is no longer a future adder; and "no row is produced automatically" now names the crossing sync's marker move as its one mechanical writer. The reopened `HISTORY_ROW_KINDS` row was re-measured (`282-286`) and reworded. A row for the new class and one for its long-marker test were added.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 adds the census import and the `CensusDocument` member to `models/knowledge_files/documents.py`, so its `SCHEMA_MODELS` table moved to `:64-71`; this card's history-schema row was re-pointed, its claim unchanged (the history schema is still registered there). No verification stamp was advanced.
 - 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta, after worker fix round 1): created this card for the new file MIK-R07 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

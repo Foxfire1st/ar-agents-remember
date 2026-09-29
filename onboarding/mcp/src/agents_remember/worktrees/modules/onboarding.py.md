@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -160,6 +160,12 @@ both preview and apply pass `context.storage` explicitly to
 `build_route_indexes()`. Closeout therefore cannot generate derived memory
 using a different path-rule interpretation from the refresh plan it validated.
 
+`validate_onboarding_refresh_plan_for_context` now takes its missing/unsupported refusal from
+`_require_onboarded_sources` (same text). Since MIK-R30 a converted memory tree is dispatched to
+`onboarding_trace_gate_for_context` / `validate_onboarding_traces_for_context` instead of the Update History
+body gates above, and gets no verification stamps; see the section "260928-MIK-L30 The Converted-Tree
+Dispatch (MIK-R30)".
+
 ### Conventions
 
 This module owns closeout orchestration and classification; shared Markdown
@@ -189,6 +195,44 @@ in `kernel/route_index_census.py`, and rendering stays in
 
 None known for the MX-FIX-4 closeout caller boundary.
 
+## 260928-MIK-L30 The Converted-Tree Dispatch (MIK-R30)
+
+MIK-R30 adds the history-file gate for converted memory trees beside today's gate; this module gains its two
+entry points and the converted-tree guards. **On an unconverted tree nothing here changes**: today's refusal
+text, classification and stamps are byte-identical (the worker's and reviewer's base-against-worktree run on
+an unconverted clone of ICR L47).
+
+- **`converted_onboarding(context, memory_tree=None)`** is true when the memory tree holds
+  `knowledge/layout.json`. On such a tree `refresh_onboarding_metadata_for_context` and
+  `refresh_route_overview_metadata_for_context` return `[]` before planning: a converted card or overview
+  carries no `lastVerifiedCommit*` metadata (MIK-R30 rule 5).
+- **`_require_onboarded_sources`** is today's missing/unsupported sidecar refusal, factored out of
+  `validate_onboarding_refresh_plan_for_context` with the same message, so both gates share it.
+- **`onboarding_trace_gate_for_context(context, changed_paths, sides, *, working_paths=None)`** is the
+  curator's memory-quality entry point: it never raises, and returns the `OnboardingTraceResult` and its
+  repair findings (one per missing trace, one per unreadable input) with today's missing-onboarding refusal
+  prepended as a `memory-refresh-attestation-failed` finding when it applies.
+- **`validate_onboarding_traces_for_context(...)`** is the closeout validator's entry point: it runs the
+  missing-onboarding refusal, then raises `RuntimeError(result.refusal())` naming every missing trace.
+- **Who dispatches.** `controller._onboarding_refresh_gate` and `prepared_certification._realize_prepared_memory`
+  call these only when `leaf_onboarding_trace_sides` returns sides; otherwise they call today's
+  `validate_memory_refresh_attestations` and the two plan validators unchanged.
+- **Rulings.** On a converted tree only a counted change or a history row satisfies a trace, so a
+  curator-coherence no-impact judgment no longer counts there (architect ruling 2026-09-29T18:49:50 (1)).
+  Deleting `memory_quality/style/update_history/` and today's gate is left to the cutover, MIK-R37 (ruling
+  18:49:50 (5)).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| A tree holding the layout marker is converted. | `converted_onboarding` | mcp/src/agents_remember/worktrees/modules/onboarding.py:80-88 |
+| No route-overview stamps on a converted tree. | `refresh_route_overview_metadata_for_context`; "a converted overview carries no verification metadata" | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-529 |
+| Today's missing-onboarding refusal, shared by both gates. | `_require_onboarded_sources` | mcp/src/agents_remember/worktrees/modules/onboarding.py:951-967 |
+| The memory-quality entry point, which never raises. | `onboarding_trace_gate_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:970-996 |
+| The closeout entry point, which refuses naming every missing trace. | `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
+| No card stamps on a converted tree. | `refresh_onboarding_metadata_for_context`; "a converted card carries no verification metadata" | mcp/src/agents_remember/worktrees/modules/onboarding.py:1033-1077 |
+| The rule both entry points evaluate. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481 |
+| An unconverted leaf keeps today's gate. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:751-758 |
+
 ## Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
@@ -203,8 +247,8 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:55-57 |
-| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:60-71 |
+| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:61-63 |
+| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:66-77 |
 
 Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
 
@@ -227,7 +271,9 @@ implementation governs this module.
 | No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-09-29T18:58:42+00:00: Generated citation repair: `contract_memory_verified_commit` repointed to mcp/src/agents_remember/worktrees/modules/onboarding.py:61-63. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
 
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Converted-Tree Dispatch (MIK-R30)" (`converted_onboarding`, the shared `_require_onboarded_sources`, the two new entry points, and the converted-tree early returns of both metadata refreshers) and a closing Logic paragraph, recording architect rulings 2026-09-29T18:49:50 (1: only a counted change or a row on converted trees; 5: deletion left to MIK-R37). Today's gate on unconverted trees is unchanged. Rows below the inserted functions were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-343 to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-342, the range the cited construct now occupies
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f8508321721044ce85bb464c13146d4ff9a93843f25c858575bda1d3bad10c1a. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 

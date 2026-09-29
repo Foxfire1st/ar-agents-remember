@@ -6,9 +6,9 @@
 | path                   | `mcp/src/agents_remember/kernel/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671`
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`
 | lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ Same-repository closeout code and tests are the direct evidence for this helper.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes. | "def changed_worktree_paths"; `onboarding_refresh_plan_for_context`; `refresh_entity_fingerprints_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/git.py:228-228; mcp/src/agents_remember/worktrees/modules/git.py:266-267; mcp/src/agents_remember/worktrees/modules/onboarding.py:77-118; mcp/src/agents_remember/worktrees/modules/onboarding.py:607-653; mcp/src/agents_remember/worktrees/modules/onboarding.py:962-1007; mcp/src/agents_remember/worktrees/modules/git.py:290-290 |
-| The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | `_missing_sidecar_onboarding`; `_missing_inline_onboarding`; `filesystem.exists`; `filesystem.read_text` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:111-124; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:127-150 |
+| `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes; since MIK-R30 the card metadata refresh returns before any read or write on a converted memory tree. | "def changed_worktree_paths"; `onboarding_refresh_plan_for_context`; `refresh_entity_fingerprints_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/git.py:228-228; mcp/src/agents_remember/worktrees/modules/git.py:266-267; mcp/src/agents_remember/worktrees/modules/onboarding.py:98-139; mcp/src/agents_remember/worktrees/modules/onboarding.py:647-693; mcp/src/agents_remember/worktrees/modules/onboarding.py:1033-1077; mcp/src/agents_remember/worktrees/modules/git.py:290-290 |
+| The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. | `_missing_sidecar_onboarding`; `_missing_inline_onboarding`; `filesystem.exists`; `filesystem.read_text` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:128-141; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:144-167 |
 
 | The `read_ar_files` application entry point calls `read_text` for full reads and `read_text_range` for line-range reads. | `_read_source`; "filesystem.read_text(source_path)"; "filesystem.read_text_range(" | mcp/src/agents_remember/application/read_files.py:188-206; mcp/src/agents_remember/application/read_files.py:207-207; mcp/src/agents_remember/application/read_files.py:209-209; mcp/src/agents_remember/application/read_files.py:224-224; mcp/src/agents_remember/application/read_files.py:226-226 |
 
@@ -77,6 +77,7 @@ No cross-repository evidence is needed for this local helper.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **reopened claim re-read and reworded** (this card's own source is unchanged). MIK-R30 changed `refresh_onboarding_metadata_for_context` structurally: it now returns `[]` on a converted memory tree before planning. The closeout-planning row now says so, and its three `onboarding.py` ranges (`77-118`, `607-653`, `962-1007`; they held each `def` line at the base but not the functions' extents) were moved by MIK-R30's insertions and re-measured to the functions' current extents (`98-139`, `647-693`, `1033-1077`). The `git.py` ranges are unchanged. No verification stamp was advanced.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `changed_worktree_paths` in the row 65 of this card from mcp/src/agents_remember/worktrees/modules/git.py:228-228 to mcp/src/agents_remember/worktrees/modules/git.py:266-267, the extent of the construct the claim is about (the checker named line(s) [266] as its live location)

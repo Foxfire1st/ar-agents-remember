@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,37 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route
+
+This route gained **one module**, `modules/onboarding_trace.py` (carded), and `modules/onboarding.py` gained
+its entry points. Together they are MIK-R30@v1's gate for converted memory trees, where Update History and
+`lastVerifiedCommit*` no longer exist:
+
+- **The rule (`onboarding_trace.py`).** Each changed sidecar-stored source with a card raises an
+  `onboarding:<path>` item, and each nearest governing route an `onboarding:<route>/overview` item
+  (`onboarding:overview` at the root). An item is satisfied by a counted change of its Markdown or sidecar
+  (not by an anchor's `blob`, line numbers or `content` alone) or by the leaf's `no_impact` history row. An
+  unreadable history file, an incomplete side or an unreadable K_B sidecar is a named problem; an unreadable
+  K_C sidecar keeps its item open. `onboarding_item_open` applies the same rule to a stored worklist item.
+- **The entry points (`onboarding.py`).** `onboarding_trace_gate_for_context` (the curator's run: findings,
+  never raises) and `validate_onboarding_traces_for_context` (closeout: refuses naming every missing trace),
+  both after today's missing-onboarding refusal, now shared as `_require_onboarded_sources`. On a converted
+  tree the two metadata refreshers stamp nothing (`converted_onboarding`).
+- **Architect rulings (2026-09-29):** 18:49:50 (only a counted change or a row satisfies a trace on converted
+  trees; the root subject; deletion of today's gate left to MIK-R37); 19:23:45 (mixed formats are an
+  incomplete side; an unreadable sidecar never satisfies a trace); 19:53:54 (the stored-item predicate agrees
+  with the live gate; unreadable K_B is an incomplete input, unreadable K_C keeps the item open, a readable
+  repair counts).
+- **Unconverted trees keep today's gate**, byte-identical: the dispatch lives in the application layer and
+  returns to `validate_memory_refresh_attestations` and the two plan validators whenever neither side is
+  converted, which is every production leaf before MIK-R37.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route's new gate over two memory sides. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481 |
+| The stored item's open state, as the live gate decides it. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:484-491 |
+| The two entry points and the shared missing-onboarding refusal. | `_require_onboarded_sources`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:951-967; mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
 
 ## 260921-ICR-L32 The Path-Enumeration Family Reads NUL-Delimited Git Output
 
@@ -64,11 +95,11 @@ holding bytes that are no longer there. That is exactly the state a released-and
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One commit, one ref, and the recorded base as the commit's parent. | `retain_code_object`; `retention_ref`; `RETAINED_CODE_REF_NAMESPACE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:146-162; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:70-70 |
+| One commit, one ref, and the recorded base as the commit's parent. | `retain_code_object`; `retention_ref`; `RETAINED_CODE_REF_NAMESPACE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:70-70; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:146-162 |
 | **The commit whose id is a function of the retained objects, and the identity that makes it so.** | `_retention_commit`; `_retention_identity` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:366-394; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:397-415 |
-| **Custody over named history only, and the empty set as a statement.** | `code_object_custody`; `CustodyNames` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106 |
-| **The third observation, which a record never stores.** | `code_object_observation`; `CUSTODY_UNREADABLE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:79-84 |
-| The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143 |
+| **Custody over named history only, and the empty set as a statement.** | `code_object_custody`; `CustodyNames` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
+| **The third observation, which a record never stores.** | `code_object_observation`; `CUSTODY_UNREADABLE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:83-83; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256 |
+| The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316 |
 | The typed failure every ref outcome raises. | `CodeObjectRetentionError` | mcp/src/agents_remember/errors.py:180-190 |
 | **The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.** | `custody_names`; `_pinned_outcome` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295; mcp/src/agents_remember/application/review_comparison_retention.py:312-358 |
 | **The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens`; `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:871-912; mcp/tests/test_knowledge_review_comparison_generation.py:915-968; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
@@ -519,23 +550,23 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
+| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:184-236 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:532-540; mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:333-333; mcp/src/agents_remember/models/worktree.py:46-55 |
-| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:240-322 |
-| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:206-209 |
+| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:240-322; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:385-430; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:433-480 |
+| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval`; `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:52-54 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76 |
+| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
 | Final memory staging removes and excludes the cache. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
-| Carryover completion is actual memory ancestry. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
+| Carryover completion is actual memory ancestry. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:193-216 |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
@@ -940,9 +971,9 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:736-770 |
-| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:633-708 |
-| Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:257-314; mcp/src/agents_remember/worktrees/modules/closeout.py:746-780 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:645-720 |
+| Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-49 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
 ## 260821-DAGQC-L4 No Route Impact
@@ -1059,8 +1090,8 @@ Selected closeout admission, original-reference readback and code-suffix executi
 | Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:291-309; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:394-472 |
 | Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
 | All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/profile_execution.py:215-292 |
-| Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
-| Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
+| Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:27-68; .dagger/src/agents_remember_quality/rail_emission.py:71-107; .dagger/src/agents_remember_quality/rail_emission.py:110-124 |
+| Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:88-92; .dagger/src/agents_remember_quality/rail_bindings.py:116-145 |
 | The report branch persists retained bytes and exports the authoritative payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
 | Required files are checked on the actual publication branch. | `_verify_required_profile_publications` | .dagger/src/agents_remember_quality/engine_helpers.py:128-166 |
 | Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. | "class QualityProgress" | .dagger/src/agents_remember_quality/profile_results.py:19-34 |
@@ -1337,7 +1368,7 @@ this route's card paths with their `path` metadata and governing-overview links 
 | --- | --- | --- |
 | The frozen strict future-code route identity, and the capture that derives it without touching the real index. | `FutureCodeCandidateIdentity`; `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22; mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
 | Currentness is exact equality of the whole bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68 |
-| The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. | `resolve_memory_candidate_pair`; `_require_branch_plan` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-131; mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:286-351 |
+| The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. | `resolve_memory_candidate_pair`; `_require_branch_plan` | mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:48-129; mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py:286-349 |
 
 ## 260918-TSIP-L6 The Closeout Payload Names What It Counts, And The Preview Stops Crashing
 
@@ -1369,6 +1400,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 
 ## Update History
 
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route": the new `modules/onboarding_trace.py` (carded, governed by this overview), `onboarding.py`'s entry points and converted-tree guards, and the architect rulings of 18:49:50, 19:23:45 and 19:53:54. Three rows. The route-index row's `onboarding.py` range (`513-521`) was moved by the insertions and re-pointed to `532-540`. No verification stamp was advanced.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 
 - 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.

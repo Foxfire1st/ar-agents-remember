@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_worklist/leaf.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,8 +38,9 @@ entry point every trigger calls.
   memory sides are unconverted.
 - **Converted base (MIK-R24 rule 7).** When K_B is unconverted and K_C converted, `_converted_base_side`
   compares K_B as its conversion at K_B's own paired code commit (its trailer when the code store holds it,
-  otherwise B), exactly as `GitBaseConverter` chooses, at K_C's pinned conversion version. It reads the
-  converted-base cache first (`base_cache.py`) and stores a fresh conversion there. The pairing records
+  otherwise B), exactly as `GitBaseConverter` chooses, at K_C's pinned conversion version. Since MIK-R30 it
+  does so through `base_cache.converted_base_files`, the read-or-convert path it shares with the onboarding
+  gate. The pairing records
   `convertedBase` and the `conversion` version.
 - **The pairing document** records the code repository, B commit and tree, C tree, the memory repository,
   K_B commit, tree, `convertedBase` and `conversion`, and the K_C tree and location.
@@ -82,6 +83,34 @@ entry point every trigger calls.
 - L09 must call `recompute_leaf_worklist` from closeout validation and each landing route's pre-commit
   evaluation.
 
+## 260928-MIK-L30 The Onboarding Gate's Sides And Items (MIK-R30)
+
+- **Items in the one list (ruling 2026-09-29T18:49:50 (2)).** After a `complete` run `leaf_worklist` calls
+  `onboarding_trace.worklist_onboarding(document, contract, _trace_request(...))`, which computes the
+  onboarding gate over the worklist's own B..C changes and merges its `onboarding_trace` items, sorted by
+  `(kind, subject)` with L08's items, into the persisted document. A side or gate failure makes the worklist
+  `incomplete` with a named reason.
+- **`_trace_request`** builds the gate's `TraceSideRequest` from the contract: owner, memory repository,
+  K_B, the memory candidate (the worktree, or an explicit `memory_tree`), code repository, B and the default
+  base-cache directory.
+- **`leaf_onboarding_trace_sides(contract, *, memory_tree=None)`** is what the memory-quality run and the
+  closeout validator call to choose a gate. It returns `None` (today's gate) for a non-leaf contract, a leaf
+  without its own memory worktree, or a leaf whose candidate and official line tip both lack the layout
+  marker (the same cheap probe as the worklist, before any read). Otherwise it pairs K_B by trailer, exactly
+  as the worklist does, and returns the sides; any exception becomes an `incomplete` side naming the error,
+  so the gate reports a finding and never lapses. It lives here, beside `paired_memory_commit`, to avoid an
+  import cycle.
+- **The converted base** now goes through `base_cache.converted_base_files` (ruling 18:49:50 (4)).
+- **Unconverted leaves are unchanged:** `recompute_leaf_worklist` still returns `None` and
+  `leaf_onboarding_trace_sides` returns `None`, so every production leaf before MIK-R37 keeps today's gate.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one-list step after a complete run, over the same K_B. | `leaf_worklist`; "document = worklist_onboarding(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:335-384 |
+| The gate's side request from the contract. | `_trace_request` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:387-403 |
+| The gate chooser: `None` keeps today's gate; a failure is an incomplete side. | `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:406-439 |
+| An unconverted leaf gets no sides and no worklist. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:751-758 |
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -100,21 +129,21 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The four sides, applicability and persistence rules. | "whose two memory sides are both unconverted gets no worklist" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:1-27 |
-| Where a leaf's worklist lives. | `worklist_path`; `WORKLIST_FILE_NAME` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:93-93; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:102-107 |
-| Reading the latest persisted worklist. | `read_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:116-123 |
-| The task-document flag. | `leaf_maintenance_scope`; `knowledgeMaintenanceScope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:126-130 |
-| The explicitly named sides. | `ExplicitSides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:133-152 |
-| K_B by trailer, or `incomplete` naming the pairing. | `paired_memory_commit`; `attributed_commits` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:194-220 |
-| The sides, the both-unconverted `None`, and the pairing document. | `_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:231-277 |
-| The converted base, cached by K_B commit, version and paired code commit. | `_converted_base_side`; `base_cache_key` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:280-318 |
-| The run over named sides; unreadable input is `incomplete`. | `worklist_for_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:321-344 |
-| A leaf's run from its contract, with the cheap applicability probe. | `leaf_worklist`; `_official_converted` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:347-390; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:393-400 |
-| The one recompute entry point, which never raises. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:403-434 |
-| The port adapter the composition binds. | `LeafWorklistRecompute` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:437-446 |
-| Pairing by trailer, following the sync, and persistence beside the contract. | `test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract` | mcp/tests/test_knowledge_worklist_leaf.py:239-281 |
-| No pairing commit is `incomplete` naming the pairing. | `test_a_base_no_memory_commit_pairs_with_is_incomplete_naming_the_pairing` | mcp/tests/test_knowledge_worklist_leaf.py:284-290 |
-| An unconverted base is compared as its conversion. | `test_an_unconverted_base_is_compared_as_its_conversion` | mcp/tests/test_knowledge_worklist_leaf.py:305-326 |
-| The recompute never raises and never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:663-700 |
+| Where a leaf's worklist lives. | `worklist_path`; `WORKLIST_FILE_NAME` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:95-95; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:104-109 |
+| Reading the latest persisted worklist. | `read_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:118-125 |
+| The task-document flag. | `leaf_maintenance_scope`; `knowledgeMaintenanceScope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:128-132 |
+| The explicitly named sides. | `ExplicitSides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:135-154 |
+| K_B by trailer, or `incomplete` naming the pairing. | `paired_memory_commit`; `attributed_commits` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:196-222 |
+| The sides, the both-unconverted `None`, and the pairing document. | `_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:233-279 |
+| K_B as its conversion, through the read-or-convert path shared with the onboarding gate. | `_converted_base_side`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:282-306 |
+| The run over named sides; unreadable input is `incomplete`. | `worklist_for_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:309-332 |
+| A leaf's run from its contract, with the cheap applicability probe; a complete run then gains the onboarding items. | `leaf_worklist`; `_official_converted` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:335-384; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:442-449 |
+| The one recompute entry point, which never raises. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483 |
+| The port adapter the composition binds. | `LeafWorklistRecompute` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:486-495 |
+| Pairing by trailer, following the sync, and persistence beside the contract. | `test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract` | mcp/tests/test_knowledge_worklist_leaf.py:240-282 |
+| No pairing commit is `incomplete` naming the pairing. | `test_a_base_no_memory_commit_pairs_with_is_incomplete_naming_the_pairing` | mcp/tests/test_knowledge_worklist_leaf.py:285-291 |
+| An unconverted base is compared as its conversion. | `test_an_unconverted_base_is_compared_as_its_conversion` | mcp/tests/test_knowledge_worklist_leaf.py:306-327 |
+| The recompute never raises and never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:672-709 |
 | Both memory sides unconverted: no worklist. | `test_two_unconverted_memory_sides_get_no_worklist` | mcp/tests/test_knowledge_worklist.py:618-632 |
 
 ## Cross-Repo References
@@ -125,9 +154,13 @@ code/memory pair of one repository, not a boundary to another code repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The run reads the paired code and memory repositories named by the leaf's contract. | `leaf_worklist`; `memory_repo_path` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:347-390 |
+| The run reads the paired code and memory repositories named by the leaf's contract. | `leaf_worklist`; `memory_repo_path` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:335-384 |
 
 ## Update History
+- 2026-09-29T18:59:33+00:00: Generated citation repair: `worklist_for_sides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:309-332. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T18:59:33+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T18:59:33+00:00: Generated citation repair: `LeafWorklistRecompute` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:486-495. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Onboarding Gate's Sides And Items" (`worklist_onboarding` after a complete run, `_trace_request`, `leaf_onboarding_trace_sides`, and the cache move), recording architect rulings 2026-09-29T18:49:50 (2, 4). **The reopened `leaf_worklist` claim was re-read and reworded** (it now says that a complete run gains the onboarding items) and re-measured, with its sibling cross-repo row; the converted-base row was reworded for `converted_base_files`. Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

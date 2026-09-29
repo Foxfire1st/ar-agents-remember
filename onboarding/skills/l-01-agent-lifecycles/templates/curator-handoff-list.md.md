@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
+| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -91,6 +91,16 @@ invariants without any proof as information and not as a gate, and that a curato
 record's "Evidence: …" text (`origin.handoff`) into proofs through `proofs`, with an authored facet. The
 same text reaches the package copy and the eight harness starter copies through `sync-skills.py`.
 
+Since leaf `260928-MIK-L30` (MIK-R30) the MIK-R12 section's history-row bullets gain one for the
+**onboarding row**, on converted memory only: subject `onboarding:<source path>` or
+`onboarding:<route>/overview` (`onboarding:overview` for the root route), disposition `no_impact`, and
+nothing else. It records that a changed source file's card, or its governing route overview, was reviewed
+and needs no change; a counted change of the card or overview (its Markdown, or a sidecar field other than
+an anchor's `blob`, line numbers and `content`) needs no row. This is the curator's side of the
+onboarding gate on history files, where only a counted change or such a row satisfies a trace (architect
+ruling 2026-09-29T18:49:50 (1)). The bullet reaches the package copy and the eight harness starter copies
+through `sync-skills.py`.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -121,12 +131,13 @@ These references name the current owners and the behavior they establish.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:482-482 |
-| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-485; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:584-584; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:590-590; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 | **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
 | **Per-target realization rationale and role, the value/vocabulary/length/route rules, the committed-retry exemption, and the stated supersession of revision 1's target element shape.** | "Realization rationale and role: one authored explanation per target"; "this file's element shape supersedes rule 1's" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
 | **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** | "as a path plus symbol"; "Proofs are shown and counted (MIK-R28)." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
+| The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. | "An onboarding row (MIK-R30, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
 
 ## Cross-Repo References
 
@@ -137,6 +148,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body update — the MIK-R30 onboarding-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject forms, `no_impact` only, no row needed after a counted change) with architect ruling 2026-09-29T18:49:50 (1), and one row citing it. The six inserted lines moved the MIK-R12 row's `every other commit route` anchor; that row was re-pointed by the exact base-to-working line map. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **body update — the MIK-R28 additions to the writer section.** Added a Logic paragraph: the evidence bullet names both test forms (`path::name` and the ruled `path -k name`), `needs_facet` offers the statement only as a draft while the curator authors the facet, a bare test file is `unresolvable`, and the new bullet "Proofs are shown and counted (MIK-R28)" covers the views, the informational "without proof" list and the migration pass. One new row (`:524-529`, `:530-534`). The change added six lines, so the MIK-R12 row's `:578` range was re-pointed to `:584` by the exact line map, and the installed `memory-citations --fix` widened the MIK-R04 row's heading citation to its section (`:460-484`); no claim wording changed there. No verification stamp was advanced.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **body update — the template gains the section "The file writer's sections (MIK-R12)"** after the MIK-R21 section, and the `incidental` line now says the writer writes it as `support`. The Logic paragraph records both, including that the section applies only to converted memory and changes nothing a producer emits; one row was added (`:485`, `:578`, `:451`). The claim that the `incidental` mapping "is MIK-R12's to decide" is kept as the MIK-R21 history it is, and the new paragraph states the decision. The same section reaches the package copy and the 8 harness starter copies through `scripts/sync-skills.py` (the L04 merge kept "Family routes (MIK-R04)" first). The MIK-R04 row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — the template gains the curator-guidance subsection "Family routes (MIK-R04)"** inside the MIK-R21 section. The Logic paragraph above records what it says and that it changes nothing a producer emits; one reference row cites it (`:459`, `:481`). No verification stamp was advanced.
