@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/review_comparison_record.py` |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`    |
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`    |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -204,7 +204,7 @@ as a carried limitation rather than as a claim.
 | **The request value composed from the contract's own recorded identities rather than from anything the caller spelled.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:262-324 |
 | The contract loader whose typed failure the invocation answer carries, and the contract whose recorded task root the generation is published under. | `load_contract`; `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The authority loader and its typed failure, so an unreadable settings document is a named refusal rather than a traceback. | `load_config`; `ConfigError` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-77 |
-| **The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:99-107 |
+| **The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:106-114 |
 | The read the recorded refusal and the recorded source range are named by, so this command's record is what the surface reopens. | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:77-78 |
 | **The case that protects the journey this command completes: a baseline placed by a `--baseline` run is opened under the namespace its own record names.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 
@@ -229,6 +229,7 @@ own authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 registers `knowledge-census` in `cli/__main__.py` (one import line and a longer docstring sentence), which moves the later registrations down by two lines; this card's registration row was re-pointed to the new extent, its claim unchanged. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.

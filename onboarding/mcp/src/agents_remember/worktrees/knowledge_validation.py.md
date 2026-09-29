@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/knowledge_validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,11 +59,11 @@ The route gate and its callers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The paired code commit. | `PairedCode` | mcp/src/agents_remember/worktrees/knowledge_validation.py:28-32 |
-| The marker probe fails closed. | `has_layout_marker`; `LayoutProbeError` | mcp/src/agents_remember/worktrees/knowledge_validation.py:39-54; mcp/src/agents_remember/worktrees/knowledge_validation.py:35-36 |
+| The paired code commit. | `PairedCode` | mcp/src/agents_remember/worktrees/knowledge_validation.py:27-32 |
+| The marker probe fails closed. | `has_layout_marker`; `LayoutProbeError` | mcp/src/agents_remember/worktrees/knowledge_validation.py:35-36; mcp/src/agents_remember/worktrees/knowledge_validation.py:39-54 |
 | The refusal: unconverted passes, converted needs a paired code commit and a bound validator. | `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:57-91 |
-| The port it calls. | `KnowledgeValidationPort` | mcp/src/agents_remember/worktrees/services.py:131-147 |
-| The sync's memory merge calls it before committing. | `_finish_staged_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:495-519 |
+| The port it calls. | `KnowledgeValidationPort` | mcp/src/agents_remember/worktrees/services.py:132-148 |
+| The sync's memory merge calls it before committing, after closing any master-line crossing history file the merge adds (MIK-R24). | `_finish_staged_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598 |
 | The route never commits converted memory unvalidated. | `test_the_worktree_route_never_commits_converted_memory_unvalidated` | mcp/tests/test_knowledge_validator_routes.py:129-153 |
 
 ## Cross-Repo References
@@ -77,4 +77,5 @@ The memory and code repositories are addressed explicitly by the caller; no exte
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Reopened claim re-read (MIK-R24).** `_finish_staged_memory_merge` changed: it closes a crossing sync's master-line history file before calling this module. The row still holds and was reworded to say so. This folds in the fixer projection of this pass. The composition now binds this module's validator with `GitBaseConverter` (rule 7), so a crossing merge is validated against its converted base; this module's own logic is unchanged.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

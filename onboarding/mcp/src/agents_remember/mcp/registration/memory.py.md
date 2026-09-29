@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -101,18 +101,18 @@ contract is supported by the implementation and the authorized cache-retirement 
 | --- | --- | --- |
 | Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:212-242; mcp/src/agents_remember/mcp/registration/memory.py:261-292 |
 | The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:317-429; mcp/src/agents_remember/application/memory_tools.py:352-421 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:330-434; mcp/src/agents_remember/application/memory_tools.py:422-441 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:371-460; mcp/src/agents_remember/application/memory_tools.py:442-456 |
+| The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
+| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:334-446; mcp/src/agents_remember/application/memory_tools.py:369-438 |
+| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:347-451; mcp/src/agents_remember/application/memory_tools.py:439-458 |
+| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:388-477; mcp/src/agents_remember/application/memory_tools.py:459-473 |
 | The payload builder for the carryover plan. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:225-246 |
-| The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:68-77 |
-| The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:80-89 |
-| The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-129 |
-| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
-| The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
+| The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:246-267 |
+| The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
+| The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:69-78 |
+| The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:81-90 |
+| The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-128 |
+| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:57-87 |
+| The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:154-170 |
 
 ## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude
 
@@ -178,6 +178,7 @@ No separate cross-repository implementation claim is made.
 | No external implementation source applies. | — | — |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`memory_tools.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The parameter-object row cited `memory_tools.py:369-376`, which ends one line above `class CarryoverCommitMessages:` at `377`; the range was widened to `369-383` so it reaches the declaration and `DEFAULT_CARRYOVER_MESSAGES`. The claim, the anchor and the other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-18T10:45:13+00:00: Generated citation repair: `memory_carryover_plan_payload` repointed to mcp/src/agents_remember/mcp/tools/memory.py:232-243. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_carryover_apply` repointed to mcp/src/agents_remember/mcp/registration/memory.py:261-292. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

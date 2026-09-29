@@ -4,8 +4,8 @@
 | ---------------------- | ---------------------------------------------------------- |
 | repository             | agents-remember                                            |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | governingOverview      | `overview.md`                                              |
@@ -67,6 +67,15 @@ Ordinary drift artifacts stay under the coordination temp root. The curator chec
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
 
+**On a converted memory tree, `citation_check` and `citation_fix` work over sidecar references
+(MIK-R24 rule 5).** Both tools first ask `memory_quality/reference_state.is_converted_memory` whether the
+memory root (the onboarding root's parent) holds `knowledge/layout.json`. If it does, they return
+`reference_state.check_references` or `reference_state.fix_references` instead of building citation
+`Trees`. A stale reference is reported (report-only), never a gate finding, and the fixer re-records
+only anchors whose bytes moved mechanically. An unconverted tree takes the legacy citation-table path
+exactly as before. The source-index build and `citation_migrate` are legacy-format operations and are
+not adapted.
+
 ### Conventions
 
 Application entry points translate validated tool arguments into service calls and JSON-compatible payloads.
@@ -118,6 +127,8 @@ package application entry point and resolver contracts.
 | Its resolver, which binds a repository to the scope the quality surface runs against. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
 | The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:383-435 |
 | The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:465-638 |
+| On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. | `citation_check_tool`; `is_converted_memory` | mcp/src/agents_remember/application/memory_tools.py:173-209; mcp/src/agents_remember/memory_quality/reference_state.py:40-43 |
+| On a converted tree the citation fixer re-records only mechanically moved reference anchors. | `citation_fix_tool`; `fix_references` | mcp/src/agents_remember/application/memory_tools.py:233-276; mcp/src/agents_remember/memory_quality/reference_state.py:207-227 |
 | The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:153-169 |
 | The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:56-86 |
 | The refusal rule for a caller exclude that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
@@ -179,6 +190,7 @@ a misuse behind an envelope.
 is the case that holds that boundary, and the docstring states it.
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added a Logic paragraph and two rows: on a converted memory tree (MIK-R24 rule 5), `citation_check_tool` and `citation_fix_tool` route to `memory_quality/reference_state`. Stale references are report-only, and the fixer handles mechanical moves only. The unconverted path is unchanged.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,

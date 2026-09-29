@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/services.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,17 +16,19 @@
 
 ## Purpose
 
-Defines the service protocols and process-local binding consumed by worktree lifecycle code. It preserves package layering while application composition supplies provider, memory and citation services, canonical task observation, and an explicit certification continuation boundary. Since MIK-R22 it also declares the port through which a memory commit route reaches the mandatory knowledge validator.
+Defines the service protocols and process-local binding consumed by worktree lifecycle code. It preserves package layering while application composition supplies provider, memory and citation services, canonical task observation, and an explicit certification continuation boundary. Since MIK-R22 it also declares the port through which a memory commit route reaches the mandatory knowledge validator, and since MIK-R24 the port through which the managed sync plans a crossing sync's structural merge.
 
 ## Code Commentary
 
 ### Logic
 
-`WorktreeServices` carries provider, memory-quality and citation services plus optional `certification_memory_rails`, `certification_continuation`, `prepared_memory_certification` and `knowledge_validation` capabilities. `CertificationMemoryRailsPort` returns R11 `RailDefinition` objects for an admitted profile selection. `ProviderSetupRequestSpec` keeps higher-level provider option objects opaque to worktrees.
+`WorktreeServices` carries provider, memory-quality and citation services plus optional `certification_memory_rails`, `certification_continuation`, `prepared_memory_certification`, `knowledge_validation` and (since MIK-R24) `knowledge_crossing` capabilities. `CertificationMemoryRailsPort` returns R11 `RailDefinition` objects for an admitted profile selection. `ProviderSetupRequestSpec` keeps higher-level provider option objects opaque to worktrees.
 
 `MemoryQualityPort.observe_contract_task` returns the shared `CanonicalTaskObservation`; worktree consumers use this port instead of importing the memory observer. `CertificationContinuationPort` separates current memory observation, Gate-5 execution, and finalization. `observe_memory` returns verified `GateFiveSemanticInputs` or explicit absence; absence cannot authorize reuse of an existing memory certificate.
 
 `KnowledgeValidationPort.refusal` (MIK-R22 rule 8) takes the memory repository, the exact candidate tree a route is about to commit, its comparison bases (K_B or every merge parent), and the paired code repository and commit, and returns the refusal text naming every violation, or `None`. The worktree layer calls it only through `worktrees/knowledge_validation.memory_commit_refusal`, which first probes the layout marker and refuses a converted commit when the port is unbound.
+
+`KnowledgeCrossingPort.plan(request)` (MIK-R24 rule 8) runs steps 1-4 of a crossing sync over three memory commits. The `CrossingRequest` names the memory repository, the (merge base, own, incoming) commits, the paired code repository and commit, and who performs the sync (`owner_kind` `leaf` or `master`, with `owner_id`). It returns a `CrossingPlanView`: `files` maps every `knowledge/` and `onboarding/` path of the merged tree to its bytes (`None` = absent), `conflicts` are `(path, item, reason)` triples for the curator, `conflict_versions` holds the converted base, own and incoming bytes of each conflicted path, and `report` is the crossing report. A failing step raises `CrossingStepFailed`, whose message names the step; nothing has been written by then. The adapter (`memory/conversion/crossing_port.GitKnowledgeCrossing`) lives above this layer, and the worktree layer calls the port only through `worktrees/knowledge_crossing.crossing_plan`.
 
 bind_worktree_services assigns the composed bundle, reset_worktree_services clears it for tests/teardown, and worktree_services refuses when no bundle is bound. The getter does not lazily create dependencies. Optional capability fields permit an incomplete bundle to be represented, while consumers refuse when the selected operation requires an absent capability. The default application bundle (`application/worktree_services.build_default_worktree_services`) binds memory rails, `PreparedCloseoutContinuation`, `PreparedMemoryCertificationAdapter` and, since MIK-R22, `GitKnowledgeValidation` from `memory_quality.knowledge_validator.commit_route`.
 
@@ -38,6 +40,7 @@ Protocols are the downward dependency boundary. Adapter implementations live abo
 
 - Worktrees must not import providers or memory_quality to satisfy a missing service. The knowledge validator lives in `memory_quality`, so it is reached only through `KnowledgeValidationPort`.
 - An unbound `knowledge_validation` is never a reason to skip validation: the route helper refuses a converted memory commit instead.
+- An unbound `knowledge_crossing` is never a reason to merge a crossing sync as plain Git: `crossing_plan` refuses with the `convert` step named.
 - An unbound service bundle is an error, not a signal to invent a default.
 - Rail population is data authority; `CertificationMemoryRailsPort` does not run Gate 5.
 - Memory reuse requires a current observation from the bound continuation. A missing continuation cannot complete selected closeout.
@@ -62,15 +65,16 @@ The protocols establish the downward dependency boundary; the application suppli
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Citation and provider lifecycle protocols remain explicit. | `CitationGuardPort`; `ProviderLifecyclePort` | mcp/src/agents_remember/worktrees/services.py:45-51; mcp/src/agents_remember/worktrees/services.py:54-96 |
-| The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out. | `KnowledgeValidationPort` | mcp/src/agents_remember/worktrees/services.py:131-147 |
-| Registry population and task/memory observations have distinct service ports. | `CertificationMemoryRailsPort`; `MemoryQualityPort` | mcp/src/agents_remember/worktrees/services.py:99-108; mcp/src/agents_remember/worktrees/services.py:111-128 |
-| Current memory authority, Gate 5, and finalization are separate continuation methods. | `CertificationContinuationPort` | mcp/src/agents_remember/worktrees/services.py:150-160 |
-| The bundle exposes optional capabilities, including `knowledge_validation`; provider setup inputs stay opaque. | `WorktreeServices`; `ProviderSetupRequestSpec` | mcp/src/agents_remember/worktrees/services.py:163-171; mcp/src/agents_remember/worktrees/services.py:174-191 |
-| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:201-201 |
-| Clear the bound services (tests and process teardown). | "def reset_worktree_services" | mcp/src/agents_remember/worktrees/services.py:207-207 |
-| Reading unbound worktree services refuses instead of constructing ambient owners. | "def worktree_services" | mcp/src/agents_remember/worktrees/services.py:213-213 |
-| The default application bundle binds rails, the prepared continuation and certification, and the knowledge validator. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:206-215 |
+| Citation and provider lifecycle protocols remain explicit. | `CitationGuardPort`; `ProviderLifecyclePort` | mcp/src/agents_remember/worktrees/services.py:46-52; mcp/src/agents_remember/worktrees/services.py:55-97 |
+| The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out. | `KnowledgeValidationPort` | mcp/src/agents_remember/worktrees/services.py:132-148 |
+| The crossing sync's port, its request and plan view, and the step failure it raises. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView`; `CrossingStepFailed` | mcp/src/agents_remember/worktrees/services.py:183-186; mcp/src/agents_remember/worktrees/services.py:170-180; mcp/src/agents_remember/worktrees/services.py:151-163; mcp/src/agents_remember/worktrees/services.py:166-167 |
+| Registry population and task/memory observations have distinct service ports. | `CertificationMemoryRailsPort`; `MemoryQualityPort` | mcp/src/agents_remember/worktrees/services.py:100-109; mcp/src/agents_remember/worktrees/services.py:112-129 |
+| Current memory authority, Gate 5, and finalization are separate continuation methods. | `CertificationContinuationPort` | mcp/src/agents_remember/worktrees/services.py:189-199 |
+| The bundle exposes optional capabilities, including `knowledge_validation` and `knowledge_crossing`; provider setup inputs stay opaque. | `WorktreeServices`; `ProviderSetupRequestSpec` | mcp/src/agents_remember/worktrees/services.py:202-211; mcp/src/agents_remember/worktrees/services.py:214-231 |
+| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:241-241 |
+| Clear the bound services (tests and process teardown). | "def reset_worktree_services" | mcp/src/agents_remember/worktrees/services.py:247-247 |
+| Reading unbound worktree services refuses instead of constructing ambient owners. | "def worktree_services" | mcp/src/agents_remember/worktrees/services.py:253-253 |
+| The default application bundle binds rails, the prepared continuation and certification, the knowledge validator with its base converter, and the knowledge crossing. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:208-218 |
 | The route helper refuses a converted commit when the port is unbound. | `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:57-91 |
 | Selected execution observes memory before reuse and refuses an absent continuation. | `execute_selected_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:344-384 |
 
@@ -88,16 +92,25 @@ Prepared-memory certification is an explicit typed service alongside the continu
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `TerminalGuard` owns the corresponding behavior described above. | `TerminalGuard` | mcp/src/agents_remember/worktrees/services.py:32-42 |
-| `CitationGuardPort` owns the corresponding behavior described above. | `CitationGuardPort` | mcp/src/agents_remember/worktrees/services.py:45-51 |
-| `WorktreeServicesUnboundError` owns the corresponding behavior described above. | `WorktreeServicesUnboundError` | mcp/src/agents_remember/worktrees/services.py:197-198 |
-| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:201-201 |
-| `reset_worktree_services` owns the corresponding behavior described above. | `reset_worktree_services` | mcp/src/agents_remember/worktrees/services.py:207-210 |
-| `worktree_services` owns the corresponding behavior described above. | `worktree_services` | mcp/src/agents_remember/worktrees/services.py:213-218 |
+| `TerminalGuard` owns the corresponding behavior described above. | `TerminalGuard` | mcp/src/agents_remember/worktrees/services.py:33-43 |
+| `CitationGuardPort` owns the corresponding behavior described above. | `CitationGuardPort` | mcp/src/agents_remember/worktrees/services.py:46-52 |
+| `WorktreeServicesUnboundError` owns the corresponding behavior described above. | `WorktreeServicesUnboundError` | mcp/src/agents_remember/worktrees/services.py:237-238 |
+| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:241-241 |
+| `reset_worktree_services` owns the corresponding behavior described above. | `reset_worktree_services` | mcp/src/agents_remember/worktrees/services.py:247-250 |
+| `worktree_services` owns the corresponding behavior described above. | `worktree_services` | mcp/src/agents_remember/worktrees/services.py:253-258 |
 
 The application composition currently installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` in `application/worktree_services.py`. Missing-port refusal remains part of the service contract; installed binding itself does not certify an execution.
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the knowledge crossing port (MIK-R24 rule 8).** Documented `KnowledgeCrossingPort`, `CrossingRequest`, `CrossingPlanView`, `CrossingStepFailed` and the `knowledge_crossing` bundle field in Purpose, Logic, an invariant and a new row. The reopened `WorktreeServices` row was reworded to name the new field and re-measured (`202-211`) by hand. The composition row names the base converter and the crossing.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: `CertificationContinuationPort` repointed to mcp/src/agents_remember/worktrees/services.py:189-199. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: "def bind_worktree_services" repointed to mcp/src/agents_remember/worktrees/services.py:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: "def reset_worktree_services" repointed to mcp/src/agents_remember/worktrees/services.py:247-247. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: "def worktree_services" repointed to mcp/src/agents_remember/worktrees/services.py:253-253. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: `WorktreeServicesUnboundError` repointed to mcp/src/agents_remember/worktrees/services.py:237-238. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: "def bind_worktree_services" repointed to mcp/src/agents_remember/worktrees/services.py:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: `reset_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:247-250. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:05:58+00:00: Generated citation repair: `worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:253-258. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented MIK-R22's `KnowledgeValidationPort` and the optional `WorktreeServices.knowledge_validation` field, the layering reason the validator is reached only through the port, and the refusal of a converted commit when it is unbound. Corrected the default-bundle claim, which still said the continuation was unbound, and re-measured the `WorktreeServices`/`ProviderSetupRequestSpec` rows. I folded the same-pass generated repair bullet for `build_default_worktree_services` into this entry, because that claim's text changed. The verification stamp is unchanged; closeout owns it.
 - 2026-09-29T05:01:31+00:00: Generated citation repair: `CertificationContinuationPort` repointed to mcp/src/agents_remember/worktrees/services.py:150-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T05:01:31+00:00: Generated citation repair: "def bind_worktree_services" repointed to mcp/src/agents_remember/worktrees/services.py:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.

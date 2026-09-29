@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_writer/code_anchors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,8 +28,10 @@ through `models/knowledge_files/anchor_content.py`.
 
 - `symbol`: the one extent the shipped citation extractor (`memory_quality/style/citations/extents`) binds
   for the name. A name bound nowhere, bound more than once, or in a language with no grammar does not
-  resolve. `Holder.method` is the `method` defined inside a `Holder` definition (`_bound_spans`), so a
-  same-named method of another class does not make it ambiguous.
+  resolve. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method
+  of another class does not make it ambiguous. Since MIK-R24 the rule itself lives in the extractor as
+  `extents.qualified_spans`; `_bound_spans` only calls it with the file's `extents.definitions`, so the
+  curator writer and the conversion (`memory/conversion/code_objects.py`) bind symbols through one rule.
 - `line_range`: the recorded lines, which must be lines the blob holds (`RangeOutsideBlobError` becomes
   `AnchorResolutionError`).
 - `file`: every byte of the blob.
@@ -73,7 +75,7 @@ Capture and resolution.
 | Capture through the private-index candidate tree. | `capture` | mcp/src/agents_remember/application/knowledge_writer/code_anchors.py:52-66 |
 | Resolve a locator into an anchor with blob and content. | `resolve` | mcp/src/agents_remember/application/knowledge_writer/code_anchors.py:79-91 |
 | A symbol must bind exactly once. | `_symbol_range` | mcp/src/agents_remember/application/knowledge_writer/code_anchors.py:112-133 |
-| A qualified name's last part must sit inside its parents. | `_bound_spans` | mcp/src/agents_remember/application/knowledge_writer/code_anchors.py:136-155 |
+| A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. | `_bound_spans`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_writer/code_anchors.py:136-139; mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
 
 ## Cross-Repo References
 
@@ -87,4 +89,5 @@ worktree of one repository.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): MIK-R24 moved the qualified-name binding rule out of `_bound_spans` into `extents.qualified_spans`, which the conversion also uses. Behaviour is unchanged. The Logic bullet now names the shared rule, and the `_bound_spans` row also cites `qualified_spans` (re-measured, which folds in the fixer projection of this pass).
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

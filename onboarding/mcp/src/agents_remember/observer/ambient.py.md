@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `c755cec64fa9dc12e797c9fcfb4c96822718330c`       |
-| lastVerifiedCommitDate | 2026-09-21T15:29:12+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`       |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -241,14 +241,15 @@ existing seam rather than adding a second one.
 | The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. | "def _agent_notifier_banner(" | mcp/src/agents_remember/application/tool_response.py:100-109 |
 | The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:1-1 |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
-| The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:158-158; mcp/src/agents_remember/application/read_files.py:327-327 |
+| The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:169-169; mcp/src/agents_remember/application/read_files.py:343-343 |
 | The heartbeat/stale idiom this generalizes. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
 | The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`). | `HEARTBEAT_SECONDS`; `age_seconds` | mcp/src/agents_remember/observer/timeutil.py:29-29; mcp/src/agents_remember/controlplane/stamps.py:22-35 |
-| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:120-147; mcp/src/agents_remember/observer/reducer.py:431-445 |
+| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:120-147; mcp/src/agents_remember/observer/reducer.py:432-446 |
 | The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. | `FLEETING_INACTIVE_TTL_SECONDS`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:37-37; mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:391-402 |
+| The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:397-408 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`read_files.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): re-derived one reference row's two ranges against the candidate rather than shifting them. This card's own source (`observer/ambient.py`) is untouched by the leaf; the row cites the `read_ar_files` entry point that calls `emit_read_packet` and the served-ledger surface, and that module's insertions moved both call sites — `emit_read_packet` to `read_files.py:158` (was `:141`) and `is_served` to `read_files.py:327` (was `:310`). The claim, both anchors and every other row are unchanged; no verification stamp was advanced.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.

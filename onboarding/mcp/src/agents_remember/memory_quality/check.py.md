@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -58,10 +58,24 @@ with a stale pointer is enforced. The curator runs the same `memory_quality_chec
 leaf, so gate findings are the exception, not the rule (260731-EFA-L16, repairing the L6
 placement that deadlocked this leaf's own closeout with 115 unresolvable findings).
 
+**On a converted memory tree the runner dispatches by format (MIK-R24 rule 5).** `run_memory_quality_check`
+asks `reference_state.is_converted_memory` whether the onboarding root's parent holds
+`knowledge/layout.json`. If it does, every selected check goes through `_converted_check`:
+
+- the checks that read the legacy card format (`LEGACY_FORMAT_CHECKS` in `converted_check.py`: Update
+  History order, citation `range_resolution` and `claim_reopen`) return `not-applicable-converted` and pass;
+- the drift slot runs `converted_knowledge_check` instead: the knowledge validator over the whole tree
+  (refusing violations are findings), plus the stale-reference report, which is report-only;
+- every other check runs as before.
+
+The result key of the drift slot is `knowledge.converted`, not the drift check's name. An unconverted tree
+runs exactly as before. No production tree is converted before MIK-R37, and the installed runtime does not
+carry this dispatch.
+
 `run_drift_quality_check(drift_context)` branches on the packet's
 status first: anything other than `checked` returns `ok: False` with one synthetic
 `onboarding_drift_check_failed` finding built from `packet.get("error", ...)`
-(`mcp/src/agents_remember/memory_quality/check.py:216-257`).
+(`mcp/src/agents_remember/memory_quality/check.py:250-291`).
 Only past that guard does it read the checked-status keys. Since
 260731-EFA-L4 `run_drift_summary` returns the typed `DriftSummaryPacket`, whose
 `count`/`reportPath`/`actionableCount` are `NotRequired`, so those three reads are
@@ -86,7 +100,7 @@ caps never reach this branch — they skip and report.
 - The top-level finding count uses each checker result's declared
   `findingCount`, so bounded drift samples can report fewer concrete findings
   than the total count. `run_memory_quality_check` coerces it with
-  `int(result.get("findingCount", 0))` (`mcp/src/agents_remember/memory_quality/check.py:112-143`),
+  `int(result.get("findingCount", 0))` (`mcp/src/agents_remember/memory_quality/check.py:124-160`),
   which assumes a checker never puts a literal `None` under that key — the drift checker's `.get`
   reads are safe only because the `checked` guard above guarantees the key is present.
 - **An unusable source index is a reported check result, never a raised exception out of this
@@ -108,17 +122,19 @@ caps never reach this branch — they skip and report.
 | Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 | The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
-| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs` | mcp/src/agents_remember/memory_quality/check.py:40-55 |
-| The guarded entry point that reports an unusable source index instead of raising. | `run_check` | mcp/src/agents_remember/memory_quality/check.py:146-163 |
-| The status a reported unusable source index carries. | `SOURCE_INDEX_UNAVAILABLE_STATUS` | mcp/src/agents_remember/memory_quality/check.py:33-33 |
-| An unusable source index becomes a reported result with the cause and the operator levers. | `source_index_unavailable_result` | mcp/src/agents_remember/memory_quality/check.py:193-213 |
-| The inner runner the guard wraps. | `_run_check` | mcp/src/agents_remember/memory_quality/check.py:166-190 |
+| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs` | mcp/src/agents_remember/memory_quality/check.py:51-64 |
+| A converted tree is dispatched by format: legacy-format checks do not apply, and the drift slot runs the validator plus the stale-reference report. | `run_memory_quality_check`; `_converted_check`; `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/check.py:124-160; mcp/src/agents_remember/memory_quality/check.py:163-177; mcp/src/agents_remember/memory_quality/converted_check.py:66-93 |
+| The guarded entry point that reports an unusable source index instead of raising. | `run_check` | mcp/src/agents_remember/memory_quality/check.py:180-197 |
+| The status a reported unusable source index carries. | `SOURCE_INDEX_UNAVAILABLE_STATUS` | mcp/src/agents_remember/memory_quality/check.py:45-45 |
+| An unusable source index becomes a reported result with the cause and the operator levers. | `source_index_unavailable_result` | mcp/src/agents_remember/memory_quality/check.py:227-247 |
+| The inner runner the guard wraps. | `_run_check` | mcp/src/agents_remember/memory_quality/check.py:200-224 |
 | The typed error the guard converts. | `SourceIndexError` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:64-65 |
-| The checked-status reads and their `NotRequired` guard. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:216-257 |
+| The checked-status reads and their `NotRequired` guard. | `run_drift_quality_check` | mcp/src/agents_remember/memory_quality/check.py:250-291 |
 | The case pinning the reported state when an index cannot be built at all. | `test_an_index_that_cannot_be_built_is_a_reported_state_with_a_next_step` | mcp/tests/test_citation_index_resilience.py:613-629 |
 | The case pinning the closeout gate's own declared check group degrading the same way. | `test_the_closeout_gates_own_check_group_degrades_the_same_way` | mcp/tests/test_citation_index_resilience.py:631-656 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the converted-format dispatch (MIK-R24 rule 5).** Added a Logic paragraph on `_converted_check`: legacy-format checks report `not-applicable-converted`, and the drift slot becomes `knowledge.converted`, the validator plus the report-only stale references. Added one row. Re-measured the construct rows and the two inline ranges, which were stale by 11 to 34 lines after the MIK-R24 import and dispatch lines.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-17T12:45+02:00 — 260915-CAPS-L14 curator: recorded the **reported-state guard** this leaf adds — `run_check` wrapping `_run_check` so a `SourceIndexError` becomes a `citation-source-index-unavailable` result with the cause and the two operator levers, instead of a bare tool error out of the surface that is supposed to describe a broken memory layer. Added the `source_index_unavailable_result` / `_run_check` / `run_drift_quality_check` rows and the corresponding invariant. **Flattened the legacy citation form**: four body cells using an inline `cit:([…], path:a-b)` wrapper and every `cit:(…)` in this card's history are now the required `| Finding | Anchor | Source |` rows plus plain `path:start-end`; the historical entries keep their wording, identifiers and meaning, with only the wrapper and their stale ranges re-expressed. **Re-derived every range against the 296-line source** (the runner moved from `:103-130` to `:112-143` and `run_drift_quality_check` from `:171-212` to `:216-257`). Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.

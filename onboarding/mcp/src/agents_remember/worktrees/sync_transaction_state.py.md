@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash |  `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
+| lastVerifiedCommitDate |  2026-09-29T15:00:35+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,6 +95,14 @@ when the retained merge is finally settled, so a completed sync carries no stale
 `knowledgeConflict`, it is part of the durable journal schema under `extra="forbid"`, so a record from
 another build is refused rather than misread.
 
+**MIK-R24 journals a crossing sync's report path, and only for a crossing sync.**
+`SyncSideRecord.crossingReport: str = ""` (at most 4,096 characters) holds the path of the crossing report
+that `worktrees/knowledge_crossing.write_crossing_report` wrote into the worktree group's `reports/`. The
+resolution payload names that report and summarises it. The wrap serializer `_omit_empty_crossing_report`
+drops the key when it is empty, so an ordinary sync's journal keeps exactly the shape the installed,
+pre-MIK-R24 runtime reads (architect ruling N2, 2026-09-29). Journals written by older builds still load,
+because the field defaults to `""`.
+
 ### Todos
 
 Final nonregular handling and public model fields are reconciled to the frozen source;
@@ -111,12 +119,13 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:117-157; mcp/src/agents_remember/worktrees/sync_transaction.py:158-180 |
+| The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:119-157; mcp/src/agents_remember/worktrees/sync_transaction.py:160-180 |
 | Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
-| Public status embeds this journal projection without moving its authority into task/queue state. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
-| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it. | `SyncSideRecord`; `SyncWipState`; `knowledgeReconciliations` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:43-81; mcp/src/agents_remember/worktrees/sync_transaction_state.py:39-39 |
-| The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:439-516 |
-| **The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.** | `SyncKnowledgeConflict`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:184-203; mcp/src/agents_remember/models/worktree.py:152-169 |
+| Public status embeds this journal projection without moving its authority into task/queue state. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:72-134 |
+| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it. | `SyncSideRecord`; `SyncWipState`; `knowledgeReconciliations` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction_state.py:46-46 |
+| The crossing report path is journaled for a crossing sync only; an empty one is omitted, so ordinary journals stay readable by the installed runtime. | `SyncSideRecord`; `_omit_empty_crossing_report` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction_state.py:87-95 |
+| The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:468-545 |
+| **The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.** | `SyncKnowledgeConflict`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:184-203; mcp/src/agents_remember/models/worktree.py:152-168 |
 
 ## Cross-Repo References
 
@@ -126,6 +135,7 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added a paragraph and a row for `SyncSideRecord.crossingReport` (MIK-R24 rule 8) and its wrap serializer, which omits the empty key (architect ruling N2: ordinary journals stay readable by the installed runtime). The remaining ranges were re-pointed by the installed fixer and the exact line map, with no wording change.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the journal gained the one field that makes a two-conflict recovery terminate.** `SyncSideRecord.knowledgeReconciliations: tuple[AuthoredReconciliation, ...] = ()` records every authored decision this side's retained knowledge merge has already accepted, in acceptance order, and it is cleared with `knowledgeConflict` when the merge settles. It is journaled for the same reason the diagnosis beside it is: the attempt that answers the second conflict has to carry the first, so the facts the next attempt needs must survive the response that produced them. Without it each attempt re-refused the row the previous decision had already answered, the two conflicts alternated forever, and the caller was re-offered a decision it had already made and that had already had its effect — the cycling the `sync-resolution-cycling` refusal now names instead of continuing. A new body paragraph records the field, its lifetime and its place in the durable schema. **Citation accounting:** the side-record row's range was re-measured to that class's own extent, `:42-75` → `:43-81`, because this leaf's field moved it, and the row's anchor cell now names `knowledgeReconciliations`. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.

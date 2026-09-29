@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-21T15:14+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,19 +52,39 @@ emits a facts-only `read.packet` — passing `repo.repo_id` (slice 07b, so the
 packet carries `data.repoId`, the read's repo) alongside the per-file facts.
 
 **The payload also carries `published_intent`** cit:([`published_intent_block`], mcp/src/agents_remember/application/published_intent.py:420-435), attached at
-the assembly from the same context and the paths this call was addressed at cit:(["published_intent"], mcp/src/agents_remember/application/read_files.py:148-148) and imported from its owning module
-cit:([`published_intent_block`], mcp/src/agents_remember/application/read_files.py:31-31). It is attached on **every** call, including when the
+the assembly from the same context and the paths this call was addressed at cit:(["published_intent", `memory_format`, `legacy_published_intent`], mcp/src/agents_remember/application/read_files.py:154-159) and imported from its owning module
+cit:([`published_intent_block`], mcp/src/agents_remember/application/read_files.py:31-31). The key is present on **every** call, including when the
 repository publishes nothing yet, because "nothing is recorded" is an answer a fresh planner needs and an
 omitted block is indistinguishable from a route that never ran; every one of its failures is carried
 inside the block, so it can never cost the caller the source and onboarding bytes this call exists to
 return. The block's three decisions, its named states and its bounds are documented in
 `application/published_intent.py.md`.
 
+**Since MIK-R24 (rules 5 and 9) what the block holds depends on the memory tree's format**
+(`application/read_files_format.py`). The format is `text/v2` exactly when the memory root (the
+onboarding root's parent) holds `knowledge/layout.json`.
+
+- **Converted tree.** `published_intent_block` runs as described above, and each file result that has
+  onboarding also gets `format: "text/v2"`, the card's sidecar and its resolved references
+  (`converted_card_parts`).
+- **Unconverted tree.** The block is `legacy_published_intent`: `state: "legacy-format"`, the memory root,
+  and a detail naming both conversion routes. No knowledge section is read, and each file result that
+  has onboarding is marked `format: "legacy-format"`, with the Markdown returned as it is. The old format
+  is never misread as the new one.
+
+**The legacy-format read is active in this build (architect ruling, 2026-09-29).** It therefore changes
+what this build's `read_ar_files` returns on today's unconverted trees: the database publication is no
+longer served through this route. This build is not installed before MIK-R37. The ICR-R19 route cases
+(`tests/test_read_ar_files.py`) now measure the database block through `published_intent_block` directly,
+and the converted-tree route is covered through `read_ar_files` itself
+(`tests/test_knowledge_conversion_toolchain.py`). The taskless `knowledge_read`, `knowledge_diff` and
+`knowledge_project` tools are unchanged.
+
 **`FileReadStatus` is declared in `models/read_files.py`** cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29) — the onboarding-lookup outcome
 for one requested path, `found | missing | disabled | unsupported |
 not_requested` — with `VALID_FILE_READ_STATUSES` derived from it by `get_args`
 cit:([`VALID_FILE_READ_STATUSES`], mcp/src/agents_remember/models/read_files.py:32-32); this module imports the alias
-cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:62-62). 260731-EFA-L4 moved the declaration here from
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:68-68). 260731-EFA-L4 moved the declaration here from
 `models/read_files.py`; the later staged reversal moved it back, because the
 alias is served wire vocabulary and the model side owns it (see Update History).
 The deciding direction is unchanged: `_resolve_onboarding` is the only function
@@ -72,7 +92,7 @@ that decides the value and `_read_one` drops it into an untyped payload dict, so
 `test_wire_vocabulary_exhaustiveness` asserts the set this function actually
 returns *equals* the declared alias.
 
-`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:165-186) validates one entry: a non-empty repo-relative `path`; an
+`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:176-197) validates one entry: a non-empty repo-relative `path`; an
 `onboarding` flag (default true; only `False` suppresses the lookup); and a
 `source` that is either `"full"`/absent (whole file) or a `{startLine, endLine}`
 dict. The range is validated up front — both ends must be integers `>= 1` and
@@ -99,7 +119,7 @@ source-omitted (`None`, byte count 0) so one bad file never aborts the whole
 batch. The returned byte count is the UTF-8 length of what was returned — a fact
 for the event, never the content.
 
-`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:235-264) returns
+`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:251-280) returns
 `tuple[FileReadStatus, str | None, bool]` — `(status, body, attach)`. Since
 260731-EFA-L4 the first element is **narrowed to the alias this module imports**
 rather than a bare `str`. With onboarding
@@ -186,6 +206,8 @@ ever appears it is honored once.
 | --- | --- | --- |
 | The thin payload wrapper that returns this application entry point's dict through the token choke point. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** | `published_intent_block`; "published_intent" | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/application/read_files.py:31-31; mcp/src/agents_remember/application/read_files.py:148-148 |
+| **The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.** | `_read_one`; `converted_card_parts`; "legacy-format" | mcp/src/agents_remember/application/read_files.py:203-227; mcp/src/agents_remember/application/read_files_format.py:65-93 |
+| The import of the format helpers. | `TEXT_FORMAT`; `memory_format` | mcp/src/agents_remember/application/read_files.py:32-37 |
 | The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
 
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
@@ -200,6 +222,8 @@ ever appears it is honored once.
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body updated: this route now switches on the memory format (MIK-R24 rules 5 and 9).** On an unconverted tree the `published_intent` block is the `legacy-format` placeholder, and file results are marked `legacy-format`. On a converted tree, file results carry the sidecar and resolved references. **Corrected a claim this change made untrue:** "attached on every call" now says that the key is present on every call and that its content depends on the format. Recorded the architect ruling that legacy-format reads are active in this build, and where the displaced ICR-R19 coverage went. Two rows were added, and the assembly row now also names `memory_format` and `legacy_published_intent`.
+- 2026-09-29T12:03:52+00:00: Generated citation repair: "from agents_remember.models.read_files import FileReadStatus" repointed to mcp/src/agents_remember/application/read_files.py:68-68. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. MIK-R23 changed `published_intent_block` (it now tries a converted memory tree's index before the database selection, and a tree-backed block carries `memoryTree` and per-page `indexState`); the claims citing it were re-read against the working tree and still hold — this entry point attaches the block it returns, whatever it selected — so their wording is retained. Their ranges were re-pointed to the function's extent `:420-435` (one row was still at the stale `:271-286`); the fixer's generated bullet for the same anchor, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 

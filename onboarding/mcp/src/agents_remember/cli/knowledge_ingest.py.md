@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/knowledge_ingest.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e` |
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,12 @@ the leaf's history file are written into the memory worktree, validated, and the
 are refused by name. An **unconverted** memory worktree takes everything this card describes below,
 byte-for-byte as before. Until the cutover (MIK-R37) no production memory worktree is converted, so the
 database route stays the production path; its removal is MIK-R26's (L26).
+
+**Since `260928-MIK-L24` (MIK-R24 rule 9) an unconverted memory worktree is refused first when its official
+line is converted.** `run` computes `unconverted_write_refusal(loaded) or _invocation_refusal(args)`, so the
+rule 9 refusal (from `cli/knowledge_write_route.py`) comes before any argument refusal and names the crossing
+sync. It fires only when the official memory branch's tip holds `knowledge/layout.json`, and no line does
+before MIK-R37, so today it is inert (architect ruling, 2026-09-29) and the database route runs unchanged.
 
 ## Code Commentary
 
@@ -104,10 +110,10 @@ re-derived from its construct's own extent rather than carried):
   nothing: a planning run, or a batch that committed no entry.
 - `_print_report` (function, lines 626-657) — prints the report in the form the caller asked for, by
   delegating both renderings to `cli/knowledge_ingest_report.py`.
-- `run` (function, lines 672-708) — drives one ingest and prints its report; **the report IS the
+- `run` (function, lines 673-709) — drives one ingest and prints its report; **the report IS the
   result**. Since `260928-MIK-L12` it first loads the leaf contract once (`load_leaf_contract`) and, when
   that contract's memory worktree is converted, returns `run_leaf_write`'s exit status instead (0 written or
-  planned, 1 refused, 2 invocation refused). On unconverted memory it refuses by name before reading anything, resolves one `_Invocation`, hands the operation
+  planned, 1 refused, 2 invocation refused). On unconverted memory it refuses by name before reading anything (the MIK-R24 rule 9 refusal first, then the invocation refusal), resolves one `_Invocation`, hands the operation
   the one `IngestSelection` (including the selected destination), places the review baseline, reads the
   publication back, and prints.
 - `EXIT_REPORTED` / `EXIT_REFUSED` (lines 151-152) — the two exit codes, unchanged: a per-entry refusal
@@ -338,9 +344,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 | **The read-back, gated on the run's own report: a refused publication and a run that published nothing are both read back not at all.** | `_read_back`; `published_identity_read_back` | mcp/src/agents_remember/cli/knowledge_ingest.py:426-439; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | **The run's own line about its publication, completed from the report because the selection happens before the list is read; and why a run that selected a destination published nothing.** | `_publication_route`; `_nothing_published` | mcp/src/agents_remember/cli/knowledge_ingest.py:613-626; mcp/src/agents_remember/cli/knowledge_ingest.py:629-634 |
 | **The four values one run resolves, in the order it needs them — the baseline is read before the destination is selected, because the ordinary route's admission IS those bytes. `_invocation` reuses the contract `run` already loaded, and loads it itself only when that load failed.** | `_Invocation`; `_invocation` | mcp/src/agents_remember/cli/knowledge_ingest.py:556-569; mcp/src/agents_remember/cli/knowledge_ingest.py:600-610 |
-| **A converted memory worktree is written by the curator file writer: `run` loads the contract once and dispatches on the layout marker before any database-route refusal (MIK-R12 rule 7).** | `run`; `run_leaf_write`; `is_converted` | mcp/src/agents_remember/cli/knowledge_ingest.py:672-678; mcp/src/agents_remember/cli/knowledge_write_route.py:120-151; mcp/src/agents_remember/cli/knowledge_write_route.py:52-55 |
-| **Every fact about the argument list answered before a contract, a list or a byte is touched.** | `_invocation_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:573-598 |
-| Drives one ingest and prints the report, which is the result; after the converted-memory dispatch it refuses by name first, resolves one `_Invocation`, builds the one `IngestSelection` the operation takes, hands the loaded contract to the review handoff, reads the publication back and prints. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:672-708; mcp/src/agents_remember/cli/knowledge_ingest.py:676-690 |
+| **A converted memory worktree is written by the curator file writer: `run` loads the contract once and dispatches on the layout marker before any database-route refusal (MIK-R12 rule 7).** | `run`; `run_leaf_write`; `is_converted` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-679; mcp/src/agents_remember/cli/knowledge_write_route.py:134-165; mcp/src/agents_remember/cli/knowledge_write_route.py:53-56 |
+| **The MIK-R24 rule 9 refusal comes first on unconverted memory, and is inert until the official line is converted.** | `run`; "unconverted_write_refusal(loaded)"; `unconverted_write_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709; mcp/src/agents_remember/cli/knowledge_write_route.py:59-69 |
+| **Every fact about the argument list answered before a contract, a list or a byte is touched.** | `_invocation_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:574-599 |
+| Drives one ingest and prints the report, which is the result; after the converted-memory dispatch it refuses by name first, resolves one `_Invocation`, builds the one `IngestSelection` the operation takes, hands the loaded contract to the review handoff, reads the publication back and prints. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709; mcp/src/agents_remember/cli/knowledge_ingest.py:677-691 |
 | **The two renderings this module delegates rather than owns, including the two fields this leaf added to the run's answer.** | `_print_report`; `summary`; `payload` | mcp/src/agents_remember/cli/knowledge_ingest.py:638-669; mcp/src/agents_remember/cli/knowledge_ingest_report.py:34-76; mcp/src/agents_remember/cli/knowledge_ingest_report.py:79-128 |
 | **The canonical review root, derived from the contract's own recorded worktree group rather than from the caller, so the directory the review resolves and the directory this run writes are the same path by construction.** | `_review_root` | mcp/src/agents_remember/cli/knowledge_ingest.py:442-451 |
 | **The candidate directory: the caller's when it named one, otherwise the canonical review candidate root.** | `_candidate_directory` | mcp/src/agents_remember/cli/knowledge_ingest.py:454-463 |
@@ -361,6 +368,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | The subparser registration that makes this the ninth CLI subcommand. | "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:52-52 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the MIK-R24 rule 9 write refusal.** Added a Purpose paragraph: on unconverted memory, `run` now refuses first through `unconverted_write_refusal`, which is inert until the official line is converted (architect ruling). The `run` bullet says so. A new row cites the refusal. The dispatch, `_invocation_refusal` and `run` rows were re-measured one line down (a one-line import was added). The other prose line hints in the construct list predate this leaf and were not re-measured.
 - 2026-09-29T08:09:02+00:00: Generated citation repair: `_review_root` repointed to mcp/src/agents_remember/cli/knowledge_ingest.py:442-451. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T08:09:02+00:00: Generated citation repair: `_candidate_directory` repointed to mcp/src/agents_remember/cli/knowledge_ingest.py:454-463. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T08:09:02+00:00: Generated citation repair: "knowledge-ingest" repointed to mcp/src/agents_remember/cli/__main__.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.

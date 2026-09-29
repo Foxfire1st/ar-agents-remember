@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1586,6 +1586,7 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New section: the `conversion/` package and its ten cards. The package gets **no overview of its own**, following its siblings `knowledge/`, `migration/`, `knowledge_census/` and `knowledge_index/`. The section records the architect rulings the cards carry and adds seven rows.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`"** with the three new cards it governs (`__init__`, `inventory`, `writer`). No separate `knowledge_census/overview.md` was created, following the `knowledge_index/` precedent. The legacy database census stays until L26. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 The Index Matches The Root Family Route"** for the `query.py` change. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`" with the seven new cards it governs. No separate `knowledge_index/overview.md` was created: the sibling packages `knowledge/` and `migration/` have none, and this overview governs them. No verification stamp was advanced.
@@ -1944,6 +1945,56 @@ production memory tree is converted, so the installed runtime never reaches it.
 | The build, which names every failing file. | `build_index`; `parse_tree` | mcp/src/agents_remember/memory/knowledge_index/build.py:132-159; mcp/src/agents_remember/memory/knowledge_index/build.py:120-129 |
 | Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:85-105; mcp/src/agents_remember/memory/knowledge_index/projection.py:68-68 |
 | The cache refuses a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-91 |
+
+
+## 260928-MIK-L24 Conversion And Boundary Crossing: A New Package, `conversion/`
+
+**Route meaning extended (MIK-R24@v1).** The new package `conversion/` turns a memory tree and its legacy
+`knowledge.sqlite` into the text knowledge format. It is deterministic, pinned to conversion-format version
+`1`, loses no citation information and authors no knowledge. It also carries the two ways a comparison or a
+sync crosses the boundary between an unconverted tree and a converted one. It has no route overview of its
+own: like its siblings `knowledge/`, `migration/`, `knowledge_census/` and `knowledge_index/`, it is governed
+by this overview.
+
+- [`convert.py`](conversion/convert.py.md) is the pure `convert_memory`: version pin, no-op on a converted
+  tree, whole-tree validation before anything is written, and the report.
+- [`cards.py`](conversion/cards.py.md) handles the Markdown: metadata and Update History removed, citation
+  tables become `- <finding> [n]`, one `## Evidence` section, and marker-shaped text escaped.
+- [`citations.py`](conversion/citations.py.md) turns a row into a reference. Symbols bind through the shipped
+  extractor, covered ranges add nothing, and any anchor text no target carries is kept in `note`.
+- [`code_objects.py`](conversion/code_objects.py.md) is the only door to the code objects. It reads by exact
+  identity, and an abbreviated commit is resolved against every prefix match.
+- [`legacy_db.py`](conversion/legacy_db.py.md) is the read-only legacy database reader and the export at
+  head revisions. Entries keep their recorded blobs, and derived-ID collisions refuse.
+- [`inputs.py`](conversion/inputs.py.md) reads a tree from a directory or Git, and writes a finished
+  conversion.
+- [`base.py`](conversion/base.py.md) is the converted base of rule 7, and `GitBaseConverter` for the
+  validator's commit route.
+- [`crossing.py`](conversion/crossing.py.md) and [`crossing_sync.py`](conversion/crossing_sync.py.md) are
+  rule 8's structural merge: markers first, conversion of every side, merge by key with mechanical fields
+  never conflicting, and conflicts marked for the curator.
+- [`crossing_port.py`](conversion/crossing_port.py.md) is the adapter the composition binds to the
+  worktree layer's crossing port.
+- [`__init__.py`](conversion/__init__.py.md) is the package map.
+
+**Architect rulings carried on the cards:** anchor text is kept in `Reference.note`; conversion and crossing
+are separate routes; crossing conflicts are marked and reported; the moved no-impact markers go in the
+`onboarding_trace` row's `markers` list; version 1 is pinned by a golden digest. The consumers of
+`comparison_sides` (MIK-R07, R30, R08, R25) wire it in their own leaves.
+
+Its callers are the `knowledge-convert` CLI, the validator's commit route and the managed sync's crossing
+branch (through `application/worktree_services.py`). Before MIK-R37 no production memory tree is converted,
+so the installed runtime never reaches it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package map. | "the deterministic conversion" | mcp/src/agents_remember/memory/conversion/__init__.py:1-10 |
+| The pure conversion, its version pin and its validation. | `convert_memory`; `CONVERSION_FORMAT_VERSION` | mcp/src/agents_remember/memory/conversion/convert.py:387-431; mcp/src/agents_remember/memory/conversion/convert.py:44-50 |
+| No anchor text lost: it is kept in the note. | `unbound_anchor_text` | mcp/src/agents_remember/memory/conversion/citations.py:197-224 |
+| The read-only reader. | `export_database` | mcp/src/agents_remember/memory/conversion/legacy_db.py:181-188 |
+| Rule 7 for any comparison consumer. | `comparison_sides` | mcp/src/agents_remember/memory/conversion/base.py:152-167 |
+| Rule 8's item rules and conflict markers. | `merge_item`; `CONFLICT_MARKER` | mcp/src/agents_remember/memory/conversion/crossing.py:113-124; mcp/src/agents_remember/memory/conversion/crossing.py:43-43 |
+| Rule 8's steps. | `cross` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:224-280 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

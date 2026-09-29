@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/knowledge_conflict.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -146,16 +146,16 @@ No domain-documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The automatic pass over the conflicted paths and the settlement it returns. | `settle_knowledge_conflicts`; `KnowledgeConflictSettlement` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:240-256; mcp/src/agents_remember/worktrees/knowledge_conflict.py:100-126 |
-| **The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.** | `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:200-237 |
-| **The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.** | `RefusedKnowledgeStage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:72-98 |
-| **Which refusal's explanation belongs in the public response, and why the structured one is preferred.** | `guidance` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:110-126 |
-| The per-path stage builder and the three reasons it declines to settle. | `_stage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:174-197 |
-| Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read. | `_materialise_stages` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:137-157 |
-| The unique-common-base proof that refuses rather than choosing between candidates. | `_common_base` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:160-171 |
+| The automatic pass over the conflicted paths and the settlement it returns. | `settle_knowledge_conflicts`; `KnowledgeConflictSettlement` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:101-126; mcp/src/agents_remember/worktrees/knowledge_conflict.py:241-257 |
+| **The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.** | `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:201-238 |
+| **The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.** | `RefusedKnowledgeStage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:73-98 |
+| **Which refusal's explanation belongs in the public response, and why the structured one is preferred.** | `guidance` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:113-126 |
+| The per-path stage builder and the three reasons it declines to settle. | `_stage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:175-198 |
+| Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read. | `_materialise_stages` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:138-158 |
+| The unique-common-base proof that refuses rather than choosing between candidates. | `_common_base` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:161-172 |
 | The stage positions, named once and matching the adapter's own roles. | `_STAGE_ROLES` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:70-70 |
-| The application half this module hands three paths to, the settlement it returns, and the one authored decision it passes through. | `merge_conflicted_stages`; `KnowledgeStageSettlement`; `AuthoredReconciliation` | mcp/src/agents_remember/application/knowledge_merge.py:113-181; mcp/src/agents_remember/application/knowledge_merge.py:94-111; mcp/src/agents_remember/models/knowledge/merge.py:175-211 |
-| **The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list.** | `_continue_memory_merge`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:364-395; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
+| The application half this module hands three paths to, the settlement it returns, and the one authored decision it passes through. | `merge_conflicted_stages`; `KnowledgeStageSettlement`; `AuthoredReconciliation` | mcp/src/agents_remember/application/knowledge_merge.py:94-110; mcp/src/agents_remember/application/knowledge_merge.py:113-181; mcp/src/agents_remember/models/knowledge/merge.py:182-218 |
+| **The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list (its outcome also carries, since MIK-R24, a crossing sync's report path).** | `_continue_memory_merge`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-67; mcp/src/agents_remember/worktrees/sync_transaction_git.py:383-415; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
 | The layer rule that forces the two-module split, and the test that enforces it. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
 | The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package. | "[package.worktrees]" | layers.toml:188-194; layers.toml:217-218 |
 | The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-186 |
@@ -170,6 +170,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Reopened claim re-read (MIK-R24).** `SideMergeOutcome` changed: it gained `crossing_report`. The row still holds and was reworded to name the new field. No claim about this card's own source changed.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the authored retry re-enters this pipeline with every decision already accepted, not only the newest one.** `settle_knowledge_conflict` now takes `reconciliations: Sequence[AuthoredReconciliation] = ()` and forwards `reconciliations=tuple(reconciliations)` into `merge_conflicted_stages`. The pass-through boundary the card records is unchanged and was re-stated with it: this module still decides nothing about a decision, each decision still answers only the row it named, and every conflict no decision names is still refused exactly as it was. The sequence exists because a retained merge is answered one conflict at a time — a decision that settles the first reveals the second, and the attempt that answers the second has to carry the first, or the two alternate forever. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.

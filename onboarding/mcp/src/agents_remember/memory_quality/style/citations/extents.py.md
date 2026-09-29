@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/extents.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,7 @@ Module-level surface:
 - `anchor_extents` (function, lines 85-91) — Every range in ``lines`` that satisfies ``anchor``, by the rule its kind implies.
 - `symbol_extents` (function, lines 94-99) — The constructs binding ``name``, or -- failing that -- the lines that mention it.
 - `definitions` (function, lines 102-116) — Every name this file binds at any depth, and the extent of the construct binding it, filled from `grammars.bindings` so each `DEFINITION` extent also records the line its declaration begins on.
+- `qualified_spans` (function, lines 159-178; MIK-R24) — The distinct extents binding `name` in one file's `definitions`. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method of another class does not make the name ambiguous. A symbol anchor names one construct only when exactly one span comes back. It is the one symbol-binding rule: the curator writer (`application/knowledge_writer/code_anchors._bound_spans`, MIK-R12), the conversion (`memory/conversion/code_objects.CodeObjects.symbol_span`, MIK-R24) and the converted-tree reference check (`memory_quality/reference_state`) all call it, so a symbol binds the same way wherever it is resolved. The conversion-format version pins its behaviour (MIK-R24 rule 6).
 - `occurrence_runs` (function, lines 119-129) — Consecutive lines holding the pattern, grouped -- two mentions ten lines apart are two ranges, because one range spanning them would quote eight lines that say nothing.
 - `heading_extents` (function, lines 132-135) — The section a heading opens: its own line to the line before the next heading of equal or higher level, or to the end of the document.
 - `heading_extents_in` (function, lines 138-152) — :func:`heading_extents` with the file's heading levels already derived.
@@ -73,6 +74,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `anchor_extents` (lines 85-91) — Every range in ``lines`` that satisfies ``anchor``, by the rule its kind implies.. | `anchor_extents` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:85-91 |
 | Defines the function `symbol_extents` (lines 94-99) — The constructs binding ``name``, or -- failing that -- the lines that mention it.. | `symbol_extents` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:94-99 |
 | Defines the function `definitions` (lines 102-116) — Every name this file binds at any depth, and the extent of the construct binding it.. | `definitions` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:134-156 |
+| The one symbol-binding rule, shared by the curator writer, the conversion and the reference check. | `qualified_spans` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
 | Defines the function `occurrence_runs` (lines 119-129) — Consecutive lines holding the pattern, grouped -- two mentions ten lines apart are two ranges, because one range spanning them would quote eight lines that say nothing.. | `occurrence_runs` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-169 |
 | Defines the function `heading_extents` (lines 132-135) — The section a heading opens: its own line to the line before the next heading of equal or higher level, or to the end of the document.. | `heading_extents` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:172-175 |
 | Defines the function `heading_extents_in` (lines 138-152) — :func:`heading_extents` with the file's heading levels already derived.. | `heading_extents_in` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:178-192 |
@@ -91,6 +93,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `merged` (lines 415-423) — ``spans`` in order with overlapping and adjacent ones fused into one range.. | `merged` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:455-463 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added `qualified_spans` (MIK-R24), the qualified-name binding rule moved here from the curator writer, as a Logic bullet and a row. It names its three callers and says that the conversion-format version pins it. The generated line hints of the other bullets predate this leaf and were not re-measured.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-19T22:28:52+00:00: Generated citation repair: `definitions` repointed to mcp/src/agents_remember/memory_quality/style/citations/extents.py:134-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-19T22:28:52+00:00: Generated citation repair: `occurrence_runs` repointed to mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.

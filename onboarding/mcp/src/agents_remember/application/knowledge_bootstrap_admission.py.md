@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -133,9 +133,9 @@ this admission implements, and it is a task-tree document rather than a configur
 | --- | --- | --- |
 | **The module's own statement of why the enclosure shape is wrong here and what the third option is.** | "a second admission"; "derived from an authority that really exists"; "line 11" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:1-40 |
 | The published surface: the staging constant, the four values, the resolver and the two derivers. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:66-74 |
-| The one staging directory name, a constant so the cleanup owner and the writer name one place. | `BOOTSTRAP_STAGING_DIRECTORY` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:76-79 |
-| The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations. | `_SCOPE_PREFIX` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:81-85 |
-| **The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.** | `BootstrapAuthority`; `authority_entry` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:88-109 |
+| The one staging directory name, a constant so the cleanup owner and the writer name one place. | `BOOTSTRAP_STAGING_DIRECTORY` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:79-79 |
+| The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations. | `_SCOPE_PREFIX` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:85-85 |
+| **The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.** | `BootstrapAuthority`; `authority_entry` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:88-115 |
 | The authority reference in one stable spelling, for a report or a progress record. | `source`; "repositories" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:111-115 |
 | **Why a repository could not be admitted, and the route that re-observes the condition.** | `BootstrapRefusal`; `next_action` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129 |
 | One admitted bootstrap: the authority, the admission, the destination and the staging root. | `AdmittedKnowledgeBootstrap`; `destination_path` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151 |
@@ -150,14 +150,14 @@ this admission implements, and it is a task-tree document rather than a configur
 | The branch as a hint about which line to read, never an identity input. | `_current_branch` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:380-389 |
 | **The two exact revisions read from the real checkouts, and the refusals when a checkout cannot answer.** | `_source_revisions`; "code_revision_unavailable"; "memory_revision_unavailable" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:392-423 |
 | The one commit id a checkout answers, or nothing. | `_revision` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:426-431 |
-| The value this module produces, and the two kinds it declares. | `KnowledgeWriteAdmission`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:79-131; mcp/src/agents_remember/application/knowledge_write_admission.py:59-60 |
-| **The destination owner resolved through the ordinary read route, so writer and reader cannot disagree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:200-217 |
-| The resolver and the selector type the empty selector is an instance of. | `resolve_coordination_context`; `CoordinationHints`; `EnclosureSelector` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:134-134; mcp/src/agents_remember/kernel/coordination_context_resolver.py:30-30; mcp/src/agents_remember/kernel/coordination_context_resolver.py:36-36 |
-| The context whose `temp_root` the staging root is derived from, and the request the resolver takes. | `CoordinationContext`; `temp_root`; `CoordinationRequest` | mcp/src/agents_remember/kernel/coordination_context/models.py:189-199; mcp/src/agents_remember/kernel/coordination_context/models.py:159-159 |
-| **The settings document and repository entry that are the authority here.** | `McpRuntimeConfig`; `RepositoryScope`; `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:129-151; mcp/src/agents_remember/kernel/primitives/runtime_config.py:81-81 |
-| The shipped Git runner every revision read goes through. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-150 |
-| The contract reader the resolver is given, which answers an empty selector with no contract. | `WorktreeContractReader` | mcp/src/agents_remember/worktrees/modules/contract_reader.py:27-27 |
-| The memory initializer this module's authority document is shared with. | `initialize_memory` | mcp/src/agents_remember/kernel/memory_init.py:195-195 |
+| The value this module produces, and the two kinds it declares. | `KnowledgeWriteAdmission`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:60-60; mcp/src/agents_remember/application/knowledge_write_admission.py:79-131 |
+| **The destination owner resolved through the ordinary read route, so writer and reader cannot disagree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:239-255 |
+| The resolver and the selector type the empty selector is an instance of. | `resolve_coordination_context`; `CoordinationHints`; `EnclosureSelector` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:134-147; mcp/src/agents_remember/kernel/coordination_context_resolver.py:30-30; mcp/src/agents_remember/kernel/coordination_context_resolver.py:36-36 |
+| The context whose `temp_root` the staging root is derived from, and the request the resolver takes. | `CoordinationContext`; `temp_root`; `CoordinationRequest` | mcp/src/agents_remember/kernel/coordination_context/models.py:188-216; mcp/src/agents_remember/kernel/coordination_context/models.py:158-164 |
+| **The settings document and repository entry that are the authority here.** | `McpRuntimeConfig`; `RepositoryScope`; `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:80-86; mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-156 |
+| The shipped Git runner every revision read goes through. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-214 |
+| The contract reader the resolver is given, which answers an empty selector with no contract. | `WorktreeContractReader` | mcp/src/agents_remember/worktrees/modules/contract_reader.py:27-115 |
+| The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). | `initialize_memory` | mcp/src/agents_remember/kernel/memory_init.py:216-317 |
 
 ## Cross-Repo References
 
@@ -170,6 +170,8 @@ empty, so nothing here names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Reopened claim re-read (MIK-R24).** `initialize_memory` changed: it now writes the layout marker for a brand-new root only. The row naming it as the shared initializer still holds; it was reworded to say so, and its range (`216-317`) is the function's real extent. This folds in the fixer projection of this pass. No claim about this card's own source changed.
+- 2026-09-29T12:03:26+00:00: Generated citation repair: `published_dataset_path` repointed to mcp/src/agents_remember/application/published_intent.py:239-255. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-24T10:20+02:00 — 260921-ICR-L29 curator, **fix-round bytes** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`; gate `verify-l29-round2.md`,
   first line `pass-with-findings`): **the two construction-proved guards are now named as such.** This

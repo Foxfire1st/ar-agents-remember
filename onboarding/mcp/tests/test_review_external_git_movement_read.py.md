@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_review_external_git_movement_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-23T19:50:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -128,30 +128,30 @@ cannot drift apart silently.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of what it drives, what it reads, and why it is a separate module from the managed-sync cases.** | "It lives beside"; "rather than inside it" | mcp/tests/test_review_external_git_movement_read.py:15-19 |
-| **The sibling fixture this module shares rather than rebuilds.** | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-380 |
-| **The shipped review read these cases drive.** | `read_knowledge_review` | mcp/src/agents_remember/application/knowledge_review.py:220-247 |
-| **The class whose docstring states the defect it protects: the packet's non-conforming example in its second form.** | `RawGitIdentityBoundaryTests` | mcp/tests/test_review_external_git_movement_read.py:53-61 |
-| **The case that drives a real rebase and proves the review stops reading as current.** | `test_a_raw_rebase_is_measured_and_the_review_stops_reading_as_current` | mcp/tests/test_review_external_git_movement_read.py:62-143 |
-| **The control that keeps R22's managed-sync fact and this leaf's raw-Git fact apart.** | `test_a_managed_sync_alone_is_not_reported_as_a_raw_transition` | mcp/tests/test_review_external_git_movement_read.py:144-203 |
-| The case where the worktree left its declared branch and the comparison cannot be taken at all. | `test_a_worktree_that_left_its_declared_branch_reports_the_switch` | mcp/tests/test_review_external_git_movement_read.py:204-253 |
-| The cherry-pick, revert and ordinary-commit case, each in its own fixture. | `test_each_forward_moving_transition_is_exercised_and_reported_as_what_it_is` | mcp/tests/test_review_external_git_movement_read.py:254-301 |
-| The case where the declared source branch is rewritten while the leaf's own branch is untouched. | `test_a_rewritten_official_line_replaces_the_recorded_source_base` | mcp/tests/test_review_external_git_movement_read.py:302-351 |
-| **The control state: the value an ordinary review of an untouched leaf publishes.** | `test_an_untouched_leaf_reports_no_transition_at_all` | mcp/tests/test_review_external_git_movement_read.py:352-399 |
-| **The pair that keeps a missing recorded object apart from a branch switch.** | `test_a_missing_recorded_object_is_not_reported_as_a_branch_switch` | mcp/tests/test_review_external_git_movement_read.py:400-447 |
-| **The pair that keeps an unusable generation apart from "never reviewed".** | `test_a_generation_that_cannot_be_read_is_unavailable_not_absent` | mcp/tests/test_review_external_git_movement_read.py:448-498 |
-| **The case that asserts the documented matrix is the rendered production table, with unknown names refusing.** | `test_the_documented_matrix_and_the_published_matrix_are_one_table` | mcp/tests/test_review_external_git_movement_read.py:499-559 |
-| **The five validator forgeries, one departing from each clause, against the real published value.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:560-633 |
-| **The case that pins the `unchanged` value as the published control.** | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:634-655 |
-| The helper that removes a recorded object so the missing-object state is reachable. | `_delete_loose_object` | mcp/tests/test_review_external_git_movement_read.py:656-671 |
-| The helpers that perform the four transitions, each a Git operation rather than an assertion. | `_rebase_work_branch_onto_a_new_official_commit`; `_revert_the_leaves_own_commit` | mcp/tests/test_review_external_git_movement_read.py:672-718 |
-| The small shared guards the transition helpers are built on. | `_on_branch`; `_git_ok` | mcp/tests/test_review_external_git_movement_read.py:719-740 |
-| **The module-level case that pins the closeout, closeout-apply and integration results carrying the statement.** | `test_the_closeout_and_integration_results_carry_the_boundary_statement` | mcp/tests/test_review_external_git_movement_read.py:741-800 |
-| **The module-level case that pins the absence a leaf which published nothing reports.** | `test_a_result_whose_leaf_published_nothing_states_the_absence` | mcp/tests/test_review_external_git_movement_read.py:801-820 |
-| **The lane registration that makes these cases part of the governed `integration` population.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/test-evidence-lanes.toml:317-317 |
-| **A lifecycle consumer row that names this module, so the artifact census still counts it.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/evidence-lifecycle.toml:763-768; mcp/tests/evidence-lifecycle.toml:1325-1325; mcp/tests/evidence-lifecycle.toml:1452-1452; mcp/tests/evidence-lifecycle.toml:769-769 |
-| The re-pinned catalog digest that owns the lifecycle manifest's exact bytes. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-48 |
+| **The sibling fixture this module shares rather than rebuilds.** | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-378 |
+| **The shipped review read these cases drive.** | `read_knowledge_review` | mcp/src/agents_remember/application/knowledge_review.py:226-253 |
+| **The class whose docstring states the defect it protects: the packet's non-conforming example in its second form.** | `RawGitIdentityBoundaryTests` | mcp/tests/test_review_external_git_movement_read.py:56-656 |
+| **The case that drives a real rebase and proves the review stops reading as current.** | `test_a_raw_rebase_is_measured_and_the_review_stops_reading_as_current` | mcp/tests/test_review_external_git_movement_read.py:65-145 |
+| **The control that keeps R22's managed-sync fact and this leaf's raw-Git fact apart.** | `test_a_managed_sync_alone_is_not_reported_as_a_raw_transition` | mcp/tests/test_review_external_git_movement_read.py:147-205 |
+| The case where the worktree left its declared branch and the comparison cannot be taken at all. | `test_a_worktree_that_left_its_declared_branch_reports_the_switch` | mcp/tests/test_review_external_git_movement_read.py:207-255 |
+| The cherry-pick, revert and ordinary-commit case, each in its own fixture. | `test_each_forward_moving_transition_is_exercised_and_reported_as_what_it_is` | mcp/tests/test_review_external_git_movement_read.py:257-303 |
+| The case where the declared source branch is rewritten while the leaf's own branch is untouched. | `test_a_rewritten_official_line_replaces_the_recorded_source_base` | mcp/tests/test_review_external_git_movement_read.py:305-353 |
+| **The control state: the value an ordinary review of an untouched leaf publishes.** | `test_an_untouched_leaf_reports_no_transition_at_all` | mcp/tests/test_review_external_git_movement_read.py:355-401 |
+| **The pair that keeps a missing recorded object apart from a branch switch.** | `test_a_missing_recorded_object_is_not_reported_as_a_branch_switch` | mcp/tests/test_review_external_git_movement_read.py:403-449 |
+| **The pair that keeps an unusable generation apart from "never reviewed".** | `test_a_generation_that_cannot_be_read_is_unavailable_not_absent` | mcp/tests/test_review_external_git_movement_read.py:451-500 |
+| **The case that asserts the documented matrix is the rendered production table, with unknown names refusing.** | `test_the_documented_matrix_and_the_published_matrix_are_one_table` | mcp/tests/test_review_external_git_movement_read.py:502-561 |
+| **The five validator forgeries, one departing from each clause, against the real published value.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:563-635 |
+| **The case that pins the `unchanged` value as the published control.** | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:637-656 |
+| The helper that removes a recorded object so the missing-object state is reachable. | `_delete_loose_object` | mcp/tests/test_review_external_git_movement_read.py:659-672 |
+| The helpers that perform the four transitions, each a Git operation rather than an assertion. | `_rebase_work_branch_onto_a_new_official_commit`; `_revert_the_leaves_own_commit` | mcp/tests/test_review_external_git_movement_read.py:675-692; mcp/tests/test_review_external_git_movement_read.py:706-712 |
+| The small shared guards the transition helpers are built on. | `_on_branch`; `_git_ok` | mcp/tests/test_review_external_git_movement_read.py:722-730; mcp/tests/test_review_external_git_movement_read.py:733-741 |
+| **The module-level case that pins the closeout, closeout-apply and integration results carrying the statement.** | `test_the_closeout_and_integration_results_carry_the_boundary_statement` | mcp/tests/test_review_external_git_movement_read.py:744-801 |
+| **The module-level case that pins the absence a leaf which published nothing reports.** | `test_a_result_whose_leaf_published_nothing_states_the_absence` | mcp/tests/test_review_external_git_movement_read.py:804-830 |
+| **The lane registration that makes these cases part of the governed `integration` population.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/test-evidence-lanes.toml:342-342 |
+| **A lifecycle consumer row that names this module, so the artifact census still counts it.** | "mcp/tests/test_review_external_git_movement_read.py" | mcp/tests/evidence-lifecycle.toml:764-769; mcp/tests/evidence-lifecycle.toml:1335-1335; mcp/tests/evidence-lifecycle.toml:1466-1466; mcp/tests/evidence-lifecycle.toml:770-770 |
+| The re-pinned catalog digest that owns the lifecycle manifest's exact bytes. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 | **The documented section the matrix case asserts against, generated from the production table.** | "Raw Git Identity Boundary" | docs/reference/worktrees-c09.md:113-148 |
-| The sibling module that owns the managed-sync half of the same read, whose fixture this module shares. | `LiveReviewMovementTests` | mcp/tests/test_review_sync_movement_read.py:40-60 |
+| The sibling module that owns the managed-sync half of the same read, whose fixture this module shares. | `LiveReviewMovementTests` | mcp/tests/test_review_sync_movement_read.py:40-327 |
 
 ## Cross-Repo References
 
@@ -162,6 +162,8 @@ external system is involved, and no cited range proves a repository or external-
 cross-repo reference row is recorded here.
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`evidence-lifecycle.toml`, `test-evidence-lanes.toml`, `test_dependency_ownership_ast_helpers.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
+- 2026-09-29T12:08:03+00:00: Generated citation repair: "mcp/tests/test_review_external_git_movement_read.py" repointed to mcp/tests/test-evidence-lanes.toml:342-342. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 5 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

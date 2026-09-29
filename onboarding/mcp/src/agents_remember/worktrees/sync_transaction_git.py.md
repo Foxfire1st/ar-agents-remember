@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_git.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -33,6 +33,29 @@ An admitted divergent memory merge runs without auto-commit. A cache-only confli
 
 **Since MIK-R22, the memory merge is validated before it is committed.** `start_side_merge` and `continue_side_merge` take an optional keyword `paired_code` (a `worktrees.knowledge_validation.PairedCode`: the code side's settled result commit) and thread it through `_existing_side_merge` and `_continue_memory_merge` to `_finish_staged_memory_merge`. After the cache ignore rule is staged, that function writes the staged index as a tree (`git write-tree`) and calls `memory_commit_refusal` with the tree, both parents (`preSyncHead`, `sourceCommit`) and `paired_code`, before `git commit --no-edit`. A refusal raises `SyncKnowledgeValidationError`, a subclass of `SyncGitProofError`, and the merge stays staged: nothing is committed, and `HEAD` and `MERGE_HEAD` are unchanged. Unconverted memory, where neither the candidate nor a parent holds `knowledge/layout.json`, gets `None` from the helper and commits exactly as before. Code-side merges and memory plans that are not a merge (fast-forward, skip, already-current) are not validated here.
 
+**Since MIK-R24, a memory merge can be a crossing sync (rule 8).** `start_side_merge` takes an optional
+keyword `crossing_owner` (`("leaf" | "master", task or leaf ID)`) and asks `_crossing` **before** Git touches
+the worktree. `_crossing` returns `None` for a code side or when `knowledge_crossing.crossing_applies` finds
+the merge base, the own side (`preSyncHead`) and the incoming side (`sourceCommit`) all alike. For an
+unconverted line that is always the case, so an ordinary sync runs exactly as before. When one tree is
+converted and another is not, `_crossing` returns `crossing_plan(...)`; a crossing without an owner is
+refused at step `markers`. A failing step raises `SyncGitProofError` naming it, with the line untouched.
+The merge argv is then the same as ever (`merge --no-commit --no-edit <source>` for memory). For a crossing,
+`_apply_crossing_merge` accepts Git exit 0 or 1 with `MERGE_HEAD` at the source, then:
+
+1. replaces every `knowledge/` and `onboarding/` path with the plan (`apply_crossing`: clean paths staged,
+   conflicted ones unmerged with stages 1-3);
+2. writes the crossing report into the worktree group's `reports/` (`write_crossing_report`);
+3. continues through `_continue_memory_merge`, returning the outcome with `crossing_report` set.
+
+`SideMergeOutcome.crossing_report` (default `""`) carries the report path to the driver, which journals it.
+`_finish_staged_memory_merge` also calls `close_crossing_history` right after the cache ignore rule is
+staged. That call sets `closed: true` on, and stages, each master-line `<task-id>-crossing-<n>.json` the
+merge adds. The validator then checks the staged tree, with the unconverted parent replaced by its
+conversion (the composition binds `GitBaseConverter`), so rule 8 step 5 is enforced at the commit. Each
+conflicted JSON item holds a `crossing-conflict` marker that the validator refuses, and Markdown conflicts
+keep Git markers, so `continue` cannot commit an unresolved crossing item.
+
 **`reconcile_side_merge` is the authored retry's Git half, and it is deliberately the same route the automatic pass takes.** It re-materialises the three index stages, calls `settle_knowledge_conflict` with the **sequence** of decisions this side has already accepted — the journaled ones plus the one just authored, so each attempt starts from the conflict the previous attempt actually reached rather than from the first one again — republishes the settled dataset into the worktree and stages it. Nothing about the conflict is interpreted here — which row, which decision and whether the decision is expressible at all are the adapter's answers — and it returns `None` when the path settled or the adapter's *fresh* explanation when it did not, so a decision that settles the first conflict and reveals a second reports that second one exactly as the first was. The caller finishes the merge through the ordinary continuation, so a reconciled sync is a normal sync with one authored input rather than a second route.
 
 
@@ -49,6 +72,7 @@ All commands use the shared runner. `SyncGitProofError` exposes an unproven Git 
 - **A knowledge dataset is settled by the transaction, and only what the adapter will not decide reaches the agent — with the engine's reason.** `settle_knowledge_conflicts` runs before the `resolution-required` return, so the conflict list a caller receives is the post-routing one; a schema disagreement is still the agent's, and the returned owner is still the agent for exactly those paths. What is new is that `SideMergeOutcome.refused` carries the attribution out with them.
 - **The routing decides nothing, and neither does the authored retry.** It republishes and stages a structurally merged dataset; it takes no compatibility verdict on the merged knowledge, and the merge adapter's own refusal is what keeps a path conflicted. `reconcile_side_merge` interprets neither the row nor the decision.
 - **A retry that reveals the next conflict reports it rather than finishing.** A settled first conflict is not a settled merge, so the fresh explanation is returned and journaled exactly as the first one was.
+- **A crossing sync is never merged as plain Git, and never commits a conflict silently (MIK-R24 rule 8).** The plan is computed before Git runs; an unbound crossing port or a missing paired code commit refuses; every conflicted item stays unmerged or marked until the curator resolves it.
 - Code-side memory.md keeps normal Git conflict semantics.
 - Only the pinned fast-forward or exact admitted two-parent merge is accepted.
 - No cache-only commit or cached-row authority is introduced.
@@ -71,17 +95,20 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact refs, worktree identity, and authority-safe cleanup. | `read_ref`; `require_side_checkout`; `delete_pinned_ref` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:57-69; mcp/src/agents_remember/worktrees/sync_transaction_git.py:113-119; mcp/src/agents_remember/worktrees/sync_transaction_git.py:84-92 |
-| Typed dirty/WIP and restore proof exclude only the memory cache. | `worktree_dirty_paths`; `park_worktree_wip`; `prove_parked_wip_restored` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:147-171; mcp/src/agents_remember/worktrees/sync_transaction_git.py:174-193; mcp/src/agents_remember/worktrees/sync_transaction_git.py:228-246 |
-| Content-domain conflicts and narrowly scoped cache state handling. | `content_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:315-322 |
-| **The typed merge outcome that replaced the three-tuple, and the adapter's refusal it carries out of the merge.** | `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:40-54 |
-| **The conflict routing: knowledge datasets settle in the transaction, the undecided remainder reaches the agent, and the explanation travels with it.** | `_continue_memory_merge`; `settle_knowledge_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:370-402; mcp/src/agents_remember/worktrees/knowledge_conflict.py:241-257 |
-| **The authored retry's Git half, which is the same route the automatic pass takes.** | `reconcile_side_merge`; `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:405-431; mcp/src/agents_remember/worktrees/knowledge_conflict.py:201-238 |
+| Exact refs, worktree identity, and authority-safe cleanup. | `read_ref`; `require_side_checkout`; `delete_pinned_ref` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:70-82; mcp/src/agents_remember/worktrees/sync_transaction_git.py:126-132; mcp/src/agents_remember/worktrees/sync_transaction_git.py:97-105 |
+| Typed dirty/WIP and restore proof exclude only the memory cache. | `worktree_dirty_paths`; `park_worktree_wip`; `prove_parked_wip_restored` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:160-184; mcp/src/agents_remember/worktrees/sync_transaction_git.py:187-206; mcp/src/agents_remember/worktrees/sync_transaction_git.py:241-259 |
+| Content-domain conflicts and narrowly scoped cache state handling. | `content_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:328-335 |
+| **The typed merge outcome that replaced the three-tuple, and the adapter's refusal and (since MIK-R24) the crossing report path it carries out of the merge.** | `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-67 |
+| **The conflict routing: knowledge datasets settle in the transaction, the undecided remainder reaches the agent, and the explanation travels with it.** | `_continue_memory_merge`; `settle_knowledge_conflicts` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:383-415; mcp/src/agents_remember/worktrees/knowledge_conflict.py:241-257 |
+| **The authored retry's Git half, which is the same route the automatic pass takes.** | `reconcile_side_merge`; `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:418-444; mcp/src/agents_remember/worktrees/knowledge_conflict.py:201-238 |
 | **The adapter the routing calls, and the one importer that makes this module depend on the application layer rather than on the memory domain.** | `merge_conflicted_stages` | mcp/src/agents_remember/application/knowledge_merge.py:113-181 |
-| Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge. | `start_side_merge`; `_finish_staged_memory_merge`; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:449-492; mcp/src/agents_remember/worktrees/sync_transaction_git.py:495-519; mcp/src/agents_remember/worktrees/sync_transaction_git.py:522-543 |
-| The staged memory tree is validated against both parents before the commit; a refusal raises and leaves the merge staged. | `memory_commit_refusal`; `SyncKnowledgeValidationError` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:506-513; mcp/src/agents_remember/worktrees/sync_transaction_git.py:36-37 |
+| Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge, which first closes any master-line crossing history file the merge adds. | `start_side_merge`; `_finish_staged_memory_merge`; "close_crossing_history"; `continue_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:462-512; mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction_git.py:601-622 |
+| **The crossing branch of the memory merge (MIK-R24 rule 8): the plan is computed before Git merges, then replaces the merge's knowledge and onboarding paths, and the report path rides the outcome.** | `_crossing`; `_apply_crossing_merge`; "crossing_report" | mcp/src/agents_remember/worktrees/sync_transaction_git.py:537-567; mcp/src/agents_remember/worktrees/sync_transaction_git.py:515-534; mcp/src/agents_remember/worktrees/sync_transaction_git.py:67-67 |
+| The crossing helpers this module drives. | `crossing_plan`; `apply_crossing`; `write_crossing_report`; `close_crossing_history` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:80-112; mcp/src/agents_remember/worktrees/knowledge_crossing.py:150-160; mcp/src/agents_remember/worktrees/knowledge_crossing.py:237-262; mcp/src/agents_remember/worktrees/knowledge_crossing.py:201-222 |
+| The managed sync crosses an unconverted leaf into a converted line, and leaves overlapping edits to the curator. | `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`; `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing` | mcp/tests/test_knowledge_crossing.py:403-431; mcp/tests/test_knowledge_crossing.py:434-499 |
+| The staged memory tree is validated against both parents before the commit; a refusal raises and leaves the merge staged. | `memory_commit_refusal`; `SyncKnowledgeValidationError` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:581-592; mcp/src/agents_remember/worktrees/sync_transaction_git.py:48-49 |
 | The managed sync refuses a merge with duplicate IDs, keeps it staged, and syncs after the repair. | `test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired` | mcp/tests/test_knowledge_validator_routes.py:156-188 |
-| Rollback and created-head proof retain exact operation ownership. | `rollback_side`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:567-596; mcp/src/agents_remember/worktrees/sync_transaction_git.py:599-607 |
+| Rollback and created-head proof retain exact operation ownership. | `rollback_side`; `exact_created_head` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:646-675; mcp/src/agents_remember/worktrees/sync_transaction_git.py:678-686 |
 | **Public regression covers cache-only success, true content conflict/continue, preserved WIP, and the structured diagnosis with its authored reconcile.** | `test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction`; `_assert_knowledge_conflict_scenarios`; `_assert_memory_content_conflict_scenarios` | mcp/tests/test_worktree_sync.py:698-719; mcp/tests/test_worktree_sync.py:721-761; mcp/tests/test_worktree_sync.py:763-844 |
 | **The real two-sided dataset case that proves the sync completes, both sides survive, and the caller invoked no merge entry point.** | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-186 |
 | **The cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled`; `_assert_delete_reference_conflict_is_retracted`; `_assert_unretractable_delete_reference_advertises_its_real_route`; `_assert_schema_disagreement_is_reported_not_reconciled` | mcp/tests/test_worktree_sync.py:268-354; mcp/tests/test_worktree_sync.py:357-399; mcp/tests/test_worktree_sync.py:402-455; mcp/tests/test_worktree_sync.py:458-490 |
@@ -94,6 +121,8 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the crossing branch of the memory merge (MIK-R24 rule 8).** Added a Logic paragraph covering `crossing_owner`, `_crossing` (planned before Git runs, inert when all three trees are alike), `_apply_crossing_merge`, `SideMergeOutcome.crossing_report`, and `close_crossing_history` inside `_finish_staged_memory_merge`. Added an invariant: a crossing is never merged as plain Git and never commits a conflict silently. The reopened `_finish_staged_memory_merge` row was reworded to name the history closing and re-cited to the function's own extent (`570-598`). Added three rows: the crossing branch, the helpers, and the managed-sync tests.
+- 2026-09-29T12:06:08+00:00: Generated citation repair: `content_conflicts` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:328-335. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented the MIK-R22 validation of the staged memory merge (`write-tree`, `memory_commit_refusal` against both parents and the paired code commit, before `git commit`), the new `paired_code` keyword on `start_side_merge`/`continue_side_merge`, the `SyncKnowledgeValidationError` subclass, and the new invariant that a converted memory merge is never committed unvalidated. Re-measured the native-merge row (`continue_side_merge` changed) and added rows for the validation call and its route test. The verification stamp is unchanged; closeout owns it.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 

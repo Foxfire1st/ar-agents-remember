@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` |
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -798,7 +798,45 @@ No separate `knowledge_census/overview.md` was created, following the sibling su
 | The measures in Doc12's order. | `compute_measures` | mcp/src/agents_remember/memory_quality/knowledge_census/measures.py:137-160 |
 | The registration with the validator. | `CENSUS_VALIDATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_census.py:54-57 |
 
+
+## 260928-MIK-L24 The Converted Format Joins This Route
+
+**MIK-R24@v1 rule 5: on a converted memory tree this route's checks read the text format.** Two new modules
+and four touched ones carry it. Nothing changes on an unconverted tree, and no production tree is converted
+before MIK-R37.
+
+- [`reference_state.py`](reference_state.py.md) is reference currentness over sidecars: `current`, `stale`,
+  `stale:unresolved` or `stale:path-absent` in the code working tree. A stale reference is **report-only,
+  never a gate finding**; the onboarding gate (MIK-R30) is its refresh route. The fixer re-records only
+  mechanically moved anchors. `application/memory_tools` routes `citation_check` and `citation_fix` here
+  on a converted tree.
+- [`converted_check.py`](converted_check.py.md) is the converted run. The legacy-format checks (Update
+  History order, `range_resolution`, `claim_reopen`) report `not-applicable-converted`. The drift slot
+  becomes `knowledge.converted`: the validator's refusals are findings, and its reports and stale references
+  are report-only.
+- [`check.py`](check.py.md) dispatches every selected check by format (`_converted_check`).
+- [`knowledge_validator/commit_route.py`](knowledge_validator/commit_route.py.md) takes an optional
+  `base_converter` (rule 7). The composition binds `memory/conversion/base.GitBaseConverter`, so a
+  converted merge whose base is unconverted is validated against that base's conversion.
+- [`knowledge_validator/markers.py`](knowledge_validator/markers.py.md) gains `escape_markers`, the
+  conversion's one escaping rule on the validator's own grammar.
+- [`style/citations/extents.py`](style/citations/extents.py.md) gains `qualified_spans`, the one
+  symbol-binding rule the curator writer, the conversion and the reference check share. The
+  conversion-format version pins it.
+- The rule 9 refusal runs in the memory-quality controller (`application/memory_quality/controller.py`,
+  the `application` route). It is inert until the official line is converted (architect ruling).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Stale references are report-only. | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:125-157 |
+| The converted run's legacy-format checks and its validator slot. | `LEGACY_FORMAT_CHECKS`; `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:31-37; mcp/src/agents_remember/memory_quality/converted_check.py:66-93 |
+| The runner's dispatch by format. | `_converted_check` | mcp/src/agents_remember/memory_quality/check.py:163-177 |
+| The commit route's optional base converter. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
+| The escaping rule on the validator's grammar. | `escape_markers` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:142-162 |
+| The one symbol-binding rule. | `qualified_spans` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
+
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24 rule 5).** New section "260928-MIK-L24 The Converted Format Joins This Route", covering the two new modules (`reference_state`, `converted_check`), the four touched ones (`check`, `commit_route`, `markers`, `extents`) and the rule 9 ruling, with six rows. The entry sits in the real Update History list after the last section, not in the inline mention inside "Deterministic Citation Document Publication".
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Migration Census Joins This Route"** for the five new `knowledge_census/` cards and the new `knowledge_validator/rules_census.py` card, plus the `validator.py` and `parsed.py` changes; the Route Model gains a `knowledge_census/` bullet and names `rules_census.py`. No separate `knowledge_census/overview.md` was created. No stamp advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Route Rules Join The Knowledge Validator"** for the two new cards (`family_routes.py`, `rules_routes.py`) and the `registry.py`/`trees.py`/`validator.py`/`__init__.py` changes. The L22 section's `__init__`, registry and validator rows were re-pointed by the exact line shift (the validator row's two ranges put back in anchor order), and the installed fixer re-normalised older passing ranges in this document; no claim wording changed there. No stamp advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated — the mandatory knowledge validator joins this route.** Added `knowledge_validator/` to the Route Model and the Hot Path Summary, a new first invariant (no converted memory commit without a passing validator run; no skip), and the section "260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route". The package's eleven modules got new file cards governed by this overview; no separate `knowledge_validator/overview.md` was created, following the sibling subpackages. No verification stamp was advanced.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Governing Overview
@@ -43,12 +43,13 @@ local copy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory quality runner entry is `run_memory_quality_check`, and this checker exposes its registered style name. | "style.update_history.history_order"; `run_memory_quality_check` | mcp/src/agents_remember/memory_quality/check.py:86-113; mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
+| The memory quality runner entry is `run_memory_quality_check` (which, since MIK-R24, reports this check `not-applicable-converted` on a converted tree), and this checker exposes its registered style name. | "style.update_history.history_order"; `run_memory_quality_check` | mcp/src/agents_remember/memory_quality/check.py:124-160; mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 | The checker imports the `rel` path-relativization helper from the drift-check discovery module. | "from agents_remember.memory_quality.integrity.onboarding_drift_check.discovery import rel" | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:21-21 |
-| The drift-check discovery module defines the `rel` path-relativization helper. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
+| The drift-check discovery module defines the `rel` path-relativization helper. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:63-69 |
 | The history-order checker entry is `check_onboarding_root`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Reopened claim re-read (MIK-R24).** `run_memory_quality_check` changed: it dispatches by memory format. The row still holds, and was reworded to say that on a converted tree this check reports `not-applicable-converted`. This folds in the fixer projection of this pass. No claim about this card's own source changed.
 
 - 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D20 by binding the shared `rel` claim to the complete helper body; rechecked this card through the locked exact-document fixer/check.
 

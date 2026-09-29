@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,16 +35,16 @@ cit:([`report_path_for`, `split_commit_owned_findings`, `_tracked_onboarding_pat
 candidates, closeout-owned provenance, and noteworthy report-only rows before it derives the
 zeroable curator count. It writes through `atomic_write_text`, so a reader sees the previous
 complete checklist or the next complete checklist, never a partial report
-cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195).
+cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:113-193).
 The renderer preserves the important distinction between a zeroable pre-closeout gate and dirty
 source/real-commit evidence that must remain visible until governed closeout supplies a real
-commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:204-266; mcp/src/agents_remember/memory_quality/curator_checklist.py:319-350).
+commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:217-279; mcp/src/agents_remember/memory_quality/curator_checklist.py:332-363).
 
 Under CCR-R03@v1 `CuratorChecklist` now carries the exact `code_candidate_tree` and
 `memory_candidate_tree`, and the attestation embeds the `memory-quality-attestation/v1` dependency
 declaration built from the pair, both trees, and the rendered-report SHA-256 — so the checklist
 attestation content-addresses exactly the candidate trees it inspected
-cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:36-59; mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195).
+cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:36-59; mcp/src/agents_remember/memory_quality/curator_checklist.py:113-193).
 
 ### Conventions
 
@@ -87,9 +87,9 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:107-131; mcp/src/agents_remember/application/memory_quality/controller.py:317-337; mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441 |
-| Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
-| The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:113-195 |
+| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:107-131; mcp/src/agents_remember/application/memory_quality/controller.py:318-338; mcp/src/agents_remember/application/memory_quality/controller.py:319-361; mcp/src/agents_remember/application/memory_quality/controller.py:364-461 |
+| Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:558-593 |
+| The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:113-193 |
 | R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149 |
 
 ## Cross-Repo References
@@ -158,6 +158,7 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`controller.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

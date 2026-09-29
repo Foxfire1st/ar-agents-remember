@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -78,6 +78,12 @@ validated with `require_git_object_id`; each batch header must name the requeste
 and anything else (a missing object, a non-blob) raises `GitPreparationError`. The output is read raw,
 without decoding or newline normalisation, so the knowledge validator's canonical-format check sees the
 bytes that will be committed; reading a whole onboarding tree one `cat-file blob` at a time was too slow.
+
+`merge_file_bytes(root, ours, base, theirs, labels)` (MIK-R24) runs `git merge-file -p` over three files
+and returns the merged bytes (read raw) with the conflict count, which is Git's exit status. Conflict hunks
+carry the three labels. Nothing is written: `-p` only prints. An exit status below 0 or above 127 is a Git
+failure and raises `GitPreparationError`. The crossing sync's structural merge
+(`memory/conversion/crossing.py`) uses it to merge a card's Markdown three-way by line.
 The validator's Git tree reader (`memory_quality/knowledge_validator/trees.py`) is its caller.
 
 ### Conventions
@@ -143,16 +149,17 @@ The generic runner has distinct Git-fact callers and private/publication observe
 | Patch-id calculation supplies diff bytes through the shared input option. | `patch_id` | mcp/src/agents_remember/memory/carryover.py:171-182 |
 | Explicit memory-history rewriting preserves original author/committer identities and timestamps. | `_identity` | mcp/src/agents_remember/kernel/memory_backfill.py:821-834 |
 | The code-profile sandbox supplies a separate clone working directory and staged input bytes. | `_prepare_sandbox` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:344-392 |
-| Memory index/flag checks omit only root memory.md; code keeps the complete checks. | `_require_preparation_index`; `_existing_preparation_entries` | mcp/src/agents_remember/kernel/git_command.py:431-468; mcp/src/agents_remember/kernel/git_command.py:509-527 |
-| Raw HEAD/tree checks precede projected content proof. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:492-506; mcp/src/agents_remember/kernel/git_command.py:513-513 |
-| The required memory certificate subject is compared against raw HEAD with only cache removed. | `_existing_preparation_entries`; `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:509-527; mcp/src/agents_remember/kernel/git_command.py:729-761 |
-| Existing output is revalidated around reading exact raw commit bytes. | `inspect_existing_git_preparation`; `read_git_commit_bytes` | mcp/src/agents_remember/kernel/git_command.py:326-329; mcp/src/agents_remember/kernel/git_command.py:530-539 |
+| Memory index/flag checks omit only root memory.md; code keeps the complete checks. | `_require_preparation_index`; `_existing_preparation_entries` | mcp/src/agents_remember/kernel/git_command.py:462-499; mcp/src/agents_remember/kernel/git_command.py:540-558 |
+| Raw HEAD/tree checks precede projected content proof. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:523-537; mcp/src/agents_remember/kernel/git_command.py:544-544 |
+| The required memory certificate subject is compared against raw HEAD with only cache removed. | `_existing_preparation_entries`; `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:540-558; mcp/src/agents_remember/kernel/git_command.py:760-792 |
+| Existing output is revalidated around reading exact raw commit bytes. | `inspect_existing_git_preparation`; `read_git_commit_bytes` | mcp/src/agents_remember/kernel/git_command.py:326-329; mcp/src/agents_remember/kernel/git_command.py:561-570 |
 | Context branch reads use the shared runner and its metadata timeout. | `git_branch` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:25-37 |
 | Coverage support is a typed wrapper around the same production Git runner. | `_git`; `run_git` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:80-90; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:93-100 |
 | Remote cleanup selects the bounded remote timeout rather than creating a second runner. | `_remote_git` | mcp/src/agents_remember/worktrees/modules/cleanup.py:320-335 |
 | Raw-output runs encode their stdin text, so a bytes-mode batch command can take input. | `_run_git` | mcp/src/agents_remember/kernel/git_command.py:286-306 |
+| A three-way line merge of three files' exact bytes that writes nothing and returns the conflict count; a Git failure raises. | `merge_file_bytes` | mcp/src/agents_remember/kernel/git_command.py:378-406 |
 | Many blobs are read as exact bytes through one batch call; a missing or non-blob object raises. | `read_git_blobs_bytes` | mcp/src/agents_remember/kernel/git_command.py:338-375 |
-| The knowledge validator reads a memory tree's knowledge files through the batch reader. | `knowledge_tree_from_git` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:161-174 |
+| The knowledge validator reads a memory tree's knowledge files through the batch reader. | `knowledge_tree_from_git` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:182-195 |
 | The module declares a separate 1800-second bulk-network timeout. | `GIT_BULK_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:96-96 |
 
 ## Cross-Repo References
@@ -181,11 +188,15 @@ Binary configuration, commit, blob and tree readers preserve exact bytes. Privat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The publication observation rejects cache-bearing new memory output and rechecks exact refs. | `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:729-761 |
-| Admission creates only the caller-authorized publication capability. | `admit_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:764-774 |
-| The actual CAS is issued once and both observations/command evidence are retained. | `publish_git_closeout_ref` | mcp/src/agents_remember/kernel/git_command.py:801-824 |
+| The publication observation rejects cache-bearing new memory output and rechecks exact refs. | `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:760-792 |
+| Admission creates only the caller-authorized publication capability. | `admit_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:795-805 |
+| The actual CAS is issued once and both observations/command evidence are retained. | `publish_git_closeout_ref` | mcp/src/agents_remember/kernel/git_command.py:832-855 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Documented `merge_file_bytes`, the new raw `git merge-file -p` helper that the MIK-R24 crossing sync uses for Markdown: a Logic paragraph and a row. The existing rows below the insertion were re-pointed by the installed fixer and the exact line map, with no wording change.
+- 2026-09-29T12:04:37+00:00: Generated citation repair: `knowledge_tree_from_git` repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:182-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:04:37+00:00: Generated citation repair: `admit_git_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:795-805. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T12:04:37+00:00: Generated citation repair: `publish_git_closeout_ref` repointed to mcp/src/agents_remember/kernel/git_command.py:832-855. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented the new `read_git_blobs_bytes` batch reader (exact bytes, one `cat-file --batch`, refusal of a missing or non-blob object) and the UTF-8 encoding of stdin for raw-output runs of `_run_git`, both added for the MIK-R22 knowledge validator. Added three reference rows. Rows below the insertion were re-measured mechanically for the +41-line shift; their claims did not change. The verification stamp is unchanged; closeout owns it.
 - 2026-09-29T05:01:01+00:00: Generated citation repair: `_observe_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:729-761. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T05:01:01+00:00: Generated citation repair: `admit_git_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:764-774. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.

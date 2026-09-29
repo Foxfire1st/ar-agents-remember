@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/read_files.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated | 2026-09-21T15:14+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
+| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ This module also derives `VALID_FILE_READ_STATUSES` from the alias by `get_args`
 (cit:([`VALID_FILE_READ_STATUSES`], mcp/src/agents_remember/models/read_files.py:32-32)),
 and `test_wire_vocabulary_exhaustiveness` asserts the set `_resolve_onboarding`
 actually returns *equals* it. `FileRead`
-(cit:([`FileRead`], mcp/src/agents_remember/models/read_files.py:35-47), a
+(cit:([`FileRead`], mcp/src/agents_remember/models/read_files.py:35-53), a
 `StrictResponseModel`, `extra="forbid"`) is one requested file's result: `path`,
 `status`, an optional
 `source` (the full file or the exact requested line range, omitted when the file
@@ -45,7 +45,13 @@ is absent or binary/non-decodable), and an optional `onboarding` body (the
 `meaningful_body` when `status == found`, omitted otherwise) — so `source` is
 independent of `status`.
 
-cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:50-74) subclasses `ToolResponse` (strict): `operation`
+Since MIK-R24 (rules 5 and 9) `FileRead` has three more optional fields, set only when the file's onboarding
+was returned. `format` is `"text/v2"` for a converted memory tree or `"legacy-format"` for an unconverted
+one. `sidecar` is the converted card's sidecar document, and `references` its resolved references, both
+for a converted tree only. On an unconverted tree the card is returned as it is, with nothing resolved.
+Their content is decided by `application/read_files_format.py`; this model only admits them.
+
+cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:56-80) subclasses `ToolResponse` (strict): `operation`
 (`"read_ar_files"`), `repoId`, the `files` list, the optional
 `repository_overview` / `route_overviews` dicts, and the optional `published_intent` dict. The two
 overview dicts are the
@@ -55,10 +61,12 @@ onboarding was suppressed for every file). Token fields are stamped by
 `finalize_payload_tokens` at the `_tool_payload` choke point — this module never
 sets them.
 
-`published_intent` cit:([`published_intent`], mcp/src/agents_remember/models/read_files.py:74-74) is the repository's published intent
+`published_intent` cit:([`published_intent`], mcp/src/agents_remember/models/read_files.py:80-80) is the repository's published intent
 read through the existing selective read (ICR-R19@v1). It is deliberately **always present**, because its
 own `state` is the answer: `recorded` carries the dataset identity, the snapshot and one bounded page per
-seed, while `not-recorded` and `unusable` name why no publication could be read. Its shape is owned by
+seed, while `not-recorded` and `unusable` name why no publication could be read. Since MIK-R24 an unconverted memory tree
+gets the state `legacy-format` instead: no knowledge section is read, and the block names the routes by
+which such a tree converts. The model is unchanged by that, because it carries the block as a dict. Its shape is owned by
 `application.published_intent` — the route that selects, seeds and names the absences — so this model
 carries it as a dict rather than re-declaring a second contract for the same read, exactly as
 `repository_overview` and `route_overviews` are carried for the front door.
@@ -85,11 +93,13 @@ carries it as a dict rather than re-declaring a second contract for the same rea
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| **The new field, and the owning module that decides its shape.** | `published_intent`; `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The new field, and the owning module that decides its shape.** | `published_intent`; `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/models/read_files.py:80-80 |
 | The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:235-264 |
+| The three optional format fields a file result gains, and the module that fills them. | `FileRead`; `converted_card_parts`; `legacy_published_intent` | mcp/src/agents_remember/models/read_files.py:35-53; mcp/src/agents_remember/application/read_files_format.py:65-93; mcp/src/agents_remember/application/read_files_format.py:35-49 |
 | The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
 
 ## Update History
+- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update (MIK-R24 rules 5 and 9).** `FileRead` gained the optional `format`, `sidecar` and `references` fields: a paragraph and a row. The `published_intent` paragraph now names the `legacy-format` state an unconverted tree gets. The `FileRead`, `ReadArFilesResponse` and `published_intent` citations were re-measured six lines down.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. MIK-R23 changed `published_intent_block` (a converted memory tree's block now carries `memoryTree` and per-page `indexState`); the claim that the owning module decides the field's shape and this model carries it as a dict was re-read and still holds, so its wording is retained. The range was re-pointed to the function's extent `:420-435`; the fixer's generated bullet, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this response gained a field.** `ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None` at `:74` (ICR-R19@v1), the repository's published intent read through the existing selective read at one exact snapshot; the class docstring states the field's contract and the body records that the shape is owned by `application.published_intent` rather than re-declared here, plus an invariant that this model carries the block and does not own its selection. The `ReadArFilesResponse` citation extent was re-derived to `:50-74` and the `_resolve_onboarding` reference row to `read_files.py:235-267` (was `:209-238`) because this leaf's insertions moved that declaration; a reference row was added for the new field and its owning module. No claim was re-worded to fit a stale pointer. **Stamp accounting:** the recorded working candidate names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
