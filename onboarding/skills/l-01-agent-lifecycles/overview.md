@@ -5,9 +5,23 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+
+## Family routes in the curator hand-off template (260928-MIK-L04)
+
+`templates/curator-handoff-list.md` gained a **curator-guidance** subsection, "Family routes (MIK-R04)",
+inside the informational text-format section: the family record owns its `routes`; Coverage and Non-empty
+over `realizes` entries (proofs do not count); routes placed as deep as makes sense (one broad `mcp/` route
+passes but is wrong); the root route spelled `.` only when there is no narrower home; `unrealized_family`
+and `route_unassigned` reported, not refused; an added route must be a code directory while a carried absent
+one is reported for MIK-R06; and `agents-remember knowledge-routes`, whose mechanical suggestion never writes
+a route. Nothing a producer emits changes. No role, operation or other template in this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:477-477 |
 
 ## Where a hand-off entry lands once knowledge is text (260928-MIK-L21)
 
@@ -498,6 +512,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "Family routes in the curator hand-off template (260928-MIK-L04)"** for the template's new MIK-R04 subsection. No stamp advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the curator hand-off template's informational MIK-R21 section.** No stamp advanced.
 - 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the per-target realization rationale section (template shape, supersession of the external schema note revision 1's rule-1 element shape, role/operation/c-14 duties). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 

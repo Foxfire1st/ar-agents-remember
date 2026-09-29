@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_validator.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,12 +22,12 @@
 
 ### Logic
 
-- **Baseline:** the fixture tree passes every rule; the report-only set is pinned to `R22.3-sidecar-without-markdown`, `R22.3-unresolved-target` and `R22.6-carried-stale`.
+- **Baseline:** the fixture tree passes every rule, MIK-R04's route rules included; the report-only set **owned by MIK-R22** (filtered by `owner.startswith("MIK-R22")` since leaf 260928-MIK-L04) is pinned to `R22.3-sidecar-without-markdown`, `R22.3-unresolved-target` and `R22.6-carried-stale`, so a later packet's report-only rules do not break the pin.
 - **Rule 1:** a bad field, a non-canonical file (naming the formatter), a file outside the layout, and a misplaced sidecar.
 - **Rule 2:** the filename prefix, duplicate IDs after a merge (`merge conflict:` naming both files), the packet's conforming parallel-mint example, and duplicate entry IDs across sidecars.
 - **Rule 3:** the packet's non-conforming hand-added `[4]`, an unused reference, Markdown without a sidecar, a file sidecar without Markdown (reported; holds no references), record links, a retired record, an unresolved target (reported), a disallowed relation by field, and a dot-named card with its sidecar.
 - **Rules 4 and 5:** an invariant that lists its realizations; a missing family member.
-- **Rule 6:** an added anchor at a missing path, a carried anchor at a deleted path (reported stale), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
+- **Rule 6:** an added anchor at a missing path, a carried anchor at a deleted path (reported stale; with an empty code tree the family's carried routes are reported too, as `R04.1-carried-route-absent`), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
 - **Rule 7:** a closed history file is frozen (edited, deleted, closed in one merge parent); an open one may change; history is shape-only (the packet's rename boundary example).
 - **Rules 8 and 9:** applicability by the marker; a later packet's rule runs everywhere and a report-only rule never refuses.
 - **Markers:** the grammar table and the invalid-number message.
@@ -62,13 +62,13 @@ Representative cases; the full list is in the module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture tree passes, and the report-only set is pinned. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:87-98 |
-| Merge duplicates are conflicts naming both files; parallel mints merge cleanly. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files`; `test_parallel_leaves_minting_different_ids_merge_cleanly` | mcp/tests/test_knowledge_validator.py:149-162; mcp/tests/test_knowledge_validator.py:165-172 |
-| The hand-added marker is refused. | `test_a_hand_added_marker_without_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:192-200 |
-| A dot-named card and its sidecar are validated. | `test_a_dot_named_card_and_its_sidecar_are_validated` | mcp/tests/test_knowledge_validator.py:292-312 |
-| The boundary merge: three rows, passes, three stale reports. | `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites` | mcp/tests/test_knowledge_validator.py:364-380 |
-| A closed history file is frozen. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:454-469 |
-| A later rule runs everywhere; report-only never refuses. | `test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses` | mcp/tests/test_knowledge_validator.py:520-537 |
+| The fixture tree passes, and MIK-R22's report-only set is pinned. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:87-102 |
+| Merge duplicates are conflicts naming both files; parallel mints merge cleanly. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files`; `test_parallel_leaves_minting_different_ids_merge_cleanly` | mcp/tests/test_knowledge_validator.py:153-166; mcp/tests/test_knowledge_validator.py:169-176 |
+| The hand-added marker is refused. | `test_a_hand_added_marker_without_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:196-204 |
+| A dot-named card and its sidecar are validated. | `test_a_dot_named_card_and_its_sidecar_are_validated` | mcp/tests/test_knowledge_validator.py:296-316 |
+| The boundary merge: three rows, passes, three stale reports. | `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites` | mcp/tests/test_knowledge_validator.py:369-385 |
+| A closed history file is frozen. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:459-474 |
+| A later rule runs everywhere; report-only never refuses. | `test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses` | mcp/tests/test_knowledge_validator.py:525-542 |
 
 ## Cross-Repo References
 
@@ -81,4 +81,5 @@ No meaningful cross-repo references found: the cases run over in-memory trees.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — two minimal MIK-R04 edits to L22's tests.** The report-only pin is filtered to rules owned by MIK-R22, and the carried-stale case with an empty code tree also expects `R04.1-carried-route-absent`; the Baseline and Rule 6 bullets and the baseline row say so. The other rows were re-pointed by the exact line shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

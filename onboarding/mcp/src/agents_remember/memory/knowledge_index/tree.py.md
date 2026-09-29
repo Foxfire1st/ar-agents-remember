@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge_index/tree.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,10 +64,10 @@ The filter, the two readers and the capture.
 | The snapshot value and the read error. | `MemoryTreeSnapshot`; `MemoryTreeError` | mcp/src/agents_remember/memory/knowledge_index/tree.py:55-62; mcp/src/agents_remember/memory/knowledge_index/tree.py:51-52 |
 | The indexed-file filter, sharing the validator's exclusion predicate. | `is_indexed_path`; `is_excluded_from_knowledge` | mcp/src/agents_remember/memory/knowledge_index/tree.py:65-77 |
 | The Git-object reader: one batch read, nothing checked out. | `git_tree_snapshot`; `read_git_blobs_bytes` | mcp/src/agents_remember/memory/knowledge_index/tree.py:80-89 |
-| The directory reader and its key, with the blob-id check and retry. | `directory_snapshot`; `directory_key`; `_blob_id` | mcp/src/agents_remember/memory/knowledge_index/tree.py:92-119; mcp/src/agents_remember/memory/knowledge_index/tree.py:203-208 |
-| The isolated capture and the index-flag clearing on the scratch copy. | `_capture`; `_clear_index_flags` | mcp/src/agents_remember/memory/knowledge_index/tree.py:122-176 |
-| Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key. | `test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers`; `test_a_historical_git_tree_is_read_through_objects_without_a_checkout`; `test_the_key_is_the_tree_id_of_the_captured_state_and_depends_on_content_only`; `test_capturing_a_key_writes_nothing_into_the_repository`; `test_a_directory_outside_git_has_no_key` | mcp/tests/test_knowledge_index.py:67-78; mcp/tests/test_knowledge_index.py:81-94; mcp/tests/test_knowledge_index.py:100-124; mcp/tests/test_knowledge_index.py:127-143; mcp/tests/test_knowledge_index.py:146-150 |
-| An index flag never hides an edit; the index reads the files the validator reads. | `test_an_index_flag_never_hides_an_edit_from_the_key`; `test_the_index_reads_the_files_the_validator_reads` | mcp/tests/test_knowledge_index.py:366-381; mcp/tests/test_knowledge_index.py:436-445 |
+| The directory reader and its key, with the blob-id check and retry. | `directory_snapshot`; `directory_key`; `_blob_id` | mcp/src/agents_remember/memory/knowledge_index/tree.py:92-110; mcp/src/agents_remember/memory/knowledge_index/tree.py:113-119; mcp/src/agents_remember/memory/knowledge_index/tree.py:203-208 |
+| The isolated capture and the index-flag clearing on the scratch copy. | `_capture`; `_clear_index_flags` | mcp/src/agents_remember/memory/knowledge_index/tree.py:122-144; mcp/src/agents_remember/memory/knowledge_index/tree.py:147-176 |
+| Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key. | `test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers`; `test_a_historical_git_tree_is_read_through_objects_without_a_checkout`; `test_the_key_is_the_tree_id_of_the_captured_state_and_depends_on_content_only`; `test_capturing_a_key_writes_nothing_into_the_repository`; `test_a_directory_outside_git_has_no_key` | mcp/tests/test_knowledge_index.py:68-79; mcp/tests/test_knowledge_index.py:82-95; mcp/tests/test_knowledge_index.py:101-125; mcp/tests/test_knowledge_index.py:128-144; mcp/tests/test_knowledge_index.py:147-151 |
+| An index flag never hides an edit; the index reads the files the validator reads. | `test_an_index_flag_never_hides_an_edit_from_the_key`; `test_the_index_reads_the_files_the_validator_reads` | mcp/tests/test_knowledge_index.py:385-400; mcp/tests/test_knowledge_index.py:455-464 |
 
 ## Cross-Repo References
 
@@ -80,4 +80,5 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`test_knowledge_index.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

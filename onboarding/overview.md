@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash |  `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
-| lastVerifiedCommitDate |  2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash |  `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate |  2026-09-29T09:20:54+02:00|
 
 > **Status:** active baseline
 
@@ -27,6 +27,21 @@ curator hand-off template (synchronized into the package and the eight harness s
 | --- | --- | --- |
 | The format declaration's own statement that text files become the source of truth. | "Text files in the memory repository are the source of truth for knowledge" | mcp/src/agents_remember/models/knowledge_files/__init__.py:3-3 |
 | The template's informational section and its no-change-before-MIK-R37 statement. | "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:427-427 |
+
+## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L04` (MIK-R04@v2): in the text knowledge format a family
+record owns its `routes`, the repository directories where its code lives (`.` for the repository root), and
+the knowledge validator now refuses a converted memory commit whose routes do not cover every member's
+realization or hold a route with none. The curator places routes; `agents-remember knowledge-routes` shows a
+mechanical suggestion and never writes one. The canonical curator hand-off template gained an informational
+"Family routes (MIK-R04)" subsection, synchronized by `scripts/sync-skills.py` into the package copy and the
+eight harness starter copies. **Nothing the installed runtime does changes before MIK-R37**: no production
+memory tree is converted or holds a family record.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's family-routes subsection. | `### Family routes (MIK-R04)`; "as deep as makes sense" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:467-467 |
 
 ## Current reviewer and publication ownership
 
@@ -117,6 +132,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Routes Are Checked, Not Yet Used"**: the repository-level consequence of MIK-R04, including the template subsection that reached the eight harness starter copies this route governs. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new repository-level section for the declared text knowledge format** (`models/knowledge_files/`, `agents-remember knowledge-format`) and the curator hand-off template's informational MIK-R21 section, including its synchronized harness copies under this route. No stamp advanced.
 

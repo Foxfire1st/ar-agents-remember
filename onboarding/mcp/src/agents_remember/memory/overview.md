@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1546,7 +1546,20 @@ disposition that links to a claim the same batch creates resolves once that clai
 reader table, and deliberately omits its three relation tables — each is written only as part of the aggregate
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
+## 260928-MIK-L04 The Index Matches The Root Family Route
+
+**Route impact (MIK-R04@v2, review R3-1).** [`knowledge_index/query.py`](knowledge_index/query.py.md)'s
+`families_governing` matches a path against the path itself, its ancestor directories and now the root route
+`.`, so a family routed at `.` governs every path, exactly as the validator's `route_covers` reads it. The
+index schema, the key and the cache are unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ancestor list ends with the root route. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:356-365 |
+| A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
+
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 The Index Matches The Root Family Route"** for the `query.py` change. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`" with the seven new cards it governs. No separate `knowledge_index/overview.md` was created: the sibling packages `knowledge/` and `migration/` have none, and this overview governs them. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): body update: added the section for the observation row codec, which moved into `knowledge/evidence_observation_rows.py` and is re-exported from `evidence_records`. The move was behaviour-preserving and no caller changed. Re-pointed the 6 citation-table ranges into `evidence_records.py` through the exact base-to-candidate line map. No stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): body update — added the *Anchor Observation Remembers Immutable Answers, Never Availability* section for the new `knowledge/read_anchor_memo.py` module and the owner/storage split with `knowledge/read_anchors.py` (per-file detail is in the two cards). Re-derived the four `read_anchors.py` ranges this overview cites against the candidate (`_observed_line_range`, `_observed_symbol`, `observe_anchor`, `_confined_posix_relative`) and re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted its row at `:173`. Wording of existing rows unchanged; no stamp was advanced.

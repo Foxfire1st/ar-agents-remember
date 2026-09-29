@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge_index/build.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -68,9 +68,9 @@ The parser, the builder and the row writers.
 | Parsing: every failure becomes a named problem. | `parse_tree`; `_parse_file` | mcp/src/agents_remember/memory/knowledge_index/build.py:120-129; mcp/src/agents_remember/memory/knowledge_index/build.py:167-178 |
 | Location, kind, file-name and duplicate-ID rules for record and sidecar files. | `_parse_knowledge_file`; `_parse_onboarding_file` | mcp/src/agents_remember/memory/knowledge_index/build.py:181-201; mcp/src/agents_remember/memory/knowledge_index/build.py:204-226 |
 | One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. | `build_index` | mcp/src/agents_remember/memory/knowledge_index/build.py:132-159 |
-| The row writers: records, entries, members, routes, links, references and history rows. | `_write_rows`; `_write_record`; `_write_link`; `_write_references`; `_reference_endpoint`; `_link`; `_write_history` | mcp/src/agents_remember/memory/knowledge_index/build.py:243-271; mcp/src/agents_remember/memory/knowledge_index/build.py:274-302; mcp/src/agents_remember/memory/knowledge_index/build.py:305-323; mcp/src/agents_remember/memory/knowledge_index/build.py:326-338; mcp/src/agents_remember/memory/knowledge_index/build.py:341-354; mcp/src/agents_remember/memory/knowledge_index/build.py:369-380; mcp/src/agents_remember/memory/knowledge_index/build.py:383-407 |
+| The row writers: records, entries, members, routes, links, references and history rows. | `_write_rows`; `_write_record`; `_write_link`; `_write_references`; `_reference_endpoint`; `_link`; `_write_history` | mcp/src/agents_remember/memory/knowledge_index/build.py:243-271; mcp/src/agents_remember/memory/knowledge_index/build.py:274-302; mcp/src/agents_remember/memory/knowledge_index/build.py:326-338; mcp/src/agents_remember/memory/knowledge_index/build.py:383-407; mcp/src/agents_remember/memory/knowledge_index/build.py:305-323; mcp/src/agents_remember/memory/knowledge_index/build.py:369-380; mcp/src/agents_remember/memory/knowledge_index/build.py:341-354 |
 | The metadata row set a cached file is checked against. | `_write_meta` | mcp/src/agents_remember/memory/knowledge_index/build.py:410-422 |
-| A file failing its schema marks the index partial and is named; an unconverted tree indexes empty. | `test_a_file_failing_its_schema_marks_the_index_partial_and_is_named`; `test_an_unconverted_tree_is_indexed_empty_and_says_so` | mcp/tests/test_knowledge_index.py:266-294; mcp/tests/test_knowledge_index.py:297-308 |
+| A file failing its schema marks the index partial and is named; an unconverted tree indexes empty. | `test_a_file_failing_its_schema_marks_the_index_partial_and_is_named`; `test_an_unconverted_tree_is_indexed_empty_and_says_so` | mcp/tests/test_knowledge_index.py:285-313; mcp/tests/test_knowledge_index.py:316-327 |
 
 ## Cross-Repo References
 
@@ -83,4 +83,5 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`test_knowledge_index.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

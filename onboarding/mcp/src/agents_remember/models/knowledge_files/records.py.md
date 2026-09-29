@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T04:55:39+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ models refuse the fields that would give it a second owner.
   every `links` relation is in `RELATIONS_BY_KIND[kind]`.
 - `InvariantRecord` (`statement`, `applicability`, `conditions`, `exclusions`, `supersedes[]`,
   `admission`) lists **no** realizations, tests, families or decisions; `extra="forbid"` refuses them.
-- `FamilyRecord` owns `members` (invariant IDs) and `routes` (repository directories), both unique.
+- `FamilyRecord` owns `members` (invariant IDs) and `routes`, both unique. Since MIK-R04 (leaf 260928-MIK-L04, ruling Q3) `routes` is `tuple[RoutePath, ...]`: a repository directory, or `.` for the repository root route, which a family uses only when it genuinely has no narrower home. `RoutePath` comes from `sidecars.py` and reuses the route sidecar's root handling; every other spelling of the root (`""`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/"`) is still refused, and every other path field stays `RepositoryPath`.
 - `DecisionRecord` owns `alternatives` (`option`, `status` chosen/rejected/deferred, `reason`,
   `reconsider_when?`), `consequences`, `decider`, `supersedes[]` and its `links`; its status is
   `active` | `under_reconsideration` — `superseded` is derived from a later record's `supersedes`,
@@ -81,12 +81,14 @@ The facet payload models this mirrors live in the shipped knowledge vocabulary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The per-kind relation vocabulary. | `RELATIONS_BY_KIND` | mcp/src/agents_remember/models/knowledge_files/records.py:56-66 |
-| Prefix and relation checks shared by every record. | `_Record` | mcp/src/agents_remember/models/knowledge_files/records.py:76-96 |
-| Revision and status on incident and facet records. | `_FacetRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:103-113 |
-| The invariant record: no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:116-137 |
-| Incident recovery is required once not unresolved. | `IncidentRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:195-220 |
-| The kind → model table. | `RECORD_MODELS` | mcp/src/agents_remember/models/knowledge_files/records.py:302-312 |
+| The per-kind relation vocabulary. | `RELATIONS_BY_KIND` | mcp/src/agents_remember/models/knowledge_files/records.py:57-67 |
+| Prefix and relation checks shared by every record. | `_Record` | mcp/src/agents_remember/models/knowledge_files/records.py:77-97 |
+| Revision and status on incident and facet records. | `_FacetRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:104-114 |
+| The family record: members and routes, a route being a repository directory or `.`. | `FamilyRecord`; `RoutePath` | mcp/src/agents_remember/models/knowledge_files/records.py:141-160; mcp/src/agents_remember/models/knowledge_files/records.py:50-50 |
+| A family route is a repository path or the root route. | `test_a_family_route_is_a_repository_path_or_the_root_route` | mcp/tests/test_knowledge_family_routes.py:276-282 |
+| The invariant record: no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:117-138 |
+| Incident recovery is required once not unresolved. | `IncidentRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:196-221 |
+| The kind → model table. | `RECORD_MODELS` | mcp/src/agents_remember/models/knowledge_files/records.py:303-313 |
 | Facet fields equal today's payload fields. | `test_facet_records_carry_todays_payload_fields_plus_links` | mcp/tests/test_knowledge_file_formats.py:298-310 |
 
 ## Cross-Repo References
@@ -101,4 +103,5 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — `FamilyRecord.routes` accepts the root route `.` through `RoutePath` (MIK-R04 ruling Q3).** The Logic bullet is reworded; two rows added. `records` now imports `sidecars`, with no cycle. The other rows were re-pointed by the exact one-line shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

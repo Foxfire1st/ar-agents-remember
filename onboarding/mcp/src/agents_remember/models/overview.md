@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -191,7 +191,22 @@ policy that computes it lives on the application route, not here.
 | **The pane field that carries the value, with its one-direction validator.** | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` | mcp/src/agents_remember/models/knowledge/review.py:739-739; mcp/src/agents_remember/models/knowledge/review.py:745-745; mcp/src/agents_remember/models/knowledge/review.py:783-794 |
 | **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
 
+## 260928-MIK-L04 A Family Route May Be The Repository Root, `.`
+
+**Route impact (MIK-R04@v2, ruling Q3).** [`knowledge_files/sidecars.py`](knowledge_files/sidecars.py.md)
+exposes `RoutePath`, the route sidecar's own route-directory spelling (a repository-relative path, or `.` for
+the root route), and [`knowledge_files/records.py`](knowledge_files/records.py.md) types
+`FamilyRecord.routes` with it. A family routes at `.` only when it genuinely has no narrower home. Every
+other path field keeps `RepositoryPath`, so `""`, `"./"`, `"./mcp"`, `".."`, `"/"` and `"mcp/"` are still
+refused everywhere.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared route-directory type. | `RoutePath` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:115-118 |
+| The family record's routes use it. | `FamilyRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:141-160 |
+
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 A Family Route May Be The Repository Root, `.`"** for `RoutePath` and `FamilyRecord.routes`. No stamp advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Knowledge Tool Responses Name A Memory Tree". The reopened `published_intent_block` row of the `read_files.py` section was re-read: the owning module still decides the block's shape and this model still carries it as a dict, so its wording is retained; the fixer's generated bullet for it, written minutes earlier in this same pass, is folded into this entry. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 7 citations into `mcp/tests/test_knowledge_diff_scope.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_diff_attribution.py`. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.

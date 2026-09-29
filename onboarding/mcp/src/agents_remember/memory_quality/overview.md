@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047` |
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -89,6 +89,8 @@ dependency on the closeout plane.
   file once through the MIK-R21/R07 models and attributes every problem to one rule; `markers.py` is the
   `[n]` marker grammar; `registry.py` is the single rule registry (rule 9) and the validation context;
   `rules_structure.py` and `rules_references.py` register MIK-R22's 16 rules (3 report-only);
+  `family_routes.py` and `rules_routes.py` (MIK-R04, added by 260928-MIK-L04) hold the family route
+  state and mechanical suggestion and register six route rules (3 report-only, 3 writer-reported);
   `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
   `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
   worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
@@ -222,12 +224,12 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:383-435 |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
-| The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
+| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
+| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:67-98 |
+| The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
 | The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
-| The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
-| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
+| The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:64-110 |
+| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:113-193 |
 
 Current working-candidate evidence for this route:
 
@@ -451,8 +453,8 @@ The application retains write-scope authorization and the source index retains f
 | Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:354-399 |
 | A relocation proves continuity through the established provenance path before a tree-wide match is admitted. | `Continuity`; `continuity_for`; `_retarget` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:159-240; mcp/src/agents_remember/memory_quality/style/citations/repair.py:243-253; mcp/src/agents_remember/memory_quality/style/citations/repair.py:356-387 |
 | The walk resolves one document's continuity and feeds it to the planner. | `Walk`; `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:201-220; mcp/src/agents_remember/memory_quality/style/citations/fixer.py:269-325 |
-| The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction. | `Pass`; `place` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:63-87; mcp/src/agents_remember/memory_quality/style/citations/migration.py:415-461 |
-| A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`. | `_projected_review_message`; `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:315-339; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:341-386 |
+| The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction. | `Pass`; `place` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:63-86; mcp/src/agents_remember/memory_quality/style/citations/migration.py:415-460 |
+| A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`. | `_projected_review_message`; `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:338-361; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:364-408 |
 | Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
 
 ## Gate-5 Registry And Execution Boundary
@@ -526,12 +528,12 @@ produced its population.
 | --- | --- | --- |
 | The one construction point folding settings, ignore file and call into one register. | `resolve_exclusion_register` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:196-226 |
 | The two settings keys, and the refusal-by-name discipline for a malformed value. | `read_citation_index_settings` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:56-85 |
-| The bounded non-Git matcher and its pinned divergence from Git. | `FallbackIgnoreMatcher` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:253-297 |
+| The bounded non-Git matcher and its pinned divergence from Git. | `FallbackIgnoreMatcher` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:252-297 |
 | A caller exclude that cannot mean anything is refused by name. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
-| The ruled numbers, the skip vocabulary and the status vocabulary. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `STATUS_CAPPED`; `STATUS_WITHIN_CAPS` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:18-43 |
-| The register's three sources and recorded authority values. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:45-61 |
+| The ruled numbers, the skip vocabulary and the status vocabulary. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `STATUS_CAPPED`; `STATUS_WITHIN_CAPS` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:22-23; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:27-27; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:36-36; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:38-39 |
+| The register's three sources and recorded authority values. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:48-52; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:57-61 |
 | The closeout gate refuses by name rather than letting a bare error out. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:415-437 |
-| The caller-exclude surface on the registered tool and the CLI. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-124 |
+| The caller-exclude surface on the registered tool and the CLI. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-128 |
 | One root gives one authority on both acquisition routes. | `test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes` | mcp/tests/test_citation_index_resilience.py:376-406 |
 
 ## Exact Git Candidate Source-Index Composition
@@ -557,9 +559,9 @@ composition does not close the production execution gap recorded above or replac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The index opens either the explicit candidate selection or the ordinary filesystem policy. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
-| R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397 |
-| R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
+| The index opens either the explicit candidate selection or the ordinary filesystem policy. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:360-431 |
+| R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:353-404 |
+| R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-134 |
 
 ## L34 Preparation Ownership — the closeout adapter moved out
 
@@ -725,13 +727,44 @@ file-level cards carry the per-module detail; the route-level facts are these:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:49-68 |
-| The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:60-66; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:69-72 |
-| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:82-97; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:76-79 |
+| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:52-72 |
+| The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:68-74; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:77-80 |
+| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:85-100; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:79-82 |
 | The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:26-54 |
 | The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
 
+## 260928-MIK-L04 Family Route Rules Join The Knowledge Validator
+
+**MIK-R04@v2 adds six rules to `knowledge_validator/`'s one registry, and the route logic they share.**
+[`family_routes.py`](knowledge_validator/family_routes.py.md) computes one family's route state over the
+realization entries of the same tree (proof entries never count): Coverage, Non-empty, the reported states
+`unrealized_family` and `route_unassigned`, the retired exemption, and the mechanical route suggestion,
+labelled `mechanical` and never written. [`rules_routes.py`](knowledge_validator/rules_routes.py.md)
+registers the rules, and `validator.py` imports it, so every place the validator runs runs them:
+
+- **Refused:** an added route that is not a directory of the paired code tree (`R04.1-route-directory`),
+  a realization under no route or a family with `routes: []` that is not an unassessed export
+  (`R04.2-coverage`), and a route with no realization (`R04.2-non-empty`).
+- **Reported, never refused:** a route carried from a base whose directory is gone
+  (`R04.1-carried-route-absent`, `route_path_absent` for MIK-R06), `R04.4-unrealized-family` and
+  `R04.4-route-unassigned`.
+- **Reported inside the writer.** The three refusing rules carry the new registry flag `writer_reports`;
+  `writer_reported_rule_ids()` names them. Every commit route still refuses them; only the writer (MIK-R12)
+  downgrades them to reports, so a leaf may break a route rule mid-way and repair it before closeout.
+- **Directory existence.** [`trees.py`](knowledge_validator/trees.py.md)'s `CodeTree` gains `has_directory`;
+  the root route `.` always exists.
+
+The validator cannot tell a broad route from a deep one; route depth stays curator judgment, helped by the
+suggestion and the `agents-remember knowledge-routes` command.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| One family's route state over its members' realizations. | `FamilyRouteState` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:73-132 |
+| The six registered rules, three report-only and three writer-reported. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
+| The registry flag a writer reads. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
+
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Route Rules Join The Knowledge Validator"** for the two new cards (`family_routes.py`, `rules_routes.py`) and the `registry.py`/`trees.py`/`validator.py`/`__init__.py` changes. The L22 section's `__init__`, registry and validator rows were re-pointed by the exact line shift (the validator row's two ranges put back in anchor order), and the installed fixer re-normalised older passing ranges in this document; no claim wording changed there. No stamp advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated — the mandatory knowledge validator joins this route.** Added `knowledge_validator/` to the Route Model and the Hot Path Summary, a new first invariant (no converted memory commit without a passing validator run; no skip), and the section "260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route". The package's eleven modules got new file cards governed by this overview; no separate `knowledge_validator/overview.md` was created, following the sibling subpackages. No verification stamp was advanced.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the two governed sources this leaf changed under this route: the six-member status vocabulary `reported_subject_status` now enumerates in the projection's own precedence order and the `notMeasuredCount` the pipeline carries end to end (`family_review.py`, 452 → 457 lines, with `application/memory_quality/controller.py` 847 → 848), and the persisted checklist's new `not-measured` limitation row and count beside the narrowed meaning of `stale` (`knowledge_review.py`, 210 → 230). This is a body change and not a metadata-only refresh, which is why it is recorded here. This document carried **no** repairable citation finding, so no citation range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

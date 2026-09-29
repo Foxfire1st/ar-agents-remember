@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/sidecars.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T04:55:39+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,7 @@ converted. It also records the definitions of *onboarding route* and *governing 
   every anchor names its path. The route-index fields (`sourceScope`, `childRoutes`, `coveredFiles`,
   `routingTerms`, `hotPath`, `fallback`) are refused by `extra="forbid"`: they stay in the generated
   `overview.index.json` cache.
+- `RoutePath` (public since MIK-R04, leaf 260928-MIK-L04) is the annotated route-directory type: `min_length` 1, the path length limit, and `AfterValidator(_require_route_path)`, so it accepts a repository-relative path or `.` exactly as `RouteSidecar.path` does. `FamilyRecord.routes` uses it; `RouteSidecar` itself is unchanged.
 - `LayoutMarker` holds `conversion` only.
 
 ### Conventions
@@ -76,7 +77,8 @@ The anchor and reference shapes come from `shapes.py`.
 | Entry anchors omit `path`. | `_Entry` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:60-71 |
 | The role vocabulary. | `RealizationRole` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:50-56 |
 | Own-file anchors omit `path`; entry IDs are unique. | `FileSidecar` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:89-108 |
-| Route sidecar: `.` for the root, every anchor names its path. | `RouteSidecar` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:115-127 |
+| A route directory type shared with family routes: a repository path or `.`. | `_require_route_path`; `RoutePath` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:111-112; mcp/src/agents_remember/models/knowledge_files/sidecars.py:115-118 |
+| Route sidecar: `.` for the root, every anchor names its path. | `RouteSidecar` | mcp/src/agents_remember/models/knowledge_files/sidecars.py:121-133 |
 | Route-index fields are refused on a route sidecar. | "coveredFiles" | mcp/tests/test_knowledge_file_formats.py:441-441 |
 
 ## Cross-Repo References
@@ -91,4 +93,5 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — the new public `RoutePath` type (MIK-R04 ruling Q3).** One Logic bullet and one row added. `RouteSidecar` was re-pointed by the exact six-line shift, its claim unchanged. No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

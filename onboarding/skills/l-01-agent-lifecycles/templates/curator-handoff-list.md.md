@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T08:49:57+02:00 |
+| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` |
+| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -55,6 +55,15 @@ formatting applied by `agents-remember knowledge-format`. It says explicitly tha
 a producer emits before MIK-R37**, and that `incidental` has no spelling in the file format (its mapping
 is MIK-R12's to decide).
 
+Since leaf `260928-MIK-L04` (MIK-R04) that section also holds the curator-guidance subsection **"Family
+routes (MIK-R04)"**: the family record owns its `routes`; Coverage (every `realizes` entry of every member
+lies under a route) and Non-empty (every route holds one), with `proves` entries not counting; routes
+placed as deep as makes sense, one broad `mcp/` route passing the rules but being the wrong placement; the
+root route spelled `.` only when a family has no narrower home; `unrealized_family` and `route_unassigned`
+reported, never refused, and a retired family exempt; an added route must be a code directory while a
+carried absent one is reported for MIK-R06; and `agents-remember knowledge-routes`, whose suggestion is
+labelled `mechanical` and never writes a route. It changes nothing a producer emits.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -84,6 +93,7 @@ These references name the current owners and the behavior they establish.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:459-459; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:481-481 |
 | **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-457 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
@@ -98,6 +108,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — the template gains the curator-guidance subsection "Family routes (MIK-R04)"** inside the MIK-R21 section. The Logic paragraph above records what it says and that it changes nothing a producer emits; one reference row cites it (`:459`, `:481`). No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **body update — the template gains the informational section "Where an entry lands once knowledge is text (MIK-R21)".** The Logic paragraph above records what it maps and that it changes nothing a producer emits before MIK-R37; one reference row cites it (`:425-457`). No verification stamp was advanced.
 - 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic states the per-target `{path, locator, governing_route, rationale, role}` element shape, the required authored rationale, the named refusals and the supersession of the external schema note revision 1's rule-1 element shape; new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
