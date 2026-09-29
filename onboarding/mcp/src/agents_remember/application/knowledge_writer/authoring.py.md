@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/authoring.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,8 @@ here judges meaning, and nothing is written to disk.
   ID is reused by subject; a closed file is refused (MIK-R07 rule 7). Invariant rows get the invariant's
   revision and `covers` with `before` (the base anchor, or `absent`) and `after`; re-anchoring writes the new
   anchor into the entry in the same operation (MIK-R07 rule 4), and `{remove: true}` removes it with
-  `after: absent`. Family rows need `examined` and record each member's revision. Since MIK-R30 an
+  `after: absent`. Since MIK-R06 (L06 ruling Q6) a `moved` row's cover may name another `path`: the entry
+  is relocated into that file's sidecar and re-anchored there (`_relocate`). Family rows need `examined` and record each member's revision. Since MIK-R30 an
   `onboarding:` subject is an onboarding row (`_onboarding_row`), and since MIK-R11 a `planned:` subject is
   a planned row (`_planned_row`); any subject that is not an invariant, a family, an onboarding card or
   route, or a planned key is refused.
@@ -69,6 +70,8 @@ here judges meaning, and nothing is written to disk.
 - A rerun of the same list writes the same files with the same IDs (idempotence).
 - An updating leaf never merges evidence into another leaf's origin (ruling F4 / R2-1).
 - No database writes; no automatic authoring of meaning (packet exclusions).
+- **Only a `moved` row may relocate an entry** (L06 ruling Q6). A cover naming a path on any other
+  disposition is refused; a rerun that finds the entry already at the path is a plain re-anchor.
 
 ### Todos
 
@@ -139,6 +142,36 @@ resolves through the strict leaf lookup: an unreadable or duplicated leaf docume
 | What the ref names must exist or resolve. | `_unresolved_ref` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:690-708 |
 | The writer's planned rows and every refusal. | `test_the_writer_writes_planned_rows_and_refuses_what_they_cannot_name` | mcp/tests/test_planned_knowledge_effects.py:419-501 |
 
+## 260928-MIK-L06 A Moved Row Relocates Its Entry To Another File (MIK-R06, Ruling Q6)
+
+The real-data directory move of MIK-R06's expected evidence needs `moved` invariant rows whose `after` names
+the moved file. Before this change the writer could only re-anchor an entry at its own source path, so a
+moved file's entries had to be re-created and the row could only be `extended`. The architect ruled that a
+conformance gap of landed L12 against MIK-R12 rule 2 and MIK-R07 rule 4, to be fixed minimally here (ruling
+Q6, 2026-09-29T21:49:19+02:00):
+
+- `_invariant_row` passes `moving` (disposition `moved`) to `_covers`, which refuses a cover naming a `path`
+  on any other disposition: "a cover names another source path only on a moved row".
+- `_cover_after` calls `_relocate` when the cover's path differs from the entry's current file. `_relocate`
+  removes the entry from its sidecar and appends it, with its ID, invariant and authored fields, to the new
+  file's sidecar (created when needed); the entry is then re-anchored at the new path as before, so its
+  `blob` and `content` are C's.
+- The row's `before` keeps the base anchor at the old path and its `after` names the new path, which is
+  MIK-R07 rule 4 (`after` equals the entry's anchor in K_C). A rerun finds the entry already at the path.
+- **Known limit, unchanged:** the old file's sidecar stays with an empty `realizes`. Moving or removing the
+  onboarding cards and sidecars of moved files is c-05 onboarding work, not the writer's row path (review
+  N3); each new sidecar raises a report-only `R22.3-sidecar-without-markdown` until a card exists.
+- The malformed-path and remove-plus-path refusals are the hand-off reader's (`handoff._cover_path`, review
+  F1 and N7).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| An invariant row tells its covers whether it is a moved row. | `_invariant_row`; `moving` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:721-744 |
+| A path on any other disposition is refused. | `_covers`; "only on a moved row" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:763-776 |
+| The entry's `after`: relocated when the path differs, then re-anchored at C. | `_cover_after`; `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:810-834; mcp/src/agents_remember/application/knowledge_writer/authoring.py:836-847 |
+| The relocation: the entry keeps its ID and fields and moves sidecar. | `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:836-847 |
+| A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. | `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` | mcp/tests/test_knowledge_writer.py:678-749 |
+
 ## Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -169,10 +202,10 @@ The mechanical fields, by concern.
 | What became of a test the evidence names, and a test file named without a test is `unresolvable`. | `_cited_test`; `TestFileMention` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:516-542 |
 | History rows into the owner's file; a closed file is frozen. | `_write_rows` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:553-576 |
 | Foreign evidence stored in this owner's row reason. | `_reason_with_evidence` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:710-719 |
-| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:772-792 |
+| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:778-798 |
 | The conforming example: decision, realization and proof, validated. | `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` | mcp/tests/test_knowledge_writer.py:133-159 |
 | Rerun idempotence. | `test_a_rerun_of_the_same_list_writes_the_same_files_with_the_same_ids` | mcp/tests/test_knowledge_writer.py:285-295 |
-| Revision increments once; foreign evidence goes to this leaf's row. | `test_a_meaning_change_increments_the_revision_once_against_the_base` | mcp/tests/test_knowledge_writer.py:369-402 |
+| Revision increments once; foreign evidence goes to this leaf's row. | `test_a_meaning_change_increments_the_revision_once_against_the_base` | mcp/tests/test_knowledge_writer.py:369-406 |
 
 ## Cross-Repo References
 
@@ -184,6 +217,7 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Added the section "260928-MIK-L06 A Moved Row Relocates Its Entry To Another File" (`moving`, `_covers`'s refusal, `_relocate`), with ruling Q6 (21:49:19) and the review's N3 known limit, extended the Logic bullet on history rows, and added the moved-row invariant. Five rows added; the existing `_cover` row still holds at `778-798`. No verification stamp was advanced.
 - 2026-09-29T21:48:07+00:00: Generated citation repair: `NON_MEANING_FIELDS` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:85-85. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:48:07+00:00: Generated citation repair: `_reason_with_evidence` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:710-719. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:48:07+00:00: Generated citation repair: `_cover` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:772-792. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.

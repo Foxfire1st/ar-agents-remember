@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
 | lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee` |
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -870,7 +870,7 @@ section.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
 | The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
@@ -912,8 +912,8 @@ no worklist.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:72-82; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:85-111 |
-| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
+| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-110 |
+| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
 
 ## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
 
@@ -955,7 +955,30 @@ follow-up, ruling Q5).
 | An export is a record whose legacy ID derives its ID. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187 |
 | The three rules, one refusing and two report-only. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
 
+## 260928-MIK-L06 The Worklist Section Renders The Family Route Conditions
+
+**Route meaning extended (MIK-R06@v2, visibility).** The worklist section rendered by
+[`knowledge_worklist_section.py`](knowledge_worklist_section.py.md) now describes the new
+`family_route_condition` items (computed on the application route by
+`application/knowledge_worklist/route_conditions.py`): the condition and the affected routes or entry paths
+(the base view's when it shows the condition), where the renamed files went, the MIK-R04 mechanical
+suggestion or "no suggestion" when the rename target is ambiguous or a file is absent at C without a rename
+(ruling Q5, with `unmappedLocations` named), and "answered by <row>" or "needs a family row (rerouted,
+assigned, changed or retired; never no_impact) and routes that satisfy MIK-R04".
+
+`_item_facts` now dispatches through a kind-to-renderer table (`_FACT_RENDERERS`, review R3-N1) instead of an
+`if`/`elif` ladder; every earlier kind renders the same text. The section stays information, never a count:
+enforcing an open route item is MIK-R09's gate (L09), through
+`application/knowledge_worklist.family_route_item_open`. Unconverted leaves render no section, so today's
+checklist bytes are unchanged; this curation's own `memory_quality_check` runs produced no worklist.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:113-143 |
+| The kind-to-renderer table. | `_FACT_RENDERERS` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:146-154 |
+
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 The Worklist Section Renders The Family Route Conditions" (`_route_facts` and its helpers, the `_FACT_RENDERERS` dispatch table from review R3-N1), with two rows; L11's two rows into `knowledge_worklist_section.py` were re-measured by hand (`72-82`/`85-111` → `71-81`/`84-110`, `118-166` → `161-209`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule Joins The Knowledge Validator" (the new, carded `rules_admission.py`, governed by this overview), recording architect rulings 2026-09-29T22:11:24 (Q1, Q2, Q5, Q6) and 23:04:57 (F1, F2), with three rows; the Route Model bullet names the module. The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The Worklist Section Shows The Planned Effects" (the planned-effects block, the **Plan** column and the `planned_untouched` facts), recording architect rulings 2026-09-29T21:56:18 (Q1) and 22:35:34 (F4). L08's section-and-summary row was re-measured (`knowledge_worklist_lines` now `118-166`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** Added the section "260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree" (the `not-applicable-converted` return, architect ruling 2026-09-29T18:49:50 (5)). One row. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet. No verification stamp was advanced.

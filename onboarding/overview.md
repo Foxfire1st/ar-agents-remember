@@ -5,11 +5,23 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash |  `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate |  2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash |  `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate |  2026-09-30T01:41:06+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L06 A Family's Routes Must Follow The Code, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L06` (MIK-R06@v2): once a memory tree is converted, a leaf
+whose change breaks a family's routes (a route directory gone, a route left with none of the family's
+realizations, a realization outside every route, or a family without routes that the leaf reaches) gets a
+`family_route_condition` worklist item. It is answered only by the leaf's family row (never `no_impact`) and a
+family record that satisfies MIK-R04 again, so a stale route cannot survive the closeout of the leaf that
+caused it. A route already dead before the leaf stays a validator report for the migration, and retired
+families raise nothing. The curator writer can now record a directory move with `moved` rows that relocate
+an entry to its new file. **Nothing the installed runtime does changes before MIK-R37**: unconverted leaves
+get no worklist.
 
 ## 260928-MIK-L27 New Knowledge Records Must Be Admitted, Not Yet Used
 
@@ -257,6 +269,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **overview body updated for MIK-R06.** Added the section "260928-MIK-L06 A Family's Routes Must Follow The Code, Not Yet Used" at the top: the repository-level consequence of the family route conditions, their satisfying row, the dead-at-B exemption and the writer's moved-row relocation, inert until MIK-R37. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 New Knowledge Records Must Be Admitted, Not Yet Used" at the top: the repository-level consequence, and the three skill changes reaching the package copies and the 8 starter copies (rulings Q3 and F2), with three rows. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 A Leaf's Planned Knowledge Effects Are Reconciled With What It Delivered, Not Yet Used" at the top: the repository-level consequence, the curator-template and reviewer-role changes reaching the package copies and the eight harness starter copies, and ruling Q2 (no real declaration before the L37 install). No verification stamp was advanced.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** New section at the top, "260928-MIK-L02 A Bounded Knowledge Page Continues Through `knowledge_read`, Not Yet Used": the repository-level consequence and the c-04 skill change reaching the package copy and the eight harness starter copies (which have no cards). One row. No verification stamp was advanced.

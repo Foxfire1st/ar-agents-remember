@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee` |
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The defaulted input and its rows. | `without_proof`; `WithoutProof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:38-65; mcp/src/agents_remember/memory_quality/curator_checklist.py:73-78 |
+| The defaulted input and its rows. | `without_proof`; `WithoutProof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:65-65; mcp/src/agents_remember/memory_quality/curator_checklist.py:73-78 |
 | The section renders only for a list, as information that moves no count. | `_render`; `_append_without_proof`; "Information, not a gate (MIK-R28 rule 5)" | mcp/src/agents_remember/memory_quality/curator_checklist.py:236-306; mcp/src/agents_remember/memory_quality/curator_checklist.py:354-386 |
 | The wire summary is identical with and without the list; an unconverted checklist has no section. | `test_the_checklist_shows_the_list_as_information_that_moves_no_count` | mcp/tests/test_knowledge_proofs.py:398-426 |
 
@@ -114,7 +114,7 @@ before the Completion Rule, and only when a worklist exists.
 | --- | --- | --- |
 | The two defaulted worklist inputs and their comment. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 | The section renders only for a worklist, after the "without proof" section. | `_render`; `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/curator_checklist.py:236-306 |
-| The section's lines. | `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:74-121 |
+| The section's lines, whose item table since MIK-R06 also renders `family_route_condition` items through the kind-to-renderer table. | `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
 
 ## Docs References
 
@@ -131,7 +131,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the "without proof" list (`None` for an unconverted tree). | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:145-169; mcp/src/agents_remember/application/memory_quality/controller.py:365-385; mcp/src/agents_remember/application/memory_quality/controller.py:388-462; mcp/src/agents_remember/application/memory_quality/controller.py:512-692 |
+| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the "without proof" list (`None` for an unconverted tree). | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:145-169; mcp/src/agents_remember/application/memory_quality/controller.py:369-389; mcp/src/agents_remember/application/memory_quality/controller.py:392-466; mcp/src/agents_remember/application/memory_quality/controller.py:516-680 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:558-593 |
 | The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:132-212 |
 | R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149 |
@@ -202,6 +202,7 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **reopened claim re-read and reworded.** The row "The section's lines" (`knowledge_worklist_lines`) was reopened because the function changed structurally (MIK-R06: `family_route_condition` rows; MIK-R11: the Plan column). Its cited range was already stale at the base (`74-121`, from before L11). I re-read the function at `knowledge_worklist_section.py:161-209`, where it is defined; the claim is about that construct, so the range is re-cited there by reading, not by projection, and the claim is reworded to say what the table now renders. The fixer's generated bullet for this row was removed, because the claim was reworded. The fixer also normalised the `without_proof` row to `65-65` (the anchor's line); no claim there changed. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The Knowledge-Worklist Section (MIK-R08 Rule 7)": the defaulted `knowledge_worklist` and `knowledge_worklist_path` inputs, rendered by `knowledge_worklist_lines` after the "without proof" section only when a worklist exists, never counted.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): Added the section "260928-MIK-L28 The "Invariants Without Proof" Section": the defaulted `without_proof` input, `WithoutProof` and `_append_without_proof`, with the architect ruling that the list is checklist-only and informational and never counts toward `curatorActionableCount`. Three cited rows. The reopened row about `_attach_curator_checklist` was re-read against the working tree: it still holds, and it now also states that the controller hands the checklist the list (`None` for an unconverted tree). The body's prose citations and the table rows moved by the new dataclass and section were re-pointed by the installed `memory-citations --fix` and the exact base-to-working line map; I also removed a stale second `_append_drift` range (`:332-363`) that the fixer had left beside the re-pointed `:381-412`. No verification stamp was advanced.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`controller.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.

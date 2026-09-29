@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -131,8 +131,11 @@ sync, `knowledge-validate`) runs them.
   also removes a retired record's realization entries, recording the outcomes in the census (MIK-R20),
   and the fact that exported records the migration assesses are only reported, never refused, so R19
   must re-validate its assessments against the `R27.2-existing-record` report.
-- **The L06 sync (ruling 22:11:24 Q4, review F6).** Whichever of L06 and L27 lands second makes its
-  report-only pins over the Doc14 fixture tree include the `R27.4-legacy-unassessed` count.
+- **The L06 sync (ruling 22:11:24 Q4, review F6): resolved.** L06 landed second. Its new cases pin no exact
+  findings list over the Doc14 fixture tree: the carried-route case asserts `validate_tree(...).ok` and
+  filters the reports by rule (`R04.1-carried-route-absent`), so the `R27.4-legacy-unassessed` count needed
+  no pin change, and L06's worker reran the validator, family-route and route-condition suites green on the
+  synced tree.
 
 ## Docs References
 
@@ -183,4 +186,5 @@ No meaningful cross-repo references found: the rules read the validation context
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated.** The Todo on the L06 sync is marked resolved: L06 landed second and its cases filter the validator's reports by rule, so no pin needed the legacy count (ruling Q4). This card's source is unchanged; no row moved. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): created this card for the new file MIK-R27 adds, recording rulings 22:11:24 Q1, Q2, Q3, Q5, Q6 and 23:04:57 F1, F2. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

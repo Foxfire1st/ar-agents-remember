@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/compute.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -18,9 +18,10 @@
 
 **One worklist run (MIK-R08 definitions 5 and 8, rules 2 to 6).** `compute_worklist(inputs)` reads the
 changed paths from the landed ICR change inventory, the renames from ICR's Git rename inference, runs the
-one-pass scope, builds the `touched_invariant`, `stale_invariant` and `reached_family` items, marks every
-changed hunk linked or unexplained, and returns the `knowledge-worklist/v1` document with its digest. The
-run is a pure function of its inputs.
+one-pass scope, builds the `touched_invariant`, `stale_invariant` and `reached_family` items, the MIK-R11
+`planned_untouched` items and the MIK-R06 `family_route_condition` items, marks every changed hunk linked
+or unexplained, and returns the `knowledge-worklist/v1` document with its digest. The run is a pure
+function of its inputs.
 
 ## Code Commentary
 
@@ -34,7 +35,7 @@ run is a pure function of its inputs.
   (architect ruling 3). An unavailable inventory, a **partial** inventory, or unavailable renames raise
   `WorklistIncomplete`; `_partial_detail` names the observation's own detail, every path that is not valid
   text (by `byte_form`) and every path with no content classification.
-- **One-pass scope** (`_Run.document`):
+- **One-pass scope** (`_Run._scope`, steps 1 to 4; `_Run.document` calls it and assembles the items):
   1. classify every K_B entry at a changed path, or every K_B entry when `knowledgeMaintenanceScope` is set;
   2. compute the knowledge-side changes, and add to the classified set any entry classified only to decide
      a re-anchor whose class covers it;
@@ -42,6 +43,16 @@ run is a pure function of its inputs.
      (`_reached`);
   4. classify every K_B entry of those families' members (K_B and K_C membership, restricted to K_B
      invariants), once.
+
+  `_scope` returns the knowledge changes, the touched invariants, the reached families and the stale
+  invariants. `_first_entries` gives step 1's entry list, `_stale` the invariants with a `stale_at_base`
+  entry, and `_scope_document` and `_entries_document` build the persisted `scope` and `entries`. This split
+  was made by 260928-MIK-L06 at the merge with L11 (ruling 2026-09-29T23:14:41+02:00: `_Run.document`
+  reduced to radon 10 or less by whichever of L06 and L11 landed second); the steps run in the same order
+  and the worklist is unchanged (the worker's and reviewer's real-data preservation runs).
+- **`Item.extra`** (MIK-R06): a registrant's further top-level fields, merged into `to_document` after
+  `id`, `kind`, `subject` and `facts`. The route items use it for `satisfiedBy`; it is empty for every other
+  kind, so their documents are unchanged.
 - **Items.** `_touched` collects K_B invariants with a raising entry or a knowledge-side change.
   `_touched_item` carries each classified entry's facts, the added, retired and re-anchored entries, the
   record's K_B and K_C revisions, and the context (families on both sides, `linkedFrom` in K_C). Its
@@ -62,6 +73,12 @@ run is a pure function of its inputs.
   and each declaration no row of the leaf's history file delivers adds a `planned_untouched` item. The marked
   items and the new items are sorted together by `(kind, subject)` before the digest, so the digest covers the
   marks. Without a declaration every item is `unplanned` and nothing is added.
+- **Step 6, family route conditions (MIK-R06, `route_conditions.py`).** `_route_items` passes
+  `family_route_conditions` a `RouteInputs` (K_B, K_C, C's files, B's files, the run's rename map and the
+  owner) and the families that have a `reached_family` item (touched, record-changed or stale-reached).
+  Every returned condition becomes a `family_route_condition` `Item` with `satisfiedBy` in `extra`. In code
+  order the route items join the item list before step 5 runs, so they are sorted and digested with the
+  rest; they are not in `planned_effects`'s marked kinds, so they carry no `planning` mark.
 - **Document.** `state`, `incomplete`, `pairing`, `scope` (the flag, changed and unrepresentable path
   counts, classified count, class counts, reached families), `entries`, `changes`, `plannedEffects` (MIK-R11: `{declared: false}`, or
   `declared: true` with one entry per declaration, matched or not), `items` sorted by kind and subject, `kinds` (the registry) and `digest` (`worklist_digest` over state, items and incomplete).
@@ -89,8 +106,11 @@ run is a pure function of its inputs.
   already carry what it summarises. The `planning` mark is inside it, so every converted worklist's digest moves
   against a worklist persisted before MIK-R11; that consequence is carried to L09 (ruling F4,
   2026-09-29T22:35:34+02:00).
-- **Stage numbering with MIK-R06** (ruling F7): whichever of L06 and L11 lands second renumbers its step and
-  keeps L11's marking and sort over the combined items.
+- **Stage numbering with MIK-R06** (ruling F7, resolved by L06, which landed second): the route stage is
+  step 6 in the docstring; L11's marking and the one sort run over the combined items, and route items stay
+  unmarked.
+- **Route items never rewrite anything** (MIK-R06 Exclusions): the run only reports the conditions and the
+  mechanical suggestion; no route is changed automatically.
 
 ### Todos
 
@@ -113,20 +133,24 @@ code and memory repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure run, the four scope steps and the linkage marking. | "that marking raises nothing here" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:22-22 |
-| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:73-73 |
-| One item, its ID from the registry. | `Item`; `item_id` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:93-107 |
-| The run's inputs. | `WorklistInputs` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:110-121 |
-| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:128-142 |
-| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:158-171; mcp/src/agents_remember/application/knowledge_worklist/compute.py:174-184 |
-| The one-pass scope and the document. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:192-276 |
-| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:300-308 |
-| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:318-353 |
-| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:355-373 |
-| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:375-392; mcp/src/agents_remember/application/knowledge_worklist/compute.py:394-413 |
-| The leaf's declarations, one input of the run. | `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:120-120 |
-| Step 5: marks, `planned_untouched` items, one sort over both, and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:243-272 |
-| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:422-451; mcp/src/agents_remember/application/knowledge_worklist/compute.py:453-467 |
+| The pure run, the four scope steps and the linkage marking. | "that marking raises nothing here" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:24-24 |
+| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:82-82 |
+| One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). | `Item`; `item_id`; `extra` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:102-126 |
+| The run's inputs. | `WorklistInputs` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:129-140 |
+| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:147-161 |
+| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:177-190; mcp/src/agents_remember/application/knowledge_worklist/compute.py:193-203 |
+| The document: the items of every step, one sort and the digest. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:211-248 |
+| Steps 1 to 4, split out of `document` at the L06/L11 merge. | `_scope`; `_first_entries`; `_stale` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:250-296 |
+| The persisted `scope` and `entries`. | `_scope_document`; `_entries_document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:298-319 |
+| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:343-351 |
+| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:361-396 |
+| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:398-416 |
+| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:418-435; mcp/src/agents_remember/application/knowledge_worklist/compute.py:437-456 |
+| The leaf's declarations, one input of the run. | `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:139-139 |
+| Step 5: marks, `planned_untouched` items, one sort over both, and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:228-244 |
+| Step 6 in the docstring: the route conditions of reached families and of killed routes. | "evaluates the family route conditions" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:20-21 |
+| Step 6: the route items, with `satisfiedBy` carried in `extra`. | `_route_items`; `family_route_conditions`; `satisfiedBy` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:458-481 |
+| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:490-519; mcp/src/agents_remember/application/knowledge_worklist/compute.py:521-535 |
 | A body edit raises one invariant and its family and carries the rest of the file. | `test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file` | mcp/tests/test_knowledge_worklist.py:327-352 |
 | A comment between functions raises nothing; one inside raises. | `test_a_comment_between_functions_raises_nothing_and_one_inside_raises` | mcp/tests/test_knowledge_worklist.py:355-368 |
 | A binary change touches a file anchor and links at file level. | `test_a_binary_change_touches_a_file_anchor_and_links_at_file_level` | mcp/tests/test_knowledge_worklist.py:440-455 |
@@ -142,6 +166,14 @@ No meaningful cross-repo references found: the run reads one code repository and
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): recorded MIK-R06's step 6 (`_route_items`, `family_route_conditions` over the reached families, `satisfiedBy` through the new `Item.extra`), the split of `_Run.document` into `_scope`, `_first_entries`, `_stale`, `_scope_document` and `_entries_document` (ruling 2026-09-29T23:14:41+02:00), and the resolved stage numbering (ruling F7). Purpose and the invariants reworded; five rows added; the `Item`, `_changes`, reached-family, step-5 and linkage rows re-measured by hand against the new code (the fixer declined them: the code moved unevenly). The fixer's seven bullets above cover rows whose claims were not reworded, so they are kept.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: "that marking raises nothing here" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:24-24. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `WorklistInputs` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:129-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `incomplete_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:147-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `_reached` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:343-351. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `_touched_item` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:361-396. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `_stale_item` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:398-416. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:15:28+00:00: Generated citation repair: `expected_effects` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:139-139. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:47:51+00:00: Generated citation repair: "that marking raises nothing here" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:22-22. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:47:51+00:00: Generated citation repair: `WORKLIST_SCHEMA` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:47:51+00:00: Generated citation repair: `_reached` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:300-308. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.

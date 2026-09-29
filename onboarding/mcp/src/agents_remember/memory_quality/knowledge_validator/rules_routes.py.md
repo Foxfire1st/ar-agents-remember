@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@
 
 - `_families` yields every parsed family record with its `FamilyRouteState` (from `family_routes`) over the tree's realization locations.
 - `R04.1-route-directory` (refuses, `writer_reports`): a route the candidate **adds** must be a directory of the paired code tree (`CodeTree.has_directory`). A route is *carried* when the same family lists it in any comparison base (K_B, or either merge parent; `_base_family_routes` unions all bases that parse).
-- `R04.1-carried-route-absent` (**report-only**): a carried route whose directory is absent is reported as `route_path_absent` for the route-maintenance pass (MIK-R06), not refused. This is the same split MIK-R22 rule 6 makes for anchors (ruling Q1).
+- `R04.1-carried-route-absent` (**report-only**): a carried route whose directory is absent is reported as `route_path_absent` for the route-maintenance pass (MIK-R06), not refused. This is the same split MIK-R22 rule 6 makes for anchors (ruling Q1). Since leaf 260928-MIK-L06 the route-maintenance pass exists (`application/knowledge_worklist/route_conditions.py`): a carried route that the leaf's own range killed (present at B, absent at C) becomes a mandatory `family_route_condition` worklist item, even for a family the worklist does not reach; a route already absent at B stays this report, for the migration (L06 ruling Q1, 2026-09-29T21:49:19+02:00).
 - Both existence rules are skipped for a standalone conversion or when there is no code tree, and for a retired family.
 - `R04.2-coverage` (refuses, `writer_reports`): each uncovered realization is named with its entry, invariant and path, and the family's routes; a `routeless` family that is not `legacy-unassessed` is refused with its realization paths.
 - `R04.2-non-empty` (refuses, `writer_reports`): each emptied route, under the field `routes.<i>`.
@@ -85,4 +85,5 @@ No meaningful cross-repo references found: the rules read one memory tree, its b
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated.** The `R04.1-carried-route-absent` bullet now says what the route-maintenance pass it names does since MIK-R06 landed: a route killed in the leaf's range becomes a mandatory worklist item, and a route already dead at B stays this report (L06 ruling Q1). This card's source is unchanged; no row moved. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): created this card for the new file MIK-R04 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

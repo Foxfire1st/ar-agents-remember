@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,17 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
   declaring `requirementRef`, its unmatched reason, each row about the declared record marked "(does not
   deliver it)", and "answered by <row>" or "needs a planned row" (`_planned_facts`). `_cell` escapes pipes
   and newlines.
+- **Dispatch table (L06, review R3-N1).** `_item_facts` looks the kind up in `_FACT_RENDERERS`
+  (`touched_invariant` → `_entry_facts`, `stale_invariant` → `_stale_facts`, `reached_family` →
+  `_family_facts`, `planned_untouched` → `_planned_facts`, `family_route_condition` → `_route_facts`); any
+  other kind still gets its sorted fact keys. The `if`/`elif` ladder it replaced rendered the same text.
+- **Family route facts (MIK-R06, `_route_facts`).** The condition and what it affects (`_route_affected`:
+  the base view's routes or entry paths when the base view shows the condition, else the candidate view's;
+  "no routes" for `route_unassigned`), "renamed to …" when there are rename candidates, the suggestion
+  (`_route_suggestion`: "mechanical suggestion …", or "no suggestion (ambiguous rename target, or a file
+  absent at C without a rename)"), "absent without a rename: …" for `unmappedLocations`, and "answered by
+  <row>" or "needs a family row (rerouted, assigned, changed or retired; never no_impact) and routes that
+  satisfy MIK-R04".
 
 ### Conventions
 
@@ -60,7 +71,8 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
 - **Unchanged bytes for unconverted leaves.** The checklist renders the section only when a worklist
   exists, so today's checklist is byte-identical. The MIK-R11 block and column appear only inside that
   section, so they change converted checklists only (review R1 F4: every converted checklist gains the
-  column and the "Planned effects" line).
+  column and the "Planned effects" line). A `family_route_condition` row appears only in a converted
+  worklist too.
 
 ### Todos
 
@@ -86,10 +98,14 @@ code and memory repositories, so they are named here and not cited as rows.
 | Rendering only; never counted toward `curatorActionableCount`. | "It does not count toward" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:1-8 |
 | The section heading. | `WORKLIST_SECTION_HEADING` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:18-18 |
 | The compact wire summary. | `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38 |
-| Per-kind facts. | `_entry_facts`; `_item_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:41-52; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:55-69 |
-| A `planned_untouched` item's facts. | `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:72-82 |
-| The planned-effects block, one line per declaration. | `_planned_lines`; "Planned effects (MIK-R11)" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:85-111 |
-| The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
+| Per-kind facts, dispatched by kind. | `_entry_facts`; `_item_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:41-52; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:64-68 |
+| The stale and reached-family renderers, split out of the ladder. | `_stale_facts`; `_family_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:55-61 |
+| A `family_route_condition` item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:113-143 |
+| The kind-to-renderer table. | `_FACT_RENDERERS` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:146-154 |
+| A `planned_untouched` item's facts. | `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81 |
+| The planned-effects block, one line per declaration. | `_planned_lines`; "Planned effects (MIK-R11)" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-110 |
+| The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
+| The ambiguous-rename checklist line: no suggestion, every candidate named. | `test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing` | mcp/tests/test_family_route_conditions.py:426-450 |
 | The checklist and the tool show the marks. | `test_a_leaf_reads_its_declaration_and_the_checklist_and_tool_show_the_marks` | mcp/tests/test_planned_knowledge_effects.py:530-587 |
 | The checklist renders it only when a worklist exists. | `knowledge_worklist`; `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-69; mcp/src/agents_remember/memory_quality/curator_checklist.py:289-289 |
 | The controller renders the section and keeps the count at 0. | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-669 |
@@ -103,6 +119,8 @@ No meaningful cross-repo references found: the module renders an in-memory docum
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Logic records the `_FACT_RENDERERS` dispatch table (review R3-N1; the rendered text is unchanged) and the `family_route_condition` facts (`_route_facts`, `_route_affected`, `_route_suggestion`); the byte-identity boundary names the new row. Four rows added; the planned-block and section rows re-measured by hand (the code moved unevenly). The fixer's one bullet above covers `_planned_facts`, whose claim was not reworded, so it is kept. No verification stamp was advanced.
+- 2026-09-29T23:15:54+00:00: Generated citation repair: `_planned_facts` repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Logic now records the planned-effects block (`_planned_lines`), the **Plan** column and the `planned_untouched` facts (`_planned_facts`); the byte-identity boundary notes that only converted checklists change (review R1 F4, carried to L09 by ruling 22:35:34). Three rows added, two reworded and re-measured. No verification stamp was advanced.

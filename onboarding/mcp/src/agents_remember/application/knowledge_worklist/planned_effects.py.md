@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module docstring: matching, classification and the satisfying row. | "Planned invariant effects reconciliation (MIK-R11@v2)" | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:1-27 |
-| The marked kinds and the unmatched reason. | `_MARKED_KINDS`; `UNMATCHED` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:62-65 |
+| The marked kinds and the unmatched reason. | `_MARKED_KINDS`; `UNMATCHED` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:62-62; mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:65-65 |
 | The kind registered on import, with its satisfying row. | `PLANNED_UNTOUCHED_KIND`; `register_item_kind` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:67-81 |
 | One declaration, its planned key and its record ID. | `Declaration` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:84-108 |
 | The task document's declarations read as `Declaration`s. | `declarations_from` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:111-126 |
@@ -123,7 +123,7 @@ code and memory repositories, so they are named here and not cited as rows.
 | Which rows deliver an effect. | `_delivers` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:203-210 |
 | `new:` matches a writer-authored invariant of this leaf only. | `_new_invariant` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:213-221 |
 | The item, its facts, its stable ID and `satisfiedBy`. | `_untouched_item` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:224-245 |
-| Step 5 of the run: marks, items and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:243-272 |
+| Step 5 of the run: marks, items and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:228-244 |
 | Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. | `test_declarations_match_only_the_rows_that_deliver_them_and_mark_every_item` | mcp/tests/test_planned_knowledge_effects.py:246-360 |
 | A planned row answers its item; the stored predicate agrees. | `test_a_planned_row_answers_its_item_and_the_stored_predicate_agrees` | mcp/tests/test_planned_knowledge_effects.py:363-398 |
 
@@ -139,4 +139,5 @@ The declaration is read from the leaf's task document in the coordination root, 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; the step-5 row into `compute.py` moved when L06 split `_Run.document` into helpers and added step 6 (`243-272` → `228-244`, re-measured by hand: the fixer declined it as a multi-anchor row). Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): created this card for the new file MIK-R11 adds, recording the architect rulings of 21:56:18 (Q1, Q2, Q4, Q5) and 22:35:34 (F3). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

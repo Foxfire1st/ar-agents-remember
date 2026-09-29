@@ -5,14 +5,59 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T01:22:26+02:00 |
+| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee` |
+| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L06 Family Route Maintenance In The Worklist, Inert Until The Cutover
+
+`260928-MIK-L06` (MIK-R06@v2) keeps each family's routes maintained with the code. A family becomes a
+worklist item, `family_route_condition` with subject `<FAM-ID>#<condition>`, when one of its routes no longer
+exists (`route_path_absent`), contains none of its realization entries (`route_emptied`, waived for an
+`unrealized_family`), when an entry lies outside every route (`realization_uncovered`), or when it has no
+routes (`route_unassigned`). The item is answered only by the leaf's family row with disposition `rerouted`,
+`assigned`, `changed` or `retired`, never `no_impact`, while the family record in K_C satisfies MIK-R04 or is
+retired. Retired families raise nothing. Nothing is rerouted automatically.
+
+- **Where:** the new `application/knowledge_worklist/route_conditions.py` (the kind, the conditions, the
+  suggestion and `family_route_item_open`); step 6 and `Item.extra` in `compute.py`, whose `_Run.document` was
+  split into helpers at the merge with L11; the package exports; the checklist renderer
+  `memory_quality/knowledge_worklist_section.py` (`_route_facts` and the `_FACT_RENDERERS` table); and the
+  writer (`knowledge_writer/handoff.py` and `authoring.py`), whose `moved` row may now relocate an entry to
+  another file through a cover `path`.
+- **Carried from L04:** a dead carried route that the validator only reports becomes a mandatory item.
+- **Architect rulings (2026-09-29):** 21:49:19 (Q1: reached families get all four conditions, unreached
+  families only `route_path_absent` on a route killed in this leaf's range, and a route already dead at B
+  stays the validator's report for R19; Q2: both route sets are judged and one family row answers all of a
+  family's items; Q3: `route_unassigned` needs a non-empty route set that satisfies MIK-R04, the
+  `legacy-unassessed` waiver does not answer it; Q4: a rename target is ambiguous when the renamed files land
+  in more than one outermost directory; Q5: the suggestion uses the rename-mapped locations, else none, with
+  `renameCandidates` and `unmappedLocations`; Q6: the writer's moved-row relocation, fixing a conformance gap
+  of landed L12; Q7: recorded on L09); 22:40:22 (F1: path validation in the hand-off reader; N1: conditions
+  judged at the entries' effective locations at C; N2: carried to L09; N6: complexity; N7: remove plus path
+  refused); 23:14:41 (`recordSatisfiesRoutes` holds both as recorded and at the effective locations;
+  `_Run.document` reduced at the merge).
+- **Candidate invariants (not ingested):** a family route problem the leaf causes cannot survive closeout
+  without a non-`no_impact` family row and routes that satisfy MIK-R04; a route already dead at B is not
+  charged to an unrelated leaf; the stored predicate and the live `satisfiedBy` agree; the writer refuses a
+  malformed cover path rather than crashing; retired families raise nothing.
+- **Inert before MIK-R37:** an unconverted leaf gets no worklist. The worker's preservation runs found both
+  builds returning no worklist on the unconverted pair, and on converted ICR L47 only one added item
+  (`route_unassigned` for the reached exported family); this curation's own `memory_quality_check` runs
+  produced no worklist.
+- **Tests:** the new `test_family_route_conditions.py` (10 cases, `unit-regression`) and one case in
+  `test_knowledge_writer.py`. No catalog row or re-pin.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module statement. | "family routes maintained with the code" | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:1-50 |
+| The stored predicate for the gate. | `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:141-154 |
+| Step 6 of the run. | `_route_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:458-481 |
 
 ## 260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover
 
@@ -595,6 +640,8 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 Family Route Maintenance In The Worklist, Inert Until The Cutover" at the top: the whole leaf, the carried L04 decision, every architect ruling (21:49:19 Q1–Q7, 22:40:22 F1/N1/N2/N6/N7, 23:14:41) and the five candidate invariants, with three rows. No verification stamp was advanced.
+- 2026-09-29T23:17:45+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover" at the top: the whole leaf, every ruling (22:11:24 Q1–Q6; 23:04:57 F1–F6) and the five candidate invariants, with three rows. No verification stamp was advanced.
 - 2026-09-29T21:47:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover" at the top: the whole leaf, where it lands, every architect ruling of 2026-09-29T21:56:18 (Q1–Q5) and 22:35:34 (F1–F7), the five candidate invariants and the preservation evidence. Rows citing the touched modules were re-pointed by the installed fixer. No verification stamp was advanced.
@@ -883,7 +930,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:118-150 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:160-160 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
