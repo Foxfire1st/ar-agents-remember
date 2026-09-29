@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@
 
 ### Conventions
 
-- The module imports `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs.
+- The module imports `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's three admission rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because the admission rules are registered here, the fixture tree's every validation now carries one report-only `R27.4-legacy-unassessed` count (its Doc14 family is an export).
 - With no bases every anchor is checked for path existence (a writer's or a curator's run).
 
 ### Invariants And Boundaries
@@ -59,11 +59,11 @@ The three entry points.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The validator: every registered rule over the candidate. | `validate_tree` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:43-79 |
-| Rule 8's applicability: the marker on any side. | `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:82-85 |
-| The commit route's call: nothing, the report, or the refusal. | `require_valid_commit` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:88-103 |
-| Commit routes validate only when a side has the marker. | `test_commit_routes_validate_only_when_a_side_has_the_layout_marker` | mcp/tests/test_knowledge_validator.py:505-517 |
-| An unconverted base is refused, and a standalone conversion checks no path. | `test_an_unconverted_base_is_refused_and_a_standalone_conversion_checks_no_path` | mcp/tests/test_knowledge_validator.py:417-429 |
+| The validator: every registered rule over the candidate. | `validate_tree` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:46-82 |
+| Rule 8's applicability: the marker on any side. | `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:85-88 |
+| The commit route's call: nothing, the report, or the refusal. | `require_valid_commit` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-106 |
+| Commit routes validate only when a side has the marker. | `test_commit_routes_validate_only_when_a_side_has_the_layout_marker` | mcp/tests/test_knowledge_validator.py:515-527 |
+| An unconverted base is refused, and a standalone conversion checks no path. | `test_an_unconverted_base_is_refused_and_a_standalone_conversion_checks_no_path` | mcp/tests/test_knowledge_validator.py:427-439 |
 
 ## Cross-Repo References
 
@@ -76,6 +76,7 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — `validator.py` now imports `rules_admission`, registering MIK-R27's three admission rules.** The Conventions bullet names it and the legacy count every fixture validation now carries. The rows were re-pointed by the exact three-line shift (`validator.py`) and by the test file's own shifts, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **body update — `validator.py` now imports `rules_census`, registering MIK-R20's nine census rules.** The Conventions bullet names it. The rows were re-pointed by the exact three-line shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — `validator.py` now imports `rules_routes`, registering MIK-R04's family route rules.** The Conventions bullet names it. The rows were re-pointed by the exact three-line shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

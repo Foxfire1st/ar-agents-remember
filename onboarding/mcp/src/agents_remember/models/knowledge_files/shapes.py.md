@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/shapes.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T04:55:39+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,15 @@ admission and origin blocks. They check shape only — presence, closed vocabula
   **Origin** `{task, leaf? | wave?, handoff?, handoffEntry?, legacyId?}` refuses leaf and wave
   together; `HandoffOrigin` needs a list path, evidence text, or both. `EntryOrigin{leaf,
   handoffEntry?}` is the per-entry form.
+- **The criteria's meanings are in the admission docstrings** (since MIK-R27, leaf 260928-MIK-L27;
+  a docstring-only change, no model change). Invariant: `spans_locations`, realized in more than one
+  file; `guarded_by_test`, at least one proof entry; `family_guarantee`, needed to state a family's
+  guarantee; `prevents_costly_mistake`, guards a plausible, costly error the justification names.
+  Family: `joint_guarantee`, the members together promise something none promises alone. Decision:
+  `real_alternatives`, at least one alternative was seriously considered, and
+  `constrains_future_work`. The `InvariantAdmission` docstring says the validator checks the first
+  two for a new record (`memory_quality/knowledge_validator/rules_admission.py`) and the reviewer
+  judges the rest.
 
 ### Conventions
 
@@ -96,7 +105,9 @@ The base, the three locators and the relation vocabulary are what `records.py` a
 | ID targets must carry their own kind's prefix. | `IdTarget` | mcp/src/agents_remember/models/knowledge_files/shapes.py:238-252 |
 | A reference has at least one target. | `Reference` | mcp/src/agents_remember/models/knowledge_files/shapes.py:282-286 |
 | `alternative` exactly for `reconsider_on`; anchor targets name their path. | `Link` | mcp/src/agents_remember/models/knowledge_files/shapes.py:342-361 |
-| Origin names a leaf or a wave, not both. | `Origin` | mcp/src/agents_remember/models/knowledge_files/shapes.py:421-435 |
+| The invariant criteria's meanings, and which two the validator checks. | `InvariantAdmission` | mcp/src/agents_remember/models/knowledge_files/shapes.py:386-396 |
+| The family and decision criteria's meanings. | `FamilyAdmission`; `DecisionAdmission` | mcp/src/agents_remember/models/knowledge_files/shapes.py:399-403; mcp/src/agents_remember/models/knowledge_files/shapes.py:406-410 |
+| Origin names a leaf or a wave, not both. | `Origin` | mcp/src/agents_remember/models/knowledge_files/shapes.py:430-444 |
 
 ## Cross-Repo References
 
@@ -110,4 +121,5 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the admission docstrings now give each criterion's meaning (MIK-R27), a docstring-only change.** A Logic bullet states the meanings and the checked/judged split; two rows added; the `Origin` row re-pointed by the exact +9 shift (`:430-444`). No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

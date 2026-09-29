@@ -5,9 +5,37 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+
+## The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)
+
+Two files of this skill now serve MIK-R27 (the admission rule), and one file of a sibling skill:
+
+- `templates/curator-handoff-list.md` gains the section **"The admission rule (MIK-R27)"**: every new
+  invariant, family and decision record states the criterion it meets with a one-sentence justification; a
+  table of each kind's criteria and meanings, marking the two the validator checks; what **new** means (not in
+  the memory base and not an export, where an export's `legacyId` derives its ID, ruling 2026-09-29T23:04:57
+  F2); what is **refused** (no criterion, `legacy-unassessed`, a justification made only of references,
+  developer-ruling IDs, commit hashes, dates and provenance words, rulings 22:11:24 Q2 and 23:04:57 F1, or an
+  unsupported checkable claim); that every other record is only reported; that local stays local; demotion;
+  and two admitted, two refused and one local example.
+- `criteria/onboarding-memory.md` gains the standing criterion **OM-4, "Admission justifications are
+  plausible"**, the reviewer's judgment the packet's rule 5 asks for. It entered **by requirement, not by the
+  promotion ratchet** (ruling 22:11:24 Q3), is marked so in its heading, binds converted memory only, and is
+  demoted only by a developer ruling.
+- `c-14-knowledge-bootstrap/SKILL.md` (a sibling skill) gains the same rule in step 3, with its own two
+  admitted and two refused examples.
+
+The paragraphs were rewrapped to 100 columns (ruling F5). All three reach the package copy and the eight
+harness starter copies through `sync-skills.py`. The rule binds converted memory only, so no hand-off list,
+review or foundation run of today's memory changes.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
+| OM-4, the requirement-bound reviewer criterion. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
 
 ## The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)
 
@@ -585,6 +613,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)" at the top (the template section, OM-4 by requirement, and c-14 step 3; rulings Q2, Q3, F1, F2 and F5), with two rows. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)" at the top, recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). Rows citing the template below the inserted bullet were re-pointed by the installed fixer or the exact line shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "The onboarding row in the curator hand-off template (260928-MIK-L30)", with architect ruling 2026-09-29T18:49:50 (1). One row. The six inserted template lines moved later template lines only; the L12, L04 and L21 sections cite lines above the insertion or were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section "Test proofs in the curator hand-off template": both evidence forms (the ruled `path -k name`), the facet authored beside the statement draft, and the new "Proofs are shown and counted (MIK-R28)" bullet. Two rows. The installed `memory-citations --fix` widened the MIK-R12 and MIK-R04 rows' heading citations to their sections, with no wording change.

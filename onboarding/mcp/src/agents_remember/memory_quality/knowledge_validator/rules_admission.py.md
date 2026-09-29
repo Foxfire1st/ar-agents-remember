@@ -1,0 +1,186 @@
+# mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| governingOverview | `../overview.md` |
+
+## Governing Overview
+
+[memory_quality route overview](../overview.md)
+
+## Purpose
+
+**MIK-R27's admission rule in the validator's one registry (MIK-R22 rule 9).** Every invariant, family
+and decision record states which admission criterion it meets, with a one-sentence justification
+(the shape is MIK-R21 rule 4, in `models/knowledge_files/shapes.py`). Admission governs **creation, not
+maintenance**: the same failure is refused on a new record and only reported on every other one.
+Importing the module registers three rules; `validator.py` imports it next to the other rule modules,
+so every place the validator runs (the writer, `validate_tree`, `require_valid_commit`, the managed
+sync, `knowledge-validate`) runs them.
+
+| Rule | Status | What it does |
+| --- | --- | --- |
+| `R27.2-new-record` | refusing | refuses a new record that fails admission, naming the record and the criterion |
+| `R27.2-existing-record` | report-only | reports every other record whose checkable criterion no longer holds |
+| `R27.4-legacy-unassessed` | report-only | one tree-level finding counting the live records still `legacy-unassessed`, by kind |
+
+## Code Commentary
+
+### Logic
+
+- **Which records are new.** `_admitted_records` walks the parsed invariant, family and decision
+  records. A record is new when its ID is absent from every comparison base (`_base_record_ids`: K_B
+  at a commit route, each parent at a merge, read from the bases' record filenames) **and** it is not
+  an export. With no base (a curator's standalone run without `--base`), every record that is not an
+  export is new.
+- **What an export is** (review R1 finding F2, ruling 23:04:57). `_exported(record)` is true only when
+  `derived_record_id(kind, origin.legacyId)` equals the record's ID: the conversion's own derivation
+  from `models/knowledge_files/ids.py`, not a copy of it. A hand-written `legacyId` that does not derive
+  the ID does not make a record exported, so such a record is judged for admission like any new one.
+- **Retired records are exempt** from both admission rules (`_retired`; decisions cannot be retired).
+- **Refused on a new record** (`check_new_record_admission`):
+  - `legacy-unassessed`, which only the export writes (field `admission`);
+  - a justification that `_only_references` finds to be only references (field
+    `admission.justification`);
+  - a claimed `spans_locations` or `guarded_by_test` that the tree's sidecar entries do not support
+    (field `admission.criteria`, from `_unsupported`).
+  - A record with no criterion never parses (MIK-R21: `criteria` has at least one item), so the shape
+    rule `R22.1-shape` refuses it, naming `admission.criteria`; this module never sees it.
+- **The two checkable criteria** (ruling 22:11:24 Q1). "Supported by the index" is checked against the
+  sidecar `realizes` and `proves` entries the derived index (MIK-R23) is built from, read from the tree
+  the validator already parsed, because `memory_quality` ranks below `memory/knowledge_index` in
+  `layers.toml`. `_entry_facts` collects, per invariant, the files its realization entries sit in and
+  whether any proof entry names it:
+  - `spans_locations` holds when the realizations sit in two or more distinct files (proofs do not
+    count);
+  - `guarded_by_test` holds when at least one `proves` entry names the invariant (MIK-R28).
+- **The reference-only detector** (`_only_references`) is a word list, not a judgment. Tokens are
+  split on whitespace, most punctuation, `/`, apostrophes and curly quotes; surrounding dots, dashes,
+  `*` and `_` are stripped; a master code directly before a leaf or requirement ID ("ICR L45") is
+  joined into one reference first (`_MASTER_PREFIXED`). Each token must be filler (`_FILLER`), a bare
+  number, or a reference (`_REFERENCE`), and at least one reference must be present:
+  - **references:** task and leaf IDs, requirement IDs with dotted sub-rules (`R27.2`), bare leaf IDs,
+    step IDs (`S2`), section signs, task directories, developer-ruling IDs (`D14`), commit hashes (7 to
+    40 hex characters, at least one a digit, so a hex-only word such as "defaced" stays a word) and ISO
+    dates or instants;
+  - **filler:** connectives and the provenance words a note is made of ("added", "introduced",
+    "implements", "per", "ruling", "developer", "commit", "decision", "acceptance", "criteria",
+    "section", "fixes" and similar).
+  - D-IDs and commit hashes are references by ruling 22:11:24 Q2; the provenance words, the
+    tokenizing, dotted sub-rules, master-prefixed IDs, step IDs and dates came in by ruling 23:04:57
+    F1. Any other word in the justification admits it, so "Per D14 at 4e1c9a7f2b: a landing that pairs
+    the wrong commits corrupts the ledger." is admitted.
+- **Reported on every other record** (`check_existing_record_admission`, report-only): the same
+  `_unsupported` failure, with "reported, not refused: admission governs creation (reassess … or
+  demote the record)".
+- **Counted** (`check_legacy_unassessed`, report-only): one finding at path `knowledge` giving the
+  number of live `legacy-unassessed` records by kind, until the migration (MIK-R19) assesses or
+  demotes each one.
+
+### Conventions
+
+- None of the three rules sets `writer_reports`, so the writer (MIK-R12) refuses exactly as every
+  commit route does.
+- Messages name the record ("new invariant INV-…") and the criterion; the refusal text asks for the
+  reason "in words".
+- Curly quotes and dashes are written as escapes in the source, because ruff's RUF001 flags the
+  literal characters.
+
+### Invariants And Boundaries
+
+- **A new record is refused unless it carries a supported admission criterion with a justification
+  stated in words.** Realized by `check_new_record_admission`, `_only_references` and `_unsupported`;
+  proved by `test_a_new_record_whose_justification_is_only_a_reference_is_refused`,
+  `test_a_new_record_without_a_criterion_or_marked_legacy_unassessed_is_refused` and
+  `test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it`.
+- **Existing and exported records are only reported, never refused.** Realized by the report-only
+  `R27.2-existing-record` and the `new` split in `_admitted_records`; proved by
+  `test_an_existing_record_whose_test_was_deleted_is_only_reported` and
+  `test_exported_retired_and_merged_records_are_never_refused`.
+- **A record counts as exported only when its ID is the one the converter derives from its
+  `legacyId`.** Realized by `_exported`; proved by `test_a_forged_legacy_id_does_not_make_a_record_exported`.
+- **Retired records are exempt.** Realized by `_retired`; proved by the retired block of
+  `test_exported_retired_and_merged_records_are_never_refused`.
+- **Nothing is refused until records are authored on a converted line.** The validator runs only
+  over converted memory (MIK-R22 rule 8): inside the writer, which refuses unconverted trees, and at a
+  commit route whose K_B or K_C holds the layout marker. The conversion commit carries only exports,
+  and a crossing sync only records a parent holds. The worker's and reviewer's real-data runs over a
+  converted scratch copy (108 exported records) showed 0 R27 refusals, and unconverted memory gives
+  byte-identical `memory_quality_check` output from the base and the leaf builds.
+- The module judges no meaning (Exclusions, Doc13): whether a justification is plausible, and whether
+  `family_guarantee`, `prevents_costly_mistake`, `joint_guarantee`, `real_alternatives` or
+  `constrains_future_work` hold, is the reviewer's judgment (OM-4, entered by requirement, ruling
+  22:11:24 Q3).
+- A statement that meets no criterion is not a record: it stays prose under "Boundaries" in the
+  onboarding Markdown (packet rule 3). Demotion retires the record with a `deleted` row (effect
+  `retire`) and never deletes its file (rule 4).
+
+### Todos
+
+- **L09 (ruling 22:11:24 Q6, carried).** Inside the writer the base is the memory worktree's `HEAD`,
+  so a record committed earlier in the same leaf is "existing" there. Closeout and landing must
+  validate admission against the parent line, so that a record first committed inside the leaf
+  counts as new.
+- **The R19 follow-up master (ruling 22:11:24 Q5; ruling 23:04:57 F2's remainder).** Whether demotion
+  also removes a retired record's realization entries, recording the outcomes in the census (MIK-R20),
+  and the fact that exported records the migration assesses are only reported, never refused, so R19
+  must re-validate its assessments against the `R27.2-existing-record` report.
+- **The L06 sync (ruling 22:11:24 Q4, review F6).** Whichever of L06 and L27 lands second makes its
+  report-only pins over the Doc14 fixture tree include the `R27.4-legacy-unassessed` count.
+
+## Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The admission rule's design authority is the requirement packet
+`MIK-R27@v1` of task `260928_maintained-invariant-knowledge`, developer ruling D14 and the
+coordination-root note Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`,
+section 6 for the derived IDs); they live outside the code and memory repositories, so they are named
+here and not cited as rows.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured live documentation source was available for this pass. | — | — |
+
+## Repo-Internal References
+
+The detector, novelty, the entry facts, the three rules and their proofs.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reference forms the detector recognises, D-IDs, commit hashes and ISO dates included. | `_REFERENCE` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:96-109 |
+| A master code before a leaf or requirement ID is joined into one reference; the provenance filler words. | `_MASTER_PREFIXED`; `_FILLER_WORDS` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:111-111; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:115-123 |
+| A justification is reference-only when every token is filler, a number or a reference, and one is a reference. | `_only_references` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:127-137 |
+| The base record IDs come from the bases' record filenames. | `_base_record_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:155-166 |
+| A record is new when no base holds its ID and it is not an export. | `_admitted_records` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:169-176 |
+| An export is a record whose legacy ID derives its ID; retired records are exempt. | `_exported`; `_retired` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:190-191 |
+| The checkable facts come from the tree's sidecar realization and proof entries. | `_entry_facts` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:202-216 |
+| An unsupported spans_locations or guarded_by_test claim. | `_unsupported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:219-239 |
+| A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim. | `check_new_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:242-268 |
+| Every other record's unsupported claim is only reported. | `check_existing_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:271-282 |
+| The live legacy-unassessed records are counted in one finding. | `check_legacy_unassessed` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:285-299 |
+| The three rules, one refusing and two report-only, none writer-reported, registered on import. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
+| The derivation the conversion writes and the export test reuses. | `derived_record_id` | mcp/src/agents_remember/models/knowledge_files/ids.py:121-126 |
+| Reference-only justifications are refused, and real prose is admitted. | `test_a_new_record_whose_justification_is_only_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:656-717 |
+| An unsupported checkable criterion on a new record is refused, naming it. | `test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it` | mcp/tests/test_knowledge_validator.py:741-750 |
+| An existing record whose test was deleted is only reported. | `test_an_existing_record_whose_test_was_deleted_is_only_reported` | mcp/tests/test_knowledge_validator.py:753-762 |
+| A forged legacy ID does not make a record exported. | `test_a_forged_legacy_id_does_not_make_a_record_exported` | mcp/tests/test_knowledge_validator.py:787-802 |
+| The writer refuses a new invariant whose claim the tree does not support, and writes nothing. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:659-675 |
+
+## Cross-Repo References
+
+No meaningful cross-repo references found: the rules read the validation context's memory trees only.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repo boundary is crossed by this file. | — | — |
+
+## Update History
+
+<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): created this card for the new file MIK-R27 adds, recording rulings 22:11:24 Q1, Q2, Q3, Q5, Q6 and 23:04:57 F1, F2. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

@@ -5,14 +5,54 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover
+
+`260928-MIK-L27` (MIK-R27@v1) makes every **new** invariant, family and decision record state the admission
+criterion it meets with a one-sentence justification (the `admission` field is MIK-R21's). The knowledge
+validator refuses a new record with `legacy-unassessed`, with a justification made only of references and
+provenance words, or with a `spans_locations` / `guarded_by_test` claim its sidecar entries do not support; a
+record with no criterion fails the shape rule. Every other record is only reported, and the live
+`legacy-unassessed` records are counted. A code change alone is never an admissible reason; a statement that
+meets no criterion stays prose.
+
+- **Where:** the new `memory_quality/knowledge_validator/rules_admission.py` (three rules: `R27.2-new-record`
+  refusing, `R27.2-existing-record` and `R27.4-legacy-unassessed` report-only, none writer-reported), imported
+  by `validator.py` and named in the package docstring (`__init__.py`); the criteria's meanings in the
+  `models/knowledge_files/shapes.py` docstrings; the curator template's admission section, c-14 step 3, and
+  the reviewer criteria's OM-4 (skills, synced to all copies).
+- **Architect rulings (2026-09-29):** 22:11:24 (Q1: "supported by the index" is checked against the sidecar
+  `realizes`/`proves` entries the index is built from; Q2: developer-ruling IDs and commit hashes are
+  references, so a justification made only of them is refused; Q3: OM-4 enters the reviewer criteria by
+  requirement; Q4: whichever of L06 and L27 lands second updates its pins for the legacy count; Q5: demotion
+  details and the census outcome go to the R19 follow-up; Q6: closeout and landing validating admission
+  against the parent line go to L09); 23:04:57 (F1: the tightened reference-only detector; F2: a record is an
+  export only when its ID equals the converter-derived ID of its `legacyId`, and the rest of F2 goes to R19;
+  F3: the CLI JSON case pins the full list; F4 already carried to L09; F5: the skill paragraphs rewrapped; F6
+  noted for the L06 sync).
+- **Candidate invariants (not ingested):** a new record is refused unless it carries a supported admission
+  criterion with a justification stated in words; existing and exported records are only reported, never
+  refused; a record counts as exported only when its ID is the one the converter derives from its
+  `legacyId`; nothing is refused until records are authored on a converted line; retired records are exempt.
+- **Inert before MIK-R37:** the validator runs only over converted trees. The worker and the reviewer found
+  unconverted `memory_quality_check` output byte-identical to the base build, and 0 R27 refusals over a
+  converted scratch copy of the real memory (108 exported records counted as `legacy-unassessed`).
+- **Tests:** 9 cases in `test_knowledge_validator.py` and 1 in `test_knowledge_writer.py`; L22's and L04's
+  exact pins gain the one report-only legacy count. No lane row, catalog row or re-pin.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The admission rule's module statement. | "MIK-R27's admission rules in the validator's registry (MIK-R22 rule 9)." | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:1-37 |
+| The three registered rules. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
+| The export test. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187 |
 
 ## 260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover
 
@@ -555,6 +595,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover" at the top: the whole leaf, every ruling (22:11:24 Q1–Q6; 23:04:57 F1–F6) and the five candidate invariants, with three rows. No verification stamp was advanced.
 - 2026-09-29T21:47:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover" at the top: the whole leaf, where it lands, every architect ruling of 2026-09-29T21:56:18 (Q1–Q5) and 22:35:34 (F1–F7), the five candidate invariants and the preservation evidence. Rows citing the touched modules were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T19:57:33+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.

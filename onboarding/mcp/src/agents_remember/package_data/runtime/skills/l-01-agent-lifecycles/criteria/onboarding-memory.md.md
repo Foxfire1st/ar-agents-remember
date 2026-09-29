@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated            | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 
 ## Purpose
 
@@ -34,6 +34,19 @@ collisions re-sorted with the checker's parse — naive as-is, tz-aware folds to
 ≥2). Plus the exploratory mandate (default 2 novel lenses) and the promotion ratchet, which notes
 that the closeout body gate IS this catalog's OM-2 mechanized — the working example of a criterion
 graduating into a gate.
+
+**OM-4, admission justifications are plausible** (leaf 260928-MIK-L27, MIK-R27 rule 5, developer
+ruling D14) is a third standing criterion. It entered **by requirement, not by the promotion
+ratchet** (ruling 22:11:24 Q3), is marked so in its heading, and is demoted only by a developer
+ruling. The validator checks only presence, shape, a justification made only of task, leaf,
+requirement or ruling references, commit hashes and provenance words, and the two checkable criteria
+(`spans_locations`, `guarded_by_test`); the reviewer judges the rest: a `prevents_costly_mistake`
+naming no plausible, costly error, a `family_guarantee` the guarantee does not need, a
+`joint_guarantee` one member already promises alone, a `real_alternatives` whose rejected option was
+never serious, and a record that restates one leaf's acceptance criteria or that a code change alone
+motivates. OM-4 binds converted memory only (the text format, MIK-R21), so it asks nothing of reviews
+of today's unconverted memory. Its body was rewrapped to 100 columns (ruling 23:04:57 F5); the heading
+cannot wrap.
 
 ### Conventions
 
@@ -67,8 +80,9 @@ No external domain documentation applies to this repository-local catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Onboarding/Memory Review` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:1-67 |
-| The reviewer role that binds this catalog per review type. | `# Reviewer`; `onboarding-memory` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:35-42 |
+| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Onboarding/Memory Review` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:1-83 |
+| OM-4, the requirement-bound standing criterion for plausible admission justifications. | "Admission justifications are plausible" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
+| The reviewer role that binds this catalog per review type. | `# Reviewer`; `onboarding-memory` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-171; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:35-42 |
 | The Update History order checker whose naive/UTC comparison semantics OM-3 pins. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 
 ## Cross-Repo References
@@ -84,6 +98,7 @@ No sibling repository evidence is needed for this catalog.
 The onboarding-memory criteria now apply exploratory and new-catalog duties only to a baseline review. Fix-verification uses the sealed outstanding IDs and cannot recensus the catalog or add findings.
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the catalog gains OM-4, "Admission justifications are plausible", a standing criterion entered by requirement (MIK-R27 rule 5, ruling Q3).** A Logic paragraph states it and its converted-memory binding; one row added; the canonical-source row re-measured to the whole file (`1-83`). No verification stamp was advanced.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the catalog-evidence sentence so routine handoff reads the worker's targeted-check record together with the curator's complete memory-quality result.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

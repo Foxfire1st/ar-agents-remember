@@ -5,11 +5,35 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash |  `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate |  2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash |  `c493b55731545a090d6b81f504bf02e1e427ec74`|
+| lastVerifiedCommitDate |  2026-09-30T00:38:11+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L27 New Knowledge Records Must Be Admitted, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L27` (MIK-R27@v1): once a memory tree is converted, every
+**new** invariant, family and decision record must state the admission criterion it meets with a
+one-sentence justification in words, and the knowledge validator refuses one that does not (developer ruling
+D14: each record must be meaningful, not a second test suite written as prose). Exported and existing
+records are only reported, never refused; a record is exported only when its ID derives from its
+`legacyId` (ruling 2026-09-29T23:04:57 F2); retired records are exempt; and the live `legacy-unassessed`
+records are counted until migration (MIK-R19) assesses or demotes them. The curator template, the c-14
+knowledge-bootstrap skill and the reviewer criteria (OM-4, by requirement, ruling 22:11:24 Q3) state the
+rule: the authored `skills/` copies, synchronized by `scripts/sync-skills.py` into
+[the package copy of the template](mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md.md),
+[the package copy of c-14](mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md.md),
+[the package copy of the criteria](mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: the validator runs only over converted trees, the conversion carries only exports, so nothing is
+refused until records are authored on a converted line.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's admission section, mirrored into the package and starter copies. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
+| OM-4, mirrored likewise. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
+| c-14 step 3's admission paragraph, mirrored likewise. | "A foundation is a small set of meaningful records" | skills/c-14-knowledge-bootstrap/SKILL.md:161-186 |
 
 ## 260928-MIK-L11 A Leaf's Planned Knowledge Effects Are Reconciled With What It Delivered, Not Yet Used
 
@@ -233,6 +257,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 New Knowledge Records Must Be Admitted, Not Yet Used" at the top: the repository-level consequence, and the three skill changes reaching the package copies and the 8 starter copies (rulings Q3 and F2), with three rows. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 A Leaf's Planned Knowledge Effects Are Reconciled With What It Delivered, Not Yet Used" at the top: the repository-level consequence, the curator-template and reviewer-role changes reaching the package copies and the eight harness starter copies, and ruling Q2 (no real declaration before the L37 install). No verification stamp was advanced.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** New section at the top, "260928-MIK-L02 A Bounded Knowledge Page Continues Through `knowledge_read`, Not Yet Used": the repository-level consequence and the c-04 skill change reaching the package copy and the eight harness starter copies (which have no cards). One row. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section "260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used": the repository-level consequence, all architect rulings of 18:49:50, 19:23:45 and 19:53:54, and the template bullet reaching the eight harness starter copies this route governs. Two rows. The `_attach_final_full_catalog` row's controller ranges were moved by MIK-R30's insertion above the function and re-pointed. No verification stamp was advanced.

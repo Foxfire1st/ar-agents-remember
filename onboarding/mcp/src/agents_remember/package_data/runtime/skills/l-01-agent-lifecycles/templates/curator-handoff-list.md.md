@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -118,6 +118,25 @@ about the declared invariant does not answer the item, while a `changed` row wit
 for `retire`, a retiring `deleted` row) delivers it and raises no item. It reaches the package copy and the
 eight harness starter copies through `sync-skills.py`.
 
+Since leaf `260928-MIK-L27` (MIK-R27) the template has a section, **"The admission rule (MIK-R27)"**,
+after the file writer's sections. Every **new** invariant, family and decision record states the
+admission criterion it meets with a one-sentence justification, `"admission": {"criteria": [...],
+"justification": "..."}`; the knowledge validator enforces it on converted memory, inside the writer and
+at every commit route, and a code change alone is never an admissible reason. A table gives each kind's
+criteria and meaning, marking the two the validator checks (`spans_locations`: realizations in two or
+more files; `guarded_by_test`: a `proves` entry). Bullets state what **new** means (absent from the
+memory base and not an export: an export's `origin.legacyId` derives its ID, and a hand-written
+`legacyId` does not make a record exported, ruling 2026-09-29T23:04:57 F2); what is **refused** (no
+criterion, `legacy-unassessed`, a justification made only of task, leaf, requirement, step or section
+references, developer ruling IDs, commit hashes, dates and provenance words, rulings 22:11:24 Q2 and
+23:04:57 F1, or an unsupported checkable claim); that every other record is only **reported** and the
+`legacy-unassessed` records counted; that **local stays local** (prose under "Boundaries"); and that
+**demotion** retires the record with a `deleted` row, effect `retire`, and never deletes its file. It
+gives two admitted, two refused and one local example, as packet rule 5 requires; the "New" bullet was
+rewrapped to 100 columns (F5), while the table rows cannot wrap. The section reaches the package copy
+and the eight harness starter copies through `sync-skills.py`. It binds converted memory only, so
+today's hand-off lists are unchanged.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -156,6 +175,7 @@ These references name the current owners and the behavior they establish.
 | **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** | "as a path plus symbol"; "Proofs are shown and counted (MIK-R28)." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
 | The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. | "An onboarding row (MIK-R30, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
 | The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. | "A planned row (MIK-R11, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
+| The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. | `## The admission rule (MIK-R27)`; "most knowledge is local and stays prose" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
 
 ## Cross-Repo References
 
@@ -166,6 +186,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the template gains the section "The admission rule (MIK-R27)".** A Logic paragraph states it with rulings Q2, F1, F2 and F5, and one row cites it (`:605-656`). The section is appended after line 604, so no existing row moved. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body update — the MIK-R11 planned-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject `planned:<declared subject>#<effect>`, the three dispositions and their refs, the task owner resolving a `dropped` decision), and one row citing it. The eleven inserted lines moved the MIK-R12 row's section extent and its `every other commit route` anchor; that row was re-pointed by the exact +11 line shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body update — the MIK-R30 onboarding-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject forms, `no_impact` only, no row needed after a counted change) with architect ruling 2026-09-29T18:49:50 (1), and one row citing it. The six inserted lines moved the MIK-R12 row's `every other commit route` anchor; that row was re-pointed by the exact base-to-working line map. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **body update — the MIK-R28 additions to the writer section.** Added a Logic paragraph: the evidence bullet names both test forms (`path::name` and the ruled `path -k name`), `needs_facet` offers the statement only as a draft while the curator authors the facet, a bare test file is `unresolvable`, and the new bullet "Proofs are shown and counted (MIK-R28)" covers the views, the informational "without proof" list and the migration pass. One new row (`:524-529`, `:530-534`). The change added six lines, so the MIK-R12 row's `:578` range was re-pointed to `:584` by the exact line map, and the installed `memory-citations --fix` widened the MIK-R04 row's heading citation to its section (`:460-484`); no claim wording changed there. No verification stamp was advanced.

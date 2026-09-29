@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -92,6 +92,8 @@ dependency on the closeout plane.
   `family_routes.py` and `rules_routes.py` (MIK-R04, added by 260928-MIK-L04) hold the family route
   state and mechanical suggestion and register six route rules (3 report-only, 3 writer-reported);
   `rules_census.py` (MIK-R20, added by 260928-MIK-L20) registers the nine refusing census rules;
+  `rules_admission.py` (MIK-R27, added by 260928-MIK-L27) registers the admission rule (one refusing,
+  two report-only);
   `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
   `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
   worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
@@ -732,9 +734,9 @@ file-level cards carry the per-module detail; the route-level facts are these:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:52-72 |
+| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:54-74 |
 | The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:68-74; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:77-80 |
-| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:82-85; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:88-103 |
+| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:85-88; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-106 |
 | The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
 | The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
 
@@ -913,7 +915,48 @@ no worklist.
 | The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:72-82; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:85-111 |
 | The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
 
+## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
+
+**MIK-R27@v1 adds three rules to `knowledge_validator/`'s one registry (MIK-R22 rule 9).**
+[`rules_admission.py`](knowledge_validator/rules_admission.py.md) registers them and `validator.py` imports
+it, so the writer and every commit route run them. Every invariant, family and decision record states
+the admission criterion it meets with a one-sentence justification; admission governs **creation, not
+maintenance**:
+
+- **Refused on a new record** (`R27.2-new-record`). A record is new when no comparison base holds its ID
+  and it is not an export; an export is a record whose `origin.legacyId` derives its ID through the
+  conversion's own `derived_record_id`, so a hand-written legacy ID does not exempt a record (ruling
+  2026-09-29T23:04:57 F2). It is refused for `legacy-unassessed`, for a justification made only of
+  references (task, leaf, requirement, step and section IDs, developer-ruling IDs and commit hashes by
+  ruling 22:11:24 Q2, ISO dates, and provenance filler words by ruling 23:04:57 F1), or for a
+  `spans_locations` or `guarded_by_test` claim the tree does not support. No criterion at all is refused
+  earlier, by the shape rule.
+- **"Supported by the index"** is read from the sidecar `realizes` and `proves` entries the derived index
+  is built from, in the tree the validator already parsed, because this route ranks below
+  `memory/knowledge_index` (ruling 22:11:24 Q1). `spans_locations` needs realizations in two or more
+  files; `guarded_by_test` needs a proof entry naming the invariant.
+- **Reported, never refused:** the same unsupported claim on an existing or exported record
+  (`R27.2-existing-record`), and one tree-level count of the live `legacy-unassessed` records
+  (`R27.4-legacy-unassessed`). Retired records are exempt from both admission rules.
+- **Writer.** None of the rules is writer-reported, so the writer refuses a new record exactly as a commit
+  route does.
+
+Only presence, shape, the reference-only form and the two checkable criteria are mechanical; plausibility
+is the reviewer's (OM-4). The rules refuse nothing until records are authored on a converted line: the
+validator runs only over converted trees, the conversion commit holds only exports and a crossing sync
+only records a parent holds. Unconverted memory is unchanged, and this curation's own
+`memory_quality_check` runs produced no worklist. Carried: closeout and landing validating admission
+against the parent line (L09, ruling Q6); demotion's realization entries and the census outcome (the R19
+follow-up, ruling Q5).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| A new record is refused for an unsupported claim, legacy-unassessed or a reference-only justification. | `check_new_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:242-268 |
+| An export is a record whose legacy ID derives its ID. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187 |
+| The three rules, one refusing and two report-only. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
+
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule Joins The Knowledge Validator" (the new, carded `rules_admission.py`, governed by this overview), recording architect rulings 2026-09-29T22:11:24 (Q1, Q2, Q5, Q6) and 23:04:57 (F1, F2), with three rows; the Route Model bullet names the module. The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The Worklist Section Shows The Planned Effects" (the planned-effects block, the **Plan** column and the `planned_untouched` facts), recording architect rulings 2026-09-29T21:56:18 (Q1) and 22:35:34 (F4). L08's section-and-summary row was re-measured (`knowledge_worklist_lines` now `118-166`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** Added the section "260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree" (the `not-applicable-converted` return, architect ruling 2026-09-29T18:49:50 (5)). One row. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information": the new `knowledge_worklist_section.py` (carded, governed by this overview) and the checklist's defaulted worklist inputs, never counted. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet.

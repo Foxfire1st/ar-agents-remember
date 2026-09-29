@@ -3,12 +3,42 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T00:17:15+02:00 |
+| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
+| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
+
+## 260928-MIK-L27 The Admission Cases, And The Legacy Count In Earlier Pins
+
+`260928-MIK-L27` (MIK-R27@v1) adds no module, lane row, catalog consumer row or re-pin: its 10 new cases
+were folded into modules that already consume the support modules.
+
+- [`test_knowledge_validator.py`](test_knowledge_validator.py.md): a MIK-R27 section of 9 cases (46
+  collected): reference-only justifications refused and real prose admitted (rulings 2026-09-29T22:11:24 Q2
+  and 23:04:57 F1), no criterion and `legacy-unassessed` refused, unsupported checkable claims refused, an
+  existing record whose test was deleted only reported, exported, retired and merge-parent records never
+  refused, a forged legacy ID treated as new (ruling F2), the legacy count, and the rules' registration.
+- [`test_knowledge_writer.py`](test_knowledge_writer.py.md): one case (17 collected): the writer refuses an
+  unsupported `guarded_by_test` claim, leaves the tree byte-identical, and writes once the proof is added.
+- **L22's and L04's pins gain the legacy count.** Every validation of the Doc14 fixture tree now carries
+  one report-only `R27.4-legacy-unassessed` finding (`LEGACY_COUNT` in
+  [`knowledge_validator_test_support.py`](knowledge_validator_test_support.py.md)), so the exact pins in
+  `test_knowledge_validator.py`, [`test_knowledge_family_routes.py`](test_knowledge_family_routes.py.md) and
+  [`test_knowledge_validator_routes.py`](test_knowledge_validator_routes.py.md) include it and stay exact;
+  the CLI JSON case pins the full sorted list with its report-only flags (ruling F3). Whichever of L06 and
+  L27 lands second updates its new pins likewise (ruling Q4).
+- **Two support fixes.** The validator fixture's two added invariants claim `prevents_costly_mistake`
+  (they have no entries to support the checkable criteria), and
+  [`knowledge_writer_test_support.py`](knowledge_writer_test_support.py.md)'s base records are genuine
+  exports whose IDs derive from their legacy IDs, with `ADMISSION` claiming an unchecked criterion.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The legacy count every fixture validation carries. | `LEGACY_COUNT` | mcp/tests/knowledge_validator_test_support.py:106-106 |
+| A forged legacy ID does not make a record exported. | `test_a_forged_legacy_id_does_not_make_a_record_exported` | mcp/tests/test_knowledge_validator.py:787-802 |
+| The writer refuses an unsupported admission claim. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:659-675 |
 
 ## 260928-MIK-L11 The Planned-Effects Cases, And The Thirty-Eighth Re-Pin
 
@@ -206,7 +236,7 @@ in the writer but refused at a commit route. [`test_knowledge_anchor_content.py`
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two lane rows. | "mcp/tests/test_knowledge_writer.py"; "mcp/tests/test_knowledge_anchor_content.py" | mcp/tests/test-evidence-lanes.toml:108-108; mcp/tests/test-evidence-lanes.toml:112-112 |
-| The world the writer cases run in. | `build_world` | mcp/tests/knowledge_writer_test_support.py:209-220 |
+| The world the writer cases run in. | `build_world` | mcp/tests/knowledge_writer_test_support.py:213-224 |
 
 ## 260928-MIK-L20 The Migration Census Cases
 
@@ -248,7 +278,7 @@ moves every later lane row down one line; this leaf re-pointed the citations tha
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Doc14 family example validates. | `test_the_doc14_family_example_validates_with_every_route_holding_realizations` | mcp/tests/test_knowledge_family_routes.py:98-123 |
+| The Doc14 family example validates. | `test_the_doc14_family_example_validates_with_every_route_holding_realizations` | mcp/tests/test_knowledge_family_routes.py:99-124 |
 | The family's other realizations in the fixture. | `FAMILY_REALIZATIONS` | mcp/tests/knowledge_validator_test_support.py:32-57 |
 | The lane row. | "mcp/tests/test_knowledge_family_routes.py" | mcp/tests/test-evidence-lanes.toml:96-96 |
 
@@ -296,8 +326,8 @@ leaf re-pointed the citations that moved.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The baseline and the pinned report-only set. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:87-102 |
-| The managed sync refuses, keeps the merge staged, and syncs after the repair. | `test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired` | mcp/tests/test_knowledge_validator_routes.py:156-188 |
+| The baseline and the pinned report-only set. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:93-108 |
+| The managed sync refuses, keeps the merge staged, and syncs after the repair. | `test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired` | mcp/tests/test_knowledge_validator_routes.py:157-189 |
 | The two lane rows. | "mcp/tests/test_knowledge_validator.py"; "mcp/tests/test_knowledge_validator_routes.py" | mcp/tests/test-evidence-lanes.toml:100-101 |
 
 ## 260928-MIK-L07 The History-File Cases
@@ -592,6 +622,7 @@ kept beside the constants.
 | The re-measured seed-page digests and their stated cause. | `PRE_LEAF_PAGE_DIGEST`; `PRE_LEAF_RESULT_DIGEST` | mcp/tests/facet_test_support.py:106-107 |
 
 ## Update History
+- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Cases, And The Legacy Count In Earlier Pins" at the top, as the current account (the 10 new cases, the `LEGACY_COUNT` pins in L22's and L04's tests, and the two support fixes; rulings Q2, Q4, F1, F2 and F3), with three rows. No lane row, catalog row or re-pin changed. No verification stamp was advanced.
 - 2026-09-29T21:50:06+00:00: Generated citation repair: "Thirty-sixth deliberate re-pin" repointed to mcp/tests/test_dependency_ownership_ast_helpers.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:50:06+00:00: Generated citation repair: "Thirty-fifth deliberate re-pin" repointed to mcp/tests/test_dependency_ownership_ast_helpers.py:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:50:06+00:00: Generated citation repair: "mcp/tests/test_review_family_member_sources.py" repointed to mcp/tests/test-evidence-lanes.toml:210-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
