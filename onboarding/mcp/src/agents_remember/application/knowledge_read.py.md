@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_read.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -52,6 +52,10 @@ are all named outcomes inside `KnowledgeReadResult`.
 
 The ordered sequence inside one read-only connection (`_select_and_page`):
 
+Steps 1 to 3 are one helper since MIK-R02, `_verified_scope`, which returns the selected scope or the
+refusal; the file guard and the failure mapping around it are `_guarded`, shared with
+`select_knowledge_scope` below.
+
 1. **The declared snapshot is verified** (`_snapshot_identity_refusal`), through **three separate
    comparisons**, each a different fact and each checked before anything is selected: the file must be
    bound to the requested namespace, it must implement the **schema generation** the context declares, and
@@ -80,6 +84,14 @@ decision rather than an accident:** a continuation that binds another selection 
 re-select a dataset they selected correctly. The scope-dependent half (the manifest) is checked where the
 selection it names exists, which is the only point at which it can be checked at all.
 
+**`select_knowledge_scope(database_path, context, seed)` is the whole verified selection, unpaged
+(260928-MIK-L02, MIK-R02).** It runs the same file guard, snapshot, namespace and schema checks, absence
+refusals and failure mapping as `read_knowledge_scope` (through `_guarded` and `_selected_scope`), and
+returns the `SelectedScope` or the same typed refused result. The paging is left to its caller:
+`application/knowledge_paging/scope_pages.py` cuts the ordered `items` to the shared token threshold for a
+converted memory tree. `read_knowledge_scope`'s behaviour is unchanged; the worker and both review rounds
+measured unconverted reads byte-identical to base.
+
 **`open_read_context(database_path, repository_id, …)` is the constructor a caller uses to build a
 context.** It opens the file read-only, reads the logical identity the file actually holds, and returns a
 context naming **that** exact snapshot — so a caller cannot hand-write the snapshot a read will be
@@ -94,6 +106,7 @@ from agents_remember.application.knowledge_read import (
     open_read_context,      # (database_path, repository_id, *, repository_root=None,
                             #  code_tree_id=None, task_ref=None) -> KnowledgeReadContext
     read_row_counts,        # (database_path) -> dict[str, int]  (the persisted-nothing measurement)
+    select_knowledge_scope, # (database_path, context, seed) -> SelectedScope | KnowledgeReadResult
 )
 ```
 
@@ -144,22 +157,24 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.** | `open_read_context` | mcp/src/agents_remember/application/knowledge_read.py:103-136 |
-| **The entry point, its typed parameters and the never-raises contract inside them.** | `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:139-192 |
-| **The read-only handle, the request-level cursor check before the file is opened, and the close.** | `_read_inside_snapshot` | mcp/src/agents_remember/application/knowledge_read.py:195-225 |
-| **The ordered sequence: verify the snapshot, select, decide absence, check the continuation, page, refuse a too-small budget.** | `_select_and_page` | mcp/src/agents_remember/application/knowledge_read.py:228-271 |
-| **The three separate snapshot comparisons — namespace, schema generation, logical dataset — each naming the comparison that fired.** | `_snapshot_identity_refusal` | mcp/src/agents_remember/application/knowledge_read.py:274-313 |
-| **The scope-dependent half of the cursor binding: a position past the end is typed, and the manifest must be this selection's.** | `_continuation_refusal`; `_manifest_binding_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:316-337; mcp/src/agents_remember/application/knowledge_read.py:496-516 |
-| **The request-level cursor bindings, checked once before the file is opened.** | `_cursor_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:468-493 |
-| **The two absence codes, and the recorded-but-empty selection that is served rather than refused.** | `_absence_refusal`; `_invariant_identity_is_recorded`; `_family_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_read.py:357-389; mcp/src/agents_remember/application/knowledge_read.py:392-414; mcp/src/agents_remember/application/knowledge_read.py:417-439 |
-| **The persisted-nothing measurement, read through the same read-only handle the operation uses.** | `read_row_counts`; `ROW_COUNT_TEMPLATE` | mcp/src/agents_remember/application/knowledge_read.py:587-602; mcp/src/agents_remember/application/knowledge_read.py:98-100 |
-| The result assembly for a page and for a refusal, and the unusable-snapshot rendering. | `_page_result`; `_refused`; `_unusable_snapshot`; `_small_budget_refusal` | mcp/src/agents_remember/application/knowledge_read.py:446-465; mcp/src/agents_remember/application/knowledge_read.py:576-584; mcp/src/agents_remember/application/knowledge_read.py:556-573; mcp/src/agents_remember/application/knowledge_read.py:340-354 |
+| **The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.** | `open_read_context` | mcp/src/agents_remember/application/knowledge_read.py:108-141 |
+| **The entry point, its typed parameters and the never-raises contract inside them.** | `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:144-166 |
+| **The read-only handle, the request-level cursor check before the file is opened, and the close.** | `_read_inside_snapshot` | mcp/src/agents_remember/application/knowledge_read.py:234-264 |
+| **The ordered sequence: verify the snapshot, select, decide absence, check the continuation, page, refuse a too-small budget.** | `_select_and_page` | mcp/src/agents_remember/application/knowledge_read.py:267-298 |
+| **MIK-R02: the verified selection shared by the paged read and the whole-scope read.** | `_verified_scope` | mcp/src/agents_remember/application/knowledge_read.py:301-318 |
+| **MIK-R02: the whole verified scope of one seed, unpaged, under the same guard and failure mapping.** | `select_knowledge_scope`; `_guarded`; `_selected_scope` | mcp/src/agents_remember/application/knowledge_read.py:169-180; mcp/src/agents_remember/application/knowledge_read.py:183-220; mcp/src/agents_remember/application/knowledge_read.py:223-231 |
+| **The three separate snapshot comparisons — namespace, schema generation, logical dataset — each naming the comparison that fired.** | `_snapshot_identity_refusal` | mcp/src/agents_remember/application/knowledge_read.py:321-360 |
+| **The scope-dependent half of the cursor binding: a position past the end is typed, and the manifest must be this selection's.** | `_continuation_refusal`; `_manifest_binding_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:363-384; mcp/src/agents_remember/application/knowledge_read.py:543-563 |
+| **The request-level cursor bindings, checked once before the file is opened.** | `_cursor_mismatch` | mcp/src/agents_remember/application/knowledge_read.py:515-540 |
+| **The two absence codes, and the recorded-but-empty selection that is served rather than refused.** | `_absence_refusal`; `_invariant_identity_is_recorded`; `_family_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_read.py:357-389; mcp/src/agents_remember/application/knowledge_read.py:404-436; mcp/src/agents_remember/application/knowledge_read.py:439-461; mcp/src/agents_remember/application/knowledge_read.py:464-486 |
+| **The persisted-nothing measurement, read through the same read-only handle the operation uses.** | `read_row_counts`; `ROW_COUNT_TEMPLATE` | mcp/src/agents_remember/application/knowledge_read.py:634-649; mcp/src/agents_remember/application/knowledge_read.py:103-105 |
+| The result assembly for a page and for a refusal, and the unusable-snapshot rendering. | `_page_result`; `_refused`; `_unusable_snapshot`; `_small_budget_refusal` | mcp/src/agents_remember/application/knowledge_read.py:493-512; mcp/src/agents_remember/application/knowledge_read.py:623-631; mcp/src/agents_remember/application/knowledge_read.py:603-620; mcp/src/agents_remember/application/knowledge_read.py:387-401 |
 | **The nodes that measure the binding refusals: the selector and the context/policy bindings in one merged case, one case each for the manifest binding, the past-the-selection position and the own-snapshot continuation.** | "test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page"; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:613-624; mcp/tests/test_knowledge_read_boundaries.py:711-769; mcp/tests/test_knowledge_read_boundaries.py:772-807; mcp/tests/test_knowledge_read_boundaries.py:923-954 |
 | **The task-free baseline read node, the snapshot/namespace/schema refusal nodes and the absent-database node.** | "test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope"; "test_a_context_naming_another_namespace_refuses_and_names_both_identities"; "test_a_context_whose_logical_digest_is_not_the_files_is_refused"; "test_a_context_declaring_another_schema_generation_is_refused_before_a_page_is_built"; "test_an_absent_database_refuses_as_an_unavailable_input_rather_than_as_empty_knowledge" | mcp/tests/test_knowledge_read_boundaries.py:565-588; mcp/tests/test_knowledge_read_boundaries.py:498-527; mcp/tests/test_knowledge_read_boundaries.py:528-553; mcp/tests/test_knowledge_read_boundaries.py:763-826; mcp/tests/test_knowledge_read_boundaries.py:591-591 |
-| **The nodes that measure the binding refusals, each with its own positive control.** | "test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page"; `_context_and_policy_bindings_refuse`; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:613-651; mcp/tests/test_knowledge_read_boundaries.py:654-708; mcp/tests/test_knowledge_read_boundaries.py:664-724; mcp/tests/test_knowledge_read_boundaries.py:772-772; mcp/tests/test_knowledge_read_boundaries.py:923-923 |
+| **The nodes that measure the binding refusals, each with its own positive control.** | "test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page"; `_context_and_policy_bindings_refuse`; "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"; "test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping"; "test_a_continuation_against_its_own_snapshot_continues_the_same_manifest" | mcp/tests/test_knowledge_read_boundaries.py:613-613; mcp/tests/test_knowledge_read_boundaries.py:654-708; mcp/tests/test_knowledge_read_boundaries.py:664-724; mcp/tests/test_knowledge_read_boundaries.py:772-772; mcp/tests/test_knowledge_read_boundaries.py:923-923 |
 | The read-only connection the seam opens. | `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
-| The schema identity the seam inspects before it selects anything. | `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:106-122 |
-| The existing reader whose confinement helper must **not** be reused for tree paths. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-58 |
+| The schema identity the seam inspects before it selects anything. | `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:111-128 |
+| The existing reader whose confinement helper must **not** be reused for tree paths. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
 
 ## Cross-Repo References
 
@@ -171,6 +186,9 @@ code tree inside one repository namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T19:59:05+00:00: Generated citation repair: `_read_inside_snapshot` repointed to mcp/src/agents_remember/application/knowledge_read.py:234-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T19:59:05+00:00: Generated citation repair: `_cursor_mismatch` repointed to mcp/src/agents_remember/application/knowledge_read.py:515-540. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **the module gains `select_knowledge_scope` (MIK-R02).** Added a Logic paragraph on the whole verified selection that `knowledge_paging/scope_pages.py` cuts to the token threshold, a sentence on the extracted `_verified_scope` and `_guarded`, the callable-surface line and two rows. The `_select_and_page` row was re-measured. `read_knowledge_scope` behaves as before.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-20T01:23+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the last four citation rows of this card — two dead anchors, one stale range and one reopened claim.** (a) The continuation-binding row's first two anchors were rewritten to the constructs that carry their facts: `test_a_continuation_presented_with_another_selector_refuses_and_returns_no_partial_page` is now `test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page` (the surviving case at 613, whose own docstring records the consolidation — "The selector half and the context/policy half are one rule ... This was three cases until they were merged, and every assertion of all three survives here"), and `test_a_continuation_presented_under_another_context_or_policy_refuses` is now `_context_and_policy_bindings_refuse` (654), the helper that case calls for the context/policy half, named as a symbol rather than as a quoted literal because that name occurs twice in the file — the call at 624 and the declaration at 654 — and only the symbol form resolves to the single declaration extent `654-708` the row cites. Both named ranges were already the live ones, so no range moved for them; the Finding text, the other three anchors and every other row are unchanged. (b) The digest row's first range `:465-497` held no construct of that row (it pointed into the middle of an unrelated case) while `test_a_context_whose_logical_digest_is_not_the_files_is_refused` is declared at 565; that range was repointed to the declaration's own span `:565-588`, giving the row's five ranges a one-to-one pairing with its five named nodes. (c) The reopened claim is the continuation-binding row above: re-read against the candidate, its wording holds as written and the two anchor rewrites plus the surviving ranges make its citation current, so the claim is retained, not re-worded or dropped. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L07-era recorded working candidate they sat beside) were replaced by ONE recorded working candidate naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it. No claim was deleted, no citation was dropped, and no range was deleted to silence a row.
 - 2026-09-20T01:01:05+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): the continuation-binding row (`application/knowledge_read.py.md` line 158) carried 5 enforced citation rows (citation_anchor_absent_from_range ×5). Three were verified already current after the earlier mechanical projection (`:664-724`, `:772-772`, `:923-923` hold the manifest, past-position and own-snapshot nodes). The other two name tests that exist nowhere in the tree any more, and the source itself records where their facts went: `test_a_continuation_presented_with_another_selector_refuses_and_returns_no_partial_page` was renamed to `test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page` (line 613) and `test_a_continuation_presented_under_another_context_or_policy_refuses` was merged into it, its own docstring stating "This was three cases until they were merged, and every assertion of all three survives here". Those two ranges were therefore re-cited to where the assertions now live — `:613-651` (the live node plus `_selector_binding_refuses`) and `:654-708` (`_context_and_policy_bindings_refuses`) — while the dead anchor cells were left exactly as they stand, because re-wording a claim is outside this pass: those two rows are reported, not claimed clear. No other range, anchor or claim wording was changed, and no verification stamp was advanced.

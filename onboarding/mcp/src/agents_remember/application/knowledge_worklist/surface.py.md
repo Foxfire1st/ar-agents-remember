@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_worklist/surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -66,8 +66,8 @@ code and memory repositories, so they are named here and not cited as rows.
 | --- | --- | --- |
 | The tool returns the last persisted worklist and computes nothing. | "The tool computes nothing here" | mcp/src/agents_remember/application/knowledge_worklist/surface.py:1-9 |
 | The three states and the compact item rows. | `leaf_worklist_fields`; `worklist_summary` | mcp/src/agents_remember/application/knowledge_worklist/surface.py:26-49 |
-| The tool's consumer of these fields. | `knowledge_integrity_check_payload`; `leaf_worklist_fields` | mcp/src/agents_remember/mcp/tools/knowledge.py:650-687 |
-| The tool returns the latest worklist and the checklist shows it. | `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it` | mcp/tests/test_knowledge_worklist_leaf.py:388-415 |
+| The tool's consumer of these fields. | `knowledge_integrity_check_payload`; `leaf_worklist_fields` | mcp/src/agents_remember/mcp/tools/knowledge.py:669-706 |
+| The tool returns the latest worklist and the checklist shows it. | `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it` | mcp/tests/test_knowledge_worklist_leaf.py:389-420 |
 
 ## Cross-Repo References
 
@@ -80,4 +80,5 @@ No meaningful cross-repo references found: the module reads one file in the coor
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/mcp/tools/knowledge.py`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

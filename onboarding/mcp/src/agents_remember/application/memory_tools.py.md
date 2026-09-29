@@ -4,8 +4,8 @@
 | ---------------------- | ---------------------------------------------------------- |
 | repository             | agents-remember                                            |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083` |
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | governingOverview      | `overview.md`                                              |
@@ -114,7 +114,7 @@ package application entry point and resolver contracts.
 | The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status`; `baseline_status` | mcp/src/agents_remember/memory/baseline.py:258-267; mcp/src/agents_remember/memory/baseline.py:300-303 |
 | Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:470-474 |
 | Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:71-102; mcp/src/agents_remember/application/memory_scope.py:105-142 |
-| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:254-260; mcp/src/agents_remember/application/memory_quality/controller.py:365-385 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:258-264; mcp/src/agents_remember/application/memory_quality/controller.py:369-389 |
 | The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-291; mcp/src/agents_remember/application/memory_tools.py:316-352 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
@@ -125,8 +125,8 @@ package application entry point and resolver contracts.
 | The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:568-585 |
 | Canonical quality scope is owned by the focused scope module. | `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:71-102 |
 | Its resolver, which binds a repository to the scope the quality surface runs against. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
-| The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:388-462 |
-| The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:512-692 |
+| The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:392-466 |
+| The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:516-680 |
 | On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. | `citation_check_tool`; `is_converted_memory` | mcp/src/agents_remember/application/memory_tools.py:173-209; mcp/src/agents_remember/memory_quality/reference_state.py:40-43 |
 | On a converted tree the citation fixer re-records only mechanically moved reference anchors. | `citation_fix_tool`; `fix_references` | mcp/src/agents_remember/application/memory_tools.py:233-276; mcp/src/agents_remember/memory_quality/reference_state.py:207-227 |
 | The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:154-170 |
@@ -134,7 +134,7 @@ package application entry point and resolver contracts.
 | The refusal rule for a caller exclude that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
 | **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** | `memory_init_tool`; `_knowledge_foundation_state`; `KNOWLEDGE_BOOTSTRAP_ROUTE` | mcp/src/agents_remember/application/memory_tools.py:357-360; mcp/src/agents_remember/application/memory_tools.py:363-392; mcp/src/agents_remember/application/memory_tools.py:395-434; mcp/src/agents_remember/application/memory_tools.py:340-343 |
 | **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** | `admit_bootstrap_context`; `BootstrapRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
-| The read that decides the block's state, and the unavailable form its states come from. | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:265-265; mcp/src/agents_remember/application/published_intent.py:214-214 |
+| The read that decides the block's state, and the unavailable form its states come from. | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:280-280; mcp/src/agents_remember/application/published_intent.py:229-229 |
 
 ## Cross-Repo References
 
@@ -190,6 +190,7 @@ a misuse behind an envelope.
 is the case that holds that boundary, and the docstring states it.
 
 ## Update History
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/published_intent.py`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T18:11:04+00:00: Generated citation repair: `memory_baseline_status_tool` repointed to mcp/src/agents_remember/application/memory_tools.py:481-488. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T18:11:04+00:00: Generated citation repair: `CarryoverCommitMessages` repointed to mcp/src/agents_remember/application/memory_tools.py:470-474. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T18:11:04+00:00: Generated citation repair: `memory_baseline_status_tool` repointed to mcp/src/agents_remember/application/memory_tools.py:481-488. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.

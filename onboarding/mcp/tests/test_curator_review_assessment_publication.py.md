@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_curator_review_assessment_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,8 +109,8 @@ the production path to drive.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:348-348; mcp/tests/test-evidence-lanes.toml:271-271 |
-| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:348-348; mcp/tests/test-evidence-lanes.toml:271-271 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:349-349; mcp/tests/test-evidence-lanes.toml:272-272 |
+| The integration-lane row this module's classification rests on, and the lane header that declares the classification. | "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" | mcp/tests/test-evidence-lanes.toml:349-349; mcp/tests/test-evidence-lanes.toml:272-272 |
 |The shared support module this module is registered as a consumer of.|"mcp/tests/test_curator_review_assessment_publication.py"| mcp/tests/test-evidence-lanes.toml:327-327; mcp/tests/evidence-lifecycle.toml:360-360; mcp/tests/evidence-lifecycle.toml:403-410; mcp/tests/evidence-lifecycle.toml:414-420 |
 | The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. | `curator_coherence_action`; `_exact_review_assessments`; `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:93-103; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:259-313; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464 |
 | The destination and read-back the survival and blocked cases measure. | `publish_assessment_evidence_bytes`; `read_back_published_bytes`; `AssessmentEvidenceBlockedError` | mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:66-96; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:154-194; mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py:197-219 |
@@ -135,6 +135,7 @@ new shared support module was written. The evidence-lifecycle catalogue's identi
 a **consumer list** changed, and the catalogue guard validates that change in both directions.
 
 ## Update History
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): No content impact: citation-only repair. Ranges into `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R30's line insertions (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-working line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R03 added one row at `:112` of `test-evidence-lanes.toml`, moving every later row down one line, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). The fixer also normalised passing ranges in rows that cite files this leaf did not change; those ranges are measurement-true. No claim, anchor or source file of this card changed.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `test-evidence-lanes.toml`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.

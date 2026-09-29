@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_currentness/surface.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T19:59:41+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083`|
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,17 +35,30 @@ and families an answer returns, computes their state with `invariant_currentness
   repository_root, default_repository)` counts only a named `codeTreeId`. A `repositoryRoot` alone, or
   nothing, requests nothing, so the block is `unverifiable`; `HEAD` is never substituted. A tree named
   without a repository is read from the mount's workspace object store.
+  **Since MIK-R02 no production path calls `requested_code_tree` or `read_currentness`:** the
+  converted-tree `knowledge_read` applies the same rule in `knowledge_paging/tree_read.py` (`_at_code_tree`:
+  only the named `codeTreeId`, or the continuation's tree on a resumed page) and computes the block through
+  `evaluate_answer`. Both functions stay exported, and L03's tests still exercise them.
 - **The published-intent block's tree (ruling 1, 18:42:37)** is chosen by its caller, `published_intent.py`:
   the tree that route already resolved for the source it returns. This module takes whatever `CodeTree`
   it is given.
 - `read_currentness(index_path, tree_key, code_tree, answer)` opens the index for that tree key, collects the
   records, and returns `invariant_currentness(...).to_document()`.
 - **It never raises (ruling N2, 19:13:41).** An index, SQLite, file-system, `ValueError` or
-  `SubprocessError` failure (`_STEP_FAILURES`; `IndexMismatchError`, `MemoryTreeError`,
+  `SubprocessError` failure (`CURRENTNESS_FAILURES`, public since MIK-R02; `IndexMismatchError`, `MemoryTreeError`,
   `KnowledgeStorageError` and `CodeReadError` are all `ValueError`s) returns a block with the `codeTree`,
   zero counts, no invariants or families, and `unverifiableReason` "currentness could not be computed
   (<type>: <message>)". With no readable index there are no entries to attach a per-entry reason to, so the
   reason is stated once for the block (the worker's deviation, accepted in review round 2).
+- **The seam MIK-R02 extracted (260928-MIK-L02, ruling F3 of 2026-09-29 20:40:40).** A bounded page is found
+  by rendering candidate pages, and each candidate carries its `currentness`, so the evaluation is split
+  out to run once per page: `named_uuids(answer)` (every projected UUID), `record_of(index, value)` (the
+  `(kind, ID)` one UUID names, or `None`), `evaluate_answer(index_path, tree_key, code_tree, answer)` (every
+  named record by UUID plus their `Currentness`; it raises the failures instead of degrading) and
+  `failure_document(code_tree, error)` (the degraded block). `returned_records` and `read_currentness` are
+  rebuilt on these helpers and behave as before: L03's `test_knowledge_currentness.py` passes unchanged,
+  and the index is still opened through this module's `KnowledgeIndex`, so its failure injection holds.
+  The caller is `application/knowledge_paging/currentness.py` (`WalkCurrentness`).
 
 ### Conventions
 
@@ -80,12 +93,15 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module statement: returned records are the UUIDs the index translates, and the answer is never edited. | "The answer itself is never edited" | mcp/src/agents_remember/application/knowledge_currentness/surface.py:1-10 |
-| Every failure class the step degrades on. | `_STEP_FAILURES` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:33-33 |
-| The records an answer returns. | `returned_records`; `text_id` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:48-64 |
-| Only a named tree ID is a request; `HEAD` is never substituted. | `requested_code_tree` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:67-80 |
-| The block, and the degraded block that never raises. | `read_currentness`; "currentness could not be computed" | mcp/src/agents_remember/application/knowledge_currentness/surface.py:83-109 |
-| The `knowledge_read` consumer, after the selection boundary. | `read_currentness`; `requested_code_tree` | mcp/src/agents_remember/mcp/tools/knowledge.py:432-441 |
-| The published-intent consumer, at its resolved source tree. | `read_published_intent`; `read_currentness` | mcp/src/agents_remember/application/published_intent.py:445-473 |
+| Every failure class the step degrades on, now public for the paged caller. | `CURRENTNESS_FAILURES` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:43-43 |
+| The records an answer returns, built on the per-UUID helper. | `returned_records`; `record_of` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:64-73; mcp/src/agents_remember/application/knowledge_currentness/surface.py:76-85 |
+| The UUIDs an answer carries, and the index's reverse map for one. | `named_uuids`; `text_id` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:58-61; mcp/src/agents_remember/application/knowledge_currentness/surface.py:67-67 |
+| The one evaluation a paged caller cuts candidates from; it raises instead of degrading. | `evaluate_answer` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:125-144 |
+| Only a named tree ID is a request; `HEAD` is never substituted. | `requested_code_tree` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:88-101 |
+| The block, which degrades to the failure document and never raises. | `read_currentness`; `failure_document` | mcp/src/agents_remember/application/knowledge_currentness/surface.py:104-122; mcp/src/agents_remember/application/knowledge_currentness/surface.py:147-156 |
+| The degraded block's reason text. | `failure_document`; "currentness could not be computed" | mcp/src/agents_remember/application/knowledge_currentness/surface.py:147-156 |
+| The `knowledge_read` consumer since MIK-R02: currentness once per page at the walk's code tree. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:463-479 |
+| The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. | `read_published_intent`; `WalkCurrentness` | mcp/src/agents_remember/application/published_intent.py:460-486 |
 | No tree, or only a repository, is unverifiable and never reads `HEAD`. | `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head` | mcp/tests/test_knowledge_currentness.py:561-580 |
 | A failing step degrades to a reason and never refuses the read. | `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read` | mcp/tests/test_knowledge_currentness.py:633-656 |
 
@@ -99,6 +115,8 @@ both named by its caller.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T19:58:54+00:00: Generated citation repair: `requested_code_tree` repointed to mcp/src/agents_remember/application/knowledge_currentness/surface.py:88-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **body updated for the seam MIK-R02 extracted.** A Logic paragraph records `named_uuids`, `record_of`, `evaluate_answer`, `failure_document` and the now-public `CURRENTNESS_FAILURES` (formerly `_STEP_FAILURES`), used by `knowledge_paging/currentness.py` to compute currentness once per page (architect ruling F3, 2026-09-29 20:40:40). **Three reopened claims were re-read and reworded:** the failure-class row now names `CURRENTNESS_FAILURES`; the returned-records row names `record_of` (with a new `named_uuids` row and an `evaluate_answer` row); the degraded-block row is split into `read_currentness` and `failure_document`. **The two consumer rows were reworded:** `knowledge_read` now reaches this module through `_tree_extras` and `WalkCurrentness`, and the published-intent block through `WalkCurrentness`; the Logic records that no production path calls `requested_code_tree` or `read_currentness` any more. `returned_records` and `read_currentness` behave as before.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): created this card for the new file MIK-R03 adds. It records the architect rulings of 2026-09-29: 18:42:37 rulings 1 to 3 (the published-intent tree is its caller's; only `codeTreeId` is a request and `HEAD` is never used; the returned invariants and families) and 19:13:41 rulings N2 (never refuses, never raises) and N5 (the counts cover every invariant carried, named or in full). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

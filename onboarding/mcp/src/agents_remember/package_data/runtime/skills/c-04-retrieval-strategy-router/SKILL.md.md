@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-09-21T18:09+02:00                     |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`             |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`             |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview      | `../../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -51,7 +51,19 @@ two, the payload's own field spellings (`kind`, `item_id`, `invariant_id`, `reco
 `counts.primary_items_total`, `counts.primary_items_remaining`), the three named `state`s with their
 refusal codes, the seed-level absences (`registration_absent`, `selector_absent`), and the limitation that
 a bounded page's `continuation` continues the selective scope read rather than the mounted `knowledge_read`
-tool, so a deeper read is taken by identity. The section's source is the authored root skill
+tool, so a deeper read is taken by identity. **Since 260928-MIK-L02 (MIK-R02) that limitation holds only for
+a block read from a database.** The section now teaches the taught route of MIK-R02 rule 6: when the block's
+`memoryTree` is present, the whole knowledge block is cut to one shared threshold (`threshold`, 8,000
+`tiktoken:o200k_base` tokens), each page's `page` states `total`, `returned` and `remaining`, and a page's
+`continuation` is followed through `knowledge_read` (`continuationOperation: "knowledge_read"`), passing the
+value of `memoryTree.memoryRoot` as `databasePath`, `repositoryId`, the `continuationView` as `view` and the
+token as `continuation`, and nothing else; naming a different `orderingInput` or `codeTreeId` is refused, and
+`repositoryRoot` is named only when the code repository is not the mount's workspace. It explains deferred
+seeds and the collapsed deferred entry with its `seeds`, `page.headerReference`, `oversized_row`, and the two
+refusals (`continuation_binding_mismatch`: restart from the seed; `continuation_unreadable`). The consumer
+note of review R2-2 is taught here: follow `continuation`, not `enumerationComplete`, through a collapsed
+walk (accepted by the architect, ruling 2026-09-29 21:32:34). The database paragraph keeps the by-identity
+read. The section's source is the authored root skill
 `skills/c-04-retrieval-strategy-router/SKILL.md`, and this generated mirror is one of the nine copies the
 repository's own `scripts/sync-skills.py` writes from it.
 
@@ -116,7 +128,8 @@ without publishing — which is why the flag stays a selection rather than a def
 `ICR-R25@v1` obligation is unchanged (the two-consecutive-task journey that has to prove task A's
 publication lands where task B's planner looks). Nothing else in the mirror moved: the same section
 still states the memory-root rule with no fallback, the exact payload spellings, the named `state`s and
-their refusal codes, and the continuation limitation as a limitation.
+their refusal codes, and the continuation limitation as a limitation (for a database block only, since
+260928-MIK-L02).
 
 ### Todos
 
@@ -135,15 +148,16 @@ retrieval contract over installed provider tooling and durable onboarding.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-32 |
+| `c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them. | `## Retrieval Substrates` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-33 |
 | **The Intent bullet now names the published-intent half: the same `read_ar_files` call carries the invariants a previous task already recorded about the requested paths, at their exact snapshot and without needing a task.** | `## Retrieval Substrates` (Intent bullet) | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-33 |
-| **The route section, which is this leaf's carrier: the publication location the read side declares, and — restated as current truth by `260921-ICR-L20` — the ordinary write side publishing to that same location with `--publish`, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.** | `## Published Intent Before Planning`; "Where the route reads, and what publishes there." | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |
-| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-82 |
-| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:84-131 |
-| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-131 |
+| **The route section, which is this leaf's carrier: the publication location the read side declares, and — restated as current truth by `260921-ICR-L20` — the ordinary write side publishing to that same location with `--publish`, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.** | `## Published Intent Before Planning`; "Where the route reads, and what publishes there." | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-253 |
+| **MIK-R02 rule 6, the taught route: a memory tree's bounded page, deferred or collapsed seeds, and every continuation followed through `knowledge_read`.** | "Follow a bounded page through"; "The threshold bounds the whole block, not each path." | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:223-245 |
+| Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-83 |
+| Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes. | `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:84-132 |
+| The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples. | `## Semantics: GrepAI`, `## Relationship: CodeGraphContext` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:34-132 |
 | The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs. | "grepai-high-leverage-usage.md", "codegraphcontext-high-level-methods.md" | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:82-82; mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:126-126 |
-| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | `## Intent: Onboarding And Source` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:133-171 |
-| The generated route-index semantics close the skill, and are unchanged by this leaf. | `## Route Index Semantics` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:231-239 |
+| Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery. | `## Intent: Onboarding And Source` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:133-172 |
+| The generated route-index semantics close the skill, and are unchanged by this leaf. | `## Route Index Semantics` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:254-262 |
 | The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
 | The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only. | `analyze` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md:1-44 |
 
@@ -157,6 +171,8 @@ They do not contain private sibling repository names, symbols, paths, or code.
 | No source-code contract is imported from a sibling repository. | n/a | n/a |
 
 ## Update History
+- 2026-09-29T19:59:16+00:00: Generated citation repair: `## Route Index Semantics` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:254-262. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **body updated — this generated mirror carries MIK-R02 rule 6.** The skill's published-intent section now teaches following a memory tree's bounded page through `knowledge_read` (the threshold, `page`, deferred and collapsed seeds, the ordering and code-tree binding, `oversized_row`, the two refusals), and keeps the by-identity read for a database block. The Logic paragraph and the Invariants paragraph say the continuation limitation is a database block's only, and one row was added; the route-section row was re-measured (`:173-253`). The authored source is `skills/c-04-retrieval-strategy-router/SKILL.md`; `sync-skills.py --check` is clean over all copies, and the dot-dir copies have no cards (covered by the root overview). Records the architect ruling of 21:32:34 (R2-2 accepted as documented in c-04).
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T19:16:12+00:00: Generated citation repair: `## Retrieval Substrates` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12-33. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
 

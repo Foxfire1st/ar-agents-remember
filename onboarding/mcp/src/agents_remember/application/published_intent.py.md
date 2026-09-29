@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/published_intent.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083` |
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -76,8 +76,10 @@ side's `resolve_published_intent` still selects the database, and no writer reac
    `PathSeed` per requested path and calls `read_published_intent`, which opens the context and builds one
    page per seed with `read_knowledge_scope`, passing the caller's identity seeds through unchanged.
    `task_ref` is left unset, because planning has to be able to read recorded knowledge before a leaf
-   exists. `PUBLISHED_INTENT_MAX_ITEMS` (8) and `PUBLISHED_INTENT_MAX_UTF8_BYTES` (8192) bound each page;
-   a page that leaves items behind reports `hasMore` and hands back the continuation that reaches them.
+   exists. `PUBLISHED_INTENT_MAX_ITEMS` (8) and the byte bound (8192, private as `_DATABASE_PAGE_MAX_UTF8_BYTES`
+   since MIK-R02) bound each **database** page; a page that leaves items behind reports `hasMore` and hands
+   back the continuation that reaches them. A memory-tree page is cut by the shared token threshold instead
+   (below).
 
 **The converted-tree route (MIK-R23 rule 6).** `converted_memory_tree(path)` answers the tree a dataset
 selection names: the path itself when it is a directory holding `knowledge/layout.json`, or its parent when
@@ -102,14 +104,32 @@ the binding (`memoryRoot`, `treeId`, `indexState`, `problems[]`), shared with th
 **Returned invariants carry their currentness (MIK-R03).** For a converted tree, `read_published_intent`
 adds a `currentness` block beside the pages: the state of every invariant and family the pages return
 (`stale`, `unverifiable`, `unrealized` or `current`), each entry that is not current, the counts by state
-and each family's stale members, computed by `knowledge_currentness.read_currentness`. **The tree it observes
+and each family's stale members, computed once per block by `knowledge_paging.currentness.WalkCurrentness`
+inside `_tree_block`, so the block is measured with it (MIK-R02, ruling F3 of 2026-09-29 20:40:40). **The tree it observes
 is the one this route already resolved for the source it returns** (architect ruling 1, 2026-09-29T18:42:37):
 the `sourceResolution` pair, the code root's `HEAD^{tree}`. That is the read's own resolved tree, not a
 fallback. The block names it (`codeTree.treeId`) and states its scope in `treeScope` (`_TREE_SCOPE`: "states
 observed at the committed code tree <id> this read resolved; uncommitted working-tree edits are not
 reflected"). When the route resolves no pair, `codeTree` is `null`, there is no `treeScope`, and every realized
-invariant is `unverifiable` ("no code tree was requested"). `read_currentness` never raises (ruling N2,
+invariant is `unverifiable` ("no code tree was requested"). The computation never raises (ruling N2,
 19:13:41), so this function holds no `try` of its own. MIK-R29 may add an explicit tree selector later.
+
+**A memory tree's block is bounded as a whole and continues through `knowledge_read` (MIK-R02).** For a
+converted tree, `_seed_block` hands each seed to `_tree_page_block`, which returns the seed's whole scope
+prepared by `knowledge_paging.scope_pages.prepare_scope` (or the read's own refusal block).
+`read_published_intent` then returns `bounded_block(blocks, envelope)` (`knowledge_paging/block_pages.py`),
+with `_tree_block` as the envelope: the recorded block around the laid-out seeds, plus `threshold` and the
+`currentness` with its `treeScope`, so everything the block carries beside its seeds is inside the measured
+block. **The threshold bounds the knowledge block of a `read_ar_files` response as a whole, not each seed**
+(architect ruling Q1, 2026-09-29 19:56:40); source files and onboarding are outside it. Seeds are laid out in
+order; once the block is full, each remaining seed is `state: "deferred"` with only its counts and a
+position-0 continuation, and when those would not fit they collapse into one deferred entry listing its
+`seeds` (ruling F2, 20:40:40). Every page carries `page` (the threshold, the binding and the walk's counts),
+`continuationOperation: "knowledge_read"` and `continuationView`, and its `continuation` is the shared
+`knowledge-continuation/v2` token the mounted tool resumes. `_candidates` hands every row any seed could
+carry to the one currentness computation (`_code_tree` is the source pair's tree). `PUBLISHED_INTENT_MAX_UTF8_BYTES`
+left the public API (ruling Q2): the database page keeps the bound privately until MIK-R26 (L26) retires that
+route. The database path is unchanged and keeps a `cast`, because it never prepares a scope.
 
 **Every way the selection can fail is a named state rather than an empty success.** `_absence_state`
 separates two facts a caller acts on differently and one answer cannot state both: `not-recorded` is
@@ -147,8 +167,9 @@ inside the read — `_seed_json` asks the value for its own `model_dump` and ans
   `sourceResolution` (`repositoryRoot` plus `codeTreeId`, or `null` when the pair was unrequested), plus
   `memoryTree` only when the selection is a converted memory tree. It claims nothing about history and never
   claims that `context_packet` retrieved invariants.
-- **`continuationOperation` is stated because the answer is not the obvious one.** The cursor a page mints
-  is a `read_knowledge_scope` cursor, while the mounted `knowledge_read` tool continues *views* and refuses
+- **`continuationOperation` is stated because the answer is not the obvious one.** On a memory tree it is
+  `knowledge_read`, which resumes the shared token (MIK-R02). On a database the cursor a page mints is a
+  `read_knowledge_scope` cursor, while the mounted `knowledge_read` tool continues *views* and refuses
   it. A caller that needs more than the page carries reads on **by identity** — the exact
   `invariant_id`/`revision_id` the page returned — rather than paging this cursor through a tool that does
   not accept it.
@@ -169,6 +190,9 @@ inside the read — `_seed_json` asks the value for its own `model_dump` and ans
 - **Currentness never edits or withholds the pages, and never refuses the block.** A stale invariant stays in
   its page; a currentness failure is stated as `unverifiableReason`. An unconverted root carries no
   `currentness` key.
+- **A memory tree's knowledge block never exceeds the threshold**, except a single row too large on its own,
+  returned alone and flagged `oversized_row`; every seed's selected rows are returned exactly once across the
+  block and its continuations (MIK-R02).
 - **A partial index is never presented as complete.** Every page read from a tree carries `indexState`, and a
   `partial` one forces `enumerationComplete` to `false`.
 - **No fallback between memory roots, and no cross-repository substitution.** A publication that is not on
@@ -190,8 +214,9 @@ inside the read — `_seed_json` asks the value for its own `model_dump` and ans
 No implementation scope is opened here. Three carried observations belong to the owning seats rather than
 to this file: the identity-seed entry point is production code with no mounted caller (the MCP surface
 reaches identity reads through `knowledge_read` plus the returned `datasetPath`/`repositoryId`); the
-per-seed page bound can truncate, and the intended deeper read is by identity because the mounted tool does
-not consume a scope cursor; and a genuine decoder defect inside the read is reported as an input fact
+per-seed page bound of a **database** read can truncate, and the intended deeper read there is by identity
+because the mounted tool does not consume a database scope cursor (a memory tree's pages continue through
+`knowledge_read` since MIK-R02); and a genuine decoder defect inside the read is reported as an input fact
 (`unusable`) rather than surfacing as a bug — a deliberate trade for "the paired read must not fail because
 of a foreign file".
 
@@ -209,33 +234,36 @@ repository source only.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The one file name a repository's published dataset occupies inside its memory layer, with the comment that now states the current truth: this route declares the location it reads, and the ordinary write side publishes there through `--publish`.** | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:147-147 |
-| **The location resolver: repository-scoped by construction, following the resolved memory root with no fallback between the canonical root and a leaf's memory worktree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:246-262 |
-| **The resolution and the guard that make a missing, corrupt or foreign publication a named state rather than an empty success.** | `resolve_published_intent`; `_absence_state` | mcp/src/agents_remember/application/published_intent.py:211-235; mcp/src/agents_remember/application/published_intent.py:265-289; mcp/src/agents_remember/application/published_intent.py:394-424 |
-| **The dataset's own identity is read from the file rather than taken from a caller; since MIK-R23 a selection may also name the converted memory tree it reads through the index (`memory_tree`, `None` for a database).** | `PublishedIntentSelection`; `PublishedMemoryTree` | mcp/src/agents_remember/application/published_intent.py:182-196; mcp/src/agents_remember/application/published_intent.py:199-210 |
-| **The authority-home guard that makes "never silently select another repository" verified rather than claimed.** | `_authority_mismatch`; `_bound_authority_home` | mcp/src/agents_remember/application/published_intent.py:525-542; mcp/src/agents_remember/application/published_intent.py:545-553 |
-| **The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.** | `_source_pair`; `PublishedIntentSourcePair` | mcp/src/agents_remember/application/published_intent.py:169-179; mcp/src/agents_remember/application/published_intent.py:501-522 |
-| **The ordinary route's whole public surface: resolve the publication — a converted memory tree first, the database otherwise — seed it with the paths the caller already asked about, and read one bounded page per path with every failure returned as a named state.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:427-442 |
-| **The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.** | `read_published_intent`; `_bind_index_state` | mcp/src/agents_remember/application/published_intent.py:445-473; mcp/src/agents_remember/application/published_intent.py:484-498 |
-| **The converted-tree route: which path names a converted tree, the one dataset resolution every knowledge read applies, the refusal without a coordination root, and the index selection that recomputes the tree key.** | `converted_memory_tree`; `select_knowledge_dataset`; `SelectedKnowledgeDataset`; `_index_selection` | mcp/src/agents_remember/application/published_intent.py:320-325; mcp/src/agents_remember/application/published_intent.py:328-341; mcp/src/agents_remember/application/published_intent.py:313-318; mcp/src/agents_remember/application/published_intent.py:344-363; mcp/src/agents_remember/application/published_intent.py:379-391 |
-| **The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.** | `resolve_published_memory_tree`; `_TREE_FAILURES` | mcp/src/agents_remember/application/published_intent.py:159-159; mcp/src/agents_remember/application/published_intent.py:166-166; mcp/src/agents_remember/application/published_intent.py:292-317 |
+| **The one file name a repository's published dataset occupies inside its memory layer, with the comment that now states the current truth: this route declares the location it reads, and the ordinary write side publishes there through `--publish`.** | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:160-160 |
+| **The location resolver: repository-scoped by construction, following the resolved memory root with no fallback between the canonical root and a leaf's memory worktree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:261-277 |
+| **The resolution and the guard that make a missing, corrupt or foreign publication a named state rather than an empty success.** | `resolve_published_intent`; `_absence_state` | mcp/src/agents_remember/application/published_intent.py:211-235; mcp/src/agents_remember/application/published_intent.py:280-304; mcp/src/agents_remember/application/published_intent.py:409-439 |
+| **The dataset's own identity is read from the file rather than taken from a caller; since MIK-R23 a selection may also name the converted memory tree it reads through the index (`memory_tree`, `None` for a database).** | `PublishedIntentSelection`; `PublishedMemoryTree` | mcp/src/agents_remember/application/published_intent.py:197-211; mcp/src/agents_remember/application/published_intent.py:214-225 |
+| **The authority-home guard that makes "never silently select another repository" verified rather than claimed.** | `_authority_mismatch`; `_bound_authority_home` | mcp/src/agents_remember/application/published_intent.py:573-590; mcp/src/agents_remember/application/published_intent.py:593-601 |
+| **The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.** | `_source_pair`; `PublishedIntentSourcePair` | mcp/src/agents_remember/application/published_intent.py:184-194; mcp/src/agents_remember/application/published_intent.py:549-570 |
+| **The ordinary route's whole public surface: resolve the publication — a converted memory tree first, the database otherwise — seed it with the paths the caller already asked about, and read one bounded page per path with every failure returned as a named state.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:442-457 |
+| **The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.** | `read_published_intent`; `_bind_index_state` | mcp/src/agents_remember/application/published_intent.py:460-486; mcp/src/agents_remember/application/published_intent.py:532-546 |
+| **The converted-tree route: which path names a converted tree, the one dataset resolution every knowledge read applies, the refusal without a coordination root, and the index selection that recomputes the tree key.** | `converted_memory_tree`; `select_knowledge_dataset`; `SelectedKnowledgeDataset`; `_index_selection` | mcp/src/agents_remember/application/published_intent.py:394-406; mcp/src/agents_remember/application/published_intent.py:335-340; mcp/src/agents_remember/application/published_intent.py:343-356; mcp/src/agents_remember/application/published_intent.py:359-378; mcp/src/agents_remember/application/published_intent.py:379-391 |
+| **The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.** | `resolve_published_memory_tree`; `_TREE_FAILURES` | mcp/src/agents_remember/application/published_intent.py:174-174; mcp/src/agents_remember/application/published_intent.py:181-181; mcp/src/agents_remember/application/published_intent.py:307-332 |
 | **The module docstring paragraph that states the switch: only the read selects a tree, and the write side still selects the database.** | "A converted memory tree is selected as a tree" | mcp/src/agents_remember/application/published_intent.py:54-63 |
-| **MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope`; with no pair, every realized invariant is unverifiable.** | `read_published_intent`; `read_currentness`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:445-473; mcp/src/agents_remember/application/published_intent.py:478-481 |
+| **MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope` and computed once inside the bounded block; with no pair, every realized invariant is unverifiable.** | `_tree_block`; `WalkCurrentness`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:460-507; mcp/src/agents_remember/application/published_intent.py:526-529 |
+| **MIK-R02: a memory tree's whole knowledge block is bounded by the shared threshold, with the database path unchanged.** | `read_published_intent`; `bounded_block`; `_candidates` | mcp/src/agents_remember/application/published_intent.py:460-486; mcp/src/agents_remember/application/published_intent.py:515-521 |
+| **MIK-R02: a memory-tree seed is prepared for the block, not read as a budgeted page.** | `_tree_page_block`; `prepare_scope` | mcp/src/agents_remember/application/published_intent.py:674-695 |
+| **The module docstring paragraph for the bounded block and its continuation.** | "A memory tree's page continues through" | mcp/src/agents_remember/application/published_intent.py:71-79 |
 | **The module docstring paragraph for the currentness block.** | "Returned invariants carry their currentness" | mcp/src/agents_remember/application/published_intent.py:54-58 |
 | The published-intent case: the resolved tree and `treeScope`, an uncommitted edit that changes nothing, and no resolved tree. | `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree` | mcp/tests/test_knowledge_currentness.py:583-630 |
-| **A page from a partial index is never presented as complete.** | "enumerationComplete" | mcp/src/agents_remember/application/published_intent.py:495-497 |
-| **The two shipped owners this module delegates the read to, reused unchanged.** | `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
-| **The per-seed bound, and the page that reports `hasMore`, the counts and the continuation which reaches the rest.** | `PUBLISHED_INTENT_MAX_ITEMS`; `PUBLISHED_INTENT_MAX_UTF8_BYTES`; `_page_block` | mcp/src/agents_remember/application/published_intent.py:152-153; mcp/src/agents_remember/application/published_intent.py:689-712 |
-| **The limitation that travels with a bounded page: the cursor continues the scope read, and the mounted read tool continues views.** | "continuationOperation" | mcp/src/agents_remember/application/published_intent.py:711-711 |
-| **A path no recorded anchor could carry is refused as a seed instead of being answered with an absence this read never observed.** | `_source_seed`; `_UnseedablePath` | mcp/src/agents_remember/application/published_intent.py:233-243; mcp/src/agents_remember/application/published_intent.py:573-587 |
-| **A value that is not one of the typed seeds is a named refusal naming its own Python type, never an `AttributeError` from inside the read.** | `_seed_json`; `_unaddressable_seed_block` | mcp/src/agents_remember/application/published_intent.py:624-637; mcp/src/agents_remember/application/published_intent.py:640-660 |
-| **One item exactly as the read selected it: dumped by its own model, excluding `None` without dropping a recorded value.** | `_item_json` | mcp/src/agents_remember/application/published_intent.py:715-723 |
-| **The recorded block that names the dataset, its snapshot, the source pair and — only for a converted memory tree — the `memoryTree` binding, and the block a publication that could not be read answers with.** | `_recorded_block`; `_memory_tree_block`; `memory_tree_block`; `_unavailable_block` | mcp/src/agents_remember/application/published_intent.py:740-761; mcp/src/agents_remember/application/published_intent.py:764-768; mcp/src/agents_remember/application/published_intent.py:366-376; mcp/src/agents_remember/application/published_intent.py:771-780 |
-| **The failure set modelled as input facts, so a paired read never aborts because a repository's knowledge file was foreign.** | `_PUBLICATION_FAILURES` | mcp/src/agents_remember/application/published_intent.py:165-165 |
+| **A page from a partial index is never presented as complete.** | "enumerationComplete" | mcp/src/agents_remember/application/published_intent.py:543-545 |
+| **The two shipped owners this module delegates the read to, reused unchanged.** | `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
+| **The database page's bounds (the byte bound private since MIK-R02), and the page that reports `hasMore`, the counts and the database cursor.** | `PUBLISHED_INTENT_MAX_ITEMS`; `_DATABASE_PAGE_MAX_UTF8_BYTES`; `_page_block` | mcp/src/agents_remember/application/published_intent.py:167-168; mcp/src/agents_remember/application/published_intent.py:763-786 |
+| **The limitation that travels with a database page: its cursor continues the scope read, which the mounted read tool does not resume.** | "continuationOperation" | mcp/src/agents_remember/application/published_intent.py:785-785 |
+| **A path no recorded anchor could carry is refused as a seed instead of being answered with an absence this read never observed.** | `_source_seed`; `_UnseedablePath` | mcp/src/agents_remember/application/published_intent.py:248-258; mcp/src/agents_remember/application/published_intent.py:621-635 |
+| **A value that is not one of the typed seeds is a named refusal naming its own Python type, never an `AttributeError` from inside the read.** | `_seed_json`; `_unaddressable_seed_block` | mcp/src/agents_remember/application/published_intent.py:624-637; mcp/src/agents_remember/application/published_intent.py:698-711; mcp/src/agents_remember/application/published_intent.py:714-734 |
+| **One item exactly as the read selected it: dumped by its own model, excluding `None` without dropping a recorded value.** | `_item_json` | mcp/src/agents_remember/application/published_intent.py:789-797 |
+| **The recorded block that names the dataset, its snapshot, the source pair and — only for a converted memory tree — the `memoryTree` binding, and the block a publication that could not be read answers with.** | `_recorded_block`; `_memory_tree_block`; `memory_tree_block`; `_unavailable_block` | mcp/src/agents_remember/application/published_intent.py:814-835; mcp/src/agents_remember/application/published_intent.py:838-842; mcp/src/agents_remember/application/published_intent.py:381-391; mcp/src/agents_remember/application/published_intent.py:845-854 |
+| **The failure set modelled as input facts, so a paired read never aborts because a repository's knowledge file was foreign.** | `_PUBLICATION_FAILURES` | mcp/src/agents_remember/application/published_intent.py:180-180 |
 | The dataset identity reader reused here: it answers an identity or a reason, and never raises for a caller. | `read_dataset_identity` | mcp/src/agents_remember/application/knowledge_before_half.py:210-223 |
 | The read-only connection the authority check opens, and the authority-home row it reads. | `open_read_only_database`; `bound_repository` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63; mcp/src/agents_remember/memory/knowledge/logical.py:178-197 |
 | The one Git command this route runs, through the shared owner. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-214 |
-| The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. | `_absence_refusal`; `_invariant_identity_is_recorded`; `_family_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_read.py:357-389; mcp/src/agents_remember/application/knowledge_read.py:392-414; mcp/src/agents_remember/application/knowledge_read.py:417-439 |
+| The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. | `_absence_refusal`; `_invariant_identity_is_recorded`; `_family_identity_is_recorded` | mcp/src/agents_remember/application/knowledge_read.py:357-389; mcp/src/agents_remember/application/knowledge_read.py:404-436; mcp/src/agents_remember/application/knowledge_read.py:439-461; mcp/src/agents_remember/application/knowledge_read.py:464-486 |
 | The typed seeds and budget this route constructs, and the policy version the recorded block carries. | `PathSeed`; `KnowledgeReadBudget`; `KnowledgeReadRequest`; `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:128-155; mcp/src/agents_remember/models/knowledge/read.py:250-259; mcp/src/agents_remember/models/knowledge/read.py:262-272; mcp/src/agents_remember/models/knowledge/read.py:91-91 |
 | The refusal and item shapes this route renders without re-spelling. | `KnowledgeRefusal`; `ReadItem` | mcp/src/agents_remember/models/knowledge/result.py:235-245; mcp/src/agents_remember/models/knowledge/read.py:329-367 |
 | The storage failure class the input-fact set is built around. | `KnowledgeStorageError` | mcp/src/agents_remember/memory/knowledge/refusals.py:27-32 |
@@ -256,6 +284,10 @@ memory layer this repository's own coordination declaration resolves, and reache
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T19:59:11+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T19:59:11+00:00: Generated citation repair: `_item_json` repointed to mcp/src/agents_remember/application/published_intent.py:789-797. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T19:59:11+00:00: Generated citation repair: `_PUBLICATION_FAILURES` repointed to mcp/src/agents_remember/application/published_intent.py:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **the memory-tree block is bounded as a whole and continues through `knowledge_read` (MIK-R02).** Added the Logic paragraph on `_tree_page_block`, `bounded_block`, `_tree_block`, `_candidates` and `_code_tree`, an Invariants bullet and three rows. Records architect rulings 19:56:40 Q1 (the whole block is bounded; remaining seeds are deferred) and Q2 (the byte bound is private until L26), 20:40:40 F2 (the collapsed tail) and F3 (currentness once, inside the measured block). **Reopened claim re-read and reworded:** the per-seed-bound row named the retired `PUBLISHED_INTENT_MAX_UTF8_BYTES`; it now names `_DATABASE_PAGE_MAX_UTF8_BYTES` and says the bounds are the database page's. The MIK-R03 row now names `_tree_block` and `WalkCurrentness`, the `continuationOperation` row and Conventions bullet say the limitation is the database page's, and the Logic, currentness paragraph and Todos say the same.
 - 2026-09-29T18:08:49+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T18:08:49+00:00: Generated citation repair: `_item_json` repointed to mcp/src/agents_remember/application/published_intent.py:715-723. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T18:08:49+00:00: Generated citation repair: `_PUBLICATION_FAILURES` repointed to mcp/src/agents_remember/application/published_intent.py:165-165. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -267,7 +267,29 @@ the invariant holds. No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional field and the docstring boundary. | `KnowledgeReadResponse`; "Proofs beside the view (MIK-R28 rule 4)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:19-23; mcp/src/agents_remember/models/tools/knowledge_responses.py:58-79 |
+| The optional field and the docstring boundary. | `KnowledgeReadResponse`; "Proofs beside the view (MIK-R28 rule 4)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:27-31; mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89 |
+
+## 260928-MIK-L02 The Shared Continuation Token, And The Read Response's Page
+
+**Route impact (MIK-R02@v2).** Three model modules change:
+
+- [`knowledge/continuation.py`](knowledge/continuation.py.md) (new, carded, governed by this overview):
+  `KnowledgeContinuation`, the one `knowledge-continuation/v2` token (`kc2.` prefix; short aliases,
+  compressed canonical JSON). It binds the memory tree, the response and resuming view, the seed (with a view
+  walk's effective ordering), the selection policy and version, the manifest digest, the position, the
+  threshold, the code tree page 1 resolved at, and at most 64 queued seeds. It carries no local path
+  (architect rulings 19:56:40 Q5 and Q6; 20:40:40 F2; the tree ID binding accepted at 21:32:34; the 64-seed
+  edge carried to L01).
+- [`tools/knowledge_responses.py`](tools/knowledge_responses.py.md): `KnowledgeReadResponse.state` gains
+  `"page"`, and the model gains the optional `page` and `threshold` fields, both absent for a database.
+- [`knowledge/projection_manifest.py`](knowledge/projection_manifest.py.md): the projection refusal closure
+  gains `oversized_row`, additively.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one continuation token and what it binds. | `KnowledgeContinuation` | mcp/src/agents_remember/models/knowledge/continuation.py:72-113 |
+| The read response's page state and fields. | `KnowledgeReadResponse`; `page` | mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89 |
+| The projection refusal code for a row too large for one artifact. | `OVERSIZED_ROW` | mcp/src/agents_remember/models/knowledge/projection_manifest.py:124-124 |
 
 ## 260928-MIK-L08 The Integrity And Sync Responses Carry The Worklist
 
@@ -285,7 +307,7 @@ responses are unchanged. No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integrity response's optional fields. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:114-114; mcp/src/agents_remember/models/tools/knowledge_responses.py:149-149 |
+| The integrity response's optional fields. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:124-124; mcp/src/agents_remember/models/tools/knowledge_responses.py:159-159 |
 | The sync response's worklist summary. | "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" | mcp/src/agents_remember/models/worktree.py:492-507 |
 
 ## 260928-MIK-L03 The Read Response Carries Optional Currentness
@@ -299,7 +321,7 @@ never refuses the read (N2). No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional field and its docstring paragraph. | `currentness`; "Currentness beside the view (MIK-R03)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:25-25; mcp/src/agents_remember/models/tools/knowledge_responses.py:77-77 |
+| The optional field and its docstring paragraph. | `currentness`; "Currentness beside the view (MIK-R03)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:33-33; mcp/src/agents_remember/models/tools/knowledge_responses.py:87-87 |
 
 ## 260928-MIK-L30 What The `onboarding_trace` Row Means
 
@@ -315,6 +337,7 @@ sync also writes it when it moves an open leaf's markers. The root route's subje
 | The row kind's docstring with MIK-R30's meaning. | `OnboardingTraceRow`; "for the root route). MIK-R30 owns the kind" | mcp/src/agents_remember/models/knowledge_files/history.py:250-272 |
 
 ## Update History
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** Added the section "260928-MIK-L02 The Shared Continuation Token, And The Read Response's Page" before L08's: the new `knowledge/continuation.py` (carded, governed by this overview), the read response's `page` state and `page`/`threshold` fields, and the projection refusal `oversized_row`, with the rulings of 19:56:40, 20:40:40 and 21:32:34. Three rows. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** Added the section "260928-MIK-L30 What The `onboarding_trace` Row Means" (the docstring-only change to `OnboardingTraceRow`, architect ruling 2026-09-29T18:49:50 (3)). One row. No verification stamp was advanced.
 - 2026-09-29T18:09:54+00:00: Generated citation repair: "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklistState: Literal[" repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:114-114; mcp/src/agents_remember/models/tools/knowledge_responses.py:149-149. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **route body updated for MIK-R03.** Added the section "260928-MIK-L03 The Read Response Carries Optional Currentness" after L08's. One row.
@@ -2900,7 +2923,7 @@ are unchanged, and no other model this route owns changed.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new field, on the strict response model that declares it.** | `ReadArFilesResponse`; `published_intent` | mcp/src/agents_remember/models/read_files.py:56-80; mcp/src/agents_remember/models/read_files.py:74-74 |
-| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:427-442 |
+| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:442-457 |
 | The strict envelope base the field joined. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
 | The registry entry for the tool whose payload carries the field; unchanged by this leaf. | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
 
@@ -3253,7 +3276,7 @@ new `memoryTree` and per-page `indexState` travel in it without a new declaratio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional memory-tree fields on the three responses. | `KnowledgeReadResponse`; `KnowledgeDiffResponse`; `KnowledgeProjectResponse` | mcp/src/agents_remember/models/tools/knowledge_responses.py:58-79; mcp/src/agents_remember/models/tools/knowledge_responses.py:95-111; mcp/src/agents_remember/models/tools/knowledge_responses.py:153-167 |
+| The optional memory-tree fields on the three responses. | `KnowledgeReadResponse`; `KnowledgeDiffResponse`; `KnowledgeProjectResponse` | mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89; mcp/src/agents_remember/models/tools/knowledge_responses.py:105-121; mcp/src/agents_remember/models/tools/knowledge_responses.py:163-177 |
 | The docstring rule: a memory tree is named, never hidden, and a partial index is never presented as complete. | "A memory tree is named, never hidden" | mcp/src/agents_remember/models/tools/knowledge_responses.py:12-17 |
 
 ## Update History

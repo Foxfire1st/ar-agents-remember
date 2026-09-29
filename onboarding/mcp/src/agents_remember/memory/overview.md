@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
+| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1255,7 +1255,7 @@ one leaf's curation pass.
 | **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 | The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
-| The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:139-192; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:587-603 |
+| The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:144-220; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:634-650 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
 | The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1148-1148 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1286,7 +1286,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:267-267 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:272-272 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1586,6 +1586,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-29T20:01:17+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:272-272. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/knowledge_read.py`, `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the index's two proof lookups, `proofs_of` and `invariants_without_proof`, with the architect ruling that the "without proof" list is information, not a gate. One row. The reopened `_self_and_ancestors` claim was re-read against the working tree: the function is unchanged and sits 27 lines lower. The row now states what the function returns (the path and every ancestor, nearest first, ending with `.`), and its generated repair bullet was removed because the claim was reworded. Other rows citing files this change moved were re-pointed by the installed `memory-citations --fix`, with no wording change.
 - 2026-09-29T13:25:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:267-267. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New section: the `conversion/` package and its ten cards. The package gets **no overview of its own**, following its siblings `knowledge/`, `migration/`, `knowledge_census/` and `knowledge_index/`. The section records the architect rulings the cards carry and adds seven rows.
@@ -2011,7 +2013,7 @@ never written by a knowledge writer, and unreached by the installed runtime befo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:260-282 |
+| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:260-268; mcp/src/agents_remember/memory/knowledge_index/query.py:270-282 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
