@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
+| lastUpdated | 2026-09-29T08:01:17+02:00 |
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
@@ -27,6 +27,7 @@ else on this route moved: the same five builders, the same declared kinds, the s
 sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 A `databasePath` May Name A Converted Memory Tree" for the builders' shared dataset selection, the new response fields and the refusal mapping. No verification stamp was advanced.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the write plane is named by both its shipped entry points.** The L20 paragraph is completed to one writer plus both CLI entry points (`WRITE_ENTRY_POINT` beside the new `TASKLESS_WRITE_ENTRY_POINT`), the module comment now agrees with it, and the new section records why the first sentence was true at its own bytes and incomplete after the second route shipped. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
@@ -1024,6 +1025,22 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 **This route's impact is one docstring in `mcp/tools/knowledge.py`, and what it records is a finding rather than a new contract.** `ReadToolRequest` (`:106-135`) now states that `databasePath` and `repositoryId` **are** the knowledge selection and that the caller owns both: the runtime config's per-repository scope carries no knowledge-database or namespace field, a repository's coordination declaration (`context_packet`) and the memory layer's `system/settings.json` name roots, paths and policy but no knowledge database, namespace or `repositoryId`, no shipped helper or filename convention resolves a repository or a task to a knowledge SQLite path (`knowledge.db` appears only in test support), and the repository namespace is minted by ingestion (`create_repository`), so it is a fact about a store that already exists. The published schema keeps both **required** rather than optional-with-a-default, because a default here would be this surface inventing a selection; a cold planner that has not been told the pair cannot discover it from this server.
 
 **Nothing was widened.** Exposing a real discovery contract — a settings key, a `context_packet` field, a resolver — is a product decision and is deliberately **not** taken by this leaf. The mounted builders, the refusal vocabulary, the source-resolution pair, the detection-run selection and the projection path are all unchanged; the docstring is the only edit at this surface.
+
+## 260928-MIK-L23 A `databasePath` May Name A Converted Memory Tree
+
+**Route meaning extended (MIK-R23@v1).** [`knowledge.py`](knowledge.py.md)'s read, diff and project builders
+now pass every caller-selected dataset path through `_select`, the application's `select_knowledge_dataset`:
+a path naming a converted memory tree (its root, or its published `knowledge.sqlite` location) is read
+through the derived index of that tree's current state, and every other path is opened as before. The
+responses gain the optional `memoryTree` (`memoryTrees` for a comparison) and `indexComplete`; a partial index
+forces every completeness statement to `false`. `_SELECTION_FAILURES` makes an index that cannot be built a
+refusal (`snapshot_unavailable` naming the tree) on all three handlers. No input schema changed. A tree-backed
+read is bound to the index's constant namespace, so seeds are its projected UUIDs.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared selection and its refusal mapping. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:239-251; mcp/src/agents_remember/mcp/tools/knowledge.py:257-263; mcp/src/agents_remember/mcp/tools/knowledge.py:266-269 |
+| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:272-283 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

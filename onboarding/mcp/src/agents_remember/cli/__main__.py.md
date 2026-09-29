@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-29T07:08:34+02:00                     |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`    |
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba`    |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -17,9 +17,9 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **eight** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **nine** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
-`knowledge-validate` and `review-record-comparison` — and
+`knowledge-validate`, `knowledge-index` and `review-record-comparison` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -32,7 +32,8 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `knowledge_ingest.add_arguments`/`knowledge_ingest.run`,
 `knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run`,
 `knowledge_format.add_arguments`/`knowledge_format.run`,
-`knowledge_validate.add_arguments`/`knowledge_validate.run` and
+`knowledge_validate.add_arguments`/`knowledge_validate.run`,
+`knowledge_index.add_arguments`/`knowledge_index.run` and
 `review_comparison_record.add_arguments`/`review_comparison_record.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
 
@@ -53,6 +54,11 @@ installed runtime never calls it; it exists so the file shapes can be formatted 
 mandatory knowledge validator over a memory working tree, against a code checkout and optional
 base commits. It writes nothing, and like the formatter it has no effect on unconverted memory: it
 reports such a tree as out of scope and exits 0.
+
+`knowledge-index` (MIK-R23) builds or reuses the derived knowledge index of one memory tree — a
+working tree's captured state, or a Git tree read through objects — in an untracked cache outside
+any Git working tree, and prints its key, state and counts as JSON. It only reads the tree; the
+installed runtime does not call it before MIK-R37.
 
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
@@ -81,13 +87,15 @@ configs launch the server by that exact name, so it is never folded into this um
 | The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:53-117; mcp/src/agents_remember/cli/memory_citations.py:120-184 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
 | The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
-| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:46-54 |
-| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:55-63 |
-| **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:64-69 |
-| **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:70-75 |
-| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:76-84 |
+| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:47-55 |
+| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:56-64 |
+| **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:65-70 |
+| **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:71-76 |
+| **The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.** | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:77-82 |
+| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:83-91 |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): the umbrella now registers **nine** subcommands. Added `knowledge-index` (MIK-R23) to the Purpose list and the registration list, a paragraph for it and its row. Re-measured the ingest, bootstrap, format and validate rows after the one-line import insertion and the six-line registration insertion. The verification stamp is unchanged; closeout owns it.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): the umbrella now registers **eight** subcommands. Added `knowledge-validate` (MIK-R22), its paragraph and its row. Re-measured the ingest, bootstrap and format rows after the six-line insertion, and corrected the format row's "seventh subcommand", which is no longer true. The verification stamp is unchanged; closeout owns it.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **the umbrella gains its seventh subcommand, `knowledge-format`.** MIK-R21 adds the text knowledge files' canonical formatter as `cli/knowledge_format.py`; this module registers it with the same declarative pair (`:63-68`). The Purpose count moves from six to seven, the Code Commentary's registration list gains the `knowledge_format` pair, and a paragraph records that this subcommand touches only the files it is given and is not called by the installed runtime before MIK-R37. The `knowledge-ingest`, `knowledge-bootstrap` and `review-record-comparison` rows were re-pointed to their shifted ranges (`:45-53`, `:54-62`, `:69-77`), and the `review-record-comparison` row no longer claims to be the reason the count is six. The adapter's own flags and exit codes are recorded on its card (`cli/knowledge_format.py.md`), not re-cited here. The earlier six-subcommand entries below are history. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/cli/dashboard.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated | 2026-09-28T17:13:48+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -282,16 +282,16 @@ see.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:16-28 |
+| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:29-92 |
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
-| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
-| The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:163-237; mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:290-311; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:352-379 |
+| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:266-292 |
+| The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:111-111; mcp/src/agents_remember/serving/change_watcher.py:285-378 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:181-255; mcp/src/agents_remember/cli/dashboard.py:148-178; mcp/src/agents_remember/cli/dashboard.py:308-329; mcp/src/agents_remember/cli/dashboard.py:343-367; mcp/src/agents_remember/cli/dashboard.py:370-397 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:255-323 |
-| The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
-| The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
-| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:256-325 |
+| The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:53-63; mcp/src/agents_remember/serving/sim.py:139-150 |
+| The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-156 |
+| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:79-88 |
 | The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:77-99 |
 
 ## 260718-CHATS-L5I Current Delta
@@ -326,12 +326,13 @@ the base is not silently dropped by this composition.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-127; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:67-127 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:440-499 |
-| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:112-122; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-490 |
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-145; mcp/src/agents_remember/application/role_capsules/launch.py:273-294 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:148-178; mcp/src/agents_remember/cli/dashboard.py:343-367; mcp/src/agents_remember/cli/dashboard.py:67-127 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:163-163; mcp/src/agents_remember/serving/_app_common.py:441-509 |
+| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:117-127; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-482 |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. The umbrella's `build_parser` gained the `knowledge-index` registration (MIK-R23); the claim that it registers this subcommand was re-read and still holds, and its range was re-pointed to the function's extent `cli/__main__.py:29-92`. The fixer's generated bullet, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the composition root wires a fourth reviewer port, the changed-intent summary (`ICR-R24@v3`).** New section with the port, its import and its reason. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

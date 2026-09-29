@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/read_files.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-21T15:14+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ assembles the payload, optionally attaching the deduped front-door, and finally
 emits a facts-only `read.packet` — passing `repo.repo_id` (slice 07b, so the
 packet carries `data.repoId`, the read's repo) alongside the per-file facts.
 
-**The payload also carries `published_intent`** cit:([`published_intent_block`], mcp/src/agents_remember/application/published_intent.py:271-286), attached at
+**The payload also carries `published_intent`** cit:([`published_intent_block`], mcp/src/agents_remember/application/published_intent.py:420-435), attached at
 the assembly from the same context and the paths this call was addressed at cit:(["published_intent"], mcp/src/agents_remember/application/read_files.py:148-148) and imported from its owning module
 cit:([`published_intent_block`], mcp/src/agents_remember/application/read_files.py:31-31). It is attached on **every** call, including when the
 repository publishes nothing yet, because "nothing is recorded" is an answer a fresh planner needs and an
@@ -72,7 +72,7 @@ that decides the value and `_read_one` drops it into an untyped payload dict, so
 `test_wire_vocabulary_exhaustiveness` asserts the set this function actually
 returns *equals* the declared alias.
 
-`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:165-189) validates one entry: a non-empty repo-relative `path`; an
+`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:165-186) validates one entry: a non-empty repo-relative `path`; an
 `onboarding` flag (default true; only `False` suppresses the lookup); and a
 `source` that is either `"full"`/absent (whole file) or a `{startLine, endLine}`
 dict. The range is validated up front — both ends must be integers `>= 1` and
@@ -99,7 +99,7 @@ source-omitted (`None`, byte count 0) so one bad file never aborts the whole
 batch. The returned byte count is the UTF-8 length of what was returned — a fact
 for the event, never the content.
 
-`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:235-267) returns
+`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:235-264) returns
 `tuple[FileReadStatus, str | None, bool]` — `(status, body, attach)`. Since
 260731-EFA-L4 the first element is **narrowed to the alias this module imports**
 rather than a bare `str`. With onboarding
@@ -185,7 +185,7 @@ ever appears it is honored once.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The thin payload wrapper that returns this application entry point's dict through the token choke point. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** | `published_intent_block`; "published_intent" | mcp/src/agents_remember/application/published_intent.py:271-286; mcp/src/agents_remember/application/read_files.py:31-31; mcp/src/agents_remember/application/read_files.py:148-148 |
+| **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** | `published_intent_block`; "published_intent" | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/application/read_files.py:31-31; mcp/src/agents_remember/application/read_files.py:148-148 |
 | The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
 
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
@@ -200,6 +200,7 @@ ever appears it is honored once.
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. MIK-R23 changed `published_intent_block` (it now tries a converted memory tree's index before the database selection, and a tree-backed block carries `memoryTree` and per-page `indexState`); the claims citing it were re-read against the working tree and still hold — this entry point attaches the block it returns, whatever it selected — so their wording is retained. Their ranges were re-pointed to the function's extent `:420-435` (one row was still at the stale `:271-286`); the fixer's generated bullet for the same anchor, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this route gained a returned half.** The payload now carries `published_intent` beside `files`, attached from the same `CoordinationContext` and seeded with the paths this call was addressed at (`:148`), imported from its owning module (`:31`); the Purpose section, a Logic paragraph and two invariants record it, including the boundary that the selection is **not** made here and that the block is additive and never fatal. `application/knowledge_read.py` was deliberately not touched: the shipped read is reused unchanged. Because this leaf's insertions moved the module's own declarations, the three in-body citations were re-derived against the candidate rather than carried — the `FileReadStatus` import to `:62-62` (was `:52-52`), `_parse_file_request` to `:165-189` (was `:139-160`) and `_resolve_onboarding` to `:235-267` (was `:209-238`) — and one reference row was added for the published-intent half. No claim was re-worded to fit a stale pointer, no anchor was renamed and no range was dropped. **Stamp accounting:** the recorded working candidate names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.

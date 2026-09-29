@@ -4,8 +4,8 @@
 | ---------------------- | ---------------------------------------------------------- |
 | repository             | agents-remember                                            |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | governingOverview      | `overview.md`                                              |
@@ -101,29 +101,29 @@ package application entry point and resolver contracts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:425-464; mcp/src/agents_remember/application/memory_tools.py:452-464 |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status`; `baseline_status` | mcp/src/agents_remember/memory/baseline.py:236-275; mcp/src/agents_remember/memory/baseline.py:300-303 |
-| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:371-460; mcp/src/agents_remember/application/memory_tools.py:442-456 |
-| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104; mcp/src/agents_remember/application/memory_scope.py:105-142 |
-| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:360-381 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-291; mcp/src/agents_remember/application/memory_tools.py:279-315 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:464-471 |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `ledger_status`; `baseline_status` | mcp/src/agents_remember/memory/baseline.py:258-267; mcp/src/agents_remember/memory/baseline.py:300-303 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:453-457 |
+| Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:71-102; mcp/src/agents_remember/application/memory_scope.py:105-142 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `_resolve_execution` | mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:360-380 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-291; mcp/src/agents_remember/application/memory_tools.py:299-335 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The route-index builder receives storage authority explicitly in its typed signature. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
-| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:491-551 |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:452-464 |
+| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:551-568 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:464-471 |
 | The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | `baseline_status` | mcp/src/agents_remember/memory/baseline.py:300-303 |
-| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:442-460 |
-| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:543-560 |
-| Canonical quality scope is owned by the focused scope module. | `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:72-104 |
+| Carryover has one memory subject and forwards it without a ledger-message option. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:453-457 |
+| The apply entry point that forwards that subject and nothing else. | `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:551-568 |
+| Canonical quality scope is owned by the focused scope module. | `MemoryScope` | mcp/src/agents_remember/application/memory_scope.py:71-102 |
 | Its resolver, which binds a repository to the scope the quality surface runs against. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
-| The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:331-383 |
-| The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:413-550 |
-| The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
-| The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
+| The one execution path both the report and the closeout gate run through. | `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:383-435 |
+| The curator worklist publication that follows a full scoped call. | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:465-638 |
+| The one construction point that carries a caller's excludes into all four citation operations. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:153-169 |
+| The scope object the caller's excludes ride with, validated at construction. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:56-86 |
 | The refusal rule for a caller exclude that cannot mean anything. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
-| **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** | `memory_init_tool`; `_knowledge_foundation_state`; `KNOWLEDGE_BOOTSTRAP_ROUTE` | mcp/src/agents_remember/application/memory_tools.py:346-376; mcp/src/agents_remember/application/memory_tools.py:378-417; mcp/src/agents_remember/application/memory_tools.py:338-343 |
-| **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** | `admit_bootstrap_context`; `BootstrapRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129 |
-| The read that decides the block's state, and the unavailable form its states come from. | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:219-219; mcp/src/agents_remember/application/published_intent.py:168-168 |
+| **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** | `memory_init_tool`; `_knowledge_foundation_state`; `KNOWLEDGE_BOOTSTRAP_ROUTE` | mcp/src/agents_remember/application/memory_tools.py:346-375; mcp/src/agents_remember/application/memory_tools.py:378-417; mcp/src/agents_remember/application/memory_tools.py:340-343 |
+| **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** | `admit_bootstrap_context`; `BootstrapRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
+| The read that decides the block's state, and the unavailable form its states come from. | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:258-258; mcp/src/agents_remember/application/published_intent.py:207-207 |
 
 ## Cross-Repo References
 
@@ -179,6 +179,7 @@ a misuse behind an envelope.
 is the case that holds that boundary, and the docstring states it.
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 
 - 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
   base `0d7910f9d646161c414ed6543453536a3c749d49`): **the memory initializer gained the knowledge half of

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap_staging.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -144,29 +144,29 @@ this staging implements, and it is a task-tree document rather than a configured
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement that the record is a projection and that cleanup is the one irreversible act.** | "The record is a projection, never a store"; "loses it during cleanup" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:1-26 |
-| The published surface: the three constants, the values, the readers and the cleanup owner. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:51-65 |
-| The one staged-candidate directory name and the one progress file name, constants so the places agree. | `BOOTSTRAP_CANDIDATE_DIRECTORY`; `BOOTSTRAP_PROGRESS_NAME`; `BOOTSTRAP_PROGRESS_SCHEMA` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:67-74 |
-| **The five store states, never collapsed into one another.** | `EntryStoreState` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:74-82 |
-| **Why a wrong staging root raises rather than returning a refusal.** | `BootstrapProgressConflict` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:81-89 |
-| **One entry's row: the run's outcome beside the store's independent answer.** | `EntryProgress`; `store_state`; `as_record` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:90-117 |
-| **The retained progress, with `remaining` and `unmeasured` as two facts and `remaining_basis` naming the derivation.** | `BootstrapProgress`; `remaining`; `unmeasured` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:120-156 |
+| The published surface: the three constants, the values, the readers and the cleanup owner. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:53-67 |
+| The one staged-candidate directory name and the one progress file name, constants so the places agree. | `BOOTSTRAP_CANDIDATE_DIRECTORY`; `BOOTSTRAP_PROGRESS_NAME`; `BOOTSTRAP_PROGRESS_SCHEMA` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:72-74 |
+| **The five store states, never collapsed into one another.** | `EntryStoreState` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:82-82 |
+| **Why a wrong staging root raises rather than returning a refusal.** | `BootstrapProgressConflict` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:89-95 |
+| **One entry's row: the run's outcome beside the store's independent answer.** | `EntryProgress`; `store_state`; `as_record` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:98-125 |
+| **The retained progress, with `remaining` and `unmeasured` as two facts and `remaining_basis` naming the derivation.** | `BootstrapProgress`; `remaining`; `unmeasured` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:128-193 |
 | The exact JSON object the record stores, with a null identity rather than an omitted one. | `destinationIdentity`; `destinationPath`; `remainingBasis` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:152-191 |
-| **The four retention states and why each calls for a different act.** | `ProgressRetention` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:186-200 |
-| One cleanup request's outcome: what was removed, or the fact that refused it. | `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:203-215 |
-| The record's exact path inside one staging root, and the candidate directory beside it. | `progress_path`; `staged_candidate_directory` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:213-230 |
-| The instant one observation is recorded at, in the shipped normalized-UTC spelling. | `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:225-236 |
-| **Why a missing field is reported as absent rather than rendered as the word `None`.** | `_recorded_text` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:231-242 |
+| **The four retention states and why each calls for a different act.** | `ProgressRetention` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:196-211 |
+| One cleanup request's outcome: what was removed, or the fact that refused it. | `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:214-221 |
+| The record's exact path inside one staging root, and the candidate directory beside it. | `progress_path`; `staged_candidate_directory` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:224-227; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:230-233 |
+| The instant one observation is recorded at, in the shipped normalized-UTC spelling. | `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:236-239 |
+| **Why a missing field is reported as absent rather than rendered as the word `None`.** | `_recorded_text` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:242-250 |
 | **The read that keeps `retained`, `moved`, `unreadable` and `absent` apart, and never reports "no progress".** | `read_progress`; "moved" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:242-299 |
-| **The atomic write that raises rather than overwriting another operation's retained progress.** | `write_progress`; `BootstrapProgressConflict` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:81-393 |
-| **The cleanup guard: two reads, two measured facts, and a named refusal in every other state.** | `discard_bootstrap_staging`; "measured_empty" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:327-470 |
-| Whether the ordinary read route's own read found exactly the staged dataset at the location. | `_destination_holds` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:391-482 |
-| The two refusal codes for staging that still holds work nobody can select. | `_unpublished`; "destination_does_not_hold_the_staged_dataset"; "destination_holds_another_dataset" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:402-512 |
-| The two result constructors, so one outcome is built in one place. | `_discarded`; `_cleanup_refusal` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:431-531 |
-| **The one bounded four-valued contents read both this cleanup and the run's readback use.** | `dataset_revisions`; `measured_empty`; `absence_established` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:79-180; mcp/src/agents_remember/application/knowledge_dataset_contents.py:79-98 |
-| The staged candidate's identity, read from the candidate file rather than inferred. | `read_dataset_identity` | mcp/src/agents_remember/application/knowledge_before_half.py:210-210 |
-| The ordinary read route's owner, which is what makes the destination comparison a read. | `resolve_published_intent`; `PublishedIntentSelection`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:219-219; mcp/src/agents_remember/application/published_intent.py:152-168 |
-| The shipped candidate database path helper this staging names its candidate through. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-58 |
-| The identity type both the retained record and the cleanup comparison carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
+| **The atomic write that raises rather than overwriting another operation's retained progress.** | `write_progress`; `BootstrapProgressConflict` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:89-95; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:393-415 |
+| **The cleanup guard: two reads, two measured facts, and a named refusal in every other state.** | `discard_bootstrap_staging`; "measured_empty" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
+| Whether the ordinary read route's own read found exactly the staged dataset at the location. | `_destination_holds` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:482-490 |
+| The two refusal codes for staging that still holds work nobody can select. | `_unpublished`; "destination_does_not_hold_the_staged_dataset"; "destination_holds_another_dataset" | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:493-519 |
+| The two result constructors, so one outcome is built in one place. | `_discarded`; `_cleanup_refusal` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:522-528; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:531-532 |
+| **The one bounded four-valued contents read both this cleanup and the run's readback use.** | `dataset_revisions`; `measured_empty`; `absence_established` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:80-89; mcp/src/agents_remember/application/knowledge_dataset_contents.py:91-100; mcp/src/agents_remember/application/knowledge_dataset_contents.py:103-182 |
+| The staged candidate's identity, read from the candidate file rather than inferred. | `read_dataset_identity` | mcp/src/agents_remember/application/knowledge_before_half.py:210-223 |
+| The ordinary read route's owner, which is what makes the destination comparison a read. | `resolve_published_intent`; `PublishedIntentSelection`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:258-258; mcp/src/agents_remember/application/published_intent.py:176-207 |
+| The shipped candidate database path helper this staging names its candidate through. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61 |
+| The identity type both the retained record and the cleanup comparison carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 
 ## Cross-Repo References
 
@@ -179,6 +179,7 @@ or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. `PublishedIntentSelection` gained an optional `memory_tree` field and `published_intent.py` grew by 160 lines (MIK-R23); the claim naming the ordinary read route's owner was re-read and still holds, and its ranges were re-pointed by exact base-to-working line mapping.
 - 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
   corrected docstrings; the card and the source agree.** The module docstring now states both reasons the

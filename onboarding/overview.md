@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash |  `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate |  2026-09-29T05:18:17+02:00|
+| lastVerifiedCommitHash |  `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
+| lastVerifiedCommitDate |  2026-09-29T08:30:03+02:00|
 
 > **Status:** active baseline
 
@@ -117,6 +117,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new repository-level section for the declared text knowledge format** (`models/knowledge_files/`, `agents-remember knowledge-format`) and the curator hand-off template's informational MIK-R21 section, including its synchronized harness copies under this route. No stamp advanced.
 
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): a factual note in the Intent Reviewer route-impact section: `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` now lives in `mcp/tests/test_knowledge_review_resolution_and_route.py`, moved verbatim by this leaf's file-size split. No other content changed, and no stamp was advanced.
@@ -360,12 +361,12 @@ Three consequences a reader of this overview should carry, because they are what
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:117-117; mcp/src/agents_remember/application/published_intent.py:200-216 |
+| **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:140-140; mcp/src/agents_remember/application/published_intent.py:239-255 |
 | **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:302-338; mcp/src/agents_remember/cli/knowledge_ingest.py:383-395; mcp/src/agents_remember/cli/knowledge_ingest.py:603-616 |
 | The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:70-70 |
-| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:106-137 |
+| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:109-140 |
 
 ## Memory Preparation And Final Certification
 
@@ -6501,7 +6502,7 @@ sidecar there.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:279-294; mcp/src/agents_remember/application/published_intent.py:200-216; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
+| **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/application/published_intent.py:239-255; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/application/knowledge_read.py:139-192 |
 | **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:93-159; mcp/src/agents_remember/models/read_files.py:74-74 |
 | **The canonical retrieval carrier, whose new section directs a caller to the route.** | `## Published Intent Before Planning` | skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |
 | **The generated copy of that carrier this package ships, regenerated from the authored source.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-232 |

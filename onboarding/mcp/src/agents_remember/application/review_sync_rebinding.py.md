@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -180,23 +180,23 @@ measurement of a generation**, because a forged record is internally consistent.
 | --- | --- | --- |
 | **The module's own statement of the gap it closes, the owners it reuses, and why it can never refuse a sync.** | `record_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:1-42; mcp/src/agents_remember/application/review_sync_rebinding.py:271-313 |
 | The published surface: the record re-export, the two dataclasses, the readers and the block. | `__all__` | mcp/src/agents_remember/application/review_sync_rebinding.py:96-112 |
-| The one durable file-name prefix, one file per leaf and judged generation. | `REVIEW_SYNC_REBINDINGS_PREFIX` | mcp/src/agents_remember/application/review_sync_rebinding.py:114-119 |
-| **The one action that produces a comparison current with the resolved pair, stated once.** | `_SUPERSESSION_ACTION` | mcp/src/agents_remember/application/review_sync_rebinding.py:121-130 |
-| **The three states in which the transaction carried the official line, and why `already-current` is not one.** | `_CARRYING_SYNC_STATES` | mcp/src/agents_remember/application/review_sync_rebinding.py:149-161 |
-| **The five states that carried nothing, each with the store fact it observed.** | `_CARRIED_NOTHING` | mcp/src/agents_remember/application/review_sync_rebinding.py:163-193 |
+| The one durable file-name prefix, one file per leaf and judged generation. | `REVIEW_SYNC_REBINDINGS_PREFIX` | mcp/src/agents_remember/application/review_sync_rebinding.py:119-119 |
+| **The one action that produces a comparison current with the resolved pair, stated once.** | `_SUPERSESSION_ACTION` | mcp/src/agents_remember/application/review_sync_rebinding.py:125-130 |
+| **The three states in which the transaction carried the official line, and why `already-current` is not one.** | `_CARRYING_SYNC_STATES` | mcp/src/agents_remember/application/review_sync_rebinding.py:155-161 |
+| **The five states that carried nothing, each with the store fact it observed.** | `_CARRIED_NOTHING` | mcp/src/agents_remember/application/review_sync_rebinding.py:167-193 |
 | **The three checked facts, including the success conjunct carried for a producer that does not exist yet.** | `resolved_pair_completed` | mcp/src/agents_remember/application/review_sync_rebinding.py:196-220 |
 | The resolved source side as a state, with the named reason it could not be measured. | `_ResolvedCapture` | mcp/src/agents_remember/application/review_sync_rebinding.py:223-229 |
 | One published rebinding: the durable artifact, the record, and the read-back that proves it. | `ReviewSyncRebindingPublication` | mcp/src/agents_remember/application/review_sync_rebinding.py:232-238 |
 | **The read-back's three states, with the predicate a consumer branches on.** | `ReviewSyncRebindingRead` | mcp/src/agents_remember/application/review_sync_rebinding.py:241-262 |
-| The one durable destination a generation's rebinding is published to. | `rebinding_file_name` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-269 |
+| The one durable destination a generation's rebinding is published to. | `rebinding_file_name` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-268 |
 | **Measuring one finished sync and publishing it, and the two cases that publish nothing at all.** | `record_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:271-313 |
 | **The never-raising entry point the sync tool calls, and the states it writes instead of raising.** | `rebinding_result_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373 |
 | **Reading one generation back: `recorded`, `not-recorded` naming the location, `unreadable` with the reason.** | `read_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
 | **The check against the store that a forged-but-consistent record cannot pass.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
 | **The leaf-wide reader, and the code's own statement that no mounted tool calls it yet.** | `read_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:479-502 |
 | **The named reclamation owner: a derived measurement whose removal costs no retained input.** | `discard_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:505-528 |
-| **The carried-nothing vocabulary, one entry per observed state.** | `_nothing_to_bind_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:534-595 |
-| **The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.** | `_no_generation_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:597-639 |
+| **The carried-nothing vocabulary, one entry per observed state.** | `_nothing_to_bind_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:534-594 |
+| **The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.** | `_no_generation_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:597-638 |
 | Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the one verdict rule. | `_assemble` | mcp/src/agents_remember/application/review_sync_rebinding.py:641-678 |
 | The shipped capture owner's refusal converted into a state rather than an exception. | `_resolved_capture` | mcp/src/agents_remember/application/review_sync_rebinding.py:681-700 |
 | **The resolved knowledge side read through the route a later planner selects knowledge with.** | `_resolved_knowledge` | mcp/src/agents_remember/application/review_sync_rebinding.py:703-727 |
@@ -208,13 +208,13 @@ measurement of a generation**, because a forged record is internally consistent.
 | The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The durable-evidence pair every rebinding is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | **The shipped capture owner whose add-all tree is the resolved source side.** | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:219-243 |
-| **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:353-375 |
+| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:258-282 |
+| **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:356-378 |
 | **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** | `ComparisonReopen`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
-| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:320-518 |
+| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574 |
 | **The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.** | `ManagedSyncReviewRebindingTests` | mcp/tests/test_review_sync_rebinding.py:381-818 |
 | The live code/memory worktree pair the managed-sync cases are built on. | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-378 |
-| **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** | `LiveReviewMovementTests`; `test_the_live_review_read_renders_what_the_sync_moved`; `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:38-325; mcp/tests/test_review_sync_movement_read.py:41-102; mcp/tests/test_review_sync_movement_read.py:258-325 |
+| **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** | `LiveReviewMovementTests`; `test_the_live_review_read_renders_what_the_sync_moved`; `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:40-327; mcp/tests/test_review_sync_movement_read.py:43-104; mcp/tests/test_review_sync_movement_read.py:260-327 |
 
 ## Cross-Repo References
 
@@ -227,6 +227,7 @@ that follows from a recorded absolute path is stated above.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 2 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

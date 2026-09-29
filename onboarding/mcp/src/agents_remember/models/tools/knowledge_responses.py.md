@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/tools/knowledge_responses.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T00:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated | 2026-09-29T08:01:17+02:00 |
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,16 @@ view payload's own `model_dump(mode="json")` there — which is precisely what "
 buys: a tool that re-rendered a view into its own format would create a second renderer and therefore a
 second place for the classification rule to be violated, so this module declares an envelope and never
 a rendering of the payload's interior.
+
+**A memory tree is named, never hidden (MIK-R23).** When a caller's `databasePath` names a converted
+memory tree, the handler reads the tree's derived knowledge index and the response gains two optional
+fields: `memoryTree` on `KnowledgeReadResponse` and `KnowledgeProjectResponse` (`memoryTrees`, keyed
+`before`/`after`, on `KnowledgeDiffResponse`) holding `{memoryRoot, treeId, indexState, problems[]}`, and
+`indexComplete` — `false` when any side was read from a `partial` index. A read from a partial index also
+reports `completeWithinDeclaredScope: false`, so a partial index is never presented as complete. Both
+fields are `dict | None` / `bool | None` defaulting to `None`, and the choke point's `exclude_none` dump
+leaves them absent for a database, which is why the change is additive and optional and on the response
+side only: no input schema changed. The module docstring states the rule.
 
 **Each model's `state` literal is its own closed success vocabulary, and a refusal is a state rather
 than a partial success.** `KnowledgeReadResponse` may be `view` or `refused`, `KnowledgeChangeResponse`
@@ -142,7 +152,8 @@ response vocabulary rather than the knowledge vocabulary: `repositoryId`, `recor
 the payload's own interior keeps the knowledge vocabulary, because that interior is not this module's
 shape to spell. Optionality is declared rather than implied: an echoed value that may legitimately be
 absent (`snapshot`, `continuation`, `completeWithinDeclaredScope`, `payload`, `recordId`, `revisionId`,
-`manifestGeneration`, `refusalCode`, `refusalDetail`) is `| None = None`, and a list that may
+`manifestGeneration`, `memoryTree`, `memoryTrees`, `indexComplete`, `refusalCode`, `refusalDetail`) is
+`| None = None`, and a list that may
 legitimately be empty (`semanticEffectLabels`, `conditions`, `limitations`, `unresolved`, `published`,
 `retained`, `discrepancies`) is `Field(default_factory=list)`. No bounded-length constants are used at
 all: this module declares no free prose, no identity and no path, so nothing here reaches for
@@ -182,6 +193,9 @@ than depending on its consumers.
   inherited from `ToolResponse`/`ResponseModel` rather than redeclared.
 - **Refusal codes are carried, not closed, here.** All five `refusalCode` fields are `str | None`, so the
   codes stay the property of the leaves that own those operations instead of being re-declared or widened.
+- **A memory tree read is named on the wire, and a database read is unchanged.** `memoryTree`/`memoryTrees`
+  and `indexComplete` appear only when a selection named a converted memory tree; `indexComplete: false`
+  (and, on a read, `completeWithinDeclaredScope: false`) is how a partial index reaches a tool caller.
 - **The state/payload exclusion is handler discipline, not a validator.** Unlike `ViewResult`, these five
   models have no cross-field rule, so a `view` state with no payload and a `refused` state with one
   remain constructible and are prevented only by the payload builders.
@@ -205,25 +219,25 @@ in the working candidate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The five public classes this module exports and nothing else — no constant, no helper, no base. | `__all__` | mcp/src/agents_remember/models/tools/knowledge_responses.py:26-32 |
-| The read response: which view and which snapshot it was read at, echoed beside the payload verbatim. | `KnowledgeReadResponse`; `payload`; `snapshot`; `completeWithinDeclaredScope`; `continuation` | mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:43-52 |
-| The change response: a recorded proposal or a refusal, with the tool recording and never authoring. | `KnowledgeChangeResponse`; `recordKind`; `recordId`; `revisionId` | mcp/src/agents_remember/models/tools/knowledge_responses.py:55-65; mcp/src/agents_remember/models/tools/knowledge_responses.py:58-65 |
-| The diff response: only the labels an identified source supplied, defaulting to the empty list. | `KnowledgeDiffResponse`; `semanticEffectLabels` | mcp/src/agents_remember/models/tools/knowledge_responses.py:68-82; mcp/src/agents_remember/models/tools/knowledge_responses.py:76-82 |
-| The integrity response: conditions, their limits and the typed `None` that records no verdict, beside the five fields that bind those conditions to the run they were measured over. | `KnowledgeIntegrityCheckResponse`; `conditions`; `limitations`; `compatible`; `unresolved`; `selectedRunId`; `inputDigest`; `inputIdentities`; `matchingRunIds`; `exactInputSelector` | mcp/src/agents_remember/models/tools/knowledge_responses.py:85-118 |
-| The project response: one managed projection's per-path outcomes as three separate lists beside its destination and renderer version. | `KnowledgeProjectResponse`; `published`; `retained`; `discrepancies`; `manifestGeneration` | mcp/src/agents_remember/models/tools/knowledge_responses.py:121-133 |
-| The envelope every one of the five derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. | `ToolResponse`; `operation`; `ResponseModel`; `to_payload`; `StrictResponseModel` | mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:91-95; mcp/src/agents_remember/models/tools/knowledge_responses.py:43-43 |
+| The five public classes this module exports and nothing else — no constant, no helper, no base. | `__all__` | mcp/src/agents_remember/models/tools/knowledge_responses.py:33-39 |
+| The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index. | `KnowledgeReadResponse`; `payload`; `snapshot`; `completeWithinDeclaredScope`; `continuation`; `memoryTree`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:42-61 |
+| The change response: a recorded proposal or a refusal, with the tool recording and never authoring. | `KnowledgeChangeResponse`; `recordKind`; `recordId`; `revisionId` | mcp/src/agents_remember/models/tools/knowledge_responses.py:64-74; mcp/src/agents_remember/models/tools/knowledge_responses.py:67-74 |
+| The diff response: only the labels an identified source supplied, defaulting to the empty list, plus `memoryTrees` naming each side read through a converted tree's index and `indexComplete`. | `KnowledgeDiffResponse`; `semanticEffectLabels`; `memoryTrees`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:77-93 |
+| The integrity response: conditions, their limits and the typed `None` that records no verdict, beside the five fields that bind those conditions to the run they were measured over. | `KnowledgeIntegrityCheckResponse`; `conditions`; `limitations`; `compatible`; `unresolved`; `selectedRunId`; `inputDigest`; `inputIdentities`; `matchingRunIds`; `exactInputSelector` | mcp/src/agents_remember/models/tools/knowledge_responses.py:96-129 |
+| The project response: one managed projection's per-path outcomes as three separate lists beside its destination and renderer version, plus the optional memory-tree binding when the projected dataset was a converted tree's index. | `KnowledgeProjectResponse`; `published`; `retained`; `discrepancies`; `manifestGeneration`; `memoryTree` | mcp/src/agents_remember/models/tools/knowledge_responses.py:132-146 |
+| The envelope every one of the five derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. | `ToolResponse`; `operation`; `ResponseModel`; `to_payload`; `StrictResponseModel` | mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:91-94; mcp/src/agents_remember/models/tools/knowledge_responses.py:43-43 |
 | Where the five classes are imported and mapped to their tool names in the registry. | `KnowledgeChangeResponse`; `KnowledgeDiffResponse`; `KnowledgeIntegrityCheckResponse`; `KnowledgeProjectResponse`; `KnowledgeReadResponse` | mcp/src/agents_remember/models/tools/tool_registry.py:111-117; mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
 | The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
 | The projection of the registry that the public surface pin compares against the advertised roster. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:255-259 |
 | The five advertised tool names, closing the one cycle-free roster literal whose last entries are the knowledge family. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-97 |
 | The choke point that validates a handler's plain dict against the registered model, so an undeclared key is a validation error. | `finalize_tool_response`; `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_response.py:15-26; mcp/src/agents_remember/models/tools/tool_response.py:23-23 |
-| The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement and the continuation token. | `knowledge_read_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:262-328 |
-| The change handler, which branches on nothing: **every** kind — declared or not — answers `refused` with `registration_absent` and a detail naming the reachable entry point, and the kinds the surface may be asked about are its own declared roster rather than a check the handler consults. | `knowledge_change_payload`; `DECLARED_CHANGE_KINDS` | mcp/src/agents_remember/mcp/tools/knowledge.py:98-105; mcp/src/agents_remember/mcp/tools/knowledge.py:386-401; mcp/src/agents_remember/mcp/tools/knowledge.py:392-392 |
-| The diff and integrity handlers: only caller-supplied labels survive, and the integrity payload carries no verdict but does carry the selected run, its input identity and the digest over it. | `_supplied_effect_labels`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:460-474; mcp/src/agents_remember/mcp/tools/knowledge.py:477-533 |
-| The project handler that returns the per-path published/retained/discrepancy lists and the manifest generation. | `knowledge_project_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:849-852 |
-| The project handler that returns the per-path published/retained/discrepancy lists and the manifest generation. | `knowledge_project_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:849-852 |
-| The one registered shape it is a payload of, where the state/payload exclusion is a validator rather than handler discipline. | `ViewPayload`; `ViewResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/view.py:934-978; mcp/src/agents_remember/models/knowledge/view.py:1151-1166; mcp/src/agents_remember/models/knowledge/view.py:1160-1166; mcp/src/agents_remember/models/knowledge/change_set.py:280-286; mcp/src/agents_remember/models/knowledge/detection.py:1001-1006; mcp/src/agents_remember/models/knowledge/diff.py:530-535 |
+| The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`. | `knowledge_read_payload`; `_read_result` | mcp/src/agents_remember/mcp/tools/knowledge.py:343-354; mcp/src/agents_remember/mcp/tools/knowledge.py:357-435 |
+| The change handler, which branches on nothing: **every** kind — declared or not — answers `refused` with `registration_absent` and a detail naming the reachable entry point, and the kinds the surface may be asked about are its own declared roster rather than a check the handler consults. | `knowledge_change_payload`; `DECLARED_CHANGE_KINDS` | mcp/src/agents_remember/mcp/tools/knowledge.py:107-114; mcp/src/agents_remember/mcp/tools/knowledge.py:466-483; mcp/src/agents_remember/mcp/tools/knowledge.py:486-503 |
+| The diff and integrity handlers: only caller-supplied labels survive, and the integrity payload carries no verdict but does carry the selected run, its input identity and the digest over it. | `_supplied_effect_labels`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:609-623; mcp/src/agents_remember/mcp/tools/knowledge.py:626-645; mcp/src/agents_remember/mcp/tools/knowledge.py:648-704 |
+| The project handler's body (behind the thin public `knowledge_project_payload` wrapper) that returns the per-path published/retained/discrepancy lists and the manifest generation, beside `memoryTree` and `indexComplete`. | `_project_result` | mcp/src/agents_remember/mcp/tools/knowledge.py:956-1003 |
+| The one registered shape it is a payload of, where the state/payload exclusion is a validator rather than handler discipline. | `ViewPayload`; `ViewResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/view.py:934-978; mcp/src/agents_remember/models/knowledge/view.py:1151-1166; mcp/src/agents_remember/models/knowledge/change_set.py:279-287; mcp/src/agents_remember/models/knowledge/detection.py:1000-1006; mcp/src/agents_remember/models/knowledge/diff.py:530-535 |
 | The closed view refusal vocabulary the read handler's `unknown_view` code comes from, which these models carry as a plain string rather than re-declare. | `ViewRefusalCode` | mcp/src/agents_remember/models/knowledge/view.py:174-182 |
+| The module docstring's statement that a memory tree is named, never hidden, and that a partial index is never presented as complete. | "A memory tree is named, never hidden" | mcp/src/agents_remember/models/tools/knowledge_responses.py:12-17 |
 
 ## Cross-Repo References
 
@@ -237,6 +251,9 @@ repository's vocabulary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **body update for the optional MIK-R23 response fields.** `memoryTree` and `indexComplete` on the read and project responses and `memoryTrees` plus `indexComplete` on the diff response: a new Logic paragraph, the optionality list, a new invariant, reworded read/diff/project response rows and a row for the new docstring paragraph. Re-read and reworded the reopened rows for `KnowledgeProjectResponse`, the read handler and the project handler (whose two identical rows are collapsed to one, since both named the same construct, and re-cited to the handler's body `_project_result`, where the per-path lists are built — the one-line public wrapper's range had been placed by the 2026-09-25 mechanical projection below, which is left as written); the fixer's generated bullets for those three claims, written minutes earlier in this same pass, are folded into this entry because their "claim bytes unchanged" would be false. The change-handler and diff/integrity-handler rows, which were stale before this leaf, were re-derived from the builders' extents in `mcp/tools/knowledge.py`. The verification stamp is not advanced: closeout owns it.
+- 2026-09-29T05:54:39+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:33-39. No content impact: mechanical anchor-range projection bound to citation source snapshot 08ce78606da3cc2a7c0249e0af5ee18d9cd313bdb4222c759c5a89e3e75efdf0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T05:54:39+00:00: Generated citation repair: `KnowledgeIntegrityCheckResponse`; `conditions`; `limitations`; `compatible`; `unresolved`; `selectedRunId`; `inputDigest`; `inputIdentities`; `matchingRunIds`; `exactInputSelector` repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:96-129; mcp/src/agents_remember/models/tools/knowledge_responses.py:117-117; mcp/src/agents_remember/models/tools/knowledge_responses.py:124-124; mcp/src/agents_remember/models/tools/knowledge_responses.py:125-125; mcp/src/agents_remember/models/tools/knowledge_responses.py:127-127; mcp/src/agents_remember/models/tools/knowledge_responses.py:119-119; mcp/src/agents_remember/models/tools/knowledge_responses.py:120-120; mcp/src/agents_remember/models/tools/knowledge_responses.py:121-121; mcp/src/agents_remember/models/tools/knowledge_responses.py:122-122; mcp/src/agents_remember/models/tools/knowledge_responses.py:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 08ce78606da3cc2a7c0249e0af5ee18d9cd313bdb4222c759c5a89e3e75efdf0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `knowledge_project_payload` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:849-852. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `knowledge_project_payload` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:849-852. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

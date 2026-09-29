@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-29T08:01:17+02:00 |
+| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
+| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -1547,6 +1547,7 @@ reader table, and deliberately omits its three relation tables — each is writt
 that owns it, so no command addresses one and no expectation could name a state a command could produce.
 
 ## Update History
+- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`" with the seven new cards it governs. No separate `knowledge_index/overview.md` was created: the sibling packages `knowledge/` and `migration/` have none, and this overview governs them. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): body update: added the section for the observation row codec, which moved into `knowledge/evidence_observation_rows.py` and is re-exported from `evidence_records`. The move was behaviour-preserving and no caller changed. Re-pointed the 6 citation-table ranges into `evidence_records.py` through the exact base-to-candidate line map. No stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): body update — added the *Anchor Observation Remembers Immutable Answers, Never Availability* section for the new `knowledge/read_anchor_memo.py` module and the owner/storage split with `knowledge/read_anchors.py` (per-file detail is in the two cards). Re-derived the four `read_anchors.py` ranges this overview cites against the candidate (`_observed_line_range`, `_observed_symbol`, `observe_anchor`, `_confined_posix_relative`) and re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted its row at `:173`. Wording of existing rows unchanged; no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
@@ -1865,6 +1866,43 @@ through — is now a one-line delegation to it.
 | **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** | `_expansion_detail` | mcp/src/agents_remember/memory/knowledge/diff_display.py:452-466 |
 | **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** | `git_tree_difference_probe`; `tree_difference_observation` | mcp/src/agents_remember/application/knowledge_diff.py:166-181; mcp/src/agents_remember/application/review_source_inventory.py:194-236 |
 | The cases that measure the observation on real repositories, including the name a line-oriented interface loses and the non-UTF-8 boundary. | `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:1027-1052; mcp/tests/test_knowledge_diff_boundaries.py:1135-1187 |
+
+## 260928-MIK-L23 The Derived Knowledge Index: A New Package, `knowledge_index/`
+
+**Route meaning extended (MIK-R23@v1).** Knowledge is becoming text in Git (D18), each relationship written
+once from its owner's side (D19). The new package `knowledge_index/` answers the reverse directions no file
+records, from an SQLite file derived from one memory tree and nothing else. It has no route overview of its
+own: like its siblings `knowledge/` and `migration/`, it is governed by this overview.
+
+- [`tree.py`](knowledge_index/tree.py.md) reads a tree from a working directory or through Git objects and
+  computes its key: the tree id, or for a directory the tree id of its captured state (`git add --all` into
+  a disposable index whose object store has the real one only as an alternate, so computing a key writes
+  nothing into the repository).
+- [`build.py`](knowledge_index/build.py.md) parses the files through the MIK-R21/R07 models and writes the
+  `ix_*` rows declared in [`schema.py`](knowledge_index/schema.py.md); a file that fails its schema, sits at
+  a location its format forbids, or repeats an ID is named and marks the index `partial`.
+- [`projection.py`](knowledge_index/projection.py.md) also writes the index as a dataset of this route's
+  store schema (uuid5 identities, a constant namespace, retired records left out), so
+  `knowledge/read.py`, the views, the comparison and the scope construction run over it unchanged.
+- [`query.py`](knowledge_index/query.py.md) answers rule 3's lookups; every answer carries the index state.
+- [`adapters.py`](knowledge_index/adapters.py.md) opens an index as a read-only `OpenedKnowledgeStore` for
+  `knowledge/registered_scope.py`.
+- [`cache.py`](knowledge_index/cache.py.md) keeps one file per key under the coordination runtime, refuses
+  any location inside a Git working tree, recomputes a working tree's key on every lookup, and evicts by age
+  and size.
+- [`__init__.py`](knowledge_index/__init__.py.md) is the package door.
+
+No knowledge writer writes the index, it is never merged, and deleting it loses nothing. Its callers are the
+application's dataset selection (`application/published_intent.py`) and the CLI; before MIK-R37 no
+production memory tree is converted, so the installed runtime never reaches it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package map. | "No knowledge writer writes the index" | mcp/src/agents_remember/memory/knowledge_index/__init__.py:1-20 |
+| The captured-state key. | `directory_snapshot`; `_capture` | mcp/src/agents_remember/memory/knowledge_index/tree.py:92-110; mcp/src/agents_remember/memory/knowledge_index/tree.py:122-144 |
+| The build, which names every failing file. | `build_index`; `parse_tree` | mcp/src/agents_remember/memory/knowledge_index/build.py:132-159; mcp/src/agents_remember/memory/knowledge_index/build.py:120-129 |
+| Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:85-105; mcp/src/agents_remember/memory/knowledge_index/projection.py:68-68 |
+| The cache refuses a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-91 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
