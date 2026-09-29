@@ -1,0 +1,132 @@
+# mcp/src/agents_remember/application/knowledge_worklist/compute.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/application/knowledge_worklist/compute.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| governingOverview | `../overview.md` |
+
+## Governing Overview
+
+[application route overview](../overview.md)
+
+## Purpose
+
+**One worklist run (MIK-R08 definitions 5 and 8, rules 2 to 6).** `compute_worklist(inputs)` reads the
+changed paths from the landed ICR change inventory, the renames from ICR's Git rename inference, runs the
+one-pass scope, builds the `touched_invariant`, `stale_invariant` and `reached_family` items, marks every
+changed hunk linked or unexplained, and returns the `knowledge-worklist/v1` document with its digest. The
+run is a pure function of its inputs.
+
+## Code Commentary
+
+### Logic
+
+- **Inputs.** `WorklistInputs` holds the `CodeTrees`, the two `KnowledgeSide`s, the pairing, the
+  `maintenance_scope` flag and the owner leaf.
+- **Changed paths and renames** (`_changes`): `tree_difference_observation` (ICR-R02) gives the entries;
+  `git_rename_inference` (ICR-R08) gives the renames, because ICR-R02's inventory runs with `--no-renames`
+  (architect ruling 3). An unavailable inventory, a **partial** inventory, or unavailable renames raise
+  `WorklistIncomplete`; `_partial_detail` names the observation's own detail, every path that is not valid
+  text (by `byte_form`) and every path with no content classification.
+- **One-pass scope** (`_Run.document`):
+  1. classify every K_B entry at a changed path, or every K_B entry when `knowledgeMaintenanceScope` is set;
+  2. compute the knowledge-side changes, and add to the classified set any entry classified only to decide
+     a re-anchor whose class covers it;
+  3. reach every K_B family with a member that has a `touched_invariant` item, or whose record changed
+     (`_reached`);
+  4. classify every K_B entry of those families' members (K_B and K_C membership, restricted to K_B
+     invariants), once.
+- **Items.** `_touched` collects K_B invariants with a raising entry or a knowledge-side change.
+  `_touched_item` carries each classified entry's facts, the added, retired and re-anchored entries, the
+  record's K_B and K_C revisions, and the context (families on both sides, `linkedFrom` in K_C). Its
+  identities are the raising entries' contents, the added, retired and re-anchored contents, and the record
+  revisions only when the record changed; carried and untouched siblings are listed but excluded.
+  `_stale_item` carries each stale entry's blob, B blob and both content identities. `_family_items` gives a
+  `reached_family` per reached family (reasons `touched:<INV>` and `record-changed`) and per family of a
+  stale invariant (reason `stale:<INV>`); `_family_item` lists the union of members with each side's revision
+  and both sides' routes, and its identities are the members' `{ id, revision }` per side.
+- **Gate linkage** (`_change`, definition 8): each changed path's text hunks are linked when a changed line
+  hits a K_B entry's range at B or a K_C entry's range at C (`_spans`). Non-text changes (binary, symlink,
+  submodule, type change, empty files) and the mode fact of a mode change are linked at `fileLevel` exactly
+  when a `file`-locator entry on either side covers the path (`_file_covered`). An added or deleted text
+  file is one whole-file hunk.
+- **Document.** `state`, `incomplete`, `pairing`, `scope` (the flag, changed and unrepresentable path
+  counts, classified count, class counts, reached families), `entries`, `changes`, `items` sorted by kind
+  and subject, `kinds` (the registry) and `digest` (`worklist_digest` over state, items and incomplete).
+  `incomplete_worklist` is the one representation of unreadable input: `state: incomplete`, the named
+  input, no items. A `CodeReadError` during the run becomes `incomplete` naming `C`.
+
+### Conventions
+
+- Everything is sorted and no timestamp is written, so identical inputs give identical bytes (rule 6).
+
+### Invariants And Boundaries
+
+- **Every changed hunk is either linked or unexplained.** The marking raises nothing here; MIK-R10's
+  registrants consume it.
+- **An unreadable or partial input makes the run incomplete, never silently complete** (architect ruling
+  on review R1, F4: a partial ICR inventory is `incomplete` and names the paths; it never falls back to
+  file-level linkage).
+- **Stale items never widen the classification.** A `stale_invariant` reaches its families without
+  classifying their members unless step 3 already reached them.
+- **Only K_B families are reached**; a family or invariant present only in K_C raises nothing of its own.
+- **A mode change keeps its text hunks** (review R1 F5): they are linked as for any text change, and the
+  mode fact is added separately at file level.
+- No verdict, severity or cause is recorded (Exclusions).
+
+### Todos
+
+- The family route chain (MIK-R05) is not in the context yet; context holds families and `linkedFrom` only.
+
+## Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
+`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
+`08_change-to-knowledge-worklist.json`) and the coordination-root note Doc14
+(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
+code and memory repositories, so they are named here and not cited as rows.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured live documentation source was available for this pass. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The pure run, the four scope steps and the linkage marking. | "that marking raises nothing here" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:1-21 |
+| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:66-66 |
+| One item, its ID from the registry. | `Item`; `item_id` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:86-100 |
+| The run's inputs. | `WorklistInputs` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:103-112 |
+| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:119-133 |
+| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:149-162; mcp/src/agents_remember/application/knowledge_worklist/compute.py:165-175 |
+| The one-pass scope and the document. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:183-263 |
+| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:287-295 |
+| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:305-340 |
+| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:342-360 |
+| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:362-400 |
+| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:409-454 |
+| A body edit raises one invariant and its family and carries the rest of the file. | `test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file` | mcp/tests/test_knowledge_worklist.py:327-352 |
+| A comment between functions raises nothing; one inside raises. | `test_a_comment_between_functions_raises_nothing_and_one_inside_raises` | mcp/tests/test_knowledge_worklist.py:355-368 |
+| A binary change touches a file anchor and links at file level. | `test_a_binary_change_touches_a_file_anchor_and_links_at_file_level` | mcp/tests/test_knowledge_worklist.py:440-455 |
+| A partial inventory is incomplete and names the path. | `test_a_partial_change_inventory_makes_the_run_incomplete_naming_the_paths` | mcp/tests/test_knowledge_worklist.py:662-675 |
+| A mode change keeps its hunks' linkage and adds the mode fact. | `test_a_text_change_with_a_mode_change_links_its_hunks_and_the_mode_fact` | mcp/tests/test_knowledge_worklist.py:678-688 |
+
+## Cross-Repo References
+
+No meaningful cross-repo references found: the run reads one code repository and two parsed memory sides.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repo boundary is crossed by this file. | — | — |
+
+## Update History
+
+<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

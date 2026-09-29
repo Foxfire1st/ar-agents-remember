@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -85,9 +85,9 @@ inside their own functions and return raw operation payloads; without the declar
 | --- | --- | --- |
 | The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:210-210 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:642-816 |
-| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:218-278 |
-| The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:424-446 |
+| The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. | "class TaskDocument(_Doc):" | mcp/src/agents_remember/tasks/document.py:649-826 |
+| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:219-277 |
+| The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:425-447 |
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -123,6 +123,7 @@ below it in this class. Pinned by
 `mcp/tests/test_tool_response_conformance.py::test_task_doc_read_steps_validates_and_returns_the_checklist`.
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **reopened `TaskDocument` claim re-read and re-cited.** The response still describes, and never returns, the persisted `TaskDocument`; the model gained MIK-R08's optional `knowledgeMaintenanceScope` field, which changes nothing this card says. The row is re-measured to the class's current extent `649-826` and anchored on its class line, so the committed 2026-09-09 generated-repair bullet for `TaskDocument` no longer describes it. This file's own source is unchanged.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected the Logic section, which said the `task_doc` response model was complete for every operation it serves.** The change set declares the `read_steps` payload the handler always emitted and the model never declared — `steps: list[TaskDocStepRead] | None` plus the `TaskDocStepRead` / `TaskDocSubStepRead` shapes — because under `extra="forbid"` the real payload was rejected *after* a successful read (`steps: Extra inputs are not permitted`), making the operation unusable on every document. This is the third instance of the class the card already records twice (`remove_subtask`, then the sprint-linkage and execution-graph fields), so the new paragraph names it as such rather than as a new topic. Added the op-scoped invariant, including the point that the declaration **narrows** (`extra="allow"` would have "fixed" the symptom by removing the strictness). The append is additive — `TaskDocResponse` moved from `115` to `138` and `TaskReopenResponse` now ends the file at `223-226` — so no other claim in this card was affected. Repairing the two ranges the new declaration did **not** cause: the `_sprint_doc_identity` merge is cited in the body prose below as `396-418` while the function spans `424-446` (the table row already carried `424-446`), and the `task_doc_tool` row cited `191-284` while the entry point spans `218-278`; both were re-read at their current position and re-pointed. Every other existing table row was left untouched for the citation pass.
 - 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): `steps` declared (`:134`, `T7`) and every citation into this file re-derived across the `+8` shift. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.

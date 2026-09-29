@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate |  2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash |  `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate |  2026-09-29T18:13:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ heads were restored when deterministic authority is absent or incomplete.
 ### Logic
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
-pair plus sync log, publishes the terminal journal first, then removes temporary worktrees and refs.
+pair plus sync log, publishes the terminal journal first, then removes temporary worktrees and refs, and
+finally (since MIK-R08) returns the completed result through `with_recomputed_worklist`.
 `_require_completed_branches` proves each final branch head is the exact operation-created head, and
 performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
 `memory.md` it carries is left to the projection that rebuilds it.
@@ -34,6 +35,16 @@ explicit memory-skipped outcomes. `cancel_sync` publishes cancelling, rolls back
 operation-owned sides, returns every parked candidate, proves contract bases stayed original,
 publishes cancelled, then deletes
 authority.
+
+**A completed sync recomputes the leaf's worklist (MIK-R08 rule 8, architect ruling 1).** The sync moved
+the base pair, so B and K_B moved with it. `with_recomputed_worklist(result, contract)` calls
+`recompute_knowledge_worklist(contract)` and, when it returns a summary, sets
+`result.payload["knowledgeWorklist"]`; otherwise the result is untouched. `recompute_knowledge_worklist`
+looks up the bound `WorktreeServices.knowledge_worklist` port, reloads the contract (which now holds the new
+base pair) and calls `port.recompute`. The port lookup, the reload and the recompute sit inside one guard:
+an unbound bundle or port, or **any** exception, returns `None`. Both `finalize_sync` and the `continue`
+replay of a completed generation (`sync_transaction_results.terminal_resolution_replay`) use it, so both
+report the worklist of the base pair the sync wrote.
 
 Unreadable or identity-invalid journals fail closed until explicit cancel. Cancellation first
 archives exact raw bytes or an opaque nonregular entry. With no refs it writes terminal quarantine
@@ -57,6 +68,9 @@ ambient inference.
 - Corrupt evidence is archived before quarantine or ref-based rollback.
 - No-refs quarantine means usable terminal sync state, not a false rollback-success claim.
 - Partial authority is preserved for manual repair; incomplete refs are not deleted wholesale.
+- **The worklist recompute never fails a completed sync.** It runs after the terminal journal is
+  published; nothing it does may change the completed result except adding the optional summary. With no
+  port bound, or no worklist applicable (every unconverted leaf), the result is byte-for-byte unchanged.
 
 ## Parked-Candidate Recovery Ownership
 
@@ -88,9 +102,10 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:207-401; mcp/src/agents_remember/worktrees/sync_transaction_state.py:445-465 |
 | Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-74; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:206-220 |
-| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:618-649; mcp/src/agents_remember/worktrees/sync_transaction_git.py:650-660 |
-| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; "require_parked_wip_settled(record)"; "restore_cancelled_wip(store, record)" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190 |
-| The completed-branch proof addresses only operation-created heads and reads no ledger rows. | `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:646-675; mcp/src/agents_remember/worktrees/sync_transaction_git.py:678-686 |
+| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; "require_parked_wip_settled(record)"; "restore_cancelled_wip(store, record)" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-127; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-225 |
+| The completed result gains the recomputed worklist summary; every failure leaves it unchanged. | `with_recomputed_worklist`; `recompute_knowledge_worklist` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:96-108; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:111-127 |
+| The completed-branch proof addresses only operation-created heads and reads no ledger rows. | `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571 |
 
 ## Cross-Repo References
 
@@ -100,6 +115,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-29T15:45:39+00:00: Generated citation repair: `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic now ends `finalize_sync` with `with_recomputed_worklist` and describes `recompute_knowledge_worklist` (bound port, reloaded contract, one guard that turns any failure into `None`), used by the finalization and the `continue` replay; Invariants records that the recompute never fails a completed sync (review R1 F2). A row cites both functions.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`sync_transaction_git.py`, `sync_transaction_state.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-20T07:25+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `exact_created_head` and `rollback_side` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/worktrees/sync_transaction_git.py:539-570` and `mcp/src/agents_remember/worktrees/sync_transaction_git.py:571-581`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-20T00:16:01+00:00: Generated citation repair: `exact_created_head`; `rollback_side` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:509-517; mcp/src/agents_remember/worktrees/sync_transaction_git.py:477-506. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.

@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -228,13 +228,13 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:252-258; mcp/src/agents_remember/application/memory_quality/controller.py:386-457 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:254-260; mcp/src/agents_remember/application/memory_quality/controller.py:388-462 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:67-98 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
 | The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:64-110 |
-| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:125-205 |
+| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:132-212 |
 
 Current working-candidate evidence for this route:
 
@@ -479,7 +479,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:567-567; mcp/src/agents_remember/application/memory_quality/controller.py:688-724 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:592-592; mcp/src/agents_remember/application/memory_quality/controller.py:719-755 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
 ## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
@@ -848,9 +848,31 @@ unchanged before MIK-R37.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The defaulted input and its section. | `WithoutProof`; `_append_without_proof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:66-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:341-373 |
+| The defaulted input and its section. | `WithoutProof`; `_append_without_proof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:66-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:73-78; mcp/src/agents_remember/memory_quality/curator_checklist.py:354-386 |
+
+## 260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information
+
+**Route meaning extended (MIK-R08@v2 rule 7).** The new
+[`knowledge_worklist_section.py`](knowledge_worklist_section.py.md) renders the leaf's persisted
+`knowledge-worklist/v1` document as the checklist section "Knowledge worklist (MIK-R08)": state, file,
+digest, pairing, and one row per item (or the unreadable inputs of an `incomplete` run). Its
+`worklist_summary` is the compact summary the memory-quality response, the managed-sync response and
+`knowledge_integrity_check` carry. [`curator_checklist.py`](curator_checklist.py.md) gains the defaulted
+`knowledge_worklist` and `knowledge_worklist_path` inputs and renders the section after the "without proof"
+section.
+
+- **Information, never a count.** The worklist never enters `curatorActionableCount`, the attestation or the
+  wire counts; what an open item blocks is MIK-R09's closeout gate, live at the cutover.
+- **Unchanged for unconverted leaves.** With no worklist the section is not rendered, so today's checklist
+  bytes are unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:74-121 |
+| The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information": the new `knowledge_worklist_section.py` (carded, governed by this overview) and the checklist's defaulted worklist inputs, never counted. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the checklist's informational "Invariants without proof" section, with the architect ruling that the list is checklist-only and never counts toward `curatorActionableCount`. One row. The entry went into the real list after the last section, not into the inline `## Update History` mention. The `_attach_final_full_catalog` row was re-pointed by the exact line map, and five further rows were re-pointed or normalised by the installed `memory-citations --fix`, with no wording change.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24 rule 5).** New section "260928-MIK-L24 The Converted Format Joins This Route", covering the two new modules (`reference_state`, `converted_check`), the four touched ones (`check`, `commit_route`, `markers`, `extents`) and the rule 9 ruling, with six rows. The entry sits in the real Update History list after the last section, not in the inline mention inside "Deterministic Citation Document Publication".
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Migration Census Joins This Route"** for the five new `knowledge_census/` cards and the new `knowledge_validator/rules_census.py` card, plus the `validator.py` and `parsed.py` changes; the Route Model gains a `knowledge_census/` bullet and names `rules_census.py`. No separate `knowledge_census/overview.md` was created. No stamp advanced.

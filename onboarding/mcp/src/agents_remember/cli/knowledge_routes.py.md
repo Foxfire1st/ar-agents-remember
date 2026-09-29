@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_routes.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ The adapter reuses the route logic; it adds only argument handling and printing.
 | The working tree's tracked and untracked, not ignored, files. | `_working_tree_files` | mcp/src/agents_remember/cli/knowledge_routes.py:53-57 |
 | Each family's routes, state and suggestion. | `_state_document`; `_family_documents` | mcp/src/agents_remember/cli/knowledge_routes.py:60-67; mcp/src/agents_remember/cli/knowledge_routes.py:92-112 |
 | Reading, rendering, unknown families and the exit status. | `run`; `_render` | mcp/src/agents_remember/cli/knowledge_routes.py:70-89; mcp/src/agents_remember/cli/knowledge_routes.py:115-137 |
-| The subcommand is registered. | `knowledge_routes` | mcp/src/agents_remember/cli/__main__.py:94-99 |
+| The subcommand is registered. | `knowledge_routes` | mcp/src/agents_remember/cli/__main__.py:102-107 |
 | The command offers the suggestion and writes nothing. | `test_the_routes_command_offers_the_suggestion_and_writes_nothing` | mcp/tests/test_knowledge_family_routes.py:415-445 |
 
 ## Cross-Repo References
@@ -79,6 +79,7 @@ No meaningful cross-repo references found: the command reads one memory working 
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 registers `knowledge-census` in `cli/__main__.py` (one import line and a longer docstring sentence), which moves the later registrations down by two lines; this card's registration row was re-pointed to the new extent, its claim unchanged. No verification stamp was advanced. The installed fixer also put the `run`; `_render` row's two ranges in anchor order (same ranges, no content impact).
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): created this card for the new file MIK-R04 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

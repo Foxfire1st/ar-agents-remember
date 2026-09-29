@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -132,8 +132,8 @@ Route reviews now bind task intent, content digests and declared direct dependen
 | --- | --- | --- |
 | Canonical task intent is hashed from the validated normative projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
 | Exact task text remains mandatory alongside supplemental packet references. | `_requirements` | mcp/src/agents_remember/tasks/task_intent.py:288-309 |
-| Task-document publication rejects a route review missing intent identity. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-231 |
-| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358 |
+| Task-document publication rejects a route review missing intent identity. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-229 |
+| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:347-360 |
 
 ## Invariants And Boundaries
 
@@ -187,11 +187,11 @@ Route reviews now bind task intent, content digests and declared direct dependen
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
-| Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
-| The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
-| The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:219-277 |
+| Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
+| The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:45-71 |
+| The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:699-750 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1142-1164 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -292,11 +292,11 @@ master-qualified leaf-title keys.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:22-35; mcp/src/agents_remember/tasks/store.py:38-52 |
-| Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:65-73 |
-| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
+| Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:23-36; mcp/src/agents_remember/tasks/store.py:39-53 |
+| Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72 |
+| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:198-253 |
 | Qualified leaf-title join. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
-| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
+| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:218-259 |
 
 ## 260821-DAGQC-L2 Total Serving-Preflight Boundary
 
@@ -358,7 +358,22 @@ exactly as a substep's, **and** counts `step.note` among the reasons to draw tha
 carrying only a note would otherwise render as a bare heading and lose the note a second time.
 Persisting a field the renderer cannot show still leaves it invisible.
 
+## 260928-MIK-L08 The `knowledgeMaintenanceScope` Field
+
+`document.py`'s `TaskDocument` gained the optional boolean `knowledgeMaintenanceScope` (MIK-R08 definition
+5): a leaf that sets it has its worklist classify every entry of its memory base.
+`document_field_effects.py` classifies it `LIFECYCLE`, not `NORMATIVE` (**architect ruling 4**), so it
+stays outside the intent digest and a change to it is an `operational-audit` mutation; `render.py` draws
+a `**Knowledge maintenance scope:**` header line when it is true. Every existing document loads unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The field. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:680-682 |
+| Its classification. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:165-165 |
+| Its header line. | `_header_lines` | mcp/src/agents_remember/tasks/render.py:180-205 |
+
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field" across `document.py`, `document_field_effects.py` (`LIFECYCLE`, architect ruling 4) and `render.py`.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): `leaf_doc.py` gained the derived master-link binding —
   absent-only `seriesContractPath`/`enclosures[]` on both planning paths, a candidate where a matching

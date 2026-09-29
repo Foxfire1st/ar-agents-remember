@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -182,13 +182,13 @@ Source declarations and test assertions are distinguished from execution and acc
 | **The side the retained phase names is read in one place, so phase and side cannot disagree.** | `_retained_side` | mcp/src/agents_remember/worktrees/sync_transaction.py:644-649 |
 | **The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.** | `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:652-690 |
 | **The authored-decision route: validate against the journal, re-run the adapter with every decision this side has already accepted plus the new one, then finish the retained merge.** | `_reconcile_knowledge_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:693-752 |
-| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:802-837; mcp/src/agents_remember/worktrees/sync_transaction.py:857-865; mcp/src/agents_remember/worktrees/sync_transaction.py:848-854 |
+| **The two facts a caller can get wrong, and the refusal that names them without entering the merge.** | `_reconcile_problem`; `_decision_matches`; `_refused_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:802-837; mcp/src/agents_remember/worktrees/sync_transaction.py:848-854; mcp/src/agents_remember/worktrees/sync_transaction.py:857-865 |
 | **The bounded refusal that stops the recovery cycling: a row an already-accepted decision answered that came back anyway.** | `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:755-784 |
 | **The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.** | `_knowledge_conflict` | mcp/src/agents_remember/worktrees/sync_transaction.py:868-885 |
 | **The read-only dry run of an authored decision.** | `_reconcile_preview` | mcp/src/agents_remember/worktrees/sync_transaction.py:488-501 |
 | The delegated Git owner excludes only the memory cache while retaining exact native merge proofs, and now returns the adapter's refusal with the merge outcome. | `worktree_dirty_paths`; `_content_pathspec`; `discard_memory_cache_changes`; `exact_created_head`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:160-184; mcp/src/agents_remember/worktrees/sync_transaction_git.py:324-325; mcp/src/agents_remember/worktrees/sync_transaction_git.py:311-312; mcp/src/agents_remember/worktrees/sync_transaction_git.py:678-686; mcp/src/agents_remember/worktrees/sync_transaction_git.py:338-351; mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-67 |
 | Pinned authority and parked-work restoration remain separate owners. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
-| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
+| Terminal finalization/cancellation and damaged-journal recovery are delegated. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-127; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-225; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:228-298; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:301-318 |
 | **The integration case that drives the authored decision through this driver and asserts the advertised call is the one that settles it.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled` | mcp/tests/test_worktree_sync.py:268-354 |
 
 ## Cross-Repo References
@@ -201,6 +201,7 @@ No additional configured external or sibling-repository evidence is claimed.
 | No additional configured cross-repository evidence. | — | — |
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `sync_transaction_recovery.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added a Logic paragraph and a row for MIK-R24 rule 8: `_run_side` passes the crossing owner (leaf or master, with the task ID) to `start_side_merge`, and journals `crossingReport` on the side record. The other ranges were re-pointed by the installed fixer and the exact line map, with no wording change.
 - 2026-09-29T12:06:03+00:00: Generated citation repair: `_paired_code` repointed to mcp/src/agents_remember/worktrees/sync_transaction.py:613-619. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented how the driver pairs the memory merge with the code side's result (`_paired_code`), maps a MIK-R22 validator refusal to `sync-knowledge-validation-refused` with a recovery line on both the automatic and the retained-conflict path (`_knowledge_validation_refused`), and keeps the merge staged. Added the matching invariant and three reference rows. The verification stamp is unchanged; closeout owns it.

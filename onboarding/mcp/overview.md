@@ -5,14 +5,52 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover
+
+`260928-MIK-L08` (MIK-R08@v2) computes, for each leaf, the complete list of knowledge items its change
+requires a disposition for, from the exact code and memory trees of its base and candidate (B, K_B, C,
+K_C), and persists it as `knowledge-worklist/v1` beside the leaf's series contract:
+
+- the new package [`application/knowledge_worklist/`](src/agents_remember/application/overview.md) holds the
+  hunks and ranges, the entry classes, the knowledge-side changes, the item-kind registry, the one-pass
+  scope, the gate linkage (every changed hunk linked or unexplained), the leaf's sides and the
+  converted-base cache; the curator writer carries `carried` entries forward mechanically
+  (`knowledge_writer/carry.py`);
+- the curator's memory-quality run and a completed managed sync recompute it (**architect ruling 1**:
+  closeout validation and landing pre-commit are L09's, through `recompute_leaf_worklist`); the checklist
+  shows it as information, never counted
+  ([`memory_quality/`](src/agents_remember/memory_quality/overview.md),
+  [`worktrees/`](src/agents_remember/worktrees/overview.md));
+- `knowledge_integrity_check` returns a leaf's latest worklist by `contractPath`
+  ([`mcp/tools/`](src/agents_remember/mcp/tools/overview.md),
+  [`mcp/registration/`](src/agents_remember/mcp/registration/overview.md),
+  [`models/`](src/agents_remember/models/overview.md));
+- the task document gains `knowledgeMaintenanceScope`, classified `LIFECYCLE` (**ruling 4**)
+  ([`tasks/`](src/agents_remember/tasks/overview.md),
+  [`application/task_docs/`](src/agents_remember/application/task_docs/overview.md));
+- `cli/` gains [`knowledge-worklist`](src/agents_remember/cli/knowledge_worklist.py.md), the umbrella's
+  thirteenth subcommand ([card](src/agents_remember/cli/__main__.py.md)).
+
+Also ruled: the knowledge-side comparison runs in memory over the index builder's parse (**ruling 2**);
+renames come from ICR's rename inference (**ruling 3**); carrying updates only this leaf's own open row
+(**ruling 5**); definition 4 wins when the blob is unchanged, a partial inventory makes the run
+`incomplete`, and the converted K_B is cached under the coordination runtime cache (**review R1 rulings**).
+**Nothing the installed runtime does changes before MIK-R37**: the worklist is inert while both memory
+sides are unconverted.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:403-434 |
+| The CLI subcommand. | `run`; `leaf_worklist` | mcp/src/agents_remember/cli/knowledge_worklist.py:93-108 |
 
 ## 260928-MIK-L28 First-Class Test Proofs Are Read Back And Listed, Not Yet Used
 
@@ -87,7 +125,7 @@ The facts that belong to this route, because `cli/` and `kernel/` have no overvi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The umbrella registers the conversion command. | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:76-81 |
+| The umbrella registers the conversion command. | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:78-83 |
 | The command converts, validates before writing, and commits nothing. | `run` | mcp/src/agents_remember/cli/knowledge_convert.py:57-89 |
 | The pinned conversion-format version. | `CONVERSION_FORMAT_VERSION` | mcp/src/agents_remember/memory/conversion/convert.py:44-44 |
 | A raw three-way line merge that writes nothing. | `merge_file_bytes` | mcp/src/agents_remember/kernel/git_command.py:378-406 |
@@ -126,7 +164,7 @@ route, because `cli/` has no overview of its own:
 | The ingest dispatch on the loaded contract's memory worktree. | `run`; `run_leaf_write` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709 |
 | The bootstrap run mode's dispatch on the admitted memory root. | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-537 |
 | The layout-marker test both commands use. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:53-56 |
-| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:50-54 |
+| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
 
 ## 260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`
 
@@ -154,7 +192,7 @@ unconverted tree, so no production route changes behaviour.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subcommand registration. | `knowledge_census`; "knowledge-census" | mcp/src/agents_remember/cli/__main__.py:100-105 |
+| The subcommand registration. | `knowledge_census`; "knowledge-census" | mcp/src/agents_remember/cli/__main__.py:108-113 |
 | Inventory pins the baseline and writes through the census writer. | `_run_inventory` | mcp/src/agents_remember/cli/knowledge_census.py:71-93 |
 | The writer refuses an unconverted memory tree. | `_tree` | mcp/src/agents_remember/memory/knowledge_census/writer.py:83-90 |
 
@@ -183,7 +221,7 @@ route changes behaviour.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subcommand registration. | `knowledge_routes`; "knowledge-routes" | mcp/src/agents_remember/cli/__main__.py:94-99 |
+| The subcommand registration. | `knowledge_routes`; "knowledge-routes" | mcp/src/agents_remember/cli/__main__.py:102-107 |
 | The command reads the families and prints them; it writes nothing. | `run` | mcp/src/agents_remember/cli/knowledge_routes.py:115-137 |
 | The six route rules in the registry. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
 
@@ -214,7 +252,7 @@ behaviour.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subcommand registration. | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:88-93 |
+| The subcommand registration. | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:90-95 |
 | The command's report and exit statuses. | `run` | mcp/src/agents_remember/cli/knowledge_index.py:44-82 |
 | The one dataset resolution every knowledge read applies. | `select_knowledge_dataset` | mcp/src/agents_remember/application/published_intent.py:337-356 |
 | The cache that refuses any location inside a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-164 |
@@ -245,7 +283,7 @@ holds `knowledge/layout.json`, so no production route changes behaviour.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subcommand registration. | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:75-86 |
+| The subcommand registration. | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:77-88 |
 | The command's inputs, scope answer and exit statuses. | `run` | mcp/src/agents_remember/cli/knowledge_validate.py:69-93 |
 | The shared exclusion predicate. | `is_excluded_from_knowledge` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:50-63 |
 | The batch blob reader. | `read_git_blobs_bytes` | mcp/src/agents_remember/kernel/git_command.py:338-375 |
@@ -271,7 +309,7 @@ informational section mapping hand-off fields to the future files; it changes no
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The format package's own map and its shape-only boundary. | "The text knowledge format" | mcp/src/agents_remember/models/knowledge_files/__init__.py:1-1 |
-| The subcommand registration. | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:69-74 |
+| The subcommand registration. | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:71-76 |
 | The command's exit statuses. | "Exit status: 0 when every file is canonical" | mcp/src/agents_remember/cli/knowledge_format.py:11-12 |
 | The template's informational section. | "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:427-427 |
 
@@ -354,7 +392,7 @@ curation report for the next leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The `review-record-comparison` subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:106-114 |
+| **The `review-record-comparison` subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:114-122 |
 | **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** | `run`; `_standing_generation`; `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:94-95; mcp/src/agents_remember/cli/review_comparison_record.py:162-202; mcp/src/agents_remember/cli/review_comparison_record.py:205-229; mcp/src/agents_remember/cli/review_comparison_record.py:95-95 |
 | **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** | `review_namespace`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:351-390; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
 | **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** | `_UNSEALED_FIELDS`; `_lineage` | mcp/src/agents_remember/application/review_comparison_generation.py:162-162; mcp/src/agents_remember/application/review_comparison_freeze.py:728-737 |
@@ -385,6 +423,9 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-29T15:41:25+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T15:41:25+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover" at the top: the new `application/knowledge_worklist/` package, the writer's carry, the two triggers L08 wires, the tool, the task-document field, the `knowledge-worklist` CLI (`cli/` has no overview of its own, so this route governs its card), and every architect ruling recorded on `08_change-to-knowledge-worklist.json`.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section: first-class test proofs read back and listed, with the four architect rulings (`path -k name`; the optional `proofs` field; the "without proof" list is checklist-only and informational; rule 3 and the stale-proof clause move to L08/L03), and the package template copy this route governs. Two rows. No `cli/` or `kernel/` fact changed. Rows citing files this change moved were re-pointed or normalised by the installed `memory-citations --fix`, with no wording change.
 - 2026-09-29T13:25:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New top section: the conversion package (governed by `memory`), the `knowledge-convert` command (twelve subcommands), the `kernel/` changes (`merge_file_bytes`, the `memory_init` marker, route-index sidecar hints), the ingest refusal, and the architect rulings, with seven rows. The existing multi-anchor rows into the changed CLI umbrella and kernel files were re-pointed by the exact base-to-working line map, with no wording change.
@@ -654,10 +695,10 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | **The read-back through the reader's owner, and the three states the report carries.** | `published_identity_read_back`; `PublishedIdentityReadBack`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-250; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/published_intent.py:219-243 |
 | **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** | `_Destination`; `_destination_conflict`; `_selected_destination`; `_publication_route`; `_read_back` | mcp/src/agents_remember/cli/knowledge_ingest.py:288-299; mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:300-311; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628; mcp/src/agents_remember/cli/knowledge_ingest.py:427-440 |
 | **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** | `summary`; `payload`; `_counts` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:34-76; mcp/src/agents_remember/cli/knowledge_ingest_report.py:279-293; mcp/src/agents_remember/cli/knowledge_ingest_report.py:79-128; mcp/src/agents_remember/cli/knowledge_ingest_report.py:154-168 |
-| The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:109-141 |
+| The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:110-142 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:140-140 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:119-119 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:121-121 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -908,8 +949,8 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:487-661; mcp/src/agents_remember/application/memory_quality/controller.py:363-383; mcp/src/agents_remember/application/memory_quality/controller.py:386-457 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:708-744 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:512-692; mcp/src/agents_remember/application/memory_quality/controller.py:365-385; mcp/src/agents_remember/application/memory_quality/controller.py:388-462 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:739-775 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:754-818 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
@@ -2439,7 +2480,7 @@ its own positive control.
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2003 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2020 |
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms

@@ -4,7 +4,7 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
 | lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
 | lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00 |
 | status      | active                 |
@@ -94,7 +94,7 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:21500f8ffcb47e94558d25ab859f4143c316428a0a395140e9cc7fc7e4a3ce36` | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:6078e6741efde951d1734f0d087bb729b034544381d5c924509a6e7f01a46484` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
 | Worktree Contract                   | `git-blob-set-v1` | `sha256:c45a69a6d62d6f75a58f162e7c458feec9fd6a8d7d50989b6ddc8fb52e50fab8` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
-| Source Lineage | `git-blob-set-v1` | sha256:212118ce50f86e2bf43e7dae918434c604167f5fab86dba0d07bcaf7c6d7042d | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
+| Source Lineage | `git-blob-set-v1` | sha256:ba54a31f265178dab40911e6757733f11d436e587123665ea8e783a099e7a7fb | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
 | Worktree Integration                | `git-blob-set-v1` | `sha256:dde80481544dca3ee1d2d165d6056fc69db6d30a6abc5fe7effc5e264ad48820` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:51fb16434b4058378390d656007dbf5275df052a0ab55fc131bef820576a3f19` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
@@ -283,7 +283,7 @@ The ledger cache is not an enabledness choice or an input message. Disabled memo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The normalized input and message vocabulary contain only code/memory. | `memory_content_message`; `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53; mcp/src/agents_remember/models/closeout/input.py:127-165 |
+| The normalized input and message vocabulary contain only code/memory. | `memory_content_message`; `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53; mcp/src/agents_remember/models/closeout/input.py:145-163 |
 
 ### Curator Coherence Authority
 
@@ -358,8 +358,8 @@ CCR cumulative source verification: The journal now separates recordRevision, ad
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adoption creates the memory-content output and refreshes its cache. | `adopt_initial_baseline`; `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:172-227; mcp/src/agents_remember/memory/baseline.py:233-240 |
-| Adoption status is derived from Git attribution. | `has_adopted_baseline`; `ledger_status` | mcp/src/agents_remember/memory/baseline.py:230-255; mcp/src/agents_remember/memory/baseline.py:258-267 |
+| Adoption creates the memory-content output and refreshes its cache. | `adopt_initial_baseline`; `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:195-249; mcp/src/agents_remember/memory/baseline.py:233-240 |
+| Adoption status is derived from Git attribution. | `has_adopted_baseline`; `ledger_status` | mcp/src/agents_remember/memory/baseline.py:252-255; mcp/src/agents_remember/memory/baseline.py:258-267 |
 
 ### Branch-Gated Cross-Repo Source
 
@@ -620,8 +620,8 @@ CCR cumulative source verification: Current contract publication additionally re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract stores the actual two outputs and informational cache location. | `WorktreeContract`; `code_commit`; `memory_content_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-281 |
-| One normalizer/validator owns contract serialization. | `contract_publication_text`; `parse_contract_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:470-477; mcp/src/agents_remember/worktrees/worktree_contract.py:475-480 |
+| The contract stores the actual two outputs and informational cache location. | `WorktreeContract`; `code_commit`; `memory_content_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286 |
+| One normalizer/validator owns contract serialization. | `contract_publication_text`; `parse_contract_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:470-477; mcp/src/agents_remember/worktrees/worktree_contract.py:480-485 |
 
 ### Worktree Integration
 
@@ -679,7 +679,7 @@ CCR cumulative source verification: Current execution routes the repository-owne
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Admission checks actual sources, ancestry and content before refs move. | `prepare_integration_ref_move`; `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
-| Carryover/cleanup readiness proves both outputs reached their official sources. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
+| Carryover/cleanup readiness proves both outputs reached their official sources. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:193-216 |
 
 ## Ownership Notes
 
@@ -761,6 +761,7 @@ The subsystem's own account of current intent lives in the file cards under
 route while the fingerprint is pending.
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): (entity-evidence intersection checked mechanically against the leaf's 36 changed or added paths): **no entity impact, and no fingerprint hand-advanced.** The only intersection is **Source Lineage**, through its evidence path `mcp/src/agents_remember/models/worktree.py`, where MIK-R08 adds one optional response field, `WorktreeSyncResponse.knowledgeWorklist` (the worklist summary a completed managed sync attaches). It does not touch the lineage plane, its relations, its projection or any identifier the row names, so the entity's claim is unchanged. **The `git-blob-set-v1` fingerprint was deliberately not re-signed:** the path is modified but uncommitted, so a value written now would be one no commit carries; the governed closeout recomputes it from the landed code commit, following the 2026-09-18 and 2026-09-29 (L24) precedent. No content impact on four further rows the census lists as edited: the installed `memory-citations --fix` run on this document normalised six passing citation ranges to their measured extents in the **Closeout Effective Input**, **Memory Baseline Adoption**, **Worktree Contract** and **Worktree Integration** sections (`models/closeout/input.py`, `memory/baseline.py`, `worktrees/worktree_contract.py`, `worktrees/modules/guidance.py`, none of which this leaf changes). Each row's claim and anchors are unchanged, and no fingerprint moved.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Memory Quality Control: added the row "Converted-Format Dispatch (260928-MIK-L24)".** It records the MIK-R24 rule 5 dispatch of `memory_quality/check.py` on a converted tree, and the rule 9 controller refusal, inert until MIK-R37. The entity's identity and evidence set are unchanged. **The `git-blob-set-v1` fingerprint was deliberately not re-signed:** `check.py`, one of its evidence paths, is modified but uncommitted, so a value written now would be one no commit carries. The governed closeout recomputes the row against the real code commit, as this catalog did for the same entity at 2026-09-17 and 2026-09-18. No stamp was advanced.
 
 - 2026-09-27T05:02:28+00:00 — Updated only Curator Coherence Authority's durable-reader/custody ownership and load-bearing evidence paths. Its existing git-blob-set-v1 value is deliberately unchanged on uncommitted source; normal closeout recomputes real committed evidence. Other inherited catalog drift is outside this repair.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/writer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,7 @@
 **`write_knowledge(WriteRequest) -> WriteReport`: the curator writer's one operation (MIK-R12 rules 2, 4
 and 7).** It reads the hand-off document (`handoff.read_handoff`), loads the memory tree
 (`MemoryState.load`), captures the code candidate tree C (`CodeSnapshot.capture`), applies the document
-(`Authoring.run`), checks every row of the owner's history file (`owner_history_problems`), renders each
+(`Authoring.run`), carries every `carried` entry forward at C (`carry_entries`, MIK-R08), checks every row of the owner's history file (`owner_history_problems`), renders each
 touched document canonically after model validation (`_render`), then runs the MIK-R22 validator
 (`validate_tree`) over the **whole resulting tree**, with the memory worktree's `HEAD` as base when that
 base is converted. Only then does it write, and only in a committing run.
@@ -35,6 +35,12 @@ base is converted. Only then does it write, and only in a committing run.
   captured.
 - Problems from reading, authoring, the history check and rendering are all collected; any of them refuses
   the operation before validation runs.
+- **Carry-forward (MIK-R08 definition 4).** After authoring and before the history check, every operation
+  calls `carry.carry_entries(state, snapshot, owner)`: each `realizes` or `proves` entry whose file's blob
+  moved at C while its anchored content is identical is re-recorded at C (`blob`, and a line range's lines),
+  and this owner's own open history row that still names the old anchor as `after` follows it. The IDs go
+  into `WriteReport.carried`. This is the mechanical update the worklist's `carried` class promises, so such
+  an entry needs no disposition. The carry runs over the whole tree, not only the leaf's changed paths.
 - `_writer_split` turns refusals of the rules the registry marks `writer_reports`
   (`writer_reported_rule_ids()`: today `R04.1-route-directory`, `R04.2-coverage`, `R04.2-non-empty`) into
   report-only violations **inside the writer**, so a leaf may place family routes over several runs
@@ -57,6 +63,9 @@ base is converted. Only then does it write, and only in a committing run.
   and report-only (architect ruling 6); the curator repairs such damage by direct edit first.
 - Nothing is written before validation: `MemoryState.write` is reached only from `_finish` with
   `commit=True`.
+- **The carry never edits authored fields or another owner's row (architect ruling 5, MIK-R08).** It never
+  changes a locator kind, a name or `content`, and it leaves closed history files and other owners' rows
+  alone; with this owner's own file closed, the history check then refuses the write ("closed and frozen").
 
 ### Todos
 
@@ -81,12 +90,14 @@ The operation and its stages.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:50-54 |
-| One operation's inputs, including the authorization reference the report records. | `WriteRequest` | mcp/src/agents_remember/application/knowledge_writer/writer.py:57-73 |
-| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:76-118 |
-| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:121-136 |
-| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:139-152 |
-| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:155-177 |
+| The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
+| One operation's inputs, including the authorization reference the report records. | `WriteRequest` | mcp/src/agents_remember/application/knowledge_writer/writer.py:62-78 |
+| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
+| The carry-forward call and its report field. | `carry_entries`; `carried=carried` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
+| The carry itself. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:47-72 |
+| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:128-143 |
+| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:146-159 |
+| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:162-184 |
 | The registry side of the writer-reported rules. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
 | A validator refusal writes nothing and names every violation. | `test_a_validator_refusal_writes_nothing_and_names_every_violation` | mcp/tests/test_knowledge_writer.py:326-338 |
 | Route rules are reports in the writer and refusals at a commit route. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:614-652 |
@@ -101,6 +112,8 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T15:42:32+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Purpose and Logic now name the carry-forward step (`carry.carry_entries`, called in every operation between authoring and the history check, its IDs in `WriteReport.carried`), and Invariants records architect ruling 5 (the carry updates only this leaf's own open row, never closed files or other owners' rows). Two rows cite the call and the new `carry.py`. The module docstring's new "Carried entries" paragraph is the source.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

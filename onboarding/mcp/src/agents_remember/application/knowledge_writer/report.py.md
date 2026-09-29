@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/report.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,9 @@ report-only findings; a refused one lists every problem and refusing violation. 
   `knowledge/history/<owner>.json#<record ID>` for evidence stored in a history row. An empty `stored_in`
   renders "nothing: the entry authored no record".
 - `authorization` is carried because the file format has no field for it.
+- `carried` (MIK-R08) lists the entries the operation re-recorded at C because their anchored content is
+  unchanged while their file's blob moved (`carry.carry_entries`). It is a JSON list and, in the text form,
+  one line per entry: `carried <ID>: blob re-recorded at C (content unchanged)`.
 
 ### Conventions
 
@@ -64,9 +67,10 @@ The report shapes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The outcome of one evidence-bearing entry. | `EvidenceOutcome` | mcp/src/agents_remember/application/knowledge_writer/report.py:59-66 |
-| The report and its refused flag. | `WriteReport` | mcp/src/agents_remember/application/knowledge_writer/report.py:69-140 |
-| The JSON form. | `to_document` | mcp/src/agents_remember/application/knowledge_writer/report.py:91-109 |
-| The text form. | `render` | mcp/src/agents_remember/application/knowledge_writer/report.py:111-140 |
+| The report and its refused flag. | `WriteReport` | mcp/src/agents_remember/application/knowledge_writer/report.py:69-145 |
+| The JSON form. | `to_document` | mcp/src/agents_remember/application/knowledge_writer/report.py:92-111 |
+| The text form. | `render` | mcp/src/agents_remember/application/knowledge_writer/report.py:113-145 |
+| The carried entries in the report, JSON and text. | `carried`; "blob re-recorded at C (content unchanged)" | mcp/src/agents_remember/application/knowledge_writer/report.py:86-86; mcp/src/agents_remember/application/knowledge_writer/report.py:129-129 |
 
 ## Cross-Repo References
 
@@ -80,4 +84,5 @@ worktree of one repository.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic gains the `carried` field (the IDs `carry.carry_entries` re-recorded at C), with its JSON and text forms, and a row cites it.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

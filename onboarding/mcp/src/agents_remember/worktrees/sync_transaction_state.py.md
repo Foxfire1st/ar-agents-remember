@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash |  `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate |  2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash |  `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate |  2026-09-29T18:13:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -120,9 +120,9 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The driver treats this store as the sole current generation and routes recovery from its strict outcomes. | `_read_sync_record`; `_route_sync_record` | mcp/src/agents_remember/worktrees/sync_transaction.py:119-157; mcp/src/agents_remember/worktrees/sync_transaction.py:160-180 |
-| Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
+| Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-225; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:228-298; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:301-318 |
 | Public status embeds this journal projection without moving its authority into task/queue state. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:72-134 |
-| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it. | `SyncSideRecord`; `SyncWipState`; `knowledgeReconciliations` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction_state.py:46-46 |
+| The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it. | `SyncSideRecord`; `SyncWipState`; `knowledgeReconciliations` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:47-47; mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction_state.py:46-46 |
 | The crossing report path is journaled for a crossing sync only; an empty one is omitted, so ordinary journals stay readable by the installed runtime. | `SyncSideRecord`; `_omit_empty_crossing_report` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction_state.py:87-95 |
 | The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis. | `_active_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:468-545 |
 | **The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.** | `SyncKnowledgeConflict`; `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:184-203; mcp/src/agents_remember/models/worktree.py:152-168 |
@@ -135,6 +135,7 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `sync_transaction_recovery.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added a paragraph and a row for `SyncSideRecord.crossingReport` (MIK-R24 rule 8) and its wrap serializer, which omits the empty key (architect ruling N2: ordinary journals stay readable by the installed runtime). The remaining ranges were re-pointed by the installed fixer and the exact line map, with no wording change.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 

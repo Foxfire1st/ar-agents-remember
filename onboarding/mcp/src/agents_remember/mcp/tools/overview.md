@@ -5,14 +5,29 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist
+
+`knowledge_integrity_check_payload` in [`knowledge.py`](knowledge.py.md) now takes one
+`IntegrityCheckRequest` and an optional `contractPath` (MIK-R08 rule 7). A dataset (`databasePath` with
+`repositoryId`) is reported as before; a leaf alone gives a `reported` result without conditions; naming
+neither is refused with `selected_input_unavailable`. When a contract is named, the result gains
+`worklistState` and `worklist` from `application/knowledge_worklist/surface.leaf_worklist_fields`: the
+latest worklist the leaf's memory-quality run or completed sync persisted beside its series contract. The
+builder computes nothing and writes nothing. The dataset pair is optional for this tool only. No other
+builder on this route changed; MIK-R26 reshapes the tool later.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The request value and the routing, with the worklist fields. | `IntegrityCheckRequest`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:638-647; mcp/src/agents_remember/mcp/tools/knowledge.py:650-687 |
 
 ## 260928-MIK-L28 A Read Of A Converted Tree Carries Its Proofs
 
@@ -27,8 +42,8 @@ index opened for the wrong key is the ordinary dataset refusal. No other builder
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read adds `proofs` for a converted tree's view. | `_read_result`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:359-443 |
-| A key mismatch is a selection failure. | `_SELECTION_FAILURES`; `IndexMismatchError` | mcp/src/agents_remember/mcp/tools/knowledge.py:258-265 |
+| The read adds `proofs` for a converted tree's view. | `_read_result`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:361-445 |
+| A key mismatch is a selection failure. | `_SELECTION_FAILURES`; `IndexMismatchError` | mcp/src/agents_remember/mcp/tools/knowledge.py:260-267 |
 
 ## 260928-MIK-L12 The Mounted Refusal Names The File Route
 
@@ -39,7 +54,7 @@ by architect ruling, until MIK-R26 (leaf L26). No builder, request model or othe
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:494-513 |
+| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:496-515 |
 
 ## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
 
@@ -54,6 +69,7 @@ else on this route moved: the same five builders, the same declared kinds, the s
 sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist": `IntegrityCheckRequest`, the optional `contractPath`, the dataset/leaf/neither routing and the `worklistState`/`worklist` fields.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **route body updated (MIK-R28).** New top section: `knowledge_read` adds the optional `proofs` field for a converted tree's `invariant` and `family` views, with the architect ruling that the additive field is accepted and absent for database reads, and `IndexMismatchError` joins the selection failures. Two rows. Rows citing `knowledge.py` elsewhere in this overview were re-pointed by the installed `memory-citations --fix`, with no wording change.
 - 2026-09-29T13:25:41+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:494-513; mcp/src/agents_remember/mcp/tools/knowledge.py:509-509. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The Mounted Refusal Names The File Route".** No verification stamp was advanced.
@@ -1069,8 +1085,8 @@ read is bound to the index's constant namespace, so seeds are its projected UUID
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared selection and its refusal mapping. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:240-252; mcp/src/agents_remember/mcp/tools/knowledge.py:258-265; mcp/src/agents_remember/mcp/tools/knowledge.py:268-271 |
-| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:274-285 |
+| The shared selection and its refusal mapping. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:242-254; mcp/src/agents_remember/mcp/tools/knowledge.py:260-267; mcp/src/agents_remember/mcp/tools/knowledge.py:270-273 |
+| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:276-287 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_format.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ The formatting rules live in the model package; this adapter only walks paths an
 | Arguments. | `add_arguments` | mcp/src/agents_remember/cli/knowledge_format.py:26-32 |
 | Cache files and hidden directories are skipped through the validator's shared predicate. | `iter_json_files`; `is_excluded_from_knowledge` | mcp/src/agents_remember/cli/knowledge_format.py:35-45; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:50-63 |
 | Exit statuses and the atomic rewrite. | `run` | mcp/src/agents_remember/cli/knowledge_format.py:48-66 |
-| Registration in the umbrella. | "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:71-71 |
+| Registration in the umbrella. | "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:73-73 |
 | The command's check, rewrite and skip behaviour is tested end to end. | `test_knowledge_format_command_checks_rewrites_and_skips_caches` | mcp/tests/test_knowledge_file_canonical.py:85-120 |
 
 ## Cross-Repo References
@@ -93,6 +93,7 @@ No meaningful cross-repo references found: the command rewrites only the files i
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 registers `knowledge-census` in `cli/__main__.py` (one import line and a longer docstring sentence), which moves the later registrations down by two lines; this card's registration row was re-pointed to the new extent, its claim unchanged. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`, `trees.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.

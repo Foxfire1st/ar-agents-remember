@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `65e3791bce458eb6265f752889435a1bcaac5f2e` |
-| lastVerifiedCommitDate | 2026-09-18T06:16:59+02:00|
+| lastUpdated            | 2026-09-29T17:20:02+02:00|
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -132,7 +132,7 @@ Under CCR-R03@v1 the route-review record became self-content-addressing. `RouteR
 `dependencies` (the typed `route-review/v1` declaration), and `recordDigest`. The record validator
 requires all content-addressing fields together, validates the declaration against the route-review
 policy, and forces `recordDigest` to equal the canonical SHA-256 of the record's own JSON bytes
-cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/route_review.py:36-42; mcp/src/agents_remember/tasks/route_review.py:140-153).
+cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/route_review.py:36-50; mcp/src/agents_remember/tasks/route_review.py:140-198).
 
 ### Invariants And Boundaries
 
@@ -183,6 +183,24 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
 
 None.
 
+## 260928-MIK-L08 The `knowledgeMaintenanceScope` Field (MIK-R08 Definition 5)
+
+`TaskDocument` gained `knowledgeMaintenanceScope: bool | None = None`. A leaf whose document sets it to
+`true` is a knowledge-maintenance leaf: its change-to-knowledge worklist classifies **every** entry of its
+memory base (K_B), not only those its code change reaches. Absent means false; only `true` is ever
+written. The field is optional, so every existing document still loads unchanged.
+
+- It is classified `LIFECYCLE`, not `NORMATIVE` (architect ruling 4): a normative slot outside the
+  `task-intent/v1` allowlist would be refused, so the field stays out of the intent digest.
+- `set_field` may set it (`application/task_docs/task_doc_tools.py`'s `_MUTABLE_FIELDS`), and the renderer
+  shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
+- The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The optional field and its comment. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:680-682 |
+| The worklist reads it. | `leaf_maintenance_scope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:126-130 |
+
 ## Docs References
 
 No Domain Documentation sources are configured for this repository-internal persisted model.
@@ -196,12 +214,12 @@ No Domain Documentation sources are configured for this repository-internal pers
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
-| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
-| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:285-306 |
-| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-153 |
-| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358 |
-| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:398-432; mcp/src/agents_remember/tasks/document.py:435-452 |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:198-253 |
+| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:313-365 |
+| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:289-310 |
+| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-198 |
+| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:267-302; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358 |
+| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:402-436; mcp/src/agents_remember/tasks/document.py:439-456 |
 
 ## L23 Final Candidate Disposition
 
@@ -226,6 +244,7 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field (MIK-R08 Definition 5)": the optional boolean on `TaskDocument`, its meaning for the worklist, and architect ruling 4 (`LIFECYCLE`, not `NORMATIVE`).
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` repointed to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-329. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `EvidenceDependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98, the extent of the construct the claim is about (the checker named line(s) [98, 229, 233] as its live location); re-pointed `require_evidence_dependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:234, the extent of the construct the claim is about (the checker named line(s) [234, 238, 345] as its live location)

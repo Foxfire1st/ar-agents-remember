@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-09-29T09:30:11+02:00                     |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`    |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated            | 2026-09-29T17:20:02+02:00                     |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`    |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -17,9 +17,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **twelve** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **thirteen** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
-`knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-routes`, `knowledge-census` and
+`knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
+`knowledge-census` and
 `review-record-comparison` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
@@ -71,6 +72,11 @@ working tree's captured state, or a Git tree read through objects — in an untr
 any Git working tree, and prints its key, state and counts as JSON. It only reads the tree; the
 installed runtime does not call it before MIK-R37.
 
+`knowledge-worklist` (MIK-R08) computes the change-to-knowledge worklist of a leaf from its series
+contract (persisted beside the contract, exactly as the curator's memory-quality run does) or of four
+explicitly named sides, and prints it as JSON. It exits 0 for a complete worklist, 1 for an incomplete one
+and 2 when none applies (both memory sides unconverted, which is every production leaf before MIK-R37).
+
 `knowledge-routes` (MIK-R04) is the curator's read-only view of family routes: for each family record of a memory working tree it prints the routes, the route state (`unrealized_family`, `route_unassigned`, uncovered realizations, emptied routes) and the mechanical route suggestion, labelled `mechanical`. It never writes a route, and on today's unconverted memory it answers "no family records".
 
 `knowledge-census` (MIK-R20) has two actions. `inventory` pins a census baseline (a code commit and a memory commit) and writes its `baseline.json` and `inventory.json` into a *converted* memory working tree through the census writer, which refuses an unconverted tree; `report` only reads, printing each census's Doc12 measures with their counts, its dispositions and its routes' governing statuses. Claims, assessments and statuses are written through the writer's Python API, not this CLI. On today's unconverted memory `report` answers "no census under knowledge/census/".
@@ -102,17 +108,19 @@ configs launch the server by that exact name, so it is never folded into this um
 | The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:53-117; mcp/src/agents_remember/cli/memory_citations.py:120-184 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
 | The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
-| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:52-60 |
-| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:61-69 |
-| **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:70-75 |
-| **The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.** | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:76-81 |
-| **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:82-87 |
-| **The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.** | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:88-93 |
-| **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** | `knowledge_routes`; "knowledge-routes" | mcp/src/agents_remember/cli/__main__.py:94-99 |
-| **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** | `knowledge_census`; "knowledge-census" | mcp/src/agents_remember/cli/__main__.py:100-105 |
-| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:106-114 |
+| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:54-62 |
+| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:63-71 |
+| **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:72-77 |
+| **The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.** | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:78-83 |
+| **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:84-89 |
+| **The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.** | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:90-95 |
+| **The `knowledge-worklist` subparser `260928-MIK-L08` adds: the change-to-knowledge worklist of a leaf or of four named sides.** | `knowledge_worklist`; "knowledge-worklist" | mcp/src/agents_remember/cli/__main__.py:96-101 |
+| **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** | `knowledge_routes`; "knowledge-routes" | mcp/src/agents_remember/cli/__main__.py:102-107 |
+| **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** | `knowledge_census`; "knowledge-census" | mcp/src/agents_remember/cli/__main__.py:108-113 |
+| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:114-122 |
 
 ## Update History
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): The umbrella now registers **thirteen** subcommands. Added `knowledge-worklist` (MIK-R08) to the Purpose list, a Logic paragraph on its two forms and exit statuses, and its subparser row; the module docstring's list names it too.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): The umbrella now registers **twelve** subcommands. Added the `knowledge-convert` (MIK-R24) paragraph, its registration pair and its row. The formatter-companion sentence now names the formatter explicitly. Every subparser row was re-measured to its exact `add_parser`/`set_defaults` extent; the ingest, bootstrap and format rows were already one line off before this leaf.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): the umbrella now registers **eleven** subcommands. Added `knowledge-census` (MIK-R20) to the Purpose list and the registration list, a paragraph for its `inventory` and `report` actions, and its row (`:93-98`). The docstring sentence and the one import line moved the later registrations down by two lines; the ingest, bootstrap, format, validate, index, routes and review-record rows were re-pointed by that exact shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): the umbrella now registers **ten** subcommands. Added `knowledge-routes` (MIK-R04) to the Purpose list and the registration list, a paragraph for it and its row. The module docstring now names it too. The ingest, bootstrap, format, validate, index and review rows were re-pointed by the exact line shift (one import line, six registration lines), their claims unchanged. The verification stamp is unchanged; closeout owns it.

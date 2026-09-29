@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 | `modules/` | public lifecycle command composition |
 | `queue/` | disposable waiting-candidate scheduling projection |
 | `integration/` | protected branch integration and lifecycle journals |
-| `services.py` | explicit provider, memory, citation and certification-continuation ports |
+| `services.py` | explicit provider, memory, citation, certification-continuation and knowledge ports (validation, crossing, worklist recompute) |
 
 ## What Does Not Belong Here
 
@@ -255,7 +255,7 @@ memory-carryover vehicle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task observation, memory/finalization continuation, knowledge validation (since MIK-R22) and the knowledge crossing (since MIK-R24) use explicit service ports; `WorktreeServices` carries each as a field. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:112-129; mcp/src/agents_remember/worktrees/services.py:151-199; mcp/src/agents_remember/worktrees/services.py:202-211 |
+| Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24) and the worklist recompute (since MIK-R08) use explicit service ports; `WorktreeServices` carries each as a field. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:112-129; mcp/src/agents_remember/worktrees/services.py:200-210; mcp/src/agents_remember/worktrees/services.py:213-223 |
 | The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
 | The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208; mcp/src/agents_remember/worktrees/modules/pause.py:152-169 |
 | The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
@@ -264,8 +264,8 @@ memory-carryover vehicle.
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:207-401; mcp/src/agents_remember/worktrees/sync_transaction_state.py:404-420 |
 | The sync driver retains conflicts for continuation, exposes explicit cancellation, and now carries the authored reconcile route through the same continuation. | `sync_contract_under_authority`; `_continue_resolution`; `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:88-116; mcp/src/agents_remember/worktrees/sync_transaction.py:581-602; mcp/src/agents_remember/worktrees/sync_transaction.py:622-641; mcp/src/agents_remember/worktrees/sync_transaction.py:652-690 |
-| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:193-263; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:266-283 |
-| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:356-382; mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-225; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:228-298; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:301-318 |
+| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:356-382; mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571 |
 | A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
 
 Current working-candidate evidence for this route:
@@ -952,6 +952,8 @@ refusal. A chain admitted under an older validator has not been proved by the cu
 | The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
 
 ## Update History
+- 2026-09-29T15:45:24+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction.py:356-382; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 A Completed Sync Recomputes The Leaf's Worklist" (the port, `with_recomputed_worklist`, the `continue` replay, never failing a completed sync; architect ruling 1), and named the worklist port in the `services.py` file-table row. **Two reopened `WorktreeServices` claims re-read and re-measured:** the bundle now also carries `knowledge_worklist`, so both rows say so and cite the class's current extent `213-223`; the first row's port range now spans the validation, crossing, worklist and continuation ports (`132-210`).
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New section: the crossing sync in the managed sync and the rule 9 refusal, covering the new `knowledge_crossing.py` card, the five touched modules and the rulings, with five rows. Also added `knowledge_crossing.py` to both file tables, and the crossing routing to the `sync_transaction_git.py` responsibility. The four reopened claims were reworded to name the crossing port, the history closing and the converted base: the two `WorktreeServices` rows (re-measured `202-211`), the sync-proof row and the L22 `_finish_staged_memory_merge` row. This folds in the two fixer projections of this pass for `_finish_staged_memory_merge`.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L22 The Memory Commit Routes' Gate To The Knowledge Validator" at the end of the change narrative, the `knowledge_validation.py` rows in Load-Bearing Files and the File-Level Onboarding Map, and one Hot Path Summary sentence. Reworded the two reference rows whose evidence changed (`WorktreeServices` now carries the knowledge-validation port; the staged memory merge is validated before its commit). I folded the same-pass generated repair bullet for the second row into this entry. The installed `memory-citations --fix` also re-normalised other passing ranges in this document; their claims are unchanged. No verification stamp was advanced.
 
@@ -1292,7 +1294,7 @@ already-current) are not validated at the sync.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. | `has_layout_marker`; `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:39-54; mcp/src/agents_remember/worktrees/knowledge_validation.py:57-91 |
-| The port the helper calls and the bundle field that carries it (beside, since MIK-R24, `knowledge_crossing`). | `KnowledgeValidationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:132-148; mcp/src/agents_remember/worktrees/services.py:202-211 |
+| The port the helper calls and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, and `knowledge_worklist`, since MIK-R08). | `KnowledgeValidationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:132-148; mcp/src/agents_remember/worktrees/services.py:213-223 |
 | The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). | `_finish_staged_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598 |
 | The driver maps the refusal to its own state with a recovery line. | `_knowledge_validation_refused` | mcp/src/agents_remember/worktrees/sync_transaction.py:594-610 |
 | The route never commits converted memory unvalidated, and an unreadable tree is refused. | `test_the_worktree_route_never_commits_converted_memory_unvalidated` | mcp/tests/test_knowledge_validator_routes.py:129-153 |
@@ -1340,9 +1342,34 @@ exactly within the 46 cards both lines changed, and after mechanical resolution 
 | --- | --- | --- |
 | The plan before Git, and its application to the started merge. | `crossing_plan`; `apply_crossing` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:80-112; mcp/src/agents_remember/worktrees/knowledge_crossing.py:150-160 |
 | The crossing branch of the memory merge. | `_crossing`; `_apply_crossing_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:537-567; mcp/src/agents_remember/worktrees/sync_transaction_git.py:515-534 |
-| The port and its request and view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:183-186; mcp/src/agents_remember/worktrees/services.py:170-180; mcp/src/agents_remember/worktrees/services.py:151-163 |
+| The port and its request and view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:151-163; mcp/src/agents_remember/worktrees/services.py:170-180; mcp/src/agents_remember/worktrees/services.py:183-186 |
 | The rule 9 refusal. | `unconverted_line_refusal` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
 | The durable report and the master-line history file closed at commit. | `write_crossing_report`; `close_crossing_history` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:237-262; mcp/src/agents_remember/worktrees/knowledge_crossing.py:201-222 |
+
+## 260928-MIK-L08 A Completed Sync Recomputes The Leaf's Worklist
+
+**Route meaning extended (MIK-R08@v2 rule 8, architect ruling 1).** A completed managed sync moves the
+leaf's base pair, so B and K_B move with it; the sync now recomputes the leaf's change-to-knowledge worklist:
+
+- [`services.py`](services.py.md) declares `KnowledgeWorklistPort.recompute(contract)` and the optional
+  `WorktreeServices.knowledge_worklist` field; the application binds `LeafWorklistRecompute` above this
+  layer, as it binds the crossing port.
+- [`sync_transaction_recovery.py`](sync_transaction_recovery.py.md): `finalize_sync` returns its completed
+  result through `with_recomputed_worklist`, which adds `knowledgeWorklist` (the summary) when one applies.
+  `recompute_knowledge_worklist` puts the port lookup, the contract reload and the recompute in one guard, so
+  **the worklist recompute never fails a completed sync** (review R1 F2).
+- [`sync_transaction_results.py`](sync_transaction_results.py.md): the `continue` replay of a completed
+  generation recomputes too.
+
+With no port bound, or no worklist applicable (both memory sides unconverted, every production leaf before
+MIK-R37), the sync result is byte-for-byte unchanged. Closeout validation and landing pre-commit are the
+other two triggers, and they are L09's.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The port and the bundle field. | `KnowledgeWorklistPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:189-197; mcp/src/agents_remember/worktrees/services.py:213-223 |
+| The completed result gains the summary; every failure leaves it unchanged. | `with_recomputed_worklist`; `recompute_knowledge_worklist` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:96-108; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:111-127 |
+| The `continue` replay recomputes too. | `terminal_resolution_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:356-391 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

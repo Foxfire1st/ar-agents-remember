@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:23+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3` |
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,9 +47,9 @@ Under CCR-R03@v1 curator-report publication is bound to the exact working-tree c
 and after the primary scan, and again immediately before the checklist write, the controller
 captures both candidate trees with `worktree_candidate_tree` (through scratch indexes outside the
 repositories) and refuses `memory-quality-candidate-changed` if the code or memory candidate moved
-while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:754-773; mcp/src/agents_remember/application/memory_quality/controller.py:782-812).
+while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:785-804; mcp/src/agents_remember/application/memory_quality/controller.py:813-843).
 The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
-can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, "candidate_inputs=candidate_inputs", `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:386-457; mcp/src/agents_remember/application/memory_quality/controller.py:487-661).
+can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, "candidate_inputs=candidate_inputs", `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:388-462; mcp/src/agents_remember/application/memory_quality/controller.py:512-692).
 
 Interactive quality execution resolves the exact scope before scanning and revalidates it after
 the scan and before publication. A full leaf run joins its checklist with the same
@@ -59,11 +59,11 @@ full catalog is a readiness projection, not final certification: this interactiv
 Gate 1–4 certificate prefix or affected-closure plan and explicitly reports those missing
 authorities. This permits preparatory memory work without claiming final acceptance.
 
-cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:363-383)
+cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:365-385)
 cit:([`_execute_memory_quality`, "revalidate_memory_candidate_scope"], mcp/src/agents_remember/application/memory_quality/controller.py:384-455)
-cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:858-885)
-cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:858-885)
-cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:708-744)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:889-916)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:889-916)
+cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:739-775)
 
 ### Invariants And Boundaries
 
@@ -143,7 +143,7 @@ the crossing sync (`worktree_sync`) as the only way such a leaf converts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refusal runs before any scan and returns a refused result naming the crossing sync. | `_execute_memory_quality`; `unconverted_line_refusal` | mcp/src/agents_remember/application/memory_quality/controller.py:386-457; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
+| The refusal runs before any scan and returns a refused result naming the crossing sync. | `_execute_memory_quality`; `unconverted_line_refusal` | mcp/src/agents_remember/application/memory_quality/controller.py:388-462; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
 
 ## 260928-MIK-L28 The "Invariants Without Proof" Input (MIK-R28 Rule 5)
 
@@ -161,7 +161,36 @@ MIK-R37, it returns `None`, and the checklist renders nothing new.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The checklist receives the list; `None` for an unconverted tree. | `_attach_curator_checklist`; `_without_proof` | mcp/src/agents_remember/application/memory_quality/controller.py:487-661; mcp/src/agents_remember/application/memory_quality/controller.py:664-675 |
+| The checklist receives the list; `None` for an unconverted tree. | `_attach_curator_checklist`; `_without_proof` | mcp/src/agents_remember/application/memory_quality/controller.py:512-692; mcp/src/agents_remember/application/memory_quality/controller.py:695-706 |
+
+## 260928-MIK-L08 The Leaf's Change-To-Knowledge Worklist (MIK-R08 Rules 7 And 8)
+
+`_execute_memory_quality` now recomputes the leaf's worklist right after preparing the census:
+`_knowledge_worklist(scope)` calls `application/knowledge_worklist.recompute_leaf_worklist(scope.contract)`
+for a contract-scoped run and returns `None` for every other scope. `recompute_leaf_worklist` computes,
+persists `knowledge-worklist.json` beside the series contract and never raises; it returns `None` where no
+worklist applies (both memory sides unconverted, which is every production leaf before MIK-R37).
+
+- When a worklist exists, the response gains `knowledgeWorklist` (`worklist_summary`: state, path, digest,
+  item count, counts by kind, unreadable inputs), and the checklist receives `knowledge_worklist` and
+  `knowledge_worklist_path`, rendered as the "Knowledge worklist (MIK-R08)" section.
+- The census and the worklist travel to `_attach_curator_checklist` together as `_PreparedInputs(census,
+  worklist)`, keeping the function within the argument and statement limits; the old `census=` keyword is
+  now `prepared=`.
+- **Information, not a gate.** The section never counts toward `curatorActionableCount`, the attestation or
+  the wire counts; what an open item blocks is MIK-R09's closeout gate.
+- **Trigger split (architect ruling 1).** This run is one of the two triggers L08 wires; the other is
+  managed-sync completion. Closeout validation and landing pre-commit evaluation are L09's, through the same
+  `recompute_leaf_worklist`.
+- **Unconverted runs are unchanged:** with no worklist, neither the response field nor the section appears.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The worklist is recomputed after the census and summarized in the response. | `_knowledge_worklist`; `worklist_summary` | mcp/src/agents_remember/application/memory_quality/controller.py:452-452; mcp/src/agents_remember/application/memory_quality/controller.py:473-482 |
+| The prepared inputs handed to the checklist. | `_PreparedInputs` | mcp/src/agents_remember/application/memory_quality/controller.py:465-470 |
+| Only a contract-scoped run gets a worklist, through the one recompute entry point. | `_knowledge_worklist`; `recompute_leaf_worklist` | mcp/src/agents_remember/application/memory_quality/controller.py:473-482 |
+| The checklist receives the worklist and its path. | `_attach_curator_checklist`; `knowledge_worklist_path` | mcp/src/agents_remember/application/memory_quality/controller.py:512-692 |
+| The controller-level run persists, reports and renders the worklist; the count stays 0. | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:572-660 |
 
 ## Docs References
 
@@ -171,10 +200,10 @@ No configured Domain Documentation source applies; the controller contract is re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:100-118 |
-| Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:252-258; mcp/src/agents_remember/application/memory_quality/controller.py:261-267; mcp/src/agents_remember/application/memory_quality/controller.py:270-276 |
-| Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. | "if not execution.publish_curator_report"; "_attach_curator_checklist("; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:448-448; mcp/src/agents_remember/application/memory_quality/controller.py:450-450; mcp/src/agents_remember/application/memory_quality/controller.py:487-661 |
-| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:754-773; mcp/src/agents_remember/application/memory_quality/controller.py:782-812 |
+| The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:102-120 |
+| Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:254-260; mcp/src/agents_remember/application/memory_quality/controller.py:263-269; mcp/src/agents_remember/application/memory_quality/controller.py:272-278 |
+| Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. | "if not execution.publish_curator_report"; "_attach_curator_checklist("; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:453-453; mcp/src/agents_remember/application/memory_quality/controller.py:455-455; mcp/src/agents_remember/application/memory_quality/controller.py:512-692 |
+| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:785-804; mcp/src/agents_remember/application/memory_quality/controller.py:813-843 |
 
 ## Cross-Repo References
 
@@ -259,6 +288,9 @@ findings` row) instead of sitting in the repairable set whose count has to reach
 from both.
 
 ## Update History
+- 2026-09-29T15:42:37+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:889-916. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T15:42:37+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:889-916. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The Leaf's Change-To-Knowledge Worklist (MIK-R08 Rules 7 And 8)": `_knowledge_worklist` and `recompute_leaf_worklist` after the census, the `knowledgeWorklist` response summary, the checklist's worklist inputs, and `_PreparedInputs` replacing the `census=` keyword. It records architect ruling 1 (L08 wires the memory-quality run and managed-sync completion; closeout and landing are L09's) and that the section is information, never counted. Unconverted runs are unchanged.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): Added the section "260928-MIK-L28 The "Invariants Without Proof" Input": `_without_proof` and the new `without_proof=` argument of `_attach_curator_checklist`, with the architect ruling that the list is checklist-only information and adds no count to the wire summary. One cited row. The other ranges moved by the two added lines and the new function were re-pointed by the installed `memory-citations --fix`; no claim wording changed there. No verification stamp was advanced.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added the section "260928-MIK-L24 The Unconverted-Line Refusal": the MIK-R24 rule 9 refusal that `_execute_memory_quality` now makes first. The section records the architect rulings: the refusal is inert until the official line is converted, and conversion and crossing are separate routes. It has one cited row. The three claims citing `_execute_memory_quality` were reopened: the function changed, and a committed 2026-09-18 projection bullet names it. I re-read each one against the working tree, and each still holds: the scope is revalidated, the candidate inputs are passed to the checklist writer, and a run that publishes no checklist returns early. Following the L23 precedent, the two prose claims now also quote the line they are about (`revalidate_memory_candidate_scope`, `candidate_inputs=candidate_inputs`) within the function's real extent (`384-455`). The Repo-Internal row is re-cited to the call site it is about (`446-454`: the early return and the `_attach_curator_checklist(` call), and names `_execute_memory_quality` in its finding text rather than as an anchor. No committed history bullet was altered.
 - 2026-09-29T12:03:35+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:691-727. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.

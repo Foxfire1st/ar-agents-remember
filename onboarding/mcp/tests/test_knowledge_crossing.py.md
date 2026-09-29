@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_crossing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-29T17:20:02+02:00 |
+| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
+| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,10 @@ plan, which moved here from the product (review R1 finding 7).
   two-parent merge and the layout marker, the untouched card equals the line's bytes, the marker row lands
   in the leaf's history file, Update History is gone, and the journal names a report under
   `<group>/reports/`. The fixture's first, ordinary sync writes no `crossingReport` key (ruling N2).
+  **Since MIK-R08** the case also checks the worklist recompute of a completed managed sync (rule 8): the
+  first sync, with both memory sides unconverted, carries no `knowledgeWorklist`; the crossing sync into
+  the converted line carries a `complete` one, persisted as `knowledge-worklist.json` beside the contract,
+  whose pairing names the line's new code tip as B and the converted line head as K_B.
 - `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing`:
   - with the crossing unbound, the sync fails at `convert`, with `HEAD` unchanged and no `MERGE_HEAD`;
   - then the resolution lists `(lines)` and `references.1`, and the report holds all three notes;
@@ -93,8 +97,9 @@ The cases and the plan check.
 | Long markers in one valid row. | `test_many_long_markers_move_into_one_valid_history_row` | mcp/tests/test_knowledge_crossing.py:217-243 |
 | The master-line crossing history file. | `test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit` | mcp/tests/test_knowledge_crossing.py:246-290 |
 | The converted base at the base's own code commit. | `test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base` | mcp/tests/test_knowledge_crossing.py:293-336 |
-| The managed crossing sync, and an ordinary journal without the new key. | `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`; `_crossing_fixture` | mcp/tests/test_knowledge_crossing.py:403-431; mcp/tests/test_knowledge_crossing.py:339-365 |
-| Overlapping edits reach the curator; a failed step changes nothing. | `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing` | mcp/tests/test_knowledge_crossing.py:434-499 |
+| The managed crossing sync, and an ordinary journal without the new key. | `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line`; `_crossing_fixture` | mcp/tests/test_knowledge_crossing.py:339-368; mcp/tests/test_knowledge_crossing.py:406-443 |
+| The unconverted first sync carries no worklist; the crossing sync's worklist is complete and persisted at the new base pair. | "Both memory sides are unconverted: the sync recomputes no worklist"; "the completed sync recomputed the now-converted leaf's worklist" | mcp/tests/test_knowledge_crossing.py:361-364; mcp/tests/test_knowledge_crossing.py:435-443 |
+| Overlapping edits reach the curator; a failed step changes nothing. | `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing` | mcp/tests/test_knowledge_crossing.py:446-511 |
 | Its lane row. | "mcp/tests/test_knowledge_crossing.py" | mcp/tests/test-evidence-lanes.toml:109-109 |
 
 ## Cross-Repo References
@@ -108,4 +113,5 @@ No meaningful cross-repo references found: the fixtures are `tmp_path` Git repos
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** The managed-crossing case's description now includes the worklist assertions the leaf added (no `knowledgeWorklist` on the unconverted first sync; a `complete`, persisted worklist at the new base pair after the crossing sync), with a citation row.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
