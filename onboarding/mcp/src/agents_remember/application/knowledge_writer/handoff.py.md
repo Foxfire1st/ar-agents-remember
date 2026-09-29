@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/handoff.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3`|
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -39,9 +39,10 @@ checks the document's own shape and collects every problem, so one refusal names
 - **Records** are `{key, kind, entry?, id?, slug?, fields}`; `kind` is one of the ten record kinds of
   `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin` and `revision` (`WRITER_OWNED_FIELDS`) and
   refuses them in `fields`; a new record needs a `slug`.
-- **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?}`. `id`
-  and `revision` are writer-owned; unknown keys (a misspelled `cover`) and a non-list `because` are
-  refused. A cover is an entry ID, `{id, locator?, remove?}` or `{handoff}`.
+- **History rows** are `{subject, disposition, reason, items?, covers?, effect?, because?, examined?, ref?}`.
+  `id` and `revision` are writer-owned; unknown keys (a misspelled `cover`), a non-list `because` and a
+  non-object `ref` are refused. `ref` (MIK-R11) is carried to `RowRequest.ref` for a planned row; what it
+  names is checked by `authoring._planned_row`, not here. A cover is an entry ID, `{id, locator?, remove?}` or `{handoff}`.
 - `"handoff:<key>"` names the record the same document authors under that key wherever an ID is
   expected; `_require_distinct_handles` refuses two items sharing a handle.
 - Evidence names a test in one of two forms (MIK-R28 rule 2), both read by `tests_named_in`: a test ID
@@ -109,15 +110,16 @@ The document's sections and their readers.
 | The template's `incidental` is written as `support`. | `ROLE_SPELLINGS` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:52-52 |
 | One refusal reason: where, and what. | `Problem` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:71-79 |
 | An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. | `EntryRequest`; `cited_tests` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:168-190 |
-| The two test forms and the bare test module, read in order and once each. | `_SELECTED_TEST`; `_TEST_FILE`; `TestFileMention`; `tests_named_in` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:54-68; mcp/src/agents_remember/application/knowledge_writer/handoff.py:123-131; mcp/src/agents_remember/application/knowledge_writer/handoff.py:134-156 |
-| Read the three sections, collecting every problem. | `read_handoff` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:242-279 |
-| A ruling no record names is refused, and so are proofs on it. | `_require_attached_rulings` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:282-313 |
-| Locators in the file form: symbol, line range, whole file. | `read_locator` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:349-374 |
-| Targets through the shipped realization rules. | `_targets` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:377-410 |
-| Proofs carry the curator's facet. | `_proofs` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:428-451 |
-| An entry: new invariant needs scope, admission and a statement. | `_entry` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:464-509 |
-| A record: kind, fields, and the writer-owned fields refused. | `_record` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:516-549 |
-| A history row: strict keys, writer-owned `id` and `revision`. | `_row` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:577-614 |
+| The two test forms and the bare test module, read in order and once each. | `_SELECTED_TEST`; `_TEST_FILE`; `TestFileMention`; `tests_named_in` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:57-60; mcp/src/agents_remember/application/knowledge_writer/handoff.py:65-68; mcp/src/agents_remember/application/knowledge_writer/handoff.py:123-131; mcp/src/agents_remember/application/knowledge_writer/handoff.py:134-156 |
+| Read the three sections, collecting every problem. | `read_handoff` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:244-281 |
+| A ruling no record names is refused, and so are proofs on it. | `_require_attached_rulings` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:284-315 |
+| Locators in the file form: symbol, line range, whole file. | `read_locator` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:351-376 |
+| Targets through the shipped realization rules. | `_targets` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:379-412 |
+| Proofs carry the curator's facet. | `_proofs` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:430-453 |
+| An entry: new invariant needs scope, admission and a statement. | `_entry` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:466-511 |
+| A record: kind, fields, and the writer-owned fields refused. | `_record` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:518-551 |
+| A history row: strict keys (since MIK-R11 including `ref`, which must be an object), writer-owned `id` and `revision`. | "def _row(position: int, raw: Any, problems: list[Problem])"; "'ref' is an object naming one row" | mcp/src/agents_remember/application/knowledge_writer/handoff.py:579-619 |
+| The row keys and the request field a planned row's `ref` travels in. | `_ROW_KEYS`; `RowRequest` | mcp/src/agents_remember/application/knowledge_writer/handoff.py:47-49; mcp/src/agents_remember/application/knowledge_writer/handoff.py:219-233 |
 | Four problems refused in one operation, each named. | `test_problems_refuse_the_whole_operation_and_each_is_named` | mcp/tests/test_knowledge_writer.py:341-366 |
 | An entry that names no record is refused. | `test_an_entry_that_names_no_record_is_refused_and_nothing_of_it_dropped` | mcp/tests/test_knowledge_writer.py:531-553 |
 
@@ -131,6 +133,7 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** The Logic bullet on history rows now names the `ref` key a planned row carries and its object-shape refusal. **The reopened `_row` claim was re-read and reworded** (strict keys now include `ref`) and re-anchored on line-exact quotes, because the generated-repair bullet that binds it is committed. One row added (`_ROW_KEYS`, `RowRequest`). Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): Added the section "260928-MIK-L28 Evidence Names A Test In Two Forms": `tests_named_in`, `_SELECTED_TEST`, `_TEST_FILE` and `TestFileMention`, with the architect ruling that the "path plus symbol" form is `path -k name` with one identifier, for `.py` files. The Logic bullet on test IDs now names both forms. The reopened `EntryRequest` claim was re-read against the working tree: the class still carries the curator keys and a ruling still authors no invariant, but `cited_tests` now delegates to `tests_named_in`, so the row now says so and anchors `cited_tests`; its generated repair bullet was removed because the claim was reworded. One new Repo-Internal row and two test rows. The other ranges were re-pointed by the installed `memory-citations --fix`. No verification stamp was advanced.
 - 2026-09-29T13:25:13+00:00: Generated citation repair: `Problem` repointed to mcp/src/agents_remember/application/knowledge_writer/handoff.py:71-79. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T13:25:13+00:00: Generated citation repair: `read_handoff` repointed to mcp/src/agents_remember/application/knowledge_writer/handoff.py:242-279. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.

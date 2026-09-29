@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_steps.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -119,10 +119,10 @@ application module.
 | The update-only operation and the fields it may copy. | `set_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165 |
 | `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. | `skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:226-261 |
 | The focused checklist read behind the `read_steps` special operation. | `step_payloads`; `_substep_payload` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:278-279 |
-| The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:690-691; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:694-695; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:698-699; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:702-708 |
-| The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:875-892 |
-| The schema field that made a top-level `note` storable at all. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
-| The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. | `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id`; `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document`; `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:298-332; mcp/tests/test_task_document_application_1.py:413-457; mcp/tests/test_task_document_application_1.py:492-529 |
+| The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:691-692; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:695-696; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:699-700; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:703-709 |
+| The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:877-894 |
+| The schema field that made a top-level `note` storable at all. | `Step` | mcp/src/agents_remember/tasks/document.py:117-135 |
+| The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. | `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id`; `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document`; `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:314-348; mcp/tests/test_task_document_application_1.py:429-473; mcp/tests/test_task_document_application_1.py:508-545 |
 
 ## Cross-Repo References
 
@@ -134,6 +134,7 @@ No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
 
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/task_docs/task_doc_tools.py`, `mcp/src/agents_remember/tasks/document.py`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
   claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
   card from their anchors against the frozen source snapshot (`agents-remember memory-citations

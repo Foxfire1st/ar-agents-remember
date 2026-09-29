@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -106,6 +106,18 @@ onboarding gate on history files, where only a counted change or such a row sati
 ruling 2026-09-29T18:49:50 (1)). The bullet reaches the package copy and the eight harness starter copies
 through `sync-skills.py`.
 
+Since leaf `260928-MIK-L11` (MIK-R11) the same list gains a bullet for the **planned row**, on converted
+memory only. It answers a `planned_untouched` worklist item: an effect the leaf's task document declared in
+`expectedKnowledgeEffects` that no row delivered. Its subject is the item's,
+`planned:<declared subject>#<effect>`; its disposition is `realized_elsewhere`, `deferred` or `dropped`; and
+it adds `ref` and nothing else: `{row}` or `{invariant}` (which must exist) for `realized_elsewhere`,
+`{requirement: {task, packet, id, version}}` or `{leaf}` for `deferred`, and `{decision: "<at>"}` for
+`dropped`, the `at` of exactly one decision entry in the leaf's task document, which the writer resolves
+through the task owner and refuses when it does not resolve. The bullet also states that a `no_impact` row
+about the declared invariant does not answer the item, while a `changed` row with the declared effect (or,
+for `retire`, a retiring `deleted` row) delivers it and raises no item. It reaches the package copy and the
+eight harness starter copies through `sync-skills.py`.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -136,13 +148,14 @@ These references name the current owners and the behavior they establish.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:482-482 |
-| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:590-590; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:601-601; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 | **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
 | **Per-target realization rationale and role, and the stated supersession of revision 1's target element shape (generated copy).** | "Realization rationale and role: one authored explanation per target"; "this file's element shape supersedes rule 1's" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
 | **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** | "as a path plus symbol"; "Proofs are shown and counted (MIK-R28)." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
 | The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. | "An onboarding row (MIK-R30, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
+| The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. | "A planned row (MIK-R11, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
 
 ## Cross-Repo References
 
@@ -153,6 +166,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body update — the MIK-R11 planned-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject `planned:<declared subject>#<effect>`, the three dispositions and their refs, the task owner resolving a `dropped` decision), and one row citing it. The eleven inserted lines moved the MIK-R12 row's section extent and its `every other commit route` anchor; that row was re-pointed by the exact +11 line shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body update — the MIK-R30 onboarding-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject forms, `no_impact` only, no row needed after a counted change) with architect ruling 2026-09-29T18:49:50 (1), and one row citing it. The six inserted lines moved the MIK-R12 row's `every other commit route` anchor; that row was re-pointed by the exact base-to-working line map. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **body update — the MIK-R28 additions to the writer section.** Added a Logic paragraph: the evidence bullet names both test forms (`path::name` and the ruled `path -k name`), `needs_facet` offers the statement only as a draft while the curator authors the facet, a bare test file is `unresolvable`, and the new bullet "Proofs are shown and counted (MIK-R28)" covers the views, the informational "without proof" list and the migration pass. One new row (`:524-529`, `:530-534`). The change added six lines, so the MIK-R12 row's `:578` range was re-pointed to `:584` by the exact line map, and the installed `memory-citations --fix` widened the MIK-R04 row's heading citation to its section (`:460-484`); no claim wording changed there. No verification stamp was advanced.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **body update — the template gains the section "The file writer's sections (MIK-R12)"** after the MIK-R21 section, and the `incidental` line now says the writer writes it as `support`. The Logic paragraph records both, including that the section applies only to converted memory and changes nothing a producer emits; one row was added (`:485`, `:578`, `:451`). The claim that the `incidental` mapping "is MIK-R12's to decide" is kept as the MIK-R21 history it is, and the new paragraph states the decision. The same section reaches the package copy and the 8 harness starter copies through `scripts/sync-skills.py` (the L04 merge kept "Family routes (MIK-R04)" first). The MIK-R04 row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.

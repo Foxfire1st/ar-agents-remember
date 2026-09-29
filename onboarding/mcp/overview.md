@@ -5,14 +5,55 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover
+
+`260928-MIK-L11` (MIK-R11@v2) lets a leaf's task document declare, before implementation, the invariant and
+family effects it expects (`expectedKnowledgeEffects: [{subject, effect, requirementRef}]`, subjects
+`invariant:<ID>`, `family:<ID>` or `new:<hand-off label>`). The change-to-knowledge worklist then marks every
+invariant and family item `planned` or `unplanned`, raises a `planned_untouched` item for each declared effect
+no history row delivers as declared, and the curator answers each with a planned row
+(`planned:<declared subject>#<effect>`: `realized_elsewhere`, `deferred` or `dropped`, with a `ref`). A
+`no_impact` row never clears a declared strengthening.
+
+- **Where:** the task plane (`tasks/document.py` field and refusals, `document_field_effects.py` `NORMATIVE`,
+  `task_intent.py` optional slot, `render.py` header block, the new `tasks/leaf_decisions.py` strict lookup),
+  `application/task_docs/task_doc_tools.py` (`set_field`), the forms in the new
+  `models/knowledge_files/planned.py` and the `planned` row kind in `history.py`, the new
+  `application/knowledge_worklist/planned_effects.py` with `compute.py` step 5, `leaf.py`, `surface.py` and
+  `__init__.py`, the writer (`authoring.py`, `handoff.py`, `writer.py`) and `cli/knowledge_write_route.py`
+  (the task owner's decision resolver), the checklist section
+  (`memory_quality/knowledge_worklist_section.py`), the curator template's planned-row bullet and the
+  reviewer role's declaration check (skill l-01, synced to all copies).
+- **Architect rulings (2026-09-29):** 21:56:18 (Q1: the reviewer UI is carried to L31; Q2: no real task
+  document declares the field before the L37 install; Q3: the reviewer line; Q4: `new:` matches
+  writer-authored invariants only; Q5: the detail choices); 22:35:34 (F1: strict leaf lookup, ambiguity
+  refuses; F2: an unreadable leaf document makes the worklist incomplete; F3: the four matching assertions;
+  F4: the pre-build digest mismatch goes to L09; F5, F6 accepted; F7: the stage-number merge note for L06).
+- **Candidate invariants (not ingested):** with no declaration every item is `unplanned` and there are no
+  `planned_untouched` items; a `planned_untouched` item is answered only by a planned row that resolves its
+  ref; an unreadable leaf document never reads as "nothing declared"; the subject key is built from the
+  declared subject and effect, never from list position; an absent field leaves existing task-intent digests
+  unchanged.
+- **Inert before MIK-R37:** unconverted leaves get no worklist; the worker (597) and the reviewer (889) found
+  every real task document's intent digest, render and stored JSON byte-identical to base.
+- **Tests:** `test_planned_knowledge_effects.py` (5 collected cases), one lane row, one catalog consumer line
+  and the Thirty-eighth re-pin (`cb853f72…`); the history-registry case asserts four row kinds.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reconciliation module statement. | "Planned invariant effects reconciliation (MIK-R11@v2)" | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:1-27 |
+| The declaration on the task document. | `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document.py:655-666 |
+| The planned row. | `PlannedEffectRow` | mcp/src/agents_remember/models/knowledge_files/history.py:310-333 |
+| The task owner's strict lookup and decision answer. | `strict_leaf_doc`; `leaf_decision_refusal` | mcp/src/agents_remember/tasks/leaf_decisions.py:39-51; mcp/src/agents_remember/tasks/leaf_decisions.py:81-98 |
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
 
@@ -76,7 +117,7 @@ stamps once memory is converted (D23).
 | --- | --- | --- |
 | The rule's statement for converted trees. | "The onboarding refresh gate on history files (MIK-R30), for converted memory trees." | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:1-27 |
 | The memory-quality dispatch between the two gates. | `_onboarding_refresh_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:683-733 |
-| The gate chooser both enforcement points share. | `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:406-439 |
+| The gate chooser both enforcement points share. | `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:431-464 |
 
 ## 260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover
 
@@ -103,7 +144,7 @@ A stale invariant stays visible and names each differing entry; reads never writ
 | --- | --- | --- |
 | The package statement. | "Stale invariants flagged at read time" | mcp/src/agents_remember/application/knowledge_currentness/__init__.py:1-14 |
 | The `knowledge_read` surface, reached through the per-page extras since MIK-R02. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:463-479 |
-| The published-intent surface. | `read_published_intent`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:460-507; mcp/src/agents_remember/application/published_intent.py:526-529 |
+| The published-intent surface. | `read_published_intent`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:460-486; mcp/src/agents_remember/application/published_intent.py:526-529 |
 
 ## 260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover
 
@@ -140,7 +181,7 @@ sides are unconverted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483 |
+| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:477-508 |
 | The CLI subcommand. | `run`; `leaf_worklist` | mcp/src/agents_remember/cli/knowledge_worklist.py:93-108 |
 
 ## 260928-MIK-L28 First-Class Test Proofs Are Read Back And Listed, Not Yet Used
@@ -254,7 +295,7 @@ route, because `cli/` has no overview of its own:
 | --- | --- | --- |
 | The ingest dispatch on the loaded contract's memory worktree. | `run`; `run_leaf_write` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709 |
 | The bootstrap run mode's dispatch on the admitted memory root. | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-537 |
-| The layout-marker test both commands use. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:53-56 |
+| The layout-marker test both commands use. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:55-58 |
 | The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
 
 ## 260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`
@@ -514,6 +555,8 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-29T21:47:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover" at the top: the whole leaf, where it lands, every architect ruling of 2026-09-29T21:56:18 (Q1–Q5) and 22:35:34 (F1–F7), the five candidate invariants and the preservation evidence. Rows citing the touched modules were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T19:57:33+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T19:57:33+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** New section at the top, "260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover": the whole leaf and every ruling (the carried L23 ruling; 19:56:40; 20:40:40; 21:32:34). Three rows. **Reopened L03 row re-read and reworded:** the `knowledge_read` surface row named `read_currentness` and `requested_code_tree`, which `mcp/tools/knowledge.py` no longer calls; it now cites `_tree_extras` and `WalkCurrentness`. Other rows citing moved lines were re-pointed by the installed fixer or the exact line map. No verification stamp was advanced.
@@ -799,7 +842,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:118-150 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:160-160 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -2581,7 +2624,7 @@ its own positive control.
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2020 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2022 |
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms

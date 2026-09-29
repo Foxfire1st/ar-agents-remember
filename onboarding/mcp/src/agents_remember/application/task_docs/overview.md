@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -150,6 +150,29 @@ decision are the audited substitute for the guard and gating on document status 
 full-document `replace`. `remove_step` ("this step should never have existed") and `skip_step`
 ("this planned unit was deliberately not done") remain distinct and are not interchangeable.
 
+## 260928-MIK-L11 `set_field` Writes A Leaf's Declared Knowledge Effects
+
+`task_doc_tools.py` adds `expectedKnowledgeEffects` (MIK-R11) to `_MUTABLE_FIELDS`, so `set_field` is the
+route through which a leaf's task document declares, before implementation, the invariant and family effects
+it expects (MIK-R11 rule 1: "written through `task_doc`"). The route's structure and operation set are
+otherwise unchanged:
+
+- the whole document is re-validated before the write, so a malformed declaration (a repeat of a subject and
+  effect, a bad subject form, a label outside the vocabulary, a prose `requirementRef`, an empty list, an
+  extra key, or the field on a master) is refused and nothing is written; `null` clears it;
+- the field is `NORMATIVE`, so a `set_field` that declares or changes it is an `intent` mutation and changes
+  the leaf's task-intent digest, while clearing it restores the former digest;
+- `task_doc` never reads knowledge: an ID the memory does not hold is the worklist's `subject_unknown` fact;
+- who may write the field (the architect, or the worker with the architect's approval) is procedural, since
+  `task_doc` has no per-field role gate; the adversarial reviewer checks the declaration against the packet
+  (ruling Q3, 2026-09-29T21:56:18+02:00);
+- no real task document may carry the field before the L37 install, because the installed runtime refuses
+  unknown task-document fields (ruling Q2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The settable flat fields, now including the declaration. | `_MUTABLE_FIELDS`; "expectedKnowledgeEffects" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:119-140 |
+
 ## Repo-Internal References
 
 The following current source owns the changed behavior; no external domain source is configured for this slice.
@@ -160,6 +183,7 @@ The following current source owns the changed behavior; no external domain sourc
 | None | `prove_task_unstarted` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:112-183 |
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 `set_field` Writes A Leaf's Declared Knowledge Effects" (`expectedKnowledgeEffects` in `_MUTABLE_FIELDS`, the refusals, the `intent` mutation class), recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No route impact: `task_doc_tools.py` added `knowledgeMaintenanceScope` (MIK-R08) to `_MUTABLE_FIELDS`, so `set_field` can set one more flat field; the route's structure, ownership and operation set are unchanged. The card records the field and architect ruling 4 (`LIFECYCLE`).
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `application/task_docs/task_doc_tools.py` changed one refusal message (`T43`); the application route's structure and ownership are unchanged.

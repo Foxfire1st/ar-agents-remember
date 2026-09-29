@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/compute.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,8 @@ run is a pure function of its inputs.
 ### Logic
 
 - **Inputs.** `WorklistInputs` holds the `CodeTrees`, the two `KnowledgeSide`s, the pairing, the
-  `maintenance_scope` flag and the owner leaf.
+  `maintenance_scope` flag, the owner leaf and (MIK-R11) `expected_effects`, the leaf's declared
+  `expectedKnowledgeEffects` as `Declaration`s, or `None` when it declares none.
 - **Changed paths and renames** (`_changes`): `tree_difference_observation` (ICR-R02) gives the entries;
   `git_rename_inference` (ICR-R08) gives the renames, because ICR-R02's inventory runs with `--no-renames`
   (architect ruling 3). An unavailable inventory, a **partial** inventory, or unavailable renames raise
@@ -55,9 +56,15 @@ run is a pure function of its inputs.
   submodule, type change, empty files) and the mode fact of a mode change are linked at `fileLevel` exactly
   when a `file`-locator entry on either side covers the path (`_file_covered`). An added or deleted text
   file is one whole-file hunk.
+- **Step 5, planned effects (MIK-R11, `planned_effects.py`).** After the items are built, the run calls
+  `reconcile_planned_effects(inputs.expected_effects, base, candidate, inputs.owner)`: every
+  `touched_invariant`, `stale_invariant` and `reached_family` item is marked `planning: planned | unplanned`,
+  and each declaration no row of the leaf's history file delivers adds a `planned_untouched` item. The marked
+  items and the new items are sorted together by `(kind, subject)` before the digest, so the digest covers the
+  marks. Without a declaration every item is `unplanned` and nothing is added.
 - **Document.** `state`, `incomplete`, `pairing`, `scope` (the flag, changed and unrepresentable path
-  counts, classified count, class counts, reached families), `entries`, `changes`, `items` sorted by kind
-  and subject, `kinds` (the registry) and `digest` (`worklist_digest` over state, items and incomplete).
+  counts, classified count, class counts, reached families), `entries`, `changes`, `plannedEffects` (MIK-R11: `{declared: false}`, or
+  `declared: true` with one entry per declaration, matched or not), `items` sorted by kind and subject, `kinds` (the registry) and `digest` (`worklist_digest` over state, items and incomplete).
   `incomplete_worklist` is the one representation of unreadable input: `state: incomplete`, the named
   input, no items. A `CodeReadError` during the run becomes `incomplete` naming `C`.
 
@@ -78,6 +85,12 @@ run is a pure function of its inputs.
 - **A mode change keeps its text hunks** (review R1 F5): they are linked as for any text change, and the
   mode fact is added separately at file level.
 - No verdict, severity or cause is recorded (Exclusions).
+- **`plannedEffects` is outside the digest** (the worker's design, unchallenged by review): the items
+  already carry what it summarises. The `planning` mark is inside it, so every converted worklist's digest moves
+  against a worklist persisted before MIK-R11; that consequence is carried to L09 (ruling F4,
+  2026-09-29T22:35:34+02:00).
+- **Stage numbering with MIK-R06** (ruling F7): whichever of L06 and L11 lands second renumbers its step and
+  keeps L11's marking and sort over the combined items.
 
 ### Todos
 
@@ -100,18 +113,20 @@ code and memory repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure run, the four scope steps and the linkage marking. | "that marking raises nothing here" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:1-21 |
-| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:66-66 |
-| One item, its ID from the registry. | `Item`; `item_id` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:86-100 |
-| The run's inputs. | `WorklistInputs` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:103-112 |
-| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:119-133 |
-| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:149-162; mcp/src/agents_remember/application/knowledge_worklist/compute.py:165-175 |
-| The one-pass scope and the document. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:183-263 |
-| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:287-295 |
-| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:305-340 |
-| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:342-360 |
-| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:362-400 |
-| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:409-454 |
+| The pure run, the four scope steps and the linkage marking. | "that marking raises nothing here" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:22-22 |
+| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:73-73 |
+| One item, its ID from the registry. | `Item`; `item_id` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:93-107 |
+| The run's inputs. | `WorklistInputs` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:110-121 |
+| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:128-142 |
+| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:158-171; mcp/src/agents_remember/application/knowledge_worklist/compute.py:174-184 |
+| The one-pass scope and the document. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:192-276 |
+| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:300-308 |
+| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:318-353 |
+| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:355-373 |
+| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:375-392; mcp/src/agents_remember/application/knowledge_worklist/compute.py:394-413 |
+| The leaf's declarations, one input of the run. | `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:120-120 |
+| Step 5: marks, `planned_untouched` items, one sort over both, and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:243-272 |
+| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:422-451; mcp/src/agents_remember/application/knowledge_worklist/compute.py:453-467 |
 | A body edit raises one invariant and its family and carries the rest of the file. | `test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file` | mcp/tests/test_knowledge_worklist.py:327-352 |
 | A comment between functions raises nothing; one inside raises. | `test_a_comment_between_functions_raises_nothing_and_one_inside_raises` | mcp/tests/test_knowledge_worklist.py:355-368 |
 | A binary change touches a file anchor and links at file level. | `test_a_binary_change_touches_a_file_anchor_and_links_at_file_level` | mcp/tests/test_knowledge_worklist.py:440-455 |
@@ -127,6 +142,10 @@ No meaningful cross-repo references found: the run reads one code repository and
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T21:47:51+00:00: Generated citation repair: "that marking raises nothing here" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:22-22. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:47:51+00:00: Generated citation repair: `WORKLIST_SCHEMA` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:47:51+00:00: Generated citation repair: `_reached` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:300-308. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): recorded MIK-R11's step 5 (the `expected_effects` input, the `planning` marks, the `planned_untouched` items sorted with the rest, and `plannedEffects` outside the digest), with the architect rulings of 22:35:34 (F4 carried to L09, F7 the stage numbering with L06). Two rows added; existing ranges re-measured by the installed fixer.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

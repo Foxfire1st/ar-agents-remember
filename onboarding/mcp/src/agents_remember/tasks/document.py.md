@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-29T17:20:02+02:00|
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -198,8 +198,44 @@ written. The field is optional, so every existing document still loads unchanged
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional field and its comment. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:680-682 |
-| The worklist reads it. | `leaf_maintenance_scope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:126-130 |
+| The optional field and its comment. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:720-720 |
+| The worklist reads it. | `leaf_maintenance_scope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:134-138 |
+
+## 260928-MIK-L11 The `expectedKnowledgeEffects` Declaration (MIK-R11 Rule 1)
+
+`TaskDocument` gained `expectedKnowledgeEffects: list[ExpectedKnowledgeEffect] | None = None`: the invariant
+and family effects a leaf expects, declared before implementation by the architect (or by the worker with
+the architect's approval) through `task_doc`. Absent means no declaration, and every worklist item is then
+`unplanned`.
+
+- **`ExpectedKnowledgeEffect`** has exactly three fields (`extra=forbid` through `_Doc`): `subject`
+  (`DECLARED_SUBJECT_PATTERN`: `invariant:<INV-ID>`, `family:<FAM-ID>` or `new:<hand-off label>`), `effect`
+  (the shipped `EffectLabel`, so the vocabulary is unchanged) and `requirementRef`
+  (`REQUIREMENT_REF_PATTERN`, `<stable ID>@v<n>`, ruling Q5). The patterns are imported from
+  `models/knowledge_files/planned.py`; the task plane checks shape only and never reads knowledge, so an ID
+  the memory does not hold is the worklist's `subject_unknown` fact.
+- **`_check_expected_knowledge_effects`**, called from the document validator, refuses: the field on a
+  master (there is no master history file), an empty list (clear it with `null` instead), and two
+  declarations with the same subject and effect, even under different `requirementRef`s, because their
+  planned keys would collide.
+- It is classified `NORMATIVE_INTENT`, unlike `knowledgeMaintenanceScope`: it is in the `task-intent/v1`
+  allowlist as an optional slot, so a declaration changes the leaf's intent digest while an absent one leaves
+  every existing digest unchanged (`task_intent.py`).
+- `set_field` may set it (`_MUTABLE_FIELDS`), and the renderer shows it as an `**Expected knowledge
+  effects:**` header block.
+- **Transition (ruling Q2, 2026-09-29T21:56:18+02:00).** The installed runtime's `TaskDocument` forbids
+  unknown fields, so no real task document may declare `expectedKnowledgeEffects` until the build carrying
+  MIK-R11 is installed at the cutover (an L37 obligation; the same holds for `knowledgeMaintenanceScope`).
+  The store writes with `exclude_none`, so a write from the new build never emits the key as `null`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| One declaration: subject form, effect label and requirement reference. | `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document.py:655-666 |
+| The refusals: master, empty, repeated subject and effect. | `_check_expected_knowledge_effects` | mcp/src/agents_remember/tasks/document.py:669-686 |
+| The optional field and its comment. | "MIK-R11: the invariant and family effects the leaf expects" | mcp/src/agents_remember/tasks/document.py:723-725 |
+| The check runs in the document validator. | "_check_expected_knowledge_effects(self.kind, self.expectedKnowledgeEffects)" | mcp/src/agents_remember/tasks/document.py:768-768 |
+| The shared patterns. | `DECLARED_SUBJECT_PATTERN`; `REQUIREMENT_REF_PATTERN` | mcp/src/agents_remember/models/knowledge_files/planned.py:67-67; mcp/src/agents_remember/models/knowledge_files/planned.py:70-70 |
+| The field's tests: optional, normative, settable, rendered and refused when malformed. | `test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations` | mcp/tests/test_planned_knowledge_effects.py:119-184 |
 
 ## Docs References
 
@@ -213,13 +249,13 @@ No Domain Documentation sources are configured for this repository-internal pers
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:198-253 |
-| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:313-365 |
-| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:289-310 |
+| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:117-135 |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:204-259 |
+| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:319-371 |
+| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:295-316 |
 | The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-198 |
 | The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:267-302; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358 |
-| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:402-436; mcp/src/agents_remember/tasks/document.py:439-456 |
+| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:408-442; mcp/src/agents_remember/tasks/document.py:445-462 |
 
 ## L23 Final Candidate Disposition
 
@@ -244,6 +280,9 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 
 ## Update History
+- 2026-09-29T21:49:26+00:00: Generated citation repair: "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" repointed to mcp/src/agents_remember/tasks/document.py:720-720. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T21:49:26+00:00: Generated citation repair: `leaf_maintenance_scope` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:134-138. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the section "260928-MIK-L11 The `expectedKnowledgeEffects` Declaration" (`ExpectedKnowledgeEffect`, `_check_expected_knowledge_effects`, the `NORMATIVE_INTENT` class, `set_field` and render), recording architect rulings 2026-09-29T21:56:18 (Q2: no real declaration before the L37 install; Q5: the `requirementRef` form). Rows below the insertion were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field (MIK-R08 Definition 5)": the optional boolean on `TaskDocument`, its meaning for the worklist, and architect ruling 4 (`LIFECYCLE`, not `NORMATIVE`).
 - 2026-09-17T07:33:51+00:00: Generated citation repair: `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` repointed to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-329. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
 

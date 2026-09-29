@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 
 ## Purpose
 
@@ -51,9 +51,9 @@ This bundle copy is written by fan-out sub-agents and consumed by the reviewer's
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
-| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence, and the reviewer's Outputs section names it among the durable route reports. | `# Reviewer`; "durable sub-agent route reports" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:96-96 |
-| The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the no-native-sub-agents rule moved into the shared operation block in 260915-CAPS-L1. | "No native sub-agents on this seat."; `# Operation — Coordination`; "AR state mutations stay in the owning seat's main loop" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:101-104; skills/l-01-agent-lifecycles/operations/coordination.md:1-1; skills/l-01-agent-lifecycles/operations/coordination.md:68-70 |
+| Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-54 |
+| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence, and the reviewer's Outputs section names it among the durable route reports. | `# Reviewer`; "durable sub-agent route reports" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:99-99 |
+| The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the no-native-sub-agents rule moved into the shared operation block in 260915-CAPS-L1. | "No native sub-agents on this seat."; `# Operation — Coordination`; "AR state mutations stay in the owning seat's main loop" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:101-104; skills/l-01-agent-lifecycles/operations/coordination.md:1-101; skills/l-01-agent-lifecycles/operations/coordination.md:68-70 |
 | The reviewer's onboarding-vs-code lens pairs `read_ar_files` with `grepai_search`, and the curation exception makes the complete memory-quality operation the reviewer's one non-optional check. | "onboarding against code"; "Curation is the exception" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:56-58; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:62-65 |
 
 ## Cross-Repo References
@@ -65,6 +65,7 @@ No sibling repository evidence is needed for this report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range): its cited range was hand-read against mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md and already held the anchor its claim names — "durable sub-agent route reports" at reviewer.md:96-96 — so no range was changed; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
 - 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `durable sub-agent route reports`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
 - 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `onboarding-coherency.md.md:55` (`# Reviewer`, "durable sub-agent route reports").

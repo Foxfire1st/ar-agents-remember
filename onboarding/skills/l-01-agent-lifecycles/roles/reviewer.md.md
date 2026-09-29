@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/reviewer.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -48,7 +48,14 @@ The append target is the same single physical leaf journal that contains the wor
 reviewer's separately authored verdict links that journal anchor instead of duplicating the
 adjudication as another authority.
 
-Beside the verdict, the reviewer emits **its own curator hand-off list** (`:88-95`) — its verdicts and
+**The declared knowledge effects (MIK-R11 rule 2, ruling Q3 of 2026-09-29T21:56:18+02:00).** Step 7 now
+ends with one line: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
+that declaration against the leaf's requirement packet — its declared subjects and effects match what the
+packet requires, with no effect missing and none invented — and a mismatch is a finding. The line sits in
+the role file, not in a criteria catalog, because the catalogs admit a standing criterion only with
+catching evidence. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
+
+Beside the verdict, the reviewer emits **its own curator hand-off list** (`:91-98`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
 for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
 source it came from and the place it was found at, and a finding the reviewer minted carries its own
@@ -71,7 +78,7 @@ The plane stamps that exact
 parent document+role onto the reviewer generation. An identity-free launcher may target an
 altitude-valid reviewer for explicit takeover, but a sprint takeover cannot invent architect versus
 orchestrator parentage and parent operations fail closed. The reviewer cannot call `dispatch_agent`:
-its `## What you may do` surface (`:132-138`) omits that call.
+its `## What you may do` surface (`:135-141`) omits that call.
 
 ### Invariants And Boundaries
 
@@ -99,7 +106,8 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 | --- | --- | --- |
 | Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. | "Adjudicate every requirement revision separately" | skills/l-01-agent-lifecycles/roles/reviewer.md:70-73 |
 | The verdict template structurally repeats one adjudication block per stable ID. | "## Mandatory Requirement Adjudication Block" | skills/l-01-agent-lifecycles/templates/verdict.md:72-72 |
-| The reviewer emits its own curator hand-off list in the shared producer shape. | "Your own curator hand-off list" | skills/l-01-agent-lifecycles/roles/reviewer.md:88-95 |
+| The reviewer emits its own curator hand-off list in the shared producer shape. | "Your own curator hand-off list" | skills/l-01-agent-lifecycles/roles/reviewer.md:91-98 |
+| A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
 | The seat's seam table fixes the five seams and where each verdict goes. | "The seam you are reviewing" | skills/l-01-agent-lifecycles/roles/reviewer.md:18-27 |
 
 ## Cross-Repo References
@@ -122,6 +130,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the Logic paragraph on step 7's new line (check a leaf's declared `expectedKnowledgeEffects` against its packet; architect ruling 2026-09-29T21:56:18 Q3), and one row. The hand-off-list row and the prose line hints below the insertion were re-pointed by the exact +3 line shift. No verification stamp was advanced.
 - 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is eight added lines in `## Outputs` (`:88-95`) adding **the reviewer's own curator hand-off list** — its verdicts and findings in the shape `../templates/curator-handoff-list.md` owns, emitted as data in the same list shape the worker emits, naming where the thing lives rather than where the reviewer looked and carrying its own statement and evidence verbatim. Body: added that output to the Logic and added two Repo-Internal References rows (the hand-off list, `:88-95`; the seat's seam table, `:18-27`). Correction made while re-deriving: the Logic's "the role table classifies reviewer as target-only" and "its dispatch/tools rows are structural documentation" named a table the rewritten role file no longer carries — the classification now lives in `composition-manifest.json` — and the reviewer's inability to dispatch is now stated from its own `## What you may do` surface (`:132-138`). Verified ranges/claims: both pre-existing rows still resolve ("Adjudicate every requirement revision separately" at `:70` inside `:70-73`; the verdict block heading at `templates/verdict.md:72`), and both new rows' anchors resolve inside their extents.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:72-72. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

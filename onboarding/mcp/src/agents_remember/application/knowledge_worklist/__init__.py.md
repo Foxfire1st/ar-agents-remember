@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,9 @@ public names of its submodules; it contains no logic of its own.
   `knowledge` (K_B and K_C through the derived index's parser), `classify` (entry classes and knowledge-side
   changes), `registry` (item kinds and stable item IDs), `compute` (one run), `leaf` (a leaf's sides, run and
   persisted file), `surface` (what `knowledge_integrity_check` returns) and, since MIK-R30, `onboarding_trace`
-  (the `onboarding_trace` item kind, the gate's sides and its items in the worklist). `base_cache` (the
+  (the `onboarding_trace` item kind, the gate's sides and its items in the worklist) and, since MIK-R11,
+  `planned_effects` (the `planned_untouched` item kind, the `planned`/`unplanned` marks and the
+  reconciliation of declared effects against rows). `base_cache` (the
   converted-base cache, review R1 F6) is imported by `leaf` and `onboarding_trace` and is not re-exported.
 - `__all__` re-exports the run (`compute_worklist`, `incomplete_worklist`, `WorklistInputs`, `Item`,
   `Incomplete`, `WORKLIST_SCHEMA`), the leaf surface (`leaf_worklist`, `recompute_leaf_worklist`,
@@ -68,8 +70,19 @@ import cycle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package map's MIK-R30 entry. | "kind (registered on import), the" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:14-15 |
-| The registering import and the two new public names. | `ONBOARDING_TRACE_KIND`; `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:44-46; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:69-69 |
+| The package map's MIK-R30 entry. | "kind (registered on import), the" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:16-17 |
+| The registering import and the two new public names. | `ONBOARDING_TRACE_KIND`; `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:46-48; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:75-75 |
+
+## 260928-MIK-L11 The Planned-Effects Kind Is Registered With The Package (MIK-R11)
+
+The package now imports `planned_effects`, whose import registers the `planned_untouched` kind
+(`PLANNED_UNTOUCHED_KIND`), so the kind is registered whenever the worklist is, exactly as MIK-R30's kind
+is. `__all__` gains `PLANNED_UNTOUCHED_KIND`. The package map names the module before `onboarding_trace`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package map's MIK-R11 entry. | "-- MIK-R11's" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:14-15 |
+| The registering import and the new public name. | `PLANNED_UNTOUCHED_KIND` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:49-51; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:63-63 |
 
 ## Docs References
 
@@ -88,10 +101,10 @@ code and memory repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package map and the three raising cases. | "a change elsewhere in the same file raises nothing" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:1-18 |
-| The re-exported public names. | `__all__` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:55-78 |
-| The run entry point it re-exports. | `compute_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:136-146 |
-| The one recompute entry point it re-exports. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483 |
+| The package map and the three raising cases. | "a change elsewhere in the same file raises nothing" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:20-20 |
+| The re-exported public names. | `__all__` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:60-84 |
+| The run entry point it re-exports. | `compute_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:145-155 |
+| The one recompute entry point it re-exports. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:477-508 |
 
 ## Cross-Repo References
 
@@ -102,6 +115,8 @@ No meaningful cross-repo references found: the module only re-exports its own pa
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T21:47:45+00:00: Generated citation repair: "a change elsewhere in the same file raises nothing" repointed to mcp/src/agents_remember/application/knowledge_worklist/__init__.py:20-20. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the section "260928-MIK-L11 The Planned-Effects Kind Is Registered With The Package" (the registering import and `PLANNED_UNTOUCHED_KIND` in `__all__`) and named `planned_effects` in the Logic bullet's package map. L30's package-map row was re-pointed by the exact +2 line shift (its anchor now also occurs in MIK-R11's entry); other rows were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T18:59:23+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

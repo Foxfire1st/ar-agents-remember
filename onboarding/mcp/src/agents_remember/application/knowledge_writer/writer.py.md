@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/writer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,10 @@ base is converted. Only then does it write, and only in a committing run.
 
 - `WriteRequest` carries the two roots, the `Owner`, the hand-off path as `origin.handoff.path` records it,
   the parsed document, the commit word and the `authorization` reference. The file format has no field for
-  the authorization, so the report records it.
+  the authorization, so the report records it. Since MIK-R11 it also carries `decisions`, the task
+  owner's `DecisionResolver` for a planned `dropped` row's cited decision, which `write_knowledge` hands to
+  `Authoring`; a write without a task owner (a wave, `decisions=None`) refuses such a row. The leaf route
+  binds it (`cli/knowledge_write_route.leaf_decisions`).
 - An unconverted memory tree is refused by name (`UNCONVERTED`, placed at `LAYOUT_MARKER_PATH`) before C is
   captured.
 - Problems from reading, authoring, the history check and rendering are all collected; any of them refuses
@@ -91,13 +94,13 @@ The operation and its stages.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
-| One operation's inputs, including the authorization reference the report records. | `WriteRequest` | mcp/src/agents_remember/application/knowledge_writer/writer.py:62-78 |
-| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
+| One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. | `WriteRequest`; `decisions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:62-81 |
+| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:84-130 |
 | The carry-forward call and its report field. | `carry_entries`; `carried=carried` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
 | The carry itself. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:47-72 |
-| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:128-143 |
-| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:146-159 |
-| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:162-184 |
+| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:133-148 |
+| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:151-164 |
+| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:167-189 |
 | The registry side of the writer-reported rules. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
 | A validator refusal writes nothing and names every violation. | `test_a_validator_refusal_writes_nothing_and_names_every_violation` | mcp/tests/test_knowledge_writer.py:326-338 |
 | Route rules are reports in the writer and refusals at a commit route. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:614-652 |
@@ -112,6 +115,7 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** The `WriteRequest` Logic bullet and row now name `decisions`, the task owner's resolver passed to `Authoring` for a planned `dropped` row (a wave refuses such a row). The reworded `WriteRequest` row reopened on the new `decisions` anchor; only the generated-repair bullet this pass's fixer wrote for it was removed. Ranges below the new field were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:42:32+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T20:47:37+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ code and memory repositories, so they are named here and not cited as rows.
 | The storage settings the gate reads. | `trace_context` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:168-184 |
 | The gate's items merged, sorted and digested into the one list. | `with_onboarding_items` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:193-224 |
 | The worklist step, which names any side failure. | `worklist_onboarding` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:227-250 |
-| The worklist run that calls it after a complete run. | `leaf_worklist`; `worklist_onboarding` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:335-384 |
+| The worklist run that calls it after a complete run. | `leaf_worklist`; `worklist_onboarding` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:356-409 |
 | The persisted worklist carries the gate's items in order. | `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` | mcp/tests/test_onboarding_trace_gate.py:726-748 |
 | Mixed formats are an incomplete side and the persisted worklist is `incomplete`. | `test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass` | mcp/tests/test_onboarding_trace_gate.py:438-461 |
 
@@ -115,4 +115,5 @@ repository), not from another code repository.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/knowledge_worklist/leaf.py`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): created this card for the new file MIK-R30 adds, recording the architect rulings of 18:49:50 (2, 4) and 19:23:45 (N1, N2, N4). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

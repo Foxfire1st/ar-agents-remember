@@ -5,11 +5,34 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash |  `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
-| lastVerifiedCommitDate |  2026-09-29T22:20:46+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash |  `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate |  2026-09-30T00:07:49+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L11 A Leaf's Planned Knowledge Effects Are Reconciled With What It Delivered, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L11` (MIK-R11@v2): once a memory tree is converted, a leaf's
+task document may declare, before implementation, the invariant and family effects it expects
+(`expectedKnowledgeEffects`), and the change-to-knowledge worklist reconciles that plan with the leaf's history
+rows. Every invariant and family item is marked `planned` or `unplanned`; every declared effect no row delivers
+as declared becomes a `planned_untouched` item, which only an authored planned row answers
+(`realized_elsewhere`, `deferred`, or `dropped` citing a decision of the leaf's task document). An approved
+strengthening that never happened is therefore visible, and a `no_impact` row cannot clear it. The curator
+template gains the planned-row bullet and the adversarial reviewer's role gains one line (check a leaf's
+declaration against its packet): the authored `skills/` copies, synchronized by `scripts/sync-skills.py` into
+[the package copy of the template](mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md.md),
+[the package copy of the reviewer role](mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: unconverted leaves get no worklist, and no real task document may carry the field before that
+install, because the installed runtime refuses unknown task-document fields (architect ruling Q2,
+2026-09-29T21:56:18+02:00). An absent declaration leaves every existing task-intent digest unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's planned-row bullet, mirrored into the package and starter copies. | "A planned row (MIK-R11, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
+| The reviewer's declaration check, mirrored likewise. | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
 
 ## 260928-MIK-L02 A Bounded Knowledge Page Continues Through `knowledge_read`, Not Yet Used
 
@@ -103,7 +126,7 @@ runtime does changes before MIK-R37**: no production memory tree is converted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
 | The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
@@ -210,6 +233,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 A Leaf's Planned Knowledge Effects Are Reconciled With What It Delivered, Not Yet Used" at the top: the repository-level consequence, the curator-template and reviewer-role changes reaching the package copies and the eight harness starter copies, and ruling Q2 (no real declaration before the L37 install). No verification stamp was advanced.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** New section at the top, "260928-MIK-L02 A Bounded Knowledge Page Continues Through `knowledge_read`, Not Yet Used": the repository-level consequence and the c-04 skill change reaching the package copy and the eight harness starter copies (which have no cards). One row. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section "260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used": the repository-level consequence, all architect rulings of 18:49:50, 19:23:45 and 19:53:54, and the template bullet reaching the eight harness starter copies this route governs. Two rows. The `_attach_final_full_catalog` row's controller ranges were moved by MIK-R30's insertion above the function and re-pointed. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R03 moved lines in `published_intent.py` and `registration/knowledge.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). The fixer also normalised passing ranges in rows that cite files this leaf did not change; those ranges are measurement-true. No claim, anchor or source file of this card changed.

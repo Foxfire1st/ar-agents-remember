@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/document_field_effects.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00|
-| lastVerifiedCommitHash |  `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate |  2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash |  `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
+| lastVerifiedCommitDate |  2026-09-30T00:07:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,6 +77,11 @@ before write.
   `task-intent/v1` schema change, because `_validate_allowlisted_classifications` refuses a normative slot
   outside the intent. As a `LIFECYCLE` field, a change to it is an `operational-audit` mutation and never
   invalidates a closeout projection.
+- **`expectedKnowledgeEffects` is `NORMATIVE` (MIK-R11 rule 1: `NORMATIVE_INTENT`).** Unlike
+  `knowledgeMaintenanceScope`, a leaf's declared knowledge effects are part of what it intends, so the field
+  and the three fields of `ExpectedKnowledgeEffect` (`subject`, `effect`, `requirementRef`) are classified
+  `NORMATIVE`, and MIK-R11 adds the matching optional slot to `task-intent/v1` (`task_intent.py`), which keeps
+  `_validate_allowlisted_classifications` symmetric. A change to it is an `intent` mutation.
 
 ### Todos
 
@@ -93,19 +98,20 @@ evidenced by the repository-owned references below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver. | `TASK_DOCUMENT_FIELD_EFFECTS`; "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:144-333; mcp/src/agents_remember/tasks/document_field_effects.py:347-347; mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
+| R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver. | `TASK_DOCUMENT_FIELD_EFFECTS`; "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:145-340; mcp/src/agents_remember/tasks/document_field_effects.py:347-347; mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MIK-R08's task-document field is classified with the lifecycle plane. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:165-165 |
-| The closed effect vocabulary and projector are declared together. | `TaskDocumentFieldEffect`; `TaskDocumentFieldEffectProjector` | mcp/src/agents_remember/tasks/document_field_effects.py:54-63; mcp/src/agents_remember/tasks/document_field_effects.py:105-126 |
-| The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts. | `TASK_DOCUMENT_FIELD_EFFECTS` | mcp/src/agents_remember/tasks/document_field_effects.py:144-333 |
-| The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. | `FIELD_EFFECT_MUTATION_CLASSES`; `classify_task_document_mutation`; `TaskDocumentMutationClassification` | mcp/src/agents_remember/tasks/document_field_effects.py:84-99; mcp/src/agents_remember/tasks/document_field_effects.py:347-360; mcp/src/agents_remember/tasks/document_field_effects.py:336-344 |
-| Missing or stale mutation mappings and unclassified models refuse before write. | `validate_task_document_mutation_classes`; `_changed_model_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:363-373; mcp/src/agents_remember/tasks/document_field_effects.py:376-396 |
-| Runtime schema discovery refuses missing, stale, or empty classifications. | `task_document_schema_models`; `validate_task_document_field_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:442-456; mcp/src/agents_remember/tasks/document_field_effects.py:472-486; mcp/src/agents_remember/tasks/document_field_effects.py:489-504 |
-| Effect projection retains only fields classified for the requested plane. | `fields_with_effect`; `project_model_field_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:520-530; mcp/src/agents_remember/tasks/document_field_effects.py:533-544 |
+| MIK-R08's task-document field is classified with the lifecycle plane. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:166-166 |
+| MIK-R11's declaration and its nested fields are classified normative. | "expectedKnowledgeEffects"; `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document_field_effects.py:167-167; mcp/src/agents_remember/tasks/document_field_effects.py:270-274 |
+| The closed effect vocabulary and projector are declared together. | `TaskDocumentFieldEffect`; `TaskDocumentFieldEffectProjector` | mcp/src/agents_remember/tasks/document_field_effects.py:55-64; mcp/src/agents_remember/tasks/document_field_effects.py:106-127 |
+| The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts. | `TASK_DOCUMENT_FIELD_EFFECTS` | mcp/src/agents_remember/tasks/document_field_effects.py:145-340 |
+| The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. | `FIELD_EFFECT_MUTATION_CLASSES`; `classify_task_document_mutation`; `TaskDocumentMutationClassification` | mcp/src/agents_remember/tasks/document_field_effects.py:85-100; mcp/src/agents_remember/tasks/document_field_effects.py:354-367; mcp/src/agents_remember/tasks/document_field_effects.py:343-351 |
+| Missing or stale mutation mappings and unclassified models refuse before write. | `validate_task_document_mutation_classes`; `_changed_model_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:370-380; mcp/src/agents_remember/tasks/document_field_effects.py:383-403 |
+| Runtime schema discovery refuses missing, stale, or empty classifications. | `task_document_schema_models`; `validate_task_document_field_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:442-456; mcp/src/agents_remember/tasks/document_field_effects.py:479-493; mcp/src/agents_remember/tasks/document_field_effects.py:496-511 |
+| Effect projection retains only fields classified for the requested plane. | `fields_with_effect`; `project_model_field_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:527-537; mcp/src/agents_remember/tasks/document_field_effects.py:540-551 |
 
 ## Cross-Repo References
 
@@ -113,6 +119,7 @@ None; this is the task-schema authority inside agents-remember.
 
 ## Update History
 
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the Invariants bullet on `expectedKnowledgeEffects` and `ExpectedKnowledgeEffect` classified `NORMATIVE` (the packet's `NORMATIVE_INTENT`), with the matching optional intent slot. One row added; L08's row re-pointed by the exact +1 line shift; other rows re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Invariants records the new `TaskDocument.knowledgeMaintenanceScope` classification (`LIFECYCLE`, architect ruling 4, hence `operational-audit` and outside the intent digest), with a citation row.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the classification of the new persisted
   `Step.note` field as `AUDIT`, and used it as the worked example of the taxonomy's exhaustive,

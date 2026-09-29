@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -868,7 +868,7 @@ section.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:74-121 |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
 | The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
@@ -885,7 +885,36 @@ is `worktrees/modules/onboarding_trace.py`; this route gains no new module.
 | --- | --- | --- |
 | The fixer's converted-tree early return. | `fix_onboarding_root`; "not-applicable-converted" | mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py:33-66 |
 
+## 260928-MIK-L11 The Worklist Section Shows The Planned Effects
+
+**Route meaning extended (MIK-R11 rule 7, visibility).** The worklist section rendered by
+[`knowledge_worklist_section.py`](knowledge_worklist_section.py.md) gains three things, all inside the
+section and so only on converted leaves:
+
+- a **"Planned effects (MIK-R11)"** block before the item table: one line when the leaf's task document
+  declares nothing ("every item is `unplanned`"), otherwise one line per declaration with its planned key,
+  its `requirementRef`, and either the row or invariant that matched it or **unmatched** with the reason and
+  whether a planned row answers it;
+- a **Plan** column in the item table, showing each invariant and family item's `planning` mark (`-` for a
+  kind with none);
+- the facts of a `planned_untouched` item: the declaring requirement, the unmatched reason, each row about
+  the declared record marked "(does not deliver it)", and "answered by" or "needs a planned row".
+
+The section stays information, never a count: MIK-R09's gate (L09) is what enforces an open
+`planned_untouched` item, through `models/knowledge_files/planned.planned_item_open`. Because the `planning`
+mark sits inside every item, every converted worklist's digest and checklist change against a worklist
+persisted before MIK-R11; that is carried to L09 (ruling F4, 2026-09-29T22:35:34+02:00). The reviewer-UI
+half of rule 7 is carried to L31 (ruling Q1, 2026-09-29T21:56:18+02:00). Unconverted leaves render no
+section, so today's checklist bytes are unchanged; this curation's own `memory_quality_check` runs produced
+no worklist.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:72-82; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:85-111 |
+| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:118-166 |
+
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The Worklist Section Shows The Planned Effects" (the planned-effects block, the **Plan** column and the `planned_untouched` facts), recording architect rulings 2026-09-29T21:56:18 (Q1) and 22:35:34 (F4). L08's section-and-summary row was re-measured (`knowledge_worklist_lines` now `118-166`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** Added the section "260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree" (the `not-applicable-converted` return, architect ruling 2026-09-29T18:49:50 (5)). One row. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information": the new `knowledge_worklist_section.py` (carded, governed by this overview) and the checklist's defaulted worklist inputs, never counted. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the checklist's informational "Invariants without proof" section, with the architect ruling that the list is checklist-only and never counts toward `curatorActionableCount`. One row. The entry went into the real list after the last section, not into the inline `## Update History` mention. The `_attach_final_full_catalog` row was re-pointed by the exact line map, and five further rows were re-pointed or normalised by the installed `memory-citations --fix`, with no wording change.

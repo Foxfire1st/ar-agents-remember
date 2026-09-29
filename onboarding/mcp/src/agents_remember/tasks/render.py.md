@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,7 +28,9 @@ the rendered markdown; the JSON document is the source of truth.
 Created, plus a `**Master:**` line for a sub-task, an `**Orchestrates:**` line listing the
 commanded master names in backticks when `doc.orchestrates` is non-empty (master-only by
 schema), a `**Knowledge maintenance scope:** \`true\`` line when `doc.knowledgeMaintenanceScope` is
-true (MIK-R08), an optional `statusNote` suffix on the
+true (MIK-R08), an `**Expected knowledge effects:**` block with one bullet per declaration (its subject, effect and
+`requirementRef`) when `doc.expectedKnowledgeEffects` is set (MIK-R11), an optional
+`statusNote` suffix on the
 `**Status:**` line, and `headerNotes` as extra `**Key:** value` lines — R4), then one `_section()` per
 `w-02-light-task-workflow` `template.md` heading (Objective, Requirements, Design,
 Implementation Steps, Proposed Code Examples, Decision Log, Open Questions,
@@ -114,7 +116,19 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The header line is drawn only when the field is true. | `_header_lines`; "**Knowledge maintenance scope:**" | mcp/src/agents_remember/tasks/render.py:180-205 |
+| The header line is drawn only when the field is true. | `_header_lines`; "**Knowledge maintenance scope:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
+
+## 260928-MIK-L11 The Expected-Knowledge-Effects Header Block
+
+MIK-R11 adds a header block after the maintenance-scope line: when the leaf's document declares
+`expectedKnowledgeEffects`, `_header_lines` appends `**Expected knowledge effects:**` and one bullet per
+declaration, in declared order, naming its subject, effect and `requirementRef`. A document without the
+field renders exactly as before (the worker's and reviewer's render hashes over every real task document are
+byte-identical).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The block is drawn only when the field is set. | `_header_lines`; "**Expected knowledge effects:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
 
 ## Docs References
 
@@ -128,11 +142,11 @@ No Domain Documentation sources are configured for this repository-internal rend
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. | `_step_lines` | mcp/src/agents_remember/tasks/render.py:440-464 |
-| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:218-259 |
-| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:324-342; mcp/src/agents_remember/tasks/render.py:345-359; mcp/src/agents_remember/tasks/render.py:362-377; mcp/src/agents_remember/tasks/render.py:380-396 |
-| The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:198-253 |
-| The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:407-414; mcp/src/agents_remember/tasks/render.py:417-424; mcp/src/agents_remember/tasks/render.py:503-525 |
+| The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. | `_step_lines` | mcp/src/agents_remember/tasks/render.py:446-470 |
+| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:224-265 |
+| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:330-348; mcp/src/agents_remember/tasks/render.py:351-365; mcp/src/agents_remember/tasks/render.py:368-383; mcp/src/agents_remember/tasks/render.py:386-402 |
+| The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:204-259 |
+| The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:413-420; mcp/src/agents_remember/tasks/render.py:423-430; mcp/src/agents_remember/tasks/render.py:509-531 |
 | The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. | `_MARKER` | mcp/src/agents_remember/tasks/render.py:84-89 |
 
 
@@ -156,6 +170,7 @@ and one-way; markdown never becomes authority.
 
 ## Update History
 
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Logic's header-block paragraph and the section "260928-MIK-L11 The Expected-Knowledge-Effects Header Block" record the new header block, drawn only when a leaf declares `expectedKnowledgeEffects`. One row added; other rows re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic's header-block description now includes the `**Knowledge maintenance scope:** `true`` line drawn when `doc.knowledgeMaintenanceScope` is true, with a short L08 section citing `_header_lines`.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `_step_lines` now suffixes a top-level step's
   `note` onto its checkbox line exactly as a substep's note is rendered, and `step.note` joined the

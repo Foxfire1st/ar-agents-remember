@@ -5,9 +5,24 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T00:34:45Z |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+
+## The reviewer checks a leaf's declared knowledge effects (260928-MIK-L11)
+
+[`reviewer.md`](reviewer.md.md), Process step 7 (where each requirement revision is adjudicated), gains one
+line for MIK-R11 rule 2: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
+that declaration against the leaf's requirement packet — its declared subjects and effects match what the
+packet requires, with no effect missing and none invented — and a mismatch is a finding. The architect ruled
+the line in (Q3, 2026-09-29T21:56:18+02:00). It sits in the role file rather than a criteria catalog, because
+the catalogs admit a standing criterion only with catching evidence. Who writes the declaration (the
+architect, or the worker with the architect's approval) stays procedural. No other role changed; the package
+copy and the eight harness starter copies are synced by `sync-skills.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The declaration check in step 7. | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
 
 ## Curator successor-family examination
 
@@ -422,6 +437,7 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The reviewer checks a leaf's declared knowledge effects (260928-MIK-L11)" at the top (step 7's new line, architect ruling 2026-09-29T21:56:18 Q3). Rows citing `reviewer.md` below the three inserted lines were re-pointed by the installed fixer or the exact +3 line shift. No verification stamp was advanced.
 - 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the section for Process step 3's per-target realization rationale duty. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.

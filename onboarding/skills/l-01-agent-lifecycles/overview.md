@@ -5,9 +5,34 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+
+## The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)
+
+Two files of this skill now serve MIK-R11 (planned invariant effects reconciliation):
+
+- `templates/curator-handoff-list.md`'s writer section (MIK-R12) gains the **planned row**, for converted
+  memory only. It answers a `planned_untouched` worklist item — an effect the leaf's task document declared in
+  `expectedKnowledgeEffects` that no row delivered — with the item's subject
+  `planned:<declared subject>#<effect>`, a disposition (`realized_elsewhere`, `deferred` or `dropped`) and a
+  `ref` of the kind that disposition takes; a `dropped` row cites a decision of the leaf's task document by
+  its `at`, which the writer resolves through the task owner. A `no_impact` row about the declared invariant
+  does not answer the item.
+- `roles/reviewer.md`, step 7, gains one line: when the leaf's task document declares
+  `expectedKnowledgeEffects`, the adversarial reviewer checks the declaration against the leaf's requirement
+  packet, and a mismatch is a finding (architect ruling Q3, 2026-09-29T21:56:18+02:00). It is in the role file,
+  not a criteria catalog, because the catalogs admit a standing criterion only with catching evidence.
+
+Both reach the package copy and the eight harness starter copies through `sync-skills.py`. Nothing a producer
+emits changes, and no other role, operation or template in this route changed. No real task document carries
+the declaration before the L37 install (ruling Q2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The planned-row history form in the writer section. | "A planned row (MIK-R11, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
+| The reviewer's declaration check in step 7. | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
 
 ## The onboarding row in the curator hand-off template (260928-MIK-L30)
 
@@ -55,7 +80,7 @@ operation or other template in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-593; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -560,6 +585,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)" at the top, recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). Rows citing the template below the inserted bullet were re-pointed by the installed fixer or the exact line shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "The onboarding row in the curator hand-off template (260928-MIK-L30)", with architect ruling 2026-09-29T18:49:50 (1). One row. The six inserted template lines moved later template lines only; the L12, L04 and L21 sections cite lines above the insertion or were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section "Test proofs in the curator hand-off template": both evidence forms (the ruled `path -k name`), the facet authored beside the statement draft, and the new "Proofs are shown and counted (MIK-R28)" bullet. Two rows. The installed `memory-citations --fix` widened the MIK-R12 and MIK-R04 rows' heading citations to their sections, with no wording change.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "The file writer's sections in the curator hand-off template (260928-MIK-L12)".** The L04 section's row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.

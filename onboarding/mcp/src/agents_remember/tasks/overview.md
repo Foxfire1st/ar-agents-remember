@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-29T23:27:43+02:00 |
+| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
+| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -130,10 +130,10 @@ Route reviews now bind task intent, content digests and declared direct dependen
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical task intent is hashed from the validated normative projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
-| Exact task text remains mandatory alongside supplemental packet references. | `_requirements` | mcp/src/agents_remember/tasks/task_intent.py:288-309 |
+| Canonical task intent is hashed from the validated normative projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:197-210 |
+| Exact task text remains mandatory alongside supplemental packet references. | `_requirements` | mcp/src/agents_remember/tasks/task_intent.py:307-328 |
 | Task-document publication rejects a route review missing intent identity. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-229 |
-| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:347-360 |
+| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:354-367 |
 
 ## Invariants And Boundaries
 
@@ -187,7 +187,7 @@ Route reviews now bind task intent, content digests and declared direct dependen
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:219-277 |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:220-278 |
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:45-71 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:699-750 |
@@ -294,9 +294,9 @@ master-qualified leaf-title keys.
 | --- | --- | --- |
 | Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:23-36; mcp/src/agents_remember/tasks/store.py:39-53 |
 | Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72 |
-| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:198-253 |
+| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:204-259 |
 | Qualified leaf-title join. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
-| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:218-259 |
+| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:224-265 |
 
 ## 260821-DAGQC-L2 Total Serving-Preflight Boundary
 
@@ -368,11 +368,51 @@ a `**Knowledge maintenance scope:**` header line when it is true. Every existing
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The field. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:680-682 |
-| Its classification. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:165-165 |
-| Its header line. | `_header_lines` | mcp/src/agents_remember/tasks/render.py:180-205 |
+| The field. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:720-722 |
+| Its classification. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:166-166 |
+| Its header line. | `_header_lines` | mcp/src/agents_remember/tasks/render.py:180-211 |
+
+## 260928-MIK-L11 The `expectedKnowledgeEffects` Declaration And The Task Owner's Answers
+
+MIK-R11 lets a leaf's task document declare, before implementation, the invariant and family effects it
+expects; the worklist then marks every invariant and family item `planned` or `unplanned` and raises a
+`planned_untouched` item for each declaration no history row delivers. The task plane's part:
+
+- [`document.py`](document.py.md): `TaskDocument.expectedKnowledgeEffects: list[ExpectedKnowledgeEffect] |
+  None` (`subject`, `effect`, `requirementRef`). The model refuses a malformed entry, the field on a master,
+  an empty list, and two declarations with the same subject and effect. The task plane checks shape only and
+  never reads knowledge; the patterns come from `models/knowledge_files/planned.py`.
+- [`document_field_effects.py`](document_field_effects.py.md) classifies the field and its three nested
+  fields `NORMATIVE` (the packet's `NORMATIVE_INTENT`), unlike L08's `LIFECYCLE` flag, and
+  [`task_intent.py`](task_intent.py.md) carries it as an optional `task-intent/v1` slot whose key is dropped
+  when absent (and from a master's projection). **An absent field leaves every existing task-intent digest
+  unchanged**: the worker (597 documents) and the reviewer (889 documents) found every real digest, render
+  and stored JSON byte-identical. A declaration changes the leaf's intent digest; clearing it restores it.
+- [`render.py`](render.py.md) draws an `**Expected knowledge effects:**` header block when declared.
+- [`leaf_decisions.py`](leaf_decisions.py.md) (new) is the task owner's answer for MIK-R11, through one strict
+  leaf lookup (`strict_leaf_doc`: `resolve_terminal_leaf_doc` plus a refusal of any unreadable document that
+  still names the leaf). The worklist reads the declaration through it, so **an unreadable leaf document
+  never reads as "nothing declared"** — it makes the run `incomplete` (ruling F2); and
+  `leaf_decision_refusal` answers whether a planned `dropped` row's cited decision (`at`) resolves to exactly
+  one decision entry — ambiguity refuses (ruling F1, 2026-09-29T22:35:34+02:00).
+- **Transition (ruling Q2, 2026-09-29T21:56:18+02:00).** The installed runtime's `TaskDocument` forbids
+  unknown fields, so no real task document may declare `expectedKnowledgeEffects` before the L37 install.
+  Who writes the field is procedural (`task_doc` has no per-field role gate); the reviewer checks the
+  declaration against the packet (ruling Q3). `leaf_maintenance_scope` keeps the fail-soft `find_leaf_doc`,
+  carried to L09 (ruling F2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The declaration model and its refusals. | `ExpectedKnowledgeEffect`; `_check_expected_knowledge_effects` | mcp/src/agents_remember/tasks/document.py:655-666; mcp/src/agents_remember/tasks/document.py:669-686 |
+| The field on the task document. | "MIK-R11: the invariant and family effects the leaf expects" | mcp/src/agents_remember/tasks/document.py:723-725 |
+| Its normative classification. | "expectedKnowledgeEffects"; `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document_field_effects.py:167-167; mcp/src/agents_remember/tasks/document_field_effects.py:270-274 |
+| The optional intent slot, absent when undeclared. | `TaskIntentExpectedKnowledgeEffect`; `canonical_value` | mcp/src/agents_remember/tasks/task_intent.py:88-91; mcp/src/agents_remember/tasks/task_intent.py:112-116 |
+| The header block. | `_header_lines`; "**Expected knowledge effects:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
+| The strict lookup and the decision answer. | `strict_leaf_doc`; `leaf_decision_refusal` | mcp/src/agents_remember/tasks/leaf_decisions.py:39-51; mcp/src/agents_remember/tasks/leaf_decisions.py:81-98 |
 
 ## Update History
+- 2026-09-29T21:49:38+00:00: Generated citation repair: `task_intent_identity` repointed to mcp/src/agents_remember/tasks/task_intent.py:197-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The `expectedKnowledgeEffects` Declaration And The Task Owner's Answers" (the field, its `NORMATIVE` class and optional intent slot, the header block, and the new `leaf_decisions.py`), recording architect rulings 2026-09-29T21:56:18 (Q2, Q3) and 22:35:34 (F1, F2). L08's two rows were re-pointed by the exact line shifts (+40 and +1). No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field" across `document.py`, `document_field_effects.py` (`LIFECYCLE`, architect ruling 4) and `render.py`.
 - 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
   `ar/260913-lca-l5-ar`, base `52875e7a`): `leaf_doc.py` gained the derived master-link binding —
