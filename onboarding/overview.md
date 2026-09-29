@@ -6,10 +6,27 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash |  `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate |  2026-09-29T00:17:28+02:00|
+| lastVerifiedCommitHash |  `45fe37749b388de348d16ced50c28c03490dce64`|
+| lastVerifiedCommitDate |  2026-09-29T05:18:17+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L21 The Text Knowledge Format Is Declared, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L21` (MIK-R21@v1), the first leaf of the
+maintained-invariant-knowledge master: the package now **declares** the text knowledge format that will
+replace the SQLite knowledge store as the source of truth (Markdown for prose, canonical JSON for
+structured facts: global records under `knowledge/`, file and route sidecars under `onboarding/`). The
+declaration is `mcp/src/agents_remember/models/knowledge_files/`, applied by the new
+`agents-remember knowledge-format` command. **Nothing the installed runtime does changes before MIK-R37**:
+the live memory repository is still read and written through the knowledge store, and the canonical
+curator hand-off template (synchronized into the package and the eight harness starter copies by
+`scripts/sync-skills.py`) only gained an informational section saying where each hand-off field will land.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The format declaration's own statement that text files become the source of truth. | "Text files in the memory repository are the source of truth for knowledge" | mcp/src/agents_remember/models/knowledge_files/__init__.py:3-3 |
+| The template's informational section and its no-change-before-MIK-R37 statement. | "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:427-427 |
 
 ## Current reviewer and publication ownership
 
@@ -100,6 +117,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new repository-level section for the declared text knowledge format** (`models/knowledge_files/`, `agents-remember knowledge-format`) and the curator hand-off template's informational MIK-R21 section, including its synchronized harness copies under this route. No stamp advanced.
 
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): a factual note in the Intent Reviewer route-impact section: `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` now lives in `mcp/tests/test_knowledge_review_resolution_and_route.py`, moved verbatim by this leaf's file-size split. No other content changed, and no stamp was advanced.
 - 2026-09-28T17:17:14+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the L45 section: the one knowledge writer requires an authored rationale per new realization target and generates none; canonical skill texts at root, copies by generator only. No stamp advanced.

@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,16 @@ shape supersedes rule 1's `{path, locator, governing_route}` in the external sch
 *260915-KS-curator-handoff-list-schema.md* revision 1 (not edited; it lives outside this repository), while
 the rest of rule 1 stands; the verbatim worked examples predate per-target rationale and say so.
 
+Since leaf `260928-MIK-L21` (MIK-R21) the template ends its producer-facing part with **"Where an entry
+lands once knowledge is text (MIK-R21)"**: an informational map from today's hand-off fields to the text
+knowledge format — records as `knowledge/<kind-dir>/<ID>-<slug>.json` that never list their own
+locations, tests, families or decisions; writer-minted IDs (`INV-7K3F9Q`, 8-character derived IDs for
+exported legacy records); each target becoming a `realizes` entry in `onboarding/<path>.json` with an
+anchor that omits its own path; test evidence becoming a `proves` entry; `origin`; and the canonical
+formatting applied by `agents-remember knowledge-format`. It says explicitly that **nothing changes what
+a producer emits before MIK-R37**, and that `incidental` has no spelling in the file format (its mapping
+is MIK-R12's to decide).
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -74,6 +84,7 @@ These references name the current owners and the behavior they establish.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-457 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
 | **Per-target realization rationale and role, the value/vocabulary/length/route rules, the committed-retry exemption, and the stated supersession of revision 1's target element shape.** | "Realization rationale and role: one authored explanation per target"; "this file's element shape supersedes rule 1's" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
@@ -87,6 +98,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **body update — the template gains the informational section "Where an entry lands once knowledge is text (MIK-R21)".** The Logic paragraph above records what it maps and that it changes nothing a producer emits before MIK-R37; one reference row cites it (`:425-457`). No verification stamp was advanced.
 - 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic states the per-target `{path, locator, governing_route, rationale, role}` element shape, the required authored rationale, the named refusals and the supersession of the external schema note revision 1's rule-1 element shape; new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.

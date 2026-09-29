@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -3045,3 +3045,36 @@ compares nothing; the application owner computes the numbers.
 
 ## Update History
 - 2026-09-28T17:30:36+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — new section for the changed-intent summary model.** The earlier history-only entry for this leaf was not a body update; this section is. No stamp advanced.
+
+## 260928-MIK-L21 The Text Knowledge Format: A New Model Package, `knowledge_files/`
+
+`models/knowledge_files/` is a new sub-package that declares the text knowledge format (MIK-R21@v1,
+Doc14): the files under `knowledge/` and the JSON sidecars under `onboarding/` that become the source of
+truth for knowledge at MIK-R37. It is separate from `models/knowledge/` on purpose: those models describe
+the SQLite store (UUID- and digest-shaped), these describe files a person can read and merge. It reuses
+only the shipped limits, `GIT_OBJECT_PATTERN`, `require_plain_git_path` and the packet-version pattern.
+
+| Module | Owns |
+| --- | --- |
+| [`__init__.py`](knowledge_files/__init__.py.md) | the format map, the `[n]` marker/escaping rule, the public re-exports |
+| [`ids.py`](knowledge_files/ids.py.md) | kind prefixes; random 6-character minted IDs; 8-character IDs derived from legacy identity (golden-pinned) |
+| [`shapes.py`](knowledge_files/shapes.py.md) | `FileModel` (frozen, extra-forbidden, explicit `null` refused); anchor `{path?, locator, blob, content}`; references with typed targets; links; admission; origin |
+| [`records.py`](knowledge_files/records.py.md) | the ten `ar-<kind>/v1` records, per-kind relation vocabulary, one owner per relationship |
+| [`sidecars.py`](knowledge_files/sidecars.py.md) | file and route sidecars, realization/proof entries, the layout marker |
+| [`documents.py`](knowledge_files/documents.py.md) | locations and `schema` dispatch |
+| [`canonical.py`](knowledge_files/canonical.py.md) | the canonical JSON formatting (formatting only; content-changing input refused) |
+
+The sub-package has no route overview of its own, like its sibling `models/knowledge/`: this overview
+governs its cards. Every model checks **shape only**; integrity (IDs resolve, markers match, one owner per
+relationship across files) is the validator's (MIK-R22). Nothing in the installed runtime imports it; its
+only production consumer is `cli/knowledge_format.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package map and the shape-only boundary. | "Integrity (IDs resolve, markers match" | mcp/src/agents_remember/models/knowledge_files/__init__.py:23-24 |
+| The base every file model inherits. | `FileModel` | mcp/src/agents_remember/models/knowledge_files/shapes.py:50-75 |
+| An invariant record carries no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:116-137 |
+| Schema dispatch refuses unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:76-85 |
+
+## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the `models/knowledge_files/` sub-package** (seven modules, each with its own new card). No route-level contract of the existing models changed. No stamp advanced.

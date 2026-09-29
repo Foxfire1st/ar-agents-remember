@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/cli/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94` |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -119,26 +119,26 @@ this entry point implements, and it is a task-tree document rather than a config
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of the gap, the two refused shortcuts and the three modes.** | "the knowledge write plane did not have"; "EXIT ZERO IS NOT A PUBLICATION CLAIM" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:1-90 |
-| The two exit meanings: a report was produced, or the invocation was refused. | `EXIT_REPORTED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:91-94 |
+| The two exit meanings: a report was produced, or the invocation was refused. | `EXIT_REPORTED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:93-94 |
 | **The whole argument surface, including the absent destination argument.** | `add_arguments`; "--repo" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:97-142 |
 | **`--commit` documented as the whole write act, with "Without it this reports and writes nothing, which is the dry run."** | "--commit"; "which is the dry run" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:110-117 |
 | The two read-only modes and their own stated boundaries. | "--status"; "--discard-staging" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:118-130 |
 | The authorization reference that is both the admission's authority and the authorship actor. | "--authorization-ref" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:106-110 |
-| **Why contradictory modes are refused rather than resolved by precedence.** | `_invocation_refusal`; "silently picking one is how a dry run becomes a real one" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:143-155 |
-| **The two refusals that keep `--status`, `--discard-staging` and `--commit` from meaning two things at once.** | `_mode_refusal`; "one run cannot mean both" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:158-168 |
-| The run's own requirements: a readable list and a non-blank authorization. | `_list_refusal` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:171-180 |
-| **Settings resolution through the umbrella CLI's own discovery, with no second convention.** | `_settings`; `load_config`; `discover_config` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:183-196 |
-| The one admission this invocation runs under, or the refusal that stopped it. | `_admitted` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:199-202 |
-| The typed refusal payload a refusal is rendered from. | `_refusal_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:208-210 |
-| The read-only status payload: what the staging retains and what the location holds now. | `_status_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:217-219 |
-| The run payload the report is rendered from. | `_run_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:276-278 |
-| The identity record one payload renders, and the cleanup payload. | `_identity_record`; `_cleanup_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:352-397 |
-| **`run`: the invocation refusal answered first, then the one selected mode.** | `run`; `_dispatch` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:456-491 |
-| **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** | `_cleanup` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:494-512 |
-| **The admission resolver this entry point is the public face of.** | `admit_bootstrap_context`; `BootstrapRefusal`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:133-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-133 |
-| **The run this subcommand drives, and its refusal value.** | `bootstrap_knowledge`; `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:151-231; mcp/src/agents_remember/application/knowledge_bootstrap.py:94-100 |
-| **The bounded cleanup owner behind `--discard-staging`.** | `discard_bootstrap_staging`; `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:213-418; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:203-418 |
-| The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:52-60 |
+| **Why contradictory modes are refused rather than resolved by precedence.** | `_invocation_refusal`; "silently picking one is how a dry run becomes a real one" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:145-157 |
+| **The two refusals that keep `--status`, `--discard-staging` and `--commit` from meaning two things at once.** | `_mode_refusal`; "one run cannot mean both" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:160-170 |
+| The run's own requirements: a readable list and a non-blank authorization. | `_list_refusal` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:173-182 |
+| **Settings resolution through the umbrella CLI's own discovery, with no second convention.** | `_settings`; `load_config`; `discover_config` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:185-198 |
+| The one admission this invocation runs under, or the refusal that stopped it. | `_admitted` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:201-207 |
+| The typed refusal payload a refusal is rendered from. | `_refusal_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:210-216 |
+| The read-only status payload: what the staging retains and what the location holds now. | `_status_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:219-275 |
+| The run payload the report is rendered from. | `_run_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:278-384 |
+| The identity record one payload renders, and the cleanup payload. | `_identity_record`; `_cleanup_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:387-394; mcp/src/agents_remember/cli/knowledge_bootstrap.py:397-403 |
+| **`run`: the invocation refusal answered first, then the one selected mode.** | `run`; `_dispatch` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:474-481; mcp/src/agents_remember/cli/knowledge_bootstrap.py:484-509 |
+| **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** | `_cleanup` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:512-519 |
+| **The admission resolver this entry point is the public face of.** | `admit_bootstrap_context`; `BootstrapRefusal`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
+| **The run this subcommand drives, and its refusal value.** | `bootstrap_knowledge`; `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:98-104; mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244 |
+| **The bounded cleanup owner behind `--discard-staging`.** | `discard_bootstrap_staging`; `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:214-221; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
+| The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:54-62 |
 
 ## Cross-Repo References
 
@@ -151,6 +151,7 @@ empty, so nothing here names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): No content impact: the `knowledge-bootstrap` registration row re-pointed to `cli/__main__.py:54-62` after MIK-R21 registered `knowledge-format` above it; the other re-pointed rows are the anchor-range projection's. Claim meaning unchanged; no stamp advanced.
 - 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
   `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
   corrected docstrings; the card and the source agree** — the contents block is named `destinationContents` with `publishedByThisRun` in the source, matching this card. All ranges were re-derived for the line shift. **No verification stamp was advanced.**

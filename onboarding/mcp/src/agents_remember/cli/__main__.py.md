@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/__main__.py`     |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated            | 2026-09-14T17:20+02:00                        |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`    |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`    |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **six** of them — `dashboard`, `memory-citations`,
-`memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap` and `review-record-comparison` — and
+that dispatches subcommands. It registers **seven** of them — `dashboard`, `memory-citations`,
+`memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format` and
+`review-record-comparison` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -29,7 +30,8 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`,
 `memory_backfill.add_arguments`/`memory_backfill.run`,
 `knowledge_ingest.add_arguments`/`knowledge_ingest.run`,
-`knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run` and
+`knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run`,
+`knowledge_format.add_arguments`/`knowledge_format.run` and
 `review_comparison_record.add_arguments`/`review_comparison_record.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
 
@@ -40,6 +42,11 @@ production entry point", which is what a repository with no leaf reaches. They a
 adapters rather than one adapter with a mode, because the two resolve different admissions
 (a leaf enclosure contract, and the settings document's repository entry) and the destination is
 derived in both cases rather than passed.
+
+`knowledge-format` is a third knowledge subcommand of a different nature: it reads and writes
+only the text knowledge files named on its command line (the MIK-R21 canonical formatter) and
+touches no store, no leaf and no admission. Until the text knowledge layout goes live (MIK-R37) the
+installed runtime never calls it; it exists so the file shapes can be formatted and checked.
 
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
@@ -63,16 +70,18 @@ configs launch the server by that exact name, so it is never folded into this um
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:225-260 |
-| The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:20-67 |
-| The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:48-101; mcp/src/agents_remember/cli/memory_citations.py:104-165 |
+| The `dashboard` subcommand adapter this dispatches to. | `run` | mcp/src/agents_remember/cli/dashboard.py:258-293 |
+| The peer CLI adapter pattern. | `main` | mcp/src/agents_remember/cli/context_packet.py:20-63 |
+| The memory-citations adapter, registered the same declarative way. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_citations.py:53-117; mcp/src/agents_remember/cli/memory_citations.py:120-184 |
 | The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. | `add_arguments`; `run` | mcp/src/agents_remember/cli/memory_backfill.py:41-73; mcp/src/agents_remember/cli/memory_backfill.py:76-97 |
 | The separate MCP server console entry that stays standalone. | `main` | mcp/src/agents_remember/mcp/__main__.py:5-8 |
-| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:43-51 |
-| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:52-60 |
-| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller, the umbrella's sixth subcommand and the reason the count above is six.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
+| The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. | `knowledge_ingest`; "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:45-53 |
+| **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:54-62 |
+| **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's seventh subcommand.** | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:63-68 |
+| **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:69-77 |
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **the umbrella gains its seventh subcommand, `knowledge-format`.** MIK-R21 adds the text knowledge files' canonical formatter as `cli/knowledge_format.py`; this module registers it with the same declarative pair (`:63-68`). The Purpose count moves from six to seven, the Code Commentary's registration list gains the `knowledge_format` pair, and a paragraph records that this subcommand touches only the files it is given and is not called by the installed runtime before MIK-R37. The `knowledge-ingest`, `knowledge-bootstrap` and `review-record-comparison` rows were re-pointed to their shifted ranges (`:45-53`, `:54-62`, `:69-77`), and the `review-record-comparison` row no longer claims to be the reason the count is six. The adapter's own flags and exit codes are recorded on its card (`cli/knowledge_format.py.md`), not re-cited here. The earlier six-subcommand entries below are history. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/cli/dashboard.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-25T22:00:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **the umbrella gains its sixth subcommand, and the count is corrected rather than extended.** `260921-ICR-L34` (D62) registers `review-record-comparison`, the CLI caller that gives the review comparison's freeze owner its first production caller outside the test suite; the registration is the same declarative pair (`add_arguments` + `set_defaults(func=...)`, `:61-69`) and the adapter owns its own flags and exit code. The body above said the parser registered **five** subcommands and listed them; it now says six and names this one, and the Code Commentary's registration list gained the sixth pair. The `260921-ICR-L29` entry below, which correctly said the count was five *then*, is history and not current policy. **No verification stamp was advanced** — the candidate is uncommitted, so no commit carries the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the two-subcommand record gains the write plane's own naming.** The card already recorded both subcommands and their different admissions; it now also records that `260921-ICR-L32` corrected the mounted tool description and two module docstrings to name **both** of these entry points where they named one, so this CLI's five-subcommand inventory and the write plane's own description agree. No claim, anchor or citation range changed by the wording added here. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.

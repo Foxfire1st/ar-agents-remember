@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/review_comparison_record.py` |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated | 2026-09-27T05:41:59+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`    |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`    |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -196,7 +196,7 @@ as a carried limitation rather than as a claim.
 | The same facts as lines, with the predecessor line stating `nothing (first generation)` when none was named. | `_print_report` | mcp/src/agents_remember/cli/review_comparison_record.py:402-447 |
 | **The freeze owner this adapter gives its production caller: resolve and compose exactly as the surface does, then freeze only what that composition bound.** | `freeze_review_comparison`; `freeze_comparison_generation` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/src/agents_remember/application/review_comparison_freeze.py:319-354 |
 | **The caller-known facts that travel together, one of which is the predecessor — the field this adapter is the first shipped caller to supply.** | `ComparisonFreezeOptions`; `EMPTY_FREEZE_OPTIONS` | mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:169-169 |
-| The outcome value the report and the exit code both read. | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:195-214 |
+| The outcome value the report and the exit code both read. | `ComparisonGenerationFreeze`; `published` | mcp/src/agents_remember/application/review_comparison_freeze.py:194-214 |
 | **The lineage a named predecessor produces: the generation id *and* that generation's manifest digest, and the successor's recorded index.** | `_lineage`; `ComparisonPublicationLineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:728-737; mcp/src/agents_remember/application/review_comparison_generation.py:380-402 |
 | **The seal's own omission set, which is why naming a predecessor changes the binding digest and therefore the derived id — the fact behind this card's carried limitation.** | `_UNSEALED_FIELDS` | mcp/src/agents_remember/application/review_comparison_generation.py:162-162 |
 | **The discovery the predecessor decision reads, and the address it answers with.** | `read_generation_refs`; `ComparisonGenerationRef` | mcp/src/agents_remember/application/review_comparison_generation.py:714-722; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
@@ -204,7 +204,7 @@ as a carried limitation rather than as a claim.
 | **The request value composed from the contract's own recorded identities rather than from anything the caller spelled.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:262-324 |
 | The contract loader whose typed failure the invocation answer carries, and the contract whose recorded task root the generation is published under. | `load_contract`; `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
 | The authority loader and its typed failure, so an unreadable settings document is a named refusal rather than a traceback. | `load_config`; `ConfigError` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-77 |
-| **The registration that makes the command reachable: the umbrella's sixth subparser, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:61-69 |
+| **The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:69-77 |
 | The read the recorded refusal and the recorded source range are named by, so this command's record is what the surface reopens. | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:77-78 |
 | **The case that protects the journey this command completes: a baseline placed by a `--baseline` run is opened under the namespace its own record names.** | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
 
@@ -229,6 +229,7 @@ own authority.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): No content impact: the registration row re-pointed to `cli/__main__.py:69-77` after MIK-R21 registered `knowledge-format`, and its finding no longer calls this the sixth subparser (the umbrella now has seven). Claim meaning unchanged; no stamp advanced.
 
 - 2026-09-27T05:41:59+00:00 — Retained the CLI argument claim with its current unchanged-knowledge and explicit recovery inputs. Verification remains closeout-owned.
 

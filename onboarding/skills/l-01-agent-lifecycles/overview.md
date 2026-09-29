@@ -6,8 +6,24 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-27T05:43:38+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
+| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+
+## Where a hand-off entry lands once knowledge is text (260928-MIK-L21)
+
+`templates/curator-handoff-list.md` gained an **informational** section, "Where an entry lands once
+knowledge is text (MIK-R21)", mapping today's hand-off fields onto the text knowledge format: records as
+`knowledge/<kind-dir>/<ID>-<slug>.json` that never list their own locations, tests, families or
+decisions; writer-minted IDs; each target becoming a `realizes` entry in `onboarding/<path>.json`; test
+evidence becoming a `proves` entry; `origin`; and the canonical formatting of `agents-remember
+knowledge-format`. It states that nothing a producer emits changes before MIK-R37, and that the template
+role `incidental` has no file spelling (MIK-R12 decides its mapping). No role, operation or other template
+in this route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The section heading and its no-change statement. | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-427 |
+| `incidental` has no spelling in the file format. | "has no spelling in the file format" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:450-450 |
 
 ## Explicit sibling selection in curation
 
@@ -482,6 +498,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the curator hand-off template's informational MIK-R21 section.** No stamp advanced.
 - 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the per-target realization rationale section (template shape, supersession of the external schema note revision 1's rule-1 element shape, role/operation/c-14 duties). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
