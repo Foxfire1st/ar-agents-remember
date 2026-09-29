@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64` |
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T06:00:00+02:00 |
+| lastVerifiedCommitHash | `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` |
+| lastVerifiedCommitDate | 2026-09-29T06:13:16+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -3071,10 +3071,39 @@ only production consumer is `cli/knowledge_format.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package map and the shape-only boundary. | "Integrity (IDs resolve, markers match" | mcp/src/agents_remember/models/knowledge_files/__init__.py:23-24 |
+| The package map and the shape-only boundary. | "Integrity (IDs resolve, markers match" | mcp/src/agents_remember/models/knowledge_files/__init__.py:25-26 |
 | The base every file model inherits. | `FileModel` | mcp/src/agents_remember/models/knowledge_files/shapes.py:50-75 |
 | An invariant record carries no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:116-137 |
-| Schema dispatch refuses unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:76-85 |
+| Schema dispatch refuses unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:79-88 |
 
 ## Update History
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the `models/knowledge_files/` sub-package** (seven modules, each with its own new card). No route-level contract of the existing models changed. No stamp advanced.
+
+## 260928-MIK-L07 Per-Leaf History Files Join `knowledge_files/`
+
+`models/knowledge_files/` gains an eighth module, [`history.py`](knowledge_files/history.py.md)
+(MIK-R07@v2): the `ar-history/v1` file at `knowledge/history/<owner-id>.json`, one per leaf, wave or
+crossing, holding the curator's judgment rows. Invariant rows (`changed` | `moved` | `deleted` |
+`extended` | `no_impact`) carry the covered entries with their before/after anchors, the invariant's
+revision and effect; family rows (`changed` | `rerouted` | `assigned` | `retired` | `no_impact`) carry the
+members examined at their revisions. A row's kind is dispatched by its subject through a registry later
+packets extend. A file that is closed on any base side must stay byte-identical: the module owns that
+predicate, the validator (MIK-R22) and the closeout (MIK-R09, live from MIK-R37) apply it.
+
+The existing modules changed only to take the new file in: [`ids.py`](knowledge_files/ids.py.md) adds
+the `ROW-` row kind and the entry/row ID patterns; [`documents.py`](knowledge_files/documents.py.md)
+registers the schema and adds `parse_history_document`, which binds a file's name to its owner;
+[`canonical.py`](knowledge_files/canonical.py.md) sorts `covers` and `examined` by `id` as it already did
+`rows`; [`__init__.py`](knowledge_files/__init__.py.md) re-exports the new public names. Nothing in the
+installed runtime imports the package yet, so production behavior is unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The history file: one owner, one row per subject, a strict `closed` flag. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:293-337 |
+| The row-kind registry. | `HISTORY_ROW_KINDS` | mcp/src/agents_remember/models/knowledge_files/history.py:261-264 |
+| The freeze predicate. | `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:373-381 |
+| The history schema in the dispatch table. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:62-68 |
+| The history row ID kind. | `ROW_PREFIXES` | mcp/src/agents_remember/models/knowledge_files/ids.py:65-65 |
+
+## Update History
+- 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta): **route body updated — new section for `knowledge_files/history.py`** (new card) and the four modules it touched; the L21 section's `__init__.py` and `parse_document` rows were re-measured to the shifted lines. No route-level contract of the existing models changed. No stamp advanced.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_file_formats.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T04:55:39+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T06:00:00+02:00 |
+| lastVerifiedCommitHash | `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c`|
+| lastVerifiedCommitDate | 2026-09-29T06:13:16+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,8 @@ checks the layout paths. Registered in the `unit-regression` lane.
   `models/knowledge/facet.py`.
 - Refusals: `test_records_refuse_second_owners_and_malformed_record_fields`,
   `test_links_carry_their_relation_rules`, `test_sidecars_references_and_anchors_refuse_malformed_shapes`
-  (including `incidental`, own-file `path`, route-index fields on a route sidecar).
+  (including `incidental`, own-file `path`, route-index fields on a route sidecar). Its
+  unknown-schema probe now uses `ar-census/v1`, because MIK-R07 made `ar-history/v1` a known schema.
 - `test_locations_follow_the_layout_and_the_slug_is_display_only`.
 
 ### Conventions
@@ -50,7 +51,7 @@ checks the layout paths. Registered in the `unit-regression` lane.
 ### Invariants And Boundaries
 
 - The golden IDs are the contract MIK-R24 must reproduce; do not regenerate them to make a change pass.
-- §4.7 (history files) is MIK-R07's and is not encoded.
+- §4.7 (history files) is MIK-R07's and is covered by `test_knowledge_history_files.py`, not here.
 
 ### Todos
 
@@ -92,4 +93,5 @@ No meaningful cross-repo references found.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta): the unknown-schema probe in `test_sidecars_references_and_anchors_refuse_malformed_shapes` moved from `ar-history/v1` to `ar-census/v1` because MIK-R07 registers the history schema. Logic and Invariants updated; no citation moved.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

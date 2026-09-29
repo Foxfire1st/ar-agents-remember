@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/canonical.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T04:55:39+02:00 |
-| lastVerifiedCommitHash | `45fe37749b388de348d16ced50c28c03490dce64`|
-| lastVerifiedCommitDate | 2026-09-29T05:18:17+02:00|
+| lastUpdated | 2026-09-29T06:00:00+02:00 |
+| lastVerifiedCommitHash | `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c`|
+| lastVerifiedCommitDate | 2026-09-29T06:13:16+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,7 +29,9 @@ name that command when it reports a non-canonical file.
 - `parse_json` is strict: a byte-order mark, `NaN`/`Infinity`, invalid JSON and an object that
   repeats a key (which `json.loads` would silently collapse) raise `CanonicalFormatError`.
 - `canonical_value` sorts an array only when it sits under a key in `IDENTIFIED_ENTRY_KEYS`
-  (`realizes`, `proves`, `rows`) **and** every element is an object with a string `id`. Every other
+  (`realizes`, `proves`, and a history file's `rows` with each row's `covers` and `examined`, the
+  last two added by MIK-R07 with the architect's leave) **and** every element is an object with a
+  string `id`. Every other
   array keeps authored order — a reference's `targets` (whose ID targets also carry `id`) and a
   decision's `alternatives` (addressed by index) included. This restriction came from review R1.
 - `canonical_text` dumps with `indent=2`, `sort_keys=True`, `ensure_ascii=False`, `allow_nan=False`
@@ -47,7 +49,8 @@ name that command when it reports a non-canonical file.
 
 ### Todos
 
-`rows` anticipates MIK-R07 history files; if their schema names the array differently this set must follow.
+None recorded. The MIK-R21 todo about `rows` is closed: MIK-R07's `ar-history/v1` names its arrays
+`rows`, `covers` and `examined`, all now in the set.
 
 ## Docs References
 
@@ -67,10 +70,10 @@ The formatter command and the tests are the consumers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Only the declared positions are sorted. | `IDENTIFIED_ENTRY_KEYS` | mcp/src/agents_remember/models/knowledge_files/canonical.py:27-27 |
-| Strict parsing refuses content-changing input. | `parse_json` | mcp/src/agents_remember/models/knowledge_files/canonical.py:46-56 |
-| The sort rule. | `canonical_value` | mcp/src/agents_remember/models/knowledge_files/canonical.py:65-80 |
-| The serialization. | `canonical_text` | mcp/src/agents_remember/models/knowledge_files/canonical.py:83-89 |
+| Only the declared positions are sorted, history `covers` and `examined` included. | `IDENTIFIED_ENTRY_KEYS` | mcp/src/agents_remember/models/knowledge_files/canonical.py:29-29 |
+| Strict parsing refuses content-changing input. | `parse_json` | mcp/src/agents_remember/models/knowledge_files/canonical.py:48-58 |
+| The sort rule. | `canonical_value` | mcp/src/agents_remember/models/knowledge_files/canonical.py:67-82 |
+| The serialization. | `canonical_text` | mcp/src/agents_remember/models/knowledge_files/canonical.py:85-91 |
 | Idempotence and content preservation are tested. | `test_formatter_is_idempotent_and_preserves_content` | mcp/tests/test_knowledge_file_canonical.py:30-47 |
 
 ## Cross-Repo References
@@ -85,4 +88,5 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta): MIK-R07 adds `covers` and `examined` to `IDENTIFIED_ENTRY_KEYS`. The reopened claim was re-read and reworded; Logic updated and the `rows` todo closed. The four Repo-Internal ranges were re-measured against the working tree and each claim re-read; the installed fixer's generated bullet for the `IDENTIFIED_ENTRY_KEYS` row, written earlier in this same uncommitted pass, was folded into this entry because that claim was reworded.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
