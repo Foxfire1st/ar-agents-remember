@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:01:26+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -109,9 +109,9 @@ Every anchor in a row occurs inside the range that row cites.
 | The real bar and the shipped store-seeding helpers. | `DocChangeSetBar`; `enclosure`; `seedProjection` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:20-22 |
 | **The summary route's unavailable answer with the owner's refusal verbatim.** | `UNAVAILABLE`; `ABSENT_DETAIL`; `ABSENT_NEXT` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:29-47 |
 | A counted or partial body whose parts sum to its totals. | `counted` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:49-65 |
-| Line totals that must never appear on the Intent review control. | `COUNTERS` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:67-73 |
-| The one stub and the per-route request counter. | `serve`; `urlsOf` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:80-95 |
-| The live-leaf seeding and the mount. | `liveLeaf`; `mount` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:97-120 |
+| Line totals that must never appear on the Intent review control. | `COUNTERS` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:68-73 |
+| The one stub and the per-route request counter. | `serve`; `urlsOf` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:80-92; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:94-95 |
+| The live-leaf seeding and the mount. | `liveLeaf`; `mount` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:97-112; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:114-120 |
 | **One control with intent counts and nothing beside it; the click opens the task context.** | "is one control with the comparison's changed-intent counts and nothing beside it" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:127-150 |
 | **One summary read, no catalogue read, one committed read.** | "makes one summary read, no catalogue read and one committed change-set read" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:152-168 |
 | **Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.** | "states missing knowledge briefly, never as +0 −0, with the owner's refusal in the disclosure" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:171-198 |
@@ -120,7 +120,7 @@ Every anchor in a row occurs inside the range that row cites.
 | **No re-read for unrelated publications; a re-read when this leaf's lifecycle moves.** | "ignores unrelated workspace publications and re-reads when this leaf's lifecycle moves" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:229-266 |
 | A previous leaf's late answer is dropped. | "never lets an answer for a previous leaf overwrite the leaf on screen now" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:268-339 |
 | **260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.** | "changeset-state"; "unrecorded"; `UNRECORDED_BODY` | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:341-387 |
-| The control, its summary read and the disclosure these cases drive. | `IntentReviewEntry`; `useIntentReviewSummary`; `EntryStateDetails` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:82-120; dashboard/src/data/reviewIntentSummary.ts:84-109; dashboard/src/panels/detail-panel/entryState.tsx:13-31 |
+| The control, its summary read and the disclosure these cases drive. | `IntentReviewEntry`; `useIntentReviewSummary`; `EntryStateDetails` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:131-171; dashboard/src/data/reviewIntentSummary.ts:96-121; dashboard/src/panels/detail-panel/entryState.tsx:13-31 |
 | The bar's composition and the leaf-scoped invalidation facts. | `DocChangeSetBar`; `LeafEntries`; `leafFacts` | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365; dashboard/src/panels/detail-panel/changeSetBar.tsx:378-392 |
 
 ## Cross-Repo References
@@ -133,6 +133,7 @@ same-origin `fetch` and names one repository namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/data/reviewIntentSummary.ts`, `dashboard/src/panels/detail-panel/intentReviewEntry.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T17:01:26+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`; review R2 pass-with-notes): **body rewritten — the module now pins the compact Intent review entry (`ICR-R24@v3`), and the catalogue-entry account is superseded.** Purpose, Logic, Conventions, Invariants and every reference row were re-derived from the rewritten module (388 lines): the summary-route fixtures, the line-total guard, the one-summary/zero-catalogue/one-committed request economy, the brief states with a closed disclosure, the partial state, leaf-scoped invalidation and the late-answer drop. The L17 section is marked superseded and states what survives. No stamp advanced; closeout owns the real stamp.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
 - 2026-09-26T21:08:48+00:00: Generated citation repair: `intentReviewEntries` repointed to dashboard/src/data/review.ts:709-715. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ Own the family-centered review layout and its transient inspection state: one sc
 
 Member navigation calls the existing subject reader using the member invariant identity while retaining its family/roster context. The narrow jump focuses the center without the browser default scroll, then scrolls to its start so the selected heading and guarantee remain visible. Layout, full-file disclosure and open path are unchanged by the jump.
 
-useWorkspaceState holds selected family/member, search, diff layout, full-file disclosure, expanded path and focus references above paged reads. Changed regions are the initial display. WorkspaceRail combines recorded catalogue navigation, the loaded guarantee/member subtree and the complete source inventory. sourceAttribution uses only the backend mapped and unmapped partitions; everything else is unknown. The scope header (and its `recordLabelOf`, which distinguishes reconstructed recorded endpoints from frozen historical and live comparisons) moved to `ReviewScopeHeader.tsx` in L48; the workspace mounts it with a `status` derived from `reading`. The center reuses FamilyReviewCenter and ReviewExpressions; desktop rail scrolling is independent.
+useWorkspaceState holds selected family/member, search, diff layout, full-file disclosure, expanded path and focus references above paged reads. Changed regions are the initial display. WorkspaceRail combines recorded catalogue navigation, the loaded guarantee/member subtree and the complete source inventory. sourceAttribution picks the explorer's labels by the kind of review: on a tree comparison (a `laneRead` is present, since MIK-L32) every changed path takes its label from the lane's classification through `laneFocus.explorerAttribution` (`attributed` → Mapped, `unexplained` → Unmapped, `attribution_unknown` → Attribution unknown; Attribution pending while the lane is read, and Attribution unknown when it could not be read; ruling 2026-09-30T12:19:20 Q1), so the explorer and the lane never disagree; a dataset review uses only the backend mapped and unmapped partitions, and everything else is unknown. The scope header (and its `recordLabelOf`, which distinguishes reconstructed recorded endpoints from frozen historical and live comparisons) moved to `ReviewScopeHeader.tsx` in L48; the workspace mounts it with a `status` derived from `reading`. The center reuses FamilyReviewCenter and ReviewExpressions; desktop rail scrolling is independent.
 
 **The unanswered subject (L48).** `ReviewWorkspace` takes an optional `reading: ReadingStatus | null`. The surface sets it only when the subject on screen has no answer and the task context has a `frame`; `payload` is then that frame, used for the shell only. `ReadingStatus` carries the read cycle's key for the requested question, the requested subject (`kind:id`), its label and, for a failed or refused read, the owner's problem block (`problem`; `null` while pending). `WorkspaceCenter` is the reading-area column — one DOM node (`review-center-column`) for the life of the workspace — and swaps only its content: `ReadingStatusCenter` renders `review-reading-pending` (`aria-busy`, `role="status"`, "Reading <label>…") or `review-reading-problem` ("<label> could not be read" plus the owner block, with `data-problem-key`/`data-problem-subject`), else the answered subject's `FamilyReviewCenter` and roster note. While unanswered, the tree marks only the reader's explicit choice (`state.chosen`) — deriving one from the frame would mark the previous subject's family as the requested subject's context.
 
@@ -35,6 +35,17 @@ through `useReviewTrees`: the comparison number is `treeComparisonNumber(payload
 was composed over (review F11), and the hook's `enabled` flag is false when the payload declares no such token. A
 dataset review therefore makes no tree read at all. The result goes to `FamilyReviewCenter` as `leafTrees`, which
 renders the knowledge panel and takes the cards' planning marks from it only when its comparison number matches.
+
+**The unexplained-changes lane (MIK-L32, MIK-R32 rule 10).** `ReviewWorkspace` takes the surface's one lane read as
+`laneRead` (`null` for a dataset review; its props moved into the `ReviewWorkspaceProps` interface to keep the function
+under the 80-line lint rule). `WorkspaceState` gains `lane` (the `LaneSelection` on screen: a destination and the file
+it opened) and `setLane`; choosing a family clears the lane, and choosing a destination reveals the centre the same
+way a family selection does. `WorkspaceRail` mounts `RailLaneDestinations` (the `Unexplained changes` and `Unknown
+attribution` nodes, `LaneDestinations`) after the families in the same tree panel, and while a lane destination is on
+screen no family node is marked current (`treeChosen`). `WorkspaceCenter` swaps the reading area for
+`UnexplainedLaneCenter` while a destination is chosen and a lane read exists, handing it the task with the comparison
+number, the payload's inventory, the layout and `gateRead(leafTrees, comparison)`: the gate's items for an opened file
+come only from the leaf-wide read of the same comparison (`reading` until it answers, `none` with why otherwise).
 
 **The rail's family navigator is told when it reads a tree comparison (MIK-L35; review R1 F2).** `FamilyRailContext`
 mounts `FamilyTree` with `tree={treeComparisonNumber(payload.limitations) !== undefined}`, so on a tree comparison
@@ -62,11 +73,13 @@ re-derived, so two mount points of the same control cannot drift. Test ids are t
 `review-center-full-file`), and the workspace root publishes `data-diff-layout` and `data-full-file` so a
 case can read the live preferences off the element. No fetch appears in this file; its one `useEffect` is
 `useSelectionFocus`, and its one read is the leaf-wide tree view through the adapter's `useReviewTrees` hook
-(MIK-L31), made only for a tree comparison.
+(MIK-L31), made only for a tree comparison. The lane read is the surface's (`ReviewSurface.ReviewPanes`, MIK-L32
+review F1) and arrives as `laneRead`; the lane's components come from `./UnexplainedLane`, `GateRead` from
+`./LaneFileFocus` and `explorerAttribution` from `./laneFocus`. The file is 657 lines.
 
 ### Invariants And Boundaries
 
-Semantic selection never filters the full changed-file population. Confirmed no-family, unselected, absent and unreadable context remain different states. Display preferences do not change knowledge or comparison identity.
+Semantic selection never filters the full changed-file population. On a tree comparison the explorer's labels are the lane's buckets and never the landed accounting's (MIK-L32 ruling Q1; part of the candidate invariant recorded on `review_unexplained_lane.py.md`), and a lane that is pending or unread is never labelled with a guessed bucket. Confirmed no-family, unselected, absent and unreadable context remain different states. Display preferences do not change knowledge or comparison identity.
 
 **R26 isolation under a retained shell (L48).** While `reading` is set, nothing of the frame's subject is rendered as the requested subject's reading: the center shows only the requested subject's status, the scope header replaces its subject-bound lines, and the tree marks only the explicit choice. The rail's tree and source explorer keep the frame's attribution labels while the subject is pending or unavailable (A2 observation A2-O3): those are comparison-level labels of the task's source changes, not the new subject's intent. A selection never unmounts the workspace, its navigation, tree or open disclosures; only a read with no frame at all (the reviewer's first) has no workspace to keep.
 
@@ -92,15 +105,17 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:148-185 |
-| `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
-| **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:89-94; dashboard/src/panels/review/ReviewWorkspace.tsx:96-128 |
-| **The reading-area column: one DOM node, only its content swapped; for a tree comparison it reads the leaf-wide tree view pinned to the payload's comparison (MIK-L31).** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:281-343 |
-| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:491-505; dashboard/src/panels/review/ReviewWorkspace.tsx:145-145 |
-| The rail's family navigator, told whether the payload is a tree comparison (MIK-L35). | "function FamilyRailContext({"; "tree={treeComparisonNumber(payload.limitations) !== undefined}" | dashboard/src/panels/review/ReviewWorkspace.tsx:434-464 |
-| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
+| `useWorkspaceState` owns the behavior described above, including the lane selection a family choice clears (MIK-L32). | `useWorkspaceState`; "setLaneState(null);"; "const setLane = (next: LaneSelection" | dashboard/src/panels/review/ReviewWorkspace.tsx:157-202 |
+| `ReviewWorkspace` owns the behavior described above; its props include the surface's lane read (MIK-L32). | "interface ReviewWorkspaceProps {"; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:214-302 |
+| **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:89-94; dashboard/src/panels/review/ReviewWorkspace.tsx:95-100; dashboard/src/panels/review/ReviewWorkspace.tsx:102-134 |
+| **The reading-area column: one DOM node, only its content swapped; for a tree comparison it reads the leaf-wide tree view pinned to the payload's comparison (MIK-L31).** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:306-381 |
+| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:572-586; dashboard/src/panels/review/ReviewWorkspace.tsx:154-154 |
+| The rail's family navigator, told whether the payload is a tree comparison (MIK-L35). | "function FamilyRailContext({"; "tree={treeComparisonNumber(payload.limitations) !== undefined}" | dashboard/src/panels/review/ReviewWorkspace.tsx:515-515; dashboard/src/panels/review/ReviewWorkspace.tsx:540-540 |
+| `WorkspaceRail` owns the behavior described above, with the lane's destinations after the families and no family node current while a destination is on screen (MIK-L32). | `WorkspaceRail`; "const treeChosen = state.lane ? null : chosen;"; "<RailLaneDestinations laneRead={laneRead} state={state} />" | dashboard/src/panels/review/ReviewWorkspace.tsx:403-495 |
+| The lane's rail nodes, for a tree comparison only (MIK-L32). | `RailLaneDestinations` | dashboard/src/panels/review/ReviewWorkspace.tsx:498-513 |
+| The lane's centre and the gate's items only from the same comparison's leaf-wide read (MIK-L32). | "<UnexplainedLaneCenter"; `gateRead` | dashboard/src/panels/review/ReviewWorkspace.tsx:349-358; dashboard/src/panels/review/ReviewWorkspace.tsx:383-401 |
 | `recordLabelOf` (moved to the scope header's module by L48) owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewScopeHeader.tsx:108-112 |
-| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:513-526 |
+| The explorer's labels: a tree comparison's from the lane (ruling Q1), a dataset review's from the landed partitions. | "function sourceAttribution("; "return explorerAttribution(" | dashboard/src/panels/review/ReviewWorkspace.tsx:594-617 |
 
 ## Cross-Repo References
 
@@ -113,6 +128,8 @@ payload's own candidate published.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Logic records the lane in the workspace (`laneRead` and `ReviewWorkspaceProps`, `lane`/`setLane`, `RailLaneDestinations` after the families, `treeChosen`, the centre swap to `UnexplainedLaneCenter`, `gateRead`) and the explorer's labels from the lane on a tree comparison (ruling 2026-09-30T12:19:20 Q1); Conventions and Invariants follow (the lane read is the surface's, review R1 F1). **Reopened claim reworded and re-anchored:** the `sourceAttribution` row is bound by committed generated bullets, so it is re-anchored on the line-exact quotes "function sourceAttribution(" and "return explorerAttribution(" (`594-617`), those bullets left intact and this pass's generated bullet for it removed. The workspace, state and rail rows are reworded and re-measured (`213-300` → `214-302`, `403-478` → `403-495`); two rows added. No verification stamp was advanced.
+- 2026-09-30T12:06:41+00:00: Generated citation repair: "function FamilyRailContext({"; "tree={treeComparisonNumber(payload.limitations) !== undefined}" repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:515-515; dashboard/src/panels/review/ReviewWorkspace.tsx:540-540. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update. Logic records the one-line `tree` prop `FamilyRailContext` passes to the family navigator (review R1 F2, 2026-09-30T12:16:39; datasets pass `false`); one row added. The installed fixer normalised the selection-focus and `sourceAttribution` rows (+1 line).
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the leaf-wide tree view `WorkspaceCenter` reads for a tree comparison (MIK-R25 rules 2-3 rendered by L31, ruling L25 Q2), pinned to the payload's `review:trees:<n>` (review F11 at 06:10:21) and never made for a dataset review; Conventions and Todos no longer say the workspace makes no request of its own. The `WorkspaceCenter` row is reworded; the selection-focus row was re-pointed by the exact line shift.
 - 2026-09-30T07:51:05+00:00: Generated citation repair: `sourceAttribution` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:512-525. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.

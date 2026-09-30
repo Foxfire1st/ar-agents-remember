@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_tree_entries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ repositories, so it is named here and not cited as a row.
 | The four range states, the three change states and the excerpt bounds. | `ReviewEntryRangeState`; `ReviewEntryChange`; `EXCERPT_MAX_LINES`; `EXCERPT_MAX_CHARACTERS` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:58-61 |
 | One entry on one side. | `ReviewTreeEntrySide` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:64-81 |
 | One entry on both sides, joined to a member by `invariant_key`. | `ReviewTreeEntry` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:84-98 |
-| The tree view's field that carries the entries. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:238-257 |
+| The tree view's field that carries the entries. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:242-264 |
 | The client mirror of this shape. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-211; dashboard/src/data/reviewTrees.ts:213-222 |
 
 ## Cross-Repo References
@@ -88,4 +88,5 @@ repositories, so it is named here and not cited as a row.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/src/agents_remember/models/knowledge/review_trees.py`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new model MIK-R31 adds. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.family.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -373,7 +373,7 @@ opens the case.
 | **The server-side rule the walk case pins: `family_members` is in the paged union because the server accepts it, and deliberately not among the walkable collections, because that collection is the set of per-family walks and a cursor-less request earns the server's own refusal.** | `ReviewPagedCollection`; `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:81-81; dashboard/src/data/review.ts:91-91 |
 | The one page request type a roster continuation builds. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:73-77 |
 | The source explorer retains the complete inventory independently of semantic selection. | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
-| The workspace hook preserves display state and the source opener needed for focus return. | "export function useWorkspaceState(): WorkspaceState {" | dashboard/src/panels/review/ReviewWorkspace.tsx:147-184 |
+| The workspace hook preserves display state and the source opener needed for focus return. | "export function useWorkspaceState(): WorkspaceState {" | dashboard/src/panels/review/ReviewWorkspace.tsx:156-201 |
 
 ## Cross-Repo References
 
@@ -385,6 +385,7 @@ one enclosure's captured bodies and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewWorkspace.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: rows into `FamilyTree.tsx`, `FamilyReviewCenter.tsx` and `SubjectReview.tsx`, which this leaf changed, were re-pointed: five by the installed fixer's normalisation, and the two it declined as ambiguous (the `completionNote` row and the member-context heading row) by the exact base-to-staged line shift (for example `FamilyTree.tsx:211-216` → `224-229`, `FamilyReviewCenter.tsx:549-554` → `559-564`). Every anchor held at the base and holds after the shift. Claim wording unchanged. No stamp advanced.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the stale module header recorded at 10:05:09 was refreshed by the worker (comments only, lines 9-21, one line shorter): it now names both captures, the MIK-L31 one (`mik_l31_recapture`, tree `18b77329`), and the SYNTHETIC exception. The Purpose paragraph and the provenance row are reworded to the new header (re-anchored on `mik_l31_recapture` and `labelled SYNTHETIC`, `4-22` → `4-21`); the Todo is removed. Every row below the header was re-pointed by the exact −1 line shift.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose records that every family body is now a current-route capture (MIK-R31 rule 6, the L44-R1-F5 remainder, re-captured by L31) and that the header's provenance paragraph is stale (a Todo; code is out of curator scope). The case list records the new real-body roster case, the SYNTHETIC-body case kept by ruling 05:36:19 Q3, the body-derived counts (review F7, R2-7), the rule 3 "Wording unchanged" guarantee, and the measured-empty body for the one-sentence case. **Reopened claims reworded and re-anchored:** the `describe` row and the four changed-case rows are bound by committed generated bullets (2026-09-26 and 2026-09-27) that name the test titles, so they are re-anchored on line-exact `describe(`/`it(` quotes and those committed bullets are left intact; this pass's four generated bullets for them were removed. The provenance row is reworded; the import row was re-measured by hand (`45-47` → `45-50`); three rows were re-pointed by the exact line shift; one row added (the real-body case).

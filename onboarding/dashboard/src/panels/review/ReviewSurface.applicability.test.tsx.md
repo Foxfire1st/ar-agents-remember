@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.applicability.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:38:01+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -111,9 +111,9 @@ No domain documentation source is configured for this repository (`system/source
 | **The counts case: the six-way partition is rendered beside the collections it filtered.** | "states the six-way counts beside the collections it filtered" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:275-289 |
 | **The historical case: a previous generation is labelled and never reads as the current result.** | "labels a previous generation's record as historical rather than as the current result" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:291-305 |
 | **The additive-compatibility case: a body published before the labels existed still renders.** | "still renders a payload published before the labels existed" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:307-318 |
-| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:155-164; dashboard/src/data/review.ts:166-178; dashboard/src/data/review.ts:180-190; dashboard/src/data/review.ts:217-239 |
-| **The rendered labels themselves: the per-record note, the context list and the counts block.** | `applicabilityNote`; `contextList`; `applicabilityCounts` | dashboard/src/panels/review/ReviewRecordPanes.tsx:46-61; dashboard/src/panels/review/ReviewRecordPanes.tsx:63-79; dashboard/src/panels/review/ReviewRecordPanes.tsx:81-92 |
-| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240; dashboard/src/panels/review/ReviewRecordPanes.tsx:299-355 |
+| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:158-167; dashboard/src/data/review.ts:169-181; dashboard/src/data/review.ts:183-193; dashboard/src/data/review.ts:220-242 |
+| **The rendered labels themselves: the per-record note, the context list and the counts block.** | `applicabilityNote`; `contextList`; `applicabilityCounts` | dashboard/src/panels/review/ReviewRecordPanes.tsx:54-69; dashboard/src/panels/review/ReviewRecordPanes.tsx:71-87; dashboard/src/panels/review/ReviewRecordPanes.tsx:89-100 |
+| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248; dashboard/src/panels/review/ReviewRecordPanes.tsx:359-415 |
 | **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** | `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` | mcp/tests/test_knowledge_review_subject_isolation.py:221-252 |
 
 ## Cross-Repo References
@@ -126,6 +126,7 @@ its own origin.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewRecordPanes.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/data/review.ts`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claims re-read — the three attribution renderers and both mounting panes moved unchanged into `ReviewRecordPanes.tsx`.** `applicabilityNote`, `contextList` and `applicabilityCounts` are still called from the knowledge and evidence panes (`KnowledgePane` mounts `contextList`/`applicabilityCounts` for the knowledge records, `EvidencePane` mounts `applicabilityNote` on its links and observations plus the list and counts), so both claims hold and were re-pointed. One L48 difference matters to a reader of this module: the panes now render only for a payload that answers the subject on screen (`ReviewTechnicalDetails`), which this module's single-subject cases do not exercise. No verification stamp was advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.

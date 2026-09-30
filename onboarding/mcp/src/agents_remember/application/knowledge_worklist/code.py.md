@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/code.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ module reads the zero-context hunks between two blobs of one path, maps a record
 blob of the same path, resolves an anchor's locator to a range in a blob, computes the range's content
 identity, and finds the mechanical unique match of definition 6. Everything else in the worklist, and the
 writer's carry-forward (`knowledge_writer/carry.py`), reads code through `CodeTrees`.
+
+**Since MIK-L32 it also owns a changed path's hunks, `change_hunks` (definition 2).** It was moved verbatim out of
+`compute._Run._path_hunks`, which now calls it, so the gate's linkage and the reviewer's unexplained-changes lane
+(`application/review_lane_classification.py`, MIK-R32) take a path's hunks from one function and never disagree about
+what a hunk is.
 
 ## Code Commentary
 
@@ -52,6 +57,10 @@ writer's carry-forward (`knowledge_writer/carry.py`), reads code through `CodeTr
   then counts, for each candidate path with a grammar, how many constructs `extents.qualified_spans` binds to
   the name. It returns a path only when exactly one path binds the name, exactly once.
 - `CodeTrees.base()` and `candidate()` list each regular file of B and C with its blob.
+- **A changed path's hunks (`change_hunks`, MIK-L32).** For a `TreeChange` of the landed change inventory and the
+  path's blobs on B and C: `None` when the content is not text or the type changed (a non-text change, linked at file
+  level, definition 8); the blob pair's hunks when both sides exist; one whole-file hunk (`Hunk(1, n, 0, 0)` or
+  `Hunk(0, 0, 1, n)`) for a deleted or added text file; and `None` for an empty added or deleted file.
 
 ### Conventions
 
@@ -65,6 +74,10 @@ writer's carry-forward (`knowledge_writer/carry.py`), reads code through `CodeTr
 - **Deterministic diffs.** No configurable diff setting is left to the machine.
 - **A binary pair is never "no change"**; it is `None`, which the classifier treats as a whole change and
   the linkage as a file-level fact.
+- **One hunk definition (MIK-L32).** The gate (`compute._Run._path_hunks`) and the reviewer's lane
+  (`review_lane_classification.TreeLane.classify`) both call `change_hunks`; this is part of the candidate invariant
+  "the reviewer classifies changed files and hunks through MIK-R08's definitions only" recorded on
+  `review_lane_classification.py.md`.
 - **One symbol rule.** Symbol ranges come from the same extractor rule the writer and conversion use, so
   the worklist and the recorded anchors agree on what a name binds.
 
@@ -90,15 +103,17 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The hunk, range, content-identity and hit rules. | "never when it sits at the range's edge" | mcp/src/agents_remember/application/knowledge_worklist/code.py:1-25 |
-| The pinned zero-context blob diff. | `BLOB_DIFF_ARGS` | mcp/src/agents_remember/application/knowledge_worklist/code.py:65-73 |
-| One hunk and its document form. | `Hunk` | mcp/src/agents_remember/application/knowledge_worklist/code.py:84-101 |
-| The strict-inside rule for an empty side. | `_hits`; `hits_old`; `hits_new` | mcp/src/agents_remember/application/knowledge_worklist/code.py:104-108; mcp/src/agents_remember/application/knowledge_worklist/code.py:111-114; mcp/src/agents_remember/application/knowledge_worklist/code.py:117-120 |
-| Binary pairs give `None`. | `parse_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:123-142 |
-| The image of a line range, or no mapping. | `_map_line`; `map_range` | mcp/src/agents_remember/application/knowledge_worklist/code.py:145-158; mcp/src/agents_remember/application/knowledge_worklist/code.py:161-176 |
-| The hunks of a blob pair, cached, with a named failure. | `hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:224-242 |
-| Resolution by locator kind. | `resolve`; `symbol_span` | mcp/src/agents_remember/application/knowledge_worklist/code.py:247-268 |
-| A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:270-279 |
-| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:290-322; mcp/src/agents_remember/application/knowledge_worklist/code.py:330-330 |
+| The pinned zero-context blob diff. | `BLOB_DIFF_ARGS` | mcp/src/agents_remember/application/knowledge_worklist/code.py:67-75 |
+| One hunk and its document form. | `Hunk` | mcp/src/agents_remember/application/knowledge_worklist/code.py:86-103 |
+| The strict-inside rule for an empty side. | `_hits`; `hits_old`; `hits_new` | mcp/src/agents_remember/application/knowledge_worklist/code.py:106-110; mcp/src/agents_remember/application/knowledge_worklist/code.py:113-116; mcp/src/agents_remember/application/knowledge_worklist/code.py:119-122 |
+| Binary pairs give `None`. | `parse_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:125-144 |
+| The image of a line range, or no mapping. | `_map_line`; `map_range` | mcp/src/agents_remember/application/knowledge_worklist/code.py:147-160; mcp/src/agents_remember/application/knowledge_worklist/code.py:163-178 |
+| The hunks of a blob pair, cached, with a named failure. | `hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:226-244 |
+| Resolution by locator kind. | `resolve`; `symbol_span` | mcp/src/agents_remember/application/knowledge_worklist/code.py:249-270 |
+| A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:272-281 |
+| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:292-324; mcp/src/agents_remember/application/knowledge_worklist/code.py:332-332 |
+| A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). | `change_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:337-356 |
+| The two callers: the gate's linkage and the lane's classification. | "return change_hunks(self.inputs.code, change, base_blob, candidate_blob)"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569; mcp/src/agents_remember/application/review_lane_classification.py:316-339 |
 | Hunk parsing and line-range mapping cases. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:309-328 |
 | Line ranges map, carry and touch. | "def test_line_ranges_map_carry_and_touch(" | mcp/tests/test_knowledge_worklist.py:422-431 |
 
@@ -112,6 +127,7 @@ through Git.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Purpose, a Logic bullet and an Invariants bullet record `change_hunks` (definition 2), moved verbatim from `compute._Run._path_hunks` so the gate and the reviewer's lane share one hunk definition. Two rows added (the function, and its two callers). The other rows moved by the new import and `__all__` entry were re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_line_ranges_map_carry_and_touch` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_line_ranges_map_carry_and_touch(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

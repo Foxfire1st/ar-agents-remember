@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -437,8 +437,8 @@ No database path is part of either shape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:60-60; mcp/src/agents_remember/models/knowledge/review_trees.py:99-139 |
-| The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:238-257 |
+| The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:64-64; mcp/src/agents_remember/models/knowledge/review_trees.py:103-143 |
+| The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:242-264 |
 
 ## 260928-MIK-L10 The Unexplained-Change Subjects And The No-Invariant Row
 
@@ -507,7 +507,37 @@ MIK-R05 adds one optional, response-side field and one docstring paragraph to
 | --- | --- | --- |
 | The range and change states and the excerpt bounds. | `ReviewEntryRangeState`; `ReviewEntryChange`; `EXCERPT_MAX_LINES`; `EXCERPT_MAX_CHARACTERS` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:58-61 |
 | One entry on one side, and on both sides. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:64-81; mcp/src/agents_remember/models/knowledge/review_tree_entries.py:84-98 |
-| The tree view's field for the entries. | "entries: tuple[ReviewTreeEntry, ...] = ()" | mcp/src/agents_remember/models/knowledge/review_trees.py:256-256 |
+| The tree view's field for the entries. | "entries: tuple[ReviewTreeEntry, ...] = ()" | mcp/src/agents_remember/models/knowledge/review_trees.py:260-260 |
+
+## 260928-MIK-L32 The Unexplained-Changes Lane's Vocabulary And Its Reconciliation Validators
+
+**Route meaning extended (MIK-R32).** One new model module, [`knowledge/review_lane.py`](knowledge/review_lane.py.md)
+(carded, governed here, following the `knowledge/` precedent of no sub-route overview), and new optional fields on two
+existing results:
+
+- `review_lane.py` fixes the lane's three shapes: `ReviewLaneSummary` (the entry's count, file buckets only),
+  `ReviewUnexplainedLane` (the two destinations, the bucket totals, `unmeasured` and every measured path's bucket,
+  `paths`, ruling 2026-09-30T12:19:20 Q1) and `ReviewFileClassification` (the per-file response: both sides with every
+  entry's range or `LaneRangeReason`, each hunk with its class, links with invariant revisions, their keys and family
+  occurrences with `LaneMembershipState`, and the unknown reasons per side). Its validators make an answer reconcile:
+  an entry supplies a range or names why not; a hunk is linked exactly when it has links and unknown exactly when it
+  has reasons; the classes sum to the hunks; a destination lists exactly its bucket and attributed files; the three
+  buckets sum to the changed total; and an unmeasured value (`partial`, `unavailable`) carries no totals, so it can
+  never read as zero.
+- [`knowledge/review_trees.py`](knowledge/review_trees.py.md): `ReviewTreesResult.lane` and `file_classification`,
+  filled only by a lane or file read.
+- [`knowledge/review_intent_summary.py`](knowledge/review_intent_summary.py.md): `ReviewIntentSummaryResult.attribution`,
+  the lane's count for a tree comparison, outside the one-outcome validator (ruling Q6) and absent for a dataset
+  comparison (the served body omits `None`).
+
+The caps are the knowledge base's own (`REFERENCE_MAX_LENGTH`, `PROSE_MAX_LENGTH`, `PATH_MAX_LENGTH`); the application
+clips reasons and a refusal's input so a validated request never trips one (review R1 F2 and F4, ruling 13:07:38).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. | `LaneBucket`; `LaneHunkClass`; `LaneRangeReason`; `LaneMembershipState`; `LaneGateLinkage` | mcp/src/agents_remember/models/knowledge/review_lane.py:74-89 |
+| The lane reconciles; an unmeasured value carries no totals. | `ReviewUnexplainedLane`; `_totals_problem` | mcp/src/agents_remember/models/knowledge/review_lane.py:284-312; mcp/src/agents_remember/models/knowledge/review_lane.py:345-361 |
+| The tree view's two new fields, and the summary's. | "lane: ReviewUnexplainedLane"; "attribution: ReviewLaneSummary" | mcp/src/agents_remember/models/knowledge/review_trees.py:262-263; mcp/src/agents_remember/models/knowledge/review_intent_summary.py:107-108 |
 
 ## 260928-MIK-L14 The Reconsideration Subject, Its Triggers, And The Sixth Row Kind
 
@@ -530,11 +560,13 @@ evaluates; its Q6 carry (index stability) is met by the validator rule `R14.1-li
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The subject pattern, the triggers and the refreshed triggers. | `RECONSIDER_SUBJECT_PATTERN`; `TRIGGERS`; `REFRESHED_TRIGGERS` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:55-67 |
+| The subject pattern, the triggers and the refreshed triggers. | `RECONSIDER_SUBJECT_PATTERN`; `TRIGGERS`; `REFRESHED_TRIGGERS` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:60-60; mcp/src/agents_remember/models/knowledge_files/reconsideration.py:62-62; mcp/src/agents_remember/models/knowledge_files/reconsideration.py:65-67 |
 | The one spelling of a link target, and the gate's predicate. | `link_target_key`; `reconsideration_item_open` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:93-109; mcp/src/agents_remember/models/knowledge_files/reconsideration.py:112-121 |
 | The sixth row kind. | `ReconsiderationRow`; "HistoryRowKind(\"reconsideration\", ReconsiderationRow, \"MIK-R14\")" | mcp/src/agents_remember/models/knowledge_files/history.py:356-368; mcp/src/agents_remember/models/knowledge_files/history.py:388-388 |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane's Vocabulary And Its Reconciliation Validators" after L31's: the new `knowledge/review_lane.py` (linked card), `ReviewTreesResult.lane`/`file_classification` and `ReviewIntentSummaryResult.attribution`, rulings 12:19:20 Q1 and Q6 and review R1 F2/F4, and three rows. The moved rows were re-pointed by the installed fixer (its bullet kept) or by the exact base-to-staged shift. No verification stamp was advanced.
+- 2026-09-30T12:07:54+00:00: Generated citation repair: "entries: tuple[ReviewTreeEntry, ...] = ()" repointed to mcp/src/agents_remember/models/knowledge/review_trees.py:260-260. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** Added the section "260928-MIK-L14 The Reconsideration Subject, Its Triggers, And The Sixth Row Kind" after L31's: the new, carded `knowledge_files/reconsideration.py` and `history.ReconsiderationRow` (rulings Q2/Q3, Q7, F1, F3, F9 and N1); three rows. L13's section notes that its Q6 carry is met. L07's registry row is reworded for the sixth kind and re-measured to the whole tuple (`382-389`); I removed this pass's generated bullet for it. The other generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.
 - 2026-09-30T10:07:12+00:00: Generated citation repair: "HistoryRowKind(\"planned\", PlannedEffectRow, \"MIK-R11\")" repointed to mcp/src/agents_remember/models/knowledge_files/history.py:386-386. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:07:12+00:00: Generated citation repair: "HistoryRowKind(\"unexplained\", UnexplainedChangeRow, \"MIK-R10\")" repointed to mcp/src/agents_remember/models/knowledge_files/history.py:387-387. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
@@ -3412,8 +3444,8 @@ compares nothing; the application owner computes the numbers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The counts and their sum check. | `ReviewIntentCounts`; `_require_the_totals_to_be_their_parts` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:55-84 |
-| One outcome per state. | `ReviewIntentSummaryResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:87-115 |
+| The counts and their sum check. | `ReviewIntentCounts`; `_require_the_totals_to_be_their_parts` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:61-90 |
+| One outcome per state. | `ReviewIntentSummaryResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:93-123 |
 
 ## Update History
 - 2026-09-28T17:30:36+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — new section for the changed-intent summary model.** The earlier history-only entry for this leaf was not a body update; this section is. No stamp advanced.

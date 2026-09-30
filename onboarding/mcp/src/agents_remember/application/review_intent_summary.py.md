@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_intent_summary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,13 @@ it opens: `read_review_intent_summary` resolves the canonical task context throu
 `intent_summary_of` refuses the pair through the shared
 [`review_pair_preflight`](review_pair_preflight.py.md) before reading anything, so the catalogue and
 the summary cannot disagree about whether a pair is readable.
+
+**Since MIK-L32 a tree comparison's summary also carries `attribution`** (MIK-R32 rule 9): after
+`intent_summary_of` answers, `read_review_intent_summary` adds `lane_summary(resolved.trees)` from
+[`review_unexplained_lane.py`](review_unexplained_lane.py.md), the unexplained-changes lane's file-level count over the
+same resolved trees, in the same request. The entry therefore asks for it exactly when it asks for the intent counts,
+and never more eagerly. It is attached whatever the intent counts' own state (ruling 2026-09-30T12:19:20 Q6: it is
+read from the trees directly and is true on its own). A dataset comparison (`resolved.trees is None`) carries none.
 
 ## Code Commentary
 
@@ -78,6 +85,8 @@ lines); it imports `revision_heads` from there instead of copying it.
 - **Same resolution, same preflight as the catalogue.** No other dataset is substituted and no
   candidate is chosen here.
 - **Read-only.** It writes, retains and freezes nothing.
+- **The lane's count is a separate fact.** `attribution` is computed from file buckets only (no hunk read; proved by
+  `test_the_entry_count_reads_file_buckets_only`) and is never folded into `+`/`−`.
 - **Presentation is not owned here.** Whether an acceptance-only successor is worded differently from a
   text revision is `ICR-R35`/leaf L49's concern (leaf ruling 16:15:11 on F3; master decision 13:40 on
   "wording unchanged").
@@ -105,13 +114,14 @@ head rule; the fixture tests pin every count class.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`. | `read_review_intent_summary`; `resolve_review_candidate` | mcp/src/agents_remember/application/review_intent_summary.py:122-134 |
-| One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved. | `intent_summary_of`; `pair_preflight_refusal`; `unreadable_candidate_refusal` | mcp/src/agents_remember/application/review_intent_summary.py:137-167 |
-| The compared fields, including the record status that makes a record-only successor count. | `_STATEMENT_FIELDS`; `_GUARANTEE_FIELDS` | mcp/src/agents_remember/application/review_intent_summary.py:76-83; mcp/src/agents_remember/application/review_intent_summary.py:85-85 |
-| The classification: unresolved, after-only, before-only, relationship-only, or a counted successor. | `_classify`; "tally.attached_only"; "tally.after_only" | mcp/src/agents_remember/application/review_intent_summary.py:339-369 |
-| Several heads, or a population with none, is not one head. | `_no_single_head` | mcp/src/agents_remember/application/review_intent_summary.py:372-375 |
-| Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership. | `_family_side`; "invariant_of.get(invariant_revision, invariant_revision)" | mcp/src/agents_remember/application/review_intent_summary.py:274-304 |
-| What one realization claim asserts, independent of the claim record's own identity. | `_claim_key` | mcp/src/agents_remember/application/review_intent_summary.py:317-326 |
+| The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32). | `read_review_intent_summary`; `resolve_review_candidate`; "return summary.model_copy(update={\"attribution\": lane_summary(resolved.trees)})" | mcp/src/agents_remember/application/review_intent_summary.py:127-142 |
+| One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved. | `intent_summary_of`; `pair_preflight_refusal`; `unreadable_candidate_refusal` | mcp/src/agents_remember/application/review_intent_summary.py:145-175 |
+| The compared fields, including the record status that makes a record-only successor count. | `_STATEMENT_FIELDS`; `_GUARANTEE_FIELDS` | mcp/src/agents_remember/application/review_intent_summary.py:81-88; mcp/src/agents_remember/application/review_intent_summary.py:90-90 |
+| The classification: unresolved, after-only, before-only, relationship-only, or a counted successor. | `_classify`; "tally.attached_only"; "tally.after_only" | mcp/src/agents_remember/application/review_intent_summary.py:347-377 |
+| Several heads, or a population with none, is not one head. | `_no_single_head` | mcp/src/agents_remember/application/review_intent_summary.py:380-383 |
+| Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership. | `_family_side`; "invariant_of.get(invariant_revision, invariant_revision)" | mcp/src/agents_remember/application/review_intent_summary.py:282-312 |
+| What one realization claim asserts, independent of the claim record's own identity. | `_claim_key` | mcp/src/agents_remember/application/review_intent_summary.py:325-334 |
+| The lane count read on a live tree leaf; none on a dataset leaf. | `test_a_live_tree_leaf_serves_the_lane_and_its_entry_count`; `test_a_dataset_review_entry_carries_no_attribution` | mcp/tests/test_review_unexplained_lane.py:659-679; mcp/tests/test_review_unexplained_lane.py:698-703 |
 | The head rule reused from the revision comparison owner. | `revision_heads` | mcp/src/agents_remember/application/review_revision_comparison.py:81-94 |
 | The fixture that pins added/revised/removed as +/− and realization-only/membership-only as typed counts. | `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` | mcp/tests/test_review_intent_summary.py:261-316 |
 | A revised member shared by two families counts once on each side. | `test_a_revised_statement_two_families_share_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:319-338 |
@@ -129,6 +139,10 @@ snapshots.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Purpose records `attribution` (the lane's file-level count, attached for a tree comparison in the same request; ruling 2026-09-30T12:19:20 Q6: shown even when the intent counts are refused), and an Invariants bullet keeps it apart from `+`/`−`. The public-read row is reworded (the `lane_summary` line added as an anchor) and was re-measured by the exact shift (`122-134` → `127-142`); one row added (the live-leaf and dataset cases). The other moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded) or by the exact shift. No verification stamp was advanced.
+- 2026-09-30T12:07:27+00:00: Generated citation repair: `_classify`; "tally.attached_only"; "tally.after_only" repointed to mcp/src/agents_remember/application/review_intent_summary.py:347-377; mcp/src/agents_remember/application/review_intent_summary.py:373-373; mcp/src/agents_remember/application/review_intent_summary.py:361-361. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T12:07:27+00:00: Generated citation repair: `_no_single_head` repointed to mcp/src/agents_remember/application/review_intent_summary.py:380-383. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T12:07:27+00:00: Generated citation repair: `_family_side`; "invariant_of.get(invariant_revision, invariant_revision)" repointed to mcp/src/agents_remember/application/review_intent_summary.py:282-312; mcp/src/agents_remember/application/review_intent_summary.py:305-305. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-28T17:30:17+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): two rows re-anchored after the full memory-quality run reopened them: the attribute and parameter references (`attached_only`, `after_only`, `invariant_of`) are now named as the literal text the cited ranges hold ("tally.attached_only", "tally.after_only", "invariant_of.get(...)") instead of as symbols, because they are uses inside `_classify`/`_family_side`, not declarations. Claim wording unchanged.

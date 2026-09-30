@@ -5,14 +5,32 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L32 The Tree View Route Answers The Unexplained-Changes Lane
+
+**Route meaning extended (MIK-R32).** [`review_trees.py`](review_trees.py.md) gains two focused questions: `lane=files`
+(the lane's two destinations, `Unexplained changes` and `Unknown attribution`, with every measured path's bucket) and
+`file=<path>` (one changed path's per-file classification). Each is one question, so at most one of `invariants`,
+`lane` and `file` is given; `lane` other than `files`, an empty `file`, a `file` longer than `MAX_FILE_PATH_LENGTH`
+(4,096 characters), or two questions at once is a 400 whose `nextAction` names the three. `ReviewTreesQuery.focused`
+tells the application to reopen the comparison for every focused read. Every admitted `file=` value answers a typed
+200: a path the comparison did not change is `refused` with `source_content_unresolved`, its `offending_input` clipped
+to the refusal's 1,024-character field by the application (review R1 F2, ruling 2026-09-30T13:07:38). No route was
+added; the entry's count travels on the landed changed-intent summary route (`attribution`), and a dataset review
+never calls this route.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lane's bounds and the one-question rule. | `MAX_FILE_PATH_LENGTH`; `LANE_FILES`; `_focus_problem` | mcp/src/agents_remember/serving/review_trees.py:42-43; mcp/src/agents_remember/serving/review_trees.py:111-119 |
+| The query's two new questions and `focused`. | "def focused(self) -> bool:"; "lane=selection.lane == LANE_FILES," | mcp/src/agents_remember/serving/review_trees.py:57-65; mcp/src/agents_remember/serving/review_trees.py:153-162 |
 
 ## 260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own
 
@@ -31,7 +49,7 @@ their bodies byte for byte (the unconverted comparison, base against worktree).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The query, the port and the GET handler with its three answer classes. | `KnowledgeReaderQuery`; `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:35-46; mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
+| The query, the port and the GET handler with its three answer classes. | `KnowledgeReaderQuery`; `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:34-46; mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
 | The collaborator port and the registration before the static mount. | "knowledge_reader: KnowledgeReaderPort"; "register_knowledge_reader_route(app, collaborators.knowledge_reader)" | mcp/src/agents_remember/serving/_app_common.py:510-515; mcp/src/agents_remember/serving/app.py:307-307 |
 
 ## 260928-MIK-L31 The Tree View Route Answers The Focused Cards
@@ -49,8 +67,8 @@ route was added, and a dataset review never calls this route.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:36-36; mcp/src/agents_remember/serving/review_trees.py:38-38; mcp/src/agents_remember/serving/review_trees.py:66-93 |
-| The query carries the named invariants to the port. | `ReviewTreesQuery` | mcp/src/agents_remember/serving/review_trees.py:41-51 |
+| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:38-38; mcp/src/agents_remember/serving/review_trees.py:40-40; mcp/src/agents_remember/serving/review_trees.py:80-119 |
+| The query carries the named invariants to the port. | `ReviewTreesQuery` | mcp/src/agents_remember/serving/review_trees.py:46-65 |
 
 ## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
 
@@ -66,7 +84,7 @@ Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route and its three answer classes, with the selection's own 400 since MIK-L31. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:99-134 |
+| The route and its three answer classes, with the selection's own 400 since MIK-L31. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:125-162 |
 | The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:306-306 |
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
@@ -83,6 +101,7 @@ route-level case pins the five-arm status table so the admission is held by beha
 alone.
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Tree View Route Answers The Unexplained-Changes Lane" at the top: `lane=files` and `file=<path>`, the one-question rule and its 400s, `focused`, and review R1 F2 (every admitted path answers the typed 200 refusal); two rows. The moved rows of L31's and L25's sections were re-pointed by the installed fixer (normalisation) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own" at the top (the new `knowledge_reader.py` route, its answer classes, the collaborator port and its registration; rulings F3 and F15), with two rows. Rows citing the grown collaborator record and `create_app` were re-pointed by the installed fixer or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Route Answers The Focused Cards" at the top: `invariants=` (ruling 05:36:19 Q2), `ReviewTreesSelection` with the 500-key and 64-character bounds (review F10 at 06:10:21), the payload-pinned reads (F11), and the settled key casing (MIK-L25 review F9). **Reopened claim reworded:** L25's route row; this pass's generated bullet for it was removed. Two rows added.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port" at the top (the new `review_trees.py`, carded and governed here; the collaborator field; the registration; rulings Q5, F6 and F9), with two rows. Rows citing moved lines were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.

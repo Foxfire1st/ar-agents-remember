@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewReadCache.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:46:34+02:00 |
-| lastVerifiedCommitHash |  `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
-| lastVerifiedCommitDate |  2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash |  `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate |  2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -102,12 +102,12 @@ renderer are its only callers.
 | The two bounds. | `REVIEW_CACHE_LIMIT`; `SOURCE_CACHE_LIMIT` | dashboard/src/panels/review/ReviewReadCache.ts:29-30 |
 | The least-recently-used store: recency refreshed on read, oldest evicted on write. | `BoundedStore` | dashboard/src/panels/review/ReviewReadCache.ts:32-67 |
 | The generation of a payload: code trees, and snapshots only when knowledge was compared. | `comparisonGenerationOf`; `knowledge_compared` | dashboard/src/panels/review/ReviewReadCache.ts:74-83 |
-| Two generations differ on code trees, or on snapshots when both compared knowledge. | `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:85-93 |
+| Two generations differ on code trees, or on snapshots when both compared knowledge. | `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93 |
 | The content key is exactly the request's fields. | `sourceContentKey` | dashboard/src/panels/review/ReviewReadCache.ts:95-104 |
 | The cache: observe empties both stores on another generation; only content answers with an expansion are kept. | `ReviewReadCache`; `observe`; `keepReview`; `forgetReview`; `keepSource` | dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
-| The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:152-154 |
+| The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:154-154 |
 | The read cycle serves, keeps or only observes answers, and a refresh forgets its question. | `startRead`; `keepReview`; `observe`; `forgetReview` | dashboard/src/panels/review/ReviewReadCycle.ts:163-217; dashboard/src/panels/review/ReviewReadCycle.ts:423-439 |
-| The surface owns one cache and provides it. | "new ReviewReadCache()"; "ReviewReadCacheContext.Provider" | dashboard/src/panels/review/ReviewSurface.tsx:462-463; dashboard/src/panels/review/ReviewSurface.tsx:540-540 |
+| The surface owns one cache and provides it. | "new ReviewReadCache()"; "ReviewReadCacheContext.Provider" | dashboard/src/panels/review/ReviewSurface.tsx:475-476; dashboard/src/panels/review/ReviewSurface.tsx:553-553 |
 | The content renderer reads through it under the request key. | `useSourceContentRead`; `sourceContentKey` | dashboard/src/panels/review/SourceContent.tsx:180-220 |
 | The bounds, refusal, generation and key cases. | "keeps at most the bound of reviews and evicts the least recently used (%i inserted)"; "empties both stores when an answer belongs to another comparison generation" | dashboard/src/panels/review/ReviewReadCache.test.ts:47-110 |
 
@@ -122,4 +122,5 @@ task context and holds no identity that ranges beyond it.
 
 ## Update History
 
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewReadCache.ts`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T21:46:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **created this one-to-one card for the new per-comparison read cache (`ICR-R24@v3`).** It records the two keyed stores, the rule that only content answers are kept, the generation rule that empties both stores on any admitted answer from another comparison, the LRU bounds (24 reviews, 32 sources) and the one-surface lifetime, plus review observations O-R1-1 (cached returns are not a live check, by design) and O-R1-5 (recency touched during render). The verification hash and date are blank because no commit contains this file yet; closeout owns the stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewScopeHeader.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:46:34+02:00 |
-| lastVerifiedCommitHash |  `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
-| lastVerifiedCommitDate |  2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash |  `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate |  2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ No domain documentation source is configured for this repository (`system/source
 | The header and its test ids. | `ReviewScopeHeader`; `review-scope-header`; `review-scope-comparison`; `review-scope-families` | dashboard/src/panels/review/ReviewScopeHeader.tsx:10-69 |
 | The subject-bound lines, replaced while pending or unavailable. | `subjectScopeOf`; "is being read"; "could not be read" | dashboard/src/panels/review/ReviewScopeHeader.tsx:71-106 |
 | The record label. | `recordLabelOf`; "Reconstructed from recorded endpoints" | dashboard/src/panels/review/ReviewScopeHeader.tsx:108-112 |
-| The workspace mounts it with a status derived from `reading`. | `ReviewScopeHeader`; `status=` | dashboard/src/panels/review/ReviewWorkspace.tsx:237-244 |
+| The workspace mounts it with a status derived from `reading`. | `ReviewScopeHeader`; `status=` | dashboard/src/panels/review/ReviewWorkspace.tsx:260-267 |
 
 ## Cross-Repo References
 
@@ -90,4 +90,5 @@ No cross-repository behavior is implemented in this file.
 
 ## Update History
 
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewWorkspace.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-28T21:46:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **created this one-to-one card for the scope header extracted from `ReviewWorkspace.tsx`.** The render and its test ids moved unchanged; `recordLabelOf` moved with it; the new `status` input and `subjectScopeOf` replace the subject-bound lines while the selected subject is pending or unavailable (the worker's E6 event found the previous subject's comparison reference still shown while pending, and this is its fix). The verification hash and date are blank because no commit contains this file yet; closeout owns the stamp.

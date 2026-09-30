@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewNavigation.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:39:58+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -94,12 +94,12 @@ The named constructs own this behavior; reads and validation use their existing 
 | The navigation shape with the read-cycle signals and the engagement signal. | `ReviewNavigation`; `settling`; `observeComparison`; `engage` | dashboard/src/panels/review/ReviewNavigation.tsx:20-36 |
 | The hold bound and why it exists, including that a late catalogue selects only for a reader who has not engaged. | `SUBJECT_HOLD_MS`; `engage` | dashboard/src/panels/review/ReviewNavigation.tsx:147-152 |
 | Subject choice, the comparison-keyed catalogue, the expiring hold, the generation bump and the engagement freeze. | `useReviewNavigation`; `useReviewCatalogue`; `setExpired`; `setGeneration`; `engage` | dashboard/src/panels/review/ReviewNavigation.tsx:155-211 |
-| The passive gesture observer the surface mounts on its root. | `useReaderEngagement`; `ENGAGING_EVENTS`; `passive: true` | dashboard/src/panels/review/ReviewNavigation.tsx:213-230 |
+| The passive gesture observer the surface mounts on its root. | `useReaderEngagement`; `ENGAGING_EVENTS`; `passive: true` | dashboard/src/panels/review/ReviewNavigation.tsx:215-215; dashboard/src/panels/review/ReviewNavigation.tsx:217-230 |
 | The surface-side snapshot report. | `useObservedComparison`; `knowledge_compared` | dashboard/src/panels/review/ReviewNavigation.tsx:233-242 |
 | `initialSubject` owns the default subject choice. | `initialSubject` | dashboard/src/panels/review/ReviewNavigation.tsx:251-259 |
 | The rail component. | `ReviewNavigation` | dashboard/src/panels/review/ReviewNavigation.tsx:88-145 |
 | `CatalogueFamilies` owns the family rail. | `CatalogueFamilies` | dashboard/src/panels/review/ReviewNavigation.tsx:261-294 |
-| The surface wires all three signals: the hold, the snapshot observation and the engagement observer on its root. | `hold: navigation.settling`; `useObservedComparison`; `useReaderEngagement` | dashboard/src/panels/review/ReviewSurface.tsx:471-496; dashboard/src/panels/review/ReviewSurface.tsx:524-527 |
+| The surface wires all three signals: the hold, the snapshot observation and the engagement observer on its root. | `hold: navigation.settling`; `useObservedComparison`; `useReaderEngagement` | dashboard/src/panels/review/ReviewSurface.tsx:484-509; dashboard/src/panels/review/ReviewSurface.tsx:537-540 |
 | The two delayed-catalogue cases: an engaged reader is not moved, an idle reader is landed on the first family without a remount. | "does not move a reader who is working when the catalogue answers after the bounded wait"; "lands a reader who has not acted on the first family when the catalogue answers late, without remounting" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:460-511 |
 
 ## Cross-Repo References
@@ -111,6 +111,7 @@ No independent cross-repository interface is introduced by this source.
 | No additional cross-repository evidence is required. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewNavigation.tsx`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T21:39:58+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — reader engagement settles a late catalogue (`ICR-R24@v3`; L47 review R2 observation O-R2-1, routed to L48).** Implementation **extends** the L47 contract: `engage` joins the navigation shape and freezes the subject on screen once the bounded wait has released a read, and `useReaderEngagement` observes pointer/key/wheel/touch gestures passively on the surface root. The card's L47 statement that a late catalogue moves the reader and drops focus is **superseded**: an engaged reader stays put, an idle reader is landed on the first family inside the same mounted workspace. The policy was the worker's choice requested by the L48 brief and was verified by review R1/R2. Logic, Conventions and Invariants updated; every reference row re-derived from its declaration, two rows added. No stamp advanced.
 
 - 2026-09-28T17:09:38+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the reviewer owns its catalogue read, keyed on the comparison, with a bounded first-read hold (`ICR-R24@v3`; L47-R1-F1).** The claim "`useReviewNavigation` owns the behavior" was re-read against the changed hook: it no longer reads analytics, returns `settling` and `observeComparison`, and `SUBJECT_HOLD_MS = 750` bounds the hold. Logic, Conventions and Invariants were extended; reference rows re-derived. No stamp advanced; closeout owns the real stamp.

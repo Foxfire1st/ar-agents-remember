@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_currentness/observe.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T19:59:41+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083`|
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -102,7 +102,7 @@ code and memory repositories, so they are named here and not cited as rows.
 | The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind. | `_decided_without_resolving` | mcp/src/agents_remember/application/knowledge_currentness/observe.py:238-255 |
 | Which locator kinds cannot be re-resolved in a changed blob. | `_unsupported` | mcp/src/agents_remember/application/knowledge_currentness/observe.py:264-275 |
 | Resolution through the worklist's resolver; a missing line-range blob is raised, and only answers are put in the cache. | `_observed_content`; `cache.put` | mcp/src/agents_remember/application/knowledge_currentness/observe.py:278-306 |
-| The reused resolver: the worklist's tree reader and its `resolve`. | `CodeTrees`; `has_blob` | mcp/src/agents_remember/application/knowledge_worklist/code.py:191-332 |
+| The reused resolver: the worklist's tree reader and its `resolve`. | `CodeTrees`; `has_blob` | mcp/src/agents_remember/application/knowledge_worklist/code.py:193-334 |
 | The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. | `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator` | mcp/tests/test_knowledge_currentness.py:340-365 |
 | A timed-out Git call is unverifiable and is not cached. | `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason` | mcp/tests/test_knowledge_currentness.py:368-378 |
 | The cache key's contents and its reuse. | `test_observations_are_keyed_by_blob_locator_and_extractor_version_and_reused` | mcp/tests/test_knowledge_currentness.py:469-502 |
@@ -119,4 +119,5 @@ its caller.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/src/agents_remember/application/knowledge_worklist/code.py`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): created this card for the new file MIK-R03 adds. It records the architect rulings of 2026-09-29: 18:42:37 rulings 4 (the extended cache key) and 5 (a missing line-range blob is `unverifiable` here), and 19:13:41 rulings N1 (the check order), N2 (Git failures are `unverifiable`, never cached) and N3 (the 8,192-entry bound). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

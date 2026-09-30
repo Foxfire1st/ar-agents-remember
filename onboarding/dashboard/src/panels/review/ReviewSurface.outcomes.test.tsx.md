@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:41:55+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -164,10 +164,10 @@ fifteen cases grouped by what they pin. Every anchor in a row occurs inside the 
 | A subject-level refusal distinct under its own code. | "keeps a subject-level refusal distinct, under its own code" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:377-402 |
 | **An answer whose state this client does not admit is named, never rendered as a review.** | "names an answer whose state it does not admit, instead of rendering it as a review" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:411-422 |
 | **The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.** | "never renders a previous target's comparison under a new target's header" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:424-465 |
-| **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:468-478; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:480-489; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:491-494 |
+| **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:474-478; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:480-489; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:491-494 |
 | **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:496-528 |
 | **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68; dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
-| The real surface composes the target-bound read and retained comparison that these cases exercise. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:440-519; dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
+| The real surface composes the target-bound read and retained comparison that these cases exercise. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:453-532; dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
 ## Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed
@@ -178,6 +178,7 @@ same-origin `fetch` and names one repository namespace.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T21:41:55+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the cross-target case now asserts what stays, per the L48-R1 ruling (`ICR-R24@v3`, preserving `ICR-R26`).** The assertion that the previous subject's `review-inventory` disappears after the new subject's read fails contradicted the Architect's ruling that a failed or refused selection keeps the workspace mounted; A2 replaced it with: the failure is labelled with the requested subject in `review-reading-problem`, the task inventory stays, and no `review-center` is rendered, while the retained-generation and `data-comparison` negatives are unchanged. The card's F4 paragraph was corrected to say so (the old statement is **superseded**, not carried). The reopened `useSurface`/`ReviewSurface` claim was re-read — the real surface still composes the target-bound read and the retained comparison — and every row this leaf displaced was re-derived from its case or declaration. No stamp advanced.
 - 2026-09-26T21:10:23+00:00: Generated citation repair: `DATASET_ABSENT`; `BAD_REQUEST`; `UNWIRED`; `BAD_PATH`; `INVENTORY_DETAIL` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:50-60; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:68-78; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:79-85; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:86-92; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:94-96. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-26T21:10:23+00:00: Generated citation repair: `reviewed` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:200-205. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/entryState.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:06:50+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T14:22:59+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -66,8 +66,8 @@ No Domain Documentation source is configured for this module.
 | The closed disclosure with its accessible summary. | `EntryStateDetails`; "details" | dashboard/src/panels/detail-panel/entryState.tsx:13-31 |
 | The brief word per shared token. | `briefProblem`; "no knowledge yet"; "offline" | dashboard/src/panels/detail-panel/entryState.tsx:35-48 |
 | The owner's full sentence, with nothing invented. | `problemSentence`; "offending input: " | dashboard/src/panels/detail-panel/entryState.tsx:52-60 |
-| The disclosure styles. | `entryStateDetails`; `entryStateSummary`; `entryStateBody` | dashboard/src/panels/detail-panel/styles.ts:175-202 |
-| The two consumers. | `EntryStateDetails`; `briefProblem`; `problemSentence` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:24-80; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-259 |
+| The disclosure styles. | `entryStateDetails`; `entryStateSummary`; `entryStateBody` | dashboard/src/panels/detail-panel/styles.ts:177-202 |
+| The two consumers. | `EntryStateDetails`; `briefProblem`; `problemSentence` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:31-129; dashboard/src/panels/detail-panel/changeSetBar.tsx:185-259 |
 
 ## Cross-Repo References
 
@@ -79,4 +79,5 @@ No cross-repository behavior.
 
 ## Update History
 
+- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/detail-panel/intentReviewEntry.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/detail-panel/styles.ts`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T17:06:50+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the shared brief-state and disclosure helpers (`ICR-R24@v3`, ICR-R16 at the entry). The verification pair names the code base; closeout owns the real stamp.

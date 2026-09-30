@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_tree_entries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ repositories, so they are named here and not cited as rows.
 | Unavailable, absent, resolved or unresolved, from the pinned tree's own blob. | `_placed`; `_in_blob` | mcp/src/agents_remember/application/review_tree_entries.py:175-183; mcp/src/agents_remember/application/review_tree_entries.py:186-208 |
 | The bounded excerpt of the exact blob. | `_excerpt` | mcp/src/agents_remember/application/review_tree_entries.py:211-225 |
 | The cached resolution, and the locators refused before any read. | `_resolve`; `_unsupported`; `_unresolved` | mcp/src/agents_remember/application/review_tree_entries.py:228-237; mcp/src/agents_remember/application/review_tree_entries.py:240-257; mcp/src/agents_remember/application/review_tree_entries.py:260-265 |
-| The caller: a query naming invariants gets only the entries. | `_entries_view` | mcp/src/agents_remember/application/review_tree_knowledge.py:176-188 |
+| The caller: a query naming invariants gets only the entries, as one focused answer (since MIK-L32 through `_focused`, beside the lane and file reads). | "return _focused(query, trees, entries=tree_entries(trees, query.invariants))" | mcp/src/agents_remember/application/review_tree_knowledge.py:126-127 |
 | The shapes this module fills. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:64-81; mcp/src/agents_remember/models/knowledge/review_tree_entries.py:84-98 |
 | The cases: four entries located, unavailable against absent, the excerpt bound and the cache bound. | `test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides`; `test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent`; `test_an_excerpt_longer_than_its_bound_is_a_stated_prefix`; `test_the_placement_cache_remembers_answers_only_and_stays_within_its_bound` | mcp/tests/test_review_git_trees.py:802-820; mcp/tests/test_review_git_trees.py:863-883; mcp/tests/test_review_git_trees.py:900-913; mcp/tests/test_review_git_trees.py:916-936 |
 
@@ -116,4 +116,5 @@ repositories, so they are named here and not cited as rows.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): this card's source is unchanged. **Reopened claim reworded and re-anchored:** MIK-L32 replaced the caller's `_entries_view` with `_focused` in `review_tree_knowledge.py`, so the caller row now names the focused answer and is anchored on the line-exact call ("return _focused(query, trees, entries=tree_entries(trees, query.invariants))", `126-127`). The installed fixer ran once and changed nothing else. No verification stamp was advanced.
 - 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new module MIK-R31 adds, recording rulings 05:36:19 Q2 (the on-demand `invariants=` read) and 06:10:21 F3 (the excerpt and cache bounds tested) and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

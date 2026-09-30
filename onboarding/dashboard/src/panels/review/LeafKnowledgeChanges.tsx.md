@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/LeafKnowledgeChanges.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T14:52:40+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -40,9 +40,11 @@ leaf-wide `/api/review/trees` read the workspace makes. It shows:
 - **Rows.** Each item lists the history rows about its subject (owner, disposition and ID) or "no history row
   about it"; rows about an item are found by its subject and by the subject its `facts.row` names
   (`worklistGroups.rowSubjects`, the PS-1 lookup). Item facts are in a nested disclosure.
-- **`UnexplainedGroups`** (exported) is the structure MIK-R32's lane plugs into: one disclosure per file, split by
-  coverage state, each item listed with its rows. It offers and decides no disposition (ruling 2026-09-30T01:56:39,
-  carried from L10).
+- **`UnexplainedGroups`** (exported): one disclosure per file, split by coverage state, each item listed with its
+  rows. It offers and decides no disposition (ruling 2026-09-30T01:56:39, carried from L10); the module header says
+  history rows (MIK-R10) answer the unexplained changes and neither this panel nor the lane decides them. Since MIK-L32 the
+  unexplained-changes lane reuses it, not a copy: `LaneFileFocus.GateItems` renders an opened file's gate items (the
+  `worklistGroups(...).unexplained` groups for that path) through it, beside the lane's own classification.
 
 ### Conventions
 
@@ -56,7 +58,13 @@ leaf-wide `/api/review/trees` read the workspace makes. It shows:
 
 ### Todos
 
-- **L32:** the unexplained-changes lane's disposition controls plug into `UnexplainedGroups`.
+- **Resolved by MIK-L32:** the lane plugs into `UnexplainedGroups` for display only. MIK-R32 adds no disposition
+  control: its adopted Exclusions forbid any assessment, approval or waiver of unexplained changes, so the gate's
+  items are shown with the history rows that answer them and nothing more.
+- **Resolved in MIK-L32 (the coordinator's comment-only fix):** the module header (line 5) now says of the
+  unexplained changes that "history rows (MIK-R10) answer them, and neither this panel nor the lane decides them",
+  which matches MIK-R32's Exclusions. (The comment above `UnexplainedGroups`, "The structure the unexplained-changes
+  lane (MIK-R32) plugs into", was already accurate: the lane renders through it.)
 
 ## Docs References
 
@@ -71,6 +79,8 @@ live outside the code and memory repositories, so they are named here and not ci
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The module's own statement: what the panel shows, and that history rows answer the unexplained changes while neither the panel nor the lane decides them. | "history rows (MIK-R10) answer them, and neither this panel nor the lane decides them." | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:1-5 |
+| The lane's focused file renders its gate items through this structure (MIK-L32). | "return <UnexplainedGroups groups={groups} />;" | dashboard/src/panels/review/LaneFileFocus.tsx:374-391 |
 | The panel: status line with the comparison mismatch, degraded sides, diff, currentness, worklist. | `LeafKnowledgeChanges`; `worklistStatus` | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:49-82; dashboard/src/panels/review/LeafKnowledgeChanges.tsx:84-89 |
 | The diff by record, by source path, and history and other files. | `FileChange`; `KnowledgeDiff` | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:91-103; dashboard/src/panels/review/LeafKnowledgeChanges.tsx:105-155 |
 | Currentness per side. | `sideCounts`; `Currentness` | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:157-164; dashboard/src/panels/review/LeafKnowledgeChanges.tsx:166-201 |
@@ -78,7 +88,7 @@ live outside the code and memory repositories, so they are named here and not ci
 | The unexplained groups the lane plugs into. | `UnexplainedGroups` | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:236-263 |
 | Knowledge items, planned effects, other kinds, unexplained groups and the gate linkage. | `Worklist` | dashboard/src/panels/review/LeafKnowledgeChanges.tsx:265-321 |
 | Where the centre mounts it, only from a tree read. | `knowledgePanel` | dashboard/src/panels/review/FamilyReviewCenter.tsx:975-988 |
-| On real data: the `planned_untouched` item, and the mismatch sentence for another comparison. | "planned_untouched"; "this view reads comparison 2, the review shows comparison 1" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:188-194; dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:250-252 |
+| On real data: the `planned_untouched` item, and the mismatch sentence for another comparison. | "planned_untouched"; "this view reads comparison 2, the review shows comparison 1" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:201-226; dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:306-308 |
 
 ## Cross-Repo References
 
@@ -87,6 +97,8 @@ live outside the code and memory repositories, so they are named here and not ci
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T14:52:40+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, now 35 files over code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): **body update; this card's source is now a change of this leaf.** The coordinator corrected the stale module header (line 5, comment text only, line count unchanged): the unexplained changes are answered by "history rows (MIK-R10) ... and neither this panel nor the lane decides them." The stale-comment Todo is resolved, Logic records the header's statement, and one row is added for the header. No cited row moved: the line count is unchanged, and no row quoted the old header text. No verification stamp was advanced.
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): this card's source is unchanged. **Body update: the L32 Todo is resolved.** `UnexplainedGroups` is now reused by the lane's `LaneFileFocus.GateItems` for display only; MIK-R32's adopted Exclusions forbid assessment, approval or waiver, so no disposition control was added; the module-header comment that still assigns disposition to MIK-R32 is recorded as a stale-comment Todo. One row added (the lane's use). The real-data row was re-pointed by the exact base-to-staged shift (`ReviewSurface.gitTrees.test.tsx`). No verification stamp was advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the mount row into `FamilyReviewCenter.tsx`, which this leaf changed, was re-pointed by the installed fixer (its bullet below), and one row into the unchanged `ReviewSurface.gitTrees.test.tsx` was normalised (`249-251` → `250-252`). Claim wording unchanged. No stamp advanced.
 - 2026-09-30T11:14:43+00:00: Generated citation repair: `knowledgePanel` repointed to dashboard/src/panels/review/FamilyReviewCenter.tsx:975-988. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.
 

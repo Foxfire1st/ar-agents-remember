@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/detail-panel/changeSetBar.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:02:23+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -123,17 +123,17 @@ Every anchor in a row occurs inside the range that row cites.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of which entries a master and a leaf get, and that the Intent review is its own component. | "intentReviewEntry.tsx" | dashboard/src/panels/detail-panel/changeSetBar.tsx:1-7 |
-| The net's leaf attribution, rendered only when the answer carried a breakdown. | `leafAttribution`; `LeafAttribution` | dashboard/src/panels/detail-panel/changeSetBar.tsx:30-48 |
+| The net's leaf attribution, rendered only when the answer carried a breakdown. | `leafAttribution`; `LeafAttribution` | dashboard/src/panels/detail-panel/changeSetBar.tsx:30-38; dashboard/src/panels/detail-panel/changeSetBar.tsx:40-48 |
 | The total withheld for an unrecorded range. | `changesetTotal` | dashboard/src/panels/detail-panel/changeSetBar.tsx:54-64 |
 | The change-set control: its own counter read, the generation threaded into the viewer target, the unrecorded state, the refusal filed rather than swallowed, and the disclosure beside the button. | `ChangeSetButton`; `setUnrecorded`; `setProblem`; "<ChangeSetStateDetails" | dashboard/src/panels/detail-panel/changeSetBar.tsx:66-166 |
 | The counter read's brief states. | `ChangeSetReadState`; `briefProblem`; "unrecorded"; "known-empty" | dashboard/src/panels/detail-panel/changeSetBar.tsx:185-233 |
 | The explanation in a closed disclosure: the refusal sentence or the unrecorded sentence. | `ChangeSetStateDetails`; `problemSentence` | dashboard/src/panels/detail-panel/changeSetBar.tsx:236-259 |
 | **A leaf's entries: working while live, then the Intent review control (not a change-set button).** | `LeafEntries`; `IntentReviewEntry` | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306 |
-| **The bar: the master/leaf branch, the one liveness predicate, and the leaf-scoped facts plus re-validation generation the summary is keyed on.** | `DocChangeSetBar`; `useIntentEntryGeneration`; `leafFacts` | dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
-| This leaf's lifecycle facts as one comparable value. | `leafEnclosure`; `leafFacts`; `closeoutStatus` | dashboard/src/panels/detail-panel/changeSetBar.tsx:367-392 |
+| **The bar: the master/leaf branch, the one liveness predicate, and the leaf-scoped facts plus re-validation generation the summary is keyed on.** | `DocChangeSetBar`; `useIntentEntryGeneration`; `leafFacts` | dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365; dashboard/src/panels/detail-panel/changeSetBar.tsx:378-392 |
+| This leaf's lifecycle facts as one comparable value. | `leafEnclosure`; `leafFacts`; `closeoutStatus` | dashboard/src/panels/detail-panel/changeSetBar.tsx:367-375; dashboard/src/panels/detail-panel/changeSetBar.tsx:378-392 |
 | **The one liveness predicate both live-dependent entries read.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:397-409 |
-| The Intent review control and its summary read. | `IntentReviewEntry`; `useIntentReviewSummary` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:82-120 |
-| The shared brief-state and disclosure helpers. | `EntryStateDetails`; `briefProblem`; `problemSentence` | dashboard/src/panels/detail-panel/entryState.tsx:13-60 |
+| The Intent review control and its summary read. | `IntentReviewEntry`; `useIntentReviewSummary` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:131-171 |
+| The shared brief-state and disclosure helpers. | `EntryStateDetails`; `briefProblem`; `problemSentence` | dashboard/src/panels/detail-panel/entryState.tsx:13-31; dashboard/src/panels/detail-panel/entryState.tsx:35-48; dashboard/src/panels/detail-panel/entryState.tsx:52-60 |
 | The re-validation generation the facts carry. | `useIntentEntryGeneration` | dashboard/src/data/intentEntryRevalidation.tsx:57-58 |
 | The change-set client the counter read belongs to. | `taskChangeset`; `TaskChangeset` | dashboard/src/data/changeset.ts:41-48; dashboard/src/data/changeset.ts:167-168 |
 | The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation. | "is one control with the comparison's changed-intent counts and nothing beside it"; "makes one summary read, no catalogue read and one committed change-set read" | dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:127-150; dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx:152-168 |
@@ -148,6 +148,7 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/detail-panel/intentReviewEntry.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/detail-panel/changeSetBar.tsx`, `dashboard/src/panels/detail-panel/entryState.tsx`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T17:30:17+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): the change-set control row was re-anchored after the full memory-quality run reopened it: its disclosure is a use of `ChangeSetStateDetails` inside `ChangeSetButton`, now named as the literal "<ChangeSetStateDetails"; the component's declaration keeps its own row. Claim wording unchanged.
 - 2026-09-28T17:02:23+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`; review R2 pass-with-notes): **body rewritten — the Intent review is one compact control with changed-intent counts, and the catalogue-at-the-entry design is superseded (`ICR-R24@v3`; 555 → 412 lines).** Purpose, Logic, Conventions, Invariants and Todos now describe the current bar: `IntentReviewEntry` in `LeafEntries` instead of a `ChangeSetButton`; no catalogue read, picker, entry refresh or analytics subscription; brief change-set states with the explanation in `ChangeSetStateDetails`; leaf-scoped `leafFacts` plus the re-validation generation as the summary's invalidation (ruling 16:27:28 on L47-R1-F2). The removed constructs are named as gone. The L12 section's catalogue bullet is annotated as superseded, and the L17 section is marked superseded with what replaces it. Every reference row was re-derived from the candidate. No stamp advanced; closeout owns the real stamp.
 - 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.

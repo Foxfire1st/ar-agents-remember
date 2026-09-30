@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/unexplained.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:41:36+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -118,8 +118,10 @@ L09) are one function.
 - **L09:** the gate applies `unexplained_item_open(item, rows_by_subject)` to the stored item. Carried note
   (ruling 03:24:28 N3): an insertion-only hunk can still be linked by a K_B range through `hits_old`'s
   "strictly inside" rule; the symmetric strict reading was not applied here.
-- **L31/L32:** item volume is by design (160 on ICR L47); grouping the unexplained items for the curator in
-  the panel is carried (ruling Q4).
+- **Resolved by MIK-L31 and MIK-L32:** item volume is by design (160 on ICR L47). L31 groups the unexplained items
+  in the reviewer's panel by file and coverage state (`dashboard/src/panels/review/worklistGroups.ts`,
+  `UnexplainedGroups`), and L32's unexplained-changes lane shows an opened file's groups beside its own
+  classification (`LaneFileFocus.tsx`), for display only (ruling Q4).
 
 ## Docs References
 
@@ -145,20 +147,20 @@ they live outside the code and memory repositories, so they are named here and n
 | The governing route and its latest census status. | `RouteCoverage`; `route_status` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:157-171 |
 | The route half of coverage over one memory tree. | `route_coverage` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:174-193 |
 | Covered by a realization entry in K_B or a migrated route. | `_coverage` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:196-211 |
-| The summary under the document's `unexplained` key. | `Unexplained`; `_summary` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:219-240 |
+| The summary under the document's `unexplained` key. | `Unexplained`; `_summary` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:219-228; mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:231-240 |
 | A side's identity; an out-of-range read is a named problem. | `_identity` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:243-255 |
 | What an item admits. | `_admits` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:258-261 |
-| Unlinked hunks and non-text changes collected; identical lines share a subject. | `_Collector`; `change` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:270-322 |
+| Unlinked hunks and non-text changes collected; identical lines share a subject. | `_Collector`; `change` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:270-363 |
 | A symlink's or submodule's object from its tree entry. | `_object` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:324-336 |
 | The file item bound to its C-side object. | `_file` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:338-363 |
 | The ID, row subject, trace fact and `satisfiedBy`. | `_finished` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:370-378 |
 | The answering set from covered items only; stray `no_invariant` rows are unnecessary. | `unexplained_items` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:392-417 |
-| Uncovered items bound to MIK-R30's item for their file. | `settle_uncovered`; `_settled` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:420-479 |
+| Uncovered items bound to MIK-R30's item for their file. | `settle_uncovered`; `_settled` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:420-430; mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:458-479 |
 | The onboarding subjects an uncovered item needs. | `answering_trace_subjects` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:433-445 |
 | Open unexplained items. | `open_count` | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:448-455 |
-| Step 7 of the run: the items join the one sorted list. | `unexplained_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:242-270 |
-| A delete-only hunk is linked only by a K_B range. | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:534-540 |
-| The leaf route settles uncovered items after the onboarding trace. | `_settled_unexplained` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:457-476 |
+| Step 7 of the run: the items join the one sorted list. | `unexplained_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:244-272 |
+| A delete-only hunk is linked only by a K_B range. | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560 |
+| The leaf route settles uncovered items after the onboarding trace. | `_settled_unexplained` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:461-480 |
 | Covered hunk: no_invariant, attach or author; never onboarding. | `test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding` | mcp/tests/test_unexplained_change_disposition.py:279-328 |
 | Delete-only hunk: only no_invariant. | `test_a_delete_only_hunk_admits_only_no_invariant` | mcp/tests/test_unexplained_change_disposition.py:331-347 |
 | An uncovered file: its onboarding trace; its no_invariant row is unnecessary. | `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace` | mcp/tests/test_unexplained_change_disposition.py:463-505 |
@@ -173,6 +175,8 @@ one code repository's trees, handed to it by the worklist run.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): this card's source is unchanged. **Body update: the L31/L32 Todo is resolved** (L31 groups the items by file and coverage state; L32's lane shows an opened file's groups for display only). The rows into `compute.py` moved by MIK-R32 were re-pointed by the installed fixer (its bullet kept) or by the exact base-to-staged shift; the fixer's normalisation also re-measured passing rows into `unexplained.py` and `leaf.py`, which this leaf did not change (no claim changed). No verification stamp was advanced.
+- 2026-09-30T12:07:14+00:00: Generated citation repair: "hunk.new_count > 0" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T04:41:36+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): created this card for the new file MIK-R10 adds, recording the architect rulings of 01:56:39 (Q1 enforcement by linkage, Q2 strict definition 8 for delete-only hunks, Q3 onboarding rows that answer are not unnecessary, Q4 as built) and 03:24:28 (N1 complexity bar at most 10, N2 covered-only answering set, N3 carried to L09, N5, N6), and the L31/L32 carry. The verification stamp is left empty: the file is new and uncommitted, so closeout owns the real stamp.

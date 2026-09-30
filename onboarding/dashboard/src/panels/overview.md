@@ -5,10 +5,71 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T14:52:40+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260928-MIK-L32 The Unexplained-Changes Lane: Two Destinations After The Families, And One Classification Everywhere
+
+**Route meaning extended (MIK-R32, adopting ICR-R33@v1).** On a tree comparison (the payload's `review:trees:<n>`),
+changed source that no recorded entry explains is a review destination of its own, and the entry counts it. The new
+modules under `review/`, governed here like L31's and L35's (no `panels/review/` overview):
+- [`review/laneFocus.ts`](review/laneFocus.ts.md): the pure presentation rules. The destination titles and group
+  notes, the two groups in the server's order, "5 files · 3 hunks · 2 non-text" (file and hunk totals separately),
+  the hunks a destination opens a file on, each hunk's window cut on the server's side line numbers (rule 8, three
+  lines of context, `beyond` for a bounded prefix), and the labels the explorer and the technical details take from
+  the lane (`explorerAttribution`, `laneAttributionFacts`, `laneCountText`).
+- [`review/UnexplainedLane.tsx`](review/UnexplainedLane.tsx.md): `LaneDestinations` (the rail nodes after the
+  families; pending `…`, `unavailable`, `not measured`, never a zero) and `UnexplainedLaneCenter` (the bucket's files,
+  then the attributed files carrying the class, each group with a one-line note and each row's reason behind "Why").
+- [`review/LaneFileFocus.tsx`](review/LaneFileFocus.tsx.md): an opened file's facts, one diff window per focused hunk
+  from the landed source-content read of the exact blobs, the full file one control away, and the gate's own items for
+  the file through L31's `UnexplainedGroups` ("reading" until the slower leaf-wide read answers, never "none").
+- [`detail-panel/intentReviewEntry.tsx`](detail-panel/intentReviewEntry.tsx.md) renders the entry's count as its own
+  element after `+N −N`: `· K unexplained`, `· K unexplained · U unknown`, `· attribution partial` (with the unmeasured
+  scope in a disclosure), `· attribution unknown`, and nothing for 0/0, pending or a dataset comparison (rule 9).
+- Tests: [`review/laneFocus.test.ts`](review/laneFocus.test.ts.md) (3),
+  [`review/ReviewSurface.lane.test.tsx`](review/ReviewSurface.lane.test.tsx.md) (7, the real surface over the real
+  bodies), [`detail-panel/intentReviewEntry.attribution.test.tsx`](detail-panel/intentReviewEntry.attribution.test.tsx.md)
+  (8), and the seven captured bodies with their receipt
+  ([`review/laneReview.capture-provenance.json`](review/laneReview.capture-provenance.json.md); the summary, task,
+  leaf-wide trees, lane, file and source bodies of the MIK-L32 scratch leaf's comparison 2).
+
+**Hooks in the landed renderers.** [`review/ReviewSurface.tsx`](review/ReviewSurface.tsx.md) makes the **one** lane
+read (`ReviewPanes`, review R1 F1) and hands it to [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) (the
+rail destinations, the centre swap, no family node current while a destination is chosen, the gate items only from
+the same comparison's leaf-wide read, and the explorer's labels from the lane: ruling Q1) and to
+[`review/ReviewRecordPanes.tsx`](review/ReviewRecordPanes.tsx.md) (the source pane's attribution counts and lists
+from the lane: review F1). [`review/SourceContent.tsx`](review/SourceContent.tsx.md) exports its keyed, cached read for
+the focused diff. [`review/ReviewSurface.gitTrees.test.tsx`](review/ReviewSurface.gitTrees.test.tsx.md) answers the
+lane read without a lane (its captures predate it) and asserts unavailable, never zero, and the dataset review's
+landed labels and details word for word. A dataset review makes no lane read and renders none of this.
+
+**Rulings.** 2026-09-30T12:19:20: Q1 the explorer takes the lane's buckets on a tree comparison; Q3 a gate-held
+non-text change is listed under `Unexplained changes` only for an attributed file; Q4 an unexplained hunk in a file of
+unknown attribution stays in `Unknown attribution` (rule 10); Q5 the membership states as mapped, L34 may refine; Q6
+the entry's count shows even when the intent counts are refused. 13:07:38 (review R1): F1 the technical details
+follow the lane; F5 carried to L34 (a focused window's context can show a neighbouring hunk without its own mark);
+F6 accepted (the L35 word-diff stub needs no change). Review R2: pass. **Resolved:** L35's carried rerun: L32 landed
+second, and `ReviewSurface.wordDiff.test.tsx` was rerun on the L35-synced tree and passes (the Todo on that card is
+resolved). L31's "disposition controls plug into `UnexplainedGroups`" Todo is resolved as display only: MIK-R32's
+Exclusions forbid assessment, approval or waiver. The two code comments that still assigned disposition to the lane
+were corrected in this leaf (comment text only, in `worklistGroups.ts` and `LeafKnowledgeChanges.tsx`): history rows
+(MIK-R10), which the closeout gate enforces, answer the unexplained items, and the panel and the lane only list
+them.
+
+**Candidate invariants (not ingested):** on tree comparisons the explorer and the technical details take their
+attribution from the lane, so no two surfaces disagree; a lane or count that is pending, unread or unmeasured never
+reads as zero or as a guessed bucket; the entry's count is a separate fact from `+N −N`, read in the same request.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The explorer's and the details' labels from the lane. | `explorerAttribution`; `laneAttributionFacts` | dashboard/src/panels/review/laneFocus.ts:144-177 |
+| The rail nodes and the centre. | `LaneDestinations`; `UnexplainedLaneCenter` | dashboard/src/panels/review/UnexplainedLane.tsx:121-186 |
+| One opened file: focused windows, full file and the gate's items. | `LaneFileFocus`; `GateItems` | dashboard/src/panels/review/LaneFileFocus.tsx:82-155; dashboard/src/panels/review/LaneFileFocus.tsx:374-391 |
+| The one lane read handed to the workspace and the details. | "const laneRead = useReviewLane(" | dashboard/src/panels/review/ReviewSurface.tsx:335-340 |
+| The entry's count as its own element. | `AttributionCount` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:80-95 |
 
 ## 260928-MIK-L35 The Word-Level Intent Diff In The Central Reading Path
 
@@ -53,7 +114,7 @@ filter on both paths, Q5 rule 1a as written, Q6 the centre roster (`FamilyMember
 added tests, F5 control placement. 12:43:15 (review R2): pass-with-notes; R2-1 fixed, R2-2 (a whitespace deletion
 that joins two words is labelled whitespace-only) and R2-3 (one extra bounded diff for control placement) accepted as
 notes. **Carried:** whichever of L35 and L32 lands second reruns `ReviewSurface.wordDiff.test.tsx` against L32's lane
-fetch (a Todo on that card).
+fetch (a Todo on that card; resolved by MIK-L32, see its section above).
 
 **Candidate invariants (not ingested):** on tree comparisons no review surface calls a changed text unchanged (the
 byte comparison decides, even at the same revision); a changed intent field reads as one passage with removed and
@@ -64,8 +125,8 @@ side's own row, or from its pane or filtered field rows; dataset reviews get no 
 | --- | --- | --- |
 | The decision, the ratio and rule 1a. | "export const REWRITE_RATIO = 0.5;"; "export function textDiff(before: string, after: string): TextDiff {"; "export function alignLists(" | dashboard/src/panels/review/wordDiff.ts:21-26; dashboard/src/panels/review/wordDiff.ts:180-206; dashboard/src/panels/review/wordDiff.ts:258-280 |
 | The tree-comparison scope, the statement area and the changed guarantee. | "export function IntentWordDiffScope({"; "export function IntentStatementBody({"; "export function guaranteeTextChange(" | dashboard/src/panels/review/IntentWordDiff.tsx:153-165; dashboard/src/panels/review/IntentWordDiff.tsx:557-613; dashboard/src/panels/review/IntentWordDiff.tsx:615-625 |
-| Each side's text from its own row, the filtered field rows, and the text-first decision. | `MemberSides`; `authoredSides`; `textFirstComparison` | dashboard/src/panels/review/SubjectReview.tsx:86-94; dashboard/src/panels/review/SubjectReview.tsx:96-145; dashboard/src/panels/review/statementWording.ts:62-73 |
-| The rail's labels compare bytes on a tree comparison. | `guaranteesOf`; `memberSideTag` | dashboard/src/panels/review/FamilyTree.tsx:310-339; dashboard/src/panels/review/FamilyTree.tsx:395-401 |
+| Each side's text from its own row, the filtered field rows, and the text-first decision. | `MemberSides`; `authoredSides`; `textFirstComparison` | dashboard/src/panels/review/SubjectReview.tsx:89-92; dashboard/src/panels/review/SubjectReview.tsx:99-145; dashboard/src/panels/review/statementWording.ts:66-73 |
+| The rail's labels compare bytes on a tree comparison. | `guaranteesOf`; `memberSideTag` | dashboard/src/panels/review/FamilyTree.tsx:312-339; dashboard/src/panels/review/FamilyTree.tsx:397-401 |
 | On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. | "word-diffs a tree review's member statement and family guarantee in the center"; "never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review" | dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx:108-181 |
 
 ## 260928-MIK-L29 The Knowledge Reader Panel
@@ -151,7 +212,7 @@ from a leaf-wide read of the same comparison; dataset reviews make no tree read.
 | The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-176; dashboard/src/panels/review/ExpressionCards.tsx:180-230 |
 | Grouping by (path, range) and the bounded-roster scope. | `cardKey`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:50-55; dashboard/src/panels/review/focusedCards.ts:195-210 |
 | Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:969-973; dashboard/src/panels/review/FamilyReviewCenter.tsx:992-1048 |
-| The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:118-195 |
+| The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:128-227 |
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
 
@@ -171,7 +232,7 @@ that renders the tree view itself was carried to L31/L32 (ruling 2026-09-29T22:2
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one case: the landed workspace over a converted leaf's trees. | "renders a converted leaf family review from its trees and opens the touched member" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:71-116 |
+| The one case: the landed workspace over a converted leaf's trees. | "renders a converted leaf family review from its trees and opens the touched member" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:81-126 |
 | The receipt of the captured bodies (five since L31). | "fixtures" | dashboard/src/panels/review/gitTrees.capture-provenance.json:9-81 |
 
 ## 260921-ICR-L44 Two Family Bodies Re-Captured Under A Receipt, Five Still At Their Earlier Capture
@@ -212,11 +273,11 @@ Rapid selections settle on the latest; a superseded answer is neither shown nor 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
-| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
+| `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:213-300 |
+| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:403-478 |
 | The read bound to its question, and the task-context frame. | `readOnScreen`; `useFrame`; `admit` | dashboard/src/panels/review/ReviewReadCycle.ts:319-337; dashboard/src/panels/review/ReviewReadCycle.ts:341-348; dashboard/src/panels/review/ReviewReadCycle.ts:219-223 |
-| The workspace mounted over the answer or the frame, with a subject-bound reading status. | `ReviewPanes`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:300-357; dashboard/src/panels/review/ReviewSurface.tsx:362-382 |
-| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:96-128; dashboard/src/panels/review/ReviewWorkspace.tsx:281-343 |
+| The workspace mounted over the answer or the frame, with a subject-bound reading status. | `ReviewPanes`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:302-370; dashboard/src/panels/review/ReviewSurface.tsx:375-395 |
+| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:102-134; dashboard/src/panels/review/ReviewWorkspace.tsx:306-381 |
 | The bounded per-comparison cache and its generation rule. | `ReviewReadCache`; `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93; dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
 | The mounted delayed-reply cases. | "keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read"; "keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:316-410; dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:523-601 |
 
@@ -346,6 +407,12 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-30T14:52:40+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, now 35 files over code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): **route body updated.** The L32 section no longer says the two stale disposition comments are open Todos: the coordinator corrected them (comment text only) in `review/worklistGroups.ts` and `review/LeafKnowledgeChanges.tsx`, which are now source changes of this leaf, and both cards record it. No row moved. No verification stamp was advanced.
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R32.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane: Two Destinations After The Families, And One Classification Everywhere" at the top: the three new modules, the three new test modules and the seven captured bodies (linked cards), the hooks in the landed renderers, rulings 12:19:20 Q1 and Q3-Q6, 13:07:38 F1, F5 (carried to L34) and F6, R2 pass, the resolved L35 rerun and L31 disposition Todos, three candidate invariants and five rows; L35's carried note now points to it. **Reopened claims re-read and re-anchored:** the two source-pane rows ("function SourcePane({ payload }" no longer resolves; the claims still hold) are anchored on "function SourcePane({" and re-measured (`292-357`, with `KnowledgePane` at `223-248`); the second row's `KnowledgePane` anchor is re-bound to its full line-exact declaration, because this pass's generated bullet for the pane-1 row names the shorter quote (that bullet is kept), and the first reworded to note the lane read; the compact-control row (the `IntentReviewEntry` construct changed) is reworded for the lane's count and anchored on the three declarations' line-exact quotes; the mount row is anchored on "<IntentReviewEntry". The other moved rows were re-pointed by the installed fixer (its bullets kept) or by the exact base-to-staged shift. No verification stamp was advanced.
+- 2026-09-30T12:05:36+00:00: Generated citation repair: "const fieldValue = (value?: string) =>" repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T12:05:36+00:00: Generated citation repair: "function KnowledgePane({ payload }" repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:223-223. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T12:05:36+00:00: Generated citation repair: "function EvidencePane" repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:359-359. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T12:05:36+00:00: Generated citation repair: "function SubmissionBlock" repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:417-417. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): **route body updated for MIK-R35.** Added the section "260928-MIK-L35 The Word-Level Intent Diff In The Central Reading Path" at the top: the three new modules and three new test modules (six new cards governed here, no sub-route overview), the hooks in the landed renderers, rulings Q1–Q6 (2026-09-30T11:53:13), F1–F5 (12:16:39) and R2 (12:43:15), the carried L32 rerun, four candidate invariants, and five rows. L31's section now says what L35 adds. **Citations:** the L31 `pinnedWorklist`/`CenterExpressions` row and the ICR-L36 hoisted-owners row, both declined by the installed fixer as ambiguous, were re-pointed by the exact base-to-staged line shift, as were the `SelectedStatement` and `FamilyReviewCenter` rows below; the ICR-L24 hierarchy row lost a range (`FamilyTree.tsx:550-562`) that the fixer's normalisation had kept but that no longer holds any of its anchors. The fixer normalised the other rows into changed files.
 - 2026-09-30T12:41:49+02:00 — 260928-MIK-L29 curator (follow-up after the coordinator's test-only edit, staged; the change set is still 24 files over `b54d1b0331f67454bcf245a7a338b04900181c3c`): **route body updated.** The L29 section now records that the debugging `console.log` in `knowledge-reader/KnowledgeReader.test.tsx` was removed, instead of pointing at a Todo; the test card's Todo is resolved and its rows re-measured. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Panel" at the top: the new `knowledge-reader/` folder and its seven cards (no sub-route overview, following `review/`), with rulings N2, F2, F4, F9, F11, F13, F17 and the R2 in-flight note, and four rows. **One reopened claim was re-read, reworded and re-anchored:** the "production route returns `Cockpit`" row, bound by a committed 2026-09-25 generated-repair bullet, now names the Knowledge initial view and is anchored on the line-exact quotes `"export function Cockpit() {"` and the reader-hash check; the committed bullet is left intact. The installed fixer normalised four rows and the `CockpitShell` row was re-pointed by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
@@ -827,8 +894,8 @@ not here.
 | --- | --- | --- |
 | Inventory rows preserve path/status and control state; optional inline content expansion uses the listed tree pair. | `inventoryEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116 |
 | Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
-| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:148-185 |
-| The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane`; `SourceContent` | dashboard/src/panels/review/ReviewRecordPanes.tsx:242-297; dashboard/src/panels/review/SourceExplorer.tsx:103-107 |
+| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:157-202 |
+| The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane`; `SourceContent` | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357; dashboard/src/panels/review/SourceExplorer.tsx:103-107 |
 | The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | "export function SelectedStatement({"; `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SubjectReview.tsx:255-334 |
 | Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:55-99 |
 | The expansion states bounded content and the admitted path relation alongside the actual source rendering. | `boundedNote`; `Expansion` | dashboard/src/panels/review/SourceContent.tsx:101-111; dashboard/src/panels/review/SourceContent.tsx:127-166 |
@@ -869,9 +936,9 @@ route, no takeover change, and the child's file cards are the authority for the 
 | --- | --- | --- |
 | **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** | `KnowledgeStatements`; `unavailable`; `oneSidedDiff`; `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:34-35; dashboard/src/panels/review/KnowledgeStatements.tsx:67-78; dashboard/src/panels/review/KnowledgeStatements.tsx:81-92; dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
 | **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:37-45 |
-| The technical knowledge pane delegates statement rendering to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240 |
-| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | "const fieldValue = (value?: string) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:109-110 |
-| The technical knowledge pane delegates statement rendering to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240 |
+| The technical knowledge pane delegates statement rendering to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248 |
+| **The field-row words this leaf added: absent and recorded-empty as two different facts.** | "const fieldValue = (value?: string) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:117-117 |
+| The technical knowledge pane delegates statement rendering to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248 |
 | **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** | "draws an added invariant's full after statement beside an absent-before label" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:195-213 |
 | The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. | "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable"; "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:215-229; dashboard/src/panels/review/KnowledgeStatements.test.tsx:244-260; dashboard/src/panels/review/KnowledgeStatements.test.tsx:262-275 |
 
@@ -912,12 +979,12 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The child route entry component. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
-| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane({ payload }" | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-215 |
-| Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content.** | "function SourcePane({ payload }" | dashboard/src/panels/review/ReviewRecordPanes.tsx:242-242 |
-| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewRecordPanes.tsx:299-355 |
-| The technical panes print the owner assessment state rather than deriving a favorable judgment. | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240; dashboard/src/panels/review/ReviewRecordPanes.tsx:299-355 |
-| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewRecordPanes.tsx:357-385 |
+| The child route entry component. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
+| Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane({ payload }" | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-223 |
+| Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content** (since MIK-L32 it also takes the lane read, for a tree comparison's attribution). | "function SourcePane({" | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357 |
+| Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewRecordPanes.tsx:359-359 |
+| The technical panes print the owner assessment state rather than deriving a favorable judgment. | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248; dashboard/src/panels/review/ReviewRecordPanes.tsx:359-415 |
+| The block that states the display-only submission boundary. | "function SubmissionBlock" | dashboard/src/panels/review/ReviewRecordPanes.tsx:417-417 |
 | The refusal rendering, which left the surface for the outcome owner: one block prints every field the owner published, and both the surface and the expansion pane render it. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177 |
 | **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `DiffPane`; `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:29-29; dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
 
@@ -3323,9 +3390,9 @@ states that its byte-form row cannot be opened — so the measurements below nam
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:81-89; dashboard/src/panels/review/ReviewSurface.tsx:41-48; dashboard/src/panels/review/ReviewSurface.tsx:521-585 |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:81-89; dashboard/src/panels/review/ReviewSurface.tsx:43-50; dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130; dashboard/src/panels/review/SourceExplorer.tsx:170-222 |
-| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. | "function SourcePane({ payload }"; "function KnowledgePane({ payload }" | dashboard/src/panels/review/ReviewRecordPanes.tsx:242-297; dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240 |
+| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. | "function SourcePane({"; "function KnowledgePane({ payload }: { payload: ReviewPayload }) {" | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357; dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248 |
 | **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:428-457 |
 | The three cases those three answers are measured by. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
@@ -3372,8 +3439,8 @@ change), and the **browser-class A01/A13 journeys** over a served dashboard are 
 | --- | --- | --- |
 | **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
 | **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** | `ReviewProblemBlock`; `intentOnlyRefusal` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:29-30 |
-| The read key names the actual question, and retention is shown only for that same question. | `targetKeyOf`; `useSurface` | dashboard/src/panels/review/ReviewReadCycle.ts:82-100; dashboard/src/panels/review/ReviewSurface.tsx:440-519 |
-| **The entry's own read state on a control that never disappears — since `260921-ICR-L47` a brief word from the changed-intent summary read, with the owner's explanation in a disclosure (the catalogue-based `ReviewEntryState` recorded above is gone).** | `IntentCounts`; `IntentDetails`; `briefProblem` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:24-61; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:63-80; dashboard/src/panels/detail-panel/entryState.tsx:35-48 |
+| The read key names the actual question, and retention is shown only for that same question. | `targetKeyOf`; `useSurface` | dashboard/src/panels/review/ReviewReadCycle.ts:82-100; dashboard/src/panels/review/ReviewSurface.tsx:453-532 |
+| **The entry's own read state on a control that never disappears — since `260921-ICR-L47` a brief word from the changed-intent summary read, with the owner's explanation in a disclosure (the catalogue-based `ReviewEntryState` recorded above is gone).** | `IntentCounts`; `IntentDetails`; `briefProblem` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:31-68; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:112-129; dashboard/src/panels/detail-panel/entryState.tsx:35-48 |
 | The source pane keeps shared transport failure rendering separate from the source owner typed refusal. | `SourceContent`; "function refusalBlock(refusal: ReviewRefusal) {" | dashboard/src/panels/review/SourceContent.tsx:222-271; dashboard/src/panels/review/SourceContent.tsx:113-125 |
 
 ## Update History
@@ -3546,10 +3613,10 @@ representable for a truncated family roster to be continued.
 | The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal. | `FamilyNode`; `MemberRoster`; `treeArrow` | dashboard/src/panels/review/FamilyTree.tsx:584-596; dashboard/src/panels/review/FamilyTree.tsx:468-498; dashboard/src/panels/review/FamilyTree.tsx:500-550 |
 | **The one family-roster walk control, continuing at the cursor the roster page published.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:263-295 |
 | **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:892-965 |
-| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:148-185; dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
+| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:157-202; dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
 | **The complete source change explorer, and why it is its own module rather than part of the surface.** | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
 | **The mounted family composition cases and the captured server bodies they are driven with.** | "familyReview.*.captured.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-9 |
-| The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. | `ReviewPanes`; `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:300-357; dashboard/src/panels/review/ReviewSurface.tsx:440-519 |
+| The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. | `ReviewPanes`; `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:302-370; dashboard/src/panels/review/ReviewSurface.tsx:453-532 |
 | **The page request whose `of` is the server's own collection union.** | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:73-77 |
 
 ## Update History
@@ -3716,11 +3783,11 @@ catalogue no longer moves an engaged reader and never remounts, and `ReviewSurfa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The compact control, its brief states and its disclosure. | `IntentReviewEntry`; `IntentCounts`; `IntentDetails` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:24-61; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:63-80; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:82-120 |
-| The entry mounted in place of a change-set button. | `LeafEntries`; `IntentReviewEntry` | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306 |
+| The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). | "export function IntentReviewEntry({"; "function IntentCounts({"; "function IntentDetails({" | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:31-68; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:112-129; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:131-171 |
+| The entry mounted in place of a change-set button. | `LeafEntries`; "<IntentReviewEntry" | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306 |
 | The leaf-scoped facts and re-validation generation. | `DocChangeSetBar`; `leafFacts`; `useIntentEntryGeneration` | dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365; dashboard/src/panels/detail-panel/changeSetBar.tsx:378-392 |
 | The reviewer's comparison-keyed catalogue, bounded hold and snapshot observation. | `SUBJECT_HOLD_MS`; `useReviewNavigation`; `useObservedComparison` | dashboard/src/panels/review/ReviewNavigation.tsx:152-152; dashboard/src/panels/review/ReviewNavigation.tsx:155-211; dashboard/src/panels/review/ReviewNavigation.tsx:233-242 |
-| The first read held while the navigation settles. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:471-496 |
+| The first read held while the navigation settles. | `hold: navigation.settling`; `useObservedComparison` | dashboard/src/panels/review/ReviewSurface.tsx:484-509 |
 
 ## Update History
 - 2026-09-28T17:06:19+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`; review R2 pass-with-notes): **route body updated — the compact Intent review entry and the reviewer-owned catalogue (`ICR-R24@v3`).** New section at the end records the entry (one control, intent counts, brief states, leaf-scoped re-validation) and the reviewer (catalogue once on entry, bounded first-read hold), and that it supersedes the entry-side catalogue accounts in the KS-L45, L9, L16 and L17 sections; the KS-L45 section and the L17 bullet are annotated, and the L16 row naming `ReviewEntryState` is reworded and re-cited. Displaced rows into files L47 changed were re-pointed from the base-to-candidate line mapping. No stamp advanced.

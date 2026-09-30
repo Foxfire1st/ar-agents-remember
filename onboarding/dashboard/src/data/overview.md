@@ -5,14 +5,36 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T14:18:54+02:00 |
+| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
+| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
+
+One new adapter, [`reviewLane.ts`](reviewLane.ts.md) (carded, governed here), carries the server's one classification
+of a tree comparison's changed paths (MIK-R32, `models/knowledge/review_lane.py`) as types, snake_case as served, and
+reads it through the tree view route: `useReviewLane` asks `lane=files` for the two destinations (`Unexplained
+changes`, `Unknown attribution`) and every measured path's bucket (`paths`, which the source explorer's labels and the
+technical details take on a tree comparison: rulings 2026-09-30T12:19:20 Q1 and 13:07:38 F1), and
+`useReviewFileClassification` asks `file=<path>` for one changed path's hunks, classes, links and reasons. Each answer
+is kept with the URL it answers, so a superseded answer never draws; an answer without the value it was asked for
+reads `unavailable`, never an empty lane. A dataset review names no tree comparison, so both hooks ask nothing. The
+surface makes the one lane read and hands it down.
+
+[`reviewIntentSummary.ts`](reviewIntentSummary.ts.md) now carries `attribution`, the lane's file-level count
+(`ReviewLaneSummary`), from the same summary response, on the counted/partial state and on the refused state alike
+(ruling Q6); the entry therefore never asks for it more eagerly than for the intent counts (MIK-R32 rule 9).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The adapter's own statement: the server classifies once and this file only carries the answer. | "server classifies once and this adapter only carries the answer" | dashboard/src/data/reviewLane.ts:1-16 |
+| The two reads; none for a dataset review. | `useReviewLane`; `useReviewFileClassification` | dashboard/src/data/reviewLane.ts:246-272 |
+| The summary carries the lane's count on both answered states. | "const attribution = result.attribution ? { attribution: result.attribution } : {};" | dashboard/src/data/reviewIntentSummary.ts:79-90 |
 
 ## 260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address
 
@@ -103,7 +125,7 @@ useReviewCatalogue.ts owns the reviewer's catalogue read (since `260921-ICR-L47`
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `useReviewCatalogue` owns the behavior described above. | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:79-111 |
-| The entry's summary read and its re-validation generation. | `useIntentReviewSummary`; `IntentEntryRevalidation` | dashboard/src/data/reviewIntentSummary.ts:84-109; dashboard/src/data/intentEntryRevalidation.tsx:29-54 |
+| The entry's summary read and its re-validation generation. | `useIntentReviewSummary`; `IntentEntryRevalidation` | dashboard/src/data/reviewIntentSummary.ts:96-121; dashboard/src/data/intentEntryRevalidation.tsx:29-54 |
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
@@ -132,6 +154,7 @@ consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` 
 measurement.
 
 ## Update History
+- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary" at the top: the new `reviewLane.ts` (linked card) and `attribution` on `reviewIntentSummary.ts`, with rulings 12:19:20 Q1 and Q6 and review R1 F1; three rows. The summary-read row of an earlier section was re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address" at the top (the new `knowledgeReader.ts`, the hash address of rule 5, typed answers returned whatever their status), with three rows. The installed fixer normalised two rows in this pass. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing" at the top: the entry types, `invariants=` (ruling 05:36:19 Q2), `treeComparisonNumber`, `useReviewTreeEntries`, the `enabled` flag and payload pinning (review F11), snake_case (MIK-L25 review F9), the re-captured body and the re-measured transport refusal (rule 6 O2), and one candidate invariant. L25's section now says its carried items are settled. **Reopened claim reworded and re-anchored:** L25's answer-and-request row, on line-exact quotes; this pass's generated bullet for it was removed. Three rows added.
 - 2026-09-30T07:49:51+00:00: Generated citation repair: `reviewTreesRead` repointed to dashboard/src/data/reviewTrees.ts:273-279. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
