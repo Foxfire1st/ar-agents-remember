@@ -5,14 +5,74 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover
+
+`260928-MIK-L31` (MIK-R31@v1) replaces the reviewer's whole-file accordion with **focused expression cards** for a
+tree comparison: every code and test location of the selected family's members is one card per (path, range),
+naming its role (a realization) or facet (a proof), the side path and the resolved range on each side (MIK-R08
+definition 3), the authored rationale directly above an excerpt from the exact side blobs, a changed range as its
+real diff and an unchanged range once, labelled and excluded from the changed count, and a not-current MIK-R03 state
+when there is one. A missing rationale is an explicit gap; the renderer writes no explanation of its own. The
+statements are decluttered by the ICR 13:40 decision ("Wording unchanged · revision a → b" only when every authored
+field is identical; added or removed statements as labelled prose). Full-file inspection and the complete changed
+inventory stay one step from every card. A dataset (unconverted) review makes no tree read and keeps its landed file
+view.
+
+- **Where:**
+  - `application/review_tree_entries.py` (new) and `models/knowledge/review_tree_entries.py` (new): each entry of
+    the named invariants located on B and C, with bounded excerpts and per-side state.
+  - `application/review_tree_knowledge.py`, `models/knowledge/review_trees.py`, `serving/review_trees.py`: the
+    on-demand `invariants=` read, the comparison pinning, snake_case on the wire, the `facts.row` history lookup.
+  - `application/review_source_admission.py` and `review_source_realization_link.py`: a tree comparison's proof
+    admits its unchanged path; the initialize remedy. `application/review_curator_records.py`: the Q8 fix.
+  - `dashboard/src/panels/review/`: `ExpressionCards.tsx`, `focusedCards.ts`, `statementWording.ts`,
+    `worklistGroups.ts`, `LeafKnowledgeChanges.tsx` (new); `FamilyReviewCenter.tsx`, `SubjectReview.tsx`,
+    `ReviewWorkspace.tsx`, `ReviewExpressions.tsx`; `data/reviewTrees.ts`; `changeset/DiffPane.tsx` and
+    `file-viewer/FilePane.tsx` (optional `firstLine` and `fit`, with `file-viewer/lineNumbering.ts`).
+  - Fixtures: the git-trees bodies re-captured from L31's scratch leaf plus the new `gitTrees.cards` body; the six
+    family fixtures L44 left at their old capture re-captured from the current route (rule 6, the L44-R1-F5
+    remainder); the stale transport refusal re-measured (O2).
+- **Architect rulings** (`31_focused-expression-cards.json`). Carried in: L11 (planned/unplanned marks and
+  `planned_untouched` on the reviewer), L25 Q2 (the panel for MIK-R25 rules 2-3), L25 F9 (snake_case), L25 Q8 (the
+  pre-existing `ValidationError`), L10 (unexplained items grouped by file and coverage), PS-1 (`facts.row`).
+  2026-09-30T05:36:19: Q1 proof admission for full-file reads; Q2 the `invariants=` on-demand read (at most 500);
+  Q3 a SYNTHETIC unit body for the no-member branch; Q4 roster order stays with MIK-R33 (L33); the Q8 fix and PS-1
+  accepted. 06:10:21 (review R1): F1 one full file keyed by card; F2 "loaded n of m"; F3/F4/F6/F12 tests; F5 prose
+  once only with both sides present; F7 re-capture with provenance; F10 each key at most 64 characters; F11 the
+  comparison pinned; F8/F9 report corrections. 06:47:03 (R2): pyright clean, R2-2, R2-3, R2-5, R2-7; R2-6 accepted.
+  09:38:03 (R3): pass-with-notes, R3-N1 accepted as a note.
+- **Candidate invariants (not ingested; listed on the cards and in the `application` overview):** focused cards
+  group by (path, range) with the rationale above the excerpt and a missing rationale shown as a gap; a card excerpt
+  comes only from the pinned tree's exact blob, bounded, with per-side state; a bounded roster never reads as the
+  whole family (the cards state the loaded n of m); card planning marks come only from a leaf-wide read of the same
+  comparison; dataset reviews make no tree read.
+- **Inertness:** only a converted leaf's tree comparison reaches the new server paths, and the dashboard asks them
+  only when the payload declares `review:trees:<n>`. Unconverted reads: 26 of L25's 29 byte-identical to base, the
+  other 3 being the fixed `ValidationError`.
+- **Tests and evidence:** 9 new Python cases (6 in `test_review_git_trees.py`, 2 in the attributed-source module, 1
+  Q8 case); 25 new dashboard cases (19 in the three new test modules), with updated expectations in five more; full unit suite 3,298 passed,
+  integration lane 447 passed, dashboard vitest 1,779 passed (reviewer R3). Real data on a converted scratch leaf:
+  11 cards for `FAM-2HBJREC2`, exactly 4 in `review_source_admission.py` (one changed diff, three unchanged), the
+  proof card with its facet; mounted-browser screenshots at 1600×1100 and 390 against the accepted HTML (task-local
+  evidence).
+- **Stale comments refreshed:** a comment-only follow-up (after curation; the change set is now 46 files) made the
+  headers of `ReviewWorkspace.family.test.tsx` and `ReviewReadCycle.family.test.tsx` name the MIK-L31 re-capture,
+  and `familyExpressions.test.ts`'s measured-shape comment name the re-captured `walkFinal` revision `a08a87b4`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The entries module statement. | "Every entry of a tree comparison, located on both code sides for the reviewer's cards (MIK-R31)." | mcp/src/agents_remember/application/review_tree_entries.py:1-19 |
+| The on-demand cards read at the route. | `MAX_ENTRY_INVARIANTS`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:36-36; mcp/src/agents_remember/serving/review_trees.py:66-93 |
+| The card component's own statement. | "one focused" | dashboard/src/panels/review/ExpressionCards.tsx:1-7 |
 
 ## 260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover
 
@@ -166,7 +226,7 @@ and the archive hook that deletes a task's review artifacts.
 | --- | --- | --- |
 | The four-tree comparison, pinned and recorded. | "A review comparison as four Git trees, pinned by Git refs and reopened from its tree ids" | mcp/src/agents_remember/application/review_tree_comparison.py:1-31 |
 | The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
-| The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:31-31 |
+| The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:34-34 |
 | The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
 | The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:123-124 |
 
@@ -893,6 +953,9 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the three stale code comments the 10:05:09 entry recorded were refreshed by the worker (comments only; `familyExpressions.test.ts` joins the change set). The L31 section's bullet says so.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the whole-leaf section "260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover" at the top: what the cards show, where the code lives, every architect ruling (the carried L11, L25 Q2/F9/Q8, L10, PS-1; 05:36:19 Q1-Q4; 06:10:21 R1; 06:47:03 R2; 09:38:03 R3 with R3-N1), the five candidate invariants, inertness, the evidence, and the stale code comments found. Three rows added.
+- 2026-09-30T07:52:41+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_TREES_ROUTE` repointed to mcp/src/agents_remember/serving/review_trees.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover" at the top: the whole leaf, every ruling (2026-09-30 03:32:18, 04:12:49, 04:45:22), the four candidate invariants, the tests and the real-data evidence, with four rows. **Reopened claim reworded:** L01's `_leaf_response` row.
 - 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.

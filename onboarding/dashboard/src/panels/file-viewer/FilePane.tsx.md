@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `dashboard/src/panels/file-viewer/FilePane.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-04T03:03+02:00                             |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`         |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated            | 2026-09-30T10:05:09+02:00                          |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`         |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -26,15 +26,19 @@ change.
 
 ### Logic
 
-Props are `{ content, language }`. A `ref` points at the host div; an effect builds the editor:
+Props are `{ content, language, firstLine? = 1, fit? = false }`. **`firstLine` and `fit` were added by MIK-L31 for
+the reviewer's focused expression cards** and change nothing at their defaults: `firstLine` numbers the gutter from
+the excerpt's first line in its file (`numberedFrom` in the sibling `lineNumbering.ts`, which is the plain
+`lineNumbers()` for line 1), and `fit` swaps the `host` style for `fitHost`, which sizes the editor to its content
+(capped at `32rem`) instead of pinning it to full height. A `ref` points at the host div; an effect builds the editor:
 **`langExtension(language)`** is awaited (the `@codemirror/lang-*` packs are code-split, so a language is
 loaded only when first opened), guarded by a `disposed` flag against a late resolve after teardown. The
-extension set is `lineNumbers()`, `EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`,
+extension set is `numberedFrom(firstLine)`, `EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`,
 `EditorView.lineWrapping`, and `codeTheme`, plus the resolved language extension when one exists; then
 `new EditorView({ parent, state })`. Cleanup sets `disposed = true` and calls `view?.destroy()`. The effect
-deps are `[content, language]`, so the editor is **recreated wholesale** when either changes. Render is a
-single `<div ref className={host} data-testid="file-pane" />` (the `host` style pins `.cm-editor` to full
-height).
+deps are `[content, language, firstLine]`, so the editor is **recreated wholesale** when any changes. Render is a
+single `<div ref className={fit ? fitHost : host} data-testid="file-pane" />` (the `host` style pins `.cm-editor`
+to full height).
 
 ### Conventions
 
@@ -57,14 +61,18 @@ L1 `language` id.
 | --- | --- | --- |
 | The sibling theme module defines the CodeMirror chrome plus syntax `HighlightStyle` bundle. | `chrome`; `"HighlightStyle.define"`; `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27; dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49; dashboard/src/panels/file-viewer/codemirrorTheme.ts:29-29 |
 | The `FilePane` module imports the sibling `codeTheme`. | "import { codeTheme }" | dashboard/src/panels/file-viewer/FilePane.tsx:10-10 |
-| `FilePane` installs `codeTheme` in the `EditorState` extension list. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| `FilePane` installs `codeTheme` in the `EditorState` extension list. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:24-64 |
 | The sibling language module defines the lazy language-by-extension map. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
-| The `FilePane` module imports the sibling `langExtension`. | "import { langExtension }" | dashboard/src/panels/file-viewer/FilePane.tsx:11-11 |
-| `FilePane` awaits `langExtension` for the requested language, appends a returned extension, and then creates the `EditorView`. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The `FilePane` module imports the sibling `langExtension`. | "import { langExtension }" | dashboard/src/panels/file-viewer/FilePane.tsx:12-12 |
+| `FilePane` awaits `langExtension` for the requested language, appends a returned extension, and then creates the `EditorView`. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:24-64 |
+| The optional first line and the content-sized host an expression card uses (MIK-L31). | `fitHost`; "numberedFrom(firstLine)," | dashboard/src/panels/file-viewer/FilePane.tsx:22-22; dashboard/src/panels/file-viewer/FilePane.tsx:47-47 |
+| The focused card excerpts that pass them. | `UnchangedExcerpt`; `SeparateSides` | dashboard/src/panels/review/ExpressionCards.tsx:420-430; dashboard/src/panels/review/ExpressionCards.tsx:467-483 |
 | The dual pane that mounts it on the code side. | `CodeSide`; `DualPane` | dashboard/src/panels/file-viewer/DualPane.tsx:59-71; dashboard/src/panels/file-viewer/DualPane.tsx:90-134 |
-| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-109 |
+| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-118 |
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the optional `firstLine` and `fit` props MIK-L31 adds for the focused expression cards (the gutter through `numberedFrom`, the content-sized `fitHost`); the defaults are unchanged. Two rows added. The file was not prettier-clean on base and was left in its existing style (review R1 F9).
+- 2026-09-30T07:50:28+00:00: Generated citation repair: "import { langExtension }" repointed to dashboard/src/panels/file-viewer/FilePane.tsx:12-12. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the four whole-claim ranges (4 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: split both

@@ -5,10 +5,52 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260928-MIK-L31 Focused Expression Cards In The Central Reading Path
+
+**Route meaning extended (MIK-R31).** For a tree comparison, the review centre no longer shows whole files in an
+accordion: [`review/ExpressionCards.tsx`](review/ExpressionCards.tsx.md) shows every code and test location of the
+selected family's members as one focused card per (path, range) — role or facet, the side path and resolved range
+on each side, the authored rationale directly above an excerpt from the exact side blobs, a changed range as its real
+diff, an unchanged range once and labelled, a not-current MIK-R03 mark, and **Full file** / **All changed files** on
+every card. [`review/focusedCards.ts`](review/focusedCards.ts.md) owns the grouping, MIK-R01 order, counts, voices and
+the bounded-roster scope ("These cards cover the loaded n of m members", review F2; R2-5; R3-N1 accepted);
+[`review/statementWording.ts`](review/statementWording.ts.md) owns the 13:40 "wording unchanged" rule that
+[`review/SubjectReview.tsx`](review/SubjectReview.tsx.md) and the guarantee block apply;
+[`review/worklistGroups.ts`](review/worklistGroups.ts.md) groups the worklist (L11 marks, `planned_untouched`, L10
+unexplained groups, PS-1 rows) that [`review/LeafKnowledgeChanges.tsx`](review/LeafKnowledgeChanges.tsx.md) renders
+(MIK-R25 rules 2-3, carried from L25 Q2). [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) mounts
+the cards (`CenterExpressions`), takes planning marks only from a leaf-wide read of the same comparison
+(`pinnedWorklist`, review F11, R2-3), and places the knowledge panel after the evidence;
+[`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) makes that leaf-wide read once per comparison, only for
+a tree comparison. A dataset review makes no tree read and renders the landed
+[`review/ReviewExpressions.tsx`](review/ReviewExpressions.tsx.md) (whose `ExpressionControls` the cards reuse).
+`changeset/DiffPane.tsx` and `file-viewer/FilePane.tsx` gained optional `firstLine`/`fit` for excerpts. None of
+the new modules has a `panels/review/` overview, following that route's precedent.
+
+**Fixtures (MIK-R31 rule 6).** The git-trees bodies were re-captured from L31's scratch leaf, with the new cards
+body [`review/gitTrees.cards.captured.json`](review/gitTrees.cards.captured.json.md) (11 entries, every range
+resolved); the six family fixtures L44 left at their old captures were re-captured from the current route (the
+L44-R1-F5 remainder; the receipt's `mik_l31_recapture`), five dashboard expectations moved to current-route truth,
+and the one branch no real body reaches is covered by a labelled SYNTHETIC body (ruling 2026-09-30T05:36:19 Q3).
+A comment-only follow-up refreshed the headers of `ReviewWorkspace.family.test.tsx` and
+`ReviewReadCycle.family.test.tsx` to name the re-capture, and `familyExpressions.test.ts`'s measured-shape comment
+to name the re-captured `walkFinal` revision.
+
+**Candidate invariants (not ingested):** focused cards group by (path, range) with the rationale above the excerpt,
+and a missing rationale is a gap; a bounded roster never reads as the whole family; card planning marks come only
+from a leaf-wide read of the same comparison; dataset reviews make no tree read.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-230 |
+| Grouping by (path, range) and the bounded-roster scope. | `cardKey`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:50-55; dashboard/src/panels/review/focusedCards.ts:195-210 |
+| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-1029 |
+| The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:118-195 |
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
 
@@ -23,12 +65,13 @@ converted scratch leaf (`review:trees:2`), its source inventory with the one cha
 [`gitTrees.entries`](review/gitTrees.entries.captured.json.md)) and the adapter's body are receipted in
 [`review/gitTrees.capture-provenance.json`](review/gitTrees.capture-provenance.json.md). They were recaptured under
 the directory-name refs (ruling 2026-09-30T02:32:42 (a)); the reviewer's R6 check explained every delta. The panel
-that renders the tree view itself is carried to L31/L32 (ruling 2026-09-29T22:22:37 Q2).
+that renders the tree view itself was carried to L31/L32 (ruling 2026-09-29T22:22:37 Q2) and is rendered since L31
+(above), which also re-captured these bodies from its own scratch leaf (`review:trees:1`).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one case: the landed workspace over a converted leaf's trees. | "renders a converted leaf family review from its trees and opens the touched member" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:59-100 |
-| The receipt of the four captured bodies. | "fixtures" | dashboard/src/panels/review/gitTrees.capture-provenance.json:6-35 |
+| The one case: the landed workspace over a converted leaf's trees. | "renders a converted leaf family review from its trees and opens the touched member" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:71-116 |
+| The receipt of the captured bodies (five since L31). | "fixtures" | dashboard/src/panels/review/gitTrees.capture-provenance.json:9-81 |
 
 ## 260921-ICR-L44 Two Family Bodies Re-Captured Under A Receipt, Five Still At Their Earlier Capture
 
@@ -40,14 +83,15 @@ over HTTP from the real review route so their member sources carry `locator`, `r
 `familyReview.truncated`, `.continued`, `.oneSided`, `.walkFinal` and `.emptyRoster` still hold their
 capture at `63b47629`, and `familyPaging` its capture at `a5bec6c3`: the current route resolves roster
 members from content and claim items too, so it cannot reproduce the first states, and several cases
-assert those older states. The receipt's worker-stated `not_recaptured` section and the case headers say
-so; their re-capture or retirement is open work that belongs with the change moving those cases to the
-current route.
+assert those older states. The receipt's worker-stated `not_recaptured` section and the case headers said
+so. **Superseded by MIK-L31:** all six were re-captured from the current route, the receipt's `not_recaptured`
+section was replaced by `mik_l31_recapture`, and the cases were moved to the current route's states (see the L31
+section above); a comment-only follow-up refreshed the case headers to match.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The receipt's not-re-captured section. | "not_recaptured" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
-| The case header stating which bodies were re-captured. | "familyReview.capture-provenance.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-19 |
+| The receipt's MIK-L31 re-capture, which replaced the not-re-captured section. | "mik_l31_recapture" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-53 |
+| The case header stating which bodies were re-captured (both captures since MIK-L31's follow-up). | "familyReview.capture-provenance.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:9-21 |
 
 ## Current family-centered review ownership
 
@@ -71,7 +115,7 @@ Rapid selections settle on the latest; a superseded answer is neither shown nor 
 | `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
 | The read bound to its question, and the task-context frame. | `readOnScreen`; `useFrame`; `admit` | dashboard/src/panels/review/ReviewReadCycle.ts:319-337; dashboard/src/panels/review/ReviewReadCycle.ts:341-348; dashboard/src/panels/review/ReviewReadCycle.ts:219-223 |
 | The workspace mounted over the answer or the frame, with a subject-bound reading status. | `ReviewPanes`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:300-357; dashboard/src/panels/review/ReviewSurface.tsx:362-382 |
-| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:95-127; dashboard/src/panels/review/ReviewWorkspace.tsx:279-326 |
+| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:96-128; dashboard/src/panels/review/ReviewWorkspace.tsx:281-343 |
 | The bounded per-comparison cache and its generation rule. | `ReviewReadCache`; `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93; dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
 | The mounted delayed-reply cases. | "keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read"; "keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:316-410; dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:523-601 |
 
@@ -201,6 +245,8 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the stale test-header and comment notes of the 10:05:09 entry. The L31 section and ICR-L44's section now say the headers were refreshed; ICR-L44's case-header row is reworded and re-measured (`8-19` → `9-21`); the rows into `ReviewWorkspace.family.test.tsx` below the header and into `familyExpressions.test.ts` below its edited comment were re-pointed by the exact −1 and +1 shifts.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 Focused Expression Cards In The Central Reading Path" at the top: the cards and their owners (nine new cards: `ExpressionCards`, `focusedCards`, `statementWording`, `worklistGroups`, `LeafKnowledgeChanges`, the three new test modules' and the cards fixture's), the dataset path unchanged, the fixtures re-captured under rule 6 (with ruling Q3's synthetic body), and four candidate invariants. L25's section and ICR-L44's section now say what L31 superseded; the walkFinal divergent-revision example names the re-captured revision. **Reopened claims reworded:** the `SelectedStatement` row (this pass's generated bullet removed) and the `FamilyReviewCenter` row (bound by a committed 2026-09-26 bullet, so re-anchored on a line-exact quote); the `not_recaptured` row is re-anchored on `mik_l31_recapture`; the gitTrees receipt row re-measured (`9-81`). Four rows added.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees" at the top: the new UI case, its three captured bodies and their receipt (five new cards governed here), rulings 22:22:37 Q2 and 02:32:42 (a), with two rows. Passing rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened seven review-route rows in this overview because an older *Generated citation repair* bullet in this card names `ReviewWorkspace`, `SourcePane`, `fieldValue`, `refusalBlock`, "function KnowledgePane" and "function SourcePane", so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function ReviewWorkspace({`, `function KnowledgePane({ payload }`, `function SourcePane({ payload }`, `const fieldValue = (value?: string) =>`, `function refusalBlock(refusal: ReviewRefusal) {`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
 - 2026-09-28T21:50:04+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`; review R2 pass): **route body updated — the reviewer stays mounted across subject selection (`ICR-R24@v3`; Architect ruling on L48-R1 F1/F2; preserving `ICR-R26`, `R17`, `R10`, `R12`, `R16` and L47's request economy).** The *Current family-centered review ownership* section now states the cross-file rule four owners share (keyed reads and a task-context frame in `ReviewReadCycle`, the mounted workspace and subject-bound reading status in `ReviewSurface`, the one reading-area column and scope header in `ReviewWorkspace`/`ReviewScopeHeader`, the bounded per-comparison `ReviewReadCache`) plus the late-catalogue `engage` rule, and names the three new extraction modules (`ReviewRecordPanes`, `ReviewScopeHeader`, `familyWalkMerge`). The L47 section's "known, routed" note is annotated as delivered (O-R2-1 and L47-R1-F5), not deleted. The prior route statements that a failed selection or late catalogue remounts the reviewer are **superseded**. Every row into a file L48 changed or into a construct it moved was re-read and re-pointed; the source-pane row was reworded because the pane no longer forwards the task context itself (the explorer does, since L24). No stamp advanced.
@@ -677,9 +723,9 @@ not here.
 | --- | --- | --- |
 | Inventory rows preserve path/status and control state; optional inline content expansion uses the listed tree pair. | `inventoryEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116 |
 | Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
-| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:147-184 |
+| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:148-185 |
 | The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane`; `SourceContent` | dashboard/src/panels/review/ReviewRecordPanes.tsx:242-297; dashboard/src/panels/review/SourceExplorer.tsx:103-107 |
-| The central statement delegates to the existing statement renderer, and source expressions delegate to bound source content. | `SelectedStatement`; `ExpressionCard` | dashboard/src/panels/review/SubjectReview.tsx:53-114; dashboard/src/panels/review/ReviewExpressions.tsx:182-239 |
+| The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | "export function SelectedStatement({"; `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SubjectReview.tsx:217-280 |
 | Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:55-99 |
 | The expansion states bounded content and the admitted path relation alongside the actual source rendering. | `boundedNote`; `Expansion` | dashboard/src/panels/review/SourceContent.tsx:101-111; dashboard/src/panels/review/SourceContent.tsx:127-166 |
 | **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** | `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:113-125 |
@@ -3395,8 +3441,8 @@ representable for a truncated family roster to be continued.
 | --- | --- | --- |
 | The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal. | `FamilyNode`; `MemberRoster`; `treeArrow` | dashboard/src/panels/review/FamilyTree.tsx:434-464; dashboard/src/panels/review/FamilyTree.tsx:466-516; dashboard/src/panels/review/FamilyTree.tsx:550-562 |
 | **The one family-roster walk control, continuing at the cursor the roster page published.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:250-282 |
-| **The unified central reading path, in one column and in the packet's order.** | `FamilyReviewCenter` | dashboard/src/panels/review/FamilyReviewCenter.tsx:819-898 |
-| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:147-184; dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
+| **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:881-946 |
+| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:148-185; dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
 | **The complete source change explorer, and why it is its own module rather than part of the surface.** | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
 | **The mounted family composition cases and the captured server bodies they are driven with.** | "familyReview.*.captured.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-9 |
 | The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. | `ReviewPanes`; `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:300-357; dashboard/src/panels/review/ReviewSurface.tsx:440-519 |
@@ -3443,9 +3489,10 @@ to re-derive from the source.**
   `readingsBySide`, beside that side's resolutions, where a read result belongs.
 - **The collection is built from the family's carried membership rows, not from the centre's first-wins
   `distinct` list.** A resolution is a fact about the address **in one side's tree**, so a collection built
-  from one row per revision would hide a change: the captured `familyReview.walkFinal` body records member
-  revision `d24e5187…` with `src/batch.py` under one recorded blob, resolved `exact_recorded_blob` on the
-  before snapshot and `recorded_blob_mismatch` on the after one, and a `distinct`-built collection would
+  from one row per revision would hide a change: the captured `familyReview.walkFinal` body records a member
+  revision (`a08a87b4…` since the MIK-L31 re-capture; `d24e5187…` in the earlier capture) with `src/batch.py`
+  under one recorded blob, resolved `exact_recorded_blob` on the before snapshot and `recorded_blob_mismatch` on
+  the after one, and a `distinct`-built collection would
   have presented that address as resolved. **The second pass that joins the two sides is `recordSideReadings`
   (renamed from `recordSideResolutions` by the F1 repair), and it now carries a read result per side rather
   than a resolution per side:** each excerpt's `readingsBySide` holds that side's **resolutions** *and* the
@@ -3497,12 +3544,12 @@ data exercises the divergent path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:455-500; dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594; dashboard/src/panels/review/FamilyReviewCenter.tsx:596-658; dashboard/src/panels/review/familyExpressions.ts:21-26 |
+| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:492-537; dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631; dashboard/src/panels/review/FamilyReviewCenter.tsx:633-698; dashboard/src/panels/review/familyExpressions.ts:21-26 |
 | Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. | `familyExpressionExcerpts`; `excerptKey`; `claimClass` | dashboard/src/panels/review/familyExpressions.ts:185-202; dashboard/src/panels/review/familyExpressions.ts:64-66; dashboard/src/panels/review/familyExpressions.ts:68-73 |
 | Per-side resolution and observed identities attach to the same recorded-address key. | `recordSideReadings`; `FamilyExcerptSideReading` | dashboard/src/panels/review/familyExpressions.ts:147-168; dashboard/src/panels/review/familyExpressions.ts:34-38 |
-| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:247-251; dashboard/src/panels/review/FamilyReviewCenter.tsx:440-451 |
-| **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:710-778 |
-| **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** | "WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD"; "keeps two excerpts apart when one address carries two different recorded blobs"; "treats two different observed blobs at one address as one excerpt, read once per side" | dashboard/src/panels/review/familyExpressions.test.ts:1-16; dashboard/src/panels/review/familyExpressions.test.ts:96-131; dashboard/src/panels/review/familyExpressions.test.ts:212-257 |
+| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:277-281; dashboard/src/panels/review/FamilyReviewCenter.tsx:477-488 |
+| **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:758-826 |
+| **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** | "WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD"; "keeps two excerpts apart when one address carries two different recorded blobs"; "treats two different observed blobs at one address as one excerpt, read once per side" | dashboard/src/panels/review/familyExpressions.test.ts:1-16; dashboard/src/panels/review/familyExpressions.test.ts:96-131; dashboard/src/panels/review/familyExpressions.test.ts:213-258 |
 
 ## Update History
 - 2026-09-26T04:00:00+02:00 — 260921-ICR-L36 curator, **the F-V1-3 reword has LANDED, and this document now carries the sentence the page actually prints.** The clause this pass quoted at 03:00 and 03:50 has been replaced in the source: the verdict's notion sentence now reads *"every row below prints what each side's read made of its address — the resolution that side's claim carried — so an address both sides carried prints both readings whenever they differ, and an address only one side carried prints that side's alone."* **The superseded wording — *"…names the resolution of each side whose read resolved its address's recorded bytes…"* — must not be quoted**: *"resolved"* collides with the product's own name for `exact_recorded_blob`, which made the clause true under the reading the code implements and false under the literal one on every live row. The reword removes the collision by naming the reading explicitly, and the fix verifier asserted the row-by-row behaviour on the rendered page. **The body was updated; the two history entries above that quote the superseded sentence are left standing as the record of what this pass wrote before the reword.** **Citation accounting:** the row into `FamilyReviewCenter.tsx` for the second pass now also cites `:682-697`, the interface that declares `readingsBySide` (the checker resolves that anchor to its declaration at `:689`, which the row's previous single range `:804-827` did not contain), and the verdict row's anchor was replaced with two strings that occur inside `:864-909` (`"no claim was left unmeasured"` and `"changed expression row(s) across the family's"`) because the old anchor's sentence no longer exists in that form anywhere in the tree. No verification stamp was advanced; no commit was made.

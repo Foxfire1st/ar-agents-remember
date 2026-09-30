@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -110,11 +110,16 @@ generation that recorded exactly a superseded pair, nothing otherwise). Attribut
 and requires the exact spelling a recorded anchor carries. Unreadable knowledge makes the link
 undetermined rather than absent. A stale anchor still admits; unmeasured and unfrozen superseded pairs
 admit nothing (Architect rulings closing L43-R1-F4). Changed-path answers are unchanged from before.
+**Extended by MIK-L31:** a tree comparison's proof entry anchored at the path links it too (`_proof_at_path` over
+the derived index's `ix_entry`; ruling 2026-09-30T05:36:19 Q1, so a proof's focused card opens its test file in
+full), and the admission sentence says "a realization or proof recorded for the path"; a dataset records no proofs
+and admits exactly as before. An undetermined link over knowledge that was never created asks to **initialize** it
+rather than restore or repair a snapshot (MIK-R31 rule 6, ICR-L43 review R2 O1).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The admission order and the three refusals. | `admit_source_path`; `_attributed_or_refused` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_admission.py:131-157 |
-| The comparison binding and the exact per-half link query. | `_bound_knowledge`; `_side_reading` | mcp/src/agents_remember/application/review_source_realization_link.py:172-232; mcp/src/agents_remember/application/review_source_realization_link.py:252-276 |
+| The admission order and the three refusals; since MIK-L31 a proof link admits and the undetermined remedy names the cause. | `admit_source_path`; `_attributed_or_refused` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_admission.py:131-159 |
+| The comparison binding and the exact per-half link query. | `_bound_knowledge`; `_side_reading` | mcp/src/agents_remember/application/review_source_realization_link.py:186-246; mcp/src/agents_remember/application/review_source_realization_link.py:266-295 |
 | The content read hands the inventory to the admission owner before reading any byte. | `_content` | mcp/src/agents_remember/application/review_source_content.py:241-285 |
 
 ## 260921-ICR-L34 The Review's Comparison Gets A Producer, And The Namespace Comes From The Record Beside The Bytes
@@ -196,6 +201,7 @@ is split into 818 lines plus a 578-line purpose-named module, which is where the
 `curator_family_authoring.py` and `curator_ingest_planes.py` now live; nothing these owners do changed.
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 Focused Expression Cards: Every Location Of The Selected Family, From The Pinned Trees" after L05's: the new `review_tree_entries.py` (carded), the cards read, pinning, snake_case and `facts.row` in `review_tree_knowledge.py`, the proof link and initialize remedy, the Q8 fix, every ruling (the carried L11, L25 Q2/F9/Q8, L10 and PS-1; 05:36:19 Q1-Q4; 06:10:21 R1; 06:47:03 R2; 09:38:03 R3 with R3-N1), and five candidate invariants. The attributed-unchanged section records the L31 extension, and two rows (the admission row, L25's tree-view row) are reworded. Six rows added.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 Route-Chain Family Retrieval" at the end, after L10's: the new `knowledge_leaf/chain.py` (carded and governed here), the six touched modules, the rulings of 2026-09-30 03:32:18, 04:12:49 and 04:45:22, four candidate invariants and six rows. L01's Q6 bullet now says MIK-R05 resolved it. **Reopened claims reworded:** L01's `select_leaf`/`_order`, `prepare_leaf`/`_page` and `_leaf_response`/`_refused` rows; the last was re-measured by hand (`577-633; 646-660`), dropping a third range that pointed into the new `_revision_absent`.
 - 2026-09-30T03:49:26+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:177-177. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:49:26+00:00: Generated citation repair: "from agents_remember.models.read_files import FileReadStatus" repointed to mcp/src/agents_remember/application/read_files.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
@@ -601,7 +607,7 @@ panels route.
 | **The four admissions, each a distinct named refusal: a complete object identity per side, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** | `_inadmissible` | mcp/src/agents_remember/application/review_source_content.py:140-207 |
 | **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement.** | `_non_tree_generation` | mcp/src/agents_remember/application/review_source_content.py:210-238 |
 | **The confinement itself, now in the admission owner: a changed path of a measured change set (the requested generation's own, or, when that measurement is unavailable, the one this leaf's review publishes), or since L43 an unchanged path a recorded realization of the same comparison links — with the admission carried on the value.** | `admit_source_path`; `SourceAdmission` | mcp/src/agents_remember/application/review_source_admission.py:54-83; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
-| The refusals that keep the read confined, and the status an admitted path keeps when the pair's change set was not measured. | `_unconfined`; `_not_listed`; `SourceAdmission` | mcp/src/agents_remember/application/review_source_admission.py:160-191; mcp/src/agents_remember/application/review_source_admission.py:194-213; mcp/src/agents_remember/application/review_source_admission.py:54-83 |
+| The refusals that keep the read confined, and the status an admitted path keeps when the pair's change set was not measured. | `_unconfined`; `_not_listed`; `SourceAdmission` | mcp/src/agents_remember/application/review_source_admission.py:162-193; mcp/src/agents_remember/application/review_source_admission.py:196-215; mcp/src/agents_remember/application/review_source_admission.py:54-83 |
 | **The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.** | `_currentness` | mcp/src/agents_remember/application/review_source_content.py:288-324 |
 | **One endpoint's content with the three outcomes kept apart, and the entry's kind deciding before its bytes: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target.** | `_side_content`; `_entry_content` | mcp/src/agents_remember/application/review_source_content.py:346-365; mcp/src/agents_remember/application/review_source_content.py:368-390 |
 | The two reasons no text form exists, and the bounded decode that carries a prefix rather than the whole object. | `_decoded`; `_binary_detail`; `_text_detail` | mcp/src/agents_remember/application/review_source_content.py:437-451; mcp/src/agents_remember/application/review_source_content.py:454-467; mcp/src/agents_remember/application/review_source_content.py:470-479 |
@@ -859,7 +865,7 @@ a *reader* will find there rather than leaving a successful exit to imply it.
 | --- | --- | --- |
 | **The three decisions the new module owns: the declared location, the admission derived from the run's own captured baseline, and the read-back through the reader's owner.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | **The three values those decisions travel as, and the exports that make them this module's public surface.** | `DeclaredPublicationLocation`; `DestinationAdmission`; `PublishedIdentityReadBack`; `__all__` | mcp/src/agents_remember/application/knowledge_publication_route.py:68-80; mcp/src/agents_remember/application/knowledge_publication_route.py:83-94; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/knowledge_publication_route.py:58-65 |
-| The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged. | `published_dataset_path`; `resolve_published_intent`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:160-160; mcp/src/agents_remember/application/published_intent.py:302-326; mcp/src/agents_remember/application/published_intent.py:283-299; mcp/src/agents_remember/application/published_intent.py:177-177; mcp/src/agents_remember/application/published_intent.py:147-147 |
+| The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged. | `published_dataset_path`; `resolve_published_intent`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:160-160; mcp/src/agents_remember/application/published_intent.py:283-299; mcp/src/agents_remember/application/published_intent.py:302-326; mcp/src/agents_remember/application/published_intent.py:177-177; mcp/src/agents_remember/application/published_intent.py:147-147 |
 | The context owner that decides *which* memory root the declared location is. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.** | `_Destination`; `_destination_conflict`; `_selected_destination`; `_publication_route`; `_read_back` | mcp/src/agents_remember/cli/knowledge_ingest.py:288-299; mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:300-311; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628; mcp/src/agents_remember/cli/knowledge_ingest.py:427-440 |
 | **The renderer that left the CLI, carrying the two facts the route added to the run's answer.** | `summary`; `payload` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:34-76; mcp/src/agents_remember/cli/knowledge_ingest_report.py:79-128 |
@@ -4099,7 +4105,7 @@ modules on this route carry it:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The leaf package statement. | "The family-complete leaf read of a converted memory tree" | mcp/src/agents_remember/application/knowledge_leaf/__init__.py:1-13 |
-| The selection and its declared order, which since MIK-R05 ends with the route-chain rows. | `select_leaf`; `_order` | mcp/src/agents_remember/application/knowledge_leaf/selection.py:142-193; mcp/src/agents_remember/application/knowledge_leaf/selection.py:270-298 |
+| The selection and its declared order, which since MIK-R05 ends with the route-chain rows. | `select_leaf`; `_order` | mcp/src/agents_remember/application/knowledge_leaf/selection.py:142-152; mcp/src/agents_remember/application/knowledge_leaf/selection.py:270-298 |
 | One prepared leaf for both surfaces, with the literal reference row and, since MIK-R05, a path page's `routeChain`. | `prepare_leaf`; `_page` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:164-208; mcp/src/agents_remember/application/knowledge_leaf/pages.py:288-322 |
 | A path seed of the block is read as a leaf. | `_tree_page_block`; `prepare_leaf` | mcp/src/agents_remember/application/published_intent.py:720-760 |
 | The block's policy follows the seeds asked. | `_block_policy` | mcp/src/agents_remember/application/published_intent.py:539-549 |
@@ -4202,7 +4208,7 @@ helpers) and [`review_comparison_freeze.py`](review_comparison_freeze.py.md) (a 
 | Capture, pin and record a live leaf's four trees; none for an unconverted leaf. | `live_review_trees`; `_record`; `_pin` | mcp/src/agents_remember/application/review_tree_comparison.py:217-235; mcp/src/agents_remember/application/review_tree_comparison.py:437-472; mcp/src/agents_remember/application/review_tree_comparison.py:490-514 |
 | The review-ref namespace is the task directory name. | `review_task_id` | mcp/src/agents_remember/application/review_tree_comparison.py:173-181 |
 | Reopen from tree ids, naming every tree Git can no longer produce. | `reopened_trees`; `_code_sides` | mcp/src/agents_remember/application/review_tree_comparison.py:634-649; mcp/src/agents_remember/application/review_tree_comparison.py:652-666 |
-| The tree view: diff, currentness, worklist. | `read_review_trees` | mcp/src/agents_remember/application/review_tree_knowledge.py:72-92 |
+| The tree view: diff, currentness, worklist; since MIK-L31 also the focused cards' entries when invariants are named. | `read_review_trees` | mcp/src/agents_remember/application/review_tree_knowledge.py:90-112 |
 | The archive hook, confined to the task. | `cleanup_review_artifacts`; `_Confinement` | mcp/src/agents_remember/application/review_artifact_cleanup.py:138-172; mcp/src/agents_remember/application/review_artifact_cleanup.py:195-229 |
 | The live pair dispatches a converted leaf to trees. | `_live_resolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:245-286 |
 
@@ -4330,6 +4336,69 @@ The knowledge index is untouched (no `INDEX_FORMAT` change), and `mcp/tools/know
 | The family seed's selection. | `select_family` | mcp/src/agents_remember/application/knowledge_leaf/selection.py:155-168 |
 | The family seed on the mounted read, and one rule for a named revision. | `_family_response`; `_revision_absent` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:525-535; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:547-565 |
 | The rendering only `read_ar_files` applies. | `_chain_rendered` | mcp/src/agents_remember/application/read_files.py:348-354 |
+
+## 260928-MIK-L31 Focused Expression Cards: Every Location Of The Selected Family, From The Pinned Trees
+
+**Route meaning extended (MIK-R31).** The reviewer's central reading path shows every code and test location of the
+selected family's members as a focused card; this route supplies its data. One new module,
+[`review_tree_entries.py`](review_tree_entries.py.md) (carded, governed here): `tree_entries` lists every
+realization and proof entry of the named invariants in K_B or K_C and places it on the code base B and the
+candidate C with the worklist's own `CodeTrees.resolve` (MIK-R08 definition 3), each side with its own authored
+role and rationale (or facet), its MIK-R03 state through `observe_entry`, and the range's excerpt from that side's
+exact blob (bounded at 400 lines or 48,000 characters). `absent` and `unavailable` are kept apart; an unresolved
+side names its reason and carries no range; `changed`/`unchanged` is by content identity and `undetermined`
+otherwise. Placements are remembered in a bounded 8,192-entry LRU keyed like the observation cache (answers only).
+
+- **[`review_tree_knowledge.py`](review_tree_knowledge.py.md)** answers a query that names invariants with
+  `_entries_view` (ruling 2026-09-30T05:36:19 Q2: the on-demand read; the leaf-wide view carries no entries, 637 KB
+  measured otherwise); pins a numbered leaf-wide read to that comparison, using the live resolution only when it is
+  that number (review F11, 06:10:21; R2-6's extra resolution accepted); re-keys every wire document to snake_case
+  with `snake_keys` (MIK-L25 review F9, carried here); and finds history rows also by the subject an item's
+  `facts.row` names (PS-1 from L10's post-sync review, accepted at 05:36:19; L32 need not repeat it).
+- **[`review_source_admission.py`](review_source_admission.py.md) and
+  [`review_source_realization_link.py`](review_source_realization_link.py.md)**: the proof link (ruling Q1) and the
+  initialize remedy (rule 6 O1), as the section above records; the link answer is composed by `_link_of` (radon).
+- **[`review_curator_records.py`](review_curator_records.py.md)**: the MIK-L25 Q8 `ValidationError` fixed. A
+  closed leaf binding many missing curator artifacts (ICR-L47: 94) reads as an `unavailable` channel; a detail over
+  the 20,000-character prose bound names the count and the first three artifacts and bounds the owner's error at
+  4,000 characters, while a detail that fits keeps its landed wording exactly (review F6, R2-2). On L25's 29
+  unconverted reads 26 are byte-identical to base; the other 3 were the `ValidationError`.
+
+**Rulings.** Carried in: L11 (planned/unplanned marks, rendered on the card voices and the panel), L25 Q2 (the
+panel), L25 F9 (snake_case), L25 Q8 (the `ValidationError`), L10 (unexplained items grouped by file and coverage),
+PS-1 (`facts.row`). 05:36:19: Q1 proof admission; Q2 `invariants=` (at most 500, each key at most 64 characters
+since F10); Q3 a SYNTHETIC-body test for the no-member first-page branch; Q4 roster order stays with MIK-R33 (L33).
+06:10:21 (review R1): F1 one full file keyed by card; F2 "loaded n of m"; F3, F4, F6, F12 tests; F5 prose once only
+with both sides present; F7 re-capture with provenance; F10 key bound; F11 comparison pinning. 06:47:03 (R2): the
+pyright fix, R2-2, R2-3, R2-5 (`cardScope` counted on one side, capped), R2-6 accepted, R2-7. 09:38:03 (R3):
+pass-with-notes; R3-N1 (`cardScope` may say "loaded 2 of 2 … load the rest" when only the narrower side is
+incomplete) accepted as a note.
+
+**Candidate invariants (not ingested; the code is inert until MIK-R37):**
+
+1. **A card excerpt comes only from the pinned tree's exact blob, bounded, with per-side state.** Realized by
+   `_placed`, `_in_blob`, `_excerpt`, `_change`. Proved by the cards-read cases in `test_review_git_trees.py` and the
+   reviewer's `git cat-file` check on both sides of RLZ-CXH58B4W.
+2. **Focused cards group expressions by (path, range) with the rationale directly above the excerpt, and a missing
+   rationale is shown as a gap.** Realized in the dashboard (`focusedCards.ts`, `ExpressionCards.tsx`); proved by
+   `ExpressionCards.test.tsx` and the real-data surface case.
+3. **A bounded roster never reads as the whole family: the cards state the loaded n of m.** Realized by
+   `cardScope` and `ScopeLine`; proved by the F2 and R2-5 cases.
+4. **Card planning marks come only from a leaf-wide read of the same comparison.** Realized by the numbered-read
+   pinning here and `FamilyReviewCenter.pinnedWorklist`; proved by the route case and the R2-3 surface case.
+5. **Dataset reviews make no tree read.** Realized by the payload's `review:trees:<n>` token gating every tree
+   read in the dashboard; proved by the surface's dataset case and the reviewer's mutation (15 tests fail when the
+   gate is forced). The server side is unchanged for unconverted leaves (26 of 29 unconverted reads byte-identical;
+   the 3 others were the `ValidationError`).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Every entry of the named invariants on B and C. | `tree_entries` | mcp/src/agents_remember/application/review_tree_entries.py:65-85 |
+| Where an entry lands, and its bounded excerpt. | `_placed`; `_in_blob`; `_excerpt` | mcp/src/agents_remember/application/review_tree_entries.py:175-225 |
+| The cards view, the pinned comparison, and the one wire casing. | `_entries_view`; `snake_keys`; "def _comparison(" | mcp/src/agents_remember/application/review_tree_knowledge.py:115-136; mcp/src/agents_remember/application/review_tree_knowledge.py:176-198 |
+| History rows by the item's subject and its `facts.row`. | `_row_subjects` | mcp/src/agents_remember/application/review_tree_knowledge.py:510-516 |
+| A proof entry links its path in a tree index. | `_proof_at_path` | mcp/src/agents_remember/application/review_source_realization_link.py:298-314 |
+| The over-length unreadable-owner detail summarised; a fitting one kept. | `_unreadable_detail` | mcp/src/agents_remember/application/review_curator_records.py:82-90 |
 
 ## Update History
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L22 The Default Worktree Services Bind The Knowledge Validator": the default composition binds `GitKnowledgeValidation` to the worktree layer's new `KnowledgeValidationPort`, and is the only place it is bound. No verification stamp was advanced.

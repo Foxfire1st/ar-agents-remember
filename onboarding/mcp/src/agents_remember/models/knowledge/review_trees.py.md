@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_trees.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:46:54+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563`|
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,8 @@
   `notes/reports/review-comparisons/<leaf>/<n>.json` by `application/review_tree_comparison.py`.
 - `ReviewTreesResult` is what `GET /api/review/trees` returns for one leaf: `trees`, `not-converted` or `refused`,
   with the comparison, each knowledge side, each reopened code side, the knowledge diff, the per-side currentness
-  and the worklist view.
+  and the worklist view; or, for a cards read that names invariants (MIK-R31), the comparison, the sides and
+  `entries` only (`ReviewTreeEntry`, `models/knowledge/review_tree_entries.py`).
 
 No database copy is part of either shape: each knowledge side is the derived index of its tree (MIK-R23), rebuilt
 from the tree and never retained with the comparison.
@@ -54,6 +55,8 @@ from the tree and never retained with the comparison.
   change)`), `ReviewKnowledgeSourceGroup` and `ReviewKnowledgeTreeDiff` (records, sources, history, other).
 - `ReviewWorklistView`: `source` (`computed`, `persisted` or `absent`), `bound`, the items verbatim, the history rows
   without a currency mark (MIK-R09 owns that rule), the gate linkage `changes` and `incomplete`.
+- `ReviewTreesResult.entries` (MIK-L31) defaults to `()`: the leaf-wide view never carries entries, because every
+  entry's excerpt leaf-wide measured 637 KB on the real repository; only the on-demand cards read fills it.
 
 ### Conventions
 
@@ -66,8 +69,9 @@ from the tree and never retained with the comparison.
 
 ### Todos
 
-- **L31 (review F9, ruling 23:15:34):** the model fields are snake_case while the embedded currentness and worklist
-  documents are camelCase; unify when the panel renders them.
+- **Resolved by MIK-L31 (review F9):** the embedded currentness and worklist documents are re-keyed to snake_case at
+  the route boundary (`application/review_tree_knowledge.py`, `snake_keys`), so the whole body follows the model
+  fields' convention.
 
 ## Docs References
 
@@ -83,15 +87,15 @@ repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The record schema and the one ref namespace pins live under. | `REVIEW_TREE_COMPARISON_SCHEMA`; `REVIEW_REF_NAMESPACE` | mcp/src/agents_remember/models/knowledge/review_trees.py:53-59 |
-| The three states a side can resolve to when read back. | `ReviewTreeSideState` | mcp/src/agents_remember/models/knowledge/review_trees.py:61-68 |
-| One tree, kept alive by a commit or a pinning ref. | `ReviewTreeSide` | mcp/src/agents_remember/models/knowledge/review_trees.py:71-81 |
-| The conversion an unconverted base was read as, recorded by its inputs and tree id. | `ReviewConvertedBase` | mcp/src/agents_remember/models/knowledge/review_trees.py:84-95 |
-| The record, and one comparison being the same task, leaf, four trees and converted base. | `ReviewTreeComparisonRecord`; `same_trees` | mcp/src/agents_remember/models/knowledge/review_trees.py:98-138 |
-| A knowledge side with its index state and problems; a reopened code side. | `ReviewKnowledgeSide`; `ReviewCodeSide` | mcp/src/agents_remember/models/knowledge/review_trees.py:141-163 |
-| The diff of the memory trees, grouped by record and by source path. | `ReviewKnowledgeRecordGroup`; `ReviewKnowledgeSourceGroup`; `ReviewKnowledgeTreeDiff` | mcp/src/agents_remember/models/knowledge/review_trees.py:176-211 |
-| The worklist view: items, history rows without a mark, gate linkage. | `ReviewWorklistView` | mcp/src/agents_remember/models/knowledge/review_trees.py:214-231 |
-| The route's answer: trees, not converted, or refused. | `ReviewTreesState`; `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:234-254 |
+| The record schema and the one ref namespace pins live under. | `REVIEW_TREE_COMPARISON_SCHEMA`; `REVIEW_REF_NAMESPACE` | mcp/src/agents_remember/models/knowledge/review_trees.py:54-56; mcp/src/agents_remember/models/knowledge/review_trees.py:60-60 |
+| The three states a side can resolve to when read back. | `ReviewTreeSideState` | mcp/src/agents_remember/models/knowledge/review_trees.py:69-69 |
+| One tree, kept alive by a commit or a pinning ref. | `ReviewTreeSide` | mcp/src/agents_remember/models/knowledge/review_trees.py:72-82 |
+| The conversion an unconverted base was read as, recorded by its inputs and tree id. | `ReviewConvertedBase` | mcp/src/agents_remember/models/knowledge/review_trees.py:85-96 |
+| The record, and one comparison being the same task, leaf, four trees and converted base. | `ReviewTreeComparisonRecord`; `same_trees` | mcp/src/agents_remember/models/knowledge/review_trees.py:99-139 |
+| A knowledge side with its index state and problems; a reopened code side. | `ReviewKnowledgeSide`; `ReviewCodeSide` | mcp/src/agents_remember/models/knowledge/review_trees.py:142-155; mcp/src/agents_remember/models/knowledge/review_trees.py:158-164 |
+| The diff of the memory trees, grouped by record and by source path. | `ReviewKnowledgeRecordGroup`; `ReviewKnowledgeSourceGroup`; `ReviewKnowledgeTreeDiff` | mcp/src/agents_remember/models/knowledge/review_trees.py:177-188; mcp/src/agents_remember/models/knowledge/review_trees.py:191-196; mcp/src/agents_remember/models/knowledge/review_trees.py:199-212 |
+| The worklist view: items, history rows without a mark, gate linkage. | `ReviewWorklistView` | mcp/src/agents_remember/models/knowledge/review_trees.py:215-232 |
+| The route's answer: trees, not converted, or refused; the cards' entries, empty on the leaf-wide view (MIK-R31). | `ReviewTreesState`; `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:235-235; mcp/src/agents_remember/models/knowledge/review_trees.py:238-257 |
 
 ## Cross-Repo References
 
@@ -100,6 +104,9 @@ repositories, so they are named here and not cited as rows.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose and Logic record `ReviewTreesResult.entries` for the on-demand cards read (ruling 05:36:19 Q2; empty on the leaf-wide view); the F9 Todo is marked resolved (the route re-keys the embedded documents). The `ReviewTreesResult` row is reworded for the new field.
+- 2026-09-30T07:53:29+00:00: Generated citation repair: `REVIEW_TREE_COMPARISON_SCHEMA`; `REVIEW_REF_NAMESPACE` repointed to mcp/src/agents_remember/models/knowledge/review_trees.py:54-56; mcp/src/agents_remember/models/knowledge/review_trees.py:60-60. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:53:29+00:00: Generated citation repair: `ReviewTreeSideState` repointed to mcp/src/agents_remember/models/knowledge/review_trees.py:69-69. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T03:46:54+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): created this card for the new file MIK-R25 adds, recording review F4 and F9 (23:15:34) and ruling 02:32:42 (a) on `same_trees`. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

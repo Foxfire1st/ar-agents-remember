@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyExpressions.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -93,8 +93,11 @@ recorded blob (`recorded` repeated) named by both sides, with the before read ob
 `readingsBySide` is exactly
 `[{ before, resolutions: ["exact_recorded_blob"], observed: [recorded] }, { after, resolutions: ["recorded_blob_mismatch"], observed: ["e"*40] }]`,
 and that the resolved side is neither a changed row nor silently dropped (`resolved` 1, one membership row
-with a change and one without, one distinct revision). **The fixture's comment states why the shape matters**:
-the observed identity is what the read *found*, not part of the address's identity, and keying the excerpt
+with a change and one without, one distinct revision). **The fixture's comment states why the shape matters**
+and where it was measured: since MIK-L31 it names the captured `familyReview.walkFinal` body's member revision
+`a08a87b4` of `retry-budget-family` (the re-captured body; the older capture's revision was `d24e5187`), whose
+`src/batch.py` is resolved `exact_recorded_blob` before and `recorded_blob_mismatch` after. The observed identity
+is what the read *found*, not part of the address's identity, and keying the excerpt
 by it split this one address into two rows that could never be paired, so the row named a single side and
 the per-side fact the collection exists for was lost. This case is the counterexample to the old key and is
 **not** `CONSTRUCTED` in the sense the first and third cases are — it is the measured shape, typed out.
@@ -198,14 +201,14 @@ on the line that opens the case.
 | **The constructed claim follows the server's locator rule: a file locator on an observed address, `whole_file` on the exact recorded blob, `unresolved` otherwise, `not_observed` with no address, and never a range.** | "follows the server's own locator rule"; `locator_state` | dashboard/src/panels/review/familyExpressions.test.ts:25-44 |
 | The recorded-member builder the cases feed the collection with. | "function member" | dashboard/src/panels/review/familyExpressions.test.ts:46-60 |
 | The one input shape the collection reads: `[side, member]` pairs turned into carried membership rows. | "function rows"; `FamilyMembershipRow["side"]` | dashboard/src/panels/review/familyExpressions.test.ts:62-65 |
-| The one `describe` every case below lives in. | "the family's changed expression excerpts (A4)" | dashboard/src/panels/review/familyExpressions.test.ts:66-308 |
+| The one `describe` every case below lives in. | "the family's changed expression excerpts (A4)" | dashboard/src/panels/review/familyExpressions.test.ts:66-309 |
 | **Case 1: two member revisions that record one address with the same recorded and observed bytes collapse to one excerpt, and the count carried is the distinct set rather than the row count.** | "collapses two member revisions that record one address with the same recorded and observed bytes"; `CONSTRUCTED` | dashboard/src/panels/review/familyExpressions.test.ts:67-94 |
 | **Case 2: the dedup key may not be the path alone — two recorded blobs at one address are two excerpts.** | "keeps two excerpts apart when one address carries two different recorded blobs" | dashboard/src/panels/review/familyExpressions.test.ts:96-131 |
 | **Case 3: rows naming one excerpt under different roles merge into one occurrence that names every role.** | "merges the rows that named one excerpt under different roles, naming every role"; `CONSTRUCTED` | dashboard/src/panels/review/familyExpressions.test.ts:133-159 |
-| **Case 4: the divergent address's two readings are kept — the case the F1 repair rewrote. It builds the real shape (one recorded blob, `observed === recorded` on before and different bytes on after) and asserts `readingsBySide` holds both sides' resolutions and both sides' observed identities.** | "keeps both sides' readings of one divergent address, because the disagreement is the change"; `readingsBySide` | dashboard/src/panels/review/familyExpressions.test.ts:161-210 |
-| **Case 5: the repair's complement, which keeps it from over-correcting — two sides that both changed and both observed different bytes are ONE excerpt with two readings, because the observed identity is a read result and not part of the address's identity.** | "treats two different observed blobs at one address as one excerpt, read once per side"; `readingsBySide` | dashboard/src/panels/review/familyExpressions.test.ts:212-257 |
-| **Case 6: the three-way partition of the read's own resolutions, with the two unmeasured states counted apart and never called changed, and the per-side observed identity asserted at its two extremes (`[]` for the address the read found nowhere, `["3"*40]` for the stale one).** | "partitions the read's own resolutions: resolved, not the recorded bytes, and not measured"; `unmeasured`; `observed` | dashboard/src/panels/review/familyExpressions.test.ts:259-290 |
-| **Case 7: an empty collection is a measured empty one, with the carried membership rows still counted.** | "reports an empty collection as a measured empty one, with the carried rows counted" | dashboard/src/panels/review/familyExpressions.test.ts:292-308 |
+| **Case 4 (its measured-shape comment naming the re-captured `walkFinal` revision since MIK-L31): the divergent address's two readings are kept — the case the F1 repair rewrote. It builds the real shape (one recorded blob, `observed === recorded` on before and different bytes on after) and asserts `readingsBySide` holds both sides' resolutions and both sides' observed identities.** | "keeps both sides' readings of one divergent address, because the disagreement is the change"; `readingsBySide` | dashboard/src/panels/review/familyExpressions.test.ts:161-211 |
+| **Case 5: the repair's complement, which keeps it from over-correcting — two sides that both changed and both observed different bytes are ONE excerpt with two readings, because the observed identity is a read result and not part of the address's identity.** | "treats two different observed blobs at one address as one excerpt, read once per side"; `readingsBySide` | dashboard/src/panels/review/familyExpressions.test.ts:213-258 |
+| **Case 6: the three-way partition of the read's own resolutions, with the two unmeasured states counted apart and never called changed, and the per-side observed identity asserted at its two extremes (`[]` for the address the read found nowhere, `["3"*40]` for the stale one).** | "partitions the read's own resolutions: resolved, not the recorded bytes, and not measured"; `unmeasured`; `observed` | dashboard/src/panels/review/familyExpressions.test.ts:260-291 |
+| **Case 7: an empty collection is a measured empty one, with the carried membership rows still counted.** | "reports an empty collection as a measured empty one, with the carried rows counted" | dashboard/src/panels/review/familyExpressions.test.ts:293-309 |
 | **The function under test, its exported input type, the per-side reading type, and the two-way partition of the resolution vocabulary it reads.** | `familyExpressionExcerpts`; `FamilyMembershipRow`; `FamilyExcerptSideReading`; `RESOLVED_ADDRESSES`; `UNMEASURED_ADDRESSES` | dashboard/src/panels/review/familyExpressions.ts:16-19; dashboard/src/panels/review/familyExpressions.ts:185-202; dashboard/src/panels/review/familyExpressions.ts:34-38; dashboard/src/panels/review/familyExpressions.ts:10-10; dashboard/src/panels/review/familyExpressions.ts:11-14 |
 | The dedup key contains the path and recorded identity; observed identities remain per-side readings. | `excerptKey`; `recordSideReadings` | dashboard/src/panels/review/familyExpressions.ts:64-66; dashboard/src/panels/review/familyExpressions.ts:147-168 |
 | The three-way realization classification keeps addressless and unmeasured claims separate from changed rows. | `claimClass` | dashboard/src/panels/review/familyExpressions.ts:68-73 |
@@ -221,6 +224,8 @@ repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): body update for a source change of this leaf. The worker's comment-only edit (lines 162-169, one line longer) makes Case 4's measured-shape comment name the re-captured `familyReview.walkFinal` body's member revision `a08a87b4` (`retry-budget-family`) instead of the older capture's `d24e5187`; `src/batch.py`, blob `353df144`, `exact_recorded_blob` before and `recorded_blob_mismatch` after are unchanged (MIK-R31 rule 6 re-capture). The Case 4 paragraph and row say so. The four rows below the edit (the `describe`, cases 4 to 7) were re-pointed by the exact +1 line shift; the installed fixer ran once on this card and changed nothing.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the constructed-claim builder now follows the server's locator rule (file locator on an observed address; `whole_file` on the exact blob, `unresolved` otherwise; `not_observed` with no address; no range), because the mirror requires `resolved_ranges` and `locator_state`. Recorded it with a row and re-measured the ranges the comment shifted. No case assertion changed. No verification stamp was advanced.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.truncated.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,114 +17,79 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
-family workspace case stubs `fetch` with. **31,590 bytes; sha256
-`91b6a1d6b4a2885389b80355a1dbf7aade71d00693556960d8a9d7bbe0efa9d6`.** It is untracked in this leaf's
-working tree (`??`), so these are candidate bytes a reader re-checks against the file, not bytes any
-commit holds.
+**re-captured by MIK-L31 from the current route** (MIK-R31 rule 6, the L44-R1-F5 remainder) with L44's producer,
+first build accepted, and installed as the fixture the family workspace cases stub `fetch` with. **36,793 bytes;
+sha256 `ac5cae6f39d6f650b3979f0b8a6afb8106204b3ad1fad2bedea81eae087db8fa`**, as its row in
+`familyReview.capture-provenance.json` (`mik_l31_recapture`) records. It is the `bounded1-truncated` request of the
+`build_family_scenario` build (page size 1).
 
-It is data with a provenance chain, not an assembled fixture: the case stubs **only `fetch`** and lets
-the real client, the shared decode and the real component tree read these bytes. It is **not browser
-evidence** — the repository's Playwright configs are Dagger-only and the case file says so in its own
-header.
+It is data with a provenance chain, not an assembled fixture: the cases stub **only `fetch`** and let the real
+client, the shared decode and the real component tree read these bytes. It is **not browser evidence**.
 
 The envelope is the review read (`state: "review"`, `operation: "read_knowledge_review"`,
 `surface_version: "knowledge-review-surface/1"`) over the fixture enclosure (`leaf_id: "260921-icr-l1"`,
 master/task_ref `review-source-endpoints-fixture`) with the per-run fixture repository uuid normalized
 to `<repository_id>`.
 
-**What this body pins apart from its six siblings: a bounded roster whose page carried none of the rows
-the read measured.** Every side measured **2** recorded membership rows and carried **0** — the owner's
-own sentence reads `holds 2 recorded membership(s) and this page carried 0` — so
-`unique_member_revision_total` is **0** while `membership_rows_total` stays **8**. The sentence this body
-must produce is therefore the **page-scoped** one; "the read measured zero memberships" is false about
-this store, and the body's sibling `emptyRoster` is the only one of the seven where it is true. This is
-also the cursor partner of the sibling `continued` body: the cursor its after roster page published **is**
-the cursor that page continues.
+**What this body pins now: a bounded roster whose first page carried part of the rows the read measured.** Since
+ICR-L38 a first page always carries the member its first items represent, so every side measured **2** recorded
+membership rows and carried **1** (the owner's sentence: "holds 2 recorded membership(s) and this page supplies 1
+member context update(s)"); `unique_member_revision_total` is **3** while `membership_rows_total` stays **8**. The
+page-scoped "carried none" state the earlier capture pinned is no longer produced by the route; the case that
+renders it runs over a labelled SYNTHETIC derivation of this body (ruling 2026-09-30T05:36:19 Q3). This body is
+also the cursor partner of the sibling `continued` body.
 
 ## Code Commentary
 
 ### Logic
 
-The current consumer sends the exact cursor published by the selected side. This older continued capture answers the after-side walk; when the control selected the before walk or another primary revision selection, the client rejects that response and retains the coherent display. A capture being a valid server answer for one cursor does not make it a valid answer for every sibling control. Valid complete walks are covered by the separate familyPaging capture and read-cycle cases.
+**Every roster page on this body is the first position of a walk.** Each side's page block is
+`complete: false`, `state: "first_page"`, `page_size=1`, and publishes a `continuation`: one item returned
+per side, with `retry-and-anchor-family` at 10 of 11 remaining (before) and 8 of 9 (after), and
+`retry-budget-family` at 12 of 13 (before) and 11 of 12 (after).
 
-**Every roster page on this body is a position in a walk with nothing carried.** Each side's page block
-is `complete: false`, `state: "first_page"`, `page_size=1`, and publishes a `continuation`; the counts
-beside it say one item was returned of a walk of 13 (before) and 12 (after) items for the first family,
-and 11 / 9 for the second, with 12, 11, 10 and 8 remaining respectively. Each side's members list is
-empty while `members_total` is 2 — the read measured two rows per side and this page reached none of
-them.
+**There is no payload-level `page` block**, as before: this is the first read of the selection and the per-side
+roster pages carry their own cursors.
 
-**This body has no payload-level `page` block at all.** The four cursor-bearing siblings carry one; here
-the read is the first page of the selection and the per-side roster pages carry their own cursors. A
-reader can re-check that by listing the payload's own keys; the card states it so the absence is not
-mistaken for a lost field.
+**The two families.** `retry-and-anchor-family` (`0cafa823…`) moves from revision `e9aebe42…` to `ea0b95c8…`;
+`retry-budget-family` (`13b94682…`) records `79ce3ed4…` on both sides. The selected subject's revision selection is
+`added` (after side only), and `source.unresolved` holds one attribution row for a record held by one snapshot.
 
-**The two families are the same two the `complete` body records, with the same revisions and the same
-authored texts.** Family `65a7c216-c8d0-422d-a114-6822fba97f90` records revision
-`ad5f45e2-0b95-4370-8a5e-e039b23c68f9` on both sides with `The retry budget is shared by integration and
-synchronization.`; family `c23a294f-fb8a-45e4-b930-3dedbdb751bb` moves from revision
-`e38f2f7c-ef1c-4044-9c4e-f13b0b566939` to revision `7d5100c2-e038-439b-987a-13758488c098`. What differs
-from `complete` is only what the pages carried, which is exactly what makes the pair useful: the
-comparison is the same, the roster state is the opposite.
+**The cursor is the server's.** The `continuation` of `retry-budget-family`'s after-side roster page is,
+byte for byte, the sibling `continued` body's `payload.page.continued_from` (both decode to position 1). The walk
+cases read that cursor out of the rendered control and assert it is sent unchanged.
 
-**The cursor is the server's, and this body is what the continued page answers.** The `continuation`
-this body's after roster page publishes and the sibling `familyReview.continued.captured.json`'s
-`payload.page.continued_from` are the **same bytes** (both decode to `position 1`). The mounted case
-reads that cursor out of the rendered control, clicks it, and asserts the request carries the published
-value unchanged — so the walk's first step is proved from these two bodies together, and no cursor the
-client invents can advance it.
-
-**The client keeps the three "no member row here" facts apart, and this body is the third one.**
-`emptyRosterSentence` decides from the owner's own `members_total` and the page's own `complete` flag:
-no recorded revision at all states the entry's own detail; a measured zero prints the measured-zero
-sentence; rows measured but not carried print `this page carried no member row — <per-side carried of
-measured counts>.` plus, when a roster is still open, `The continuation beside each bounded roster
-reaches the rows this page did not carry.` The per-side counts come from `carriedOf` in the owner's two
-numbers, which is why the case can assert `0 of the 2 recorded membership row(s) it measured` and the
-owner's own `records 2 membership row(s) and this page carried 0 of them` on the same screen without the
-two disagreeing.
-
-**Five cases drive these bytes.** They walk the roster only from the published cursor (paired with the
-continued body), assert the page-scoped sentence and the absence of "measured zero", head a bounded
-member context `partial` and count the owner's rows rather than this page's, assert that the tree and
-the centre print **one** empty-roster sentence for the same family rather than two that happen to agree,
-and keep the reader's workspace state across two page requests through the centre's own control.
+**The cases these bytes drive.** The real-body roster case (all four rosters print "records 2 membership row(s);
+loaded context contains 1 of them", no empty-roster sentence, never "measured zero"); the SYNTHETIC case (this body
+with every roster's member rows removed, so the "carried no member row" branch stays covered); the bounded
+member-context case, whose loaded count is read from this body and asserted below 4; the walk case and the
+workspace-state case (with `continued`).
 
 ### Conventions
 
-- Captured bytes, never hand-edited: the provenance lives in the consuming case file's header, and this
-  card adds no second provenance.
+- Captured bytes, never hand-edited: the provenance is the receipt's `mik_l31_recapture` row, and the capture
+  record it binds.
 - One JSON document, minified to a **single line** with sorted keys. Every reference row below cites the
   whole file (`:1-1`) and names the exact key path and value in the finding, because a line number
-  cannot distinguish two facts in a one-line file. Two candidate anchors — the empty `members` array and
-  the `recorded_revision_ids` array literal — were **dropped rather than cited**: a bracketed literal
-  does not verify under the literal-grep rule, so the emptiness is carried by the owner's own sentence
-  and by `members_total` instead.
-- The body is opaque data to this client: the case types it `unknown` and narrows it at runtime.
-- Numbers on this card are the file's: byte size and digest are the file, counts are the owner's.
+  cannot distinguish two facts in a one-line file.
+- The body is opaque data to this client: the cases type it `unknown` and narrow it at runtime.
+- Numbers on this card are the file's: byte size and digest are the file, counts are the owner's. The
+  identities are one draw of the scenario builder; a re-capture draws new ones.
 
 ### Invariants And Boundaries
 
-- **A page that carried none of N measured rows is not a measured zero.** The two facts share a screen
-  and must never share a sentence; only `emptyRoster` may say "the read measured zero".
-- **The owner's two numbers are printed above the page-scoped sentence**, so the clause and the count
-  cannot disagree — that disagreement is the defect this body and its case exist to prevent.
-- **The cursor belongs to the server.** The continuation this page publishes is the continuation the
-  walk continues; the client forwards it unchanged.
-- **An absent payload-level page is a shape, not a loss.** This is a first read whose per-side rosters
-  carry the cursors.
-- **A captured body is evidence, not a specification.** The contract it evidences is the read response
-  the route publishes and the sentence pair the client composes from the owner's counts.
-- **No conclusion is carried anywhere in the body.** The evidence state is `none_recorded`, the
-  assessment state is `unassessed`, and the submission block is `unavailable`.
-- **Not browser evidence.** These are the bytes a real route published, rendered by the real client in a
-  mounted test tree; they are not a live page fed by a running publication.
+- **A page that carried part of N measured rows is stated as that part.** The owner's own two measures are printed,
+  and "the read measured zero" is never said; only a measured-empty roster may say it.
+- **The cursor belongs to the server.** The continuation this page publishes is the continuation the walk
+  continues; the client forwards it unchanged.
+- **An absent payload-level page is a shape, not a loss.**
+- **No conclusion is carried anywhere in the body.** No evidence record, no assessment, and the submission block
+  is `unavailable`.
+- **Not browser evidence.**
 
 ### Todos
 
-None recorded. Every user-visible sentence this body drives is pinned by a case; no obligation is
-attached to this file.
+None recorded.
 
 ## Docs References
 
@@ -137,27 +102,26 @@ No domain documentation source is configured for this repository (`system/source
 
 ## Repo-Internal References
 
-Every row was re-derived against this candidate, and every anchor in a row occurs on the line the row
-cites. Because each captured body is one minified line, the cited range is the whole file and the
-finding names the exact key path and value a reader can re-check.
+Every row was re-derived against the MIK-L31 re-capture, and every anchor in a row occurs on the line the row
+cites. Because each captured body is one minified line, the cited range is the whole file and the finding names the
+exact key path and value a reader can re-check.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| **The family context: two families, the owner's eight measured rows, and no distinct carried revision at all — the count that separates this body from every sibling.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":0"; "\"state\":\"partial\"" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| **The page-scoped fact in the owner's own words: two recorded rows measured, none carried, on a page that is a position in a walk and publishes the cursor that reaches the rest.** | "holds 2 recorded membership(s) and this page carried 0"; "\"members_total\":2"; "\"page\":{\"complete\":false,\"continuation\""; "\"state\":\"first_page\""; "\"page_size=1" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| **The walk arithmetic behind the sentence: one item returned per side, with twelve and eleven remaining of thirteen and twelve items, and the same for the second family.** | "\"primary_items_remaining\":12"; "\"primary_items_remaining\":11" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| **The same two families, revisions and authored texts the `complete` body records — so the only difference between the pair is what the pages carried.** | "65a7c216-c8d0-422d-a114-6822fba97f90"; "c23a294f-fb8a-45e4-b930-3dedbdb751bb"; "e38f2f7c-ef1c-4044-9c4e-f13b0b566939"; "7d5100c2-e038-439b-987a-13758488c098"; "The retry budget is shared by integration and synchronization." | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
-| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.truncated.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
-| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
-| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.truncated.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
-| The bounded-roster case states owner totals while refusing to call the current empty page a measured zero. | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:448-469 |
-| The bounded capture keeps the exact continuation, owner-measured counts and reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "heads a bounded member context partial and counts the owner's rows, not this page's"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:296-339; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:482-516; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:647-700 |
-| The case that asserts one empty-roster sentence is printed in both columns, so the tree and the centre cannot drift into two sentences that happen to agree. | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:592-616 |
-| Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:222-236; dashboard/src/panels/review/FamilyTree.tsx:218-220 |
-| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594; dashboard/src/panels/review/FamilyTree.tsx:211-216 |
+| **The enclosure the bytes were recorded over, and the single normalization.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
+| **The family context: two families, the owner's eight measured rows, and three distinct carried revisions.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":3" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
+| **The page-scoped fact in the owner's own words: two rows measured, one carried, on a first page that publishes the cursor that reaches the rest.** | "holds 2 recorded membership(s) and this page supplies 1 member context update(s)"; "\"members_total\":2"; "\"state\":\"first_page\""; "\"page_size=1" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
+| **The walk arithmetic behind the sentence: one item returned per side, with ten, eight, twelve and eleven remaining.** | "\"primary_items_remaining\":10"; "\"primary_items_remaining\":8"; "\"primary_items_remaining\":12"; "\"primary_items_remaining\":11" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
+| **The two families by label and identity, and the selection added on the after side.** | "retry-and-anchor-family"; "retry-budget-family"; "0cafa823-a47f-4250-a451-c1f883136049"; "13b94682-b7c0-4182-b626-71459a7fcd38"; "\"state\":\"added\"" | dashboard/src/panels/review/familyReview.truncated.captured.json:1-1 |
+| **The receipt row for this file in the MIK-L31 re-capture, with its digest, scenario and requests.** | "familyReview.truncated.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:56-56 |
+| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | "const TRUNCATED"; "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:68-68; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
+| The real-body roster case: part of the measured rows carried, never zero. | "states a bounded roster page as the part of the measured rows it carried, never as zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:451-469 |
+| The SYNTHETIC derivation of this body that keeps the "carried no member row" branch covered (ruling Q3). | "SYNTHETIC FIXTURE, not a route body"; "structuredClone(TRUNCATED as ReviewResult)" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:471-491 |
+| The bounded capture keeps the exact continuation, the owner-measured counts (the loaded count read from this body) and the reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "it(\"heads a bounded member context partial"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:299-342; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:504-548; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:695-748 |
+| Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:218-220; dashboard/src/panels/review/FamilyTree.tsx:222-236 |
+| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631; dashboard/src/panels/review/FamilyTree.tsx:211-216 |
 
 ## Cross-Repo References
 
@@ -170,6 +134,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder; ruling 05:36:19 Q3 for the synthetic case). The card now describes the new bytes (36,793 bytes, sha256 `ac5cae6f…`): every side measured 2 rows and carried 1, `unique_member_revision_total` 3, the new family identities and walk counts, and the cases that read it (the real-body roster case, the SYNTHETIC case, the body-derived counts of review F7/R2-7). **Claims re-anchored:** every row naming the old bytes (the carried-0 sentence, `unique_member_revision_total` 0, the old family and revision identities, the walk counts) and the old provenance rows (`63b47629`, `not_recaptured`) are replaced by rows on the new bytes and the receipt's `mik_l31_recapture` row; the three case rows whose titles changed are re-anchored (the committed 2026-09-26 bullet for the empty-roster case is left intact; that case now reads `emptyRoster`); this pass's three generated bullets for the replaced rows were removed.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 

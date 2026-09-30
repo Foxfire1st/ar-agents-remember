@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.walkFinal.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,121 +17,79 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
-family workspace case stubs `fetch` with. **62,079 bytes; sha256
-`9e41d766f7caacf5183b7599ad7a655fa462a919d840aac756fe1a7a3f656df2`** — the largest of the leaf's seven
-bodies. It is untracked in this leaf's working tree (`??`), so these are candidate bytes a reader
-re-checks against the file, not bytes any commit holds.
+**re-captured by MIK-L31 from the current route** (MIK-R31 rule 6, the L44-R1-F5 remainder) with L44's producer,
+first build accepted, and installed as the fixture the family workspace cases stub `fetch` with. **64,617 bytes;
+sha256 `34bb7deeac7c9f5e6efb236fda545271032a0d33e7f7796ff62c3cd3a6c09ca7`**, as its row in
+`familyReview.capture-provenance.json` (`mik_l31_recapture`) records. It is the final page of a four-page after-side
+walk over `build_family_scenario` with 70 extra roster rows (`_author_extra_roster_rows(70)`).
 
-It is data with a provenance chain, not an assembled fixture: the case stubs **only `fetch`** and lets
-the real client, the shared decode and the real component tree read these bytes. It is **not browser
-evidence** — the repository's Playwright configs are Dagger-only and the case file says so in its own
-header.
+It is data with a provenance chain, not an assembled fixture: the cases stub **only `fetch`** and let the real
+client, the shared decode and the real component tree read these bytes. It is **not browser evidence**.
 
 The envelope is the review read (`state: "review"`, `operation: "read_knowledge_review"`,
 `surface_version: "knowledge-review-surface/1"`) over the fixture enclosure (`leaf_id: "260921-icr-l1"`,
 master/task_ref `review-source-endpoints-fixture`) with the per-run fixture repository uuid normalized
 to `<repository_id>`.
 
-**What this body pins apart from its six siblings: the page that COMPLETES a multi-page roster walk.**
-Its `payload.page` is a continued page whose `remaining` is **0** and which publishes **no continuation**
-— the walk is finished — and the roster it completes holds **72** recorded membership rows of which
-**this page carried 11**, every one of them a row whose revision content the page did not carry. The
-sentence it carries is the corrected one: `holds 72 recorded membership(s); this page carried 11 of them
-and completes the read walk, the pages before it carried the rest`. The same body keeps the contrast
-beside it: two other rosters were read whole in one page and say `was read whole: 2 recorded
-membership(s), all carried here`.
-
-**This body's composition is the leaf base's work, not this leaf's.** The two sentences and the guard
-that distinguishes them are owner-side bytes that arrive with the base commit `5f14fc67` — the ICR-R31
-correction *"the roster walk's completion flag describes the walk (260921-ICR-L31, reopened)"*, produced
-in enclosure `260921-icr-l31b-ar` — and neither the sentence nor the guard exists in that commit's
-parent. This leaf's candidate modifies **no owner-side file**: its delta is `dashboard/**` client work,
-the family test, these seven captured bodies, and the leaf's own `temp/` ignore rule. So this case
-renders recorded bytes, and L24 neither composed nor re-proves the live walk — the live walk's proof
-(every page of a 72-row roster answering, and the walk terminating truthfully) belongs to that enclosure
-and that commit.
+**What this body pins: the page that completes a multi-page walk is the walk's last page, never the whole roster.**
+Its consumers: the walk-completion case, the family excerpt-collection case (whose expectation is computed from this
+body), and `ExpressionCards.test.tsx`'s F2 case, which takes its bounded family (72 recorded rows, a few loaded) and
+its complete family from this body.
 
 ## Code Commentary
 
 ### Logic
 
-The capture bytes and their recorded page facts are unchanged. Its current mounted case uses the loaded-context vocabulary and the exact page/side distinction below; a completed walk is not proof that its last body alone carries every member or claim.
+**The payload-level page block is the completed walk.** `collection: "family_members"`, `state: "continued"`,
+`continued_from` decoding to `position 135`, `returned` 149, `remaining` **0**, `total` 149 on
+`total_basis: "selection"`, scope `side=after`, family revision `75337eac…`, `page_size=64` — and **no
+`continuation` key**, which is what a finished walk publishes instead of a cursor.
 
-**The payload-level page block is the completed walk.** `collection: "family_members"`,
-`state: "continued"`, `continued_from` decoding to `position 134`, `returned` 149, `remaining` **0**,
-`total` 149 on `total_basis: "selection"`, scope `side=after`, family revision
-`acb2c150-1004-4341-a6fd-7b6762427713`, `page_size=64` — and **no `continuation` key**, which is what a
-finished walk publishes instead of a cursor.
+**The completing roster page carries the owner's sentence and its own arithmetic.** The after side of
+`retry-and-anchor-family` (`c2cfee4a…`) is `complete: true` with `state: "continued"`, `members_total` **72** and 11
+carried rows, and the owner's sentence is "holds 72 recorded membership(s); this page supplies 11 member context
+update(s) and completes the read walk, the pages before it carried the rest". The eleven rows are all
+`state: "content_not_on_page"` (their labels are `walk-row-*` rows and `shared-retry-budget`): the page completes the
+*walk*, not the roster's content. The count is one draw of the builder; the case reads it from the body and asserts
+it is below 72 (review F7, R2-7).
 
-**The completing roster page carries the corrected sentence and its own arithmetic.** The after side of
-family `a33d139e-5a2e-44c1-aab2-2ea7be05df30` is `complete: true` with `state: "continued"`,
-`members_total` **72** and 11 carried rows, and the owner's sentence is `holds 72 recorded membership(s);
-this page carried 11 of them and completes the read walk, the pages before it carried the rest`. The
-eleven rows are all `state: "content_not_on_page"` (their display labels run `walk-row-62` and on), which
-is the honest shape for a page that reached membership rows without their revision content — the page
-completes the *walk*, not the roster's content.
+**The contrast inside the same body keeps the sentence honest.** The before side of that family, and both sides of
+`retry-budget-family` (`55cc5810…`, revision `7061038b…` on both sides), are `complete: true` first pages that say
+"was read whole: 2 recorded membership(s), all carried here". The owner composes the two branches from the same
+flag, and the case asserts they never share a roster line. The family context is `partial`, with
+`membership_rows_total` 78 and `unique_member_revision_total` 13. The selected subject's revision selection is
+`ambiguous`.
 
-**The contrast inside the same body is what keeps the sentence honest.** The before side of that family
-is `complete: true` with `state: "first_page"`, `members_total` 2 and both rows carried, and says
-`was read whole: 2 recorded membership(s), all carried here`; family
-`daadb69b-0a88-40ef-8edc-51bed48a32e3` records revision `e3488f05-332f-4553-90d9-139e4ada169b` on both
-sides, each `complete: true`, each read whole. The owner therefore composes two branches from the same
-flag — a single-page walk was read whole, a walk finished at a continued page completes the walk and the
-pages before it carried the rest — and the case asserts the two never appear on the same roster line. A
-surface that flattened them would tell a reader that a page holding 11 of 72 rows is the whole selection.
+**One divergent address.** The body still records one address (`src/batch.py` under one recorded blob) that the two
+sides resolve differently, which the excerpt-collection case's arithmetic exercises. It belongs to member revision `a08a87b4…` of `retry-budget-family`:
+resolved `exact_recorded_blob` on the before side and `recorded_blob_mismatch` on the after side, where the read
+observed `da6bf861…`. The measured-shape comment in `familyExpressions.test.ts` names that revision (the older
+capture's was `d24e5187…`).
 
-**Where the sentence comes from, and why that matters to this leaf.** The two branches are composed in
-`application/review_family_rosters.py` (`read whole` and `completes the read walk` on adjacent lines),
-and the guard that decides them lives in `models/knowledge/review_family_context.py` as
-`single_page_walk = self.page.complete and self.page.state == "first_page"` before it demands that a
-complete page carry every recorded membership. The comment there records the defect this correction
-answers: comparing a page's carried rows against the revision-wide count refused an ordinary multi-page
-roster and the route answered the reader's own continuation request with **HTTP 500** — so on the
-pre-correction bytes nothing on this page was renderable at all. Those owner files are the leaf base's
-bytes, from enclosure `260921-icr-l31b-ar`; this leaf's candidate does not touch the route or the models.
-
-**One case drives these bytes, and it asserts both directions of the pair.** It filters the roster lines
-for `completes the walk`, requires exactly one, and asserts that line contains `the pages before it
-carried the rows this one did not` and `this page carried 11 of them` while **not** containing `the page
-is the whole selection`; it then requires every line saying `the page is the whole selection` to be free
-of the completing wording; and finally it asserts the tree carries the owner's own phrase `completes the
-read walk` rather than a sentence the client invented.
+**Where the sentence comes from.** The two branches are composed in `application/review_family_rosters.py`
+(`_roster_detail`), and the guard that decides them lives in `models/knowledge/review_family_context.py` as
+`single_page_walk`; before that guard was corrected the route answered this page's request with **HTTP 500**.
 
 ### Conventions
 
-- Captured bytes, never hand-edited: the provenance lives in the consuming case file's header, and this
-  card adds no second provenance.
+- Captured bytes, never hand-edited: the provenance is the receipt's `mik_l31_recapture` row.
 - One JSON document, minified to a **single line** with sorted keys. Every reference row below cites the
-  whole file (`:1-1`) and names the exact key path and value in the finding, because a line number
-  cannot distinguish two facts in a one-line file.
-- The body is opaque data to this client: the case types it `unknown` and narrows it at runtime.
-- Numbers on this card are the file's: byte size and digest are the file, counts are the owner's.
+  whole file (`:1-1`) and names the exact key path and value in the finding.
+- The body is opaque data to this client: the cases type it `unknown` and narrow it at runtime.
+- Numbers on this card are the file's; the identities are one draw of the scenario builder.
 
 ### Invariants And Boundaries
 
-- **A completed walk is not a complete roster.** This page completes the walk and carried 11 of the
-  revision's 72 recorded membership rows; "the page is the whole selection" belongs only to a roster the
-  read took in one page, and the two sentences must never share a line.
-- **A cursor-less page is how completion is published.** `remaining` 0 and no `continuation` is the
-  finished state; no control may offer a next step for it.
-- **The sentence is the owner's, not the client's.** The client renders the branch it is given and
-  decides only which of the owner's words a bounded page may add.
-- **This body's composition is not this leaf's work.** The guard and the two sentences arrive with the
-  leaf base's owner-side bytes from enclosure `260921-icr-l31b-ar` (commit `5f14fc67`, whose parent
-  contains neither the sentence nor the guard), and this leaf's candidate changes no owner file; the
-  live walk is proved there, not here.
-- **A captured body is evidence, not a specification.** The contract it evidences is the read response
-  the route publishes and the walk's own `complete` flag.
-- **No conclusion is carried anywhere in the body.** The evidence state is `none_recorded`, the
-  assessment state is `unassessed`, and the submission block is `unavailable`.
-- **Not browser evidence.** These are the bytes a real route published, rendered by the real client in a
-  mounted test tree; they are not a live page fed by a running publication.
+- **A completed walk is not a complete roster.** This page completes the walk and carried 11 of the revision's 72
+  recorded membership rows; "the page is the whole selection" belongs only to a roster the read took in one page.
+- **A cursor-less page is how completion is published.** `remaining` 0 and no `continuation` is the finished
+  state; no control may offer a next step for it.
+- **The sentence is the owner's, not the client's.**
+- **No conclusion is carried anywhere in the body**, and **not browser evidence**.
 
 ### Todos
 
-None recorded. The completing-walk sentence is pinned by its case; the live walk itself remains the
-responsibility of the enclosure that corrected the guard.
+None recorded.
 
 ## Docs References
 
@@ -144,25 +102,25 @@ No domain documentation source is configured for this repository (`system/source
 
 ## Repo-Internal References
 
-Every row was re-derived against this candidate, and every anchor in a row occurs on the line the row
-cites. Because each captured body is one minified line, the cited range is the whole file and the
-finding names the exact key path and value a reader can re-check.
+Every row was re-derived against the MIK-L31 re-capture, and every anchor in a row occurs on the line the row
+cites. Because each captured body is one minified line, the cited range is the whole file and the finding names the
+exact key path and value a reader can re-check.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The completed walk at the payload level: a continued page with nothing remaining, its total and basis, the scope it finished, and the cursor it came from.** | "\"collection\":\"family_members\""; "\"state\":\"continued\""; "\"continued_from\""; "\"returned\":149"; "\"remaining\":0"; "\"total\":149"; "\"page_size=64" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The completing roster page: seventy-two recorded rows measured, eleven carried by this page, all of them rows whose revision content the page did not carry.** | "\"members_total\":72"; "holds 72 recorded membership(s); this page carried 11 of them"; "\"state\":\"content_not_on_page\""; "\"display_label\":\"walk-row-62\""; "\"page\":{\"complete\":true,\"continued_from\"" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The corrected sentence itself, naming the pages before it as the ones that carried the rest.** | "this page carried 11 of them and completes the read walk, the pages before it carried the rest"; "the pages before it carried the rest" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The contrast inside the same body: a roster the read took in one page, read whole, with both rows carried.** | "was read whole: 2 recorded membership(s), all carried here"; "\"page\":{\"complete\":true,\"counts\""; "\"state\":\"first_page\""; "e3488f05-332f-4553-90d9-139e4ada169b"; "daadb69b-0a88-40ef-8edc-51bed48a32e3" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| **The two families of the body, the revision the completing page belongs to, and the owner's measured counts for the whole context.** | "a33d139e-5a2e-44c1-aab2-2ea7be05df30"; "acb2c150-1004-4341-a6fd-7b6762427713"; "18c530d5-d41e-4fc6-8b51-85f5408a4ae9"; "\"membership_rows_total\":78"; "\"unique_member_revision_total\":14" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.walkFinal.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
-| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
-| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.walkFinal.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
-| **The case this body exists for, including what it says about the defect the corrected guard answers — on the pre-correction bytes this page's request was answered with HTTP 500.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster"; "HTTP 500"; "completion guard was corrected"; "completes the read walk"; `WALK_FINAL` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:617-646; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:624-624; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:623-623; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:645-645; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:70-70 |
-| The roster owner separates a whole single-page selection from a final continuation that completes a walk. | `_roster_detail` | mcp/src/agents_remember/application/review_family_rosters.py:367-397 |
+| **The enclosure the bytes were recorded over, the one normalization, and the scratch directory of the capture.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>"; "l31-walk" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
+| **The completed walk at the payload level: a continued page with nothing remaining, its total, and its scope.** | "\"collection\":\"family_members\""; "\"returned\":149"; "\"remaining\":0"; "\"total\":149"; "\"page_size=64" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
+| **The completing roster page: seventy-two recorded rows measured, eleven supplied, each a row whose revision content the page did not carry, and the owner's sentence naming the pages before it.** | "\"members_total\":72"; "holds 72 recorded membership(s); this page supplies 11 member context update(s) and completes the read walk, the pages before it carried the rest"; "\"state\":\"content_not_on_page\""; "\"display_label\":\"walk-row-7\"" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
+| **The contrast inside the same body: rosters the read took in one page, read whole.** | "was read whole: 2 recorded membership(s), all carried here"; "55cc5810-6bc9-432b-969e-44968936c443"; "7061038b-ec28-4305-b401-0c85f4ca3ff8" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
+| **The walked family and revision, and the owner's measured counts for the whole context.** | "c2cfee4a-91f8-437c-b7ce-75d628c9ba51"; "75337eac-858a-4bae-aa3c-b829cbeef9e8"; "\"membership_rows_total\":78"; "\"unique_member_revision_total\":13" | dashboard/src/panels/review/familyReview.walkFinal.captured.json:1-1 |
+| **The receipt row for this file in the MIK-L31 re-capture.** | "familyReview.walkFinal.captured.json"; "_author_extra_roster_rows(70)" | dashboard/src/panels/review/familyReview.capture-provenance.json:102-104 |
+| The one constant that binds this body to its cases, and the runtime narrowing. | "const WALK_FINAL"; "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:73-73; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
+| **The case this body exists for, with the carried count read from the body, and what it says about the HTTP 500 the corrected guard answers.** | "it(\"states the page that completes a multi-page walk"; "HTTP 500"; "completion guard was corrected" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:658-694 |
+| The unit case's measured-shape comment names this body's divergent address and its member revision. | "a08a87b4"; "(retry-budget-family)" | dashboard/src/panels/review/familyExpressions.test.ts:162-169 |
+| The F2 case of the focused cards takes its bounded and its complete family from this body. | "familyReview.walkFinal.captured.json" | dashboard/src/panels/review/ExpressionCards.test.tsx:237-263 |
+| The roster owner separates a whole single-page selection from a final continuation that completes a walk. | `_roster_detail` | mcp/src/agents_remember/application/review_family_rosters.py:367-396 |
 | **The corrected guard that makes a continued final page answerable at all, with the comment recording the HTTP 500 it answers.** | `single_page_walk`; "HTTP 500" | mcp/src/agents_remember/models/knowledge/review_family_context.py:316-316; mcp/src/agents_remember/models/knowledge/review_family_context.py:318-318 |
 | **The client's two wordings for the pair, so a reader can see the sentence this body must reach and the one it must not.** | "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:214-214; dashboard/src/panels/review/FamilyTree.tsx:215-215 |
 
@@ -177,6 +135,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** both stale comments recorded at 10:05:09 were refreshed by the worker (comments only): the `ReviewWorkspace.family.test.tsx` header now names the MIK-L31 re-capture, and the `familyExpressions.test.ts` comment (lines 162-169) names this body's divergent member revision `a08a87b4` (`retry-budget-family`, observed `da6bf861` after). The divergent-address paragraph now names the revision; one row added (the comment); the Todo is removed; rows into the workspace test were re-pointed by the exact −1 line shift.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder). The card now describes the new bytes (64,617 bytes, sha256 `34bb7dee…`): the completed after-side walk (`continued_from` position 135, 149 of 149, page size 64), 11 of 72 rows supplied on the completing page, `unique_member_revision_total` 13, the new family identities, the one divergent address, and its new consumer (the F2 card case). **Claims re-anchored:** every row naming the old sentence ("this page carried 11 of them"), identities and counts, and the old provenance rows (`63b47629`, `not_recaptured`) are replaced by rows on the new bytes and the receipt's `mik_l31_recapture` row; the case row is re-anchored on an `it(` quote (committed 2026-09-26 bullets name its title); this pass's generated bullet for the receipt row was removed. The stale comment in `familyExpressions.test.ts` is recorded as a Todo.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 

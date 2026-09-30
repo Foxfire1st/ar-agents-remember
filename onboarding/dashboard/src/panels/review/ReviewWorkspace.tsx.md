@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:44:14+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,14 @@ useWorkspaceState holds selected family/member, search, diff layout, full-file d
 
 **The unanswered subject (L48).** `ReviewWorkspace` takes an optional `reading: ReadingStatus | null`. The surface sets it only when the subject on screen has no answer and the task context has a `frame`; `payload` is then that frame, used for the shell only. `ReadingStatus` carries the read cycle's key for the requested question, the requested subject (`kind:id`), its label and, for a failed or refused read, the owner's problem block (`problem`; `null` while pending). `WorkspaceCenter` is the reading-area column — one DOM node (`review-center-column`) for the life of the workspace — and swaps only its content: `ReadingStatusCenter` renders `review-reading-pending` (`aria-busy`, `role="status"`, "Reading <label>…") or `review-reading-problem` ("<label> could not be read" plus the owner block, with `data-problem-key`/`data-problem-subject`), else the answered subject's `FamilyReviewCenter` and roster note. While unanswered, the tree marks only the reader's explicit choice (`state.chosen`) — deriving one from the frame would mark the previous subject's family as the requested subject's context.
 
+**The leaf's tree view, read once per comparison (MIK-L31).** `WorkspaceCenter` receives the task context
+(`repo`, `master`, `leaf`, `history`) and, only for a tree comparison, reads the leaf-wide `/api/review/trees` view
+through `useReviewTrees`: the comparison number is `treeComparisonNumber(payload.limitations)` (the payload's own
+`review:trees:<n>` token), passed as `{ comparison }` so the read is pinned to the comparison the review on screen
+was composed over (review F11), and the hook's `enabled` flag is false when the payload declares no such token. A
+dataset review therefore makes no tree read at all. The result goes to `FamilyReviewCenter` as `leafTrees`, which
+renders the knowledge panel and takes the cards' planning marks from it only when its comparison number matches.
+
 **Focus after a selection (L48-R1-F2).** `focusSelection` holds `{ from }`, the element that had focus when the reader selected. `useSelectionFocus` runs on the next payload, clears the request, and moves focus to the selected tree node (or the center) only if focus is still on `from` or has fallen to `body`; focus the reader moved while the subject was pending is kept.
 
 ### Conventions
@@ -36,7 +44,8 @@ Styles come from `../../../styled-system/css` as module-level constants (`worksp
 `title`, `muted`, `mono`, `jump`), matching the cockpit panels' idiom. Imports are split by kind: React
 hooks from `react`; the payload types (`ReviewPayload`, `ReviewFamilyContext`, `ReviewFamilySideName`,
 `ReviewSelectorKind`) as type-only imports from `../../data/review`; `carriedPage` as the module's one
-value import from that entry; `ReviewPageRequest` as a type-only import from `./ReviewReadCycle`;
+value import from that entry; `treeComparisonNumber` and `useReviewTrees` from `../../data/reviewTrees`
+(MIK-L31); `ReviewPageRequest` as a type-only import from `./ReviewReadCycle`;
 `FamilyReviewCenter`, `FamilyTree`/`FamilySelection`, `ReviewScopeHeader` and the type-only `DiffLayout` from their own modules.
 Every sub-component is a plain function taking the values it renders; props are threaded rather than
 re-derived, so two mount points of the same control cannot drift. Test ids are the contract
@@ -46,7 +55,8 @@ re-derived, so two mount points of the same control cannot drift. Test ids are t
 `review-display-state`, `review-center-display-controls`, `review-center-diff-layout`,
 `review-center-full-file`), and the workspace root publishes `data-diff-layout` and `data-full-file` so a
 case can read the live preferences off the element. No fetch appears in this file; its one `useEffect` is
-`useSelectionFocus`.
+`useSelectionFocus`, and its one read is the leaf-wide tree view through the adapter's `useReviewTrees` hook
+(MIK-L31), made only for a tree comparison.
 
 ### Invariants And Boundaries
 
@@ -56,7 +66,8 @@ Semantic selection never filters the full changed-file population. Confirmed no-
 
 ### Todos
 
-None recorded. The workspace adds no request of its own, no control that writes, and no second reader: the
+None recorded. The workspace adds no control that writes and no second reader of the review payload; its one
+request of its own, since MIK-L31, is the leaf-wide tree view of a tree comparison (none for a dataset review). The
 one page control stays the surface's, the tree keeps its own keyboard traversal, and the centre keeps its
 own statements. Any further layout work belongs to the owners named above rather than to this file.
 
@@ -75,14 +86,14 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:147-184 |
+| `useWorkspaceState` owns the behavior described above. | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:148-185 |
 | `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
-| **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:85-127 |
-| **The reading-area column: one DOM node, only its content swapped.** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:277-326 |
-| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:473-487; dashboard/src/panels/review/ReviewWorkspace.tsx:129-145 |
+| **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:89-94; dashboard/src/panels/review/ReviewWorkspace.tsx:96-128 |
+| **The reading-area column: one DOM node, only its content swapped; for a tree comparison it reads the leaf-wide tree view pinned to the payload's comparison (MIK-L31).** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:281-343 |
+| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:490-504; dashboard/src/panels/review/ReviewWorkspace.tsx:130-146 |
 | `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
 | `recordLabelOf` (moved to the scope header's module by L48) owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewScopeHeader.tsx:108-112 |
-| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:495-508 |
+| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:512-525 |
 
 ## Cross-Repo References
 
@@ -95,6 +106,8 @@ payload's own candidate published.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the leaf-wide tree view `WorkspaceCenter` reads for a tree comparison (MIK-R25 rules 2-3 rendered by L31, ruling L25 Q2), pinned to the payload's `review:trees:<n>` (review F11 at 06:10:21) and never made for a dataset review; Conventions and Todos no longer say the workspace makes no request of its own. The `WorkspaceCenter` row is reworded; the selection-focus row was re-pointed by the exact line shift.
+- 2026-09-30T07:51:05+00:00: Generated citation repair: `sourceAttribution` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:512-525. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the component row because an older *Generated citation repair* bullet in this card names `ReviewWorkspace`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function ReviewWorkspace({`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
 - 2026-09-28T21:44:14+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the workspace stays mounted across selection (`ICR-R24@v3`; L48-R1-F1/F2 rulings; `ICR-R26` preserved).** New: `ReadingStatus`, `ReadingStatusCenter` (pending or could-not-be-read, labelled with the requested subject), `WorkspaceCenter` (one reading-area column whose content alone is swapped), and the moved-focus guard in `useSelectionFocus` (`focusSelection` now `{ from }`). `ScopeHeader` and `recordLabelOf` moved to `ReviewScopeHeader.tsx` (L47-R1-F5 file budget). The implementation **extends** the card's layout contract and **supersedes** the implicit expectation that a subject change remounts the workspace. Purpose, Logic, Conventions (including the wrong pre-existing "no `useEffect`" statement) and Invariants updated; the three reopened claims were re-read; rows re-derived, three rows added. No stamp advanced.
 - 2026-09-26T21:11:04+00:00: Generated citation repair: `ReviewWorkspace` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:208-287. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.

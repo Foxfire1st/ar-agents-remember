@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/reviewFamily.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -219,13 +219,13 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 | **The one join key, held as a value rather than prose because joining on a label or a path would be inventing the association.** | `FAMILY_CONTEXT_JOIN_KEY`; `invariant_revision_id` | dashboard/src/data/reviewFamily.ts:32-35 |
 | The family revision's own authored guarantee, printed from the stored text rather than assembled from members. | `ReviewFamilyGuarantee`; `joint_guarantee`; `payload_digest` | dashboard/src/data/reviewFamily.ts:37-46 |
 | One realization claim's source reference: the address and what the read resolved it to travel together or not at all; required stored role and rationale; the structured locator, this side's resolved ranges and the locator state. | `ReviewFamilyMemberSource`; `observed_source_identity`; `detail`; `locator_state` | dashboard/src/data/reviewFamily.ts:67-87 |
-| **The three locator declarations: the server's locator kinds, one resolved line range, and the four locator states with what each one carries.** | `ReviewSourceLocator`; `ReviewSourceLineRange`; `ReviewSourceLocatorState` | dashboard/src/data/reviewFamily.ts:48-65 |
+| **The three locator declarations: the server's locator kinds, one resolved line range, and the four locator states with what each one carries.** | `ReviewSourceLocator`; `ReviewSourceLineRange`; `ReviewSourceLocatorState` | dashboard/src/data/reviewFamily.ts:49-52; dashboard/src/data/reviewFamily.ts:55-59; dashboard/src/data/reviewFamily.ts:65-65 |
 | The server rule these states mirror. | `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_source.py:108-123 |
 | **One recorded membership: the exact member revision, the two member content states, and the shared-identity list.** | `ReviewFamilyMember`; `content_not_on_page`; `other_family_revision_ids` | dashboard/src/data/reviewFamily.ts:89-111 |
 | The read owner's own counts, carried whole because the walk's arithmetic is the owner's. | `ReviewReadCounts`; `primary_items_remaining`; `unresolved_anchor_total` | dashboard/src/data/reviewFamily.ts:115-127 |
 | **One roster page: the owner's own `enumeration_complete` flag, its two measures and the cursor that reaches the rest.** | `ReviewFamilyRosterPage`; `enumeration_complete`; `continued_from` | dashboard/src/data/reviewFamily.ts:130-130; dashboard/src/data/reviewFamily.ts:132-140 |
 | **One side's family revision context, whose `recorded_revision_ids` is a larger population than the revisions a selection reached.** | `ReviewFamilyRevisionContext`; `recorded_revision_ids`; `members_total` | dashboard/src/data/reviewFamily.ts:142-156 |
-| The owner's revision-selection value, mirrored here and shared by the family context and the primary invariant statement pane; neither consumer selects a head. | "shared by family context and the primary invariant"; `ReviewRevisionSelectionState` | dashboard/src/data/reviewFamily.ts:158-165 |
+| The owner's revision-selection value, mirrored here and shared by the family context and the primary invariant statement pane; neither consumer selects a head. | "shared by family context and the primary invariant"; `ReviewRevisionSelectionState` | dashboard/src/data/reviewFamily.ts:158-158; dashboard/src/data/reviewFamily.ts:160-165 |
 | **One family entry: its selection, its two sides, and the `candidates` present exactly for the two states that chose no revision.** | `ReviewFamilyContextEntry`; `label_side`; `candidates` | dashboard/src/data/reviewFamily.ts:180-192 |
 | The owner's own published collections a member context is referenced through, named by identity and joined on `join_key`. | `ReviewFamilyContextReferences`; `join_key` | dashboard/src/data/reviewFamily.ts:194-203 |
 | The context itself: its four totals, its references and its stated limitations. | `ReviewFamilyContext`; `unique_member_revision_total`; `limitations` | dashboard/src/data/reviewFamily.ts:205-216 |
@@ -243,7 +243,7 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 | The payload key whose absence is its own fact — a body that is not a measured zero and is never shown as `no_family_recorded`. | "family_context?: ReviewFamilyContext" | dashboard/src/data/review.ts:467-467 |
 | **The server module this file mirrors, and the packet revision that asked for the vocabulary.** | "ICR-R31@v1" | mcp/src/agents_remember/models/knowledge/review_family_context.py:1-3 |
 | The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate. | "A guarantee is the family's own authored text"; "The five status dimensions stay separate" | mcp/src/agents_remember/models/knowledge/review_family_context.py:10-24 |
-| The tree uses shared side order and its own guarantee/roster helpers; central guarantee comparison stays separate from authoritative selected statements. | `guaranteesOf`; `memberRows`; `GuaranteeComparisonBlock`; `SelectedStatement` | dashboard/src/panels/review/FamilyTree.tsx:288-312; dashboard/src/panels/review/FamilyTree.tsx:120-138; dashboard/src/panels/review/FamilyReviewCenter.tsx:104-169; dashboard/src/panels/review/SubjectReview.tsx:53-114 |
+| The tree uses shared side order and its own guarantee/roster helpers; central guarantee comparison stays separate from authoritative selected statements. | `guaranteesOf`; `memberRows`; `GuaranteeComparisonBlock`; `SelectedStatement` | dashboard/src/panels/review/FamilyTree.tsx:288-312; dashboard/src/panels/review/FamilyTree.tsx:120-138; dashboard/src/panels/review/FamilyReviewCenter.tsx:114-188; dashboard/src/panels/review/SubjectReview.tsx:217-280 |
 
 ## Cross-Repo References
 
@@ -256,6 +256,8 @@ one association it carries is an in-repository contract rather than a cross-repo
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): No content impact: citation-only repair. This card's source is unchanged. Its rows into `panels/review/FamilyReviewCenter.tsx` and `panels/review/SubjectReview.tsx` moved with MIK-L31's edits there: the tree/centre row was re-pointed by the exact line shift (`104-169` → `114-188` for `GuaranteeComparisonBlock`, `53-114` → `217-280` for `SelectedStatement`), and the installed fixer normalised two further ranges.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the mirror gained `ReviewSourceLocator`, `ReviewSourceLineRange` and `ReviewSourceLocatorState`, and `ReviewFamilyMemberSource` now carries optional `locator`, required `resolved_ranges`/`locator_state` and required `role`/`rationale`. Recorded that there is no runtime decoder and no rendering reads the new fields yet, corrected the re-export count (twenty-one types), and re-measured every range the insertions shifted. No verification stamp was advanced.
 

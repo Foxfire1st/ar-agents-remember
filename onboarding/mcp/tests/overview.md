@@ -3,12 +3,41 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | governingOverview | `../overview.md` |
+
+## 260928-MIK-L31 The Focused-Card Read Cases, The Proof Admission At The Route, And The Q8 Cases
+
+`260928-MIK-L31` (MIK-R31@v1) adds cases to three modules and no new module, lane row or catalog line:
+
+- [`test_review_git_trees.py`](test_review_git_trees.py.md) (19 collected, 1,022 lines): the cards read locates each
+  entry of the named invariants on both code sides (a changed range with each side's own excerpt and MIK-R03 state,
+  a retired entry carried once, a proof with its facet, an unresolved locator with its reason), names an unreadable
+  side `unavailable` and a missing file `absent`, bounds the excerpt (500 lines give a stated 400-line prefix) and
+  the placement cache (answers only, 8,192; review F3), finds history rows by `facts.row` (PS-1), and at the route
+  (review F12, ruling Q1) admits an unchanged test file only after a K_C proof names it. The route case gains the
+  pinned numbered read (review F11), the cards read, and the 400s for a 65-character key (F10) and 501 keys; the
+  tree-view case asserts snake_case keys (MIK-L25 review F9).
+- [`test_knowledge_review_attributed_source_content.py`](test_knowledge_review_attributed_source_content.py.md):
+  never-initialized knowledge asks to initialize it (MIK-R31 rule 6, O1), a tree index's proof entry links its
+  path while a dataset links none (Q1), and the undetermined case asserts the Q1 wording.
+- [`test_review_assessment_history.py`](test_review_assessment_history.py.md): the Q8 case, with 100 artifacts
+  summarised and 10 kept exactly (review F6, R2-2 pinning the two branches apart).
+
+No new C block in any touched test (the pre-existing D block of the tree-view case rose from D26 to D28). On the
+synced tree the full unit suite passed (3,298 passed, 62 skipped) and the integration lane passed (447 passed, 15
+skipped), rerun by the reviewer in R3 (pass-with-notes); the collection budget holds with L05's and L10's cases.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The cards-read case and its four helpers. | `test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides` | mcp/tests/test_review_git_trees.py:802-820 |
+| The proof admission at the route. | `test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review` | mcp/tests/test_review_git_trees.py:950-1016 |
+| The never-initialized remedy. | `test_never_initialized_knowledge_asks_to_initialize_it` | mcp/tests/test_knowledge_review_attributed_source_content.py:356-369 |
+| The Q8 case. | `test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable` | mcp/tests/test_review_assessment_history.py:437-460 |
 
 ## 260928-MIK-L05 The Route-Chain Cases, The Adapted Leaf-Read Module, And The Forty-First Re-Pin
 
@@ -105,7 +134,7 @@ passed, 15 skipped).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two MIK-R25 lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:123-124 |
-| A repeat read writes nothing. | `test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing` | mcp/tests/test_review_git_trees.py:400-420 |
+| A repeat read writes nothing. | `test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing` | mcp/tests/test_review_git_trees.py:409-429 |
 | Archival deletes only the task's own artifacts. | `test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies` | mcp/tests/test_review_artifact_cleanup.py:228-278 |
 
 ## 260928-MIK-L13 The Decision-Record Cases, And The Writer's Endpoint Cases
@@ -814,6 +843,7 @@ kept beside the constants.
 | The re-measured seed-page digests and their stated cause. | `PRE_LEAF_PAGE_DIGEST`; `PRE_LEAF_RESULT_DIGEST` | mcp/tests/facet_test_support.py:106-107 |
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Focused-Card Read Cases, The Proof Admission At The Route, And The Q8 Cases" at the top: the new cases in three modules (the cards read, review F3/F10/F11/F12, PS-1, rule 6 O1, ruling Q1, the Q8 case with F6/R2-2), no lane or catalog change, the suites' results. Four rows added.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 The Route-Chain Cases, The Adapted Leaf-Read Module, And The Forty-First Re-Pin" at the top, with four rows. Rows citing `test-evidence-lanes.toml` after `:109`, `evidence-lifecycle.toml` after the inserted consumer lines, and the pin module's docstring were re-pointed by the exact line shift where the installed fixer declined them; the item-16 consumer row, already stale before this leaf (its `test-evidence-lanes.toml:183` and `evidence-lifecycle.toml:1343` did not hold their anchors at base), was re-measured by hand (`1345`, `177`, `185`).
 - 2026-09-30T03:48:39+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:48:39+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.

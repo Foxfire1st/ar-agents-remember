@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -436,8 +436,8 @@ No database path is part of either shape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:59-59; mcp/src/agents_remember/models/knowledge/review_trees.py:98-138 |
-| The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:237-254 |
+| The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:60-60; mcp/src/agents_remember/models/knowledge/review_trees.py:99-139 |
+| The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:238-257 |
 
 ## 260928-MIK-L10 The Unexplained-Change Subjects And The No-Invariant Row
 
@@ -483,7 +483,33 @@ MIK-R05 adds one optional, response-side field and one docstring paragraph to
 | The optional field. | `routeChain` | mcp/src/agents_remember/models/tools/knowledge_responses.py:101-101 |
 | The docstring paragraph. | "Route-chain families (MIK-R05)" | mcp/src/agents_remember/models/tools/knowledge_responses.py:49-53 |
 
+## 260928-MIK-L31 One Entry Located On Both Code Sides, For The Focused Cards
+
+**Route meaning extended (MIK-R31).** One new model module,
+[`knowledge/review_tree_entries.py`](knowledge/review_tree_entries.py.md) (carded, governed here, following the
+`knowledge/` precedent of no sub-route overview), and one field on
+[`knowledge/review_trees.py`](knowledge/review_trees.py.md):
+
+- `ReviewTreeEntry`: one realization or proof entry of K_B or K_C (`id`, `kind`, the text `invariant`, the
+  `invariant_key` the landed review payload addresses the invariant by, `before`, `after`, `change`).
+- `ReviewTreeEntrySide`: whether that side's memory tree records the entry (`recorded`, `None` when it could not be
+  read), the range state (`resolved`, `unresolved` with a reason, `absent`, `unavailable` with a reason — `absent`
+  and `unavailable` never merged), the range and its content identity, the excerpt from the exact blob bounded by
+  `EXCERPT_MAX_LINES` (400) and `EXCERPT_MAX_CHARACTERS` (48,000), the side's own authored `role`/`rationale` or
+  `facet`, and its MIK-R03 `currentness`.
+- `ReviewEntryChange`: `changed`, `unchanged` (the excerpt carried once, on the after side) or `undetermined` (never
+  counted by guess).
+- `ReviewTreesResult.entries`, empty on the leaf-wide view and filled only by the on-demand cards read (ruling
+  2026-09-30T05:36:19 Q2). The wire is snake_case throughout (MIK-L25 review F9, settled by L31).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The range and change states and the excerpt bounds. | `ReviewEntryRangeState`; `ReviewEntryChange`; `EXCERPT_MAX_LINES`; `EXCERPT_MAX_CHARACTERS` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:58-61 |
+| One entry on one side, and on both sides. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:64-98 |
+| The tree view's field for the entries. | "entries: tuple[ReviewTreeEntry, ...] = ()" | mcp/src/agents_remember/models/knowledge/review_trees.py:256-256 |
+
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 One Entry Located On Both Code Sides, For The Focused Cards" after L05's: the new `knowledge/review_tree_entries.py` (carded), its per-side states and bounds, and `ReviewTreesResult.entries` (ruling 05:36:19 Q2). L25's `REVIEW_REF_NAMESPACE` row was re-pointed by the exact +1 line shift. Three rows added.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 The Read Response's Optional `routeChain`" at the end, after L10's, with two rows (rulings Q1 and Q4 of 2026-09-30 03:32:18). **Four reopened `KnowledgeReadResponse` rows reworded** (L28's `proofs`, L02's `page`, L01's `families` and L23's memory-tree row), removing this pass's generated bullet that bound the `families` row; their range `78-103` still spans the class.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Unexplained-Change Subjects And The No-Invariant Row" after L25's (the new, carded `unexplained.py`, governed here; `UnexplainedChangeRow`; rulings 01:56:39 Q1 and 03:24:28 N2), three rows. **Two reopened claims reworded and re-anchored:** L11's "registry with the fourth kind" row now cites only its own `planned` registration line (`:368`), and L07's registry row names the fifth kind and is re-anchored on the line-exact quote "HISTORY_ROW_KINDS: Final["; this pass's two fixer bullets for them were removed. No verification stamp was advanced.
 - 2026-09-30T02:31:47+00:00: Generated citation repair: `frozen_history_violation` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:479-487. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.

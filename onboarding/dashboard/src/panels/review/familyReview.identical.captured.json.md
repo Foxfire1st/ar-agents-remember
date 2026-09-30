@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.identical.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -82,9 +82,11 @@ the route's own example of a recorded range the exact blob does not reach. The o
 `shared-retry-budget` source is a `whole_file`. `resolved_ranges` is `[]` on every source here.
 
 **One case drives these bytes, and it reads which family is which from the rendered blocks rather than
-from row order.** It opens the identical-text family and asserts the block names **different family
-revisions** and says `A revision was authored between them; the text is what did not move.`, with the
-unchanged block absent; it then opens the other family and asserts the unchanged block says the two
+from row order.** It opens the identical-text family and asserts, since MIK-R31 rule 3 (the ICR 13:40
+decision, rendered by MIK-L31), that the block says "Wording unchanged · revision <before8> → <after8>", shows the
+guarantee **once**, and names both revision IDs under "Revision records", with the unchanged block absent and never
+"so the guarantee is unchanged" (before MIK-L31 the block showed both texts side by side as "two recorded
+revisions"); it then opens the other family and asserts the unchanged block says the two
 snapshots selected the **same** family revision, with the identical-text block absent. That pairing is
 the whole point: the same two sentences must not be interchangeable.
 
@@ -144,14 +146,14 @@ finding names the exact key path and value a reader can re-check.
 | **The unchanged shape: the same family revision on both snapshots, carrying the same guarantee text.** | "\"display_label\":\"retry-budget-family\""; "The retry budget is shared by integration and synchronization."; "\"state\":\"first_page\"" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
 | **The identical-text shape: two distinct family revisions whose guarantee text is the same string while their payload digests differ.** | "\"display_label\":\"retry-and-anchor-family\""; "\"joint_guarantee\":\"The retry budget and the anchor identity rule hold together.\""; "\"payload_digest\"" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
 | **Three sides supplied their two member updates on a first page of a continuing walk, and the identical-text family's one-row after roster was read whole.** | "was read whole: 1 recorded membership(s), all carried here"; "holds 2 recorded membership(s) and this page supplies 2 member context update(s)" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.identical.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
+| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.identical.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-77; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:78-81; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110|
 | **Each member source's structured locator and state: `whole_file` and `unresolved` file locators, and a recorded 3-7 line range on the exact blob that is `unresolved` with no range.** | "\"locator\":{\"end_line\":7,\"kind\":\"line_range\",\"start_line\":3}"; "\"locator_state\":\"whole_file\""; "\"locator_state\":\"unresolved\""; "\"resolution\":\"recorded_blob_mismatch\""; "\"resolved_ranges\":[]" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The provenance of this body: re-captured over HTTP by the producer, command and source tree the receipt names, carrying each member source's structured locator, resolved ranges and locator state.** | "familyReview.capture-provenance.json"; "re-captured over HTTP" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-13 |
+| **The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.** | "familyReview.capture-provenance.json"; "its own run, at source tree a8039b8e" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:9-11 |
 | **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** | "familyReview.identical.captured.json"; "captured_source_tree" | dashboard/src/panels/review/familyReview.capture-provenance.json:1-35 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
-| The fixture case distinguishes separate guarantee revisions with identical text from the same unchanged revision. | "distinguishes two distinct revisions with identical text from one unchanged revision" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:518-540 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
+| The fixture case distinguishes separate guarantee revisions with identical text ("Wording unchanged", both revisions named, the text once) from the same unchanged revision. | "it(\"distinguishes two distinct revisions with identical text" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:550-579 |
 | **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee`; `memberComparison` | dashboard/src/data/reviewFamily.ts:243-248; dashboard/src/data/reviewFamily.ts:250-259; dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:280-280; dashboard/src/data/reviewFamily.ts:283-283; dashboard/src/data/reviewFamily.ts:311-322 |
-| The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. | `GuaranteeComparisonBlock` | dashboard/src/panels/review/FamilyReviewCenter.tsx:104-169 |
+| The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. | `GuaranteeComparisonBlock` | dashboard/src/panels/review/FamilyReviewCenter.tsx:114-188 |
 
 ## Cross-Repo References
 
@@ -163,6 +165,8 @@ repository's own route over this repository's own fixture enclosure.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): citation re-anchored; the fixture bytes are unchanged. The worker's comment-only rewrite of the `ReviewWorkspace.family.test.tsx` header (MIK-L31 follow-up) no longer says "re-captured over HTTP"; the provenance row is reworded to the header's new text (this body is from ICR-L44's own run at `a8039b8e`, the receipt's top level) and re-measured (`8-13` → `9-11`). The rows below the header were re-pointed by the exact −1 line shift.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update; the fixture bytes are unchanged. The case that reads this body now asserts MIK-R31 rule 3's rendering of identical guarantee text on two revisions ("Wording unchanged · revision a → b", the text once, both IDs in details). **Reopened claim reworded and re-anchored** on an `it(` quote; this pass's generated bullet for it was removed.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the body was re-captured over HTTP from the real review route (44,684 bytes; sha256 `fa7a257f…c660`, recorded in `familyReview.capture-provenance.json`). Corrected the counts (`unique_member_revision_total` is 4) and the roster description (three first-page sides and one after roster read whole), replaced per-build UUIDs and digests with labels and sentences, described the four sources' locator states — including a recorded 3-7 line range on a 3-line exact blob that is `unresolved` with no range — and pointed provenance at the receipt. The identical-text and unchanged shapes it pins are unchanged. No verification stamp was advanced.
 

@@ -5,14 +5,39 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing
+
+[`reviewTrees.ts`](reviewTrees.ts.md) now carries what the reviewer's focused expression cards need (MIK-R31):
+`ReviewTreeEntry` and `ReviewTreeEntrySide` (each realization and proof entry located on both code sides, with the
+range state, the bounded excerpt, the authored role and rationale or facet, and the MIK-R03 state), `invariants=`
+on the request (ruling 2026-09-30T05:36:19 Q2), `treeComparisonNumber` (the payload's own `review:trees:<n>`, whose
+absence marks a dataset review), `useReviewTreeEntries` (one selection's entries, kept with the question they
+answer) and an `enabled` flag on `useReviewTrees`, which the workspace passes only for a tree comparison and pins to
+the payload's comparison number (review F11). **Every key is snake_case** (MIK-L25 review F9, settled by L31: the
+server re-keys the owners' camelCase documents), and the worklist's items and history rows are named types with
+MIK-R11's `planning` mark. The panel and the cards now render this view (`panels/review/LeafKnowledgeChanges.tsx`,
+`ExpressionCards.tsx`). **Candidate invariant (not ingested): dataset reviews make no tree read.**
+
+The real body ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) was re-captured from L31's scratch leaf
+(comparison 1, the planned marks and `planned_untouched` items of its two declared effects), and
+[`reviewTrees.test.ts`](reviewTrees.test.ts.md) asserts no camelCase key anywhere in it. The transport test's
+expansion refusal ([`reviewTransport.test.ts`](reviewTransport.test.ts.md)) was re-measured on the real route
+(MIK-R31 rule 6, ICR-L43 review R2 O2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The entry types. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-222 |
+| The comparison a payload names, and one selection's entries. | `treeComparisonNumber`; `useReviewTreeEntries` | dashboard/src/data/reviewTrees.ts:316-352 |
+| No camelCase key in the real body. | "one wire convention (MIK-L25 review F9)" | dashboard/src/data/reviewTrees.test.ts:120-145 |
 
 ## 260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees
 
@@ -24,16 +49,17 @@ the memory trees grouped by record and by source path, MIK-R03 currentness per s
 shared review vocabulary; `useReviewTrees` drops a superseded answer. The landed adapters (`review.ts`,
 `reviewFamily.ts`) are unchanged: for a converted leaf only their data source changed (rule 6).
 
-No component renders this view yet — the panel for rules 2 and 3 is carried to L31/L32 (ruling
-2026-09-29T22:22:37 Q2), and the mixed key casing the types mirror is carried to L31 (review F9). Its cases
+At L25 no component rendered this view — the panel for rules 2 and 3 was carried to L31/L32 (ruling
+2026-09-29T22:22:37 Q2), and the mixed key casing the types mirrored was carried to L31 (review F9); both are
+settled by L31 (above). Its cases
 ([`reviewTrees.test.ts`](reviewTrees.test.ts.md)) run over the real captured body
 ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) of the worker's converted scratch leaf, recaptured
 under the directory-name refs (ruling 2026-09-30T02:32:42 (a)).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tree view's answer and the request, addressed by number or `recorded`, never by path. | `ReviewTreesResult`; `reviewTrees` | dashboard/src/data/reviewTrees.ts:166-199 |
-| Three answers kept apart. | `reviewTreesRead` | dashboard/src/data/reviewTrees.ts:210-216 |
+| The tree view's answer and the request, addressed by number, `recorded` or (since L31) a selection's invariants, never by path. | "export interface ReviewTreesResult"; "export const reviewTrees" | dashboard/src/data/reviewTrees.ts:224-238; dashboard/src/data/reviewTrees.ts:250-262 |
+| Three answers kept apart. | `reviewTreesRead` | dashboard/src/data/reviewTrees.ts:273-279 |
 
 ## 260921-ICR-L44 The Family Mirror Carries Each Source's Locator, Ranges And State
 
@@ -86,6 +112,8 @@ consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` 
 measurement.
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing" at the top: the entry types, `invariants=` (ruling 05:36:19 Q2), `treeComparisonNumber`, `useReviewTreeEntries`, the `enabled` flag and payload pinning (review F11), snake_case (MIK-L25 review F9), the re-captured body and the re-measured transport refusal (rule 6 O2), and one candidate invariant. L25's section now says its carried items are settled. **Reopened claim reworded and re-anchored:** L25's answer-and-request row, on line-exact quotes; this pass's generated bullet for it was removed. Three rows added.
+- 2026-09-30T07:49:51+00:00: Generated citation repair: `reviewTreesRead` repointed to dashboard/src/data/reviewTrees.ts:273-279. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees" at the top: the new `reviewTrees.ts`, its test and captured body (three new cards governed here), rulings 22:22:37 Q2 and 02:32:42 (a) and review F4 and F9, with two rows. Passing rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.

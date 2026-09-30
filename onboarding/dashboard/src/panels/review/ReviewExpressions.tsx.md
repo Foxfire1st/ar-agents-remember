@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewExpressions.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a`|
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,12 @@
 ## Purpose
 
 Render actual bound source and test diffs directly after the selected intent in the central reading path.
+
+**Since MIK-L31 this is the dataset (unconverted) review's expression view only.** For a tree comparison the centre
+renders the focused expression cards (`ExpressionCards.tsx`, MIK-R31) instead of this file accordion; a dataset
+review makes no tree read and still renders this component unchanged (review F8's narrowed claim). The one change
+here is that `ExpressionControls` (the diff layout and full-file toggles) is exported, so the cards reuse the same
+controls and state.
 
 ## Code Commentary
 
@@ -56,6 +62,8 @@ The named constructs own this behavior; reads and validation use their existing 
 | --- | --- | --- |
 | `ReviewExpressions` owns the behavior described above. | `ReviewExpressions` | dashboard/src/panels/review/ReviewExpressions.tsx:38-101 |
 | `expressionSelection` owns the behavior described above. | `expressionSelection` | dashboard/src/panels/review/ReviewExpressions.tsx:152-180 |
+| The layout and full-file controls, exported for the focused cards. | "export function ExpressionControls({" | dashboard/src/panels/review/ReviewExpressions.tsx:103-150 |
+| The centre mounts this view only when no cards read applies (a dataset review). | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029 |
 | `ExpressionCard` owns the behavior described above. | `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239 |
 
 ## Cross-Repo References
@@ -67,6 +75,8 @@ No independent cross-repository interface is introduced by this source.
 | No additional cross-repository evidence is required. | — | — |
 
 ## Update History
+
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose records that this is now the dataset review's expression view (a tree comparison renders MIK-R31's focused cards) and that `ExpressionControls` is exported for the cards; two rows added.
 
 - 2026-09-27T00:59:43+00:00 — Replaced the resolved projection-gap note with the current loaded-link contract. Empty/partial copy no longer claims absent stored links; the complete source inventory and selected-subject source authority stay independent.
 - 2026-09-26T21:21:39Z — Recorded the upstream continuation projection limit without reclassifying stored realizations as absent.

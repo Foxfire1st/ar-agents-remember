@@ -5,14 +5,32 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L31 The Tree View Route Answers The Focused Cards
+
+**Route meaning extended (MIK-R31).** [`review_trees.py`](review_trees.py.md) gains `invariants=<ids>`
+(comma-separated identities, as the landed review payload addresses invariants): a query that names invariants is
+answered with only those invariants' realization and proof entries, on both code sides with their bounded excerpts,
+for the reviewer's focused expression cards (ruling 2026-09-30T05:36:19 Q2, the on-demand read; the leaf-wide view
+carries no entries, because every excerpt leaf-wide measured 637 KB). The three query parameters now arrive as one
+`ReviewTreesSelection` value whose `problem()` answers the 400: `history` other than `recorded`, a negative
+`comparison`, more than 500 named invariants, or any key longer than 64 characters (review F10, 2026-09-30T06:10:21).
+The client pins every read to the payload's own comparison number (review F11). The mixed key casing carried from L25
+(review F9) is settled: the application re-keys the embedded documents, so the body is snake_case throughout. No
+route was added, and a dataset review never calls this route.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:36-38; mcp/src/agents_remember/serving/review_trees.py:66-93 |
+| The query carries the named invariants to the port. | `ReviewTreesQuery` | mcp/src/agents_remember/serving/review_trees.py:41-51 |
 
 ## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
 
@@ -28,7 +46,7 @@ Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route and its three answer classes. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:57-88 |
+| The route and its three answer classes, with the selection's own 400 since MIK-L31. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:99-134 |
 | The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:305-305 |
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
@@ -45,6 +63,7 @@ route-level case pins the five-arm status table so the admission is held by beha
 alone.
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Route Answers The Focused Cards" at the top: `invariants=` (ruling 05:36:19 Q2), `ReviewTreesSelection` with the 500-key and 64-character bounds (review F10 at 06:10:21), the payload-pinned reads (F11), and the settled key casing (MIK-L25 review F9). **Reopened claim reworded:** L25's route row; this pass's generated bullet for it was removed. Two rows added.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port" at the top (the new `review_trees.py`, carded and governed here; the collaborator field; the registration; rulings Q5, F6 and F9), with two rows. Rows citing moved lines were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): re-pointed 6 citations into `mcp/tests/test_knowledge_review_source_endpoints.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. One claim was re-worded after re-reading. The selector-kind row said the case asserts that omitting both selector parameters is admitted, and the case (moved verbatim) does not. It now states what the two cited cases assert, and its generated-repair bullet was retired. No stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`): No route impact: L55 (`ICR-R24@v3`) bounded the notes listing inside `serving/notes.py`. It now makes one followed `stat` per entry, realpath-checks only symlinks, and enters directories through `O_DIRECTORY|O_NOFOLLOW` descriptors. The route set, the registration order before the static mount, the shared `SCOPED_READ_RESPONSES` idiom and the `NotesListing`/`NoteContents` contracts are unchanged, and no cache, store or daemon joined the route. The file-level account, including the accepted read-without-search deviation and the two residual windows, is on `notes.py.md`. No stamp was advanced.
@@ -251,7 +270,7 @@ same eight keys, no `capsuleDelivery` key appears, and diffing the two transcrip
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:107-159; mcp/src/agents_remember/serving/launch_capsule.py:233-248; mcp/src/agents_remember/serving/launch_capsule.py:251-272; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-78 |
+| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:73-78; mcp/src/agents_remember/serving/launch_capsule.py:107-159; mcp/src/agents_remember/serving/launch_capsule.py:233-248; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:251-272 |
 | The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
 | The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-60 |

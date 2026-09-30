@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,107 +17,79 @@
 ## Purpose
 
 One **captured route answer body**: the bytes the intent-review route published for one real enclosure,
-recorded at `63b47629` by a leaf-local probe that is not part of the repository, and installed as the fixture the
-family workspace case stubs `fetch` with. **40,941 bytes; sha256
-`383bd101a349b2d054dca8ab7fb05cf8d182612dc17cdced57bae5c358af4db1`.** It is untracked in this leaf's
-working tree (`??`), so these are candidate bytes a reader re-checks against the file, not bytes any
-commit holds.
+**re-captured by MIK-L31 from the current route** (MIK-R31 rule 6, the L44-R1-F5 remainder) with L44's producer,
+first build accepted, and installed as the fixture the family workspace case stubs `fetch` with. **45,874 bytes;
+sha256 `16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134`**, as its row in
+`familyReview.capture-provenance.json` (`mik_l31_recapture`) records. It is the `one-sided1-one-sided` request: the
+`retry-and-anchor-family` before-side cursor of a page-size-1 read, continued at page size 4.
 
-It is data with a provenance chain, not an assembled fixture: the case stubs **only `fetch`** and lets
-the real client, the shared decode and the real component tree read these bytes. It is **not browser
-evidence** — the repository's Playwright configs are Dagger-only and the case file says so in its own
-header.
+It is data with a provenance chain, not an assembled fixture: the case stubs **only `fetch`** and lets the real
+client, the shared decode and the real component tree read these bytes. It is **not browser evidence**.
 
 The envelope is the review read (`state: "review"`, `operation: "read_knowledge_review"`,
 `surface_version: "knowledge-review-surface/1"`) over the fixture enclosure (`leaf_id: "260921-icr-l1"`,
 master/task_ref `review-source-endpoints-fixture`) with the per-run fixture repository uuid normalized
 to `<repository_id>`.
 
-**What this body pins apart from its six siblings: the one membership row that a single snapshot
-records, whose revision content this page did not carry.** It is the only body of the seven in which
-exactly one row carries the page-scoped uncarried state **and** the other snapshot does not list that
-revision at all, which is why the case can address the row in the singular and why the sentence it must
-produce is a fact about the **page** — never the one-sided comparison wrapper, and never "the snapshot
-records no row".
+**What this body pins: the one membership row that a single snapshot records, whose revision content this page did
+not carry.** Exactly one row in the whole body carries the page-scoped uncarried state, and the other snapshot does
+not list that revision at all, which is why the case can address the row in the singular and why the sentence it
+must produce is a fact about the **page** — never the one-sided comparison wrapper, and never "the snapshot records
+no row".
 
 ## Code Commentary
 
 ### Logic
 
-The capture bytes and their recorded page facts are unchanged. Its current mounted case uses the loaded-context vocabulary and the exact page/side distinction below; a completed walk is not proof that its last body alone carries every member or claim.
+**The body is a continued page of the before side's walk.** `payload.page` is `collection: "family_members"`,
+`state: "continued"`, `returned` 5, `remaining` 6, `total` 11 on `total_basis: "selection"`, with `continued_from`
+(position 1) and `continuation` cursors and a scope naming `side=before`, family revision `f20547ca…` and
+`page_size=4`. The family context is `partial` with two families, `membership_rows_total` 8 and
+`unique_member_revision_total` 4; every side carried both of its 2 recorded rows.
 
-**The body is a continued page of the before side's walk.** `payload.page` is `collection:
-"family_members"`, `state: "continued"`, `returned` 5, `remaining` 6, `total` 11 on
-`total_basis: "selection"`, with `continued_from` and `continuation` cursors and a scope naming
-`side=before`, family revision `af44f607-e364-443a-8cee-fe2a1d4e8e82` and `page_size=4`. The family
-context is `partial` with two families, `membership_rows_total` 8 and — the lowest among the seven
-bodies — `unique_member_revision_total` 2, because this page carried one row per side of each family.
+**The uncarried row is the whole reason this file exists.** `retry-and-anchor-family`'s before side lists member
+`9b397d0d-93ab-4c8b-949a-546685c06e31` (`anchor-identity-preservation`, revision
+`dccb2d50-628c-4f00-aa46-e3ba98c46874`) with state `content_not_on_page`. The after side of that family (revision
+`a98b9149…`) lists two recorded rows and does **not** list `dccb2d50…` at all. So for that member no side this page
+reached carried content: the comparison is `not_on_page`, and the only truthful sentence is the page-scoped one.
 
-**The uncarried row is the whole reason this file exists.** Family
-`dc9b58d2-f5d0-4a9c-b6df-1ec44c422f94`'s before side measured 2 rows and carried both: one `recorded`
-row and one row whose state is `content_not_on_page` for revision
-`63a89639-aac8-4802-ba97-3324c3f6acaf` (member `f117ecca-1d81-4e46-b91c-c2c8d36675a0`). The after side
-of that family records revision `74555fd7-8d39-4561-a672-f9973f74c0d4` and lists one recorded row — it
-does **not** list `63a89639-...` at all. So for that member, no side this page reached carried content:
-the comparison is `not_on_page`, and the only truthful sentence is the page-scoped one the member
-statement prints, which is exactly what the row itself already says in its own detail.
+**The same body carries the other one-snapshot fact, outside the family context.** `source.unresolved` holds exactly
+**two** rows (references `0133d688-6f67-467a-a24a-68b587b602c3` and `2c2e8b4a-d6c9-4d69-8a0f-c397336befca`), each
+with the owner's sentence "this record is held by one snapshot and was not reached by the other side's declared
+selection; it is displayed as present outside the selection and never as a deletion". That is a different owner's
+fact from the member row above and must not be merged with it.
 
-**The same body carries the other one-snapshot fact, outside the family context.** `source.unresolved`
-holds exactly **two** rows, both with the owner's sentence `this record is held by one snapshot and was
-not reached by the other side's declared selection; it is displayed as present outside the selection and
-never as a deletion` (references `21fcbbd7-a5a8-4903-a4d4-e96abbb6d0ce` and
-`23053fbb-423f-4a36-a1eb-3972f3aa22d1`). That is the attribution vocabulary's statement about a record
-held by one snapshot; it is a different owner's fact from the member row above and must not be merged
-with it.
+**What a reader must NOT look for in this body.** Every family side is `state: "recorded"` and carries a
+guarantee, so the guarantee-level `one_sided` and `unrecorded` shapes are not composed here. This body's
+one-sidedness is the member row and the two unresolved attribution rows.
 
-**What a reader must NOT look for in this body.** Every one of its four family sides is `state:
-"recorded"` and carries a guarantee object — as do all 26 sides across the seven captured bodies — so
-the **guarantee-level** `one_sided` (exactly one snapshot recorded a revision, no comparison made) and
-`unrecorded` shapes are not composed here at all. The vocabulary declares those shapes and the renderer
-has a block for them, but this body's one-sidedness is the member row and the two unresolved
-attribution rows. A reader (or a later curator) who expects an unrecorded family side in this file will
-not find one, and should not "fix" the body to supply it.
-
-**One case drives these bytes, and it asserts the boundary in four directions.** It takes the single
-row carrying `review-family-member-state`, clicks that row's opener, and asserts the centre shows the
-not-on-page statement containing `did not carry the revision content` while the one-sided, unchanged and
-changed member blocks are all **absent**. Singular addressing is itself part of the evidence: the
-sibling `walkFinal` body carries eleven uncarried rows and could not be driven this way, and the sibling
-`continued` body's uncarried row is listed by **both** sides, which is the different sentence pair the
-case beside this one drives.
+**One case drives these bytes, and it asserts the boundary in four directions.** It takes the single row carrying
+`review-family-member-state`, clicks that row's opener, and asserts the centre shows the not-on-page statement
+containing "did not carry the revision content" while the one-sided, unchanged and changed member blocks are all
+**absent**. The sibling `walkFinal` body carries eleven uncarried rows and could not be driven this way, and the
+sibling `continued` body's uncarried row is listed by **both** sides.
 
 ### Conventions
 
-- Captured bytes, never hand-edited: the provenance lives in the consuming case file's header, and this
-  card adds no second provenance. The body itself carries the capture directory in its inventory
-  command (`temp/icr/l24-capture/scenario-one-sided/...`), which is where the file's name comes from.
+- Captured bytes, never hand-edited: the provenance is the receipt's `mik_l31_recapture` row.
 - One JSON document, minified to a **single line** with sorted keys. Every reference row below cites the
-  whole file (`:1-1`) and names the exact key path and value in the finding, because a line number
-  cannot distinguish two facts in a one-line file.
+  whole file (`:1-1`) and names the exact key path and value in the finding.
 - The body is opaque data to this client: the case types it `unknown` and narrows it at runtime.
-- Numbers on this card are the file's: byte size and digest are the file, counts are the owner's.
+- Numbers on this card are the file's; the identities are one draw of the scenario builder.
 
 ### Invariants And Boundaries
 
 - **A row whose content no reached side carried is a statement about the page.** It is not a deletion,
-  not an absence from a snapshot, and not a one-sided comparison: the sentence names the page and the
-  revision, and stops there.
+  not an absence from a snapshot, and not a one-sided comparison.
 - **`content_not_on_page` is the state the whole distinction rests on.** The membership row **is**
-  recorded; only its revision content fell outside the page. A rendering that reads the state as "the
-  snapshot has no row" falsifies the store.
-- **One snapshot holding a record is its own published fact.** It appears on `source.unresolved` with
-  the owner's sentence, and it is not evidence that the other snapshot deleted anything.
-- **The guarantee-level one-sided shape is not in this body.** All seven captured bodies record a
-  guarantee on every side; a reader must not read this file's name as a claim about family revisions.
-- **No conclusion is carried anywhere in the body.** The evidence state is `none_recorded`, the
-  assessment state is `unassessed`, and the submission block is `unavailable`.
-- **Not browser evidence.** These are the bytes a real route published, rendered by the real client in a
-  mounted test tree; they are not a live page fed by a running publication.
+  recorded; only its revision content fell outside the page.
+- **One snapshot holding a record is its own published fact** on `source.unresolved`, and it is not evidence that
+  the other snapshot deleted anything.
+- **No conclusion is carried anywhere in the body**, and **not browser evidence**.
 
 ### Todos
 
-None recorded. The one-sided member sentence and the one-snapshot attribution sentence are both
-published by their owners; no obligation is attached to this file.
+None recorded.
 
 ## Docs References
 
@@ -130,27 +102,25 @@ No domain documentation source is configured for this repository (`system/source
 
 ## Repo-Internal References
 
-Every row was re-derived against this candidate, and every anchor in a row occurs on the line the row
-cites. Because each captured body is one minified line, the cited range is the whole file and the
-finding names the exact key path and value a reader can re-check.
+Every row was re-derived against the MIK-L31 re-capture, and every anchor in a row occurs on the line the row
+cites. Because each captured body is one minified line, the cited range is the whole file and the finding names the
+exact key path and value a reader can re-check.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, the one normalization, and the capture directory the file's own name comes from.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>"; "scenario-one-sided"; "l24-capture" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The page block: this is a continued page of the before side's walk, with its returned/remaining/total arithmetic and its scope.** | "\"collection\":\"family_members\""; "\"state\":\"continued\""; "\"returned\":5"; "\"remaining\":6"; "\"total\":11"; "\"page_size=4" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The family context, with the lowest distinct-revision count of the seven bodies because each side carried one row.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":2" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The one uncarried row of the whole body: its revision identity, its member identity, and the state that says the row is recorded while its content is not on the page.** | "63a89639-aac8-4802-ba97-3324c3f6acaf"; "f117ecca-1d81-4e46-b91c-c2c8d36675a0"; "\"state\":\"content_not_on_page\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The two families and the rosters this page measured against what it carried, including the one-row sides.** | "c47d4be4-4780-483a-a43b-3eedb7022507"; "dc9b58d2-f5d0-4a9c-b6df-1ec44c422f94"; "762083cc-a98b-4afe-9cfb-a5be1fe7bb67"; "af44f607-e364-443a-8cee-fe2a1d4e8e82"; "74555fd7-8d39-4561-a672-f9973f74c0d4"; "holds 2 recorded membership(s) and this page carried 1"; "\"members_total\":2" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The other one-snapshot fact: two unresolved attribution rows, each displaying a record held by one snapshot as present outside the selection rather than as a deletion.** | "this record is held by one snapshot and was not reached by the other side's declared selection; it is displayed as present outside the selection and never as a deletion"; "\"recorded_reference\":\"21fcbbd7-a5a8-4903-a4d4-e96abbb6d0ce\""; "\"recorded_reference\":\"23053fbb-423f-4a36-a1eb-3972f3aa22d1\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.oneSided.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-78; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:84-107|
-| **The provenance of this body after the locator re-capture: it still holds its capture at `63b47629`, when a roster page listed only membership rows, and it was not re-captured — the current route cannot reproduce it, because since a5bec6c3 a roster page also resolves the members its content and claim items represent. Its member sources therefore predate the structured `locator`, `resolved_ranges` and `locator_state` fields.** | "63b47629"; "not_recaptured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:14-19 |
-| **The receipt's worker-stated `not_recaptured` entry for this file, with the evidence it cites.** | "familyReview.oneSided.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-52 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
-| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement"; "did not carry the revision content"; `ONE_SIDED` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:541-559; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:555-555; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:68-68 |
+| **The enclosure the bytes were recorded over, the one normalization, and the scratch directory the capture ran in.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>"; "l31-one-sided" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
+| **The page block: a continued page of the before side's walk, with its returned/remaining/total arithmetic and its scope.** | "\"collection\":\"family_members\""; "\"returned\":5"; "\"remaining\":6"; "\"total\":11"; "\"page_size=4" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
+| **The family context and its counts.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":4" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
+| **The one uncarried row of the whole body: its revision and member identities, and the state that says the row is recorded while its content is not on the page.** | "dccb2d50-628c-4f00-aa46-e3ba98c46874"; "9b397d0d-93ab-4c8b-949a-546685c06e31"; "\"state\":\"content_not_on_page\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
+| **The other one-snapshot fact: two unresolved attribution rows, each a record held by one snapshot displayed as present outside the selection.** | "\"recorded_reference\":\"0133d688-6f67-467a-a24a-68b587b602c3\""; "\"recorded_reference\":\"2c2e8b4a-d6c9-4d69-8a0f-c397336befca\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
+| **The receipt row for this file in the MIK-L31 re-capture.** | "familyReview.oneSided.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:78-78 |
+| The one constant that binds this body to its case, and the runtime narrowing. | "const ONE_SIDED"; "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:71-71; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110 |
+| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
+| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:581-599 |
 | **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:311-322; dashboard/src/data/reviewFamily.ts:324-347 |
-| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:410-410; dashboard/src/panels/review/FamilyTree.tsx:411-411; dashboard/src/panels/review/FamilyReviewCenter.tsx:567-567; dashboard/src/panels/review/FamilyReviewCenter.tsx:201-201; dashboard/src/panels/review/FamilyReviewCenter.tsx:202-202 |
-| Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | `SelectedStatement`; `UnavailableMember` | dashboard/src/panels/review/SubjectReview.tsx:53-114; dashboard/src/panels/review/FamilyReviewCenter.tsx:764-787 |
+| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:410-411; dashboard/src/panels/review/FamilyReviewCenter.tsx:231-232 |
+| Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | "export function SelectedStatement({"; "function UnavailableMember({" | dashboard/src/panels/review/SubjectReview.tsx:217-280; dashboard/src/panels/review/FamilyReviewCenter.tsx:838-861 |
 
 ## Cross-Repo References
 
@@ -163,6 +133,8 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder). The card now describes the new bytes (45,874 bytes, sha256 `16e24767…`): the before-side continued page at page size 4, the one uncarried row `9b397d0d…`/`dccb2d50…`, `unique_member_revision_total` 4, and the two unresolved attribution rows `0133d688…` and `2c2e8b4a…`. **Claims re-anchored:** every row naming the old identities, counts, capture directory and the old provenance (`63b47629`, `not_recaptured`) is replaced by a row on the new bytes and the receipt's `mik_l31_recapture` row; the cross-file rows into `FamilyReviewCenter.tsx` and `SubjectReview.tsx`, already stale, are re-measured (`231-232`, `838-861`, `217-280`, on line-exact quotes); this pass's generated bullet for the receipt row was removed.
 
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
 

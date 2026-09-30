@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `dashboard/src/panels/changeset/DiffPane.tsx`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-29T23:00+02:00                             |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`         |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
+| lastUpdated            | 2026-09-30T10:05:09+02:00                          |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`         |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -26,19 +26,26 @@ across the L2 plain code pane and this diff.
 
 ### Logic
 
-Props are `{ before, after, language, mode: "split" | "inline", collapse? = true }`. A `ref` points at a
+Props are `{ before, after, language, mode: "split" | "inline", collapse? = true, firstLine?, fit? = false }`.
+**`firstLine` and `fit` were added by MIK-L31 for the reviewer's focused expression cards** and change nothing when
+omitted: `firstLine` gives each side's first line in its file (an excerpt), so the before editor numbers from
+`firstLine.before` and the after editor (and the inline editor) from `firstLine.after` through
+`file-viewer/lineNumbering.ts`'s `numberedFrom`, which is the plain `lineNumbers()` for line 1; `fit` swaps the
+`host` css for `fitHost`, which sizes the editors to their content (`height: auto`, the merge view capped at
+`32rem`) so the card, not the pane, scrolls, and keeps the same full-height change highlights. A `ref` points at a
 host div; an effect builds the editor: **`langExtension(language)`** is awaited (the `@codemirror/lang-*`
 packs are code-split), guarded by a `disposed` flag against a late resolve after teardown. The shared
-`base` extension array is `lineNumbers()`, `EditorState.readOnly.of(true)`,
-`EditorView.editable.of(false)`, `EditorView.lineWrapping`, `codeTheme`, plus the resolved language when
-one exists. `collapseUnchanged` is `{ margin: 3 }` when `collapse` (the change-set view) else `undefined`
+`common` extension array is `EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`,
+`EditorView.lineWrapping`, `codeTheme`, plus the resolved language when one exists; `base` is
+`numberedFrom(afterFirst)` plus `common`, and the split view's `a` side uses `numberedFrom(beforeFirst)` plus
+`common`. `collapseUnchanged` is `{ margin: 3 }` when `collapse` (the change-set view) else `undefined`
 (full-file view shows everything). For `split`: `new MergeView({ a: {doc: before, extensions: base}, b:
 {doc: after, extensions: base}, parent, gutter: true, collapseUnchanged })` — **no `revertControls`**, so
 the diff is read-only. For `inline`: `new EditorView({ parent, state })` whose doc is `after` and whose
 extensions are `unifiedMergeView({ original: before, mergeControls: false, gutter: true, collapseUnchanged
 })` plus `base`. Cleanup sets `disposed = true` and calls `view?.destroy()`. The effect deps are
-`[before, after, language, mode, collapse]`, so the editor is recreated wholesale when any change. Render
-is a single `<div ref className={host} data-testid="diff-pane" />`. The `host` css scopes the
+`[before, after, language, mode, collapse, beforeFirst, afterFirst]`, so the editor is recreated wholesale when any change. Render
+is a single `<div ref className={fit ? fitHost : host} data-testid="diff-pane" />`. The `host` css scopes the
 editor-fill to the **direct** `.cm-editor` (inline/single-editor mode scrolls via its own `.cm-scroller`)
 and makes `.cm-mergeView` the bounded scroll container in split mode — the merge theme grows its inner
 editors to content height and forces their scrollers to `overflow:visible`, so a long split diff scrolls
@@ -72,14 +79,18 @@ fetching — the caller (`ChangeSetPane`) supplies already-fetched content from 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:24-64 |
 | The shared CodeMirror theme (chrome + syntax `HighlightStyle`). | `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
 | The lazy language-by-extension map it awaits. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
-| `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false). | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
+| `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:63-140 |
+| The content-sized host an expression card uses (MIK-L31). | `fitHost` | dashboard/src/panels/changeset/DiffPane.tsx:49-59 |
+| The gutter that keeps a file's own numbering for an excerpt. | `numberedFrom` | dashboard/src/panels/file-viewer/lineNumbering.ts:7-11 |
+| The focused card that passes `firstLine` and `fit`. | `ChangedExcerpt` | dashboard/src/panels/review/ExpressionCards.tsx:434-463 |
 | The column wrapper that mounts it and supplies `mode`/`collapse`. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
 | The `FileDiff` (before/after content) the caller passes through. | `FileDiff` | dashboard/src/data/changeset.ts:51-58 |
 
 ## Update History
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the optional `firstLine` and `fit` props MIK-L31 adds for the focused expression cards (per-side numbering through `numberedFrom`, the content-sized `fitHost`); the defaults are unchanged. The `DiffPane` row is reworded; three rows added. The file was not prettier-clean on base and was left in its existing style (review R1 F9).
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `FileDiff` repointed to dashboard/src/data/changeset.ts:51-58. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 5 Repo-Internal citation rows with exact

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.family.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:38:01+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
+| lastUpdated | 2026-09-30T10:52:00+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -25,15 +25,18 @@ travels the way the browser's does — status, body, the shared decode in `data/
 component tree, the read cycle in `ReviewReadCycle.ts`. Only `fetch` is stubbed, and the bodies it is
 stubbed with are the real route's own: the `familyReview.*.captured.json` files hold the bytes
 `serving/review.py` published over the real application owners and the real store for one real enclosure.
-**They are not all from the same route revision, and the header says which is which.** `complete` and
-`identical` were re-captured over HTTP by the producer, command and source tree named in
-`familyReview.capture-provenance.json`, and carry each member source's structured `locator`,
-`resolved_ranges` and `locator_state`. `truncated`, `continued`, `oneSided`, `walkFinal` and `emptyRoster`
-still hold their capture at `63b47629`, when a roster page listed only membership rows; the current route
-also resolves the members a page's content and claim items represent, so it cannot reproduce the first
-four, and `emptyRoster` carries no member source and was left as captured. Several cases here assert states
-only those older bodies produce, so their re-capture belongs with the change that moves those cases to the
-current route's roster states. The header names capture commits and the receipt rather than a leaf, per the
+**Since MIK-L31 every body is from the current route** (MIK-R31 rule 6, the L44-R1-F5 remainder): `complete`
+and `identical` were re-captured earlier by the producer named in `familyReview.capture-provenance.json`, and
+`truncated`, `continued`, `oneSided`, `walkFinal` and `emptyRoster` were re-captured by MIK-L31 with L44's
+producer (first build accepted, one attempt each; the receipt's `mik_l31_recapture` section, captured at the
+L10-synced tree `18b77329`). All carry each member source's structured `locator`, `resolved_ranges` and
+`locator_state`. Because the current route's bounded first page always carries the member its first items
+represent, five expectations were moved to current-route truth (the worker's open question 3), and the one
+rendering branch no real body reaches any more, "this page carried no member row", is kept and covered by a
+labelled SYNTHETIC body (ruling 2026-09-30T05:36:19 Q3). The module header (lines 9-21, refreshed by a
+comment-only follow-up) says so: two captures recorded in the receipt, the MIK-L31 one at the L10-synced tree
+`18b77329` (`mik_l31_recapture`), counts that depend on a build's identity draw read from the body, and the one case
+labelled SYNTHETIC as the only assembled body. The header names capture commits and the receipt rather than a leaf, per the
 repository's source-comment scope rule. No assertion reads a prop this test itself passed, and no
 payload is assembled here: a case that reached into the component with a hand-built value would prove
 nothing about the wire contract, which is what these cases are about.
@@ -71,7 +74,7 @@ Roster assertions distinguish cumulative read-item counts from loaded member-con
 
 The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 
-**The module carries twenty-one cases** (`grep -c '^  it('` on this candidate), all inside one
+**The module carries twenty-two cases** (`grep -c '^  it('` on this candidate), all inside one
 `describe("ReviewSurface family-centered workspace (ICR-R24@v3)")`. They fall into three groups: the
 original layout cases (the tree, the centre, the explorer, the roster walk, the no-family-context body, the
 expansion preference, keyboard traversal and the filter), the fix-round cases that pin a sentence's
@@ -100,7 +103,7 @@ declare — and throws loudly rather than mounting the surface under a wrong sub
 module's own reading instead of silently re-pointing an assertion, and several cases additionally read
 which row they are about out of the DOM before asking the centre, for the same reason.
 
-**The twenty-one cases and what each one pins:**
+**The twenty-two cases and what each one pins (twenty-one before MIK-L31 added the real-body roster case, 10):**
 
 1. *renders the recorded families, their authored guarantees and the full member statements* — the context's
    own `partial` state is not upgraded, each family's guarantee is printed as the revision's own authored
@@ -134,23 +137,29 @@ which row they are about out of the DOM before asking the centre, for the same r
 9. *reports the filter scope without restating the comparison's totals* — the filter scope line reports the
    composed family contexts, a filter is stated as a filter on this display only, a matched family keeps its
    members, and a filter matching nothing says the composed contexts are unchanged by it.
-10. *(fix round 1)* *says a bounded roster carried none of the measured rows, never that the read measured
-    zero* — every bounded roster prints the **page-scoped** sentence ("this page carried no member row",
-    "0 of the 2 recorded membership row(s) it measured") and the continuation sentence, and never the word
-    "measured zero"; the owner's own two measures are printed above it so the two clauses cannot disagree.
+10. *(MIK-L31, real body)* *states a bounded roster page as the part of the measured rows it carried, never as
+    zero* — over the re-captured `TRUNCATED` body, all four rosters print the owner's own measures ("records 2
+    membership row(s); loaded context contains 1 of them"), no empty-roster sentence is printed, "measured zero"
+    is never said, and the continuation is offered.
+10a. *(fix round 1, kept by ruling Q3 over a SYNTHETIC body)* *says a bounded roster carried none of the
+    measured rows, never that the read measured zero* — the body is the real `TRUNCATED` capture with every
+    roster's member rows removed, labelled SYNTHETIC in the case and never offered as a route body; every
+    bounded roster prints the **page-scoped** sentence ("this page carried no member row", "0 of the 2 recorded
+    membership row(s) it measured") and the continuation sentence, and never "measured zero".
 11. *(fix round 1)* *still says the measured zero when the read really measured zero memberships* — the other
     direction of the same sentence, and the only place "the read measured zero memberships" may be said.
 12. *(fix round 1)* *heads a bounded member context partial and counts the owner's rows, not this page's* —
     the centre's heading is "Recorded member context (partial)", the counts state the read's own
-    `4 … across 2 recorded side(s) (before 2 + after 2)` and "this page carried 0 member row(s) of them"
-    plus the continuation sentence, the distinct-member line is scoped to the rows this page carried, the
+    `4 … across 2 recorded side(s) (before 2 + after 2)` and "loaded context contains <n> member row(s) of them",
+    where `<n>` is read from the body (the opened family's distinct loaded member revisions, asserted below 4 so a
+    capture that carried every row cannot pass; MIK-L31, review F7 and R2-7), plus the continuation sentence, the distinct-member line is scoped to the rows this page carried, the
     per-side lines are the tree's own components mounted in the centre, and the centre's continuation control
     is **clicked** and the request it issues asserted, because a control mounted without its handler renders
     identically and fetches nothing (fix round 2, V6).
 13. *(fix round 1)* *distinguishes two distinct revisions with identical text from one unchanged revision* —
-    two distinct revisions carrying the same authored text render as `different family revisions` with "A
-    revision was authored between them; the text is what did not move." and never as unchanged; only the
-    same-revision family may say the guarantee is unchanged.
+    two distinct revisions carrying the same authored text render, since MIK-R31 rule 3 (the 13:40 decision), as
+    "Wording unchanged · revision <before8> → <after8>" with the guarantee shown **once** and both revision IDs
+    under details, never as "the guarantee is unchanged"; only the same-revision family may say that.
 14. *(fix round 1)* *states a member whose content the page did not carry as that, not as a one-sided
     statement* — the `not_on_page` shape is rendered as itself, with no one-sided, unchanged or changed
     wrapper beside it.
@@ -163,12 +172,14 @@ which row they are about out of the DOM before asking the centre, for the same r
     sentence and never "records no member row".
 17. *(fix round 1)* *prints one empty-roster sentence in both columns, not two that happen to agree* — the
     centre's line is asserted **equal to** the tree's own string for the same family, which is what makes it
-    one implementation mounted twice rather than two sentences that happen to read alike.
+    one implementation mounted twice rather than two sentences that happen to read alike. Since MIK-L31 it runs
+    over the measured-empty `EMPTY_ROSTER` body, the one the current route serves with an empty roster.
 18. *(fix round 3)* *states the page that completes a multi-page walk as the walk's last page, not as the
     whole roster* — the final page of a four-page walk says it "completes the walk" and that the pages before
     it carried the rows this one did not, never "the page is the whole selection"; the rosters the read took
     whole still say so and never claim to be a step in a walk, and the surface read the route's own sentence
-    for that side rather than inventing one. Before the walk's completion guard was corrected this request
+    for that side rather than inventing one. Since MIK-L31 the carried count is read from the body (the side
+    with 72 recorded rows), asserted below 72. Before the walk's completion guard was corrected this request
     was answered with HTTP 500.
 19. *(fix round 5, V10)* *keeps the reader's workspace state across two page requests through the centre's
     own control* — the reader sets a selected family, a filter, an inline diff layout and "changed regions
@@ -293,7 +304,7 @@ the two loops that search the DOM for a shape throw with the sentences they did 
 
 ### Todos
 
-None recorded. The obligations this module deliberately leaves open are named in its own header and kept
+The obligations this module deliberately leaves open are named in its own header and kept
 there: the mounted-browser structural and visual review, and R25's assembled acceptance, belong to other
 owners — the live walk's proof lives in enclosure `260921-icr-l31b-ar` at commit `5f14fc67`, not here.
 
@@ -310,54 +321,55 @@ The statements below are grounded in repository source only.
 
 Every claim on this card is checkable in the shipped candidate: the module's own statement of what it
 exercises and of what it does not claim, the four pieces of its harness, the captured bodies it reads, and
-each of the twenty-one cases by its own name. Every anchor in a row below occurs on a line inside the range
+each of the twenty-two cases by its own name. Every anchor in a row below occurs on a line inside the range
 that row cites; the anchor of a case row is that case's own `it(...)` name, which occurs on the line that
 opens the case.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement that this is `ICR-R24@v3` at the mounted surface: the family tree, the unified central reading path, the complete source explorer and the one family-roster walk control.** | "ICR-R24@v3 at the mounted surface" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:1-2 |
-| **Real component and real client, with only `fetch` stubbed, and the captured bodies' provenance: two bodies re-captured under the receipt, five still at their `63b47629` capture.** | `intentReview`; "is stubbed"; "familyReview.*.captured.json"; "familyReview.capture-provenance.json"; "63b47629" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:4-22 |
-| What these cases catch, including the two ways a repair could lie. | "WHAT THESE CASES CATCH"; "the two ways a repair could lie" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:24-31 |
-| **What they do not claim: not browser evidence, Dagger-only Playwright configs, and a live publication explicitly out of scope.** | "WHAT THEY DO NOT CLAIM"; "These are not browser evidence"; "require-dagger-test-environment.mjs"; "not of a live page fed by a running publication" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:33-37 |
-| The two collection constants the walk case pins, and the captured refusal body the no-family-context case mounts. | `REVIEW_PAGED_COLLECTIONS`; `REVIEW_WALKABLE_COLLECTIONS`; `RECORDS_PAGE_REFUSAL_RESPONSE` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:45-47 |
-| The three task identifiers and the seven captured bodies, read from the capture directory. | "const COMPLETE"; "const EMPTY_ROSTER"; "const WALK_FINAL" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:64-64; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:69-70 |
-| The loader that resolves a capture from this file's own directory rather than the process cwd. | "function captured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:75-75 |
-| The runtime narrowing that finds a family subject in a captured body and throws rather than mounting under a wrong one. | "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:72-99 |
-| The typed refusal the explorer's reads are answered with, so no case asserts on a file's bytes. | "const SOURCE_REFUSAL" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:101-113 |
-| The one stubbed `fetch` for the whole surface: it records the URLs, routes `/source-content` to the refusal, and answers the rest with the captured queue in order. | "function serving"; "vi.stubGlobal"; "/source-content" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:119-141 |
-| The test mount opens the real surface with the fixture task and selected subject context. | `mount` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:153-165 |
-| The teardown cleans the mounted tree and restores stubbed globals. | "afterEach(() => {" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:167-170 |
-| The one `describe` every case below lives in. | "ReviewSurface family-centered workspace (ICR-R24@v3)" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:172-899 |
-| Case 1: the recorded families, their authored guarantees, the full member statements with unchanged siblings included, the recorded sharing, and the opener on every member row. | "renders the recorded families, their authored guarantees and the full member statements" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:173-211 |
-| Case 2: a guarantee comparison is drawn in the shape the two recorded revisions support — the same revision on both snapshots versus two different ones. | "opens a family review whose guarantee comparison is the shape the two recorded revisions support" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:213-246 |
-| Case 3: a member's review keeps its family, and statement, membership, source attribution and authored judgment are five separate facts. | "keeps the family context when a member is selected and states the five facts separately" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:248-276 |
-| Case 4: the complete source explorer is independent of the family selection. | "keeps the complete source explorer independent of the family selection" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:278-294 |
-| **Case 5: a roster walks only from the cursor that family's own page published, and the collection picker offers no option that would fetch a refusal.** | "sends the family's published cursor and refuses a response from another walk" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:296-339 |
-| Case 6: a body with no family context is rendered as that fact and never as a measured zero. | "renders a body that carries no family context as that fact, never as a measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:341-360 |
-| Case 7: an expanded entry stays expanded across a diff-layout switch, and full-file is one value shared by the explorer and the centre. | "keeps an expanded entry expanded across a diff-layout switch" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:362-389 |
-| Case 8: the current selection is exposed on the tree and arrow keys traverse the one roving-focus group. | "marks the current selection and traverses the tree by keyboard" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:391-414 |
-| Case 9: the filter reports its own scope, keeps a matched family's members, and states that the composed contexts are unchanged when nothing matches. | "reports the filter scope without restating the comparison's totals" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:416-445 |
-| **Fix round 1, direction one: a bounded roster says it carried none of the rows it measured, and never that the read measured zero.** | "says a bounded roster carried none of the measured rows, never that the read measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:448-469 |
-| **Fix round 1, direction two: the measured zero is said only where the read really measured zero memberships.** | "still says the measured zero when the read really measured zero memberships" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:471-480 |
-| **Fix round 1: a bounded member context is headed partial, its counts are the owner's rows and not this page's, and the centre's continuation control is clicked and its request asserted.** | "heads a bounded member context partial and counts the owner's rows, not this page's" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:482-516 |
-| **Fix round 1: two distinct revisions carrying identical text are distinguished from one unchanged revision.** | "distinguishes two distinct revisions with identical text from one unchanged revision" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:518-539 |
-| **Fix round 1: a member whose content the page did not carry is stated as that, not as a one-sided statement.** | "states a member whose content the page did not carry as that, not as a one-sided statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:541-559 |
-| Uncarried roster content is not converted into an absent primary statement. | "does not turn an uncarried roster operand into an absent statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:560-576 |
-| Bounded before-only membership remains context and does not assert invariant removal. | "retains a bounded before-only membership without claiming that the invariant was removed" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:578-590 |
-| **Fix round 1: the centre's empty-roster line is the tree's own string for the same family — one implementation mounted twice.** | "prints one empty-roster sentence in both columns, not two that happen to agree" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:592-616 |
-| **Fix round 3: the page that completes a multi-page walk is stated as the walk's last page, never as the whole roster.** | "states the page that completes a multi-page walk as the walk's last page, not as the whole roster" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:617-646 |
-| **Fix round 5, V10: all five workspace values survive two page requests issued by the centre's own continuation control, and exactly three request URLs are seen.** | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:647-700 |
-| **260921-ICR-L25, register B3: the narrow jump route is composed ABOVE the family tree and the tree is intact — the case pins document order (`DOCUMENT_POSITION_FOLLOWING`), that both families and their member rows are still rendered, and that activating the control focuses the centre column. It pins composition rather than a pixel, because a jsdom render has no layout and the pixels are the mounted capture's job.** | "composes the narrow jump route above the family tree, with the tree intact" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:880-898 |
-| **260921-ICR-L36 (fix round included): the family's rendered excerpt collection is the body's DISTINCT excerpt set and not its changed-row count, every row's `data-collapsed-rows` is one of the body's group sizes, every divergent excerpt's `data-sides` and per-side reading strings match the body's, and EVERY rendered row's `data-sides` equals the sides the body resolves it on. The predicate is divergence of the reading (distinct resolution sets across sides), not "seen on two sides".** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `review-center-family-expressions`; `review-center-family-expression-resolution`; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:710-778 |
-| **The arithmetic that case's expectation is read from, deliberately written in the case's module rather than imported from the component, so the assertion checks the body and not the implementation it tests. It computes the excerpt key the fixed module uses (`path \0 recorded`), the per-side resolution sets the divergent predicate compares, and the side list every rendered row is checked against.** | "function familyExpressionArithmetic" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:789-878 |
+| **Real component and real client, with only `fetch` stubbed, and the header's provenance: the two captures recorded in the receipt (the MIK-L31 re-capture, `mik_l31_recapture`), and the one case labelled SYNTHETIC as the only assembled body.** | `intentReview`; "is stubbed"; "familyReview.*.captured.json"; "familyReview.capture-provenance.json"; "mik_l31_recapture"; "labelled SYNTHETIC" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:4-21 |
+| What these cases catch, including the two ways a repair could lie. | "WHAT THESE CASES CATCH"; "the two ways a repair could lie" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:23-30 |
+| **What they do not claim: not browser evidence, Dagger-only Playwright configs, and a live publication explicitly out of scope.** | "WHAT THEY DO NOT CLAIM"; "These are not browser evidence"; "require-dagger-test-environment.mjs"; "not of a live page fed by a running publication" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
+| The two collection constants the walk case pins, and the captured refusal body the no-family-context case mounts. | `REVIEW_PAGED_COLLECTIONS`; `REVIEW_WALKABLE_COLLECTIONS`; `RECORDS_PAGE_REFUSAL_RESPONSE` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:44-49 |
+| The three task identifiers and the seven captured bodies, read from the capture directory. | "const COMPLETE"; "const EMPTY_ROSTER"; "const WALK_FINAL" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:67-67; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:72-73 |
+| The loader that resolves a capture from this file's own directory rather than the process cwd. | "function captured" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:78-78 |
+| The runtime narrowing that finds a family subject in a captured body and throws rather than mounting under a wrong one. | "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:71-98 |
+| The typed refusal the explorer's reads are answered with, so no case asserts on a file's bytes. | "const SOURCE_REFUSAL" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:115-115 |
+| The one stubbed `fetch` for the whole surface: it records the URLs, routes `/source-content` to the refusal, and answers the rest with the captured queue in order. | "function serving"; "vi.stubGlobal"; "/source-content" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:133-133; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:137-137; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:142-142 |
+| The test mount opens the real surface with the fixture task and selected subject context. | `mount` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:156-168 |
+| The teardown cleans the mounted tree and restores stubbed globals. | "afterEach(() => {" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:170-170 |
+| The one `describe` every case below lives in, including the MIK-L31 real-body and synthetic roster cases. | "describe(\"ReviewSurface family-centered workspace (ICR-R24@v3)\"" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:175-947 |
+| Case 1: the recorded families, their authored guarantees, the full member statements with unchanged siblings included, the recorded sharing, and the opener on every member row. | "renders the recorded families, their authored guarantees and the full member statements" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:176-214 |
+| Case 2: a guarantee comparison is drawn in the shape the two recorded revisions support — the same revision on both snapshots versus two different ones. | "opens a family review whose guarantee comparison is the shape the two recorded revisions support" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:216-249 |
+| Case 3: a member's review keeps its family, and statement, membership, source attribution and authored judgment are five separate facts. | "keeps the family context when a member is selected and states the five facts separately" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:251-279 |
+| Case 4: the complete source explorer is independent of the family selection. | "keeps the complete source explorer independent of the family selection" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:281-297 |
+| **Case 5: a roster walks only from the cursor that family's own page published, and the collection picker offers no option that would fetch a refusal.** | "sends the family's published cursor and refuses a response from another walk" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:299-342 |
+| Case 6: a body with no family context is rendered as that fact and never as a measured zero. | "renders a body that carries no family context as that fact, never as a measured zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:344-363 |
+| Case 7: an expanded entry stays expanded across a diff-layout switch, and full-file is one value shared by the explorer and the centre. | "keeps an expanded entry expanded across a diff-layout switch" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:365-392 |
+| Case 8: the current selection is exposed on the tree and arrow keys traverse the one roving-focus group. | "marks the current selection and traverses the tree by keyboard" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:394-417 |
+| Case 9: the filter reports its own scope, keeps a matched family's members, and states that the composed contexts are unchanged when nothing matches. | "reports the filter scope without restating the comparison's totals" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:419-448 |
+| **MIK-L31: a bounded roster page over the real re-captured body states the part of the measured rows it carried, never zero.** | "states a bounded roster page as the part of the measured rows it carried, never as zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:451-469 |
+| **Fix round 1, direction one, kept by ruling Q3 over a labelled SYNTHETIC body: a bounded roster that carried none of the rows it measured says so, and never that the read measured zero.** | "(SYNTHETIC body)"; "SYNTHETIC FIXTURE, not a route body" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:471-491 |
+| **Fix round 1, direction two: the measured zero is said only where the read really measured zero memberships.** | "still says the measured zero when the read really measured zero memberships" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:493-502 |
+| **Fix round 1: a bounded member context is headed partial, its counts are the owner's rows with the loaded count read from the body (below 4), and the centre's continuation control is clicked and its request asserted.** | "it(\"heads a bounded member context partial and counts the owner's rows" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:504-548 |
+| **Fix round 1, as MIK-R31 rule 3 renders it: two distinct revisions carrying identical text are "Wording unchanged" with both revisions named, the guarantee once, never one unchanged revision.** | "it(\"distinguishes two distinct revisions with identical text" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:550-579 |
+| **Fix round 1: a member whose content the page did not carry is stated as that, not as a one-sided statement.** | "states a member whose content the page did not carry as that, not as a one-sided statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:581-599 |
+| Uncarried roster content is not converted into an absent primary statement. | "does not turn an uncarried roster operand into an absent statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:600-616 |
+| Bounded before-only membership remains context and does not assert invariant removal. | "retains a bounded before-only membership without claiming that the invariant was removed" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:618-630 |
+| **Fix round 1, over the measured-empty body since MIK-L31: the centre's empty-roster line is the tree's own string for the same family — one implementation mounted twice.** | "it(\"prints one empty-roster sentence in both columns" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:632-657 |
+| **Fix round 3: the page that completes a multi-page walk is stated as the walk's last page, never as the whole roster; since MIK-L31 its carried count is read from the body.** | "it(\"states the page that completes a multi-page walk" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:658-694 |
+| **Fix round 5, V10: all five workspace values survive two page requests issued by the centre's own continuation control, and exactly three request URLs are seen.** | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:695-748 |
+| **260921-ICR-L25, register B3: the narrow jump route is composed ABOVE the family tree and the tree is intact — the case pins document order (`DOCUMENT_POSITION_FOLLOWING`), that both families and their member rows are still rendered, and that activating the control focuses the centre column. It pins composition rather than a pixel, because a jsdom render has no layout and the pixels are the mounted capture's job.** | "composes the narrow jump route above the family tree, with the tree intact" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:928-946 |
+| **260921-ICR-L36 (fix round included): the family's rendered excerpt collection is the body's DISTINCT excerpt set and not its changed-row count, every row's `data-collapsed-rows` is one of the body's group sizes, every divergent excerpt's `data-sides` and per-side reading strings match the body's, and EVERY rendered row's `data-sides` equals the sides the body resolves it on. The predicate is divergence of the reading (distinct resolution sets across sides), not "seen on two sides".** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `review-center-family-expressions`; `review-center-family-expression-resolution`; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:758-826 |
+| **The arithmetic that case's expectation is read from, deliberately written in the case's module rather than imported from the component, so the assertion checks the body and not the implementation it tests. It computes the excerpt key the fixed module uses (`path \0 recorded`), the per-side resolution sets the divergent predicate compares, and the side list every rendered row is checked against.** | "function familyExpressionArithmetic" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:788-877 |
 | The shared empty-roster function distinguishes absent family revisions, measured zero and page-local missing rows. | `emptyRosterSentence` | dashboard/src/panels/review/FamilyTree.tsx:222-236 |
 | The owner of the completion sentence: `complete` is the read walk's flag, so a one-page walk is the whole selection while a final page is only its last position. | `completionNote`; "the page is the whole selection"; "this page completes the walk" | dashboard/src/panels/review/FamilyTree.tsx:211-216; dashboard/src/panels/review/FamilyTree.tsx:260-284; dashboard/src/panels/review/FamilyTree.tsx:275-284; dashboard/src/panels/review/FamilyTree.tsx:278-284; dashboard/src/panels/review/FamilyTree.tsx:278-308 |
 | The tree's own roster line, whose test id the centre re-mounts under its own name. | `RosterLine`; `review-family-roster` | dashboard/src/panels/review/FamilyTree.tsx:182-209 |
 | The tree's own continuation control, which publishes the cursor it was given and is the component the centre mounts a second time. | `RosterNext`; `review-family-roster-next`; `data-continuation={page.continuation}` | dashboard/src/panels/review/FamilyTree.tsx:250-282 |
-| The central empty-roster presentation reuses the tree-owned sentence and preserves the page scope. | `FamilyMemberContext`; `emptyRosterSentence` | dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594; dashboard/src/panels/review/FamilyTree.tsx:222-236 |
-| The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness. | `memberContextHeading`; `memberContextCounts`; "loaded context contains ${carriedCarried} member row(s) of them" | dashboard/src/panels/review/FamilyReviewCenter.tsx:512-517; dashboard/src/panels/review/FamilyReviewCenter.tsx:519-531 |
-| Roster revision content and authoritative selected-subject statements remain separate rendering responsibilities. | `MemberStatement`; `SelectedStatement` | dashboard/src/panels/review/FamilyReviewCenter.tsx:198-214; dashboard/src/panels/review/SubjectReview.tsx:53-114 |
+| The central empty-roster presentation reuses the tree-owned sentence and preserves the page scope. | `FamilyMemberContext`; `emptyRosterSentence` | dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631; dashboard/src/panels/review/FamilyTree.tsx:222-236 |
+| The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness. | `memberContextHeading`; `memberContextCounts`; "loaded context contains ${carriedCarried} member row(s) of them" | dashboard/src/panels/review/FamilyReviewCenter.tsx:549-554; dashboard/src/panels/review/FamilyReviewCenter.tsx:556-568 |
+| Roster revision content and authoritative selected-subject statements remain separate rendering responsibilities. | `MemberStatement`; `SelectedStatement` | dashboard/src/panels/review/FamilyReviewCenter.tsx:228-244; dashboard/src/panels/review/SubjectReview.tsx:217-280 |
 | **The server-side rule the walk case pins: `family_members` is in the paged union because the server accepts it, and deliberately not among the walkable collections, because that collection is the set of per-family walks and a cursor-less request earns the server's own refusal.** | `ReviewPagedCollection`; `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:81-81; dashboard/src/data/review.ts:91-91 |
 | The one page request type a roster continuation builds. | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:73-77 |
 | The source explorer retains the complete inventory independently of semantic selection. | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
@@ -373,6 +385,17 @@ one enclosure's captured bodies and carries no identity that ranges beyond it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the stale module header recorded at 10:05:09 was refreshed by the worker (comments only, lines 9-21, one line shorter): it now names both captures, the MIK-L31 one (`mik_l31_recapture`, tree `18b77329`), and the SYNTHETIC exception. The Purpose paragraph and the provenance row are reworded to the new header (re-anchored on `mik_l31_recapture` and `labelled SYNTHETIC`, `4-22` → `4-21`); the Todo is removed. Every row below the header was re-pointed by the exact −1 line shift.
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose records that every family body is now a current-route capture (MIK-R31 rule 6, the L44-R1-F5 remainder, re-captured by L31) and that the header's provenance paragraph is stale (a Todo; code is out of curator scope). The case list records the new real-body roster case, the SYNTHETIC-body case kept by ruling 05:36:19 Q3, the body-derived counts (review F7, R2-7), the rule 3 "Wording unchanged" guarantee, and the measured-empty body for the one-sentence case. **Reopened claims reworded and re-anchored:** the `describe` row and the four changed-case rows are bound by committed generated bullets (2026-09-26 and 2026-09-27) that name the test titles, so they are re-anchored on line-exact `describe(`/`it(` quotes and those committed bullets are left intact; this pass's four generated bullets for them were removed. The provenance row is reworded; the import row was re-measured by hand (`45-47` → `45-50`); three rows were re-pointed by the exact line shift; one row added (the real-body case).
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "function captured" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:79-79. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "const SOURCE_REFUSAL" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:116-116. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "function serving"; "vi.stubGlobal"; "/source-content" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:134-134; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:138-138; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "afterEach(() => {" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "still says the measured zero when the read really measured zero memberships" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:494-503. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "states a member whose content the page did not carry as that, not as a one-sided statement" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:582-600. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "does not turn an uncarried roster operand into an absent statement" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:601-617. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "retains a bounded before-only membership without claiming that the invariant was removed" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:619-631. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T07:51:00+00:00: Generated citation repair: "composes the narrow jump route above the family tree, with the tree intact" repointed to dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:929-947. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the workspace-hook row because an older *Generated citation repair* bullet in this card names `useWorkspaceState`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function useWorkspaceState(): WorkspaceState {`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
 - 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — `useWorkspaceState` changed shape.** Its `focusSelection` ref now records the element that had focus at selection time (`{ from }`) instead of a boolean, so the answer's focus lands only when the reader has not moved it (L48-R1-F2). The claim this module relies on — the hook keeps display state above read-cycle remounts and keeps the source opener needed for focus return — still holds; the row was re-pointed, as was the moved `ReviewPageRequest` row. No verification stamp was advanced.
 

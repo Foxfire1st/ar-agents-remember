@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/FamilyReviewCenter.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-30T10:05:09+02:00 |
+| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
+| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,11 @@ Render the independently authored family guarantee, complete carried member cont
 
 MemberCenter receives an explicit selected subject and delegates the authoritative statement/evidence account to SubjectReview. The selected roster revision remains inspectable context, while the source owner selected before/after revisions drive the actual statement comparison. An invariant with no family still renders its own central statement, expressions and evidence. UnavailableMember names a missing invariant identity and claims no assessment absence.
 
-FamilyCenter presents the guarantee comparison, carried exact member revisions, ReviewExpressions, then family evidence. Realization-resolution summaries remain available in a disclosure; their pure grouping is owned by familyExpressions. MemberCenter keeps the family guarantee beside the selected statement, then renders actual expressions and the selected subject execution evidence/assessment. Statement, membership, source, guarantee and authored-judgment facts are separate. A missing side is interpreted from that side roster state and page completeness, never diffed against invented blank content.
+FamilyCenter presents the guarantee comparison, carried exact member revisions, the code and test expressions (`CenterExpressions`), then family evidence and, for a tree comparison, the leaf's knowledge panel. Realization-resolution summaries remain available in a disclosure; their pure grouping is owned by familyExpressions. MemberCenter keeps the family guarantee beside the selected statement, then renders actual expressions and the selected subject execution evidence/assessment. Statement, membership, source, guarantee and authored-judgment facts are separate. A missing side is interpreted from that side roster state and page completeness, never diffed against invented blank content.
+
+**Focused expression cards for a tree comparison (MIK-R31, MIK-L31).** `CenterExpressions` asks `useReviewTreeEntries` for the entries of `cardInvariants` (every member of the selected family on both sides, or the selected invariant alone when it has no family on this page; sorted, so one selection is one read) at the payload's own comparison (`treeComparisonNumber`). A dataset review declares no `review:trees:<n>`, so the hook returns `null` and the landed `ReviewExpressions` renders unchanged; otherwise `ExpressionCards` renders one card per (path, range) with the selected invariant as the MIK-R01 seed, `cardScope(entry)` as the bounded-roster scope (review F2), and a path the reader opens from a card routed through `onOpenFromCenter`. **Planning marks come from one comparison only (review F11, R2-3):** `pinnedWorklist` passes the leaf-wide read's worklist to `planningMarks` only when that read's `comparison.number` equals the payload's; otherwise the cards carry no mark. `knowledgePanel` mounts `LeafKnowledgeChanges` (MIK-R25 rules 2-3, carried from L25 Q2) after the evidence in the family, member and unselected centres, and states a comparison mismatch there.
+
+**Decluttered guarantees (MIK-R31 rule 3).** Identical guarantee text on two revisions is "Wording unchanged · revision a → b" (`revisionMeta` over `guaranteeRevisionLabels`: the display versions, or the revisions' short identities when those read alike), the guarantee shown once, with both revision IDs under "Revision records"; a guarantee recorded on one side is labelled "Added guarantee" or "Removed guarantee". `MemberCenter` passes the selected subject's member rows (`subjectRows`) to `SelectedStatement` so the 13:40 rule can compare every authored field.
 
 ### Conventions
 
@@ -59,7 +63,7 @@ state this file holds is none at all.
 
 ### Invariants And Boundaries
 
-Only the same recorded revision may be described as unchanged; identical text on different revisions is a different fact. Partial member pages retain owner counts and continuation, and a missing row on one page proves no snapshot-wide absence. The selected-subject reader owns evidence applicability and currentness; the center preserves those bindings and labels unrelated records as context. Family or member changes do not create a semantic assessment. The complete source inventory is owned by the workspace rail.
+Only the same recorded revision may be described as unchanged; identical text on different revisions is a different fact, rendered as "Wording unchanged" with both revisions named. **Candidate invariant (not ingested): card planning marks come only from a leaf-wide read of the same comparison** (`pinnedWorklist`; proved by the gitTrees R2-3 case, where a leaf-wide body for comparison 2 against a payload for comparison 1 gives the panel's mismatch sentence and no planned or unplanned mark on any voice, and removing the `same` check fails it). **Candidate invariant (not ingested): dataset reviews make no tree read** (`CenterExpressions` falls back to `ReviewExpressions` when `useReviewTreeEntries` returns `null`; proved by the gitTrees dataset case, which asserts no `/trees` request, no cards and no knowledge panel). Partial member pages retain owner counts and continuation, and a missing row on one page proves no snapshot-wide absence. The selected-subject reader owns evidence applicability and currentness; the center preserves those bindings and labels unrelated records as context. Family or member changes do not create a semantic assessment. The complete source inventory is owned by the workspace rail.
 
 ### Todos
 
@@ -83,11 +87,14 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `FamilyCenter` owns the behavior described above. | `FamilyCenter` | dashboard/src/panels/review/FamilyReviewCenter.tsx:596-658 |
-| `MemberCenter` owns the behavior described above. | `MemberCenter` | dashboard/src/panels/review/FamilyReviewCenter.tsx:711-777 |
-| `FamilyReviewCenter` owns the behavior described above. | `FamilyReviewCenter` | dashboard/src/panels/review/FamilyReviewCenter.tsx:819-898 |
-| `IndependentFacts` owns the behavior described above. | `IndependentFacts` | dashboard/src/panels/review/FamilyReviewCenter.tsx:660-709 |
-| `FamilyMemberContext` owns the behavior described above. | `FamilyMemberContext` | dashboard/src/panels/review/FamilyReviewCenter.tsx:533-594 |
+| The family centre: guarantee, carried members, the expressions slot, family evidence, then the leaf's knowledge panel. | "function FamilyCenter({" | dashboard/src/panels/review/FamilyReviewCenter.tsx:633-698 |
+| The member centre: guarantee, the selected statement with the subject's member rows, the expressions slot, evidence, then the knowledge panel. | "function MemberCenter({"; `subjectRows` | dashboard/src/panels/review/FamilyReviewCenter.tsx:751-825; dashboard/src/panels/review/FamilyReviewCenter.tsx:827-836 |
+| The centre entry: selection, the expressions slot and the knowledge panel wired for every centre, from the workspace's leaf-wide read. | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)"; `FamilyReviewCenterProps` | dashboard/src/panels/review/FamilyReviewCenter.tsx:863-946 |
+| Planning marks only from the same comparison, and the knowledge panel only from a tree read. | `pinnedWorklist`; `knowledgePanel` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-969 |
+| Cards for a tree comparison, the landed file view for a dataset review, and the invariants one selection reads. | `CenterExpressions`; `cardInvariants` | dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029; dashboard/src/panels/review/FamilyReviewCenter.tsx:1034-1043 |
+| Identical guarantee text shown once as wording unchanged, with compact revision labels. | `GuaranteeComparisonBlock`; `guaranteeRevisionLabels` | dashboard/src/panels/review/FamilyReviewCenter.tsx:114-199 |
+| `IndependentFacts` owns the behavior described above. | `IndependentFacts` | dashboard/src/panels/review/FamilyReviewCenter.tsx:700-749 |
+| `FamilyMemberContext` owns the behavior described above. | `FamilyMemberContext` | dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631 |
 
 ## Cross-Repo References
 
@@ -99,6 +106,8 @@ namespace from a payload the server composed, and carries no identity that range
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the focused expression cards in the expressions slot for a tree comparison (`CenterExpressions`, `cardInvariants`, the F2 scope), the pinned planning marks (review F11 at 06:10:21, guard tested by R2-3 at 06:47:03), the knowledge panel (L25 Q2), and the decluttered guarantee and statement (rule 3); two candidate invariants recorded. **Reopened claims reworded and re-anchored:** the `FamilyCenter`, `MemberCenter` and `FamilyReviewCenter` rows are bound by committed generated bullets (2026-09-26T21:09:05), so they are re-anchored on line-exact quotes and those committed bullets are left intact. Three rows added. The file is 1,092 lines (under the 1,200 bound, close to it; worker note).
 
 - 2026-09-27T00:59:43+00:00 — Curated loaded-only source and family-detail semantics, including partial and unavailable sides. Reviewed the actual central renderer and member-context references: they preserve selected-subject statement/evidence authority and now wire truthful completeness without implying missing expressions are unchanged.
 - 2026-09-26T21:09:05+00:00: Generated citation repair: `FamilyCenter` repointed to dashboard/src/panels/review/FamilyReviewCenter.tsx:582-643. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
