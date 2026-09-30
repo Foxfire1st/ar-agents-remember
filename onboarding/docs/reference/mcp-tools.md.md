@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | docs/reference/mcp-tools.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview | docs/reference/overview.md |
 
 ## Governing Overview
@@ -61,7 +61,18 @@ execution scope/check/detail inputs, while `poll` carries only repository and ru
 the hard live-work cap, same-identity reuse, typed `capacity-reached` guidance, and nondisclosing
 `run-not-found` result. Flat `wait` and top-level `run_id` calls are no longer valid.
 
+## 260928-MIK-L38 The `lifecycle_finalize_task` Row Names The Folder Master
+
+The `lifecycle_finalize_task` row (`:163`) now says the finalizer reconciles the leaf's exact row when the leaf
+declares an existing immediate parent "(or names none and its folder's `task.json` master lists it)", and that "a
+sub-task naming none whose folder `task.json` is not a master is refused" (MIK-R38; ruling 2026-09-30T12:33:07 Q3,
+review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that is its own
+`task.json` is not covered by the refusal). The rest of the row, including standalone support and that the parent
+task itself is not completed, is unchanged. The same clauses are in the registered tool description
+(`mcp/registration/tasks.py`) and the c-09 skill.
+
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38**, although `docs/**` is outside `pathRules`. New section "260928-MIK-L38 The `lifecycle_finalize_task` Row Names The Folder Master" (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52). No verification stamp was advanced.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced the legacy quality call grammar with strict sync/start/poll requests and documented capacity/nondisclosure outcomes. Verification metadata remains pinned until architect-owned closeout.
 

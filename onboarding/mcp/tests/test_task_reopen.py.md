@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. The same module also carries the **series** half: one gathered case drives the terminal atomic-series reopen and, through two plain helper methods, the two other arrivals at the same publication — the series that is already live at a collected address, and the reset that was interrupted before its successor generation was published. Deleted guard/start/abandon companion suites are not claimed as current tests here.
+Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. The same module also carries the **series** half: one gathered case drives the terminal atomic-series reopen and, through two plain helper methods, the two other arrivals at the same publication — the series that is already live at a collected address, and the reset that was interrupted before its successor generation was published. Deleted guard/start/abandon companion suites are not claimed as current tests here. Since 260928-MIK-L38 the leaf half also pins how reopen finds a leaf's master (MIK-R38's one rule) and that it refuses a leaf or master the store would write to another file.
 
 ## Code Commentary
 
@@ -46,6 +46,22 @@ The three facts the gathered subject pins are the three ways a series reaches th
 - **the counter** — the completion's spent review rounds (`round: 3` in the fixture) are cleared to
   `0`, not pending, no baseline or residual, no developer approval and no additional rounds, so the
   next round reads as the first instead of the fourth.
+
+**The MIK-R38 cases in `ReopenResetTests`** (integration lane, ruling 2026-09-30T12:33:07 Q1):
+- an unnamed `subTask` leaf still finds its folder master through the shared helper: `reopen_task` returns
+  `masterIndex: reset` and the row goes back to `planning` (ruling Q2; passes on base, which is the preservation);
+- a `light` document that is itself the folder's `task.json` is not its own master: `_plan_master_index_reset`
+  returns `(None, "no-master")`. It calls the planner directly because `reopen_task`'s integration-branch preflight
+  refuses a leaf contract whose folder has no master before the planner runs (it fails on base, which resolved the
+  document to itself and refused it as not a master);
+- a hand-made `light` leaf `01_demo-leaf.json` listed by the master, which the store would write as `task.json`, is
+  refused `blocked` with "would be rewritten to" and the contract, leaf, `task.json` and `task.md` bytes unchanged
+  (review R1 finding 1; base crashed with `duplicate task document write target`);
+- a leaf naming a hand-made master `other.json` is refused the same way, with the series master unchanged (ruling
+  13:35:32; base overwrote the series `task.json`).
+
+These four are collected cases in the integration lane; the case-budget reason the series helpers above give for
+being plain methods is of its own time (review R1 found the integration budget has room for them).
 
 ### Conventions
 
@@ -86,11 +102,15 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:38-79 |
-| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:81-105 |
-| The terminal series reopen, gathered as one collected subject across all three of its arrivals. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:117-226 |
-| The reset that is durable while the locator is still the collected generation is resumed, not refused. | `_assert_an_interrupted_series_reset_is_resumed` | mcp/tests/test_task_reopen.py:228-259 |
-| A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:261-358 |
+| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:39-80 |
+| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:82-106 |
+| A leaf naming no master resets the row its folder master lists (MIK-R38). | "def test_a_leaf_naming_no_master_resets_the_row_its_folder_master_lists(self) -> None:" | mcp/tests/test_task_reopen.py:108-121 |
+| A light leaf that is the folder's `task.json` is not its own master. | "def test_a_light_leaf_that_is_the_folder_task_json_is_not_its_own_master(self) -> None:"; "self.assertEqual(planned, (None, \"no-master\"))" | mcp/tests/test_task_reopen.py:123-150 |
+| A leaf the store would write elsewhere is refused before any write. | "def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:" | mcp/tests/test_task_reopen.py:152-184 |
+| A named master the store would write elsewhere is refused before any write. | "def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:" | mcp/tests/test_task_reopen.py:186-218 |
+| The terminal series reopen, gathered as one collected subject across all three of its arrivals. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:230-341 |
+| The reset that is durable while the locator is still the collected generation is resumed, not refused. | `_assert_an_interrupted_series_reset_is_resumed` | mcp/tests/test_task_reopen.py:343-374 |
+| A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:376-469 |
 
 ## Cross-Repo References
 
@@ -101,6 +121,9 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** Purpose and Logic record the four new `ReopenResetTests` cases (the folder master through the shared helper and the light `task.json` case, ruling 12:33:07 Q2; the leaf-side and master-side placement refusals, review R1 finding 1 and ruling 13:35:32) and that the series helpers' case-budget reason is of its own time; four rows added. The existing rows moved with the one added import line and the inserted cases: two were re-pointed by the installed fixer (generated bullets kept) and three normalised by it. No verification stamp was advanced.
+- 2026-09-30T13:22:53+00:00: Generated citation repair: `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` repointed to mcp/tests/test_task_reopen.py:230-341. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T13:22:53+00:00: Generated citation repair: `_assert_an_interrupted_series_reset_is_resumed` repointed to mcp/tests/test_task_reopen.py:343-374. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (deterministic-check clearance inside this leaf's change set, uncommitted on `ar/260915-ks-l43-ar`, code base `fb719f89`): **one `ruff format` reflow inside an existing case; no claim changed.** In `SeriesReopenTests` the `commit_file(contract.code_repo_path, "late.txt", …)` call split across lines, which is a whitespace change inside that class's second method. The reflow is net two lines at its own span and **lands below `:146`**, so the card's five cited ranges are unchanged and each was verified at the reformatted tree: `ReopenResetTests` `:38-79` still opens on `test_resets_contract_doc_and_master_index`, `:81-105` still opens on `test_contract_publish_failure_rolls_back_docs_and_master_index`, `SeriesReopenTests` `:117-226` still opens on `test_a_terminal_series_is_reopened_without_ever_moving_its_line`, `:228-259` still opens on `self._assert_an_interrupted_series_reset_is_resumable` and `:261-358` still spans the resumed-locator assertions to the file's end. No range moved and no claim changed. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.

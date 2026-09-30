@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -28,9 +28,23 @@ know task-series policy.
 `plan_master_sync(task_root, leaf)` only acts on `kind == "subTask"` documents.
 When a leaf has a `master` reference, `_json_path_from_master_ref` accepts
 only a candidate inside the task root whose parent is that root. Without a
-master reference, the planner checks the root's default `task.json`. Missing
+master reference, `_master_json_path` asks `folder_master_json_path`, which
+returns the root's default `task.json` when it exists. Missing
 or cross-series candidates return `status="none"`; a found but unreadable or
 non-master parent raises `MasterSyncError`.
+
+**`folder_master_json_path` is the one rule for a leaf that names no master
+(MIK-R38).** It returns `None` for a leaf that names its master or is not a
+`subTask` (a `light` or master document *is* the folder's `task.json`, so it
+would otherwise resolve to itself), and otherwise the folder's `task.json` when
+it exists, unresolved, exactly the path the sync used before, so `masterDocPath`
+in task-document responses is unchanged. The finalizer
+(`worktrees/modules/finalize.py`, which completes the row when the leaf lands)
+and reopen (`worktrees/reopen.py`, which resets it) call the same helper. Before
+MIK-R38 the finalizer called such a leaf standalone, so the row this sync kept
+current stayed `inProgress` after the leaf finished (260928-MIK: 15 rows,
+repaired by resync writes). The sync's own behaviour is unchanged: it already
+gated on `subTask` before reaching this point.
 
 When a parent master is available, the planner finds the existing row by
 `SubTaskRef.number == leaf.id`, maps `number`, `name`, `file`, and derived
@@ -52,6 +66,11 @@ not render markdown; the application/store boundary owns that.
   `Completed`. Any done, in-progress, or blocked status otherwise derives
   `inProgress`; an inconsistent completed leaf also derives
   `inProgress`, and the remaining case keeps the leaf status.
+- **One resolution rule for every writer of a leaf's master row (MIK-R38).** The
+  sync, the finalizer and reopen resolve a leaf naming no master through
+  `folder_master_json_path` alone; each resolves a named reference by its own
+  rule (the named-reference differences between them are out of MIK-R38's scope,
+  review R1 note 3).
 - **An abandoned leaf projects `abandoned` unchanged:** `derived_master_status`
   returns `abandoned` before the rollup, so a deliberately dropped leaf does not
   collapse back to `inProgress` and a later master sync cannot silently reopen a
@@ -74,9 +93,11 @@ scope; this file implements an internal coordination contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Same-root parent resolution and master-plan construction. | `plan_master_sync`; `_master_json_path`; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:144-148; mcp/src/agents_remember/tasks/master_sync.py:151-161; mcp/src/agents_remember/tasks/master_sync.py:172-182 |
+| Same-root parent resolution and master-plan construction: a named master through `_json_path_from_master_ref`, a leaf naming none through `folder_master_json_path`. | `plan_master_sync`; "def _master_json_path("; "return folder_master_json_path(task_root, leaf)"; `_json_path_from_master_ref` | mcp/src/agents_remember/tasks/master_sync.py:35-89; mcp/src/agents_remember/tasks/master_sync.py:186-189; mcp/src/agents_remember/tasks/master_sync.py:192-202 |
+| The one rule for a leaf naming no master: `None` for a named master or a non-`subTask`, else the folder's `task.json` when it exists. | "def folder_master_json_path(task_root: Path, leaf: TaskDocument)"; "ONE RULE FOR EVERY WRITER OF A LEAF'S MASTER ROW (MIK-R38)."; "if leaf.kind != \"subTask\" or leaf.master:" | mcp/src/agents_remember/tasks/master_sync.py:165-183 |
+| The finalizer and reopen resolve an unnamed leaf through the same helper. | "folder_master = folder_master_json_path(task_root, leaf)"; "return master_sync.folder_master_json_path(task_root, doc)" | mcp/src/agents_remember/worktrees/modules/finalize.py:459-481; mcp/src/agents_remember/worktrees/reopen.py:647-657 |
 | Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:92-102 |
-| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-121; mcp/src/agents_remember/tasks/master_sync.py:119-125; mcp/src/agents_remember/tasks/master_sync.py:140-146 |
+| Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-137; mcp/src/agents_remember/tasks/master_sync.py:119-125; mcp/src/agents_remember/tasks/master_sync.py:140-146 |
 | Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:149-162 |
 | Parent document loading uses the exact accepted JSON snapshot. | "master = TaskDocument.model_validate_json(source_snapshot.json_bytes)" | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
 
@@ -100,6 +121,7 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 | The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. | `MasterSyncError`; `MasterSyncPlan`; `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:18-19; mcp/src/agents_remember/tasks/master_sync.py:22-32; mcp/src/agents_remember/tasks/master_sync.py:35-89 |
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** The Logic records the new public `folder_master_json_path` as the one rule for a leaf naming no master (its `subTask` gate, the unchanged path it returns, the finalizer and reopen as its other consumers; D32, ruling 12:33:07 Q2), and the Invariants gain the one-rule invariant (review R1 note 3 kept out of scope). **Reopened claim re-read, reworded and re-anchored:** the parent-resolution row names both branches, cites `_master_json_path` on its line-exact declaration and fallback call, and drops two ranges (`144-148`, `151-161`) that held none of its anchors; two rows added. The fixer normalised the derivation row (`105-121` → `105-137`). No verification stamp was advanced.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_validate_existing_row_path` repointed to mcp/src/agents_remember/tasks/master_sync.py:149-162. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_master_status` returns `abandoned` before the step rollup, so an abandoned leaf's row is never collapsed back to `inProgress` and a later sync cannot silently reopen it. Added the invariant and corrected the derivation row to the current extent. Content change, not a range repoint.

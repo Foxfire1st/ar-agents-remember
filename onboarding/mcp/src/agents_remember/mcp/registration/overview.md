@@ -5,14 +5,26 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L38 The `lifecycle_finalize_task` Description Names The Folder Master
+
+`lifecycle_finalize_task`'s description in [`tasks.py`](tasks.py.md) now says the finalizer derives and reconciles
+the leaf's exact row when the leaf declares an existing immediate parent "or names none and its folder's task.json
+master lists it" (MIK-R38; ruling 2026-09-30T12:33:07 Q3), and that "a sub-task naming none whose folder task.json is
+not a master is refused" (review R1 note 5, ruling 13:11:32; "sub-task", not "leaf", by ruling 14:12:52). No tool,
+argument or schema changed; the same clauses are in `docs/reference/mcp-tools.md` and the c-09 skill.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The description's two new clauses. | "existing immediate parent, or names none and its folder's task.json master lists it, the"; "assertions are omitted; a sub-task naming none whose folder task.json is not a master is" | mcp/src/agents_remember/mcp/registration/tasks.py:90-103 |
 
 ## 260928-MIK-L05 The Read Description Names The Route-Chain Rows And The Family Seed
 
@@ -103,6 +115,7 @@ attributed here because the earlier sentence was not false when it was written �
 No staleness marker for it was ever recorded in memory, so this section *is* the record.
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 The `lifecycle_finalize_task` Description Names The Folder Master" at the top (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52), with one row. No tool was added, removed or renamed. No verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 The Read Description Names The Route-Chain Rows And The Family Seed" at the top, with one row (ruling Q1, 2026-09-30 03:32:18).
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Read Description Names The Family-Complete Leaf Read" at the top, with one row (rules 6 and 7; ruling Q7). The other rows were normalised by the installed fixer.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** Added the section "260928-MIK-L02 The Read Description Names The Page, The Threshold And The Continuation" at the top, with one row. **Reopened claim re-read and reworded:** L03's description row now says the sentence is at the walk's code tree.

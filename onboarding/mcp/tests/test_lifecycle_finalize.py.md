@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,13 +16,41 @@
 
 ## Purpose
 
-Lifecycle finalization of a leaf and immediate parent row.
+Lifecycle finalization of a leaf and immediate parent row: a leaf that names its master, and (since MIK-R38) a
+leaf that names none and is listed by its folder's `task.json` master.
 
 ## Code Commentary
 
 ### Logic
 
 Finalization marks the leaf Completed and its parent subtask row Completed, records the finalization decision and leaves the master inProgress. Failure while publishing the second document rolls back the leaf, parent and their rendered files to exact previous bytes.
+
+**Fixtures (260928-MIK-L38).** The contract and document builders moved to the base class `_FinalizeFixtures`: a
+landed, cleaned leaf contract (`_contract`, whose `fixture_name` keeps subtests apart), `_docs` (a folder master plus
+the leaf; `leaf_master`, `rows` and `master_status` vary the pair), `_leaf_doc`, `_folder_doc` (the folder's
+`task.json` as a master, or a non-master document in its place) and `_set_leaf_steps`. `_row` builds a master row and
+`_sources` captures each document's JSON and rendered Markdown bytes, so every refusal can assert that nothing was
+written.
+
+**`LifecycleFinalizeTests`** keeps its two named-master cases unchanged and gains the parent-side placement case
+(ruling 2026-09-30T13:35:32): a leaf naming a hand-made master `other.json` is refused with "`<other.json>` would be
+rewritten to `<task.json>`", and the leaf, `other.json` and the series master are byte-identical afterwards.
+
+**`FolderMasterFinalizeTests`** (MIK-R38; every leaf has `master: null`):
+- the listing folder master's row completes, a second open row stays `inProgress`, and a `Completed` master is
+  demoted to `inProgress` (behaviours 1 and 2);
+- a dry run reports `would-update` with the resolved `task.json` and row `14`, accepts the caller's matching
+  assertions, and writes nothing (behaviour 5);
+- no `task.json`, a master without the leaf's row, and a `light` leaf that is itself the `task.json` each finalize
+  standalone with the parent `skipped` and the master untouched (behaviour 3, three subtests);
+- a non-master, an unreadable `task.json`, a duplicate row, a row pointing elsewhere, an asserted other master and an
+  asserted master without the row are each refused as `task-document-resolution-blocked` with the named-master text
+  (or the named cause) and no bytes changed (behaviour 4 and review R1 notes 2 and 4, six subtests);
+- a hand-made `light` leaf `14_finalize.json`, which the store would write as `task.json`, is refused before any
+  write (review R1 finding 1).
+
+The worker and both review rounds removed each guard in turn; every removal failed at least one of these cases, and
+the base build fails the folder-master cases while passing the standalone ones.
 
 ### Conventions
 
@@ -31,6 +59,10 @@ This card describes the retained source at IAS `d3610903`. Historical entries be
 ### Invariants And Boundaries
 
 Child completion does not automatically complete the master. Document publication is atomic across the affected pair and is not a replacement for lifecycle acceptance.
+
+The module sits in the integration lane with the existing finalize cases (ruling 2026-09-30T12:33:07 Q1), because
+finalize publishes through the task transaction. Every refusal case compares the documents' bytes before and after,
+so a refusal that wrote anything fails.
 
 ### Todos
 
@@ -50,8 +82,15 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Finalized updates leaf and immediate parent row. | `test_finalized_updates_leaf_and_immediate_parent_row` | mcp/tests/test_lifecycle_finalize.py:125-146 |
-| Second document publish failure rolls back leaf and parent. | `test_second_document_publish_failure_rolls_back_leaf_and_parent` | mcp/tests/test_lifecycle_finalize.py:148-176 |
+| Finalized updates leaf and immediate parent row. | `test_finalized_updates_leaf_and_immediate_parent_row` | mcp/tests/test_lifecycle_finalize.py:156-177 |
+| Second document publish failure rolls back leaf and parent. | `test_second_document_publish_failure_rolls_back_leaf_and_parent` | mcp/tests/test_lifecycle_finalize.py:179-207 |
+| The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture. | "class _FinalizeFixtures(unittest.TestCase):"; "def _sources(*paths: Path) -> dict[Path, bytes]:" | mcp/tests/test_lifecycle_finalize.py:42-152; mcp/tests/test_lifecycle_finalize.py:32-39 |
+| A named master the store would write elsewhere is refused before any write. | "def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:" | mcp/tests/test_lifecycle_finalize.py:209-244 |
+| The folder master's row completes under the demotion rule. | "def test_the_listing_folder_master_row_completes_under_the_demotion_rule(self) -> None:" | mcp/tests/test_lifecycle_finalize.py:255-275 |
+| A dry run reports the folder master's row and accepts its assertion. | "def test_a_dry_run_reports_the_folder_master_row_and_accepts_its_assertion(self) -> None:" | mcp/tests/test_lifecycle_finalize.py:277-304 |
+| Without a listing folder master the leaf finalizes standalone. | "def test_without_a_listing_folder_master_the_leaf_finalizes_standalone(self) -> None:"; "for case in (\"no-task-json\", \"no-row\", \"leaf-is-the-light-task-json\"):" | mcp/tests/test_lifecycle_finalize.py:306-331 |
+| A folder master is refused exactly as a named master, before any write. | "def test_a_folder_master_is_refused_exactly_as_a_named_master(self) -> None:"; "\"asserted-master-without-row\": \"lists no row '14'; the leaf finalizes standalone\"," | mcp/tests/test_lifecycle_finalize.py:333-377 |
+| A leaf the store would write elsewhere is refused before any write. | "def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:" | mcp/tests/test_lifecycle_finalize.py:379-409 |
 
 ## Cross-Repo References
 
@@ -62,6 +101,9 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** Purpose, Logic and Invariants record the fixtures moved to `_FinalizeFixtures`, the named-master placement case (ruling 13:35:32), the new `FolderMasterFinalizeTests` (behaviours 1-5, review R1 finding 1 and notes 2 and 4; 5 cases, 9 subtests) and the integration lane (ruling 12:33:07 Q1); seven rows added. The two existing rows were re-pointed by the installed fixer (two generated bullets, kept: the claims are unchanged). No verification stamp was advanced.
+- 2026-09-30T13:22:49+00:00: Generated citation repair: `test_finalized_updates_leaf_and_immediate_parent_row` repointed to mcp/tests/test_lifecycle_finalize.py:156-177. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T13:22:49+00:00: Generated citation repair: `test_second_document_publish_failure_rolls_back_leaf_and_parent` repointed to mcp/tests/test_lifecycle_finalize.py:179-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

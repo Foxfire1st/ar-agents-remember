@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -34,12 +34,12 @@ masters and unparseable files) and returns the first whose authored `id`, any
 same exact joins the observer projection uses, in the same order. The
 case-insensitivity matters because doc ids are authored labels (`260628-L11`) while
 enclosure leaf ids are lowercase directory names (`260628-l11`).
-`plan_leaf_doc_lifecycle_restamp` (`:237-260`) plans the start/reopen write without mutating
+`plan_leaf_doc_lifecycle_restamp` (`:256-279`) plans the start/reopen write without mutating
 bytes. It returns a candidate when the `lifecycleId` differs **or** when a derived field is
 missing (`changed = doc.lifecycleId != lifecycle_id`; `bindings = _derived_leaf_bindings(...)`;
 `if not changed and not bindings: return <no candidate>`), so a doc whose `lifecycleId` already
 matches but whose master link is absent is a candidate rather than a silent no-op — that
-omission was the defect. `restamp_leaf_doc_lifecycle` (`:263-292`) publishes that plan's
+omission was the defect. `restamp_leaf_doc_lifecycle` (`:282-311`) publishes that plan's
 candidate through an injected writer, OVERWRITING any previous lifecycle stamp (the enclosure's
 newest lifecycle IS the doc's binding), re-rendering the markdown via `write_task_docs`; it
 returns a small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no doc yet
@@ -49,23 +49,35 @@ returns a small `{docPath, lifecycleId, changed}` report, or `None` when the lea
 **`restamp_leaf_doc_lifecycle` has no caller anywhere in `mcp/src` or `mcp/tests` — only its
 definition.** The card previously implied it was the live repair path; it is not. Measured with
 `grep -rn --include=*.py restamp_leaf_doc_lifecycle mcp/src mcp/tests`, which returns exactly one
-line, `mcp/src/agents_remember/tasks/leaf_doc.py:263`. The live bind-at-start publisher is
-`plan_leaf_doc_enclosure_registration` (`:332-391`) reached through
+line, `mcp/src/agents_remember/tasks/leaf_doc.py:282`. The live bind-at-start publisher is
+`plan_leaf_doc_enclosure_registration` (`:351-410`) reached through
 `worktrees/task_leaf_binding.py`'s `plan_current_leaf_enclosure_registration` (`:178-202`) from
 `_publish_leaf_task_enclosure_binding` (`worktrees/modules/start.py:912-985`), and
 `plan_leaf_doc_lifecycle_restamp` is itself reached from start only read-only, as
 `_start_restamp_preflight`'s terminal-blocker check (`worktrees/modules/startup/start_contract.py:870-879`).
 
-`_derived_bindings` (`:198-221`) and `_derived_leaf_bindings` (`:224-234`) compute only the ABSENT
+`_derived_bindings` (`:217-240`) and `_derived_leaf_bindings` (`:243-253`) compute only the ABSENT
 derived fields, so an existing binding is never rewired: `seriesContractPath` is
 `series_contract_path(task_root).as_posix()` (`task_root/series-contract.md`) and `enclosures` is
 the single `{leafId, enclosurePath}` ref naming `leaf_enclosure_path(task_root, leaf_id)`
 (`task_root/enclosures/<slugified leaf id>/series-contract.md`), bound only when the leaf id is
 nonblank. `plan_leaf_doc_enclosure_registration`'s exact no-op now also requires the link to be
 present (`if address_exact and not missing_link and (lifecycle_id is None or ...)`); otherwise its
-candidate carries the missing bindings, and `_enclosure_registration_state` (`:312-329`) reports
+candidate carries the missing bindings, and `_enclosure_registration_state` (`:331-348`) reports
 the new `master-link-missing` state for an exact address whose derived link is absent, keeping
 `lifecycle-mismatch` for a reopened leaf and `mismatched`/`missing` for the enclosure itself.
+
+**`require_task_document_in_place(json_path, doc, refusal)` (`:140-156`, MIK-R38 review R1).** The store writes a
+document to `json_path_for` its kind and slug, never back to the path it was read from, so a hand-made `light`
+leaf saved as `01_x.json`, or a hand-made master saved as `other.json`, is written to the folder's `task.json`,
+over the series master. This guard compares the two paths and raises the caller's own refusal type when they
+differ, naming both paths and the document's kind and slug. The two terminal writers call it before any write, on
+both documents they rewrite: finalize (`worktrees/modules/finalize.py`) on the leaf in `_resolve_task_targets` and
+on every master in `_read_parent`, reported as `task-document-resolution-blocked`; reopen
+(`worktrees/reopen.py`) on the leaf in `_plan_leaf_doc_reset` and on the master in `_plan_master_index_reset`,
+reported as `blocked`. The guard covers every kind, so a `subTask` whose file name differs from its slug is refused
+too; correctly placed documents pass unchanged (review R2's read-only sweep of the real task folders refused none of
+557 sub-tasks and 39 masters). Rulings 2026-09-30T13:11:32 (leaf side) and 13:35:32 (master side).
 
 ### Invariants And Boundaries
 
@@ -89,6 +101,9 @@ the new `master-link-missing` state for an exact address whose derived link is a
   measurement: the layering rail already failed at base (15 pre-existing `worktrees -> memory_quality`
   violations plus that cycle), so the defect added a violation to an already-red rail rather than turning
   a green one red, and the fix returns the rail to that same red, not to green.
+- **No terminal task-document writer overwrites a document whose read path differs from the store's write target
+  for it (MIK-R38).** Finalize and reopen refuse such a leaf or master before any write, through
+  `require_task_document_in_place`; the guard reads only `tasks.store`, so the module stays in the task domain.
 - Restamp is idempotent (`changed: false` when the stamp already matches **and** no derived field
   is missing) and total (overwrites a stale finalized-lifecycle stamp — a reopened leaf's doc must
   follow the fresh lifecycle, not the old one). Idempotency is now conditional rather than
@@ -104,16 +119,18 @@ the new `master-link-missing` state for an exact address whose derived link is a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:424-465 |
+| The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it. | "def _plan_leaf_doc_reset("; "require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)" | mcp/src/agents_remember/worktrees/reopen.py:435-477 |
+| The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised. | "def require_task_document_in_place("; "target = json_path_for(json_path.parent, doc)"; "would be rewritten to {target}; its file name must match" | mcp/src/agents_remember/tasks/leaf_doc.py:140-156 |
+| Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen. | "require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)"; "require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)"; "require_task_document_in_place(master_path, master, ReopenTaskDocumentError)" | mcp/src/agents_remember/worktrees/modules/finalize.py:393-393; mcp/src/agents_remember/worktrees/modules/finalize.py:518-518; mcp/src/agents_remember/worktrees/reopen.py:611-611 |
 | Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:687-719 |
-| The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:858-931 |
+| The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller. | `_publish_leaf_task_enclosure_binding` | mcp/src/agents_remember/worktrees/modules/start.py:913-986 |
 | The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner. | `plan_current_leaf_enclosure_registration`; `require_current_leaf_enclosure_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202; mcp/src/agents_remember/worktrees/task_leaf_binding.py:205-256 |
-| Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`. | `_start_restamp_preflight`; `_start_will_restamp` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:865-870; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:873-882 |
-| The two derived-field computations: absent-only binding, never a rewire. | `_derived_bindings`; `_derived_leaf_bindings` | mcp/src/agents_remember/tasks/leaf_doc.py:198-221; mcp/src/agents_remember/tasks/leaf_doc.py:224-234 |
-| The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds. | `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:237-260; mcp/src/agents_remember/tasks/leaf_doc.py:263-292 |
-| The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_candidate`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:295-309; mcp/src/agents_remember/tasks/leaf_doc.py:312-329; mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
+| Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`. | `_start_restamp_preflight`; `_start_will_restamp` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:869-878; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:861-866 |
+| The two derived-field computations: absent-only binding, never a rewire. | `_derived_bindings`; `_derived_leaf_bindings` | mcp/src/agents_remember/tasks/leaf_doc.py:217-240; mcp/src/agents_remember/tasks/leaf_doc.py:243-253 |
+| The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds. | `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:256-279; mcp/src/agents_remember/tasks/leaf_doc.py:282-311 |
+| The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. | `plan_leaf_doc_enclosure_registration`; `_enclosure_registration_candidate`; `_enclosure_registration_state` | mcp/src/agents_remember/tasks/leaf_doc.py:314-328; mcp/src/agents_remember/tasks/leaf_doc.py:331-348; mcp/src/agents_remember/tasks/leaf_doc.py:351-410 |
 | The path helpers this module imports — now from the task domain, which is what keeps the package order intact. | `series_contract_path`; `leaf_enclosure_path`; `leaf_enclosure_dir` | mcp/src/agents_remember/tasks/task_paths.py:31-34; mcp/src/agents_remember/tasks/task_paths.py:37-40; mcp/src/agents_remember/tasks/task_paths.py:43-46 |
-| The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. | `__all__` | mcp/src/agents_remember/worktrees/task_resolver.py:29-50 |
+| The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. | `__all__` | mcp/src/agents_remember/worktrees/task_resolver.py:29-49 |
 | The package order this module's import direction must respect, with no baseline and no exception. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
 | The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-320 |
 | The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:124-124 |
@@ -189,6 +206,7 @@ those 16 are pre-existing and the rail was already red before this change set ex
 untouched, and there is no `# noqa`, per-file ignore or widened limit anywhere in the resolution.
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** The Logic records the new `require_task_document_in_place` guard (review R1 finding 1, rulings 13:11:32 and 13:35:32): what it compares, its four call sites in finalize and reopen, and R2's real-folder sweep; the Invariants gain the no-overwrite invariant. The Logic's own line references into this file moved by the guard's +19 lines and were updated (`:237-260` → `:256-279` and the six others). **Reopened claim re-read, reworded and re-anchored:** the `_plan_leaf_doc_reset` row now names the guard and cites the line-exact declaration and guard call, so the committed generated bullets (2026-09-17) are left intact. Two rows added. The two multi-anchor rows into this file were re-pointed by the exact +19 shift; the installed fixer normalised the `plan_leaf_doc_lifecycle_restamp` row and three rows into `start.py`, `start_contract.py` and `task_resolver.py`, files this leaf did not change. No verification stamp was advanced.
 - 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `snapshots_impl/_task_documents.py` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_plan_leaf_doc_reset` repointed to mcp/src/agents_remember/worktrees/reopen.py:424-465. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: `_create_start_enclosure` repointed to mcp/src/agents_remember/worktrees/modules/start.py:687-719. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

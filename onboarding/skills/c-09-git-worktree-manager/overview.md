@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 
 ## Purpose
 
@@ -95,11 +95,11 @@ Closeout and integration are authorized Git transactions over code and memory-co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:256-303; skills/c-09-git-worktree-manager/SKILL.md:433-512 |
+| The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:256-303; skills/c-09-git-worktree-manager/SKILL.md:436-516 |
 | Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:380-380; skills/c-09-git-worktree-manager/SKILL.md:381-384; skills/c-09-git-worktree-manager/SKILL.md:387-387 |
 | The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. | "nothing serializes the masters" | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:162-162 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-| Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366 |
+| Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:207-401 |
 
 Current working-candidate evidence for this route:
 
@@ -143,6 +143,20 @@ operation at the leaf's contract scope. The ruling is forward-looking: the alrea
 leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
 frozen tip.
 
+## 260928-MIK-L38 Finalization Reaches The Master That Lists A Leaf Naming None
+
+The route's finalization doctrine gains two clauses (MIK-R38; ruling 2026-09-30T12:33:07 Q3): the finalizer derives
+and reconciles the exact row when the bound leaf declares an existing immediate parent "or names none and its
+folder's `task.json` master lists it", and "a sub-task naming none whose folder `task.json` is not a master is
+refused" (review R1 note 5, ruling 13:11:32; "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that
+is its own `task.json`, which finalizes standalone, is not covered). Standalone leaves, the identity assertions and
+the rule that the parent task itself is not completed are unchanged. `scripts/sync-skills.py` rewrote the package
+copy and the eight harness starter copies byte-identically.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The finalizer paragraph's two new clauses. | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | skills/c-09-git-worktree-manager/SKILL.md:496-503 |
+
 ## Ungoverned Mirror Status (known defect)
 
 This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's
@@ -157,6 +171,7 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 Finalization Reaches The Master That Lists A Leaf Naming None" (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52; the nine-copy sync), with one row. The installed fixer normalised the section row (`## Lifecycle Finalization And Cleanup` `433-512` → `436-516`) and the `SyncOperationStore` row (`172-366` → `207-401`, a file this leaf did not change). No verification stamp was advanced.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 
 - 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated            | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -158,6 +158,15 @@ PR merge has been pulled locally. Squash-merge equivalence is intentionally out
 of the default path because it erases commit lineage and can invalidate memory
 lookup history.
 
+**MIK-R38 (260928-MIK-L38): the folder master's row, and the sub-task refusal.** The `## Lifecycle Finalization
+And Cleanup` paragraph now says the finalizer derives and reconciles the exact row when the bound leaf declares an
+existing immediate parent "or names none and its folder's `task.json` master lists it" (ruling 2026-09-30T12:33:07
+Q3), and that "a sub-task naming none whose folder `task.json` is not a master is refused" (review R1 note 5, ruling
+13:11:32; "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that is its own `task.json`, which
+finalizes standalone, is not covered). The authored `skills/` source changed, and `scripts/sync-skills.py` rewrote
+this copy and the eight harness starter copies byte-identically (`--check` ok for all nine). The same clauses are in
+the `lifecycle_finalize_task` tool description and `docs/reference/mcp-tools.md`.
+
 ### Conventions
 
 `c-09-git-worktree-manager` skill is a wrapper, not a replacement workflow. Task identity should be settled
@@ -237,15 +246,16 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-566 |
+| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-567 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-320 |
 | The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:205-205 |
 | The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:130-130 |
 | Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:104-163 |
-| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:368-435; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:436-515 |
+| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:368-435; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:436-516 |
 | Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:406-406; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:409-409 |
 | Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:368-435 |
-| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:436-515 |
+| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:436-516 |
+| The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:496-503 |
 | The shipped text is corrected: admission is contract-scoped, each canonical series contract owns its own activation record, and masters sharing one exact code/memory source pair never share that state. | "Atomic-series implementation admission is a separate, contract-scoped authority." | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:237-247 |
 | The shipped closeout-queue paragraph now projects only active, reconciling, or vacant waiting candidates and owns none of those lifecycle facts. | "projects active, reconciling, or vacant waiting candidates" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:249-254 |
 | The shipped sync-scope "source pair" is current: sync derives one contract's code/memory branch pair from the contract, so the phrase describes a two-branch reconciliation, not a serialization claim. | "def source_pair(contract" | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:110-110 |
@@ -340,6 +350,7 @@ source, and an already-journaled no-door operation remains recoverable only as t
 generation.
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** The Logic records the finalizer paragraph's two new clauses (ruling 12:33:07 Q3; review R1 note 5 and the re-wrap, ruling 13:11:32; "a sub-task naming none", ruling 14:12:52) and the nine-copy sync; one row added. The paragraph grew by one line, so the section's extent moved (`436-515` → `436-516`, whole file `6-566` → `6-567`); the installed fixer normalised those three rows. No verification stamp was advanced.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "The recorded leaf" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:205-205. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "Before previewing integration" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:409-409. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def source_pair(contract" repointed to mcp/src/agents_remember/worktrees/sync_transaction_authority.py:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

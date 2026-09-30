@@ -5,9 +5,19 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-09-24T12:34:00+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
+
+## 260928-MIK-L38 The Tool Reference Names The Folder Master
+
+`260928-MIK-L38` (MIK-R38) edits one row of `docs/reference/mcp-tools.md`, this route's MCP tool reference: the
+`lifecycle_finalize_task` row now says the finalizer reconciles the leaf's exact row when the leaf declares an
+existing immediate parent "(or names none and its folder's `task.json` master lists it)", and that "a sub-task naming
+none whose folder `task.json` is not a master is refused" (ruling 2026-09-30T12:33:07 Q3; review R1 note 5 at
+13:11:32; "sub-task", ruling 14:12:52). It describes the finalizer's shipped behaviour and defines none; the same
+clauses are in the registered tool description and the c-09 skill. As with the catalogue edit below, `docs/**` sits
+outside the onboarding `pathRules.include`, so this overview and the file's card record it.
 
 ## 260921-ICR-L27 The Skill Catalogue Gains The Knowledge-Bootstrap Procedure
 
@@ -296,9 +306,10 @@ The following current source owns the changed behavior; no external domain sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The normalized public input has only two commit legs. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:127-165; mcp/src/agents_remember/models/closeout/input.py:128-166 |
+| The normalized public input has only two commit legs. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 The Tool Reference Names The Folder Master" at the top: the `lifecycle_finalize_task` row's two new clauses (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52). The installed fixer normalised one row into `models/closeout/input.py`, a file this leaf did not change (its two overlapping ranges merged into `128-166`). No verification stamp was advanced.
 - 2026-09-24T12:34:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the catalogue's two edits.** `docs/reference/skills.md` gains a `c-14-knowledge-bootstrap` row and extends the `c-13-install-and-onboard` row so the knowledge foundation appears among the stages a first run reaches. The section states that both edits describe the shipped skill tree rather than define behaviour, and that the skills' canonical home is root `skills/**`. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.

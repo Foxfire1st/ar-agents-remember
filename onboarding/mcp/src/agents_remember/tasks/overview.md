@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -118,7 +118,8 @@ together.
   `.md`), `write_task_docs` (batch prepare-all-then-write persistence for coupled
   leaf/master edits), and `doc_stem` (`task` for a light **or master** doc, `<slug>` for a sub-task).
 - `master_sync.py` — the leaf-to-master row planner used by `task_doc`: same-root
-  master discovery, `SubTaskRef` derivation from leaf id/title/rendered filename/status, manual
+  master discovery (a leaf naming no master resolves through the public `folder_master_json_path`,
+  the one rule the finalizer and reopen also use since MIK-R38), `SubTaskRef` derivation from leaf id/title/rendered filename/status, manual
   `scope` preservation, strict parent-master validation, and the step/substep status collapse that
   maps any active/blocked/done progress to master `inProgress` and all-done progress to `Completed`.
 
@@ -410,7 +411,35 @@ expects; the worklist then marks every invariant and family item `planned` or `u
 | The header block. | `_header_lines`; "**Expected knowledge effects:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
 | The strict lookup and the decision answer. | `strict_leaf_doc`; `leaf_decision_refusal` | mcp/src/agents_remember/tasks/leaf_decisions.py:39-51; mcp/src/agents_remember/tasks/leaf_decisions.py:81-98 |
 
+## 260928-MIK-L38 The Master Sync's Fallback Becomes The One Rule, And A Placement Guard
+
+Developer direction D32 (MIK-R38): a completed leaf must show `Completed` on the master that lists it. Two tools had
+resolved a leaf's master differently: this route's master sync fell back to the folder's `task.json` for a leaf
+naming no master, while the finalizer (`worktrees/modules/finalize.py`) called that leaf standalone, so the master
+row the sync kept current stayed `inProgress` after the leaf landed (260928-MIK: 15 rows, repaired by resync
+writes). This route now owns the rule and one guard, both used by the worktree layer above it:
+
+- [`master_sync.py`](master_sync.py.md): the public `folder_master_json_path(task_root, leaf)` is the whole rule
+  for a leaf naming no master: `None` for a named master or a non-`subTask` (a `light` or master document *is* the
+  folder's `task.json`), else the folder's `task.json` when it exists. `_master_json_path` calls it and returns the
+  same unresolved path as before, so the sync's behaviour and `masterDocPath` are unchanged. The finalizer and
+  reopen (`worktrees/reopen.py`, ruling 2026-09-30T12:33:07 Q2) call it too.
+- [`leaf_doc.py`](leaf_doc.py.md): `require_task_document_in_place(json_path, doc, refusal)` raises the caller's
+  refusal when the store's write target for a document (`json_path_for`, by kind and slug) differs from the path it
+  was read from. Finalize and reopen call it on the leaf and on the master before any write, so a hand-made `light`
+  leaf or master under another name can never be written over the series `task.json` (review R1 finding 1, rulings
+  13:11:32 and 13:35:32). Review R2's read-only sweep of the real task folders (557 sub-tasks, 39 masters) refused
+  none.
+
+No task-document format, render or sync behaviour changed, and no document was migrated (the packet's Exclusions).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one rule for a leaf naming no master, and the sync's own call. | "def folder_master_json_path(task_root: Path, leaf: TaskDocument)"; "return folder_master_json_path(task_root, leaf)" | mcp/src/agents_remember/tasks/master_sync.py:165-183; mcp/src/agents_remember/tasks/master_sync.py:186-189 |
+| The placement guard. | "def require_task_document_in_place("; "target = json_path_for(json_path.parent, doc)" | mcp/src/agents_remember/tasks/leaf_doc.py:140-156 |
+
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 The Master Sync's Fallback Becomes The One Rule, And A Placement Guard" after L11's (D32; rulings 12:33:07 Q2, 13:11:32 finding 1, 13:35:32; the R2 sweep), with two rows, and named the helper in the `master_sync.py` route-model entry. No verification stamp was advanced.
 - 2026-09-29T21:49:38+00:00: Generated citation repair: `task_intent_identity` repointed to mcp/src/agents_remember/tasks/task_intent.py:197-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The `expectedKnowledgeEffects` Declaration And The Task Owner's Answers" (the field, its `NORMATIVE` class and optional intent slot, the header block, and the new `leaf_decisions.py`), recording architect rulings 2026-09-29T21:56:18 (Q2, Q3) and 22:35:34 (F1, F2). L08's two rows were re-pointed by the exact line shifts (+40 and +1). No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field" across `document.py`, `document_field_effects.py` (`LIFECYCLE`, architect ruling 4) and `render.py`.

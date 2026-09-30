@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -28,6 +28,10 @@ Reopen a fully landed leaf — or a terminal atomic series — under its origina
 `reopen_task` requires a leaf whose closeout, integration, and cleanup are completed and whose code/memory worktrees are gone. It resolves the exact parent series, proves accepted memory ancestry through `require_integrated_memory_ancestry`, and uses the recorded integrated code/memory outputs as the terminal lineage position. It never reads a cache mapping or uses an integrated ledger commit.
 
 The reset clears free-form approval/output/lifecycle provenance with dataclass replacement and changes vocabulary cells through `ContractCells` and `amend_contract`. It preserves the leaf id. Task plans reset the leaf and corresponding master row; `cleanup="reopened"` tells worktree start to recreate the enclosure rather than attach to the old one.
+
+**The master is resolved by the one rule (MIK-R38, ruling 2026-09-30T12:33:07 Q2).** `_reopen_master_path` resolves a named `master` by its own rule and a leaf that names none through `master_sync.folder_master_json_path`, the rule the task-document master sync and the finalizer use, so its private copy of the fallback is gone. An unnamed `subTask` still finds its folder master (the row returns to `planning`, `masterIndex: reset`). A `light` document is itself the folder's `task.json`: the old fallback resolved it to itself and refused it as "not a master", and now `_plan_master_index_reset` reports `no-master`. The public route cannot reach that case, because `reopen_task`'s integration-branch preflight (`require_parent_series`) already refuses a leaf contract whose folder has no master. The master demotion is now called as `master_sync.demote_completed_master_if_unresolved` (a module-qualified import, so this file, already over 1,200 lines at base, did not grow).
+
+**Both documents reopen rewrites must be in place (review R1 finding 1, rulings 2026-09-30T13:11:32 and 13:35:32).** `_plan_leaf_doc_reset` and `_plan_master_index_reset` call `tasks/leaf_doc.require_task_document_in_place` after their existing checks, so a leaf or master that the store would write to another file (a hand-made `light` leaf `01_x.json`, a hand-made master `other.json`, both written as the folder's `task.json`) is refused as `blocked`, in the preview and under the publication CAS, before any write. On base the misnamed light leaf crashed with `duplicate task document write target`, and the misnamed master silently replaced the series `task.json`. Correctly placed documents reopen exactly as before.
 
 The frozen landing observation clear, leaf/master task updates, and contract reset publish in one task-fact CAS batch. Apply reloads and repeats the terminal/source checks inside that publication. Original artifacts support rollback of a failed canonical write; derived projection refresh happens afterward. Recreating worktrees remains worktree_start's responsibility.
 
@@ -69,6 +73,7 @@ This owner lives in worktrees because the enclosure contract is the primary muta
 ### Invariants And Boundaries
 
 - Leaf identity is stable across reopen.
+- A leaf naming no master is resolved by the same rule as the master sync and the finalizer (`folder_master_json_path`), and a leaf or master whose read path differs from the store's write target for it is refused before any write (MIK-R38).
 - In-flight leaves, series contracts, and leaves with live worktrees cannot reopen.
 - Terminal code/memory Git facts replace cache mapping proof; unrelated source movement remains a refusal.
 - Vocabulary cells use the typed contract writer.
@@ -93,18 +98,22 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:325-397 |
-| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:197-223 |
-| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:519-577 |
+| Terminal preflight, accepted memory ancestry, and integrated source-position checks. | `_reopen_preflight_refusal` | mcp/src/agents_remember/worktrees/reopen.py:324-396 |
+| Contract reset preserves identity while clearing two-output provenance. | `_reopened_contract` | mcp/src/agents_remember/worktrees/reopen.py:196-222 |
+| Frozen observation, task plans, and canonical publication remain coordinated. | `_clear_frozen_landing`; `_ReopenPublication` | mcp/src/agents_remember/worktrees/reopen.py:399-415; mcp/src/agents_remember/worktrees/reopen.py:518-577 |
 | Whether a series still owns its integration line, read from the two progress cells a completion writes rather than from `cleanup`. | `_series_in_flight` | mcp/src/agents_remember/worktrees/reopen.py:1003-1012 |
 | Whether a series still owns its integration line, read from the two progress cells a completion writes rather than from `cleanup`. | `_series_in_flight` | mcp/src/agents_remember/worktrees/reopen.py:1003-1012 |
 | A series is live but unaddressed only when the locator at its own address is `terminal-archived` and both progress cells are untouched. | `_series_is_live_unaddressed` | mcp/src/agents_remember/worktrees/reopen.py:1015-1039 |
 | A series is live but unaddressed only when the locator at its own address is `terminal-archived` and both progress cells are untouched. | `_series_is_live_unaddressed` | mcp/src/agents_remember/worktrees/reopen.py:1015-1039 |
-| An advanced integration branch is the in-flight series' own landed work: reported as `advance`, never moved; divergence still refuses. | `_series_ref_recut` | mcp/src/agents_remember/worktrees/reopen.py:787-821 |
+| An advanced integration branch is the in-flight series' own landed work: reported as `advance`, never moved; divergence still refuses. | `_series_ref_recut` | mcp/src/agents_remember/worktrees/reopen.py:921-977 |
 | The reopen clears the review counter a completion spent, and only when the counter carries history. | `_review_state_carries_history`; `_plan_series_document_reset` | mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117 |
 | The reopen clears the review counter a completion spent, and only when the counter carries history. | `_review_state_carries_history`; `_plan_series_document_reset` | mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117 |
 | The publication `mode` (`reset` or `publish`) is decided by the arrival, not by a caller flag. | `_series_reopen_plan` | mcp/src/agents_remember/worktrees/reopen.py:1120-1189 |
 | The publication `mode` (`reset` or `publish`) is decided by the arrival, not by a caller flag. | `_series_reopen_plan` | mcp/src/agents_remember/worktrees/reopen.py:1120-1189 |
+| An unnamed leaf's master through the shared helper; a named reference by reopen's own rule. | "def _reopen_master_path("; "return master_sync.folder_master_json_path(task_root, doc)" | mcp/src/agents_remember/worktrees/reopen.py:647-657 |
+| The master reset refuses a misplaced master before planning its row, and keeps the demotion rule. | "require_task_document_in_place(master_path, master, ReopenTaskDocumentError)"; "updated = master_sync.demote_completed_master_if_unresolved(TaskDocument.model_validate(data))" | mcp/src/agents_remember/worktrees/reopen.py:588-628 |
+| The leaf reset refuses a misplaced leaf before planning its reset. | "require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)" | mcp/src/agents_remember/worktrees/reopen.py:435-477 |
+| The shared rule. | "def folder_master_json_path(task_root: Path, leaf: TaskDocument)" | mcp/src/agents_remember/tasks/master_sync.py:165-183 |
 | Parent lineage compares exact prestart output positions to the configured parent source. | `parent_source_lineage` | mcp/src/agents_remember/worktrees/source_lineage.py:79-91 |
 
 ## Cross-Repo References
@@ -115,6 +124,9 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** Two Logic paragraphs: `_reopen_master_path` resolves an unnamed leaf through `master_sync.folder_master_json_path` (ruling 12:33:07 Q2; the light `task.json` case and why only the planner reaches it; the module-qualified import that kept the file at 1,446 lines), and the placement guard on both rewritten documents (review R1 finding 1, rulings 13:11:32 and 13:35:32; base crashed or overwrote). One invariant and four rows added. The installed fixer re-pointed `_reopen_preflight_refusal` and `_reopened_contract` by this leaf's -1 import shift (two generated bullets, kept) and normalised two rows that were already stale at base (`_clear_frozen_landing` now cites its own `399-415`; `_series_ref_recut` `787-821` → `921-977`). No verification stamp was advanced.
+- 2026-09-30T13:22:44+00:00: Generated citation repair: `_reopen_preflight_refusal` repointed to mcp/src/agents_remember/worktrees/reopen.py:324-396. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T13:22:44+00:00: Generated citation repair: `_reopened_contract` repointed to mcp/src/agents_remember/worktrees/reopen.py:196-222. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: `_series_in_flight` repointed to mcp/src/agents_remember/worktrees/reopen.py:1003-1012. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-20T17:17:10+00:00: Generated citation repair: `_series_is_live_unaddressed` repointed to mcp/src/agents_remember/worktrees/reopen.py:1015-1039. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.

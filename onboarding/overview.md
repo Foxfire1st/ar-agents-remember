@@ -5,11 +5,26 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash |  `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate |  2026-09-30T13:14:52+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash |  `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
+| lastVerifiedCommitDate |  2026-09-30T15:46:42+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L38 A Finished Leaf Shows Completed On Its Master
+
+Repository-level consequence of leaf `260928-MIK-L38` (MIK-R38, developer direction D32): `lifecycle_finalize_task`
+completes a leaf's row on the master that lists it even when the leaf names no `master`, because the finalizer, reopen
+and the task-document master sync now resolve a leaf's master by one rule (the named master, else the folder's
+`task.json` master). A leaf without a listing master finalizes standalone as before. Finalize and reopen also refuse,
+before any write, a leaf or master stored under a file name the store would not write it back to, so a hand-made
+document can never be written over the series `task.json`. The c-09 skill says so: the authored `skills/` copy,
+synchronized by `scripts/sync-skills.py` into the package copy and the eight harness starter copies this route
+governs. **This is not gated on the memory conversion**: it applies to every task folder once this build is installed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The skill's finalizer paragraph, mirrored into the package and starter copies. | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | skills/c-09-git-worktree-manager/SKILL.md:496-503 |
 
 ## 260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used
 
@@ -357,6 +372,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **root body updated for MIK-R38.** A new top section, "260928-MIK-L38 A Finished Leaf Shows Completed On Its Master": the repository-level consequence (one rule for a leaf's master, the placement refusal) and the c-09 finalizer paragraph reaching the package copy and the eight harness starter copies, not gated on conversion; one row. No verification stamp was advanced.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **root body updated for MIK-R14.** A new top section, "260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used": the repository-level consequence (reconsideration candidates, `still_rejected` and `raise`, never reversing, the reorder refusal) and the template bullet reaching the package copy and the eight harness starter copies, inert before MIK-R37; two rows. The other rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used" at the top: the repository-level consequence and the c-04 paragraph reaching the package copy and the eight starter copies (ruling Q5, 2026-09-30 03:32:18), with one row. L01's c-04 row still resolves.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used" at the top: the repository-level consequence, with the template bullet reaching the package and eight starter copies; one row. L13's template row was re-pointed by the +8 shift of the inserted bullet. No verification stamp was advanced.

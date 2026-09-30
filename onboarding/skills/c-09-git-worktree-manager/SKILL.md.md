@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T13:20+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash |  `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
+| lastVerifiedCommitDate |  2026-09-30T15:46:42+02:00|
 | governingOverview | `skills/c-09-git-worktree-manager/overview.md` |
 
 ## Governing Overview
@@ -63,6 +63,14 @@ it and never clears a newer selection. Integration conflicts use the same eviden
 agents resolve technically derivable conflicts; only genuine semantic ambiguity escalates to the
 architect.
 
+**Finalization reaches the master that lists a leaf naming none (MIK-R38, 260928-MIK-L38).** The finalizer
+paragraph of `## Lifecycle Finalization And Cleanup` now says the finalizer derives and reconciles the exact row when
+the bound leaf declares an existing immediate parent "or names none and its folder's `task.json` master lists it"
+(ruling 2026-09-30T12:33:07 Q3), and that "a sub-task naming none whose folder `task.json` is not a master is
+refused" (review R1 note 5, ruling 13:11:32; "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that
+is its own `task.json`, which finalizes standalone, is not covered). `scripts/sync-skills.py` rewrote the package
+copy and the eight harness starter copies byte-identically from this source.
+
 ### Conventions
 
 - Preview before mutation and keep dry-run side-effect free.
@@ -104,8 +112,9 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical contract-scoped admission and task/queue separation. | "Atomic-series implementation admission is a separate, contract-scoped authority." | skills/c-09-git-worktree-manager/SKILL.md:237-249 |
-| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:256-300 |
-| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:430-508 |
+| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:258-304 |
+| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:436-516 |
+| The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | skills/c-09-git-worktree-manager/SKILL.md:496-503 |
 | Public implementation facade preserves the same contract-addressed API. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
 
 ## Cross-Repo References
@@ -129,6 +138,7 @@ removed. That mismatch between the declared path rules and the enforced checking
 recorded defect.
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38**, although this card's source is outside `pathRules` (kept current as the L27, L13, L10 and L14 curators kept the `skills/` cards). The Logic records the finalizer paragraph's two new clauses (ruling 12:33:07 Q3; review R1 note 5, ruling 13:11:32; "a sub-task naming none", ruling 14:12:52) and the nine-copy sync; one row added. The installed fixer normalised the two section rows, one of them already imprecise at base (`## Lifecycle Finalization And Cleanup` `430-508` → `436-516`, `## Mid-Task Sync` `256-300` → `258-304`). No verification stamp was advanced.
 - 2026-09-14T13:20+02:00 — Corrected the sync doctrine this card states: the transaction no longer
   re-judges a memory resolution against either parent's row list, because the ledger is derived state
   and its rebuild is its authority, so a row the rebuild cannot resolve is reported as an exclusion

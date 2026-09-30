@@ -5,14 +5,62 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
+
+`260928-MIK-L38` (MIK-R38, developer direction D32: "Completing a status on a task should also show the status on the
+master as completed") makes the finalizer resolve a leaf's master by the task-document master sync's rule. Before it,
+the sync resolved a leaf naming no `master` to its folder's `task.json` and kept that row current, while the
+finalizer called the same leaf standalone and skipped the row, so every finished 260928-MIK leaf (none names its
+master) stayed `inProgress` on the master; the developer saw 15 such rows, repaired by resync writes.
+
+- **Where:**
+  - `tasks/master_sync.py`: the public `folder_master_json_path`, the one rule for a leaf naming no master (a
+    `subTask` only; the folder's `task.json` when it exists). The sync's own path and behaviour are unchanged.
+  - `worktrees/modules/finalize.py`: `_resolve_parent_target` dispatches to `_named_parent` (unchanged) or
+    `_folder_parent` (the helper, then every named-master check and the demotion rule); no folder master, or no row
+    for the leaf, stays standalone; an asserted parent without a row names that cause.
+  - `worktrees/reopen.py`: `_reopen_master_path` uses the same helper (ruling 2026-09-30T12:33:07 Q2), so a `light`
+    `task.json` no longer resolves to itself.
+  - `tasks/leaf_doc.py`: `require_task_document_in_place`, called by finalize and reopen on the leaf and on the
+    master before any write (review R1 finding 1, ruling 13:11:32; the master side by ruling 13:35:32).
+  - The `lifecycle_finalize_task` description, `docs/reference/mcp-tools.md` and the c-09 skill (source, package copy
+    and the eight starter copies) name the folder-master row and the refusal of a sub-task naming none whose folder
+    `task.json` is not a master (ruling Q3; R1 note 5; "sub-task", ruling 14:12:52).
+- **Rulings** (`38_finalize-completes-the-master-row.json`). 12:33:07: Q1 the new cases stay in the integration lane
+  with the finalize tests; Q2 reopen resolves through the same helper; Q3 the tool description, `mcp-tools.md` and the
+  c-09 skill are updated; Q4 the packet's standalone and refusal cases as specified (a folder master without the
+  leaf's row leaves it standalone; an unnamed `subTask` whose folder `task.json` is not a master is refused).
+  13:11:32 (review R1 pass-with-notes): finding 1 the misplaced-leaf guard; note 2 the unreadable `task.json` pinned;
+  note 4 the named cause; note 5 the docs; note 3 (named-master resolution differences) out of scope. 13:35:32: the
+  master-side guard. 14:12:52: review R2 pass, and the wording "a sub-task naming none". Sync: the leaf was synced onto
+  L32 (`59daf505`) with a clean 3-way apply; its finalize, reopen and dependency-ownership tests pass on the synced
+  tree.
+- **Candidate invariants (not ingested; no speculative ingestion):** (1) finalize, reopen and the task-document master
+  sync resolve a leaf's master by one rule: the named master, else the folder's `task.json` master; (2) a finalized
+  leaf that a master lists shows `Completed` on that master's row; (3) no task-document writer overwrites a document
+  whose read path differs from the store's write target for it (finalize and reopen guard it before any write).
+- **Not inert:** unlike the knowledge leaves, this is not gated on the memory conversion; once this build is
+  installed, finalize and reopen use the rule on every task folder. Real-path evidence on scratch copies of the real
+  task folder (the worker with L31, review R1 with L35 and L38): base leaves L35's row `inProgress` and the sync re-plan reports `updated`; the fixed build completes
+  the row and the re-plan reports `unchanged`; a named leaf (L38) is identical on both.
+- **Tests:** `FolderMasterFinalizeTests` (5 cases, 9 subtests), one new `LifecycleFinalizeTests` case, four new
+  `ReopenResetTests` cases.
+  Review R2: unit suite 3,298 passed, integration lane 457 passed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The one rule, named for its three writers. | "ONE RULE FOR EVERY WRITER OF A LEAF'S MASTER ROW (MIK-R38)." | mcp/src/agents_remember/tasks/master_sync.py:165-183 |
+| The finalizer's dispatch. | "target = _folder_parent(contract.task_root, args, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:397-437 |
+| The placement guard. | "def require_task_document_in_place(" | mcp/src/agents_remember/tasks/leaf_doc.py:140-156 |
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover
 
@@ -1152,6 +1200,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master" at the top: D32, where the leaf lands (including the c-09 package copy this route governs), every ruling (12:33:07 Q1-Q4, 13:11:32 finding 1 and notes 2-5, 13:35:32, 14:12:52, the L32 sync), the three candidate invariants, that it is not gated on conversion, the real-path evidence and tests; three rows. The installed fixer normalised one memory-relative row into `memory/overview.md` (`1-2146` → `1-2148`), a document this leaf did not change. No verification stamp was advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover" at the top: where the leaf lands, every ruling (PS-1, 12:19:20 Q1-Q7 with Q2 carried to L37, 13:07:38 F1-F6 with F5 carried to L34, R2 pass, the L35 sync rerun), the five candidate invariants, inertness, tests and evidence, and three rows. The moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:06:51+00:00: Generated citation repair: "hunk.new_count > 0" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
@@ -3261,7 +3310,7 @@ its own positive control.
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2146 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2148 |
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms

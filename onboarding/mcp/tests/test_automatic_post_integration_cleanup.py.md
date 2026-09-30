@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T15:34:31+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -132,14 +132,14 @@ direct evidence.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module docstring that records the ownership story and the historical name. | "Reclamation is automatic and unprompted, and finalization is what runs it." | mcp/tests/test_automatic_post_integration_cleanup.py:1-28 |
-| The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:324-358; mcp/src/agents_remember/worktrees/modules/finalize.py:357-357 |
+| The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:328-362; mcp/src/agents_remember/worktrees/modules/finalize.py:361-361 |
 | The report shaper whose exact sentence and inventory the first case asserts. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
 | The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:287-372 |
 | The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:904-935 |
 | The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:238-243; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65 |
 | The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset("; `AMBIENT_ROLE_RUNNER_PATH`; "mcp/tests/test_automatic_post_integration_cleanup.py" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47; mcp/tests/test-evidence-lanes.toml:238-243; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/tests/test-evidence-lanes.toml:278-278 |
+| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62; mcp/tests/test-evidence-lanes.toml:283-283 |
 
 ## Cross-Repo References
 
@@ -151,6 +151,8 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T15:34:31+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`): No content impact: this leaf's imports added 4 lines near the top of `worktrees/modules/finalize.py`, so the reclamation-runner row was re-pointed by that exact shift (`324-358; 357-357` → `328-362; 361-361`); the wording holds. The installed fixer also repaired the lane row into `mcp/tests/test-evidence-lanes.toml` (`278` → `283`, its generated bullet kept), a file this leaf did not change, where the row was already stale. No verification stamp was advanced.
+- 2026-09-30T13:24:04+00:00: Generated citation repair: "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" repointed to mcp/tests/test-evidence-lanes.toml:283-283; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `finalize.py`, `test-evidence-lanes.toml` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-30T01:50:28+00:00: Generated citation repair: "integration = ["; "AMBIENT_ROLE_RUNNER_PATH: frozenset(" repointed to mcp/tests/test-evidence-lanes.toml:278-278; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:62-62. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

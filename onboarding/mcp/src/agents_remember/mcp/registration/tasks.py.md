@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-30T15:25:16+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ creates exactly one and requires `{id, title}`, refusing an id that already exis
 `read_steps` is the read-only focused checklist read; and all of them address one exact existing unit
 by `step={id, parent?}`, where `parent` selects the namespace. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:119-119; mcp/src/agents_remember/mcp/registration/tasks.py:135-135; mcp/src/agents_remember/mcp/registration/tasks.py:141-142).
+explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:121-121; mcp/src/agents_remember/mcp/registration/tasks.py:137-137; mcp/src/agents_remember/mcp/registration/tasks.py:143-144).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -83,6 +83,13 @@ master_doc_path, subtask_number)` and keeps `dry_run` and `teardown_providers` s
 docstring states the terminal semantics: the task's landed commit must be reachable from the
 contract's local target/source branch — a PR-gated flow must complete the merge and pull first, so
 the proof is structurally identical to a non-PR edge — and no squash-merge equivalence is attempted.
+Since 260928-MIK-L38 (MIK-R38; ruling 2026-09-30T12:33:07 Q3) the docstring also says the finalizer
+derives and reconciles the leaf's exact row when the leaf declares an existing immediate parent "or names
+none and its folder's task.json master lists it", and (review R1 note 5, ruling 13:11:32) that "a sub-task
+naming none whose folder task.json is not a master is refused". The refusal names a sub-task, not a leaf,
+by ruling 14:12:52 (review R2's wording note): a `light` task that is its own `task.json` finalizes
+standalone and is not covered by it. The same clauses are in `docs/reference/mcp-tools.md` and the c-09
+skill. No argument, schema or response model changed.
 
 `task_reopen(contract_path, dry_run)` is a state reset, not a worktree creator: it returns the
 enclosure contract's review/closeout/integration state to virgin and the leaf's task document to
@@ -107,6 +114,7 @@ recreates everything.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32; mcp/src/agents_remember/mcp/tools/task_doc.py:35-48 |
+| The finalize description: the folder-master row and the sub-task refusal (MIK-R38). | "existing immediate parent, or names none and its folder's task.json master lists it, the"; "assertions are omitted; a sub-task naming none whose folder task.json is not a master is" | mcp/src/agents_remember/mcp/registration/tasks.py:90-103 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
 | `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:144-144 |
 
@@ -170,6 +178,7 @@ reversed). The pin is taken from the **registered** FastMCP surface
 `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
 ## Update History
+- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** The `lifecycle_finalize_task` paragraph records the docstring's two new clauses (ruling 12:33:07 Q3; review R1 note 5 and the re-wrap, ruling 13:11:32; "a sub-task naming none", ruling 14:12:52) and that no argument or schema changed; one row added. The docstring grew by two lines, so the `skip_step` vocabulary citation was re-pointed by the exact +2 shift (`119/135/141-142` → `121/137/143-144`; every one of its six anchors re-read in the new ranges). The line numbers in the TSIP-L4 section are those of its own time. No verification stamp was advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `task_doc` description stops advertising the refused `'light'` kind (`T43`, surface side). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
 - 2026-09-18T14:49:10+00:00: Generated citation repair: "operation: 'create'"; "exact existing step"; "sets only that unit done"; "records intentional-skip provenance without cascading"; "A nonblank reason is required."; "explicit status clears an earlier skip disposition" repointed to mcp/src/agents_remember/mcp/registration/tasks.py:119-119; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:135-135. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.

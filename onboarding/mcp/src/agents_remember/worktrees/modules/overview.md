@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T15:32:24+02:00 |
+| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
+| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,25 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260928-MIK-L38 Finalization Completes The Row Of The Master That Lists The Leaf
+
+`modules/finalize.py` resolves a leaf's immediate parent by the task-document master sync's rule (MIK-R38, developer
+direction D32). A leaf that names its master is unchanged (`_named_parent`). A leaf that names none used to finalize
+as standalone, leaving its row on the listing master at `inProgress`; it now resolves the folder's `task.json`
+through `tasks/master_sync.folder_master_json_path` (`_folder_parent`), holds it to every named-master check, and
+completes its row under the master demotion rule. Without a folder master, or without a row for the leaf, it stays
+standalone as before. Both masters and the leaf must also be in place: a document the store would write to another
+file is refused before cleanup and before any write (`tasks/leaf_doc.require_task_document_in_place`; review R1
+finding 1, rulings 2026-09-30T13:11:32 and 13:35:32). Reopen (`../reopen.py`) resolves by the same helper (ruling
+12:33:07 Q2). Every refusal is `task-document-resolution-blocked` with a named reason; the preflight, the source
+snapshots and the projection effects are unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Parent resolution dispatches on the leaf's `master`: named, folder, or standalone. | "target = _named_parent(contract.task_root, args, leaf.master, leaf.id)"; "target = _folder_parent(contract.task_root, args, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:397-437 |
+| The folder master through the master sync's helper, with the named-master checks. | "folder_master = folder_master_json_path(task_root, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:459-481 |
+| The placement guard on the leaf and on every master read. | "require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)"; "require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)" | mcp/src/agents_remember/worktrees/modules/finalize.py:393-393; mcp/src/agents_remember/worktrees/modules/finalize.py:507-519 |
 
 ## 260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject
 
@@ -45,7 +64,7 @@ task's review refs, its own legacy retained-code pins and its legacy dataset cop
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The archive result gains the hook's report; unbound or failed is reported, never raised. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:229-267 |
+| The archive result gains the hook's report; unbound or failed is reported, never raised. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:233-271 |
 
 ## 260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route
 
@@ -463,8 +482,9 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
 - `finalize.py` owns the terminal `lifecycle_finalize_task` operation. It
   refuses until closeout and integration are complete, the landed code commit is
   an ancestor of the recorded local source branch, and external-memory carryover
-  is done; then it runs or verifies cleanup and marks the leaf task plus
-  immediate parent row `Completed` when task-document paths are supplied. The
+  is done; then it runs or verifies cleanup and marks the contract-bound leaf and
+  its derived immediate parent row `Completed`: the master the leaf names or, for
+  a leaf naming none, the folder's `task.json` master that lists it (MIK-R38). The
   proof is one parent-child branch edge at a time. PR-gated flows are identical
   after the PR merge has been pulled locally, while squash-merge equivalence is
   not inferred by default.
@@ -582,8 +602,8 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
-| Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
-| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:324-358; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
+| Finalizer tests cover a named master's row, its rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row, the dry run, the standalone cases and the refusals before any write. | "class LifecycleFinalizeTests(_FinalizeFixtures):"; "class FolderMasterFinalizeTests(_FinalizeFixtures):" | mcp/tests/test_lifecycle_finalize.py:155-244; mcp/tests/test_lifecycle_finalize.py:247-409 |
+| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:328-362; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:532-540; mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:333-333; mcp/src/agents_remember/models/worktree.py:46-55 |
@@ -1429,6 +1449,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 Finalization Completes The Row Of The Master That Lists The Leaf" at the top (D32; rulings 12:33:07 Q2, 13:11:32 finding 1, 13:35:32), with three rows, and corrected the `finalize.py` route-model entry, which said the parent row is completed "when task-document paths are supplied" (it is derived from the leaf). **Reopened claim re-read, reworded and re-anchored:** the `LifecycleFinalizeTests` row claimed landed-commit, cleanup-blocking and dry-run cases the class does not hold; it now names both test classes on their line-exact class lines, so the committed generated bullet (2026-09-06T22:41:21+00:00) is left intact. The installed fixer normalised the two `finalize.py` rows by this leaf's +4 import shift. No verification stamp was advanced.
 
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject" at the top (the additive `subject` and why, ruling 01:56:39 Q3), one row. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 Finalization Carries The Review-Artifact Archive Hook" at the top (`finalize._with_review_artifact_cleanup`, review F2, ruling 02:32:42 (a)), with one row. No verification stamp was advanced.
