@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/tools/knowledge_responses.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -201,6 +201,24 @@ than depending on its consumers.
   models have no cross-field rule, so a `view` state with no payload and a `refused` state with one
   remain constructible and are prevented only by the payload builders.
 
+## 260928-MIK-L05 The Optional `routeChain` Field And The Route-Chain Rows (MIK-R05)
+
+- **`routeChain`** (`dict[str, Any] | None = None`) is on a `registration_absent` refusal of a path read from a
+  converted tree: the mechanical chain (`directory`, `links`, `derivation`, `state`, `families`) stating
+  `no_governing_family`. A page carries the same block inside `payload`, not in this field.
+- **The docstring paragraph "Route-chain families (MIK-R05)"** says that after the MIK-R01 content
+  `payload.rows` hold one compact `chain_family` row per family with a route on the path's directory or an
+  ancestor, that `payload.routeChain` states the chain, and that a `source_context` read naming
+  `familyRevisionId` and no path returns that family's full content (the family seed, ruling Q1 of
+  2026-09-30 03:32:18).
+- **Additive and optional.** A database read never sets `routeChain`, so the installed runtime's responses are
+  unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The docstring paragraph on the route-chain rows, `routeChain` and the family seed. | "Route-chain families (MIK-R05)" | mcp/src/agents_remember/models/tools/knowledge_responses.py:49-53 |
+| The optional `routeChain` field on the read model, for a path's refusal. | `routeChain` | mcp/src/agents_remember/models/tools/knowledge_responses.py:101-101 |
+
 ## 260928-MIK-L01 The Leaf Read's Page And The Optional `families` Field (MIK-R01)
 
 A docstring paragraph names the family-complete leaf read, and the model gains one optional field.
@@ -218,7 +236,7 @@ A docstring paragraph names the family-complete leaf read, and the model gains o
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The docstring paragraph on the leaf read and family names. | "The family-complete leaf read and family names (MIK-R01)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:43-47 |
-| The optional `families` field on the read model. | `families` | mcp/src/agents_remember/models/tools/knowledge_responses.py:94-94 |
+| The optional `families` field on the read model. | `families` | mcp/src/agents_remember/models/tools/knowledge_responses.py:100-100 |
 
 ## 260928-MIK-L28 The Optional `proofs` Field On A Read (MIK-R28 Rule 4)
 
@@ -235,7 +253,7 @@ other three views; an unknown subject also has no field, which is distinct from 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The docstring paragraph on proofs beside the view. | "Proofs beside the view (MIK-R28 rule 4)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:27-27 |
-| The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, and since MIK-R01 the optional `families`. | `KnowledgeReadResponse`; `proofs` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
+| The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. | `KnowledgeReadResponse`; `proofs` | mcp/src/agents_remember/models/tools/knowledge_responses.py:78-103 |
 | A family whose members have no proof shows `[]`. | `test_a_family_whose_members_have_no_proof_shows_an_empty_list` | mcp/tests/test_knowledge_proofs.py:322-337 |
 
 ## 260928-MIK-L08 The Integrity Response Carries A Leaf's Worklist (MIK-R08 Rule 7)
@@ -250,7 +268,7 @@ other three views; an unknown subject also has no field, which is distinct from 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional repository and the two worklist fields, with their comment. | "MIK-R08 rule 7: the leaf's latest persisted worklist"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:165-166 |
+| The optional repository and the two worklist fields, with their comment. | "MIK-R08 rule 7: the leaf's latest persisted worklist"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:172-173 |
 | The builder that fills them. | `leaf_worklist_fields` | mcp/src/agents_remember/application/knowledge_worklist/surface.py:35-56 |
 
 ## 260928-MIK-L03 The Optional `currentness` Field On A Read (MIK-R03)
@@ -272,7 +290,7 @@ invariant the answer carries at the code tree named by `codeTreeId`: `codeTree`,
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The docstring paragraph on currentness beside the view. | "Currentness beside the view (MIK-R03)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:25-33 |
-| The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, and at MIK-R01 when it gained `families`. | `KnowledgeReadResponse`; `currentness` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
+| The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. | `KnowledgeReadResponse`; `currentness` | mcp/src/agents_remember/models/tools/knowledge_responses.py:78-103 |
 | The block the field carries, computed once per page since MIK-R02. | `WalkCurrentness`; `evaluate_answer` | mcp/src/agents_remember/application/knowledge_paging/currentness.py:30-70 |
 
 ## 260928-MIK-L02 The Read Response States Its Page And Threshold (MIK-R02)
@@ -297,7 +315,7 @@ invariant the answer carries at the code tree named by `codeTreeId`: `codeTree`,
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The docstring paragraph on a memory tree's bounded page. | "A memory tree's read is a bounded page (MIK-R02)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:19-25 |
-| The `page` state (which since MIK-R01 also answers a leaf read) and the optional `page` and `threshold` fields on the read model. | `KnowledgeReadResponse`; `threshold` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
+| The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. | `KnowledgeReadResponse`; `threshold` | mcp/src/agents_remember/models/tools/knowledge_responses.py:78-103 |
 | Where the page facts are built. | `page_block` | mcp/src/agents_remember/application/knowledge_paging/pager.py:176-200 |
 
 ## Docs References
@@ -319,12 +337,12 @@ in the working candidate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The five public classes this module exports and nothing else — no constant, no helper, no base. | `__all__` | mcp/src/agents_remember/models/tools/knowledge_responses.py:63-69 |
-| The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index. | `KnowledgeReadResponse`; `payload`; `snapshot`; `completeWithinDeclaredScope`; `continuation`; `memoryTree`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
-| The change response: a recorded proposal or a refusal, with the tool recording and never authoring. | `KnowledgeChangeResponse`; `recordKind`; `recordId`; `revisionId` | mcp/src/agents_remember/models/tools/knowledge_responses.py:99-109; mcp/src/agents_remember/models/tools/knowledge_responses.py:104-104; mcp/src/agents_remember/models/tools/knowledge_responses.py:106-107 |
-| The diff response: only the labels an identified source supplied, defaulting to the empty list, plus `memoryTrees` naming each side read through a converted tree's index and `indexComplete`. | `KnowledgeDiffResponse`; `semanticEffectLabels`; `memoryTrees`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:112-128 |
-| The integrity response class as it now reads: the conditions, their limits and the typed `None` that records no verdict, the five fields that bind those conditions to the run they were measured over, and (since MIK-R08) an optional `repositoryId` beside the leaf's optional worklist state and summary. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklist: dict[str, Any]" | mcp/src/agents_remember/models/tools/knowledge_responses.py:131-131; mcp/src/agents_remember/models/tools/knowledge_responses.py:167-167 |
-| The project response: one managed projection's per-path outcomes as three separate lists beside its destination and renderer version, plus the optional memory-tree binding when the projected dataset was a converted tree's index. | `KnowledgeProjectResponse`; `published`; `retained`; `discrepancies`; `manifestGeneration`; `memoryTree` | mcp/src/agents_remember/models/tools/knowledge_responses.py:170-184 |
+| The five public classes this module exports and nothing else — no constant, no helper, no base. | `__all__` | mcp/src/agents_remember/models/tools/knowledge_responses.py:69-75 |
+| The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index. | `KnowledgeReadResponse`; `payload`; `snapshot`; `completeWithinDeclaredScope`; `continuation`; `memoryTree`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:78-103 |
+| The change response: a recorded proposal or a refusal, with the tool recording and never authoring. | `KnowledgeChangeResponse`; `recordKind`; `recordId`; `revisionId` | mcp/src/agents_remember/models/tools/knowledge_responses.py:106-116; mcp/src/agents_remember/models/tools/knowledge_responses.py:111-111; mcp/src/agents_remember/models/tools/knowledge_responses.py:113-114 |
+| The diff response: only the labels an identified source supplied, defaulting to the empty list, plus `memoryTrees` naming each side read through a converted tree's index and `indexComplete`. | `KnowledgeDiffResponse`; `semanticEffectLabels`; `memoryTrees`; `indexComplete` | mcp/src/agents_remember/models/tools/knowledge_responses.py:119-135 |
+| The integrity response class as it now reads: the conditions, their limits and the typed `None` that records no verdict, the five fields that bind those conditions to the run they were measured over, and (since MIK-R08) an optional `repositoryId` beside the leaf's optional worklist state and summary. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklist: dict[str, Any]" | mcp/src/agents_remember/models/tools/knowledge_responses.py:138-138; mcp/src/agents_remember/models/tools/knowledge_responses.py:174-174 |
+| The project response: one managed projection's per-path outcomes as three separate lists beside its destination and renderer version, plus the optional memory-tree binding when the projected dataset was a converted tree's index. | `KnowledgeProjectResponse`; `published`; `retained`; `discrepancies`; `manifestGeneration`; `memoryTree` | mcp/src/agents_remember/models/tools/knowledge_responses.py:177-191 |
 | The envelope every one of the five derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. | `ToolResponse`; `operation`; `ResponseModel`; `to_payload`; `StrictResponseModel` | mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:91-94; mcp/src/agents_remember/models/tools/knowledge_responses.py:49-49 |
 | Where the five classes are imported and mapped to their tool names in the registry. | `KnowledgeChangeResponse`; `KnowledgeDiffResponse`; `KnowledgeIntegrityCheckResponse`; `KnowledgeProjectResponse`; `KnowledgeReadResponse` | mcp/src/agents_remember/models/tools/tool_registry.py:111-117; mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
 | The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
@@ -351,6 +369,9 @@ repository's vocabulary.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): the section "260928-MIK-L05 The Optional `routeChain` Field And The Route-Chain Rows (MIK-R05)" with two rows: the new optional `routeChain` field for a path's `registration_absent` refusal, and the docstring paragraph on the chain rows and the family seed (ruling Q1, 2026-09-30 03:32:18). **Three reopened `KnowledgeReadResponse` rows reworded** (L28's `proofs`, L03's `currentness` and L02's `page`), removing this pass's generated bullets that bound the first two; their range `78-103` still spans the class.
+- 2026-09-30T03:49:20+00:00: Generated citation repair: `families` repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:100-100. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:49:20+00:00: Generated citation repair: "MIK-R08 rule 7: the leaf's latest persisted worklist"; "worklistState: Literal[" repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:172-172; mcp/src/agents_remember/models/tools/knowledge_responses.py:173-173. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 adds a docstring paragraph and the optional `families` field. Added the section "260928-MIK-L01 The Leaf Read's Page And The Optional `families` Field" with two rows, and reworded L02's interim `headerReference` bullet: a leaf page now carries the reference as its literal first row, a view page still in `page`. **Three reopened `KnowledgeReadResponse` claims were re-read and reworded** (L28's `proofs` row, L03's `currentness` row and L02's `page` row, each now naming what MIK-R01 added); this pass's two generated-repair bullets that bound them were removed because their claims were reworded. The other rows were projected or normalised by the installed fixer.
 - 2026-09-29T23:58:34+00:00: Generated citation repair: "MIK-R08 rule 7: the leaf's latest persisted worklist"; "worklistState: Literal[" repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:165-165; mcp/src/agents_remember/models/tools/knowledge_responses.py:166-166. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T19:58:42+00:00: Generated citation repair: "Proofs beside the view (MIK-R28 rule 4)." repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:27-27. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.

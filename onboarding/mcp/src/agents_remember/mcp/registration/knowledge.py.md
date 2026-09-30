@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/mcp/registration/knowledge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview | `mcp/src/agents_remember/mcp/registration/overview.md` |
 
 ## Governing Overview
@@ -86,6 +86,19 @@ The family module follows the package door's contract exactly: one `register_*_t
 - **The default dataset, namespace and destination are always caller-supplied.** No handler falls back to a configured dataset path, repository id or destination root — only the anchor-resolution root has a configured fallback, and the coordination root is only where a caller-named converted tree's index is cached.
 - **The read signature's seed is passed through, never interpreted.** `sourcePath` is one optional wire argument forwarded as `source_path` into `ReadToolRequest`; the registrar neither validates it nor defaults it, so what a seed means — and the `PathSeed` rule that decides whether it is a usable one — stays in the models layer where the write path already spells it.
 
+## 260928-MIK-L05 The Read Docstring Names The Route-Chain Rows And The Family Seed
+
+`knowledge_read`'s published docstring now continues the leaf-read sentence (MIK-R05): after the advertised
+families come one compact `chain_family` row per family routed at the path's directory or an ancestor, with
+`payload.routeChain` stating the chain (`no_governing_family` when none). It also names the family seed:
+`source_context` with a family ID in `familyRevisionId` and no `sourcePath` returns that family's full content
+(ruling Q1, 2026-09-30 03:32:18). No argument changed: the family seed reuses the existing `familyRevisionId`
+argument, and the registrar still forwards it without interpreting it.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The docstring sentences on the chain rows and the family seed. | "one compact chain_family row per family routed"; "no sourcePath returns that family's full content" | mcp/src/agents_remember/mcp/registration/knowledge.py:102-104 |
+
 ## 260928-MIK-L01 The Read Docstring Names The Family-Complete Leaf Read
 
 `knowledge_read`'s published docstring now states that, on a converted tree, `source_context` with
@@ -98,13 +111,13 @@ the tree read (ruling Q7, 2026-09-29 23:21:57).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The docstring sentences on the leaf read and the `invariant` view's families. | "is the family-complete leaf read"; "names the invariant's families" | mcp/src/agents_remember/mcp/registration/knowledge.py:98-102 |
+| The docstring sentences on the leaf read and, after MIK-R05's chain sentences, the `invariant` view's families. | "is the family-complete leaf read"; "names the invariant's families" | mcp/src/agents_remember/mcp/registration/knowledge.py:99-99; mcp/src/agents_remember/mcp/registration/knowledge.py:105-105 |
 
 ## 260928-MIK-L08 The Integrity Check Takes A Leaf's Contract
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional dataset pair, the new `contractPath`, the docstring's worklist sentence, and the one request value handed to the builder. | `_register_knowledge_integrity_check`; `contractPath`; `IntegrityCheckRequest`; "a leaf may be named without a dataset" | mcp/src/agents_remember/mcp/registration/knowledge.py:175-207 |
+| The optional dataset pair, the new `contractPath`, the docstring's worklist sentence, and the one request value handed to the builder. | `_register_knowledge_integrity_check`; `contractPath`; `IntegrityCheckRequest`; "a leaf may be named without a dataset" | mcp/src/agents_remember/mcp/registration/knowledge.py:178-210 |
 | The builder that decides the accepted combinations. | `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:706-743 |
 
 ## 260928-MIK-L03 The Read Docstring Names `currentness`
@@ -119,7 +132,7 @@ the caller's `repositoryRoot` untouched and the workspace root separately, which
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The read docstring's `currentness` sentence, now at the walk's code tree. | "gives each returned invariant's state" | mcp/src/agents_remember/mcp/registration/knowledge.py:95-98 |
-| Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used. | `_at_code_tree`; `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:207-243; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:280-296 |
+| Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used. | `_at_code_tree`; `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:212-251; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:290-306 |
 
 ## 260928-MIK-L02 The Read Docstring Names The Page, The Threshold And The Continuation
 
@@ -156,18 +169,18 @@ No domain documentation source is configured for this repository (`system/source
 | --- | --- | --- |
 | The family module's own statement of its scope — appended rather than inserted, the five operation families in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose five `_register_*` calls are made in the declared read, change, diff, integrity, projection order. | `register_knowledge_tools`; `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/knowledge.py:6-6; mcp/src/agents_remember/mcp/registration/knowledge.py:45-64 |
 | The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached (MIK-R23) — and the configuration type whose `workspace_root` is the first value. | `workspace_root`; "coordination root"; `McpRuntimeConfig` | mcp/src/agents_remember/mcp/registration/knowledge.py:45-58; mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-156 |
-| The five registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments, the read, diff and project registrars that also forward the configured coordination root, and the change and integrity registrars that take the server alone. | `_register_knowledge_read`; `_register_knowledge_change`; `_register_knowledge_diff`; `_register_knowledge_integrity_check`; `_register_knowledge_project`; `coordination_root` | mcp/src/agents_remember/mcp/registration/knowledge.py:67-119; mcp/src/agents_remember/mcp/registration/knowledge.py:114-114; mcp/src/agents_remember/mcp/registration/knowledge.py:118-118; mcp/src/agents_remember/mcp/registration/knowledge.py:122-154; mcp/src/agents_remember/mcp/registration/knowledge.py:157-180; mcp/src/agents_remember/mcp/registration/knowledge.py:175-175; mcp/src/agents_remember/mcp/registration/knowledge.py:179-179; mcp/src/agents_remember/mcp/registration/knowledge.py:183-215; mcp/src/agents_remember/mcp/registration/knowledge.py:218-249 |
+| The five registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments, the read, diff and project registrars that also forward the configured coordination root, and the change and integrity registrars that take the server alone. | `_register_knowledge_read`; `_register_knowledge_change`; `_register_knowledge_diff`; `_register_knowledge_integrity_check`; `_register_knowledge_project`; `coordination_root` | mcp/src/agents_remember/mcp/registration/knowledge.py:67-122; mcp/src/agents_remember/mcp/registration/knowledge.py:117-117; mcp/src/agents_remember/mcp/registration/knowledge.py:121-121; mcp/src/agents_remember/mcp/registration/knowledge.py:125-157; mcp/src/agents_remember/mcp/registration/knowledge.py:160-183; mcp/src/agents_remember/mcp/registration/knowledge.py:178-178; mcp/src/agents_remember/mcp/registration/knowledge.py:182-182; mcp/src/agents_remember/mcp/registration/knowledge.py:186-218; mcp/src/agents_remember/mcp/registration/knowledge.py:221-252 |
 | The published read contract: the five views, the attributed records, the rule that an unclassifiable value is an unresolved limitation rather than an empty class, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`. | `knowledge_read`; `sourcePath`; `source_path` | mcp/src/agents_remember/mcp/registration/knowledge.py:66-116; mcp/src/agents_remember/mcp/registration/knowledge.py:80-80; mcp/src/agents_remember/mcp/registration/knowledge.py:110-110 |
 | The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:45-64 |
-| The record registrar, whose docstring states that the content is never drafted, the rationale never judged, and no gate, approval or new authority added — and, since `260921-ICR-L20`, names the write plane's ordinary route and its read-back; since `260928-MIK-L12` it also says that a converted memory tree is written through the curator file writer. | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location"; "On a converted memory tree" | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
-| The comparison registrar, whose docstring states that semantic effect labels are included only when an identified source supplied them. | `_register_knowledge_diff`; `knowledge_diff` | mcp/src/agents_remember/mcp/registration/knowledge.py:157-180 |
+| The record registrar, whose docstring states that the content is never drafted, the rationale never judged, and no gate, approval or new authority added — and, since `260921-ICR-L20`, names the write plane's ordinary route and its read-back; since `260928-MIK-L12` it also says that a converted memory tree is written through the curator file writer. | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location"; "On a converted memory tree" | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
+| The comparison registrar, whose docstring states that semantic effect labels are included only when an identified source supplied them. | `_register_knowledge_diff`; `knowledge_diff` | mcp/src/agents_remember/mcp/registration/knowledge.py:160-183 |
 | The report registrar, whose docstring records that `compatible` is absent by design rather than by accident, that an unresolved assessment stays unresolved, and that `runId`/`inputDigest` select one exact run among several in the selected scope. | `_register_knowledge_integrity_check`; `knowledge_integrity_check`; `runId`; `inputDigest`; "absent by design, not" | mcp/src/agents_remember/mcp/registration/knowledge.py:179-211 |
-| The projection registrar, whose docstring records sibling Markdown and JSON views, the non-export JSON projection, and the externally edited file that is preserved unless its exact path is authorized. | `_register_knowledge_project`; `knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:218-249 |
+| The projection registrar, whose docstring records sibling Markdown and JSON views, the non-export JSON projection, and the externally edited file that is preserved unless its exact path is authorized. | `_register_knowledge_project`; `knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:221-252 |
 | The request value objects and payload builders this module delegates to, imported rather than re-declared here. | `knowledge_read_payload`; `ReadToolRequest` | mcp/src/agents_remember/mcp/registration/knowledge.py:31-41 |
 | The registry the family is appended to, where the import and the fourteenth tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. | `TOOL_REGISTRARS`; `register_knowledge_tools`; `test_live_registration_matches_the_public_inventory_in_order` | mcp/src/agents_remember/mcp/registration/__init__.py:27-27; mcp/src/agents_remember/mcp/registration/__init__.py:38-53; mcp/tests/test_tools.py:237-246 |
 | The five advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. | `knowledge_read`; `knowledge_integrity_check` | mcp/src/agents_remember/models/tools/public_roster.py:91-96 |
 | The five response-model rows that validate these operations' payloads, added at the registry's own tail. | `knowledge_read`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
-| The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96; mcp/src/agents_remember/models/tools/knowledge_responses.py:131-167 |
+| The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:78-103; mcp/src/agents_remember/models/tools/knowledge_responses.py:138-174 |
 | The review-matrix view this module makes reachable through the read operation's view argument, defined where the view payloads live rather than here. | `ReviewMatrixView` | mcp/src/agents_remember/models/knowledge/view.py:796-800; mcp/src/agents_remember/application/knowledge_views.py:58-58; mcp/src/agents_remember/application/knowledge_views.py:281-281; mcp/src/agents_remember/models/knowledge/view.py:956-956; mcp/src/agents_remember/models/knowledge/view.py:956-960 |
 | The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model` | mcp/tests/test_models.py:47-61 |
 | The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model`; "def test_every_public_tool_has_a_schema_generating_response_model(" | mcp/tests/test_models.py:47-61 |
@@ -181,6 +194,7 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): the section "260928-MIK-L05 The Read Docstring Names The Route-Chain Rows And The Family Seed" with one row (ruling Q1, 2026-09-30 03:32:18). The reopened L01 docstring row was reworded (its `invariant` view sentence now follows the chain sentences), removing this pass's generated bullet that bound it.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 extends `knowledge_read`'s published docstring. Added the section "260928-MIK-L01 The Read Docstring Names The Family-Complete Leaf Read" with one row (rules 6 and 7; ruling Q7). No argument or default changed.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **body updated for MIK-R02.** Added the section "260928-MIK-L02 The Read Docstring Names The Page, The Threshold And The Continuation" (the page, the threshold, the cross-surface continuation, `orderingInput` defaulting to `None`; rulings Q5, F1 and F4) with two rows. **Reopened claim re-read and reworded:** L03's `currentness` sentence now says the walk's code tree, and its row says so; the `requested_code_tree` row now cites `tree_read` (`_at_code_tree`), which applies the same named-tree rule since MIK-R02.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **body updated for MIK-R03.** Added the section "260928-MIK-L03 The Read Docstring Names `currentness`": the `knowledge_read` docstring sentence, and how the separate root arguments support architect ruling 2 of 2026-09-29T18:42:37 (only `codeTreeId` is a request). Rows below the inserted lines were re-pointed by the installed fixer.

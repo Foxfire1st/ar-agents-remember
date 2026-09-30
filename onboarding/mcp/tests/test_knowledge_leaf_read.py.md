@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_leaf_read.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T02:10:00+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-**The MIK-R01 cases: the family-complete leaf read over converted memory trees, and the obligations L01 carries from L02.** Eleven collected cases cover the selection and its order, one selection on both surfaces, family names in the `invariant` view, the conforming example, the failure states, the carried obligations (the empty-repository root, the leaf walk's code tree, the seed-queue cap and the projection's 64-row cap), the derived reference title, and identity seeds beside a leaf. The module is in the `unit-regression` lane.
+**The MIK-R01 cases: the family-complete leaf read over converted memory trees, and the obligations L01 carries from L02.** Thirteen collected cases (eleven at MIK-R01; MIK-R05's review split one into three) cover the selection and its order, one selection on both surfaces, family names in the `invariant` view, the conforming example, the failure states, the carried obligations (the empty-repository root, the leaf walk's code tree, the seed-queue cap and the projection's 64-row cap), the derived reference title, and identity seeds beside a leaf. The module is in the `unit-regression` lane.
 
 ## Code Commentary
 
@@ -27,7 +27,10 @@
 - **Both surfaces** (`test_both_surfaces_return_one_selection_under_one_manifest`): identical rows and manifest digest from `read_ar_files` and `knowledge_read` `source_context` (rule 6).
 - **Family names** (`test_the_invariant_view_names_its_families`): the `invariant` view's `families` by ID and title (rule 7).
 - **The conforming example** (`test_the_conforming_example_returns_the_whole_family_in_one_response`): the review fixture's path returns its own invariant first, its family and guarantee, every member statement and every entry, in one response.
-- **Failure states** (`test_absent_and_partial_states_are_named`): `registration_absent` on both surfaces, naming "realization or proof claim" (ruling N6); a complete tree's refusal names the same memory tree as the block, and a partial index states `indexState: partial` and `indexComplete: false` (ruling N3).
+- **MIK-R05 adaptations (L05).** The L01 fixture routes `FAM-F11111` at `src` and `FAM-F22222` at `.`, so the selection test's expected sequence gains two `chain_family` rows after `advertised_family`, `counts` gain `chainFamilies: 2`, and `rowsTotal`/`rowsReturned` go from 15 to 17; the policy assertions name `family-complete-leaf/v2` (ruling Q4, 2026-09-30 03:32:18). Every other L01 assertion is unchanged.
+- **An entry-less path under a route** (`test_a_path_without_entries_still_returns_its_route_chain`, MIK-R05): `src/nothing.py` is a page stating `registration: registration_absent` with the N6 wording and its two chain rows.
+- **Failure states** (`test_absent_and_partial_states_are_named`): with `FAM-F22222` re-routed to `src`, `docs/nothing.md` has no entry and no governing family, so it is refused `registration_absent` on both surfaces, naming "realization or proof claim" (ruling N6), and both refusals carry the same `routeChain` stating `no_governing_family` (MIK-R05). The block's policy is `family-complete-leaf/v2` (N5), and a complete tree's refusal names the same memory tree as the block (ruling N3).
+- **A partial index** (`test_a_partial_index_is_named_on_both_surfaces`): an ungoverned path read from a partial index states `indexState: partial` and `indexComplete: false` (ruling N3). This and the entry-less case were split out of the failure test by review R1 F1 (2026-09-30 04:12:49) so no adapted test is at radon C.
 - **Carried obligations.**
   - `test_a_repository_root_with_no_commit_is_refused_by_name`: a repository with no commit, and a plain directory, are refused `selected_input_unavailable` naming the root (carried 2026-09-29 21:17:07).
   - `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`: the token carries no local path, the walk resumes at page 1's tree from the workspace, and an unrelated root is refused by name.
@@ -67,18 +70,20 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module statement. | "The family-complete leaf read (MIK-R01) and the obligations L01 carries from L02." | mcp/tests/test_knowledge_leaf_read.py:1-13 |
-| The converted-tree world written through the text-file layout. | `_invariant`; `_family`; `_sidecar`; `_graph` | mcp/tests/test_knowledge_leaf_read.py:67-158 |
-| Selection, order, reference row, frontier, counts and policy. | `test_a_path_selects_one_family_hop_in_the_declared_order` | mcp/tests/test_knowledge_leaf_read.py:185-270 |
-| One selection on both surfaces. | `test_both_surfaces_return_one_selection_under_one_manifest` | mcp/tests/test_knowledge_leaf_read.py:273-292 |
-| Family names in the `invariant` view. | `test_the_invariant_view_names_its_families` | mcp/tests/test_knowledge_leaf_read.py:295-309 |
-| The conforming example in one response. | `test_the_conforming_example_returns_the_whole_family_in_one_response` | mcp/tests/test_knowledge_leaf_read.py:312-332 |
-| Absent and partial states, and refusals naming the tree. | `test_absent_and_partial_states_are_named` | mcp/tests/test_knowledge_leaf_read.py:335-355 |
-| A root with no commit refused by name. | `test_a_repository_root_with_no_commit_is_refused_by_name` | mcp/tests/test_knowledge_leaf_read.py:358-371 |
-| A leaf walk resumes at its code tree, with no path in the token. | `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` | mcp/tests/test_knowledge_leaf_read.py:374-433 |
-| More than one queue of seeds refused by name within the threshold. | `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`; `_DEEP` | mcp/tests/test_knowledge_leaf_read.py:436-459 |
-| A tree projection carries every row of a view. | `test_a_tree_projection_carries_every_row_of_a_view` | mcp/tests/test_knowledge_leaf_read.py:462-493 |
-| The derived reference title. | `test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length` | mcp/tests/test_knowledge_leaf_read.py:496-501 |
-| Identity seeds keep the scope read beside the leaf, and the mixed-block policy. | `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`; `_walk_entries` | mcp/tests/test_knowledge_leaf_read.py:520-582 |
+| The converted-tree world written through the text-file layout. | `_invariant`; `_family`; `_sidecar`; `_graph` | mcp/tests/test_knowledge_leaf_read.py:67-84; mcp/tests/test_knowledge_leaf_read.py:87-103; mcp/tests/test_knowledge_leaf_read.py:106-137; mcp/tests/test_knowledge_leaf_read.py:140-158 |
+| Selection, order, reference row, frontier, the chain rows after it, counts and policy. | `test_a_path_selects_one_family_hop_in_the_declared_order` | mcp/tests/test_knowledge_leaf_read.py:185-274 |
+| One selection on both surfaces. | `test_both_surfaces_return_one_selection_under_one_manifest` | mcp/tests/test_knowledge_leaf_read.py:277-296 |
+| Family names in the `invariant` view. | `test_the_invariant_view_names_its_families` | mcp/tests/test_knowledge_leaf_read.py:299-313 |
+| The conforming example in one response. | `test_the_conforming_example_returns_the_whole_family_in_one_response` | mcp/tests/test_knowledge_leaf_read.py:316-336 |
+| MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`. | `test_a_path_without_entries_still_returns_its_route_chain` | mcp/tests/test_knowledge_leaf_read.py:339-351 |
+| A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree. | `test_absent_and_partial_states_are_named` | mcp/tests/test_knowledge_leaf_read.py:354-373 |
+| A partial index named on both surfaces. | `test_a_partial_index_is_named_on_both_surfaces` | mcp/tests/test_knowledge_leaf_read.py:376-386 |
+| A root with no commit refused by name. | `test_a_repository_root_with_no_commit_is_refused_by_name` | mcp/tests/test_knowledge_leaf_read.py:389-402 |
+| A leaf walk resumes at its code tree, with no path in the token. | `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` | mcp/tests/test_knowledge_leaf_read.py:405-464 |
+| More than one queue of seeds refused by name within the threshold. | `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`; `_DEEP` | mcp/tests/test_knowledge_leaf_read.py:467-467; mcp/tests/test_knowledge_leaf_read.py:470-490 |
+| A tree projection carries every row of a view. | `test_a_tree_projection_carries_every_row_of_a_view` | mcp/tests/test_knowledge_leaf_read.py:493-524 |
+| The derived reference title. | `test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length` | mcp/tests/test_knowledge_leaf_read.py:527-532 |
+| Identity seeds keep the scope read beside the leaf, and the mixed-block policy. | `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`; `_walk_entries` | mcp/tests/test_knowledge_leaf_read.py:551-566; mcp/tests/test_knowledge_leaf_read.py:569-613 |
 | The lane row. | "mcp/tests/test_knowledge_leaf_read.py" | mcp/tests/test-evidence-lanes.toml:109-109 |
 
 ## Cross-Repo References
@@ -90,6 +95,10 @@ No meaningful cross-repo references found: the cases build their repositories un
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): the MIK-R05 adaptations (two chain rows and `chainFamilies: 2` in the selection test, `family-complete-leaf/v2` per ruling Q4 of 2026-09-30 03:32:18) and review R1 F1's split (04:12:49) of the failure test into the entry-less page, the refusal with `routeChain`, and the partial-index case. Purpose, Logic, two new rows and two reworded rows.
+- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_repository_root_with_no_commit_is_refused_by_name` repointed to mcp/tests/test_knowledge_leaf_read.py:389-402. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`; `_DEEP` repointed to mcp/tests/test_knowledge_leaf_read.py:470-490; mcp/tests/test_knowledge_leaf_read.py:467-467. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length` repointed to mcp/tests/test_knowledge_leaf_read.py:527-532. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): created this card for the new file MIK-R01 adds (11 collected cases). It records the carried obligations and the architect rulings of 2026-09-29 23:21:57 (Q1, Q3, Q5) and 2026-09-30 00:08:39 (N2, N3, N4, N6). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

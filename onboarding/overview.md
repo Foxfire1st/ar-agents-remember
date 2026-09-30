@@ -5,11 +5,29 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash |  `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate |  2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash |  `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
+| lastVerifiedCommitDate |  2026-09-30T06:21:14+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L05` (MIK-R05@v2): once a memory tree is converted, reading a
+file through `read_ar_files`, or through `knowledge_read` with `view: "source_context"` and `sourcePath`, also
+returns one compact row per family with a route on the file's directory or an ancestor, after the file's own
+family content, so a new or unattributed file still sees the families whose territory it is in. Each row's
+`expand` reads that family whole (`source_context` with `familyRevisionId` and no `sourcePath`). A repeated
+`read_ar_files` in the same session may shorten an unchanged row to `served_earlier`; `knowledge_read` never
+does. The skill `c-04-retrieval-strategy-router` teaches this in one paragraph (ruling Q5): the authored
+`skills/` copy, synchronized by `scripts/sync-skills.py` into
+[the package copy](mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: unconverted reads are byte-identical to base.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The skill's route-chain paragraph, mirrored into the package and starter copies. | "Route-chain families come last." | skills/c-04-retrieval-strategy-router/SKILL.md:240-248 |
 
 ## 260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used
 
@@ -137,7 +155,7 @@ read for it.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The skill's taught route through `knowledge_read`, mirrored into the package and starter copies. | "Follow a bounded page through"; "The threshold bounds the whole block, not each path." | skills/c-04-retrieval-strategy-router/SKILL.md:240-240; skills/c-04-retrieval-strategy-router/SKILL.md:252-252 |
+| The skill's taught route through `knowledge_read`, mirrored into the package and starter copies. | "Follow a bounded page through"; "The threshold bounds the whole block, not each path." | skills/c-04-retrieval-strategy-router/SKILL.md:250-250; skills/c-04-retrieval-strategy-router/SKILL.md:262-262 |
 
 ## 260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used
 
@@ -320,6 +338,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used" at the top: the repository-level consequence and the c-04 paragraph reaching the package copy and the eight starter copies (ruling Q5, 2026-09-30 03:32:18), with one row. L01's c-04 row still resolves.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used" at the top: the repository-level consequence, with the template bullet reaching the package and eight starter copies; one row. L13's template row was re-pointed by the +8 shift of the inserted bullet. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 Decisions Are Recorded With The Alternatives They Rejected, Not Yet Used" at the top: the repository-level consequence of MIK-R13 (decision content rules, requirement endpoints reported never refused, a decision never an export) and the two skill files reaching the package and the eight starter copies. Two rows. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 A Path Is Read With Its Whole Family, Not Yet Used" at the top: the repository-level consequence, the no-commit root refused by name, and the c-04 change reaching the package copy and the eight starter copies, with one row. The other rows were projected by the installed fixer.
@@ -579,12 +598,12 @@ Three consequences a reader of this overview should carry, because they are what
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:170-170; mcp/src/agents_remember/application/published_intent.py:276-292 |
+| **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177; mcp/src/agents_remember/application/published_intent.py:283-299 |
 | **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628 |
 | The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:70-70 |
-| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
+| The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 
 ## Memory Preparation And Final Certification
 
@@ -6720,10 +6739,10 @@ sidecar there.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:457-472; mcp/src/agents_remember/application/published_intent.py:276-292; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
-| **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:99-170; mcp/src/agents_remember/models/read_files.py:74-74 |
-| **The canonical retrieval carrier, whose new section directs a caller to the route.** | `## Published Intent Before Planning` | skills/c-04-retrieval-strategy-router/SKILL.md:173-272 |
-| **The generated copy of that carrier this package ships, regenerated from the authored source.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-272 |
+| **The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `published_dataset_path`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:464-479; mcp/src/agents_remember/application/published_intent.py:283-299; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
+| **The ordinary paired read is the mount point, and the response field the block travels on.** | `read_ar_files_tool`; `published_intent` | mcp/src/agents_remember/application/read_files.py:106-181; mcp/src/agents_remember/models/read_files.py:74-74 |
+| **The canonical retrieval carrier, whose new section directs a caller to the route.** | `## Published Intent Before Planning` | skills/c-04-retrieval-strategy-router/SKILL.md:173-282 |
+| **The generated copy of that carrier this package ships, regenerated from the authored source.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-282 |
 | **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`; `CARRIER` | mcp/tests/test_read_ar_files.py:24-24; mcp/tests/test_read_ar_files.py:529-552 |
 
 ## Update History

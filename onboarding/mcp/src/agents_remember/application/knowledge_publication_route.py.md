@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_publication_route.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -146,8 +146,8 @@ statements below are grounded in repository source only.
 | **The admission as four ordered facts, each stating only what it established, and the ordinary update as the fourth: the destination holds the dataset this run forked from, read from that path before the run could publish over it.** | `admitted_destination`; `DestinationAdmission` | mcp/src/agents_remember/application/knowledge_publication_route.py:83-94; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199 |
 | **The read-back through the reader's own owner, its three states, and the refusal code carried beside the reader's own sentence when nothing readable is there.** | `published_identity_read_back`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | The declared exports that make those six names this module's public surface. | `__all__` | mcp/src/agents_remember/application/knowledge_publication_route.py:58-65 |
-| **The declaration this module resolves against — the read route's one published-dataset location, which is what makes the write side reach the place the read side selects.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:276-292; mcp/src/agents_remember/application/published_intent.py:170-170 |
-| **The reader's owner the read-back goes through, and the named absence it answers with instead of raising.** | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:243-260; mcp/src/agents_remember/application/published_intent.py:295-319 |
+| **The declaration this module resolves against — the read route's one published-dataset location, which is what makes the write side reach the place the read side selects.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:283-299; mcp/src/agents_remember/application/published_intent.py:177-177 |
+| **The reader's owner the read-back goes through, and the named absence it answers with instead of raising.** | `resolve_published_intent`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:250-267; mcp/src/agents_remember/application/published_intent.py:302-326 |
 | The context owner that decides *which* memory root this location is, shared with the read side. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The bytes the admission is derived from, captured at the top of the run, and the read that turns them into a dataset identity or a reason they are not one.** | `CapturedBaseline`; `read_captured_dataset_identity` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:178-189; mcp/src/agents_remember/application/knowledge_before_half.py:226-240 |
 | The identity type both the admission and the read-back are expressed in. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
@@ -165,6 +165,7 @@ repository's own write plane and its own read route.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/src/agents_remember/application/published_intent.py` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/published_intent.py`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R03 moved lines in `published_intent.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). The fixer also normalised passing ranges in rows that cite files this leaf did not change; those ranges are measurement-true. No claim, anchor or source file of this card changed.

@@ -5,14 +5,68 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover
+
+`260928-MIK-L05` (MIK-R05@v2) makes a path's leaf read also return, compactly, every live family with a route
+equal to, or an ancestor of, the path's directory, even when the path realizes none of its members (D4, D12,
+D20). The chain is the directory and its ancestors, computed at read time and labelled `mechanical`; each family
+found is one `chain_family` row (ID, revision, title, guarantee, routes, live member count, `via`,
+`memberAtSeed`, and an `expand` family seed), after the MIK-R01 content, counted toward the MIK-R02 threshold.
+Each path page states `routeChain` (`governed` or `no_governing_family`); an entry-less path with a governing
+family is a page stating `registration_absent`, and one with none stays refused `registration_absent` with the
+same `routeChain`. A family seed (`knowledge_read` `source_context` with `familyRevisionId` and no `sourcePath`)
+returns one family's full MIK-R01 content. Only `read_ar_files` may shorten a chain row already served in the
+lifecycle to a `served_earlier` row; `knowledge_read` never does.
+
+- **Where:**
+  - `application/knowledge_leaf/chain.py` (new): the chain, the lookup over L23's `families_governing`, the
+    compact row, `routeChain`, and the `served_earlier` rendering.
+  - `application/knowledge_leaf/selection.py`, `pages.py` and `__init__.py`: the chain rows last, the family
+    seed (`select_family`), `routeChain`/`registration` on path pages, `absent_chain`, policy `v2`.
+  - `application/knowledge_paging/tree_read.py`: the family seed on `source_context`, the family-seed resume,
+    one rule for a named revision; `application/published_intent.py`: the refusal's `routeChain`;
+    `application/read_files.py`: `_chain_rendered`.
+  - `models/tools/knowledge_responses.py`: the optional `routeChain` field; `mcp/registration/knowledge.py`: the
+    read docstring; skill c-04 (the authored copy, the package copy and the 8 harness copies): one paragraph.
+  - The knowledge index and `mcp/tools/knowledge.py` are untouched.
+- **Architect rulings** (`05_route-chain-family-retrieval.json`). 2026-09-30T03:32:18 Q1 (the family seed on
+  `source_context`; the old tree behaviour ignored the family, a defect; projected UUIDs accepted), Q2
+  (`memberAtSeed` families keep their chain row), Q3 (nearest route then family ID; `routeChain` gives the
+  directory and link count; an uncovered entry-less path stays refused), Q4 (policy `family-complete-leaf/v2`),
+  Q5 (the c-04 paragraph). 04:12:49 review R1: F1 (test radon splits), F2 (a v1-policy token refused), F4
+  (`familyRevisionId` spelling normalised on a family-seed resume); F3 and F6 accepted as designed; F5 (the pin
+  renumbered after L10). 04:45:22 review R2 pass, R2-1 (a revision the tree does not hold is refused
+  `selector_absent` on resume and fresh read alike, including a bare `ID@`).
+- **Candidate invariants (not ingested):** (1) a leaf read returns the governing route chain after the leaf
+  content, each chain row exactly once, within the bound; (2) a continuation is bound to tree, policy and seed,
+  and resuming under another family, path, policy or tree is refused `continuation_binding_mismatch`; (3) a
+  revision the tree does not hold is refused `selector_absent`, on fresh read and resume alike; (4) unconverted
+  memory reads are unchanged.
+- **Inert before MIK-R37:** only a converted memory tree reaches the new code. Unconverted reads were
+  byte-identical to base (105,164 bytes, including a `source_context` read naming `familyRevisionId`). Real
+  families have `routes: []` today, so every real read states `no_governing_family` until routes are assigned.
+- **Tests:** `test_knowledge_route_chain.py` (13), lane row `:110`; `test_knowledge_leaf_read.py` adapted and split
+  (13); the Forty-first catalog re-pin (`f8b04814…`). Real data on scratch clones with routes assigned in scratch:
+  the conforming example `mcp/src/agents_remember/worktrees/new_helper.py` returns `FAM-QWVGDSYX`
+  "attribution-and-landing-pairing" compactly; 84/84 entry paths agree across surfaces, each row once, within
+  threshold (largest 7,957 tokens), chain last; 982 of 3,440 entry-less files became pages. Review R1
+  pass-with-notes, R2 pass; post-sync full unit suite 3,289 passed, integration lane 447 passed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The chain module statement. | "Route-chain families of a seed path" | mcp/src/agents_remember/application/knowledge_leaf/chain.py:1-26 |
+| The compact row with its family seed. | `chain_row` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:134-154 |
+| The family seed on the mounted read. | `_family_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:525-535 |
+| The lane row. | "mcp/tests/test_knowledge_route_chain.py" | mcp/tests/test-evidence-lanes.toml:110-110 |
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -62,7 +116,7 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 | The two kinds and the coverage lookup. | "MIK-R10's unexplained changes" | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:1-35 |
 | The subjects and the gate predicate. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
 | A delete-only hunk is linked only by a K_B range. | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:537-539 |
-| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
+| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -114,7 +168,7 @@ and the archive hook that deletes a task's review artifacts.
 | The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
 | The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:31-31 |
 | The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
-| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:122-123 |
+| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:123-124 |
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -210,8 +264,8 @@ At intake a leaf read returned 3 of 25 items and never the family.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The leaf package statement. | "The family-complete leaf read of a converted memory tree" | mcp/src/agents_remember/application/knowledge_leaf/__init__.py:1-13 |
-| A path seed of the published-intent block is read as a leaf. | `_tree_page_block`; `prepare_leaf` | mcp/src/agents_remember/application/published_intent.py:713-753 |
-| The mounted read's leaf response. | `_leaf_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:495-546 |
+| A path seed of the published-intent block is read as a leaf. | `_tree_page_block`; `prepare_leaf` | mcp/src/agents_remember/application/published_intent.py:720-760 |
+| The mounted read's leaf response, of a path or (since MIK-R05) a family seed. | `_leaf_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:577-633 |
 
 ## 260928-MIK-L06 Family Route Maintenance In The Worklist, Inert Until The Cutover
 
@@ -369,7 +423,7 @@ refused (`continuation_unreadable`, observed 2026-09-28) is replaced on converte
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The paging package statement. | "Bounded pages of a memory tree's knowledge" | mcp/src/agents_remember/application/knowledge_paging/__init__.py:1-30 |
-| The mounted read's converted-tree branch. | `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:207-243 |
+| The mounted read's converted-tree branch. | `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:212-251 |
 | The whole-block bound of the published-intent block. | `bounded_block` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:52-79 |
 
 ## 260928-MIK-L30 The Onboarding Refresh Gate On History Files, Inert Until The Cutover
@@ -428,7 +482,7 @@ A stale invariant stays visible and names each differing entry; reads never writ
 | --- | --- | --- |
 | The package statement. | "Stale invariants flagged at read time" | mcp/src/agents_remember/application/knowledge_currentness/__init__.py:1-14 |
 | The `knowledge_read` surface, reached through the per-page extras since MIK-R02. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
-| The published-intent surface. | `read_published_intent`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:475-504; mcp/src/agents_remember/application/published_intent.py:565-568 |
+| The published-intent surface. | `read_published_intent`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:482-511; mcp/src/agents_remember/application/published_intent.py:572-575 |
 
 ## 260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover
 
@@ -670,7 +724,7 @@ behaviour.
 | --- | --- | --- |
 | The subcommand registration. | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:90-95 |
 | The command's report and exit statuses. | `run` | mcp/src/agents_remember/cli/knowledge_index.py:44-82 |
-| The one dataset resolution every knowledge read applies. | `select_knowledge_dataset` | mcp/src/agents_remember/application/published_intent.py:374-393 |
+| The one dataset resolution every knowledge read applies. | `select_knowledge_dataset` | mcp/src/agents_remember/application/published_intent.py:381-400 |
 | The cache that refuses any location inside a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-164 |
 
 ## 260928-MIK-L22 The Mandatory Knowledge Validator, And The CLI Gains `knowledge-validate`
@@ -839,6 +893,11 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover" at the top: the whole leaf, every ruling (2026-09-30 03:32:18, 04:12:49, 04:45:22), the four candidate invariants, the tests and the real-data evidence, with four rows. **Reopened claim reworded:** L01's `_leaf_response` row.
+- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:50:54+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:177-177. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:132-132. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover" at the top: the whole leaf, every ruling (01:56:39 Q1–Q4, 03:24:28 N1–N6), the L09 and L31/L32 carries, the four candidate invariants, inertness and the evidence; four rows. No verification stamp was advanced.
 - 2026-09-30T02:31:23+00:00: Generated citation repair: `leaf_onboarding_trace_sides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:498-531. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:31:23+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:544-575. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1139,10 +1198,10 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | **The read-back through the reader's owner, and the three states the report carries.** | `published_identity_read_back`; `PublishedIdentityReadBack`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-250; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/published_intent.py:219-243 |
 | **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** | `_Destination`; `_destination_conflict`; `_selected_destination`; `_publication_route`; `_read_back` | mcp/src/agents_remember/cli/knowledge_ingest.py:288-299; mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:300-311; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628; mcp/src/agents_remember/cli/knowledge_ingest.py:427-440 |
 | **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** | `summary`; `payload`; `_counts` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:34-76; mcp/src/agents_remember/cli/knowledge_ingest_report.py:279-293; mcp/src/agents_remember/cli/knowledge_ingest_report.py:79-128; mcp/src/agents_remember/cli/knowledge_ingest_report.py:154-168 |
-| The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
-| The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:170-170 |
+| The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
+| The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:131-131 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -7020,9 +7079,9 @@ assert an installed copy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:457-472; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
+| **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:464-479; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
 | **The response field the block travels on, carried by the strict response model rather than re-declared.** | `published_intent` | mcp/src/agents_remember/models/read_files.py:80-80 |
-| **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-272 |
+| **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-282 |
 | **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` | mcp/tests/test_read_ar_files.py:529-552 |
 
 ## Update History

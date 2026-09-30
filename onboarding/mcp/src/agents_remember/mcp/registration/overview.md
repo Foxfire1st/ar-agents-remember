@@ -5,14 +5,27 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T05:58:11+02:00 |
+| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
+| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L05 The Read Description Names The Route-Chain Rows And The Family Seed
+
+`knowledge_read`'s description in [`knowledge.py`](knowledge.py.md) continues the leaf-read sentence (MIK-R05):
+after the advertised families come one compact `chain_family` row per family routed at the path's directory or
+an ancestor, with `payload.routeChain` stating the chain (`no_governing_family` when none); and
+`source_context` with a family ID in `familyRevisionId` and no `sourcePath` returns that family's full content
+(ruling Q1, 2026-09-30 03:32:18). No input schema changed: the family seed reuses the existing
+`familyRevisionId` argument.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The description sentences on the chain rows and the family seed. | "one compact chain_family row per family routed" | mcp/src/agents_remember/mcp/registration/knowledge.py:102-104 |
 
 ## 260928-MIK-L01 The Read Description Names The Family-Complete Leaf Read
 
@@ -61,7 +74,7 @@ changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registrar's optional pair, `contractPath` and docstring. | `_register_knowledge_integrity_check`; "a leaf may be named without a dataset" | mcp/src/agents_remember/mcp/registration/knowledge.py:183-215 |
+| The registrar's optional pair, `contractPath` and docstring. | `_register_knowledge_integrity_check`; "a leaf may be named without a dataset" | mcp/src/agents_remember/mcp/registration/knowledge.py:186-218 |
 
 ## 260928-MIK-L12 The `knowledge_change` Description Names The File Route
 
@@ -73,7 +86,7 @@ argument, response model or registration order changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registrar's docstring sentence. | `_register_knowledge_change`; "On a converted memory tree" | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
+| The registrar's docstring sentence. | `_register_knowledge_change`; "On a converted memory tree" | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 
 ## 260921-ICR-L32 The Mounted Refusal Names Both Shipped Entry Points, And Nothing Else On This Route Moves
 
@@ -90,6 +103,7 @@ attributed here because the earlier sentence was not false when it was written �
 No staleness marker for it was ever recorded in memory, so this section *is* the record.
 
 ## Update History
+- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 The Read Description Names The Route-Chain Rows And The Family Seed" at the top, with one row (ruling Q1, 2026-09-30 03:32:18).
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Read Description Names The Family-Complete Leaf Read" at the top, with one row (rules 6 and 7; ruling Q7). The other rows were normalised by the installed fixer.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** Added the section "260928-MIK-L02 The Read Description Names The Page, The Threshold And The Continuation" at the top, with one row. **Reopened claim re-read and reworded:** L03's description row now says the sentence is at the walk's code tree.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **route body updated for MIK-R03.** Added the section "260928-MIK-L03 The Read Description Names `currentness`" at the top. One row.
@@ -660,7 +674,7 @@ computes anything new; and the publication itself is not reachable from this rou
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The refusal whose docstring now names the ordinary publication and its read-back, and the registrar that declares it.** | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location" | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
+| **The refusal whose docstring now names the ordinary publication and its read-back, and the registrar that declares it.** | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location" | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 | The operation family entry point this leaf leaves exactly as it was: five registrars, declared order, appended at the tail. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:45-64 |
 | **The writer the refusal names for the write half, and the module that now owns the publication half the refusal also names.** | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
 | The subcommand spelling the docstring carries, and the parser that registers it. | "knowledge-ingest" | mcp/src/agents_remember/cli/__main__.py:55-55 |
@@ -919,7 +933,7 @@ family's position in `TOOL_REGISTRARS` is unchanged, and no other family module 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The entry point, now handing `config` to the diff and project registrars. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:45-64 |
-| The three registrars that forward the coordination root. | `_register_knowledge_read`; `_register_knowledge_diff`; `_register_knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:67-119; mcp/src/agents_remember/mcp/registration/knowledge.py:157-180; mcp/src/agents_remember/mcp/registration/knowledge.py:218-249 |
+| The three registrars that forward the coordination root. | `_register_knowledge_read`; `_register_knowledge_diff`; `_register_knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:67-122; mcp/src/agents_remember/mcp/registration/knowledge.py:160-183; mcp/src/agents_remember/mcp/registration/knowledge.py:221-252 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
