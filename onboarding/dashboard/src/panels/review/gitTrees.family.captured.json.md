@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/gitTrees.family.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T20:36:31+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 **A real `GET /api/review/intent` body over the MIK-L31 worker's converted scratch leaf `260928-MIK-L31` (test
-evidence for `ReviewSurface.gitTrees.test.tsx`, `ExpressionCards.test.tsx`, and since MIK-L35
-`IntentWordDiff.test.tsx` and `ReviewSurface.wordDiff.test.tsx`).** The MIK-L35 cases derive a successor guarantee
+evidence for `ReviewSurface.gitTrees.test.tsx`, `ExpressionCards.test.tsx`, since MIK-L35
+`IntentWordDiff.test.tsx` and `ReviewSurface.wordDiff.test.tsx`, and since MIK-L34 `IntentMarkers.test.tsx`, whose card
+cases mount `ExpressionCards` over this payload).** The MIK-L35 cases derive a successor guarantee
 from its `FAM-2HBJREC2` guarantee, including one revision whose text changes. Its receipt is in `gitTrees.capture-provenance.json` (route, status, sha256 and bytes).
 
 ## Code Commentary
@@ -65,6 +66,7 @@ cited as rows.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): Body updated: MIK-L34's `IntentMarkers.test.tsx` now also reads this body (its card cases mount `ExpressionCards` over this payload), so Purpose names it. Bytes unchanged. No stamp advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update, bytes unchanged. Purpose names its MIK-L35 consumers (`IntentWordDiff.test.tsx`, `ReviewSurface.wordDiff.test.tsx`), which derive a successor guarantee from it; Conventions says tests, plural.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture: leaf `260928-MIK-L31`, `review:trees:1`, member sources with resolved ranges (MIK-R31 rule 6). **Claims re-anchored:** the comparison row (`review:trees:2` no longer exists in the body) and the receipt row (reworded; this pass's generated bullet removed).
 

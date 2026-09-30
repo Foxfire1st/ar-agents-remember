@@ -5,14 +5,35 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`       |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T20:36:31+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`       |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src/panels overview](../overview.md)
+
+## 260928-MIK-L34 A Code Pane Can Carry Marks On Its File Lines
+
+`MIK-R34` adds one module and one optional prop to this route, for the reviewer's per-hunk intent markers, all inert
+for the File Viewer. [`markGutter.tsx`](markGutter.tsx.md) (new, carded, governed here, with its test
+[`markGutter.test.tsx`](markGutter.test.tsx.md), 15 cases) is a CodeMirror gutter whose markers are React content
+portalled into hosts the pane owns, placed on the pane's own file line numbers: `useMarkedPane(marks)` gives a pane
+the gutter per editor, the portals, `placement` (rebuild only when a mark moves) and `drawn`, which exposes the marks
+to assistive technology, expands a collapsed run of unchanged lines that holds a mark (ruling 2026-09-30T16:19:34 Q4),
+and reveals a returned-to mark with focus on it. The reveal's hold keeps the mark focused and in view while CodeMirror
+settles and ends at the reader's first pointer, key or wheel, at focus moved elsewhere, at teardown, or after 45
+frames (review R2-F1, R3-F1, R3-F2). Below 40rem the gutter is sized to each mark's compact text (review R1 F2).
+[`FilePane.tsx`](FilePane.tsx.md) gains `marks` (the `"all"` gutter first in its extensions, `drawn` after the build
+and at teardown, the portals after its host); `changeset/DiffPane.tsx` takes the same prop per editor. Which line a
+mark sits on is always the caller's decision. The File Viewer passes no marks and renders exactly as before.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. | `useMarkedPane` | dashboard/src/panels/file-viewer/markGutter.tsx:321-372 |
+| The bounded, passive hold released by the reader's pointer, key or wheel. | `HOLD_RELEASES`; `holdRevealed` | dashboard/src/panels/file-viewer/markGutter.tsx:176-218 |
+| The code pane's optional marks. | "marks?: PaneMarks;"; "drawn({ after: { view, first: firstLine } });" | dashboard/src/panels/file-viewer/FilePane.tsx:35-70 |
 
 ## 260928-MIK-L31 The Code Pane Can Show An Excerpt With Its File's Line Numbers
 
@@ -26,7 +47,7 @@ Viewer passes neither prop and renders exactly as before.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The excerpt gutter. | `numberedFrom` | dashboard/src/panels/file-viewer/lineNumbering.ts:7-11 |
-| The code pane's optional first line and content-sized host. | `fitHost`; "numberedFrom(firstLine)," | dashboard/src/panels/file-viewer/FilePane.tsx:22-22; dashboard/src/panels/file-viewer/FilePane.tsx:47-47 |
+| The code pane's optional first line and content-sized host. | `fitHost`; "numberedFrom(firstLine)," | dashboard/src/panels/file-viewer/FilePane.tsx:23-23; dashboard/src/panels/file-viewer/FilePane.tsx:53-53 |
 
 ## Purpose
 
@@ -105,6 +126,7 @@ its first selected view, retains that settled result across later visibility cha
 in-flight read during development effect replay.
 
 ## Update History
+- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 A Code Pane Can Carry Marks On Its File Lines": the new [`markGutter.tsx`](markGutter.tsx.md) and its test (both carded here) and the optional `marks` prop of [`FilePane.tsx`](FilePane.tsx.md), recording ruling 2026-09-30T16:19:34 Q4 and review R1 F2, R2-F1, R3-F1 and R3-F2; three rows. The MIK-L31 section's `FilePane` row was re-pointed by the exact line shift (`22` → `23`, `47` → `53`). The route's purpose is unchanged: the File Viewer passes no marks.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this route's governed sources are unchanged. MIK-R29 grew `dashboard/src/cockpit/Cockpit.tsx` (two imports, the `knowledge` destination, the reader-hash initial view and the `ViewBody` case), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Code Pane Can Show An Excerpt With Its File's Line Numbers" before Purpose (the new `lineNumbering.ts`, carded; `FilePane`'s optional `firstLine` and `fit`) and the Route Model entries. Two rows added.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `fetchRepos` repointed to dashboard/src/data/files.ts:113-116. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

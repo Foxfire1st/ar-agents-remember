@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/IntentWordDiff.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:18:53+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -142,7 +142,7 @@ outside the code and memory repositories, so they are named here and not cited a
 | The statement area of a tree comparison's selected invariant. | "export function IntentStatementBody({" | dashboard/src/panels/review/IntentWordDiff.tsx:557-613 |
 | The guarantee's changed text, including one revision whose texts differ, and the details fact. | "export function guaranteeTextChange("; "export function guaranteeFact(" | dashboard/src/panels/review/IntentWordDiff.tsx:615-634 |
 | The changed-guarantee block and the one-sided guarantee label. | "export function GuaranteeTextChange({"; "export function OneSidedGuaranteeLabel({" | dashboard/src/panels/review/IntentWordDiff.tsx:636-699 |
-| Where the centre and the navigator set the scope. | "<IntentWordDiffScope payload={props.payload}>"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyReviewCenter.tsx:891-898; dashboard/src/panels/review/FamilyTree.tsx:675-683 |
+| Where the centre and the navigator set the scope. | "<IntentWordDiffScope payload={props.payload}>"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyReviewCenter.tsx:892-899; dashboard/src/panels/review/FamilyTree.tsx:680-688 |
 
 ## Cross-Repo References
 
@@ -153,4 +153,5 @@ outside the code and memory repositories, so they are named here and not cited a
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted import lines in `FamilyReviewCenter.tsx` (one) and `FamilyTree.tsx` (one, plus the four-line member-row hook above the cited range), so the scope row was re-pointed by the exact Git-hunk line shift (`891-898` → `892-899`; `675-683` → `680-688`). The claim is unchanged. No stamp advanced.
 - 2026-09-30T13:18:53+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): created this card for the new rendering module MIK-R35 adds, recording rulings Q1 (the same-revision label), Q2 (the unsaved per-passage "Show inline"), Q3 (no word diff for datasets) and Q6 (the roster out of scope) of 2026-09-30T11:53:13; review R1 F2 (every tree-comparison label compares text bytes), F4 (the field-level one-sided, projected and whitespace-glyph cases) and F5 (control placement) of 12:16:39; and R2-1 (fixed) and R2-3 (a note) of 12:43:15. Three candidate invariants recorded. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

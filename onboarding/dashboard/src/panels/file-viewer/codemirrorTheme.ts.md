@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/file-viewer/codemirrorTheme.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-29T17:00+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,11 +45,12 @@ read from CSS custom properties rather than hardcoded, so the theme tracks the l
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `FilePane` builds its `EditorView` with this theme bundle. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| `FilePane` builds its `EditorView` with this theme bundle. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
 | The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens. | `chrome` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27 |
 | The syntax-highlight bundle reads the cyan and mint syntax tokens. | `highlight` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:29-46 |
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: `FilePane.tsx` gained an optional `marks` prop (MIK-R34), so the fixer normalised the `FilePane` row (`20-50` → `25-78`). The claim is unchanged. No stamp advanced.
 - 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split the pooled theme-token claim between chrome and syntax owners under the adversarial verdict, then the exact scoped fixer/check passed.
 
 - 2026-06-29T17:00+02:00 — L4 follow-up (readability): comments and operators/punctuation/brackets now use

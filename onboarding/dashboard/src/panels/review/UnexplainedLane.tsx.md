@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/UnexplainedLane.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:06:33+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -77,10 +77,10 @@ and memory repositories, so they are named here and not cited as rows.
 | The destination on screen and the file it opened. | `LaneSelection` | dashboard/src/panels/review/UnexplainedLane.tsx:36-39 |
 | The rail line: pending, unavailable, not measured or the totals. | `destinationLine` | dashboard/src/panels/review/UnexplainedLane.tsx:112-119 |
 | The rail nodes. | `LaneDestinations` | dashboard/src/panels/review/UnexplainedLane.tsx:121-158 |
-| The center and its read states. | `UnexplainedLaneCenter`; `LaneBody` | dashboard/src/panels/review/UnexplainedLane.tsx:170-221 |
-| The two groups, each with its note. | `DestinationFiles`; `FileGroup` | dashboard/src/panels/review/UnexplainedLane.tsx:223-268 |
-| A row's counts, the focused file, and the reason one click away. | `rowCounts`; `FileRow`; `RowReason` | dashboard/src/panels/review/UnexplainedLane.tsx:270-345 |
-| Where the workspace mounts the rail nodes and the center. | `RailLaneDestinations`; "<UnexplainedLaneCenter" | dashboard/src/panels/review/ReviewWorkspace.tsx:498-514; dashboard/src/panels/review/ReviewWorkspace.tsx:349-358 |
+| The center and its read states. | `UnexplainedLaneCenter`; `LaneBody` | dashboard/src/panels/review/UnexplainedLane.tsx:170-186; dashboard/src/panels/review/UnexplainedLane.tsx:188-221 |
+| The two groups, each with its note. | `DestinationFiles`; `FileGroup` | dashboard/src/panels/review/UnexplainedLane.tsx:223-248; dashboard/src/panels/review/UnexplainedLane.tsx:250-268 |
+| A row's counts, the focused file, and the reason one click away. | `rowCounts`; `FileRow`; `RowReason` | dashboard/src/panels/review/UnexplainedLane.tsx:270-280; dashboard/src/panels/review/UnexplainedLane.tsx:282-318; dashboard/src/panels/review/UnexplainedLane.tsx:321-345 |
+| Where the workspace mounts the rail nodes and the center. | `RailLaneDestinations`; "<UnexplainedLaneCenter" | dashboard/src/panels/review/ReviewWorkspace.tsx:540-556; dashboard/src/panels/review/ReviewWorkspace.tsx:386-395 |
 | The rows in the server's order, and a focused hunk. | "lists unexplained files first, then attributed files, and opens one on its unexplained hunk" | dashboard/src/panels/review/ReviewSurface.lane.test.tsx:101-139 |
 
 ## Cross-Repo References
@@ -92,4 +92,5 @@ and memory repositories, so they are named here and not cited as rows.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted lines above the lane's mounts in `ReviewWorkspace.tsx`, so the caller row was re-pointed by the exact Git-hunk shift (`498-514` → `540-556`, `349-358` → `386-395`). In the same fixer run three rows citing this card's own unchanged source were normalised into per-declaration ranges. Claims unchanged. No stamp advanced.
 - 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new lane component MIK-R32 adds (rules 10 and 11). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

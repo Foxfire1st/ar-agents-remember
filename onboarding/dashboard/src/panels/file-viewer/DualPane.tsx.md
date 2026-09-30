@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `dashboard/src/panels/file-viewer/DualPane.tsx`    |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-29T09:06+02:00                             |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-09-30T20:14:26+02:00                             |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`         |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -66,15 +66,16 @@ reused by L4 by swapping the code side for a diff view.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read-only CodeMirror pane it hosts on the code side. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
+| The read-only CodeMirror pane it hosts on the code side. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
+| The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:109-159 |
 | The effects-gated boomerang backdrop the `empty` state fills the pane with. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 | The page that supplies `code` + the derived `SidecarView`. | "export const FileViewer = memo(FileViewerImpl);"; "import { DualPane, type SidecarView } from \"./DualPane\";" | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299; dashboard/src/panels/file-viewer/FileViewer.tsx:22-22 |
 | The `FileContent` type / onboarding pairing it renders. | `FileContent` | dashboard/src/data/files.ts:51-59 |
-| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-109 |
+| The route overview that governs this component. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-137 |
 
 ## Update History
 
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: `FilePane.tsx` gained an optional `marks` prop (MIK-R34), so the fixer normalised the `FilePane` row (`20-50` → `25-78`); in the same run it also normalised the `Markdown` row (`98-121` → `109-159`, a file this leaf did not change) and the governing-overview row (`1-109` → `1-137`). Claims unchanged. No stamp advanced.
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 10 citations (citation_anchor_missing=5, citation_prose_not_in_cit_form=0, citation_source_malformed=5); final scoped citation check clean.
 - 2026-06-30T00:00:00+02:00 — operations-integration L5: added two whole-pane branches ahead of the split — an `empty` state that fills the pane with a faint siege-tank `EmptyStateBackdrop` (`/assets/sc2-siege-tank-boomerang.mp4`, `opacity 0.18`) replacing the per-side "select a file" placeholders, and a partnerless-overview (`code===null && state==="markdown"`) that renders its markdown full-pane via `SidecarSide` in both single and split mode. New import: `EmptyStateBackdrop`.
 - 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the reusable single|split dual-pane (code left via the read-only `FilePane`, markdown sidecar right via `grammar/Markdown`) with the exported `SidecarView` union, stable-size placeholders for missing/overview/binary, and persisted split sizes; reused by L4. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

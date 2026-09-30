@@ -5,14 +5,30 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/changeset/`                |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`       |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:36:31+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`       |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src/panels overview](../overview.md)
+
+## 260928-MIK-L34 The Diff Pane Can Carry Marks On Its File Lines
+
+`MIK-R34` reaches this route through one governed source. [`DiffPane.tsx`](DiffPane.tsx.md) gains an optional `marks`
+prop for the reviewer's per-hunk intent markers, inert when absent: through `file-viewer/markGutter.tsx`'s
+`useMarkedPane`, each editor gets a marks gutter first in its extensions (`gutterFor("before" | "after", first)`, no
+extension without marks), the pane calls `drawn` once its editors exist (which expands a collapsed run holding a mark)
+and at teardown, `placement` joins the effect's dependencies, and the marks' portals render after the host. To keep the
+component within the function-size rule the split and inline view builders were extracted unchanged into `splitView`
+and `inlineView` over a shared `DiffBuild`. The Change-Set Viewer (`ChangeSetPane`) passes no marks, so its diff is
+exactly the landed one; the reviewer's source view, lane windows and card excerpts are the only callers that pass them.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The optional marks and the marked pane. | "marks?: PaneMarks;"; "const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);" | dashboard/src/panels/changeset/DiffPane.tsx:141-148 |
+| The two extracted view builders, each with its marks gutter. | `splitView`; `inlineView` | dashboard/src/panels/changeset/DiffPane.tsx:77-121 |
 
 ## 260928-MIK-L31 The Diff Pane Can Show An Excerpt With Its File's Line Numbers
 
@@ -26,8 +42,8 @@ card that uses them is `panels/review/ExpressionCards.tsx` (`ChangedExcerpt`: a 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional first lines and the content-sized host. | `DiffPane`; `fitHost` | dashboard/src/panels/changeset/DiffPane.tsx:49-59; dashboard/src/panels/changeset/DiffPane.tsx:63-140 |
-| The card that passes them. | `ChangedExcerpt` | dashboard/src/panels/review/ExpressionCards.tsx:434-463 |
+| The optional first lines and the content-sized host. | `DiffPane`; `fitHost` | dashboard/src/panels/changeset/DiffPane.tsx:50-60; dashboard/src/panels/changeset/DiffPane.tsx:123-193 |
+| The card that passes them. | `ChangedExcerpt` | dashboard/src/panels/review/ExpressionCards.tsx:463-496 |
 
 ## 260921-ICR-L32 The Change-Set Read's Refusal Now Reaches The Control That Asked
 
@@ -67,6 +83,7 @@ route were added.
 | The cockpit re-target that keeps the opened leaf inside this route's takeover. | `onOpenLeaf` | dashboard/src/cockpit/Cockpit.tsx:601-601 |
 
 ## Update History
+- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 The Diff Pane Can Carry Marks On Its File Lines": `DiffPane`'s optional `marks` prop and the two view builders extracted unchanged; two rows. The Change-Set Viewer passes no marks and is unchanged. The fixer normalised the three rows that cite `DiffPane.tsx`, `ExpressionCards.tsx` and `FilePane.tsx` to where their constructs now sit (`63-140` → `123-193`, `49-59` → `50-60`, `434-463` → `463-496`, `24-64` → `25-78`); no claim changed.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No route impact: this route's governed sources are unchanged. **Reopened claim re-read and retained:** MIK-L32 changed the `IntentReviewEntry` construct (it now renders the lane's count after `+N −N`), but the entry still carries the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one, so the claim holds; the row is re-anchored from the construct name to its line-exact declaration ("export function IntentReviewEntry({") and keeps its range (`131-171`); this pass's generated bullet for the row was removed, since its anchor changed. The installed fixer also re-pointed the `onOpenLeaf` row (its bullet kept) and normalised the rows into `DiffPane.tsx`, `Cockpit.tsx` and `ReviewSurface.tsx`; no other claim changed. No verification stamp was advanced.
 - 2026-09-30T12:05:20+00:00: Generated citation repair: `onOpenLeaf` repointed to dashboard/src/cockpit/Cockpit.tsx:601-601. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Diff Pane Can Show An Excerpt With Its File's Line Numbers" at the top: `DiffPane`'s optional `firstLine` and `fit` for the focused expression cards, inert at their defaults. Two rows added.
@@ -175,7 +192,7 @@ until a file is picked; the back link restores the railed Operations view.
 | The same-origin client wrapping that API. | `taskChangeset` | dashboard/src/data/changeset.ts:78-79; dashboard/src/data/changeset.ts:167-168; dashboard/src/data/changeset.ts:158-158 |
 | The shell that hosts the takeover + restores the rails. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:892-948 |
 | The detail panel button + counters that open this screen. | `ChangeSetButton` | dashboard/src/panels/detail-panel/changeSetBar.tsx:66-166 |
-| The reused read-only CodeMirror pane + theme + lang map. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:24-64 |
+| The reused read-only CodeMirror pane + theme + lang map. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
 | The markdown renderer the sidecar column + rendered-markdown toggle reuse. | `Markdown` | dashboard/src/grammar/Markdown.tsx:109-159 |
 | The siege-tank empty-state backdrop shown until a file is picked. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 

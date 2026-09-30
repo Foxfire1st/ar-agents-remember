@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_unexplained_lane.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:06:33+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:36:31+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
   `invariant_revision_key` (`text_uuid("revision", "<id>@<revision>")`), the supplied range, and the family
   occurrences (`_occurrences`): the keys the landed payload addresses invariants, revisions and families by, which
   the later markers (MIK-R34) need.
-- **Membership states (ruling Q5, accepted; L34 may refine).** `_membership`: an after-side occurrence is `member`;
+- **Membership states (ruling Q5, accepted; L34 may refine, and kept them as mapped).** `_membership`: an after-side occurrence is `member`;
   a before-side one is `member` when the after record still lists the invariant, `removed_or_reassigned` when the
   after record exists without it, `before_only` when the after tree holds no record of the family (and every
   family record there was read), and `membership_unknown` when the after knowledge could not be read or a family
@@ -98,9 +98,13 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
 
 ### Todos
 
-- **Carried to L34 (review R1 F5):** per-hunk markers for a neighbouring hunk that a focused diff window shows
-  inside its context lines.
-- **L34 may refine the membership states (ruling Q5).**
+- **Resolved by MIK-L34 (review R1 F5, carried by ruling 2026-09-30T13:07:38):** every owner hunk a focused diff
+  window draws, a neighbour inside its context lines included, carries its own per-hunk intent mark
+  (`dashboard/src/panels/review/LaneFileFocus.tsx`, from this module's per-file response).
+- **Ruling Q5 (L34 may refine the membership states): L34 kept them as mapped.** Each state maps directly onto a
+  marker target, and ruling 2026-09-30T16:19:34 Q2 left the response unchanged. The dashboard's
+  `hunkMarkers.unknownReason` restates `_membership` and `_occurrences`' rule for an unknown membership and names this
+  module as its owner (review R1 N1): **if that mapping changes here, that sentence must change with it.**
 
 ## Docs References
 
@@ -139,6 +143,7 @@ and memory repositories, so they are named here and not cited as rows.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **Both carried Todos are resolved** (ruling 2026-09-30T13:07:38 F5 and ruling Q5): MIK-L34 marks every owner hunk a lane window draws, a neighbour shown as context included, and kept the membership mapping as it is; the Logic heading and the Todos section record both, with the one dependency the dashboard now has on `_membership` and `_occurrences` (the restated unknown-membership reason, review R1 N1). The source file is unchanged.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new module MIK-R32 adds, recording rulings 2026-09-30T12:19:20 Q1 (`paths` for the explorer), Q3, Q4, Q5 and Q7, review R1 F2 (typed refusal for long `file=` values) fixed at 13:07:38, F5 carried to L34, and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

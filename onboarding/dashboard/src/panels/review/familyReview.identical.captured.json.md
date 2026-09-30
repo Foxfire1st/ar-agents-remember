@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.identical.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -153,7 +153,7 @@ finding names the exact key path and value a reader can re-check.
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
 | The fixture case distinguishes separate guarantee revisions with identical text ("Wording unchanged", both revisions named, the text once) from the same unchanged revision. | "it(\"distinguishes two distinct revisions with identical text" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:550-579 |
 | **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee`; `memberComparison` | dashboard/src/data/reviewFamily.ts:243-248; dashboard/src/data/reviewFamily.ts:250-259; dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:280-280; dashboard/src/data/reviewFamily.ts:283-283; dashboard/src/data/reviewFamily.ts:311-322 |
-| The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. | `GuaranteeComparisonBlock` | dashboard/src/panels/review/FamilyReviewCenter.tsx:127-209 |
+| The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. | `GuaranteeComparisonBlock` | dashboard/src/panels/review/FamilyReviewCenter.tsx:128-210 |
 
 ## Cross-Repo References
 
@@ -165,6 +165,7 @@ repository's own route over this repository's own fixture enclosure.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line in `FamilyReviewCenter.tsx`, so the fixer normalised the `GuaranteeComparisonBlock` row (`127-209` → `128-210`). The claim is unchanged. No stamp advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the guarantee-block row into `FamilyReviewCenter.tsx`, which this leaf changed, was normalised by the installed fixer (`114-188` → `127-209`). The block still distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee; on a tree comparison it now word-diffs a changed text first (MIK-L35), which this body's identical text never reaches. Claim wording unchanged. No stamp advanced.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): citation re-anchored; the fixture bytes are unchanged. The worker's comment-only rewrite of the `ReviewWorkspace.family.test.tsx` header (MIK-L31 follow-up) no longer says "re-captured over HTTP"; the provenance row is reworded to the header's new text (this body is from ICR-L44's own run at `a8039b8e`, the receipt's top level) and re-measured (`8-13` → `9-11`). The rows below the header were re-pointed by the exact −1 line shift.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update; the fixture bytes are unchanged. The case that reads this body now asserts MIK-R31 rule 3's rendering of identical guarantee text on two revisions ("Wording unchanged · revision a → b", the text once, both IDs in details). **Reopened claim reworded and re-anchored** on an `it(` quote; this pass's generated bullet for it was removed.

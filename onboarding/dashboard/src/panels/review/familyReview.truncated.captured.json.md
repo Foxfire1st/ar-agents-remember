@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.truncated.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -120,8 +120,8 @@ exact key path and value a reader can re-check.
 | The real-body roster case: part of the measured rows carried, never zero. | "states a bounded roster page as the part of the measured rows it carried, never as zero" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:451-469 |
 | The SYNTHETIC derivation of this body that keeps the "carried no member row" branch covered (ruling Q3). | "SYNTHETIC FIXTURE, not a route body"; "structuredClone(TRUNCATED as ReviewResult)" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:471-491 |
 | The bounded capture keeps the exact continuation, the owner-measured counts (the loaded count read from this body) and the reader state; a returned foreign walk is rejected. | "sends the family's published cursor and refuses a response from another walk"; "it(\"heads a bounded member context partial"; "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:299-342; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:504-548; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:695-748 |
-| Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:231-233; dashboard/src/panels/review/FamilyTree.tsx:235-249 |
-| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:580-641; dashboard/src/panels/review/FamilyTree.tsx:224-229 |
+| Empty-roster wording and carried counts remain owned by the same page-aware tree helpers. | `emptyRosterSentence`; `carriedOf` | dashboard/src/panels/review/FamilyTree.tsx:232-234; dashboard/src/panels/review/FamilyTree.tsx:236-250 |
+| Partial member context retains owner counts and continuation; completing a page is not the same as carrying the whole selection. | `FamilyMemberContext`; `completionNote` | dashboard/src/panels/review/FamilyReviewCenter.tsx:581-642; dashboard/src/panels/review/FamilyTree.tsx:225-230 |
 
 ## Cross-Repo References
 
@@ -134,6 +134,7 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line each in `FamilyTree.tsx` and `FamilyReviewCenter.tsx`, so the fixer normalised the two consumer rows by one line. Claims unchanged. No stamp advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: two rows into `FamilyTree.tsx` and `FamilyReviewCenter.tsx`, which this leaf changed, were normalised by the installed fixer; the empty-roster row kept a range (`FamilyTree.tsx:218-220`) that no longer holds either of its anchors, so it was dropped, and the row now cites `carriedOf` at `231-233` and `emptyRosterSentence` at `235-249`. Claim wording unchanged. No stamp advanced.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder; ruling 05:36:19 Q3 for the synthetic case). The card now describes the new bytes (36,793 bytes, sha256 `ac5cae6f…`): every side measured 2 rows and carried 1, `unique_member_revision_total` 3, the new family identities and walk counts, and the cases that read it (the real-body roster case, the SYNTHETIC case, the body-derived counts of review F7/R2-7). **Claims re-anchored:** every row naming the old bytes (the carried-0 sentence, `unique_member_revision_total` 0, the old family and revision identities, the walk counts) and the old provenance rows (`63b47629`, `not_recaptured`) are replaced by rows on the new bytes and the receipt's `mik_l31_recapture` row; the three case rows whose titles changed are re-anchored (the committed 2026-09-26 bullet for the empty-roster case is left intact; that case now reads `emptyRoster`); this pass's three generated bullets for the replaced rows were removed.

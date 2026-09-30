@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/KnowledgeStatements.test.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:40:46Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d` |
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -158,8 +158,8 @@ single identifiers. The suite itself is unchanged by that repair; only this card
 | **The field-row case: absent, changed-text, changed-structured (asserted unequal) and recorded-empty in one render, none printed as a blank.** | "names an absent field value and a recorded empty one without printing either as blank" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:292-337 |
 | The jsdom answers that let the shipped CodeMirror primitives render in these cases. | `Range.getClientRects`; `ResizeObserver`; `matchMedia` | dashboard/src/test/setup.ts:65-83; dashboard/src/test/setup.ts:108-112 |
 | The component under test and the rule it implements. | `KnowledgeStatements`; `unavailable`; `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:34-35; dashboard/src/panels/review/KnowledgeStatements.tsx:37-45; dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
-| The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118; dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The shipped renderers whose DOM these cases read back. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118; dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
+| The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:123-193; dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
+| The shipped renderers whose DOM these cases read back. | `DiffPane`; `FilePane` | dashboard/src/panels/changeset/DiffPane.tsx:123-193; dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
 | **The server-side half these cases mirror: the same statements and details measured through the real composition.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not`; `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:288-317; mcp/tests/test_knowledge_review_one_sided_statements.py:320-348 |
 
 ## Cross-Repo References
@@ -173,6 +173,7 @@ names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 extracted `DiffPane`'s two view builders above the component and gave `FilePane` an optional `marks` prop, so the two renderer rows no longer held `DiffPane` in their old range. Both were re-measured by hand onto the two components' current extents (`DiffPane.tsx:123-193`, `FilePane.tsx:25-78`), the extents the fixer gives the same anchors elsewhere. Claims unchanged. No stamp advanced.
 - 2026-09-26T20:40:46Z — Reconciled the shared revision-selection consumer and scoped technical-pane regression account.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

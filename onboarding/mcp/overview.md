@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
+| lastUpdated | 2026-09-30T20:36:31+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -88,10 +88,12 @@ definitions.
 - **Architect rulings** (`32_unexplained-changes-lane.json`). PS-1 was already fixed by L31. 12:19:20: Q1 on tree
   comparisons the explorer takes the lane's buckets; Q2 the exact-blob rule is the packet's, carried to L37 as a check
   item (47 of 178 converted real entries sit at an older blob); Q3 and Q4 placement of gate-held non-text changes and
-  of unexplained hunks in files of unknown attribution; Q5 the membership states (L34 may refine); Q6 the entry
+  of unexplained hunks in files of unknown attribution; Q5 the membership states (L34 may refine; it kept them as
+  mapped); Q6 the entry
   count shows even when the intent counts are refused; Q7 a rename is a deletion plus an addition. 13:07:38 (review
   R1 pass-with-notes): F1 the technical details follow the lane; F2 long `file=` values answer the typed refusal; F3 a
-  partial index gives `unknown`, never "gate unexplained"; F4 bounded reasons; F5 carried to L34; F6 accepted. Review
+  partial index gives `unknown`, never "gate unexplained"; F4 bounded reasons; F5 carried to L34 and resolved there
+  (every hunk a lane window draws carries its own intent mark); F6 accepted. Review
   R2: pass. Sync: the L35 word-diff surface test was rerun on the L35-synced tree and passes.
 - **Candidate invariants (not ingested; no speculative ingestion):** (1) the reviewer classifies changed files and
   hunks through MIK-R08's definitions only, one classification shared with the gate; (2) an entry supplies a range
@@ -1200,6 +1202,7 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **The L32 review F5 carry is resolved** (ruling 2026-09-30T13:07:38). MIK-L34 (per-hunk intent markers, dashboard only) marks every owner hunk a lane window draws, a neighbour shown only as context included, and corrects the "the full file shows every one" wording; the L32 section's F5 clause now says so, and its Q5 clause records that L34 kept L32's membership mapping as it is (each state maps directly onto a marker target; ruling 2026-09-30T16:19:34 Q2 left the response unchanged). This leaf changed no file under `mcp/`, so the route needs no section of its own; the leaf's section is in `dashboard/src/panels/overview.md`.
 - 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master" at the top: D32, where the leaf lands (including the c-09 package copy this route governs), every ruling (12:33:07 Q1-Q4, 13:11:32 finding 1 and notes 2-5, 13:35:32, 14:12:52, the L32 sync), the three candidate invariants, that it is not gated on conversion, the real-path evidence and tests; three rows. The installed fixer normalised one memory-relative row into `memory/overview.md` (`1-2146` → `1-2148`), a document this leaf did not change. No verification stamp was advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover" at the top: where the leaf lands, every ruling (PS-1, 12:19:20 Q1-Q7 with Q2 carried to L37, 13:07:38 F1-F6 with F5 carried to L34, R2 pass, the L35 sync rerun), the five candidate invariants, inertness, tests and evidence, and three rows. The moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/FamilyTree.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,15 @@ FamilyNode leads with the family control and authored guarantee, exposes member 
 - `memberRows` records, for a revision listed on both sides, whether the two carried texts are the same, differ, or cannot be compared because a side's content is not on the page (`wording`, from `sidesWording` over `rowWording` and `wordingComparison`). `memberSideTag` then reads "· unchanged revision" only when they are the same, "· same revision · text differs" when they differ, and "· same revision" when a side is unknown.
 - A dataset review (`tree` false) keeps the landed labels: there one revision id is one immutable text.
 
+**A followed intent marker's unknown membership on its member row (MIK-L34; ruling 2026-09-30T16:19:34 Q3).**
+`MemberNode` renders `MarkerTargetState.MemberTargetNote` inside the member button, after the side tag. It draws
+"Attribution unknown" and the reason only when the workspace's marker scope holds a followed target whose family and
+member revision are this row's and whose membership is `membership_unknown`; for every other row, and outside a
+tree comparison's workspace, it draws nothing. Because it is inside the button, the state is part of the selected
+node's accessible name, so a reader who follows such a marker lands on a row that says so, never on a plain row that
+reads like a confirmed membership. The edit is an import and one element, kept that small because MIK-L33 changes
+this file too.
+
 ### Conventions
 
 The module is one default-free file of small function components plus two exported pure helpers
@@ -52,11 +61,17 @@ the tree takes its selection and its query from the caller rather than owning th
 
 ### Invariants And Boundaries
 
-A guarantee is not summarized from members. On a tree comparison, no rail label calls one revision unchanged unless its carried texts are identical (MIK-L35; the candidate invariant recorded on `IntentWordDiff.tsx.md`). Ambiguous revisions remain candidates and missing content remains named. Partial pages do not justify whole-snapshot absence or complete-member claims. Repeated membership references a canonical invariant revision without creating a duplicate identity.
+A guarantee is not summarized from members. A member row opened from an intent marker whose membership is unknown
+carries "Attribution unknown" with its reason in its own name (MIK-L34), distinct from any confirmed state. On a tree comparison, no rail label calls one revision unchanged unless its carried texts are identical (MIK-L35; the candidate invariant recorded on `IntentWordDiff.tsx.md`). Ambiguous revisions remain candidates and missing content remains named. Partial pages do not justify whole-snapshot absence or complete-member claims. Repeated membership references a canonical invariant revision without creating a duplicate identity.
 
 ### Todos
 
-None recorded. The tree's own sentences are the ones the family route needs; a state this vocabulary
+- **For MIK-L33's sync (ruling 2026-09-30T17:39:21, landing order L34 then L33).** L33 inserts its change-kind badge
+  at the same place in `MemberNode`. Keep both elements, the change-kind fact first, and move both reasons to
+  `aria-describedby` with wording that tells "change kind unknown" from "membership unknown", so the member row's
+  accessible name stays short.
+
+Otherwise none recorded. The tree's own sentences are the ones the family route needs; a state this vocabulary
 cannot yet carry would arrive as a new server fact rather than as a rendering-side default.
 
 ## Docs References
@@ -74,13 +89,15 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `FamilyNode` owns the behavior described above. | `FamilyNode` | dashboard/src/panels/review/FamilyTree.tsx:500-550 |
-| `memberRows` unions both sides by exact revision and, for a revision on both sides, records whether the carried texts are the same, differ or are unknown (MIK-L35). | `memberRows`; `sidesWording`; "existing.wording = sidesWording(existing.member, member);" | dashboard/src/panels/review/FamilyTree.tsx:116-151 |
-| The rail's joint guarantee: one revision once only when its texts are the same on a tree comparison; otherwise both texts, noted "same revision, text differs". | "function sameGuaranteeText("; "function guaranteesOf("; "const note = oneRevision ? ' · same revision, text differs' : '';" | dashboard/src/panels/review/FamilyTree.tsx:301-339 |
-| The member node's side tag: "unchanged revision" only for the same carried text on a tree comparison. | `memberSideTag`; "memberSideTag(row, tree)" | dashboard/src/panels/review/FamilyTree.tsx:395-401; dashboard/src/panels/review/FamilyTree.tsx:451-451 |
-| `familyMatches` owns the behavior described above. | `familyMatches` | dashboard/src/panels/review/FamilyTree.tsx:565-582 |
-| `filterScope` owns the behavior described above. | `filterScope` | dashboard/src/panels/review/FamilyTree.tsx:552-563 |
-| `FamilyTree` owns the column; its `tree` prop (MIK-L35) sets the tree-comparison scope around the family list. | "export function FamilyTree({"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyTree.tsx:624-693 |
+| `FamilyNode` owns the behavior described above. | `FamilyNode` | dashboard/src/panels/review/FamilyTree.tsx:505-555 |
+| `memberRows` unions both sides by exact revision and, for a revision on both sides, records whether the carried texts are the same, differ or are unknown (MIK-L35). | `memberRows`; `sidesWording`; "existing.wording = sidesWording(existing.member, member);" | dashboard/src/panels/review/FamilyTree.tsx:127-131; dashboard/src/panels/review/FamilyTree.tsx:133-152 |
+| The rail's joint guarantee: one revision once only when its texts are the same on a tree comparison; otherwise both texts, noted "same revision, text differs". | "function sameGuaranteeText("; "function guaranteesOf("; "const note = oneRevision ? ' · same revision, text differs' : '';" | dashboard/src/panels/review/FamilyTree.tsx:302-340 |
+| The member node's side tag: "unchanged revision" only for the same carried text on a tree comparison. | `memberSideTag`; "memberSideTag(row, tree)" | dashboard/src/panels/review/FamilyTree.tsx:396-402; dashboard/src/panels/review/FamilyTree.tsx:452-452 |
+| The member button carries a followed marker's unknown-membership state after its side tag (MIK-L34). | "<MemberTargetNote" | dashboard/src/panels/review/FamilyTree.tsx:452-456 |
+| The note: only on the exact family and member revision of an unknown-membership target. | `MemberTargetNote` | dashboard/src/panels/review/MarkerTargetState.tsx:56-81 |
+| `familyMatches` owns the behavior described above. | `familyMatches` | dashboard/src/panels/review/FamilyTree.tsx:570-587 |
+| `filterScope` owns the behavior described above. | `filterScope` | dashboard/src/panels/review/FamilyTree.tsx:557-568 |
+| `FamilyTree` owns the column; its `tree` prop (MIK-L35) sets the tree-comparison scope around the family list. | "export function FamilyTree({"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyTree.tsx:629-698 |
 
 ## Cross-Repo References
 
@@ -93,6 +110,7 @@ it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **body updated for MIK-R34's five-line hook** (Logic, Invariants, Todos): `MemberNode` renders `MemberTargetNote` inside the member button, so a member followed from an intent marker with unknown membership says "Attribution unknown" and its reason in its own accessible name (ruling 2026-09-30T16:19:34 Q3). A Todo records ruling 2026-09-30T17:39:21's merge order for MIK-L33's badge. Two rows added. The other rows moved by the one inserted import line: the fixer normalised them and the `memberSideTag` row was re-pointed by the exact shift (`451` → `452`).
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update. Logic and Invariants record review R1 F2 (2026-09-30T12:16:39): the `tree` prop and scope, the rail's joint guarantee and the member tag comparing text bytes on a tree comparison, datasets unchanged. The `memberRows` and `FamilyTree` rows are reworded and re-measured (`FamilyTree` now on a line-exact quote); two rows added. The new joint-guarantee row is anchored on line-exact quotes rather than the bare `guaranteesOf`, which a committed 2026-09-25T22:19:46 generated bullet names; that bullet is left intact. The installed fixer's `familyMatches` and `filterScope` bullets are kept.
 - 2026-09-30T11:14:38+00:00: Generated citation repair: `familyMatches` repointed to dashboard/src/panels/review/FamilyTree.tsx:565-582. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T11:14:38+00:00: Generated citation repair: `filterScope` repointed to dashboard/src/panels/review/FamilyTree.tsx:552-563. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.

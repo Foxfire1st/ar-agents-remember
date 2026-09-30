@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewReadCache.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash |  `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate |  2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash |  `d3a22213ad3124603b0210afb7e3d049c5589b82`|
+| lastVerifiedCommitDate |  2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ renderer are its only callers.
 | The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:154-154 |
 | The read cycle serves, keeps or only observes answers, and a refresh forgets its question. | `startRead`; `keepReview`; `observe`; `forgetReview` | dashboard/src/panels/review/ReviewReadCycle.ts:163-217; dashboard/src/panels/review/ReviewReadCycle.ts:423-439 |
 | The surface owns one cache and provides it. | "new ReviewReadCache()"; "ReviewReadCacheContext.Provider" | dashboard/src/panels/review/ReviewSurface.tsx:475-476; dashboard/src/panels/review/ReviewSurface.tsx:553-553 |
-| The content renderer reads through it under the request key. | `useSourceContentRead`; `sourceContentKey` | dashboard/src/panels/review/SourceContent.tsx:180-220 |
+| The content renderer reads through it under the request key. | `useSourceContentRead`; `sourceContentKey` | dashboard/src/panels/review/SourceContent.tsx:210-250 |
 | The bounds, refusal, generation and key cases. | "keeps at most the bound of reviews and evicts the least recently used (%i inserted)"; "empties both stores when an answer belongs to another comparison generation" | dashboard/src/panels/review/ReviewReadCache.test.ts:47-110 |
 
 ## Cross-Repo References
@@ -122,5 +122,6 @@ task context and holds no identity that ranges beyond it.
 
 ## Update History
 
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted lines above `useSourceContentRead` in `SourceContent.tsx`, so the fixer normalised the row (`180-220` → `210-250`). The claim is unchanged. No stamp advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewReadCache.ts`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T21:46:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **created this one-to-one card for the new per-comparison read cache (`ICR-R24@v3`).** It records the two keyed stores, the rule that only content answers are kept, the generation rule that empties both stores on any admitted answer from another comparison, the LRU bounds (24 reviews, 32 sources) and the one-surface lifetime, plus review observations O-R1-1 (cached returns are not a live check, by design) and O-R1-5 (recency touched during render). The verification hash and date are blank because no commit contains this file yet; closeout owns the stamp.

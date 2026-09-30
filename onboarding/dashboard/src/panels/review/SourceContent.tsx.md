@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/SourceContent.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:14:26+02:00 |
+| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
+| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,13 @@ Since ICR-R24@v3 it also takes the reader's two display preferences from its cal
 here, because the explorer above owns the diff layout and the full-file disclosure — and because a
 layout switch there must not be able to reset an expansion here. Their defaults (`"split"` and `false`)
 are exactly the shipped rendering: a split diff of the whole file.
+
+Since MIK-R34 it also draws the **per-hunk intent markers** of the diff it shows, through an optional
+`markers` prop (`SourceMarkers`: the pane's name within the workspace, and the file's classification when
+the caller already holds it, as the lane's full file does). The marks themselves are decided in
+`IntentMarkers.tsx` from MIK-R32's one per-file classification; this module only threads them into the two
+panes it already reuses. Outside a tree comparison's review workspace there is no marker scope, and the
+view is exactly the landed one.
 
 ## Code Commentary
 
@@ -143,15 +150,26 @@ outside a review surface has no provider and reads every time, as before. The re
 and bumps `attempt`, which is on the effect's dependencies, so a retried read is a real read.
 
 **Exported for the unexplained-changes lane (MIK-L32).** `SourceContentRequest` and `useSourceContentRead` are now
-exported (the only change to this file: two words). `LaneFileFocus.tsx` makes the same keyed, cached read of the
+exported (L32's only change to this file: two words). `LaneFileFocus.tsx` makes the same keyed, cached read of the
 listed generation for a file the lane opens and cuts its focused hunk windows from the two exact side texts, so the
 lane opens exactly the bytes the source explorer would, and a file already opened in the explorer is not read again.
 
+**The per-hunk intent markers of this view (MIK-L34).** `SourceContent` and `Expansion` pass the optional `markers`
+down to `Sides`, which asks `IntentMarkers.useSourceMarking(expansion, mode, markers)` once. The answer is three
+pieces the branches place around the panes they already draw: `marking.note` above them (why a changed file shows
+no marks: its classification is loading, unavailable, describes other content than the drawn blobs, or is not read
+because a partial inventory does not list the path; or a count of hunks past a bounded text), `marking.marks` into
+the panes, and `marking.panel` below them (the open marker's list). Both sides `present`: the one `DiffPane` takes
+all the marks. The one-sided branch: each textual side's `contentBlock` hands its `FilePane` only that side's marks
+(`sideMarks(marking.marks, side)`); `contentBlock` gained the optional `marks` argument for this. Nothing here decides
+which hunk a mark belongs to or where it sits.
+
 ### Conventions
 
-The component takes eight props — the six it has always taken (`repo`, `master`, `leaf`, the
+The component takes nine props — the six it has always taken (`repo`, `master`, `leaf`, the
 `ReviewChangedFile` `entry`, and the two
-generation ids) plus the two optional display preferences `mode` and `collapse` (ICR-R24@v3) — and its
+generation ids) plus the two optional display preferences `mode` and `collapse` (ICR-R24@v3) and the optional
+`markers` (MIK-R34, its type `SourceMarkers` exported) — and its
 helpers are plain module-level functions in lower case (`textual`, `sideLine`,
 `contentBlock`, `Sides`, `boundedNote`, `refusalBlock`, `Expansion`) with the one exported
 `PascalCase` component, matching the route's idiom. It imports its types and its one function from
@@ -180,6 +198,10 @@ match the cockpit panels' idiom.
 - **Both renderers are reused, not re-implemented.** `DiffPane` comes from the change-set route and
   `FilePane` from the file-viewer route; this module declares neither a differ nor a viewer, and it
   decides neither the diff's layout nor its disclosure.
+- **Intent marks are threaded, never computed here (MIK-L34).** Which hunks a file has, what each names and on
+  which line its mark sits come from `IntentMarkers.tsx` over the classification owner's response; without a
+  marker scope `useSourceMarking` returns no marks and no note, so a dataset review and any view outside the
+  workspace render the landed pane.
 - **The diff layout and the full-file disclosure are inputs, never state.** `mode` and `collapse` arrive
   as props and are threaded into `DiffPane`; this module holds no display preference of its own, so a
   layout switch in the explorer cannot reset an expansion, and the defaults (`"split"`, `false`) are
@@ -223,18 +245,20 @@ surface over the real client.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The header's own record of the defect and of the three rendering rules, including the rule that an `absent` side is a measured fact rather than an empty file.** | `ReviewSourceContentResult`; `DiffPane`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:1-38; dashboard/src/panels/review/SourceContent.tsx:40-40; dashboard/src/panels/review/SourceContent.tsx:188-188 |
-| SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes. | `SourceContent`; "function Sides({"; `contentBlock` | dashboard/src/panels/review/SourceContent.tsx:222-271; dashboard/src/panels/review/SourceContent.tsx:44-53; dashboard/src/panels/review/SourceContent.tsx:55-55 |
-| Text renderability is determined by the supplied text value, rather than inferred from a present-state label. | `textual` | dashboard/src/panels/review/SourceContent.tsx:17-17 |
-| **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:21-42 |
-| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:44-53; dashboard/src/panels/file-viewer/FilePane.tsx:24-64 |
-| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side.** | `Sides`; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:55-99 |
-| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:101-111 |
-| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:113-125 |
-| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command.** | `Expansion`; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:127-166 |
-| **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** | `SourceContent`; `useSourceContentRead`; `useEffect` | dashboard/src/panels/review/SourceContent.tsx:180-220; dashboard/src/panels/review/SourceContent.tsx:222-271 |
-| The read's request type and hook, exported for the lane's focused diff (MIK-L32). | "export interface SourceContentRequest {"; "export function useSourceContentRead(request: SourceContentRequest): {" | dashboard/src/panels/review/SourceContent.tsx:168-181 |
-| The lane's focused diff reading through it. | "const { result, problem, retry } = useSourceContentRead({" | dashboard/src/panels/review/LaneFileFocus.tsx:209-216 |
+| **The header's own record of the defect and of the three rendering rules, including the rule that an `absent` side is a measured fact rather than an empty file.** | `ReviewSourceContentResult`; `DiffPane`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:1-41; dashboard/src/panels/review/SourceContent.tsx:43-43; dashboard/src/panels/review/SourceContent.tsx:218-218 |
+| SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes. | `SourceContent`; "function Sides({"; `contentBlock` | dashboard/src/panels/review/SourceContent.tsx:252-305; dashboard/src/panels/review/SourceContent.tsx:47-62; dashboard/src/panels/review/SourceContent.tsx:71-71 |
+| Text renderability is determined by the supplied text value, rather than inferred from a present-state label. | `textual` | dashboard/src/panels/review/SourceContent.tsx:20-20 |
+| **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** | `sideLine` | dashboard/src/panels/review/SourceContent.tsx:24-45 |
+| The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. | `contentBlock`; `FilePane` | dashboard/src/panels/review/SourceContent.tsx:47-61; dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
+| **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side; each branch places the view's intent-marker note, marks and list around the panes it draws (MIK-L34).** | "function Sides({"; "const marking = useSourceMarking(expansion, mode, markers);"; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:71-127 |
+| **The bounded read stated as a prefix of the object, naming which sides are truncated.** | `boundedNote`; `review-source-truncated` | dashboard/src/panels/review/SourceContent.tsx:129-139 |
+| **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:141-153 |
+| **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command; the optional `markers` passed on to the sides (MIK-L34).** | "function Expansion({"; `review-source-currentness`; `review-source-path-bound`; `review-source-command` | dashboard/src/panels/review/SourceContent.tsx:155-196 |
+| **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** | `SourceContent`; `useSourceContentRead`; `useEffect` | dashboard/src/panels/review/SourceContent.tsx:210-250; dashboard/src/panels/review/SourceContent.tsx:224-224; dashboard/src/panels/review/SourceContent.tsx:252-305 |
+| The read's request type and hook, exported for the lane's focused diff (MIK-L32). | "export interface SourceContentRequest {"; "export function useSourceContentRead(request: SourceContentRequest): {" | dashboard/src/panels/review/SourceContent.tsx:198-198; dashboard/src/panels/review/SourceContent.tsx:210-210 |
+| Where a view's intent markers come from: the pane's name and the classification a caller already holds (MIK-L34). | "export interface SourceMarkers {" | dashboard/src/panels/review/SourceContent.tsx:63-70 |
+| The marking of this view, and each side's own marks for the one-sided panes. | `useSourceMarking`; `sideMarks` | dashboard/src/panels/review/IntentMarkers.tsx:403-429; dashboard/src/panels/review/IntentMarkers.tsx:566-569 |
+| The lane's focused diff reading through it. | "const { result, problem, retry } = useSourceContentRead({" | dashboard/src/panels/review/LaneFileFocus.tsx:218-218 |
 | **The key the read is bound to, and the cache it reads through (L48).** | `sourceContentKey`; `keepSource`; `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:95-104; dashboard/src/panels/review/ReviewReadCache.ts:143-145; dashboard/src/panels/review/ReviewReadCache.ts:154-154 |
 | The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws. | `reviewSourceContent`; `FilesApiError` | dashboard/src/data/review.ts:742-760; dashboard/src/data/changeset.test.ts:4-4; dashboard/src/data/changeset.test.ts:54-54; dashboard/src/data/changeset.test.ts:56-56; dashboard/src/data/changeset.ts:3-4; dashboard/src/data/files.test.ts:4-4; dashboard/src/data/files.test.ts:49-49; dashboard/src/data/files.test.ts:51-51; dashboard/src/data/files.ts:76-84; dashboard/src/data/notes.test.ts:3-3; dashboard/src/data/notes.test.ts:28-28; dashboard/src/data/notes.test.ts:30-30; dashboard/src/data/reviewTransport.test.ts:5-5; dashboard/src/data/reviewTransport.ts:18-18; dashboard/src/data/reviewTransport.ts:100-100; dashboard/src/data/reviewTransport.ts:102-102; dashboard/src/panels/changeset/ChangeSetViewer.tsx:27-27; dashboard/src/panels/changeset/ChangeSetViewer.tsx:306-306; dashboard/src/panels/file-viewer/FileViewer.tsx:12-12; dashboard/src/panels/file-viewer/FileViewer.tsx:112-112 |
 | **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:324-330; dashboard/src/data/review.ts:332-339 |
@@ -248,9 +272,9 @@ surface over the real client.
 | **The failure and provenance cases: a typed refusal with no content, the exact generation and path the listing published, and the leaf-change-set bound stated when the requested generation could not be measured.** | "renders a refused entry read as its typed refusal and no content"; "sends the generation and path the listing published, not a re-resolved one"; "states which measured change set admitted the path when the requested one could not be measured" | dashboard/src/panels/review/SourceContent.test.tsx:441-459; dashboard/src/panels/review/SourceContent.test.tsx:461-490; dashboard/src/panels/review/SourceContent.test.tsx:492-522 |
 | **The two boundary cases: the byte-form row is listed without an open control, and an inventory that named no code trees offers no expansion at all.** | "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:524-562; dashboard/src/panels/review/SourceContent.test.tsx:564-590 |
 
-| `Expansion` owns the behavior described above. | `Expansion` | dashboard/src/panels/review/SourceContent.tsx:127-129 |
-| `SourceContent` owns the behavior described above. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:222-224 |
-| `Sides` owns the behavior described above. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:55-57 |
+| `Expansion` owns the behavior described above. | `Expansion` | dashboard/src/panels/review/SourceContent.tsx:155-157 |
+| `SourceContent` owns the behavior described above. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:252-254 |
+| `Sides` owns the behavior described above. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:71-73 |
 
 ## Cross-Repo References
 
@@ -262,6 +286,12 @@ records at one repository's two bound code trees, and carries no identity that r
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **body updated for MIK-R34's per-hunk intent markers** (Purpose, Logic, Conventions, Invariants): the optional `markers` prop (`SourceMarkers`) threaded through `SourceContent`, `Expansion` and `Sides`; `Sides` asks `useSourceMarking` once and places its note, marks and list around the panes it draws, the one-sided panes taking only their own side's marks through `contentBlock`'s new `marks` argument; nothing here places a mark. The L32 sentence now says "L32's only change". **Reopened claims:** the `Sides` and `Expansion` rows are bound by the committed 2026-09-26T21:11:23 generated bullets and both constructs changed, so each is reworded to name its marker role and re-anchored on its line-exact declaration (`"function Sides({"`, `"function Expansion({"`); the committed bullets are intact. The component row (`SourceContent`; `"function Sides({"`; `contentBlock`) was re-measured (`252-305; 47-62; 71-71`) because its old ranges ended inside changed lines. Two rows added. The three headerless "owns the behavior" pointer rows, which the checker does not parse, were re-pointed by the exact shift. The generated repairs above re-point unchanged constructs; the fixer normalised five rows.
+- 2026-09-30T18:06:45+00:00: Generated citation repair: `textual` repointed to dashboard/src/panels/review/SourceContent.tsx:20-20. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:06:45+00:00: Generated citation repair: `boundedNote` repointed to dashboard/src/panels/review/SourceContent.tsx:129-139. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:06:45+00:00: Generated citation repair: `refusalBlock` repointed to dashboard/src/panels/review/SourceContent.tsx:141-153. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:06:45+00:00: Generated citation repair: "export interface SourceContentRequest {"; "export function useSourceContentRead(request: SourceContentRequest): {" repointed to dashboard/src/panels/review/SourceContent.tsx:198-198; dashboard/src/panels/review/SourceContent.tsx:210-210. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:06:45+00:00: Generated citation repair: "const { result, problem, retry } = useSourceContentRead({" repointed to dashboard/src/panels/review/LaneFileFocus.tsx:218-218. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Logic records that `SourceContentRequest` and `useSourceContentRead` are exported (two words) so `LaneFileFocus.tsx` makes the same keyed, cached read for a file the lane opens. Two rows added. The export adds no line, so no row moved; the installed fixer's run normalised 14 passing ranges and repaired none. No verification stamp was advanced.
 - 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the component row because an older *Generated citation repair* bullet in this card names `Sides`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`function Sides({`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
 - 2026-09-28T21:43:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the content read is keyed and cached per comparison (`ICR-R24@v3`).** The read moved into `useSourceContentRead`, which binds its answer and failure to `sourceContentKey` and reads through the surface's `ReviewReadCache`; reopening a file at the same code trees costs no request. The card's statement that the effect resets `result`/`problem` to `null` before each read is **superseded** by key-bound derivation (a previous entry's content or failure can no longer render under another key, and the answer no longer vanishes on remount). The generation paragraph, the four-outcomes paragraph and the invariants were updated; the reopened `SourceContent` claim was re-read (the four outcomes and their order are unchanged); every row re-derived after the one-line import shift, one row added for the key and cache. No stamp advanced.
