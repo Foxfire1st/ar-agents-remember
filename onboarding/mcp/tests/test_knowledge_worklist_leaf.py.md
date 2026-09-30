@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_worklist_leaf.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,8 @@ leaf's enclosure: exactly the inputs the curator's memory-quality run hands the 
   - `knowledge_integrity_check(contractPath)` returns the latest worklist, and the checklist section shows it;
   - the memory-quality recompute persists and names its own failure; the controller-level run
     (`_execute_memory_quality`, review R1 F1) persists the file, returns `knowledgeWorklist` and renders the
-    section while `curatorActionableCount` stays 0;
+    section; since MIK-R09 (leaf 260928-MIK-L09) its four open items count, `curatorActionableCount` 4 and
+    `knowledgeGate.openItemCount` 4 (it was 0 while the worklist was information only);
   - a completed sync recomputes through the bound port; the recompute never raises and a failure never fails
     a completed sync (F2); the `continue` replay recomputes too;
   - converted bases cached by commit, version and code commit, and a cache location inside a working tree
@@ -49,7 +50,8 @@ leaf's enclosure: exactly the inputs the curator's memory-quality run hands the 
 
 - The controller case stubs the scope revalidation, census, style checks, onboarding probes, coherence
   authority, catalog steps and L28's `_without_proof`; `_knowledge_worklist` and `write_curator_checklist`
-  run for real.
+  run for real. Since MIK-R09 the exact candidate trees are captured for real too (`_curator_candidate_inputs` is
+  no longer stubbed with placeholder IDs), because the gate judges exact trees.
 - The module is registered in the `unit-regression` lane; the census derives it as a consumer of
   `fixtures/repository_profiles/node/package-lock.json` because it drives the controller (the Thirty-fifth
   catalog re-pin).
@@ -103,11 +105,11 @@ code and memory repositories, so they are named here and not cited as rows.
 | Other owners' rows and closed files are untouched. | `test_carrying_never_edits_another_owners_row_or_a_closed_history_file` | mcp/tests/test_knowledge_worklist_leaf.py:478-500 |
 | A writer-authored proof raises its invariant. | `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` | mcp/tests/test_knowledge_worklist_leaf.py:503-547 |
 | The bound sync port. | `test_a_completed_sync_recomputes_through_the_bound_port` | mcp/tests/test_knowledge_worklist_leaf.py:550-569 |
-| The controller-level run. | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-669 |
-| Never raises; never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:672-709 |
-| The `continue` replay. | `test_the_continue_replay_of_a_completed_sync_recomputes_too` | mcp/tests/test_knowledge_worklist_leaf.py:712-726 |
-| The converted-base cache. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:729-763 |
-| The census-derived consumer row. | "mcp/tests/test_knowledge_worklist_leaf.py" | mcp/tests/evidence-lifecycle.toml:831-831 |
+| The controller-level run; since MIK-R09 its four open items count (4). | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-670 |
+| Never raises; never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:673-710 |
+| The `continue` replay. | `test_the_continue_replay_of_a_completed_sync_recomputes_too` | mcp/tests/test_knowledge_worklist_leaf.py:713-727 |
+| The converted-base cache. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:730-764 |
+| The census-derived consumer row. | "mcp/tests/test_knowledge_worklist_leaf.py" | mcp/tests/evidence-lifecycle.toml:832-832 |
 
 ## Cross-Repo References
 
@@ -118,6 +120,8 @@ No meaningful cross-repo references found: every repository and the task root ar
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The controller case now captures real candidate trees and asserts `curatorActionableCount` 4 and `knowledgeGate.openItemCount` 4, because MIK-R09 counts each open item (it was 0); the Logic, the Conventions and the controller row say so. The rows the installed fixer normalised are kept.
+- 2026-09-30T18:03:27+00:00: Generated citation repair: "mcp/tests/test_knowledge_worklist_leaf.py" repointed to mcp/tests/evidence-lifecycle.toml:832-832. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Onboarding Items Join The Worklist Assertions": the two `itemsByKind` assertions now include `onboarding_trace: 2`, and the cache case patches `base_cache.converted_base` (rulings 2026-09-29T18:49:50 (2, 4)). Rows below the edits were re-pointed by the installed fixer. No verification stamp was advanced.

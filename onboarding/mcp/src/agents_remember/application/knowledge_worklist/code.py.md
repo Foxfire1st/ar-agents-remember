@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/code.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,8 @@ what a hunk is.
   - `symbol`: `CodeObjects.symbol_span`, the one extent the shipped extractor binds uniquely for the name
     (the rule the writer and the conversion bind with); a name bound twice or nowhere does not resolve;
   - `line_range`: the recorded lines in the anchor's own blob, otherwise mapped through the diff from the
-    recorded blob (`_mapped_lines`). A recorded blob the store does not hold gives no mapping, not an error.
+    recorded blob (`_mapped_lines`). A recorded blob the store does not hold gives no mapping, not an error; since
+    MIK-R09 a Git failure asking for it is a `CodeReadError` (below), never "not held".
   - The content identity is `content_identity(range_bytes(...))` from `models/knowledge_files/anchor_content`.
     A range outside the blob does not resolve.
 - **Unique match.** `unique_binder(name)` prefilters C with `git grep -l -z -F` on the name's last segment,
@@ -66,6 +67,11 @@ what a hunk is.
 
 - Every read failure is a `CodeReadError` that names the tree, blob, pair or grammar; the run turns it into
   an `incomplete` worklist (MIK-R08 rule 4). A tree the store does not hold is never read as an empty tree.
+- **`CodeTrees.has_blob` (MIK-R09, L09 review R3-2, ruling 2026-09-30T19:16:07).** It asks
+  `CodeObjects.has_blob`, which now tells Git's documented not-found answer (`False`) from a Git failure
+  (`CodeObjectError`, naming Git's stderr); the failure is re-raised as `CodeReadError`. A Git failure is therefore
+  never read as a missing object: the worklist makes the run `incomplete`, and `observe_entry` marks the entry
+  `read_failed`, so the gate reports an unreadable input and never memoises it.
 - `CodeTrees.open(repository, base_tree, candidate_tree)` wraps one `CodeObjects` store; the writer's carry
   builds one with the same tree on both sides.
 
@@ -109,10 +115,11 @@ code and memory repositories, so they are named here and not cited as rows.
 | Binary pairs give `None`. | `parse_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:125-144 |
 | The image of a line range, or no mapping. | `_map_line`; `map_range` | mcp/src/agents_remember/application/knowledge_worklist/code.py:147-160; mcp/src/agents_remember/application/knowledge_worklist/code.py:163-178 |
 | The hunks of a blob pair, cached, with a named failure. | `hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:226-244 |
-| Resolution by locator kind. | `resolve`; `symbol_span` | mcp/src/agents_remember/application/knowledge_worklist/code.py:249-270 |
-| A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:272-281 |
-| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:292-324; mcp/src/agents_remember/application/knowledge_worklist/code.py:332-332 |
-| A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). | `change_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:337-356 |
+| Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2). | "def has_blob(self, blob: str) -> bool:" | mcp/src/agents_remember/application/knowledge_worklist/code.py:246-252 |
+| Resolution by locator kind. | `resolve`; `symbol_span` | mcp/src/agents_remember/application/knowledge_worklist/code.py:254-275 |
+| A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:277-286 |
+| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:297-329; mcp/src/agents_remember/application/knowledge_worklist/code.py:337-337 |
+| A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). | `change_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:342-361 |
 | The two callers: the gate's linkage and the lane's classification. | "return change_hunks(self.inputs.code, change, base_blob, candidate_blob)"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569; mcp/src/agents_remember/application/review_lane_classification.py:316-339 |
 | Hunk parsing and line-range mapping cases. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:309-328 |
 | Line ranges map, carry and touch. | "def test_line_ranges_map_carry_and_touch(" | mcp/tests/test_knowledge_worklist.py:422-431 |
@@ -127,6 +134,7 @@ through Git.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** A Conventions bullet and the `line_range` resolution bullet record `CodeTrees.has_blob`: a Git failure asking for a blob is re-raised as `CodeReadError`, never read as a missing object (review R3-2, ruling 19:16:07). One row added. The `unique_binder` row, which the installed fixer declined, was re-pointed by the exact base-to-staged line shift (+5; both anchors checked in both ranges).
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Purpose, a Logic bullet and an Invariants bullet record `change_hunks` (definition 2), moved verbatim from `compute._Run._path_hunks` so the gate and the reviewer's lane share one hunk definition. Two rows added (the function, and its two callers). The other rows moved by the new import and `__all__` entry were re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_line_ranges_map_carry_and_touch` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_line_ranges_map_carry_and_touch(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.
 

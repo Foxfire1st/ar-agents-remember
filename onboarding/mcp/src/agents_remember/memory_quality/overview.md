@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -97,7 +97,10 @@ dependency on the closeout plane.
   `rules_decisions.py` (MIK-R13, added by 260928-MIK-L13) registers the five decision content rules;
   `rules_reconsideration.py` (MIK-R14, added by 260928-MIK-L14) registers the refusing reorder guard
   `R14.1-linked-alternative-order`;
-  `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
+  `rules_history.py` (MIK-R09, added by 260928-MIK-L09) registers `R09-history-rows` (refusing,
+  writer-reported) and the report-only `R09-history-rows-merged`;
+  `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit` (since MIK-R09 with a
+  `leaf_publication` keyword);
   `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
   worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
   above: it validates only trees that carry `knowledge/layout.json`, and before MIK-R37 no production
@@ -233,13 +236,13 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:259-265; mcp/src/agents_remember/application/memory_quality/controller.py:393-467 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:261-267; mcp/src/agents_remember/application/memory_quality/controller.py:395-468 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:67-98 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
 | The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:64-110 |
-| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:132-212 |
+| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:133-213 |
 
 Current working-candidate evidence for this route:
 
@@ -484,7 +487,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:597-597; mcp/src/agents_remember/application/memory_quality/controller.py:786-822 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:648-648; mcp/src/agents_remember/application/memory_quality/controller.py:881-917 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
 ## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
@@ -542,7 +545,7 @@ produced its population.
 | A caller exclude that cannot mean anything is refused by name. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
 | The ruled numbers, the skip vocabulary and the status vocabulary. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `STATUS_CAPPED`; `STATUS_WITHIN_CAPS` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:22-23; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:27-27; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:36-36; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:38-39 |
 | The register's three sources and recorded authority values. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:48-52; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:57-61 |
-| The closeout gate refuses by name rather than letting a bare error out. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:424-446 |
+| The closeout gate refuses by name rather than letting a bare error out. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:431-453 |
 | The caller-exclude surface on the registered tool and the CLI. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-128 |
 | One root gives one authority on both acquisition routes. | `test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes` | mcp/tests/test_citation_index_resilience.py:376-406 |
 
@@ -737,10 +740,10 @@ file-level cards carry the per-module detail; the route-level facts are these:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:58-78 |
+| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:60-80 |
 | The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:68-74; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:77-80 |
-| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-94; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:97-112 |
-| The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
+| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-94; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:97-100; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:103-122 |
+| The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124 |
 | The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
 
 ## 260928-MIK-L04 Family Route Rules Join The Knowledge Validator
@@ -836,7 +839,7 @@ before MIK-R37.
 | Stale references are report-only. | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:125-157 |
 | The converted run's legacy-format checks and its validator slot. | `LEGACY_FORMAT_CHECKS`; `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:31-37; mcp/src/agents_remember/memory_quality/converted_check.py:66-93 |
 | The runner's dispatch by format. | `_converted_check` | mcp/src/agents_remember/memory_quality/check.py:163-177 |
-| The commit route's optional base converter. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
+| The commit route's optional base converter. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124 |
 | The escaping rule on the validator's grammar. | `escape_markers` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:142-162 |
 | The one symbol-binding rule. | `qualified_spans` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
 
@@ -853,7 +856,7 @@ unchanged before MIK-R37.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The defaulted input and its section. | `WithoutProof`; `_append_without_proof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:66-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:73-78; mcp/src/agents_remember/memory_quality/curator_checklist.py:354-386 |
+| The defaulted input and its section. | `WithoutProof`; `_append_without_proof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:66-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:74-79; mcp/src/agents_remember/memory_quality/curator_checklist.py:355-387 |
 
 ## 260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information
 
@@ -873,8 +876,8 @@ section.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:212-260 |
-| The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:234-283 |
+| The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:70-71 |
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
 
@@ -915,8 +918,8 @@ no worklist.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:115-141 |
-| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:212-260 |
+| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:77-87; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:121-147 |
+| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:234-283 |
 
 ## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
 
@@ -977,8 +980,8 @@ checklist bytes are unchanged; this curation's own `memory_quality_check` runs p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174 |
-| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194 |
+| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:150-166; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:169-174; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-180 |
+| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:215-215 |
 
 ## 260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator
 
@@ -1034,8 +1037,8 @@ items for the curator is carried to L31/L32.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-112 |
-| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:203-203 |
+| An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:90-118 |
+| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:224-224 |
 
 ## 260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration
 
@@ -1066,10 +1069,57 @@ today's checklist bytes are unchanged; this curation's own `memory_quality_check
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Moves followed from both sides by unique option text. | `moved_linked_alternatives` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:74-104 |
-| The refusing guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-142 |
-| A reconsideration item's facts. | `_reconsideration_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-191 |
+| The refusing guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-139 |
+| A reconsideration item's facts. | `_reconsideration_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:183-197 |
+
+## 260928-MIK-L09 The History-Row Rule Joins The Validator, And The Gate Counts Every Open Item
+
+**MIK-R09@v2 (leaf 260928-MIK-L09) makes the worklist a gate and adds one rule module to `knowledge_validator/`'s
+one registry.** Route meaning extended in three ways:
+
+- **[`rules_history.py`](knowledge_validator/rules_history.py.md)** (new, carded, governed here), imported by
+  `validator.py`, registers `R09-history-rows` (the carried L12 row rule, decision 2026-09-29T06:39:28): every history
+  file's row subjects must name a record of the tree, at every route (review R2-1: a retired record still resolves,
+  MIK-R22 rule 3), and every covered entry's `after` anchor must equal its entry's anchor in the tree, checked over
+  every open history file and, at a commit that publishes a leaf, over every file not closed in a comparison base,
+  whatever its own flag (review R1 F1, ruling 16:07:55: a closed flag set during the leaf is never a waiver). A file
+  closed in a base is frozen (rule 7) and not re-anchor-checked again. At a sync merge, a mismatch the merge itself
+  caused (a parent held the identical row, agreeing with its own entries) is reported by the report-only
+  `R09-history-rows-merged` and re-checked at the leaf's next gate; one already present on the leaf's side refuses.
+  `writer_reports`: inside the writer it only reports.
+- **The leaf-publication flag.** `ValidationContext.leaf_publication`, `validate_tree(..., leaf_publication)`,
+  `require_valid_commit(..., leaf_publication)` and the adapter's new `GitKnowledgeValidation.leaf_refusal` carry it;
+  `commit_route` now names a Git failure instead of letting it escape (F9). The L22 validator fixtures keep the retired
+  record `INV-RET1R3` (`status: retired`) in their trees, per rule 3.
+- **The worklist section counts nothing itself, and the gate counts every open item.** The mandatory gate
+  (`application/knowledge_gate/`) turns every item without a current satisfying row, every unreadable input and every
+  refusing violation into one repair finding (check `knowledge-gate`) toward `curatorActionableCount` (MIK-R09 rule
+  1). The L08 section's "information, never a count" is therefore of its own time: the section still renders only,
+  but its lead sentence now says the gate counts; [`knowledge_worklist_section.py`](knowledge_worklist_section.py.md)
+  exports `item_facts` (the gate's findings quote it) and renders `onboarding_trace` items (`_trace_facts`), and
+  [`curator_checklist.py`](curator_checklist.py.md)'s field comment says how an open item reaches the count. The
+  three-term formula and the single checklist are unchanged (MIK-R09 Preservation).
+- **Candidate invariants (not ingested; no speculative ingestion):** a history file closed in K_B is frozen, and at
+  leaf-publication routes every other history file's rows must agree with their entries, whatever the file's own
+  closed flag says (`checked_history_files`); every subject a history row names resolves in the tree, at every route
+  (`check_history_rows`). Proved by the F1, N01, N08, N09 and ghost-subject tests and the two sync-merge cases.
+- **Inert until the cutover:** the validator runs only where a side holds the layout marker (MIK-R22 rule 8), and the
+  gate only on converted memory; unconverted checklists are byte-identical, and this curation's own
+  `memory_quality_check` runs produced no worklist.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The files the re-anchor check reads. | `checked_history_files` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:80-91 |
+| The refusing and the merge-reported rule. | `check_history_rows`; `check_merged_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:161-190 |
+| The registering import. | `rules_history` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:27-29 |
+| The leaf-publication route of the adapter. | "def leaf_refusal(" | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:65-79 |
+| The section's lead: the gate counts each open item. | "The section itself counts nothing" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:1-8 |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The History-Row Rule Joins The Validator, And The Gate Counts Every Open Item" after L14's: the new, carded `rules_history.py` (`R09-history-rows` with review R1 F1's leaf-publication scoping and R2-1's subjects-everywhere rule; the report-only `R09-history-rows-merged` of the sync-merge ruling), the leaf-publication flag through the validator and adapter, the `RETIRED` fixture, and the section and checklist comment now saying the gate counts every open item; two candidate invariants; five rows. The Route Model bullet names `rules_history.py`. **The entry is in the real list after the last section, not in the inline `## Update History` mention of the Route Model.** Rows into the section and checklist modules were re-pointed by the installed fixer (bullets kept); L06's route-facts row, which the fixer normalised by adding the three new extents while keeping two base extents, lost those two stale ranges. No verification stamp was advanced.
+- 2026-09-30T18:00:48+00:00: Generated citation repair: `knowledge_worklist`; `knowledge_worklist_path` repointed to mcp/src/agents_remember/memory_quality/curator_checklist.py:70-70; mcp/src/agents_remember/memory_quality/curator_checklist.py:71-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:00:48+00:00: Generated citation repair: "_FACT_RENDERERS: Final[" repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:00:48+00:00: Generated citation repair: "\"unexplained_file\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** Added the section "260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration" after L10's: the new, carded `rules_reconsideration.py` (`R14.1-linked-alternative-order`, L13's carried link-stability decision, rulings 04:37:56 Q4 and 05:31:11 F5/F6, note R6-4), `_reconsideration_facts`, and one candidate invariant; three rows. The Route Model bullet names `rules_decisions.py` and `rules_reconsideration.py`, and L13's section notes that its Q5/Q6 carry is met. The entry is in the real list after the last section, not the inline `## Update History` mention. The fixer's generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.
 - 2026-09-30T10:06:55+00:00: Generated citation repair: "_FACT_RENDERERS: Final[" repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:06:55+00:00: Generated citation repair: "\"unexplained_file\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.

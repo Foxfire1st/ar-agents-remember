@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,36 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260928-MIK-L09 Closeout, Record Landing And Integration Ask The Mandatory Invariant Gate
+
+Three modules of this route are MIK-R09 routes (leaf 260928-MIK-L09, D5). Each asks the gate through
+`worktrees/knowledge_gate.py` and the bound `KnowledgeGatePort`, only on converted memory:
+
+- **`closeout_external.py` (rule 3, the closeout memory commit).** On a converted leaf, `external_closeout_commits`
+  closes the leaf's history file (`close_owner_history`, MIK-R07 rule 7), and `_commit_memory_content(closing=…)`
+  validates the exact tree it is about to commit (`_refuse_invalid_memory_commit`: `memory_commit_refusal` as a leaf
+  publication, against the parent line's memory tip, the carried L22 and L27 obligations) before `begin_git_mutation`;
+  any refusal or failure before the commit restores the file (review R1 F2). The closing is inside the one memory
+  commit, which keeps its `Code-Commit` trailer.
+- **`record_landing.py` (rule 3, commits no memory).** It probes the memory line and the task's memory base first (F7),
+  then checks the landed memory commit: the validator against the task's `memory_base_commit` and, for a leaf, the
+  history file `closed` in it; a converted line must name its memory commit; an unconverted line's commit is only
+  probed and records exactly as before.
+- **`integrate.py` (rule 4, master and checkpoint landing).** `_knowledge_gate_block` runs in preview and apply alike
+  after the handover gates: the validator on the master's memory commit and the net-staleness check (every entry at a
+  path the master's net code diff changed must be `current` at its code commit; `unverifiable` and a failed Git read
+  refuse too, F4), blocking with `knowledge-gate-refused` and naming the maintenance-leaf remedy.
+
+Unconverted memory is not gated at any of them (the unconverted test; `unconverted.sh`: the real memory commit tree
+`20ccf39a…`, its message and trailer, and the record-landing payload are identical to base). Refusal tests enter
+through each public route entry (`test_knowledge_gate_routes.py`). **Inert until the cutover.**
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The closeout closes the history file and validates its exact tree, restoring on refusal. | `_refuse_invalid_memory_commit`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:108-185 |
+| Record landing probes first, then asks the gate over the landed commit. | `_line_converted`; `_knowledge_gate_refusal` | mcp/src/agents_remember/worktrees/modules/record_landing.py:74-82; mcp/src/agents_remember/worktrees/modules/record_landing.py:106-122 |
+| Master and checkpoint landing wait for valid, current knowledge. | `_knowledge_gate_block` | mcp/src/agents_remember/worktrees/modules/integrate.py:775-815 |
 
 ## 260928-MIK-L38 Finalization Completes The Row Of The Master That Lists The Leaf
 
@@ -604,7 +634,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
 | Finalizer tests cover a named master's row, its rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row, the dry run, the standalone cases and the refusals before any write. | "class LifecycleFinalizeTests(_FinalizeFixtures):"; "class FolderMasterFinalizeTests(_FinalizeFixtures):" | mcp/tests/test_lifecycle_finalize.py:155-244; mcp/tests/test_lifecycle_finalize.py:247-409 |
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:328-362; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
-| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
+| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:576-576; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:532-540; mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:333-333; mcp/src/agents_remember/models/worktree.py:46-55 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:240-322; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:385-430; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:433-480 |
@@ -614,7 +644,7 @@ Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
+| External closeout chooses substantive memory output and refreshes the cache afterwards. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
 | Final memory staging removes and excludes the cache. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
 | Carryover completion is actual memory ancestry. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:193-216 |
 
@@ -1449,6 +1479,8 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 `mcp/tests/test_terminal_blocker_reasons.py:382-480`.
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 Closeout, Record Landing And Integration Ask The Mandatory Invariant Gate" at the top: the closeout memory commit's closing and exact-tree validation (review R1 F2), record landing's probe-first check of the landed commit (F7), and the master and checkpoint landing's validator and net staleness (rule 4, F4); unconverted memory unchanged; three rows. The row the installed fixer declined was re-pointed by the exact base-to-staged line shift. No verification stamp was advanced.
+- 2026-09-30T18:02:08+00:00: Generated citation repair: "def _integrated_result("; "def record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:576-576; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 Finalization Completes The Row Of The Master That Lists The Leaf" at the top (D32; rulings 12:33:07 Q2, 13:11:32 finding 1, 13:35:32), with three rows, and corrected the `finalize.py` route-model entry, which said the parent row is completed "when task-document paths are supplied" (it is derived from the leaf). **Reopened claim re-read, reworded and re-anchored:** the `LifecycleFinalizeTests` row claimed landed-commit, cleanup-blocking and dry-run cases the class does not hold; it now names both test classes on their line-exact class lines, so the committed generated bullet (2026-09-06T22:41:21+00:00) is left intact. The installed fixer normalised the two `finalize.py` rows by this leaf's +4 import shift. No verification stamp was advanced.
 
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject" at the top (the additive `subject` and why, ruling 01:56:39 Q3), one row. No verification stamp was advanced.

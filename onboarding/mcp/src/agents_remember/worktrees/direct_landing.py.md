@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,50 @@ normalized inputs. It carries no closeout-door publication. The runtime executes
 same generation. Success includes the lifecycle-operation projection; an existing generation that
 requires action returns the closed public `refused` outcome with that evidence nested.
 
+### 260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)
+
+Direct landing is one of MIK-R09's leaf-publication routes. On converted memory (the layout marker in the checkout's
+working tree or `HEAD`) it gates before admission; unconverted memory lands exactly as before (probed before anything
+is captured or written: `count-objects` and `status` unchanged in the unconverted test; `unconverted.sh` finds the
+preview payload and object count identical to base).
+
+- **The gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
+  the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
+  `reports/`, `MEMORY_CONTENT_EXCLUDES`), and asks `direct_gate_verdict` through the port; any refusal raises
+  `direct-landing-knowledge-gate-refused`. It returns the leaf that owns the one open history file (ruling
+  2026-09-30T14:38:47 gap 2). The preview calls it too, so it refuses exactly as the apply.
+- **The closing and the exact tree.** `_close_gated_leaf` gates, closes the owner's history file
+  (`close_owner_history`, MIK-R07 rule 7), and validates the exact tree it will commit through
+  `memory_commit_refusal(..., leaf_publication=True)` against `HEAD` (`direct-landing-knowledge-validation-refused`).
+  Any refusal or exception restores the file.
+- **The closing lives until the generation is decided (review R1 F3; R2-2, R2-5; R3-1).** `_start_or_observe_direct_landing`
+  first settles the kept closings (`_settle_kept_closing`; an unreadable receipt refuses as
+  `direct-landing-closing-receipt-unreadable`), then checks `_in_flight_retry`: an exact retry of the series'
+  in-flight generation (same contract path, code commit, candidate tree, effective input and approval note,
+  `_same_request`) prepares **without** the gate and reaches `_create_direct_landing`'s existing-generation check,
+  which resumes it or reports the conflict; that generation was gated when it was admitted.
+  `_prepare_direct_landing_candidate(identity, *, gated)` returns the input, the candidate and the closing (restored if
+  building the input fails). `_admit_direct_landing` writes the generation's receipt (`keep_direct_closing`) before
+  creating it and keeps the closing only when the journal **creates** a generation; an input conflict, a failing
+  create, any exception, or a replayed generation restores it in process and drops only this call's receipt
+  (`_undo_closing`). A receipt Git cannot write (`hash-object` failing) restores and refuses as
+  `direct-landing-closing-receipt-unwritable`. The kept closings are settled again after a replayed completion and
+  after execution (`_generation_state`: landed, cancelled or in flight); cancellation settles them too
+  (`integration/lifecycle/control/cancellation.py`).
+- **Tests:** `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal` and, through the
+  public entry `direct_landing(config, request, series)`, the preview/apply, input-conflict, exact-retry, cancel,
+  another-generation (N12), crash-before-create (N05), unreadable-receipt (R2-5), exact-tree (N09) and
+  already-landed (R3-1, SHA-1 and SHA-256) cases in `test_knowledge_gate_routes.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module docstring's gate and closing paragraphs. | "On converted memory (the layout marker on either side) the mandatory" | mcp/src/agents_remember/worktrees/direct_landing.py:28-43 |
+| The preview refuses as the apply. | "the preview refuses exactly as the apply" | mcp/src/agents_remember/worktrees/direct_landing.py:328-328 |
+| Settle, exact retry, prepare, admit, and settle again. | `_start_or_observe_direct_landing`; `_generation_state`; `_settle_kept_closing`; `_in_flight_retry`; `_same_request` | mcp/src/agents_remember/worktrees/direct_landing.py:390-497 |
+| Only a created generation keeps the closing. | `_admit_direct_landing`; `_undo_closing` | mcp/src/agents_remember/worktrees/direct_landing.py:500-531 |
+| The prepared input, the candidate and the closing. | `_prepare_direct_landing_candidate`; `_operation_candidate` | mcp/src/agents_remember/worktrees/direct_landing.py:550-598 |
+| The exact memory tree, the gate and the closing validated as a leaf publication. | `_memory_content_tree`; `_direct_gate_owner`; `_close_gated_leaf` | mcp/src/agents_remember/worktrees/direct_landing.py:601-667 |
+
 ### Conventions
 
 Execution is synchronous and journaled. Concurrency serialization is owned by configured
@@ -86,10 +130,10 @@ the current working-candidate behavior; historical entries below retain their or
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Policy, normalized request, exact code proof, and read-only preview. | `DirectLandingRequest`; `require_direct_landing_enabled`; `_verify_code_commit`; `_direct_landing_preview` | mcp/src/agents_remember/worktrees/direct_landing.py:86-136; mcp/src/agents_remember/worktrees/direct_landing.py:196-254; mcp/src/agents_remember/worktrees/direct_landing.py:287-307 |
-| Memory admission captures the prepared content snapshot and typed candidate. | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:310-353 |
-| Generation creation and action-required public projection. | `_create_direct_landing`; `_direct_landing_observation` | mcp/src/agents_remember/worktrees/direct_landing.py:460-494; mcp/src/agents_remember/worktrees/direct_landing.py:497-514 |
-| The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:55-104 |
+| Policy, normalized request, exact code proof, and the preview, which writes no memory content and since MIK-R09 refuses exactly as the apply on converted memory. | `DirectLandingRequest`; `require_direct_landing_enabled`; `_verify_code_commit`; `_direct_landing_preview` | mcp/src/agents_remember/worktrees/direct_landing.py:118-168; mcp/src/agents_remember/worktrees/direct_landing.py:228-286; mcp/src/agents_remember/worktrees/direct_landing.py:319-341 |
+| Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). | `_direct_memory_admission_snapshot` | mcp/src/agents_remember/worktrees/direct_landing.py:344-387 |
+| Generation creation and action-required public projection. | `_create_direct_landing`; `_direct_landing_observation` | mcp/src/agents_remember/worktrees/direct_landing.py:670-704; mcp/src/agents_remember/worktrees/direct_landing.py:707-724 |
+| The application owns configured admission and execution serialization. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:64-113 |
 | The focused integration scenario verifies cache-independent publication and recovery. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
 
 ## Cross-Repo References
@@ -105,6 +149,7 @@ source is configured for this file's claims.
 ## Update History
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New subsection "260928-MIK-L09 The Mandatory Gate At Direct Landing (MIK-R09 Rule 3)": the gate before admission on converted memory (the leaf inferred as the one open history file's owner, gap 2 of 14:38:47), the preview refusing as the apply, the closing and its exact-tree validation as a leaf publication (review R1 F1), and the closing kept until the generation is decided with per-generation receipts (F3, R2-2, R2-5, R3-1); six rows. **Reopened claim reworded:** the policy/preview row (the preview now also gates on converted memory, so "read-only preview" became "writes no memory content"); the admission-snapshot row notes the split into `_operation_candidate`. The generation rows the installed fixer declined were re-pointed by the exact base-to-staged line shift, every anchor checked in both ranges.
 - 2026-09-15T00:51 UTC — Replaced the memory-plus-ledger admission narrative with exact code/content evidence and one memory publication; recorded reversible cache preparation, typed input retirement, retained request-owned generation admission, and the nearer worktrees overview. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
 
 - 2026-09-11T23:05:00+00:00: Repaired the R03 claim, which anchored `_claim_waiting_direct_landing` at lines 678-701 of a 576-line file. That helper no longer exists anywhere in the tree and the closeout-door cut (commit `fad9808e`) already removed the door reads; `_create_direct_landing` (473-507) now admits a fresh generation from the request itself (series contract, branch HEAD commit and tree, effective commit messages) with no door publication and no bound `lifecycle_operation_dependencies`.

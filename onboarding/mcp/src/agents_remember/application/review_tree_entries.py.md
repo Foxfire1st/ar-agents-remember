@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_tree_entries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,13 @@ The read is on demand: `application/review_tree_knowledge.py` calls it only when
   `symbol`, `line_range` or `file`, a symbol in a file no shipped grammar reads, and a `line_range` whose recorded
   blob the store cannot give (`unavailable`, never guessed). `_resolve` then asks `CodeTrees.resolve`; `None` is
   `unresolved` with the reason `_unresolved` names; a `CodeReadError` or a failed Git read is `unavailable`.
+  **Since MIK-R09 (L09 review R3-2, ruling 2026-09-30T19:16:07)** the `_unsupported` probe runs inside the same
+  `try`: its `has_blob` call now raises a `CodeReadError` when Git cannot say whether it holds the recorded blob
+  (`CodeTrees.has_blob`), and that is `unavailable` with the named reason instead of an unhandled error. Git's
+  documented not-found answer is still the probe's "the store cannot give" `unavailable`. This is one of L09's stated
+  exceptions to "inert until the cutover" (with `has_blob` itself and the conversion's Git-failure naming): it is not
+  behind the gate's marker probe, and it changes only what a Git failure reads as, from an escaping error to a named
+  `unavailable`.
 - **The excerpt.** `_excerpt` slices lines `start..end` of the exact blob with `blob_lines`, keeps at most
   `EXCERPT_MAX_LINES` (400) lines and `EXCERPT_MAX_CHARACTERS` (48,000) characters, sets `excerpt_truncated` when it
   cut, and never re-encodes: a range that is not UTF-8 carries a reason and no excerpt, and a blob the store cannot
@@ -116,5 +123,6 @@ repositories, so they are named here and not cited as rows.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The Where-it-lands bullet records that `_unsupported` now runs inside `_in_blob`'s `try`, so a Git failure in `has_blob` is `unavailable`, named, instead of an unhandled error (review R3-2, ruling 19:16:07). The `_in_blob` row still holds (same extent). No other row moved.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): this card's source is unchanged. **Reopened claim reworded and re-anchored:** MIK-L32 replaced the caller's `_entries_view` with `_focused` in `review_tree_knowledge.py`, so the caller row now names the focused answer and is anchored on the line-exact call ("return _focused(query, trees, entries=tree_entries(trees, query.invariants))", `126-127`). The installed fixer ran once and changed nothing else. No verification stamp was advanced.
 - 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new module MIK-R31 adds, recording rulings 05:36:19 Q2 (the on-demand `invariants=` read) and 06:10:21 F3 (the excerpt and cache bounds tested) and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

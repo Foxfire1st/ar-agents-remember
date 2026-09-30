@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/compute.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -76,8 +76,11 @@ function of its inputs.
   "strictly inside" extension no longer links it through a K_C range. This is the strict reading of
   definition 8 and a correction of L08's output: on ICR L47 exactly four delete-only hunks of
   `changeSetBar.tsx` flip `linked` from true to false; classification and every non-MIK-R10 item are
-  unchanged. The symmetric case (an insertion-only hunk still linkable by a K_B range through `hits_old`)
-  was not changed; it is carried to L09 as a note (ruling 03:24:28 N3).
+  unchanged. **The symmetric case was applied by MIK-R09 (260928-MIK-L09, the L10 N3 carry of ruling 03:24:28,
+  gathered by the start decision 2026-09-30T13:15:47):** `_linked(hunk, base_spans, candidate_spans)` links a
+  hunk only through the sides where it changes lines, so an insertion-only hunk (`old_count == 0`) is linked only
+  by a K_C range at C, as a delete-only hunk is only by a K_B range at B. The change can only add
+  `unexplained_hunk` items, never drop one; L32's lane docstring states the same per-side rule (review R1 F8).
 - **Shared with the reviewer's lane (MIK-L32).** `_path_hunks` now only calls `code.change_hunks` (the body moved
   there verbatim), and `_file_covered` calls the module-level `non_text_linked(locator_kinds)` predicate (exported in
   `__all__`): a non-text change is linked exactly when a `file`-locator entry on either side covers the path. The
@@ -113,7 +116,9 @@ function of its inputs.
   `openCount`, `unnecessaryRows`), `reconsideration` (MIK-R14: `links`, each evaluated link with its trigger or
   `null`, its class or endpoint and approval state, or `skipped: superseded`), `items` sorted by kind and subject, `kinds` (the registry) and `digest` (`worklist_digest` over state, items and incomplete).
   `incomplete_worklist` is the one representation of unreadable input: `state: incomplete`, the named
-  input, no items. A `CodeReadError` during the run becomes `incomplete` naming `C`.
+  input, no items. A `CodeReadError` during the run becomes `incomplete` naming `C`; since MIK-R09 a
+  `subprocess.SubprocessError` (a Git call that failed or timed out) becomes `incomplete` naming `git`, through the
+  exported `git_failure(error)` (the L03 review N2 carry, decision 2026-09-29T19:15:20), never an unhandled error.
 
 ### Conventions
 
@@ -169,28 +174,30 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items. | "7. marks every changed hunk" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:22-26 |
-| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:100-100 |
-| One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). | `Item`; `item_id`; `extra` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:120-144 |
+| The schema name. | `WORKLIST_SCHEMA` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:103-103 |
+| One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). | `Item`; `item_id`; `extra` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:123-147 |
 | The run's inputs, with MIK-R10's route coverage and MIK-R14's coordination root last. | "class WorklistInputs:" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:147-162 |
-| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:169-183 |
-| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:199-212; mcp/src/agents_remember/application/knowledge_worklist/compute.py:215-225 |
-| The document: the items of every step, one sort and the digest. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:233-292 |
-| Steps 1 to 4, split out of `document` at the L06/L11 merge. | `_scope`; `_first_entries`; `_stale` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:294-321; mcp/src/agents_remember/application/knowledge_worklist/compute.py:323-331; mcp/src/agents_remember/application/knowledge_worklist/compute.py:333-340; mcp/src/agents_remember/application/knowledge_worklist/compute.py:302-310 |
-| The persisted `scope` and `entries`. | `_scope_document`; `_entries_document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:342-352; mcp/src/agents_remember/application/knowledge_worklist/compute.py:354-363 |
-| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:387-395 |
-| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:405-440 |
-| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:442-460 |
-| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:462-479; mcp/src/agents_remember/application/knowledge_worklist/compute.py:481-500 |
-| The leaf's declarations, one input of the run. | `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:157-157 |
-| Step 5: marks, `planned_untouched` items, one sort over both, and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:249-249; mcp/src/agents_remember/application/knowledge_worklist/compute.py:286-286 |
+| The one representation of unreadable input. | `incomplete_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:172-186 |
+| Inventory and renames; a partial inventory is incomplete, naming the paths. | `_changes`; `_partial_detail` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:204-217; mcp/src/agents_remember/application/knowledge_worklist/compute.py:220-230 |
+| The document: the items of every step, one sort and the digest. | `document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:238-297 |
+| Steps 1 to 4, split out of `document` at the L06/L11 merge. | `_scope`; `_first_entries`; `_stale` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:299-326; mcp/src/agents_remember/application/knowledge_worklist/compute.py:328-336; mcp/src/agents_remember/application/knowledge_worklist/compute.py:338-345 |
+| The persisted `scope` and `entries`. | `_scope_document`; `_entries_document` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:347-357; mcp/src/agents_remember/application/knowledge_worklist/compute.py:359-368 |
+| Step 3: families reached by a touched member or a changed record. | `_reached` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:392-400 |
+| The `touched_invariant` facts and identities. | `_touched_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:410-445 |
+| The `stale_invariant` item. | `_stale_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:447-465 |
+| The `reached_family` items and their member identities. | `_family_items`; `_family_item` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:467-484; mcp/src/agents_remember/application/knowledge_worklist/compute.py:486-505 |
+| The leaf's declarations, one input of the run. | `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:160-160 |
+| Step 5: marks, `planned_untouched` items, one sort over both, and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:254-254; mcp/src/agents_remember/application/knowledge_worklist/compute.py:291-291 |
 | Step 6 in the docstring: the route conditions of reached families and of killed routes. | "evaluates the family route conditions" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:20-21 |
-| Step 6: the route items, with `satisfiedBy` carried in `extra`. | `_route_items`; `family_route_conditions`; `satisfiedBy` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:502-525 |
-| Step 7: one linkage, the unexplained items in the one sort, `changes` and `unexplained`. | `unexplained_items`; "\"unexplained\": unexplained.summary()" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:253-253; mcp/src/agents_remember/application/knowledge_worklist/compute.py:287-287 |
+| Step 6: the route items, with `satisfiedBy` carried in `extra`. | `_route_items`; `family_route_conditions`; `satisfiedBy` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:507-530 |
+| Step 7: one linkage, the unexplained items in the one sort, `changes` and `unexplained`. | `unexplained_items`; "\"unexplained\": unexplained.summary()" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:258-258; mcp/src/agents_remember/application/knowledge_worklist/compute.py:292-292 |
 | Step 8 in the docstring: MIK-R14's reconsideration candidates. | "8. evaluates every K_B decision's" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:27-28 |
-| Step 8: the run's classifier bound once and reused; the candidates join the one sort; the `reconsideration` key. | "reconsideration = reconsideration_candidates("; "classifier = Classifier(inputs.code, inputs.base, renamed)"; "\"reconsideration\": reconsideration.summary" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:237-238; mcp/src/agents_remember/application/knowledge_worklist/compute.py:259-275; mcp/src/agents_remember/application/knowledge_worklist/compute.py:288-288 |
-| A delete-only hunk is linked only by a K_B range (ruling Q2). | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560 |
-| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:534-564; mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569 |
-| The non-text predicate the gate and the lane share (MIK-L32). | `_file_covered`; `non_text_linked` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:584-598 |
+| Step 8: the run's classifier bound once and reused; the candidates join the one sort; the `reconsideration` key. | "reconsideration = reconsideration_candidates("; "classifier = Classifier(inputs.code, inputs.base, renamed)"; "\"reconsideration\": reconsideration.summary" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:242-243; mcp/src/agents_remember/application/knowledge_worklist/compute.py:264-280; mcp/src/agents_remember/application/knowledge_worklist/compute.py:293-293 |
+| A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry). | "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:601-613 |
+| A Git call that failed or timed out is `incomplete` naming `git` (MIK-R09). | `git_failure`; "except subprocess.SubprocessError as error:" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:189-201; mcp/src/agents_remember/application/knowledge_worklist/compute.py:616-619 |
+| The insertion-only symmetry at the gate. | `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range` | mcp/tests/test_knowledge_closeout_gate.py:978-990 |
+| Gate linkage, text and file level. | `_change`; `_path_hunks` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:539-564; mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569 |
+| The non-text predicate the gate and the lane share (MIK-L32). | `_file_covered`; `non_text_linked` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:584-589; mcp/src/agents_remember/application/knowledge_worklist/compute.py:592-598 |
 | A body edit raises one invariant and its family and carries the rest of the file. | `test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file` | mcp/tests/test_knowledge_worklist.py:336-361 |
 | A comment between functions raises nothing; one inside raises. | `test_a_comment_between_functions_raises_nothing_and_one_inside_raises` | mcp/tests/test_knowledge_worklist.py:364-379 |
 | A binary change touches a file anchor and links at file level. | `test_a_binary_change_touches_a_file_anchor_and_links_at_file_level` | mcp/tests/test_knowledge_worklist.py:451-466 |
@@ -206,6 +213,9 @@ No meaningful cross-repo references found: the run reads one code repository and
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The gate-linkage bullet records the symmetric definition-8 correction L09 applied (`_linked`: an insertion-only hunk is linked only by a K_C range; the L10 N3 carry), and the Document bullet records that a `SubprocessError` is `incomplete` naming `git` (`git_failure`, the L03 carry). **Reopened claim reworded:** the "hunk.new_count > 0" row now states both sides and cites `_linked`; this pass's generated bullet for it was removed. Two rows added. The step-7 and step-8 rows the fixer declined were re-pointed by the exact base-to-staged line shift, every anchor checked in both ranges. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded row was re-anchored on line-exact quotes ("def _linked(" and the `_linked` condition line); no committed history line was edited.
+- 2026-09-30T17:58:48+00:00: Generated citation repair: `WORKLIST_SCHEMA` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:103-103. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:48+00:00: Generated citation repair: `expected_effects` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** A Logic bullet and an Invariants bullet record that `_path_hunks` now calls `code.change_hunks` and `_file_covered` the exported `non_text_linked`, the two functions the reviewer's lane shares, with the gate's output unchanged. One row added (`_file_covered`; `non_text_linked`); the `_path_hunks` range re-measured by the exact shift (`564-578` → `566-569`); the other moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded). No verification stamp was advanced.
 - 2026-09-30T12:07:03+00:00: Generated citation repair: `WORKLIST_SCHEMA` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:100-100. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:07:03+00:00: Generated citation repair: `expected_effects` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.

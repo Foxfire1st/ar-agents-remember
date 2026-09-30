@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | verificationStatus | working-candidate |
 | governingOverview | `overview.md` |
 
@@ -29,9 +29,24 @@ Ordinary integration validates completed approved closeout, the exact work branc
 
 A checkpoint obtains `CheckpointLanding` from the live series refs instead of closeout cells an unfinished master cannot have. The same captured pair feeds preview and apply, and publication rechecks it. A completed master cannot use this weaker route. Source code advancing without a matching memory trailer is not a refusal: the actual memory ref is still the accepted memory output.
 
-Handover gates are folded across gate logs by matching master/task identity. Preview evaluates the addressed gate without writing; apply enforces it. Unmatched open gates produce the existing addressing diagnostic. Normal integration does not run code quality, memory quality, certification, curator coherence, or independent review.
+Handover gates are folded across gate logs by matching master/task identity. Preview evaluates the addressed gate without writing; apply enforces it. Unmatched open gates produce the existing addressing diagnostic. Normal integration does not run code quality, memory quality, certification, curator coherence, or independent review; since MIK-R09 a series (master or checkpoint) landing on converted memory does run the mandatory invariant gate (below).
 
 `_publish_integration_edge` reloads the exact contract, checks atomic/series or ordinary authority, re-proves the source snapshot, and delegates expected-old CAS. A CAS race reports the operation that actually ran, including the checkpoint tool on that route. The shared landing writer records `completed` plus pending cleanup for final integration, or `checkpointed` while preserving cleanup for a checkpoint. Neither landing reclaims the task; finalization owns that step.
+
+**The mandatory invariant gate at master and checkpoint landing (MIK-R09 rule 4, leaf 260928-MIK-L09).**
+`_handover_or_apply_integration` now calls `_knowledge_gate_block(contract, args, commits, sources)` after the handover
+gates and before the memory-ancestry proof, in preview and apply alike, over the route's own commits
+(`_route_commits`: the closeout cells, or the checkpoint's live pair). For a series contract with external memory it
+asks `worktrees.knowledge_gate.landing_gate_refusal` with a `LandingGateRequest` naming the master's memory commit
+(validated against the parent line's current memory source, the carried L22 obligation) and the master's code commit
+with the parent line's current code source as `code_base`, so every entry of the master's memory tree at a path the
+master's net code diff changed must be `current` at the master's code commit: `stale`, `unverifiable` (review R1 F4)
+and a Git read failure all refuse. A refusal is the blocked payload `knowledge-gate-refused` (exit 2, persisted only on
+apply, no developer decision), naming every finding and the remedy (a knowledge-maintenance leaf within the master,
+`knowledgeMaintenanceScope: true`). Unconverted memory is not gated (the probe returns `None`). Tests:
+`test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale` and, through the route,
+`test_the_master_and_checkpoint_landings_refuse_through_the_integration_route`; on real data `closeout.txt` step 4
+(`integrate`'s dry run returns `(2, knowledge-gate-refused)` for the unmaintained master).
 
 ### Conventions
 
@@ -62,12 +77,13 @@ These current source spans identify the implementation owners and the specific a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | `validate_integrate_contract`; `validate_integrate_memory_contract` | mcp/src/agents_remember/worktrees/modules/integrate.py:168-190 |
-| Source snapshots and replay/lineage decisions retain current Git facts. | `_integration_source_state_block`; `_integration_lineage_block`; `_replay_requirements` | mcp/src/agents_remember/worktrees/modules/integrate.py:268-274; mcp/src/agents_remember/worktrees/modules/integrate.py:216-238; mcp/src/agents_remember/worktrees/modules/integrate.py:283-314 |
-| Checkpoint capture, route output selection, and shared memory ancestry. | `CheckpointLanding`; `_require_memory_ancestry` | mcp/src/agents_remember/worktrees/modules/integrate.py:386-409; mcp/src/agents_remember/worktrees/modules/integrate.py:473-486 |
-| Addressed handover gates and publication preserve the operation's real identity. | `handover_gate_guard`; `handover_gates` | mcp/src/agents_remember/worktrees/modules/integrate.py:83-109; mcp/src/agents_remember/worktrees/modules/integrate.py:131-131 |
-| Final and checkpoint result publication differ without performing reclamation. | `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
-| The shared writer records the two accepted output commits. | `LandedIntegration`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
+| Ordinary admission requires the accepted code/memory work heads and substantive cleanliness. | `validate_integrate_contract`; `validate_integrate_memory_contract` | mcp/src/agents_remember/worktrees/modules/integrate.py:170-192; mcp/src/agents_remember/worktrees/modules/integrate.py:195-215 |
+| Source snapshots and replay/lineage decisions retain current Git facts. | `_integration_source_state_block`; `_integration_lineage_block`; `_replay_requirements` | mcp/src/agents_remember/worktrees/modules/integrate.py:218-240; mcp/src/agents_remember/worktrees/modules/integrate.py:270-276; mcp/src/agents_remember/worktrees/modules/integrate.py:285-316 |
+| Checkpoint capture, route output selection, and shared memory ancestry. | `CheckpointLanding`; `_require_memory_ancestry` | mcp/src/agents_remember/worktrees/modules/integrate.py:387-411; mcp/src/agents_remember/worktrees/modules/integrate.py:475-488 |
+| Addressed handover gates and publication preserve the operation's real identity. | `handover_gate_guard`; `handover_gates` | mcp/src/agents_remember/worktrees/modules/integrate.py:85-111; mcp/src/agents_remember/worktrees/modules/integrate.py:133-133 |
+| MIK-R09 rule 4: the gate before the ancestry proof, preview and apply alike. | "blocked = _knowledge_gate_block(contract, args, _route_commits(contract, checkpoint), sources)"; `_knowledge_gate_block` | mcp/src/agents_remember/worktrees/modules/integrate.py:746-748; mcp/src/agents_remember/worktrees/modules/integrate.py:775-815 |
+| Final and checkpoint result publication differ without performing reclamation. | `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:576-609; mcp/src/agents_remember/worktrees/modules/integrate.py:939-976 |
+| The shared writer records the two accepted output commits. | `LandedIntegration`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
 
 ## Cross-Repo References
 
@@ -77,6 +93,9 @@ The operation and fixture boundaries described here are defined by same-reposito
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** Logic gains the paragraph on `_knowledge_gate_block`: a series (master or checkpoint) landing on converted memory runs the validator on the master's memory commit and the net-staleness check at its code commit, refusing `knowledge-gate-refused` in preview and apply alike (rule 4; review R1 F4); the "normal integration does not run … gates" sentence names the exception. One row added. The `handover_gate_guard` row the installed fixer declined was re-pointed by the exact base-to-staged line shift (+1 import line). **Row re-measured:** the later `_integrated_result` row carried four ranges none of which held the function at HEAD already; it now cites `_integrated_result`'s extent (`576-609`).
+- 2026-09-30T18:01:55+00:00: Generated citation repair: `validate_integrate_contract`; `validate_integrate_memory_contract` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:170-192; mcp/src/agents_remember/worktrees/modules/integrate.py:195-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:01:55+00:00: Generated citation repair: `_integrated_result`; `_checkpoint_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:576-609; mcp/src/agents_remember/worktrees/modules/integrate.py:939-976. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Retired ledger candidate/output fields and mapping projection gates; preserved two-output ancestry, exact ref CAS, handover/ownership checks, checkpoint capture, and finalization separation. Superseded obsolete active-body acceptance and hard-reset rollback claims. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
@@ -158,7 +177,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding for the master full gate and removal of the requires_integrated_acceptance repo-name policy; refreshed integration_quality citations to the post-cutover ranges.
 | The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:321-369 |
-| The integrated result records the completed publication outcome and promises only the landing. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:600-637; mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/integrate.py:882-882; mcp/src/agents_remember/worktrees/modules/integrate.py:897-897 |
+| The integrated result records the completed publication outcome and promises only the landing. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:576-609 |
 | The altitude-proof module this row cited was deleted with the removed closeout fixture chain (commit `9e1743c1`); the altitude matrix it described is no longer retained as test coverage. | — | — |
 | Historical/removed: the direct-legacy-integration cases named here lived in `test_worktree_support_tests_2.py` / `_3.py`, which no longer exist. Journaled production-path suites own successful movement and recovery; this row records the earlier coverage rather than a current test. | N/A | N/A |
 

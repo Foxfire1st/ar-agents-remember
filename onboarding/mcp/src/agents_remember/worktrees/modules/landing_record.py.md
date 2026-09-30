@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ has only the landed commit to record.
 
 This file exists because the cell it writes is read as an authority, not as a report.
 `worktree_cleanup` refuses until `integration_status == "completed"`
-cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:637-712), and the series
+cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:645-720), and the series
 abandon guard reads the same cell to decide whether a master's work has left it
 cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276).
 Two writers would therefore mean two definitions of "landed", and the one that was never called is
@@ -38,7 +38,7 @@ The shared landing record contains strategy, code commit, and optional memory-co
 
 The landed facts travel as one frozen record,
 `LandedIntegration(strategy, code_commit, memory_content_commit="")`
-cit:([`LandedIntegration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:28-33), and the
+cit:([`LandedIntegration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33), and the
 writer is
 `record_landed_integration(contract, *, landed: LandedIntegration, checkpoint: bool = False)`
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
@@ -63,9 +63,9 @@ here is not an assertion that memory was carried.
 
 Three callers reach it and no others: the local final integration result
 cit:(["def _integrated_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:574-607), the local
-checkpoint result cit:(["def _checkpoint_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:890-927),
-and the pull-request entry point
-cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142).
+checkpoint result cit:(["def _checkpoint_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:939-939),
+and the pull-request entry point, which since MIK-R09 first checks the landed memory commit on converted memory
+cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:168-253).
 `LandedIntegration` is why the signature could gain `checkpoint` at all: threading a fifth keyword
 onto the writer would have pushed it past the enabled argument-count rule, and bundling the landed
 facts keeps the one writer the single definition of "landed" that this module exists to be.
@@ -119,9 +119,9 @@ The following current source boundaries establish the ledger-retirement behavior
 | --- | --- | --- |
 | The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | `integration_strategy` | mcp/src/agents_remember/worktrees/worktree_contract.py:264-264 |
 | The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
-| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
-| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:890-927 |
-| The pull-request route calls the same writer. (`record_landed_integration(`) | `updated`; "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:121 |
+| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:576-609 |
+| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:939-976 |
+| The pull-request route calls the same writer. (`record_landed_integration(`) | `updated`; "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:232-239 |
 | Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
 | The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276 |
 
@@ -135,6 +135,10 @@ there is no cross-repository protocol to cite.
 | No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No change to the landing writer: its own source is unchanged. **Reopened claim reworded:** the caller sentence naming `record_landing_result`, which MIK-R09 (260928-MIK-L09) changed structurally (it checks the landed memory commit through the mandatory gate on converted memory before recording); this pass's generated bullet for it was removed. The other prose citations were re-pointed by the installed fixer (bullets kept). No verification stamp was advanced.
+- 2026-09-30T18:01:59+00:00: Generated citation repair: `_checkpoint_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:939-976. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:01:59+00:00: Generated citation repair: `updated`; "record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:232-239; mcp/src/agents_remember/worktrees/modules/record_landing.py:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:01:59+00:00: Generated citation repair: "def _checkpoint_result(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:939-939. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=4db2c4475bc64fafbcf231bdeb2c00f0a7d60bf84b9337add2ef413b2a24bfc5. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_onboarding_trace_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T20:47:37+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,7 +46,11 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
   writes a `knowledge-worklist-base/v1` cache file and shows it is ignored and rewritten as v2.
 - **Retired checks.** `test_converted_trees_get_no_verification_stamps_and_no_history_sort`.
 - **Enforcement.** `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count`
-  drives the controller (`_run_controller`); `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
+  drives the controller (`_run_controller`). Since MIK-R09 (leaf 260928-MIK-L09) `_run_controller` captures the real
+  candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
+  `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
+  are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
+  written; `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
   pins ruling Q2 and the `(kind, subject)` order; `test_an_unconverted_leaf_keeps_todays_gate_unchanged`
   asserts that the sides and the worklist are `None` and today's gate runs.
 
@@ -94,10 +98,10 @@ here and not cited as a row.
 | Unreadable history and unestablished sides are findings. | `test_unreadable_history_and_unestablished_sides_are_findings_never_a_pass` | mcp/tests/test_onboarding_trace_gate.py:513-533 |
 | The conversion counts for nothing; a v1 cache file is rewritten. | `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` | mcp/tests/test_onboarding_trace_gate.py:552-604 |
 | No stamps and no history sort on converted trees. | `test_converted_trees_get_no_verification_stamps_and_no_history_sort` | mcp/tests/test_onboarding_trace_gate.py:607-620 |
-| Each missing trace counts toward `curatorActionableCount`. | `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` | mcp/tests/test_onboarding_trace_gate.py:706-723 |
-| The items are in the persisted worklist. | `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` | mcp/tests/test_onboarding_trace_gate.py:726-748 |
-| An unconverted leaf keeps today's gate. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:751-758 |
-| The unit-lane registration. | "mcp/tests/test_onboarding_trace_gate.py" | mcp/tests/test-evidence-lanes.toml:116-116 |
+| Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). | `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` | mcp/tests/test_onboarding_trace_gate.py:702-722 |
+| The items are in the persisted worklist. | `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` | mcp/tests/test_onboarding_trace_gate.py:725-747 |
+| An unconverted leaf keeps today's gate. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:750-757 |
+| The unit-lane registration. | "mcp/tests/test_onboarding_trace_gate.py" | mcp/tests/test-evidence-lanes.toml:121-121 |
 
 ## Cross-Repo References
 
@@ -108,6 +112,10 @@ No meaningful cross-repo references found: the fixtures are temporary repositori
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The Enforcement bullet records that the controller helper captures real candidate trees and that the count is now 3 (the two traces plus the uncovered file's `unexplained_hunk`, each open item counted once by the gate). **Reopened claim reworded:** the test's row; this pass's generated bullet for it was removed. The other rows were re-pointed by the installed fixer (bullets kept), including the lane row (`:121`).
+- 2026-09-30T18:03:31+00:00: Generated citation repair: `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` repointed to mcp/tests/test_onboarding_trace_gate.py:725-747. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:03:31+00:00: Generated citation repair: `test_an_unconverted_leaf_keeps_todays_gate_unchanged` repointed to mcp/tests/test_onboarding_trace_gate.py:750-757. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:03:31+00:00: Generated citation repair: "mcp/tests/test_onboarding_trace_gate.py" repointed to mcp/tests/test-evidence-lanes.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): created this card for the new test file MIK-R30 adds (15 cases). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

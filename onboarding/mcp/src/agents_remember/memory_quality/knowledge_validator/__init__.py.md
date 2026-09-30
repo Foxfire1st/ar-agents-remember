@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,7 @@
 - The module map names `rules_admission` (MIK-R27's admission rule: refused on a new record, reported on an existing one, and the count of records still `legacy-unassessed`). Nothing is re-exported for it: its rules reach callers through the one registry.
 - The module map names `rules_decisions` (MIK-R13's decision content rules: alternatives, `reconsider_when`, `superseded` never stored, `reconsider_on` indexes, and the governs links reported). Nothing is re-exported for it either.
 - The module map names `rules_reconsideration` (MIK-R14's guard `R14.1-linked-alternative-order`: an alternative a `reconsider_on` link addresses keeps its index, so a reorder never silently retargets the link). Nothing is re-exported for it; `validator.py` imports it for its registration.
+- The module map names `rules_history` (MIK-R09's rule on history rows that are not frozen: their subjects name records and their covered entries' `after` anchors are the tree's; leaf 260928-MIK-L09). Nothing is re-exported for it; `validator.py` imports it for its registration of `R09-history-rows` and the report-only `R09-history-rows-merged`.
 - The docstring states the scope boundary: the validator judges no meaning (Doc13). Whether a statement is true or a realization really enforces its invariant is the curator's and the reviewer's; whether an anchor's content still matches the code is currentness (MIK-R03), not validity.
 
 ### Conventions
@@ -42,7 +43,7 @@
 
 ### Todos
 
-None recorded. The routes that MIK-R09 owns (closeout, direct/record landing, master and checkpoint landing) and the writer (MIK-R12) will call this package; they are not wired yet.
+None recorded. The routes that MIK-R09 owns (closeout, direct/record landing, master and checkpoint landing) now call this package (leaf 260928-MIK-L09, the carried L22 obligation: `memory_commit_refusal` at every route, and the gate's own validator run); the writer (MIK-R12) calls it too. All of it runs only on converted memory.
 
 ## Docs References
 
@@ -62,10 +63,11 @@ The re-exported API and the module map.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The re-exported names, `writer_reported_rule_ids` included. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:58-78 |
-| Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. | `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:19-19; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:34-34; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:37-37 |
-| The route adapter the composition binds. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
-| The module map names MIK-R14's link guard, and importing the validator registers it. | "MIK-R14's guard: an alternative a"; "registers MIK-R14's link guard" | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:17-18; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:27-29 |
+| The re-exported names, `writer_reported_rule_ids` included. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:60-80 |
+| Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. | `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:19-19; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:34-34; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:37-37; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:40-40 |
+| The route adapter the composition binds. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124 |
+| The module map names MIK-R09's history-row rule, and importing the validator registers it. | "MIK-R09's rule on history rows that are not frozen"; "registers MIK-R09's open history row rule" | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:19-20; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:28-28 |
+| The module map names MIK-R14's link guard, and importing the validator registers it. | "MIK-R14's guard: an alternative a"; "registers MIK-R14's link guard" | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:17-17; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31 |
 | The module map names MIK-R13's decision rules, and importing the validator registers them. | `rules_decisions` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:15-16; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:24-26 |
 
 ## Cross-Repo References
@@ -77,6 +79,8 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The module map names `rules_history` (`R09-history-rows` and `R09-history-rows-merged`), and the Todo that said the MIK-R09 routes were not wired now says they call the package (the carried L22 obligation). One row added. The rule-registration row into `validator.py`, which the installed fixer declined, was re-pointed by the exact base-to-staged line shift (+3; every anchor checked).
+- 2026-09-30T18:00:18+00:00: Generated citation repair: "MIK-R14's guard: an alternative a"; "registers MIK-R14's link guard" repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:17-17; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** A Logic bullet records that the module map names `rules_reconsideration` (the `R14.1-linked-alternative-order` guard; nothing re-exported). One row added. The rows the fixer declined were re-pointed by the exact line shift of this leaf's diff; the others were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic records the `rules_decisions` module-map entry and its registration through `validator.py` (five decision content rules). One row was added; the existing import row the fixer re-pointed was not reworded. No verification stamp was advanced.
 - 2026-09-30T01:08:26+00:00: Generated citation repair: `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:19-19; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:28-28; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.

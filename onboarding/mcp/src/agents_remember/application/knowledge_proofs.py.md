@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_proofs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,8 +96,8 @@ The two readings and their consumers.
 | The cached or throwaway index. | `_unproven`; `KnowledgeIndexCache` | mcp/src/agents_remember/application/knowledge_proofs.py:193-203 |
 | The tests the migrated evidence names. | `_evidence_tests`; `tests_named_in` | mcp/src/agents_remember/application/knowledge_proofs.py:206-213 |
 | The view consumer, since MIK-R02 the per-page extras of a converted tree's read. | `_tree_extras`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
-| The checklist consumer. | `_without_proof`; `invariants_without_proof` | mcp/src/agents_remember/application/memory_quality/controller.py:762-773 |
-| The index lookups it reads. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:261-269; mcp/src/agents_remember/memory/knowledge_index/query.py:271-283 |
+| The checklist consumer. | `_without_proof`; `invariants_without_proof` | mcp/src/agents_remember/application/memory_quality/controller.py:857-868 |
+| The index lookups it reads. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:265-273; mcp/src/agents_remember/memory/knowledge_index/query.py:275-287 |
 | Migrated evidence is listed, then a curator pass writes the proof and the list empties. | `test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass` | mcp/tests/test_knowledge_proofs.py:429-466 |
 | The cache is reused, and an unreadable cache is reported, not raised. | `test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one` | mcp/tests/test_knowledge_proofs.py:469-485 |
 
@@ -113,6 +113,7 @@ caller, and the coordination index cache.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `application/memory_quality/controller.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the row it declined, by the exact base-to-staged line shift, checked in both ranges. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; rows citing `application/memory_quality/controller.py` lines that MIK-R10 moved were re-pointed, and the fixer also normalised two `memory/knowledge_index/query.py` rows that were already one line off (their anchors resolve unchanged at the new ranges); these rows were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `mcp/tools/knowledge.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **reopened consumer row re-read and reworded.** `mcp/tools/knowledge.py` now calls `tree_view_proofs` from `_tree_extras`, once per page of a converted tree's read (MIK-R02, architect ruling F3 of 2026-09-29 20:40:40), not from `_read_result`; the row names `_tree_extras` and cites `knowledge.py:463-479`. This module is unchanged.

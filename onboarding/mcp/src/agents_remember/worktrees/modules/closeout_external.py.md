@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,9 +20,40 @@ Owns the external-memory content leg of journaled closeout after code acceptance
 
 ## CCR-R12@v5 Current External Transaction Boundary
 
-`external_closeout_commits` receives the accepted code change and normalized input. It refreshes existing onboarding metadata, route-overview metadata, entity fingerprints, and generated route indexes, then creates a memory-content commit only if real memory content changed. The prepared staged-index commit uses `--no-verify`; this owner does not introduce an additional quality or curator gate.
+`external_closeout_commits` receives the accepted code change and normalized input. It refreshes existing onboarding metadata, route-overview metadata, entity fingerprints, and generated route indexes, then creates a memory-content commit only if real memory content changed. The prepared staged-index commit uses `--no-verify`; this owner does not introduce an additional quality or curator gate, except MIK-R09's closing and exact-tree validation on converted memory (section below).
 
 Attribution is rendered before the commit object is created: `effective_input.memory_content_message(code_commit)` supplies the accepted message body and the `Code-Commit:` trailer, and `prove_git_commit` records the exact output. The later cache refresh derives from Git history and returns only informational state. Failure to render or write that cache cannot undo or block a proven memory output.
+
+## 260928-MIK-L09 The Closeout Memory Commit Closes The Leaf's History File And Validates Its Exact Tree (MIK-R09 Rule 3)
+
+On a converted leaf (`worktrees.knowledge_gate.leaf_memory_converted`: the memory worktree's layout marker, or the
+official memory line's tip), `external_closeout_commits` now:
+
+- closes the leaf's history file before the memory commit (`close_owner_history`, MIK-R07 rule 7): it sets
+  `closed: true`, creating `knowledge/history/<leaf>.json` with no rows when the leaf wrote none; the rows are never
+  rewritten. A converted leaf that names no leaf ID refuses (`_owner`);
+- passes the `HistoryClosing` into `_commit_memory_content(..., closing=...)`, which, once real content is dirty,
+  validates **the exact tree it is about to commit** (`_refuse_invalid_memory_commit`: captured through a private
+  index with the commit's own exclusions, validated through `memory_commit_refusal(..., leaf_publication=True)`
+  against the parent line's memory tip, paired with the closeout's code commit; the carried L22 obligation and the
+  L27 admission base) before `begin_git_mutation`;
+- restores the file on a refusal or on any failure before the commit begins (a failed tree capture, a failed or
+  timed-out tip read, which is named, or `prepare_memory_cache`), so a refused closeout leaves the file as the leaf
+  wrote it (review R1 F2, ruling 2026-09-30T16:07:55). The closing flag is written inside the same memory commit,
+  which keeps its `Code-Commit` trailer (MIK-R09 Preservation: the paired c-12 transaction).
+
+The curator coherence validated before this (`curator_coherence._require_knowledge_gate`) already ran the full gate over
+the same bytes; this is the exact-tree backstop. **Unconverted leaves are unchanged:** `leaf_memory_converted` is
+false, no file is written, and `unconverted.sh` finds the real memory commit (tree `20ccf39a…`, message and trailer)
+identical between the base build and this build. Tests: `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`,
+and through the public entry `test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid`
+and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed` (N08).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The converted leaf's history file is closed before the memory commit. | "closing = close_owner_history(contract.memory_worktree, _owner(contract))" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:70-79 |
+| The owner, and the exact tree validated as a leaf publication against the parent tip. | `_owner`; `_refuse_invalid_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:99-137 |
+| Any failure before the commit restores the file. | `_commit_memory_content`; "closing.restore()" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:140-185 |
 
 ## Code Commentary
 
@@ -65,10 +96,10 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `external_closeout_commits` resumes or creates the memory output, then refreshes its informational cache. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79 |
-| `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
-| `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | `_refresh_external_memory` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:124-150 |
-| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | `_report_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:150-159 |
+| `external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first), then refreshes its informational cache. | "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
+| `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit. | `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:140-185 |
+| `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | `_refresh_external_memory` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:196-222 |
+| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | `_report_memory_commit` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:225-234 |
 
 The memory mutation boundary and the cache renderer have separate owners.
 
@@ -89,6 +120,9 @@ The external-memory worktree is another repository governed by the same closeout
 The current entry point is `external_closeout_commits`. Closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery still govern memory content. Ledger-specific intent, mapping reconciliation, and commits have been removed from this owner rather than retained as a parallel route.
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New section "260928-MIK-L09 The Closeout Memory Commit Closes The Leaf's History File And Validates Its Exact Tree (MIK-R09 Rule 3)": the closing on a converted leaf (MIK-R07 rule 7), the exact-tree validation as a leaf publication against the parent tip before `begin_git_mutation` (the carried L22 and L27 obligations), and the restore on any refusal or failure before the commit (review R1 F2); three rows. The CCR-R12 sentence "this owner does not introduce an additional … gate" now names that exception. **Reopened claims reworded:** the `external_closeout_commits` and `_commit_memory_content` rows; this pass's generated bullet for the second was removed (the first's bullet is committed history). The fixer re-pointed the other rows. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded `external_closeout_commits` row was re-anchored on line-exact quotes ("def external_closeout_commits("); no committed history line was edited.
+- 2026-09-30T18:01:51+00:00: Generated citation repair: `_refresh_external_memory` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:196-222. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:01:51+00:00: Generated citation repair: `_report_memory_commit` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:225-234. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
 - 2026-09-15T00:58 UTC — Rechecked the formatted L9 working candidate and rebound current references after source cleanup; source-sha256=34ad2b8d7424260a75ef5e0aa844d4d2632dbc15fc5b078e03842f7ac87924d4. The older working-candidate snapshot and verification provenance are retained.

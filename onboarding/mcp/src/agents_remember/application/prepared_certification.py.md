@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/prepared_certification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T11:05+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,8 +73,25 @@ the architect accepted it as necessary wiring (ruling 2026-09-29T18:49:50 (6)).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The closeout validator's dispatch between the two gates. | `_realize_prepared_memory`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/application/prepared_certification.py:342-421 |
+| The closeout validator's dispatch between the two gates. | `_realize_prepared_memory`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/application/prepared_certification.py:346-428 |
 | The refusal names each missing trace. | `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses` | mcp/tests/test_onboarding_trace_gate.py:335-349 |
+
+### The prepared path fails closed on converted memory (MIK-R09, L09 gap 3)
+
+`_realize_prepared_memory` now first asks `worktrees.knowledge_gate.prepared_closeout_refusal(contract)`. This
+certified (prepared) path binds its memory commit to the exact curator-attested candidate, so it cannot write
+`closed: true` into the leaf's history file (MIK-R07 rule 7, MIK-R09 rule 3). On converted memory it therefore refuses
+through the path's own `refuse(...)` (`CertificationContractError`, code
+`prepared-closeout-knowledge-history-unclosable`), naming why and that the leaf should close out through the worktree
+closeout commit; a marker probe Git cannot answer refuses too. Unconverted memory gets `None` and runs exactly as
+before. The path has no production caller today (ruling 2026-09-30T14:38:47 gap 3: "fails closed on converted memory
+with a named reason until it can close the history file"); `certification/execution.py::execute_selected_closeout`
+carries the same check at its entry. Tested by `test_the_prepared_closeout_path_fails_closed_on_converted_memory`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The refusal before anything is realized. | "unclosable = prepared_closeout_refusal(request.handoff.contract)" | mcp/src/agents_remember/application/prepared_certification.py:350-352 |
+| Both prepared entry points refuse on converted memory. | `test_the_prepared_closeout_path_fails_closed_on_converted_memory` | mcp/tests/test_knowledge_closeout_gate.py:1034-1046 |
 
 ### Conventions
 
@@ -105,14 +122,14 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The certification's own source index, or a named refusal with a next step. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:424-446 |
-| The candidate route whose register record the closeout gate sees. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:449-568 |
-| The reopened handoff this certification reads. | `_current` | mcp/src/agents_remember/application/prepared_certification.py:146-154 |
-| The scope authority preserved while final HEAD-based checks read the proved view. | `_PreparedScopeAuthority` | mcp/src/agents_remember/application/prepared_certification.py:157-198 |
-| Publication of the selected code artifacts and the final catalog. | `_export` | mcp/src/agents_remember/application/prepared_certification.py:606-655 |
-| The emitted final catalog. | `_manifest` | mcp/src/agents_remember/application/prepared_certification.py:658-707 |
-| Selection of the original Gate-5 result/certificate. | `_select` | mcp/src/agents_remember/application/prepared_certification.py:710-760 |
-| The adapter the lifecycle owner drives. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
+| The certification's own source index, or a named refusal with a next step. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:431-453 |
+| The candidate route whose register record the closeout gate sees. | `_run` | mcp/src/agents_remember/application/prepared_certification.py:456-575 |
+| The reopened handoff this certification reads. | `_current` | mcp/src/agents_remember/application/prepared_certification.py:150-158 |
+| The scope authority preserved while final HEAD-based checks read the proved view. | `_PreparedScopeAuthority` | mcp/src/agents_remember/application/prepared_certification.py:161-202 |
+| Publication of the selected code artifacts and the final catalog. | `_export` | mcp/src/agents_remember/application/prepared_certification.py:613-662 |
+| The emitted final catalog. | `_manifest` | mcp/src/agents_remember/application/prepared_certification.py:665-714 |
+| Selection of the original Gate-5 result/certificate. | `_select` | mcp/src/agents_remember/application/prepared_certification.py:717-767 |
+| The adapter the lifecycle owner drives. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:770-834 |
 | The index acquisition the refusal wraps. | `open_repository_index`; `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:180-274; mcp/src/agents_remember/memory_quality/style/citations/source_index.py:360-431 |
 | The typed error the acquisition failure becomes. | `SourceIndexError` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:64-65 |
 | The route value the certification reads. | `Trees` | mcp/src/agents_remember/memory_quality/style/citations/resolution.py:37-148 |
@@ -125,6 +142,7 @@ No source-local TODO is asserted here.
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New subsection "The prepared path fails closed on converted memory (MIK-R09, L09 gap 3)": `_realize_prepared_memory` refuses `prepared-closeout-knowledge-history-unclosable` on converted memory before anything is realized (ruling 14:38:47 gap 3); two rows. The rows the installed fixer normalised are kept.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the subsection "The onboarding gate at closeout (MIK-R30)": the converted-tree dispatch in `_realize_prepared_memory`, with architect ruling 2026-09-29T18:49:50 (6) accepting this file as wiring. Rows below the import and the dispatch were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 

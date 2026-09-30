@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,23 @@ and retry, public projection, legal controls, cancellation, and completed-dispos
 Store recovery cells and public operation controls follow code and memory-content evidence only. Cache refresh has no operation leg, immutable ledger intent, third commit or recoverable ledger publication state; genuine Git/ref/worker evidence remains authoritative.
 
 Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_location.py` for the locator-to-enclosure chain. `lifecycle_operation_store.py` owns record and meaningful revisions; `observation/status_wait.py` waits for meaningful change, while `lifecycle_operation_projection.py` and the control projector derive one generation-coherent public view.
+
+## 260928-MIK-L09 Cancellation Restores A Direct Landing's Closing
+
+**Route impact (MIK-R09@v2, leaf 260928-MIK-L09; review R1 F3 and R2-5).** A direct landing on converted memory
+closes the leaf's history file before its journal generation exists and keeps the closing in a per-generation receipt
+(`worktrees/knowledge_gate.keep_direct_closing`). For a `direct-landing` record, `control/cancellation.cancel_operation`
+now checks every receipt before anything is terminated or published (an unreadable receipt is
+`direct-landing-closing-receipt-unreadable`, next action `developer-decision`), and once the cancelled outcome is
+published, or on a repeated cancel, settles the generation's receipt as `cancelled`: the file is restored to its
+previous bytes, never over a later edit. Cancellation's no-output proof means no memory commit exists at that point.
+Other operation kinds are untouched; unconverted direct landings keep no closing. Tested by
+`test_cancelling_the_generation_restores_the_file_it_closed_but_never_a_later_edit` and
+`test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The receipt check before anything moves, and the restore after publication. | `_require_readable_direct_closings`; `_restore_direct_closing` | mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py:147-170 |
 
 ## Generation Construction And Retained Resume
 
@@ -129,6 +146,7 @@ The following current source owns the changed behavior; no external domain sourc
 | Recovery state contains the actual two commit outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 Cancellation Restores A Direct Landing's Closing": for a `direct-landing` record, cancellation refuses first on an unreadable closing receipt and restores the history file the landing closed once the cancellation is published (review R1 F3, R2-5); one row. No verification stamp was advanced.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
 - 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def _validate_identity_and_evidence_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-306. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

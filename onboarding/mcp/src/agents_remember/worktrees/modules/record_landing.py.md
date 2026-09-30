@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/modules/record_landing.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,36 +32,68 @@ It is `worktree_record_landing`'s domain half, reached through the MCP tool of t
 
 The PR landing path forwards only the supplied landed code and memory-content commits into the shared `LandedIntegration` writer. It requests no ledger commit and cannot turn cache refresh into evidence that a remote landing occurred.
 
-`record_landing_result(args)` cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142)
+`record_landing_result(args)`, which since MIK-R09 also asks the mandatory gate on converted memory (section below), cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:168-253)
 refuses unless the call is approved or a dry run
-cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:60-60),
+cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:170-170),
 loads the contract, and then short-circuits to `already-recorded` when the cell already records a
 landed integration — `completed` or `checkpointed`
-cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:76-76) —
+cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:186-186) —
 so a repeat is idempotent rather than a second write.
 
-It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:93-93)
+It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:203-203)
 and resolves the branches that commit may legitimately have landed on. Both shapes occur: a master
 integrates into its recorded source branch (the super branch), while a task whose branch was merged
 straight to the protected default bypasses super entirely — which is what happened to
-`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:32-46)
+`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:57-71)
 therefore returns the recorded `code_source_branch` plus `main` when it exists locally, keeping only
 targets that are actually present.
 
 The anti-fabrication check is an ancestry test against those targets
-cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:105-105):
+cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:215-215):
 a commit that landed nowhere cannot set the cell. A `dry_run` reports `would-record` and writes
-nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:115-115).
-The real path records `strategy=PR_STRATEGY` cit:([`PR_STRATEGY`], mcp/src/agents_remember/worktrees/modules/record_landing.py:29-29)
+nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:226-226).
+The real path records `strategy=PR_STRATEGY` cit:([`PR_STRATEGY`], mcp/src/agents_remember/worktrees/modules/record_landing.py:54-54)
 through the shared writer, so the cell says which route landed the work. Since 260831-LOCR-L30 the
 call bundles its landed facts into the shared `LandedIntegration` record (the same record the local
 routes build) and appends no `checkpoint` flag, so this route still records a final landing
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
 
-The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:49-55)
+The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:159-165)
 rather than by `status_payload`. That is deliberate: this operation has no worktree or provider state
 to report, and avoiding the status payload keeps the operation callable and unit-testable without
 bound worktree services.
+
+### 260928-MIK-L09 The Landed Memory Commit Is Checked (MIK-R09 Rule 3)
+
+Record landing commits no memory, but on converted memory it now checks the landed memory commit before the dry-run
+and apply branches (`_require_knowledge_gate(contract, commit, landed_memory_content_commit)`, a `RuntimeError` naming
+every finding):
+
+- **Probe first (review R1 F7, ruling 2026-09-30T16:07:55).** `_line_converted` probes the official memory line and
+  the task's `memory_base_commit` for the layout marker **before** anything reads the landed commit; a probe Git
+  cannot answer refuses by name. On an unconverted line the landed commit is only probed (`_commit_converted`), and
+  one Git cannot read is exempt, exactly as before this master; so an unconverted route records exactly as it did
+  (`test_record_landing_on_unconverted_memory_never_reads_the_landed_commit`, `would-record`; `unconverted.sh`
+  agrees with base, including an unreadable memory commit).
+- **A converted line must name its memory commit** (`_unnamed_memory_commit_refusal`).
+- **The request (`_landing_request`).** An unreadable landed commit on a converted line is refused, named. The
+  validator's base is the parent line the task last synced from (`memory_base_commit`), so every record the task
+  introduced is judged new (the L27 carry); only when it is unset are the commit's parents used (note R2-4). A leaf
+  contract names `leaf_owner`, so the landing also requires the leaf's history file to be `closed` in the landed
+  commit and validates it as a leaf publication (`landing_gate_refusal`); a master's record landing gets the
+  validator without the staleness check (accepted choice, ruling 14:38:47). A memory commit made before the
+  repository was converted carries no marker and is exempt.
+- **Tests:** `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`,
+  `test_record_landing_refuses_through_its_route_entry`, and
+  `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing` (F1); real data `closeout.txt`
+  step 3.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module docstring's gate and probe-first paragraphs. | "On converted memory the record route commits no memory but still checks the landed memory commit" | mcp/src/agents_remember/worktrees/modules/record_landing.py:15-24 |
+| Probe the line first; an unconverted line's commit is only probed. | `_line_converted`; `_commit_converted`; `_unnamed_memory_commit_refusal` | mcp/src/agents_remember/worktrees/modules/record_landing.py:74-103 |
+| The gate's request over the landed commit, based on the task's memory base. | `_knowledge_gate_refusal`; `_landing_request`; `_require_knowledge_gate` | mcp/src/agents_remember/worktrees/modules/record_landing.py:106-156 |
+| The gate runs before the dry-run and apply branches. | "_require_knowledge_gate(contract, commit, args.landed_memory_content_commit.strip())" | mcp/src/agents_remember/worktrees/modules/record_landing.py:220-220 |
 
 ### Conventions
 
@@ -75,9 +107,9 @@ locally, then record the commit it landed) instead of a bare failure.
 
 The `already-recorded` short-circuit covers **both** landing states:
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70),
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:180-180),
 and the summary branches on which one it found
-cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:80-80).
+cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:190-190).
 
 The `checkpointed` half is not cosmetic. The full-record path below writes `completed` plus
 `cleanup="pending"`, and that pending cleanup is exactly what `worktree_cleanup` requires before it
@@ -118,18 +150,18 @@ The following current source boundaries establish the ledger-retirement behavior
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `record_landing_result` validates the recorded code landing and forwards the actual code/memory facts. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-142 |
+| `record_landing_result` validates the recorded code landing, since MIK-R09 checks the landed memory commit on converted memory (before the dry-run and apply branches), and forwards the actual code/memory facts. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:168-253 |
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
-| The local route that already recorded its own landing. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:574-607 |
-| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | `integration_status`; "already-recorded" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70; mcp/src/agents_remember/worktrees/modules/record_landing.py:76-76 |
-| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | `checkpointed`; "This contract already records a checkpointed integration" | mcp/src/agents_remember/worktrees/modules/record_landing.py:80 |
+| The local route that already recorded its own landing. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:576-609 |
+| The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) | `integration_status`; "already-recorded" | mcp/src/agents_remember/worktrees/modules/record_landing.py:180-180; mcp/src/agents_remember/worktrees/modules/record_landing.py:186-186 |
+| The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) | `checkpointed`; "This contract already records a checkpointed integration" | mcp/src/agents_remember/worktrees/modules/record_landing.py:181-181; mcp/src/agents_remember/worktrees/modules/record_landing.py:190-190 |
 | Cleanup refuses until the cell this route sets reads completed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
 | The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:97-154 |
 | The MCP tool and payload that expose this operation. (`worktree_record_landing`) | `worktree_record_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:201-224 |
-| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:498-547 |
+| The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) | `worktree_record_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:547-580 |
 | The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) | `worktree_record_landing` | system/git-workflow.md:50-50 |
 
 ## Cross-Repo References
@@ -142,6 +174,18 @@ is recorded rather than queried at decision time, so no live external boundary i
 | No additional cross-repository evidence applies. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New subsection "260928-MIK-L09 The Landed Memory Commit Is Checked (MIK-R09 Rule 3)": probe first (review R1 F7), a converted line must name its memory commit, the request based on the task's `memory_base_commit` (the L27 carry; note R2-4), the leaf's closed history file and leaf-publication validation, the master's validator-only record landing (14:38:47); four rows. **Reopened claims reworded:** the `record_landing_result` prose citation and table row (both now say the route checks the landed memory commit on converted memory); this pass's two generated bullets for them were removed. **Row re-pointed by exact shift:** the `already-recorded` guard row cited `:70` and `76-76`, which held its anchors at base; they moved +110 (`180-180`, `186-186`). The fixer re-pointed the other prose citations (its bullets are kept).
+- 2026-09-30T18:02:13+00:00: Generated citation repair: `checkpointed`; "This contract already records a checkpointed integration" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:181-181; mcp/src/agents_remember/worktrees/modules/record_landing.py:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "recording a landing requires explicit developer approval" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "already-recorded" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "requires landed_code_commit" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: `_landing_targets` repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:57-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "not reachable from any landing target" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "would-record" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:226-226. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: `PR_STRATEGY` repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:54-54. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: `_identity_payload` repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:159-165. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "contract.integration_status in {\"completed\", \"checkpointed\"}" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T18:02:13+00:00: Generated citation repair: "This contract already records a checkpointed integration" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=d37edafd5a2f8b43edc8d679e8b0e7a610101ba467b8373fa6400067dde477bb. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 

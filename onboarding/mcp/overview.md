@@ -6,13 +6,121 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover
+
+`260928-MIK-L09` (MIK-R09@v2; D5: "Invariant work is MANDATORY! Never just reporting.") makes invariant maintenance a
+gate, not a report. No route that commits a leaf's memory commits while an item of the leaf's **recomputed** worklist
+(MIK-R08) lacks a current satisfying row in its history file (MIK-R07), while the worklist run is `incomplete`, or
+while the validator (MIK-R22) fails; each is one repair finding in `curatorActionableCount`. A master or checkpoint
+lands only when no entry at a path its net code diff changed is stale or unverifiable (MIK-R03). No waiver, override
+flag or report-only mode exists.
+
+- **Where:**
+  - `application/knowledge_gate/` (new, six modules, carded under the application overview): `predicates` (each
+    kind's own predicate; rule 2's invariant and family currentness), `gate` (`evaluate_leaf_gate`: probe, tip, memo,
+    recompute over the exact trees, decide, validate as a leaf publication against the parent line's memory tip),
+    `memo` (the bounded memo keyed by the exact trees, contract, parent tip, task document, build and the recorded
+    requirement-file reads), `direct` (direct landing's sides and leaf), `landing` (record landing's closed history
+    and the master's net staleness), `adapter` (`KnowledgeGate`, the port implementation).
+  - `worktrees/knowledge_gate.py` (new): the marker probes, `GATE_UNBOUND`, `close_owner_history` (the closeout's own
+    `closed: true`, MIK-R07 rule 7), the direct landing's per-generation closing receipts, and the prepared path's
+    fail-closed refusal; `worktrees/services.py` declares `KnowledgeGatePort`; `application/worktree_services.py`
+    binds it.
+  - The routes: the curator publication (`application/memory_quality/controller.py`: every gate finding is a
+    `knowledge-gate` repair finding), the closeout validator (`curator_coherence._require_knowledge_gate`), the
+    closeout memory commit (`closeout_external`: close, validate the exact tree, restore on refusal), direct landing
+    (gate, close, validate, keep the closing until the generation is decided; cancellation restores it), record
+    landing (probe first; the landed commit validates and a leaf's file is closed), master and checkpoint landing
+    (`integrate._knowledge_gate_block`), and the prepared path (`certification/execution.py`,
+    `prepared_certification.py`: refuses on converted memory).
+  - `memory_quality/knowledge_validator/rules_history.py` (new): `R09-history-rows` (every history file's subjects
+    resolve; open files, and at leaf publications every file not closed in a base, re-anchor-checked) and the
+    report-only `R09-history-rows-merged`; `ValidationContext.leaf_publication` and `GitKnowledgeValidation.leaf_refusal`.
+  - `kernel/recorded_reads.py` (new): the read-set recorder; `requirement_endpoint` and `trace_context` record the
+    files outside any tree.
+  - The worklist: `leaf.py` (`CandidateTrees`, `worklist_over`, the strict maintenance scope, fail-closed probes),
+    `compute.py` (`_linked`, the symmetric definition 8; `git_failure`), `observe.py` (`read_failed`,
+    `CodeObjectUnavailable`), `code.py` and `memory/conversion/code_objects.py` (`has_blob`), `onboarding_trace.py`,
+    `knowledge_worklist_section.py` (`item_facts`, `_trace_facts`); L32's `review_lane_classification.py` docstring
+    and `review_tree_entries.py`.
+- **Rulings** (`09_mandatory-invariant-closeout-gate.json`).
+  - **Carried obligations and D29, gathered by the start decision 2026-09-30T13:15:47:** validator wiring at every
+    route (L22, `memory_commit_refusal` with a refusal test at each); the L12 history-row rule through the registry;
+    `SubprocessError` → `incomplete` naming `git` (L03, 19:15:20); per-kind stored-item predicates (L30 N6, L06 Q7,
+    L10, L14); the admission base is the parent line's memory tip (L27 Q6); fail-closed task-document reads and
+    always recompute (L11); subject-keyed family route items (L06 N2); the insertion-only symmetry (L10 N3); an
+    unanswered reconsideration candidate blocks (D29).
+  - **14:38:47, gaps 1–4:** gap 1, MIK-R09 rule 6's second bullet (refuse unconverted trees at the routes, naming the
+    crossing sync) is **carried to L37**, not built here; gap 2, direct landing infers its leaf (the one open history
+    file) on converted memory only, with no schema change; gap 3, the prepared path fails closed on converted memory;
+    gap 4, the bounded memo keyed by exact inputs. Accepted smaller choices: the history-row rule's scoping and a
+    master's record landing without the staleness check.
+  - **15:09:25:** refusals over complete inputs may be memoised; the memo records every requirement file it read and
+    reuses a verdict only while each still hashes the same.
+  - **16:07:55, review R1 (changes-required) F1–F9:** F1 the row rule applies to every file not closed in K_B, scoped to
+    leaf-publication routes; F2 a refused closeout restores the file it closed; F3 direct landing keeps its closing
+    until the generation is decided, and an exact retry reaches the existing generation before the gate; F4
+    unverifiable blocks at landing; F5 one refusal test per public route entry; F6 the admission base and memo key
+    tested; F7 record landing probes first; F8 L32's docstring; F9 Git failures are incomplete and never memoised,
+    the conversion probe fails closed, probe timeouts are named, the settings fallback joins the read set, a
+    conflicting read is never kept. **Sync merges:** a merge-caused mismatch is report-only (`R09-history-rows-merged`);
+    one already present on the leaf's side refuses.
+  - **16:08:08, carried to L37:** reopen after the cutover (a closed-out leaf's history file is frozen in K_B).
+  - **17:59:48, review R2 (pass-with-notes):** R2-1 `unknown_subjects` over every history file at every route (the L22
+    validator fixtures now keep the retired record `INV-RET1R3`, per MIK-R22 rule 3); R2-2 per-generation receipts
+    (N12) and the pinned guards; R2-3 `CodeObjectUnavailable` named, not a Git failure; R2-5 a corrupt receipt is a
+    named refusal; R2-4 accepted as a note.
+  - **19:16:07, review R3 (pass):** R3-1 the landed-generation backstop hashes with `git hash-object` (the repository's
+    own object format); R3-2 `has_blob` tells a missing object from a Git failure.
+- **Candidate invariants (not ingested; no speculative ingestion):**
+  1. No memory reaches a leaf-publication route (worktree closeout, direct landing, a leaf's record landing) without
+     the gate's recomputed worklist fully answered and the validator passing; no waiver, override or report-only mode
+     exists (`judge`, the route refusals, `GATE_UNBOUND`; the gate and route tests, and `gate-1..4` on real data).
+  2. The gate always recomputes from the exact trees; a kept verdict is reused only for identical trees, contract,
+     parent tip, task document, build and recorded requirement-file reads; incomplete runs and Git failures are never
+     kept (`recompute_for_gate`, `GateMemoKey`, `_Kept`, `GateResult.memoisable`; the memo, approval-state, tip and
+     Git-failure tests).
+  3. An unreadable input (a Git failure, an unreadable task document or knowledge) makes the run incomplete with a
+     named reason; it is never read as unchanged, answered or absent (`git_failure`, `strict_leaf_doc`,
+     `has_layout_marker`, `read_failed`, `has_blob`; the incomplete, predicate/validator, probe and blob tests).
+  4. On unconverted memory every route behaves exactly as before the gate (the marker probes; the unconverted test;
+     `unconverted.sh`, base against this build on the real memory: identical apart from the build label).
+  5. A history file closed in K_B is frozen; at leaf-publication routes every other history file's rows must agree
+     with their entries, whatever the file's own closed flag says (`checked_history_files`, `leaf_publication`; the
+     F1, N01, N08 and N09 tests).
+  6. Every subject a history row names resolves in the tree, at every route (`check_history_rows`; the ghost-subject
+     master-landing test).
+- **Inert until the cutover.** Every gate path runs only on converted memory (the layout marker on K_B or K_C); on
+  unconverted memory, which is all production memory before MIK-R37, closeout, landing and sync behave exactly as on
+  base. The exceptions, not behind the marker probe: a Git failure in the conversion's `has_blob` now refuses instead
+  of reading "absent"; `has_blob` itself distinguishes a missing object from a Git failure; and the reviewer lane's
+  cards read names such a failure `unavailable` instead of raising. The gate goes live with MIK-R37's installed build
+  (rule 8); the cutover's own closeout is its first real-workflow evidence.
+- **Tests and evidence.** `test_knowledge_closeout_gate.py` (18 cases), `test_knowledge_gate_routes.py` (27 cases), two
+  sync-merge cases in `test_knowledge_validator_routes.py`, adapted counts in `test_knowledge_worklist_leaf.py` (0 → 4)
+  and `test_onboarding_trace_gate.py` (2 → 3), and the `RETIRED` fixture in `test_knowledge_validator.py`. Mutations:
+  26, 37 and 4 of the worker's killed, and the reviewer's N01–N21 set as recorded. Real data on converted scratch
+  copies (`notes/reports/260928-MIK-L09-evidence/`): `gate-0` pass, `gate-1` refused with 5 findings (the packet's
+  `_not_listed` edit), `gate-2` pass once rows were ingested, `gate-3` refused with 2 (edited again), `gate-4` pass;
+  the scripted closeout and landings (`closeout.txt`); the maintenance scope (178 entries, 15 findings); the memo
+  timing (about 67 s → 17 s and 31 s → 8 s per run). Final checks (R3): unit suite 3,406 passed, integration lane 457
+  passed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The gate over a leaf's exact candidate. | `evaluate_leaf_gate`; `judge` | mcp/src/agents_remember/application/knowledge_gate/gate.py:236-261; mcp/src/agents_remember/application/knowledge_gate/gate.py:317-342 |
+| Each kind's own predicate, registered beside the kind. | "register_gate_predicate(\"touched_invariant\", invariant_row_open)" | mcp/src/agents_remember/application/knowledge_gate/predicates.py:282-290 |
+| The worktree layer's probes, the unbound refusal and the closeout's own write. | `GATE_UNBOUND`; `leaf_gate_refusal`; `close_owner_history` | mcp/src/agents_remember/worktrees/knowledge_gate.py:89-92; mcp/src/agents_remember/worktrees/knowledge_gate.py:176-196; mcp/src/agents_remember/worktrees/knowledge_gate.py:279-300 |
+| The history-row rule over every file's subjects and the leaf's own file. | `checked_history_files`; `check_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:80-91; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:161-179 |
+| The two lane rows. | "mcp/tests/test_knowledge_closeout_gate.py"; "mcp/tests/test_knowledge_gate_routes.py" | mcp/tests/test-evidence-lanes.toml:122-123 |
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
 
@@ -191,9 +299,9 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
 | --- | --- | --- |
 | The worklist registrant: what is read, the triggers, route and superseded rulings, the items. | "item kind: a decision whose reconsider target changed" | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:1-39 |
 | The writer's rows, the refresh and its link states. | "The writer's reconsideration rows (MIK-R14 rule 4)" | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:1-54 |
-| The manifest lookup. | `requirement_approval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:183-194 |
+| The manifest lookup. | `requirement_approval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209 |
 | The reorder guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-139 |
-| The lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:128-128 |
+| The lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -424,8 +532,8 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 | --- | --- | --- |
 | The two kinds and the coverage lookup. | "MIK-R10's unexplained changes" | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:1-35 |
 | The subjects and the gate predicate. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
-| A delete-only hunk is linked only by a K_B range. | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560 |
-| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
+| A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). | "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:601-613 |
+| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:129-129 |
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -477,7 +585,7 @@ and the archive hook that deletes a task's review artifacts.
 | The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
 | The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:36-36 |
 | The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
-| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:124-124; mcp/tests/test-evidence-lanes.toml:126-126 |
+| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:128-128 |
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -528,7 +636,7 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 | --- | --- | --- |
 | The content rules and derived reads. | "MIK-R13's content rules for decision records, and the reads they make possible." | mcp/src/agents_remember/models/knowledge_files/decisions.py:1-25 |
 | The five registered decision rules. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-144 |
-| The owner resolves each requirement endpoint; unresolved is reported. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:85-121 |
+| The owner resolves each requirement endpoint; unresolved is reported. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:92-129 |
 | The writer reports each endpoint of the records the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/requirement_links.py:24-53 |
 | A decision is never an export. | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
 
@@ -619,7 +727,7 @@ retired. Retired families raise nothing. Nothing is rerouted automatically.
 | --- | --- | --- |
 | The module statement. | "family routes maintained with the code" | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:1-50 |
 | The stored predicate for the gate. | `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:141-154 |
-| Step 6 of the run. | `_route_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:502-525 |
+| Step 6 of the run. | `_route_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:507-530 |
 
 ## 260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover
 
@@ -763,8 +871,8 @@ stamps once memory is converted (D23).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The rule's statement for converted trees. | "The onboarding refresh gate on history files (MIK-R30), for converted memory trees." | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:1-27 |
-| The memory-quality dispatch between the two gates. | `_onboarding_refresh_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:709-759 |
-| The gate chooser both enforcement points share. | `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:502-535 |
+| The memory-quality dispatch between the two gates. | `_onboarding_refresh_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:804-854 |
+| The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). | "def leaf_onboarding_trace_sides(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:596-630 |
 
 ## 260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover
 
@@ -828,7 +936,7 @@ sides are unconverted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one recompute entry point every trigger calls. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:548-579 |
+| The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate instead). | "def recompute_leaf_worklist(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:659-694 |
 | The CLI subcommand. | `run`; `leaf_worklist` | mcp/src/agents_remember/cli/knowledge_worklist.py:99-114 |
 
 ## 260928-MIK-L28 First-Class Test Proofs Are Read Back And Listed, Not Yet Used
@@ -1203,6 +1311,13 @@ backslash on each side.
 
 ## Update History
 - 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **The L32 review F5 carry is resolved** (ruling 2026-09-30T13:07:38). MIK-L34 (per-hunk intent markers, dashboard only) marks every owner hunk a lane window draws, a neighbour shown only as context included, and corrects the "the full file shows every one" wording; the L32 section's F5 clause now says so, and its Q5 clause records that L34 kept L32's membership mapping as it is (each state maps directly onto a marker target; ruling 2026-09-30T16:19:34 Q2 left the response unchanged). This leaf changed no file under `mcp/`, so the route needs no section of its own; the leaf's section is in `dashboard/src/panels/overview.md`.
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover" at the top: where the leaf lands (the new `application/knowledge_gate/` package, `worktrees/knowledge_gate.py`, `rules_history.py`, `kernel/recorded_reads.py`, and every route), every ruling of `09_mandatory-invariant-closeout-gate.json` (the carried obligations and D29 of 13:15:47; 14:38:47 gaps 1–4 with gap 1 carried to L37; 15:09:25; 16:07:55 F1–F9 and the sync-merge rule; 16:08:08 carried to L37; 17:59:48 R2; 19:16:07 R3), the six candidate invariants, inertness and its three exceptions, and the tests and real-data evidence; five rows. **Reopened claims reworded:** L10's delete-only row (now both sides, anchored on `_linked`), L30's gate-chooser row and L08's recompute row; this pass's generated bullets for those three were removed. The other moved rows were re-pointed by the installed fixer (bullets kept) or by the exact base-to-staged line shift. No verification stamp was advanced. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded rows were re-anchored on line-exact quotes ("def _linked(" with the `_linked` condition line, "def leaf_onboarding_trace_sides(", "def recompute_leaf_worklist("); no committed history line was edited.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: `requirement_approval` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: `_onboarding_refresh_gate` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:804-854. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:58:19+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:901-937. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master" at the top: D32, where the leaf lands (including the c-09 package copy this route governs), every ruling (12:33:07 Q1-Q4, 13:11:32 finding 1 and notes 2-5, 13:35:32, 14:12:52, the L32 sync), the three candidate invariants, that it is not gated on conversion, the real-path evidence and tests; three rows. The installed fixer normalised one memory-relative row into `memory/overview.md` (`1-2146` → `1-2148`), a document this leaf did not change. No verification stamp was advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover" at the top: where the leaf lands, every ruling (PS-1, 12:19:20 Q1-Q7 with Q2 carried to L37, 13:07:38 F1-F6 with F5 carried to L34, R2 pass, the L35 sync rerun), the five candidate invariants, inertness, tests and evidence, and three rows. The moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1531,7 +1646,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:135-135 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:137-137 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -1782,9 +1897,9 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:517-681; mcp/src/agents_remember/application/memory_quality/controller.py:370-390; mcp/src/agents_remember/application/memory_quality/controller.py:393-467 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:806-842 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:568-722; mcp/src/agents_remember/application/memory_quality/controller.py:372-392; mcp/src/agents_remember/application/memory_quality/controller.py:395-468 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:901-937 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:770-834 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:

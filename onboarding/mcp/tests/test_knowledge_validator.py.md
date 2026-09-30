@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_validator.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,7 @@
 - **Rules 4 and 5:** an invariant that lists its realizations; a missing family member.
 - **Rule 6:** an added anchor at a missing path, a carried anchor at a deleted path (reported stale; with an empty code tree the family's carried routes are reported too, as `R04.1-carried-route-absent`), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
 - **Rule 7:** a closed history file is frozen (edited, deleted, closed in one merge parent); an open one may change; history is shape-only (the packet's rename boundary example).
+- **The retired subject kept in the tree (MIK-R09, L09 review R2-1, ruling 2026-09-30T17:59:48).** The three rule-7 cases use a history file whose subject `INV-RET1R3` stands for "a subject that has since been retired". Since L09, MIK-R09's `R09-history-rows` rule checks every history file's subjects at every route (`unknown_subjects`), so a subject absent from the tree would now refuse. MIK-R22 rule 3 says records are never deleted (retiring sets `status: retired` and keeps the file), so the fixtures now model it faithfully: `RETIRED` adds `INV-RET1R3` with `status: retired` (and an unchecked admission) to each tree, including the left merge parent. The assertions are unchanged, and the packet's boundary example (a renamed `before` path in a closed file) still passes.
 - **Rules 8 and 9:** applicability by the marker; a later packet's rule runs everywhere and a report-only rule never refuses.
 - **Markers:** the grammar table and the invalid-number message.
 - **MIK-R27, the admission rule** (leaf 260928-MIK-L27), with helpers that change one record's admission, drop the proof sidecar's `proves`, leave `INV-7K3F9Q`'s realizations in `integrate.py` only, or add an exported invariant (`_with_export`: its ID is `derived_record_id("invariant", EXPORTED_LEGACY_ID)`, or a forged ID when `identifier` is given):
@@ -72,18 +73,19 @@ Representative cases; the full list is in the module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fixture tree passes with only the legacy count, and MIK-R22's report-only set is pinned. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:93-108 |
-| Merge duplicates are conflicts naming both files; parallel mints merge cleanly. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files`; `test_parallel_leaves_minting_different_ids_merge_cleanly` | mcp/tests/test_knowledge_validator.py:159-172; mcp/tests/test_knowledge_validator.py:175-182 |
-| The hand-added marker is refused. | `test_a_hand_added_marker_without_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:202-210 |
-| A dot-named card and its sidecar are validated. | `test_a_dot_named_card_and_its_sidecar_are_validated` | mcp/tests/test_knowledge_validator.py:302-322 |
-| The boundary merge: three rows, passes, three stale reports. | `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites` | mcp/tests/test_knowledge_validator.py:379-395 |
-| A closed history file is frozen. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:469-484 |
-| MIK-R27: reference-only justifications are refused, real prose is admitted. | `test_a_new_record_whose_justification_is_only_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:656-717 |
-| MIK-R27: an existing record whose test was deleted is only reported. | `test_an_existing_record_whose_test_was_deleted_is_only_reported` | mcp/tests/test_knowledge_validator.py:753-762 |
-| MIK-R27: exported, retired and merge-parent records are never refused. | `test_exported_retired_and_merged_records_are_never_refused` | mcp/tests/test_knowledge_validator.py:765-784 |
-| MIK-R27: a forged legacy ID does not make a record exported. | `test_a_forged_legacy_id_does_not_make_a_record_exported` | mcp/tests/test_knowledge_validator.py:787-802 |
-| MIK-R27: the legacy count and the rules' registration flags. | `test_legacy_records_are_counted_until_assessed_or_demoted`; `test_the_rules_are_registered_refusing_new_and_reporting_the_rest` | mcp/tests/test_knowledge_validator.py:805-821; mcp/tests/test_knowledge_validator.py:824-834 |
-| A later rule runs everywhere; report-only never refuses. | `test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses` | mcp/tests/test_knowledge_validator.py:535-552 |
+| The fixture tree passes with only the legacy count, and MIK-R22's report-only set is pinned. | `test_converted_fixture_tree_passes_every_rule` | mcp/tests/test_knowledge_validator.py:94-109 |
+| Merge duplicates are conflicts naming both files; parallel mints merge cleanly. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files`; `test_parallel_leaves_minting_different_ids_merge_cleanly` | mcp/tests/test_knowledge_validator.py:160-173; mcp/tests/test_knowledge_validator.py:176-183 |
+| The hand-added marker is refused. | `test_a_hand_added_marker_without_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:203-211 |
+| A dot-named card and its sidecar are validated. | `test_a_dot_named_card_and_its_sidecar_are_validated` | mcp/tests/test_knowledge_validator.py:303-323 |
+| The boundary merge: three rows, passes, three stale reports. | `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites` | mcp/tests/test_knowledge_validator.py:380-396 |
+| The retired record the history fixtures keep in every tree (records are never deleted, MIK-R22 rule 3; L09 R2-1). | `RETIRED` | mcp/tests/test_knowledge_validator.py:450-454 |
+| A closed history file is frozen. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:479-494 |
+| MIK-R27: reference-only justifications are refused, real prose is admitted. | `test_a_new_record_whose_justification_is_only_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:667-728 |
+| MIK-R27: an existing record whose test was deleted is only reported. | `test_an_existing_record_whose_test_was_deleted_is_only_reported` | mcp/tests/test_knowledge_validator.py:764-773 |
+| MIK-R27: exported, retired and merge-parent records are never refused. | `test_exported_retired_and_merged_records_are_never_refused` | mcp/tests/test_knowledge_validator.py:776-795 |
+| MIK-R27: a forged legacy ID does not make a record exported. | `test_a_forged_legacy_id_does_not_make_a_record_exported` | mcp/tests/test_knowledge_validator.py:798-813 |
+| MIK-R27: the legacy count and the rules' registration flags. | `test_legacy_records_are_counted_until_assessed_or_demoted`; `test_the_rules_are_registered_refusing_new_and_reporting_the_rest` | mcp/tests/test_knowledge_validator.py:816-832; mcp/tests/test_knowledge_validator.py:835-845 |
+| A later rule runs everywhere; report-only never refuses. | `test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses` | mcp/tests/test_knowledge_validator.py:546-563 |
 
 ## Cross-Repo References
 
@@ -94,6 +96,8 @@ No meaningful cross-repo references found: the cases run over in-memory trees.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09 (a fixture change).** A Logic bullet records the `RETIRED` fixture: the rule-7 history cases now keep `INV-RET1R3` in the tree as a retired record, because MIK-R09's history-row rule checks every file's subjects at every route (review R2-1, ruling 17:59:48) and MIK-R22 rule 3 keeps retired records; assertions unchanged. One row added; the rule-7 rows below it were re-pointed or normalised by the installed fixer (its bullet is kept, since no claim was reworded) or by the exact base-to-staged line shift.
+- 2026-09-30T18:03:19+00:00: Generated citation repair: `test_an_existing_record_whose_test_was_deleted_is_only_reported` repointed to mcp/tests/test_knowledge_validator.py:764-773. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the MIK-R27 section (9 cases, 46 collected) and `LEGACY_COUNT` in L22's pins.** Purpose, the Baseline bullet and a new MIK-R27 bullet state it, with rulings Q2, F1 and F2; the baseline row reworded; five rows added; the other rows re-pointed by the exact line shifts. No verification stamp was advanced.

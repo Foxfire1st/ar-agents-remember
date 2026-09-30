@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/certification/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -59,9 +59,24 @@ Read `observation.py` and `admission.py` for actual candidate admission, `select
 | Currentness rechecks the profile, owner semantics and route review. | `validate_selected_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:343-386 |
 | Recovery derives actual input changes and requires complete prior-red correction. | `derive_certificate_input_changes`; `build_prior_red_context` | mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py:123-152; mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py:155-203 |
 | Journal selection reopens the complete original graph before its live-owner CAS. | `require_selected_certification`; `select_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:128-132; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:580-598 |
-| Execution admits only the selected suffix and current memory/finalization boundary. | `execute_selected_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:344-384 |
+| Execution first refuses the prepared path on converted memory (MIK-R09, gap 3), then admits only the selected suffix and current memory/finalization boundary. | "def execute_selected_closeout(" | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:348-391 |
 | Retained output permits only the selected physically proven code commit. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:28-77 |
-| The ordinary service construction installs the prepared closeout continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:203-211 |
+| The ordinary service construction installs the prepared closeout continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:211-224 |
+
+## 260928-MIK-L09 The Prepared Closeout Fails Closed On Converted Memory
+
+**Route impact (MIK-R09@v2, leaf 260928-MIK-L09, ruling 2026-09-30T14:38:47 gap 3).** This certified (prepared)
+closeout binds its memory commit to the exact curator-attested candidate, so it cannot set `closed: true` in the leaf's
+history file (MIK-R07 rule 7), which MIK-R09 rule 3 requires of a closeout memory commit. `execute_selected_closeout`
+therefore first asks `worktrees/knowledge_gate.prepared_closeout_refusal(contract)`, before recovery, and on
+converted memory refuses with `prepared-closeout-knowledge-history-unclosable`, naming why and that the leaf should
+close out through the worktree closeout commit; `application/prepared_certification._realize_prepared_memory` carries
+the same check. The path has no production caller today; unconverted memory is untouched. Tested by
+`test_the_prepared_closeout_path_fails_closed_on_converted_memory`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The refusal before recovery. | "unclosable = prepared_closeout_refusal(contract)" | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:359-361 |
 
 ## Docs And Cross-Repo References
 
@@ -74,6 +89,7 @@ Execution first resumes an already claimed prepared publication, before attempti
 
 ## Update History
 
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Prepared Closeout Fails Closed On Converted Memory" (ruling 14:38:47 gap 3): `execute_selected_closeout` refuses `prepared-closeout-knowledge-history-unclosable` on converted memory before recovery; one row. **Reopened claim reworded:** the execution row (it now names the new first refusal); its generated bullet is committed history (2026-09-09) and untouched. The fixer normalised the rows. No verification stamp was advanced. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded execution row was re-anchored on line-exact quotes ("def execute_selected_closeout("); no committed history line was edited.
 - 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
   admission/selection/service ranges the earlier entry re-derived were re-checked and hold; the
   retained-output row is corrected in the entry above. No other wording changed. Verification

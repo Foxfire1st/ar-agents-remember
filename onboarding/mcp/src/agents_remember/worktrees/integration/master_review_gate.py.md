@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/master_review_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No relevant domain documentation was configured for this repository-internal int
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. | `blocked_integration_payload` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-39 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:636-661; mcp/src/agents_remember/worktrees/modules/integrate.py:815-820; mcp/src/agents_remember/worktrees/series_closeout.py:73-73 |
+| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:638-663; mcp/src/agents_remember/worktrees/modules/integrate.py:864-869; mcp/src/agents_remember/worktrees/series_closeout.py:73-73 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,7 @@ with this file's SHA-256 recorded as
 is retained as historical composition evidence and is not the active identity for this card.
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `worktrees/modules/integrate.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the row it declined, by the exact base-to-staged line shift, every anchor checked in both ranges. No verification stamp was advanced.
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:636-661 to mcp/src/agents_remember/worktrees/modules/integrate.py:815-820, the extent of the construct the claim is about (the checker named line(s) [815] as its live location)
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:846-921 to mcp/src/agents_remember/worktrees/modules/integrate.py:815, the extent of the construct the claim is about (the checker named line(s) [815] as its live location); re-pointed `publish_series_integration_under_authority[T]` in the row 61 of this card from mcp/src/agents_remember/worktrees/series_closeout.py:74-92 to mcp/src/agents_remember/worktrees/series_closeout.py:73, the extent of the construct the claim is about (the checker named line(s) [73] as its live location)
 - 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:610-613 to mcp/src/agents_remember/worktrees/modules/integrate.py:815-820, the extent of the construct the claim is about (the checker named line(s) [815] as its live location)

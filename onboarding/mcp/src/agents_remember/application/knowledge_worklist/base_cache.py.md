@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/base_cache.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ K_B on every run (about 30 s on the real tree):
 | The v2 format constant. | `FORMAT` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:48-48 |
 | What the cache holds. | `is_cached_path` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:130-137 |
 | The one read-or-convert path both consumers use. | `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:140-172 |
-| The gate reads its converted K_B through it. | `onboarding_trace_sides`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:109-157 |
+| The gate reads its converted K_B through it. | `onboarding_trace_sides`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py:110-166 |
 | The cache holds the Markdown, and a v1 file is ignored and rewritten. | `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` | mcp/tests/test_onboarding_trace_gate.py:552-604 |
 
 ## Docs References
@@ -116,8 +116,8 @@ code and memory repositories, so they are named here and not cited as rows.
 | A location inside a working tree is refused before anything is created. | `open` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:69-83 |
 | A hit only for this format and key. | `load` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:88-107 |
 | Atomic writes and eviction. | `store`; `_evict` | mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:109-121; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:123-127 |
-| The worklist's converted K_B, now read through the shared read-or-convert path. | `_converted_base_side`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:341-369 |
-| Cached by commit, version and code commit; a refused location converts and creates nothing. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:729-763 |
+| The worklist's converted K_B, now read through the shared read-or-convert path. | `_converted_base_side`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:365-393 |
+| Cached by commit, version and code commit; a refused location converts and creates nothing. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:730-764 |
 
 ## Cross-Repo References
 
@@ -128,6 +128,7 @@ No meaningful cross-repo references found: the cache lives in the coordination r
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `application/knowledge_worklist/leaf.py`, `onboarding_trace.py` and `test_knowledge_worklist_leaf.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the row it declined, by the exact base-to-staged line shift. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; the `_converted_base_side` row cited `leaf.py:302-326`, whose first line MIK-R10 changed, so no line shift could map it; it was re-measured to the declaration's current extent `341-369` were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/knowledge_worklist/leaf.py`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T18:59:28+00:00: Generated citation repair: `store`; `_evict` repointed to mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:109-121; mcp/src/agents_remember/application/knowledge_worklist/base_cache.py:123-127. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.

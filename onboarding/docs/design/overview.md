@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated | 2026-09-18T17:14+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -113,13 +113,13 @@ needed to establish the route model.
 | The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs. | — | — |
 | FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. | `# Cockpit Dashboard — Workflow Scenario Catalog` | docs/design/dashboard/scenario-catalog.md:1-166 |
 | The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
-| The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-154 |
+| The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-155 |
 
 Current working-candidate evidence for this route:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The implementation produces/reuses memory content before refreshing its cache. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:36-76; mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
+| The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first). | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96; mcp/src/agents_remember/worktrees/modules/closeout_external.py:140-185 |
 
 ## R39 Design Evidence Disposition
 
@@ -181,6 +181,7 @@ the repository declares `unit_case_budget = 2000` and `integration_case_budget =
 rather than deleted, and this is a `T45` find — no check reads a number in prose.
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No route impact: these design documents are unchanged. **Reopened claim re-read and reworded:** the closeout-implementation row, whose `_commit_memory_content` MIK-R09 (260928-MIK-L09) changed structurally; the claim holds, and it now names the exact-tree validation on converted memory. The installed fixer normalised this row (it added `_commit_memory_content`'s current extent but left the base extent `82-113`, now stale, which was dropped) and the evidence-pack row (`1-155`). No verification stamp was advanced.
 - 2026-09-18T17:14+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): **body update, not an annotation** — this route's governed source `python-pytest-bootstrap.md` changed (the Git-checkout prerequisite at `:22-24`), so the section above was added and the paragraph carrying the superseded 1,000/150 budget figure was corrected to `pyproject.toml`'s 2000/300 in the same operation (`T45`). Verification stamps stay at the recorded verification; the candidate is uncommitted and the governed closeout owns the real code commit.
 
 - 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.

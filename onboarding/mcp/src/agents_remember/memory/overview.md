@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T14:22:59+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,33 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L09 The Approval Reads Are Recorded, And A Missing Object Is Told From A Git Failure
+
+**Route impact (MIK-R09@v2, leaf 260928-MIK-L09), two modules touched.**
+
+- [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md) records every file it reads for
+  approval state through `kernel/recorded_reads.record_read` (ruling 2026-09-30T15:09:25): `_manifest` reads the
+  bytes once and records the SHA-256 of exactly those bytes (or `absent`, or the identity now for an unreadable file),
+  and `resolve_requirement_endpoint` records the linked packet before the owner reads it. Answers are unchanged. The
+  mandatory gate evaluates inside a recording block and keeps its verdict with that read set, re-hashing each file
+  before reuse, so a newly approved version (or a manifest that appears) forces a recompute that raises the
+  reconsideration item. Outside a recording block nothing changes.
+- [`conversion/code_objects.py`](conversion/code_objects.py.md): `CodeObjects.has_blob` tells Git's documented
+  not-found answer (`cat-file -e` exits 1: `False`) from a Git failure (`CodeObjectError`, naming Git's stderr; a
+  timeout still raises `TimeoutExpired`), where before any non-zero exit read as "absent" (review R3-2, ruling
+  19:16:07). This is **not** behind the gate's marker probe: the conversion's `legacy_db` now refuses on such a failure
+  (`knowledge-convert` already catches `CodeObjectError`), the worklist and currentness report it as an unreadable
+  input, and the reviewer's cards read names it `unavailable`. It changes only what a Git failure reads as.
+- **Candidate invariant (not ingested):** an unreadable input is never read as absent: a Git failure asking for a blob
+  is named, never "the store does not hold it". Proved by
+  `test_a_recorded_blob_the_store_lacks_is_named_at_its_real_raise_site` and
+  `test_a_git_failure_asking_for_a_recorded_blob_is_incomplete_and_never_kept`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The manifest read records exactly the bytes it read. | "record_read(path, bytes_identity(data))" | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:172-172 |
+| A missing object against a Git failure. | "def has_blob(self, blob_id: str) -> bool:"; `_GIT_NOT_FOUND` | mcp/src/agents_remember/memory/conversion/code_objects.py:44-44; mcp/src/agents_remember/memory/conversion/code_objects.py:143-168 |
 
 ## 260928-MIK-L14 The Owning Task's Manifest Answers Whether A Newer Version Is Approved
 
@@ -41,8 +68,8 @@ this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The approval states and what the manifest says about one ID. | `ApprovalState`; `RequirementApproval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:46-46; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:131-151 |
-| The lookup with its reasons, and the packet's named function. | `requirement_approval`; `latest_approved_requirement_version` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:183-194; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:197-204 |
+| The approval states and what the manifest says about one ID. | `ApprovalState`; `RequirementApproval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:46-46; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:53-53; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:139-159 |
+| The lookup with its reasons (since MIK-R09 recording the manifest bytes it read), and the packet's named function. | `requirement_approval`; `latest_approved_requirement_version` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:212-219 |
 
 ## 260928-MIK-L29 Five Index Lookups For The Knowledge Reader
 
@@ -113,8 +140,8 @@ route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver: no root, a root outside tasks, or the owner's answer. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:85-121 |
-| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:107-112 |
+| The resolver: no root, a root outside tasks, or the owner's answer. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:92-129 |
+| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:115-120 |
 
 ## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
 
@@ -1400,7 +1427,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:283-283 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:285-285 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1700,6 +1727,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Approval Reads Are Recorded, And A Missing Object Is Told From A Git Failure" at the top: `requirement_endpoint` records its manifest and packet reads for the gate's memo (ruling 15:09:25), and `CodeObjects.has_blob` distinguishes a missing object from a Git failure (review R3-2, not behind the marker probe; the conversion now refuses on such a failure); one candidate invariant; two rows. **Reopened claim reworded:** L14's lookup row (`latest_approved_requirement_version`, which did not exist at this overview's older verification pin). The resolver and owner rows were re-pointed by the exact base-to-staged line shift, and the lane row by the installed fixer (its bullet kept). No verification stamp was advanced.
+- 2026-09-30T18:00:03+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:285-285. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No route impact: this route's governed sources are unchanged. MIK-R32 moved lines in `mcp/tests/test-evidence-lanes.toml`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-30T12:21:46+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:283-283. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): **route body updated for MIK-R14.** A new top section, "260928-MIK-L14 The Owning Task's Manifest Answers Whether A Newer Version Is Approved": the manifest lookup in `knowledge/requirement_endpoint.py` (rule 2, rulings 04:37:56 Q6 and 05:31:11 F4, L13's Q5 carry met) and one candidate invariant; two rows. L13's section now points to it. The row the installed fixer declined was re-pointed by the exact line shift; the fixer projected the rest, and its generated bullet is kept. No verification stamp was advanced. **After the sync:** L29's top section and this leaf's are both kept, this leaf's above; L29's reworded `record_ids` row is kept, and the rows into the lanes manifest were re-pointed by the exact shift from `ce459423`.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash |  `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
-| lastVerifiedCommitDate |  2026-09-30T15:46:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash |  `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate |  2026-09-30T21:09:40+02:00|
 
 > **Status:** active baseline
 
@@ -372,6 +372,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No route impact at the repository level: the mandatory invariant gate (MIK-R09, 260928-MIK-L09) is recorded on the `mcp`, `application`, `memory`, `memory_quality`, `worktrees` (and its `modules`, `integration/closeout`, `integration/closeout/certification`, `integration/lifecycle`) and `mcp/tests` overviews; it is inert until the cutover. **Reopened claim re-read and reworded:** the closeout-output row, whose `_commit_memory_content` MIK-R09 changed structurally; the claim holds, and it now names the converted-memory closing and exact-tree validation. The installed fixer normalised this document's rows into `controller.py`, `prepared_certification.py` and `closeout_external.py` (it added `_commit_memory_content`'s current extent `140-185` to that row but left its base extent `82-113`, now stale, which was dropped); the `_attach_final_full_catalog` row it declined was re-pointed by the exact base-to-staged line shift. No verification stamp was advanced.
 - 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **root body updated for MIK-R38.** A new top section, "260928-MIK-L38 A Finished Leaf Shows Completed On Its Master": the repository-level consequence (one rule for a leaf's master, the placement refusal) and the c-09 finalizer paragraph reaching the package copy and the eight harness starter copies, not gated on conversion; one row. No verification stamp was advanced.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **root body updated for MIK-R14.** A new top section, "260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used": the repository-level consequence (reconsideration candidates, `still_rejected` and `raise`, never reversing, the reorder refusal) and the template bullet reaching the package copy and the eight harness starter copies, inert before MIK-R37; two rows. The other rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used" at the top: the repository-level consequence and the c-04 paragraph reaching the package copy and the eight starter copies (ruling Q5, 2026-09-30 03:32:18), with one row. L01's c-04 row still resolves.
@@ -6467,9 +6468,9 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:370-390; mcp/src/agents_remember/application/memory_quality/controller.py:393-467; mcp/src/agents_remember/application/memory_quality/controller.py:517-681 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:581-621; mcp/src/agents_remember/application/memory_quality/controller.py:806-842 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:372-392; mcp/src/agents_remember/application/memory_quality/controller.py:395-468; mcp/src/agents_remember/application/memory_quality/controller.py:568-722 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:632-672; mcp/src/agents_remember/application/memory_quality/controller.py:901-937 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:770-834 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 
 Current working-candidate evidence for this route:
@@ -6477,7 +6478,7 @@ Current working-candidate evidence for this route:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Git attribution is the source of the consumer ledger. | `derive_memory_ledger`; "Read mappings from Git without consulting a cached file or a ledger commit." | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-| Closeout writes or reuses one actual memory-content output. | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:39-79; mcp/src/agents_remember/worktrees/modules/closeout_external.py:82-113 |
+| Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating the exact tree). | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96; mcp/src/agents_remember/worktrees/modules/closeout_external.py:140-185 |
 | Integration proves exact memory source ancestry independently of cache rows. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
 
 ## Key Invariants

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,19 @@ reads the task's `requirements/manifest.json`.
   named function: the same lookup's `latest`, or `None`.
 - Only the manifest's `packets` list is read (ruling 2026-09-30T04:37:56 Q6: `not_approved` is accepted as a third
   state; this master's own `v1_packets` are not read).
+- **Recording what was read (MIK-R09, L09 ruling 2026-09-30T15:09:25).** The approval state lives outside every Git
+  tree, so the module records each file it reads for it through `kernel.recorded_reads.record_read` (a no-op outside
+  a recording block):
+  - `_manifest` now reads the bytes once and records the SHA-256 of exactly those bytes (`bytes_identity`), or
+    `absent` for a missing manifest, or the identity now for an unreadable one; it then parses those bytes, so its
+    answers are unchanged;
+  - `resolve_requirement_endpoint` records the linked packet it hands the owner **before** the owner reads it, so a
+    race can only cause a miss.
+
+  The mandatory gate evaluates inside `recorded_reads()` and keeps its verdict with that read set; before reusing a
+  kept verdict it hashes each file again, so a newly approved version, or a manifest that appears, forces a
+  recompute that raises the reconsideration item (the approval-state test). The recorder itself moved to
+  `kernel/recorded_reads.py` in the review R1 fix round.
 
 ### Conventions
 
@@ -97,17 +110,19 @@ The locator, the resolver and its proof.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two answers that are this module's own, both about the root. | `TASK_PLANE_UNAVAILABLE`; `TASK_OUTSIDE_TASKS` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:42-43 |
-| One endpoint, its state, its task root and the owner's answer; its index key. | `RequirementEndpoint`; `key` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:53-73 |
-| The owning task's root, or none when the repository is not one directory. | `requirement_task_root` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:76-82 |
-| No root, a root outside tasks, or the owner's answer verbatim. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:85-121 |
-| The manifest path, format and version pattern; the approval states. | `MANIFEST_PATH`; `MANIFEST_FORMAT`; `ApprovalState` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:46-50 |
-| The integer after `v`. | `version_number` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:124-128 |
-| What the manifest says about one ID, and the newer-than comparison. | `RequirementApproval`; `newer_than` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:131-151 |
-| The manifest read with its reasons; the approved entries of one ID. | `_manifest`; `_approved_entries` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:154-166; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:169-180 |
-| The highest approved version and its packet, `not_approved`, or `unknown`; the packet's named function. | `requirement_approval`; `latest_approved_requirement_version` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:183-194; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:197-204 |
+| The docstring's recording paragraph (MIK-R09). | "is recorded through :func:" | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:29-33 |
+| The linked packet is recorded before the owner reads it. | "record_read(task_root / reference.packet)" | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:114-114 |
+| The two answers that are this module's own, both about the root. | `TASK_PLANE_UNAVAILABLE`; `TASK_OUTSIDE_TASKS` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:49-50 |
+| One endpoint, its state, its task root and the owner's answer; its index key. | `RequirementEndpoint`; `key` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:60-80 |
+| The owning task's root, or none when the repository is not one directory. | `requirement_task_root` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:83-89 |
+| No root, a root outside tasks, or the owner's answer verbatim. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:92-129 |
+| The manifest path, format and version pattern; the approval states. | `MANIFEST_PATH`; `MANIFEST_FORMAT`; `ApprovalState` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:53-53; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:55-56 |
+| The integer after `v`. | `version_number` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:132-136 |
+| What the manifest says about one ID, and the newer-than comparison. | `RequirementApproval`; `newer_than` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:139-159 |
+| The manifest read with its reasons, since MIK-R09 recording the exact bytes read; the approved entries of one ID. | `_manifest`; `_approved_entries`; "record_read(path, bytes_identity(data))" | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:162-181; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:184-195 |
+| The highest approved version and its packet, `not_approved`, or `unknown`; the packet's named function. | `requirement_approval`; `latest_approved_requirement_version` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:212-219 |
 | The lookup's cases. | `test_the_manifest_lookup_returns_the_highest_approved_version` | mcp/tests/test_reconsideration_surfacing.py:212-231 |
-| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:38-38; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:107-112 |
+| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:45-45; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:115-120 |
 | Resolved, version mismatch, missing, outside tasks and no root; the validator never resolves. | `test_requirement_endpoints_resolve_through_the_owner_and_never_refuse` | mcp/tests/test_knowledge_decisions.py:280-311 |
 
 ## Cross-Repo References
@@ -119,6 +134,13 @@ No cross-repo boundary is crossed: the task plane read is the coordination root'
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** A Logic bullet records that `_manifest` and `resolve_requirement_endpoint` record every requirement file they read (the exact bytes' SHA-256, `absent` or unreadable) for the gate's memo (ruling 15:09:25; the recorder moved to `kernel/recorded_reads.py` in the review R1 fix round). Two rows added and the `_manifest` row extended. The `_manifest`, `consume_owner_resolution` and endpoint rows the installed fixer declined were re-pointed by the exact base-to-staged line shift; the fixer re-pointed the rest (its bullets are kept, since no claim was reworded).
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `TASK_PLANE_UNAVAILABLE`; `TASK_OUTSIDE_TASKS` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:49-49; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:50-50. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `RequirementEndpoint`; `key` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:60-80; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:75-80. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `requirement_task_root` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:83-89. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `MANIFEST_PATH`; `MANIFEST_FORMAT`; `ApprovalState` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:55-55; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:56-56; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:53-53. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `version_number` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:132-136. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T17:59:58+00:00: Generated citation repair: `RequirementApproval`; `newer_than` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:139-159; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:154-159. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14 rule 2.** Purpose and Logic record the manifest lookup (`_manifest`, `_approved_entries`, `version_number`, `RequirementApproval` with `approved` / `not_approved` / `unknown`, `packet` and `newer_than`, `requirement_approval` and the packet's named `latest_approved_requirement_version`) and ruling 04:37:56 Q6; a candidate invariant (a task without a readable manifest never triggers); the L14 Todo is marked resolved for L14's half. Six rows added. The other rows were projected by the installed fixer or re-pointed by the exact line shift, and its generated bullets are kept. No verification stamp was advanced.
 - 2026-09-30T10:06:22+00:00: Generated citation repair: `TASK_PLANE_UNAVAILABLE`; `TASK_OUTSIDE_TASKS` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:42-42; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:43-43. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:06:22+00:00: Generated citation repair: `RequirementEndpoint`; `key` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:53-73; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:68-73. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.

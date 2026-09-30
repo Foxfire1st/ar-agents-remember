@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_bounded_pagination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The entry stays a catalogue: driving it calls no comparison and no view, and its body carries no page at either dataset size.** | "test_the_entry_read_populates_the_button_without_fetching_record_pages" | mcp/tests/test_review_bounded_pagination.py:841-878 |
 | The page arithmetic under test, and the page value whose constructor refuses a remainder without a cursor. | `comparison_page`; `records_page`; `reset_comparison_page`; `ReviewCollectionPage` | mcp/src/agents_remember/application/review_pagination.py:202-305; mcp/src/agents_remember/models/knowledge/review.py:366-440 |
 | The two page refusal codes the transport cases read. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
-| **The lane row and the three exact-scope consumer rows this module's registration produced.** | "unit-regression"; "mcp/tests/test_review_bounded_pagination.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:216-216 |
+| **The lane row and the three exact-scope consumer rows this module's registration produced.** | "unit-regression"; "mcp/tests/test_review_bounded_pagination.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:218-218 |
 
 ## Cross-Repo References
 
@@ -132,6 +132,7 @@ repository and the two Git trees borrow each other's object store inside `tmp_pa
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `mcp/tests/test-evidence-lanes.toml` (two new `unit-regression` rows at `:122`-`:123`; every later row moves down by two), so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the multi-anchor rows it declined, by that exact +2 shift, each row byte-identical to memory HEAD and checked in both ranges. No verification stamp was advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/tests/test-evidence-lanes.toml`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
 - 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): No content impact: citation-only repair. This card's source is unchanged; MIK-R14 inserted one `unit-regression` row at `test-evidence-lanes.toml:127` (`:126` before the sync onto L29), so every later lane row moved down by one line. The rows citing those lines, which the installed fixer declined, were re-pointed by that exact shift (each row byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No verification stamp was advanced. **After the sync:** the rows L29's landed curation had also re-pointed were taken from L29's text and re-pointed by the exact line shift from `ce459423` to the staged tree (L14's lane row now at `:127`, its catalog line `:839`, the pin docstring), each anchor checked at both ends; the other rows keep this leaf's values.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/tests/test-evidence-lanes.toml` (one `unit-regression` row at `:108`), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ The structure rules and their registration.
 | An unconverted base is refused unless this is a standalone conversion. | `check_bases_converted` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:101-111 |
 | A closed history file is frozen. | `check_history_frozen` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:114-131 |
 | The eight registered structure rules. | `STRUCTURE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163 |
-| Duplicate IDs after a merge are a conflict naming both files. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files` | mcp/tests/test_knowledge_validator.py:149-162 |
-| A closed history file is frozen, including deletion and closure in one merge parent. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:454-469 |
+| Duplicate IDs after a merge are a conflict naming both files. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files` | mcp/tests/test_knowledge_validator.py:160-173 |
+| A closed history file is frozen, including deletion and closure in one merge parent; since MIK-R09 its trees keep the retired subject `INV-RET1R3` (records are never deleted, rule 3), assertions unchanged. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:479-494 |
 
 ## Cross-Repo References
 
@@ -82,4 +82,5 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact on the rules: this card's own source is unchanged. **Reopened claim reworded:** the rule-7 test row, whose case MIK-R09 (260928-MIK-L09, review R2-1) changed structurally: its trees now keep the retired record `INV-RET1R3`, because MIK-R09's history-row rule checks every history file's subjects; the assertions are unchanged. This pass's generated bullet for it was removed; the other test row was re-pointed by the installed fixer (bullet kept). No verification stamp was advanced.
 - 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

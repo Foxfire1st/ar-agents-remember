@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality/runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ snapshot copy, and maps wrong-repository lookup to the same absence as an unknow
 | Admission reuses equivalent live work before terminal pruning and hard live-cap refusal. | `start_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:71-105 |
 | Polling requires repository ownership and returns a detached snapshot. | `poll_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:108-121 |
 | Pruning removes terminal rows only. | `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:142-163 |
-| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:262-268; mcp/src/agents_remember/application/memory_quality/controller.py:271-277 |
+| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:264-270; mcp/src/agents_remember/application/memory_quality/controller.py:273-279 |
 
 ## Cross-Repo References
 
@@ -80,6 +80,7 @@ same exact code/memory pair instead of reconstructing scope from repository id.
 
 ## Update History
 
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `application/memory_quality/controller.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the row it declined, by the exact +2 shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/memory_quality/controller.py`, `mcp/src/agents_remember/application/memory_quality/runs.py`, moved by MIK-R30's line insertions (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-working line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The row cited `controller.py:111-143` and `146-208`, neither of which holds `start_memory_quality_request` or `poll_memory_quality_request`; the two definitions this leaf's changes left in the controller are at `258-264` and `267-273`, which is what the cell cites now. The claim and both anchors are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller start/poll row (76-144 to 111-143/146-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.

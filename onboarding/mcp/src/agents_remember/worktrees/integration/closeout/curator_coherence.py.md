@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:25:19+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,13 +44,25 @@ Under CCR-R03@v1 the observation and currentness seam binds declared dependencie
 reader takes `_QualityAttestationSource` (attestation/report paths, pair identity, and the exact
 code/memory candidate trees) and re-requires the attestation's dependency declaration against those
 trees (`memory-quality-attestation-dependencies-stale` refuses)
-cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:108-114; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:450-507).
+cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:109-115; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:475-532).
 `require_current_curator_coherence` runs `_require_current_dependencies`, which rebuilds the
 `curator-coherence/v1` declaration from the record's code/memory candidate trees, topology
 fingerprint, digest-bearing task intent, attestation/report digests, every judgment evidence digest,
 and predecessor — refusing `curator-coherence-task-intent-missing`,
 `evidence-dependencies-missing`, or `curator-coherence-dependencies-stale`
-cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:347-443; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:285-344).
+cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:372-468; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346).
+
+**The mandatory invariant gate (MIK-R09 rule 3, leaf 260928-MIK-L09).** After every other check passes,
+`require_current_curator_coherence` calls `_require_knowledge_gate(contract, observation)`, which asks
+`worktrees.knowledge_gate.leaf_gate_refusal` over the very code and memory candidate trees this authority binds
+(`observation.code_candidate_tree`, `observation.memory_candidate_tree`). On converted memory the gate recomputes the
+worklist, decides every item through its kind's predicate and runs the validator (as a leaf publication, against the
+parent line's memory tip); any open item, incomplete run or violation raises `curator-coherence-knowledge-gate-refused`
+with next action `memory_quality_check`, naming every finding. A converted leaf with no bound gate refuses
+(`GATE_UNBOUND`). An unconverted leaf is not gated and is validated exactly as before. The curator-coherence record,
+its identity checks and pair identity are unchanged (MIK-R09 Preservation): the gate is one more refusal after them.
+Because the curator publication computed the same memo key, this read is normally served from the gate's memo.
+cit:([`_require_knowledge_gate`, "_require_knowledge_gate(contract, observation)"], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:345-369).
 
 ### Conventions
 
@@ -87,20 +99,22 @@ No external source governs this repository-local lifecycle authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:145-208 |
-| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:227-272 |
-| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:285-344; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:446-447 |
-| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:117-122; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:125-142 |
-| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:510-537 |
+| Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:146-209 |
+| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:228-273 |
+| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:471-472 |
+| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:118-123; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:126-143 |
+| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:535-562 |
 | Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py:37-68 |
-| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:347-443; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:450-507 |
+| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:372-468; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:475-532 |
 
 The following declarations carry the changed boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A named retained generation is read without asserting live readiness. | `load_curator_coherence_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:275-282 |
-| Current readiness still validates live inputs and dependencies. | `require_current_curator_coherence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:285-344 |
+| A named retained generation is read without asserting live readiness. | `load_curator_coherence_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:276-283 |
+| The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). | `_require_knowledge_gate`; "curator-coherence-knowledge-gate-refused" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:349-369 |
+| The closeout validator refuses until the gate passes and never runs ungated. | `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated` | mcp/tests/test_knowledge_closeout_gate.py:731-790 |
+| Current readiness still validates live inputs and dependencies. | `require_current_curator_coherence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346 |
 
 ## Cross-Repo References
 
@@ -168,6 +182,7 @@ card).
 
 ## Update History
 
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** Logic gains the paragraph on `_require_knowledge_gate`: the closeout validator recomputes the gate over the authority's own candidate trees and refuses `curator-coherence-knowledge-gate-refused` (next action `memory_quality_check`) on converted memory; unconverted leaves are validated as before; the record and pair identity are unchanged. Two rows added. The rows below the insertion were re-pointed by the installed fixer (its bullets are kept) or, for the evidence row it declined, by the exact base-to-staged line shift.
 - 2026-09-27T05:25:19+00:00 — Reconciled the L41 moved record/path owners and explicit retained-parent recovery boundary with current source. Prior generated history and real verification stamps are preserved.
 
 - 2026-09-27T05:23:46+00:00 — Re-resolved 5 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.

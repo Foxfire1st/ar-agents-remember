@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -82,6 +82,25 @@ impassable tool defect (`notes/DISCLOSURES.md` D-11). The text is a pure functio
 an appended member reaches this response with no edit here. `prepare` still invents neither identity,
 returns no value for either, and `_publish` is untouched: the only change in this module is the summary
 string.
+
+## 260928-MIK-L09 The Closeout Validator Recomputes The Mandatory Invariant Gate
+
+**Route meaning extended (MIK-R09@v2 rule 3).** `curator_coherence.require_current_curator_coherence` is one of the
+two closeout routes MIK-R09 names. After every existing check passes it now calls `_require_knowledge_gate`, which
+asks `worktrees/knowledge_gate.leaf_gate_refusal` over the very code and memory candidate trees the coherence authority
+binds. On converted memory the gate recomputes the leaf's worklist over those trees, decides every item through its
+kind's own predicate, and runs the validator as a leaf publication against the parent line's memory tip; any open
+item, incomplete run or violation raises `curator-coherence-knowledge-gate-refused` (next action
+`memory_quality_check`) naming every finding. A converted leaf with no bound gate refuses (`GATE_UNBOUND`); an
+unconverted leaf is not gated and is validated exactly as before. The coherence record, its identity checks and pair
+identity are unchanged (MIK-R09 Preservation); normally the curator publication has already evaluated the same memo
+key, so this read is served from the gate's memo. Tested through the real validator by
+`test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`. The certified (prepared) path of
+[`certification/`](certification/overview.md) refuses on converted memory (gap 3). **Inert until the cutover.**
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The closeout validator's gate over the authority's exact candidate. | `_require_knowledge_gate`; "curator-coherence-knowledge-gate-refused" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:349-369 |
 
 ## Local Invariants And Traps
 
@@ -188,6 +207,7 @@ cannot classify the same record two different ways.
 
 ## Update History
 
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Closeout Validator Recomputes The Mandatory Invariant Gate": `require_current_curator_coherence` now ends with `_require_knowledge_gate`, refusing `curator-coherence-knowledge-gate-refused` on converted memory while any gate finding exists (MIK-R09 rule 3); unconverted leaves, the record and pair identity are unchanged; one row. No verification stamp was advanced.
 - 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the route's own behaviour change: `curator_coherence_assessments` and `curator_coherence_subject_assessment_state` now classify per record through `supplied_measurement_statuses`, an omitted or empty measurement answers `not-measured` instead of defaulting every record to `stale`, and `_stale_assessment_ids` is deleted rather than kept as an alias. This is a body change and not a metadata-only refresh: the route's governed source changed under this leaf. The two enforced `citation_anchor_absent_from_range` rows this pass cleared live on the `curator_coherence.py` card, not on this overview (`:501-502` → `:501-504` for `curator_coherence_evidence` and `:115-141` → `:115-160` for `curator_coherence_no_impact`), and are recorded in full there; this overview carried no citation finding of its own and no range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

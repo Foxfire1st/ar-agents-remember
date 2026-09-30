@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
+| lastUpdated | 2026-09-30T20:16:46+02:00 |
+| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
+| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -255,7 +255,7 @@ memory-carryover vehicle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08) and the review-artifact archive hook (since MIK-R25) use explicit service ports; `WorktreeServices` carries each as a field. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:112-129; mcp/src/agents_remember/worktrees/services.py:226-236; mcp/src/agents_remember/worktrees/services.py:239-250 |
+| Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:113-130; mcp/src/agents_remember/worktrees/services.py:292-302; mcp/src/agents_remember/worktrees/services.py:305-317 |
 | The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
 | The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208; mcp/src/agents_remember/worktrees/modules/pause.py:152-169 |
 | The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
@@ -952,6 +952,7 @@ refusal. A chain admitted under an older validator has not been proved by the cu
 | The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
 
 ## Update History
+- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 Every Memory Commit And Landing Route Asks The Mandatory Invariant Gate" after L38's: the new, carded `knowledge_gate.py` (marker applicability with gap 1 carried to L37, `GATE_UNBOUND`, the closeout's own `closed: true`, the direct landing's per-generation receipts, the prepared path's refusal), a table of every route and what it checks (the rulings of 14:38:47 gaps 2–3, 16:07:55 F1–F5 and F7, 17:59:48 R2-2/R2-5, 19:16:07 R3-1), two candidate invariants and inertness; five rows. The L22 section's "MIK-R09's routes … will call the same helper" is of its own time; this section says they do. **Reopened claims reworded:** the three rows citing `WorktreeServices` (the bundle now carries `knowledge_gate`; re-measured `305-317`). The rows the installed fixer declined were re-pointed by the exact base-to-staged line shift. No verification stamp was advanced.
 - 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 A Leaf's Master Is Resolved By One Rule At Finalize And Reopen" after L25's (D32; rulings 12:33:07 Q2, 13:11:32 finding 1, 13:35:32; review R1 note 3 out of scope), with three rows. The installed fixer re-pointed the two reopen-test rows of the KS-L34 section (one generated bullet, kept) and normalised the L25 `finalize.py` and `services.py` rows. No verification stamp was advanced.
 - 2026-09-30T13:23:30+00:00: Generated citation repair: `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` repointed to mcp/tests/test_task_reopen.py:230-341. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 Archiving A Task Deletes Its Review Artifacts" after L08's (the `ReviewArtifactCleanupPort` in `services.py`, the finalizer's `_with_review_artifact_cleanup`, and the archive rulings), with two rows. **Three reopened `WorktreeServices` rows re-read:** the class gained `review_artifact_cleanup`; the services-ports row and the validator-port row were reworded to name it, and all three were re-measured to the class's current extent (`239-249` → `239-250`). No verification stamp was advanced.
@@ -1296,11 +1297,11 @@ already-current) are not validated at the sync.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. | `has_layout_marker`; `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:39-54; mcp/src/agents_remember/worktrees/knowledge_validation.py:57-91 |
-| The port the helper calls and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, and `review_artifact_cleanup`, since MIK-R25). | `KnowledgeValidationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:132-148; mcp/src/agents_remember/worktrees/services.py:239-250 |
+| The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. | `has_layout_marker`; `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:40-61; mcp/src/agents_remember/worktrees/knowledge_validation.py:64-104 |
+| The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). | `KnowledgeValidationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:133-162; mcp/src/agents_remember/worktrees/services.py:305-317 |
 | The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). | `_finish_staged_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598 |
 | The driver maps the refusal to its own state with a recovery line. | `_knowledge_validation_refused` | mcp/src/agents_remember/worktrees/sync_transaction.py:594-610 |
-| The route never commits converted memory unvalidated, and an unreadable tree is refused. | `test_the_worktree_route_never_commits_converted_memory_unvalidated` | mcp/tests/test_knowledge_validator_routes.py:130-154 |
+| The route never commits converted memory unvalidated, and an unreadable tree is refused. | `test_the_worktree_route_never_commits_converted_memory_unvalidated` | mcp/tests/test_knowledge_validator_routes.py:134-158 |
 
 ## 260928-MIK-L24 The Crossing Sync In The Managed Sync, And The Unconverted-Line Refusal
 
@@ -1345,7 +1346,7 @@ exactly within the 46 cards both lines changed, and after mechanical resolution 
 | --- | --- | --- |
 | The plan before Git, and its application to the started merge. | `crossing_plan`; `apply_crossing` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:80-112; mcp/src/agents_remember/worktrees/knowledge_crossing.py:150-160 |
 | The crossing branch of the memory merge. | `_crossing`; `_apply_crossing_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:537-567; mcp/src/agents_remember/worktrees/sync_transaction_git.py:515-534 |
-| The port and its request and view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:151-163; mcp/src/agents_remember/worktrees/services.py:170-180; mcp/src/agents_remember/worktrees/services.py:183-186 |
+| The port and its request and view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:165-177; mcp/src/agents_remember/worktrees/services.py:184-194; mcp/src/agents_remember/worktrees/services.py:197-200 |
 | The rule 9 refusal. | `unconverted_line_refusal` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
 | The durable report and the master-line history file closed at commit. | `write_crossing_report`; `close_crossing_history` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:237-262; mcp/src/agents_remember/worktrees/knowledge_crossing.py:201-222 |
 
@@ -1370,7 +1371,7 @@ other two triggers, and they are L09's.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The port and the bundle field. | `KnowledgeWorklistPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:189-197; mcp/src/agents_remember/worktrees/services.py:239-250 |
+| The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). | `KnowledgeWorklistPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:203-211; mcp/src/agents_remember/worktrees/services.py:305-317 |
 | The completed result gains the summary; every failure leaves it unchanged. | `with_recomputed_worklist`; `recompute_knowledge_worklist` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:96-108; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:111-127 |
 | The `continue` replay recomputes too. | `terminal_resolution_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:356-391 |
 
@@ -1397,7 +1398,7 @@ tasks' legacy copies — including curator scratch copies — which L37's cutove
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The archive hook's request and port. | `ReviewArtifactCleanupRequest`; `ReviewArtifactCleanupPort` | mcp/src/agents_remember/worktrees/services.py:200-213; mcp/src/agents_remember/worktrees/services.py:216-223 |
+| The archive hook's request and port. | `ReviewArtifactCleanupRequest`; `ReviewArtifactCleanupPort` | mcp/src/agents_remember/worktrees/services.py:266-279; mcp/src/agents_remember/worktrees/services.py:282-289 |
 | The finalizer carries the hook's report after the archive move, and never raises. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:233-271 |
 
 ## 260928-MIK-L38 A Leaf's Master Is Resolved By One Rule At Finalize And Reopen
@@ -1426,6 +1427,55 @@ scope (review R1 note 3).
 | Finalize resolves a leaf naming none through the shared helper. | "folder_master = folder_master_json_path(task_root, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:459-481 |
 | Reopen resolves a leaf naming none through the same helper. | "return master_sync.folder_master_json_path(task_root, doc)" | mcp/src/agents_remember/worktrees/reopen.py:647-657 |
 | Reopen's placement guard on the leaf and the master. | "require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)"; "require_task_document_in_place(master_path, master, ReopenTaskDocumentError)" | mcp/src/agents_remember/worktrees/reopen.py:435-477; mcp/src/agents_remember/worktrees/reopen.py:588-628 |
+
+## 260928-MIK-L09 Every Memory Commit And Landing Route Asks The Mandatory Invariant Gate
+
+**Route meaning extended (MIK-R09@v2, D5: invariant work is mandatory, never report-only).** Every route in this area
+that commits or lands a leaf's or a master's memory now asks the mandatory invariant gate before it moves anything.
+The gate ranks above this layer (`application/knowledge_gate/`) and is reached only through the new
+`services.KnowledgeGatePort`, bound by `application/worktree_services.py`. The new
+[`knowledge_gate.py`](knowledge_gate.py.md) (carded, governed here) holds what the layer owns itself:
+
+- **Applicability by the layout marker (rule 6).** Each route probes K_C or K_B (the candidate tree, the official
+  line, the checkout's `HEAD`, a landed commit and its bases) with `has_layout_marker`; with no marker anywhere the
+  route behaves exactly as before this master. A probe Git cannot answer refuses by name; it is never taken for
+  unconverted memory (review R1 F9). MIK-R09 rule 6's second bullet (refuse unconverted trees and name the crossing
+  sync) is **not** built: carried to L37 (ruling 14:38:47 gap 1).
+- **No bypass (rule 5):** a converted route with no bound gate refuses (`GATE_UNBOUND`).
+- **The closeout's own write (MIK-R07 rule 7):** `close_owner_history` sets `closed: true` in the leaf's history file
+  (creating it with no rows when absent); `HistoryClosing.restore` undoes it on a refusal.
+- **A direct landing's closing outlives the call:** per-generation receipts under the worktree group's `reports/`,
+  settled when the generation lands (forgotten), is cancelled or was never created (restored, never over a later
+  edit), with `git hash-object` recording the closed blob (R3-1) and an unreadable receipt refusing by name (R2-5).
+- **The prepared path fails closed** on converted memory (`prepared_closeout_refusal`, gap 3).
+
+The routes, each with a refusal test through its public entry point (`test_knowledge_gate_routes.py`, review R1 F5):
+
+| Route | Where | What it checks |
+| --- | --- | --- |
+| Closeout validator | `integration/closeout/curator_coherence._require_knowledge_gate` | The full gate over the authority's exact candidate; `curator-coherence-knowledge-gate-refused`. |
+| Closeout memory commit | `modules/closeout_external` | Closes the history file, validates the exact tree as a leaf publication against the parent tip, restores on refusal (F2). |
+| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Gate (the leaf is the one open history file's owner, gap 2), close, validate the exact tree, keep the closing until the generation is decided; an exact retry of an in-flight generation reaches it before the gate (F3). |
+| Cancellation | `integration/lifecycle/control/cancellation` | Checks receipts before anything moves; restores a cancelled direct landing's closing. |
+| Record landing | `modules/record_landing` | Probe first (F7); the landed memory commit validates against the task's memory base, and a leaf's history file is closed in it. |
+| Master and checkpoint landing | `modules/integrate._knowledge_gate_block` | The validator on the master's memory commit and every entry at a path the net code diff changed `current` at its code commit (rule 4; F4: `unverifiable` refuses too). |
+| Prepared closeout | `integration/closeout/certification/execution` | Refuses on converted memory (gap 3). |
+
+[`knowledge_validation.py`](knowledge_validation.py.md) gains `leaf_publication` (the port's `leaf_refusal`, F1) and a
+named refusal for a timed-out probe; [`services.py`](services.py.md) declares `KnowledgeGatePort`,
+`LandingGateRequest` and `DirectGateVerdict`. **Candidate invariants (not ingested):** no memory reaches a
+leaf-publication route without the recomputed worklist fully answered and the validator passing; on unconverted memory
+every route behaves exactly as before the gate (the unconverted test; `unconverted.sh`, base `904e804b` against this
+build: identical apart from the build label, including the real memory commit tree `20ccf39a…`, the record-landing
+payload and the direct-landing preview). **Inert until the cutover.**
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The layer's probes, the unbound refusal and the closeout's own write. | `converted_memory`; `GATE_UNBOUND`; `close_owner_history` | mcp/src/agents_remember/worktrees/knowledge_gate.py:89-105; mcp/src/agents_remember/worktrees/knowledge_gate.py:279-300 |
+| The closeout validator's and the landings' gate. | `leaf_gate_refusal`; `landing_gate_refusal` | mcp/src/agents_remember/worktrees/knowledge_gate.py:176-196; mcp/src/agents_remember/worktrees/knowledge_gate.py:230-260 |
+| The direct landing's closing, kept and settled per generation. | `keep_direct_closing`; `settle_direct_closing` | mcp/src/agents_remember/worktrees/knowledge_gate.py:360-422 |
+| The port, the landing request and the direct verdict. | `KnowledgeGatePort`; `LandingGateRequest`; `DirectGateVerdict` | mcp/src/agents_remember/worktrees/services.py:214-263 |
+| Direct landing's gate and closing. | `_direct_gate_owner`; `_close_gated_leaf` | mcp/src/agents_remember/worktrees/direct_landing.py:619-667 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
