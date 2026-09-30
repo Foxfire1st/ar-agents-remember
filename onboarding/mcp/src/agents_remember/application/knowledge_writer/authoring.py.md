@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/authoring.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -109,8 +109,8 @@ The file is outside MIK-R30's Scope list; the architect accepted it as necessary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| An `onboarding:` subject goes to its own row builder. | `_row`; `OnboardingTraceRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:596-625 |
-| The onboarding row: no extra members, the ID and moved markers kept, validated. | `_onboarding_row` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:627-661 |
+| An `onboarding:` subject goes to its own row builder. | `_row`; `OnboardingTraceRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:614-644 |
+| The onboarding row: no extra members, the ID and moved markers kept, validated. | `_onboarding_row` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:646-680 |
 | A moved marker row satisfies its item and survives a rewrite through the writer. | `test_a_moved_marker_row_satisfies_its_item_and_survives_a_rewrite` | mcp/tests/test_onboarding_trace_gate.py:401-435 |
 
 ## 260928-MIK-L11 The Planned Row Through The Writer (MIK-R11 Rule 5)
@@ -137,11 +137,11 @@ resolves through the strict leaf lookup: an unreadable or duplicated leaf docume
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The task owner's answer about a decision, injected into the writer. | `DecisionResolver` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:82-82 |
-| The resolver field; `None` has no task owner. | "decisions: DecisionResolver" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:125-125 |
-| A `planned:` subject goes to its own row builder. | `_row`; `PlannedEffectRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:596-625 |
-| The planned row: no extra members, `ref` required, the ID kept, validated. | `_planned_row` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:703-749 |
-| What the ref names must exist or resolve. | `_unresolved_ref` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:751-769 |
+| The task owner's answer about a decision, injected into the writer. | `DecisionResolver` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:94-94 |
+| The resolver field; `None` has no task owner. | "decisions: DecisionResolver" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:137-137 |
+| A `planned:` subject goes to its own row builder. | `_row`; `PlannedEffectRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:614-644 |
+| The planned row: no extra members, `ref` required, the ID kept, validated. | `_planned_row` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:722-768 |
+| What the ref names must exist or resolve. | `_unresolved_ref` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:923-941 |
 | The writer's planned rows and every refusal. | `test_the_writer_writes_planned_rows_and_refuses_what_they_cannot_name` | mcp/tests/test_planned_knowledge_effects.py:419-501 |
 
 ## 260928-MIK-L06 A Moved Row Relocates Its Entry To Another File (MIK-R06, Ruling Q6)
@@ -168,17 +168,17 @@ Q6, 2026-09-29T21:49:19+02:00):
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| An invariant row tells its covers whether it is a moved row. | `_invariant_row`; `moving` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:782-805 |
-| A path on any other disposition is refused. | `_covers`; "only on a moved row" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:824-837 |
-| The entry's `after`: relocated when the path differs, then re-anchored at C. | `_cover_after`; `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:871-895; mcp/src/agents_remember/application/knowledge_writer/authoring.py:897-908 |
-| The relocation: the entry keeps its ID and fields and moves sidecar. | `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:897-908 |
+| An invariant row tells its covers whether it is a moved row. | `_invariant_row`; `moving` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:954-977 |
+| A path on any other disposition is refused. | `_covers`; "only on a moved row" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:996-1009 |
+| The entry's `after`: relocated when the path differs, then re-anchored at C. | `_cover_after`; `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:1043-1067; mcp/src/agents_remember/application/knowledge_writer/authoring.py:1069-1080 |
+| The relocation: the entry keeps its ID and fields and moves sidecar. | `_relocate` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:1069-1080 |
 | A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. | `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` | mcp/tests/test_knowledge_writer.py:682-753 |
 
 ## 260928-MIK-L10 The No-Invariant Row And The Retired-Attach Refusal (MIK-R10)
 
 - **Dispatch table.** `_row` now tries `OnboardingTraceRow`, `PlannedEffectRow` and `UnexplainedChangeRow` in
   one loop over `(model, builder)` pairs, matching each model's `subject_pattern`, which keeps `_row` within
-  PLR0911. The behaviour for the first two is unchanged.
+  PLR0911. The behaviour for the first two is unchanged. (L14 adds `ReconsiderationRow` as a fourth pair.)
 - **`_unexplained_row`.** A `no_invariant` row answers an unexplained change in a covered file (rule 3). It
   refuses `covers`, `effect`, `because`, `examined` and `ref` ("a no_invariant row carries no [...]"), reuses
   the row ID by subject, validates against `UnexplainedChangeRow` (only `no_invariant`; a blank `reason` is
@@ -198,11 +198,55 @@ Q6, 2026-09-29T21:49:19+02:00):
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The retired-attach guard, called before the record is placed. | "if self._attaches_to_retired(entry, invariant_id, document):" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:304-306 |
-| The refusal names the invariant and the alternatives. | `_attaches_to_retired` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:330-342 |
-| The three special row kinds, dispatched through one table. | `_row`; `UnexplainedChangeRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:596-625 |
-| The no_invariant row: no extra members, the ID kept, validated, and a `file:` subject checked at C. | `_unexplained_row`; `file_subject_mismatch` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:663-701 |
+| The retired-attach guard, called before the record is placed. | "if self._attaches_to_retired(entry, invariant_id, document):" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:323-323 |
+| The refusal names the invariant and the alternatives. | `_attaches_to_retired` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:348-360 |
+| The special row kinds (L10's three, and MIK-R14's reconsideration row since L14), dispatched through one table. | `_row`; `UnexplainedChangeRow` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:614-644 |
+| The no_invariant row: no extra members, the ID kept, validated, and a `file:` subject checked at C. | `_unexplained_row`; `file_subject_mismatch` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:682-720 |
 | The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition. | `test_the_writer_refuses_what_the_packet_refuses` | mcp/tests/test_unexplained_change_disposition.py:513-537 |
+
+## 260928-MIK-L14 The Reconsideration Rows Through The Writer (MIK-R14 Rule 4)
+
+- **Dispatch.** `_row`'s `(model, builder)` table gains `(ReconsiderationRow, self._reconsideration_row)`, the
+  fourth special kind (L10's table form kept at the sync, review F9), so a `reconsider:<DEC-ID>#<i>` subject is
+  routed by the model's `subject_pattern`.
+- **The common row (`_common_row`).** A reconsideration row carries the common fields only: `covers`, `effect`,
+  `because`, `examined` and `ref` are refused ("a reconsideration row carries no [...]"); the row ID is reused by
+  subject or minted; the row is validated against `ReconsiderationRow` (only `still_rejected` and `raise`, a
+  non-blank `reason`).
+- **What the subject names (`_reconsideration_row`).** The decision is read from the memory tree
+  (`state.record`) and checked by `reconsidered_alternative`: a decision record, a `rejected` or `deferred`
+  alternative at the index, and a `reconsider_on` link to it; otherwise the row is refused with the reason.
+- **`raise` (`_raise`).** The question is composed by `raise_question` and checked through the `questions` port
+  (a dry run of the task-document edit); with no port the row is refused ("a raise appends a question to the leaf's
+  task document, and this write has no task owner"), and a check refusal refuses it too ("the raise is refused, so
+  the item stays open: …"). Otherwise the decision's `status` becomes `under_reconsideration` through `state.put`
+  (status is in `NON_MEANING_FIELDS`, so the revision stays), the `(key, question)` pair is queued in `raised` for
+  `writer.py` to append before any file is written, and the note names the question. A `raise` leaves the links
+  as they are.
+- **`still_rejected` (`_refresh`, rulings 04:37:56 Q2/Q3, 05:31:11 F1–F4 and reviews R3–R5).** `_answered_item`
+  finds the leaf worklist's item for the subject (`reconsiderations`, filled from `WriteRequest.worklist`): with no
+  item the row is written and a note says no link was refreshed (review N3); a row whose `items` names another ID
+  is refused ("recompute the worklist and answer that item"). The `Answer` carries the item's `facts.changed`, the
+  decision as memory `HEAD` records it (`state.base_record`), the item ID and whether the row names it; `CodeAtC`
+  carries C's trees and blobs. `refreshed_links` returns the links and any problems: each problem refuses the row
+  ("the still_rejected refresh is refused: links.<i>: …"). Unchanged links write nothing; a newly judged link places
+  the decision through `_place_record`, so its revision goes up once in the leaf and it is reported in `records`
+  (F2: links are meaning); a link only carried to the current C is written with `state.put` and a note, with no
+  further bump (R4-1).
+- **Fields.** `questions` (the `OpenQuestions` port, `None` without a task owner), `raised` (the queued questions)
+  and `reconsiderations` (the worklist's reconsideration items by subject).
+- **Size and complexity.** The module is 1,094 lines (under the 1,200 limit). Radon reports no new C: the C blocks
+  (`run`, `_invariant_document`, `_write_record`, `_upsert_entry`) exist at base (reviews R1–R6).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The port, the queued questions and the worklist's items. | "questions: OpenQuestions"; "raised: list"; "reconsiderations: Mapping" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:138-143 |
+| The fourth special row kind in the dispatch table. | "(ReconsiderationRow, self._reconsideration_row)" | mcp/src/agents_remember/application/knowledge_writer/authoring.py:620-620 |
+| The row: common fields, the named alternative, then `raise` or the refresh. | `_reconsideration_row`; `_common_row` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:770-793; mcp/src/agents_remember/application/knowledge_writer/authoring.py:795-826 |
+| `still_rejected`: the answered item, the refresh, one bump when judged, carried in place otherwise. | `_refresh`; `_answered_item` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:828-871; mcp/src/agents_remember/application/knowledge_writer/authoring.py:873-891 |
+| `raise`: the checked question, the status, and the queued append. | `_raise` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:893-921 |
+| The refusals of a wrong subject or an extra field. | `test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees` | mcp/tests/test_reconsideration_surfacing.py:417-443 |
+| A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. | `test_raise_sets_the_status_and_appends_the_question_or_is_refused` | mcp/tests/test_reconsideration_surfacing.py:461-479 |
 
 ## Docs References
 
@@ -223,18 +267,18 @@ The mechanical fields, by concern.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fields that carry no meaning; a change elsewhere is a new revision. | `NON_MEANING_FIELDS` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:86-86 |
-| The operation: entries, records, rows, then unstored foreign evidence refuses. | `run` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:129-157 |
-| ID assignment and rerun reuse. | `_assign_ids` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:172-195 |
-| Origin: own records gain evidence, another owner's origin is kept exactly. | `_origin` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:230-265 |
-| Revision once per leaf against the base. | `_place_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:267-296 |
-| Records of any kind, with defaults and resolved links. | `_write_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:376-404 |
-| Realization and proof entries upserted in the sidecar. | `_upsert_entry` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:428-471 |
-| A rerun removes only this owner's unnamed entries. | `_remove_unnamed_entries` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:473-497 |
-| What became of a test the evidence names, and a test file named without a test is `unresolvable`. | `_cited_test`; `TestFileMention` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:534-560 |
-| History rows into the owner's file; a closed file is frozen. | `_write_rows` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:571-594 |
-| Foreign evidence stored in this owner's row reason. | `_reason_with_evidence` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:771-780 |
-| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:839-859 |
+| Fields that carry no meaning; a change elsewhere is a new revision. | `NON_MEANING_FIELDS` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:98-98 |
+| The operation: entries, records, rows, then unstored foreign evidence refuses. | `run` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:147-175 |
+| ID assignment and rerun reuse. | `_assign_ids` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:190-213 |
+| Origin: own records gain evidence, another owner's origin is kept exactly. | `_origin` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:248-283 |
+| Revision once per leaf against the base. | `_place_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:285-314 |
+| Records of any kind, with defaults and resolved links. | `_write_record` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:394-422 |
+| Realization and proof entries upserted in the sidecar. | `_upsert_entry` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:446-489 |
+| A rerun removes only this owner's unnamed entries. | `_remove_unnamed_entries` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:491-515 |
+| What became of a test the evidence names, and a test file named without a test is `unresolvable`. | `_cited_test`; `TestFileMention` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:552-578 |
+| History rows into the owner's file; a closed file is frozen. | `_write_rows` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:589-612 |
+| Foreign evidence stored in this owner's row reason. | `_reason_with_evidence` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:943-952 |
+| A cover's before and after, re-anchored at C when asked. | `_cover` | mcp/src/agents_remember/application/knowledge_writer/authoring.py:1011-1031 |
 | The conforming example: decision, realization and proof, validated. | `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` | mcp/tests/test_knowledge_writer.py:133-159 |
 | Rerun idempotence. | `test_a_rerun_of_the_same_list_writes_the_same_files_with_the_same_ids` | mcp/tests/test_knowledge_writer.py:285-295 |
 | Revision increments once; foreign evidence goes to this leaf's row. | `test_a_meaning_change_increments_the_revision_once_against_the_base` | mcp/tests/test_knowledge_writer.py:369-406 |
@@ -249,6 +293,18 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** New section "260928-MIK-L14 The Reconsideration Rows Through The Writer (MIK-R14 Rule 4)": the fourth dispatch pair, `_common_row`, `_reconsideration_row`, `_raise` (status `under_reconsideration` at an unchanged revision, the question checked and queued), `_refresh` and `_answered_item` (rulings Q2/Q3, F1–F4, N3, R3–R5; the revision bumped once per leaf through `_place_record`, F2; a carried link written in place, R4-1) and the three new fields; seven rows. L10's dispatch-table bullet and row are reworded for the fourth kind. The rows the fixer declined were re-pointed by the exact line shift of this leaf's diff; the others were projected or normalised by the installed fixer, and its generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `DecisionResolver` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: "decisions: DecisionResolver" repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_invariant_row`; `moving` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:954-977; mcp/src/agents_remember/application/knowledge_writer/authoring.py:961-961. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_covers`; "only on a moved row" repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:996-1009; mcp/src/agents_remember/application/knowledge_writer/authoring.py:1000-1000. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_relocate` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:1069-1080. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: "if self._attaches_to_retired(entry, invariant_id, document):" repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_attaches_to_retired` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:348-360. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_unexplained_row`; `file_subject_mismatch` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:682-720; mcp/src/agents_remember/application/knowledge_writer/authoring.py:716-716. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `NON_MEANING_FIELDS` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:98-98. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_reason_with_evidence` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:943-952. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:36+00:00: Generated citation repair: `_cover` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:1011-1031. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The History-rows Logic bullet names the `no_invariant` row and the dispatch table; added the section "260928-MIK-L10 The No-Invariant Row And The Retired-Attach Refusal (MIK-R10)" (`_unexplained_row`, `_attaches_to_retired`, the rulings 01:56:39 Q1 and Q4 and 03:24:28 N1), five rows. Other rows were projected or normalised by the installed fixer, or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-30T02:33:03+00:00: Generated citation repair: `DecisionResolver` repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:82-82. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:33:03+00:00: Generated citation repair: "decisions: DecisionResolver" repointed to mcp/src/agents_remember/application/knowledge_writer/authoring.py:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T12:56:40+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,33 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L14 The Owning Task's Manifest Answers Whether A Newer Version Is Approved
+
+**Route impact (MIK-R14@v2 rule 2), one module extended.** [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md)
+gains the manifest lookup MIK-R14's reconsideration surfacing needs. `latest_approved_requirement_version(task_root,
+stable_id)`, the packet's named function, reads the owning task's `requirements/manifest.json` (format
+`approved-requirement-corpus`) and returns the highest version among the `packets` entries with that stable ID and
+`state: approved`, comparing the integer after `v`. `requirement_approval` is the same lookup with its reason:
+`approved` (with `latest` and the entry's `packet`, `requirements/<file>`), `not_approved` (the manifest approves no
+version of the ID; accepted as a third state by ruling 2026-09-30T04:37:56 Q6), or `unknown` (no manifest this lookup
+can read, with the reason), and `newer_than` compares versions. A task without a readable manifest never triggers a
+reconsideration. The worklist's step 8 calls it after `resolve_requirement_endpoint` resolved the endpoint, from the
+resolved `task_root`, so L13's carry (Q5, reuse the resolver) is met; the writer never reads the manifest (review F4:
+the re-point takes the item's facts). Only `packets` is read. The root is only read, never written. Nothing else on
+this route changed.
+
+- **Candidate invariant (not ingested):** a `reconsider_on` requirement link fires only when its endpoint resolves
+  and the owning task's manifest approves a newer version; an unresolved endpoint or a task without a manifest never
+  fires. Proved by `test_the_manifest_lookup_returns_the_highest_approved_version` and
+  `test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version`, and on real data by the worker's scratch
+  leaf (`MIK-R13@v1` against the copied real manifest, which approves v2, fires; `MIK-R04@v1`, unresolved, does
+  not).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The approval states and what the manifest says about one ID. | `ApprovalState`; `RequirementApproval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:46-46; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:131-151 |
+| The lookup with its reasons, and the packet's named function. | `requirement_approval`; `latest_approved_requirement_version` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:183-194; mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:197-204 |
 
 ## 260928-MIK-L29 Five Index Lookups For The Knowledge Reader
 
@@ -79,14 +106,15 @@ carries back verbatim. **The requirement owner remains the resolver.** The modul
 root: `requirement-task-plane-unavailable` (no root) and `requirement-task-outside-tasks` (a repository that is not
 one directory). An unresolved endpoint is reported, never refused; `task_root` is kept so MIK-R14 can look for a
 newer approved version in the same task. It sits next to `requirement_owner.py`, and moves with it if MIK-R26
-retires the `memory/knowledge` package (ruling 2026-09-30T01:45:56 Q8, carried to L26); L14 and L29 reuse it (Q5).
+retires the `memory/knowledge` package (ruling 2026-09-30T01:45:56 Q8, carried to L26); L14 and L29 reuse it (Q5;
+L14's reuse is recorded in its section above).
 The writer (`application/knowledge_writer/requirement_links.py`) is its only caller today. Nothing else on this
 route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver: no root, a root outside tasks, or the owner's answer. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:71-107 |
-| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:93-98 |
+| The resolver: no root, a root outside tasks, or the owner's answer. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:85-121 |
+| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:107-112 |
 
 ## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
 
@@ -1343,7 +1371,7 @@ one leaf's curation pass.
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
 | The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:144-166; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:634-650 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
-| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1148-1148 |
+| The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1149-1149 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
@@ -1372,7 +1400,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:281-281 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:282-282 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1672,7 +1700,9 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): **route body updated for MIK-R14.** A new top section, "260928-MIK-L14 The Owning Task's Manifest Answers Whether A Newer Version Is Approved": the manifest lookup in `knowledge/requirement_endpoint.py` (rule 2, rulings 04:37:56 Q6 and 05:31:11 F4, L13's Q5 carry met) and one candidate invariant; two rows. L13's section now points to it. The row the installed fixer declined was re-pointed by the exact line shift; the fixer projected the rest, and its generated bullet is kept. No verification stamp was advanced. **After the sync:** L29's top section and this leaf's are both kept, this leaf's above; L29's reworded `record_ids` row is kept, and the rows into the lanes manifest were re-pointed by the exact shift from `ce459423`.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 Five Index Lookups For The Knowledge Reader" at the top (`entries_under`, `entries_in_directory`, `live_entry_paths_under`, `links_to_path`, `records_of_kind`, and `_incoming` over the shared `_links`; ruling Q2 recorded), with three rows. **Two reopened claims were re-read and reworded:** the `record_ids` row (it now names its new caller) and the `_self_and_ancestors` row (the list `families_governing` matches against); both constructs are unchanged in substance and only moved down the file. This pass's two generated bullets for them were removed because the claims were reworded; no committed history line was touched. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T10:06:27+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T09:56:53+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup" at the top (the shared seal fix in `projection.py`, `INDEX_FORMAT` v2, `record_ids`; ruling 22:22:37 Q6), with three rows. **Reopened claim re-read:** the retired-records row (`RETIRED_STATUS`, `project`) still holds and its wording was retained. No verification stamp was advanced.
 - 2026-09-30T01:47:43+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:278-278. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.

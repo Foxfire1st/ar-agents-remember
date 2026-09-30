@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_guarded_merge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T12:56:40+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -72,10 +72,10 @@ No domain documentation source is configured for this repository (`system/source
 | The harness the cases are built on, and its real three-commit Git scenario. | `build_case`; `GitBranchWorld` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:71-78 |
 | The boundary module that carries the scenarios needing their own world. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
 | **The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.** | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:127-201 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1338-1338|
+|**The lane manifest row that classifies the integration half — the lane header itself.**|"integration"| mcp/tests/test-evidence-lanes.toml:128-202 |
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1339-1339|
 | The lane manifest rows that classify both modules. | `unit-regression`; `integration` | mcp/tests/test-evidence-lanes.toml:281-281 |
-|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1338-1338|
+|The governed-artifact registration of the support module these cases share.|"contract:common-base-merge-cases"|mcp/tests/evidence-lifecycle.toml:1339-1339|
 
 ## Cross-Repo References
 
@@ -84,10 +84,15 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1338-1338|
+|  The governed-artifact registration of the support module these cases share. | "contract:common-base-merge-cases" |mcp/tests/evidence-lifecycle.toml:1339-1339|
 
 ## Update History
+- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): No content impact: citation-only repair. This card's source is unchanged; MIK-R14 inserted one `unit-regression` row at `test-evidence-lanes.toml:127` (`:126` before the sync onto L29) and one consumer line at `evidence-lifecycle.toml:839`, so every later row of either file moved down by one line. The rows citing those lines that the installed fixer declined were re-pointed by that exact shift (each row byte-identical to memory HEAD, its anchors checked in the base and shifted ranges); the fixer projected the others, and its generated bullets are kept. No verification stamp was advanced. **After the sync:** the rows L29's landed curation had also re-pointed were taken from L29's text and re-pointed by the exact line shift from `ce459423` to the staged tree (L14's lane row now at `:127`, its catalog line `:839`, the pin docstring), each anchor checked at both ends; the other rows keep this leaf's values.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/tests/test-evidence-lanes.toml` (one `unit-regression` row at `:108`), so the citation rows into it that moved were re-pointed by the installed fixer (its generated bullets in this list) and by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
+- 2026-09-30T10:08:11+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1339-1339. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:08:11+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:08:11+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1339-1339. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:08:11+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1339-1339. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T09:58:47+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
 - 2026-09-30T03:51:48+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1338-1338. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.

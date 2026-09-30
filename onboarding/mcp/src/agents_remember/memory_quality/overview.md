@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -94,6 +94,9 @@ dependency on the closeout plane.
   `rules_census.py` (MIK-R20, added by 260928-MIK-L20) registers the nine refusing census rules;
   `rules_admission.py` (MIK-R27, added by 260928-MIK-L27) registers the admission rule (one refusing,
   two report-only);
+  `rules_decisions.py` (MIK-R13, added by 260928-MIK-L13) registers the five decision content rules;
+  `rules_reconsideration.py` (MIK-R14, added by 260928-MIK-L14) registers the refusing reorder guard
+  `R14.1-linked-alternative-order`;
   `validator.py` exposes `validate_tree`, `validation_applies` and `require_valid_commit`;
   `report.py` holds the violations and the refusal; `commit_route.py` is the Git adapter the
   worktree layer's `KnowledgeValidationPort` binds to. It is separate from the onboarding checks
@@ -734,9 +737,9 @@ file-level cards carry the per-module detail; the route-level facts are these:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:56-76 |
+| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:58-78 |
 | The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:68-74; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:77-80 |
-| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:88-91; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:94-109 |
+| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-94; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:97-112 |
 | The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
 | The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
 
@@ -870,7 +873,7 @@ section.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-242 |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:212-260 |
 | The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
@@ -913,7 +916,7 @@ no worklist.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:115-141 |
-| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-242 |
+| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:212-260 |
 
 ## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
 
@@ -975,7 +978,7 @@ checklist bytes are unchanged; this curation's own `memory_quality_check` runs p
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174 |
-| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-187 |
+| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194 |
 
 ## 260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator
 
@@ -994,7 +997,7 @@ the writer and every commit route run them over every decision record; the check
 - **Every decision, new or carried** (ruling Q3). None of the rules is writer-reported.
 - **Not here:** `origin` naming the task is MIK-R21's shape, and the ruling travels in the attached entry's
   evidence (ruling Q1); unresolved requirement endpoints are reported by the writer, because this route has no task
-  plane (Q5/Q6, carried to L14).
+  plane (Q5/Q6, carried to L14; L14 met them, see its section below).
 - **Admission (review F6, ruling 02:05:07):** [`rules_admission.py`](knowledge_validator/rules_admission.py.md)'s
   `_exported` is `False` for every `DecisionRecord`, since the conversion exports no decisions; a `legacyId` on a
   decision exempts it from nothing.
@@ -1032,9 +1035,44 @@ items for the curator is carried to L31/L32.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-112 |
-| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:185-186 |
+| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:203-203 |
+
+## 260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration
+
+**MIK-R14@v2 adds one refusing rule to `knowledge_validator/`'s one registry (MIK-R22 rule 9) and one renderer to the
+worklist section.** [`rules_reconsideration.py`](knowledge_validator/rules_reconsideration.py.md) (new, carded,
+governed here) registers `R14.1-linked-alternative-order`, and `validator.py` imports it, so the writer and every
+commit route run it. It is L13's carried decision on link stability (ruling 2026-09-30T01:45:56): a `reconsider_on`
+link addresses its alternative by index, so an alternative a link addresses on either side (K_B or K_C) must keep its
+index against every comparison base. Alternatives are followed by their unique `option` text, read as raw JSON on
+both sides: a linked alternative whose option appears at another index has moved, and so has an alternative moved
+into a linked index (the second loop, review F6). A reword in place and appended alternatives pass. A move combined
+with a reword of the moved option, and duplicate option texts, are not followed (ruling 04:37:56 Q4, a recorded
+limit; binding links to a content hash would change the L21 link shape). On real data the lifted D18 with
+alternatives 1 and 2 swapped passes on the base build and is refused twice on the L14 build (review F5; note R6-4:
+that base build is the pre-L14 scratch at `31d761a2`).
+
+[`knowledge_worklist_section.py`](knowledge_worklist_section.py.md) gains `_reconsideration_facts`, one
+`_FACT_RENDERERS` entry: a `reconsideration_candidate` item shows its alternative, each changed target with its
+trigger, and "answered by <row>" or "needs a reconsideration row (still_rejected with a reason, or raise)". The
+section stays information, never a count: an unanswered candidate is enforced by MIK-R09's gate (L09) through
+`models/knowledge_files/reconsideration.reconsideration_item_open` (D29). Unconverted leaves render no section, so
+today's checklist bytes are unchanged; this curation's own `memory_quality_check` runs produced no worklist.
+
+- **Candidate invariant (not ingested):** a linked alternative cannot be reordered to another index (R14.1).
+  Realized by `moved_linked_alternatives`; proved by `test_a_reorder_of_linked_alternatives_is_refused` and the
+  real reorder contrast.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Moves followed from both sides by unique option text. | `moved_linked_alternatives` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:74-104 |
+| The refusing guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-142 |
+| A reconsideration item's facts. | `_reconsideration_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-191 |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** Added the section "260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration" after L10's: the new, carded `rules_reconsideration.py` (`R14.1-linked-alternative-order`, L13's carried link-stability decision, rulings 04:37:56 Q4 and 05:31:11 F5/F6, note R6-4), `_reconsideration_facts`, and one candidate invariant; three rows. The Route Model bullet names `rules_decisions.py` and `rules_reconsideration.py`, and L13's section notes that its Q5/Q6 carry is met. The entry is in the real list after the last section, not the inline `## Update History` mention. The fixer's generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.
+- 2026-09-30T10:06:55+00:00: Generated citation repair: "_FACT_RENDERERS: Final[" repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:06:55+00:00: Generated citation repair: "\"unexplained_file\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Worklist Section Renders The Unexplained Changes" after L13's (`_unexplained_facts` as two `_FACT_RENDERERS` entries; the Q3 onboarding-row rule; the L31/L32 carry), two rows. **Reopened claim reworded:** L06's `_FACT_RENDERERS` row (the table gained two entries) is re-anchored on the line-exact quote "_FACT_RENDERERS: Final["; this pass's fixer bullet for it was removed. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator" after L06's: the five `rules_decisions.py` rules, rulings 01:45:56 Q1–Q3 and Q5/Q6, and the review F6 admission guard in `rules_admission.py`. Three rows. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 The Worklist Section Renders The Family Route Conditions" (`_route_facts` and its helpers, the `_FACT_RENDERERS` dispatch table from review R3-N1), with two rows; L11's two rows into `knowledge_worklist_section.py` were re-measured by hand (`72-82`/`85-111` → `71-81`/`84-110`, `118-166` → `161-209`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.

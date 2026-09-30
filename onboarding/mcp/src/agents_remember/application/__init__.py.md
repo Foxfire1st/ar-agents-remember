@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T12:56:40+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,11 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1235-1238 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1242-1244 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): No content impact: citation-only repair. This card's source is unchanged. The memory-relative `## Hot Path Summary` citation moved with this pass's lines in `application/overview.md` (the fixer's generated bullets and this leaf's history entry, above the heading). At HEAD its range `1234-1237` ended on the heading (`1237`), so the row was re-measured rather than shifted: `1241-1243`, the heading and its summary paragraph. No verification stamp was advanced. **After the sync:** the heading moved down one more line with L29's merged history entry, so the row was re-measured again to `1242-1244`; L29's rows are kept as landed.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's source is unchanged; its memory-relative citation into `application/overview.md` moved exactly one line down, because this pass's one-line Update History entry near the top of that overview moved the `## Hot Path Summary` heading (`1234-1237` → `1235-1238`). No claim or anchor changed, and no verification stamp was advanced.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): No content impact: citation-only repair. This card's source is unchanged. The memory-relative `## Hot Path Summary` citation moved exactly six lines with this pass's lines in `application/overview.md` (`1228-1231` → `1234-1237`).
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. The memory-relative `## Hot Path Summary` citation moved exactly three lines with this pass's lines in `application/overview.md` (`1225-1228` → `1228-1231`).

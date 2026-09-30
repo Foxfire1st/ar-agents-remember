@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,8 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
 - **Dispatch table (L06, review R3-N1).** `_item_facts` looks the kind up in `_FACT_RENDERERS`
   (`touched_invariant` → `_entry_facts`, `stale_invariant` → `_stale_facts`, `reached_family` →
   `_family_facts`, `planned_untouched` → `_planned_facts`, `family_route_condition` → `_route_facts`, and
-  since MIK-R10 `unexplained_hunk` and `unexplained_file` → `_unexplained_facts`); any other kind still gets
+  since MIK-R10 `unexplained_hunk` and `unexplained_file` → `_unexplained_facts`, and since MIK-R14
+  `reconsideration_candidate` → `_reconsideration_facts`); any other kind still gets
   its sorted fact keys. The `if`/`elif` ladder it replaced rendered the same text.
 - **Family route facts (MIK-R06, `_route_facts`).** The condition and what it affects (`_route_affected`:
   the base view's routes or entry paths when the base view shows the condition, else the candidate view's;
@@ -59,6 +60,10 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
   <row>" or "needs a family row (rerouted, assigned, changed or retired; never no_impact) and routes that
   satisfy MIK-R04".
 
+- **Reconsideration facts (MIK-R14, `_reconsideration_facts`).** The alternative ("`<status>` alternative `<i>`
+  '`<option>`' of `<DEC-ID>`"), each changed target with the trigger that fired ("`<target key>` (`<trigger>`)"),
+  and "answered by `<row>`" or "needs a reconsideration row (still_rejected with a reason, or raise)". The facts
+  never evaluate `reconsider_when` (packet Exclusions).
 - **Unexplained-change facts (MIK-R10, `_unexplained_facts`).** The path and where the change is (each hunk
   as `-<start>,<count> +<start>,<count>`, or a file change's content and status), the coverage (state,
   realization-entry count, governing route and its status), "delete-only: only no_invariant" for a
@@ -109,11 +114,12 @@ code and memory repositories, so they are named here and not cited as rows.
 | Per-kind facts, dispatched by kind. | `_entry_facts`; `_item_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:41-52; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:64-68 |
 | The stale and reached-family renderers, split out of the ladder. | `_stale_facts`; `_family_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:55-56; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:59-61 |
 | A `family_route_condition` item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174 |
-| The kind-to-renderer table, since MIK-R10 with both unexplained kinds. | "_FACT_RENDERERS: Final["; "\"unexplained_hunk\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-187 |
+| The kind-to-renderer table, since MIK-R10 with both unexplained kinds. | "_FACT_RENDERERS: Final["; "\"unexplained_hunk\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:202-202 |
+| A reconsideration item's facts: the alternative, each changed target and trigger, and what answers it; its renderer entry. | `_reconsideration_facts`; "\"reconsideration_candidate\": _reconsideration_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-191; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:204-204 |
 | An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-112 |
 | A `planned_untouched` item's facts. | `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81 |
 | The planned-effects block, one line per declaration. | `_planned_lines`; "Planned effects (MIK-R11)" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:115-141 |
-| The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-242 |
+| The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:212-260 |
 | The ambiguous-rename checklist line: no suggestion, every candidate named. | `test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing` | mcp/tests/test_family_route_conditions.py:426-450 |
 | The checklist and the tool show the marks. | `test_a_leaf_reads_its_declaration_and_the_checklist_and_tool_show_the_marks` | mcp/tests/test_planned_knowledge_effects.py:530-587 |
 | The checklist renders it only when a worklist exists. | `knowledge_worklist`; `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-69; mcp/src/agents_remember/memory_quality/curator_checklist.py:289-289 |
@@ -128,6 +134,8 @@ No meaningful cross-repo references found: the module renders an in-memory docum
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The dispatch-table bullet names `reconsideration_candidate` → `_reconsideration_facts`, and a Logic bullet records what that renderer shows (the alternative, each changed target with its trigger, and what answers it). One row added. The `_FACT_RENDERERS` row's claim was not reworded, so the fixer's generated bullet is kept; the `knowledge_worklist_lines` row the fixer declined was re-pointed by the exact line shift (+18: the new renderer sits above it). No verification stamp was advanced.
+- 2026-09-30T10:06:48+00:00: Generated citation repair: "_FACT_RENDERERS: Final["; "\"unexplained_hunk\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:202-202. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The dispatch-table bullet names the two unexplained kinds; a Logic bullet for `_unexplained_facts`; one row added. **Reopened claim reworded:** the `_FACT_RENDERERS` row (the table gained two entries) is re-anchored on the line-exact quote "_FACT_RENDERERS: Final[" and names the new entry; this pass's fixer bullet for it was removed. Other rows were projected or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-30T02:33:21+00:00: Generated citation repair: `_route_facts`; `_route_affected`; `_route_suggestion` repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Logic records the `_FACT_RENDERERS` dispatch table (review R3-N1; the rendered text is unchanged) and the `family_route_condition` facts (`_route_facts`, `_route_affected`, `_route_suggestion`); the byte-identity boundary names the new row. Four rows added; the planned-block and section rows re-measured by hand (the code moved unevenly). The fixer's one bullet above covers `_planned_facts`, whose claim was not reworded, so it is kept. No verification stamp was advanced.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_review_attributed_source_content.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T12:56:40+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ No domain documentation source is configured for this repository (`system/source
 | **The two review-fix cases: exact spelling, and a link scope size cannot fail or an unread half cannot negate.** | `test_a_padded_spelling_is_never_admitted_as_attributed_context`; `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`; `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent` | mcp/tests/test_knowledge_review_attributed_source_content.py:274-298; mcp/tests/test_knowledge_review_attributed_source_content.py:301-325; mcp/tests/test_knowledge_review_attributed_source_content.py:328-353 |
 | **The MIK-L31 cases: the never-initialized remedy, and a proof entry's path linked in a tree index but not in a dataset.** | `test_never_initialized_knowledge_asks_to_initialize_it`; `test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at`; "def _proof_at_path(" | mcp/tests/test_knowledge_review_attributed_source_content.py:356-369; mcp/tests/test_knowledge_review_attributed_source_content.py:372-385; mcp/src/agents_remember/application/review_source_realization_link.py:298-314 |
 | The population paths the fixture's knowledge links. | `INTEGRATION_PATH`; `RESOLUTION_PATH`; `UNPARSED_PATH` | mcp/tests/read_scope_test_support.py:115-115; mcp/tests/read_scope_test_support.py:119-119; mcp/tests/read_scope_test_support.py:125-125 |
-| The lane row and the read-scope consumer row this module adds. | "mcp/tests/test_knowledge_review_attributed_source_content.py" | mcp/tests/test-evidence-lanes.toml:142-142; mcp/tests/evidence-lifecycle.toml:1530-1530 |
+| The lane row and the read-scope consumer row this module adds. | "mcp/tests/test_knowledge_review_attributed_source_content.py" | mcp/tests/test-evidence-lanes.toml:144-144; mcp/tests/evidence-lifecycle.toml:1531-1531 |
 | The owners under test. | `admit_source_path`; `recorded_realization_link` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_realization_link.py:116-151 |
 
 ## Cross-Repo References
@@ -112,6 +112,7 @@ No cross-repository behavior is measured in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): No content impact: citation-only repair. This card's source is unchanged; MIK-R14 inserted one `unit-regression` row at `test-evidence-lanes.toml:127` (`:126` before the sync onto L29) and one consumer line at `evidence-lifecycle.toml:839`, so every later row of either file moved down by one line. The rows citing those lines that the installed fixer declined were re-pointed by that exact shift (each row byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No verification stamp was advanced. **After the sync:** its lanes row was moved from this leaf's pre-sync numbering to the synced tree (+1 for L29's row at `:108`), mapped line for line.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. The case table records the two new cases (the never-initialized remedy, MIK-R31 rule 6 O1; the proof link in a tree index and none in a dataset, ruling 05:36:19 Q1) and the undetermined case's new assertion of the Q1 wording; the population constants row was re-pointed by the exact +2 import shift. One row added.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; rows citing lane rows after the one `unit-regression` row MIK-R10 inserted at `test-evidence-lanes.toml:124` (or catalog lines after `evidence-lifecycle.toml:836`) were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.

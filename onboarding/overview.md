@@ -5,11 +5,30 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash |  `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
-| lastVerifiedCommitDate |  2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash |  `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate |  2026-09-30T13:14:52+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L14` (MIK-R14@v2): once a memory tree is converted, a decision's
+rejected or deferred alternative comes back up when a leaf changes a target its `reconsider_on` link names (a
+record, a history row's subject, a code anchor, or a requirement packet whose owning task approved a newer version).
+The worklist lists it as a reconsideration candidate, and the curator answers it: `still_rejected` with a reason
+(the link is refreshed to what was judged, so the same condition is not raised again, while a later change is), or
+`raise`, which puts the decision under reconsideration and appends a question to the leaf's task document for the
+developer. The curator never reverses a decision, and a linked alternative cannot be reordered to another index.
+The curator's hand-off template says how to write the row: the authored `skills/` copy, synchronized by
+`scripts/sync-skills.py` into the package copy and the eight harness starter copies this route governs.
+**Nothing the installed runtime does changes before MIK-R37**: unconverted memory gets no worklist and no file
+write.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's reconsideration-row bullet, mirrored into the package and starter copies. | "A reconsideration row (MIK-R14, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:583-607 |
+| The decision section's reorder refusal. | "with a linked alternative moved to another index against the memory base" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:726-729 |
 
 ## 260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used
 
@@ -60,7 +79,7 @@ memory is unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's decision-record section, mirrored into the package and starter copies. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:666-726 |
+| The template's decision-record section, mirrored into the package and starter copies. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:691-752 |
 | The curator role's step-3 pointer to lifting decisions. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## 260928-MIK-L01 A Path Is Read With Its Whole Family, Not Yet Used
@@ -112,7 +131,7 @@ refused until records are authored on a converted line.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's admission section, mirrored into the package and starter copies. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:613-665 |
+| The template's admission section, mirrored into the package and starter copies. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:638-690 |
 | OM-4, mirrored likewise. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
 | c-14 step 3's admission paragraph, mirrored likewise. | "A foundation is a small set of meaningful records" | skills/c-14-knowledge-bootstrap/SKILL.md:161-186 |
 
@@ -231,8 +250,8 @@ runtime does changes before MIK-R37**: no production memory tree is converted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-612; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
-| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:56-60 |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-637; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:60-64 |
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
 
@@ -338,6 +357,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **root body updated for MIK-R14.** A new top section, "260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used": the repository-level consequence (reconsideration candidates, `still_rejected` and `raise`, never reversing, the reorder refusal) and the template bullet reaching the package copy and the eight harness starter copies, inert before MIK-R37; two rows. The other rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used" at the top: the repository-level consequence and the c-04 paragraph reaching the package copy and the eight starter copies (ruling Q5, 2026-09-30 03:32:18), with one row. L01's c-04 row still resolves.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used" at the top: the repository-level consequence, with the template bullet reaching the package and eight starter copies; one row. L13's template row was re-pointed by the +8 shift of the inserted bullet. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 Decisions Are Recorded With The Alternatives They Rejected, Not Yet Used" at the top: the repository-level consequence of MIK-R13 (decision content rules, requirement endpoints reported never refused, a decision never an export) and the two skill files reaching the package and the eight starter copies. Two rows. No verification stamp was advanced.
@@ -600,7 +620,7 @@ Three consequences a reader of this overview should carry, because they are what
 | --- | --- | --- |
 | **The declaration both sides resolve, and the constant that names the file.** | `published_dataset_path`; `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177; mcp/src/agents_remember/application/published_intent.py:283-299 |
 | **The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.** | `declared_publication_location`; `admitted_destination`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
-| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:314-350; mcp/src/agents_remember/cli/knowledge_ingest.py:395-407; mcp/src/agents_remember/cli/knowledge_ingest.py:615-628 |
+| The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report. | `_destination_conflict`; `_selected_destination`; `_publication_route` | mcp/src/agents_remember/cli/knowledge_ingest.py:321-357; mcp/src/agents_remember/cli/knowledge_ingest.py:402-414; mcp/src/agents_remember/cli/knowledge_ingest.py:622-635 |
 | The context rule that decides *which* memory root the location is, with no fallback between the two. | `contract_context` | mcp/src/agents_remember/worktrees/modules/context.py:38-77 |
 | **The canonical carrier instructions that now tell the curator seat to invoke that route.** | "Author and publish the durable knowledge through the real writer." | skills/l-01-agent-lifecycles/roles/curator.md:70-70 |
 | The mounted refusal that names it, and the operation document that carries it. | `_register_knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |

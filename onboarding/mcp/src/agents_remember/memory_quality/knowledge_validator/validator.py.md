@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@
 
 ### Conventions
 
-- The module imports `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_decisions` (MIK-R13, since leaf 260928-MIK-L13), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's three admission rules, MIK-R13's five decision content rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because the admission rules are registered here, the fixture tree's every validation now carries one report-only `R27.4-legacy-unassessed` count (its Doc14 family is an export).
+- The module imports `rules_admission` (MIK-R27, since leaf 260928-MIK-L27), `rules_decisions` (MIK-R13, since leaf 260928-MIK-L13), `rules_reconsideration` (MIK-R14, since leaf 260928-MIK-L14), `rules_census` (MIK-R20, since leaf 260928-MIK-L20), `rules_references`, `rules_routes` (MIK-R04, since leaf 260928-MIK-L04) and `rules_structure` for their registration side effect, so MIK-R27's three admission rules, MIK-R13's five decision content rules, MIK-R20's nine census rules and MIK-R04's six family route rules run wherever the validator runs. Because the admission rules are registered here, the fixture tree's every validation now carries one report-only `R27.4-legacy-unassessed` count (its Doc14 family is an export).
 - With no bases every anchor is checked for path existence (a writer's or a curator's run).
 
 ### Invariants And Boundaries
@@ -59,11 +59,12 @@ The three entry points.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The validator: every registered rule over the candidate. | `validate_tree` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:49-85 |
-| Rule 8's applicability: the marker on any side. | `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:88-91 |
-| The commit route's call: nothing, the report, or the refusal. | `require_valid_commit` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:94-109 |
+| The validator: every registered rule over the candidate. | `validate_tree` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:52-88 |
+| Rule 8's applicability: the marker on any side. | `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-94 |
+| The commit route's call: nothing, the report, or the refusal. | `require_valid_commit` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:97-112 |
 | Commit routes validate only when a side has the marker. | `test_commit_routes_validate_only_when_a_side_has_the_layout_marker` | mcp/tests/test_knowledge_validator.py:515-527 |
 | An unconverted base is refused, and a standalone conversion checks no path. | `test_an_unconverted_base_is_refused_and_a_standalone_conversion_checks_no_path` | mcp/tests/test_knowledge_validator.py:427-439 |
+| The registering import of MIK-R14's link guard. | `rules_reconsideration` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:27-29 |
 | The registering import of MIK-R13's decision content rules. | `rules_decisions` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:24-26 |
 
 ## Cross-Repo References
@@ -77,6 +78,7 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The Conventions bullet names the registering import of `rules_reconsideration` (MIK-R14's link guard); one row added. The other rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** The Conventions bullet now names the `rules_decisions` import, which registers MIK-R13's five decision content rules wherever the validator runs. One row was added. Rows below the import were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — `validator.py` now imports `rules_admission`, registering MIK-R27's three admission rules.** The Conventions bullet names it and the legacy count every fixture validation now carries. The rows were re-pointed by the exact three-line shift (`validator.py`) and by the test file's own shifts, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **body update — `validator.py` now imports `rules_census`, registering MIK-R20's nine census rules.** The Conventions bullet names it. The rows were re-pointed by the exact three-line shift, their claims unchanged. No verification stamp was advanced.

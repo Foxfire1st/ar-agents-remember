@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_review_one_sided_statements.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T12:56:40+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -160,7 +160,7 @@ it.
 | **The projection owner whose markers and canonicality this module asserts.** | `structured_value_text`; `STRUCTURED_VALUE_LEAD`; `STRUCTURED_VALUE_TAIL` | mcp/src/agents_remember/application/review_statement_sides.py:61-62; mcp/src/agents_remember/application/review_statement_sides.py:69-83 |
 | The adapter entry point the cases drive, and the one-sided contract its pane values carry. | `compose_review`; `ReviewCandidateResolution`; `ReviewRecordInputs` | mcp/src/agents_remember/application/knowledge_review.py:69; mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/knowledge_review.py:86 |
 | **The fixture this module builds on, and the public store operations it authors through.** | `ReadScopeFixture`; `build_read_scope_fixture`; `open_knowledge_store`; `create_invariant`; `create_revision` | mcp/tests/read_scope_test_support.py:177-243; mcp/tests/read_scope_test_support.py:270-287; mcp/src/agents_remember/memory/knowledge/store.py:767-784; mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-325 |
-| **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/test-evidence-lanes.toml:133-133; mcp/tests/evidence-lifecycle.toml:1531-1531 |
+| **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** | "mcp/tests/test_knowledge_review_one_sided_statements.py" | mcp/tests/test-evidence-lanes.toml:135-135; mcp/tests/evidence-lifecycle.toml:1532-1532 |
 | The `consumer_scope = "exact"` artifact whose list this module joined. | `"mcp/tests/read_scope_test_support.py"`; `consumer_scope` | mcp/tests/evidence-lifecycle.toml:1425-1472 |
 | **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** | `KnowledgeStatements`; `names an absent field value and a recorded empty one without printing either as blank` | dashboard/src/panels/review/KnowledgeStatements.test.tsx:291-336; dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
 
@@ -173,6 +173,7 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): No content impact: citation-only repair. This card's source is unchanged; MIK-R14 inserted one `unit-regression` row at `test-evidence-lanes.toml:127` (`:126` before the sync onto L29) and one consumer line at `evidence-lifecycle.toml:839`, so every later row of either file moved down by one line. The rows citing those lines that the installed fixer declined were re-pointed by that exact shift (each row byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No verification stamp was advanced. **After the sync:** its lanes row was moved from this leaf's pre-sync numbering to the synced tree (+1 for L29's row at `:108`), mapped line for line.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; rows citing lane rows after the one `unit-regression` row MIK-R10 inserted at `test-evidence-lanes.toml:124` (or catalog lines after `evidence-lifecycle.toml:836`) were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `evidence-lifecycle.toml` and `test-evidence-lanes.toml`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).

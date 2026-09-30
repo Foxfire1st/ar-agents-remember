@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_history_files.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,9 +31,12 @@ test to MIK-R22. Registered in the `unit-regression` lane; 9 tests, 29 collected
   placed inside an invariant record is refused as an extra input.
 - `test_file_shape_owner_and_row_uniqueness_are_enforced`: exactly one of `leaf`/`wave`/`crossing`,
   the crossing pattern, strict `closed`, unique row IDs and subjects, and `mint_id("history_row")`.
-- `test_row_kind_registry_owns_disjoint_subject_forms`: the five registered kinds (`invariant`,
-  `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, and since MIK-R10
-  `unexplained`, in that order; MIK-R10's own row cases are in `test_unexplained_change_disposition.py`), their subject dispatch (an
+- `test_row_kind_registry_owns_disjoint_subject_forms`: the six registered kinds (`invariant`,
+  `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, since MIK-R10
+  `unexplained`, and since MIK-R14 `reconsideration`), **compared as a set since MIK-R14**: leaves register in
+  landing order, so the order is not asserted (review F9); the duplicate-name check the ordered list gave is gone,
+  while subject disjointness is still asserted below it (review N4, accepted as a note). MIK-R10's own row cases
+  are in `test_unexplained_change_disposition.py` and MIK-R14's in `test_reconsideration_surfacing.py`. The case also asserts the subject dispatch (an
   `onboarding:<path>` subject now dispatches to `onboarding_trace`), the refusal of an unclaimed subject
   (`DEC-…`, a legacy `INV-0143`), and both disposition tuples.
 - `test_invariant_row_dispositions_and_shape` (parametrized): every invariant disposition with
@@ -83,13 +86,13 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 | --- | --- | --- |
 | The conforming example and the owner path. | `test_conforming_example_parses_at_its_owner_path_and_formats_canonically` | mcp/tests/test_knowledge_history_files.py:111-144 |
 | File shape, owner and uniqueness. | `test_file_shape_owner_and_row_uniqueness_are_enforced` | mcp/tests/test_knowledge_history_files.py:147-165 |
-| The row-kind registry, with the five kinds (MIK-R10 adds `unexplained`). | `test_row_kind_registry_owns_disjoint_subject_forms` | mcp/tests/test_knowledge_history_files.py:168-190 |
-| Invariant dispositions, covers and effects. | `test_invariant_row_dispositions_and_shape` | mcp/tests/test_knowledge_history_files.py:209-249 |
-| Family rows. | `test_family_row_dispositions_and_examined_members` | mcp/tests/test_knowledge_history_files.py:252-260 |
-| Re-anchoring against the candidate. | `test_after_anchor_must_equal_the_entry_anchor_in_the_candidate` | mcp/tests/test_knowledge_history_files.py:268-292 |
-| The revision binding. | `test_revision_binding_for_invariant_and_family_rows` | mcp/tests/test_knowledge_history_files.py:295-317 |
-| The freeze predicate. | `test_closed_in_base_implies_byte_identical_in_candidate` | mcp/tests/test_knowledge_history_files.py:329-357 |
-| The parallel merge in a real repository. | `test_two_parallel_leaves_merge_their_history_files_without_conflict` | mcp/tests/test_knowledge_history_files.py:370-394 |
+| The row-kind registry, with the six kinds as a set (MIK-R10 adds `unexplained`, MIK-R14 `reconsideration`). | `test_row_kind_registry_owns_disjoint_subject_forms` | mcp/tests/test_knowledge_history_files.py:168-193 |
+| Invariant dispositions, covers and effects. | `test_invariant_row_dispositions_and_shape` | mcp/tests/test_knowledge_history_files.py:212-252 |
+| Family rows. | `test_family_row_dispositions_and_examined_members` | mcp/tests/test_knowledge_history_files.py:255-263 |
+| Re-anchoring against the candidate. | `test_after_anchor_must_equal_the_entry_anchor_in_the_candidate` | mcp/tests/test_knowledge_history_files.py:271-295 |
+| The revision binding. | `test_revision_binding_for_invariant_and_family_rows` | mcp/tests/test_knowledge_history_files.py:298-320 |
+| The freeze predicate. | `test_closed_in_base_implies_byte_identical_in_candidate` | mcp/tests/test_knowledge_history_files.py:332-360 |
+| The parallel merge in a real repository. | `test_two_parallel_leaves_merge_their_history_files_without_conflict` | mcp/tests/test_knowledge_history_files.py:373-397 |
 | Lane registration. | "mcp/tests/test_knowledge_history_files.py" | mcp/tests/test-evidence-lanes.toml:100-100 |
 
 ## Cross-Repo References
@@ -101,6 +104,7 @@ No meaningful cross-repo references found.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The registry case now lists six kinds (`reconsideration` added) and compares them as a set, because leaves register in landing order (review F9; the lost duplicate-name check is review N4, accepted as a note). The registry row is reworded; its range still holds. The other rows were normalised by the installed fixer. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The registry case now lists five kinds (`unexplained` last); the bullet and its row were reworded. No verification stamp was advanced.
 - 2026-09-30T02:35:16+00:00: Generated citation repair: "mcp/tests/test_knowledge_history_files.py" repointed to mcp/tests/test-evidence-lanes.toml:100-100. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:50:35+00:00: Generated citation repair: `test_invariant_row_dispositions_and_shape` repointed to mcp/tests/test_knowledge_history_files.py:208-248. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.

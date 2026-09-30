@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/requirement_links.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,8 +49,10 @@
 
 ### Todos
 
-- **L14 (review F2):** a standalone `knowledge-validate` or a commit route reports no requirement endpoints; only a
-  writer run does, for the records it touched.
+- **L14 (review F2), partly resolved by L14:** the endpoints of `reconsider_on` links are now reported in every
+  worklist run's `reconsideration.links` summary (resolution and approval state, from the leaf's coordination root,
+  MIK-R14). A standalone `knowledge-validate` or a commit route still reports no requirement endpoints; only a
+  writer run does, for the records it touched. The reads that show endpoints stay with L29.
 
 ## Docs References
 
@@ -85,4 +87,5 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree, wr
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): this card's source is unchanged. **A forward reference to L14 is resolved in the Todos:** MIK-R14 adds the validator rule `R14.1-linked-alternative-order` (index stability, L13's carried Q6/F1) and reports `reconsider_on` requirement endpoints in the worklist's `reconsideration.links` summary (Q5/F2, partly: commit routes still resolve none, and the reads stay with L29). The installed fixer found nothing to change here. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): created this card for the new file MIK-R13 adds, recording ruling 01:45:56 Q5 and review F2 and F4. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

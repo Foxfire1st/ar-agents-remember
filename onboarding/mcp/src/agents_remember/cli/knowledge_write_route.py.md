@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_write_route.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,19 @@ changes (architect ruling 1).
   strict leaf lookup (ruling F1). `run_wave_write` binds none, so a wave refuses a `dropped` planned row.
   Since MIK-R13 the request also carries `coordination_root=contract.coordination_root`, so the writer resolves
   each requirement endpoint through its owning task and reports it (`requirementEndpoints`); an unresolved
-  endpoint never refuses the run.
+  endpoint never refuses the run. Since MIK-R14 it also carries `questions=LeafQuestions(args, contract)` and
+  `worklist=read_leaf_worklist(contract.contract_path)`: the leaf's persisted worklist, so a `still_rejected` row
+  refreshes the links whose trigger fired on its item, and a lazy port to the leaf task document's
+  `openQuestions` for `raise` rows.
+- **`LeafQuestions` (MIK-R14).** A `dataclass` over the parsed arguments and the contract that implements the
+  writer's `OpenQuestions` port lazily: the MCP authority settings are read only when a `raise` needs them (`check`
+  or `append`), from `--config` (`require_config_path`) or else by `discover_config(Path.cwd())`. A settings error
+  (`AgentsRememberError`, `ConfigDiscoveryError`, `OSError`, `ValueError`) yields `UnavailableOpenQuestions` with
+  "no MCP authority settings to reach task_doc (…); pass --config", so the `raise` is refused and nothing is
+  written; otherwise `TaskDocOpenQuestions` addresses the contract's repository, contract path, task root and leaf
+  (`leaf_id`, else the task name). A run with only `still_rejected` rows never reads settings. The worker's real
+  evidence ran the scratch answer with `declare_execution_mode("test")`, because checkout-CLI mode substitutes
+  synthetic settings for `--config`; the installed-mode check is carried to L37 (review F10).
 - `run_wave_write` (`knowledge-bootstrap`): a bootstrap has no leaf, so it writes as the wave `--wave` names
   (`[A-Za-z0-9._-]`); its history file is `knowledge/history/<wave>.json` (MIK-R07 rule 8); the task is
   the bootstrap scope (architect ruling 2). Since MIK-R13 it takes an optional keyword `coordination_root` (default `None`) and
@@ -87,18 +99,19 @@ The dispatch test and the two routes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The database-only flags refused by name. | `_DATABASE_ONLY` | mcp/src/agents_remember/cli/knowledge_write_route.py:43-50 |
-| The layout-marker test. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:55-58 |
-| The rule 9 write refusal for an unconverted leaf tree whose official line is converted. | `unconverted_write_refusal`; `unconverted_line_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:61-71; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
-| The owner from the contract and `task.json`. | `leaf_owner` | mcp/src/agents_remember/cli/knowledge_write_route.py:95-107 |
-| The task owner's decision resolver for the leaf (MIK-R11). | `leaf_decisions`; `leaf_decision_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:136-140 |
-| The leaf route, which binds that resolver. | `run_leaf_write`; "decisions=leaf_decisions(contract)" | mcp/src/agents_remember/cli/knowledge_write_route.py:143-176 |
-| The wave route. | `run_wave_write` | mcp/src/agents_remember/cli/knowledge_write_route.py:179-219 |
-| The ingest dispatch on the loaded contract. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709 |
+| The database-only flags refused by name. | `_DATABASE_ONLY` | mcp/src/agents_remember/cli/knowledge_write_route.py:53-60 |
+| The layout-marker test. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:65-68 |
+| The rule 9 write refusal for an unconverted leaf tree whose official line is converted. | `unconverted_write_refusal`; `unconverted_line_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:71-81; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
+| The owner from the contract and `task.json`. | `leaf_owner` | mcp/src/agents_remember/cli/knowledge_write_route.py:105-117 |
+| The task owner's decision resolver for the leaf (MIK-R11). | `leaf_decisions`; `leaf_decision_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:146-150 |
+| The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist. | "def run_leaf_write("; "decisions=leaf_decisions(contract)"; "questions=LeafQuestions(args, contract)"; "worklist=read_leaf_worklist(contract.contract_path)" | mcp/src/agents_remember/cli/knowledge_write_route.py:195-195; mcp/src/agents_remember/cli/knowledge_write_route.py:223-226 |
+| The lazy port: settings read only when a `raise` needs them, from `--config` or discovery; unavailable settings refuse the `raise`. | `LeafQuestions`; "pass --config" | mcp/src/agents_remember/cli/knowledge_write_route.py:154-192 |
+| The wave route. | `run_wave_write` | mcp/src/agents_remember/cli/knowledge_write_route.py:233-273 |
+| The ingest dispatch on the loaded contract. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
 | The bootstrap dispatch on the admitted memory root. | `_run` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538 |
 | Planning writes nothing; unconverted memory is not this route. | `test_a_planning_run_writes_nothing_and_unconverted_memory_is_not_this_route` | mcp/tests/test_knowledge_writer.py:444-461 |
 | Blank authorization refused and recorded. | `test_the_leaf_file_route_refuses_a_blank_authorization_and_reports_it` | mcp/tests/test_knowledge_writer.py:609-619 |
-| The leaf route and the wave route pass the coordination root requirement endpoints resolve against (MIK-R13). | `coordination_root` | mcp/src/agents_remember/cli/knowledge_write_route.py:172-172; mcp/src/agents_remember/cli/knowledge_write_route.py:185-185; mcp/src/agents_remember/cli/knowledge_write_route.py:215-215 |
+| The leaf route and the wave route pass the coordination root requirement endpoints resolve against (MIK-R13). | `coordination_root` | mcp/src/agents_remember/cli/knowledge_write_route.py:224-224; mcp/src/agents_remember/cli/knowledge_write_route.py:239-239; mcp/src/agents_remember/cli/knowledge_write_route.py:269-269 |
 
 ## Cross-Repo References
 
@@ -110,6 +123,10 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The `run_leaf_write` bullet records the persisted worklist and the task-document port it now passes; a new `LeafQuestions` bullet (settings read lazily from `--config` or discovery, unavailable settings refuse a `raise`, the evidence's test-mode note and the L37 carry of review F10). **Reopened claim re-read and reworded:** the `run_leaf_write` row (the function changed structurally) now names what the route binds and is re-anchored on line-exact quotes; I removed this pass's generated bullet for it. One row added (`LeafQuestions`). The other rows were projected by the installed fixer or re-pointed by the exact line shift (`leaf_decisions`, the `coordination_root` row), and the kept generated bullets cover claims I did not reword. No verification stamp was advanced.
+- 2026-09-30T10:06:17+00:00: Generated citation repair: `_DATABASE_ONLY` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:53-60. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:06:17+00:00: Generated citation repair: `is_converted` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:65-68. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:06:17+00:00: Generated citation repair: `run_wave_write` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:233-273. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic records that `run_leaf_write` passes the contract's `coordination_root` and that `run_wave_write` takes an optional `coordination_root` keyword and passes it on, so the writer reports each requirement endpoint (never refused). One row was added. The wave-route row's range was re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.

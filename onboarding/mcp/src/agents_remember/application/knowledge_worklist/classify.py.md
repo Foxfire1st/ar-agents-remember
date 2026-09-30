@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/classify.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -19,13 +19,15 @@
 **Entry classification and the knowledge-side changes (MIK-R08 definitions 4, 6 and 7).** `Classifier`
 gives each K_B entry its class for one run, with the facts that decided it; `knowledge_changes` compares K_B
 with K_C and reports, per K_B invariant, whether its record changed and which entries were added, retired or
-re-anchored, and which K_B families' records changed.
+re-anchored, and which K_B families' records changed. Since MIK-R14 it also classifies a decision's
+`reconsider_on` anchor target the same way (`classify_anchor`), without making it an entry.
 
 ## Code Commentary
 
 ### Logic
 
-- **Classes, first that applies** (`Classifier._classify`):
+- **Classes, first that applies** (`Classifier._classify_anchor`; `_classify` passes it the entry's ID, kind,
+  invariant, path and anchor):
   1. `stale_at_base`: the entry's `blob` differs from its path's blob at B, and at B its range content
      differs from the recorded `content` or its locator does not resolve.
   2. `moved_or_absent`: the path is absent at C or Git's rename detection renamed it, the symbol does not
@@ -37,7 +39,15 @@ re-anchored, and which K_B families' records changed.
   4. `untouched` when the C blob **is** the recorded `blob`, whatever the recorded content says.
   5. Otherwise `touched` when the range content at C differs from the recorded `content` (no hunk hit it,
      but the bytes changed), else `carried`.
-- `Classification` holds the entry ID and kind (`realization` or `proof`, from `ProofEntry`), invariant,
+- **A `reconsider_on` link's anchor (MIK-R14 rule 1, `classify_anchor`).** The link target is classified by
+  the same `_classify_anchor` body, with kind `link`, no invariant, and the link's key
+  (`reconsider:<DEC>#<i>/links.<j>`) as its ID. It is **not an entry**: it is not memoized in `classify` and never
+  recorded among the run's classified entries. A link's anchor always names its path (asserted). The worklist's
+  reconsideration registrant fires `anchor` on `touched`/`moved_or_absent` and `anchor_stale` on `stale_at_base`.
+  The split of the old `_classify` body into `_classify_anchor` is moved code: radon went from 14 to 13, with no
+  behaviour change (review R1).
+- `Classification` holds the entry ID and kind (`EntryKind`: `realization` or `proof`, from `ProofEntry`, or
+  `link`), invariant,
   path, class, anchor, both blobs, both resolutions, the hitting hunks, `renamed_to` and `unique_match`.
   `contents()` is the per-side content identity used in item IDs (`absent` where unresolved);
   `to_document()` is its facts form.
@@ -68,6 +78,9 @@ re-anchored, and which K_B families' records changed.
   closes the gap where no hunk hit but the bytes differ (the worker's filled-in choice, accepted).
 - **A curator's re-anchor at an unchanged path still owes a row**: it is a knowledge-side change unless a
   covering class or the mechanical carry explains it.
+- **A link anchor is classified like an entry but never becomes one** (MIK-R14): proved by
+  `test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise`, which asserts that the run's `entries`
+  stay `RLZ-`/`PRF-` only.
 
 ### Todos
 
@@ -91,14 +104,16 @@ code and memory repositories, so they are named here and not cited as rows.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The class order, the definition-4 ruling and the definition-7 rules. | "When the C blob *is* the" | mcp/src/agents_remember/application/knowledge_worklist/classify.py:1-29 |
-| Raising and covering classes. | `RAISING_CLASSES`; `COVERING_CLASSES` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:63-64 |
-| One entry's class and facts; the per-side content identity. | `Classification`; `contents` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:68-110 |
-| Classify once per run. | `classify` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:135-140 |
-| The class decision, with the unchanged-blob `untouched` rule. | `_classify` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:142-179 |
-| The hunks that hit the range; `None` for a binary pair. | `_hits` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:186-205 |
-| The writer's carry-forward is not a re-anchor. | `_only_mechanical` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:239-250 |
-| Added, retired and changed-record invariants; changed families. | `knowledge_changes` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:253-287 |
-| A re-anchor is a change unless a covering class or the carry explains it. | `_reanchor` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:290-304 |
+| Raising and covering classes. | `RAISING_CLASSES`; `COVERING_CLASSES` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:69-70 |
+| One entry's class and facts; the per-side content identity. | `Classification`; `contents` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:74-116 |
+| Classify once per run. | `classify` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:141-146 |
+| An entry's kind handed to the shared body, which decides the class with the unchanged-blob `untouched` rule. | `_classify`; `_classify_anchor` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:158-161; mcp/src/agents_remember/application/knowledge_worklist/classify.py:163-200 |
+| A `reconsider_on` link's anchor, classified like an entry with kind `link` and never recorded as one. | `classify_anchor`; `EntryKind` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:148-156; mcp/src/agents_remember/application/knowledge_worklist/classify.py:68-68 |
+| The hunks that hit the range; `None` for a binary pair. | `_hits` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:207-226 |
+| The writer's carry-forward is not a re-anchor. | `_only_mechanical` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:260-271 |
+| Added, retired and changed-record invariants; changed families. | `knowledge_changes` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:274-308 |
+| A re-anchor is a change unless a covering class or the carry explains it. | `_reanchor` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:311-325 |
+| The link anchor triggers on `touched` and `moved_or_absent` and joins no entries. | `test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise` | mcp/tests/test_reconsideration_surfacing.py:296-311 |
 | Stale takes precedence. | `test_stale_at_base_takes_precedence_and_reaches_its_families_without_widening` | mcp/tests/test_knowledge_worklist.py:382-398 |
 | Deletion, rename, ambiguity and a deleted range are `moved_or_absent`, with a mechanical match. | `test_moved_or_absent_covers_deletion_rename_ambiguity_and_a_deleted_range` | mcp/tests/test_knowledge_worklist.py:401-419 |
 | Added, retired and re-anchored entries raise; new records do not. | `test_added_retired_and_reanchored_entries_raise_and_new_records_do_not` | mcp/tests/test_knowledge_worklist.py:488-520 |
@@ -115,6 +130,10 @@ of one run.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** Purpose and Logic record `classify_anchor` (a `reconsider_on` link's anchor classified by the shared body with kind `link`, never an entry, MIK-R14 rule 1), the `_classify` / `_classify_anchor` split (moved code, radon 14 to 13, review R1) and `EntryKind`; a new Invariants bullet. The `_classify` row, which the fixer normalised onto the four-line wrapper, is reworded to cite both functions; two rows added. The other rows were projected or normalised by the installed fixer, and its generated bullets are kept. No verification stamp was advanced.
+- 2026-09-30T10:05:04+00:00: Generated citation repair: `RAISING_CLASSES`; `COVERING_CLASSES` repointed to mcp/src/agents_remember/application/knowledge_worklist/classify.py:69-69; mcp/src/agents_remember/application/knowledge_worklist/classify.py:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:04+00:00: Generated citation repair: `classify` repointed to mcp/src/agents_remember/application/knowledge_worklist/classify.py:141-146. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:04+00:00: Generated citation repair: `_only_mechanical` repointed to mcp/src/agents_remember/application/knowledge_worklist/classify.py:260-271. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_a_mechanical_carry_forward_in_k_c_is_not_a_change` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_a_mechanical_carry_forward_in_k_c_is_not_a_change(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

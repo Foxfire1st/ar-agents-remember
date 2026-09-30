@@ -5,9 +5,35 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
+
+## The reconsideration row in the curator hand-off template (260928-MIK-L14)
+
+One file of this skill now serves MIK-R14 (reconsideration surfacing):
+
+- `templates/curator-handoff-list.md`'s writer section gains a bullet after the no_invariant row, for converted
+  memory only: a **reconsideration row** answers a `reconsideration_candidate` worklist item (a target a decision's
+  `reconsider_on` link names changed in the leaf). Its subject is the item's, `reconsider:<DEC-ID>#<alternative
+  index>`, with the common fields only. `still_rejected` says why the rejection holds, and the writer refreshes the
+  links whose trigger fired to what was judged; when a newer version is approved, or the anchored code changes again,
+  after the refresh, a plain rerun is refused and the curator answers the new item by naming its ID in `items`
+  (rulings 2026-09-30T10:39:15 and 11:01:18 R5-4, in the second person). `raise` sets the decision
+  `under_reconsideration` and appends a question to the leaf's task document through `task_doc`; when the question
+  cannot be written the `raise` is refused and the item stays open. The bullet also covers route targets, superseded
+  decisions, never reversing a decision, and keeping linked alternatives at their index.
+- The same template's decision-record section adds the refusal of a linked alternative moved to another index
+  against the memory base (`R14.1-linked-alternative-order`).
+
+The stale-item refusal is not in the template; its message names its own fix (review note R6-3). The changes reach
+the package copy and the eight harness starter copies through `sync-skills.py` (`--check` ok). They bind converted
+memory only, so no hand-off list of today's memory changes; no role, operation or other template changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reconsideration-row bullet in the writer section. | "A reconsideration row (MIK-R14, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:583-607 |
+| The decision section's reorder refusal. | "with a linked alternative moved to another index against the memory base" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:726-729 |
 
 ## The no_invariant row in the curator hand-off template (260928-MIK-L10)
 
@@ -49,7 +75,7 @@ memory only, so no hand-off list of today's memory changes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The decision-record section of the hand-off template. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:666-726 |
+| The decision-record section of the hand-off template. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:691-752 |
 | The curator role's pointer in step 3. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)
@@ -77,7 +103,7 @@ review or foundation run of today's memory changes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:613-665 |
+| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:638-690 |
 | OM-4, the requirement-bound reviewer criterion. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
 
 ## The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)
@@ -151,7 +177,7 @@ operation or other template in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-612; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-637; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -656,6 +682,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** A new top section, "The reconsideration row in the curator hand-off template (260928-MIK-L14)": the reconsideration-row bullet (rulings 10:39:15 and 11:01:18 R5-4) and the decision section's reorder refusal, note R6-3, and the sync to the package and eight starter copies; two rows. The other rows were normalised by the installed fixer, or re-pointed by the exact line shift of the template. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "The no_invariant row in the curator hand-off template (260928-MIK-L10)" at the top (rulings 01:56:39 Q1 and 03:24:28 N2), one row. The bullet was inserted at `:575-582`, so rows citing later template lines were re-pointed by the installed fixer or by the exact +8 shift. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "Decision records in the curator hand-off template and the curator role (260928-MIK-L13)" at the top: the template's new section and the role's step-3 pointer, synced to every copy. Two rows. The rows the installed fixer declined for the role file were re-pointed by the exact +4 shift below the insertion. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)" at the top (the template section, OM-4 by requirement, and c-14 step 3; rulings Q2, Q3, F1, F2 and F5), with two rows. No verification stamp was advanced.

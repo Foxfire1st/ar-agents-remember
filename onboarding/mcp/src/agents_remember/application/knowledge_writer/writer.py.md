@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_writer/writer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T12:13:48+02:00 |
+| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
+| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,15 @@ base is converted. Only then does it write, and only in a committing run.
   endpoint is reported `requirement-task-plane-unavailable`. The leaf route passes the contract's
   coordination root and the bootstrap wave the admitted authority's (`cli/knowledge_write_route.py`,
   `cli/knowledge_bootstrap.py`).
+- **Reconsideration rows (MIK-R14 rule 4).** `WriteRequest.worklist` (optional) is the leaf's persisted worklist:
+  `_reconsideration_items` keeps its `reconsideration_candidate` items by subject and hands them to `Authoring` as
+  `reconsiderations`, so a `still_rejected` row refreshes the links whose trigger fired on its item; without it no
+  link is refreshed. `WriteRequest.questions` (optional) is the leaf task document's `openQuestions` port, handed to
+  `Authoring` as `questions`; without it a `raise` is refused. After validation passes and **before `_finish`**,
+  `_append_raised` appends each queued `raise` question in a committing run; any refusal refuses the operation with
+  a problem at `openQuestions` ("the raise is refused: …"), and no knowledge file is written. A planned run appends
+  nothing (the question was already checked by a dry run during authoring). The leaf route passes the persisted
+  worklist (`read_leaf_worklist`) and a lazy `LeafQuestions` port (`cli/knowledge_write_route.py`).
 - An unconverted memory tree is refused by name (`UNCONVERTED`, placed at `LAYOUT_MARKER_PATH`) before C is
   captured.
 - Problems from reading, authoring, the history check and rendering are all collected; any of them refuses
@@ -79,7 +88,18 @@ base is converted. Only then does it write, and only in a committing run.
   alone; with this owner's own file closed, the history check then refuses the write ("closed and frozen").
 - **An unresolved requirement endpoint is reported, never refused (MIK-R13 rule 4).** Resolution lives here, in the
   writer, not in the validator: `memory_quality` ranks below `memory` in `layers.toml`, and commit routes carry no
-  coordination root (ruling 01:45:56 Q5/Q6; review F2 carried to L14 and L29).
+  coordination root (ruling 01:45:56 Q5/Q6; review F2 carried to L14 and L29). L14 reports the endpoints of
+  `reconsider_on` links in the worklist's `reconsideration.links` summary; the reads remain L29's.
+- **A `raise` puts the question in the task document before any knowledge file is written; on failure it writes
+  nothing (MIK-R14 Failure And Recovery).** Candidate invariant. Realized by `_append_raised` between the
+  validator and `_finish`, and by the dry-run check during authoring; proved by
+  `test_raise_sets_the_status_and_appends_the_question_or_is_refused` (no task owner, a check refusal and an append
+  refusal each leave the decision bytes unchanged and `written == ()`) and on real data by the worker's scratch
+  answer (refused with exit 1 without task-document settings, then written with the question in the scratch task
+  document).
+- **Recorded limit (rulings 04:37:56 Q7/Q8 and 05:31:11 F7).** The question and the knowledge files are two
+  stores: an `OSError` in `MemoryState.write` after the append, or a second `raise` whose append fails, leaves a
+  question with no knowledge written. A rerun appends nothing twice (key prefix).
 
 ### Todos
 
@@ -104,19 +124,22 @@ The operation and its stages.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:56-60 |
-| One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. | `WriteRequest`; `decisions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:63-85 |
-| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:88-135 |
+| The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:60-64 |
+| One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. | `WriteRequest`; `decisions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:67-95 |
+| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:98-155 |
+| The worklist and the task document's questions, both optional (MIK-R14). | `worklist`; `questions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:90-95 |
+| The questions reach the task document after validation and before any file. | "refused = _append_raised(request, authoring.raised)" | mcp/src/agents_remember/application/knowledge_writer/writer.py:151-155 |
+| The worklist's reconsideration items by subject; the append in a committing run. | `_reconsideration_items`; `_append_raised` | mcp/src/agents_remember/application/knowledge_writer/writer.py:158-164; mcp/src/agents_remember/application/knowledge_writer/writer.py:167-173 |
 | The carry-forward call and its report field. | `carry_entries`; `carried=carried` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
-| The carry itself. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:47-72 |
-| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:138-153 |
-| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:156-169 |
-| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:172-194 |
+| The carry itself. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:65-90 |
+| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:176-191 |
+| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:194-207 |
+| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:210-232 |
 | The registry side of the writer-reported rules. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
 | A validator refusal writes nothing and names every violation. | `test_a_validator_refusal_writes_nothing_and_names_every_violation` | mcp/tests/test_knowledge_writer.py:326-338 |
 | Route rules are reports in the writer and refusals at a commit route. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:622-660 |
-| The coordination root requirement endpoints resolve against; never a reason to refuse. | `coordination_root` | mcp/src/agents_remember/application/knowledge_writer/writer.py:83-85 |
-| The report's requirement endpoints, resolved for every record the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/writer.py:121-121 |
+| The coordination root requirement endpoints resolve against; never a reason to refuse. | `coordination_root` | mcp/src/agents_remember/application/knowledge_writer/writer.py:87-87 |
+| The report's requirement endpoints, resolved for every record the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/writer.py:137-137 |
 
 ## Cross-Repo References
 
@@ -128,6 +151,10 @@ worktree of one repository.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** A Logic bullet records `WriteRequest.worklist` and `questions`, `_reconsideration_items` and `_append_raised` (the questions appended after validation and before `_finish`, a refusal refusing the whole operation); the endpoint invariant now notes that L14 reports `reconsider_on` endpoints in the worklist; a candidate invariant (a `raise` reaches the task document before any file, or writes nothing) and the recorded Q7/Q8/F7 two-store limit. Three rows added. The rows the fixer declined were re-pointed by the exact line shift of this leaf's diff; the others were projected or normalised by the installed fixer, and its generated bullets are kept. No verification stamp was advanced.
+- 2026-09-30T10:05:54+00:00: Generated citation repair: `_finish` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:194-207. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:54+00:00: Generated citation repair: `_render` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:210-232. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T10:05:54+00:00: Generated citation repair: `coordination_root` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic and Invariants record `WriteRequest.coordination_root` and the `requirements` the operation reports through `requirement_links.requirement_endpoints` (reported, never refused; resolution stays in the writer, ruling 01:45:56 Q5/Q6). Two rows were added. Rows below the new import and field were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** The `WriteRequest` Logic bullet and row now name `decisions`, the task owner's resolver passed to `Authoring` for a planned `dropped` row (a wave refuses such a row). The reworded `WriteRequest` row reopened on the new `decisions` anchor; only the generated-repair bullet this pass's fixer wrote for it was removed. Ranges below the new field were re-pointed by the installed fixer. No verification stamp was advanced.
 - 2026-09-29T15:42:32+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
