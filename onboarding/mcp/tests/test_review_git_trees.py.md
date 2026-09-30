@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_git_trees.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -109,11 +109,11 @@ No domain documentation source is configured; the requirement packet `MIK-R25@v1
 | Reopen, the converted base, and the legacy comparison. | `test_a_comparison_reopens_from_its_tree_ids_and_names_a_tree_git_can_no_longer_produce`; `test_an_unconverted_before_side_is_compared_as_its_conversion`; `test_a_comparison_recorded_before_the_conversion_keeps_its_code_sides_only` | mcp/tests/test_review_git_trees.py:531-580; mcp/tests/test_review_git_trees.py:583-621; mcp/tests/test_review_git_trees.py:624-653 |
 | No database but the index; unconverted unchanged; never frozen. | `test_no_review_path_opens_a_database_other_than_the_derived_index`; `test_an_unconverted_leaf_keeps_the_dataset_review`; `test_a_tree_comparison_is_never_frozen_into_a_dataset_generation` | mcp/tests/test_review_git_trees.py:656-681; mcp/tests/test_review_git_trees.py:684-698; mcp/tests/test_review_git_trees.py:701-711 |
 | Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds. | `test_pins_are_named_by_the_task_directory_and_archival_removes_them`; `test_the_tree_view_route_serves_the_port_and_refuses_when_unwired` | mcp/tests/test_review_git_trees.py:717-727; mcp/tests/test_review_git_trees.py:730-776 |
-| The cards read: four entries located on both sides, each helper's per-entry facts. | `_with_proof_and_unresolved`; `test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides`; `_changed_range`; `_retired_entry`; `_proof_entry`; `_unresolved_entry` | mcp/tests/test_review_git_trees.py:779-860 |
+| The cards read: four entries located on both sides, each helper's per-entry facts. | `_with_proof_and_unresolved`; `test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides`; `_changed_range`; `_retired_entry`; `_proof_entry`; `_unresolved_entry` | mcp/tests/test_review_git_trees.py:779-799; mcp/tests/test_review_git_trees.py:802-820; mcp/tests/test_review_git_trees.py:823-832; mcp/tests/test_review_git_trees.py:835-842; mcp/tests/test_review_git_trees.py:845-849; mcp/tests/test_review_git_trees.py:852-860 |
 | Unavailable against absent, and the history row found through `facts.row`. | `test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent`; `test_history_rows_are_found_by_the_row_subject_an_item_names` | mcp/tests/test_review_git_trees.py:863-883; mcp/tests/test_review_git_trees.py:886-897 |
 | The excerpt bound and the placement cache (review F3). | `test_an_excerpt_longer_than_its_bound_is_a_stated_prefix`; `test_the_placement_cache_remembers_answers_only_and_stays_within_its_bound` | mcp/tests/test_review_git_trees.py:900-913; mcp/tests/test_review_git_trees.py:916-936 |
-| The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1). | `_inventory`; `_named`; `test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review` | mcp/tests/test_review_git_trees.py:939-947; mcp/tests/test_review_git_trees.py:950-1016 |
-| The lane row. | "mcp/tests/test_review_git_trees.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
+| The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1). | `_inventory`; `_named`; `test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review` | mcp/tests/test_review_git_trees.py:939-942; mcp/tests/test_review_git_trees.py:945-947; mcp/tests/test_review_git_trees.py:950-1016 |
+| The lane row. | "mcp/tests/test_review_git_trees.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
 
 ## Cross-Repo References
 
@@ -122,6 +122,8 @@ No domain documentation source is configured; the requirement packet `MIK-R25@v1
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_review_git_trees.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:31:57+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py" repointed to mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose (19 collected, 1,022 lines, lane row now `:123` after L05's row) and Logic record the snake_case assertions (MIK-L25 review F9), the route's pinned numbered read, cards read and key bounds (review F10, F11; ruling Q2), the cards-read cases with their four helpers, the F3 bound cases, the PS-1 row-subject case and the F12 route case for ruling Q1 (with R2-1's asserted payload and IDs). **Reopened claim reworded:** the tree-view row; this pass's generated bullet for it was removed. Four rows added; the route row reworded.
 - 2026-09-30T07:54:18+00:00: Generated citation repair: `test_no_review_path_opens_a_database_other_than_the_derived_index`; `test_an_unconverted_leaf_keeps_the_dataset_review`; `test_a_tree_comparison_is_never_frozen_into_a_dataset_generation` repointed to mcp/tests/test_review_git_trees.py:656-681; mcp/tests/test_review_git_trees.py:684-698; mcp/tests/test_review_git_trees.py:701-711. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T07:54:18+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.

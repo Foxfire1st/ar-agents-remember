@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_diff_attribution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ repository source only.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's statement of what it measures, and the import of the sibling's helpers. | "The comparison's source attribution partition: every measured changed path in exactly one bucket."; "from test_knowledge_diff_scope import diff_seed, run_diff" | mcp/tests/test_knowledge_diff_attribution.py:1-49 |
-| The unit marker and the per-case fixture. | `pytestmark`; `fixture` | mcp/tests/test_knowledge_diff_attribution.py:51-58 |
+| The unit marker and the per-case fixture. | `pytestmark`; `fixture` | mcp/tests/test_knowledge_diff_attribution.py:51-51; mcp/tests/test_knowledge_diff_attribution.py:54-58 |
 | The sibling's comparison helpers these cases reuse. | `diff_seed`; `run_diff` | mcp/tests/test_knowledge_diff_scope.py:68-75; mcp/tests/test_knowledge_diff_scope.py:78-113 |
 | **The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive" | mcp/tests/test_knowledge_diff_attribution.py:64-135 |
 | **The boundary case: a change mapped only to another invariant is outside selection, never unregistered.** | "test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered"; `entry_link` | mcp/tests/test_knowledge_diff_attribution.py:144-183; mcp/tests/test_knowledge_diff_attribution.py:138-141 |
@@ -106,7 +106,7 @@ repository source only.
 | **The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.** | "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"; "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence" | mcp/tests/test_knowledge_diff_attribution.py:426-488; mcp/tests/test_knowledge_diff_attribution.py:491-526 |
 | **The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope.** | "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_attribution.py:529-555; mcp/tests/test_knowledge_diff_attribution.py:558-601 |
 | The arithmetic cases' two input builders. | `_observed`; `_inspected_sides` | mcp/tests/test_knowledge_diff_attribution.py:604-607; mcp/tests/test_knowledge_diff_attribution.py:610-626 |
-| The unit-regression lane row, beside its sibling's. | "mcp/tests/test_knowledge_diff_attribution.py" | mcp/tests/test-evidence-lanes.toml:139-139 |
+| The unit-regression lane row, beside its sibling's. | "mcp/tests/test_knowledge_diff_attribution.py" | mcp/tests/test-evidence-lanes.toml:175-175 |
 | The two support artifacts whose exact `consumers` lists declare this module (at `:1442` and `:1493`). | "path = \"mcp/tests/diff_scope_test_support.py\""; "path = \"mcp/tests/read_scope_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1425-1470; mcp/tests/evidence-lifecycle.toml:1473-1529 |
 
 ## Cross-Repo References
@@ -118,5 +118,7 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 | No configured cross-repository evidence is claimed. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_diff_attribution.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:27:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_diff_attribution.py" repointed to mcp/tests/test-evidence-lanes.toml:175-175. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): created this one-to-one card for the attribution-partition cases, which the worker moved verbatim out of `test_knowledge_diff_scope.py` (1384 → 790 lines there; 626 lines and 9 cases here). The six case rows moved from `test_knowledge_diff_scope.py.md`, where they were removed, and their ranges were re-derived to each case's own extent. The case list reuses the `260921-ICR-L4` curator's account of the nine cases. New rows cite the helpers, the lane row and the two consumer declarations. Verification metadata remains empty until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/knowledge_graph_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,17 +92,17 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The through-the-public-operations rule this support module exists to enforce. | "through the public typed operations" | mcp/tests/knowledge_graph_test_support.py:4-5 |
-| The four seed shapes a case varies. | `FamilySeed`; `ClaimSeed`; `MemberSeed`; `AnchorSeed` | mcp/tests/knowledge_graph_test_support.py:65-74; mcp/tests/knowledge_graph_test_support.py:75-85; mcp/tests/knowledge_graph_test_support.py:86-94; mcp/tests/knowledge_graph_test_support.py:95-102 |
-| The draft builders each case calls. | `anchor_draft`; `family_draft`; `sealed_family` | mcp/tests/knowledge_graph_test_support.py:103-120; mcp/tests/knowledge_graph_test_support.py:121-135; mcp/tests/knowledge_graph_test_support.py:136-145 |
-| The request builders that go through the admitted seam. | `claim_request`; `member_request` | mcp/tests/knowledge_graph_test_support.py:146-161; mcp/tests/knowledge_graph_test_support.py:162-175 |
-| The whole-database probe a refusal case uses to prove nothing was written. | `table_counts` | mcp/tests/knowledge_graph_test_support.py:176-184 |
-| The two raw writes that construct the state the operations forbid. | `insert_raw_family_revision`; `insert_raw_family_edge` | mcp/tests/knowledge_graph_test_support.py:185-190; mcp/tests/knowledge_graph_test_support.py:191-201 |
-| The before/after pair builder and the clone it is built on. | `build_removed_relation_successor`; `_clone_closed_database` | mcp/tests/knowledge_graph_test_support.py:217-265; mcp/tests/knowledge_graph_test_support.py:269-286 |
+| The four seed shapes a case varies. | `FamilySeed`; `ClaimSeed`; `MemberSeed`; `AnchorSeed` | mcp/tests/knowledge_graph_test_support.py:64-71; mcp/tests/knowledge_graph_test_support.py:74-82; mcp/tests/knowledge_graph_test_support.py:85-91; mcp/tests/knowledge_graph_test_support.py:94-100 |
+| The draft builders each case calls. | `anchor_draft`; `family_draft`; `sealed_family` | mcp/tests/knowledge_graph_test_support.py:103-118; mcp/tests/knowledge_graph_test_support.py:121-133; mcp/tests/knowledge_graph_test_support.py:136-143 |
+| The request builders that go through the admitted seam. | `claim_request`; `member_request` | mcp/tests/knowledge_graph_test_support.py:146-159; mcp/tests/knowledge_graph_test_support.py:162-173 |
+| The whole-database probe a refusal case uses to prove nothing was written. | `table_counts` | mcp/tests/knowledge_graph_test_support.py:176-182 |
+| The two raw writes that construct the state the operations forbid. | `insert_raw_family_revision`; `insert_raw_family_edge` | mcp/tests/knowledge_graph_test_support.py:185-188; mcp/tests/knowledge_graph_test_support.py:191-198 |
+| The before/after pair builder and the clone it is built on. | `build_removed_relation_successor`; `_clone_closed_database` | mcp/tests/knowledge_graph_test_support.py:217-263; mcp/tests/knowledge_graph_test_support.py:269-286 |
 | The shared L1 fixture this module extends rather than forks. | `BranchingKnowledgeFixture`; `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:160-186; mcp/tests/knowledge_fixture_test_support.py:203-261 |
-|The registry contract and artifact row that declare this module's owner, fidelity and exact consumers.|"contract:knowledge-graph-case-support"| mcp/tests/evidence-lifecycle.toml:1246-1246 |
-| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
-|The registry contract and artifact row that declare this module's owner, fidelity and exact consumers.|"contract:knowledge-graph-case-support"| mcp/tests/evidence-lifecycle.toml:1246-1246 |
-| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
+|The registry contract and artifact row that declare this module's owner, fidelity and exact consumers.|"contract:knowledge-graph-case-support"| mcp/tests/evidence-lifecycle.toml:1266-1266 |
+| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:149-149 |
+|The registry contract and artifact row that declare this module's owner, fidelity and exact consumers.|"contract:knowledge-graph-case-support"| mcp/tests/evidence-lifecycle.toml:1266-1266 |
+| The lane registration that keeps this support module's consumers collectable. | "mcp/tests/test_knowledge_family_revision.py" | mcp/tests/test-evidence-lanes.toml:149-149 |
 
 ## Cross-Repo References
 
@@ -111,9 +111,15 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-graph-case-support" | mcp/tests/evidence-lifecycle.toml:1246-1246  |
+|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-graph-case-support" | mcp/tests/evidence-lifecycle.toml:1266-1266  |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 5 row(s) re-pointed by the installed fixer (its generated bullets kept); 6 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`evidence-lifecycle.toml`, `knowledge_graph_test_support.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:25:22+00:00: Generated citation repair: "contract:knowledge-graph-case-support" repointed to mcp/tests/evidence-lifecycle.toml:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:25:22+00:00: Generated citation repair: "mcp/tests/test_knowledge_family_revision.py" repointed to mcp/tests/test-evidence-lanes.toml:149-149. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:25:22+00:00: Generated citation repair: "contract:knowledge-graph-case-support" repointed to mcp/tests/evidence-lifecycle.toml:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:25:22+00:00: Generated citation repair: "mcp/tests/test_knowledge_family_revision.py" repointed to mcp/tests/test-evidence-lanes.toml:149-149. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:25:22+00:00: Generated citation repair: "contract:knowledge-graph-case-support" repointed to mcp/tests/evidence-lifecycle.toml:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-graph-case-support" repointed to mcp/tests/evidence-lifecycle.toml:1236-1236. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

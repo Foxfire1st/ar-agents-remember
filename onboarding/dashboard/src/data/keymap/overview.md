@@ -5,15 +5,34 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastUpdated            | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [data overview](../overview.md) — this child owns keyboard contracts while the data overview owns
 the surrounding cockpit state and authority boundaries.
+
+## 260928-MIK-L33 A Fourth Zone: The Intent Reviewer's Change Traversal
+
+MIK-R33 rule 7 (adopting ICR-R32) registers the reviewer's `j`/`k` through this route. [`zones.ts`](zones.ts.md) adds
+the `review` zone to `Zone` and to `zoneForTarget`; `routeKey` routes it by the chrome/composer rule, so the printable
+chords are inert in inputs, textareas, selects and contenteditable regions, and the `review` zone is never the PTY
+zone. [`chords.ts`](chords.ts.md) adds `REVIEW_CHORDS` (`J` → `review.nextChange`, `K` → `review.previousChange`,
+`review` zone only), and [`preferences.ts`](preferences.ts.md) puts it into `DEFAULT_BINDINGS`, so the two commands are
+known, rebindable through `cockpit.sessions.keymap.v1` and listed on the `?` page (`CommandPalette.tsx`'s "Intent
+reviewer" group). The binding itself is not `useKeyboardZones`'s: `panels/review/changeTraversal.ts` binds the
+effective chords with tinykeys on the reviewer's `data-kbzone="review"` root (`ReviewSurface.tsx`), checking the
+target's zone and `routeKey` per event. **Observations for the owner** (Todos on the cards): the two review commands
+have no `data/commands.ts` registry entry, which the chord card's invariant otherwise requires, and `zones.ts`'s header
+comment still says "Three zones:".
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reviewer's zone and chords. | `REVIEW_CHORDS`; `zoneForTarget` | dashboard/src/data/keymap/chords.ts:106-122; dashboard/src/data/keymap/zones.ts:30-34 |
+| The reviewer's own binding on its zone. | "const owner = zoneForTarget(target);"; "if (routeKey(owner, event, target) !== 'handle') return;" | dashboard/src/panels/review/changeTraversal.ts:154-156 |
 
 ## Purpose
 
@@ -23,10 +42,11 @@ the routing contract without a terminal, and so every consumer — the tinykeys 
 (`panels/session-cockpit/useKeyboardZones.ts`), the `?` keyboard-reference palette page
 (`CommandPalette.tsx`), and the future L6 xterm `attachCustomKeyEventHandler` — reads ONE source
 and can never drift apart. FEUI-L8 adds a versioned effective-keymap preference layer consumed by
-those same surfaces and by CodeMirror. Three zones own keys: **chrome** (the shell — chords may be handled,
+those same surfaces and by CodeMirror. Four zones own keys: **chrome** (the shell — chords may be handled,
 printable bindings never fire in editable targets), **composer** (the editor owns its keys; only
-composer-declared chords are handled), and **pty** (EVERY key passes to the hosted harness except
-exactly the bound reserved set; no bare-Esc sequence is ever claimed).
+composer-declared chords are handled), **pty** (EVERY key passes to the hosted harness except
+exactly the bound reserved set; no bare-Esc sequence is ever claimed), and, since MIK-L33, **review** (the intent
+reviewer: its own `j`/`k` fire only while focus is inside it, under the chrome rule).
 
 ## Route Model
 
@@ -117,12 +137,13 @@ no cross-repository implementation source is imported or treated as governing co
 | --- | --- | --- |
 | The effective-keymap preference and validation boundary. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:244-271 |
 | The thin React binding that installs the effective tables via tinykeys. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:379-449 |
-| The command ids the chord tables dispatch into. | `registerDefaultCommands` | dashboard/src/data/commands.ts:88-191 |
+| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:387-457 |
+| The command ids the chord tables dispatch into. | `registerDefaultCommands` | dashboard/src/data/commands.ts:189-192 |
 | The DOM that carries the `data-kbzone`/`data-region` markers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
 | The live CodeMirror surface that consumes profile and chord reconfiguration. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33 rule 7:** Purpose now names four zones; new section "260928-MIK-L33 A Fourth Zone: The Intent Reviewer's Change Traversal" (the `review` zone, `REVIEW_CHORDS`, `DEFAULT_BINDINGS`, the `?` group, the reviewer's own binding, and two observations for the owner); two rows.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: preferences.ts changed only by behavior-preserving lint remediation.
 
 - 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.

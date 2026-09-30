@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/reviewFamily.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/data/overview.md` |
 
 ## Governing Overview
@@ -107,6 +107,23 @@ the two states that chose no revision, its entry `state` and its `detail`. `Revi
 closes with the entry list, the four family/membership totals and
 `ReviewFamilyContextReferences`.
 
+**The change facts of a tree comparison (MIK-L33, MIK-R33).** `ReviewFamilyContextEntry` gains the optional
+`change_kinds: ReviewFamilyChanges`, mirroring `models/knowledge/review_change_kinds.py`; a dataset review carries
+none. `ReviewChangeKind` (`intent`, `implementation`, `membership`, `unknown`, `unchanged`), `ReviewChangeFact`
+(`established`, `not_established`, `unknown`) and `ReviewChangeMark` (the three facts, `text_differs`, `test`,
+`unknown`) are the server's literals. `ReviewMemberChange` is one member occurrence keyed by the roster's `member_id`
+(the same on both sides, so both revision rows of a revised member read one fact set), with the optional `invariant`
+and `authored_position`, the three facts, `proof`, `text_differs`, `range_unresolved`, the server-derived `primary`
+and `marks`, and three bounded line lists kept apart: `evidence`, `unknown_reasons` (why the change kind is not fully
+known) and `membership_reasons` (why the membership is unknown; the merge round's split). `ReviewFamilyChanges` is
+the family's own `guarantee` fact (`intent`, `unchanged`, `unknown`) with its `guarantee_detail`, the optional
+`members_total` (absent when it could not be read), the returned occurrences and an optional `detail`. As everywhere
+in this file, an omitted field stays `undefined`: a rendering orders, counts and traverses by these facts
+(`panels/review/changeTriage.ts`) and never recomputes one. **`ReviewFamilyRosterPage.complete` is not "every member
+returned":** a roster page can be incomplete with every member returned, because the read owner's page also counts
+realization items, so MIK-L33 counts unreturned members as returned below `members_total` (ruling
+2026-09-30T16:22:22 item 8).
+
 **Two comments in the tree fix a population, not a rendering.** `ReviewFamilyRevisionContext`'s
 `recorded_revision_ids` is every revision of that family the snapshot records — a *larger* population
 than the revisions a selection reached, because a family revision that cites no member is recorded
@@ -156,7 +173,7 @@ narrowed into a client shape. The two comparison functions are pure and total ov
 inputs: they read the values they are handed, return a discriminated union member, and touch no
 module state, no clock and no transport. The unions are named types rather than inline literal
 parameters, and each carries a comment that states what its members mean and which one is a measured
-zero. `data/review.ts` re-exports the five names and the twenty-one types from this module (including the three locator types), and
+zero. `data/review.ts` re-exports the five names and the twenty-one types from this module (including the three locator types); the five change types MIK-L33 adds are not re-exported there, and `changeTriage.ts`, `ChangeBadges.tsx` and `FamilyTree.tsx` import them from this file directly, and
 `FamilyTree.tsx` / `FamilyReviewCenter.tsx` import them from `../../data/review` rather than reaching
 into this file directly. Inline prose comments sit above the declaration they explain, and the
 header comment names both the packet revision the vocabulary mirrors and the increment that consumes
@@ -226,24 +243,26 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 | **One roster page: the owner's own `enumeration_complete` flag, its two measures and the cursor that reaches the rest.** | `ReviewFamilyRosterPage`; `enumeration_complete`; `continued_from` | dashboard/src/data/reviewFamily.ts:130-130; dashboard/src/data/reviewFamily.ts:132-140 |
 | **One side's family revision context, whose `recorded_revision_ids` is a larger population than the revisions a selection reached.** | `ReviewFamilyRevisionContext`; `recorded_revision_ids`; `members_total` | dashboard/src/data/reviewFamily.ts:142-156 |
 | The owner's revision-selection value, mirrored here and shared by the family context and the primary invariant statement pane; neither consumer selects a head. | "shared by family context and the primary invariant"; `ReviewRevisionSelectionState` | dashboard/src/data/reviewFamily.ts:158-158; dashboard/src/data/reviewFamily.ts:160-165 |
-| **One family entry: its selection, its two sides, and the `candidates` present exactly for the two states that chose no revision.** | `ReviewFamilyContextEntry`; `label_side`; `candidates` | dashboard/src/data/reviewFamily.ts:180-192 |
-| The owner's own published collections a member context is referenced through, named by identity and joined on `join_key`. | `ReviewFamilyContextReferences`; `join_key` | dashboard/src/data/reviewFamily.ts:194-203 |
-| The context itself: its four totals, its references and its stated limitations. | `ReviewFamilyContext`; `unique_member_revision_total`; `limitations` | dashboard/src/data/reviewFamily.ts:205-216 |
-| **`FAMILY_SIDES`: the two snapshots as a value, so a rendering cannot read one side twice.** | `FAMILY_SIDES`; "[\"before\", \"after\"]" | dashboard/src/data/reviewFamily.ts:220-220 |
-| **The tree's own row shape: one member revision as one row, keyed by the revision rather than the association.** | `FamilyMemberRow`; `other_family_revision_ids` | dashboard/src/data/reviewFamily.ts:107-107; dashboard/src/data/reviewFamily.ts:226-229|
-| **`UNRESOLVED_SELECTION_STATES`: a lineage this context could not reduce to a head, which is a distinct answer from "no members".** | `UNRESOLVED_SELECTION_STATES`; `ambiguous` | dashboard/src/data/reviewFamily.ts:234-237 |
-| **The five shapes of a guarantee comparison.** | `GuaranteeComparison`; `unrecorded`; `one_sided` | dashboard/src/data/reviewFamily.ts:243-248 |
-| **The three "did not change" shapes kept apart on purpose: one revision, two revisions with identical text, and a one-sided record.** | `unchanged_revision`; `identical_text`; `one_sided` | dashboard/src/data/reviewFamily.ts:250-259 |
-| **`guaranteeComparison`: the two recorded sides reduced to one shape, and the only place a surface may learn that a guarantee did not change.** | `guaranteeComparison`; "before === undefined" | dashboard/src/data/reviewFamily.ts:260-270 |
-| The private second half: identities decide first, then the recorded text. | `twoRecordedGuarantees`; `joint_guarantee` | dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:275-285|
-| **`MemberComparison`'s four shapes, and the `not_on_page` / `one_sided` distinction that the caller must decide rather than the value.** | `MemberComparison`; `not_on_page`; `missingRowNote` | dashboard/src/data/reviewFamily.ts:287-309 |
-| **`memberComparison`: decided from each member's own carried `state`, never from the revision ids alone.** | `memberComparison`; "before.state !== \"recorded\"" | dashboard/src/data/reviewFamily.ts:311-322 |
-| The one-sided reducer: how many sides carried content is the question, and a row missing from a bounded page is the page's fact. | `oneSidedMember`; "carried.length === 0" | dashboard/src/data/reviewFamily.ts:335-347 |
+| **One family entry: its selection, its two sides, the `candidates` present exactly for the two states that chose no revision, and on a tree comparison its optional change facts (MIK-L33).** | "export interface ReviewFamilyContextEntry {"; "label_side?: ReviewFamilySideName;"; "candidates: ReviewFamilyGuarantee[];"; "change_kinds?: ReviewFamilyChanges;" | dashboard/src/data/reviewFamily.ts:229-242 |
+| The owner's own published collections a member context is referenced through, named by identity and joined on `join_key`. | `ReviewFamilyContextReferences`; `join_key` | dashboard/src/data/reviewFamily.ts:244-253 |
+| The context itself: its four totals, its references and its stated limitations. | `ReviewFamilyContext`; `unique_member_revision_total`; `limitations` | dashboard/src/data/reviewFamily.ts:255-266 |
+| **`FAMILY_SIDES`: the two snapshots as a value, so a rendering cannot read one side twice.** | `FAMILY_SIDES`; "[\"before\", \"after\"]" | dashboard/src/data/reviewFamily.ts:270-270 |
+| **The tree's own row shape: one member revision as one row, keyed by the revision rather than the association.** | `FamilyMemberRow`; `other_family_revision_ids` | dashboard/src/data/reviewFamily.ts:107-107; dashboard/src/data/reviewFamily.ts:276-279 |
+| **`UNRESOLVED_SELECTION_STATES`: a lineage this context could not reduce to a head, which is a distinct answer from "no members".** | `UNRESOLVED_SELECTION_STATES`; `ambiguous` | dashboard/src/data/reviewFamily.ts:284-287 |
+| **The five shapes of a guarantee comparison.** | `GuaranteeComparison`; `unrecorded`; `one_sided` | dashboard/src/data/reviewFamily.ts:293-298 |
+| **The three "did not change" shapes kept apart on purpose: one revision, two revisions with identical text, and a one-sided record.** | `unchanged_revision`; `identical_text`; `one_sided` | dashboard/src/data/reviewFamily.ts:300-309 |
+| **`guaranteeComparison`: the two recorded sides reduced to one shape, and the only place a surface may learn that a guarantee did not change.** | `guaranteeComparison`; "before === undefined" | dashboard/src/data/reviewFamily.ts:310-320 |
+| The private second half: identities decide first, then the recorded text. | `twoRecordedGuarantees`; `joint_guarantee` | dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:325-335 |
+| **`MemberComparison`'s four shapes, and the `not_on_page` / `one_sided` distinction that the caller must decide rather than the value.** | `MemberComparison`; `not_on_page`; `missingRowNote` | dashboard/src/data/reviewFamily.ts:337-359 |
+| **`memberComparison`: decided from each member's own carried `state`, never from the revision ids alone.** | `memberComparison`; "before.state !== \"recorded\"" | dashboard/src/data/reviewFamily.ts:361-372 |
+| The one-sided reducer: how many sides carried content is the question, and a row missing from a bounded page is the page's fact. | `oneSidedMember`; "carried.length === 0" | dashboard/src/data/reviewFamily.ts:385-397 |
 | **The public entry that re-exports this module's names, so the surface imports one contract.** | `FAMILY_CONTEXT_JOIN_KEY`; `guaranteeComparison` | dashboard/src/data/review.ts:32-41 |
 | The payload key whose absence is its own fact — a body that is not a measured zero and is never shown as `no_family_recorded`. | "family_context?: ReviewFamilyContext" | dashboard/src/data/review.ts:467-467 |
 | **The server module this file mirrors, and the packet revision that asked for the vocabulary.** | "ICR-R31@v1" | mcp/src/agents_remember/models/knowledge/review_family_context.py:1-3 |
 | The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate. | "A guarantee is the family's own authored text"; "The five status dimensions stay separate" | mcp/src/agents_remember/models/knowledge/review_family_context.py:10-24 |
-| The tree uses shared side order and its own guarantee/roster helpers; central guarantee comparison stays separate from authoritative selected statements. | `guaranteesOf`; `memberRows`; `GuaranteeComparisonBlock`; `SelectedStatement` | dashboard/src/panels/review/FamilyTree.tsx:313-340; dashboard/src/panels/review/FamilyTree.tsx:133-152; dashboard/src/panels/review/FamilyReviewCenter.tsx:128-210; dashboard/src/panels/review/SubjectReview.tsx:255-334 |
+| The tree uses shared side order and its own guarantee/roster helpers; central guarantee comparison stays separate from authoritative selected statements. | `guaranteesOf`; `memberRows`; `GuaranteeComparisonBlock`; `SelectedStatement` | dashboard/src/panels/review/FamilyTree.tsx:335-363; dashboard/src/panels/review/FamilyTree.tsx:152-171; dashboard/src/panels/review/FamilyReviewCenter.tsx:130-212; dashboard/src/panels/review/SubjectReview.tsx:255-334 |
+| The change literals and one member occurrence's facts, primary, marks and three reason lists kept apart (MIK-L33). | `ReviewChangeKind`; `ReviewChangeFact`; `ReviewChangeMark`; `ReviewMemberChange`; `membership_reasons` | dashboard/src/data/reviewFamily.ts:180-216 |
+| One family occurrence: its guarantee fact, its total when readable, its returned occurrences (MIK-L33). | `ReviewFamilyChanges`; `members_total` | dashboard/src/data/reviewFamily.ts:218-227 |
 
 ## Cross-Repo References
 
@@ -256,6 +275,12 @@ one association it carries is an in-repository contract rather than a cross-repo
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33:** the mirrored change types (`ReviewChangeKind`, `ReviewChangeFact`, `ReviewChangeMark`, `ReviewMemberChange` with `membership_reasons` apart from `unknown_reasons`, `ReviewFamilyChanges`) and `ReviewFamilyContextEntry.change_kinds`; the note that a roster page's `complete` is not "every member returned" (ruling 2026-09-30T16:22:22 item 8); Conventions records that the new types are imported from this file directly, not re-exported through `data/review.ts`. **Reopened claim reworded and re-anchored** on line-exact quotes: the family-entry row; this pass's generated bullet for it was removed (the others are kept). Two rows added. The other rows moved by the 49 inserted lines were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
+- 2026-09-30T20:19:37+00:00: Generated citation repair: `ReviewFamilyContextReferences`; `join_key` repointed to dashboard/src/data/reviewFamily.ts:244-253; dashboard/src/data/reviewFamily.ts:251-251. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:19:37+00:00: Generated citation repair: `ReviewFamilyContext`; `unique_member_revision_total`; `limitations` repointed to dashboard/src/data/reviewFamily.ts:255-266; dashboard/src/data/reviewFamily.ts:263-263; dashboard/src/data/reviewFamily.ts:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:19:37+00:00: Generated citation repair: `FAMILY_SIDES`; "[\"before\", \"after\"]" repointed to dashboard/src/data/reviewFamily.ts:270-270; dashboard/src/data/reviewFamily.ts:270-270. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:19:37+00:00: Generated citation repair: `memberComparison`; "before.state !== \"recorded\"" repointed to dashboard/src/data/reviewFamily.ts:361-372; dashboard/src/data/reviewFamily.ts:366-366. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:19:37+00:00: Generated citation repair: `oneSidedMember`; "carried.length === 0" repointed to dashboard/src/data/reviewFamily.ts:385-397; dashboard/src/data/reviewFamily.ts:392-392. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line in `FamilyTree.tsx` and one in `FamilyReviewCenter.tsx`, so the fixer normalised the one row citing them (`FamilyTree.tsx` `312-339` → `313-340`, `132-151` → `133-152`; `FamilyReviewCenter.tsx` `127-209` → `128-210`). The claim is unchanged. No stamp advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: citation ranges into files this leaf changed (`FamilyTree.tsx`, `FamilyReviewCenter.tsx`, `SubjectReview.tsx`) were normalised by the installed fixer to where the same anchors now sit (`guaranteesOf`, `memberRows`, `GuaranteeComparisonBlock`, `SelectedStatement`). The claim still holds: the tree keeps its own guarantee and roster helpers, and the central guarantee comparison stays separate from the selected statement. Claim wording unchanged. No stamp advanced.

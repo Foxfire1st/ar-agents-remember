@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_response_address_binding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T19:50+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -125,23 +125,23 @@ they make no acceptance claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The guidance shape the worktree state machine emits, both spellings set to the contract file. | `guidance` | mcp/tests/test_response_address_binding.py:60-75 |
-| A real closeout response model, so the guard is driven by the envelope it will meet. | `closeout_response` | mcp/tests/test_response_address_binding.py:76-81 |
-| The recorded `T54` shape: a response that declares no address cannot vouch for guidance. | `test_guidance_naming_another_task_is_withheld_from_a_response_with_no_address` | mcp/tests/test_response_address_binding.py:82-94 |
-| The positive control: the guard is not a blanket refusal of guidance. | `test_guidance_agreeing_with_the_responses_own_address_is_kept` | mcp/tests/test_response_address_binding.py:95-109 |
-| One disagreeing spelling is enough to withhold the hint, in both directions. | `test_one_stale_path_spelling_is_enough_to_withhold_the_guidance` | mcp/tests/test_response_address_binding.py:110-122 |
-| Guidance that names no artifact is kept; `None` stays `None`. | `test_guidance_that_names_no_artifact_is_left_alone` | mcp/tests/test_response_address_binding.py:123-133 |
-| `T71`: every counted refresh entry is named by its source path or its own document path. | `test_the_refreshed_onboarding_census_names_every_entry_it_counts` | mcp/tests/test_response_address_binding.py:134-175 |
-| The migration payload builder and a declined item, driven through the real producer. | `_migration_payload`; `_declined_item` | mcp/tests/test_response_address_binding.py:189-210; mcp/tests/test_response_address_binding.py:211-224 |
-| `T64`: a preview reports its outcome instead of a bare not-ok, and must not read `remaining`. | `test_a_migration_preview_reports_its_outcome_instead_of_a_bare_not_ok` | mcp/tests/test_response_address_binding.py:225-291 |
+| The guidance shape the worktree state machine emits, both spellings set to the contract file. | `guidance` | mcp/tests/test_response_address_binding.py:60-73 |
+| A real closeout response model, so the guard is driven by the envelope it will meet. | `closeout_response` | mcp/tests/test_response_address_binding.py:76-79 |
+| The recorded `T54` shape: a response that declares no address cannot vouch for guidance. | `test_guidance_naming_another_task_is_withheld_from_a_response_with_no_address` | mcp/tests/test_response_address_binding.py:82-92 |
+| The positive control: the guard is not a blanket refusal of guidance. | `test_guidance_agreeing_with_the_responses_own_address_is_kept` | mcp/tests/test_response_address_binding.py:95-107 |
+| One disagreeing spelling is enough to withhold the hint, in both directions. | `test_one_stale_path_spelling_is_enough_to_withhold_the_guidance` | mcp/tests/test_response_address_binding.py:110-120 |
+| Guidance that names no artifact is kept; `None` stays `None`. | `test_guidance_that_names_no_artifact_is_left_alone` | mcp/tests/test_response_address_binding.py:123-131 |
+| `T71`: every counted refresh entry is named by its source path or its own document path. | `test_the_refreshed_onboarding_census_names_every_entry_it_counts` | mcp/tests/test_response_address_binding.py:134-173 |
+| The migration payload builder and a declined item, driven through the real producer. | `_migration_payload`; `_declined_item` | mcp/tests/test_response_address_binding.py:189-208; mcp/tests/test_response_address_binding.py:211-222 |
+| `T64`: a preview reports its outcome instead of a bare not-ok, and must not read `remaining`. | `test_a_migration_preview_reports_its_outcome_instead_of_a_bare_not_ok` | mcp/tests/test_response_address_binding.py:225-289 |
 | The producer half of `T54`: the closed payload declares its own address in the envelope spelling. | `test_the_closed_closeout_payload_declares_its_own_address_in_the_envelope_spelling` | mcp/tests/test_response_address_binding.py:323-355 |
-| The guard these cases pin, and the two rules it applies. | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:58-99 |
-| The place comparison: the same file, or the directory that immediately contains it. | `_names_the_same_place` | mcp/src/agents_remember/application/tool_response.py:31-57 |
-| The entry namer `T71` repaired: source path, or the document's own path. | `_refreshed_onboarding_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:127-141 |
-| The bounded count that refuses to count a blank. | `_bounded_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:115-126 |
+| The guard these cases pin, and the two rules it applies. | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:58-97 |
+| The place comparison: the same file, or the directory that immediately contains it. | `_names_the_same_place` | mcp/src/agents_remember/application/tool_response.py:31-55 |
+| The entry namer `T71` repaired: source path, or the document's own path. | `_refreshed_onboarding_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:127-139 |
+| The bounded count that refuses to count a blank. | `_bounded_paths` | mcp/src/agents_remember/worktrees/modules/closeout.py:115-124 |
 | `T64`'s decision: `ok` answers whether the call did what it set out to do, with `state` and `outcome` declared separately. | `payload` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:767-833 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_response_address_binding.py" |mcp/tests/test-evidence-lanes.toml:171-171|
-| The refusal axes this module reuses rather than re-deriving, so a refusal is judged once. | `refusal_axes` | mcp/tests/test_tool_refusal_conformance.py:250-261 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_response_address_binding.py" |mcp/tests/test-evidence-lanes.toml:216-216|
+| The refusal axes this module reuses rather than re-deriving, so a refusal is judged once. | `refusal_axes` | mcp/tests/test_tool_refusal_conformance.py:258-269 |
 
 ## Cross-Repo References
 
@@ -153,6 +153,8 @@ The cases build no repository and touch no real coordination root.
 | No repository or external-system boundary is proved by this module. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 14 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`closeout.py`, `test_response_address_binding.py`, `test_tool_refusal_conformance.py`, `tool_response.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:31:15+00:00: Generated citation repair: "mcp/tests/test_response_address_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:216-216. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

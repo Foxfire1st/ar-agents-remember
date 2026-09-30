@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-18T13:43+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | path | `mcp/tests/test_codex_capsule_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -91,16 +91,16 @@ No Domain Documentation entries are configured in the resolved source registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The recording transport is the wire-shape boundary: cases assert the requests the session really sends. | `RecordingTransport` | mcp/tests/test_codex_capsule_delivery.py:142-295 |
-| The applied parameter is pinned as a key **set**, so a second instruction field cannot ride along. | `test_thread_instruction_params_carry_only_the_trusted_stream` | mcp/tests/test_codex_capsule_delivery.py:316-333 |
-| The conversion is driven over a genuine compilation built through the public compiler. | `test_delivery_consumes_a_genuine_compilation_result` | mcp/tests/test_codex_capsule_delivery.py:463-482 |
-| The factory fills the carrier, the filled settings reach the thread-open request, and a channel-less harness refuses. | `test_the_production_factory_fills_the_capsule_carrier`; `test_the_factory_filled_settings_put_the_capsule_on_the_wire`; `test_the_production_factory_refuses_a_capsule_for_a_harness_without_the_channel` | mcp/tests/test_codex_capsule_delivery.py:560-638 |
-| The launch boundary — real `_prepare_controlled_launch`, both factory calls, round-tripped carrier. | `test_a_launch_boundary_capsule_reaches_the_adapter_settings` | mcp/tests/test_codex_capsule_delivery.py:640-702 |
-| The no-selection branch and the legacy configuration are pinned separately. | `test_the_no_selection_branch_also_carries_the_capsule`; `test_a_capsule_free_launch_configuration_carries_nothing` | mcp/tests/test_codex_capsule_delivery.py:777-815; mcp/tests/test_codex_capsule_delivery.py:960-983 |
-| A malformed payload refuses before delivery, and the value type guards its own wire form. | `test_a_malformed_capsule_payload_is_refused_before_delivery`; `test_the_carrier_value_type_guards_its_own_wire_form` | mcp/tests/test_codex_capsule_delivery.py:816-885; mcp/tests/test_codex_capsule_delivery.py:886-959 |
-| The session decision path compares the recorded binding and digest across four resume branches. | `test_the_session_decision_path_compares_the_recorded_binding_and_digest` | mcp/tests/test_codex_capsule_delivery.py:1055-1120 |
-| The live case runs against the installed app-server; a version mismatch skips with its reason. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1208-1256 |
-| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:351-351 |
+| The recording transport is the wire-shape boundary: cases assert the requests the session really sends. | `RecordingTransport` | mcp/tests/test_codex_capsule_delivery.py:142-189 |
+| The applied parameter is pinned as a key **set**, so a second instruction field cannot ride along. | `test_thread_instruction_params_carry_only_the_trusted_stream` | mcp/tests/test_codex_capsule_delivery.py:316-331 |
+| The conversion is driven over a genuine compilation built through the public compiler. | `test_delivery_consumes_a_genuine_compilation_result` | mcp/tests/test_codex_capsule_delivery.py:463-480 |
+| The factory fills the carrier, the filled settings reach the thread-open request, and a channel-less harness refuses. | `test_the_production_factory_fills_the_capsule_carrier`; `test_the_factory_filled_settings_put_the_capsule_on_the_wire`; `test_the_production_factory_refuses_a_capsule_for_a_harness_without_the_channel` | mcp/tests/test_codex_capsule_delivery.py:560-594; mcp/tests/test_codex_capsule_delivery.py:597-621; mcp/tests/test_codex_capsule_delivery.py:624-636 |
+| The launch boundary — real `_prepare_controlled_launch`, both factory calls, round-tripped carrier. | `test_a_launch_boundary_capsule_reaches_the_adapter_settings` | mcp/tests/test_codex_capsule_delivery.py:639-700 |
+| The no-selection branch and the legacy configuration are pinned separately. | `test_the_no_selection_branch_also_carries_the_capsule`; `test_a_capsule_free_launch_configuration_carries_nothing` | mcp/tests/test_codex_capsule_delivery.py:776-813; mcp/tests/test_codex_capsule_delivery.py:960-981 |
+| A malformed payload refuses before delivery, and the value type guards its own wire form. | `test_a_malformed_capsule_payload_is_refused_before_delivery`; `test_the_carrier_value_type_guards_its_own_wire_form` | mcp/tests/test_codex_capsule_delivery.py:816-883; mcp/tests/test_codex_capsule_delivery.py:886-934 |
+| The session decision path compares the recorded binding and digest across four resume branches. | `test_the_session_decision_path_compares_the_recorded_binding_and_digest` | mcp/tests/test_codex_capsule_delivery.py:1054-1118 |
+| The live case runs against the installed app-server; a version mismatch skips with its reason. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1206-1256 |
+| The registry requires a lane row for every test module; this module's row is `provider-conformance`. | "\"mcp/tests/test_codex_capsule_delivery.py\"" | mcp/tests/test-evidence-lanes.toml:396-396 |
 
 ## Cross-Repo References
 
@@ -111,6 +111,8 @@ The live case and the instruction-channel fixture are pinned to the installed ve
 | The live case is gated on the installed CLI version and reports a mismatch as a skip, never as a pass. | `test_live_app_server_observes_instruction_sources_and_accepts_the_capsule` | mcp/tests/test_codex_capsule_delivery.py:1206-1256 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 9 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_codex_capsule_delivery.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:25:54+00:00: Generated citation repair: "\"mcp/tests/test_codex_capsule_delivery.py\"" repointed to mcp/tests/test-evidence-lanes.toml:396-396. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

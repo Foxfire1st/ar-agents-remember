@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewSurface.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash |  `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate |  2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash |  `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate |  2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,12 @@ the result as `laneRead` to both `ReviewWorkspace` (the lane's rail destinations
 explorer's labels) and `ReviewTechnicalDetails` (the source pane's attribution counts and lists), so every surface of
 a tree comparison shows the one classification and there is exactly one `lane=files` request per comparison. A
 dataset review names no tree comparison, so the hook asks nothing and both receive `null`.
+
+**The reviewer's keyboard zone (MIK-L33, MIK-R33 rule 7).** The surface root carries `data-kbzone="review"`, the
+keymap owner's `review` zone (`data/keymap/zones.ts`). The family tree binds its `j`/`k` change traversal
+(`changeTraversal.useChangeTraversal`) on this element, so the chords act only while focus is inside the reviewer and
+the owner's routing keeps them inert in inputs, textareas, contenteditable regions and the terminal zone. This is the
+file's only MIK-L33 change.
 
 Since `260921-ICR-L47`, `useSurface` passes `hold: navigation.settling` to `useReviewReadCycle`, so the
 reviewer's first read waits (at most `SUBJECT_HOLD_MS`) for the catalogue to choose a subject, and calls
@@ -101,8 +107,9 @@ The current ownership and boundaries above are grounded in these source declarat
 | The unanswered subject's status, keyed and labelled with the requested subject. | `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:375-395 |
 | `ReviewPanes` owns the behavior described above: the workspace over the answer or the frame, the records only for an answer, and the one lane read handed to both (MIK-L32). | "function ReviewPanes({"; "const laneRead = useReviewLane("; "<ReviewTechnicalDetails" | dashboard/src/panels/review/ReviewSurface.tsx:302-370 |
 | One lane read per comparison through the real surface; none for a dataset review. | "offers the two lane destinations after the families, with their file and hunk totals" | dashboard/src/panels/review/ReviewSurface.lane.test.tsx:85-99 |
-| `ReviewSurface` owns the behavior described above, including the cache provider, the pending/unavailable root attributes and the engagement observer. | `ReviewSurface`; `ReviewReadCacheContext`; `useReaderEngagement` | dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
+| `ReviewSurface` owns the behavior described above, including the cache provider, the pending/unavailable root attributes and the engagement observer. | `ReviewSurface`; `ReviewReadCacheContext`; `useReaderEngagement` | dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
 | `PageControls` owns the behavior described above. | `PageControls` | dashboard/src/panels/review/ReviewSurface.tsx:256-295 |
+| The root is the keymap owner's reviewer zone (MIK-L33). | "data-kbzone=\"review\"" | dashboard/src/panels/review/ReviewSurface.tsx:547-547 |
 
 ## Cross-Repo References
 
@@ -166,11 +173,12 @@ inner root's count was already 0 in both rounds, which is exactly why F1 was a c
 | **The pane helper's two load-bearing declarations (moved unchanged to `ReviewRecordPanes.tsx` by L48).** | `pane`; "minWidth: 0"; "overflowWrap"; `data-pane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:33-41 |
 | **The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.** | "const TAKEOVER = 'changeset-viewer'"; "gridTemplateColumns: 'minmax(0, 1fr)'"; `review-details` | dashboard/src/panels/review/ReviewRecordPanes.tsx:31-31; dashboard/src/panels/review/ReviewRecordPanes.tsx:462-483 |
 | The header wraps the task/subject controls while keeping their context and refresh action available. | `ReviewHeader` | dashboard/src/panels/review/ReviewSurface.tsx:397-451 |
-| The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:52-81; dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
+| The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility. | `reviewShell`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:52-81; dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
 | The fixture builder and the mount this pin relies on, cited from their own declarations. | `payload` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
 | The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself. | "the viewport does not scroll"; `overflow: "hidden"` | dashboard/src/cockpit/Cockpit.tsx:328-328 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33:** the surface root's `data-kbzone="review"` (the keymap owner's reviewer zone, on which the tree binds `j`/`k`). One row added. The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32 (review R1 F1, ruling 2026-09-30T13:07:38).** Logic records that `ReviewPanes` makes the one lane read (`useReviewLane` over `treeComparisonNumber(payload.limitations)`) and hands it to the workspace and the technical details; none for a dataset review. The `ReviewPanes` row is reworded and re-anchored on line-exact quotes ("function ReviewPanes({", "const laneRead = useReviewLane(", "<ReviewTechnicalDetails"), re-measured to `302-370`; one row added (the one-read surface case). The other rows moved by the two imports and the read were re-pointed by the installed fixer (its bullets kept) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:06:26+00:00: Generated citation repair: `pane`; "minWidth: 0"; "overflowWrap" repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:33-41; dashboard/src/panels/review/ReviewRecordPanes.tsx:35-35; dashboard/src/panels/review/ReviewRecordPanes.tsx:35-35. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:06:26+00:00: Generated citation repair: "the viewport does not scroll" repointed to dashboard/src/cockpit/Cockpit.tsx:328-328. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.

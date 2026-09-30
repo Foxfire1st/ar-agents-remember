@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_memory_branch_authority.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `overview.md` |
 
 ## Governing Overview
@@ -115,13 +115,13 @@ No external or domain documentation governs this repository-local check.
 | Group 2 — the free agent's shape, with the ruling the group protects. | `test_the_bootstrap_role_is_a_free_agent_and_has_no_task_altitude`; `test_without_a_task_document_only_the_taskless_seat_roles_are_admitted`; `test_the_free_agent_set_is_named_and_readable_not_a_bare_literal`; `test_no_task_altitude_set_in_the_source_names_bootstrap` | mcp/tests/test_memory_branch_authority.py:346-363; mcp/tests/test_memory_branch_authority.py:366-394; mcp/tests/test_memory_branch_authority.py:397-417; mcp/tests/test_memory_branch_authority.py:426-444 |
 | Group 3 — the exclusion, pinned on the commit tree. | `test_the_first_baseline_never_commits_bootstrap_scaffolding`; `test_no_memory_content_commit_stages_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:474-497; mcp/tests/test_memory_branch_authority.py:500-516 |
 | Group 4 — a supplied document still resolves, and the manifest exception stays scoped. | `test_a_document_supplied_to_a_taskless_role_still_resolves_but_skips_the_altitude_check`; `test_the_manifest_declares_no_task_altitude_for_the_free_agent` | mcp/tests/test_memory_branch_authority.py:519-594; mcp/tests/test_memory_branch_authority.py:597-623 |
-| The branch authority the first group drives. | `_git_init_result`; `_repair_unborn_memory_repository`; `_resolved_initial_branch`; `DEFAULT_BRANCH_CONFIG_KEY` | mcp/src/agents_remember/kernel/memory_init.py:161-213; mcp/src/agents_remember/kernel/memory_init.py:124-158; mcp/src/agents_remember/kernel/memory_init.py:70-80; mcp/src/agents_remember/kernel/memory_init.py:13-13 |
+| The branch authority the first group drives. | `_git_init_result`; `_repair_unborn_memory_repository`; `_resolved_initial_branch`; `DEFAULT_BRANCH_CONFIG_KEY` | mcp/src/agents_remember/kernel/memory_init.py:124-158; mcp/src/agents_remember/kernel/memory_init.py:161-213; mcp/src/agents_remember/kernel/memory_init.py:70-80; mcp/src/agents_remember/kernel/memory_init.py:13-13 |
 | The adoption seam whose hard-coded `main` the first group replaced. | `_baseline_default_branch` | mcp/src/agents_remember/memory/baseline.py:149-192 |
 | The recorded-name validation the first group holds, and its malformed-name refusal. | `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:70-105 |
 | The taskless admission the second and fourth groups hold. | `TASKLESS_SEAT_ROLES`; `_binding_refusal` | mcp/src/agents_remember/serving/task_binding.py:60-83; mcp/src/agents_remember/serving/task_binding.py:91-91; mcp/src/agents_remember/serving/task_binding.py:134-160 |
 | The exclusion policy the third group pins. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
 | The staging helper the third group's failure mode lives in. | `_excluded_pathspec`; `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:34-35; mcp/src/agents_remember/worktrees/modules/git.py:191-197; mcp/src/agents_remember/worktrees/modules/git.py:200-207 |
-| The lane row that keeps the fail-closed evidence registry loading clean. | "test_memory_branch_authority.py" |mcp/tests/test-evidence-lanes.toml:167-167|
+| The lane row that keeps the fail-closed evidence registry loading clean. | "test_memory_branch_authority.py" |mcp/tests/test-evidence-lanes.toml:187-187|
 
 ## Cross-Repo References
 
@@ -132,6 +132,8 @@ No sibling-repository contract defines this check.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:30:24+00:00: Generated citation repair: "test_memory_branch_authority.py" repointed to mcp/tests/test-evidence-lanes.toml:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`memory_init.py`, `test-evidence-lanes.toml`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
 - 2026-09-29T12:07:43+00:00: Generated citation repair: "test_memory_branch_authority.py" repointed to mcp/tests/test-evidence-lanes.toml:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

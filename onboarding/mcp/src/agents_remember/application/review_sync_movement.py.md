@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_sync_movement.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -194,36 +194,36 @@ movement is folded into the staleness the review publishes**, while an absence s
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The module's own statement of the requirement, the read-half gap it closes, and the "measures, owns no verdict" boundary.** | "It measures; it owns no verdict of its own." | mcp/src/agents_remember/application/review_sync_movement.py:1-30 |
-| The published surface: exactly the two operations, and the routing that keeps the R17 fold callable beside the movement read. | `__all__` | mcp/src/agents_remember/application/review_sync_movement.py:59-62 |
-| The two channels a moved identity can belong to, and the `channel:identity` spelling. | `_CODE_CHANNEL`; `_KNOWLEDGE_CHANNEL` | mcp/src/agents_remember/application/review_sync_movement.py:69-76 |
-| **The verdict-to-state mapping stated as a table, and the comment that records why a two-way channel reading would promote `unmeasured` to agreement (G1).** | `_MOVEMENT_STATES` | mcp/src/agents_remember/application/review_sync_movement.py:70-79 |
-| The remedy stated once: the successor generation the record itself names, not an action this module performs. | `_SUPERSESSION` | mcp/src/agents_remember/application/review_sync_movement.py:81-84 |
-| **The never-raising read: no leaf contract, or any store read error, answers `None` so the live review read cannot fail on a measurement.** | `review_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:87-105 |
-| **The three outcomes and the middle one's own reason for existing — an unusable record is neither an absence nor a measurement.** | `_measured` | mcp/src/agents_remember/application/review_sync_movement.py:108-135 |
-| The `unavailable` value: its own state, `record_readable=False`, the reason, and the absence sentence. | `_unavailable` | mcp/src/agents_remember/application/review_sync_movement.py:138-155 |
-| The reviewed dataset identity read off the generation's own after side, or `None` when it retained none. | `_reviewed_knowledge` | mcp/src/agents_remember/application/review_sync_movement.py:158-162 |
-| **The projection: the state taken from the record's verdict, moved identities named only on a moving channel, resolved identities only where one moved.** | `_project` | mcp/src/agents_remember/application/review_sync_movement.py:165-213 |
-| **The absence reason built from the record's own values, including the location's own state and sentence.** | `_unmeasured_reason` | mcp/src/agents_remember/application/review_sync_movement.py:216-234 |
-| **One sentence per state, with the agreement sentence reachable only from `current`.** | `_statement` | mcp/src/agents_remember/application/review_sync_movement.py:237-281 |
-| The agreement clause that names only the channels actually compared and matched. | `_measured_clause` | mcp/src/agents_remember/application/review_sync_movement.py:284-306 |
+| The published surface: exactly the two operations, and the routing that keeps the R17 fold callable beside the movement read. | `__all__` | mcp/src/agents_remember/application/review_sync_movement.py:60-64 |
+| The two channels a moved identity can belong to, and the `channel:identity` spelling. | `_CODE_CHANNEL`; `_KNOWLEDGE_CHANNEL` | mcp/src/agents_remember/application/review_sync_movement.py:69-70 |
+| **The verdict-to-state mapping stated as a table, and the comment that records why a two-way channel reading would promote `unmeasured` to agreement (G1).** | `_MOVEMENT_STATES` | mcp/src/agents_remember/application/review_sync_movement.py:77-81 |
+| The remedy stated once: the successor generation the record itself names, not an action this module performs. | `_SUPERSESSION` | mcp/src/agents_remember/application/review_sync_movement.py:83-86 |
+| **The never-raising read: no leaf contract, or any store read error, answers `None` so the live review read cannot fail on a measurement.** | `review_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:89-107 |
+| **The three outcomes and the middle one's own reason for existing — an unusable record is neither an absence nor a measurement.** | `_measured` | mcp/src/agents_remember/application/review_sync_movement.py:110-137 |
+| The `unavailable` value: its own state, `record_readable=False`, the reason, and the absence sentence. | `_unavailable` | mcp/src/agents_remember/application/review_sync_movement.py:140-157 |
+| The reviewed dataset identity read off the generation's own after side, or `None` when it retained none. | `_reviewed_knowledge` | mcp/src/agents_remember/application/review_sync_movement.py:160-164 |
+| **The projection: the state taken from the record's verdict, moved identities named only on a moving channel, resolved identities only where one moved.** | `_project` | mcp/src/agents_remember/application/review_sync_movement.py:167-215 |
+| **The absence reason built from the record's own values, including the location's own state and sentence.** | `_unmeasured_reason` | mcp/src/agents_remember/application/review_sync_movement.py:218-236 |
+| **One sentence per state, with the agreement sentence reachable only from `current`.** | `_statement` | mcp/src/agents_remember/application/review_sync_movement.py:239-283 |
+| The agreement clause that names only the channels actually compared and matched. | `_measured_clause` | mcp/src/agents_remember/application/review_sync_movement.py:286-308 |
 | **The fold: a `stale` movement outranks the reader's carried identity, and the previous input is always one somebody held.** | `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| **The generation selection this module reads through, with its four states and its `ref`.** | `ReviewGenerationSelection`; `select_review_generation` | mcp/src/agents_remember/application/review_final_output_receipt.py:135-150; mcp/src/agents_remember/application/review_final_output_receipt.py:182-215 |
-| **The record read as a state rather than an exception, with its three read states.** | `ReviewSyncRebindingRead`; `read_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:242-264; mcp/src/agents_remember/application/review_sync_rebinding.py:376-440 |
-| **The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-478 |
-| The record's own three verdicts, and the seven channel matches the projection reads for identity naming only. | `ReviewSyncRebindingVerdict`; `SyncChannelMatch` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:97-103; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:88-96 |
+| **The generation selection this module reads through, with its four states and its `ref`.** | `ReviewGenerationSelection`; `select_review_generation` | mcp/src/agents_remember/application/review_final_output_receipt.py:135-148; mcp/src/agents_remember/application/review_final_output_receipt.py:182-213 |
+| **The record read as a state rather than an exception, with its three read states.** | `ReviewSyncRebindingRead`; `read_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:241-262; mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
+| **The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
+| The record's own three verdicts, and the seven channel matches the projection reads for identity naming only. | `ReviewSyncRebindingVerdict`; `SyncChannelMatch` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:97-97; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:88-88 |
 | The sealed manifest this module reads and never rewrites, its knowledge sides, and the binding each side reports. | `ComparisonGenerationManifest`; `knowledge_side`; `read_manifest`; `COMPARISON_MANIFEST_NAME`; `ComparisonKnowledgeBinding` | mcp/src/agents_remember/application/review_comparison_generation.py:182-216; mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:492-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:133-133 |
-| The resolution whose `contract` decides whether a generation can be resolved at all. | `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:121-159 |
-| **The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.** | `ReviewSyncMovement`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:85-187; mcp/src/agents_remember/models/knowledge/review_staleness.py:131-187 |
-| **The live read that consumes both operations and folds the movement into the staleness it publishes.** | `compose_review`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:328-539; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| The payload field the movement is published on, beside the staleness it is folded into. | `KnowledgeReviewPayload`; `sync_movement` | mcp/src/agents_remember/models/knowledge/review.py:991-1084; mcp/src/agents_remember/models/knowledge/review.py:1019-1026 |
-| **The reopen channel reading the same durable record for itself, with the same location-then-generation order.** | `sync_rebinding`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:351-360; mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:367-392 |
-| The sync tool's projection point, where the write half is attached after the Git work has finished. | `worktree_sync_tool`; `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:356-380 |
-| **The case that renders a recorded movement through the shipped read, including absence, measured agreement and movement.** | `test_the_live_review_read_renders_what_the_sync_moved` | mcp/tests/test_review_sync_movement_read.py:41-103 |
-| **The G1 case: an uncompared knowledge channel renders as `not-measured` with the record's own reason, never as agreement.** | `test_an_uncompared_knowledge_channel_is_rendered_unmeasured` | mcp/tests/test_review_sync_movement_read.py:104-168 |
-| **Both unusable-record sub-cases render `unavailable`, with the two reasons distinguishable, and the `record_readable` hold recorded in place.** | `test_a_record_that_cannot_be_used_is_reported_unavailable` | mcp/tests/test_review_sync_movement_read.py:169-226 |
-| The success conjunct that keeps a failed sync payload from being measured as a resolution. | `test_a_carrying_state_reported_as_a_failure_is_not_measured` | mcp/tests/test_review_sync_movement_read.py:227-257 |
-| The four movement-validator clauses pinned one forgery each, with the real published movement as the accepted control. | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:258-327 |
-| The shared read assertion every render case routes through. | `assert_the_read_renders_the_movement` | mcp/tests/test_review_sync_movement_read.py:328-356 |
+| The resolution whose `contract` decides whether a generation can be resolved at all. | `ReviewCandidateResolution` | mcp/src/agents_remember/application/review_candidate_resolution.py:132-177 |
+| **The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.** | `ReviewSyncMovement`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:95-197 |
+| **The live read that consumes both operations and folds the movement into the staleness it publishes.** | `compose_review`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:335-577; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
+| The payload field the movement is published on, beside the staleness it is folded into. | `KnowledgeReviewPayload`; `sync_movement` | mcp/src/agents_remember/models/knowledge/review.py:999-1107; mcp/src/agents_remember/models/knowledge/review.py:1019-1026 |
+| **The reopen channel reading the same durable record for itself, with the same location-then-generation order.** | `sync_rebinding`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
+| The sync tool's projection point, where the write half is attached after the Git work has finished. | `worktree_sync_tool`; `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:356-378 |
+| **The case that renders a recorded movement through the shipped read, including absence, measured agreement and movement.** | `test_the_live_review_read_renders_what_the_sync_moved` | mcp/tests/test_review_sync_movement_read.py:43-104 |
+| **The G1 case: an uncompared knowledge channel renders as `not-measured` with the record's own reason, never as agreement.** | `test_an_uncompared_knowledge_channel_is_rendered_unmeasured` | mcp/tests/test_review_sync_movement_read.py:106-169 |
+| **Both unusable-record sub-cases render `unavailable`, with the two reasons distinguishable, and the `record_readable` hold recorded in place.** | `test_a_record_that_cannot_be_used_is_reported_unavailable` | mcp/tests/test_review_sync_movement_read.py:171-227 |
+| The success conjunct that keeps a failed sync payload from being measured as a resolution. | `test_a_carrying_state_reported_as_a_failure_is_not_measured` | mcp/tests/test_review_sync_movement_read.py:229-258 |
+| The four movement-validator clauses pinned one forgery each, with the real published movement as the accepted control. | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:260-327 |
+| The shared read assertion every render case routes through. | `assert_the_read_renders_the_movement` | mcp/tests/test_review_sync_movement_read.py:330-358 |
 
 ## Cross-Repo References
 
@@ -236,6 +236,7 @@ No cross-repo reference row is recorded here because no cited range proves a rep
 boundary.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 28 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`review.py`, `review_candidate_resolution.py`, `review_comparison_reopen.py`, `review_final_output_receipt.py`, `review_staleness.py`, `review_sync_movement.py`, `review_sync_rebinding.py`, `review_sync_rebinding.py`, `test_review_sync_movement_read.py`, `worktree_tools.py`). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.

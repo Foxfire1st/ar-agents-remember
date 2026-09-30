@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -101,6 +101,7 @@ route-level case pins the five-arm status table so the admission is held by beha
 alone.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No route impact: citation repair only; this document's own route is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Tree View Route Answers The Unexplained-Changes Lane" at the top: `lane=files` and `file=<path>`, the one-question rule and its 400s, `focused`, and review R1 F2 (every admitted path answers the typed 200 refusal); two rows. The moved rows of L31's and L25's sections were re-pointed by the installed fixer (normalisation) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own" at the top (the new `knowledge_reader.py` route, its answer classes, the collaborator port and its registration; rulings F3 and F15), with two rows. Rows citing the grown collaborator record and `create_app` were re-pointed by the installed fixer or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Route Answers The Focused Cards" at the top: `invariants=` (ruling 05:36:19 Q2), `ReviewTreesSelection` with the 500-key and 64-character bounds (review F10 at 06:10:21), the payload-pinned reads (F11), and the settled key casing (MIK-L25 review F9). **Reopened claim reworded:** L25's route row; this pass's generated bullet for it was removed. Two rows added.
@@ -2568,7 +2569,7 @@ unwired `503`/refusal answers, the status mapping and the serializer are unchang
 | **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` |mcp/src/agents_remember/serving/review.py:294-327; mcp/src/agents_remember/models/knowledge/review.py:262-324|
 | **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` |mcp/src/agents_remember/serving/review.py:661-709; mcp/src/agents_remember/serving/review.py:627-709|
 | The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` |mcp/src/agents_remember/serving/review.py:712-717; mcp/src/agents_remember/serving/review.py:607-624|
-| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/review_task_context.py:93-191 |
+| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577; mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` |mcp/tests/test_knowledge_review_source_endpoints.py:829-905; mcp/tests/test_knowledge_review_resolution_and_route.py:285-303|
 
 ## 260921-ICR-L3 The Reviewer Gains Its Expansion Route, And The Inventory Rows Open Into Their Bound Content

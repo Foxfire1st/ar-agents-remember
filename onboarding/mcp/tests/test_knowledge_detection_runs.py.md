@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_detection_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T05:15+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -169,13 +169,13 @@ No domain documentation source is configured for this repository (`system/source
 | **Retention reported through the operation names the destination, and a worktree-local home is not retention.** | "test_a_manifest_reference_reported_through_the_operation_names_its_destination" | mcp/tests/test_knowledge_detection_runs.py:1058-1058 |
 | The exact inputs recorded as identities rather than as paths. | "test_a_run_records_the_exact_inputs_it_read_as_identities" | mcp/tests/test_knowledge_detection_runs.py:1084-1084 |
 | **The predating dataset: refused with both generation numbers as facts, migrated nowhere, table still absent.** | "test_a_detection_dataset_predating_generation_4_cannot_be_created_by_migration" | mcp/tests/test_knowledge_detection_runs.py:1108-1108 |
-| The synthetic build of union items, family memberships and anchor resolutions the conditions are provoked from. | `realization_item`; `family_union`; `comparison`; `walk`; `ClaimSpec` | mcp/tests/test_knowledge_detection_runs.py:119-287 |
-| The one anchor-resolution constructor every synthetic item is built through — re-cited at its own extent. | `anchor` | mcp/tests/test_knowledge_detection_runs.py:107-117 |
-| The real store fixture and the run assembled from a walk's signals. | `detection_store`; `assembled_run`; `real_fixture`; `run_real_diff` | mcp/tests/test_knowledge_detection_runs.py:545-592; mcp/tests/test_knowledge_detection_runs.py:458-490; mcp/tests/test_knowledge_detection_runs.py:721-733; mcp/tests/test_knowledge_detection_runs.py:746-766 |
-| The registered support fixtures this module consumes — **no new artifact and no new contract**. | `DiffFixture`; `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:148-188; mcp/tests/diff_scope_test_support.py:189-215 |
-| The production entry points these cases drive. | `record_detection_run`; `read_detection_run`; `detect_review_conditions`; `build_detection_run` | mcp/src/agents_remember/memory/knowledge/detection.py:263-289; mcp/src/agents_remember/memory/knowledge/detection.py:557-600; mcp/src/agents_remember/memory/knowledge/detection_walk.py:182-247; mcp/src/agents_remember/memory/knowledge/detection.py:144-173 |
+| The synthetic build of union items, family memberships and anchor resolutions the conditions are provoked from. | `realization_item`; `family_union`; `comparison`; `walk`; `ClaimSpec` | mcp/tests/test_knowledge_detection_runs.py:122-138; mcp/tests/test_knowledge_detection_runs.py:141-173; mcp/tests/test_knowledge_detection_runs.py:176-234; mcp/tests/test_knowledge_detection_runs.py:237-257; mcp/tests/test_knowledge_detection_runs.py:280-289 |
+| The one anchor-resolution constructor every synthetic item is built through — re-cited at its own extent. | `anchor` | mcp/tests/test_knowledge_detection_runs.py:110-119 |
+| The real store fixture and the run assembled from a walk's signals. | `detection_store`; `assembled_run`; `real_fixture`; `run_real_diff` | mcp/tests/test_knowledge_detection_runs.py:545-592; mcp/tests/test_knowledge_detection_runs.py:461-465; mcp/tests/test_knowledge_detection_runs.py:468-493; mcp/tests/test_knowledge_detection_runs.py:721-733; mcp/tests/test_knowledge_detection_runs.py:746-766 |
+| The registered support fixtures this module consumes — **no new artifact and no new contract**. | `DiffFixture`; `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:155-194; mcp/tests/diff_scope_test_support.py:197-241 |
+| The production entry points these cases drive. | `record_detection_run`; `read_detection_run`; `detect_review_conditions`; `build_detection_run` | mcp/src/agents_remember/memory/knowledge/detection.py:271-297; mcp/src/agents_remember/memory/knowledge/detection.py:582-625; mcp/src/agents_remember/memory/knowledge/detection_walk.py:216-283; mcp/src/agents_remember/memory/knowledge/detection.py:152-181 |
 | **The sequence table's two triggers, which are what refuse a reorder or a shortening of a recorded run.** | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:106-116 |
-| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1436-1436; mcp/tests/test-evidence-lanes.toml:5-5 |
+| The lane row this module is registered under, and the two catalog consumer rows it added. | "unit-regression = ["; "contract:knowledge-diff-cases" | mcp/tests/evidence-lifecycle.toml:1460-1460; mcp/tests/test-evidence-lanes.toml:5-5 |
 
 ## Cross-Repo References
 
@@ -186,6 +186,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation normalisation only; this document's own source is unchanged by MIK-L33, and none of its rows into MIK-L33's changed sources moved. The installed fixer, run once on it because it cites a changed source, normalised passing rows (5). The fixer's normalisation also re-measured ranges into files this leaf did not change (`detection.py`, `detection_walk.py`, `diff_scope_test_support.py`, `evidence-lifecycle.toml`, `test_knowledge_detection_runs.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:27:16+00:00: Generated citation repair: "unit-regression = ["; "contract:knowledge-diff-cases" repointed to mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1460-1460. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "unit-regression = ["; "contract:knowledge-diff-cases" repointed to mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/evidence-lifecycle.toml:1422-1422. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

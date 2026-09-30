@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_read_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -125,13 +125,13 @@ No domain documentation source is configured for this repository (`system/source
 | The count-separation and multi-family-membership nodes. | "test_claim_identities_and_distinct_source_locations_are_counted_separately"; "test_a_revision_reached_through_two_families_appears_once_with_both_membership_rows" | mcp/tests/test_knowledge_read_scope.py:475-509; mcp/tests/test_knowledge_read_scope.py:510-546 |
 | The truncation, too-small-budget, execution-bound and absence nodes. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position"; "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total"; "test_the_declared_bound_admits_a_selection_that_fits_and_refuses_one_that_does_not"; "test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope"; "test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:872-901; mcp/tests/test_knowledge_read_scope.py:902-929; mcp/tests/test_knowledge_read_scope.py:930-961; mcp/tests/test_knowledge_read_scope.py:962-981; mcp/tests/test_knowledge_read_scope.py:982-1000 |
 | **The persisted-nothing and namespace-confinement nodes.** | "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged"; "test_the_selection_reads_only_the_requested_namespace" | mcp/tests/test_knowledge_read_scope.py:1001-1058; mcp/tests/test_knowledge_read_scope.py:1059-1163 |
-| The fixture every node builds through the public store operations. | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:266-284 |
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:112-112|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
-| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:112-112|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
+| The fixture every node builds through the public store operations. | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:270-287 |
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:155-155|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
+| The lane row this module occupies. | "mcp/tests/test_knowledge_read_scope.py" |mcp/tests/test-evidence-lanes.toml:155-155|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
 
 ## Cross-Repo References
 
@@ -140,10 +140,19 @@ No cross-repository behavior is implemented in this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
-| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1484-1484|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
+| The support artifact and contract this module is a declared consumer of. | "contract:knowledge-read-scope-cases" |mcp/tests/evidence-lifecycle.toml:1508-1508|
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 8 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`evidence-lifecycle.toml`, `read_scope_test_support.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_read_scope.py" repointed to mcp/tests/test-evidence-lanes.toml:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_read_scope.py" repointed to mcp/tests/test-evidence-lanes.toml:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:07+00:00: Generated citation repair: "contract:knowledge-read-scope-cases" repointed to mcp/tests/evidence-lifecycle.toml:1508-1508. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 6 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_read_scope.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

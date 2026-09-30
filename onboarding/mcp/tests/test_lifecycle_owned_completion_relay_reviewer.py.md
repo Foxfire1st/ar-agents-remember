@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T21:21+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -157,13 +157,13 @@ certification result, and the candidate is uncommitted.
 | The derived durable row's own text, asserted to carry the outcome and evidence identity and to speak no verdict vocabulary. | `state_signal_ask`; `state_signal_response` | mcp/src/agents_remember/serving/state_signals.py:506-518; mcp/src/agents_remember/serving/state_signals.py:521-527 |
 | The real notifier sweep the module drives to persist the wake and to land it at the owner's next boundary. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-190 |
 | The real terminal-evidence lift the module uses instead of typing an outcome: the projector registry decides the outcome and the evidence identity. | `latest_native_terminal_evidence` | mcp/src/agents_remember/serving/terminal_evidence.py:146-184 |
-| The real observer whose passes produce the terminal truth the wake rides on. | `TerminalCatalogLivenessSweeper`; `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:149-322; mcp/src/agents_remember/serving/terminal_liveness.py:90-113 |
-| The wake scenario class and its single-seat scripted adapter endpoint. | `ReviewerTurnOwnerWakeTests`; `_Bridge` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:269-655; mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:230-266 |
+| The real observer whose passes produce the terminal truth the wake rides on. | `TerminalCatalogLivenessSweeper`; `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:89-110; mcp/src/agents_remember/serving/terminal_liveness.py:149-322 |
+| The wake scenario class and its single-seat scripted adapter endpoint. | `ReviewerTurnOwnerWakeTests`; `_Bridge` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:230-266; mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:269-651 |
 | The tmux double that answers "session alive", with the `gone` set that keeps a departed generation departed. | `_AliveHost` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:163-184 |
 | The negative control: `failed` is real terminal truth with an evidence identity, is not wakeable, and consumes nothing. | `test_a_failed_reviewer_turn_never_wakes_the_manager_and_stays_eligible` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:605-651 |
 | The fixtures this module imports rather than rebuilds, owned by the sibling relay card. | `_accepted_paster`; `_write_task_topology` | mcp/tests/test_state_signal_relay.py:120-132; mcp/tests/test_state_signal_relay.py:149-193 |
-| The sibling module that owns the relay's own structural contract. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:196-607 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" |mcp/tests/test-evidence-lanes.toml:140-140|
+| The sibling module that owns the relay's own structural contract. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:196-603 |
+| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" |mcp/tests/test-evidence-lanes.toml:184-184|
 
 ## Cross-Repo References
 
@@ -174,6 +174,8 @@ unit-regression module.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`terminal_liveness.py`, `test_lifecycle_owned_completion_relay_reviewer.py`, `test_state_signal_relay.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:30:11+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:184-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:136-136. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-15T21:25+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | path | `mcp/tests/test_serving_notifier_handoff.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -139,13 +139,13 @@ not execution evidence and is not a certification result.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two independently scheduled loops neither of which can wake the other: the observer's completion-relative poll and the notifier's completion-relative interval. | `_terminal_observation_loop`; `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126; mcp/src/agents_remember/serving/_app_lifespan.py:288-352 |
+| The two independently scheduled loops neither of which can wake the other: the observer's completion-relative poll and the notifier's completion-relative interval. | `_terminal_observation_loop`; `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126; mcp/src/agents_remember/serving/_app_lifespan.py:288-348 |
 | The observer's poll delay, read from the production declaration rather than written as a literal. | `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
 | The sweeper's retained starting-row window and ten-second full-sweep limit measured from the previous full sweep's start. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The full-sweep rate limit the oracle's `F` term is read from, declared with the hysteresis the sweeper applies. | `TerminalCatalogLivenessConfig`; `DEFAULT_LIVENESS_HYSTERESIS` | mcp/src/agents_remember/models/terminal_catalog.py:729-744 |
+| The full-sweep rate limit the oracle's `F` term is read from, declared with the hysteresis the sweeper applies. | `TerminalCatalogLivenessConfig`; `DEFAULT_LIVENESS_HYSTERESIS` | mcp/src/agents_remember/models/terminal_catalog.py:728-741; mcp/src/agents_remember/models/terminal_catalog.py:744-744 |
 | The notifier interval the oracle's `N` term is read from. | `DEFAULT_AGENT_NOTIFIER_INTERVAL_SECONDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:115-115 |
-| The real notifier sweep each recorded pass runs, and the durable store whose commit boundary the harness records. | `run_agent_notifier_sweep`; `TerminalCatalog` | mcp/src/agents_remember/serving/agent_notifier.py:96-192; mcp/src/agents_remember/serving/terminal_catalog.py:65-433 |
-| The instrument: the deadline-correct virtual clock, the recorded worlds, and the oracle's terms read back out of them. | `_HandoffCase`; `_Handoff`; `assert_oracle` | mcp/tests/_serving_handoff.py:669-886; mcp/tests/_serving_handoff.py:604-666; mcp/tests/_serving_handoff.py:827-886 |
+| The real notifier sweep each recorded pass runs, and the durable store whose commit boundary the harness records. | `run_agent_notifier_sweep`; `TerminalCatalog` | mcp/src/agents_remember/serving/agent_notifier.py:96-190; mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
+| The instrument: the deadline-correct virtual clock, the recorded worlds, and the oracle's terms read back out of them. | `_HandoffCase`; `_Handoff`; `assert_oracle` | mcp/tests/_serving_handoff.py:603-666; mcp/tests/_serving_handoff.py:669-902; mcp/tests/_serving_handoff.py:827-902 |
 | The oracle's fixed part and the class that carries all eight cases. | `WORST_PHASE_BOUND`; `ServingNotifierHandoffTests` | mcp/tests/_serving_handoff.py:95-96; mcp/tests/test_serving_notifier_handoff.py:52-376 |
 | The default-phase handoff with no injected overrun, and the strict observer-phase form asserted where its arming actually happens. | `test_the_default_phase_handoff_stays_inside_the_worst_phase_bound` | mcp/tests/test_serving_notifier_handoff.py:53-99 |
 | The previous full sweep's own overrun as the `R_observer` term, with the bound met exactly. | `test_an_in_flight_full_sweep_overrun_delays_the_consuming_sweep` | mcp/tests/test_serving_notifier_handoff.py:101-146 |
@@ -156,7 +156,7 @@ not execution evidence and is not a certification result.
 | A live pass that did not read the fact cannot be the pass that satisfies the stage. | `test_a_live_pass_that_did_not_observe_the_fact_does_not_satisfy_the_stage` | mcp/tests/test_serving_notifier_handoff.py:325-354 |
 | Notifier disablement pauses signal derivation only, and re-enabling in place consumes already-committed truth on the next pass. | `test_a_disabled_notifier_pauses_signal_derivation_only` | mcp/tests/test_serving_notifier_handoff.py:356-376 |
 | The shared fixture this module extends rather than duplicating. | `_ServingFixture` | mcp/tests/test_serving_observation_loop.py:259-370 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_notifier_handoff.py" |mcp/tests/test-evidence-lanes.toml:185-185|
+| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_notifier_handoff.py" |mcp/tests/test-evidence-lanes.toml:231-231|
 
 ## Cross-Repo References
 
@@ -167,6 +167,8 @@ unit-regression module.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`_app_lifespan.py`, `_serving_handoff.py`, `agent_notifier.py`, `terminal_catalog.py`, `terminal_catalog.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:32:22+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:231-231. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

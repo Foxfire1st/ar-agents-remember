@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_revision_seals.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -93,15 +93,15 @@ No domain documentation source is configured for this repository (`system/source
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Why this module owns the shared seal evidence rather than either single-graph module. | "neither single-graph module owns the shared mechanism" | mcp/tests/test_knowledge_revision_seals.py:5-5 |
-| The four raw edge statements the read nodes mutate with. | `_FAMILY_EDGE_INSERT`; `_FAMILY_EDGE_DELETE`; `_INVARIANT_EDGE_INSERT`; `_INVARIANT_EDGE_DELETE` | mcp/tests/test_knowledge_revision_seals.py:37-41; mcp/tests/test_knowledge_revision_seals.py:42-46; mcp/tests/test_knowledge_revision_seals.py:47-51; mcp/tests/test_knowledge_revision_seals.py:52-56 |
+| The four raw edge statements the read nodes mutate with. | `_FAMILY_EDGE_INSERT`; `_FAMILY_EDGE_DELETE`; `_INVARIANT_EDGE_INSERT`; `_INVARIANT_EDGE_DELETE` | mcp/tests/test_knowledge_revision_seals.py:37-40; mcp/tests/test_knowledge_revision_seals.py:42-45; mcp/tests/test_knowledge_revision_seals.py:47-50; mcp/tests/test_knowledge_revision_seals.py:52-55 |
 | The field-isolating digest node for the invariant payload. | "test_an_invariant_revision_digest_seals_its_predecessor_set" | mcp/tests/test_knowledge_revision_seals.py:63-95 |
 | The two family read nodes (added and removed edge behind the seal). | "test_a_family_revision_read_refuses_after_a_predecessor_edge_is_added"; "test_a_family_revision_read_refuses_after_a_predecessor_edge_is_deleted" | mcp/tests/test_knowledge_revision_seals.py:96-123; mcp/tests/test_knowledge_revision_seals.py:124-148 |
 | The two invariant read nodes (added and removed edge behind the seal). | "test_an_invariant_revision_read_refuses_after_a_predecessor_edge_is_added"; "test_an_invariant_revision_read_refuses_after_a_predecessor_edge_is_deleted" | mcp/tests/test_knowledge_revision_seals.py:149-170; mcp/tests/test_knowledge_revision_seals.py:171-188 |
 | The field-isolating family digest node this module's invariant sibling mirrors. | "test_a_family_revision_digest_seals_its_predecessor_set" | mcp/tests/test_knowledge_family_revision.py:150-183 |
 | The payloads that seal the predecessor set, one per revision kind. | `canonical_revision_payload`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
-| The read-path recomputation that turns a tampered edge into a storage defect. | `decode_revision_row`; `decode_family_revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:153-189; mcp/src/agents_remember/memory/knowledge/records.py:327-356 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_revision_seals.py" |mcp/tests/test-evidence-lanes.toml:132-132|
-|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" |mcp/tests/evidence-lifecycle.toml:1217-1217|
+| The read-path recomputation that turns a tampered edge into a storage defect. | `decode_revision_row`; `decode_family_revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:153-187; mcp/src/agents_remember/memory/knowledge/records.py:327-354 |
+| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_revision_seals.py" |mcp/tests/test-evidence-lanes.toml:177-177|
+|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" |mcp/tests/evidence-lifecycle.toml:1237-1237|
 
 ## Cross-Repo References
 
@@ -112,6 +112,9 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`evidence-lifecycle.toml`, `records.py`, `test_knowledge_revision_seals.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:29:50+00:00: Generated citation repair: "mcp/tests/test_knowledge_revision_seals.py" repointed to mcp/tests/test-evidence-lanes.toml:177-177. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:29:50+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1237-1237. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_revision_seals.py" repointed to mcp/tests/test-evidence-lanes.toml:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

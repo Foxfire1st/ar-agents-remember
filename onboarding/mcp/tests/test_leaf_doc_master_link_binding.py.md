@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | path | `mcp/tests/test_leaf_doc_master_link_binding.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -117,16 +117,16 @@ repository's own source, the real `task_doc` plane and real Git objects.
 | The repair path for an already-damaged document, asserted additive (authored content unchanged). | `test_an_existing_damaged_document_is_repaired_by_its_next_start`; `_write_leaf_document` | mcp/tests/test_leaf_doc_master_link_binding.py:110-141; mcp/tests/test_leaf_doc_master_link_binding.py:197-233 |
 | The fail-closed half: a leaf under a task root with no master document is refused with its remedy and writes nothing. | `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy` | mcp/tests/test_leaf_doc_master_link_binding.py:235-250 |
 | The counter-case that keeps planning usable: master plus two leaves before any start, still unstamped. | `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` | mcp/tests/test_leaf_doc_master_link_binding.py:252-268 |
-| The refusal this module asserts, with its remedy text. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:620-650 |
+| The refusal this module asserts, with its remedy text. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:622-652 |
 | The start publisher that binds the missing link, entered from the real start path. | "def _publish_leaf_task_enclosure_binding(" | mcp/src/agents_remember/worktrees/modules/start.py:858-933 |
 | The worktree-side wrapper that resolves the canonical parent row and delegates to the task-domain planner. | "def plan_current_leaf_enclosure_registration(" | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202 |
 | The task-domain planner that decides whether the derived master link is bound. | "def plan_leaf_doc_enclosure_registration(" | mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
-| The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:577-663 |
+| The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:641-727 |
 | The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363; mcp/tests/evidence-lifecycle.toml:326-333; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:337-343; mcp/tests/evidence-lifecycle.toml:384-390 |
 | The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:278-278|
-| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-366 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:278-278|
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:323-323|
+| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
+| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:323-323|
 
 ## Cross-Repo References
 
@@ -136,9 +136,12 @@ cross-repository authority is claimed by this focused module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
+| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `initialized_memory_repo` | mcp/tests/test_worktree_support.py:93-113; mcp/tests/test_worktree_support.py:364-392 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`task_doc_tools.py`, `test_task_document_application_1.py`, `test_worktree_support.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:30:07+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:30:07+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

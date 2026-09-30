@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge/review_external_movement.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T19:45:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/src/agents_remember/models/overview.md` |
 
 ## Governing Overview
@@ -137,22 +137,22 @@ absence of a transition, published exactly when every declared identity still st
 | **The module's own statement of why this is a measurement and not a command classifier, and what the four states mean.** | "What is supported is a field, not a tone of voice." | mcp/src/agents_remember/models/knowledge/review_external_movement.py:1-43 |
 | The shared bounds, the base model and the state vocabulary this value reuses. | `ReviewSyncMovementState`; `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:45-58 |
 | The published surface: the value, the transition union, the channel union, the evidence union and the reconciliation union. | `__all__` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:60-66 |
-| **The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.** | `ExternalGitTransition` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:69-81 |
-| **Whether this system reconciles a transition at all, earned by the one recovery it performs.** | `GitTransitionReconciliation` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:83-86 |
-| **The three declared channels, each named by the thing that moved rather than by the command that moved it.** | `GitMovementChannel` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:88-92 |
-| **What one channel's ancestry check found, with `advanced` as a measurement of its own.** | `GitMovementEvidence` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:94-98 |
-| **The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.** | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-126 |
-| The field set, with `observed_*` present only for the channels that were read. | `observed_code_work_branch_head`; `reason` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:128-152 |
+| **The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.** | `ExternalGitTransition` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:74-81 |
+| **Whether this system reconciles a transition at all, earned by the one recovery it performs.** | `GitTransitionReconciliation` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:86-86 |
+| **The three declared channels, each named by the thing that moved rather than by the command that moved it.** | `GitMovementChannel` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:92-92 |
+| **What one channel's ancestry check found, with `advanced` as a measurement of its own.** | `GitMovementEvidence` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:98-98 |
+| **The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.** | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205 |
+| The field set, with `observed_*` present only for the channels that were read. | `observed_code_work_branch_head`; `reason` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:136-136; mcp/src/agents_remember/models/knowledge/review_external_movement.py:142-142 |
 | **The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.** | `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:154-205 |
-| **The matrix these labels come from, and the recovery each row names.** | `GIT_TRANSITION_SUPPORT` | mcp/src/agents_remember/application/review_external_git_movement.py:143-236 |
+| **The matrix these labels come from, and the recovery each row names.** | `GIT_TRANSITION_SUPPORT` | mcp/src/agents_remember/application/review_external_git_movement.py:143-233 |
 | **The producer that publishes this value from what the repository shows.** | `external_git_movement` | mcp/src/agents_remember/application/review_external_git_movement.py:328-348 |
-| The closeout/integration statement, which repeats the unsupported verdicts whether or not a value was produced. | `_absence_block` | mcp/src/agents_remember/application/review_external_git_movement.py:457-471 |
+| The closeout/integration statement, which repeats the unsupported verdicts whether or not a value was produced. | `_absence_block` | mcp/src/agents_remember/application/review_external_git_movement.py:457-469 |
 | **The payload field this value travels on, and the re-export that keeps its import site.** | `external_git_movement`; `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205; mcp/src/agents_remember/models/knowledge/review.py:1051-1051 |
 | The payload module's own `__all__` entry for the value. | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205 |
-| **The read path that carries the value from the measurement owner to the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:371-611 |
+| **The read path that carries the value from the measurement owner to the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:372-614 |
 | The second review boundary that publishes the same value on the task-context path. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
-| **The case that forges five false shapes, each departing from exactly one validator clause, with the real published value as the accepted control.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:560-633 |
-| The case that pins the control state as the value an untouched leaf publishes. | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:634-655 |
+| **The case that forges five false shapes, each departing from exactly one validator clause, with the real published value as the accepted control.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:563-635 |
+| The case that pins the control state as the value an untouched leaf publishes. | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:637-656 |
 
 ## Cross-Repo References
 
@@ -163,4 +163,5 @@ repository resolved. No cross-repo reference row is recorded here because no cit
 repository or external-system boundary.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 10 passing row(s) normalised by the fixer; 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). The fixer's normalisation also re-measured ranges into files this leaf did not change (`review_external_git_movement.py`, `review_external_movement.py`, `test_review_external_git_movement_read.py`). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-23T19:45:00+02:00 — 260921-ICR-L23 curator (uncommitted change set on `ar/260921-icr-l23`, base `473ad8242bb4c22bdabed5d5253767350381eb3e`): created this one-to-one card for the module this leaf introduced as **the typed value a review publishes about identity movement caused outside managed sync**. It records what a consumer has to act on: `reconciliation` is a field rather than a tone of voice, so `unsupported` travels on the value and no reader can conclude from `current` alone that a cherry-pick or a revert was handled; `unchanged` exists as the measured absence of a transition so the control state never names an event that did not happen; `binding_state` reuses R22's four-member vocabulary rather than minting a fifth state, and adds the per-channel `transition_evidence` union so `advanced` — a branch that moved forward without replacing the recorded commit — is distinguishable from `current` without reading a sentence; and the `after` validator refuses every false shape in both directions, so a `stale` report without a named replaced identity, an absence without a reason, a reason beside a measurement and a readable generation reported `unavailable` are all unconstructible. Two boundaries are carried as boundaries and not as defects: the recorded knowledge *dataset* identity stays with the managed-sync rebinding rather than being restated here, and the value performs no recovery — `recovery_action` names the step a person takes while the reviewed generation keeps every byte it had. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name this leaf's recorded base `473ad8242bb4c22bdabed5d5253767350381eb3e` because every construct cited here exists only in this leaf's uncommitted working tree — the file itself is untracked at that commit — so no commit contains the content a stamp would claim to have verified; what was actually read is that working tree (base commit plus the leaf's working-tree delta), and the governing overview is `mcp/src/agents_remember/models/overview.md`.

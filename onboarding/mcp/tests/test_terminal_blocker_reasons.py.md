@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | path | `mcp/tests/test_terminal_blocker_reasons.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -133,31 +133,31 @@ repository's own source, its own blocker vocabulary, and the operator payload it
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public abandon preview is non-mutating and does not invent a removal failure. | "would-abandon"; `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
-| The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:116-170 |
-| The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:173-229 |
-| The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:232-252 |
-| An unnameable blocker reason raises at the call site that detected it. | `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:255-273 |
-| Public abandon preview is non-mutating and does not invent a removal failure. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-190 |
-| The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-190 |
-| The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:191-249 |
-| The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:250-272 |
+| Public abandon preview is non-mutating and does not invent a removal failure. | "would-abandon"; `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-188 |
+| The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-188 |
+| The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:191-247 |
+| The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:250-270 |
 | An unnameable blocker reason raises at the call site that detected it. | `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:273-286 |
-| A blank producer reason cannot reach an operator as `reason: ""`. | `test_an_empty_provider_reason_is_replaced_by_a_named_statement` | mcp/tests/test_terminal_blocker_reasons.py:271-294 |
-| The sole provider-runtime producer answers with a reason whenever it reclaimed nothing. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` | mcp/tests/test_terminal_blocker_reasons.py:315-340 |
-| The post-reclaim branch that could answer silently now names its own cause. | `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:341-381 |
-| The landed fixture and the public calls the whole-tool cases drive. | `_landed_leaf`; `_landed_leaf_config`; `_landed_leaf_document`; `_finalize` | mcp/tests/test_terminal_blocker_reasons.py:102-106; mcp/tests/test_terminal_blocker_reasons.py:107-120; mcp/tests/test_terminal_blocker_reasons.py:121-126; mcp/tests/test_terminal_blocker_reasons.py:127-133 |
-| The service rebinding and the citation-guard double the whole-tool cases run against. | `bound_worktree_services`; `_NoManagedCitationCache` | mcp/tests/test_terminal_blocker_reasons.py:77-90; mcp/tests/test_terminal_blocker_reasons.py:91-101 |
-| The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. | `_blocker` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:647-665 |
-| The operator-language answer for a reasonless or malformed result item. | `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:632-646 |
-| The bundle and the builder the invariant-owner cases drive directly. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-243; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-297 |
+| Public abandon preview is non-mutating and does not invent a removal failure. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-188 |
+| The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported. | `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` | mcp/tests/test_terminal_blocker_reasons.py:134-188 |
+| The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry. | `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` | mcp/tests/test_terminal_blocker_reasons.py:191-247 |
+| The exact L6 input — `{"removed": False}` with no reason — is answered in operator language instead of becoming a null reason. | `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` | mcp/tests/test_terminal_blocker_reasons.py:250-270 |
+| An unnameable blocker reason raises at the call site that detected it. | `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` | mcp/tests/test_terminal_blocker_reasons.py:273-286 |
+| A blank producer reason cannot reach an operator as `reason: ""`. | `test_an_empty_provider_reason_is_replaced_by_a_named_statement` | mcp/tests/test_terminal_blocker_reasons.py:289-312 |
+| The sole provider-runtime producer answers with a reason whenever it reclaimed nothing. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` | mcp/tests/test_terminal_blocker_reasons.py:315-338 |
+| The post-reclaim branch that could answer silently now names its own cause. | `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:341-379 |
+| The landed fixture and the public calls the whole-tool cases drive. | `_landed_leaf`; `_landed_leaf_config`; `_landed_leaf_document`; `_finalize` | mcp/tests/test_terminal_blocker_reasons.py:102-104; mcp/tests/test_terminal_blocker_reasons.py:107-118; mcp/tests/test_terminal_blocker_reasons.py:121-124; mcp/tests/test_terminal_blocker_reasons.py:127-131 |
+| The service rebinding and the citation-guard double the whole-tool cases run against. | `bound_worktree_services`; `_NoManagedCitationCache` | mcp/tests/test_terminal_blocker_reasons.py:77-87; mcp/tests/test_terminal_blocker_reasons.py:90-99 |
+| The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. | `_blocker` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:650-666 |
+| The operator-language answer for a reasonless or malformed result item. | `_blocked_reason` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:635-647 |
+| The bundle and the builder the invariant-owner cases drive directly. | `TerminalResult`; `terminal_result_blockers` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:229-243; mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-298 |
 | The producer whose reason the refusal carries, including the post-reclaim branch this module forces. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
-| The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:54-96; mcp/src/agents_remember/application/worktree_services.py:203-211 |
-| The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:855-904 |
-| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
-| The integration lane row the fail-closed manifest requires. | "integration = [" |mcp/tests/test-evidence-lanes.toml:241-241|
+| The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. | `ProviderLifecyclePort`; `build_default_worktree_services` | mcp/src/agents_remember/worktrees/services.py:56-98; mcp/src/agents_remember/application/worktree_services.py:211-224 |
+| The public terminal route the whole-tool cases call. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:904-935 |
+| The landing fixture and the public configuration the whole-tool cases build on. | `_authority_fixture`; `_closed_external_leaf_worktrees`; `_public_config` | mcp/tests/integration_branch_authority_test_support.py:129-286; mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
+| The integration lane row the fail-closed manifest requires. | "integration = [" |mcp/tests/test-evidence-lanes.toml:286-286|
 | The landing fixture and the public configuration the whole-tool cases build on. | "def _authority_fixture("; "def _closed_external_leaf_worktrees("; "def _public_config(" | mcp/tests/integration_branch_authority_test_support.py:48-91; mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/test_transaction_only_worktree_delivery.py:59-83 |
-| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:241-241 |
+| The integration lane row the fail-closed manifest requires. | "integration = [" | mcp/tests/test-evidence-lanes.toml:286-286 |
 | The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. | "REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]" | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-184 |
 
 ## Cross-Repo References
@@ -168,7 +168,7 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:129-296; mcp/tests/integration_branch_authority_test_support.py:48-91 |
+| The landing world each whole-tool case builds is a real temporary repository pair. | `_authority_fixture`; `_closed_external_leaf_worktrees` | mcp/tests/integration_branch_authority_test_support.py:129-286; mcp/tests/integration_branch_authority_test_support.py:48-91 |
 
 ## 260918-TSIP-L6 The Drift-Snapshot Preview Cases
 
@@ -195,6 +195,9 @@ now has **ten** cases, not seven, and its lane row is
 `mcp/tests/test-evidence-lanes.toml:220` (it read `:177` when this card was written).
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 21 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`integration_branch_authority_test_support.py`, `services.py`, `terminal_validation.py`, `test_terminal_blocker_reasons.py`, `worktree_services.py`, `worktree_tools.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:32:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:32:47+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/keymap/focus.test.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -44,10 +44,11 @@ including forward/backward wrapping and collapsed-region handling.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The cycle logic under test. | `FOCUS_REGIONS`; `nextRegion` | dashboard/src/data/keymap/focus.ts:9-9; dashboard/src/data/keymap/focus.ts:14-24 |
-| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:31-31; dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:265-265; dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:254-254 |
+| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:31-31; dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:271-271; dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:254-254 |
 
 ## Update History
 
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`shell.test.tsx`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: converted the focus references to exact source anchors and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
 
 - 2026-07-24T13:17:50Z — Updated F6-cycle regression coverage for the removed StatusLine region.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -179,7 +179,7 @@ No configured Domain Documentation source applies.
 | The cleanup owner whose two measured facts the cleanup cases drive. | `discard_bootstrap_staging` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
 | The record name the cases read off disk, and the reader that reconstructs it. | `BOOTSTRAP_PROGRESS_NAME`; `read_progress` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:73-73; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:253-323 |
 | The read surface the stored statements are read back through: the mounted read builder, imported and called by these cases. | `knowledge_read_payload` | mcp/tests/test_knowledge_bootstrap.py:80-80; mcp/tests/test_knowledge_bootstrap.py:271-271; mcp/tests/test_knowledge_bootstrap.py:283-283 |
-| The leaf review-candidate root name this module asserts is absent from a bootstrap world. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:203-203 |
+| The leaf review-candidate root name this module asserts is absent from a bootstrap world. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/knowledge_review.py:204-204 |
 
 ## Cross-Repo References
 
@@ -192,6 +192,7 @@ or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. `knowledge_read_payload` gained an optional `coordination_root` and the converted-tree selection (MIK-R23); the claim that it is the read surface stored statements are read back through was re-read and still holds (an unconverted dataset path reads exactly as before). It is re-cited to the location it is about on this card: the cases' own import and two calls of the builder (`:80`, `:271`, `:283`), instead of the builder's range in `mcp/tools/knowledge.py`, which the 2026-09-25 mechanical projection below had placed (that committed bullet is left as written). The fixer's generated bullet from this same pass is folded into this entry.
 - 2026-09-28T17:24:12+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): follow-up to the entry below: the builder row is split into the unchanged list builder (`hand_off`) and the entry builder's new per-target rationale line, each cited by its own anchor. No stamp advanced.
 - 2026-09-28T17:13:55+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — the shared `entry` builder now gives each target its own authored `rationale` (the writer refuses a new realization without one). Conventions records this; the builder row was re-worded and re-anchored on the new line it is about (the earlier generated repair's `entry` projection is superseded by that re-citation). Other ranges re-pointed through the exact base-to-candidate line map; no stamp advanced.

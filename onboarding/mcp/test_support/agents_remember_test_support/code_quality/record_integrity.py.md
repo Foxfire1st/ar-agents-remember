@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated |  2026-09-18T14:55+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated |  2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -158,28 +158,28 @@ certification pass. Every range was derived against the current 1110-line source
 | The enclosure-contract glob the tree walk resolves. | `CONTRACT_GLOB` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:64-64 |
 | What a "case" is, declared once so a figure check and its cases cannot disagree. | `TEST_DEFINITION` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:68-68 |
 | The closed status vocabularies, so an unrecognized status is reported rather than compared. | `ACTIVE_STATUSES`; `LANDED_CONTRACT_STATUSES`; `STARTED_CONTRACT_STATUSES` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:75-79 |
-| The seven named rules, so a finding says which comparison produced it. | `RULE_LEAF_CONTRACT`; `RULE_LEAF_CONTRACT_KEYED`; `RULE_MASTER_EARLY`; `RULE_OWNER`; `RULE_FIGURE` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:82-94 |
-| A comparison that could not be made, named rather than returned as a silent zero. | `RecordIntegrityError` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:97-100 |
+| The seven named rules, so a finding says which comparison produced it. | `RULE_LEAF_CONTRACT`; `RULE_LEAF_CONTRACT_KEYED`; `RULE_MASTER_EARLY`; `RULE_OWNER`; `RULE_FIGURE` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:82-82; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:87-87; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:89-89; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:93-94 |
+| A comparison that could not be made, named rather than returned as a silent zero. | `RecordIntegrityError` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:97-98 |
 | One disagreement with both sides named and the line a reader can open. | "class Finding:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:102-126 |
 | What one check compared, so its finding count is readable rather than merely small. | "class Comparison:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:128-188 |
 | One enclosure contract reduced to the cells and identity a comparison needs. | "class ContractCells:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:190-217 |
 | One task document reduced to the fields the comparisons read. | "class LeafDocument:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:219-234 |
 | One `subTasks[]` row of a master document. | "class MasterRow:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:236-244 |
-| Scalars and nested blocks read out of frontmatter, which is all the parsing there is. | `_scalar_fields`; `_block_fields` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:247-262 |
-| The leaf/contract comparison: contract cells are the authority, the document's status is the subject. | `check_leaf_document_against_contract` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:441-547 |
+| Scalars and nested blocks read out of frontmatter, which is all the parsing there is. | `_scalar_fields`; `_block_fields` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:247-248; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:251-262 |
+| The leaf/contract comparison: contract cells are the authority, the document's status is the subject. | `check_leaf_document_against_contract` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:441-542 |
 | `Completed` requires the document to be `Completed`, never merely every step marked (D42's rule). | `derived_master_status` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:550-566 |
-| The master-row comparison, with `row-completed-before-landing` named on every finding. | `check_master_rows_against_leaf_documents` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:569-675 |
-| The tolerant `L<n>` suffix key that found six leaves an exact match reported clean. | `leaf_key`; `_index_by_leaf_key` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:410-438 |
+| The master-row comparison, with `row-completed-before-landing` named on every finding. | `check_master_rows_against_leaf_documents` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:569-662 |
+| The tolerant `L<n>` suffix key that found six leaves an exact match reported clean. | `leaf_key`; `_index_by_leaf_key` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:410-423; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:426-433 |
 | Only the State cell is graded, because the Owner cell names owners rather than leaf-set membership. | `STATE_COLUMN`; `ARROW` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:674-675 |
-| The register's arrow comparison, refusing rather than zeroing when the master declares no leaf set. | `check_register_row_ownership`; `declared_leaf_ids` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:682-758 |
+| The register's arrow comparison, refusing rather than zeroing when the master declares no leaf set. | `check_register_row_ownership`; `declared_leaf_ids` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:682-694; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:697-751 |
 | One prose figure and the revision whose source value is the authority for it. | "class FigureClaim:" | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:760-857 |
-| The prose-figure comparison `T45` records as absent from the product's own checks. | `check_declared_figure_currency` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:872-955 |
-| The two shipped figure shapes, and the CLI form that declares a claim. | `FIGURE_SHAPES`; `parse_figure_claim` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:955-983 |
-| The coordination root as an input rather than a hard-coded layout, or a refusal naming it. | `COORDINATION_ROOT_ENV`; `coordination_root_from_environment` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:953-1002 |
+| The prose-figure comparison `T45` records as absent from the product's own checks. | `check_declared_figure_currency` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:872-939 |
+| The two shipped figure shapes, and the CLI form that declares a claim. | `FIGURE_SHAPES`; `parse_figure_claim` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:955-955; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:958-983 |
+| The coordination root as an input rather than a hard-coded layout, or a refusal naming it. | `COORDINATION_ROOT_ENV`; `coordination_root_from_environment` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:953-953; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:986-1002 |
 | The run that joins the figure comparison only when claims are supplied. | `run_all` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1005-1033 |
-| The runner, its repeatable inputs, and the exit status that reports a finding. | `build_parser`; `main` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1036-1110 |
-| The 37 cases that pin these behaviours against the historical artifacts, in both directions. | `LeafDocumentAgainstContractTests`; `MasterRowAgainstLeafDocumentTests`; `RegisterOwnerArrowTests`; `DeclaredFigureCurrencyTests`; `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:257-1140 |
-| The lane this module's contract suite is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" |mcp/tests/test-evidence-lanes.toml:342-342|
+| The runner, its repeatable inputs, and the exit status that reports a finding. | `build_parser`; `main` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1036-1085; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:1088-1106 |
+| The 37 cases that pin these behaviours against the historical artifacts, in both directions. | `LeafDocumentAgainstContractTests`; `MasterRowAgainstLeafDocumentTests`; `RegisterOwnerArrowTests`; `DeclaredFigureCurrencyTests`; `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:257-352; mcp/tests/test_record_integrity.py:360-555; mcp/tests/test_record_integrity.py:563-660; mcp/tests/test_record_integrity.py:668-1007; mcp/tests/test_record_integrity.py:1015-1140 |
+| The lane this module's contract suite is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" |mcp/tests/test-evidence-lanes.toml:387-387|
 
 ## Cross-Repo References
 
@@ -195,6 +195,8 @@ path and **skips with the reason named** when they are absent.
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 12 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`record_integrity.py`, `test_record_integrity.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:25:09+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:387-387. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

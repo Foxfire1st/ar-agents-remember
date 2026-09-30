@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_lane_classification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ Each memory side is read through the derived index of its tree (`KnowledgeIndex`
   reasons.
 - **Hunks (`TreeLane.classify`, `_classified`).** `classify(change)` buckets the path, takes its hunks from
   `change_hunks` (a `CodeReadError` becomes `LaneReadError`), and classifies each hunk:
-  - only the sides where the hunk changes lines are considered (`_changes_lines`), so an insertion is matched
+  - only the sides where the hunk changes lines are considered (`changes_lines`, exported since MIK-L33), so an insertion is matched
     against after-side ranges only and a deletion against before-side ranges only;
   - *linked* when those changed lines intersect a supplied range there (`_links`, `_intersects` through
     `hits_old`/`hits_new`); every intersecting entry per side is kept;
@@ -144,27 +144,28 @@ live outside the code and memory repositories, so they are named here and not ci
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement: one classification, no hunk arithmetic of its own, and where it differs from the gate. | "An entry supplies a range on a side only at its own recorded blob."; "Only changed lines are intersected." | mcp/src/agents_remember/application/review_lane_classification.py:1-33 |
-| The bounds on a reason: ten named entries, clipped details. | `NAMED_ENTRIES`; `DETAIL_LIMIT` | mcp/src/agents_remember/application/review_lane_classification.py:102-103 |
-| A side's knowledge of one path: an unread side, or the path's own unparsed sidecar. | `LaneSide`; "problem = self.problems.get(sidecar)" | mcp/src/agents_remember/application/review_lane_classification.py:115-188 |
-| A side read whole; realization and proof entries at a path; family records all read. | "return self.index is not None and not self.problems"; "return (*found.realizations, *found.proofs)"; `families_complete` | mcp/src/agents_remember/application/review_lane_classification.py:147-147; mcp/src/agents_remember/application/review_lane_classification.py:153-153; mcp/src/agents_remember/application/review_lane_classification.py:155-161 |
-| One entry placed, one side of a path, one hunk and one file's result with its counts. | `Placed`; `SideReading`; `HunkResult`; `FileResult` | mcp/src/agents_remember/application/review_lane_classification.py:191-198; mcp/src/agents_remember/application/review_lane_classification.py:201-216; mcp/src/agents_remember/application/review_lane_classification.py:219-226; mcp/src/agents_remember/application/review_lane_classification.py:229-248 |
-| The comparison's changed paths, from the landed change inventory. | "def observe(self) -> TreePaths:" | mcp/src/agents_remember/application/review_lane_classification.py:256-263 |
-| The file bucket, read without any hunk. | "def bucket(self, path: str)"; `_reading` | mcp/src/agents_remember/application/review_lane_classification.py:276-276; mcp/src/agents_remember/application/review_lane_classification.py:281-287 |
-| The exact-blob rule and the other reasons an entry supplies no range. | `_place`; "if recorded != blob:" | mcp/src/agents_remember/application/review_lane_classification.py:289-315 |
-| One path whole: bucket, the gate's hunks, and the non-text fact. | "def classify(self, change: TreeChange) -> FileResult:"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/review_lane_classification.py:316-339 |
-| The trees opened once; a side with no index or an unopenable one named. | `open_tree_lane`; `_side` | mcp/src/agents_remember/application/review_lane_classification.py:345-363; mcp/src/agents_remember/application/review_lane_classification.py:366-383 |
-| A range resolved at its own recorded blob, through the placements the cards read shares. | `_placement`; "PLACEMENTS.get(key)" | mcp/src/agents_remember/application/review_lane_classification.py:386-401 |
-| The three buckets. | `_bucket` | mcp/src/agents_remember/application/review_lane_classification.py:407-417 |
-| Bounded text and at most ten named entries. | `bounded_text`; `_named` | mcp/src/agents_remember/application/review_lane_classification.py:420-423; mcp/src/agents_remember/application/review_lane_classification.py:426-431 |
-| The bucket reasons. | `_attributed_reason`; `_unknown_facts`; `_withheld` | mcp/src/agents_remember/application/review_lane_classification.py:434-445; mcp/src/agents_remember/application/review_lane_classification.py:448-455; mcp/src/agents_remember/application/review_lane_classification.py:458-466 |
-| Only sides with changed lines are intersected; linked, unknown or unexplained. | `_changes_lines`; `_intersects`; `_links`; `_classified` | mcp/src/agents_remember/application/review_lane_classification.py:472-473; mcp/src/agents_remember/application/review_lane_classification.py:476-480; mcp/src/agents_remember/application/review_lane_classification.py:483-491; mcp/src/agents_remember/application/review_lane_classification.py:494-502 |
-| Why a hunk is attribution unknown, per side, with every withheld entry. | `_unknown` | mcp/src/agents_remember/application/review_lane_classification.py:505-519 |
-| The gate's non-text linkage, unknown unless both sides were read whole (review F3). | `_gate`; "if not (before.side.complete and after.side.complete):" | mcp/src/agents_remember/application/review_lane_classification.py:522-537 |
+| The bounds on a reason: ten named entries, clipped details. | `NAMED_ENTRIES`; `DETAIL_LIMIT` | mcp/src/agents_remember/application/review_lane_classification.py:103-104 |
+| A side's knowledge of one path: an unread side, or the path's own unparsed sidecar. | `LaneSide`; "problem = self.problems.get(sidecar)" | mcp/src/agents_remember/application/review_lane_classification.py:116-189 |
+| A side read whole; realization and proof entries at a path; family records all read. | "return self.index is not None and not self.problems"; "return (*found.realizations, *found.proofs)"; `families_complete` | mcp/src/agents_remember/application/review_lane_classification.py:148-148; mcp/src/agents_remember/application/review_lane_classification.py:154-154; mcp/src/agents_remember/application/review_lane_classification.py:156-162 |
+| One entry placed, one side of a path, one hunk and one file's result with its counts. | `Placed`; `SideReading`; `HunkResult`; `FileResult` | mcp/src/agents_remember/application/review_lane_classification.py:192-199; mcp/src/agents_remember/application/review_lane_classification.py:202-217; mcp/src/agents_remember/application/review_lane_classification.py:220-227; mcp/src/agents_remember/application/review_lane_classification.py:230-249 |
+| The comparison's changed paths, from the landed change inventory. | "def observe(self) -> TreePaths:" | mcp/src/agents_remember/application/review_lane_classification.py:257-264 |
+| The file bucket, read without any hunk. | "def bucket(self, path: str)"; `_reading` | mcp/src/agents_remember/application/review_lane_classification.py:277-277; mcp/src/agents_remember/application/review_lane_classification.py:282-288 |
+| The exact-blob rule and the other reasons an entry supplies no range. | `_place`; "if recorded != blob:" | mcp/src/agents_remember/application/review_lane_classification.py:290-316 |
+| One path whole: bucket, the gate's hunks, and the non-text fact. | "def classify(self, change: TreeChange) -> FileResult:"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/review_lane_classification.py:317-340 |
+| The trees opened once; a side with no index or an unopenable one named. | `open_tree_lane`; `_side` | mcp/src/agents_remember/application/review_lane_classification.py:346-364; mcp/src/agents_remember/application/review_lane_classification.py:367-384 |
+| A range resolved at its own recorded blob, through the placements the cards read shares. | `_placement`; "PLACEMENTS.get(key)" | mcp/src/agents_remember/application/review_lane_classification.py:387-402 |
+| The three buckets. | `_bucket` | mcp/src/agents_remember/application/review_lane_classification.py:408-418 |
+| Bounded text and at most ten named entries. | `bounded_text`; `_named` | mcp/src/agents_remember/application/review_lane_classification.py:421-424; mcp/src/agents_remember/application/review_lane_classification.py:427-432 |
+| The bucket reasons. | `_attributed_reason`; `_unknown_facts`; `_withheld` | mcp/src/agents_remember/application/review_lane_classification.py:435-446; mcp/src/agents_remember/application/review_lane_classification.py:449-456; mcp/src/agents_remember/application/review_lane_classification.py:459-467 |
+| Only sides with changed lines are intersected (the exported `changes_lines`, MIK-L33); linked, unknown or unexplained. | "def changes_lines(hunk: Hunk, side: LaneSideName) -> bool:"; `_intersects`; `_links`; `_classified` | mcp/src/agents_remember/application/review_lane_classification.py:473-476; mcp/src/agents_remember/application/review_lane_classification.py:479-483; mcp/src/agents_remember/application/review_lane_classification.py:486-494; mcp/src/agents_remember/application/review_lane_classification.py:497-505 |
+| Why a hunk is attribution unknown, per side, with every withheld entry. | `_unknown` | mcp/src/agents_remember/application/review_lane_classification.py:508-522 |
+| The gate's non-text linkage, unknown unless both sides were read whole (review F3). | `_gate`; "if not (before.side.complete and after.side.complete):" | mcp/src/agents_remember/application/review_lane_classification.py:525-540 |
 | The hunks the gate and the lane share (definition 2). | `change_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:342-361 |
 | The gate's non-text predicate, now shared (definition 8). | `non_text_linked` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:592-598 |
 | The lane's reads over this module. | `lane_summary`; `unexplained_lane`; `classify_changed_path` | mcp/src/agents_remember/application/review_unexplained_lane.py:87-110; mcp/src/agents_remember/application/review_unexplained_lane.py:129-155; mcp/src/agents_remember/application/review_unexplained_lane.py:226-244 |
 | Buckets, exact-blob hunks, pre- and post-curation. | `test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile`; `test_hunks_are_classified_on_their_changed_lines_at_each_sides_recorded_blob` | mcp/tests/test_review_unexplained_lane.py:356-373; mcp/tests/test_review_unexplained_lane.py:447-474 |
 | An unread side, a partial index, and bounded reasons. | `test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links`; `test_a_partial_index_makes_only_its_unparsed_files_unknown`; `test_a_reason_names_a_bounded_number_of_entries` | mcp/tests/test_review_unexplained_lane.py:515-532; mcp/tests/test_review_unexplained_lane.py:545-561; mcp/tests/test_review_unexplained_lane.py:574-593 |
+| `changes_lines` is exported, the lane's own helper renamed with its one caller, and the change kinds reuse it (MIK-L33, review R1 note). | "\"changes_lines\","; "if not ("; "_non_text_content(result) or any(changes_lines(one.hunk, name) for one in result.hunks)" | mcp/src/agents_remember/application/review_lane_classification.py:95-95; mcp/src/agents_remember/application/review_change_kinds.py:615-617 |
 
 ## Cross-Repo References
 
@@ -173,6 +174,8 @@ live outside the code and memory repositories, so they are named here and not ci
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33:** `_changes_lines` is exported as `changes_lines` (renamed, with a docstring, its one caller updated), so MIK-L33's change kinds reuse the lane's own rule instead of a duplicate (review R1 note, ruling 2026-09-30T17:47:43); the lane's behaviour is unchanged. **Reopened claim reworded and re-anchored** on the line-exact `changes_lines` declaration (its old anchor `_changes_lines` no longer exists); its ranges re-measured. One row added. The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
+- 2026-09-30T20:23:46+00:00: Generated citation repair: `NAMED_ENTRIES`; `DETAIL_LIMIT` repointed to mcp/src/agents_remember/application/review_lane_classification.py:103-103; mcp/src/agents_remember/application/review_lane_classification.py:104-104. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09 (the docstring only).** L09 review R1 F8 rewrote the docstring's "Only changed lines are intersected" paragraph: the gate's linkage is now the same symmetric per-side rule (definition 8), and the two views differ only in where ranges come from. One Invariants bullet records it. The module-docstring row and the rows below it were re-pointed or normalised by the installed fixer (its bullets are kept, since no claim was reworded).
 - 2026-09-30T17:59:32+00:00: Generated citation repair: `NAMED_ENTRIES`; `DETAIL_LIMIT` repointed to mcp/src/agents_remember/application/review_lane_classification.py:102-102; mcp/src/agents_remember/application/review_lane_classification.py:103-103. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
 

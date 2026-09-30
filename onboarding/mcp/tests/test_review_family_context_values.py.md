@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_family_context_values.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -121,9 +121,9 @@ share is accepted.
 | **A member source's locator state, locator, ranges and resolution are one fact, and a source without its stored role or rationale is refused.** | `test_a_member_source_may_not_state_a_region_its_observation_does_not_support` | mcp/tests/test_review_family_context_values.py:167-216 |
 | The validators that case exercises. | `_require_the_locator_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_source.py:82-105 |
 | The one internally consistent context every roster-and-count case departs from by exactly one clause. | `_honest_context` | mcp/tests/test_review_family_context_values.py:219-315 |
-| **The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:284-330 |
-| The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:467-522 |
-| The validator refusing a truncated roster presented as a complete one. | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:229-251 |
+| **The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** | `_require_the_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:285-331 |
+| The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. | `_require_the_family_counts_to_describe_the_entries` | mcp/src/agents_remember/models/knowledge/review_family_context.py:486-541 |
+| The validator refusing a truncated roster presented as a complete one. | `_require_the_cursor_and_the_remainder_to_agree` | mcp/src/agents_remember/models/knowledge/review_family_context.py:230-252 |
 | The production-entry cases this module is the value half of. | `test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees` | mcp/tests/test_review_family_context.py:284-318 |
 | The population case independently checks authored-head ambiguity and explicitly requested revision history. | `test_the_history_sentence_is_measured_against_the_family_owner` | mcp/tests/test_review_family_context_population.py:236-288 |
 
@@ -135,6 +135,7 @@ so no cross-repo reference row is recorded.
 
 ## Update History
 
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`review_family_context.py`) moved with the leaf's inserted lines: 3 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
 - 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the seventh value case, `test_a_member_source_may_not_state_a_region_its_observation_does_not_support` (locator state, locator, ranges and resolution are one fact; role and rationale required), with its rows, and corrected the honest-fixture range. No verification stamp was advanced.
 
 - 2026-09-27T02:44:54Z — L40: No content impact: clarified the linked population case’s corrected ambiguity/exact-history meaning. This value-test source and its construction rules are unchanged.

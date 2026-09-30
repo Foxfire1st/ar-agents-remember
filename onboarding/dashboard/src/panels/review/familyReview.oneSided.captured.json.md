@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -118,9 +118,9 @@ exact key path and value a reader can re-check.
 | The one constant that binds this body to its case, and the runtime narrowing. | "const ONE_SIDED"; "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:71-71; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110 |
 | **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
 | **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:581-599 |
-| **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:311-322; dashboard/src/data/reviewFamily.ts:324-347 |
-| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:447-448; dashboard/src/panels/review/FamilyReviewCenter.tsx:242-243 |
-| Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | "export function SelectedStatement({"; "function UnavailableMember({" | dashboard/src/panels/review/SubjectReview.tsx:255-334; dashboard/src/panels/review/FamilyReviewCenter.tsx:849-872 |
+| **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:361-372; dashboard/src/data/reviewFamily.ts:374-397 |
+| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:488-489; dashboard/src/panels/review/FamilyReviewCenter.tsx:244-245 |
+| Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | "export function SelectedStatement({"; "function UnavailableMember({" | dashboard/src/panels/review/SubjectReview.tsx:255-334; dashboard/src/panels/review/FamilyReviewCenter.tsx:859-882 |
 
 ## Cross-Repo References
 
@@ -133,6 +133,7 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`FamilyReviewCenter.tsx`, `FamilyTree.tsx`, `reviewFamily.ts`) moved with the leaf's inserted lines: 2 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). Its page-scoped-line row was re-measured by hand (`FamilyTree.tsx:447-448` → `488-489`, where `MemberSubject` now draws the line; `FamilyReviewCenter.tsx:242-243` → `244-245`). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line each in `FamilyTree.tsx` and `FamilyReviewCenter.tsx`, so the two consumer rows were re-pointed by the exact Git-hunk shift (`FamilyTree.tsx:446-447` → `447-448`, `FamilyReviewCenter.tsx:241-242` → `242-243`, `848-871` → `849-872`). Claims unchanged. No stamp advanced.
 - 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the two rows into `FamilyTree.tsx`, `FamilyReviewCenter.tsx` and `SubjectReview.tsx`, which this leaf changed, were re-pointed by the exact base-to-staged line shift (the installed fixer declined the first as ambiguous and left the second, whose old ranges still held its anchors only by coincidence) (`FamilyTree.tsx:410-411` → `446-447`, `FamilyReviewCenter.tsx:231-232` → `241-242`, `SubjectReview.tsx:217-280` → `255-334`, `FamilyReviewCenter.tsx:838-861` → `848-871`). Every anchor held at the base and holds after the shift. Claim wording unchanged. No stamp advanced.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.

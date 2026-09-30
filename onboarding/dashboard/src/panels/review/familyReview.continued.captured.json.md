@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/familyReview.continued.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:52:00+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -119,7 +119,7 @@ exact key path and value a reader can re-check.
 | The client sends the selected published cursor unchanged and rejects this capture when it answers another side or primary selection. | "sends the family's published cursor and refuses a response from another walk" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:299-342 |
 | The continuation cases preserve page-scoped missing content and owner-measured totals without inventing primary statement absence. | "does not turn an uncarried roster operand into an absent statement"; "retains a bounded before-only membership without claiming that the invariant was removed"; "it(\"heads a bounded member context partial" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:600-616; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:618-630; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:504-548 |
 | The captured continuation verifies that family selection, filter, layout, full-file preference and continuation controls survive two page reads. | "keeps the reader's workspace state across two page requests through the centre's own control" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:695-748 |
-| **The vocabulary the page-scoped row is read through: `content_not_on_page` as the state the distinction rests on, and `not_on_page` versus `one_sided` as two different facts.** | `content_not_on_page`; `not_on_page`; `one_sided`; `oneSidedMember` | dashboard/src/data/reviewFamily.ts:290-304; dashboard/src/data/reviewFamily.ts:324-347; dashboard/src/data/reviewFamily.ts:89-99 |
+| **The vocabulary the page-scoped row is read through: `content_not_on_page` as the state the distinction rests on, and `not_on_page` versus `one_sided` as two different facts.** | `content_not_on_page`; `not_on_page`; `one_sided`; `oneSidedMember` | dashboard/src/data/reviewFamily.ts:340-354; dashboard/src/data/reviewFamily.ts:374-397; dashboard/src/data/reviewFamily.ts:89-99 |
 
 ## Cross-Repo References
 
@@ -132,6 +132,7 @@ repository's own route over this repository's own fixture enclosure.
 
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`reviewFamily.ts`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder). The card now describes the new bytes (49,355 bytes, sha256 `9e13e39f…`): the `retry-budget-family` after-side continuation at page size 6, the both-sides-listed uncarried row `cb5d5f97…`, `unique_member_revision_total` 4, and the five cases that read it. **Claims re-anchored:** the rows naming the old member and revision identities and the old provenance rows (`63b47629`, `not_recaptured`) are replaced; the continuation-cases row, which was already stale (`560-576`, `578-590`, `482-516` held none of its test titles), is re-measured (`601-617`, `619-631`, `505-549`, the last on an `it(` quote); this pass's generated bullet for the receipt row was removed.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/panels/review/ReviewWorkspace.family.test.tsx`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.

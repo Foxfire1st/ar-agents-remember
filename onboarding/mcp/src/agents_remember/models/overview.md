@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ beside it.
 | --- | --- | --- |
 | **The presence union on the vocabulary, beside the subject-kind union it parallels.** | `ReviewSubjectPresence`; `ReviewSubjectKind` | mcp/src/agents_remember/models/knowledge/review.py:203-203; mcp/src/agents_remember/models/knowledge/review.py:210-210 |
 | **The entry value with `presence`, and the entry list with the totals and their agreement validator.** | `ReviewEntry`; `ReviewEntryListResult`; `_require_the_totals_to_describe_the_catalogue` | mcp/src/agents_remember/models/knowledge/review.py:341-359; mcp/src/agents_remember/models/knowledge/review.py:1128-1189; mcp/src/agents_remember/models/knowledge/review.py:1117-1117 |
-| The catalogue owner that fills these values, and the adapter that delegates to it. | `read_subject_catalogue`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/knowledge_review.py:256-317 |
+| The catalogue owner that fills these values, and the adapter that delegates to it. | `read_subject_catalogue`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/knowledge_review.py:257-318 |
 
 ## 260921-ICR-L7 The Review Wire Carries The Explicit Revision Selection, Declared Next Door
 
@@ -535,9 +535,24 @@ clips reasons and a refusal's input so a validated request never trips one (revi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. | `LaneBucket`; `LaneHunkClass`; `LaneRangeReason`; `LaneMembershipState`; `LaneGateLinkage` | mcp/src/agents_remember/models/knowledge/review_lane.py:74-89 |
+| The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. | `LaneBucket`; `LaneHunkClass`; `LaneRangeReason`; `LaneMembershipState`; `LaneGateLinkage` | mcp/src/agents_remember/models/knowledge/review_lane.py:75-76; mcp/src/agents_remember/models/knowledge/review_lane.py:80-82; mcp/src/agents_remember/models/knowledge/review_lane.py:84-86; mcp/src/agents_remember/models/knowledge/review_lane.py:89-89 |
 | The lane reconciles; an unmeasured value carries no totals. | `ReviewUnexplainedLane`; `_totals_problem` | mcp/src/agents_remember/models/knowledge/review_lane.py:284-312; mcp/src/agents_remember/models/knowledge/review_lane.py:345-361 |
 | The tree view's two new fields, and the summary's. | "lane: ReviewUnexplainedLane"; "attribution: ReviewLaneSummary" | mcp/src/agents_remember/models/knowledge/review_trees.py:262-263; mcp/src/agents_remember/models/knowledge/review_intent_summary.py:107-108 |
+
+## 260928-MIK-L33 The Change-Kind Vocabulary Rides On The Family Context
+
+MIK-R33's facts have their own wire module, [`knowledge/review_change_kinds.py`](knowledge/review_change_kinds.py.md):
+the literals (`ChangeKind`, `ChangeFact`, `ChangeMark`, `GuaranteeChange`), the precedence, `primary_change` and
+`change_marks` (the unconditional `unknown` for an unresolved range, review R1 F4), `ReviewMemberChange` (built by
+`of`; validators re-derive `primary` and `marks`, and require `unknown_reasons` exactly when the change kind is not
+fully known and `membership_reasons` exactly when the membership is unknown) and `ReviewFamilyChanges`.
+[`knowledge/review_family_context.py`](knowledge/review_family_context.py.md)'s `ReviewFamilyContextEntry` gains the
+optional `change_kinds` and a validator requiring facts for exactly the returned member occurrences.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The facts derive the primary and the marks. | `primary_change`; `change_marks` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:111-147 |
+| The entry's facts describe exactly its returned members. | `_require_change_facts_for_exactly_the_returned_members` | mcp/src/agents_remember/models/knowledge/review_family_context.py:356-370 |
 
 ## 260928-MIK-L14 The Reconsideration Subject, Its Triggers, And The Sixth Row Kind
 
@@ -565,6 +580,7 @@ evaluates; its Q6 carry (index stability) is met by the validator rule `R14.1-li
 | The sixth row kind. | `ReconsiderationRow`; "HistoryRowKind(\"reconsideration\", ReconsiderationRow, \"MIK-R14\")" | mcp/src/agents_remember/models/knowledge_files/history.py:356-368; mcp/src/agents_remember/models/knowledge_files/history.py:388-388 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33:** new section "260928-MIK-L33 The Change-Kind Vocabulary Rides On The Family Context" after L32's (the new `knowledge/review_change_kinds.py`, carded and governed here, and `ReviewFamilyContextEntry.change_kinds` with its validator); two rows.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane's Vocabulary And Its Reconciliation Validators" after L31's: the new `knowledge/review_lane.py` (linked card), `ReviewTreesResult.lane`/`file_classification` and `ReviewIntentSummaryResult.attribution`, rulings 12:19:20 Q1 and Q6 and review R1 F2/F4, and three rows. The moved rows were re-pointed by the installed fixer (its bullet kept) or by the exact base-to-staged shift. No verification stamp was advanced.
 - 2026-09-30T12:07:54+00:00: Generated citation repair: "entries: tuple[ReviewTreeEntry, ...] = ()" repointed to mcp/src/agents_remember/models/knowledge/review_trees.py:260-260. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** Added the section "260928-MIK-L14 The Reconsideration Subject, Its Triggers, And The Sixth Row Kind" after L31's: the new, carded `knowledge_files/reconsideration.py` and `history.ReconsiderationRow` (rulings Q2/Q3, Q7, F1, F3, F9 and N1); three rows. L13's section notes that its Q6 carry is met. L07's registry row is reworded for the sixth kind and re-measured to the whole tuple (`382-389`); I removed this pass's generated bullet for it. The other generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.

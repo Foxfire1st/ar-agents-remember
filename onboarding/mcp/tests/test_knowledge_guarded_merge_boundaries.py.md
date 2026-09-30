@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_guarded_merge_boundaries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -68,11 +68,11 @@ No domain documentation source is configured for this repository (`system/source
 | The insert-plus-conflicting-update node. | "test_a_table_carrying_an_insert_and_a_conflicting_update_names_the_conflicting_row" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:135-162 |
 | The old-side preference and the honest missing-key report. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
 | The reachable structural guard and the dangling claim that reaches it. | "test_a_candidate_carrying_a_foreign_key_violation_is_refused_by_the_structural_check" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:187-226 |
-| The two direct-policy nodes for the unreachable call sites, and the trigger-restoring damage they build. | "test_a_candidate_that_dropped_an_intended_change_is_refused"; "test_a_candidate_missing_a_sealed_aggregate_is_refused"; `_remove_sealed_revision` | mcp/tests/test_knowledge_guarded_merge_boundaries.py:229-249; mcp/tests/test_knowledge_guarded_merge_boundaries.py:252-272; mcp/tests/test_knowledge_guarded_merge_boundaries.py:298-314 |
-| The unreachability statements the two policy nodes correspond to. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:169-211; mcp/src/agents_remember/memory/knowledge/merge_validation.py:104-152 |
-| The conflict key the first two nodes hold to the engine's own operation. | `_conflicting_key`; `AppliedChangeset` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:546-571; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:159-199 |
-| The harness these cases are built on. | `build_case`; `copy_closed`; `materialize_commit` | mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:219-239; mcp/tests/merge_case_test_support.py:474-484 |
-| The integration-lane row that classifies this module outside the unit budget. | `integration` | mcp/tests/test-evidence-lanes.toml:250-250 |
+| The two direct-policy nodes for the unreachable call sites, and the trigger-restoring damage they build. | "test_a_candidate_that_dropped_an_intended_change_is_refused"; "test_a_candidate_missing_a_sealed_aggregate_is_refused"; `_remove_sealed_revision` | mcp/tests/test_knowledge_guarded_merge_boundaries.py:229-249; mcp/tests/test_knowledge_guarded_merge_boundaries.py:252-272; mcp/tests/test_knowledge_guarded_merge_boundaries.py:309-325 |
+| The unreachability statements the two policy nodes correspond to. | `require_applied_changes`; `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:173-215; mcp/src/agents_remember/memory/knowledge/merge_validation.py:108-156 |
+| The conflict key the first two nodes hold to the engine's own operation. | `_conflicting_key`; `AppliedChangeset` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:558-581; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:158-196 |
+| The harness these cases are built on. | `build_case`; `copy_closed`; `materialize_commit` | mcp/tests/merge_case_test_support.py:474-484; mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:219-239 |
+| The integration-lane row that classifies this module outside the unit budget. | `integration` | mcp/tests/test-evidence-lanes.toml:286-286 |
 | The unit module that carries the rest of the contract. | "The unit population is at its declared ceiling" | mcp/tests/test_knowledge_guarded_merge.py:1-33 |
 
 ## Cross-Repo References
@@ -84,6 +84,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`merge_changeset.py`, `merge_validation.py`, `test_knowledge_guarded_merge_boundaries.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:28:08+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

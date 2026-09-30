@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_final_output_receipt.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:22:59+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ narrowing, so each of them fails if that behaviour is reverted.
 | **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** | `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound` | mcp/tests/test_review_final_output_receipt.py:755-787 |
 | **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** | `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:790-822 |
 | **The consumer case: the reopened generation reports what the task delivered, phase by phase.** | `test_the_reopened_generation_reports_what_the_task_delivered` | mcp/tests/test_review_final_output_receipt.py:825-871 |
-| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:221-221; mcp/tests/evidence-lifecycle.toml:807-807; mcp/tests/evidence-lifecycle.toml:1443-1443; mcp/tests/evidence-lifecycle.toml:1496-1496; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
+| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/evidence-lifecycle.toml:807-807; mcp/tests/evidence-lifecycle.toml:1443-1443; mcp/tests/evidence-lifecycle.toml:1496-1496; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
 
 ## Cross-Repo References
 
@@ -184,6 +184,7 @@ repository rather than to an invented one.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/tests/test-evidence-lanes.toml`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`mcp/tests/test_review_final_output_receipt.py`); no claim changed. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 4 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

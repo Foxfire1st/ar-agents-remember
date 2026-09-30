@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/markerReturn.capture-provenance.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -16,23 +16,28 @@
 
 ## Purpose
 
-**The receipt of five of the six real served bodies of the MIK-L34 worker's converted scratch leaf, comparison 2.** It
-names the capture time (2026-09-30T13:48:07Z), the producer (`notes/reports/260928-MIK-L34-evidence/capture_ui_fixtures.py`)
-and its command, the route (`create_app(config, collaborators=serving_collaborators(config))` over a FastAPI
-`TestClient`), the source tree (the L34 worktree on base `59daf505` with its uncommitted changes; no server file
-changed), the scratch (`/tmp/mik-l34-real`, `--shared` clones of the live repositories; memory `76f5e91e1` converted
-and committed as scratch `main` with `Code-Commit` `59daf505`; the leaf's edits and `curate`), comparison `2`, the
+**The receipt of five of the six real served bodies of the MIK-L34 worker's converted scratch leaf, comparison 2,
+as re-captured in MIK-L33's merge round.** It names the capture time (2026-09-30T19:11:44Z; MIK-L34's own capture was
+13:48:07Z), the producer (MIK-L34's `capture_ui_fixtures.py` re-run by the MIK-L33 worker from
+`notes/reports/260928-MIK-L33-evidence/merge-round/l34-scenario/`) and its command, the route
+(`create_app(config, collaborators=serving_collaborators(config))` over a FastAPI `TestClient`), the source tree (the
+L33 worktree on base `d3a22213`, MIK-L34 landed, with MIK-L33's changes: the review route now carries
+`change_kinds`), the scratch (`/tmp/mik-l33-merge`: MIK-L34's `setup_scratch.sh` re-run, `--shared` clones of the live
+repositories; memory `76f5e91e1` converted and committed as scratch `main` with `Code-Commit` `59daf505`; the leaf's
+edits and `curate`), comparison `2`, the
 attempts (one capture per body, each the first answer), and one row per body with route, parameters, status,
 seconds, sha256 and bytes. The sixth comparison-2 body, `markerReturn.cards.captured.json`, was captured in the
-rulings round and is receipted in `markerUnknown.capture-provenance.json`.
+rulings round and is receipted in `markerUnknown.capture-provenance.json`. A closing `merge_round` note says what
+changed: the invariant review now carries its family's `change_kinds`; the other bodies differ only by scratch paths,
+the memory commit, timestamps and comparison digests.
 
 ## Code Commentary
 
 ### Logic
 
-- Five rows: the task-context review (`GET /api/review/intent`, 4.99 s), the lane (`lane=files`, 0.11 s), `notes.py`'s
-  classification (`file=`, 0.07 s), `notes.py`'s source content (`GET /api/review/intent/source-content` at trees
-  `59daf505` → `db68db54`, 3.3 s) and INV-Z66EMHMH's review (`selectorKind=invariant`, 5.54 s).
+- Five rows: the task-context review (`GET /api/review/intent`, 6.09 s), the lane (`lane=files`, 0.08 s), `notes.py`'s
+  classification (`file=`, 0.05 s), `notes.py`'s source content (`GET /api/review/intent/source-content` at trees
+  `59daf505` → `db68db54`, 2.55 s) and INV-Z66EMHMH's review (`selectorKind=invariant`, 4.09 s).
 - The scratch leaf: `serving/notes.py` edited inside `_confined_stat` (two recorded ranges) and `list_notes`'s
   docstring line deleted (three recorded ranges); `review_comparison_retention.py` edited inside `_side_binding`
   with a helper appended; a new module with no entry; a test body edited with a scratch-authored proof `PRF-7Q3M5K`;
@@ -64,7 +69,7 @@ No domain documentation source is configured; the requirement packet `MIK-R34@v1
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | When, by what command and at which source tree the bodies were captured, and over which scratch leaf. | "captured_at"; "source_tree"; "scratch" | dashboard/src/panels/review/markerReturn.capture-provenance.json:2-9 |
-| One receipt row per captured body. | "\"fixtures\": [" | dashboard/src/panels/review/markerReturn.capture-provenance.json:10-85 |
+| One receipt row per captured body, and the merge-round note (MIK-L33). | "\"fixtures\": ["; "merge_round" | dashboard/src/panels/review/markerReturn.capture-provenance.json:10-86 |
 
 ## Cross-Repo References
 
@@ -75,4 +80,5 @@ No domain documentation source is configured; the requirement packet `MIK-R34@v1
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-L33's merge round** (review R3-3): the receipt now names the merge round's re-capture (time 19:11:44Z, producer, source tree `d3a22213` with MIK-L33's changes, scratch `/tmp/mik-l33-merge`, new timings) and its `merge_round` note. The fixtures row reworded to name the note and re-measured (`10-85` → `10-86`). All five sha256 values and byte counts match the bodies (checked by this curation).
 - 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new capture receipt of five comparison-2 bodies. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

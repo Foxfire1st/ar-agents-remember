@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_snapshot_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one fixture every case builds on. | `candidate` | mcp/tests/test_knowledge_snapshot_publication.py:46-49 |
+| The one fixture every case builds on. | `candidate` | mcp/tests/test_knowledge_snapshot_publication.py:46-48 |
 | A published snapshot reopens to the records and is a closed database. | "test_a_published_snapshot_reopens_to_the_candidate_records_and_is_closed" | mcp/tests/test_knowledge_snapshot_publication.py:51-79 |
 | The load-bearing node: a WAL-resident batch is published whole while a main-file copy is not. | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
 | The failed replacement that leaves the prior destination byte-identical. | "test_a_failed_replacement_leaves_the_prior_destination_byte_identical" | mcp/tests/test_knowledge_snapshot_publication.py:173-173 |
@@ -108,10 +108,10 @@ No domain documentation source is configured for this repository (`system/source
 | The read-side gate until a publication happens. | "test_a_newer_runtime_candidate_reports_candidate_snapshot_unpublished_until_published" | mcp/tests/test_knowledge_snapshot_publication.py:424-424 |
 | The flush failure that is a refusal rather than an escaping error. | "test_a_failed_stage_flush_is_refused_before_the_destination_is_replaced" | mcp/tests/test_knowledge_snapshot_publication.py:464-464 |
 | The publication operations these cases protect. | `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
-| The freeze whose closedness the load-bearing node measures. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109 |
+| The freeze whose closedness the load-bearing node measures. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137 |
 | The read-side gate and its refusal restatement. | `publication_state`; `unpublished_refusal` | mcp/src/agents_remember/memory/knowledge/materialization.py:34-99; mcp/src/agents_remember/memory/knowledge/materialization.py:102-120 |
-| The shared harness these cases are built on. | `build_case`; `publish`; `byte_copy`; `journal_peer_names` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:357-380; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:410-418 |
-| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_snapshot_publication.py" |mcp/tests/test-evidence-lanes.toml:134-134|
+| The shared harness these cases are built on. | `build_case`; `publish`; `byte_copy`; `journal_peer_names` | mcp/tests/snapshot_lifecycle_test_support.py:178-205; mcp/tests/snapshot_lifecycle_test_support.py:358-380; mcp/tests/snapshot_lifecycle_test_support.py:454-459; mcp/tests/snapshot_lifecycle_test_support.py:411-418 |
+| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_snapshot_publication.py" |mcp/tests/test-evidence-lanes.toml:179-179|
 
 ## Cross-Repo References
 
@@ -122,6 +122,8 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`closed_snapshot.py`, `snapshot_lifecycle_test_support.py`, `test_knowledge_snapshot_publication.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:29:58+00:00: Generated citation repair: "mcp/tests/test_knowledge_snapshot_publication.py" repointed to mcp/tests/test-evidence-lanes.toml:179-179. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_snapshot_publication.py" repointed to mcp/tests/test-evidence-lanes.toml:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

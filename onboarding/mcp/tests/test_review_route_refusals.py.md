@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_review_route_refusals.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -130,20 +130,20 @@ inside the range that row cites.
 | **The docstring's own statement of what the module is (the fast transport contract, driving the real route), of the two shapes a refusal arrives in, and of what it deliberately does not re-derive.** | `register_review_routes`; `KnowledgeReviewResult` | mcp/tests/test_review_route_refusals.py:1-22; mcp/tests/test_review_route_refusals.py:24-42; mcp/tests/test_review_route_refusals.py:65-69; mcp/tests/test_review_route_refusals.py:151-172 |
 | The real route constants, registrar and typed models under test. | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE`; `KNOWLEDGE_REVIEW_ROUTE`; `register_review_routes` | mcp/tests/test_review_route_refusals.py:24-42 |
 | The lane marker that keeps this a hermetic unit module. | `pytestmark` | mcp/tests/test_review_route_refusals.py:43-43 |
-| The task context, the recorded subject, and **the module's own definition of actionable**. | `TASK`; `SUBJECT`; `ACTIONABLE` | mcp/tests/test_review_route_refusals.py:45-53 |
-| A configuration naming no real root, because these routes resolve nothing from it. | `runtime_config` | mcp/tests/test_review_route_refusals.py:54-63 |
-| **The one app builder: a bare `FastAPI()` with the real routes registered and the ports injected.** | `served` | mcp/tests/test_review_route_refusals.py:65-69 |
-| The typed refusal builder whose own action the cases assert survives the transport. | `typed_refusal` | mcp/tests/test_review_route_refusals.py:71-78 |
+| The task context, the recorded subject, and **the module's own definition of actionable**. | `TASK`; `SUBJECT`; `ACTIONABLE` | mcp/tests/test_review_route_refusals.py:45-51 |
+| A configuration naming no real root, because these routes resolve nothing from it. | `runtime_config` | mcp/tests/test_review_route_refusals.py:54-62 |
+| **The one app builder: a bare `FastAPI()` with the real routes registered and the ports injected.** | `served` | mcp/tests/test_review_route_refusals.py:65-68 |
+| The typed refusal builder whose own action the cases assert survives the transport. | `typed_refusal` | mcp/tests/test_review_route_refusals.py:71-77 |
 | **An unwired adapter refused on both routes with an actionable body naming the composition root.** | "test_an_unwired_adapter_answers_with_the_action_that_wires_it" | mcp/tests/test_review_route_refusals.py:80-93 |
 | **An unadmitted selector refused by the transport itself before the port runs, naming the input and both admitted kinds.** | "test_an_unadmitted_selector_names_the_input_and_the_admitted_kinds" | mcp/tests/test_review_route_refusals.py:96-112 |
 | **The `AuthorityError` mapping this leaf made actionable.** | "test_a_refused_authority_carries_the_action_that_clears_it" | mcp/tests/test_review_route_refusals.py:115-130 |
 | **The `FileNotFoundError` mapping this leaf made actionable, keeping the path and adding the action.** | "test_a_missing_path_names_the_path_it_does_not_hold_and_a_next_action" | mcp/tests/test_review_route_refusals.py:133-148 |
 | **The packet's conforming example at the transport: `404` + `candidate_dataset_absent` + the whole refusal, with no `payload` key so it cannot read as a degraded success.** | "test_a_typed_refusal_travels_whole_in_the_body_of_its_own_status" | mcp/tests/test_review_route_refusals.py:151-172 |
 | **The status family derived from the refusal's own code, driven through the entry route.** | "test_the_entry_route_maps_each_refusal_code_onto_its_own_status" | mcp/tests/test_review_route_refusals.py:175-204 |
-| **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:113-170 |
-| The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:522-607|
-| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:135-135 |
-| The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:70-98; dashboard/src/data/reviewTransport.ts:158-171 |
+| **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:145-152; mcp/src/agents_remember/serving/review.py:155-167; mcp/src/agents_remember/serving/review.py:170-196 |
+| The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:607-624|
+| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:171-171 |
+| The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:97-98; dashboard/src/data/reviewTransport.ts:161-171 |
 
 ## Cross-Repo References
 
@@ -155,6 +155,8 @@ candidate and the app under test is built in-process.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 7 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`review.py`, `reviewTransport.ts`, `test_review_route_refusals.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:32:05+00:00: Generated citation repair: `test_review_route_refusals` repointed to mcp/tests/test-evidence-lanes.toml:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.

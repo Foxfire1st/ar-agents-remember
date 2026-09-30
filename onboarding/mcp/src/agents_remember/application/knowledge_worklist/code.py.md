@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/code.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ code and memory repositories, so they are named here and not cited as rows.
 | A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:277-286 |
 | The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:297-329; mcp/src/agents_remember/application/knowledge_worklist/code.py:337-337 |
 | A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). | `change_hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:342-361 |
-| The two callers: the gate's linkage and the lane's classification. | "return change_hunks(self.inputs.code, change, base_blob, candidate_blob)"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569; mcp/src/agents_remember/application/review_lane_classification.py:316-339 |
+| The two callers: the gate's linkage and the lane's classification. | "return change_hunks(self.inputs.code, change, base_blob, candidate_blob)"; "hunks = change_hunks(self.code, change, before.blob, after.blob)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:566-569; mcp/src/agents_remember/application/review_lane_classification.py:317-340 |
 | Hunk parsing and line-range mapping cases. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:309-328 |
 | Line ranges map, carry and touch. | "def test_line_ranges_map_carry_and_touch(" | mcp/tests/test_knowledge_worklist.py:422-431 |
 
@@ -134,6 +134,7 @@ through Git.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`review_lane_classification.py`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** A Conventions bullet and the `line_range` resolution bullet record `CodeTrees.has_blob`: a Git failure asking for a blob is re-raised as `CodeReadError`, never read as a missing object (review R3-2, ruling 19:16:07). One row added. The `unique_binder` row, which the installed fixer declined, was re-pointed by the exact base-to-staged line shift (+5; both anchors checked in both ranges).
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Purpose, a Logic bullet and an Invariants bullet record `change_hunks` (definition 2), moved verbatim from `compute._Run._path_hunks` so the gate and the reviewer's lane share one hunk definition. Two rows added (the function, and its two callers). The other rows moved by the new import and `__all__` entry were re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_line_ranges_map_carry_and_touch` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_line_ranges_map_carry_and_touch(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.

@@ -5,14 +5,30 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260928-MIK-L33 The Family Mirror Carries The Change Facts Of A Tree Comparison
+
+[`reviewFamily.ts`](reviewFamily.ts.md) mirrors MIK-R33's change facts
+(`models/knowledge/review_change_kinds.py`): `ReviewChangeKind`, `ReviewChangeFact`, `ReviewChangeMark`,
+`ReviewMemberChange` (one member occurrence by the roster's `member_id`, with its three facts, `proof`, `text_differs`,
+`range_unresolved`, the server-derived `primary` and `marks`, and `evidence`, `unknown_reasons` and
+`membership_reasons` kept apart) and `ReviewFamilyChanges` (the guarantee's fact, the optional `members_total`, the
+returned occurrences), carried on `ReviewFamilyContextEntry.change_kinds` for a tree comparison only. The
+transport casts the body as before; an omitted field stays `undefined`, and a rendering (`panels/review/changeTriage.ts`)
+never recomputes a fact. The five new types are imported from `reviewFamily.ts` directly, not re-exported through
+`review.ts`. The keymap child route gains the reviewer's zone and chords (its overview's MIK-L33 section).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The mirrored change types and the entry's optional facts. | `ReviewMemberChange`; `ReviewFamilyChanges`; "change_kinds?: ReviewFamilyChanges;" | dashboard/src/data/reviewFamily.ts:197-227; dashboard/src/data/reviewFamily.ts:241-241 |
 
 ## 260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers
 
@@ -26,7 +42,7 @@ as it is). A dataset review names no comparison, so the scope asks nothing.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One file's classification as a single read; a transport failure is `unavailable`. | `readFileClassification` | dashboard/src/data/reviewLane.ts:259-276 |
+| One file's classification as a single read; a transport failure is `unavailable`. | `readFileClassification` | dashboard/src/data/reviewLane.ts:261-276 |
 | The scope that keeps it per surface, only for a tree comparison. | "comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path)," | dashboard/src/panels/review/intentMarkerScope.ts:96-98 |
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
@@ -169,6 +185,7 @@ consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` 
 measurement.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33:** new top section "260928-MIK-L33 The Family Mirror Carries The Change Facts Of A Tree Comparison" (`reviewFamily.ts`'s mirrored change types and `change_kinds`; the keymap child's section named); one row. **Row already stale at the base re-measured** (no content impact): the ICR-L24 mirror-module row's `reviewFamily.ts` range, whose anchor `ReviewFamilyContext` sat outside it at the base and which the exact shift would have widened across the inserted types, now cites the interface (`255-266`). The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
 - 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers": `reviewLane.readFileClassification` and its one caller, the marker scope (ruling 2026-09-30T16:19:34 Q2); two rows. **Reopened claim:** the `SourceContent` renderer row, bound by the committed 2026-09-26T21:07:30 generated bullet naming `Sides` and reopened because `Sides` gained the optional `markers` prop, was re-read and holds (the expansion's fields still feed its three state-decided branches); it is retained and re-anchored on the line-exact `"function Sides({"`, and the committed bullet is intact. The generated repair above re-points the MIK-L32 hook row; the fixer normalised the inventory row's `SourceContent` range (`222-271` → `252-305`) and the renderer row (`55-99` → `71-127`).
 - 2026-09-30T18:04:41+00:00: Generated citation repair: `useReviewLane`; `useReviewFileClassification` repointed to dashboard/src/data/reviewLane.ts:248-257; dashboard/src/data/reviewLane.ts:279-291. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary" at the top: the new `reviewLane.ts` (linked card) and `attribution` on `reviewIntentSummary.ts`, with rulings 12:19:20 Q1 and Q6 and review R1 F1; three rows. The summary-read row of an earlier section was re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
@@ -986,7 +1003,7 @@ said something the server did not:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** | `ReviewFamilyContext`; `reviewFamily` | dashboard/src/data/reviewFamily.ts:179-192; dashboard/src/data/review.ts:33-61 |
+| **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** | `ReviewFamilyContext`; `reviewFamily` | dashboard/src/data/reviewFamily.ts:255-266; dashboard/src/data/review.ts:33-61 |
 | **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** | `ReviewPagedCollection`; `family_members` | dashboard/src/data/review.ts:68-81 |
 | **The set a request may name with no cursor, and the reason `family_members` is not in it.** | `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:91-91 |
 | **The optional family context whose absence says the body did not come from this route.** | `family_context` | dashboard/src/data/review.ts:467-467 |

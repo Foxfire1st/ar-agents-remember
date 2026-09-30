@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/keymap/preferences.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate |  2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,9 @@ selected CodeMirror composer profile. It is the sole persistence/subscription bo
   remove or rebind the invariant F6 `focus.nextRegion` escape.
 - Exposes `bindingFor`, command activity, CodeMirror conversion, and a stable effective signature so
   both the global zone dispatcher and mounted editors reconfigure from one source.
+- The defaults are `CHROME_CHORDS`, `COMPOSER_CHORDS` and, since MIK-L33, `REVIEW_CHORDS` (`DEFAULT_BINDINGS`), so
+  the reviewer's `review.nextChange`/`review.previousChange` are known commands here: rebindable, validated like the
+  others, and resolved for the reviewer through `bindingFor`.
 - Supports Emacs and Vim composer profiles. Vim owns Escape for insert/normal transitions; F6 stays
   the invariant way out of the editor.
 - Publishes same-tab changes through an external-store subscription and cross-tab changes through
@@ -63,7 +66,8 @@ The preference module imports only repository-local keymap definitions and brows
 | Static chord definitions. | `CHROME_CHORDS`, `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
 | Browser/PTY reserved set. | `PTY_RESERVED`, `BROWSER_FORBIDDEN` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:153-202 |
 | Global dispatcher consumer. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| Composer and reference UI consumers. | `SessionComposer`, `CommandPalette` | dashboard/src/panels/SessionComposer.tsx:57-117; dashboard/src/panels/session-cockpit/CommandPalette.tsx:379-449 |
+| Composer and reference UI consumers. | `SessionComposer`, `CommandPalette` | dashboard/src/panels/SessionComposer.tsx:57-117; dashboard/src/panels/session-cockpit/CommandPalette.tsx:387-457 |
+| The default bindings include the reviewer's table (MIK-L33). | "const DEFAULT_BINDINGS = [...CHROME_CHORDS, ...COMPOSER_CHORDS, ...REVIEW_CHORDS] as const;" | dashboard/src/data/keymap/preferences.ts:39-40 |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (ariaKeyshortcuts helper)
 
@@ -75,6 +79,7 @@ seam keeps the assistive-tech advertisement truthful (F25) — replacing a hardc
 Additive to the effective-keymap boundary; verification stays pinned to the FEUI-L8 base until closeout.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33 rule 7:** `DEFAULT_BINDINGS` now includes `REVIEW_CHORDS`, so the reviewer's two traversal commands are known, rebindable and resolved through `bindingFor`. One row added. The rows moved by the changed import line were re-pointed by the installed fixer.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 9 citation findings (4 rows); scoped recheck clean.

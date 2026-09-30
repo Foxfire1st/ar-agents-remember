@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -208,10 +208,10 @@ measurement of a generation**, because a forged record is internally consistent.
 | The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The durable-evidence pair every rebinding is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | **The shipped capture owner whose add-all tree is the resolved source side.** | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:280-304 |
+| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:302-326 |
 | **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:356-378 |
 | **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** | `ComparisonReopen`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
-| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574 |
+| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577 |
 | **The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.** | `ManagedSyncReviewRebindingTests` | mcp/tests/test_review_sync_rebinding.py:381-818 |
 | The live code/memory worktree pair the managed-sync cases are built on. | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-378 |
 | **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** | `LiveReviewMovementTests`; `test_the_live_review_read_renders_what_the_sync_moved`; `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:40-327; mcp/tests/test_review_sync_movement_read.py:43-104; mcp/tests/test_review_sync_movement_read.py:260-327 |
@@ -227,6 +227,7 @@ that follows from a recorded absolute path is stated above.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`published_intent.py`). No claim wording changed, and no verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/src/agents_remember/application/published_intent.py` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded. The fixer also normalised ranges into unchanged files (`mcp/src/agents_remember/application/knowledge_publication_route.py`).
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.

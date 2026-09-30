@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/keymap/reserved.ts`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The reserved set, browser-forbidden records, and the single PTY matching gate. | `PTY_RESERVED`; `BROWSER_FORBIDDEN`; `matchReservedChord`; `matches` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:218-224; dashboard/src/data/keymap/reserved.ts:204-212; dashboard/src/data/keymap/reserved.ts:153-202 |
-| `routeKey("pty", …)` defers entirely to `matchReservedChord`. | `matchReservedChord` | dashboard/src/data/keymap/zones.ts:54-58 |
+| `routeKey("pty", …)` defers entirely to `matchReservedChord`. | `matchReservedChord` | dashboard/src/data/keymap/zones.ts:56-60 |
 | The tinykeys binding installs only bound entries. | "if (!reserved.bound"; "!reserved.tinykeys) continue;"; "add(reserved.tinykeys" | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:62-63 |
 
 ## FEUI-L8 Reviewed Candidate Delta
@@ -115,6 +115,7 @@ cross-repository implementation source that governs its behavior.
 
 ## Update History
 
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`zones.ts`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
 - 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deleted the unsupported reference-page and
   hygiene-suite rows, rebound the surviving PTY gate/reserved-set/modifier/bound-entry claims to exact
   source owners, and completed the bound-entry whole-claim audit.

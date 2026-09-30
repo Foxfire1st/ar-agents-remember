@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -63,16 +63,16 @@ harness plus a complete selection; pre-session buttons no longer claim adapter p
 - **Effort rules**: a model with no launch-settable efforts gets the honest
   `launch-effort-none` note (Haiku can never form a pair — "launch with vendor defaults instead",
 # dashboard/src/panels/session-cockpit/LaunchFlow.tsx
-  and a null re-gated effort demands an explicit choice (`launch-effort-choose`, cit:(["launch-effort-choose"], dashboard/e2e-chats/support/drive.ts:35-35)).
+  and a null re-gated effort demands an explicit choice (`launch-effort-choose`, cit:(["launch-effort-choose"], dashboard/e2e-chats/support/drive.ts:34-35)).
   Model clicks run `chooseModel` (re-gates effort to THAT row's advertised launch default only),
   effort clicks `chooseEffort` — the reducers, not local logic.
-- **Prefill** (cit:([`chooseModel`], dashboard/src/data/launchFlow.ts:47-59)): 'Launch corrected…' hands in the refused pair; it is applied
+- **Prefill** (cit:([`chooseModel`], dashboard/src/data/launchFlow.ts:51-63)): 'Launch corrected…' hands in the refused pair; it is applied
   ONLY where the live catalog still advertises it (`chooseModel` returns empty for an absent row)
   — the flow can never re-offer a key the catalog no longer advertises. Consumed once per open
   via `prefillPairRef`.
 - **Launch** (cit:([`selectionComplete`], dashboard/src/data/launchFlow.ts:81-83)): `readyToLaunch` requires a currently advertised detected harness plus
   `selectionComplete`, not posting, and no pending unknown. `launch()` mints the id (`crypto.randomUUID`, cit:([`defaultMint`], dashboard/src/panels/session-cockpit/LaunchFlow.tsx:60-60);
-  `mintSessionId` is the test seam) and calls `openHostedSession` (cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:232-250)). A 200 records the retained
+  `mintSessionId` is the test seam) and calls `openHostedSession` (cit:([`openHostedSession`], dashboard/src/data/launchFlow.ts:248-266)). A 200 records the retained
   pair in `sessionCockpitStore.setLaunchEvidence` at the tier `launchTier` derives from the
   RESPONSE controlState ('starting' ⇒ pending — never promoted by the open response itself,
   cit:([`launchTier`], dashboard/src/data/launchEvidence.ts:29-41)), hydrates the catalog, focuses the new row, and closes.
@@ -142,11 +142,11 @@ the reviewed task evidence for any current behavioral claim.
 | The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). | `CapabilityCatalogState` | dashboard/src/data/capabilityCatalog.ts:41-43 |
 | The tier machine stamping the retained pair at 'pending' on a 200. | `launchTier` | dashboard/src/data/launchEvidence.ts:29-41 |
 | The typed narrow harness catalog read and explicit result states. | `HarnessCatalogRead` | dashboard/src/data/harnessCatalog.ts:13-16 |
-| The hook owning timeout, abort, Retry, and one replacement per serving boot. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-84 |
-| The owner registering `session.launch` and mounting the dialog after the palette. | "session.launch" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:229-229 |
+| The hook owning timeout, abort, Retry, and one replacement per serving boot. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-86 |
+| The owner registering `session.launch` and mounting the dialog after the palette. | "session.launch" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:235-235 |
 | The banner handing in the refused-pair prefill. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
 | The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | `renderFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx:88-102 |
-| The open-response fixtures the classifier paths render. | `INVALID_PARTIAL_PAIR`, `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:140-144 |
+| The open-response fixtures the classifier paths render. | `INVALID_PARTIAL_PAIR`, `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:143-147 |
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -165,6 +165,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`shell.test.tsx`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 5 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`openResponses.ts`, `useHarnessCatalogRead.ts`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:22:41+00:00: Generated citation repair: "session.launch" repointed to dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LaunchFlow.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the launchFlowParts/launchFlowStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.

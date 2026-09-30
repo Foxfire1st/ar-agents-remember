@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_tool_entry_point_sweep.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -132,8 +132,8 @@ they make no acceptance claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:325-866 |
-| The classifier both the sweep and the controls use, so a control proves the sweep. | `classify` | mcp/tests/test_tool_entry_point_sweep.py:286-298 |
+| The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:328-931 |
+| The classifier both the sweep and the controls use, so a control proves the sweep. | `classify` | mcp/tests/test_tool_entry_point_sweep.py:289-299 |
 | The refused model's identity, which separates a response-model break from the caller's invalid arguments. | `REFUSED_MODEL` | mcp/tests/test_tool_entry_point_sweep.py:208-208 |
 | `T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`. | `ENVELOPE_LOSING_RAISERS` | mcp/tests/test_tool_entry_point_sweep.py:98-98 |
 | The same defect on the lifecycle family's state precondition, five tools with their losing states. | `STATE_DEPENDENT_RAISERS` | mcp/tests/test_tool_entry_point_sweep.py:128-134 |
@@ -142,15 +142,15 @@ they make no acceptance claim.
 | The population written out, so weakening the derivation rule is a second visible edit. | `EXPECTED_LIFECYCLE_STATE_POPULATION` | mcp/tests/test_tool_entry_point_sweep.py:154-165 |
 | The two scaffold files the sweep's own world may gain, and nothing else. | `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` | mcp/tests/test_tool_entry_point_sweep.py:171-171 |
 | The third pin: an envelope reporting `ok:false` that a caller cannot act on. **Now empty** — `citation_migrate` answers the envelope, repaired by `260918-TSIP-L6`. | `UNMARKED_NOT_OK` | mcp/tests/test_tool_entry_point_sweep.py:189-189 |
-| A refusal's own marks, read from the payload rather than from the arm. | `refusal_marks` | mcp/tests/test_tool_entry_point_sweep.py:229-244 |
-| The coordination-root zones inside which the product may legitimately write. | `COORDINATION_WRITE_ZONES` | mcp/tests/test_tool_entry_point_sweep.py:215-226 |
+| A refusal's own marks, read from the payload rather than from the arm. | `refusal_marks` | mcp/tests/test_tool_entry_point_sweep.py:232-245 |
+| The coordination-root zones inside which the product may legitimately write. | `COORDINATION_WRITE_ZONES` | mcp/tests/test_tool_entry_point_sweep.py:218-229 |
 | The swept population is derived and equals the live server's advertisement. | `EntryPointCoverageTests` | mcp/tests/test_tool_entry_point_sweep.py:934-951 |
-| The sweep itself: one world, one run, and the equality assertions that bind every pin. | `EntryPointProbeTests` | mcp/tests/test_tool_entry_point_sweep.py:887-1181 |
-| The executed positive control over the choke point, and both break shapes at the entry point. | `ChokePointControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1182-1280 |
-| The census controls: write, rewrite and delete in both repositories and outside every zone. | `EntryPointCensusControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1281-1353 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" |mcp/tests/test-evidence-lanes.toml:221-221|
-| The advertised roster the swept population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
-| The registry whose models classify a payload that does not validate. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:156-241 |
+| The sweep itself: one world, one run, and the equality assertions that bind every pin. | `EntryPointProbeTests` | mcp/tests/test_tool_entry_point_sweep.py:954-1246 |
+| The executed positive control over the choke point, and both break shapes at the entry point. | `ChokePointControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1249-1345 |
+| The census controls: write, rewrite and delete in both repositories and outside every zone. | `EntryPointCensusControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1348-1420 |
+| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" |mcp/tests/test-evidence-lanes.toml:266-266|
+| The advertised roster the swept population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-97 |
+| The registry whose models classify a payload that does not validate. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
 | The choke point a bypassing handler skips, and the validation this module's control executes. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The validation the positive control drives directly. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
 
@@ -183,6 +183,8 @@ the real entry point — and this module grew **1274 → 1353 lines** in the cha
 (`T66`, deferred), so the pin stays and names itself as an open, measured defect.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 9 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`public_roster.py`, `test_tool_entry_point_sweep.py`, `tool_registry.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:33:12+00:00: Generated citation repair: "mcp/tests/test_tool_entry_point_sweep.py" repointed to mcp/tests/test-evidence-lanes.toml:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

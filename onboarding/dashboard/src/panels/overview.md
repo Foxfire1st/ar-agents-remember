@@ -5,10 +5,109 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260928-MIK-L33 Change-Kind Badges, Triage Order And `j`/`k` In The Family Tree Of A Tree Comparison
+
+**Route meaning extended (MIK-R33, adopting ICR-R32@v1 with the storage substitutions).** In the review workspace's
+family tree, on a tree comparison, every family occurrence and member occurrence shows what kind of recorded change
+brings it into review (`intent`, `implementation`, `membership`, `unknown` or `unchanged`, with secondary marks);
+the tree lists the most review-relevant changes first without hiding unchanged siblings, and `j`/`k` (and visible
+controls) move between the changes. Every fact is the server's, delivered with the roster
+(`application/review_change_kinds.py`); this route orders, counts and traverses by them and never recomputes one. A
+dataset review renders exactly the landed tree (no badges, breakdown or controls; landed order; `j`/`k` inert). The
+new modules under `review/`, governed here like L31's, L32's, L34's and L35's (no `panels/review/` overview):
+- [`review/changeTriage.ts`](review/changeTriage.ts.md): the pure rules (weights, labels and meanings; a family's
+  counts, returned, total, `partial` and `scoped` state and weight; the breakdown text; family and member order; the
+  union of two deliveries across a roster walk).
+- [`review/ChangeBadges.tsx`](review/ChangeBadges.tsx.md): the member badge and marks, the labelled reason lines
+  ("change kind unknown", "membership unknown", "guarantee unknown"), the family's guarantee badge, the breakdown, and
+  the sticky triage bar with the order control, previous/next and the polite status.
+- [`review/changeTraversal.ts`](review/changeTraversal.ts.md): the stops in displayed order, the partial family's
+  continuation stop, the ends, and the keymap owner's `j`/`k` bound on the reviewer's zone.
+- [`review/triageOrderPreference.ts`](review/triageOrderPreference.ts.md): the browser-local order preference
+  (`review.tree-order.v1`; triage when storage is unavailable).
+- Tests (36 cases): [`review/changeTriage.test.ts`](review/changeTriage.test.ts.md) (12),
+  [`review/FamilyTree.triage.test.tsx`](review/FamilyTree.triage.test.tsx.md) (18),
+  [`review/FamilyTree.triageReal.test.tsx`](review/FamilyTree.triageReal.test.tsx.md) (3, real data),
+  [`review/ReviewSurface.triage.test.tsx`](review/ReviewSurface.triage.test.tsx.md) (1) and
+  [`review/ReviewSurface.triageMarkers.test.tsx`](review/ReviewSurface.triageMarkers.test.tsx.md) (2, the merge with
+  MIK-L34 on real data); `session-cockpit/sessions-view/shell.test.tsx`'s `?` case is extended (the session-cockpit
+  overview's MIK-L33 section).
+- Fixtures, each set with its receipt: [`review/triage.capture-provenance.json`](review/triage.capture-provenance.json.md)
+  (the store-authored world of `mcp/tests/test_review_change_kinds.py`: [entries](review/triage.entries.captured.json.md),
+  [family](review/triage.family.captured.json.md), [familyPage](review/triage.familyPage.captured.json.md),
+  [familyContinued](review/triage.familyContinued.captured.json.md), [shared](review/triage.shared.captured.json.md),
+  [memberA](review/triage.memberA.captured.json.md), [memberH](review/triage.memberH.captured.json.md)),
+  [`review/triageReal.capture-provenance.json`](review/triageReal.capture-provenance.json.md) (the worker's real
+  scratch: [family](review/triageReal.family.captured.json.md), [shared](review/triageReal.shared.captured.json.md))
+  and [`review/triageMarker.capture-provenance.json`](review/triageMarker.capture-provenance.json.md) (comparison 3's
+  [cards](review/triageMarker.cards.captured.json.md)). MIK-L34's `markerReturn.*` and `markerUnknown.*` bodies were
+  re-captured in the merge round and now carry `change_kinds` (their cards say so). All 22 sha256 values and byte
+  counts match their receipts (checked by this curation).
+
+**Hooks in the landed renderers.** [`review/FamilyTree.tsx`](review/FamilyTree.tsx.md): the orders, the badges and
+breakdown, the traversal's data attributes, the triage bar, and the member row's one statement per fact (the change
+badge or MIK-L34's note; the name the subject only, the facts described). [`review/familyWalkMerge.ts`](review/familyWalkMerge.ts.md)
+unions the facts of an admitted roster continuation. [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md):
+the family centre's member list follows the tree's order. [`review/ReviewSurface.tsx`](review/ReviewSurface.tsx.md):
+the root is the keymap owner's `review` zone. [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md): the
+stacked layout's one sticky offset while a marker's way back is open. [`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md):
+`useMemberTarget` shared with the badge, and the note's `id`. The data mirror (`data/reviewFamily.ts`) and the keymap
+(`data/keymap/`) have their own MIK-L33 sections.
+
+**Rulings** (`33_review-triage-order-and-change-kind-badges.json`). 2026-09-30T15:11:20: start; the `implementation`
+fact (b) comes from L32's per-file classification, with no second hunk classifier; built beside L34. 16:22:22 (worker
+items 1–11): accepted as built 1 (tree comparisons only), 2 (catalogue rail rows carry no badges), 3 (a family row's
+badge is its guarantee fact; its weight includes its members), 4 (pre-curation unknowns follow MIK-R32's exact-blob
+rule), 6a (retired counts as removed), 6c (the impl mark beside an intent), 7 (authored order is the record's
+`members` list), 8 (unreturned means returned < total), 10 and 11; changed: 5 (one revision with changed text is
+`intent`, noted "same revision; text differs", never `unchanged`), 6b (a `file` entry on a changed non-text file
+establishes `implementation`), 4 and 9 (every unknown shows its reason; the end status is visible beside the selection
+in a sticky bar). 17:47:43 (review R1, changes-required): F1 only the writer's mechanical carry is exempt from
+re-anchoring; F2 a breakdown with no total says "(total unknown)" and weighs at least unknown; F3 tests for the eight
+surviving mutations; F4 the unresolved-range unknown mark is unconditional; notes: one statement per fact, the centre
+follows the tree, the total unknown only for the family's own records, reuse L32's lane helper; the landing order (L34
+first) and the merge plan. 18:57:45 (review R2): "re-anchored (stale at base)", the N5/N6 cases, reasons from entries
+that established nothing first. 21:41:02: the merge round accepted; a `j` move at 390 px reveals the centre through the
+existing `revealCenter`, as a tap does (kept). 21:55:02 (review R3): R3-1 fixed (a member row's name is its subject,
+its facts only in its description); R3-2 accepted as notes (two lines for two unknown facts with one cause; the bar
+sliding under Back for one step); R3-3 routed to this curation. **Resolved:** MIK-L34's merge Todos on
+`review/FamilyTree.tsx` and `review/MarkerTargetState.tsx` (the 17:39:21 merge order), as built.
+
+**Candidate invariants (not ingested; no speculative ingestion):**
+1. Change-kind facts are computed on the server, for returned members only, from recorded comparison facts; the hunk
+   intersection comes only from MIK-L32's classification, and the client never recomputes it (realized by
+   `with_change_kinds` and the entry validator; the client reads `primary`/`marks` and only counts and orders; proved
+   by the server tests, the lane reconciliation 2 of 2, and the mutation sets; recorded on
+   `application/review_change_kinds.py.md`).
+2. Unreadable or partial knowledge produces `unknown` with a stated reason, never `unchanged` or a complete-looking
+   total (realized on the server by `_unread`, `_record`, `_entries`, `_unresolved` and a `None` total, and here by
+   `occurrenceKind`'s undescribed member and `familyTriage`'s `scoped` "(total unknown)"; proved by the server's
+   failure cases, `changeTriage.test.ts` and `FamilyTree.triage.test.tsx`'s SYNTHETIC cases; recorded on
+   `application/review_change_kinds.py.md`).
+3. Changed intent text is never `unchanged`, even at the same revision (realized by `_intent`'s byte comparison and the
+   `text_differs` note; proved by INV-PPPPPP on the server and in the tree, and INV-2E8MG43K on real data; recorded on
+   `application/review_change_kinds.py.md`).
+4. Triage order never hides unchanged siblings, and traversal never forces unreturned pages to load (realized by
+   `orderFamilies`/`orderMemberRows` and `changeTraversal`'s continuation stop; recorded on `review/changeTriage.ts.md`).
+5. Each fact is stated once per node, both visually and to assistive technology (realized by `MemberChangeBadge`, the
+   replaced side-tag and guarantee labels, and `aria-labelledby`/`aria-describedby`; proved by the tree and surface
+   cases, the merge and R3 mutations and the CDP reads at 390 px; recorded on `review/ChangeBadges.tsx.md`).
+
+**Inert before MIK-R37:** only a converted leaf's tree comparison carries `change_kinds`; the worker's preservation
+rerun found 29 of 29 unconverted reads identical to base once the null `change_kinds` is dropped (the served body
+omits it).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The rules over the delivered facts; nothing decides a fact. | `familyTriage`; `orderMemberRows` | dashboard/src/panels/review/changeTriage.ts:94-133; dashboard/src/panels/review/changeTriage.ts:159-180 |
+| The member badge and the tagged membership line; the sticky controls. | `MemberChangeBadge`; `TriageControls` | dashboard/src/panels/review/ChangeBadges.tsx:237-270; dashboard/src/panels/review/ChangeBadges.tsx:311-359 |
+| Stops in displayed order and the keymap binding on the reviewer's zone. | `nextChange`; `useChangeTraversal` | dashboard/src/panels/review/changeTraversal.ts:98-106; dashboard/src/panels/review/changeTraversal.ts:119-164 |
+| The tree's hooks: facts order the tree and drive the traversal. | "const triaged = hasChangeFacts(context.entries);"; "const traversal = useChangeTraversal(root, triaged);" | dashboard/src/panels/review/FamilyTree.tsx:768-771 |
 
 ## 260928-MIK-L34 Per-Hunk Intent Markers In Every Diff Of A Tree Comparison
 
@@ -79,7 +178,7 @@ marks below 40rem; F3 the focused `Attribution unknown` region; F4 the three esc
 rerun; F5 the partial-inventory note; notes N1 (the reason's owner named in a comment), N2 (off-screen marks outside
 CodeMirror's drawn area are not in the tab order) and N3 (a followed target's state stays until Back) accepted; landing
 order L34 before L33, and at L33's sync both member-row elements are kept, the change-kind fact first, both reasons in
-`aria-describedby`. 18:23:50 (review R2): Back refocuses and re-scrolls after CodeMirror's measure on every layout,
+`aria-describedby` (built by MIK-L33's merge round: see its section above). 18:23:50 (review R2): Back refocuses and re-scrolls after CodeMirror's measure on every layout,
 including side by side at 390 px; three test gaps pinned. 19:27:57 (review R3): the hold also ends on wheel (passive);
 the hold's end conditions and cleanup pinned by frame-by-frame tests. A short R4 confirmation runs beside this curation.
 **Resolved:** the L32 F5 carry. Its Todos on `review/laneFocus.ts` and `review/LaneFileFocus.tsx` (and on the `mcp` and
@@ -108,9 +207,9 @@ more-hunks note no longer says "the full file shows every one".
 | --- | --- | --- |
 | Marks only from the owner's response, placed on its side lines. | `fileMarks`; `markAnchor` | dashboard/src/panels/review/hunkMarkers.ts:91-102; dashboard/src/panels/review/hunkMarkers.ts:329-342 |
 | Every owner hunk a pane draws is placed; the list and the reveal of a return. | `usePaneMarking` | dashboard/src/panels/review/IntentMarkers.tsx:140-192 |
-| A lane window marks each neighbour its context shows (the L32 F5 carry). | `useWindowMarking` | dashboard/src/panels/review/LaneFileFocus.tsx:327-357 |
-| The scope provided around the landed workspace body. | "export function ReviewWorkspace(props: ReviewWorkspaceProps) {"; "<IntentMarkerScope.Provider value={markers}>" | dashboard/src/panels/review/ReviewWorkspace.tsx:251-266 |
-| The unknown-membership state in the rail. | `InvariantTargetState` | dashboard/src/panels/review/MarkerTargetState.tsx:102-145 |
+| A lane window marks each neighbour its context shows (the L32 F5 carry). | `useWindowMarking` | dashboard/src/panels/review/LaneFileFocus.tsx:329-357 |
+| The scope provided around the landed workspace body. | "export function ReviewWorkspace(props: ReviewWorkspaceProps) {"; "<IntentMarkerScope.Provider value={markers}>" | dashboard/src/panels/review/ReviewWorkspace.tsx:270-270; dashboard/src/panels/review/ReviewWorkspace.tsx:281-281 |
+| The unknown-membership state in the rail. | `InvariantTargetState` | dashboard/src/panels/review/MarkerTargetState.tsx:118-157 |
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane: Two Destinations After The Families, And One Classification Everywhere
 
@@ -229,7 +328,7 @@ side's own row, or from its pane or filtered field rows; dataset reviews get no 
 | The decision, the ratio and rule 1a. | "export const REWRITE_RATIO = 0.5;"; "export function textDiff(before: string, after: string): TextDiff {"; "export function alignLists(" | dashboard/src/panels/review/wordDiff.ts:21-26; dashboard/src/panels/review/wordDiff.ts:180-206; dashboard/src/panels/review/wordDiff.ts:258-280 |
 | The tree-comparison scope, the statement area and the changed guarantee. | "export function IntentWordDiffScope({"; "export function IntentStatementBody({"; "export function guaranteeTextChange(" | dashboard/src/panels/review/IntentWordDiff.tsx:153-165; dashboard/src/panels/review/IntentWordDiff.tsx:557-613; dashboard/src/panels/review/IntentWordDiff.tsx:615-625 |
 | Each side's text from its own row, the filtered field rows, and the text-first decision. | `MemberSides`; `authoredSides`; `textFirstComparison` | dashboard/src/panels/review/SubjectReview.tsx:89-92; dashboard/src/panels/review/SubjectReview.tsx:99-145; dashboard/src/panels/review/statementWording.ts:66-73 |
-| The rail's labels compare bytes on a tree comparison. | `guaranteesOf`; `memberSideTag` | dashboard/src/panels/review/FamilyTree.tsx:313-340; dashboard/src/panels/review/FamilyTree.tsx:398-402 |
+| The rail's labels compare bytes on a tree comparison; with MIK-L33's change facts the badges state a text change and the labels do not repeat it. | "function guaranteesOf("; "function memberSideTag(row: MemberRow, tree: boolean, noted = false): string {" | dashboard/src/panels/review/FamilyTree.tsx:335-363; dashboard/src/panels/review/FamilyTree.tsx:425-431 |
 | On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. | "word-diffs a tree review's member statement and family guarantee in the center"; "never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review" | dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx:108-181 |
 
 ## 260928-MIK-L29 The Knowledge Reader Panel
@@ -314,7 +413,7 @@ from a leaf-wide read of the same comparison; dataset reviews make no tree read.
 | --- | --- | --- |
 | The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:138-178; dashboard/src/panels/review/ExpressionCards.tsx:182-237 |
 | Grouping by (path, range) and the bounded-roster scope. | `cardKey`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:50-55; dashboard/src/panels/review/focusedCards.ts:195-210 |
-| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:970-974; dashboard/src/panels/review/FamilyReviewCenter.tsx:993-1049 |
+| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:980-984; dashboard/src/panels/review/FamilyReviewCenter.tsx:1003-1059 |
 | The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:128-227 |
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
@@ -376,11 +475,11 @@ Rapid selections settle on the latest; a superseded answer is neither shown nor 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ReviewWorkspace` owns the behavior described above; since MIK-L34 it is a thin wrapper that provides the intent markers' scope around the landed body, `WorkspaceBody`. | "export function ReviewWorkspace(props: ReviewWorkspaceProps) {"; "function WorkspaceBody({" | dashboard/src/panels/review/ReviewWorkspace.tsx:251-339 |
-| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:440-520 |
+| `ReviewWorkspace` owns the behavior described above; since MIK-L34 it is a thin wrapper that provides the intent markers' scope around the landed body, `WorkspaceBody`. | "export function ReviewWorkspace(props: ReviewWorkspaceProps) {"; "function WorkspaceBody({" | dashboard/src/panels/review/ReviewWorkspace.tsx:270-365 |
+| `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:466-546 |
 | The read bound to its question, and the task-context frame. | `readOnScreen`; `useFrame`; `admit` | dashboard/src/panels/review/ReviewReadCycle.ts:319-337; dashboard/src/panels/review/ReviewReadCycle.ts:341-348; dashboard/src/panels/review/ReviewReadCycle.ts:219-223 |
 | The workspace mounted over the answer or the frame, with a subject-bound reading status. | `ReviewPanes`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:302-370; dashboard/src/panels/review/ReviewSurface.tsx:375-395 |
-| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:114-146; dashboard/src/panels/review/ReviewWorkspace.tsx:343-418 |
+| The reading-area column and its pending/problem statements. | `WorkspaceCenter`; `ReadingStatusCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:133-165; dashboard/src/panels/review/ReviewWorkspace.tsx:369-444 |
 | The bounded per-comparison cache and its generation rule. | `ReviewReadCache`; `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93; dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
 | The mounted delayed-reply cases. | "keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read"; "keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:316-410; dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:523-601 |
 
@@ -510,6 +609,8 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33.** New top section "260928-MIK-L33 Change-Kind Badges, Triage Order And `j`/`k` In The Family Tree Of A Tree Comparison": the four new modules, five tests and thirteen fixture cards linked; the hooks in the landed renderers; every ruling of `33_review-triage-order-and-change-kind-badges.json` (15:11:20 to 21:55:02); MIK-L34's merge Todos resolved; the **five candidate invariants** with realization and proof; inertness; four rows. The L34 section's merge-plan clause points to it. **Reopened claims reworded and re-anchored** on line-exact quotes (claims bind by anchor text; the committed 2026-09-26T21:08:59 bullet names `RosterNext`): the rail-labels row (`guaranteesOf`/`memberSideTag`, re-measured to `335-363; 425-431`), the family-hierarchy row (`FamilyNode`/`MemberRoster`/`treeArrow`) and the roster-walk row (`RosterNext`). In the L31 cards row the range the fixer's normalisation kept beside its shifted copy (`970-974`, live at the base) was dropped. The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
+- 2026-09-30T20:19:46+00:00: Generated citation repair: "export function ReviewWorkspace(props: ReviewWorkspaceProps) {"; "<IntentMarkerScope.Provider value={markers}>" repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:270-270; dashboard/src/panels/review/ReviewWorkspace.tsx:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 Per-Hunk Intent Markers In Every Diff Of A Tree Comparison" at the top: the five new `review/` modules and `file-viewer/markGutter.tsx`, the seven test modules (59 cases) and the three fixture sets with their receipts (all linked), the hooks in the landed renderers, every ruling (13:07:38 F5 carry; 15:11:20 start; 16:19:34 Q1–Q4; 17:39:21 R1 F1–F5, N1–N3 and the landing order; 18:23:50 R2; 19:27:57 R3), the four candidate invariants, five rows. **The L32 F5 carry is resolved**, and the L32 section's "F5 carried to L34" now points to the new section; its Q5 clause records that L34 kept L32's membership mapping. **Reopened claims:** the two rows anchored on `"export function ReviewWorkspace({"`, which no longer exists (the function became a wrapper around `WorkspaceBody`), are re-anchored on the wrapper's and the body's line-exact declarations; the ICR-L48 row's claim gains one clause naming the wrapper, and the ICR-L24 row's claim is retained. The installed fixer re-pointed or normalised thirteen rows citing the changed sources (its one generated repair, `refusalBlock`, is above), the exact Git-hunk line shift re-pointed five more (the L32 opened-file row, `WorkspaceRail`, the `refusalBlock` quote row, the centre-entry row and one more `FamilyReviewCenter.tsx` row), and the stale range the normalisation kept in the `boundedNote`/`Expansion` row (`SourceContent.tsx:101-111`) was dropped.
 - 2026-09-30T18:05:31+00:00: Generated citation repair: `refusalBlock` repointed to dashboard/src/panels/review/SourceContent.tsx:141-153. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T14:52:40+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, now 35 files over code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): **route body updated.** The L32 section no longer says the two stale disposition comments are open Todos: the coordinator corrected them (comment text only) in `review/worklistGroups.ts` and `review/LeafKnowledgeChanges.tsx`, which are now source changes of this leaf, and both cards record it. No row moved. No verification stamp was advanced.
@@ -999,7 +1100,7 @@ not here.
 | --- | --- | --- |
 | Inventory rows preserve path/status and control state; optional inline content expansion uses the listed tree pair. | `inventoryEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116 |
 | Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
-| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:171-217 |
+| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:190-236 |
 | The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane`; `SourceContent` | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357; dashboard/src/panels/review/SourceExplorer.tsx:103-107 |
 | The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | "export function SelectedStatement({"; `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SubjectReview.tsx:255-334 |
 | Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:71-127 |
@@ -1084,7 +1185,7 @@ rendered state carries a `data-testid`, which is how the surface's cases read ea
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The child route entry component. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
+| The child route entry component. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
 | Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** | "function KnowledgePane({ payload }" | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-223 |
 | Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content** (since MIK-L32 it also takes the lane read, for a tree comparison's attribution). | "function SourcePane({" | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357 |
 | Pane 3, evidence and assessment with both absence states stated. | "function EvidencePane" | dashboard/src/panels/review/ReviewRecordPanes.tsx:359-359 |
@@ -3495,7 +3596,7 @@ states that its byte-form row cannot be opened — so the measurements below nam
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:81-89; dashboard/src/panels/review/ReviewSurface.tsx:43-50; dashboard/src/panels/review/ReviewSurface.tsx:534-598 |
+| **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:81-89; dashboard/src/panels/review/ReviewSurface.tsx:43-50; dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
 | **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130; dashboard/src/panels/review/SourceExplorer.tsx:170-222 |
 | **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. | "function SourcePane({"; "function KnowledgePane({ payload }: { payload: ReviewPayload }) {" | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-357; dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248 |
 | **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
@@ -3715,10 +3816,10 @@ representable for a truncated family roster to be continued.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal. | `FamilyNode`; `MemberRoster`; `treeArrow` | dashboard/src/panels/review/FamilyTree.tsx:589-601; dashboard/src/panels/review/FamilyTree.tsx:473-503; dashboard/src/panels/review/FamilyTree.tsx:505-555 |
-| **The one family-roster walk control, continuing at the cursor the roster page published.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:264-296 |
-| **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:893-966 |
-| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "function WorkspaceBody({" | dashboard/src/panels/review/ReviewWorkspace.tsx:171-217; dashboard/src/panels/review/ReviewWorkspace.tsx:268-339 |
+| The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal; on a tree comparison it also badges, orders and traverses the changes without hiding a sibling (MIK-L33). | "function FamilyNode({"; "function MemberRoster({"; "function treeArrow(event: React.KeyboardEvent<HTMLButtonElement>): void {" | dashboard/src/panels/review/FamilyTree.tsx:702-714; dashboard/src/panels/review/FamilyTree.tsx:576-610; dashboard/src/panels/review/FamilyTree.tsx:612-668 |
+| **The one family-roster walk control, continuing at the cursor the roster page published; since MIK-L33 it names its family for the traversal's partial-family message.** | "export function RosterNext({"; "data-family-label={familyLabel(entry)}" | dashboard/src/panels/review/FamilyTree.tsx:283-316 |
+| **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:903-976 |
+| **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "function WorkspaceBody({" | dashboard/src/panels/review/ReviewWorkspace.tsx:190-236; dashboard/src/panels/review/ReviewWorkspace.tsx:268-339 |
 | **The complete source change explorer, and why it is its own module rather than part of the surface.** | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
 | **The mounted family composition cases and the captured server bodies they are driven with.** | "familyReview.*.captured.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-9 |
 | The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. | `ReviewPanes`; `useSurface` | dashboard/src/panels/review/ReviewSurface.tsx:302-370; dashboard/src/panels/review/ReviewSurface.tsx:453-532 |
@@ -3820,10 +3921,10 @@ data exercises the divergent path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:503-548; dashboard/src/panels/review/FamilyReviewCenter.tsx:581-642; dashboard/src/panels/review/FamilyReviewCenter.tsx:644-709; dashboard/src/panels/review/familyExpressions.ts:21-26 |
+| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:505-550; dashboard/src/panels/review/FamilyReviewCenter.tsx:583-644; dashboard/src/panels/review/FamilyReviewCenter.tsx:646-719; dashboard/src/panels/review/familyExpressions.ts:21-26 |
 | Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. | `familyExpressionExcerpts`; `excerptKey`; `claimClass` | dashboard/src/panels/review/familyExpressions.ts:185-202; dashboard/src/panels/review/familyExpressions.ts:64-66; dashboard/src/panels/review/familyExpressions.ts:68-73 |
 | Per-side resolution and observed identities attach to the same recorded-address key. | `recordSideReadings`; `FamilyExcerptSideReading` | dashboard/src/panels/review/familyExpressions.ts:147-168; dashboard/src/panels/review/familyExpressions.ts:34-38 |
-| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:288-292; dashboard/src/panels/review/FamilyReviewCenter.tsx:488-499 |
+| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:290-294; dashboard/src/panels/review/FamilyReviewCenter.tsx:490-501 |
 | **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:758-826 |
 | **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** | "WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD"; "keeps two excerpts apart when one address carries two different recorded blobs"; "treats two different observed blobs at one address as one excerpt, read once per side" | dashboard/src/panels/review/familyExpressions.test.ts:1-16; dashboard/src/panels/review/familyExpressions.test.ts:96-131; dashboard/src/panels/review/familyExpressions.test.ts:213-258 |
 

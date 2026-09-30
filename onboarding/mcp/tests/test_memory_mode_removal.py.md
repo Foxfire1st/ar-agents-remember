@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_mode_removal.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -146,20 +146,20 @@ migration-boundary and instruction-corpus assertions.
 | --- | --- | --- |
 | The three pinned properties, each named with the failure it prevents. | "memory mode: refused by name, reported, never substituted." | mcp/tests/test_memory_mode_removal.py:1-1 |
 | The expected supported set is written literally, not imported, so a vocabulary change must be made twice. | `EXPECTED_MODES` | mcp/tests/test_memory_mode_removal.py:93-93 |
-| The declared vocabulary holds no removed member. | `test_the_declared_vocabulary_has_no_removed_member` | mcp/tests/test_memory_mode_removal.py:119-122 |
-| A removed token is refused by name while an unknown token stays an invalid-argument error. | `test_require_supported_topology_keeps_unknown_tokens_distinct_from_the_removal` | mcp/tests/test_memory_mode_removal.py:137-142 |
-| Existing state recording the removed mode is reported and left byte-identical. | `test_a_contract_recording_the_removed_mode_is_reported_and_left_byte_identical` | mcp/tests/test_memory_mode_removal.py:318-333 |
-| The supported paths are unaffected: external still resolves, disabled still round-trips. | `test_external_selection_still_resolves` | mcp/tests/test_memory_mode_removal.py:354-372 |
-| The CLI never advertises the removed member and hands a removed token to the typed refusal. | `test_cli_never_advertises_the_removed_member` | mcp/tests/test_memory_mode_removal.py:393-399 |
-| The tool documentation no longer offers the removed mode. | `test_the_start_tool_documentation_no_longer_offers_the_removed_mode` | mcp/tests/test_memory_mode_removal.py:427-433 |
-| The operator receives the typed refusal with the recorded value, the supported set and the artifact. | `test_worktree_status_packet_reports_the_removed_mode_to_the_operator` | mcp/tests/test_memory_mode_removal.py:531-544 |
-| A removed-mode answer never claims the publication was lost. | `test_a_removed_mode_answer_never_claims_publication_was_lost` | mcp/tests/test_memory_mode_removal.py:649-665 |
-| Both flag narrowers distinguish a typo from a removal. | `test_the_flag_narrowers_do_not_report_a_typo_as_a_removal` | mcp/tests/test_memory_mode_removal.py:673-685 |
-| Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. | `CORRECTED_SURFACES` | mcp/tests/test_memory_mode_removal.py:701-785 |
-| The generated skill copy must equal the canonical tree it is generated from. | `test_the_generated_skill_copy_carries_the_canonical_correction` | mcp/tests/test_memory_mode_removal.py:802-809 |
-| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" |mcp/tests/test-evidence-lanes.toml:151-151|
+| The declared vocabulary holds no removed member. | `test_the_declared_vocabulary_has_no_removed_member` | mcp/tests/test_memory_mode_removal.py:122-125 |
+| A removed token is refused by name while an unknown token stays an invalid-argument error. | `test_require_supported_topology_keeps_unknown_tokens_distinct_from_the_removal` | mcp/tests/test_memory_mode_removal.py:140-145 |
+| Existing state recording the removed mode is reported and left byte-identical. | `test_a_contract_recording_the_removed_mode_is_reported_and_left_byte_identical` | mcp/tests/test_memory_mode_removal.py:321-336 |
+| The supported paths are unaffected: external still resolves, disabled still round-trips. | `test_external_selection_still_resolves` | mcp/tests/test_memory_mode_removal.py:357-375 |
+| The CLI never advertises the removed member and hands a removed token to the typed refusal. | `test_cli_never_advertises_the_removed_member` | mcp/tests/test_memory_mode_removal.py:396-402 |
+| The tool documentation no longer offers the removed mode. | `test_the_start_tool_documentation_no_longer_offers_the_removed_mode` | mcp/tests/test_memory_mode_removal.py:430-436 |
+| The operator receives the typed refusal with the recorded value, the supported set and the artifact. | `test_worktree_status_packet_reports_the_removed_mode_to_the_operator` | mcp/tests/test_memory_mode_removal.py:534-547 |
+| A removed-mode answer never claims the publication was lost. | `test_a_removed_mode_answer_never_claims_publication_was_lost` | mcp/tests/test_memory_mode_removal.py:652-668 |
+| Both flag narrowers distinguish a typo from a removal. | `test_the_flag_narrowers_do_not_report_a_typo_as_a_removal` | mcp/tests/test_memory_mode_removal.py:676-688 |
+| Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. | `CORRECTED_SURFACES` | mcp/tests/test_memory_mode_removal.py:704-788 |
+| The generated skill copy must equal the canonical tree it is generated from. | `test_the_generated_skill_copy_carries_the_canonical_correction` | mcp/tests/test_memory_mode_removal.py:805-812 |
+| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" |mcp/tests/test-evidence-lanes.toml:195-195|
 | **The leaf enclosure's memory worktree is a supported onboarding root, and the resolver reports the root it was given rather than the official one.** | `test_a_leaf_enclosures_memory_worktree_is_a_supported_onboarding_root` | mcp/tests/test_memory_mode_removal.py:820-834 |
-| **The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.** | `test_a_directory_that_merely_resembles_a_memory_worktree_is_refused` | mcp/tests/test_memory_mode_removal.py:850-860 |
+| **The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.** | `test_a_directory_that_merely_resembles_a_memory_worktree_is_refused` | mcp/tests/test_memory_mode_removal.py:837-860 |
 | **The refusal names both supported shapes and the root it received, so it cannot send the caller in a circle.** | `test_the_onboarding_root_refusal_names_both_shapes_and_the_root_received` | mcp/tests/test_memory_mode_removal.py:863-877 |
 | **The CLI entry point measured end to end: the leaf enclosure's root is measured and named, an unsupported root raises the refusal containing its own path.** | `test_the_cli_measures_a_leaf_memory_worktree_and_refuses_an_unsupported_root`; `check_missing_onboarding_main` | mcp/tests/test_memory_mode_removal.py:880-931; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:219-298 |
 | The module is declared in three evidence-lifecycle consumer lists: the shared curator-coherence support artifact's list and two further artifact lists. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:390-390 |
@@ -172,6 +172,8 @@ No cross-repository implementation evidence is required for these local refusal 
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 12 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_memory_mode_removal.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:30:32+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:195-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

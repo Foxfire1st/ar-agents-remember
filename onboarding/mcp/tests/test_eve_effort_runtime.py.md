@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | path | `mcp/tests/test_eve_effort_runtime.py` |
 | doc_type | `file-level-onboarding` |
 | governingOverview | `overview.md` |
@@ -110,14 +110,14 @@ was available for this module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes. | `REASONING_EFFORTS`; `PROVIDER_DEFAULT_EFFORT` | mcp/src/agents_remember/serving/eve_adapter.py:100-110; mcp/src/agents_remember/serving/eve_adapter.py:91-91 |
-| The real runtime process the cases start, and the launch environment the selected level is carried into. | `EveRuntimeProcess`; `resolve_runtime_spec`; `EveLaunchSelection`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-372; mcp/src/agents_remember/serving/eve_runtime_launch.py:312-347; mcp/src/agents_remember/serving/eve_runtime_launch.py:90-372 |
-| The recording provider boundary and the staged application root, which are what make the body the evidence. | `RecordedModelRequest`; `serve_recording_provider`; `staged_runtime_root`; `EVE_APPLICATION_ROOT`; `require_installed_eve_application` | mcp/tests/eve_adapter_test_support.py:440-465; mcp/tests/eve_adapter_test_support.py:467-574; mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:37-37; mcp/tests/eve_adapter_test_support.py:42-61 |
-| The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support. | `FixtureCarrierRequest`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_capsule_test_support.py:559-572; mcp/tests/eve_capsule_test_support.py:573-628; mcp/tests/eve_capsule_test_support.py:630-641; mcp/tests/eve_capsule_test_support.py:155-171 |
+| The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes. | `REASONING_EFFORTS`; `PROVIDER_DEFAULT_EFFORT` | mcp/src/agents_remember/serving/eve_adapter.py:91-91; mcp/src/agents_remember/serving/eve_adapter.py:100-108 |
+| The real runtime process the cases start, and the launch environment the selected level is carried into. | `EveRuntimeProcess`; `resolve_runtime_spec`; `EveLaunchSelection`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-413; mcp/src/agents_remember/serving/eve_runtime_launch.py:108-126; mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348 |
+| The recording provider boundary and the staged application root, which are what make the body the evidence. | `RecordedModelRequest`; `serve_recording_provider`; `staged_runtime_root`; `EVE_APPLICATION_ROOT`; `require_installed_eve_application` | mcp/tests/eve_adapter_test_support.py:439-464; mcp/tests/eve_adapter_test_support.py:467-573; mcp/tests/eve_adapter_test_support.py:37-37; mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:44-62 |
+| The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support. | `FixtureCarrierRequest`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_capsule_test_support.py:558-570; mcp/tests/eve_capsule_test_support.py:573-627; mcp/tests/eve_capsule_test_support.py:630-640; mcp/tests/eve_capsule_test_support.py:155-170 |
 | The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
-| The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1191 |
-| The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1361 |
-| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:250-250 |
+| The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1190 |
+| The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1359 |
+| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:286-286 |
 
 ## Cross-Repo References
 
@@ -126,9 +126,11 @@ a dependency rather than a sibling Agents Remember repository.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. | `EveEffortConsumerTests`; `_one_level` | eve_runtime/package.json:15-20; eve_runtime/README.md:25-25; mcp/tests/test_eve_effort_runtime.py:175-215; mcp/tests/test_eve_effort_runtime.py:108-163 |
+| The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. | `EveEffortConsumerTests`; `_one_level` | eve_runtime/package.json:15-20; eve_runtime/README.md:25-25; mcp/tests/test_eve_effort_runtime.py:108-163; mcp/tests/test_eve_effort_runtime.py:175-215 |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 7 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`eve_adapter.py`, `eve_adapter_test_support.py`, `eve_capsule_test_support.py`, `eve_runtime_client.py`, `eve_runtime_launch.py`, `test_eve_product_integration.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:26:12+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

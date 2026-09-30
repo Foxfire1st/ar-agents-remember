@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_next_step_address_binding.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:07+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -130,17 +130,17 @@ it pins.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement of D-13 and of the two fixes it pins. | "A next-step hint must describe the task the response addressed, never a process cursor." | mcp/tests/test_next_step_address_binding.py:1-20 |
-| **The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.** | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:30-58 |
+| **The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.** | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:58-97 |
 | The two field tuples the comparison reads. | `_RESPONSE_PATH_FIELDS`; `_ARGUMENT_PATH_FIELDS` | mcp/src/agents_remember/application/tool_response.py:22-28 |
 | **The contract-derived hint, which is why no global cursor can reach a caller.** | `compute_next_step` | mcp/src/agents_remember/application/next_step.py:110-131 |
 | One running lifecycle, so the linear half is the branch under test. | `_live_state` | mcp/tests/test_next_step_address_binding.py:50-59 |
-| One addressed contract, with the closeout state its hint is derived from. | `_contract` | mcp/tests/test_next_step_address_binding.py:48-73 |
+| One addressed contract, with the closeout state its hint is derived from. | `_contract` | mcp/tests/test_next_step_address_binding.py:62-87 |
 | The address-carrying envelope of the carrier D-13 was measured on. | `_status_response` | mcp/tests/test_next_step_address_binding.py:90-100 |
-| **The contradicting-address case: the hint is omitted, not forwarded.** | `test_a_hint_naming_another_contract_is_omitted_not_forwarded` | mcp/tests/test_next_step_address_binding.py:89-105 |
+| **The contradicting-address case: the hint is omitted, not forwarded.** | `test_a_hint_naming_another_contract_is_omitted_not_forwarded` | mcp/tests/test_next_step_address_binding.py:103-119 |
 | The positive control: the omission is a contradiction check, not blanket suppression. | `test_a_hint_naming_the_addressed_contract_is_kept_unchanged` | mcp/tests/test_next_step_address_binding.py:122-133 |
-| **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** | `test_two_addressed_contracts_in_sequence_yield_two_different_hints` | mcp/tests/test_next_step_address_binding.py:122-164 |
+| **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** | `test_two_addressed_contracts_in_sequence_yield_two_different_hints` | mcp/tests/test_next_step_address_binding.py:136-179 |
 | **The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.** | `test_an_envelope_with_no_address_has_its_hint_withheld`; `TaskDocResponse` | mcp/tests/test_next_step_address_binding.py:182-219; mcp/src/agents_remember/models/task_doc.py:138-138 |
-| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" |mcp/tests/test-evidence-lanes.toml:230-230|
+| The lane row this module was appended to. | "mcp/tests/test_next_step_address_binding.py" |mcp/tests/test-evidence-lanes.toml:275-275|
 
 ## Cross-Repo References
 
@@ -152,6 +152,8 @@ contracts under `tmp_path` and asserts one repository's own address binder.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_next_step_address_binding.py`, `tool_response.py`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:30:41+00:00: Generated citation repair: "mcp/tests/test_next_step_address_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:275-275. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.

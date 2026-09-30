@@ -5,14 +5,56 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L33 Review Triage Order And Change-Kind Badges, Inert Until The Cutover
+
+`260928-MIK-L33` (MIK-R33, adopting ICR-R32@v1 with the storage substitutions of D18) makes the reviewer's family tree
+say what kind of recorded change brings each family and member occurrence into review, list the changes first
+without hiding unchanged siblings, and move between them with `j`/`k`.
+
+- **Where:**
+  - `application/review_change_kinds.py` (new): the facts, on the server, for the members a roster page returned,
+    over MIK-L32's lane (no second hunk classifier); `models/knowledge/review_change_kinds.py` (new): their
+    vocabulary and validators; `review_family_context.py`: the entry's optional `change_kinds`;
+    `knowledge_review.py`: one call; `knowledge_worklist/classify.py`: the public `carried_mechanically` and
+    `reanchored`; `review_lane_classification.py`: `changes_lines` exported.
+  - Dashboard: `data/reviewFamily.ts` (the mirror); `panels/review/changeTriage.ts`, `ChangeBadges.tsx`,
+    `changeTraversal.ts`, `triageOrderPreference.ts`; hooks in `FamilyTree.tsx`, `familyWalkMerge.ts`,
+    `FamilyReviewCenter.tsx`, `ReviewSurface.tsx`, `ReviewWorkspace.tsx`, `MarkerTargetState.tsx`; the keymap's
+    `review` zone and `REVIEW_CHORDS`; the `?` page's group.
+- **Architect rulings** (`33_review-triage-order-and-change-kind-badges.json`): 15:11:20 start; 16:22:22 worker items
+  1–11 (5, 6b, 4 and 9 changed); 17:47:43 review R1 (F1–F4, the notes, the landing order and merge plan); 18:57:45
+  review R2; 21:41:02 the merge round with MIK-L34 (and `j` at 390 px reveals the centre); 21:55:02 review R3 (R3-1
+  fixed, R3-2 notes, R3-3 to curation). Recorded in the panels and application overviews and on the cards.
+- **Candidate invariants (not ingested; no speculative ingestion):** (1) change-kind facts are computed on the server,
+  for returned members only, from recorded comparison facts, with the hunk intersection only from MIK-L32's
+  classification and never recomputed by the client; (2) unreadable or partial knowledge produces `unknown` with a
+  stated reason, never `unchanged` or a complete-looking total; (3) changed intent text is never `unchanged`, even at
+  the same revision; (4) triage order never hides unchanged siblings, and traversal never forces unreturned pages to
+  load; (5) each fact is stated once per node, visually and to assistive technology.
+- **Inert before MIK-R37:** only a converted leaf's tree comparison carries `change_kinds`; the worker's 29
+  unconverted reads are identical to base once the null field is dropped, and this curation's `memory_quality_check`
+  runs returned no worklist.
+- **Tests and evidence:** `test_review_change_kinds.py` (12, lane row `:128`); `changeTriage.test.ts` (12),
+  `FamilyTree.triage.test.tsx` (18), `FamilyTree.triageReal.test.tsx` (3), `ReviewSurface.triage.test.tsx` (1),
+  `ReviewSurface.triageMarkers.test.tsx` (2), and the extended `shell.test.tsx` and `ReviewSurface.markers.test.tsx`;
+  22 captured bodies with receipts (MIK-L34's twelve re-captured). Real data on scratch clones
+  (`notes/reports/260928-MIK-L33-evidence/`): FAM-R6R095RW reads 2 intent · 6 impl · 1 membership · 0 unknown of 24
+  after curation, and every hunk-established fact is a link in the lane's per-file response (2 of 2). Checks on the
+  merged tree: the whole vitest suite 1,951 passed; the reviewer's focused pytest 150 passed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The facts and where they come from. | "The facts are computed here, on" | mcp/src/agents_remember/application/review_change_kinds.py:1-33 |
+| Their vocabulary. | "The **primary** kind is the highest established fact in the precedence" | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:1-34 |
 
 ## 260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover
 
@@ -301,7 +343,7 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
 | The writer's rows, the refresh and its link states. | "The writer's reconsideration rows (MIK-R14 rule 4)" | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:1-54 |
 | The manifest lookup. | `requirement_approval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209 |
 | The reorder guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-139 |
-| The lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
+| The lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:131-131 |
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -533,7 +575,7 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 | The two kinds and the coverage lookup. | "MIK-R10's unexplained changes" | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:1-35 |
 | The subjects and the gate predicate. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
 | A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). | "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:601-613 |
-| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:129-129 |
+| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -585,7 +627,7 @@ and the archive hook that deletes a task's review artifacts.
 | The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
 | The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:36-36 |
 | The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
-| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:128-128 |
+| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:129-129 |
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -1310,6 +1352,10 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33:** new top section "260928-MIK-L33 Review Triage Order And Change-Kind Badges, Inert Until The Cutover" (where, the rulings, the five candidate invariants, inertness, tests and evidence); two rows. The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
+- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:138-138. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **The L32 review F5 carry is resolved** (ruling 2026-09-30T13:07:38). MIK-L34 (per-hunk intent markers, dashboard only) marks every owner hunk a lane window draws, a neighbour shown only as context included, and corrects the "the full file shows every one" wording; the L32 section's F5 clause now says so, and its Q5 clause records that L34 kept L32's membership mapping as it is (each state maps directly onto a marker target; ruling 2026-09-30T16:19:34 Q2 left the response unchanged). This leaf changed no file under `mcp/`, so the route needs no section of its own; the leaf's section is in `dashboard/src/panels/overview.md`.
 - 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover" at the top: where the leaf lands (the new `application/knowledge_gate/` package, `worktrees/knowledge_gate.py`, `rules_history.py`, `kernel/recorded_reads.py`, and every route), every ruling of `09_mandatory-invariant-closeout-gate.json` (the carried obligations and D29 of 13:15:47; 14:38:47 gaps 1–4 with gap 1 carried to L37; 15:09:25; 16:07:55 F1–F9 and the sync-merge rule; 16:08:08 carried to L37; 17:59:48 R2; 19:16:07 R3), the six candidate invariants, inertness and its three exceptions, and the tests and real-data evidence; five rows. **Reopened claims reworded:** L10's delete-only row (now both sides, anchored on `_linked`), L30's gate-chooser row and L08's recompute row; this pass's generated bullets for those three were removed. The other moved rows were re-pointed by the installed fixer (bullets kept) or by the exact base-to-staged line shift. No verification stamp was advanced. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded rows were re-anchored on line-exact quotes ("def _linked(" with the `_linked` condition line, "def leaf_onboarding_trace_sides(", "def recompute_leaf_worklist("); no committed history line was edited.
 - 2026-09-30T17:58:19+00:00: Generated citation repair: `requirement_approval` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1598,7 +1644,7 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 | --- | --- | --- |
 | The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
 | **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:507-518 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1020-1043; mcp/src/agents_remember/application/knowledge_review.py:965-1017 |
+| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1020-1043; mcp/src/agents_remember/application/knowledge_review.py:968-1020 |
 | **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-348 |
 | The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
 | The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
@@ -1646,7 +1692,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:137-137 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -1716,7 +1762,7 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
 | The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:102-126; mcp/src/agents_remember/application/knowledge_first_generation.py:157-187 |
 | **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1619-1640; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1561-1616; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
 | **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:497-521; mcp/src/agents_remember/cli/knowledge_ingest.py:524-562; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516 |
-| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:256-317; mcp/src/agents_remember/application/knowledge_review.py:334-574 |
+| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:257-318; mcp/src/agents_remember/application/knowledge_review.py:335-577 |
 | The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1899-2013; mcp/tests/test_knowledge_review_resolution_and_route.py:134-172 |
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
@@ -3428,7 +3474,7 @@ its own positive control.
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2148 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2177 |
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms
@@ -3572,7 +3618,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:463-463; mcp/src/agents_remember/serving/_app_common.py:474-474 |
 | The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-300 |
 | The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:94-103; mcp/src/agents_remember/cli/dashboard.py:105-113 |
-| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:107-107; mcp/src/agents_remember/application/review_candidate_resolution.py:113-113; mcp/src/agents_remember/application/review_candidate_resolution.py:114-114; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
+| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:107-107; mcp/src/agents_remember/application/review_candidate_resolution.py:113-113; mcp/src/agents_remember/application/review_candidate_resolution.py:114-114; mcp/src/agents_remember/application/knowledge_review.py:132-146; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
 | **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:524-562 |
 | **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** | `review_namespace`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:391-430; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316|
 | **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` |mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:370-388|

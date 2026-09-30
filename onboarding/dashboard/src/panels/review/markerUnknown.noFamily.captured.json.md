@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/markerUnknown.noFamily.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 **A real `GET /api/review/intent` review of INV-413DC8XE (selector `4ec11f34…`) on comparison 3 of the MIK-L34 scratch
-leaf** (27,246 bytes; test evidence for `ReviewSurface.markers.test.tsx`).
+leaf** (27,247 bytes; test evidence for `ReviewSurface.markers.test.tsx` and, since MIK-L33's merge round, `ReviewSurface.triageMarkers.test.tsx`).
 
 ## Code Commentary
 
@@ -29,13 +29,15 @@ leaf** (27,246 bytes; test evidence for `ReviewSurface.markers.test.tsx`).
   review's `no_family_recorded` kept in its details and the centre line naming both (ruling Q3); following the
   before-side confirmed occurrence shows the landed `No recorded family`.
 
+- **Re-captured in MIK-L33's merge round** over the merged tree (MIK-L34 landed; the review route now carries `change_kinds`). Against MIK-L34's capture it differs only by scratch paths, the converted memory commit, timestamps and comparison digests (the reviewer's structural diff, review R3 point 5).
+
 ### Conventions
 
 Keep the captured bytes and their receipt intact; a recapture rewrites both.
 
 ### Invariants And Boundaries
 
-The body describes the scratch copies under `/tmp/mik-l34-real` (code `59daf505` with the scratch leaf's edits; memory `76f5e91e1` converted with the L34 worktree's `knowledge-convert` and committed as scratch `main` `2e3810ed`), not current project knowledge; its line numbers, blobs and keys are the scratch tree's.
+The body describes the scratch copies under `/tmp/mik-l33-merge`: MIK-L34's scenario, rebuilt by MIK-L33's merge round with MIK-L34's own scripts (code `59daf505` with the scratch leaf's edits and the same curated blobs `9019bea5` and `b6d07091`; memory `76f5e91e1` converted and committed as scratch `main` `31ab7016`), not current project knowledge; its line numbers, blobs and keys are the scratch tree's.
 
 ### Todos
 
@@ -66,4 +68,5 @@ No domain documentation source is configured; the requirement packet `MIK-R34@v1
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-L33's merge round** (review R3-3): the body was re-captured over the merged tree from MIK-L34's scenario rebuilt under `/tmp/mik-l33-merge` (scratch `main` `31ab7016`); it differs from MIK-L34's capture only by scratch paths, the memory commit, timestamps and comparison digests; the byte count and the scratch sentence are updated, and the Purpose names the new consumer `ReviewSurface.triageMarkers.test.tsx`. Its sha256 and byte count match the updated receipt (checked by this curation). The rows' ranges were normalised by the installed fixer (its bullets kept).
 - 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new captured no-family review (comparison 3). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/intentMarkerScope.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
+| lastUpdated | 2026-09-30T22:35:02+02:00 |
+| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
+| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -80,13 +80,13 @@ No domain documentation source is configured; the requirement packet `MIK-R34@v1
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own statement: a tree comparison provides the scope; a dataset review or a diff outside the workspace has none. | "Only a tree comparison provides a scope." | dashboard/src/panels/review/intentMarkerScope.ts:1-6 |
-| Where a followed marker sat, the workspace's moves, a pane's read and the scope's value. | `MarkerAt`; `MarkerMoves`; `MarkRead`; `IntentMarkerScopeValue` | dashboard/src/panels/review/intentMarkerScope.ts:17-54 |
-| A return that never finds its mark stops waiting. | `RETURN_WINDOW_MS` | dashboard/src/panels/review/intentMarkerScope.ts:56-57 |
-| A partial or unmeasured inventory counts as partial (review R2). | `markerInventory` | dashboard/src/panels/review/intentMarkerScope.ts:66-76 |
-| The scope: listed paths, origin, target and return only for the same comparison; follow, back and settle. | `useIntentMarkerScope` | dashboard/src/panels/review/intentMarkerScope.ts:78-129 |
-| One read per listed path per scope; a failed read forgotten. | `useClassificationCache` | dashboard/src/panels/review/intentMarkerScope.ts:131-172 |
-| A pane's read: the caller's classification, `unlisted` under a partial inventory, the kept answer, or loading. | `useMarkClassification`; `shownRead` | dashboard/src/panels/review/intentMarkerScope.ts:174-221 |
-| The workspace that provides it. | "<IntentMarkerScope.Provider value={markers}>" | dashboard/src/panels/review/ReviewWorkspace.tsx:262-262 |
+| Where a followed marker sat, the workspace's moves, a pane's read and the scope's value. | `MarkerAt`; `MarkerMoves`; `MarkRead`; `IntentMarkerScopeValue` | dashboard/src/panels/review/intentMarkerScope.ts:18-22; dashboard/src/panels/review/intentMarkerScope.ts:26-29; dashboard/src/panels/review/intentMarkerScope.ts:34-35; dashboard/src/panels/review/intentMarkerScope.ts:37-52 |
+| A return that never finds its mark stops waiting. | `RETURN_WINDOW_MS` | dashboard/src/panels/review/intentMarkerScope.ts:57-57 |
+| A partial or unmeasured inventory counts as partial (review R2). | `markerInventory` | dashboard/src/panels/review/intentMarkerScope.ts:68-76 |
+| The scope: listed paths, origin, target and return only for the same comparison; follow, back and settle. | `useIntentMarkerScope` | dashboard/src/panels/review/intentMarkerScope.ts:91-129 |
+| One read per listed path per scope; a failed read forgotten. | `useClassificationCache` | dashboard/src/panels/review/intentMarkerScope.ts:133-172 |
+| A pane's read: the caller's classification, `unlisted` under a partial inventory, the kept answer, or loading. | `useMarkClassification`; `shownRead` | dashboard/src/panels/review/intentMarkerScope.ts:176-211; dashboard/src/panels/review/intentMarkerScope.ts:214-221 |
+| The workspace that provides it. | "<IntentMarkerScope.Provider value={markers}>" | dashboard/src/panels/review/ReviewWorkspace.tsx:281-281 |
 | The scope cases: one read per surface, never an unlisted path; partial and unmeasured inventories. | "classifies a listed path once per surface, and never an unlisted one"; "counts an inventory that is partial, or not measured at all, as partial (review R2)" | dashboard/src/panels/review/intentMarkerScope.test.ts:22-76 |
 
 ## Cross-Repo References
@@ -96,6 +96,8 @@ No domain documentation source is configured; the requirement packet `MIK-R34@v1
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewWorkspace.tsx`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 6 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`intentMarkerScope.ts`). No claim wording changed, and no verification stamp was advanced.
+- 2026-09-30T20:22:07+00:00: Generated citation repair: "<IntentMarkerScope.Provider value={markers}>" repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new marker scope MIK-R34 adds, recording review R1 F4 (N11, the changed-path gate), F5 (the partial inventory), N3 (the target kept until Back) and the review R2 gap on unmeasured inventories. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
