@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -208,7 +208,7 @@ measurement of a generation**, because a forged record is internally consistent.
 | The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
 | The durable-evidence pair every rebinding is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
 | **The shipped capture owner whose add-all tree is the resolved source side.** | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:258-282 |
+| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:273-297 |
 | **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:356-378 |
 | **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** | `ComparisonReopen`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
 | **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574 |
@@ -227,6 +227,7 @@ that follows from a recorded absolute path is stated above.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 

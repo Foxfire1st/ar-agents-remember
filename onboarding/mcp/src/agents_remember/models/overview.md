@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -267,7 +267,7 @@ the invariant holds. No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional field and the docstring boundary. | `KnowledgeReadResponse`; "Proofs beside the view (MIK-R28 rule 4)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:27-31; mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89 |
+| The optional field and the docstring boundary. | `KnowledgeReadResponse`; "Proofs beside the view (MIK-R28 rule 4)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:27-31; mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
 
 ## 260928-MIK-L02 The Shared Continuation Token, And The Read Response's Page
 
@@ -279,7 +279,7 @@ the invariant holds. No input model changed.
   walk's effective ordering), the selection policy and version, the manifest digest, the position, the
   threshold, the code tree page 1 resolved at, and at most 64 queued seeds. It carries no local path
   (architect rulings 19:56:40 Q5 and Q6; 20:40:40 F2; the tree ID binding accepted at 21:32:34; the 64-seed
-  edge carried to L01).
+  edge carried to L01, which resolved it as the named refusal `seed_queue_exceeded`).
 - [`tools/knowledge_responses.py`](tools/knowledge_responses.py.md): `KnowledgeReadResponse.state` gains
   `"page"`, and the model gains the optional `page` and `threshold` fields, both absent for a database.
 - [`knowledge/projection_manifest.py`](knowledge/projection_manifest.py.md): the projection refusal closure
@@ -287,8 +287,8 @@ the invariant holds. No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one continuation token and what it binds. | `KnowledgeContinuation` | mcp/src/agents_remember/models/knowledge/continuation.py:72-113 |
-| The read response's page state and fields. | `KnowledgeReadResponse`; `page` | mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89 |
+| The one continuation token and what it binds. | `KnowledgeContinuation` | mcp/src/agents_remember/models/knowledge/continuation.py:75-116 |
+| The read response's page state and fields. | `KnowledgeReadResponse`; `page` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
 | The projection refusal code for a row too large for one artifact. | `OVERSIZED_ROW` | mcp/src/agents_remember/models/knowledge/projection_manifest.py:124-124 |
 
 ## 260928-MIK-L08 The Integrity And Sync Responses Carry The Worklist
@@ -307,7 +307,7 @@ responses are unchanged. No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integrity response's optional fields. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:124-124; mcp/src/agents_remember/models/tools/knowledge_responses.py:159-159 |
+| The integrity response's optional fields. | "class KnowledgeIntegrityCheckResponse(ToolResponse):"; "worklistState: Literal[" | mcp/src/agents_remember/models/tools/knowledge_responses.py:131-131; mcp/src/agents_remember/models/tools/knowledge_responses.py:166-166 |
 | The sync response's worklist summary. | "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" | mcp/src/agents_remember/models/worktree.py:492-507 |
 
 ## 260928-MIK-L03 The Read Response Carries Optional Currentness
@@ -321,7 +321,7 @@ never refuses the read (N2). No input model changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional field and its docstring paragraph. | `currentness`; "Currentness beside the view (MIK-R03)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:33-33; mcp/src/agents_remember/models/tools/knowledge_responses.py:87-87 |
+| The optional field and its docstring paragraph. | `currentness`; "Currentness beside the view (MIK-R03)." | mcp/src/agents_remember/models/tools/knowledge_responses.py:33-33; mcp/src/agents_remember/models/tools/knowledge_responses.py:93-93; mcp/src/agents_remember/models/tools/knowledge_responses.py:87-87 |
 
 ## 260928-MIK-L30 What The `onboarding_trace` Row Means
 
@@ -378,7 +378,27 @@ ID through `knowledge_files/ids.py`'s `derived_record_id` (ruling 23:04:57 F2), 
 | The invariant criteria's meanings, and which two the validator checks. | `InvariantAdmission` | mcp/src/agents_remember/models/knowledge_files/shapes.py:386-396 |
 | The derivation that identifies an export. | `derived_record_id` | mcp/src/agents_remember/models/knowledge_files/ids.py:121-126 |
 
+## 260928-MIK-L01 The `leaf` Response Kind, The Public Queue Cap, And The Optional `families`
+
+**Route impact (MIK-R01@v2).** Two model modules change, additively:
+
+- [`knowledge/continuation.py`](knowledge/continuation.py.md): `PagedResponse` gains `"leaf"`, the response
+  kind of the family-complete leaf read of a seed path, which resumes on the `source_context` view. The queue
+  cap is public as `MAX_QUEUED_SEEDS` (64), because `knowledge_paging/block_pages.py` refuses a longer tail by
+  name, `seed_queue_exceeded`, instead of minting it (the L02 R2-1 edge; ruling 2026-09-29 23:21:57). The token
+  still carries no local path (carried 21:17:07).
+- [`tools/knowledge_responses.py`](tools/knowledge_responses.py.md): a docstring paragraph names the leaf read
+  (a `source_context` read of a path is `state: "page"` whose `payload.rows` are the leaf rows), and the model
+  gains the optional `families` field, the `invariant` view's containing families by ID and title (rule 7).
+  Both are absent for a database.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The response kinds a token pages, and the public queue cap. | `PagedResponse`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/models/knowledge/continuation.py:70-72 |
+| The optional `families` field on the read response. | `KnowledgeReadResponse`; `families` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
+
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The `leaf` Response Kind, The Public Queue Cap, And The Optional `families`" after L27's, with two rows (the `leaf` kind and `MAX_QUEUED_SEEDS`, ruling 23:21:57; the `families` field, rule 7), and noted in L02's section that the 64-seed edge is resolved as `seed_queue_exceeded`. The other rows were projected by the installed fixer.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Criteria's Meanings" (the `shapes.py` docstring change, no model change; rulings Q3 and F2), with two rows. No verification stamp was advanced.
 - 2026-09-29T21:49:06+00:00: Generated citation repair: `HistoryFile` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:381-425. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:49:06+00:00: Generated citation repair: `frozen_history_violation` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:461-469. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
@@ -2969,7 +2989,7 @@ are unchanged, and no other model this route owns changed.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The new field, on the strict response model that declares it.** | `ReadArFilesResponse`; `published_intent` | mcp/src/agents_remember/models/read_files.py:56-80; mcp/src/agents_remember/models/read_files.py:74-74 |
-| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:442-457 |
+| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:457-472 |
 | The strict envelope base the field joined. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
 | The registry entry for the tool whose payload carries the field; unchanged by this leaf. | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
 
@@ -3322,7 +3342,7 @@ new `memoryTree` and per-page `indexState` travel in it without a new declaratio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional memory-tree fields on the three responses. | `KnowledgeReadResponse`; `KnowledgeDiffResponse`; `KnowledgeProjectResponse` | mcp/src/agents_remember/models/tools/knowledge_responses.py:66-89; mcp/src/agents_remember/models/tools/knowledge_responses.py:105-121; mcp/src/agents_remember/models/tools/knowledge_responses.py:163-177 |
+| The optional memory-tree fields on the three responses. | `KnowledgeReadResponse`; `KnowledgeDiffResponse`; `KnowledgeProjectResponse` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96; mcp/src/agents_remember/models/tools/knowledge_responses.py:170-184; mcp/src/agents_remember/models/tools/knowledge_responses.py:112-128 |
 | The docstring rule: a memory tree is named, never hidden, and a partial index is never presented as complete. | "A memory tree is named, never hidden" | mcp/src/agents_remember/models/tools/knowledge_responses.py:12-17 |
 
 ## Update History

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory/knowledge/read_refusals.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `mcp/src/agents_remember/memory/overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,7 @@ Six factories, and the distinction they carry is the one a caller actually acts 
 | Factory | Code | The fact |
 | --- | --- | --- |
 | `selector_absent_refusal` | `selector_absent` | the seed names an identity or revision the snapshot does not hold — the caller asked the **wrong question** |
-| `registration_absent_refusal` | `registration_absent` | the seed is a **path with no recorded realization claim** — a right question whose answer is that nothing is recorded there yet (zero recorded counts) |
+| `registration_absent_refusal` | `registration_absent` | the seed is a **path with no recorded realization claim** (or, with `with_proofs`, no realization or proof claim) — a right question whose answer is that nothing is recorded there yet (zero recorded counts) |
 | `page_budget_too_small_refusal` | `page_budget_too_small` | the selection is valid and one indivisible item does not fit; `observed` is the exact minimum and the **position is unchanged**, so raising the budget re-reads the same item rather than skipping it |
 | `continuation_binding_mismatch_refusal` | `continuation_binding_mismatch` | the cursor binds another snapshot, context, selector, policy, schema, manifest or a position outside the selection; **no items returned** |
 | `snapshot_unavailable_refusal` | `snapshot_unavailable` | the selected snapshot cannot be obtained at all: absent namespace row, another schema generation, another logical digest, unreadable file. The mirror of the two absence codes — nothing is known about the graph because the dataset itself is missing |
@@ -67,6 +67,13 @@ an `operation: KnowledgeOperation = _OPERATION` keyword whose default is this mo
 default keeps every existing caller byte-identical; `registration_absent_refusal`,
 `page_budget_too_small_refusal` and `continuation_binding_mismatch_refusal` still name `_OPERATION`
 unconditionally, and the six-code vocabulary itself is unchanged.
+
+**`registration_absent_refusal` names proof claims for the family-complete leaf read (260928-MIK-L01,
+ruling N6 of 2026-09-30 00:08:39).** It takes `with_proofs: bool = False`. The leaf read of a converted tree
+(`application/knowledge_leaf/pages.py`) seeds on realization *and* proof entries (ruling Q3 of 2026-09-29
+23:21:57) and passes `True`, so its detail, `expected` and `next_action` say "realization or proof claim".
+The default wording, which the recorded-scope read and the diff use, is byte-for-byte unchanged, so the
+database read and every existing caller keep their exact message.
 
 ### Conventions
 
@@ -110,12 +117,13 @@ No domain documentation source is configured for this repository (`system/source
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The two absence codes, separated by which question the caller got wrong.** | `selector_absent_refusal`; `registration_absent_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-57; mcp/src/agents_remember/memory/knowledge/read_refusals.py:60-79 |
-| **The budget refusal that reports the exact minimum and leaves the position unchanged.** | `page_budget_too_small_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:82-108 |
-| **The binding refusal: a page assembled from two snapshots is not a page of either.** | `continuation_binding_mismatch_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:111-135 |
-| **The snapshot-unavailable refusal, which is also what an unreadable schema generation surfaces as.** | `snapshot_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:138-156 |
-| The execution-bound refusal, so a partial selection with an invented total is unrepresentable. | `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-177 |
-| The shared factory and facts model this module composes rather than re-declares. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:57-77; mcp/src/agents_remember/memory/knowledge/refusals.py:48-54 |
+| **The two absence codes, separated by which question the caller got wrong.** | `selector_absent_refusal`; `registration_absent_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-61; mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-87 |
+| **MIK-R01: the leaf read's wording names proof claims too; the default wording is unchanged (ruling N6).** | `with_proofs`; "realization or proof claim" | mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-87 |
+| **The budget refusal that reports the exact minimum and leaves the position unchanged.** | `page_budget_too_small_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:90-116 |
+| **The binding refusal: a page assembled from two snapshots is not a page of either.** | `continuation_binding_mismatch_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:119-143 |
+| **The snapshot-unavailable refusal, which is also what an unreadable schema generation surfaces as.** | `snapshot_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:146-170 |
+| The execution-bound refusal, so a partial selection with an invented total is unrepresentable. | `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:173-193 |
+| The shared factory and facts model this module composes rather than re-declares. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:47-54; mcp/src/agents_remember/memory/knowledge/refusals.py:57-77 |
 | **The six codes and the one operation this leaf added to the shared vocabulary.** | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:161-232; mcp/src/agents_remember/models/knowledge/result.py:36-157 |
 | **The node that measures the persisted-nothing property at a later page as well as at the first.** | "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged" | mcp/tests/test_knowledge_read_scope.py:1001-1058 |
 | **The node that measures a refused read of a real database leaving the file byte-identical.** | "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" | mcp/tests/test_knowledge_read_boundaries.py:954-988 |
@@ -130,6 +138,7 @@ No cross-repository behavior is implemented in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **`registration_absent_refusal` gains `with_proofs` (ruling N6).** Added a Logic paragraph and one row, and extended the factory table's `registration_absent` fact. The default wording is byte-for-byte unchanged; the other rows were normalised by the installed fixer.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 - 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. Three rows were wrong. The shared-helper row had `refusal` and `RefusalFacts` crossed; it now cites `refusals.py:57-77` and `refusals.py:48-54`. The vocabulary row carried five citations for two constructs, three of which were comment or member lines inside the operation literal; it now pairs `KnowledgeRefusalCode` with `result.py:161-232` and `KnowledgeOperation` with `result.py:36-157` (each literal's own extent). The byte-identical-read node was cited at `test_knowledge_read_boundaries.py:944-944`, a line the test no longer occupies; it now cites the node's own extent, `:954-988`. Every other row was re-checked and stands. No claim was deleted or softened. The stamp is unchanged because `5e4eb651`'s content for this file is byte-identical to `e7998504` (`git diff 5e4eb651 HEAD` is empty).- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical" repointed to mcp/tests/test_knowledge_read_boundaries.py:944-944. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.

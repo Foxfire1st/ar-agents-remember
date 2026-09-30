@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee` |
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,10 +35,11 @@ builders import application entry point functions directly from their domain mod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1215-1218 |
+| The overview hot path summarizes guarded commit-message and forwarding boundaries. | "## Hot Path Summary" | onboarding/mcp/src/agents_remember/application/overview.md:1218-1221 |
 | Public payload builders import application entry points from their owning modules. | "from .benchmark import codex_benchmark_prepare_payload"; "from agents_remember.application.benchmark_tools import (" | mcp/src/agents_remember/mcp/tools/__init__.py:12-13; mcp/src/agents_remember/mcp/tools/benchmark.py:7-16 |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. The memory-relative citation into `application/overview.md` (`## Hot Path Summary`) moved by exactly three lines with the two generated-repair bullets and the one history entry this pass added above it in that overview (`1215-1218` → `1218-1221`).
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): No content impact: citation-only repair. The memory-relative citation into `application/overview.md` (`## Hot Path Summary`) moved down two lines with this pass's history lines in that overview (the fixer's generated bullet and the L06 entry) (`1213-1216` → `1215-1218`). Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. The memory-relative citation into `application/overview.md` (`## Hot Path Summary`) moved with this pass's history lines in that overview (`1210-1213` → `1213-1216`). Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged; its memory-relative citation into `application/overview.md` moved down four lines by this pass's additions to that overview's Update History (its L03 entry and the fixer's generated bullets) (`1206-1209` → `1210-1213`, the same `## Hot Path Summary` section). No claim or anchor changed.

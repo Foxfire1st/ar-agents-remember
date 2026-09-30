@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_knowledge_review_attributed_source_content.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ No domain documentation source is configured for this repository (`system/source
 | **Comparison isolation and historical bytes.** | `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one`; `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes`; `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` | mcp/tests/test_knowledge_review_attributed_source_content.py:167-197; mcp/tests/test_knowledge_review_attributed_source_content.py:200-247; mcp/tests/test_knowledge_review_attributed_source_content.py:250-269 |
 | **The two review-fix cases: exact spelling, and a link scope size cannot fail or an unread half cannot negate.** | `test_a_padded_spelling_is_never_admitted_as_attributed_context`; `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`; `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent` | mcp/tests/test_knowledge_review_attributed_source_content.py:272-296; mcp/tests/test_knowledge_review_attributed_source_content.py:299-323; mcp/tests/test_knowledge_review_attributed_source_content.py:326-350 |
 | The population paths the fixture's knowledge links. | `INTEGRATION_PATH`; `RESOLUTION_PATH`; `UNPARSED_PATH` | mcp/tests/read_scope_test_support.py:115-115; mcp/tests/read_scope_test_support.py:119-119; mcp/tests/read_scope_test_support.py:125-125 |
-| The lane row and the read-scope consumer row this module adds. | "mcp/tests/test_knowledge_review_attributed_source_content.py" | mcp/tests/test-evidence-lanes.toml:139-139; mcp/tests/evidence-lifecycle.toml:1526-1526 |
+| The lane row and the read-scope consumer row this module adds. | "mcp/tests/test_knowledge_review_attributed_source_content.py" | mcp/tests/test-evidence-lanes.toml:140-140; mcp/tests/evidence-lifecycle.toml:1527-1527 |
 | The owners under test. | `admit_source_path`; `recorded_realization_link` | mcp/src/agents_remember/application/review_source_admission.py:86-128; mcp/src/agents_remember/application/review_source_realization_link.py:109-152 |
 
 ## Cross-Repo References
@@ -106,6 +106,7 @@ No cross-repository behavior is measured in this file.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `evidence-lifecycle.toml` and `test-evidence-lanes.toml`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): No content impact: citation-only repair. Ranges into `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R30's line insertions (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-working line map. Claim wording unchanged. No verification stamp was advanced.

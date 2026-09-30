@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,21 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
+
+**Route impact (MIK-R01@v2), one additive keyword.** The family-complete leaf read of a converted tree
+(`application/knowledge_leaf/`) seeds on realization *and* proof entries at a path (ruling Q3 of 2026-09-29
+23:21:57), so a path with neither is `registration_absent` with wording that says so:
+[`knowledge/read_refusals.py`](knowledge/read_refusals.py.md)'s `registration_absent_refusal` takes
+`with_proofs: bool = False`, and the leaf read passes `True` (ruling N6 of 2026-09-30 00:08:39). The default
+wording, used by the recorded-scope read and the diff, is byte-for-byte unchanged. Nothing else on this route
+changed: the leaf read reaches the derived index only through `KnowledgeIndex`'s existing answers
+(`entries_at_path`, `invariant`, `family`, `record`, `text_id`), with no `INDEX_FORMAT` change.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The absence refusal, naming proof claims when the leaf read asks. | `registration_absent_refusal`; `with_proofs` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-87 |
 
 ## 260921-ICR-L57 The Observation Row Codec Is Its Own Module, And `evidence_records` Still Answers For It
 
@@ -1251,11 +1266,11 @@ one leaf's curation pass.
 | **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** | `_page_counts` | mcp/src/agents_remember/memory/knowledge/read.py:842-866 |
 | The count model that refuses its own arithmetic contradiction at construction. | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:370-414 |
 | **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** | `observe_anchor`; `_confined_posix_relative`; `require_plain_git_path` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:130-192; mcp/src/agents_remember/memory/knowledge/read_anchors.py:558-584; mcp/src/agents_remember/models/knowledge/base.py:59-92 |
-| The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-61; mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-83; mcp/src/agents_remember/memory/knowledge/read_refusals.py:86-112; mcp/src/agents_remember/memory/knowledge/read_refusals.py:115-139; mcp/src/agents_remember/memory/knowledge/read_refusals.py:142-166; mcp/src/agents_remember/memory/knowledge/read_refusals.py:169-189 |
+| The read's refusal vocabulary, one factory per observable failure point. | `selector_absent_refusal`; `registration_absent_refusal`; `page_budget_too_small_refusal`; `continuation_binding_mismatch_refusal`; `snapshot_unavailable_refusal`; `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-61; mcp/src/agents_remember/memory/knowledge/read_refusals.py:64-87; mcp/src/agents_remember/memory/knowledge/read_refusals.py:90-116; mcp/src/agents_remember/memory/knowledge/read_refusals.py:119-143; mcp/src/agents_remember/memory/knowledge/read_refusals.py:146-170; mcp/src/agents_remember/memory/knowledge/read_refusals.py:173-193 |
 | **The one decoder a read page and the logical digest share.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
 | The read's path lookup, which is how a path seed selects. | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
 | The edge lookup the directly containing family set is derived from. | `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
-| The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:144-220; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:634-650 |
+| The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). | `read_knowledge_scope`; `open_read_context`; `read_row_counts` | mcp/src/agents_remember/application/knowledge_read.py:144-166; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:634-650 |
 | **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** | "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family"; "test_a_page_budget_of_one_item_still_advertises_the_second_location"; "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent" | mcp/tests/test_knowledge_read_scope.py:139-169; mcp/tests/test_knowledge_read_scope.py:547-657; mcp/tests/test_knowledge_read_paths.py:370-444 |
 | The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376; mcp/tests/evidence-lifecycle.toml:1148-1148 |
 | The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1286,7 +1301,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:272-272 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:275-275 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1586,6 +1601,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims" at the top, with one row (`with_proofs`, rulings Q3 and N6); the default wording is unchanged. The other rows were projected or normalised by the installed fixer.
+- 2026-09-29T23:57:40+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:275-275. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T20:01:17+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:272-272. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/knowledge_read.py`, `mcp/tests/test-evidence-lanes.toml`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the index's two proof lookups, `proofs_of` and `invariants_without_proof`, with the architect ruling that the "without proof" list is information, not a gate. One row. The reopened `_self_and_ancestors` claim was re-read against the working tree: the function is unchanged and sits 27 lines lower. The row now states what the function returns (the path and every ancestor, nearest first, ending with `.`), and its generated repair bullet was removed because the claim was reworded. Other rows citing files this change moved were re-pointed by the installed `memory-citations --fix`, with no wording change.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap_staging.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -164,7 +164,7 @@ this staging implements, and it is a task-tree document rather than a configured
 | The two result constructors, so one outcome is built in one place. | `_discarded`; `_cleanup_refusal` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:522-528; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:531-532 |
 | **The one bounded four-valued contents read both this cleanup and the run's readback use.** | `dataset_revisions`; `measured_empty`; `absence_established` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:80-89; mcp/src/agents_remember/application/knowledge_dataset_contents.py:91-100; mcp/src/agents_remember/application/knowledge_dataset_contents.py:103-182 |
 | The staged candidate's identity, read from the candidate file rather than inferred. | `read_dataset_identity` | mcp/src/agents_remember/application/knowledge_before_half.py:210-223 |
-| The ordinary read route's owner, which is what makes the destination comparison a read. | `resolve_published_intent`; `PublishedIntentSelection`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:280-280; mcp/src/agents_remember/application/published_intent.py:198-229 |
+| The ordinary read route's owner, which is what makes the destination comparison a read. | `resolve_published_intent`; `PublishedIntentSelection`; `PublishedIntentUnavailable` | mcp/src/agents_remember/application/published_intent.py:295-295; mcp/src/agents_remember/application/published_intent.py:213-244 |
 | The shipped candidate database path helper this staging names its candidate through. | `candidate_database_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-61 |
 | The identity type both the retained record and the cleanup comparison carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 
@@ -179,6 +179,7 @@ or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/published_intent.py`, moved by MIK-R02's changes (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
 - 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R03 moved lines in `published_intent.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). The fixer also normalised passing ranges in rows that cite files this leaf did not change; those ranges are measurement-true. No claim, anchor or source file of this card changed.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. `PublishedIntentSelection` gained an optional `memory_tree` field and `published_intent.py` grew by 160 lines (MIK-R23); the claim naming the ordinary read route's owner was re-read and still holds, and its ranges were re-pointed by exact base-to-working line mapping.

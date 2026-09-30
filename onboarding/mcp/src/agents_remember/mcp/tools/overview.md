@@ -6,13 +6,36 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` |
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
+
+A converted tree's `knowledge_read` with `view: "source_context"` and `sourcePath`, and every `leaf`
+continuation, is now the family-complete leaf read (MIK-R01): `_read_result` still hands the read to
+`knowledge_paging.tree_read.read_tree_page`, which routes it to `_leaf_response`, so this route's seam is
+unchanged. It returns the same selection under the same `manifestDigest` as the `read_ar_files` block (rule 6),
+the `invariant` view names its families in `families` (rule 7), and every refusal after the selection names the
+memory tree (rule 9, ruling N3 of 2026-09-30 00:08:39). [`knowledge.py`](knowledge.py.md) changes in two
+places:
+
+- **A named `repositoryRoot` with no commit, or that is not a repository, is refused**
+  `selected_input_unavailable` naming the root (`_NoCodeTreeError`, the obligation carried from L02 of
+  2026-09-29 21:17:07); it used to raise a pydantic `ValidationError`. It applies to database and tree reads
+  alike (review R1 N7: intended).
+- **`knowledge_project` reads a converted tree's views whole** (`ProjectionOptions(whole_views=...)`, the L02
+  Q7 obligation accepted by the ruling of 2026-09-29 23:21:57); a database projection is unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The named refusal of a root with no code tree. | `_NoCodeTreeError`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:269-281; mcp/src/agents_remember/mcp/tools/knowledge.py:298-303 |
+| A converted tree's projection reads each view whole. | "whole_views=selected.memory_tree is not None" | mcp/src/agents_remember/mcp/tools/knowledge.py:1081-1084 |
+| The leaf response the paged tree read routes to. | `_leaf_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:495-546 |
 
 ## 260928-MIK-L02 A Read Of A Converted Tree Is A Bounded Page
 
@@ -27,8 +50,8 @@ F1, F3, F8).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seam that pages a converted tree's read, and the per-page extras. | `read_tree_page`; `_tree_extras` | mcp/src/agents_remember/mcp/tools/knowledge.py:426-426; mcp/src/agents_remember/mcp/tools/knowledge.py:463-479 |
-| Converted-tree refusals state the threshold. | `knowledge_read_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:359-371 |
+| The seam that pages a converted tree's read, and the per-page extras. | `read_tree_page`; `_tree_extras` | mcp/src/agents_remember/mcp/tools/knowledge.py:448-448; mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
+| Converted-tree refusals state the threshold. | `knowledge_read_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:381-393 |
 
 ## 260928-MIK-L03 A Read Of A Converted Tree Carries Its Currentness
 
@@ -43,7 +66,7 @@ database read carries no `currentness`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read's currentness, at the walk's code tree, prepared once per page with the proofs. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:463-479 |
+| The read's currentness, at the walk's code tree, prepared once per page with the proofs. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
 
 ## 260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist
 
@@ -58,7 +81,7 @@ builder on this route changed; MIK-R26 reshapes the tool later.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The request value and the routing, with the worklist fields. | `IntegrityCheckRequest`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:638-647; mcp/src/agents_remember/mcp/tools/knowledge.py:653-662; mcp/src/agents_remember/mcp/tools/knowledge.py:672-681; mcp/src/agents_remember/mcp/tools/knowledge.py:684-721 |
+| The request value and the routing, with the worklist fields. | `IntegrityCheckRequest`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:638-647; mcp/src/agents_remember/mcp/tools/knowledge.py:653-662; mcp/src/agents_remember/mcp/tools/knowledge.py:672-681; mcp/src/agents_remember/mcp/tools/knowledge.py:694-703; mcp/src/agents_remember/mcp/tools/knowledge.py:706-743 |
 
 ## 260928-MIK-L28 A Read Of A Converted Tree Carries Its Proofs
 
@@ -73,8 +96,8 @@ index opened for the wrong key is the ordinary dataset refusal. No other builder
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A converted tree's page carries `proofs`, prepared once per page since MIK-R02. | `_tree_extras`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:463-479 |
-| A key mismatch is a selection failure. | `_SELECTION_FAILURES`; `IndexMismatchError` | mcp/src/agents_remember/mcp/tools/knowledge.py:272-279 |
+| A converted tree's page carries `proofs`, prepared once per page since MIK-R02. | `_tree_extras`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
+| A key mismatch is a selection failure. | `_SELECTION_FAILURES`; `IndexMismatchError` | mcp/src/agents_remember/mcp/tools/knowledge.py:287-295 |
 
 ## 260928-MIK-L12 The Mounted Refusal Names The File Route
 
@@ -85,7 +108,7 @@ by architect ruling, until MIK-R26 (leaf L26). No builder, request model or othe
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:530-549 |
+| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:552-571 |
 
 ## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
 
@@ -100,6 +123,10 @@ else on this route moved: the same five builders, the same declared kinds, the s
 sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name" at the top, with three rows: the leaf read reached through the unchanged seam (rules 6, 7 and 9; ruling N3), `_NoCodeTreeError` (carried 2026-09-29 21:17:07; review N7) and `whole_views` (ruling 23:21:57). **Reopened claim re-read and reworded:** the shared-selection row now says a named root with no code tree is refused by name. The other rows were projected by the installed fixer.
+- 2026-09-29T23:57:26+00:00: Generated citation repair: `knowledge_read_payload` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:381-393. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:57:26+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:552-571; mcp/src/agents_remember/mcp/tools/knowledge.py:567-567. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-29T23:57:26+00:00: Generated citation repair: `_index_complete` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:306-317. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T19:58:22+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:530-549; mcp/src/agents_remember/mcp/tools/knowledge.py:545-545. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** Added the section "260928-MIK-L02 A Read Of A Converted Tree Is A Bounded Page" at the top, with two rows. L03's section now says the currentness is computed once per page through `WalkCurrentness` at the walk's code tree, and its row cites `_tree_extras`, because this module no longer calls `read_currentness`. **L28's `proofs` row was re-read and reworded** the same way: the proofs are now prepared in `_tree_extras`. No verification stamp was advanced.
 - 2026-09-29T18:09:48+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:511-530; mcp/src/agents_remember/mcp/tools/knowledge.py:526-526. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1120,8 +1147,8 @@ read is bound to the index's constant namespace, so seeds are its projected UUID
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared selection and its refusal mapping. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:254-266; mcp/src/agents_remember/mcp/tools/knowledge.py:272-279; mcp/src/agents_remember/mcp/tools/knowledge.py:282-285 |
-| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:288-299 |
+| The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:254-266; mcp/src/agents_remember/mcp/tools/knowledge.py:287-295; mcp/src/agents_remember/mcp/tools/knowledge.py:298-303 |
+| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:306-317 |
 
 ## Update History
 - 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.

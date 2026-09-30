@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -171,7 +171,7 @@ task-tree document rather than a configured domain source.
 | The staging owner whose reader and writer this run uses. | `read_progress`; `write_progress`; `staged_candidate_directory`; `observed_now` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:230-233; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:236-239; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:253-323; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:393-415 |
 | **The bounded contents read the remaining list is derived from.** | `dataset_revisions`; `DatasetContents` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:55-100; mcp/src/agents_remember/application/knowledge_dataset_contents.py:103-182 |
 | The read route's own publication-readback owner. | `published_identity_read_back`; `DeclaredPublicationLocation`; `PublishedIdentityReadBack` | mcp/src/agents_remember/application/knowledge_publication_route.py:68-80; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
-| The resolved published intent, its unavailable form and the selection type. | `resolve_published_intent`; `PublishedIntentUnavailable`; `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:258-282; mcp/src/agents_remember/application/published_intent.py:206-223; mcp/src/agents_remember/application/published_intent.py:175-188 |
+| The resolved published intent, its unavailable form and the selection type. | `resolve_published_intent`; `PublishedIntentUnavailable`; `PublishedIntentSelection` | mcp/src/agents_remember/application/published_intent.py:273-297; mcp/src/agents_remember/application/published_intent.py:221-238; mcp/src/agents_remember/application/published_intent.py:188-203 |
 | The identity type the destination reading and the retained record carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 
 ## Cross-Repo References
@@ -185,6 +185,7 @@ names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
 - 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.

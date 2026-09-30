@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/knowledge_paging/block_pages.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
+| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
+| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,9 @@
 
 - `bounded_block(entries, envelope)`: seeds are laid out in request order. Each seed's page is cut against the rendered whole block: the seeds already laid out, this page, every block-level summary the envelope adds (the threshold and MIK-R03 `currentness`), and the entries still to come.
 - **The tail.** Once a seed's next row no longer fits (`cut.blocked`) or a seed's page is partial, that seed and every later one are the tail: each returns `state: "deferred"` with only its counts and a position-0 continuation. `_tail` sizes the tail so the seed's next row still has room.
-- **The collapse (ruling F2, 20:40:40).** When the deferred entries alone would not fit, the tail collapses into one deferred entry listing its `seeds`, whose single continuation walks every tail seed in turn (`PreparedScope.collapsed`).
+- **Two kinds of prepared seed (MIK-R01).** `Prepared` is `PreparedLeaf | PreparedScope`: a path seed is prepared by the family-complete leaf read, an identity seed by the scope read. Both have the same shape (`rows`, `position`, `render`, `deferred`, `collapsed`), so `bounded_block`, `_first_row` and `_placeholder` treat them alike.
+- **The collapse (ruling F2, 20:40:40).** When the deferred entries alone would not fit, the tail collapses (`_collapsed_tail`): the carried entries stay as they are, then **each kind's** prepared seeds collapse into one deferred entry listing its `seeds`, whose single continuation walks every tail seed of that kind in turn (`PreparedLeaf.collapsed`, `PreparedScope.collapsed`). Extracting `_collapsed_tail` keeps `_tail` at or below 10 under radon (L01 ruling N1, 2026-09-30 00:08:39).
+- **`seed_queue_exceeded` (carried from L02 R2-1, ruling 2026-09-29 21:32:34; accepted 23:21:57).** `_collapsed` refuses a kind whose tail would queue more than `MAX_QUEUED_SEEDS` (64) seeds behind its first: one entry with `state: "refused"`, `refusalCode: "seed_queue_exceeded"`, `seedCount`, `firstSeed` and a detail telling the caller to read at most 65 seeds per request. Nothing is minted for them, so nothing raises, and the entry's size does not grow with the seed count.
 - Entries that are not pages (a refusal, an unseedable path) are carried as they are.
 - `alone` renders a seed's page as a block of its own, so `oversized_row` is flagged only for a row too large on its own; a row that merely does not fit beside other seeds is deferred.
 
@@ -34,12 +36,12 @@
 
 ### Invariants And Boundaries
 
-- **The knowledge block stays within the threshold for any seed count the mounted tool can send** (`read_ar_files` caps files at 5; the reviewer measured 2 to 64 seeds within 7,499–7,901 tokens).
+- **The knowledge block stays within the threshold for any seed count.** `read_ar_files` caps files at 5; the L02 reviewer measured 2 to 64 seeds within 7,499–7,901 tokens, and since L01 a longer tail is the bounded `seed_queue_exceeded` entry (104 deep seeds stay within 8,000 tokens in `test_knowledge_leaf_read.py`).
 - Every seed's selection is returned exactly once across the block and its continuations.
 
 ### Todos
 
-- **R2-1 (carried to L01, ruling 21:32:34):** a direct helper call with more than 64 queued seeds raises a `ValidationError` while minting the collapsed token (`rest` is capped at 64). It is not reachable through `read_ar_files`.
+- **R2-1 resolved by L01:** a tail of more than 64 queued seeds is now refused by name, `seed_queue_exceeded`, instead of raising a `ValidationError` while minting (ruling 2026-09-29 23:21:57 chose the named refusal over chaining).
 - R2-2 (accepted as documented in c-04): a collapsed entry's `counts` carries `total` and `returned` but no `remaining`.
 
 ## Docs References
@@ -59,11 +61,13 @@ code and memory repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module statement: the block, the tail, the collapse. | "One bounded knowledge block for several seeds" | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:1-16 |
-| Laying seeds out within one threshold. | `bounded_block` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:39-66 |
-| Deferred entries, or one collapsed entry when those would not fit. | `_tail` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:69-80 |
-| A seed's next row, and the smallest form of a later entry. | `_first_row`; `_placeholder` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:83-95 |
-| The envelope the block is measured in. | `_tree_block` | mcp/src/agents_remember/application/published_intent.py:489-507 |
+| The module statement: the block, the tail, the collapse, the queue refusal, and the two kinds of seed. | "One bounded knowledge block for several seeds" | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:1-22 |
+| Laying seeds out within one threshold. | `bounded_block` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:52-79 |
+| Deferred entries, or the collapsed tail when those would not fit. | `_tail` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:82-91 |
+| The two prepared kinds, and the refusal code a tail too long for one queue earns. | `SEED_QUEUE_EXCEEDED`; `Prepared`; `BlockEntry` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:42-47 |
+| Each kind's tail collapsed into one entry, or refused `seed_queue_exceeded` beyond `MAX_QUEUED_SEEDS`. | `_collapsed_tail`; `_collapsed`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:94-100; mcp/src/agents_remember/application/knowledge_paging/block_pages.py:103-124 |
+| A leaf's or a scope's next row, and the smallest form of a later entry. | `_first_row`; `_placeholder` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:127-133; mcp/src/agents_remember/application/knowledge_paging/block_pages.py:136-139 |
+| The envelope the block is measured in. | `_tree_block` | mcp/src/agents_remember/application/published_intent.py:507-529 |
 
 ## Cross-Repo References
 
@@ -76,4 +80,5 @@ No meaningful cross-repo references found: the block holds one memory tree's pag
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 gives the block a second kind of prepared seed. The Logic names `Prepared` (leaf or scope), the per-kind collapse `_collapsed_tail` (ruling N1) and the named refusal `seed_queue_exceeded` (`_collapsed`, carried R2-1, ruling 23:21:57); the Invariants bullet and the R2-1 Todo now say the tail is bounded for any seed count. Three rows were added. **Two reopened claims were re-read and reworded:** the `_tail` row (the collapse now goes through `_collapsed_tail`) and the `_first_row`/`_placeholder` row (they now take either kind); this pass's generated-repair bullet for the latter was removed because its claim was reworded. The module-statement row was re-measured (`1-16` → `1-22`).
 - 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q1 the whole block is bounded and the remaining seeds are deferred), 20:40:40 (F2 the tail collapse, `oversized_row` only alone) and 21:32:34 (R2-1 carried to L01, R2-2 accepted). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
