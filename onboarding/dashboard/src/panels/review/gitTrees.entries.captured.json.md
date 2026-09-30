@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/gitTrees.entries.captured.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 **A real `GET /api/review/intent/entries` body over the MIK-L31 worker's converted scratch leaf `260928-MIK-L31`
-(test evidence for `ReviewSurface.gitTrees.test.tsx`).** Its receipt is in `gitTrees.capture-provenance.json` (route, status, sha256 and bytes).
+(test evidence for `ReviewSurface.gitTrees.test.tsx`, and since MIK-L35 `ReviewSurface.wordDiff.test.tsx`).** Its receipt is in `gitTrees.capture-provenance.json` (route, status, sha256 and bytes).
 
 ## Code Commentary
 
@@ -28,7 +28,7 @@
 
 ### Conventions
 
-Keep the captured bytes and their receipt intact; only the test reads this file.
+Keep the captured bytes and their receipt intact; only the tests read this file.
 
 ### Invariants And Boundaries
 
@@ -62,6 +62,7 @@ cited as rows.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update, bytes unchanged. Purpose names its MIK-L35 consumer (`ReviewSurface.wordDiff.test.tsx`); Conventions says tests, plural.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (only the leaf id changed in the body). **Claim reworded:** the receipt row (this pass's generated bullet removed).
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

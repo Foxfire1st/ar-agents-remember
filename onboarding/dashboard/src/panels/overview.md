@@ -5,10 +5,68 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T12:41:49+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260928-MIK-L35 The Word-Level Intent Diff In The Central Reading Path
+
+**Route meaning extended (MIK-R35, adopting ICR-R35@v1).** On a tree comparison (the payload's `review:trees:<n>`),
+a changed statement, applicability, condition, exclusion or family guarantee now reads as **one prose passage with
+its removed and added words marked in place**, inside L31's decluttered structure, which it keeps. The new modules
+under `review/`, governed here like L31's (no `panels/review/` overview):
+- [`review/wordDiff.ts`](review/wordDiff.ts.md): the pure half. Whitespace-preserving word tokens, the token LCS with
+  replaced phrases as one removed and one added run, the byte decision (identical, whitespace-only with all
+  whitespace removed per review R1 F3, or words), `REWRITE_RATIO = 0.5` (ruling Q2: over the longer side, exactly
+  0.5 is not a rewrite), the `DIFF_CELL_LIMIT` coarse bound, exact reassembly (rule 8), and rule 1a's list
+  alignment (LCS by exact text, moved items out before gap pairing, gaps paired only on equal counts, never
+  positional; ruling Q5).
+- [`review/IntentWordDiff.tsx`](review/IntentWordDiff.tsx.md): the rendering and the **tree-comparison scope**
+  (`TreeComparisonScope` / `useTreeComparison`), inline or side by side, the rewrite fallback with its reason and an
+  unsaved per-passage "Show inline", whitespace-only with both exact texts disclosed, `<del>` / `<ins>` marks with
+  visually hidden "removed:" / "added:" text (rule 7), the R06 one-sided lines distinct from an unreadable side
+  (rule 5), the statement area and the changed guarantee; the layout control only where a word-diffed passage is
+  drawn (review R1 F5, R2-1).
+- [`review/intentDiffPreference.ts`](review/intentDiffPreference.ts.md): the browser-local layout preference
+  (`review.intent-diff.layout.v1`), inline by default and when storage is unavailable.
+- Tests: [`review/wordDiff.test.ts`](review/wordDiff.test.ts.md) (12),
+  [`review/IntentWordDiff.test.tsx`](review/IntentWordDiff.test.tsx.md) (30, accessible-text assertions) and
+  [`review/ReviewSurface.wordDiff.test.tsx`](review/ReviewSurface.wordDiff.test.tsx.md) (3, the real surface over the
+  real git-trees bodies, a tree review against a dataset review).
+
+**Hooks in the landed renderers.** [`review/SubjectReview.tsx`](review/SubjectReview.tsx.md) decides text-first on a
+tree comparison (`textFirstComparison` in [`review/statementWording.ts`](review/statementWording.ts.md)) and reads
+each side's text only from that side's own member row, or from the pane and the field rows filtered to the selected
+revisions (review R1 F1; ruling Q4 applies the filter on dataset reviews too).
+[`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) wraps its body in the scope, word-diffs a changed
+guarantee first, and names `same_revision_text_changed` in its details;
+[`review/FamilyTree.tsx`](review/FamilyTree.tsx.md) takes a `tree` prop from
+[`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) so the rail's joint guarantee and member tags compare
+text bytes (review R1 F2).
+
+**Rulings.** 2026-09-30T11:53:13: Q1 the same-revision label ("revision r2 → r2 · the same revision on both sides;
+its text differs": MIK-R21 increments `revision` only when meaning changes, so the bytes decide), Q2
+`REWRITE_RATIO = 0.5`, Q3 **no word diff for dataset reviews** (the scope is the one switch), Q4 the field-row
+filter on both paths, Q5 rule 1a as written, Q6 the centre roster (`FamilyMemberContext`) out of scope. 12:16:39
+(review R1): F1 per-side rows, F2 every tree-comparison label compares text bytes, F3 whitespace-only detection, F4
+added tests, F5 control placement. 12:43:15 (review R2): pass-with-notes; R2-1 fixed, R2-2 (a whitespace deletion
+that joins two words is labelled whitespace-only) and R2-3 (one extra bounded diff for control placement) accepted as
+notes. **Carried:** whichever of L35 and L32 lands second reruns `ReviewSurface.wordDiff.test.tsx` against L32's lane
+fetch (a Todo on that card).
+
+**Candidate invariants (not ingested):** on tree comparisons no review surface calls a changed text unchanged (the
+byte comparison decides, even at the same revision); a changed intent field reads as one passage with removed and
+added words marked in place, and both texts are reconstructed byte for byte; each side's text comes only from that
+side's own row, or from its pane or filtered field rows; dataset reviews get no word diff.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The decision, the ratio and rule 1a. | "export const REWRITE_RATIO = 0.5;"; "export function textDiff(before: string, after: string): TextDiff {"; "export function alignLists(" | dashboard/src/panels/review/wordDiff.ts:21-26; dashboard/src/panels/review/wordDiff.ts:180-206; dashboard/src/panels/review/wordDiff.ts:258-280 |
+| The tree-comparison scope, the statement area and the changed guarantee. | "export function IntentWordDiffScope({"; "export function IntentStatementBody({"; "export function guaranteeTextChange(" | dashboard/src/panels/review/IntentWordDiff.tsx:153-165; dashboard/src/panels/review/IntentWordDiff.tsx:557-613; dashboard/src/panels/review/IntentWordDiff.tsx:615-625 |
+| Each side's text from its own row, the filtered field rows, and the text-first decision. | `MemberSides`; `authoredSides`; `textFirstComparison` | dashboard/src/panels/review/SubjectReview.tsx:86-94; dashboard/src/panels/review/SubjectReview.tsx:96-145; dashboard/src/panels/review/statementWording.ts:62-73 |
+| The rail's labels compare bytes on a tree comparison. | `guaranteesOf`; `memberSideTag` | dashboard/src/panels/review/FamilyTree.tsx:310-339; dashboard/src/panels/review/FamilyTree.tsx:395-401 |
+| On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. | "word-diffs a tree review's member statement and family guarantee in the center"; "never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review" | dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx:108-181 |
 
 ## 260928-MIK-L29 The Knowledge Reader Panel
 
@@ -71,7 +129,9 @@ the cards (`CenterExpressions`), takes planning marks only from a leaf-wide read
 a tree comparison. A dataset review makes no tree read and renders the landed
 [`review/ReviewExpressions.tsx`](review/ReviewExpressions.tsx.md) (whose `ExpressionControls` the cards reuse).
 `changeset/DiffPane.tsx` and `file-viewer/FilePane.tsx` gained optional `firstLine`/`fit` for excerpts. None of
-the new modules has a `panels/review/` overview, following that route's precedent.
+the new modules has a `panels/review/` overview, following that route's precedent. **Since MIK-L35 (above)**, a tree
+comparison's changed intent wording is word-diffed and its labels compare text bytes; the 13:40 rule and the dataset
+path are unchanged.
 
 **Fixtures (MIK-R31 rule 6).** The git-trees bodies were re-captured from L31's scratch leaf, with the new cards
 body [`review/gitTrees.cards.captured.json`](review/gitTrees.cards.captured.json.md) (11 entries, every range
@@ -90,7 +150,7 @@ from a leaf-wide read of the same comparison; dataset reviews make no tree read.
 | --- | --- | --- |
 | The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-176; dashboard/src/panels/review/ExpressionCards.tsx:180-230 |
 | Grouping by (path, range) and the bounded-roster scope. | `cardKey`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:50-55; dashboard/src/panels/review/focusedCards.ts:195-210 |
-| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-954; dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029 |
+| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:969-973; dashboard/src/panels/review/FamilyReviewCenter.tsx:992-1048 |
 | The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:118-195 |
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
@@ -286,6 +346,7 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): **route body updated for MIK-R35.** Added the section "260928-MIK-L35 The Word-Level Intent Diff In The Central Reading Path" at the top: the three new modules and three new test modules (six new cards governed here, no sub-route overview), the hooks in the landed renderers, rulings Q1–Q6 (2026-09-30T11:53:13), F1–F5 (12:16:39) and R2 (12:43:15), the carried L32 rerun, four candidate invariants, and five rows. L31's section now says what L35 adds. **Citations:** the L31 `pinnedWorklist`/`CenterExpressions` row and the ICR-L36 hoisted-owners row, both declined by the installed fixer as ambiguous, were re-pointed by the exact base-to-staged line shift, as were the `SelectedStatement` and `FamilyReviewCenter` rows below; the ICR-L24 hierarchy row lost a range (`FamilyTree.tsx:550-562`) that the fixer's normalisation had kept but that no longer holds any of its anchors. The fixer normalised the other rows into changed files.
 - 2026-09-30T12:41:49+02:00 — 260928-MIK-L29 curator (follow-up after the coordinator's test-only edit, staged; the change set is still 24 files over `b54d1b0331f67454bcf245a7a338b04900181c3c`): **route body updated.** The L29 section now records that the debugging `console.log` in `knowledge-reader/KnowledgeReader.test.tsx` was removed, instead of pointing at a Todo; the test card's Todo is resolved and its rows re-measured. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Panel" at the top: the new `knowledge-reader/` folder and its seven cards (no sub-route overview, following `review/`), with rulings N2, F2, F4, F9, F11, F13, F17 and the R2 in-flight note, and four rows. **One reopened claim was re-read, reworded and re-anchored:** the "production route returns `Cockpit`" row, bound by a committed 2026-09-25 generated-repair bullet, now names the Knowledge initial view and is anchored on the line-exact quotes `"export function Cockpit() {"` and the reader-hash check; the committed bullet is left intact. The installed fixer normalised four rows and the `CockpitShell` row was re-pointed by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the stale test-header and comment notes of the 10:05:09 entry. The L31 section and ICR-L44's section now say the headers were refreshed; ICR-L44's case-header row is reworded and re-measured (`8-19` → `9-21`); the rows into `ReviewWorkspace.family.test.tsx` below the header and into `familyExpressions.test.ts` below its edited comment were re-pointed by the exact −1 and +1 shifts.
@@ -768,7 +829,7 @@ not here.
 | Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
 | Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows`; `useWorkspaceState` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/ReviewWorkspace.tsx:148-185 |
 | The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane`; `SourceContent` | dashboard/src/panels/review/ReviewRecordPanes.tsx:242-297; dashboard/src/panels/review/SourceExplorer.tsx:103-107 |
-| The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | "export function SelectedStatement({"; `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SubjectReview.tsx:217-280 |
+| The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | "export function SelectedStatement({"; `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SubjectReview.tsx:255-334 |
 | Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:55-99 |
 | The expansion states bounded content and the admitted path relation alongside the actual source rendering. | `boundedNote`; `Expansion` | dashboard/src/panels/review/SourceContent.tsx:101-111; dashboard/src/panels/review/SourceContent.tsx:127-166 |
 | **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** | `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:113-125 |
@@ -3482,9 +3543,9 @@ representable for a truncated family roster to be continued.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal. | `FamilyNode`; `MemberRoster`; `treeArrow` | dashboard/src/panels/review/FamilyTree.tsx:434-464; dashboard/src/panels/review/FamilyTree.tsx:466-516; dashboard/src/panels/review/FamilyTree.tsx:550-562 |
-| **The one family-roster walk control, continuing at the cursor the roster page published.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:250-282 |
-| **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:881-946 |
+| The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal. | `FamilyNode`; `MemberRoster`; `treeArrow` | dashboard/src/panels/review/FamilyTree.tsx:584-596; dashboard/src/panels/review/FamilyTree.tsx:468-498; dashboard/src/panels/review/FamilyTree.tsx:500-550 |
+| **The one family-roster walk control, continuing at the cursor the roster page published.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:263-295 |
+| **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:892-965 |
 | **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState`; "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:148-185; dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
 | **The complete source change explorer, and why it is its own module rather than part of the surface.** | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-302 |
 | **The mounted family composition cases and the captured server bodies they are driven with.** | "familyReview.*.captured.json" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:8-9 |
@@ -3587,10 +3648,10 @@ data exercises the divergent path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:492-537; dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631; dashboard/src/panels/review/FamilyReviewCenter.tsx:633-698; dashboard/src/panels/review/familyExpressions.ts:21-26 |
+| **The family column's three parts and the collection mounted as the third, after the member context and before the shared explorer.** | `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership` | dashboard/src/panels/review/FamilyReviewCenter.tsx:502-547; dashboard/src/panels/review/FamilyReviewCenter.tsx:580-641; dashboard/src/panels/review/FamilyReviewCenter.tsx:643-708; dashboard/src/panels/review/familyExpressions.ts:21-26 |
 | Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. | `familyExpressionExcerpts`; `excerptKey`; `claimClass` | dashboard/src/panels/review/familyExpressions.ts:185-202; dashboard/src/panels/review/familyExpressions.ts:64-66; dashboard/src/panels/review/familyExpressions.ts:68-73 |
 | Per-side resolution and observed identities attach to the same recorded-address key. | `recordSideReadings`; `FamilyExcerptSideReading` | dashboard/src/panels/review/familyExpressions.ts:147-168; dashboard/src/panels/review/familyExpressions.ts:34-38 |
-| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:277-281; dashboard/src/panels/review/FamilyReviewCenter.tsx:477-488 |
+| **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** | "function unlistedPathNote"; "function listedOrPlainPath" | dashboard/src/panels/review/FamilyReviewCenter.tsx:287-291; dashboard/src/panels/review/FamilyReviewCenter.tsx:487-498 |
 | **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** | "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:758-826 |
 | **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** | "WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD"; "keeps two excerpts apart when one address carries two different recorded blobs"; "treats two different observed blobs at one address as one excerpt, read once per side" | dashboard/src/panels/review/familyExpressions.test.ts:1-16; dashboard/src/panels/review/familyExpressions.test.ts:96-131; dashboard/src/panels/review/familyExpressions.test.ts:213-258 |
 

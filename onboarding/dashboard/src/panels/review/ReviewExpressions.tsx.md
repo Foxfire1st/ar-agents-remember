@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewExpressions.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ The named constructs own this behavior; reads and validation use their existing 
 | `ReviewExpressions` owns the behavior described above. | `ReviewExpressions` | dashboard/src/panels/review/ReviewExpressions.tsx:38-101 |
 | `expressionSelection` owns the behavior described above. | `expressionSelection` | dashboard/src/panels/review/ReviewExpressions.tsx:152-180 |
 | The layout and full-file controls, exported for the focused cards. | "export function ExpressionControls({" | dashboard/src/panels/review/ReviewExpressions.tsx:103-150 |
-| The centre mounts this view only when no cards read applies (a dataset review). | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029 |
+| The centre mounts this view only when no cards read applies (a dataset review). | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:992-1048 |
 | `ExpressionCard` owns the behavior described above. | `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239 |
 
 ## Cross-Repo References
@@ -76,6 +76,7 @@ No independent cross-repository interface is introduced by this source.
 
 ## Update History
 
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the caller row into `FamilyReviewCenter.tsx`, which this leaf changed, was normalised by the installed fixer to where `CenterExpressions` now sits (`973-1029` → `992-1048`). Claim wording unchanged. No stamp advanced.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose records that this is now the dataset review's expression view (a tree comparison renders MIK-R31's focused cards) and that `ExpressionControls` is exported for the cards; two rows added.
 
 - 2026-09-27T00:59:43+00:00 — Replaced the resolved projection-gap note with the current loaded-link contract. Empty/partial copy no longer claims absent stored links; the complete source inventory and selected-subject source authority stay independent.

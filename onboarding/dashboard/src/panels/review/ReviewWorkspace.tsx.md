@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ReviewWorkspace.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,12 @@ through `useReviewTrees`: the comparison number is `treeComparisonNumber(payload
 was composed over (review F11), and the hook's `enabled` flag is false when the payload declares no such token. A
 dataset review therefore makes no tree read at all. The result goes to `FamilyReviewCenter` as `leafTrees`, which
 renders the knowledge panel and takes the cards' planning marks from it only when its comparison number matches.
+
+**The rail's family navigator is told when it reads a tree comparison (MIK-L35; review R1 F2).** `FamilyRailContext`
+mounts `FamilyTree` with `tree={treeComparisonNumber(payload.limitations) !== undefined}`, so on a tree comparison
+the navigator's joint-guarantee and member labels compare text bytes and never call one revision "unchanged" when
+its two texts differ; a dataset review passes `false` and keeps the landed labels. This is the only change here; the
+review centre sets its own scope from the payload.
 
 **Focus after a selection (L48-R1-F2).** `focusSelection` holds `{ from }`, the element that had focus when the reader selected. `useSelectionFocus` runs on the next payload, clears the request, and moves focus to the selected tree node (or the center) only if focus is still on `from` or has fallen to `body`; focus the reader moved while the subject was pending is kept.
 
@@ -90,10 +96,11 @@ The current ownership and boundaries above are grounded in these source declarat
 | `ReviewWorkspace` owns the behavior described above. | "export function ReviewWorkspace({" | dashboard/src/panels/review/ReviewWorkspace.tsx:196-275 |
 | **The unanswered subject's status and its two renderings in the reading area.** | `ReadingStatus`; `ReadingStatusCenter`; `review-reading-pending`; `review-reading-problem` | dashboard/src/panels/review/ReviewWorkspace.tsx:89-94; dashboard/src/panels/review/ReviewWorkspace.tsx:96-128 |
 | **The reading-area column: one DOM node, only its content swapped; for a tree comparison it reads the leaf-wide tree view pinned to the payload's comparison (MIK-L31).** | `WorkspaceCenter`; `review-center-column` | dashboard/src/panels/review/ReviewWorkspace.tsx:281-343 |
-| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:490-504; dashboard/src/panels/review/ReviewWorkspace.tsx:130-146 |
+| **Selection focus lands only if the reader has not moved it.** | `useSelectionFocus`; `focusSelection` | dashboard/src/panels/review/ReviewWorkspace.tsx:491-505; dashboard/src/panels/review/ReviewWorkspace.tsx:145-145 |
+| The rail's family navigator, told whether the payload is a tree comparison (MIK-L35). | "function FamilyRailContext({"; "tree={treeComparisonNumber(payload.limitations) !== undefined}" | dashboard/src/panels/review/ReviewWorkspace.tsx:434-464 |
 | `WorkspaceRail` owns the behavior described above. | `WorkspaceRail` | dashboard/src/panels/review/ReviewWorkspace.tsx:345-415 |
 | `recordLabelOf` (moved to the scope header's module by L48) owns the behavior described above. | `recordLabelOf` | dashboard/src/panels/review/ReviewScopeHeader.tsx:108-112 |
-| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:512-525 |
+| `sourceAttribution` owns the behavior described above. | `sourceAttribution` | dashboard/src/panels/review/ReviewWorkspace.tsx:513-526 |
 
 ## Cross-Repo References
 
@@ -106,6 +113,7 @@ payload's own candidate published.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update. Logic records the one-line `tree` prop `FamilyRailContext` passes to the family navigator (review R1 F2, 2026-09-30T12:16:39; datasets pass `false`); one row added. The installed fixer normalised the selection-focus and `sourceAttribution` rows (+1 line).
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the leaf-wide tree view `WorkspaceCenter` reads for a tree comparison (MIK-R25 rules 2-3 rendered by L31, ruling L25 Q2), pinned to the payload's `review:trees:<n>` (review F11 at 06:10:21) and never made for a dataset review; Conventions and Todos no longer say the workspace makes no request of its own. The `WorkspaceCenter` row is reworded; the selection-focus row was re-pointed by the exact line shift.
 - 2026-09-30T07:51:05+00:00: Generated citation repair: `sourceAttribution` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:512-525. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the component row because an older *Generated citation repair* bullet in this card names `ReviewWorkspace`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`export function ReviewWorkspace({`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/FamilyTree.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,11 @@ Present the recorded family, its independent guarantee and full member statement
 `RosterLine` distinguishes the read owner's cumulative returned/total/remaining item counts from the number of unique loaded membership contexts. A final continuation completes the walk; retained earlier pages may contribute its loaded context. The published cursor remains the only continuation address.
 
 FamilyNode leads with the family control and authored guarantee, exposes member rows directly, and puts candidate identities, side states, history and roster protocol in a details block. memberRows unions carried before/after rows by exact invariant revision. The search keeps full sibling context for matching families and reports the visible filter scope. Arrow-key navigation and aria-current express selection; roster continuation comes only from the selected family side published cursor.
+
+**Labels on a tree comparison compare text bytes (MIK-L35; review R1 F2, ruled 2026-09-30T12:16:39).** The navigator is mounted by the workspace outside the review centre, so it takes a `tree` prop (default `false`; `ReviewWorkspace.FamilyRailContext` passes whether the payload declares `review:trees:<n>`) and wraps `FamilyList` in `TreeComparisonScope`. On a tree comparison one text record's revision can carry different bytes on its two sides (MIK-R21), so:
+- `guaranteesOf` shows one guarantee revision once as "Joint guarantee · unchanged" only when its two texts are the same (`sameGuaranteeText`); otherwise it shows both texts, labelled "Joint guarantee · before · same revision, text differs" and "… after · same revision, text differs".
+- `memberRows` records, for a revision listed on both sides, whether the two carried texts are the same, differ, or cannot be compared because a side's content is not on the page (`wording`, from `sidesWording` over `rowWording` and `wordingComparison`). `memberSideTag` then reads "· unchanged revision" only when they are the same, "· same revision · text differs" when they differ, and "· same revision" when a side is unknown.
+- A dataset review (`tree` false) keeps the landed labels: there one revision id is one immutable text.
 
 ### Conventions
 
@@ -47,7 +52,7 @@ the tree takes its selection and its query from the caller rather than owning th
 
 ### Invariants And Boundaries
 
-A guarantee is not summarized from members. Ambiguous revisions remain candidates and missing content remains named. Partial pages do not justify whole-snapshot absence or complete-member claims. Repeated membership references a canonical invariant revision without creating a duplicate identity.
+A guarantee is not summarized from members. On a tree comparison, no rail label calls one revision unchanged unless its carried texts are identical (MIK-L35; the candidate invariant recorded on `IntentWordDiff.tsx.md`). Ambiguous revisions remain candidates and missing content remains named. Partial pages do not justify whole-snapshot absence or complete-member claims. Repeated membership references a canonical invariant revision without creating a duplicate identity.
 
 ### Todos
 
@@ -69,11 +74,13 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `FamilyNode` owns the behavior described above. | `FamilyNode` | dashboard/src/panels/review/FamilyTree.tsx:466-516 |
-| `memberRows` owns the behavior described above. | `memberRows` | dashboard/src/panels/review/FamilyTree.tsx:120-138 |
-| `familyMatches` owns the behavior described above. | `familyMatches` | dashboard/src/panels/review/FamilyTree.tsx:531-548 |
-| `filterScope` owns the behavior described above. | `filterScope` | dashboard/src/panels/review/FamilyTree.tsx:518-529 |
-| `FamilyTree` owns the behavior described above. | `FamilyTree` | dashboard/src/panels/review/FamilyTree.tsx:590-654 |
+| `FamilyNode` owns the behavior described above. | `FamilyNode` | dashboard/src/panels/review/FamilyTree.tsx:500-550 |
+| `memberRows` unions both sides by exact revision and, for a revision on both sides, records whether the carried texts are the same, differ or are unknown (MIK-L35). | `memberRows`; `sidesWording`; "existing.wording = sidesWording(existing.member, member);" | dashboard/src/panels/review/FamilyTree.tsx:116-151 |
+| The rail's joint guarantee: one revision once only when its texts are the same on a tree comparison; otherwise both texts, noted "same revision, text differs". | "function sameGuaranteeText("; "function guaranteesOf("; "const note = oneRevision ? ' · same revision, text differs' : '';" | dashboard/src/panels/review/FamilyTree.tsx:301-339 |
+| The member node's side tag: "unchanged revision" only for the same carried text on a tree comparison. | `memberSideTag`; "memberSideTag(row, tree)" | dashboard/src/panels/review/FamilyTree.tsx:395-401; dashboard/src/panels/review/FamilyTree.tsx:451-451 |
+| `familyMatches` owns the behavior described above. | `familyMatches` | dashboard/src/panels/review/FamilyTree.tsx:565-582 |
+| `filterScope` owns the behavior described above. | `filterScope` | dashboard/src/panels/review/FamilyTree.tsx:552-563 |
+| `FamilyTree` owns the column; its `tree` prop (MIK-L35) sets the tree-comparison scope around the family list. | "export function FamilyTree({"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyTree.tsx:624-693 |
 
 ## Cross-Repo References
 
@@ -86,6 +93,9 @@ it.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update. Logic and Invariants record review R1 F2 (2026-09-30T12:16:39): the `tree` prop and scope, the rail's joint guarantee and the member tag comparing text bytes on a tree comparison, datasets unchanged. The `memberRows` and `FamilyTree` rows are reworded and re-measured (`FamilyTree` now on a line-exact quote); two rows added. The new joint-guarantee row is anchored on line-exact quotes rather than the bare `guaranteesOf`, which a committed 2026-09-25T22:19:46 generated bullet names; that bullet is left intact. The installed fixer's `familyMatches` and `filterScope` bullets are kept.
+- 2026-09-30T11:14:38+00:00: Generated citation repair: `familyMatches` repointed to dashboard/src/panels/review/FamilyTree.tsx:565-582. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T11:14:38+00:00: Generated citation repair: `filterScope` repointed to dashboard/src/panels/review/FamilyTree.tsx:552-563. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-27T00:59:43+00:00 — Clarified cumulative read items versus loaded exact member contexts and final-walk wording. Guarantee, exact member identity, navigation and user-driven continuation remain unchanged.
 - 2026-09-26T19:49:05Z — Reconciled the visible guarantee/member hierarchy and disclosed roster diagnostics.

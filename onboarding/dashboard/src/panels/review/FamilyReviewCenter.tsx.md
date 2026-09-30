@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/FamilyReviewCenter.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9` |
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,12 @@ FamilyCenter presents the guarantee comparison, carried exact member revisions, 
 
 **Focused expression cards for a tree comparison (MIK-R31, MIK-L31).** `CenterExpressions` asks `useReviewTreeEntries` for the entries of `cardInvariants` (every member of the selected family on both sides, or the selected invariant alone when it has no family on this page; sorted, so one selection is one read) at the payload's own comparison (`treeComparisonNumber`). A dataset review declares no `review:trees:<n>`, so the hook returns `null` and the landed `ReviewExpressions` renders unchanged; otherwise `ExpressionCards` renders one card per (path, range) with the selected invariant as the MIK-R01 seed, `cardScope(entry)` as the bounded-roster scope (review F2), and a path the reader opens from a card routed through `onOpenFromCenter`. **Planning marks come from one comparison only (review F11, R2-3):** `pinnedWorklist` passes the leaf-wide read's worklist to `planningMarks` only when that read's `comparison.number` equals the payload's; otherwise the cards carry no mark. `knowledgePanel` mounts `LeafKnowledgeChanges` (MIK-R25 rules 2-3, carried from L25 Q2) after the evidence in the family, member and unselected centres, and states a comparison mismatch there.
 
-**Decluttered guarantees (MIK-R31 rule 3).** Identical guarantee text on two revisions is "Wording unchanged · revision a → b" (`revisionMeta` over `guaranteeRevisionLabels`: the display versions, or the revisions' short identities when those read alike), the guarantee shown once, with both revision IDs under "Revision records"; a guarantee recorded on one side is labelled "Added guarantee" or "Removed guarantee". `MemberCenter` passes the selected subject's member rows (`subjectRows`) to `SelectedStatement` so the 13:40 rule can compare every authored field.
+**Decluttered guarantees (MIK-R31 rule 3).** Identical guarantee text on two revisions is "Wording unchanged · revision a → b" (`revisionMeta` over `guaranteeRevisionLabels`: the display versions, or the revisions' short identities when those read alike), the guarantee shown once, with both revision IDs under "Revision records"; a guarantee recorded on one side is labelled "Added guarantee" or "Removed guarantee". `MemberCenter` passes the selected subject's member rows (`subjectRows`) to `SelectedStatement` so the 13:40 rule can compare every authored field. Since MIK-L35, `guaranteeRevisionLabels` lives in `statementWording.ts`, shared with the word-diffed guarantee.
+
+**Word-level intent diff (MIK-R35, MIK-L35).** `FamilyReviewCenter` is now a thin exported wrapper that sets the tree-comparison scope (`IntentWordDiffScope`, from the payload's `review:trees:<n>`) around the unchanged body, renamed `ReviewCenterBody` and not re-indented (a small diff beside L32). Inside the scope:
+- `GuaranteeComparisonBlock` first asks `guaranteeTextChange`: whenever both sides carry a guarantee and its text differs, **including one revision whose two texts differ** (MIK-R21; ruling Q1), it returns the word-diffed `GuaranteeTextChange` ("Changed guarantee · revision a → b" as one passage). On the tree path a one-sided guarantee carries `OneSidedGuaranteeLabel`, with the R06 known-absent line only when the other side records none. Otherwise, and always on a dataset review, the landed branches answer (ruling Q3: the dataset guarantee keeps its `DiffPane`).
+- `IndependentFacts` prints the guarantee fact through `guaranteeFact`: `same_revision_text_changed` instead of `unchanged_revision` for one revision whose texts differ on a tree comparison (review R1 F2, 2026-09-30T12:16:39).
+- `subjectRows` returns the subject's rows **per side** (`MemberSides`, from `entry.before.members` and `entry.after.members`), so `SelectedStatement` reads each side's text only from that side's own row (review R1 F1).
 
 ### Conventions
 
@@ -63,14 +68,15 @@ state this file holds is none at all.
 
 ### Invariants And Boundaries
 
-Only the same recorded revision may be described as unchanged; identical text on different revisions is a different fact, rendered as "Wording unchanged" with both revisions named. **Candidate invariant (not ingested): card planning marks come only from a leaf-wide read of the same comparison** (`pinnedWorklist`; proved by the gitTrees R2-3 case, where a leaf-wide body for comparison 2 against a payload for comparison 1 gives the panel's mismatch sentence and no planned or unplanned mark on any voice, and removing the `same` check fails it). **Candidate invariant (not ingested): dataset reviews make no tree read** (`CenterExpressions` falls back to `ReviewExpressions` when `useReviewTreeEntries` returns `null`; proved by the gitTrees dataset case, which asserts no `/trees` request, no cards and no knowledge panel). Partial member pages retain owner counts and continuation, and a missing row on one page proves no snapshot-wide absence. The selected-subject reader owns evidence applicability and currentness; the center preserves those bindings and labels unrelated records as context. Family or member changes do not create a semantic assessment. The complete source inventory is owned by the workspace rail.
+Only the same recorded revision may be described as unchanged; identical text on different revisions is a different fact, rendered as "Wording unchanged" with both revisions named. **On a tree comparison, one revision is unchanged only when its two texts are too** (MIK-L35; ruling Q1 and review R1 F2): the guarantee block, the details fact and the member statement compare the bytes, and a same-revision text change reads "the same revision on both sides; its text differs" (the candidate invariant recorded on `IntentWordDiff.tsx.md`). **Candidate invariant (not ingested): card planning marks come only from a leaf-wide read of the same comparison** (`pinnedWorklist`; proved by the gitTrees R2-3 case, where a leaf-wide body for comparison 2 against a payload for comparison 1 gives the panel's mismatch sentence and no planned or unplanned mark on any voice, and removing the `same` check fails it). **Candidate invariant (not ingested): dataset reviews make no tree read** (`CenterExpressions` falls back to `ReviewExpressions` when `useReviewTreeEntries` returns `null`; proved by the gitTrees dataset case, which asserts no `/trees` request, no cards and no knowledge panel). Partial member pages retain owner counts and continuation, and a missing row on one page proves no snapshot-wide absence. The selected-subject reader owns evidence applicability and currentness; the center preserves those bindings and labels unrelated records as context. Family or member changes do not create a semantic assessment. The complete source inventory is owned by the workspace rail.
 
 ### Todos
 
 None recorded. The centre renders what the payload and the owners' records carry; the two known
 limits of the surrounding family route — the browser-class journeys and the state a served bundle
 would have to exercise — belong to the read/refresh and interaction increments rather than to this
-rendering.
+rendering. **Size (MIK-L35):** the file is 1,111 lines, 89 under the 1,200 bound; L35 kept its growth to the scope
+wrapper and two hooks, and further centre work should extract rather than grow it.
 
 ## Docs References
 
@@ -87,14 +93,14 @@ The current ownership and boundaries above are grounded in these source declarat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The family centre: guarantee, carried members, the expressions slot, family evidence, then the leaf's knowledge panel. | "function FamilyCenter({" | dashboard/src/panels/review/FamilyReviewCenter.tsx:633-698 |
-| The member centre: guarantee, the selected statement with the subject's member rows, the expressions slot, evidence, then the knowledge panel. | "function MemberCenter({"; `subjectRows` | dashboard/src/panels/review/FamilyReviewCenter.tsx:751-825; dashboard/src/panels/review/FamilyReviewCenter.tsx:827-836 |
-| The centre entry: selection, the expressions slot and the knowledge panel wired for every centre, from the workspace's leaf-wide read. | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)"; `FamilyReviewCenterProps` | dashboard/src/panels/review/FamilyReviewCenter.tsx:863-946 |
-| Planning marks only from the same comparison, and the knowledge panel only from a tree read. | `pinnedWorklist`; `knowledgePanel` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-969 |
-| Cards for a tree comparison, the landed file view for a dataset review, and the invariants one selection reads. | `CenterExpressions`; `cardInvariants` | dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029; dashboard/src/panels/review/FamilyReviewCenter.tsx:1034-1043 |
-| Identical guarantee text shown once as wording unchanged, with compact revision labels. | `GuaranteeComparisonBlock`; `guaranteeRevisionLabels` | dashboard/src/panels/review/FamilyReviewCenter.tsx:114-199 |
-| `IndependentFacts` owns the behavior described above. | `IndependentFacts` | dashboard/src/panels/review/FamilyReviewCenter.tsx:700-749 |
-| `FamilyMemberContext` owns the behavior described above. | `FamilyMemberContext` | dashboard/src/panels/review/FamilyReviewCenter.tsx:570-631 |
+| The family centre: guarantee, carried members, the expressions slot, family evidence, then the leaf's knowledge panel. | "function FamilyCenter({" | dashboard/src/panels/review/FamilyReviewCenter.tsx:643-708 |
+| The member centre: guarantee, the selected statement with the subject's member rows kept per side (MIK-L35, review R1 F1), the expressions slot, evidence, then the knowledge panel. | "function MemberCenter({"; "function subjectRows(" | dashboard/src/panels/review/FamilyReviewCenter.tsx:762-836; dashboard/src/panels/review/FamilyReviewCenter.tsx:838-846 |
+| The centre entry: a thin wrapper that sets the tree-comparison scope (MIK-L35) around the body, which wires selection, the expressions slot and the knowledge panel for every centre from the workspace's leaf-wide read. | "export function FamilyReviewCenter(props: FamilyReviewCenterProps)"; "function ReviewCenterBody(props: FamilyReviewCenterProps) {"; `FamilyReviewCenterProps` | dashboard/src/panels/review/FamilyReviewCenter.tsx:873-889; dashboard/src/panels/review/FamilyReviewCenter.tsx:891-965 |
+| Planning marks only from the same comparison, and the knowledge panel only from a tree read. | `pinnedWorklist`; `knowledgePanel` | dashboard/src/panels/review/FamilyReviewCenter.tsx:969-973; dashboard/src/panels/review/FamilyReviewCenter.tsx:975-988 |
+| Cards for a tree comparison, the landed file view for a dataset review, and the invariants one selection reads. | `CenterExpressions`; `cardInvariants` | dashboard/src/panels/review/FamilyReviewCenter.tsx:992-1048; dashboard/src/panels/review/FamilyReviewCenter.tsx:1053-1062 |
+| Identical guarantee text shown once as wording unchanged, with compact revision labels; on a tree comparison a changed guarantee text, even at one revision, is the word-diffed block first, and a one-sided guarantee carries its R06 label (MIK-L35). | `GuaranteeComparisonBlock`; "const textChange = wordDiff ? guaranteeTextChange(entry) : null;"; `guaranteeRevisionLabels` | dashboard/src/panels/review/FamilyReviewCenter.tsx:127-209 |
+| The centre details print the independent facts; on a tree comparison the guarantee fact names one revision whose texts differ `same_revision_text_changed` (MIK-L35, review R1 F2). | "function IndependentFacts({"; "guaranteeFact(entry, tree)" | dashboard/src/panels/review/FamilyReviewCenter.tsx:710-760 |
+| `FamilyMemberContext` owns the behavior described above. | `FamilyMemberContext` | dashboard/src/panels/review/FamilyReviewCenter.tsx:580-641 |
 
 ## Cross-Repo References
 
@@ -106,6 +112,8 @@ namespace from a payload the server composed, and carries no identity that range
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update. Logic records MIK-R35 in the centre: the scope wrapper around `ReviewCenterBody`, the word-diffed guarantee first on a tree comparison (including one revision whose texts differ, ruling Q1 of 2026-09-30T11:53:13; datasets unchanged, Q3), the one-sided R06 label, the details fact `same_revision_text_changed` (review R1 F2, 12:16:39) and the per-side `subjectRows` (F1); `guaranteeRevisionLabels` moved to `statementWording.ts`. Invariants and Todos (the 1,111-line size) updated. **Reopened claims reworded and re-anchored:** the `MemberCenter`/`subjectRows` row (now on the quote "function subjectRows(", re-measured, the stale `827-836` dropped) and the `IndependentFacts` row, which is bound by a committed 2026-09-26T21:09:05 bullet and so is re-anchored on the line-exact quotes "function IndependentFacts({" and "guaranteeFact(entry, tree)" with that bullet left intact. The `FamilyReviewCenter` and `GuaranteeComparisonBlock` rows are reworded and re-measured; the `CenterExpressions` row's stale `1034-1043` (left by the installed fixer's normalisation) was dropped. The fixer's `pinnedWorklist`/`knowledgePanel` bullet is kept.
+- 2026-09-30T11:14:33+00:00: Generated citation repair: `pinnedWorklist`; `knowledgePanel` repointed to dashboard/src/panels/review/FamilyReviewCenter.tsx:969-973; dashboard/src/panels/review/FamilyReviewCenter.tsx:975-988. No content impact: mechanical anchor-range projection bound to citation source snapshot 2597c838ec1e64a918943e8db9f63ef52ddf51fa320d55ca6abc370de5fa8b59; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Logic records the focused expression cards in the expressions slot for a tree comparison (`CenterExpressions`, `cardInvariants`, the F2 scope), the pinned planning marks (review F11 at 06:10:21, guard tested by R2-3 at 06:47:03), the knowledge panel (L25 Q2), and the decluttered guarantee and statement (rule 3); two candidate invariants recorded. **Reopened claims reworded and re-anchored:** the `FamilyCenter`, `MemberCenter` and `FamilyReviewCenter` rows are bound by committed generated bullets (2026-09-26T21:09:05), so they are re-anchored on line-exact quotes and those committed bullets are left intact. Three rows added. The file is 1,092 lines (under the 1,200 bound, close to it; worker note).
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/panels/review/ExpressionCards.tsx` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T13:23:08+02:00 |
+| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
+| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
 | governingOverview | `dashboard/src/panels/overview.md` |
 
 ## Governing Overview
@@ -98,13 +98,13 @@ and not cited as rows.
 | The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope. | `CardsProps` | dashboard/src/panels/review/ExpressionCards.tsx:121-134 |
 | Loading, unavailable and not-a-tree-comparison states. | `ExpressionCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-176 |
 | The counts, the scope line and one full file keyed by the card (F1). | `ReadyCards`; `ScopeLine` | dashboard/src/panels/review/ExpressionCards.tsx:180-230; dashboard/src/panels/review/ExpressionCards.tsx:233-241 |
-| Side lines, one line for an unchanged same region, and the side-state texts. | `sideLine`; `SideLines`; `sameRegion`; `sideStateText` | dashboard/src/panels/review/ExpressionCards.tsx:249-257; dashboard/src/panels/review/ExpressionCards.tsx:259-274; dashboard/src/panels/review/ExpressionCards.tsx:277-286; dashboard/src/panels/review/ExpressionCards.tsx:288-292 |
+| Side lines, one line for an unchanged same region, and the side-state texts. | `sideLine`; `SideLines`; `sameRegion`; `sideStateText` | dashboard/src/panels/review/ExpressionCards.tsx:249-257; dashboard/src/panels/review/ExpressionCards.tsx:288-292; dashboard/src/panels/review/ExpressionCards.tsx:259-274; dashboard/src/panels/review/ExpressionCards.tsx:277-286 |
 | One card: header, voices, side lines, excerpt, marks, actions. | `FocusedCard` | dashboard/src/panels/review/ExpressionCards.tsx:294-366 |
 | A voice: the authored rationale or facet, or the named gap. | `voiceHeading`; `Voice` | dashboard/src/panels/review/ExpressionCards.tsx:376-382; dashboard/src/panels/review/ExpressionCards.tsx:384-409 |
 | Unchanged once, changed as a diff, sides that are not both regions shown apart. | `Excerpt`; `UnchangedExcerpt`; `ChangedExcerpt`; `SeparateSides` | dashboard/src/panels/review/ExpressionCards.tsx:411-417; dashboard/src/panels/review/ExpressionCards.tsx:420-430; dashboard/src/panels/review/ExpressionCards.tsx:434-463; dashboard/src/panels/review/ExpressionCards.tsx:467-483 |
 | Entry details kept out of the reading path. | `CardDetails`; `sideFacts` | dashboard/src/panels/review/ExpressionCards.tsx:493-505; dashboard/src/panels/review/ExpressionCards.tsx:507-524 |
 | The inventory jump, the full file through the landed content read, and a file opened from the explorer. | `InventoryLink`; `FullFile`; `OpenedFile` | dashboard/src/panels/review/ExpressionCards.tsx:526-545; dashboard/src/panels/review/ExpressionCards.tsx:548-583; dashboard/src/panels/review/ExpressionCards.tsx:587-606 |
-| The one caller, which mounts cards only for a tree comparison. | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029 |
+| The one caller, which mounts cards only for a tree comparison. | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:992-1048 |
 | The card-state cases. | "draws a changed range as its real diff and an unchanged range once, labelled unchanged"; "names a missing rationale as a gap and never writes text of its own" | dashboard/src/panels/review/ExpressionCards.test.tsx:66-81; dashboard/src/panels/review/ExpressionCards.test.tsx:137-147 |
 | The F1 case. | "opens one full file, in the card that asked, with one read (F1)" | dashboard/src/panels/review/ExpressionCards.test.tsx:209-235 |
 
@@ -117,4 +117,5 @@ and not cited as rows.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the caller row into `FamilyReviewCenter.tsx`, which this leaf changed, was normalised by the installed fixer to where `CenterExpressions` now sits (`973-1029` → `992-1048`), and the fixer reordered one row's ranges into this card's own unchanged source. Claim wording unchanged. No stamp advanced.
 - 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new component MIK-R31 adds, recording rulings 05:36:19 Q1 (a proof's path opens in full), 06:10:21 F1 (one full file keyed by card) and F2 (the loaded n of m), and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
